@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "municipal-scrape-workspace"
+version = "0.1.0"
+description = "Municipal scraping workspace that depends on ipfs_datasets_py"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+  # Pull ipfs_datasets_py directly from GitHub so `ipfs-datasets` CLI is installed
+    # Install from the local ipfs_datasets_py checkout.
+    # Rationale: upstream currently pins ipfs_kit_py via a git URL that triggers a broken submodule fetch.
+    # The local checkout has been patched to use the known_good branch ZIP instead, enabling clean installs.
+    "ipfs_datasets_py @ file:///home/barberb/ipfs_datasets_py",
+]
+
+[project.optional-dependencies]
+# Optional: enable extra fallbacks like Playwright (you still need `playwright install chromium`).
+playwright = ["playwright>=1.45"]
+
+[project.scripts]
+municipal-scrape = "municipal_scrape_workspace.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

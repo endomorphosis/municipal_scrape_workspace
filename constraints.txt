@@ -1,0 +1,1 @@
+ipfs_kit_py @ https://github.com/endomorphosis/ipfs_kit_py/archive/refs/heads/known_good.zip
