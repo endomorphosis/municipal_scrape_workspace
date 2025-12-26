@@ -16,3 +16,19 @@ content_blobs/
 logs/
 
 *test*
+
+# Run/output directories
+out_*/
+
+# Local caches
+.mypy_cache/
+.pytest_cache/
+
+# Environment/config
+.env
+
+# Binary/DB artifacts
+*.duckdb
+
+# Line-oriented logs/artifacts
+*.jsonl
