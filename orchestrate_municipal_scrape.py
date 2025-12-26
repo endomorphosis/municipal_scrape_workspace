@@ -129,49 +129,240 @@ def _save_cc_domain_cache(cache_dir: Path, domain: str, urls: List[str]) -> None
         pass
 
 
-async def _query_cc_cdx_for_domain(domain: str, worker_id: int) -> List[str]:
-    """Query Common Crawl CDX API for all archived URLs on a domain.
+def _query_local_cc_index(local_file: Path, domain: str, worker_id: int) -> List[str]:
+    """Read a local Common Crawl index file (.gz or plain) and filter by domain.
     
-    Returns a list of unique URLs found in Common Crawl's CDX index for the domain.
+    Supports:
+    - CDX format: space/tab separated lines with URL in field 3
+    - JSON/NDJSON: lines with {"url": ...}
+    """
+    import gzip
+    
+    if not local_file.exists():
+        _log(worker_id, f"Local index file not found: {local_file}", "WARN")
+        return []
+    
+    _log(worker_id, f"Reading local CC index: {local_file.name} for domain {domain}", "INFO")
+    urls: List[str] = []
+    seen: set[str] = set()
+    
+    try:
+        # Auto-detect gzip
+        opener = gzip.open if str(local_file).endswith(".gz") else open
+        with opener(local_file, "rt", encoding="utf-8", errors="ignore") as f:
+            for line_no, line in enumerate(f, 1):
+                line = line.strip()
+                if not line or line.startswith("#"):
+                    continue
+                
+                url = None
+                # Try JSON first
+                if line.startswith("{"):
+                    try:
+                        rec = json.loads(line)
+                        url = rec.get("url")
+                    except Exception:
+                        pass
+                
+                # Try CDX format (whitespace-separated, URL typically in field 3)
+                if not url:
+                    parts = line.split()
+                    if len(parts) >= 3:
+                        url = parts[2]
+                
+                if url and domain in url and url not in seen:
+                    seen.add(url)
+                    urls.append(url)
+                
+                # Cap reads for very large files
+                if line_no > 10_000_000:
+                    _log(worker_id, f"Stopped after 10M lines in {local_file.name}", "WARN")
+                    break
+        
+        _log(worker_id, f"Local index yielded {len(urls)} URLs for {domain}", "INFO")
+        return urls
+    except Exception as e:
+        _log(worker_id, f"Error reading local index: {type(e).__name__}: {e}", "WARN")
+        return []
+
+
+async def _query_cc_with_toolkit(domain: str, worker_id: int, limit: int = 5000) -> List[str]:
+    """Use cdx_toolkit library to query Common Crawl (if available).
+    
+    Requires: pip install cdx_toolkit
+    """
+    try:
+        import cdx_toolkit
+    except ImportError:
+        _log(worker_id, "cdx_toolkit not available; skipping", "DEBUG")
+        return []
+    
+    _log(worker_id, f"Querying CC via cdx_toolkit for domain: {domain}", "INFO")
+    
+    try:
+        cdx = cdx_toolkit.CDXFetcher(source="cc")
+        urls: List[str] = []
+        seen: set[str] = set()
+        
+        # Query with wildcard
+        query = f"*.{domain}/*"
+        count = 0
+        for obj in cdx.iter(query, limit=limit):
+            url = obj.get("url")
+            if url and url not in seen:
+                seen.add(url)
+                urls.append(url)
+                count += 1
+                if count >= limit:
+                    break
+        
+        _log(worker_id, f"cdx_toolkit found {len(urls)} URLs for {domain}", "INFO")
+        return urls
+    except Exception as e:
+        _log(worker_id, f"cdx_toolkit error: {type(e).__name__}: {e}", "WARN")
+        return []
+
+
+async def _query_cc_cdx_for_domain(
+    domain: str,
+    worker_id: int,
+    cc_api_host: str = "index.commoncrawl.org",
+    collections_latest: int = 1,
+    user_agent: str = "municipal-scrape/2025-12",
+    request_delay_ms: int = 500,
+    max_retries: int = 3,
+    index_max_lines: int = 5000,
+) -> List[str]:
+    """Query Common Crawl for archived URLs on a domain.
+
+    Prefer https://index.commoncrawl.org with polite headers and small delays.
+    Fallback to https://cdx.commoncrawl.org/search/cdx for limited cases.
     """
     try:
         import aiohttp
     except ImportError:
-        _log(worker_id, f"aiohttp not available; skipping CDX query for {domain}", "WARN")
+        _log(worker_id, f"aiohttp not available; skipping CC index query for {domain}", "WARN")
         return []
 
-    cdx_api = "https://cdx.commoncrawl.org/search/cdx"
-    params = {
-        "url": f"{domain}/*",
-        "output": "json",
-        "collapse": "urlkey",
-        "pageSize": 10000,
-    }
+    import random
 
-    _log(worker_id, f"Querying CC CDX for domain: {domain}", "INFO")
-    try:
-        async with aiohttp.ClientSession() as session:
-            async with session.get(cdx_api, params=params, timeout=30) as resp:
+    urls: List[str] = []
+    seen: set[str] = set()
+
+    async def sleep_politely():
+        await asyncio.sleep(max(request_delay_ms, 0) / 1000.0 + random.uniform(0.0, 0.2))
+
+    headers = {"User-Agent": user_agent}
+
+    # Helper: fetch available collections from index.commoncrawl.org
+    async def get_collections(session: aiohttp.ClientSession) -> List[str]:
+        collinfo_url = "https://index.commoncrawl.org/collinfo.json"
+        try:
+            async with session.get(collinfo_url, headers=headers, timeout=30) as resp:
                 if resp.status != 200:
-                    _log(worker_id, f"CC CDX query failed: HTTP {resp.status} for {domain}", "WARN")
                     return []
                 data = await resp.json()
-                if not isinstance(data, list) or len(data) < 2:
-                    _log(worker_id, f"CC CDX returned no results for {domain}", "DEBUG")
-                    return []
-                # First row is headers; remaining are [timestamp, status_code, original_url, ...]
-                urls: List[str] = []
-                seen: set[str] = set()
-                for row in data[1:]:
-                    if len(row) >= 3:
-                        url = row[2]  # original_url column
-                        if url not in seen:
-                            seen.add(url)
-                            urls.append(url)
-                _log(worker_id, f"CC CDX found {len(urls)} unique URLs for {domain}", "INFO")
-                return urls
+                ids: List[str] = []
+                for item in data:
+                    cid = item.get("id")
+                    if isinstance(cid, str) and cid.endswith("-index"):
+                        ids.append(cid)
+                # Most recent first
+                return ids[: max(1, int(collections_latest))]
+        except Exception:
+            return []
+
+    _log(worker_id, f"Querying CC index for domain: {domain} (host={cc_api_host})", "INFO")
+
+    try:
+        async with aiohttp.ClientSession() as session:
+            # Primary path: index.commoncrawl.org
+            if cc_api_host.strip().lower() == "index.commoncrawl.org":
+                cols = await get_collections(session)
+                if not cols:
+                    _log(worker_id, "No index collections fetched; falling back to CDX", "WARN")
+                else:
+                    for cid in cols:
+                        q_url = f"https://index.commoncrawl.org/{cid}"
+                        params = {
+                            "url": f"*.{domain}/*",
+                            "output": "json",
+                        }
+                        ok = False
+                        for attempt in range(max(1, int(max_retries))):
+                            try:
+                                async with session.get(q_url, params=params, headers=headers, timeout=45) as resp:
+                                    if resp.status == 200:
+                                        # NDJSON stream; read chunks and parse lines
+                                        text = await resp.text()
+                                        count = 0
+                                        for line in text.splitlines():
+                                            line = line.strip()
+                                            if not line:
+                                                continue
+                                            try:
+                                                rec = json.loads(line)
+                                                u = rec.get("url")
+                                                if u and u not in seen:
+                                                    seen.add(u)
+                                                    urls.append(u)
+                                                    count += 1
+                                                    if count >= int(index_max_lines):
+                                                        break
+                                            except Exception:
+                                                continue
+                                        _log(worker_id, f"Index {cid} yielded {count} URLs for {domain}", "DEBUG")
+                                        ok = True
+                                        break
+                                    elif resp.status in (429, 503):
+                                        _log(worker_id, f"Rate limited on {cid} (HTTP {resp.status}); backing off", "WARN")
+                                        await asyncio.sleep(2.5 * (attempt + 1))
+                                    else:
+                                        _log(worker_id, f"Index {cid} HTTP {resp.status}; skipping", "WARN")
+                                        break
+                            except Exception as e:
+                                _log(worker_id, f"Index {cid} error: {type(e).__name__}: {e}", "WARN")
+                                await asyncio.sleep(1.5 * (attempt + 1))
+                        await sleep_politely()
+                if urls:
+                    _log(worker_id, f"CC index found {len(urls)} unique URLs for {domain}", "INFO")
+                    return urls
+
+            # Fallback: CDX server (Wayback-style)
+            cdx_api = "https://cdx.commoncrawl.org/search/cdx"
+            params = {
+                "url": f"{domain}/*",
+                "output": "json",
+                "collapse": "urlkey",
+                "pageSize": 10000,
+            }
+            for attempt in range(max(1, int(max_retries))):
+                try:
+                    async with session.get(cdx_api, params=params, headers=headers, timeout=30) as resp:
+                        if resp.status != 200:
+                            _log(worker_id, f"CC CDX failed: HTTP {resp.status} for {domain}", "WARN")
+                            if resp.status in (429, 503):
+                                await asyncio.sleep(2.0 * (attempt + 1))
+                            continue
+                        data = await resp.json()
+                        if not isinstance(data, list) or len(data) < 2:
+                            _log(worker_id, f"CC CDX returned no results for {domain}", "DEBUG")
+                            return []
+                        for row in data[1:]:
+                            if len(row) >= 3:
+                                u = row[2]
+                                if u and u not in seen:
+                                    seen.add(u)
+                                    urls.append(u)
+                        _log(worker_id, f"CC CDX found {len(urls)} unique URLs for {domain}", "INFO")
+                        return urls
+                except Exception as e:
+                    _log(worker_id, f"CC CDX error: {type(e).__name__}: {e}", "WARN")
+                    await asyncio.sleep(1.5 * (attempt + 1))
+                await sleep_politely()
+            return []
     except Exception as e:
-        _log(worker_id, f"CC CDX query error: {type(e).__name__}: {e}", "WARN")
+        _log(worker_id, f"CC index query error: {type(e).__name__}: {e}", "WARN")
         return []
 
 
@@ -709,6 +900,14 @@ async def run_scrape(
     full_domain_crawl: bool = False,
     per_domain_concurrency: int = 4,
     cc_cache_ttl_days: int = 7,
+    cc_api_host: str = "index.commoncrawl.org",
+    cc_collections_latest: int = 1,
+    cc_user_agent: str = "municipal-scrape/2025-12",
+    cc_request_delay_ms: int = 500,
+    cc_max_retries: int = 3,
+    cc_index_max_lines: int = 5000,
+    cc_local_index_file: Optional[str] = None,
+    use_cdx_toolkit: bool = False,
 ) -> None:
     # Build list of URLs assigned to this worker.
     # If rescrape mode is enabled, derive URLs from the archive status JSONL.
@@ -737,7 +936,31 @@ async def run_scrape(
                 _log(worker_id, f"Cache hit {domain}: +{len(cached)} URLs", "DEBUG")
                 all_urls.update(cached)
                 continue
-            cc_urls = await _query_cc_cdx_for_domain(domain, worker_id)
+            
+            # Try multiple methods in priority order
+            cc_urls: List[str] = []
+            
+            # Method 1: Local index file (fastest, no network)
+            if cc_local_index_file:
+                cc_urls = _query_local_cc_index(Path(cc_local_index_file), domain, worker_id)
+            
+            # Method 2: cdx_toolkit (polite API wrapper)
+            if not cc_urls and use_cdx_toolkit:
+                cc_urls = await _query_cc_with_toolkit(domain, worker_id, limit=int(cc_index_max_lines))
+            
+            # Method 3: Direct index.commoncrawl.org or CDX fallback
+            if not cc_urls:
+                cc_urls = await _query_cc_cdx_for_domain(
+                    domain,
+                    worker_id,
+                    cc_api_host=cc_api_host,
+                    collections_latest=cc_collections_latest,
+                    user_agent=cc_user_agent,
+                    request_delay_ms=cc_request_delay_ms,
+                    max_retries=cc_max_retries,
+                    index_max_lines=cc_index_max_lines,
+                )
+            
             if cc_urls:
                 _save_cc_domain_cache(cache_dir, domain, cc_urls)
                 _log(worker_id, f"Cached {domain}: +{len(cc_urls)} URLs", "DEBUG")
@@ -831,128 +1054,128 @@ async def run_scrape(
             else:
                 domain_sem = asyncio.Semaphore(1)
             async with domain_sem:
-            attempts = con.execute(
-                "SELECT attempts FROM url_cid_latest WHERE url = ?",
-                [url],
-            ).fetchone()
-            attempt = int(attempts[0]) + 1 if attempts else 1
+                attempts = con.execute(
+                    "SELECT attempts FROM url_cid_latest WHERE url = ?",
+                    [url],
+                ).fetchone()
+                attempt = int(attempts[0]) + 1 if attempts else 1
 
-            row = await _scrape_one(scraper, url, timeout=timeout, worker_id=worker_id, attempt=attempt)
+                row = await _scrape_one(scraper, url, timeout=timeout, worker_id=worker_id, attempt=attempt)
 
-            status_str = str(row.get("status") or "error")
+                status_str = str(row.get("status") or "error")
 
-            # Persist to DB
-            con.execute(
-                """
-                INSERT INTO scrape_attempts (
-                    url, attempt, worker_id, started_at, finished_at, status, error,
-                    method_used, status_code, content_type, content_cid, content_bytes, text_bytes, metadata_json
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-                """,
-                [
-                    row.get("url"),
-                    row.get("attempt"),
-                    row.get("worker_id"),
-                    row.get("started_at"),
-                    row.get("finished_at"),
-                    row.get("status"),
-                    row.get("error"),
-                    row.get("method_used"),
-                    row.get("status_code"),
-                    row.get("content_type"),
-                    row.get("content_cid"),
-                    row.get("content_bytes"),
-                    row.get("text_bytes"),
-                    row.get("metadata_json"),
-                ],
-            )
-            
-            if status_str == "success":
-                _log(worker_id, f"✓ SUCCESS {url} (method={row.get('method_used')}, bytes={row.get('content_bytes')}, cid={row.get('content_cid')[:16]}...)", "INFO")
-            else:
-                _log(worker_id, f"✗ ERROR {url} (error={row.get('error')[:80] if row.get('error') else 'unknown'})", "WARN")
-
-            _upsert_url_latest(
-                con,
-                url=url,
-                status=status_str,
-                error=row.get("error"),
-                method_used=row.get("method_used"),
-                status_code=row.get("status_code"),
-                content_type=row.get("content_type"),
-                content_cid=row.get("content_cid"),
-                ipfs_cid=None,
-                content_bytes=row.get("content_bytes"),
-                text_bytes=row.get("text_bytes"),
-                finished_at=row.get("finished_at"),
-            )
-
-            cid = row.get("content_cid")
-            if row.get("status") == "success" and cid and row.get("content_raw") is not None:
-                blob_path = _blob_path_for_cid(blobs_dir, cid)
-                if not blob_path.exists():
-                    blob_path.write_bytes(row["content_raw"])
-                    _log(worker_id, f"  → Blob written: {blob_path.name} ({len(row['content_raw'])} bytes)", "DEBUG")
+                # Persist to DB
+                con.execute(
+                    """
+                    INSERT INTO scrape_attempts (
+                        url, attempt, worker_id, started_at, finished_at, status, error,
+                        method_used, status_code, content_type, content_cid, content_bytes, text_bytes, metadata_json
+                    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                    """,
+                    [
+                        row.get("url"),
+                        row.get("attempt"),
+                        row.get("worker_id"),
+                        row.get("started_at"),
+                        row.get("finished_at"),
+                        row.get("status"),
+                        row.get("error"),
+                        row.get("method_used"),
+                        row.get("status_code"),
+                        row.get("content_type"),
+                        row.get("content_cid"),
+                        row.get("content_bytes"),
+                        row.get("text_bytes"),
+                        row.get("metadata_json"),
+                    ],
+                )
+                
+                if status_str == "success":
+                    _log(worker_id, f"✓ SUCCESS {url} (method={row.get('method_used')}, bytes={row.get('content_bytes')}, cid={row.get('content_cid')[:16]}...)", "INFO")
                 else:
-                    _log(worker_id, f"  → Blob already exists: {blob_path.name}", "DEBUG")
+                    _log(worker_id, f"✗ ERROR {url} (error={row.get('error')[:80] if row.get('error') else 'unknown'})", "WARN")
 
-                ipfs_cid: Optional[str] = None
-                if ipfs:
-                    try:
-                        ipfs_cid = _ipfs_add_file(ipfs_bin, blob_path, pin=ipfs_pin)
-                        _log(worker_id, f"  → IPFS CID: {ipfs_cid}", "DEBUG")
-                    except Exception as e:
-                        # Best-effort: record the error but continue.
+                _upsert_url_latest(
+                    con,
+                    url=url,
+                    status=status_str,
+                    error=row.get("error"),
+                    method_used=row.get("method_used"),
+                    status_code=row.get("status_code"),
+                    content_type=row.get("content_type"),
+                    content_cid=row.get("content_cid"),
+                    ipfs_cid=None,
+                    content_bytes=row.get("content_bytes"),
+                    text_bytes=row.get("text_bytes"),
+                    finished_at=row.get("finished_at"),
+                )
+
+                cid = row.get("content_cid")
+                if row.get("status") == "success" and cid and row.get("content_raw") is not None:
+                    blob_path = _blob_path_for_cid(blobs_dir, cid)
+                    if not blob_path.exists():
+                        blob_path.write_bytes(row["content_raw"])
+                        _log(worker_id, f"  → Blob written: {blob_path.name} ({len(row['content_raw'])} bytes)", "DEBUG")
+                    else:
+                        _log(worker_id, f"  → Blob already exists: {blob_path.name}", "DEBUG")
+
+                    ipfs_cid: Optional[str] = None
+                    if ipfs:
+                        try:
+                            ipfs_cid = _ipfs_add_file(ipfs_bin, blob_path, pin=ipfs_pin)
+                            _log(worker_id, f"  → IPFS CID: {ipfs_cid}", "DEBUG")
+                        except Exception as e:
+                            # Best-effort: record the error but continue.
+                            con.execute(
+                                "UPDATE url_cid_latest SET last_error = ? WHERE url = ?",
+                                [f"ipfs_add_error:{type(e).__name__}:{e}", url],
+                            )
+                            _log(worker_id, f"  → IPFS add failed: {type(e).__name__}: {e}", "WARN")
+
+                    if ipfs_cid:
                         con.execute(
-                            "UPDATE url_cid_latest SET last_error = ? WHERE url = ?",
-                            [f"ipfs_add_error:{type(e).__name__}:{e}", url],
+                            "UPDATE url_cid_latest SET last_ipfs_cid = ? WHERE url = ?",
+                            [ipfs_cid, url],
                         )
-                        _log(worker_id, f"  → IPFS add failed: {type(e).__name__}: {e}", "WARN")
 
-                if ipfs_cid:
+                    seen_at = row.get("finished_at") or _utc_now_iso()
+
                     con.execute(
-                        "UPDATE url_cid_latest SET last_ipfs_cid = ? WHERE url = ?",
-                        [ipfs_cid, url],
+                        "INSERT INTO url_cid_history (url, content_cid, ipfs_cid, seen_at, worker_id) VALUES (?, ?, ?, ?, ?)",
+                        [url, cid, ipfs_cid, seen_at, worker_id],
                     )
 
-                seen_at = row.get("finished_at") or _utc_now_iso()
+                    _upsert_cid_content(
+                        con,
+                        cid=cid,
+                        content_type=row.get("content_type"),
+                        ipfs_cid=ipfs_cid,
+                        content_bytes=int(row.get("content_bytes") or 0),
+                        text=row.get("text") or "",
+                        blob_path=str(blob_path),
+                        seen_at=seen_at,
+                    )
 
-                con.execute(
-                    "INSERT INTO url_cid_history (url, content_cid, ipfs_cid, seen_at, worker_id) VALUES (?, ?, ?, ?, ?)",
-                    [url, cid, ipfs_cid, seen_at, worker_id],
-                )
-
-                _upsert_cid_content(
-                    con,
-                    cid=cid,
-                    content_type=row.get("content_type"),
-                    ipfs_cid=ipfs_cid,
-                    content_bytes=int(row.get("content_bytes") or 0),
-                    text=row.get("text") or "",
-                    blob_path=str(blob_path),
-                    seen_at=seen_at,
-                )
-
-                # Extract and store discovered links if crawling enabled
-                if crawl_discovered_links:
-                    discovered = _extract_links_from_metadata(row.get("metadata_json") or "{}")
-                    source_domain = _extract_domain(url)
-                    for link in discovered:
-                        link_domain = _extract_domain(link)
-                        # Only follow same-domain links
-                        if source_domain and link_domain and source_domain == link_domain:
-                            try:
-                                con.execute(
-                                    """
-                                    INSERT INTO discovered_links
-                                    (source_url, discovered_url, source_domain, discovered_domain, discovered_at, worker_id)
-                                    VALUES (?, ?, ?, ?, ?, ?)
-                                    ON CONFLICT DO NOTHING
-                                    """,
-                                    [url, link, source_domain, link_domain, _utc_now_iso(), worker_id],
-                                )
-                            except Exception:
-                                pass  # Ignore constraint violations
+                    # Extract and store discovered links if crawling enabled
+                    if crawl_discovered_links:
+                        discovered = _extract_links_from_metadata(row.get("metadata_json") or "{}")
+                        source_domain = _extract_domain(url)
+                        for link in discovered:
+                            link_domain = _extract_domain(link)
+                            # Only follow same-domain links
+                            if source_domain and link_domain and source_domain == link_domain:
+                                try:
+                                    con.execute(
+                                        """
+                                        INSERT INTO discovered_links
+                                        (source_url, discovered_url, source_domain, discovered_domain, discovered_at, worker_id)
+                                        VALUES (?, ?, ?, ?, ?, ?)
+                                        ON CONFLICT DO NOTHING
+                                        """,
+                                        [url, link, source_domain, link_domain, _utc_now_iso(), worker_id],
+                                    )
+                                except Exception:
+                                    pass  # Ignore constraint violations
 
     # Run in bounded-parallel batches (DuckDB connection is shared; keep batches modest).
     batch_size = max(1, max_concurrent * 5)
@@ -1120,7 +1343,7 @@ def main() -> int:
         "--full-domain-crawl",
         action="store_true",
         default=False,
-        help="Query Common Crawl CDX for all URLs on each domain and scrape them all (not just the input URLs)",
+        help="Expand to all URLs on the domain via Common Crawl index (cache-first)",
     )
     p.add_argument(
         "--per-domain-concurrency",
@@ -1139,6 +1362,54 @@ def main() -> int:
         action="store_true",
         default=False,
         help="Assign shards based on domain hash instead of URL hash",
+    )
+    p.add_argument(
+        "--cc-api-host",
+        type=str,
+        default="index.commoncrawl.org",
+        help="Common Crawl index host: index.commoncrawl.org (preferred) or cdx.commoncrawl.org",
+    )
+    p.add_argument(
+        "--cc-collections-latest",
+        type=int,
+        default=1,
+        help="Number of latest CC collections to query on index.commoncrawl.org",
+    )
+    p.add_argument(
+        "--cc-user-agent",
+        type=str,
+        default="municipal-scrape/2025-12 (+https://github.com/barberb/municipal_scrape_workspace)",
+        help="User-Agent to send to Common Crawl",
+    )
+    p.add_argument(
+        "--cc-request-delay-ms",
+        type=int,
+        default=500,
+        help="Delay in milliseconds between index requests (add jitter)",
+    )
+    p.add_argument(
+        "--cc-max-retries",
+        type=int,
+        default=3,
+        help="Max retries per collection request with exponential backoff",
+    )
+    p.add_argument(
+        "--cc-index-max-lines",
+        type=int,
+        default=5000,
+        help="Max lines to parse per collection response (NDJSON)",
+    )
+    p.add_argument(
+        "--cc-local-index-file",
+        type=str,
+        default=None,
+        help="Path to local Common Crawl index file (.gz or plain; downloaded from data.commoncrawl.org)",
+    )
+    p.add_argument(
+        "--use-cdx-toolkit",
+        action="store_true",
+        default=False,
+        help="Use cdx_toolkit library if available (pip install cdx_toolkit)",
     )
 
     args = p.parse_args()
@@ -1174,6 +1445,14 @@ def main() -> int:
                 full_domain_crawl=bool(args.full_domain_crawl),
                 per_domain_concurrency=int(args.per_domain_concurrency),
                 cc_cache_ttl_days=int(args.cc_cache_ttl_days),
+                cc_api_host=str(args.cc_api_host),
+                cc_collections_latest=int(args.cc_collections_latest),
+                cc_user_agent=str(args.cc_user_agent),
+                cc_request_delay_ms=int(args.cc_request_delay_ms),
+                cc_max_retries=int(args.cc_max_retries),
+                cc_index_max_lines=int(args.cc_index_max_lines),
+                cc_local_index_file=args.cc_local_index_file,
+                use_cdx_toolkit=bool(args.use_cdx_toolkit),
             )
         )
 
