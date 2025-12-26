@@ -130,6 +130,39 @@ def _split_urls(source_url_field: str) -> List[str]:
     return re.findall(r"https?://[^\s,;]+", field)
 
 
+def _extract_domain(url: str) -> str:
+    """Extract root domain from URL for crawling scope."""
+    try:
+        from urllib.parse import urlparse
+        parsed = urlparse(url)
+        domain = parsed.netloc.lower()
+        # Remove 'www.' prefix if present
+        if domain.startswith("www."):
+            domain = domain[4:]
+        return domain
+    except Exception:
+        return ""
+
+
+def _extract_links_from_metadata(metadata_json: str) -> List[str]:
+    """Extract discovered links from scraper metadata JSON."""
+    try:
+        meta = json.loads(metadata_json or "{}")
+        links = meta.get("links", [])
+        if isinstance(links, list):
+            return [link for link in links if isinstance(link, str) and link.startswith(("http://", "https://"))]
+    except Exception:
+        pass
+    return []
+
+
+def _same_domain(url1: str, url2: str) -> bool:
+    """Check if two URLs share the same root domain."""
+    d1 = _extract_domain(url1)
+    d2 = _extract_domain(url2)
+    return bool(d1 and d2 and d1 == d2)
+
+
 def _ensure_dirs(out_root: Path) -> Dict[str, Path]:
     state_dir = out_root / "state"
     datasets_dir = out_root / "datasets"
@@ -264,6 +297,21 @@ def _init_schema(con: duckdb.DuckDBPyConnection) -> None:
             con.execute(stmt)
         except Exception:
             pass
+
+    # Discovered links table (for full website crawling mode)
+    con.execute(
+        """
+        CREATE TABLE IF NOT EXISTS discovered_links (
+            source_url VARCHAR,
+            discovered_url VARCHAR,
+            source_domain VARCHAR,
+            discovered_domain VARCHAR,
+            discovered_at TIMESTAMP,
+            worker_id INTEGER,
+            PRIMARY KEY (source_url, discovered_url)
+        );
+        """
+    )
 
 
 def ingest_csv_to_db(
@@ -535,9 +583,12 @@ async def run_scrape(
     resume: bool,
     rescrape_archive_status_jsonl: Optional[str],
     rescrape_include_success: bool,
+    common_crawl_only: bool,
     ipfs: bool,
     ipfs_bin: str,
     ipfs_pin: bool,
+    crawl_discovered_links: bool = False,
+    crawl_depth: int = 1,
 ) -> None:
     # Build list of URLs assigned to this worker.
     # If rescrape mode is enabled, derive URLs from the archive status JSONL.
@@ -577,17 +628,23 @@ async def run_scrape(
         archive_async_submit_on_failure = False
         archive_async_submit_on_challenge = False
     else:
-        preferred_methods = [
-            ScraperMethod.COMMON_CRAWL,
-            ScraperMethod.WAYBACK_MACHINE,
-            ScraperMethod.ARCHIVE_IS,
-            ScraperMethod.PLAYWRIGHT,
-            ScraperMethod.BEAUTIFULSOUP,
-            ScraperMethod.REQUESTS_ONLY,
-        ]
-        fallback_enabled = True
-        archive_async_submit_on_failure = True
-        archive_async_submit_on_challenge = True
+        if common_crawl_only:
+            preferred_methods = [ScraperMethod.COMMON_CRAWL]
+            fallback_enabled = False
+            archive_async_submit_on_failure = False
+            archive_async_submit_on_challenge = False
+        else:
+            preferred_methods = [
+                ScraperMethod.COMMON_CRAWL,
+                ScraperMethod.WAYBACK_MACHINE,
+                ScraperMethod.ARCHIVE_IS,
+                ScraperMethod.PLAYWRIGHT,
+                ScraperMethod.BEAUTIFULSOUP,
+                ScraperMethod.REQUESTS_ONLY,
+            ]
+            fallback_enabled = True
+            archive_async_submit_on_failure = True
+            archive_async_submit_on_challenge = True
 
     config = ScraperConfig(
         timeout=timeout,
@@ -710,12 +767,53 @@ async def run_scrape(
                     seen_at=seen_at,
                 )
 
+                # Extract and store discovered links if crawling enabled
+                if crawl_discovered_links:
+                    discovered = _extract_links_from_metadata(row.get("metadata_json") or "{}")
+                    source_domain = _extract_domain(url)
+                    for link in discovered:
+                        link_domain = _extract_domain(link)
+                        # Only follow same-domain links
+                        if source_domain and link_domain and source_domain == link_domain:
+                            try:
+                                con.execute(
+                                    """
+                                    INSERT INTO discovered_links
+                                    (source_url, discovered_url, source_domain, discovered_domain, discovered_at, worker_id)
+                                    VALUES (?, ?, ?, ?, ?, ?)
+                                    ON CONFLICT DO NOTHING
+                                    """,
+                                    [url, link, source_domain, link_domain, _utc_now_iso(), worker_id],
+                                )
+                            except Exception:
+                                pass  # Ignore constraint violations
+
     # Run in bounded-parallel batches (DuckDB connection is shared; keep batches modest).
     batch_size = max(1, max_concurrent * 5)
     for start in range(0, len(urls), batch_size):
         batch = urls[start : start + batch_size]
         await asyncio.gather(*[_task(u) for u in batch])
         con.execute("CHECKPOINT")
+
+    # If crawl mode is enabled, queue discovered links and scrape them
+    if crawl_discovered_links:
+        discovered_urls = [
+            r[0]
+            for r in con.execute(
+                """
+                SELECT DISTINCT discovered_url
+                FROM discovered_links
+                WHERE discovered_url NOT IN (SELECT url FROM url_cid_latest)
+                ORDER BY discovered_url
+                """
+            ).fetchall()
+        ]
+        if discovered_urls:
+            print(f"[Worker {worker_id}] Found {len(discovered_urls)} undiscovered links to crawl")
+            for start in range(0, len(discovered_urls), batch_size):
+                batch = discovered_urls[start : start + batch_size]
+                await asyncio.gather(*[_task(u) for u in batch])
+                con.execute("CHECKPOINT")
 
 
 def export_parquets(con: duckdb.DuckDBPyConnection, datasets_dir: Path) -> Dict[str, Path]:
@@ -807,6 +905,12 @@ def main() -> int:
         default=False,
         help="Include URLs already marked success in url_cid_latest when rescraping archived URLs.",
     )
+    p.add_argument(
+        "--common-crawl-only",
+        action="store_true",
+        default=False,
+        help="Restrict scraping to Common Crawl only (no fallbacks)",
+    )
 
     # Do NOT call resolve() here: venv python is often a symlink to /usr/bin/python.
     default_ipfs_bin = str(Path(sys.executable).parent / "ipfs")
@@ -827,6 +931,18 @@ def main() -> int:
         action="store_true",
         default=False,
         help="Pin added content in the local IPFS repo",
+    )
+    p.add_argument(
+        "--crawl-discovered-links",
+        action="store_true",
+        default=False,
+        help="Extract and scrape links discovered within successful pages (same domain only)",
+    )
+    p.add_argument(
+        "--crawl-depth",
+        type=int,
+        default=1,
+        help="Maximum depth for link crawling (future: currently only stores discovered links at depth 1)",
     )
 
     args = p.parse_args()
@@ -853,9 +969,12 @@ def main() -> int:
                 resume=bool(args.resume),
                 rescrape_archive_status_jsonl=args.rescrape_archive_status_jsonl,
                 rescrape_include_success=bool(args.rescrape_include_success),
+                common_crawl_only=bool(args.common_crawl_only),
                 ipfs=bool(args.ipfs),
                 ipfs_bin=str(args.ipfs_bin),
                 ipfs_pin=bool(args.ipfs_pin),
+                crawl_discovered_links=bool(args.crawl_discovered_links),
+                crawl_depth=int(args.crawl_depth),
             )
         )
 
