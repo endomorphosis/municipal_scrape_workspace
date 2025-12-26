@@ -66,6 +66,68 @@ from ipfs_datasets_py.integrations import compute_cid_for_content
 from ipfs_datasets_py.unified_web_scraper import ScraperConfig, ScraperMethod, UnifiedWebScraper
 
 
+def _log(worker_id: int, msg: str, level: str = "INFO") -> None:
+    """Verbose logging with timestamp and worker ID."""
+    ts = datetime.now(timezone.utc).isoformat()
+    print(f"[{ts}] [W{worker_id}] [{level}] {msg}", flush=True)
+
+
+def _extract_domain(url: str) -> str:
+    """Extract domain from a URL (e.g., 'https://example.com/path' -> 'example.com')."""
+    try:
+        from urllib.parse import urlparse
+        parsed = urlparse(url)
+        return parsed.netloc or ""
+    except Exception:
+        return ""
+
+
+async def _query_cc_cdx_for_domain(domain: str, worker_id: int) -> List[str]:
+    """Query Common Crawl CDX API for all archived URLs on a domain.
+    
+    Returns a list of unique URLs found in Common Crawl's CDX index for the domain.
+    """
+    try:
+        import aiohttp
+    except ImportError:
+        _log(worker_id, f"aiohttp not available; skipping CDX query for {domain}", "WARN")
+        return []
+
+    cdx_api = "https://cdx.commoncrawl.org/search/cdx"
+    params = {
+        "url": f"{domain}/*",
+        "output": "json",
+        "collapse": "urlkey",
+        "pageSize": 10000,
+    }
+
+    _log(worker_id, f"Querying CC CDX for domain: {domain}", "INFO")
+    try:
+        async with aiohttp.ClientSession() as session:
+            async with session.get(cdx_api, params=params, timeout=30) as resp:
+                if resp.status != 200:
+                    _log(worker_id, f"CC CDX query failed: HTTP {resp.status} for {domain}", "WARN")
+                    return []
+                data = await resp.json()
+                if not isinstance(data, list) or len(data) < 2:
+                    _log(worker_id, f"CC CDX returned no results for {domain}", "DEBUG")
+                    return []
+                # First row is headers; remaining are [timestamp, status_code, original_url, ...]
+                urls: List[str] = []
+                seen: set[str] = set()
+                for row in data[1:]:
+                    if len(row) >= 3:
+                        url = row[2]  # original_url column
+                        if url not in seen:
+                            seen.add(url)
+                            urls.append(url)
+                _log(worker_id, f"CC CDX found {len(urls)} unique URLs for {domain}", "INFO")
+                return urls
+    except Exception as e:
+        _log(worker_id, f"CC CDX query error: {type(e).__name__}: {e}", "WARN")
+        return []
+
+
 def _load_archived_urls_from_jsonl(path: Path) -> List[str]:
     """Load URLs that appear archived from a JSONL status/callback file.
 
@@ -325,6 +387,7 @@ def ingest_csv_to_db(
     existing_row = con.execute("SELECT COUNT(*) FROM towns").fetchone()
     existing = int(existing_row[0]) if existing_row and existing_row[0] is not None else 0
     if existing == 0:
+        print(f"[INGEST] Loading CSV from {csv_path}", flush=True)
         # Robust CSV parse (some fields include commas inside quotes)
         rows: List[Tuple[Any, ...]] = []
         with csv_path.open("r", encoding="utf-8", newline="") as f:
@@ -337,12 +400,15 @@ def ingest_csv_to_db(
                 status = (r.get("status") or "").strip()
                 rows.append((gnis, place_name, state_code, source_url, status))
 
+        print(f"[INGEST] Inserting {len(rows)} town records", flush=True)
         con.executemany(
             "INSERT INTO towns (gnis, place_name, state_code, source_url, status) VALUES (?, ?, ?, ?, ?)",
             rows,
         )
+        print(f"[INGEST] Towns ingested successfully", flush=True)
 
     # Rebuild town_urls idempotently
+    print(f"[INGEST] Normalizing URLs and assigning shards for {num_workers} workers", flush=True)
     con.execute("DELETE FROM town_urls")
 
     normalized_rows: List[Tuple[Any, ...]] = []
@@ -353,6 +419,8 @@ def ingest_csv_to_db(
         for url in urls:
             shard = _stable_shard(url, num_workers)
             normalized_rows.append((gnis, place_name, state_code, url, source_url, shard))
+    
+        print(f"[INGEST] Inserting {len(normalized_rows)} normalized URLs", flush=True)
 
     con.executemany(
         "INSERT INTO town_urls (gnis, place_name, state_code, url, source_url_raw, shard) VALUES (?, ?, ?, ?, ?, ?)",
@@ -589,6 +657,7 @@ async def run_scrape(
     ipfs_pin: bool,
     crawl_discovered_links: bool = False,
     crawl_depth: int = 1,
+    full_domain_crawl: bool = False,
 ) -> None:
     # Build list of URLs assigned to this worker.
     # If rescrape mode is enabled, derive URLs from the archive status JSONL.
@@ -602,10 +671,25 @@ async def run_scrape(
     if limit is not None:
         urls = urls[: int(limit)]
 
+        _log(worker_id, f"Assigned {len(urls)} URLs from CSV", "INFO")
+    
+        # If full domain crawl is enabled, expand URLs to all URLs on their domains from Common Crawl CDX
+        if crawl_discovered_links:
+            _log(worker_id, f"Full domain crawl enabled; querying CC CDX for each domain", "INFO")
+            all_urls: set[str] = set(urls)
+            for url in urls:
+                domain = _extract_domain(url)
+                if domain:
+                    cc_urls = await _query_cc_cdx_for_domain(domain, worker_id)
+                    all_urls.update(cc_urls)
+            urls = sorted(list(all_urls))
+            _log(worker_id, f"After domain expansion from CDX: {len(urls)} total URLs", "INFO")
+    
     # Skip successes if requested.
     if resume or (rescrape_archive_status_jsonl and not rescrape_include_success):
         done = set(r[0] for r in con.execute("SELECT url FROM url_cid_latest WHERE last_status = 'success'").fetchall())
         urls = [u for u in urls if u not in done]
+        _log(worker_id, f"After filtering successes: {len(urls)} URLs remaining", "INFO")
 
     out_root = blobs_dir.parent
     archive_callback_file = str((out_root / "state" / "archive_jobs.jsonl").resolve())
@@ -629,11 +713,13 @@ async def run_scrape(
         archive_async_submit_on_challenge = False
     else:
         if common_crawl_only:
+            _log(worker_id, "Common Crawl only mode enabled", "INFO")
             preferred_methods = [ScraperMethod.COMMON_CRAWL]
             fallback_enabled = False
             archive_async_submit_on_failure = False
             archive_async_submit_on_challenge = False
         else:
+            _log(worker_id, "Full fallback chain enabled (CC -> Wayback -> Archive.is -> Playwright -> BeautifulSoup -> Requests)", "INFO")
             preferred_methods = [
                 ScraperMethod.COMMON_CRAWL,
                 ScraperMethod.WAYBACK_MACHINE,
@@ -669,6 +755,7 @@ async def run_scrape(
         archive_async_submit_if_missing=True,
         archive_async_callback_file=archive_callback_file,
     )
+    _log(worker_id, f"Scraper config: timeout={timeout}s, concurrent={max_concurrent}", "INFO")
     scraper = UnifiedWebScraper(config)
 
     sem = asyncio.Semaphore(max_concurrent)
@@ -710,6 +797,11 @@ async def run_scrape(
                     row.get("metadata_json"),
                 ],
             )
+            
+            if status_str == "success":
+                _log(worker_id, f"✓ SUCCESS {url} (method={row.get('method_used')}, bytes={row.get('content_bytes')}, cid={row.get('content_cid')[:16]}...)", "INFO")
+            else:
+                _log(worker_id, f"✗ ERROR {url} (error={row.get('error')[:80] if row.get('error') else 'unknown'})", "WARN")
 
             _upsert_url_latest(
                 con,
@@ -731,17 +823,22 @@ async def run_scrape(
                 blob_path = _blob_path_for_cid(blobs_dir, cid)
                 if not blob_path.exists():
                     blob_path.write_bytes(row["content_raw"])
+                    _log(worker_id, f"  → Blob written: {blob_path.name} ({len(row['content_raw'])} bytes)", "DEBUG")
+                else:
+                    _log(worker_id, f"  → Blob already exists: {blob_path.name}", "DEBUG")
 
                 ipfs_cid: Optional[str] = None
                 if ipfs:
                     try:
                         ipfs_cid = _ipfs_add_file(ipfs_bin, blob_path, pin=ipfs_pin)
+                        _log(worker_id, f"  → IPFS CID: {ipfs_cid}", "DEBUG")
                     except Exception as e:
                         # Best-effort: record the error but continue.
                         con.execute(
                             "UPDATE url_cid_latest SET last_error = ? WHERE url = ?",
                             [f"ipfs_add_error:{type(e).__name__}:{e}", url],
                         )
+                        _log(worker_id, f"  → IPFS add failed: {type(e).__name__}: {e}", "WARN")
 
                 if ipfs_cid:
                     con.execute(
@@ -814,6 +911,12 @@ async def run_scrape(
                 batch = discovered_urls[start : start + batch_size]
                 await asyncio.gather(*[_task(u) for u in batch])
                 con.execute("CHECKPOINT")
+    
+    # Final progress summary
+    successes = con.execute("SELECT COUNT(*) FROM url_cid_latest WHERE last_status = 'success'").fetchone()[0]
+    failures = con.execute("SELECT COUNT(*) FROM url_cid_latest WHERE last_status = 'error'").fetchone()[0]
+    total_blobs = len(list((blobs_dir).glob("*.bin")))
+    _log(worker_id, f"FINAL: {successes} successes, {failures} failures, {total_blobs} unique blobs", "INFO")
 
 
 def export_parquets(con: duckdb.DuckDBPyConnection, datasets_dir: Path) -> Dict[str, Path]:
@@ -944,6 +1047,12 @@ def main() -> int:
         default=1,
         help="Maximum depth for link crawling (future: currently only stores discovered links at depth 1)",
     )
+    p.add_argument(
+        "--full-domain-crawl",
+        action="store_true",
+        default=False,
+        help="Query Common Crawl CDX for all URLs on each domain and scrape them all (not just the input URLs)",
+    )
 
     args = p.parse_args()
 
@@ -975,6 +1084,7 @@ def main() -> int:
                 ipfs_pin=bool(args.ipfs_pin),
                 crawl_discovered_links=bool(args.crawl_discovered_links),
                 crawl_depth=int(args.crawl_depth),
+                full_domain_crawl=bool(args.full_domain_crawl),
             )
         )
 
