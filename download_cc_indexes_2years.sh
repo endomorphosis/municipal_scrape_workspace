@@ -1,6 +1,7 @@
 #!/bin/bash
-# Download Common Crawl indexes for past 2 years in background
+# Download Common Crawl indexes for past 2 years
 # Stores in /storage/ccindex/<collection>/
+# Estimated: 22 collections, ~3000+ index files, ~20-25 TB total
 
 set -e
 
@@ -16,9 +17,8 @@ PARALLEL_JOBS=${1:-8}
   echo "Parallel jobs: $PARALLEL_JOBS"
   echo ""
   
-  # Generate list of collections for past 5 years (2020-12-27 to 2025-12-26)
-  # Generated from official collinfo.json from index.commoncrawl.org/collinfo.json
-  # Total: 42 collections with ~6000+ index files covering 5 years
+  # 22 collections for 2-year coverage (Dec 2023 - Dec 2025)
+  # Generated from official collinfo.json
   COLLECTIONS=(
     "CC-MAIN-2025-51" "CC-MAIN-2025-47" "CC-MAIN-2025-43" "CC-MAIN-2025-38"
     "CC-MAIN-2025-33" "CC-MAIN-2025-30" "CC-MAIN-2025-26" "CC-MAIN-2025-21"
@@ -26,20 +26,11 @@ PARALLEL_JOBS=${1:-8}
     "CC-MAIN-2024-51" "CC-MAIN-2024-46" "CC-MAIN-2024-42" "CC-MAIN-2024-38"
     "CC-MAIN-2024-33" "CC-MAIN-2024-30" "CC-MAIN-2024-26" "CC-MAIN-2024-22"
     "CC-MAIN-2024-18" "CC-MAIN-2024-10"
-    "CC-MAIN-2023-50" "CC-MAIN-2023-40" "CC-MAIN-2023-23" "CC-MAIN-2023-14"
-    "CC-MAIN-2023-06"
-    "CC-MAIN-2022-49" "CC-MAIN-2022-40" "CC-MAIN-2022-33" "CC-MAIN-2022-27"
-    "CC-MAIN-2022-21" "CC-MAIN-2022-05"
-    "CC-MAIN-2021-49" "CC-MAIN-2021-43" "CC-MAIN-2021-39" "CC-MAIN-2021-31"
-    "CC-MAIN-2021-25" "CC-MAIN-2021-21" "CC-MAIN-2021-17" "CC-MAIN-2021-10"
-    "CC-MAIN-2021-04"
-    "CC-MAIN-2024-10" "CC-MAIN-2024-18" "CC-MAIN-2024-22" "CC-MAIN-2024-26"
-    "CC-MAIN-2024-30" "CC-MAIN-2024-33" "CC-MAIN-2024-38" "CC-MAIN-2024-42"
-    "CC-MAIN-2024-46" "CC-MAIN-2024-51"
-    "CC-MAIN-2025-05" "CC-MAIN-2025-08" "CC-MAIN-2025-13" "CC-MAIN-2025-18"
-    "CC-MAIN-2025-21" "CC-MAIN-2025-26" "CC-MAIN-2025-30" "CC-MAIN-2025-33"
-    "CC-MAIN-2025-38" "CC-MAIN-2025-43" "CC-MAIN-2025-47" "CC-MAIN-2025-51"
   )
+  
+  echo "Collections to download: ${#COLLECTIONS[@]}"
+  echo "Expected size: ~20-25 TB total"
+  echo ""
   
   download_collection() {
     local collection=$1
@@ -54,7 +45,7 @@ PARALLEL_JOBS=${1:-8}
       return 0
     fi
     
-    # Try to fetch the index file list
+    # Try to fetch the first index file to verify collection exists
     local index_url="$BASE_URL/$collection/indexes/cdx-00000.gz"
     
     # Test if collection exists
@@ -101,7 +92,10 @@ PARALLEL_JOBS=${1:-8}
   
   total_size=$(du -sh "$STORAGE" | cut -f1)
   echo ""
-  echo "Total storage: $total_size"
-  echo "Complete: $(date)"
+  echo "Total storage used: $total_size"
+  echo "End: $(date)"
   
-} | tee -a "$LOG_FILE"
+} 2>&1 | tee "$LOG_FILE"
+
+echo ""
+echo "Log saved to: $LOG_FILE"
