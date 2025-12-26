@@ -135,55 +135,67 @@ def _query_local_cc_index(local_file: Path, domain: str, worker_id: int) -> List
     Supports:
     - CDX format: space/tab separated lines with URL in field 3
     - JSON/NDJSON: lines with {"url": ...}
+    - Single file or directory of index files
     """
     import gzip
     
-    if not local_file.exists():
-        _log(worker_id, f"Local index file not found: {local_file}", "WARN")
+    # If it's a directory, search all .gz files in it
+    index_files: List[Path] = []
+    if local_file.is_dir():
+        index_files = sorted(local_file.glob("*.gz"))
+        if not index_files:
+            index_files = sorted(local_file.glob("*"))
+        if not index_files:
+            _log(worker_id, f"No index files found in directory: {local_file}", "WARN")
+            return []
+        _log(worker_id, f"Searching {len(index_files)} index files in {local_file.name}", "INFO")
+    elif local_file.exists():
+        index_files = [local_file]
+    else:
+        _log(worker_id, f"Local index file/dir not found: {local_file}", "WARN")
         return []
     
-    _log(worker_id, f"Reading local CC index: {local_file.name} for domain {domain}", "INFO")
     urls: List[str] = []
     seen: set[str] = set()
     
-    try:
-        # Auto-detect gzip
-        opener = gzip.open if str(local_file).endswith(".gz") else open
-        with opener(local_file, "rt", encoding="utf-8", errors="ignore") as f:
-            for line_no, line in enumerate(f, 1):
-                line = line.strip()
-                if not line or line.startswith("#"):
-                    continue
-                
-                url = None
-                # Try JSON first
-                if line.startswith("{"):
-                    try:
-                        rec = json.loads(line)
-                        url = rec.get("url")
-                    except Exception:
-                        pass
-                
-                # Try CDX format (whitespace-separated, URL typically in field 3)
-                if not url:
-                    parts = line.split()
-                    if len(parts) >= 3:
-                        url = parts[2]
-                
-                if url and domain in url and url not in seen:
-                    seen.add(url)
-                    urls.append(url)
-                
-                # Cap reads for very large files
-                if line_no > 10_000_000:
-                    _log(worker_id, f"Stopped after 10M lines in {local_file.name}", "WARN")
-                    break
-        
-        _log(worker_id, f"Local index yielded {len(urls)} URLs for {domain}", "INFO")
-        return urls
-    except Exception as e:
-        _log(worker_id, f"Error reading local index: {type(e).__name__}: {e}", "WARN")
-        return []
+    for idx_file in index_files:
+        try:
+            # Auto-detect gzip
+            opener = gzip.open if str(idx_file).endswith(".gz") else open
+            with opener(idx_file, "rt", encoding="utf-8", errors="ignore") as f:
+                for line_no, line in enumerate(f, 1):
+                    line = line.strip()
+                    if not line or line.startswith("#"):
+                        continue
+                    
+                    url = None
+                    # Try JSON first
+                    if line.startswith("{"):
+                        try:
+                            rec = json.loads(line)
+                            url = rec.get("url")
+                        except Exception:
+                            pass
+                    
+                    # Try CDX format (whitespace-separated, URL typically in field 3)
+                    if not url:
+                        parts = line.split()
+                        if len(parts) >= 3:
+                            url = parts[2]
+                    
+                    if url and domain in url and url not in seen:
+                        seen.add(url)
+                        urls.append(url)
+                    
+                    # Cap reads per file for very large files
+                    if line_no > 50_000_000:
+                        break
+        except Exception as e:
+            _log(worker_id, f"Error reading {idx_file.name}: {type(e).__name__}", "WARN")
+            continue
+    
+    _log(worker_id, f"Local index yielded {len(urls)} URLs for {domain} (searched {len(index_files)} files)", "INFO")
+    return urls
 
 
 async def _query_cc_with_toolkit(domain: str, worker_id: int, limit: int = 5000) -> List[str]:
@@ -1403,7 +1415,7 @@ def main() -> int:
         "--cc-local-index-file",
         type=str,
         default=None,
-        help="Path to local Common Crawl index file (.gz or plain; downloaded from data.commoncrawl.org)",
+        help="Path to local CC index file or directory of .gz files (downloaded from data.commoncrawl.org)",
     )
     p.add_argument(
         "--use-cdx-toolkit",
