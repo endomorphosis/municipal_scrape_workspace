@@ -82,6 +82,53 @@ def _extract_domain(url: str) -> str:
         return ""
 
 
+def _cc_cache_dir(out_root: Path) -> Path:
+    d = out_root / "state" / "cc_index_cache"
+    d.mkdir(parents=True, exist_ok=True)
+    return d
+
+
+def _cc_cache_path(cache_dir: Path, domain: str) -> Path:
+    safe = re.sub(r"[^a-zA-Z0-9._-]", "_", domain)
+    return cache_dir / f"{safe}.jsonl"
+
+
+def _load_cc_domain_cache(cache_dir: Path, domain: str, ttl_days: int) -> Optional[List[str]]:
+    p = _cc_cache_path(cache_dir, domain)
+    if not p.exists():
+        return None
+    try:
+        mtime = datetime.fromtimestamp(p.stat().mtime, tz=timezone.utc)
+        if (datetime.now(timezone.utc) - mtime).days > max(ttl_days, 0):
+            return None
+        urls: List[str] = []
+        with p.open("r", encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if not line:
+                    continue
+                try:
+                    rec = json.loads(line)
+                    url = rec.get("url")
+                    if url:
+                        urls.append(url)
+                except Exception:
+                    continue
+        return urls or None
+    except Exception:
+        return None
+
+
+def _save_cc_domain_cache(cache_dir: Path, domain: str, urls: List[str]) -> None:
+    p = _cc_cache_path(cache_dir, domain)
+    try:
+        with p.open("w", encoding="utf-8") as f:
+            for u in urls:
+                f.write(json.dumps({"url": u}, ensure_ascii=False) + "\n")
+    except Exception:
+        pass
+
+
 async def _query_cc_cdx_for_domain(domain: str, worker_id: int) -> List[str]:
     """Query Common Crawl CDX API for all archived URLs on a domain.
     
@@ -380,6 +427,7 @@ def ingest_csv_to_db(
     con: duckdb.DuckDBPyConnection,
     csv_path: Path,
     num_workers: int,
+    shard_by_domain: bool = False,
 ) -> None:
     """Load CSV into `towns` and normalize urls into `town_urls`."""
 
@@ -417,7 +465,8 @@ def ingest_csv_to_db(
     ).fetchall():
         urls = _split_urls(source_url or "")
         for url in urls:
-            shard = _stable_shard(url, num_workers)
+            key = _extract_domain(url) if shard_by_domain else url
+            shard = _stable_shard(key, num_workers)
             normalized_rows.append((gnis, place_name, state_code, url, source_url, shard))
     
         print(f"[INGEST] Inserting {len(normalized_rows)} normalized URLs", flush=True)
@@ -658,6 +707,8 @@ async def run_scrape(
     crawl_discovered_links: bool = False,
     crawl_depth: int = 1,
     full_domain_crawl: bool = False,
+    per_domain_concurrency: int = 4,
+    cc_cache_ttl_days: int = 7,
 ) -> None:
     # Build list of URLs assigned to this worker.
     # If rescrape mode is enabled, derive URLs from the archive status JSONL.
@@ -671,19 +722,28 @@ async def run_scrape(
     if limit is not None:
         urls = urls[: int(limit)]
 
-        _log(worker_id, f"Assigned {len(urls)} URLs from CSV", "INFO")
-    
-        # If full domain crawl is enabled, expand URLs to all URLs on their domains from Common Crawl CDX
-        if crawl_discovered_links:
-            _log(worker_id, f"Full domain crawl enabled; querying CC CDX for each domain", "INFO")
-            all_urls: set[str] = set(urls)
-            for url in urls:
-                domain = _extract_domain(url)
-                if domain:
-                    cc_urls = await _query_cc_cdx_for_domain(domain, worker_id)
-                    all_urls.update(cc_urls)
-            urls = sorted(list(all_urls))
-            _log(worker_id, f"After domain expansion from CDX: {len(urls)} total URLs", "INFO")
+    _log(worker_id, f"Assigned {len(urls)} URLs from CSV", "INFO")
+
+    # If full domain crawl is enabled, expand URLs to all URLs on their domains (prefer cache, fallback to CC CDX)
+    if full_domain_crawl:
+        out_root = blobs_dir.parent
+        cache_dir = _cc_cache_dir(out_root)
+        domains = sorted(set(_extract_domain(u) for u in urls if _extract_domain(u)))
+        _log(worker_id, f"Expanding {len(domains)} domains via cache/CDX", "INFO")
+        all_urls: set[str] = set(urls)
+        for domain in domains:
+            cached = _load_cc_domain_cache(cache_dir, domain, ttl_days=int(cc_cache_ttl_days))
+            if cached:
+                _log(worker_id, f"Cache hit {domain}: +{len(cached)} URLs", "DEBUG")
+                all_urls.update(cached)
+                continue
+            cc_urls = await _query_cc_cdx_for_domain(domain, worker_id)
+            if cc_urls:
+                _save_cc_domain_cache(cache_dir, domain, cc_urls)
+                _log(worker_id, f"Cached {domain}: +{len(cc_urls)} URLs", "DEBUG")
+                all_urls.update(cc_urls)
+        urls = sorted(list(all_urls))
+        _log(worker_id, f"After domain expansion: {len(urls)} total URLs", "INFO")
     
     # Skip successes if requested.
     if resume or (rescrape_archive_status_jsonl and not rescrape_include_success):
@@ -759,9 +819,18 @@ async def run_scrape(
     scraper = UnifiedWebScraper(config)
 
     sem = asyncio.Semaphore(max_concurrent)
+    domain_sems: Dict[str, asyncio.Semaphore] = {}
 
     async def _task(url: str) -> None:
         async with sem:
+            dom = _extract_domain(url) or ""
+            if dom:
+                if dom not in domain_sems:
+                    domain_sems[dom] = asyncio.Semaphore(max(1, int(per_domain_concurrency)))
+                domain_sem = domain_sems[dom]
+            else:
+                domain_sem = asyncio.Semaphore(1)
+            async with domain_sem:
             attempts = con.execute(
                 "SELECT attempts FROM url_cid_latest WHERE url = ?",
                 [url],
@@ -1053,6 +1122,24 @@ def main() -> int:
         default=False,
         help="Query Common Crawl CDX for all URLs on each domain and scrape them all (not just the input URLs)",
     )
+    p.add_argument(
+        "--per-domain-concurrency",
+        type=int,
+        default=4,
+        help="Maximum concurrent scrapes per domain (to reduce 429/5xx)",
+    )
+    p.add_argument(
+        "--cc-cache-ttl-days",
+        type=int,
+        default=7,
+        help="TTL in days for Common Crawl domain URL cache (JSONL)",
+    )
+    p.add_argument(
+        "--shard-by-domain",
+        action="store_true",
+        default=False,
+        help="Assign shards based on domain hash instead of URL hash",
+    )
 
     args = p.parse_args()
 
@@ -1064,7 +1151,7 @@ def main() -> int:
     con = _connect_db(db_path)
     try:
         _init_schema(con)
-        ingest_csv_to_db(con, csv_path, num_workers=int(args.num_workers))
+        ingest_csv_to_db(con, csv_path, num_workers=int(args.num_workers), shard_by_domain=bool(args.shard_by_domain))
 
         asyncio.run(
             run_scrape(
@@ -1085,6 +1172,8 @@ def main() -> int:
                 crawl_discovered_links=bool(args.crawl_discovered_links),
                 crawl_depth=int(args.crawl_depth),
                 full_domain_crawl=bool(args.full_domain_crawl),
+                per_domain_concurrency=int(args.per_domain_concurrency),
+                cc_cache_ttl_days=int(args.cc_cache_ttl_days),
             )
         )
 
