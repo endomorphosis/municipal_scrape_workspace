@@ -96,6 +96,12 @@ def _ensure_parent(path: Path) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
 
 
+def _abspath_preserve_symlinks(path: Path) -> Path:
+    # Avoid Path.resolve() because it dereferences symlinks. For virtualenv
+    # Python, the symlink path matters.
+    return Path(os.path.abspath(str(path.expanduser())))
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument(
@@ -179,7 +185,7 @@ def main() -> int:
     # Print plan
     print(f"Selected collections: {len(collections)}")
     print(f"Workers: {len(plans)}")
-    python_exe = Path(args.python).expanduser().resolve() if args.python else Path(sys.executable).resolve()
+    python_exe = _abspath_preserve_symlinks(Path(args.python)) if args.python else _abspath_preserve_symlinks(Path(sys.executable))
 
     plan_payload: Dict[str, Any] = {
         "created_at_epoch": time.time(),
