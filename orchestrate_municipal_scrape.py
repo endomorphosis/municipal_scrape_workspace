@@ -129,30 +129,105 @@ def _save_cc_domain_cache(cache_dir: Path, domain: str, urls: List[str]) -> None
         pass
 
 
-def _query_local_cc_index(local_file: Path, domain: str, worker_id: int) -> List[str]:
-    """Read a local Common Crawl index file (.gz or plain) and filter by domain.
+def _host_to_rev(host: str) -> str:
+    parts = [p for p in (host or "").lower().split(".") if p]
+    return ",".join(reversed(parts))
+
+
+def _iter_pointer_duckdb_files(db_path_or_dir: Path) -> List[Path]:
+    if db_path_or_dir.is_file():
+        return [db_path_or_dir]
+    if db_path_or_dir.is_dir():
+        # Year-sharded layout: cc_pointers_YYYY.duckdb
+        return sorted(p for p in db_path_or_dir.glob("*.duckdb") if p.is_file())
+    return []
+
+
+def _query_cc_pointer_duckdb(db_path_or_dir: Path, domain: str, worker_id: int, limit: int = 5000) -> List[str]:
+    """Query a local DuckDB pointer index for URLs under a domain.
+
+    `db_path_or_dir` can be a single DuckDB file or a directory containing yearly DBs.
+    Expects table `cc_pointers` with columns: url, host_rev.
+    Uses host_rev prefix matching so it scales across many collections.
+    """
+    try:
+        db_files = _iter_pointer_duckdb_files(db_path_or_dir)
+        if not db_files:
+            return []
+
+        dom = (domain or "").lower().strip()
+        if dom.startswith("www."):
+            dom = dom[4:]
+        if not dom:
+            return []
+
+        prefix = _host_to_rev(dom)
+        if not prefix:
+            return []
+
+        like_pat = prefix + ",%"
+
+        urls: List[str] = []
+        seen: set[str] = set()
+        remaining = max(0, int(limit))
+
+        for db_file in db_files:
+            if remaining <= 0:
+                break
+            con = duckdb.connect(str(db_file), read_only=True)
+            rows = con.execute(
+                """
+                SELECT DISTINCT url
+                FROM cc_pointers
+                WHERE host_rev = ? OR host_rev LIKE ?
+                LIMIT ?
+                """,
+                [prefix, like_pat, int(remaining)],
+            ).fetchall()
+            con.close()
+
+            for r in rows:
+                if not r or not r[0]:
+                    continue
+                u = r[0]
+                if u in seen:
+                    continue
+                seen.add(u)
+                urls.append(u)
+                remaining -= 1
+                if remaining <= 0:
+                    break
+
+        return urls
+    except Exception as e:
+        _log(worker_id, f"CC pointer DuckDB query error: {type(e).__name__}: {e}", "WARN")
+        return []
+
+
+def _query_local_cc_index(local_root: Path, domain: str, worker_id: int) -> List[str]:
+    """Read local Common Crawl index files (single file or folder tree) and filter by domain.
     
     Supports:
     - CDX format: space/tab separated lines with URL in field 3
     - JSON/NDJSON: lines with {"url": ...}
-    - Single file or directory of index files
+    - Single file, directory of .gz, or a folder tree of collections (we recurse)
     """
     import gzip
-    
-    # If it's a directory, search all .gz files in it
+
+    # Collect index files (gz preferred) recursively to support a folder containing many collections.
     index_files: List[Path] = []
-    if local_file.is_dir():
-        index_files = sorted(local_file.glob("*.gz"))
+    if local_root.is_dir():
+        index_files = sorted(p for p in local_root.rglob("*.gz") if p.is_file())
         if not index_files:
-            index_files = sorted(local_file.glob("*"))
+            index_files = sorted(p for p in local_root.rglob("*") if p.is_file())
         if not index_files:
-            _log(worker_id, f"No index files found in directory: {local_file}", "WARN")
+            _log(worker_id, f"No index files found under: {local_root}", "WARN")
             return []
-        _log(worker_id, f"Searching {len(index_files)} index files in {local_file.name}", "INFO")
-    elif local_file.exists():
-        index_files = [local_file]
+        _log(worker_id, f"Searching {len(index_files)} index files under {local_root}", "INFO")
+    elif local_root.is_file():
+        index_files = [local_root]
     else:
-        _log(worker_id, f"Local index file/dir not found: {local_file}", "WARN")
+        _log(worker_id, f"Local index path not found: {local_root}", "WARN")
         return []
     
     urls: List[str] = []
@@ -181,7 +256,18 @@ def _query_local_cc_index(local_file: Path, domain: str, worker_id: int) -> List
                     if not url:
                         parts = line.split()
                         if len(parts) >= 3:
-                            url = parts[2]
+                            # Common Crawl local index shards are typically CDXJ:
+                            #   <surt> <timestamp> <json>
+                            # where the JSON contains the original URL.
+                            candidate = " ".join(parts[2:])
+                            if candidate.startswith("{"):
+                                try:
+                                    rec = json.loads(candidate)
+                                    url = rec.get("url")
+                                except Exception:
+                                    url = None
+                            else:
+                                url = parts[2]
                     
                     if url and domain in url and url not in seen:
                         seen.add(url)
@@ -671,8 +757,12 @@ def ingest_csv_to_db(
             key = _extract_domain(url) if shard_by_domain else url
             shard = _stable_shard(key, num_workers)
             normalized_rows.append((gnis, place_name, state_code, url, source_url, shard))
-    
-        print(f"[INGEST] Inserting {len(normalized_rows)} normalized URLs", flush=True)
+
+        # Avoid printing per-row; it's extremely slow/noisy for large CSVs.
+        if len(normalized_rows) % 1000 == 0:
+            print(f"[INGEST] Prepared {len(normalized_rows)} normalized URLs", flush=True)
+
+    print(f"[INGEST] Inserting {len(normalized_rows)} normalized URLs", flush=True)
 
     con.executemany(
         "INSERT INTO town_urls (gnis, place_name, state_code, url, source_url_raw, shard) VALUES (?, ?, ?, ?, ?, ?)",
@@ -919,6 +1009,8 @@ async def run_scrape(
     cc_max_retries: int = 3,
     cc_index_max_lines: int = 5000,
     cc_local_index_file: Optional[str] = None,
+    cc_local_index_folder: Optional[str] = None,
+    cc_pointer_duckdb: Optional[str] = None,
     use_cdx_toolkit: bool = False,
 ) -> None:
     # Build list of URLs assigned to this worker.
@@ -952,15 +1044,22 @@ async def run_scrape(
             # Try multiple methods in priority order
             cc_urls: List[str] = []
             
-            # Method 1: Local index file (fastest, no network)
-            if cc_local_index_file:
-                cc_urls = _query_local_cc_index(Path(cc_local_index_file), domain, worker_id)
+            # Method 1: Local DuckDB pointer index (fast, no network)
+            if cc_pointer_duckdb:
+                cc_urls = _query_cc_pointer_duckdb(Path(cc_pointer_duckdb), domain, worker_id, limit=int(cc_index_max_lines))
+
+            # Method 2: Local index folder/file (fast, no network, but can be slow at scale)
+            if not cc_urls:
+                if cc_local_index_folder:
+                    cc_urls = _query_local_cc_index(Path(cc_local_index_folder), domain, worker_id)
+                elif cc_local_index_file:
+                    cc_urls = _query_local_cc_index(Path(cc_local_index_file), domain, worker_id)
             
-            # Method 2: cdx_toolkit (polite API wrapper)
+            # Method 3: cdx_toolkit (polite API wrapper)
             if not cc_urls and use_cdx_toolkit:
                 cc_urls = await _query_cc_with_toolkit(domain, worker_id, limit=int(cc_index_max_lines))
             
-            # Method 3: Direct index.commoncrawl.org or CDX fallback
+            # Method 4: Direct index.commoncrawl.org or CDX fallback
             if not cc_urls:
                 cc_urls = await _query_cc_cdx_for_domain(
                     domain,
@@ -1418,6 +1517,18 @@ def main() -> int:
         help="Path to local CC index file or directory of .gz files (downloaded from data.commoncrawl.org)",
     )
     p.add_argument(
+        "--cc-local-index-folder",
+        type=str,
+        default=None,
+        help="Path to a folder tree containing multiple CC index files (recurses and aggregates)",
+    )
+    p.add_argument(
+        "--cc-pointer-duckdb",
+        type=str,
+        default=None,
+        help="Path to DuckDB with a prebuilt cc_pointers table for fast domain expansion",
+    )
+    p.add_argument(
         "--use-cdx-toolkit",
         action="store_true",
         default=False,
@@ -1464,6 +1575,8 @@ def main() -> int:
                 cc_max_retries=int(args.cc_max_retries),
                 cc_index_max_lines=int(args.cc_index_max_lines),
                 cc_local_index_file=args.cc_local_index_file,
+                cc_local_index_folder=args.cc_local_index_folder,
+                cc_pointer_duckdb=args.cc_pointer_duckdb,
                 use_cdx_toolkit=bool(args.use_cdx_toolkit),
             )
         )

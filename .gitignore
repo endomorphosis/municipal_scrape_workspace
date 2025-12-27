@@ -15,6 +15,7 @@ datasets/
 content_blobs/
 logs/
 
+ccindex_subset*
 *test*
 
 # Run/output directories

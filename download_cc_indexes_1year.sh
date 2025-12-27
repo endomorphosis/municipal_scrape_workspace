@@ -1,35 +1,32 @@
 #!/bin/bash
-# Download Common Crawl indexes for past 2 years
+# Download Common Crawl indexes for past 1 year (2025)
 # Stores in /storage/ccindex/<collection>/
-# Estimated: 22 collections, ~3000+ index files, ~20-25 TB total
+# Estimated: 12 collections, ~1500+ index files, ~10-12 TB total
 
 set -e
 
 BASE_URL="https://data.commoncrawl.org/cc-index/collections"
 STORAGE="/storage/ccindex"
-LOG_FILE="/tmp/cc_2year_download.log"
+LOG_FILE="/tmp/cc_1year_download.log"
 PARALLEL_JOBS=${1:-8}
 
 {
-  echo "=== Common Crawl 2-Year Index Download ==="
+  echo "=== Common Crawl 1-Year Index Download (2025) ==="
   echo "Start: $(date)"
   echo "Target: /storage/ccindex/"
   echo "Parallel jobs: $PARALLEL_JOBS"
   echo ""
   
-  # 22 collections for 2-year coverage (Dec 2023 - Dec 2025)
+  # 12 collections for 1-year coverage (Dec 2024 - Dec 2025, 2025 only)
   # Generated from official collinfo.json
   COLLECTIONS=(
     "CC-MAIN-2025-51" "CC-MAIN-2025-47" "CC-MAIN-2025-43" "CC-MAIN-2025-38"
     "CC-MAIN-2025-33" "CC-MAIN-2025-30" "CC-MAIN-2025-26" "CC-MAIN-2025-21"
     "CC-MAIN-2025-18" "CC-MAIN-2025-13" "CC-MAIN-2025-08" "CC-MAIN-2025-05"
-    "CC-MAIN-2024-51" "CC-MAIN-2024-46" "CC-MAIN-2024-42" "CC-MAIN-2024-38"
-    "CC-MAIN-2024-33" "CC-MAIN-2024-30" "CC-MAIN-2024-26" "CC-MAIN-2024-22"
-    "CC-MAIN-2024-18" "CC-MAIN-2024-10"
   )
   
   echo "Collections to download: ${#COLLECTIONS[@]}"
-  echo "Expected size: ~20-25 TB total"
+  echo "Expected size: ~10-12 TB total"
   echo ""
   
   download_collection() {
