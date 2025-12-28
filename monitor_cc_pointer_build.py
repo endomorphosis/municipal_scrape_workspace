@@ -33,6 +33,44 @@ from pathlib import Path
 from typing import Dict, Iterable, List, Optional, Tuple
 
 
+_PART_RX = re.compile(r"^(?P<base>CC-MAIN-\d{4}-\d{2})__m(?P<mod>\d+)r(?P<rem>\d+)$")
+_CDX_RX = re.compile(r"^cdx-(\d{5})\.gz$")
+
+
+def _split_part_suffix(shard_key: str) -> Tuple[str, Optional[int], Optional[int]]:
+    m = _PART_RX.match(shard_key or "")
+    if not m:
+        return shard_key, None, None
+    base = str(m.group("base"))
+    try:
+        mod = int(m.group("mod"))
+        rem = int(m.group("rem"))
+        return base, mod, rem
+    except Exception:
+        return shard_key, None, None
+
+
+def _count_expected_part_shards(col_dir: Path, mod: int, rem: int) -> int:
+    # Exact count from disk (still cheap: ~300 files/collection)
+    n = 0
+    try:
+        for f in col_dir.iterdir():
+            if not f.is_file():
+                continue
+            m = _CDX_RX.match(f.name)
+            if not m:
+                continue
+            try:
+                i = int(m.group(1))
+            except Exception:
+                continue
+            if (i % int(mod)) == int(rem):
+                n += 1
+    except Exception:
+        return 0
+    return n
+
+
 @dataclass
 class Snapshot:
     shard_key: Optional[str]
@@ -256,6 +294,7 @@ def _render_once(
 
     expected_by_year: Dict[int, int] = {}
     expected_by_collection: Dict[str, int] = {}
+    expected_part_cache: Dict[Tuple[str, int, int], int] = {}
     if input_root is not None:
         expected_by_year = _count_expected_shards_by_year(input_root, collections_regex)
         expected_by_collection = _count_expected_shards_by_collection(input_root, collections_regex)
@@ -291,7 +330,14 @@ def _render_once(
 
         exp = None
         if expected_by_collection and s.shard_key and not re.fullmatch(r"\d{4}", s.shard_key):
-            exp = expected_by_collection.get(s.shard_key)
+            base, mod, rem = _split_part_suffix(s.shard_key)
+            if mod is not None and rem is not None and input_root is not None:
+                key = (base, int(mod), int(rem))
+                if key not in expected_part_cache:
+                    expected_part_cache[key] = _count_expected_part_shards(input_root / base, int(mod), int(rem))
+                exp = expected_part_cache.get(key)
+            else:
+                exp = expected_by_collection.get(base)
         if exp is None and expected_by_year and year is not None:
             exp = expected_by_year.get(int(year))
         if exp is not None:

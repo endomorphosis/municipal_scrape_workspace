@@ -110,6 +110,10 @@ class Worker:
     pid_file: Path
     log_file: Path
 
+    # Optional within-collection shard partitioning: ingest only shard_number % mod == rem
+    cdx_shard_mod: Optional[int] = None
+    cdx_shard_rem: Optional[int] = None
+
     # runtime state
     last_start_epoch: float = 0.0
     last_stop_epoch: float = 0.0
@@ -137,13 +141,27 @@ def _workers_from_plan(plan: Dict[str, Any]) -> Tuple[List[Worker], List[str]]:
         if not isinstance(item, dict):
             continue
         try:
-            idx = int(item.get("worker_index"))
+            idx_raw = item.get("worker_index")
+            if idx_raw is None:
+                raise ValueError("worker_index missing")
+            idx = int(idx_raw)
             cols = item.get("collections")
             if not isinstance(cols, list):
                 cols = []
             pid_file = Path(str(item.get("pid_file"))).expanduser().resolve()
             log_file = Path(str(item.get("log_file"))).expanduser().resolve()
-            workers.append(Worker(worker_index=idx, collections=[str(c) for c in cols], pid_file=pid_file, log_file=log_file))
+            cdx_mod = item.get("cdx_shard_mod")
+            cdx_rem = item.get("cdx_shard_rem")
+            workers.append(
+                Worker(
+                    worker_index=idx,
+                    collections=[str(c) for c in cols],
+                    pid_file=pid_file,
+                    log_file=log_file,
+                    cdx_shard_mod=(int(cdx_mod) if cdx_mod is not None else None),
+                    cdx_shard_rem=(int(cdx_rem) if cdx_rem is not None else None),
+                )
+            )
         except Exception as e:
             errors.append(f"bad worker plan: {type(e).__name__}: {e}")
 
@@ -168,6 +186,14 @@ def _build_cmd(plan: Dict[str, Any], w: Worker) -> List[str]:
         "--progress-interval-seconds",
         str(int(plan.get("progress_interval_seconds", 30))),
     ]
+
+    if w.cdx_shard_mod is not None:
+        cmd += [
+            "--cdx-shard-mod",
+            str(int(w.cdx_shard_mod)),
+            "--cdx-shard-rem",
+            str(int(w.cdx_shard_rem or 0)),
+        ]
 
     parquet_out = plan.get("parquet_out")
     if parquet_out:

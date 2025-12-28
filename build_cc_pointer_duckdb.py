@@ -91,6 +91,19 @@ def _atomic_write_json(path: Path, obj: Dict[str, Any]) -> None:
     tmp.replace(path)
 
 
+_CDX_SHARD_RX = re.compile(r"^cdx-(\d{5})\.gz$")
+
+
+def _cdx_shard_number(name: str) -> Optional[int]:
+    m = _CDX_SHARD_RX.match(name or "")
+    if not m:
+        return None
+    try:
+        return int(m.group(1))
+    except Exception:
+        return None
+
+
 def _progress_path(progress_dir: Path, shard_key: str) -> Path:
     # Keep filenames safe.
     safe = re.sub(r"[^a-zA-Z0-9._-]", "_", shard_key or "all")
@@ -241,11 +254,19 @@ def _parse_cdxj_line(line: str) -> Optional[Tuple[str, Optional[str], Optional[s
     return surt, ts, url, meta
 
 
-def _connect(db_path: Path, threads: int) -> duckdb.DuckDBPyConnection:
+def _connect(db_path: Path, threads: int, *, memory_limit_gib: Optional[float] = None) -> duckdb.DuckDBPyConnection:
     db_path.parent.mkdir(parents=True, exist_ok=True)
     con = duckdb.connect(str(db_path))
     con.execute(f"PRAGMA threads={max(1, int(threads))}")
     con.execute("PRAGMA enable_object_cache")
+    if memory_limit_gib is not None:
+        try:
+            gib = float(memory_limit_gib)
+            if gib > 0:
+                con.execute(f"PRAGMA memory_limit='{gib:.3f}GB'")
+        except Exception:
+            # Best-effort; keep going.
+            pass
     return con
 
 
@@ -453,6 +474,24 @@ def main() -> int:
     ap.add_argument("--max-lines-per-file", type=int, default=None, help="Cap lines read per shard file (for testing)")
     ap.add_argument("--batch-rows", type=int, default=200_000, help="Rows per insert batch")
     ap.add_argument("--threads", type=int, default=os.cpu_count() or 8, help="DuckDB threads")
+    ap.add_argument(
+        "--memory-limit-gib",
+        type=float,
+        default=None,
+        help="Optional DuckDB memory_limit per process in GiB (spills/limits memory; helps avoid OOM)",
+    )
+    ap.add_argument(
+        "--cdx-shard-mod",
+        type=int,
+        default=None,
+        help="If set, only ingest shard files where shard_number %% mod == rem (use with --cdx-shard-rem)",
+    )
+    ap.add_argument(
+        "--cdx-shard-rem",
+        type=int,
+        default=None,
+        help="Remainder for --cdx-shard-mod partitioning",
+    )
     ap.add_argument("--create-indexes", action="store_true", default=False, help="Attempt to create helpful indexes")
     ap.add_argument(
         "--parquet-out",
@@ -489,6 +528,16 @@ def main() -> int:
 
     if bool(args.shard_by_year) and bool(args.shard_by_collection):
         raise SystemExit("Use only one of --shard-by-year or --shard-by-collection")
+
+    if (args.cdx_shard_mod is None) != (args.cdx_shard_rem is None):
+        raise SystemExit("Use --cdx-shard-mod together with --cdx-shard-rem")
+    if args.cdx_shard_mod is not None:
+        mod = int(args.cdx_shard_mod)
+        rem = int(args.cdx_shard_rem)
+        if mod <= 0:
+            raise SystemExit("--cdx-shard-mod must be > 0")
+        if rem < 0 or rem >= mod:
+            raise SystemExit("--cdx-shard-rem must satisfy 0 <= rem < mod")
 
     input_root = Path(args.input_root)
     db_target = Path(args.db)
@@ -529,6 +578,9 @@ def main() -> int:
         )
 
     def _db_path_for(collection: str, year: Optional[int]) -> Path:
+        part_suffix = ""
+        if args.cdx_shard_mod is not None:
+            part_suffix = f"__m{int(args.cdx_shard_mod)}r{int(args.cdx_shard_rem)}"
         if bool(args.shard_by_year):
             if not db_target.exists():
                 db_target.mkdir(parents=True, exist_ok=True)
@@ -536,7 +588,7 @@ def main() -> int:
                 raise SystemExit("--db must be a directory when using --shard-by-year")
             if year is None:
                 raise SystemExit("Could not determine collection year; use --collections-regex to filter")
-            return db_target / f"cc_pointers_{int(year)}.duckdb"
+            return db_target / f"cc_pointers_{int(year)}{part_suffix}.duckdb"
         if bool(args.shard_by_collection):
             if not db_target.exists():
                 db_target.mkdir(parents=True, exist_ok=True)
@@ -544,14 +596,17 @@ def main() -> int:
                 raise SystemExit("--db must be a directory when using --shard-by-collection")
             if not collection:
                 raise SystemExit("Could not determine collection name")
-            return db_target / f"cc_pointers_{collection}.duckdb"
+            return db_target / f"cc_pointers_{collection}{part_suffix}.duckdb"
         return db_target
 
     def _shard_key_for(collection: str, year: Optional[int]) -> str:
+        part_suffix = ""
+        if args.cdx_shard_mod is not None:
+            part_suffix = f"__m{int(args.cdx_shard_mod)}r{int(args.cdx_shard_rem)}"
         if bool(args.shard_by_year):
-            return str(int(year)) if year is not None else "unknown"
+            return (str(int(year)) if year is not None else "unknown") + part_suffix
         if bool(args.shard_by_collection):
-            return collection or "unknown"
+            return (collection or "unknown") + part_suffix
         return "all"
 
     def get_con(collection: str, year: Optional[int]) -> duckdb.DuckDBPyConnection:
@@ -566,7 +621,7 @@ def main() -> int:
         totals_by_shard[shard_key]["year"] = int(year) if year is not None else None
         totals_by_shard[shard_key]["collection"] = collection or None
 
-        con = _connect(db_path, threads=int(args.threads))
+        con = _connect(db_path, threads=int(args.threads), memory_limit_gib=args.memory_limit_gib)
         _init_schema(con)
 
         # Seed progress counters from existing ingested metadata so snapshots are cumulative across restarts.
@@ -590,6 +645,18 @@ def main() -> int:
     files = list(_iter_index_files(input_root, collections=collections_list))
     if rx:
         files = [p for p in files if rx.search(_guess_collection_from_path(p) or "")]
+
+    if args.cdx_shard_mod is not None:
+        mod = int(args.cdx_shard_mod)
+        rem = int(args.cdx_shard_rem)
+        filtered: List[Path] = []
+        for p in files:
+            n = _cdx_shard_number(p.name)
+            if n is None:
+                continue
+            if (n % mod) == rem:
+                filtered.append(p)
+        files = filtered
 
     if args.max_files is not None:
         files = files[: max(0, int(args.max_files))]

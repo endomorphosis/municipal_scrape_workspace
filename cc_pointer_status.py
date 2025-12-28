@@ -32,6 +32,43 @@ from typing import Dict, Iterable, List, Optional, Tuple
 import duckdb
 
 
+_PART_RX = re.compile(r"^(?P<base>CC-MAIN-\d{4}-\d{2})__m(?P<mod>\d+)r(?P<rem>\d+)$")
+_CDX_RX = re.compile(r"^cdx-(\d{5})\.gz$")
+
+
+def _split_part_suffix(shard_key: str) -> Tuple[str, Optional[int], Optional[int]]:
+    m = _PART_RX.match(shard_key or "")
+    if not m:
+        return shard_key, None, None
+    base = str(m.group("base"))
+    try:
+        mod = int(m.group("mod"))
+        rem = int(m.group("rem"))
+        return base, mod, rem
+    except Exception:
+        return shard_key, None, None
+
+
+def _count_expected_part_shards(col_dir: Path, mod: int, rem: int) -> int:
+    n = 0
+    try:
+        for f in col_dir.iterdir():
+            if not f.is_file():
+                continue
+            m = _CDX_RX.match(f.name)
+            if not m:
+                continue
+            try:
+                i = int(m.group(1))
+            except Exception:
+                continue
+            if (i % int(mod)) == int(rem):
+                n += 1
+    except Exception:
+        return 0
+    return n
+
+
 @dataclass
 class ShardStatus:
     shard_key: str
@@ -83,8 +120,10 @@ def _read_shard_db(db_path: Path) -> ShardStatus:
     if shard_key is None:
         raise SystemExit(f"Could not parse shard key from DB filename: {db_path.name}")
 
-    year = int(shard_key) if re.fullmatch(r"\d{4}", shard_key) else _parse_year_from_text(shard_key)
-    collection = None if re.fullmatch(r"\d{4}", shard_key) else shard_key
+    base_key, _mod, _rem = _split_part_suffix(shard_key)
+
+    year = int(base_key) if re.fullmatch(r"\d{4}", base_key) else _parse_year_from_text(base_key)
+    collection = None if re.fullmatch(r"\d{4}", base_key) else base_key
 
     db_bytes = db_path.stat().st_size if db_path.exists() else 0
 
@@ -228,12 +267,19 @@ def main() -> int:
 
     expected_by_year: Dict[int, int] = {}
     expected_by_collection: Dict[str, int] = {}
+    expected_part_cache: Dict[Tuple[str, int, int], int] = {}
     if args.input_root:
         input_root = Path(args.input_root).expanduser().resolve()
         expected_by_year = _count_expected_shards_by_year(input_root, args.collections_regex)
         expected_by_collection = _count_expected_shards_by_collection(input_root, args.collections_regex)
         for st in statuses:
-            if st.collection and st.collection in expected_by_collection:
+            base, mod, rem = _split_part_suffix(st.shard_key)
+            if st.collection and mod is not None and rem is not None:
+                key = (st.collection, int(mod), int(rem))
+                if key not in expected_part_cache:
+                    expected_part_cache[key] = _count_expected_part_shards(input_root / st.collection, int(mod), int(rem))
+                st.expected_files = expected_part_cache.get(key)
+            elif st.collection and st.collection in expected_by_collection:
                 st.expected_files = expected_by_collection[st.collection]
             elif st.year is not None and st.year in expected_by_year:
                 st.expected_files = expected_by_year[st.year]

@@ -47,6 +47,8 @@ class WorkerPlan:
     collections: List[str]
     pid_file: Path
     log_file: Path
+    cdx_shard_mod: Optional[int] = None
+    cdx_shard_rem: Optional[int] = None
 
     def to_json(self) -> Dict[str, Any]:
         return {
@@ -54,6 +56,8 @@ class WorkerPlan:
             "collections": list(self.collections),
             "pid_file": str(self.pid_file),
             "log_file": str(self.log_file),
+            "cdx_shard_mod": int(self.cdx_shard_mod) if self.cdx_shard_mod is not None else None,
+            "cdx_shard_rem": int(self.cdx_shard_rem) if self.cdx_shard_rem is not None else None,
         }
 
 
@@ -132,6 +136,16 @@ def main() -> int:
     ap.add_argument("--workers", type=int, default=4, help="Number of worker processes to spawn")
     ap.add_argument("--threads-per-worker", type=int, default=2, help="DuckDB threads per worker process")
 
+    ap.add_argument(
+        "--cdx-shard-mod",
+        type=int,
+        default=None,
+        help=(
+            "Optional: split each collection into mod disjoint shard-file partitions (cdx-XXXXX % mod == rem). "
+            "Every remainder is processed; DBs will be cc_pointers_<collection>__m<mod>r<rem>.duckdb"
+        ),
+    )
+
     ap.add_argument("--progress-dir", type=str, default=None, help="Progress snapshot dir (passed through)")
     ap.add_argument("--progress-interval-seconds", type=int, default=30, help="Snapshot interval (passed through)")
 
@@ -165,16 +179,62 @@ def main() -> int:
         raise SystemExit("No collections selected")
 
     workers = max(1, int(args.workers))
-    groups = _chunk_round_robin(sorted(collections), workers)
+    cdx_mod = int(args.cdx_shard_mod) if args.cdx_shard_mod is not None else None
+    if cdx_mod is not None and cdx_mod <= 0:
+        raise SystemExit("--cdx-shard-mod must be > 0")
 
-    # Build worker plans, skipping empties.
     plans: List[WorkerPlan] = []
-    for i, cols in enumerate(groups):
-        if not cols:
-            continue
-        pid_file = pid_dir / f"build_worker_{i}.pid"
-        log_file = log_dir / f"build_worker_{i}.log"
-        plans.append(WorkerPlan(worker_index=i, collections=cols, pid_file=pid_file, log_file=log_file))
+
+    if cdx_mod is None:
+        groups = _chunk_round_robin(sorted(collections), workers)
+
+        # Build worker plans, skipping empties.
+        for i, cols in enumerate(groups):
+            if not cols:
+                continue
+            pid_file = pid_dir / f"build_worker_{i}.pid"
+            log_file = log_dir / f"build_worker_{i}.log"
+            plans.append(WorkerPlan(worker_index=i, collections=cols, pid_file=pid_file, log_file=log_file))
+    else:
+        # When partitioning within a collection by (cdx_number % mod == rem), we must ensure
+        # that *every* remainder sees *every* collection exactly once.
+        # We do this by creating worker buckets per remainder and distributing collections
+        # among the workers in that remainder bucket.
+
+        rem_to_worker_idxs: List[List[int]] = [[] for _ in range(cdx_mod)]
+        for i in range(workers):
+            rem_to_worker_idxs[i % cdx_mod].append(i)
+
+        # If some remainder has no worker, we'd miss shards. Fail loudly.
+        for rem, idxs in enumerate(rem_to_worker_idxs):
+            if not idxs:
+                raise SystemExit(
+                    f"--workers ({workers}) must be >= --cdx-shard-mod ({cdx_mod}) so every remainder 0..{cdx_mod-1} is covered"
+                )
+
+        # Seed empty plans for all workers.
+        idx_to_plan: Dict[int, WorkerPlan] = {}
+        for i in range(workers):
+            pid_file = pid_dir / f"build_worker_{i}.pid"
+            log_file = log_dir / f"build_worker_{i}.log"
+            idx_to_plan[i] = WorkerPlan(
+                worker_index=i,
+                collections=[],
+                pid_file=pid_file,
+                log_file=log_file,
+                cdx_shard_mod=cdx_mod,
+                cdx_shard_rem=(i % cdx_mod),
+            )
+
+        # Distribute collections within each remainder bucket.
+        cols_sorted = sorted(collections)
+        for rem, worker_idxs in enumerate(rem_to_worker_idxs):
+            k = len(worker_idxs)
+            for j, col in enumerate(cols_sorted):
+                wi = worker_idxs[j % k]
+                idx_to_plan[wi].collections.append(col)
+
+        plans = [idx_to_plan[i] for i in range(workers) if idx_to_plan[i].collections]
 
     build_script = (Path(__file__).parent / "build_cc_pointer_duckdb.py").resolve()
     if not build_script.exists():
@@ -195,6 +255,7 @@ def main() -> int:
         "collections_regex": args.collections_regex,
         "workers": int(workers),
         "threads_per_worker": int(args.threads_per_worker),
+        "cdx_shard_mod": int(cdx_mod) if cdx_mod is not None else None,
         "progress_dir": str(Path(args.progress_dir).expanduser().resolve()) if args.progress_dir else None,
         "progress_interval_seconds": int(args.progress_interval_seconds),
         "batch_rows": int(args.batch_rows) if args.batch_rows is not None else None,
@@ -205,7 +266,10 @@ def main() -> int:
     }
 
     for p in plans:
-        print(f"  worker={p.worker_index}\tcollections={len(p.collections)}\tpid={p.pid_file}\tlog={p.log_file}")
+        extra = ""
+        if p.cdx_shard_mod is not None:
+            extra = f"\tcdx_mod={p.cdx_shard_mod}\tcdx_rem={p.cdx_shard_rem}"
+        print(f"  worker={p.worker_index}\tcollections={len(p.collections)}\tpid={p.pid_file}\tlog={p.log_file}{extra}")
 
     procs: List[Popen] = []
 
@@ -229,6 +293,9 @@ def main() -> int:
             "--progress-interval-seconds",
             str(int(args.progress_interval_seconds)),
         ]
+
+        if p.cdx_shard_mod is not None:
+            cmd += ["--cdx-shard-mod", str(int(p.cdx_shard_mod)), "--cdx-shard-rem", str(int(p.cdx_shard_rem or 0))]
 
         if args.parquet_out:
             cmd += ["--parquet-out", str(Path(args.parquet_out).expanduser().resolve())]
@@ -280,7 +347,10 @@ def main() -> int:
 
     print("\nStarted processes:")
     for p, proc in zip(plans, procs):
-        print(f"  worker={p.worker_index}\tpid={proc.pid}\tlog={p.log_file}")
+        extra = ""
+        if p.cdx_shard_mod is not None:
+            extra = f"\tcdx_mod={p.cdx_shard_mod}\tcdx_rem={p.cdx_shard_rem}"
+        print(f"  worker={p.worker_index}\tpid={proc.pid}\tlog={p.log_file}{extra}")
 
     return 0
 
