@@ -471,14 +471,28 @@ def main() -> int:
             flush=True,
         )
 
-    def _on_sigint(_signum: int, _frame: object) -> None:
-        print("signal\tSIGINT\tstopping", flush=True)
+    def _stop_all(reason: str) -> None:
+        print(f"signal\t{reason}\tstopping", flush=True)
         for r in list(running):
             _stop_proc(r.proc, grace_seconds=int(args.stop_grace_seconds))
         persist_state(running=[])
         raise SystemExit(130)
 
+    def _on_sigint(_signum: int, _frame: object) -> None:
+        _stop_all("SIGINT")
+
+    def _on_sigterm(_signum: int, _frame: object) -> None:
+        _stop_all("SIGTERM")
+
+    def _on_sighup(_signum: int, _frame: object) -> None:
+        _stop_all("SIGHUP")
+
     signal.signal(signal.SIGINT, _on_sigint)
+    signal.signal(signal.SIGTERM, _on_sigterm)
+    try:
+        signal.signal(signal.SIGHUP, _on_sighup)
+    except Exception:
+        pass
 
     while True:
         # Reap finished
