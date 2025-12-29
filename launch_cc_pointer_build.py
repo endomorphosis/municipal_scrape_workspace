@@ -14,12 +14,13 @@ It:
 Example
   /home/barberb/municipal_scrape_workspace/.venv/bin/python launch_cc_pointer_build.py \
     --input-root /storage/ccindex \
-    --db-dir /storage/ccindex_duckdb/cc_pointers_by_collection \
+        --db-dir /storage/ccindex_duckdb/cc_domain_by_collection \
     --parquet-out /storage/ccindex_parquet/cc_pointers_by_collection \
     --collections-regex 'CC-MAIN-2024-.*' \
     --workers 8 \
     --threads-per-worker 2 \
-    --progress-dir /storage/ccindex_duckdb/cc_pointers_by_collection
+        --duckdb-index-mode domain \
+        --progress-dir /storage/ccindex_duckdb/cc_domain_by_collection
 
 Notes
 - Safe resume is handled by build_cc_pointer_duckdb.py via cc_ingested_files.
@@ -125,6 +126,27 @@ def main() -> int:
     ap.add_argument("--db-dir", required=True, type=str, help="Directory to place cc_pointers_<collection>.duckdb outputs")
     ap.add_argument("--parquet-out", type=str, default=None, help="Optional Parquet output root")
 
+    ap.add_argument(
+        "--duckdb-index-mode",
+        type=str,
+        default="url",
+        choices=["url", "domain"],
+        help="What to store in DuckDB: 'url' stores per-URL pointers; 'domain' stores only domain->shard/parquet mapping",
+    )
+    ap.add_argument(
+        "--domain-index-action",
+        type=str,
+        default="append",
+        choices=["append", "rebuild"],
+        help="Only used with --duckdb-index-mode domain. 'append' keeps existing; 'rebuild' clears and rebuilds cc_domain_shards",
+    )
+    ap.add_argument(
+        "--resume-require-parquet",
+        action=argparse.BooleanOptionalAction,
+        default=None,
+        help="When --parquet-out is set, only skip an already-ingested shard if its Parquet file exists (default: true)",
+    )
+
     ap.add_argument("--collections-regex", type=str, default=None, help="Regex to select collections from --input-root")
     ap.add_argument(
         "--collections",
@@ -159,6 +181,9 @@ def main() -> int:
     ap.add_argument("--force", action="store_true", default=False, help="Overwrite PID files even if they exist")
 
     args = ap.parse_args()
+
+    if str(args.duckdb_index_mode) != "domain" and str(args.domain_index_action) != "append":
+        raise SystemExit("--domain-index-action is only valid with --duckdb-index-mode domain")
 
     input_root = Path(args.input_root).expanduser().resolve()
     db_dir = Path(args.db_dir).expanduser().resolve()
@@ -288,6 +313,10 @@ def main() -> int:
             "--db",
             str(db_dir),
             "--shard-by-collection",
+            "--duckdb-index-mode",
+            str(args.duckdb_index_mode),
+            "--domain-index-action",
+            str(args.domain_index_action),
             "--threads",
             str(int(args.threads_per_worker)),
             "--progress-interval-seconds",
@@ -299,6 +328,9 @@ def main() -> int:
 
         if args.parquet_out:
             cmd += ["--parquet-out", str(Path(args.parquet_out).expanduser().resolve())]
+
+            if args.resume_require_parquet is not None:
+                cmd += ["--resume-require-parquet" if bool(args.resume_require_parquet) else "--no-resume-require-parquet"]
 
         if args.progress_dir:
             cmd += ["--progress-dir", str(Path(args.progress_dir).expanduser().resolve())]
