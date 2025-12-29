@@ -149,6 +149,7 @@ def _build_cmd(
     memory_limit_gib: Optional[float],
     parquet_compression: str,
     parquet_compression_level: Optional[int],
+    parquet_action: str,
     duckdb_index_mode: str,
     domain_index_action: str,
     resume_require_parquet: Optional[bool],
@@ -172,6 +173,8 @@ def _build_cmd(
         str(int(progress_interval_seconds)),
         "--parquet-compression",
         str(parquet_compression),
+        "--parquet-action",
+        str(parquet_action),
     ]
 
     if parquet_out is not None:
@@ -259,6 +262,13 @@ def main() -> int:
 
     ap.add_argument("--parquet-compression", type=str, default="zstd", choices=["zstd", "snappy", "gzip"], help="Parquet compression")
     ap.add_argument("--parquet-compression-level", type=int, default=None, help="Parquet compression level")
+    ap.add_argument(
+        "--parquet-action",
+        type=str,
+        default="skip-if-exists",
+        choices=["write", "skip-if-exists", "skip"],
+        help="Whether to write Parquet shards. Default 'skip-if-exists' avoids rewriting existing shards.",
+    )
 
     ap.add_argument(
         "--duckdb-index-mode",
@@ -464,6 +474,7 @@ def main() -> int:
                 memory_limit_gib=(float(args.memory_limit_gib) if args.memory_limit_gib is not None else None),
                 parquet_compression=str(args.parquet_compression),
                 parquet_compression_level=(int(args.parquet_compression_level) if args.parquet_compression_level is not None else None),
+                parquet_action=str(args.parquet_action),
                 duckdb_index_mode=str(args.duckdb_index_mode),
                 domain_index_action=str(args.domain_index_action),
                 resume_require_parquet=(bool(args.resume_require_parquet) if args.resume_require_parquet is not None else None),
@@ -490,6 +501,7 @@ def main() -> int:
             memory_limit_gib=(float(args.memory_limit_gib) if args.memory_limit_gib is not None else None),
             parquet_compression=str(args.parquet_compression),
             parquet_compression_level=(int(args.parquet_compression_level) if args.parquet_compression_level is not None else None),
+            parquet_action=str(args.parquet_action),
             duckdb_index_mode=str(args.duckdb_index_mode),
             domain_index_action=str(args.domain_index_action),
             resume_require_parquet=(bool(args.resume_require_parquet) if args.resume_require_parquet is not None else None),

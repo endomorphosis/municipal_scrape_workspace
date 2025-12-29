@@ -579,6 +579,17 @@ def main() -> int:
         help="Optional output directory to write Parquet pointer shards while ingesting (one Parquet per input shard)",
     )
     ap.add_argument(
+        "--parquet-action",
+        type=str,
+        default="write",
+        choices=["write", "skip-if-exists", "skip"],
+        help=(
+            "Whether to write Parquet shards. 'write' overwrites by atomic replace; "
+            "'skip-if-exists' will not rewrite an existing non-empty Parquet shard; "
+            "'skip' disables Parquet writing entirely"
+        ),
+    )
+    ap.add_argument(
         "--resume-require-parquet",
         action=argparse.BooleanOptionalAction,
         default=None,
@@ -771,6 +782,7 @@ def main() -> int:
 
     parquet_root = Path(args.parquet_out).expanduser().resolve() if args.parquet_out else None
     resume_require_parquet = bool(parquet_root) if args.resume_require_parquet is None else bool(args.resume_require_parquet)
+    parquet_action = str(args.parquet_action)
 
     for idx, shard_path in enumerate(files, 1):
         st = shard_path.stat()
@@ -808,6 +820,14 @@ def main() -> int:
             except Exception:
                 parquet_ok = False
 
+        # Decide whether we should write Parquet for this shard.
+        parquet_exists_ok = False
+        if parquet_final is not None:
+            try:
+                parquet_exists_ok = parquet_final.exists() and parquet_final.stat().st_size > 0
+            except Exception:
+                parquet_exists_ok = False
+
         domain_rebuild = str(args.duckdb_index_mode) == "domain" and str(args.domain_index_action) == "rebuild"
 
         # If already ingested and (if enabled) Parquet exists, skip.
@@ -839,6 +859,11 @@ def main() -> int:
 
         # In domain rebuild mode we may choose to only rebuild the domain table (no parquet rewrite).
         write_parquet = (parquet_root is not None) and (not domain_rebuild_only)
+        if write_parquet:
+            if parquet_action == "skip":
+                write_parquet = False
+            elif parquet_action == "skip-if-exists" and parquet_exists_ok:
+                write_parquet = False
         write_duckdb_rows = (str(args.duckdb_index_mode) == "url") and (not domain_rebuild_only) and (not parquet_rebuild_only)
 
         if write_parquet and parquet_tmp is not None:

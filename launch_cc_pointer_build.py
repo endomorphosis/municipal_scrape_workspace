@@ -125,6 +125,13 @@ def main() -> int:
     ap.add_argument("--input-root", required=True, type=str, help="Root folder containing CC shards (e.g. /storage/ccindex)")
     ap.add_argument("--db-dir", required=True, type=str, help="Directory to place cc_pointers_<collection>.duckdb outputs")
     ap.add_argument("--parquet-out", type=str, default=None, help="Optional Parquet output root")
+    ap.add_argument(
+        "--parquet-action",
+        type=str,
+        default="skip-if-exists",
+        choices=["write", "skip-if-exists", "skip"],
+        help="Whether to write Parquet shards. Default 'skip-if-exists' avoids rewriting existing shards.",
+    )
 
     ap.add_argument(
         "--duckdb-index-mode",
@@ -328,6 +335,8 @@ def main() -> int:
 
         if args.parquet_out:
             cmd += ["--parquet-out", str(Path(args.parquet_out).expanduser().resolve())]
+
+            cmd += ["--parquet-action", str(args.parquet_action)]
 
             if args.resume_require_parquet is not None:
                 cmd += ["--resume-require-parquet" if bool(args.resume_require_parquet) else "--no-resume-require-parquet"]
