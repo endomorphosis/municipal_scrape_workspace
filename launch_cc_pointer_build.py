@@ -132,6 +132,13 @@ def main() -> int:
         choices=["write", "skip-if-exists", "skip"],
         help="Whether to write Parquet shards. Default 'skip-if-exists' avoids rewriting existing shards.",
     )
+    ap.add_argument(
+        "--parquet-validate",
+        type=str,
+        default="quick",
+        choices=["quick", "none"],
+        help="Validate existing Parquet shards before skipping them (passed through)",
+    )
 
     ap.add_argument(
         "--duckdb-index-mode",
@@ -336,6 +343,7 @@ def main() -> int:
         if args.parquet_out:
             cmd += ["--parquet-out", str(Path(args.parquet_out).expanduser().resolve())]
 
+            cmd += ["--parquet-validate", str(args.parquet_validate)]
             cmd += ["--parquet-action", str(args.parquet_action)]
 
             if args.resume_require_parquet is not None:

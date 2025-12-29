@@ -29,16 +29,22 @@ from typing import Iterable, List, Optional, Set, Tuple
 import duckdb
 
 
+_PARTITIONED_DB_RX = re.compile(r"__m\d+r\d+\.duckdb$")
+
+
 def _host_to_rev(host: str) -> str:
     parts = [p for p in (host or "").lower().split(".") if p]
     return ",".join(reversed(parts))
 
 
-def _iter_duckdb_files(path_or_dir: Path) -> List[Path]:
+def _iter_duckdb_files(path_or_dir: Path, *, include_partitioned: bool) -> List[Path]:
     if path_or_dir.is_file():
         return [path_or_dir]
     if path_or_dir.is_dir():
-        return sorted(p for p in path_or_dir.glob("*.duckdb") if p.is_file())
+        files = sorted(p for p in path_or_dir.glob("*.duckdb") if p.is_file())
+        if not include_partitioned:
+            files = [p for p in files if not _PARTITIONED_DB_RX.search(p.name)]
+        return files
     return []
 
 
@@ -155,6 +161,12 @@ def main() -> int:
         default=None,
         help="Optional cap when counting URLs (stop after reaching this many matches)",
     )
+    ap.add_argument(
+        "--include-partitioned-dbs",
+        action="store_true",
+        default=False,
+        help="Also scan experimental partitioned DBs named like *__m<mod>r<rem>.duckdb (default: off)",
+    )
 
     args = ap.parse_args()
 
@@ -169,7 +181,7 @@ def main() -> int:
     if not prefix:
         raise SystemExit("Could not compute host_rev for domain")
 
-    db_files = _iter_duckdb_files(duckdb_dir)
+    db_files = _iter_duckdb_files(duckdb_dir, include_partitioned=bool(args.include_partitioned_dbs))
     if not db_files:
         raise SystemExit(f"No DuckDB files found under: {duckdb_dir}")
 

@@ -139,7 +139,17 @@ def _iter_pointer_duckdb_files(db_path_or_dir: Path) -> List[Path]:
         return [db_path_or_dir]
     if db_path_or_dir.is_dir():
         # Year-sharded layout: cc_pointers_YYYY.duckdb
-        return sorted(p for p in db_path_or_dir.glob("*.duckdb") if p.is_file())
+        out: List[Path] = []
+        for p in sorted(db_path_or_dir.glob("*.duckdb")):
+            if not p.is_file():
+                continue
+            # Ignore experimental partitioned DBs created via --cdx-shard-mod/--cdx-shard-rem.
+            # These can be useful for debugging, but they can also give an incomplete view
+            # of domain coverage if scanned alongside full collection DBs.
+            if re.search(r"__m\d+r\d+\.duckdb$", p.name):
+                continue
+            out.append(p)
+        return out
     return []
 
 def _duckdb_has_table(con: duckdb.DuckDBPyConnection, table_name: str) -> bool:

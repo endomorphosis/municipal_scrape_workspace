@@ -101,6 +101,54 @@ CC_DOMAIN_SHARDS_SCHEMA = pa.schema(
 )
 
 
+_EXPECTED_POINTER_PARQUET_COLS = [f.name for f in CC_POINTERS_SCHEMA]
+
+
+def _parquet_is_complete(path: Path, *, expected_cols: Optional[Sequence[str]] = None) -> bool:
+    """Best-effort Parquet integrity check.
+
+    Goal: distinguish a fully-written Parquet file from a truncated/partial one.
+
+    This intentionally avoids reading row data; it checks the footer magic and
+    ensures Parquet metadata is readable.
+    """
+    try:
+        if not path.exists():
+            return False
+        st = path.stat()
+        # Parquet footer + metadata requires at least a tiny file.
+        if st.st_size < 12:
+            return False
+
+        # Parquet files end with the magic bytes PAR1.
+        with path.open("rb") as f:
+            f.seek(-4, os.SEEK_END)
+            if f.read(4) != b"PAR1":
+                return False
+
+        pf = pq.ParquetFile(path)
+        md = pf.metadata
+        if md is None:
+            return False
+        if int(md.num_row_groups or 0) <= 0:
+            return False
+        if int(md.num_rows or 0) <= 0:
+            return False
+
+        if expected_cols:
+            try:
+                names = set(pf.schema_arrow.names)
+            except Exception:
+                names = set(pf.schema.names)
+            for c in expected_cols:
+                if c not in names:
+                    return False
+
+        return True
+    except Exception:
+        return False
+
+
 def _atomic_write_json(path: Path, obj: Dict[str, Any]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     tmp = path.with_suffix(path.suffix + ".tmp")
@@ -590,6 +638,17 @@ def main() -> int:
         ),
     )
     ap.add_argument(
+        "--parquet-validate",
+        type=str,
+        default="quick",
+        choices=["quick", "none"],
+        help=(
+            "When deciding whether an existing Parquet shard can be skipped, "
+            "validate it. 'quick' reads footer+metadata (detects truncation); "
+            "'none' only checks file existence/size."
+        ),
+    )
+    ap.add_argument(
         "--resume-require-parquet",
         action=argparse.BooleanOptionalAction,
         default=None,
@@ -783,6 +842,7 @@ def main() -> int:
     parquet_root = Path(args.parquet_out).expanduser().resolve() if args.parquet_out else None
     resume_require_parquet = bool(parquet_root) if args.resume_require_parquet is None else bool(args.resume_require_parquet)
     parquet_action = str(args.parquet_action)
+    parquet_validate = str(args.parquet_validate)
 
     for idx, shard_path in enumerate(files, 1):
         st = shard_path.stat()
@@ -816,7 +876,10 @@ def main() -> int:
         parquet_ok = True
         if resume_require_parquet and parquet_final is not None:
             try:
-                parquet_ok = parquet_final.exists() and parquet_final.stat().st_size > 0
+                if parquet_validate == "quick":
+                    parquet_ok = _parquet_is_complete(parquet_final, expected_cols=_EXPECTED_POINTER_PARQUET_COLS)
+                else:
+                    parquet_ok = parquet_final.exists() and parquet_final.stat().st_size > 0
             except Exception:
                 parquet_ok = False
 
@@ -824,7 +887,10 @@ def main() -> int:
         parquet_exists_ok = False
         if parquet_final is not None:
             try:
-                parquet_exists_ok = parquet_final.exists() and parquet_final.stat().st_size > 0
+                if parquet_validate == "quick":
+                    parquet_exists_ok = _parquet_is_complete(parquet_final, expected_cols=_EXPECTED_POINTER_PARQUET_COLS)
+                else:
+                    parquet_exists_ok = parquet_final.exists() and parquet_final.stat().st_size > 0
             except Exception:
                 parquet_exists_ok = False
 
