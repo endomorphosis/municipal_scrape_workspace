@@ -163,7 +163,7 @@ def main() -> int:
         type=int,
         default=None,
         help=(
-            "Optional: split each collection into mod disjoint shard-file partitions (cdx-XXXXX % mod == rem). "
+            "Optional: split each collection into mod disjoint shard-file partitions (cdx-XXXXX modulo mod == rem). "
             "Every remainder is processed; DBs will be cc_pointers_<collection>__m<mod>r<rem>.duckdb"
         ),
     )

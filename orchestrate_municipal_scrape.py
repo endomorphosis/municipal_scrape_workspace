@@ -142,13 +142,92 @@ def _iter_pointer_duckdb_files(db_path_or_dir: Path) -> List[Path]:
         return sorted(p for p in db_path_or_dir.glob("*.duckdb") if p.is_file())
     return []
 
+def _duckdb_has_table(con: duckdb.DuckDBPyConnection, table_name: str) -> bool:
+    try:
+        row = con.execute(
+            """
+            SELECT 1
+            FROM information_schema.tables
+            WHERE table_schema = 'main' AND table_name = ?
+            LIMIT 1
+            """,
+            [str(table_name)],
+        ).fetchone()
+        return row is not None
+    except Exception:
+        return False
 
-def _query_cc_pointer_duckdb(db_path_or_dir: Path, domain: str, worker_id: int, limit: int = 5000) -> List[str]:
+def _query_cc_pointer_parquet_urls(
+    parquet_files: List[Path],
+    domain: str,
+    worker_id: int,
+    *,
+    limit: int,
+) -> List[str]:
+    """Extract URLs for a domain by querying Parquet pointer shards via DuckDB."""
+    dom = (domain or "").lower().strip()
+    if dom.startswith("www."):
+        dom = dom[4:]
+    if not dom:
+        return []
+
+    prefix = _host_to_rev(dom)
+    if not prefix:
+        return []
+    like_pat = prefix + ",%"
+
+    urls: List[str] = []
+    seen: set[str] = set()
+    remaining = max(0, int(limit))
+
+    try:
+        con = duckdb.connect(database=":memory:")
+        for p in parquet_files:
+            if remaining <= 0:
+                break
+            if not p.exists():
+                continue
+            rows = con.execute(
+                """
+                SELECT DISTINCT url
+                FROM read_parquet(?)
+                WHERE host_rev = ? OR host_rev LIKE ?
+                LIMIT ?
+                """,
+                [str(p), prefix, like_pat, int(remaining)],
+            ).fetchall()
+            for r in rows:
+                if not r or not r[0]:
+                    continue
+                u = r[0]
+                if u in seen:
+                    continue
+                seen.add(u)
+                urls.append(u)
+                remaining -= 1
+                if remaining <= 0:
+                    break
+        con.close()
+    except Exception as e:
+        _log(worker_id, f"CC Parquet pointer query error: {type(e).__name__}: {e}", "WARN")
+        return []
+
+    return urls
+
+
+def _query_cc_pointer_duckdb(
+    db_path_or_dir: Path,
+    domain: str,
+    worker_id: int,
+    *,
+    limit: int = 5000,
+    parquet_root: Optional[Path] = None,
+) -> List[str]:
     """Query a local DuckDB pointer index for URLs under a domain.
 
-    `db_path_or_dir` can be a single DuckDB file or a directory containing yearly DBs.
-    Expects table `cc_pointers` with columns: url, host_rev.
-    Uses host_rev prefix matching so it scales across many collections.
+    Supports two layouts:
+    - Legacy (url mode): table `cc_pointers(url, host_rev, ...)`
+    - Domain-only (domain mode): table `cc_domain_shards(host_rev, parquet_relpath, ...)` and uses Parquet pointer shards
     """
     try:
         db_files = _iter_pointer_duckdb_files(db_path_or_dir)
@@ -175,28 +254,70 @@ def _query_cc_pointer_duckdb(db_path_or_dir: Path, domain: str, worker_id: int, 
             if remaining <= 0:
                 break
             con = duckdb.connect(str(db_file), read_only=True)
-            rows = con.execute(
-                """
-                SELECT DISTINCT url
-                FROM cc_pointers
-                WHERE host_rev = ? OR host_rev LIKE ?
-                LIMIT ?
-                """,
-                [prefix, like_pat, int(remaining)],
-            ).fetchall()
-            con.close()
 
-            for r in rows:
-                if not r or not r[0]:
-                    continue
-                u = r[0]
-                if u in seen:
-                    continue
-                seen.add(u)
-                urls.append(u)
-                remaining -= 1
-                if remaining <= 0:
-                    break
+            if _duckdb_has_table(con, "cc_pointers"):
+                rows = con.execute(
+                    """
+                    SELECT DISTINCT url
+                    FROM cc_pointers
+                    WHERE host_rev = ? OR host_rev LIKE ?
+                    LIMIT ?
+                    """,
+                    [prefix, like_pat, int(remaining)],
+                ).fetchall()
+                con.close()
+
+                for r in rows:
+                    if not r or not r[0]:
+                        continue
+                    u = r[0]
+                    if u in seen:
+                        continue
+                    seen.add(u)
+                    urls.append(u)
+                    remaining -= 1
+                    if remaining <= 0:
+                        break
+                continue
+
+            if _duckdb_has_table(con, "cc_domain_shards"):
+                if parquet_root is None:
+                    con.close()
+                    _log(worker_id, "cc_domain_shards present but --cc-pointer-parquet-root not set; skipping CC expansion", "WARN")
+                    return []
+
+                rels = con.execute(
+                    """
+                    SELECT DISTINCT parquet_relpath
+                    FROM cc_domain_shards
+                    WHERE host_rev = ? OR host_rev LIKE ?
+                    """,
+                    [prefix, like_pat],
+                ).fetchall()
+                con.close()
+
+                parquet_files: List[Path] = []
+                for (rel,) in rels:
+                    if not rel:
+                        continue
+                    try:
+                        parquet_files.append((parquet_root / str(rel)).resolve())
+                    except Exception:
+                        continue
+
+                # Query Parquet shards for URLs for this domain.
+                new_urls = _query_cc_pointer_parquet_urls(parquet_files, dom, worker_id, limit=int(remaining))
+                for u in new_urls:
+                    if u in seen:
+                        continue
+                    seen.add(u)
+                    urls.append(u)
+                    remaining -= 1
+                    if remaining <= 0:
+                        break
+                continue
+
+            con.close()
 
         return urls
     except Exception as e:
@@ -1011,6 +1132,7 @@ async def run_scrape(
     cc_local_index_file: Optional[str] = None,
     cc_local_index_folder: Optional[str] = None,
     cc_pointer_duckdb: Optional[str] = None,
+    cc_pointer_parquet_root: Optional[str] = None,
     use_cdx_toolkit: bool = False,
 ) -> None:
     # Build list of URLs assigned to this worker.
@@ -1046,7 +1168,14 @@ async def run_scrape(
             
             # Method 1: Local DuckDB pointer index (fast, no network)
             if cc_pointer_duckdb:
-                cc_urls = _query_cc_pointer_duckdb(Path(cc_pointer_duckdb), domain, worker_id, limit=int(cc_index_max_lines))
+                parquet_root = Path(cc_pointer_parquet_root).expanduser().resolve() if cc_pointer_parquet_root else None
+                cc_urls = _query_cc_pointer_duckdb(
+                    Path(cc_pointer_duckdb),
+                    domain,
+                    worker_id,
+                    limit=int(cc_index_max_lines),
+                    parquet_root=parquet_root,
+                )
 
             # Method 2: Local index folder/file (fast, no network, but can be slow at scale)
             if not cc_urls:
@@ -1526,7 +1655,13 @@ def main() -> int:
         "--cc-pointer-duckdb",
         type=str,
         default=None,
-        help="Path to DuckDB with a prebuilt cc_pointers table for fast domain expansion",
+        help="Path to DuckDB file/dir for CC domain expansion (legacy cc_pointers or domain-only cc_domain_shards)",
+    )
+    p.add_argument(
+        "--cc-pointer-parquet-root",
+        type=str,
+        default="/storage/ccindex_parquet/cc_pointers_by_collection",
+        help="Root folder containing pointer Parquet shards (used when cc-pointer-duckdb is in domain-only mode)",
     )
     p.add_argument(
         "--use-cdx-toolkit",
@@ -1577,6 +1712,7 @@ def main() -> int:
                 cc_local_index_file=args.cc_local_index_file,
                 cc_local_index_folder=args.cc_local_index_folder,
                 cc_pointer_duckdb=args.cc_pointer_duckdb,
+                                cc_pointer_parquet_root=args.cc_pointer_parquet_root,
                 use_cdx_toolkit=bool(args.use_cdx_toolkit),
             )
         )
