@@ -12,6 +12,12 @@ and builds a DB with:
   cc_pointers(collection, shard_file, surt, timestamp, url, host, host_rev,
               status, mime, digest, warc_filename, warc_offset, warc_length)
 
+Optional: domain-only DuckDB index
+- If --duckdb-index-mode domain is set, DuckDB stores only a compact mapping of
+    domains (hosts) -> which shard/parquet file(s) contain URLs for that domain.
+- In this mode, the full per-URL pointer rows are expected to live in Parquet,
+    and DuckDB is used only as a fast directory/lookup layer.
+
 It also tracks ingested shard files in:
   cc_ingested_files(path, size_bytes, mtime_ns, ingested_at, rows)
 
@@ -78,6 +84,19 @@ CC_POINTERS_SCHEMA = pa.schema(
         ("warc_filename", pa.string()),
         ("warc_offset", pa.int64()),
         ("warc_length", pa.int64()),
+    ]
+)
+
+
+CC_DOMAIN_SHARDS_SCHEMA = pa.schema(
+    [
+        ("source_path", pa.string()),
+        ("collection", pa.string()),
+        ("year", pa.int32()),
+        ("shard_file", pa.string()),
+        ("parquet_relpath", pa.string()),
+        ("host", pa.string()),
+        ("host_rev", pa.string()),
     ]
 )
 
@@ -270,26 +289,43 @@ def _connect(db_path: Path, threads: int, *, memory_limit_gib: Optional[float] =
     return con
 
 
-def _init_schema(con: duckdb.DuckDBPyConnection) -> None:
-    con.execute(
-        """
-        CREATE TABLE IF NOT EXISTS cc_pointers (
-            collection VARCHAR,
-            shard_file VARCHAR,
-            surt VARCHAR,
-            ts VARCHAR,
-            url VARCHAR,
-            host VARCHAR,
-            host_rev VARCHAR,
-            status INTEGER,
-            mime VARCHAR,
-            digest VARCHAR,
-            warc_filename VARCHAR,
-            warc_offset BIGINT,
-            warc_length BIGINT
-        );
-        """
-    )
+def _init_schema(con: duckdb.DuckDBPyConnection, *, duckdb_index_mode: str) -> None:
+    if str(duckdb_index_mode) == "url":
+        con.execute(
+            """
+            CREATE TABLE IF NOT EXISTS cc_pointers (
+                collection VARCHAR,
+                shard_file VARCHAR,
+                surt VARCHAR,
+                ts VARCHAR,
+                url VARCHAR,
+                host VARCHAR,
+                host_rev VARCHAR,
+                status INTEGER,
+                mime VARCHAR,
+                digest VARCHAR,
+                warc_filename VARCHAR,
+                warc_offset BIGINT,
+                warc_length BIGINT
+            );
+            """
+        )
+    elif str(duckdb_index_mode) == "domain":
+        con.execute(
+            """
+            CREATE TABLE IF NOT EXISTS cc_domain_shards (
+                source_path VARCHAR,
+                collection VARCHAR,
+                year INTEGER,
+                shard_file VARCHAR,
+                parquet_relpath VARCHAR,
+                host VARCHAR,
+                host_rev VARCHAR
+            );
+            """
+        )
+    else:
+        raise SystemExit(f"Unknown --duckdb-index-mode: {duckdb_index_mode}")
 
     con.execute(
         """
@@ -374,10 +410,14 @@ def _insert_and_write_table(
     con: duckdb.DuckDBPyConnection,
     tbl: pa.Table,
     parquet_writer: Optional[pq.ParquetWriter],
+    *,
+    duckdb_index_mode: str,
+    insert_duckdb: bool = True,
 ) -> None:
-    con.register("_cc_batch", tbl)
-    con.execute("INSERT INTO cc_pointers SELECT * FROM _cc_batch")
-    con.unregister("_cc_batch")
+    if insert_duckdb and str(duckdb_index_mode) == "url":
+        con.register("_cc_batch", tbl)
+        con.execute("INSERT INTO cc_pointers SELECT * FROM _cc_batch")
+        con.unregister("_cc_batch")
     if parquet_writer is not None:
         parquet_writer.write_table(tbl)
 
@@ -388,16 +428,19 @@ def _insert_and_write_batch(
     parquet_writer: Optional[pq.ParquetWriter],
     parquet_compression: str,
     parquet_compression_level: Optional[int],
+    *,
+    duckdb_index_mode: str,
 ) -> Optional[pq.ParquetWriter]:
     if not rows:
         return parquet_writer
 
     tbl = _rows_to_arrow(rows)
 
-    # 1) Insert into DuckDB
-    con.register("_cc_batch", tbl)
-    con.execute("INSERT INTO cc_pointers SELECT * FROM _cc_batch")
-    con.unregister("_cc_batch")
+    # 1) Insert into DuckDB (url mode only)
+    if str(duckdb_index_mode) == "url":
+        con.register("_cc_batch", tbl)
+        con.execute("INSERT INTO cc_pointers SELECT * FROM _cc_batch")
+        con.unregister("_cc_batch")
 
     # 2) Append to Parquet (if enabled)
     if parquet_writer is not None:
@@ -440,6 +483,28 @@ def _maybe_create_indexes(con: duckdb.DuckDBPyConnection) -> None:
             con.execute(stmt)
         except Exception:
             pass
+
+
+def _maybe_create_domain_indexes(con: duckdb.DuckDBPyConnection) -> None:
+    for stmt in [
+        "CREATE INDEX idx_cc_domain_shards_host_rev ON cc_domain_shards(host_rev)",
+        "CREATE INDEX idx_cc_domain_shards_host ON cc_domain_shards(host)",
+        "CREATE INDEX idx_cc_domain_shards_collection ON cc_domain_shards(collection)",
+    ]:
+        try:
+            con.execute(stmt)
+        except Exception:
+            pass
+
+
+def _parquet_relpath(parquet_root: Optional[Path], year: Optional[int], collection: str, shard_file: str) -> Optional[str]:
+    if parquet_root is None or year is None:
+        return None
+    p = _parquet_out_path(parquet_root, int(year), collection, shard_file)
+    try:
+        return p.relative_to(parquet_root).as_posix()
+    except Exception:
+        return p.as_posix()
 
 
 def main() -> int:
@@ -494,10 +559,30 @@ def main() -> int:
     )
     ap.add_argument("--create-indexes", action="store_true", default=False, help="Attempt to create helpful indexes")
     ap.add_argument(
+        "--duckdb-index-mode",
+        type=str,
+        default="url",
+        choices=["url", "domain"],
+        help="What to store in DuckDB: 'url' stores per-URL pointers; 'domain' stores only domain->shard/parquet mapping",
+    )
+    ap.add_argument(
+        "--domain-index-action",
+        type=str,
+        default="append",
+        choices=["append", "rebuild"],
+        help="Only used with --duckdb-index-mode domain. 'append' keeps existing rows; 'rebuild' clears and rebuilds cc_domain_shards",
+    )
+    ap.add_argument(
         "--parquet-out",
         type=str,
         default=None,
         help="Optional output directory to write Parquet pointer shards while ingesting (one Parquet per input shard)",
+    )
+    ap.add_argument(
+        "--resume-require-parquet",
+        action=argparse.BooleanOptionalAction,
+        default=None,
+        help="When --parquet-out is set, only skip an already-ingested shard if its Parquet file exists (default: true when --parquet-out is set)",
     )
     ap.add_argument(
         "--parquet-compression",
@@ -526,6 +611,9 @@ def main() -> int:
     )
     args = ap.parse_args()
 
+    if str(args.duckdb_index_mode) != "domain" and str(args.domain_index_action) != "append":
+        raise SystemExit("--domain-index-action is only valid with --duckdb-index-mode domain")
+
     if bool(args.shard_by_year) and bool(args.shard_by_collection):
         raise SystemExit("Use only one of --shard-by-year or --shard-by-collection")
 
@@ -545,6 +633,7 @@ def main() -> int:
 
     # Connections keyed by shard key (or 'all' when not sharding).
     cons: Dict[str, duckdb.DuckDBPyConnection] = {}
+    domain_tables_cleared: set[str] = set()
 
     started_at_epoch = time.time()
     last_progress_write: Dict[str, float] = {}
@@ -622,7 +711,17 @@ def main() -> int:
         totals_by_shard[shard_key]["collection"] = collection or None
 
         con = _connect(db_path, threads=int(args.threads), memory_limit_gib=args.memory_limit_gib)
-        _init_schema(con)
+        _init_schema(con, duckdb_index_mode=str(args.duckdb_index_mode))
+
+        # Domain rebuild: clear cc_domain_shards once per DB file.
+        if str(args.duckdb_index_mode) == "domain" and str(args.domain_index_action) == "rebuild":
+            key = str(db_path)
+            if key not in domain_tables_cleared:
+                try:
+                    con.execute("DELETE FROM cc_domain_shards")
+                except Exception:
+                    pass
+                domain_tables_cleared.add(key)
 
         # Seed progress counters from existing ingested metadata so snapshots are cumulative across restarts.
         try:
@@ -671,6 +770,7 @@ def main() -> int:
     total_rows_ingested = 0
 
     parquet_root = Path(args.parquet_out).expanduser().resolve() if args.parquet_out else None
+    resume_require_parquet = bool(parquet_root) if args.resume_require_parquet is None else bool(args.resume_require_parquet)
 
     for idx, shard_path in enumerate(files, 1):
         st = shard_path.stat()
@@ -689,28 +789,66 @@ def main() -> int:
         totals_by_shard[shard_key]["last_event"] = "considering"
         maybe_write_progress(shard_key)
 
-        if _already_ingested(con, path_str, st.st_size, st.st_mtime_ns):
-            continue
         shard_file = shard_path.name
-        t0 = time.perf_counter()
 
-        # If writing Parquet, open a writer for this shard (tmp file then atomic rename).
-        parquet_writer: Optional[pq.ParquetWriter] = None
+        # Determine expected Parquet output (used for resume decisions).
         parquet_final: Optional[Path] = None
         parquet_tmp: Optional[Path] = None
         if parquet_root is not None:
             if year is None:
                 raise SystemExit("Could not determine collection year for Parquet output")
-            parquet_final = _parquet_out_path(parquet_root, year, collection, shard_file)
+            parquet_final = _parquet_out_path(parquet_root, int(year), collection, shard_file)
             parquet_tmp = parquet_final.with_suffix(parquet_final.suffix + ".tmp")
+
+        already = _already_ingested(con, path_str, st.st_size, st.st_mtime_ns)
+        parquet_ok = True
+        if resume_require_parquet and parquet_final is not None:
+            try:
+                parquet_ok = parquet_final.exists() and parquet_final.stat().st_size > 0
+            except Exception:
+                parquet_ok = False
+
+        domain_rebuild = str(args.duckdb_index_mode) == "domain" and str(args.domain_index_action) == "rebuild"
+
+        # If already ingested and (if enabled) Parquet exists, skip.
+        # Exception: domain rebuild wants to recompute cc_domain_shards even for already-ingested shards.
+        if already and (not resume_require_parquet or parquet_ok) and (not domain_rebuild):
+            continue
+
+        domain_rebuild_only = domain_rebuild and already and (not resume_require_parquet or parquet_ok)
+
+        # In URL mode, if we are reprocessing only because the Parquet output is missing,
+        # do NOT re-insert into DuckDB (would duplicate cc_pointers rows).
+        parquet_rebuild_only = (
+            str(args.duckdb_index_mode) == "url"
+            and already
+            and bool(resume_require_parquet)
+            and parquet_final is not None
+            and (not parquet_ok)
+        )
+        t0 = time.perf_counter()
+
+        # Domain-only DuckDB index: map host/host_rev -> shard/parquet
+        # (keeps DuckDB compact and leaves full per-URL rows to Parquet).
+        domain_map: Optional[Dict[str, str]] = None
+        if str(args.duckdb_index_mode) == "domain":
+            domain_map = {}
+
+        # If writing Parquet, open a writer for this shard (tmp file then atomic rename).
+        parquet_writer: Optional[pq.ParquetWriter] = None
+
+        # In domain rebuild mode we may choose to only rebuild the domain table (no parquet rewrite).
+        write_parquet = (parquet_root is not None) and (not domain_rebuild_only)
+        write_duckdb_rows = (str(args.duckdb_index_mode) == "url") and (not domain_rebuild_only) and (not parquet_rebuild_only)
+
+        if write_parquet and parquet_tmp is not None:
             # Ensure we don't keep a stale tmp from a prior interrupted run.
             try:
                 if parquet_tmp.exists():
                     parquet_tmp.unlink()
             except Exception:
                 pass
-
-        cols = _new_columns()
+        cols = _new_columns() if (write_parquet or write_duckdb_rows) else {}
         pending = 0
         file_rows = 0
 
@@ -731,6 +869,10 @@ def main() -> int:
                     host = _extract_host(url) or None
                     host_rev = _host_to_rev(host) if host else None
 
+                    if domain_map is not None and host and host_rev:
+                        # Keep one entry per host_rev (host value retained for display).
+                        domain_map.setdefault(host_rev, host)
+
                     status = _to_int(meta.get("status")) if isinstance(meta, dict) else None
                     mime = (meta.get("mime") if isinstance(meta, dict) else None)
                     digest = (meta.get("digest") if isinstance(meta, dict) else None)
@@ -738,24 +880,25 @@ def main() -> int:
                     warc_offset = _to_int(meta.get("offset")) if isinstance(meta, dict) else None
                     warc_length = _to_int(meta.get("length")) if isinstance(meta, dict) else None
 
-                    cols["collection"].append(collection)
-                    cols["shard_file"].append(shard_file)
-                    cols["surt"].append(surt or None)
-                    cols["ts"].append(ts)
-                    cols["url"].append(url)
-                    cols["host"].append(host)
-                    cols["host_rev"].append(host_rev)
-                    cols["status"].append(status)
-                    cols["mime"].append(mime)
-                    cols["digest"].append(digest)
-                    cols["warc_filename"].append(warc_filename)
-                    cols["warc_offset"].append(warc_offset)
-                    cols["warc_length"].append(warc_length)
-                    pending += 1
+                    if write_parquet or write_duckdb_rows:
+                        cols["collection"].append(collection)
+                        cols["shard_file"].append(shard_file)
+                        cols["surt"].append(surt or None)
+                        cols["ts"].append(ts)
+                        cols["url"].append(url)
+                        cols["host"].append(host)
+                        cols["host_rev"].append(host_rev)
+                        cols["status"].append(status)
+                        cols["mime"].append(mime)
+                        cols["digest"].append(digest)
+                        cols["warc_filename"].append(warc_filename)
+                        cols["warc_offset"].append(warc_offset)
+                        cols["warc_length"].append(warc_length)
+                        pending += 1
                     file_rows += 1
 
                     if pending >= int(args.batch_rows):
-                        if parquet_root is not None and parquet_writer is None and parquet_tmp is not None:
+                        if write_parquet and parquet_writer is None and parquet_tmp is not None:
                             parquet_writer = _open_parquet_writer(
                                 parquet_tmp,
                                 schema=CC_POINTERS_SCHEMA,
@@ -763,13 +906,19 @@ def main() -> int:
                                 compression_level=args.parquet_compression_level,
                             )
                         tbl = _columns_to_arrow(cols)
-                        _insert_and_write_table(con, tbl, parquet_writer)
+                        _insert_and_write_table(
+                            con,
+                            tbl,
+                            parquet_writer,
+                            duckdb_index_mode=str(args.duckdb_index_mode),
+                            insert_duckdb=bool(write_duckdb_rows),
+                        )
                         total_rows_ingested += pending
-                        cols = _new_columns()
+                        cols = _new_columns() if (write_parquet or write_duckdb_rows) else {}
                         pending = 0
 
             if pending:
-                if parquet_root is not None and parquet_writer is None and parquet_tmp is not None:
+                if write_parquet and parquet_writer is None and parquet_tmp is not None:
                     parquet_writer = _open_parquet_writer(
                         parquet_tmp,
                         schema=CC_POINTERS_SCHEMA,
@@ -777,9 +926,15 @@ def main() -> int:
                         compression_level=args.parquet_compression_level,
                     )
                 tbl = _columns_to_arrow(cols)
-                _insert_and_write_table(con, tbl, parquet_writer)
+                _insert_and_write_table(
+                    con,
+                    tbl,
+                    parquet_writer,
+                    duckdb_index_mode=str(args.duckdb_index_mode),
+                    insert_duckdb=bool(write_duckdb_rows),
+                )
                 total_rows_ingested += pending
-                cols = _new_columns()
+                cols = _new_columns() if (write_parquet or write_duckdb_rows) else {}
                 pending = 0
 
             if parquet_writer is not None:
@@ -789,13 +944,41 @@ def main() -> int:
                     parquet_final.parent.mkdir(parents=True, exist_ok=True)
                     parquet_tmp.replace(parquet_final)
 
-            _record_ingested(con, path_str, st.st_size, st.st_mtime_ns, file_rows)
-            total_files_ingested += 1
+            # Domain-only index: store host -> shard/parquet mapping in DuckDB.
+            if domain_map is not None:
+                # Make re-ingests idempotent: remove any prior entries for this source path.
+                try:
+                    con.execute("DELETE FROM cc_domain_shards WHERE source_path = ?", [path_str])
+                except Exception:
+                    pass
 
-            totals_by_shard[shard_key]["ingested_files"] = int(totals_by_shard[shard_key].get("ingested_files", 0)) + 1
-            totals_by_shard[shard_key]["ingested_rows"] = int(totals_by_shard[shard_key].get("ingested_rows", 0)) + int(file_rows)
-            totals_by_shard[shard_key]["last_event"] = "ingested"
-            maybe_write_progress(shard_key)
+                rel = _parquet_relpath(parquet_root, year, collection, shard_file)
+                if domain_map:
+                    hosts = list(domain_map.items())
+                    dom_tbl = pa.Table.from_pydict(
+                        {
+                            "source_path": [path_str] * len(hosts),
+                            "collection": [collection] * len(hosts),
+                            "year": [int(year) if year is not None else None] * len(hosts),
+                            "shard_file": [shard_file] * len(hosts),
+                            "parquet_relpath": [rel] * len(hosts),
+                            "host": [h for (_hr, h) in hosts],
+                            "host_rev": [hr for (hr, _h) in hosts],
+                        },
+                        schema=CC_DOMAIN_SHARDS_SCHEMA,
+                    )
+                    con.register("_cc_domains", dom_tbl)
+                    con.execute("INSERT INTO cc_domain_shards SELECT * FROM _cc_domains")
+                    con.unregister("_cc_domains")
+
+            if not domain_rebuild_only:
+                _record_ingested(con, path_str, st.st_size, st.st_mtime_ns, file_rows)
+                total_files_ingested += 1
+
+                totals_by_shard[shard_key]["ingested_files"] = int(totals_by_shard[shard_key].get("ingested_files", 0)) + 1
+                totals_by_shard[shard_key]["ingested_rows"] = int(totals_by_shard[shard_key].get("ingested_rows", 0)) + int(file_rows)
+                totals_by_shard[shard_key]["last_event"] = "ingested"
+                maybe_write_progress(shard_key)
 
             dt = time.perf_counter() - t0
             if bool(args.shard_by_year):
@@ -838,7 +1021,10 @@ def main() -> int:
 
     if args.create_indexes:
         for con in cons.values():
-            _maybe_create_indexes(con)
+            if str(args.duckdb_index_mode) == "url":
+                _maybe_create_indexes(con)
+            else:
+                _maybe_create_domain_indexes(con)
 
     for con in cons.values():
         con.close()

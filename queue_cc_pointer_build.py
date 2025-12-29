@@ -149,6 +149,9 @@ def _build_cmd(
     memory_limit_gib: Optional[float],
     parquet_compression: str,
     parquet_compression_level: Optional[int],
+    duckdb_index_mode: str,
+    domain_index_action: str,
+    resume_require_parquet: Optional[bool],
     collection: str,
 ) -> List[str]:
     cmd: List[str] = [
@@ -159,6 +162,10 @@ def _build_cmd(
         "--db",
         str(db_dir),
         "--shard-by-collection",
+        "--duckdb-index-mode",
+        str(duckdb_index_mode),
+        "--domain-index-action",
+        str(domain_index_action),
         "--threads",
         str(int(threads)),
         "--progress-interval-seconds",
@@ -169,6 +176,9 @@ def _build_cmd(
 
     if parquet_out is not None:
         cmd += ["--parquet-out", str(parquet_out)]
+
+        if resume_require_parquet is not None:
+            cmd += ["--resume-require-parquet" if bool(resume_require_parquet) else "--no-resume-require-parquet"]
 
     if progress_dir is not None:
         cmd += ["--progress-dir", str(progress_dir)]
@@ -211,8 +221,12 @@ def main() -> int:
     # When stdout is redirected (e.g. "> queue_launcher.log"), Python will fully-buffer
     # writes by default. Enable line buffering so the log stays live.
     try:
-        sys.stdout.reconfigure(line_buffering=True)
-        sys.stderr.reconfigure(line_buffering=True)
+        out_reconf = getattr(sys.stdout, "reconfigure", None)
+        err_reconf = getattr(sys.stderr, "reconfigure", None)
+        if callable(out_reconf):
+            out_reconf(line_buffering=True)
+        if callable(err_reconf):
+            err_reconf(line_buffering=True)
     except Exception:
         pass
 
@@ -245,6 +259,27 @@ def main() -> int:
 
     ap.add_argument("--parquet-compression", type=str, default="zstd", choices=["zstd", "snappy", "gzip"], help="Parquet compression")
     ap.add_argument("--parquet-compression-level", type=int, default=None, help="Parquet compression level")
+
+    ap.add_argument(
+        "--duckdb-index-mode",
+        type=str,
+        default="url",
+        choices=["url", "domain"],
+        help="What to store in DuckDB: 'url' stores per-URL pointers; 'domain' stores only domain->shard/parquet mapping",
+    )
+    ap.add_argument(
+        "--domain-index-action",
+        type=str,
+        default="append",
+        choices=["append", "rebuild"],
+        help="Only used with --duckdb-index-mode domain. 'append' keeps existing; 'rebuild' clears and rebuilds cc_domain_shards",
+    )
+    ap.add_argument(
+        "--resume-require-parquet",
+        action=argparse.BooleanOptionalAction,
+        default=None,
+        help="When --parquet-out is set, only skip an already-ingested shard if its Parquet file exists (default: true)",
+    )
 
     ap.add_argument("--python", type=str, default=None, help="Python executable to run builder with (default: current interpreter)")
     ap.add_argument("--log-dir", type=str, default=None, help="Where to write per-collection logs (default: --db-dir)")
@@ -405,7 +440,7 @@ def main() -> int:
     # Build plan and optionally dry-run.
     print(f"Selected collections: {len(collections)}", flush=True)
     print(
-        f"max_parallel={max_parallel}\tthreads_per_worker={int(args.threads_per_worker)}\tmemory_limit_gib={args.memory_limit_gib}",
+        f"max_parallel={max_parallel}\tthreads_per_worker={int(args.threads_per_worker)}\tmemory_limit_gib={args.memory_limit_gib}\tduckdb_index_mode={args.duckdb_index_mode}",
         flush=True,
     )
     print(f"db_dir={db_dir}", flush=True)
@@ -429,6 +464,9 @@ def main() -> int:
                 memory_limit_gib=(float(args.memory_limit_gib) if args.memory_limit_gib is not None else None),
                 parquet_compression=str(args.parquet_compression),
                 parquet_compression_level=(int(args.parquet_compression_level) if args.parquet_compression_level is not None else None),
+                duckdb_index_mode=str(args.duckdb_index_mode),
+                domain_index_action=str(args.domain_index_action),
+                resume_require_parquet=(bool(args.resume_require_parquet) if args.resume_require_parquet is not None else None),
                 collection=c,
             )
             print(" ".join(shlex.quote(x) for x in cmd))
@@ -452,6 +490,9 @@ def main() -> int:
             memory_limit_gib=(float(args.memory_limit_gib) if args.memory_limit_gib is not None else None),
             parquet_compression=str(args.parquet_compression),
             parquet_compression_level=(int(args.parquet_compression_level) if args.parquet_compression_level is not None else None),
+            duckdb_index_mode=str(args.duckdb_index_mode),
+            domain_index_action=str(args.domain_index_action),
+            resume_require_parquet=(bool(args.resume_require_parquet) if args.resume_require_parquet is not None else None),
             collection=col,
         )
 
