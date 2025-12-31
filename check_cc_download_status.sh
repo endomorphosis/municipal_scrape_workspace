@@ -56,7 +56,7 @@ echo "────────────────────────�
 if pgrep -f "download_cc_indexes_5years" > /dev/null 2>&1; then
     pid=$(pgrep -f "download_cc_indexes_5years" | head -1)
     echo "  Status: ✅ ACTIVE (PID: $pid)"
-    echo "  Log: /tmp/cc_5year_corrected.log"
+    echo "  Log: /tmp/cc_5year_download.log"
 else
     echo "  Status: ⏸️  INACTIVE"
     echo "  To resume: bash download_cc_indexes_5years.sh 12"
