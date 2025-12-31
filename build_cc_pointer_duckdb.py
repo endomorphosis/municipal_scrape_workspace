@@ -101,6 +101,22 @@ CC_DOMAIN_SHARDS_SCHEMA = pa.schema(
 )
 
 
+CC_PARQUET_ROWGROUPS_SCHEMA = pa.schema(
+    [
+        ("source_path", pa.string()),
+        ("collection", pa.string()),
+        ("year", pa.int32()),
+        ("shard_file", pa.string()),
+        ("parquet_relpath", pa.string()),
+        ("row_group", pa.int32()),
+        ("row_start", pa.int64()),
+        ("row_end", pa.int64()),
+        ("host_rev_min", pa.string()),
+        ("host_rev_max", pa.string()),
+    ]
+)
+
+
 _EXPECTED_POINTER_PARQUET_COLS = [f.name for f in CC_POINTERS_SCHEMA]
 
 
@@ -372,6 +388,23 @@ def _init_schema(con: duckdb.DuckDBPyConnection, *, duckdb_index_mode: str) -> N
             );
             """
         )
+
+        con.execute(
+            """
+            CREATE TABLE IF NOT EXISTS cc_parquet_rowgroups (
+                source_path VARCHAR,
+                collection VARCHAR,
+                year INTEGER,
+                shard_file VARCHAR,
+                parquet_relpath VARCHAR,
+                row_group INTEGER,
+                row_start BIGINT,
+                row_end BIGINT,
+                host_rev_min VARCHAR,
+                host_rev_max VARCHAR
+            );
+            """
+        )
     else:
         raise SystemExit(f"Unknown --duckdb-index-mode: {duckdb_index_mode}")
 
@@ -519,6 +552,140 @@ def _open_parquet_writer(
     )
 
 
+def _sort_parquet_with_duckdb(
+    src_parquet: Path,
+    dst_parquet: Path,
+    *,
+    compression: str,
+    compression_level: Optional[int],
+) -> None:
+    """Rewrite a Parquet file in sorted order (expensive)."""
+    dst_parquet.parent.mkdir(parents=True, exist_ok=True)
+    try:
+        if dst_parquet.exists():
+            dst_parquet.unlink()
+    except Exception:
+        pass
+
+    con = duckdb.connect(database=":memory:")
+    try:
+        opts = ["FORMAT 'parquet'", f"COMPRESSION '{str(compression)}'"]
+        if compression_level is not None:
+            opts.append(f"COMPRESSION_LEVEL {int(compression_level)}")
+        opt_sql = ", ".join(opts)
+        # DuckDB parameter binding with COPY ... TO ? can be finicky across versions.
+        # Keep the input parameterized, but embed the output path as a literal.
+        out_sql = str(dst_parquet).replace("'", "''")
+        con.execute(
+            f"""
+            COPY (
+                SELECT *
+                FROM read_parquet(?)
+                ORDER BY host_rev, url, ts
+            )
+            TO '{out_sql}' ({opt_sql});
+            """,
+            [str(src_parquet)],
+        )
+    finally:
+        con.close()
+
+
+def _decode_stat(v: Any) -> Optional[str]:
+    if v is None:
+        return None
+    if isinstance(v, bytes):
+        try:
+            return v.decode("utf-8", errors="ignore")
+        except Exception:
+            return None
+    try:
+        return str(v)
+    except Exception:
+        return None
+
+
+def _extract_parquet_rowgroup_host_rev_ranges(parquet_path: Path) -> List[Tuple[int, int, int, Optional[str], Optional[str]]]:
+    """Return per-row-group (rg_idx, row_start, row_end, host_rev_min, host_rev_max)."""
+    pf = pq.ParquetFile(parquet_path)
+    md = pf.metadata
+    if md is None:
+        return []
+
+    host_rev_col_idx: Optional[int] = None
+    try:
+        host_rev_col_idx = list(pf.schema_arrow.names).index("host_rev")
+    except Exception:
+        try:
+            host_rev_col_idx = list(pf.schema.names).index("host_rev")
+        except Exception:
+            host_rev_col_idx = None
+
+    out: List[Tuple[int, int, int, Optional[str], Optional[str]]] = []
+    row_start = 0
+    for rg_idx in range(int(md.num_row_groups or 0)):
+        rg = md.row_group(rg_idx)
+        n = int(rg.num_rows or 0)
+        row_end = row_start + n
+
+        mn: Optional[str] = None
+        mx: Optional[str] = None
+        if host_rev_col_idx is not None:
+            try:
+                col = rg.column(int(host_rev_col_idx))
+                stats = getattr(col, "statistics", None)
+                if stats is not None:
+                    mn = _decode_stat(getattr(stats, "min", None))
+                    mx = _decode_stat(getattr(stats, "max", None))
+            except Exception:
+                mn = None
+                mx = None
+
+        out.append((int(rg_idx), int(row_start), int(row_end), mn, mx))
+        row_start = row_end
+
+    return out
+
+
+def _rebuild_cc_parquet_rowgroups_for_shard(
+    con: duckdb.DuckDBPyConnection,
+    *,
+    source_path: str,
+    collection: str,
+    year: Optional[int],
+    shard_file: str,
+    parquet_relpath: Optional[str],
+    parquet_path: Path,
+) -> None:
+    try:
+        con.execute("DELETE FROM cc_parquet_rowgroups WHERE source_path = ?", [str(source_path)])
+    except Exception:
+        return
+
+    rows = _extract_parquet_rowgroup_host_rev_ranges(parquet_path)
+    if not rows:
+        return
+
+    tbl = pa.Table.from_pydict(
+        {
+            "source_path": [str(source_path)] * len(rows),
+            "collection": [str(collection)] * len(rows),
+            "year": [int(year) if year is not None else None] * len(rows),
+            "shard_file": [str(shard_file)] * len(rows),
+            "parquet_relpath": [str(parquet_relpath) if parquet_relpath else None] * len(rows),
+            "row_group": [r[0] for r in rows],
+            "row_start": [r[1] for r in rows],
+            "row_end": [r[2] for r in rows],
+            "host_rev_min": [r[3] for r in rows],
+            "host_rev_max": [r[4] for r in rows],
+        },
+        schema=CC_PARQUET_ROWGROUPS_SCHEMA,
+    )
+    con.register("_cc_rowgroups", tbl)
+    con.execute("INSERT INTO cc_parquet_rowgroups SELECT * FROM _cc_rowgroups")
+    con.unregister("_cc_rowgroups")
+
+
 def _maybe_create_indexes(con: duckdb.DuckDBPyConnection) -> None:
     # Index support and behavior can vary by DuckDB version.
     # If index creation fails, we continue (the table still works; zonemaps help).
@@ -538,6 +705,9 @@ def _maybe_create_domain_indexes(con: duckdb.DuckDBPyConnection) -> None:
         "CREATE INDEX idx_cc_domain_shards_host_rev ON cc_domain_shards(host_rev)",
         "CREATE INDEX idx_cc_domain_shards_host ON cc_domain_shards(host)",
         "CREATE INDEX idx_cc_domain_shards_collection ON cc_domain_shards(collection)",
+        "CREATE INDEX idx_cc_parquet_rowgroups_host_rev_min ON cc_parquet_rowgroups(host_rev_min)",
+        "CREATE INDEX idx_cc_parquet_rowgroups_host_rev_max ON cc_parquet_rowgroups(host_rev_max)",
+        "CREATE INDEX idx_cc_parquet_rowgroups_collection ON cc_parquet_rowgroups(collection)",
     ]:
         try:
             con.execute(stmt)
@@ -668,6 +838,25 @@ def main() -> int:
         help="Parquet compression level (codec-dependent)",
     )
     ap.add_argument(
+        "--parquet-sort",
+        type=str,
+        default="none",
+        choices=["none", "duckdb"],
+        help=(
+            "Optional: rewrite each Parquet shard in sorted order after writing. "
+            "'duckdb' performs ORDER BY host_rev,url,ts via DuckDB (expensive)."
+        ),
+    )
+    ap.add_argument(
+        "--domain-range-index",
+        action=argparse.BooleanOptionalAction,
+        default=False,
+        help=(
+            "When using --duckdb-index-mode domain, also store Parquet row-group range/offset metadata "
+            "in cc_parquet_rowgroups (host_rev min/max + row start/end per row group)."
+        ),
+    )
+    ap.add_argument(
         "--progress-dir",
         type=str,
         default=None,
@@ -683,6 +872,9 @@ def main() -> int:
 
     if str(args.duckdb_index_mode) != "domain" and str(args.domain_index_action) != "append":
         raise SystemExit("--domain-index-action is only valid with --duckdb-index-mode domain")
+
+    if bool(args.domain_range_index) and str(args.duckdb_index_mode) != "domain":
+        raise SystemExit("--domain-range-index is only valid with --duckdb-index-mode domain")
 
     if bool(args.shard_by_year) and bool(args.shard_by_collection):
         raise SystemExit("Use only one of --shard-by-year or --shard-by-collection")
@@ -791,6 +983,10 @@ def main() -> int:
                     con.execute("DELETE FROM cc_domain_shards")
                 except Exception:
                     pass
+                try:
+                    con.execute("DELETE FROM cc_parquet_rowgroups")
+                except Exception:
+                    pass
                 domain_tables_cleared.add(key)
 
         # Seed progress counters from existing ingested metadata so snapshots are cumulative across restarts.
@@ -835,6 +1031,9 @@ def main() -> int:
     else:
         print(f"DB: {db_target}")
     print(f"Files to consider: {len(files)}")
+
+    processed_files = 0
+    processed_rows = 0
 
     total_files_ingested = 0
     total_rows_ingested = 0
@@ -899,6 +1098,26 @@ def main() -> int:
         # If already ingested and (if enabled) Parquet exists, skip.
         # Exception: domain rebuild wants to recompute cc_domain_shards even for already-ingested shards.
         if already and (not resume_require_parquet or parquet_ok) and (not domain_rebuild):
+            if (
+                bool(args.domain_range_index)
+                and str(args.duckdb_index_mode) == "domain"
+                and parquet_final is not None
+                and parquet_ok
+                and parquet_final.exists()
+            ):
+                try:
+                    rel = _parquet_relpath(parquet_root, year, collection, shard_file)
+                    _rebuild_cc_parquet_rowgroups_for_shard(
+                        con,
+                        source_path=path_str,
+                        collection=collection,
+                        year=year,
+                        shard_file=shard_file,
+                        parquet_relpath=rel,
+                        parquet_path=parquet_final,
+                    )
+                except Exception:
+                    pass
             continue
 
         domain_rebuild_only = domain_rebuild and already and (not resume_require_parquet or parquet_ok)
@@ -913,6 +1132,8 @@ def main() -> int:
             and (not parquet_ok)
         )
         t0 = time.perf_counter()
+
+        processed_files += 1
 
         # Domain-only DuckDB index: map host/host_rev -> shard/parquet
         # (keeps DuckDB compact and leaves full per-URL rows to Parquet).
@@ -1035,6 +1256,16 @@ def main() -> int:
                     parquet_final.parent.mkdir(parents=True, exist_ok=True)
                     parquet_tmp.replace(parquet_final)
 
+                    if str(args.parquet_sort) == "duckdb":
+                        sorted_tmp = parquet_final.with_suffix(parquet_final.suffix + ".sorted.tmp")
+                        _sort_parquet_with_duckdb(
+                            parquet_final,
+                            sorted_tmp,
+                            compression=str(args.parquet_compression),
+                            compression_level=args.parquet_compression_level,
+                        )
+                        sorted_tmp.replace(parquet_final)
+
             # Domain-only index: store host -> shard/parquet mapping in DuckDB.
             if domain_map is not None:
                 # Make re-ingests idempotent: remove any prior entries for this source path.
@@ -1062,6 +1293,22 @@ def main() -> int:
                     con.execute("INSERT INTO cc_domain_shards SELECT * FROM _cc_domains")
                     con.unregister("_cc_domains")
 
+                if (
+                    bool(args.domain_range_index)
+                    and parquet_final is not None
+                    and parquet_final.exists()
+                    and _parquet_is_complete(parquet_final, expected_cols=_EXPECTED_POINTER_PARQUET_COLS)
+                ):
+                    _rebuild_cc_parquet_rowgroups_for_shard(
+                        con,
+                        source_path=path_str,
+                        collection=collection,
+                        year=year,
+                        shard_file=shard_file,
+                        parquet_relpath=rel,
+                        parquet_path=parquet_final,
+                    )
+
             if not domain_rebuild_only:
                 _record_ingested(con, path_str, st.st_size, st.st_mtime_ns, file_rows)
                 total_files_ingested += 1
@@ -1070,6 +1317,8 @@ def main() -> int:
                 totals_by_shard[shard_key]["ingested_rows"] = int(totals_by_shard[shard_key].get("ingested_rows", 0)) + int(file_rows)
                 totals_by_shard[shard_key]["last_event"] = "ingested"
                 maybe_write_progress(shard_key)
+
+            processed_rows += int(file_rows)
 
             dt = time.perf_counter() - t0
             if bool(args.shard_by_year):
@@ -1121,8 +1370,10 @@ def main() -> int:
         con.close()
 
     print("")
-    print(f"Ingested files this run: {total_files_ingested}")
-    print(f"Ingested rows this run:  {total_rows_ingested:,}")
+    print(f"Processed shard files this run: {processed_files}")
+    print(f"Processed rows this run:       {processed_rows:,}")
+    print(f"New ingested files this run:  {total_files_ingested}")
+    print(f"New ingested rows this run:   {total_rows_ingested:,}")
     return 0
 
 

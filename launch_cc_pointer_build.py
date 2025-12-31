@@ -139,6 +139,13 @@ def main() -> int:
         choices=["quick", "none"],
         help="Validate existing Parquet shards before skipping them (passed through)",
     )
+    ap.add_argument(
+        "--parquet-sort",
+        type=str,
+        default="none",
+        choices=["none", "duckdb"],
+        help="Optional: rewrite each Parquet shard in sorted order after writing (passed through)",
+    )
 
     ap.add_argument(
         "--duckdb-index-mode",
@@ -153,6 +160,12 @@ def main() -> int:
         default="append",
         choices=["append", "rebuild"],
         help="Only used with --duckdb-index-mode domain. 'append' keeps existing; 'rebuild' clears and rebuilds cc_domain_shards",
+    )
+    ap.add_argument(
+        "--domain-range-index",
+        action=argparse.BooleanOptionalAction,
+        default=False,
+        help="When using --duckdb-index-mode domain, also store Parquet row-group range/offset metadata (passed through)",
     )
     ap.add_argument(
         "--resume-require-parquet",
@@ -331,11 +344,16 @@ def main() -> int:
             str(args.duckdb_index_mode),
             "--domain-index-action",
             str(args.domain_index_action),
+            "--parquet-sort",
+            str(args.parquet_sort),
             "--threads",
             str(int(args.threads_per_worker)),
             "--progress-interval-seconds",
             str(int(args.progress_interval_seconds)),
         ]
+
+        if bool(args.domain_range_index):
+            cmd += ["--domain-range-index"]
 
         if p.cdx_shard_mod is not None:
             cmd += ["--cdx-shard-mod", str(int(p.cdx_shard_mod)), "--cdx-shard-rem", str(int(p.cdx_shard_rem or 0))]

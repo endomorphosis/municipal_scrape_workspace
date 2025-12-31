@@ -149,10 +149,12 @@ def _build_cmd(
     memory_limit_gib: Optional[float],
     parquet_compression: str,
     parquet_compression_level: Optional[int],
+    parquet_sort: str,
     parquet_validate: str,
     parquet_action: str,
     duckdb_index_mode: str,
     domain_index_action: str,
+    domain_range_index: bool,
     resume_require_parquet: Optional[bool],
     collection: str,
 ) -> List[str]:
@@ -174,11 +176,16 @@ def _build_cmd(
         str(int(progress_interval_seconds)),
         "--parquet-compression",
         str(parquet_compression),
+        "--parquet-sort",
+        str(parquet_sort),
         "--parquet-validate",
         str(parquet_validate),
         "--parquet-action",
         str(parquet_action),
     ]
+
+    if bool(domain_range_index):
+        cmd += ["--domain-range-index"]
 
     if parquet_out is not None:
         cmd += ["--parquet-out", str(parquet_out)]
@@ -266,6 +273,13 @@ def main() -> int:
     ap.add_argument("--parquet-compression", type=str, default="zstd", choices=["zstd", "snappy", "gzip"], help="Parquet compression")
     ap.add_argument("--parquet-compression-level", type=int, default=None, help="Parquet compression level")
     ap.add_argument(
+        "--parquet-sort",
+        type=str,
+        default="none",
+        choices=["none", "duckdb"],
+        help="Optional: rewrite each Parquet shard in sorted order after writing (passed through)",
+    )
+    ap.add_argument(
         "--parquet-validate",
         type=str,
         default="quick",
@@ -293,6 +307,12 @@ def main() -> int:
         default="append",
         choices=["append", "rebuild"],
         help="Only used with --duckdb-index-mode domain. 'append' keeps existing; 'rebuild' clears and rebuilds cc_domain_shards",
+    )
+    ap.add_argument(
+        "--domain-range-index",
+        action=argparse.BooleanOptionalAction,
+        default=False,
+        help="When using --duckdb-index-mode domain, also store Parquet row-group range/offset metadata (passed through)",
     )
     ap.add_argument(
         "--resume-require-parquet",
@@ -484,10 +504,12 @@ def main() -> int:
                 memory_limit_gib=(float(args.memory_limit_gib) if args.memory_limit_gib is not None else None),
                 parquet_compression=str(args.parquet_compression),
                 parquet_compression_level=(int(args.parquet_compression_level) if args.parquet_compression_level is not None else None),
+                parquet_sort=str(args.parquet_sort),
                 parquet_validate=str(args.parquet_validate),
                 parquet_action=str(args.parquet_action),
                 duckdb_index_mode=str(args.duckdb_index_mode),
                 domain_index_action=str(args.domain_index_action),
+                domain_range_index=bool(args.domain_range_index),
                 resume_require_parquet=(bool(args.resume_require_parquet) if args.resume_require_parquet is not None else None),
                 collection=c,
             )
@@ -512,10 +534,12 @@ def main() -> int:
             memory_limit_gib=(float(args.memory_limit_gib) if args.memory_limit_gib is not None else None),
             parquet_compression=str(args.parquet_compression),
             parquet_compression_level=(int(args.parquet_compression_level) if args.parquet_compression_level is not None else None),
+            parquet_sort=str(args.parquet_sort),
             parquet_validate=str(args.parquet_validate),
             parquet_action=str(args.parquet_action),
             duckdb_index_mode=str(args.duckdb_index_mode),
             domain_index_action=str(args.domain_index_action),
+            domain_range_index=bool(args.domain_range_index),
             resume_require_parquet=(bool(args.resume_require_parquet) if args.resume_require_parquet is not None else None),
             collection=col,
         )
