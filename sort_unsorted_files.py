@@ -7,23 +7,33 @@ import argparse
 import multiprocessing as mp
 import sys
 from pathlib import Path
-from typing import Tuple
+from typing import List, Tuple
 
 import duckdb
 
 
-def sort_parquet_file(args: Tuple[Path, Path]) -> Tuple[Path, bool, str]:
+def sort_parquet_file(args: Tuple[Path, Path, int]) -> Tuple[Path, bool, str]:
     """
-    Sort a single parquet file.
+    Sort a single parquet file with memory limits and isolated temp dir.
     Returns (file, success, message)
     """
-    parquet_file, temp_dir = args
+    parquet_file, temp_dir, worker_id = args
     
     try:
-        sorted_tmp = temp_dir / f"{parquet_file.name}.sorted.tmp"
+        # Each worker gets its own temp directory to avoid conflicts
+        worker_temp = temp_dir / f"worker_{worker_id}"
+        worker_temp.mkdir(parents=True, exist_ok=True)
         
-        # Sort using DuckDB
+        sorted_tmp = worker_temp / f"{parquet_file.name}.sorted.tmp"
+        
+        # Sort using DuckDB with memory limit and isolated temp directory
         con = duckdb.connect(":memory:")
+        
+        # Set memory limit and temp directory PER WORKER
+        con.execute("SET memory_limit='2GB'")
+        con.execute(f"SET temp_directory='{worker_temp}'")
+        con.execute("SET preserve_insertion_order=false")  # Reduce memory usage
+        
         con.execute(f"""
             COPY (
                 SELECT * FROM read_parquet('{parquet_file}')
@@ -68,7 +78,7 @@ def main() -> int:
     ap = argparse.ArgumentParser(description="Sort unsorted parquet files in parallel")
     ap.add_argument("--unsorted-list", required=True, help="File containing list of unsorted files")
     ap.add_argument("--parquet-root", required=True, help="Root directory")
-    ap.add_argument("--workers", type=int, default=16, help="Parallel workers")
+    ap.add_argument("--workers", type=int, default=4, help="Parallel workers (default: 4 for memory safety)")
     ap.add_argument("--temp-dir", default="/tmp/sort_temp", help="Temp directory for sorting")
     
     args = ap.parse_args()
@@ -113,7 +123,8 @@ def main() -> int:
     sorted_count = 0
     failed_count = 0
     
-    work_items = [(f, temp_dir) for f in unsorted_files]
+    # Assign worker IDs to avoid temp file conflicts
+    work_items = [(unsorted_files[i], temp_dir, i % args.workers) for i in range(len(unsorted_files))]
     
     with mp.Pool(processes=args.workers) as pool:
         results = pool.imap_unordered(sort_parquet_file, work_items, chunksize=1)
