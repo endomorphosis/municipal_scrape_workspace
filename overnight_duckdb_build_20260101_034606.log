@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/home/barberb/municipal_scrape_workspace.worktrees/worktree-2025-12-31T02-40-18/build_cc_pointer_duckdb.py", line 45, in <module>
+    import duckdb
+ModuleNotFoundError: No module named 'duckdb'
