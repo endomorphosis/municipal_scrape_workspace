@@ -1,0 +1,13 @@
+nohup: ignoring input
+Converting final 3 files with chunking to avoid memory issues...
+Memory-efficient chunked processing (10M records per chunk)
+
+SKIP: Destination already exists: /storage/ccindex_parquet/CC-MAIN-2024-33-cdx-00099.gz.parquet
+SKIP: Destination already exists: /storage/ccindex_parquet/CC-MAIN-2024-38-cdx-00099.gz.parquet
+SKIP: Destination already exists: /storage/ccindex_parquet/CC-MAIN-2024-42-cdx-00099.gz.parquet
+
+============================================================
+Conversion complete!
+  Success: 3/3
+  Failed: 0/3
+============================================================

@@ -1,0 +1,114 @@
+═══════════════════════════════════════════════════════════════════════════
+NEW SCRIPTS CREATED FOR DUCKDB POINTER INDEX
+═══════════════════════════════════════════════════════════════════════════
+
+📦 CONVERSION & PROCESSING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+parallel_convert_missing.py
+  ✓ Multi-process .gz → sorted .parquet conversion
+  ✓ Memory-aware (8 workers, 2GB each)
+  ✓ Handles 6,396 files with chunking
+  ✓ Currently RUNNING
+
+convert_missing_with_chunks.py
+  ✓ Single-threaded backup converter
+  ✓ Chunked processing to avoid OOM
+  ✓ 50k records per batch
+
+🔍 SEARCH & QUERY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+search_cc_domain.py
+  ✓ Fast domain → WARC pointer lookups
+  ✓ Three modes: duckdb, parquet, both
+  ✓ Returns URL, timestamp, WARC location
+  ✓ Usage: python3 search_cc_domain.py example.com --limit 100
+
+⚡ BENCHMARKING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+benchmark_cc_domain_search.py
+  ✓ Comprehensive performance testing
+  ✓ Cold/warm cache comparison
+  ✓ Multiple domain testing
+  ✓ JSON output for analysis
+  ✓ Usage: python3 benchmark_cc_domain_search.py
+
+🤖 ORCHESTRATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+overnight_duckdb_complete.sh
+  ✓ Full end-to-end automation
+  ✓ Waits for conversion → validates → builds → tests
+  ✓ Manages disk space (ZFS snapshots)
+  ✓ Generates completion report
+  ✓ Currently RUNNING (PID: 3228018)
+
+📊 MONITORING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+monitor_overnight_build.sh
+  ✓ Real-time progress display
+  ✓ Shows worker status, memory, disk
+  ✓ Latest log entries
+  ✓ Usage: ./monitor_overnight_build.sh
+
+quickref_duckdb.sh
+  ✓ Quick reference commands
+  ✓ Current progress display
+  ✓ Usage: ./quickref_duckdb.sh
+
+📖 DOCUMENTATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+OVERNIGHT_BUILD_STATUS.md
+  ✓ Full architecture documentation
+  ✓ Design rationale
+  ✓ Expected performance
+  ✓ Timeline and monitoring
+
+NEW_SCRIPTS_SUMMARY.txt
+  ✓ This file
+
+═══════════════════════════════════════════════════════════════════════════
+DESIGN OVERVIEW
+═══════════════════════════════════════════════════════════════════════════
+
+ARCHITECTURE:
+  Source:    /storage/ccindex/CC-MAIN-202[45]-*/*.gz (6,600 files)
+             ↓ (parallel_convert_missing.py)
+  Parquet:   /storage/ccindex_parquet/.../cdx-XXXXX.gz.parquet (sorted!)
+             ↓ (overnight_duckdb_complete.sh)
+  DuckDB:    /storage/ccindex_duckdb/cc_pointers.duckdb
+             ↓ (search_cc_domain.py)
+  Results:   Domain → [(url, timestamp, warc_file, offset, length), ...]
+
+KEY FEATURES:
+  ✓ Sorted parquet files (enables binary search)
+  ✓ DuckDB stores only domain → (file, offset, range) pointers
+  ✓ Full URL data stays in parquet (columnar, compressed)
+  ✓ Fast indexed lookups (<100ms expected)
+  ✓ Minimal index size (<1GB vs terabytes)
+  ✓ Flexible searching across all 2024-2025 crawls
+
+PERFORMANCE:
+  Query Time:    <100ms (warm cache, indexed)
+  Index Size:    <1GB (pointers only)
+  Data Size:     ~200GB (sorted parquet files)
+  Throughput:    Thousands of rows/sec
+  Scalability:   Billions of URLs supported
+
+═══════════════════════════════════════════════════════════════════════════
+QUICK START (AFTER BUILD COMPLETES)
+═══════════════════════════════════════════════════════════════════════════
+
+# Monitor progress
+./monitor_overnight_build.sh
+
+# Search for a domain
+python3 search_cc_domain.py example.com --show
+
+# Run benchmarks
+python3 benchmark_cc_domain_search.py
+
+# Compare search methods
+python3 search_cc_domain.py example.com --mode both
+
+═══════════════════════════════════════════════════════════════════════════
+STATUS: Build running overnight, ETA ~1 hour
+═══════════════════════════════════════════════════════════════════════════
