@@ -1,244 +1,72 @@
 #!/usr/bin/env python3
 """
-Search across all DuckDB pointer indexes for a domain
-Returns all WARC file locations for URLs matching the domain
+Search across all parallel DuckDB pointer indexes
 """
-
 import duckdb
 import sys
-import json
 import time
 from pathlib import Path
-from typing import List, Dict, Any
+import multiprocessing as mp
 
 INDEX_DIR = Path("/storage/ccindex_duckdb/cc_pointers_by_collection")
-PARQUET_DIR = Path("/storage/ccindex_parquet")
+PARQUET_BASE = Path("/storage/ccindex_parquet/cc_pointers_by_year")
 
-def get_available_collections():
-    """Get list of all available collection indexes"""
-    master_db = INDEX_DIR / "master_index.duckdb"
-    
-    if not master_db.exists():
-        # Fallback: scan for .duckdb files
-        collections = []
-        for db_file in INDEX_DIR.glob("*.duckdb"):
-            if db_file.name != "master_index.duckdb":
-                collections.append(db_file.stem)
-        return sorted(collections)
-    
-    con = duckdb.connect(str(master_db), read_only=True)
-    collections = [row[0] for row in con.execute("SELECT collection FROM collection_indexes WHERE status = 'success' ORDER BY collection").fetchall()]
-    con.close()
-    return collections
+def get_collection_indexes():
+    return sorted(INDEX_DIR.glob("CC-MAIN-*.duckdb"))
 
-def search_collection(collection: str, domain: str, limit: int = None) -> List[Dict[str, Any]]:
-    """Search a single collection index for domain"""
-    db_path = INDEX_DIR / f"{collection}.duckdb"
-    
-    if not db_path.exists():
-        return []
-    
+def search_collection(args):
+    db_path, domain = args
+    collection = db_path.stem
     try:
         con = duckdb.connect(str(db_path), read_only=True)
-        
-        # Get all parquet files containing this domain
-        pointers = con.execute("""
-            SELECT parquet_file, row_offset, row_count
-            FROM domain_pointers
-            WHERE domain = ?
-            ORDER BY parquet_file
-        """, [domain]).fetchall()
-        
+        results = con.execute("SELECT domain, parquet_file, row_offset, row_count FROM domain_pointers WHERE domain = ? ORDER BY parquet_file", [domain]).fetchall()
         con.close()
-        
-        if not pointers:
-            return []
-        
-        # Read the actual data from parquet files
-        results = []
-        for parquet_file, row_offset, row_count in pointers:
-            parquet_path = PARQUET_DIR / parquet_file
-            
-            if not parquet_path.exists():
-                continue
-            
-            # Read the specific rows for this domain
-            con = duckdb.connect()
-            rows = con.execute(f"""
-                WITH numbered AS (
-                    SELECT 
-                        url,
-                        regexp_extract(url, 'https?://([^/:]+)', 1) as domain_extracted,
-                        timestamp,
-                        filename,
-                        offset,
-                        length,
-                        mime,
-                        status,
-                        digest,
-                        ROW_NUMBER() OVER (ORDER BY regexp_extract(url, 'https?://([^/:]+)', 1), url, timestamp) - 1 as row_num
-                    FROM read_parquet('{parquet_path}')
-                )
-                SELECT 
-                    url,
-                    domain_extracted,
-                    timestamp,
-                    filename,
-                    offset,
-                    length,
-                    mime,
-                    status,
-                    digest
-                FROM numbered
-                WHERE row_num >= {row_offset} 
-                  AND row_num < {row_offset + row_count}
-                  AND domain_extracted = ?
-                {'LIMIT ' + str(limit - len(results)) if limit and len(results) < limit else ''}
-            """, [domain]).fetchall()
-            con.close()
-            
-            for row in rows:
-                results.append({
-                    "url": row[0],
-                    "domain": row[1],
-                    "timestamp": row[2],
-                    "warc_file": row[3],
-                    "warc_offset": row[4],
-                    "warc_length": row[5],
-                    "mime": row[6],
-                    "status": row[7],
-                    "digest": row[8],
-                    "collection": collection,
-                    "parquet_file": parquet_file
-                })
-                
-                if limit and len(results) >= limit:
-                    break
-            
-            if limit and len(results) >= limit:
-                break
-        
-        return results
-        
+        return {"collection": collection, "results": results, "error": None}
     except Exception as e:
-        print(f"Error searching {collection}: {e}", file=sys.stderr)
-        return []
+        return {"collection": collection, "results": [], "error": str(e)}
 
-def search_domain(domain: str, collections: List[str] = None, limit: int = None, parallel: bool = True) -> List[Dict[str, Any]]:
-    """
-    Search for a domain across all or specified collections
+def search_domain(domain, max_workers=10):
+    start_time = time.time()
+    indexes = get_collection_indexes()
+    if not indexes:
+        print("No collection indexes found!")
+        return {}
     
-    Args:
-        domain: Domain name to search for (e.g., 'example.com')
-        collections: List of collections to search (None = all)
-        limit: Maximum number of results to return (None = all)
-        parallel: Whether to search collections in parallel
+    print(f"Searching {len(indexes)} collections for: {domain}")
+    search_args = [(db, domain) for db in indexes]
     
-    Returns:
-        List of dictionaries containing URL and WARC location info
-    """
-    if collections is None:
-        collections = get_available_collections()
+    with mp.Pool(max_workers) as pool:
+        search_results = pool.map(search_collection, search_args)
     
-    if not collections:
-        print("No collection indexes found!", file=sys.stderr)
-        return []
+    all_results = {}
+    total_pointers = 0
     
-    all_results = []
+    for result in search_results:
+        if result["results"]:
+            collection = result["collection"]
+            all_results[collection] = []
+            for domain_name, parquet_file, row_offset, row_count in result["results"]:
+                all_results[collection].append({
+                    "parquet_file": parquet_file,
+                    "row_offset": row_offset,
+                    "row_count": row_count
+                })
+                total_pointers += 1
     
-    if parallel:
-        from multiprocessing import Pool, cpu_count
-        num_workers = min(len(collections), cpu_count())
-        
-        with Pool(num_workers) as pool:
-            # Search all collections in parallel
-            args = [(col, domain, limit) for col in collections]
-            results_per_collection = pool.starmap(search_collection, args)
-        
-        for results in results_per_collection:
-            all_results.extend(results)
-            if limit and len(all_results) >= limit:
-                all_results = all_results[:limit]
-                break
-    else:
-        # Sequential search
-        for collection in collections:
-            results = search_collection(collection, domain, limit - len(all_results) if limit else None)
-            all_results.extend(results)
-            
-            if limit and len(all_results) >= limit:
-                break
+    elapsed = time.time() - start_time
+    print(f"\nSearch time: {elapsed:.3f}s")
+    print(f"Collections with results: {len(all_results)}")
+    print(f"Total pointers: {total_pointers}\n")
+    
+    for collection, pointers in sorted(all_results.items()):
+        print(f"{collection}:")
+        for p in pointers:
+            print(f"  {p['parquet_file']}: rows {p['row_offset']}-{p['row_offset']+p['row_count']} ({p['row_count']} records)")
     
     return all_results
 
-def main():
-    if len(sys.argv) < 2:
-        print("Usage: python search_parallel_duckdb_indexes.py <domain> [--limit N] [--collections COLL1,COLL2] [--sequential] [--json]")
-        print("\nExample:")
-        print("  python search_parallel_duckdb_indexes.py example.com")
-        print("  python search_parallel_duckdb_indexes.py example.com --limit 100")
-        print("  python search_parallel_duckdb_indexes.py example.com --collections CC-MAIN-2024-33,CC-MAIN-2024-38")
-        print("  python search_parallel_duckdb_indexes.py example.com --json")
-        sys.exit(1)
-    
-    domain = sys.argv[1]
-    limit = None
-    collections = None
-    parallel = True
-    output_json = False
-    
-    # Parse arguments
-    i = 2
-    while i < len(sys.argv):
-        if sys.argv[i] == "--limit" and i + 1 < len(sys.argv):
-            limit = int(sys.argv[i + 1])
-            i += 2
-        elif sys.argv[i] == "--collections" and i + 1 < len(sys.argv):
-            collections = sys.argv[i + 1].split(",")
-            i += 2
-        elif sys.argv[i] == "--sequential":
-            parallel = False
-            i += 1
-        elif sys.argv[i] == "--json":
-            output_json = True
-            i += 1
-        else:
-            i += 1
-    
-    start_time = time.time()
-    
-    # Perform search
-    results = search_domain(domain, collections, limit, parallel)
-    
-    elapsed = time.time() - start_time
-    
-    if output_json:
-        print(json.dumps({
-            "domain": domain,
-            "results": results,
-            "count": len(results),
-            "elapsed_seconds": elapsed
-        }, indent=2))
-    else:
-        print(f"\nFound {len(results)} results for '{domain}' in {elapsed:.3f}s\n")
-        
-        if results:
-            # Group by collection
-            by_collection = {}
-            for result in results:
-                coll = result["collection"]
-                if coll not in by_collection:
-                    by_collection[coll] = []
-                by_collection[coll].append(result)
-            
-            for collection, coll_results in sorted(by_collection.items()):
-                print(f"\n{collection} ({len(coll_results)} results):")
-                for i, result in enumerate(coll_results[:10], 1):
-                    print(f"  {i}. {result['url']}")
-                    print(f"     WARC: {result['warc_file']} @ {result['warc_offset']}")
-                
-                if len(coll_results) > 10:
-                    print(f"     ... and {len(coll_results) - 10} more")
-
 if __name__ == "__main__":
-    main()
+    if len(sys.argv) < 2:
+        print("Usage: search_parallel_duckdb_indexes.py <domain>")
+        sys.exit(1)
+    search_domain(sys.argv[1])

@@ -1,0 +1,4 @@
+nohup: ignoring input
+Found 5 collections to index
+Collections: CC-MAIN-2023-50, CC-MAIN-2024-10, CC-MAIN-2024-18, CC-MAIN-2024-22, CC-MAIN-2025-05
+Using 5 parallel workers (out of 56 CPUs, 5 collections)

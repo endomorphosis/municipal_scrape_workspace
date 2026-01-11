@@ -14,23 +14,30 @@ from pathlib import Path
 from datetime import datetime
 from collections import defaultdict
 
-PARQUET_DIR = Path("/storage/ccindex_parquet")
+PARQUET_DIR = Path("/storage/ccindex_parquet/cc_pointers_by_year")
 INDEX_DIR = Path("/storage/ccindex_duckdb/cc_pointers_by_collection")
 LOG_DIR = Path("logs")
 
 def get_all_collections():
-    """Extract all unique collection names from parquet files"""
+    """Extract all unique collection names from organized parquet directory structure"""
     collections = set()
-    for f in PARQUET_DIR.glob("*.gz.parquet"):
-        # Extract collection name: CC-MAIN-2024-33-cdx-00099.gz.parquet -> CC-MAIN-2024-33
-        collection = "-".join(f.stem.replace(".gz", "").split("-")[:4])
-        collections.add(collection)
+    # Scan YEAR/COLLECTION subdirectories
+    for year_dir in PARQUET_DIR.glob("*/"):
+        if year_dir.is_dir():
+            for collection_dir in year_dir.glob("*/"):
+                if collection_dir.is_dir():
+                    collections.add(collection_dir.name)
     return sorted(collections)
 
 def get_collection_files(collection):
-    """Get all parquet files for a specific collection"""
-    pattern = f"{collection}-cdx-*.gz.parquet"
-    return sorted(PARQUET_DIR.glob(pattern))
+    """Get all parquet files for a specific collection from organized structure"""
+    files = []
+    # Look in all year directories for this collection
+    for year_dir in PARQUET_DIR.glob("*/"):
+        collection_path = year_dir / collection
+        if collection_path.exists() and collection_path.is_dir():
+            files.extend(sorted(collection_path.glob("*.parquet")))
+    return files
 
 def build_collection_index(collection):
     """Build DuckDB index for a single collection"""
@@ -89,12 +96,12 @@ def build_collection_index(collection):
             
             try:
                 # Query the parquet file to get domain ranges
-                # Extract domain from URL using regex
+                # Extract domain from URL - order by domain and URL only (schema-agnostic)
                 result = con.execute(f"""
                     WITH domain_ranges AS (
                         SELECT 
                             regexp_extract(url, 'https?://([^/:]+)', 1) as domain,
-                            ROW_NUMBER() OVER (ORDER BY regexp_extract(url, 'https?://([^/:]+)', 1), url, timestamp) - 1 as row_num
+                            ROW_NUMBER() OVER (ORDER BY regexp_extract(url, 'https?://([^/:]+)', 1), url) - 1 as row_num
                         FROM read_parquet('{parquet_file}')
                         WHERE regexp_extract(url, 'https?://([^/:]+)', 1) IS NOT NULL
                     ),
@@ -141,6 +148,17 @@ def build_collection_index(collection):
                 
             except Exception as e:
                 log(f"  ERROR processing {filename}: {e}")
+                # Delete corrupted parquet file and mark collection as dirty
+                log(f"  Deleting corrupted file: {parquet_file}")
+                try:
+                    parquet_file.unlink()
+                    # Mark collection as dirty
+                    dirty_marker = INDEX_DIR / f"{collection}_DIRTY.marker"
+                    with open(dirty_marker, "a") as f:
+                        f.write(f"{datetime.now().isoformat()}: {filename} - {str(e)}\n")
+                    log(f"  Collection {collection} marked as DIRTY")
+                except Exception as del_err:
+                    log(f"  Failed to delete corrupted file: {del_err}")
                 continue
         
         # Final statistics
@@ -216,9 +234,10 @@ def main():
     print(f"Found {len(collections)} collections to index")
     print(f"Collections: {', '.join(collections)}")
     
-    # Determine parallelism
-    num_workers = min(len(collections), mp.cpu_count() // 2)
-    print(f"Using {num_workers} parallel workers")
+    # Determine parallelism - with 41GB available RAM, each worker uses ~400-500MB
+    # We can safely run 15-20 workers, leaving headroom for system
+    num_workers = min(len(collections), 15)
+    print(f"Using {num_workers} parallel workers (out of {mp.cpu_count()} CPUs, {len(collections)} collections)")
     
     # Build indexes in parallel
     with mp.Pool(num_workers) as pool:

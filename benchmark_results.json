@@ -1,118 +1,34 @@
 {
-  "timestamp": 1768155748.1229806,
+  "timestamp": 1768157955.8414557,
   "collections": [
     "CC-MAIN-2024-33",
     "CC-MAIN-2024-38",
     "CC-MAIN-2024-42"
   ],
-  "benchmarks": [
+  "results": [
     {
       "domain": "example.com",
-      "results_count": 0,
-      "min_time": 0.44022297859191895,
-      "max_time": 0.4770035743713379,
-      "avg_time": 0.46267032623291016,
-      "iterations": 3,
-      "test": "single_collection",
-      "collections": [
-        "CC-MAIN-2024-33"
-      ]
+      "results": 0,
+      "min_ms": 609.2922687530518,
+      "max_ms": 678.5721778869629,
+      "avg_ms": 632.465410232544,
+      "median_ms": 621.0436820983887
     },
     {
       "domain": "wikipedia.org",
-      "results_count": 0,
-      "min_time": 0.44267964363098145,
-      "max_time": 0.4768531322479248,
-      "avg_time": 0.45763731002807617,
-      "iterations": 3,
-      "test": "single_collection",
-      "collections": [
-        "CC-MAIN-2024-33"
-      ]
+      "results": 0,
+      "min_ms": 623.00705909729,
+      "max_ms": 658.0679416656494,
+      "avg_ms": 642.1821117401123,
+      "median_ms": 643.8820362091064
     },
     {
       "domain": "github.com",
-      "results_count": 0,
-      "min_time": 0.42952823638916016,
-      "max_time": 0.446453332901001,
-      "avg_time": 0.43531020482381183,
-      "iterations": 3,
-      "test": "single_collection",
-      "collections": [
-        "CC-MAIN-2024-33"
-      ]
-    },
-    {
-      "domain": "example.com",
-      "results_count": 0,
-      "min_time": 0.521615743637085,
-      "max_time": 0.5508484840393066,
-      "avg_time": 0.53803817431132,
-      "iterations": 3,
-      "test": "all_collections_parallel"
-    },
-    {
-      "domain": "wikipedia.org",
-      "results_count": 0,
-      "min_time": 0.5012969970703125,
-      "max_time": 0.5291023254394531,
-      "avg_time": 0.5158535639444987,
-      "iterations": 3,
-      "test": "all_collections_parallel"
-    },
-    {
-      "domain": "github.com",
-      "results_count": 0,
-      "min_time": 0.4977281093597412,
-      "max_time": 0.5317304134368896,
-      "avg_time": 0.515718142191569,
-      "iterations": 3,
-      "test": "all_collections_parallel"
-    },
-    {
-      "domain": "example.com",
-      "results_count": 0,
-      "min_time": 0.06267380714416504,
-      "max_time": 0.4594409465789795,
-      "avg_time": 0.19539578755696616,
-      "iterations": 3,
-      "test": "all_collections_sequential"
-    },
-    {
-      "domain": "wikipedia.org",
-      "results_count": 0,
-      "min_time": 0.06065106391906738,
-      "max_time": 0.06319260597229004,
-      "avg_time": 0.062256574630737305,
-      "iterations": 3,
-      "test": "all_collections_sequential"
-    },
-    {
-      "domain": "example.com",
-      "results_count": 0,
-      "min_time": 0.0744009017944336,
-      "max_time": 0.07883262634277344,
-      "avg_time": 0.0759276549021403,
-      "iterations": 3,
-      "test": "limited_100"
-    },
-    {
-      "domain": "wikipedia.org",
-      "results_count": 0,
-      "min_time": 0.07808637619018555,
-      "max_time": 0.10201573371887207,
-      "avg_time": 0.08635703722635905,
-      "iterations": 3,
-      "test": "limited_100"
-    },
-    {
-      "domain": "github.com",
-      "results_count": 0,
-      "min_time": 0.07644391059875488,
-      "max_time": 0.08122086524963379,
-      "avg_time": 0.07848811149597168,
-      "iterations": 3,
-      "test": "limited_100"
+      "results": 0,
+      "min_ms": 598.3598232269287,
+      "max_ms": 718.8849449157715,
+      "avg_ms": 646.6141223907471,
+      "median_ms": 628.875732421875
     }
   ]
 }
