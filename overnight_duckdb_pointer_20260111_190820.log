@@ -1,0 +1,33 @@
+nohup: ignoring input
+Starting DuckDB Pointer Index Build - Sun Jan 11 07:08:20 PM CET 2026
+Log file: /home/barberb/municipal_scrape_workspace.worktrees/worktree-2025-12-31T02-40-18/overnight_duckdb_pointer_20260111_190820.log
+Removing old database...
+Building pointer index...
+DB: /storage/ccindex_duckdb/domain_pointer.duckdb
+Files to consider: 0
+
+Processed shard files this run: 0
+Processed rows this run:       0
+New ingested files this run:  0
+New ingested rows this run:   0
+Build completed successfully - Sun Jan 11 07:08:21 PM CET 2026
+
+Running validation benchmark...
+DuckDB Pointer Index Benchmark
+Database: /storage/ccindex_duckdb/domain_pointer.duckdb
+
+Validating index completeness...
+Traceback (most recent call last):
+  File "/home/barberb/municipal_scrape_workspace.worktrees/worktree-2025-12-31T02-40-18/benchmark_duckdb_pointer_domain.py", line 187, in <module>
+    exit(main())
+         ^^^^^^
+  File "/home/barberb/municipal_scrape_workspace.worktrees/worktree-2025-12-31T02-40-18/benchmark_duckdb_pointer_domain.py", line 132, in main
+    if not validate_index_completeness(args.db, args.parquet_root):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/barberb/municipal_scrape_workspace.worktrees/worktree-2025-12-31T02-40-18/benchmark_duckdb_pointer_domain.py", line 76, in validate_index_completeness
+    con = duckdb.connect(str(db_path), read_only=True)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_duckdb.IOException: IO Error: Cannot open database "/storage/ccindex_duckdb/domain_pointer.duckdb" in read-only mode: database does not exist
+ect(str(db_path), read_only=True)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_duckdb.IOException: IO Error: Cannot open database "/storage/ccindex_duckdb/domain_pointer.duckdb" in read-only mode: database does not exist

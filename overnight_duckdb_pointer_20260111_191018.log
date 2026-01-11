@@ -1,0 +1,7 @@
+nohup: ignoring input
+Starting DuckDB Pointer Index Build - Sun Jan 11 07:10:18 PM CET 2026
+Log file: /home/barberb/municipal_scrape_workspace.worktrees/worktree-2025-12-31T02-40-18/overnight_duckdb_pointer_20260111_191018.log
+Building pointer index from sorted parquet files...
+Terminated
+rktree-2025-12-31T02-40-18/overnight_duckdb_pointer_20260111_191018.log
+Building pointer index from sorted parquet files...
