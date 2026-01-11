@@ -30,26 +30,32 @@ class PipelineMonitor:
             'collections': set()
         }
         
-        # Count .gz files
+        # Count .gz files (recursively)
         if self.ccindex_dir.exists():
-            counts['gz_files'] = len(list(self.ccindex_dir.glob("*.gz")))
+            counts['gz_files'] = len(list(self.ccindex_dir.rglob("*.gz")))
         
-        # Count parquet files and check if sorted
+        # Count parquet files and check if sorted (recursively)
         if self.parquet_dir.exists():
-            for pq in self.parquet_dir.glob("*.gz.parquet"):
+            for pq in self.parquet_dir.rglob("*.parquet"):
                 counts['parquet_files'] += 1
+                
                 # Extract collection name
-                name = pq.name.replace(".gz.parquet", "")
+                if pq.name.endswith('.gz.parquet'):
+                    name = pq.name.replace(".gz.parquet", "").replace(".sorted", "")
+                elif pq.name.endswith('.gz.sorted.parquet'):
+                    name = pq.name.replace(".gz.sorted.parquet", "")
+                else:
+                    name = pq.stem.replace(".sorted", "")
+                
                 counts['collections'].add(name)
                 
-                # Check if sorted (has .sorted marker or metadata)
-                sorted_marker = pq.with_suffix(pq.suffix + '.sorted')
-                if sorted_marker.exists():
+                # Check if sorted (has .sorted. in filename)
+                if '.sorted.' in pq.name or pq.name.endswith('.sorted.parquet'):
                     counts['sorted_files'] += 1
         
-        # Count pointer DBs
+        # Count pointer DBs (recursively)
         if self.pointer_dir.exists():
-            counts['pointer_dbs'] = len(list(self.pointer_dir.glob("*.duckdb")))
+            counts['pointer_dbs'] = len(list(self.pointer_dir.rglob("*.duckdb")))
         
         counts['collections'] = len(counts['collections'])
         return counts
