@@ -83,25 +83,44 @@ class CollectionValidator:
         """Check if parquet files exist for collection (numbered files)
         Returns: (files_found, expected_count, path)
         """
-        parquet_files = []
+        sorted_files = []
+        unsorted_files = []
+        collection_path = None
+        
+        # Extract year from collection name
+        year_match = collection.split('-')[2] if len(collection.split('-')) > 2 else None
         
         # Look in multiple locations:
-        # 1. Flat directory: CC-MAIN-2024-22-cdx-00000.gz.parquet
-        parquet_files.extend(self.parquet_dir.glob(f"{collection}-cdx-*.gz.parquet"))
-        parquet_files.extend(self.parquet_dir.glob(f"{collection}-cdx-*.gz.sorted.parquet"))
+        # 1. Organized subdirectories (primary location): /storage/ccindex_parquet/cc_pointers_by_collection/2024/CC-MAIN-2024-51/
+        if year_match:
+            collection_subdir = self.parquet_dir / "cc_pointers_by_collection" / year_match / collection
+            if collection_subdir.exists():
+                sorted_files.extend(collection_subdir.glob("cdx-*.gz.sorted.parquet"))
+                unsorted_files.extend(collection_subdir.glob("cdx-*.gz.parquet"))
+                # Remove .sorted.parquet from unsorted list
+                unsorted_files = [f for f in unsorted_files if '.sorted.parquet' not in f.name]
+                collection_path = collection_subdir
         
-        # 2. Organized subdirectories: cc_pointers_by_collection/2024/CC-MAIN-2024-51/cdx-*.gz.parquet
-        year_match = collection.split('-')[2]  # Extract year from CC-MAIN-YYYY-WW
-        collection_subdir = self.parquet_dir / "cc_pointers_by_collection" / year_match / collection
-        if collection_subdir.exists():
-            parquet_files.extend(collection_subdir.glob("cdx-*.gz.parquet"))
-            parquet_files.extend(collection_subdir.glob("cdx-*.gz.sorted.parquet"))
+        # 2. Year-organized: /storage/ccindex_parquet/2024/CC-MAIN-2024-51/
+        if not sorted_files and not unsorted_files and year_match:
+            year_subdir = self.parquet_dir / year_match / collection
+            if year_subdir.exists():
+                sorted_files.extend(year_subdir.glob("cdx-*.gz.sorted.parquet"))
+                unsorted_files.extend(year_subdir.glob("cdx-*.gz.parquet"))
+                unsorted_files = [f for f in unsorted_files if '.sorted.parquet' not in f.name]
+                collection_path = year_subdir
         
-        # Each file is either .gz.parquet or .gz.sorted.parquet (not both)
-        # So just count all parquet files
-        total_count = len(parquet_files)
+        # 3. Flat directory (legacy): CC-MAIN-2024-22-cdx-00000.gz.parquet
+        if not sorted_files and not unsorted_files:
+            sorted_files.extend(self.parquet_dir.glob(f"{collection}-cdx-*.gz.sorted.parquet"))
+            unsorted_files.extend(self.parquet_dir.glob(f"{collection}-cdx-*.gz.parquet"))
+            unsorted_files = [f for f in unsorted_files if '.sorted.parquet' not in f.name]
+            if sorted_files or unsorted_files:
+                collection_path = self.parquet_dir
+        
+        total_count = len(sorted_files) + len(unsorted_files)
         if total_count > 0:
-            return total_count, 300, self.parquet_dir
+            return total_count, 300, collection_path
         return 0, 300, None
     
     def check_parquet_sorted(self, parquet_path: Path) -> bool:
@@ -136,23 +155,39 @@ class CollectionValidator:
         """Check if all parquet files for a collection are sorted
         Returns: (sorted_count, total_count)
         """
-        # Check in multiple locations
-        sorted_files = list(self.parquet_dir.glob(f"{collection}-cdx-*.gz.sorted.parquet"))
-        unsorted_files = list(self.parquet_dir.glob(f"{collection}-cdx-*.gz.parquet"))
+        sorted_files = []
+        unsorted_files = []
         
-        # Also check organized subdirectories
+        # Extract year from collection name
         year_match = collection.split('-')[2] if len(collection.split('-')) > 2 else None
+        
+        # Check in multiple locations
+        # 1. Organized subdirectories (primary location)
         if year_match:
             collection_subdir = self.parquet_dir / "cc_pointers_by_collection" / year_match / collection
             if collection_subdir.exists():
                 sorted_files.extend(collection_subdir.glob("cdx-*.gz.sorted.parquet"))
                 unsorted_files.extend(collection_subdir.glob("cdx-*.gz.parquet"))
+                # Remove any .sorted.parquet from unsorted list
+                unsorted_files = [f for f in unsorted_files if '.sorted.parquet' not in f.name]
         
-        # Remove sorted files from unsorted list
-        unsorted_files = [f for f in unsorted_files if '.sorted.' not in f.name]
+        # 2. Year-organized subdirectories
+        if not sorted_files and not unsorted_files and year_match:
+            year_subdir = self.parquet_dir / year_match / collection
+            if year_subdir.exists():
+                sorted_files.extend(year_subdir.glob("cdx-*.gz.sorted.parquet"))
+                unsorted_files.extend(year_subdir.glob("cdx-*.gz.parquet"))
+                unsorted_files = [f for f in unsorted_files if '.sorted.parquet' not in f.name]
+        
+        # 3. Flat directory (legacy)
+        if not sorted_files and not unsorted_files:
+            sorted_files = list(self.parquet_dir.glob(f"{collection}-cdx-*.gz.sorted.parquet"))
+            unsorted_files = list(self.parquet_dir.glob(f"{collection}-cdx-*.gz.parquet"))
+            unsorted_files = [f for f in unsorted_files if '.sorted.parquet' not in f.name]
         
         total = len(sorted_files) + len(unsorted_files)
-        return len(sorted_files), total
+        sorted_count = len(sorted_files)
+        return sorted_count, total
     
     def check_duckdb_index_exists(self, collection: str) -> Tuple[bool, List[Path]]:
         """Check if DuckDB pointer index exists for collection"""
@@ -174,6 +209,12 @@ class CollectionValidator:
     
     def check_duckdb_index_sorted(self, db_path: Path) -> bool:
         """Check if DuckDB pointer index is sorted by domain"""
+        # Check for .sorted marker file first
+        sorted_marker = db_path.with_suffix('.sorted')
+        if sorted_marker.exists():
+            return True
+        
+        # Fallback: check actual data sorting (expensive)
         try:
             conn = duckdb.connect(str(db_path), read_only=True)
             
