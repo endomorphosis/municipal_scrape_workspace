@@ -325,16 +325,45 @@ class PipelineOrchestrator:
         ]
         
         try:
+            logger.info(f"Running: {' '.join(cmd)}")
             result = subprocess.run(cmd, capture_output=True, text=True, check=True)
+            
+            # Log output for debugging
+            if result.stdout:
+                logger.info(f"Build output: {result.stdout[:500]}")
+            if result.stderr:
+                logger.warning(f"Build stderr: {result.stderr[:500]}")
+                
             logger.info(f"Built DuckDB index for {collection}")
             
-            # Mark as sorted
-            sorted_marker = duckdb_path.with_suffix('.sorted')
-            sorted_marker.touch()
-            
-            return True
+            # Verify the index was created and has data
+            import duckdb
+            try:
+                conn = duckdb.connect(str(duckdb_path), read_only=True)
+                row_count = conn.execute("SELECT COUNT(*) FROM domain_pointers").fetchone()[0]
+                logger.info(f"  Index contains {row_count:,} domain pointers")
+                
+                # Check if sorted
+                first_domain = conn.execute("SELECT domain FROM domain_pointers ORDER BY domain LIMIT 1").fetchone()
+                if first_domain:
+                    logger.info(f"  First domain: {first_domain[0]}")
+                conn.close()
+                
+                # Mark as sorted
+                sorted_marker = duckdb_path.with_suffix('.sorted')
+                sorted_marker.touch()
+                
+                return True
+            except Exception as verify_error:
+                logger.error(f"Failed to verify index: {verify_error}")
+                return False
+                
         except subprocess.CalledProcessError as e:
             logger.error(f"Failed to build index for {collection}: {e}")
+            if e.stdout:
+                logger.error(f"stdout: {e.stdout}")
+            if e.stderr:
+                logger.error(f"stderr: {e.stderr}")
             return False
     
     def process_collection(self, collection: str) -> bool:
