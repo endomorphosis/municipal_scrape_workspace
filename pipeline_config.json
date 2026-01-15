@@ -1,7 +1,9 @@
 {
   "ccindex_root": "/storage/ccindex",
   "parquet_root": "/storage/ccindex_parquet",
-  "duckdb_root": "/storage/ccindex_duckdb/cc_pointers_by_collection",
+  "duckdb_collection_root": "/storage/ccindex_duckdb/cc_pointers_by_collection",
+  "duckdb_year_root": "/storage/ccindex_duckdb/cc_pointers_by_year",
+  "duckdb_master_root": "/storage/ccindex_duckdb/cc_pointers_master",
   "max_workers": 8,
   "memory_limit_gb": 10.0,
   "min_free_space_gb": 50.0,
