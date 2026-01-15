@@ -193,7 +193,12 @@ class CollectionValidator:
         """Check if DuckDB pointer index exists for collection"""
         db_files = []
         
-        # Check various pointer index locations
+        # Check the direct path first (pointer_dir is already the collection root)
+        direct_path = self.pointer_dir / f"{collection}.duckdb"
+        if direct_path.exists():
+            db_files.append(direct_path)
+        
+        # Check subdirectories for backward compatibility
         patterns = [
             f"cc_pointers_by_collection/{collection}.duckdb",
             f"cc_domain_by_collection/{collection}.duckdb",
@@ -202,15 +207,15 @@ class CollectionValidator:
         
         for pattern in patterns:
             path = self.pointer_dir / pattern
-            if path.exists():
+            if path.exists() and path not in db_files:
                 db_files.append(path)
         
         return len(db_files) > 0, db_files
     
     def check_duckdb_index_sorted(self, db_path: Path) -> bool:
         """Check if DuckDB pointer index is sorted by domain"""
-        # Check for .sorted marker file first
-        sorted_marker = db_path.with_suffix('.sorted')
+        # Check for .sorted marker file first (appended, not replaced)
+        sorted_marker = Path(str(db_path) + '.sorted')
         if sorted_marker.exists():
             return True
         

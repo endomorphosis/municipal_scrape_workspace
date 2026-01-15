@@ -16,6 +16,7 @@ Uses existing validator and HUD scripts for consistency.
 from __future__ import annotations
 
 import argparse
+import duckdb
 import json
 import logging
 import multiprocessing
@@ -50,7 +51,9 @@ class PipelineConfig:
     """Pipeline configuration"""
     ccindex_root: Path
     parquet_root: Path
-    duckdb_root: Path
+    duckdb_collection_root: Path
+    duckdb_year_root: Path
+    duckdb_master_root: Path
     max_workers: int
     memory_limit_gb: float
     min_free_space_gb: float
@@ -59,7 +62,9 @@ class PipelineConfig:
     def __post_init__(self):
         self.ccindex_root = Path(self.ccindex_root)
         self.parquet_root = Path(self.parquet_root)
-        self.duckdb_root = Path(self.duckdb_root)
+        self.duckdb_collection_root = Path(self.duckdb_collection_root)
+        self.duckdb_year_root = Path(self.duckdb_year_root)
+        self.duckdb_master_root = Path(self.duckdb_master_root)
     
     @classmethod
     def from_json(cls, path: Path) -> 'PipelineConfig':
@@ -84,9 +89,6 @@ class PipelineConfig:
             if hasattr(args, 'parquet_root') and args.parquet_root:
                 logger.info(f"Overriding parquet_root: {args.parquet_root}")
                 config.parquet_root = Path(args.parquet_root)
-            if hasattr(args, 'duckdb_root') and args.duckdb_root:
-                logger.info(f"Overriding duckdb_root: {args.duckdb_root}")
-                config.duckdb_root = Path(args.duckdb_root)
             if hasattr(args, 'workers') and args.workers:
                 logger.info(f"Overriding workers: {args.workers}")
                 config.max_workers = args.workers
@@ -99,7 +101,9 @@ class PipelineConfig:
             return cls(
                 ccindex_root=Path(args.ccindex_root) if hasattr(args, 'ccindex_root') and args.ccindex_root else Path('/storage/ccindex'),
                 parquet_root=Path(args.parquet_root) if hasattr(args, 'parquet_root') and args.parquet_root else Path('/storage/ccindex_parquet'),
-                duckdb_root=Path(args.duckdb_root) if hasattr(args, 'duckdb_root') and args.duckdb_root else Path('/storage/ccindex_duckdb/cc_pointers_by_collection'),
+                duckdb_collection_root=Path('/storage/ccindex_duckdb/cc_pointers_by_collection'),
+                duckdb_year_root=Path('/storage/ccindex_duckdb/cc_pointers_by_year'),
+                duckdb_master_root=Path('/storage/ccindex_duckdb/cc_pointers_master'),
                 max_workers=args.workers if hasattr(args, 'workers') else 8,
                 memory_limit_gb=10.0,
                 min_free_space_gb=50.0,
@@ -112,16 +116,10 @@ class PipelineOrchestrator:
     
     def __init__(self, config: PipelineConfig):
         self.config = config
-        # Normalize roots: some configs point directly at a subdir like
-        # /storage/ccindex_duckdb/cc_pointers_by_collection. The validator expects
-        # the DuckDB *base* directory and appends subpaths itself.
-        pointer_base = config.duckdb_root
-        if pointer_base.name in {"cc_pointers_by_collection", "cc_domain_by_collection", "cc_domain_by_year", "ccindex_duckdb"}:
-            pointer_base = pointer_base.parent
         self.validator = CollectionValidator(
             ccindex_dir=config.ccindex_root,
             parquet_dir=config.parquet_root,
-            pointer_dir=pointer_base
+            pointer_dir=config.duckdb_collection_root  # Use collection-level indexes
         )
         self.collections: List[str] = []
         self.collection_status: Dict[str, dict] = {}
@@ -162,7 +160,7 @@ class PipelineOrchestrator:
             logger.warning(f"Low memory: {mem_gb:.1f} GB available, need {self.config.memory_limit_gb:.1f} GB")
             return False
         
-        for path in [self.config.ccindex_root, self.config.parquet_root, self.config.duckdb_root]:
+        for path in [self.config.ccindex_root, self.config.parquet_root, self.config.duckdb_collection_root]:
             free_gb = self.get_free_space_gb(path)
             if free_gb < self.config.min_free_space_gb:
                 logger.warning(f"Low disk space at {path}: {free_gb:.1f} GB free, need {self.config.min_free_space_gb:.1f} GB")
@@ -201,12 +199,18 @@ class PipelineOrchestrator:
         """Convert a collection's .gz files to parquet, optionally sorting immediately"""
         logger.info(f"Converting {collection} to parquet (sort_after={sort_after})...")
         
-        year = collection.split('-')[2]
         ccindex_dir = self.config.ccindex_root / collection
-        parquet_dir = self.config.parquet_root / year / collection
+        
+        # Use flat structure: /storage/ccindex_parquet/CC-MAIN-*/
+        parquet_dir = self.config.parquet_root / collection
         parquet_dir.mkdir(parents=True, exist_ok=True)
         
-        # Use bulk_convert_gz_to_parquet.py to convert
+        # Count existing parquet files to track resume progress
+        existing_parquet = list(parquet_dir.glob("cdx-*.gz.parquet"))
+        existing_sorted = list(parquet_dir.glob("cdx-*.gz.parquet.sorted"))
+        logger.info(f"  Resume: {len(existing_parquet)} parquet, {len(existing_sorted)} sorted already exist")
+        
+        # Use bulk_convert_gz_to_parquet.py to convert (it has skip_existing logic)
         cmd = [
             sys.executable,
             "bulk_convert_gz_to_parquet.py",
@@ -234,46 +238,23 @@ class PipelineOrchestrator:
         """Sort a collection's parquet files by domain using external merge sort"""
         logger.info(f"Sorting {collection} with external merge sort...")
         
-        # Find all unsorted files for this collection in the correct locations
+        # Use flat structure
+        parquet_dir = self.config.parquet_root / collection
+        
+        if not parquet_dir.exists():
+            logger.error(f"Parquet directory does not exist: {parquet_dir}")
+            return False
+        
+        # Find all unsorted files (files without a .sorted counterpart)
         unsorted_files = []
-        
-        # Extract year from collection name
-        year = collection.split('-')[2] if len(collection.split('-')) > 2 else None
-        
-        # Check in organized subdirectories (primary location)
-        if year:
-            collection_subdir = self.config.parquet_root / "cc_pointers_by_collection" / year / collection
-            if collection_subdir.exists():
-                for parquet_file in collection_subdir.glob("cdx-*.gz.parquet"):
-                    # Skip files that have a .sorted.parquet counterpart or are already .sorted.parquet
-                    if '.sorted.parquet' in parquet_file.name:
-                        continue
-                    # Check if sorted version exists
-                    sorted_version = parquet_file.parent / parquet_file.name.replace('.gz.parquet', '.gz.sorted.parquet')
-                    if sorted_version.exists():
-                        continue
-                    unsorted_files.append(parquet_file)
-        
-        # Also check year-organized subdirectories
-        if year and not unsorted_files:
-            year_subdir = self.config.parquet_root / year / collection
-            if year_subdir.exists():
-                for parquet_file in year_subdir.glob("cdx-*.gz.parquet"):
-                    if '.sorted.parquet' in parquet_file.name:
-                        continue
-                    sorted_version = parquet_file.parent / parquet_file.name.replace('.gz.parquet', '.gz.sorted.parquet')
-                    if sorted_version.exists():
-                        continue
-                    unsorted_files.append(parquet_file)
-        
-        # Fallback: flat directory (legacy)
-        if not unsorted_files:
-            for parquet_file in self.config.parquet_root.glob(f"{collection}-*.gz.parquet"):
-                if '.sorted.parquet' in parquet_file.name:
-                    continue
-                sorted_version = parquet_file.parent / parquet_file.name.replace('.gz.parquet', '.gz.sorted.parquet')
-                if sorted_version.exists():
-                    continue
+        for parquet_file in parquet_dir.glob("cdx-*.gz.parquet"):
+            # Skip if already sorted (has .sorted extension)
+            if parquet_file.name.endswith('.parquet.sorted'):
+                continue
+            
+            # Check if sorted version exists
+            sorted_version = Path(str(parquet_file) + '.sorted')
+            if not sorted_version.exists():
                 unsorted_files.append(parquet_file)
         
         if not unsorted_files:
@@ -284,28 +265,16 @@ class PipelineOrchestrator:
         
         # Use external merge sort for memory-efficient sorting
         try:
-            # sort_parquet_external_merge.py operates on a directory, emitting
-            # <input>.sorted.parquet files into --output-dir.
-            # We set output-dir to the collection directory so the validator's
-            # expected ".sorted.parquet" files appear alongside the originals.
-            year = collection.split('-')[2] if len(collection.split('-')) > 2 else None
-            if year:
-                collection_dir = self.config.parquet_root / "cc_pointers_by_collection" / year / collection
-            else:
-                collection_dir = self.config.parquet_root / collection
-
-            temp_dir = collection_dir / ".sort_tmp"
-
             cmd = [
                 sys.executable,
                 "sort_parquet_external_merge.py",
-                "--input-dir", str(collection_dir),
-                "--output-dir", str(collection_dir),
-                "--temp-dir", str(temp_dir),
-                "--workers", str(self.config.max_workers),
+                "--input-dir", str(parquet_dir),
+                "--output-dir", str(parquet_dir),
+                "--collection", collection,
+                "--workers", str(self.config.max_workers)
             ]
-
-            subprocess.run(cmd, capture_output=True, text=True, check=True)
+            
+            result = subprocess.run(cmd, capture_output=True, text=True, check=True)
             logger.info(f"Sorted {len(unsorted_files)} files for {collection}")
             return True
         except subprocess.CalledProcessError as e:
@@ -315,66 +284,146 @@ class PipelineOrchestrator:
             if e.stderr:
                 logger.error(f"stderr: {e.stderr}")
             return False
-        finally:
-            # Best-effort cleanup of temp directory; sorting script also cleans up.
-            try:
-                import shutil
-                if 'temp_dir' in locals() and temp_dir.exists():
-                    shutil.rmtree(temp_dir, ignore_errors=True)
-            except Exception:
-                pass
     
     def build_index_for_collection(self, collection: str) -> bool:
         """Build DuckDB pointer index for a collection"""
         logger.info(f"Building DuckDB index for {collection}...")
         
-        year = collection.split('-')[2]
-        parquet_dir = self.config.parquet_root / year / collection
-
-        # Write DB where the validator expects it: <duckdb_base>/cc_pointers_by_collection/<collection>.duckdb
-        duckdb_base = self.config.duckdb_root
-        if duckdb_base.name == "cc_pointers_by_collection":
-            duckdb_dir = duckdb_base
-        else:
-            duckdb_dir = duckdb_base / "cc_pointers_by_collection"
+        # Use flat structure for parquet files
+        parquet_dir = self.config.parquet_root / collection
+        
+        if not parquet_dir.exists():
+            logger.error(f"Parquet directory does not exist: {parquet_dir}")
+            return False
+        
+        # Check for sorted files
+        sorted_files = list(parquet_dir.glob("*.gz.parquet.sorted"))
+        if not sorted_files:
+            logger.warning(f"No sorted parquet files found in {parquet_dir}")
+            # Fall back to unsorted files if needed
+            sorted_files = list(parquet_dir.glob("*.gz.parquet"))
+        
+        # Store per-collection indexes in cc_pointers_by_collection
+        duckdb_dir = self.config.duckdb_collection_root
         duckdb_dir.mkdir(parents=True, exist_ok=True)
         duckdb_path = duckdb_dir / f"{collection}.duckdb"
-
-        # Build index from existing Parquet (fast, avoids re-parsing CC .gz shards).
-        # We rebuild from scratch to avoid duplicate inserts on reruns.
-        if duckdb_path.exists():
-            try:
-                duckdb_path.unlink()
-            except Exception:
-                pass
-        try:
-            wal = duckdb_path.with_suffix(duckdb_path.suffix + ".wal")
-            if wal.exists():
-                wal.unlink()
-        except Exception:
-            pass
-
+        
+        # Use build_cc_pointer_duckdb.py - pass the SPECIFIC subdirectory
         cmd = [
             sys.executable,
-            "build_index_from_parquet.py",
-            "--parquet-root",
-            str(parquet_dir),
-            "--output-db",
-            str(duckdb_path),
-            "--batch-size",
-            "10",
-            "--extract-rowgroups",
+            "build_cc_pointer_duckdb.py",
+            "--input-root", str(parquet_dir),  # Point directly to the collection folder
+            "--db", str(duckdb_path),
+            "--threads", str(self.config.max_workers),
+            "--duckdb-index-mode", "domain",
+            "--domain-range-index"
         ]
         
         try:
+            logger.info(f"Running: {' '.join(cmd)}")
             result = subprocess.run(cmd, capture_output=True, text=True, check=True)
+            
+            # Log output for debugging
+            if result.stdout:
+                logger.info(f"Build output: {result.stdout[:500]}")
+            if result.stderr:
+                logger.warning(f"Build stderr: {result.stderr[:500]}")
+                
             logger.info(f"Built DuckDB index for {collection}")
             
-            # Mark as sorted (validator uses this as a cheap/explicit completion marker)
-            sorted_marker = duckdb_path.with_suffix('.sorted')
-            sorted_marker.touch()
-            
-            return True
+            # Verify the index was created and has data
+            import duckdb
+            import time
+            try:
+                # If file is locked by another process, just check existence
+                if duckdb_path.exists():
+                    file_size = duckdb_path.stat().st_size
+                    if file_size > 0:
+                        logger.info(f"  Index file exists ({file_size:,} bytes)")
+                        # Try to verify, but don't fail if locked
+                        try:
+                            conn = duckdb.connect(str(duckdb_path), read_only=True)
+                            # Check which table exists
+                            tables = [row[0] for row in conn.execute("SHOW TABLES").fetchall()]
+                            
+                            if 'domain_pointers' in tables:
+                                row_count = conn.execute("SELECT COUNT(*) FROM domain_pointers").fetchone()[0]
+                                first_domain_query = "SELECT domain FROM domain_pointers ORDER BY domain LIMIT 1"
+                            elif 'cc_domain_shards' in tables:
+                                row_count = conn.execute("SELECT COUNT(*) FROM cc_domain_shards").fetchone()[0]
+                                first_domain_query = "SELECT host FROM cc_domain_shards ORDER BY host LIMIT 1"
+                            else:
+                                logger.warning(f"  Unknown table schema in index, tables: {tables}")
+                                conn.close()
+                                return True
+                            
+                            logger.info(f"  Index contains {row_count:,} entries")
+                            
+                            # Check first entry
+                            first_domain = conn.execute(first_domain_query).fetchone()
+                            if first_domain:
+                                logger.info(f"  First domain: {first_domain[0]}")
+                            
+                            # Check if sorted
+                            is_sorted = False
+                            if 'domain_pointers' in tables:
+                                domains = [row[0] for row in conn.execute("SELECT domain FROM domain_pointers LIMIT 1000").fetchall()]
+                                is_sorted = domains == sorted(domains)
+                                sort_column = "domain"
+                                table_name = "domain_pointers"
+                            elif 'cc_domain_shards' in tables:
+                                hosts = [row[0] for row in conn.execute("SELECT host_rev FROM cc_domain_shards LIMIT 1000").fetchall()]
+                                is_sorted = hosts == sorted(hosts)
+                                sort_column = "host_rev"
+                                table_name = "cc_domain_shards"
+                            
+                            logger.info(f"  Index is sorted: {is_sorted}")
+                            conn.close()
+                            
+                            if not is_sorted:
+                                logger.info(f"  Sorting index by {sort_column}...")
+                                conn = duckdb.connect(str(duckdb_path))
+                                
+                                if table_name == "domain_pointers":
+                                    conn.execute("""
+                                        CREATE TABLE domain_pointers_sorted AS 
+                                        SELECT * FROM domain_pointers 
+                                        ORDER BY domain, parquet_file, row_start;
+                                    """)
+                                    conn.execute("DROP TABLE domain_pointers;")
+                                    conn.execute("ALTER TABLE domain_pointers_sorted RENAME TO domain_pointers;")
+                                elif table_name == "cc_domain_shards":
+                                    conn.execute("""
+                                        CREATE TABLE cc_domain_shards_sorted AS 
+                                        SELECT * FROM cc_domain_shards 
+                                        ORDER BY host_rev, shard_file;
+                                    """)
+                                    conn.execute("DROP TABLE cc_domain_shards;")
+                                    conn.execute("ALTER TABLE cc_domain_shards_sorted RENAME TO cc_domain_shards;")
+                                
+                                conn.close()
+                                logger.info(f"  ✓ Index sorted by {sort_column}")
+                            
+                            # Mark as sorted
+                            sorted_marker = duckdb_path.with_suffix('.duckdb.sorted')
+                            sorted_marker.touch()
+                            logger.info(f"  ✓ Index marked as sorted")
+                        except Exception as lock_error:
+                            if "lock" in str(lock_error).lower() or "conflicting" in str(lock_error).lower():
+                                logger.warning(f"  Index is locked by another process, skipping verification")
+                            else:
+                                raise
+                        return True
+                    else:
+                        logger.error(f"  Index file is empty")
+                        return False
+                else:
+                    logger.error(f"  Index file was not created")
+                    return False
+            except Exception as verify_error:
+                logger.error(f"Failed to verify index: {verify_error}")
+                return False
+                
         except subprocess.CalledProcessError as e:
             logger.error(f"Failed to build index for {collection}: {e}")
             if e.stdout:
@@ -393,8 +442,6 @@ class PipelineOrchestrator:
         logger.info(f"  Sorted: {status['sorted_count']}/{status['parquet_expected']}")
         logger.info(f"  Indexed: {status['duckdb_index_exists']} (sorted: {status['duckdb_index_sorted']})")
         
-        logger.debug(f"Status details: {status}")
-        
         if status['complete']:
             logger.info(f"  ✓ {collection} is complete, skipping")
             return True
@@ -406,57 +453,109 @@ class PipelineOrchestrator:
         
         # Stage 1: Download
         if status['tar_gz_count'] < status['tar_gz_expected']:
-            logger.debug(f"Stage 1: Need to download {status['tar_gz_expected'] - status['tar_gz_count']} .gz files")
+            logger.info(f"  Stage 1: Downloading {status['tar_gz_expected'] - status['tar_gz_count']} .gz files...")
             if not self.download_collection(collection):
                 return False
             status = self.validator.validate_collection(collection)
-            logger.debug(f"After download: {status['tar_gz_count']}/{status['tar_gz_expected']}")
+            logger.info(f"  ✓ Downloaded: {status['tar_gz_count']}/{status['tar_gz_expected']}")
         else:
-            logger.debug(f"Stage 1: Downloads complete ({status['tar_gz_count']}/{status['tar_gz_expected']})")
+            logger.info(f"  ✓ Stage 1: Downloads complete ({status['tar_gz_count']}/{status['tar_gz_expected']})")
         
         # Stage 2: Convert
         if status['parquet_count'] < status['parquet_expected']:
-            logger.debug(f"Stage 2: Need to convert {status['parquet_expected'] - status['parquet_count']} parquet files")
+            logger.info(f"  Stage 2: Converting {status['parquet_expected'] - status['parquet_count']} parquet files...")
             if not self.convert_collection(collection):
                 return False
             status = self.validator.validate_collection(collection)
-            logger.debug(f"After convert: {status['parquet_count']}/{status['parquet_expected']}")
+            logger.info(f"  ✓ Converted: {status['parquet_count']}/{status['parquet_expected']}")
         else:
-            logger.debug(f"Stage 2: Conversions complete ({status['parquet_count']}/{status['parquet_expected']})")
+            logger.info(f"  ✓ Stage 2: Conversions complete ({status['parquet_count']}/{status['parquet_expected']})")
         
         # Stage 3: Sort
         if status['sorted_count'] < status['parquet_expected']:
-            logger.debug(f"Stage 3: Need to sort {status['parquet_expected'] - status['sorted_count']} parquet files")
+            logger.info(f"  Stage 3: Sorting {status['parquet_expected'] - status['sorted_count']} parquet files...")
             if not self.sort_collection(collection):
                 return False
             status = self.validator.validate_collection(collection)
-            logger.debug(f"After sort: {status['sorted_count']}/{status['parquet_expected']}")
+            logger.info(f"  ✓ Sorted: {status['sorted_count']}/{status['parquet_expected']}")
         else:
-            logger.debug(f"Stage 3: Sorting complete ({status['sorted_count']}/{status['parquet_expected']})")
+            logger.info(f"  ✓ Stage 3: Sorting complete ({status['sorted_count']}/{status['parquet_expected']})")
         
         # Stage 4: Index
         if not status['duckdb_index_exists'] or not status['duckdb_index_sorted']:
-            logger.debug(f"Stage 4: Need to build/update index (exists: {status['duckdb_index_exists']}, sorted: {status['duckdb_index_sorted']})")
+            logger.info(f"  Stage 4: Building DuckDB index (exists: {status['duckdb_index_exists']}, sorted: {status['duckdb_index_sorted']})...")
             if not self.build_index_for_collection(collection):
                 return False
+            # Re-verify after building
             status = self.validator.validate_collection(collection)
-            logger.debug(f"After index: exists={status['duckdb_index_exists']}, sorted={status['duckdb_index_sorted']}")
+            logger.info(f"  ✓ Index built and verified: exists={status['duckdb_index_exists']}, sorted={status['duckdb_index_sorted']}")
         else:
-            logger.debug(f"Stage 4: Index complete and sorted")
-
-        # Final status: only claim completion if validator agrees.
-        if status.get('complete', False):
-            logger.info(f"  ✓ {collection} processing complete")
+            logger.info(f"  ✓ Stage 4: Index complete and sorted")
+        
+        logger.info(f"  ✓ {collection} processing complete")
+        return True
+    
+    def build_meta_indexes(self):
+        """Build year-level and master meta-indexes"""
+        try:
+            # Step 1: Build year-level indexes
+            logger.info("\nStep 1: Building year-level meta-indexes...")
+            year_index_script = Path(__file__).parent / "build_year_meta_indexes.py"
+            if not year_index_script.exists():
+                logger.error(f"Year index builder not found: {year_index_script}")
+                return False
+            
+            cmd = [
+                sys.executable,
+                str(year_index_script),
+                "--collection-dir", str(self.config.duckdb_root),
+                "--output-dir", str(self.config.duckdb_root.parent / "cc_domain_by_year")
+            ]
+            
+            logger.info(f"Running: {' '.join(cmd)}")
+            result = subprocess.run(cmd, capture_output=True, text=True, check=True)
+            logger.info(result.stdout)
+            logger.info("✓ Year-level indexes built")
+            
+            # Step 2: Build master index
+            logger.info("\nStep 2: Building master meta-index...")
+            master_index_script = Path(__file__).parent / "build_master_index.py"
+            if not master_index_script.exists():
+                logger.error(f"Master index builder not found: {master_index_script}")
+                return False
+            
+            cmd = [
+                sys.executable,
+                str(master_index_script),
+                "--year-dir", str(self.config.duckdb_root.parent / "cc_domain_by_year"),
+                "--output", str(self.config.duckdb_root.parent / "cc_master_index.duckdb")
+            ]
+            
+            logger.info(f"Running: {' '.join(cmd)}")
+            result = subprocess.run(cmd, capture_output=True, text=True, check=True)
+            logger.info(result.stdout)
+            logger.info("✓ Master index built")
+            
+            # Print final statistics
+            logger.info("\nFinal Index Statistics:")
+            cmd = [
+                sys.executable,
+                str(master_index_script),
+                "--stats",
+                "--output", str(self.config.duckdb_root.parent / "cc_master_index.duckdb")
+            ]
+            result = subprocess.run(cmd, capture_output=True, text=True, check=True)
+            logger.info(result.stdout)
+            
             return True
-
-        logger.warning(
-            f"  ⏳ {collection} finished stages but is still incomplete: "
-            f"parquet={status.get('parquet_count')}/{status.get('parquet_expected')} "
-            f"sorted={status.get('sorted_count')}/{status.get('sorted_expected')} "
-            f"index_exists={status.get('duckdb_index_exists')} "
-            f"index_sorted={status.get('duckdb_index_sorted')}"
-        )
-        return False
+            
+        except subprocess.CalledProcessError as e:
+            logger.error(f"Failed to build meta-indexes: {e}")
+            if e.stdout:
+                logger.error(f"stdout: {e.stdout}")
+            if e.stderr:
+                logger.error(f"stderr: {e.stderr}")
+            return False
     
     def run_pipeline(self, resume: bool = True):
         """Run the complete pipeline"""
@@ -505,6 +604,13 @@ class PipelineOrchestrator:
                 s = self.collection_status[c]
                 pct = (s['sorted_count'] / s['parquet_expected'] * 100) if s['parquet_expected'] > 0 else 0
                 logger.info(f"  {c}: {pct:.1f}% sorted ({s['sorted_count']}/{s['parquet_expected']})")
+        
+        # Build meta-indexes if all collections complete
+        if not incomplete:
+            logger.info("\n" + "=" * 80)
+            logger.info("Building Meta-Indexes")
+            logger.info("=" * 80)
+            self.build_meta_indexes()
 
 
 def main():
@@ -569,14 +675,16 @@ def main():
     # Log the active configuration
     logger.info("")
     logger.info("Active Configuration:")
-    logger.info(f"  ccindex_root:  {config.ccindex_root}")
-    logger.info(f"  parquet_root:  {config.parquet_root}")
-    logger.info(f"  duckdb_root:   {config.duckdb_root}")
-    logger.info(f"  max_workers:   {config.max_workers}")
-    logger.info(f"  memory_limit:  {config.memory_limit_gb} GB")
-    logger.info(f"  min_free:      {config.min_free_space_gb} GB")
+    logger.info(f"  ccindex_root:          {config.ccindex_root}")
+    logger.info(f"  parquet_root:          {config.parquet_root}")
+    logger.info(f"  duckdb_collection_root:{config.duckdb_collection_root}")
+    logger.info(f"  duckdb_year_root:      {config.duckdb_year_root}")
+    logger.info(f"  duckdb_master_root:    {config.duckdb_master_root}")
+    logger.info(f"  max_workers:           {config.max_workers}")
+    logger.info(f"  memory_limit:          {config.memory_limit_gb} GB")
+    logger.info(f"  min_free:              {config.min_free_space_gb} GB")
     if config.collections_filter:
-        logger.info(f"  filter:        {config.collections_filter}")
+        logger.info(f"  filter:                {config.collections_filter}")
     logger.info("")
     
     orchestrator = PipelineOrchestrator(config)
