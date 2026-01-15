@@ -123,6 +123,33 @@ class PipelineOrchestrator:
         )
         self.collections: List[str] = []
         self.collection_status: Dict[str, dict] = {}
+
+    def _collection_year(self, collection: str) -> Optional[str]:
+        parts = collection.split('-')
+        if len(parts) >= 3 and parts[2].isdigit():
+            return parts[2]
+        return None
+
+    def _get_collection_parquet_dir(self, collection: str) -> Path:
+        """Return the on-disk parquet directory for a collection.
+
+        Prefer the validator's primary layout:
+          <parquet_root>/cc_pointers_by_collection/<year>/<collection>/
+        Fall back to:
+          <parquet_root>/<year>/<collection>/
+          <parquet_root>/<collection>/
+        """
+
+        year = self._collection_year(collection)
+        if year:
+            primary = self.config.parquet_root / "cc_pointers_by_collection" / year / collection
+            if primary.exists():
+                return primary
+            secondary = self.config.parquet_root / year / collection
+            if secondary.exists():
+                return secondary
+
+        return self.config.parquet_root / collection
         
     def get_all_collections(self) -> List[str]:
         """Get all available CC collections using validator"""
@@ -201,13 +228,17 @@ class PipelineOrchestrator:
         
         ccindex_dir = self.config.ccindex_root / collection
         
-        # Use flat structure: /storage/ccindex_parquet/CC-MAIN-*/
-        parquet_dir = self.config.parquet_root / collection
+        # Prefer validator's primary structure.
+        year = self._collection_year(collection)
+        if year:
+            parquet_dir = self.config.parquet_root / "cc_pointers_by_collection" / year / collection
+        else:
+            parquet_dir = self.config.parquet_root / collection
         parquet_dir.mkdir(parents=True, exist_ok=True)
         
         # Count existing parquet files to track resume progress
         existing_parquet = list(parquet_dir.glob("cdx-*.gz.parquet"))
-        existing_sorted = list(parquet_dir.glob("cdx-*.gz.parquet.sorted"))
+        existing_sorted = list(parquet_dir.glob("cdx-*.gz.sorted.parquet"))
         logger.info(f"  Resume: {len(existing_parquet)} parquet, {len(existing_sorted)} sorted already exist")
         
         # Use bulk_convert_gz_to_parquet.py to convert (it has skip_existing logic)
@@ -235,69 +266,57 @@ class PipelineOrchestrator:
             return False
     
     def sort_collection(self, collection: str) -> bool:
-        """Sort a collection's parquet files by domain using external merge sort"""
-        logger.info(f"Sorting {collection} with external merge sort...")
-        
-        # Use flat structure
-        parquet_dir = self.config.parquet_root / collection
+        """Sort a collection's parquet files by (host_rev, url, ts).
+
+        Uses validate_and_mark_sorted.py which:
+        - validates files,
+        - sorts any unsorted files, and
+        - renames them to *.gz.sorted.parquet (validator convention).
+        """
+        logger.info(f"Sorting {collection} (validate + sort + mark)...")
+
+        parquet_dir = self._get_collection_parquet_dir(collection)
         
         if not parquet_dir.exists():
             logger.error(f"Parquet directory does not exist: {parquet_dir}")
             return False
         
-        # Find all unsorted files (files without a .sorted counterpart)
-        unsorted_files = []
-        for parquet_file in parquet_dir.glob("cdx-*.gz.parquet"):
-            # Skip if already sorted (has .sorted extension)
-            if parquet_file.name.endswith('.parquet.sorted'):
-                continue
-            
-            # Check if sorted version exists
-            sorted_version = Path(str(parquet_file) + '.sorted')
-            if not sorted_version.exists():
-                unsorted_files.append(parquet_file)
-        
-        if not unsorted_files:
-            logger.info(f"No unsorted files found for {collection}")
-            return True
-        
-        logger.info(f"Found {len(unsorted_files)} unsorted files for {collection}")
-        
-        # Use external merge sort for memory-efficient sorting
         try:
             cmd = [
                 sys.executable,
-                "sort_parquet_external_merge.py",
-                "--input-dir", str(parquet_dir),
-                "--output-dir", str(parquet_dir),
-                "--collection", collection,
-                "--workers", str(self.config.max_workers)
+                "validate_and_mark_sorted.py",
+                "--parquet-root", str(parquet_dir),
+                "--sort-unsorted",
+                "--workers", str(self.config.max_workers),
             ]
-            
-            result = subprocess.run(cmd, capture_output=True, text=True, check=True)
-            logger.info(f"Sorted {len(unsorted_files)} files for {collection}")
+
+            result = subprocess.run(cmd, capture_output=True, text=True)
+            if result.stdout:
+                logger.info(result.stdout[-2000:])
+            if result.returncode != 0:
+                if result.stderr:
+                    logger.error(f"stderr: {result.stderr[-2000:]}")
+                logger.error(f"Failed to sort/mark parquet for {collection} (exit {result.returncode})")
+                return False
+
+            logger.info(f"Sorted/marked parquet files for {collection}")
             return True
-        except subprocess.CalledProcessError as e:
+        except Exception as e:
             logger.error(f"Failed to sort {collection}: {e}")
-            if e.stdout:
-                logger.error(f"stdout: {e.stdout}")
-            if e.stderr:
-                logger.error(f"stderr: {e.stderr}")
             return False
     
     def build_index_for_collection(self, collection: str) -> bool:
         """Build DuckDB pointer index for a collection"""
         logger.info(f"Building DuckDB index for {collection}...")
         
-        # Use flat structure for parquet files
-        parquet_dir = self.config.parquet_root / collection
+        parquet_dir = self._get_collection_parquet_dir(collection)
         
         if not parquet_dir.exists():
             logger.error(f"Parquet directory does not exist: {parquet_dir}")
             return False
         
         # Check for sorted files
-        sorted_files = list(parquet_dir.glob("*.gz.parquet.sorted"))
+        sorted_files = list(parquet_dir.glob("*.gz.sorted.parquet"))
         if not sorted_files:
             logger.warning(f"No sorted parquet files found in {parquet_dir}")
             # Fall back to unsorted files if needed
@@ -492,8 +511,20 @@ class PipelineOrchestrator:
         else:
             logger.info(f"  ✓ Stage 4: Index complete and sorted")
         
-        logger.info(f"  ✓ {collection} processing complete")
-        return True
+        # Final re-validation gate: only claim completion if validator agrees.
+        status = self.validator.validate_collection(collection)
+        if status.get('complete'):
+            logger.info(f"  ✓ {collection} processing complete")
+            return True
+
+        logger.warning(
+            f"  ⚠️  {collection} finished stages but is still incomplete: "
+            f"downloaded={status['tar_gz_count']}/{status['tar_gz_expected']} "
+            f"converted={status['parquet_count']}/{status['parquet_expected']} "
+            f"sorted={status['sorted_count']}/{status['parquet_expected']} "
+            f"indexed={status['duckdb_index_exists']} (sorted={status['duckdb_index_sorted']})"
+        )
+        return False
     
     def build_meta_indexes(self):
         """Build year-level and master meta-indexes"""

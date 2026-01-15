@@ -144,8 +144,14 @@ def convert_collection(
     work = []
     for gz_file in gz_files:
         output_file = output_dir / f"{gz_file.name}.parquet"
-        if skip_existing and output_file.exists():
-            logger.info(f"Skipping existing {output_file.name}")
+        sorted_output_file = output_dir / f"{gz_file.name}.sorted.parquet"
+
+        # Treat already-sorted outputs as "already converted" to avoid duplicating work.
+        if skip_existing and (output_file.exists() or sorted_output_file.exists()):
+            if sorted_output_file.exists() and not output_file.exists():
+                logger.info(f"Skipping existing sorted {sorted_output_file.name}")
+            else:
+                logger.info(f"Skipping existing {output_file.name}")
             continue
         work.append((gz_file, output_file))
     
