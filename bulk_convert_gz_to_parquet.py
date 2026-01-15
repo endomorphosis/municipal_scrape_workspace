@@ -21,6 +21,36 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s [%(levelname)s] %(me
 logger = logging.getLogger(__name__)
 
 
+def _coerce_int(value: object) -> Optional[int]:
+    """Best-effort conversion of CC index numeric fields.
+
+    Common Crawl CDX JSON often represents numeric fields as strings (e.g. "200").
+    We normalize those to Python ints so Arrow can write typed parquet reliably.
+    """
+
+    if value is None:
+        return None
+    if isinstance(value, bool):
+        # Avoid treating booleans as ints for these fields.
+        return None
+    if isinstance(value, int):
+        return value
+    if isinstance(value, float):
+        # Some parsers may yield floats; only accept integral floats.
+        if value.is_integer():
+            return int(value)
+        return None
+    if isinstance(value, str):
+        text = value.strip()
+        if not text or text == "-":
+            return None
+        try:
+            return int(text)
+        except ValueError:
+            return None
+    return None
+
+
 def convert_gz_to_parquet(gz_path: Path, output_path: Path, chunk_size: int = 100000) -> bool:
     """Convert a single .gz file to parquet"""
     try:
@@ -48,12 +78,12 @@ def convert_gz_to_parquet(gz_path: Path, output_path: Path, chunk_size: int = 10
                     'surt': surt,
                     'timestamp': timestamp,
                     'url': json_data.get('url'),
-                    'status': json_data.get('status'),
+                    'status': _coerce_int(json_data.get('status')),
                     'mime': json_data.get('mime'),
                     'digest': json_data.get('digest'),
                     'warc_filename': json_data.get('filename'),
-                    'warc_offset': json_data.get('offset'),
-                    'warc_length': json_data.get('length')
+                    'warc_offset': _coerce_int(json_data.get('offset')),
+                    'warc_length': _coerce_int(json_data.get('length')),
                 })
         
         if not rows:

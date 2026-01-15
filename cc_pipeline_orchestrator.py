@@ -112,10 +112,16 @@ class PipelineOrchestrator:
     
     def __init__(self, config: PipelineConfig):
         self.config = config
+        # Normalize roots: some configs point directly at a subdir like
+        # /storage/ccindex_duckdb/cc_pointers_by_collection. The validator expects
+        # the DuckDB *base* directory and appends subpaths itself.
+        pointer_base = config.duckdb_root
+        if pointer_base.name in {"cc_pointers_by_collection", "cc_domain_by_collection", "cc_domain_by_year", "ccindex_duckdb"}:
+            pointer_base = pointer_base.parent
         self.validator = CollectionValidator(
             ccindex_dir=config.ccindex_root,
             parquet_dir=config.parquet_root,
-            pointer_dir=config.duckdb_root
+            pointer_dir=pointer_base
         )
         self.collections: List[str] = []
         self.collection_status: Dict[str, dict] = {}
@@ -308,33 +314,57 @@ class PipelineOrchestrator:
         
         year = collection.split('-')[2]
         parquet_dir = self.config.parquet_root / year / collection
-        duckdb_dir = self.config.duckdb_root / "cc_pointers_by_collection"
+
+        # Write DB where the validator expects it: <duckdb_base>/cc_pointers_by_collection/<collection>.duckdb
+        duckdb_base = self.config.duckdb_root
+        if duckdb_base.name == "cc_pointers_by_collection":
+            duckdb_dir = duckdb_base
+        else:
+            duckdb_dir = duckdb_base / "cc_pointers_by_collection"
         duckdb_dir.mkdir(parents=True, exist_ok=True)
         duckdb_path = duckdb_dir / f"{collection}.duckdb"
-        
-        # Use build_cc_pointer_duckdb.py
+
+        # Build index from existing Parquet (fast, avoids re-parsing CC .gz shards).
+        # We rebuild from scratch to avoid duplicate inserts on reruns.
+        if duckdb_path.exists():
+            try:
+                duckdb_path.unlink()
+            except Exception:
+                pass
+        try:
+            wal = duckdb_path.with_suffix(duckdb_path.suffix + ".wal")
+            if wal.exists():
+                wal.unlink()
+        except Exception:
+            pass
+
         cmd = [
             sys.executable,
-            "build_cc_pointer_duckdb.py",
-            "--input-root", str(self.config.parquet_root),
-            "--db", str(duckdb_path),
-            "--collections", collection,
-            "--threads", str(self.config.max_workers),
-            "--duckdb-index-mode", "domain",
-            "--domain-range-index"
+            "build_index_from_parquet.py",
+            "--parquet-root",
+            str(parquet_dir),
+            "--output-db",
+            str(duckdb_path),
+            "--batch-size",
+            "10",
+            "--extract-rowgroups",
         ]
         
         try:
             result = subprocess.run(cmd, capture_output=True, text=True, check=True)
             logger.info(f"Built DuckDB index for {collection}")
             
-            # Mark as sorted
+            # Mark as sorted (validator uses this as a cheap/explicit completion marker)
             sorted_marker = duckdb_path.with_suffix('.sorted')
             sorted_marker.touch()
             
             return True
         except subprocess.CalledProcessError as e:
             logger.error(f"Failed to build index for {collection}: {e}")
+            if e.stdout:
+                logger.error(f"stdout: {e.stdout}")
+            if e.stderr:
+                logger.error(f"stderr: {e.stderr}")
             return False
     
     def process_collection(self, collection: str) -> bool:
@@ -397,9 +427,20 @@ class PipelineOrchestrator:
             logger.debug(f"After index: exists={status['duckdb_index_exists']}, sorted={status['duckdb_index_sorted']}")
         else:
             logger.debug(f"Stage 4: Index complete and sorted")
-        
-        logger.info(f"  ✓ {collection} processing complete")
-        return True
+
+        # Final status: only claim completion if validator agrees.
+        if status.get('complete', False):
+            logger.info(f"  ✓ {collection} processing complete")
+            return True
+
+        logger.warning(
+            f"  ⏳ {collection} finished stages but is still incomplete: "
+            f"parquet={status.get('parquet_count')}/{status.get('parquet_expected')} "
+            f"sorted={status.get('sorted_count')}/{status.get('sorted_expected')} "
+            f"index_exists={status.get('duckdb_index_exists')} "
+            f"index_sorted={status.get('duckdb_index_sorted')}"
+        )
+        return False
     
     def run_pipeline(self, resume: bool = True):
         """Run the complete pipeline"""
