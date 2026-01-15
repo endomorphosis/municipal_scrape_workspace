@@ -284,15 +284,28 @@ class PipelineOrchestrator:
         
         # Use external merge sort for memory-efficient sorting
         try:
-            # Sort each file using external merge sort
+            # sort_parquet_external_merge.py operates on a directory, emitting
+            # <input>.sorted.parquet files into --output-dir.
+            # We set output-dir to the collection directory so the validator's
+            # expected ".sorted.parquet" files appear alongside the originals.
+            year = collection.split('-')[2] if len(collection.split('-')) > 2 else None
+            if year:
+                collection_dir = self.config.parquet_root / "cc_pointers_by_collection" / year / collection
+            else:
+                collection_dir = self.config.parquet_root / collection
+
+            temp_dir = collection_dir / ".sort_tmp"
+
             cmd = [
                 sys.executable,
                 "sort_parquet_external_merge.py",
+                "--input-dir", str(collection_dir),
+                "--output-dir", str(collection_dir),
+                "--temp-dir", str(temp_dir),
                 "--workers", str(self.config.max_workers),
-                "--chunk-size", "50000",  # Process 50k rows at a time
-            ] + [str(f) for f in unsorted_files]
-            
-            result = subprocess.run(cmd, capture_output=True, text=True, check=True)
+            ]
+
+            subprocess.run(cmd, capture_output=True, text=True, check=True)
             logger.info(f"Sorted {len(unsorted_files)} files for {collection}")
             return True
         except subprocess.CalledProcessError as e:
@@ -303,10 +316,13 @@ class PipelineOrchestrator:
                 logger.error(f"stderr: {e.stderr}")
             return False
         finally:
-            # Clean up temp file
-            import os
-            if os.path.exists(unsorted_list_path):
-                os.unlink(unsorted_list_path)
+            # Best-effort cleanup of temp directory; sorting script also cleans up.
+            try:
+                import shutil
+                if 'temp_dir' in locals() and temp_dir.exists():
+                    shutil.rmtree(temp_dir, ignore_errors=True)
+            except Exception:
+                pass
     
     def build_index_for_collection(self, collection: str) -> bool:
         """Build DuckDB pointer index for a collection"""

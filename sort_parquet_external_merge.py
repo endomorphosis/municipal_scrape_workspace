@@ -24,6 +24,7 @@ import logging
 
 import pyarrow as pa
 import pyarrow.parquet as pq
+import pyarrow.compute as pc
 import psutil
 
 logging.basicConfig(
@@ -101,7 +102,7 @@ class ExternalMergeSorter:
                 table = pa.Table.from_batches([row_group])
                 
                 # Sort by host_rev, url, ts
-                indices = pa.compute.sort_indices(
+                indices = pc.sort_indices(
                     table,
                     sort_keys=[
                         ("host_rev", "ascending"),
@@ -109,7 +110,7 @@ class ExternalMergeSorter:
                         ("ts", "ascending")
                     ]
                 )
-                sorted_table = pa.compute.take(table, indices)
+                sorted_table = pc.take(table, indices)
                 
                 # Write sorted chunk
                 pq.write_table(sorted_table, chunk_path, compression='snappy')
@@ -169,7 +170,7 @@ class ExternalMergeSorter:
                     current_batches[i] = batch
                     if len(batch) > 0:
                         row = self._get_row_dict(batch, 0)
-                        sort_key = (row['host_rev'], row['url'], row['ts'])
+                        sort_key = self._make_sort_key(row)
                         heapq.heappush(heap, (sort_key, i, 0, batch))
                 except StopIteration:
                     pass
@@ -210,7 +211,7 @@ class ExternalMergeSorter:
                 if next_row_idx < len(batch):
                     # More rows in current batch
                     row = self._get_row_dict(batch, next_row_idx)
-                    sort_key = (row['host_rev'], row['url'], row['ts'])
+                    sort_key = self._make_sort_key(row)
                     heapq.heappush(heap, (sort_key, chunk_idx, next_row_idx, batch))
                 else:
                     # Need next batch from this chunk
@@ -218,7 +219,7 @@ class ExternalMergeSorter:
                         next_batch = next(iterators[chunk_idx])
                         if len(next_batch) > 0:
                             row = self._get_row_dict(next_batch, 0)
-                            sort_key = (row['host_rev'], row['url'], row['ts'])
+                            sort_key = self._make_sort_key(row)
                             heapq.heappush(heap, (sort_key, chunk_idx, 0, next_batch))
                     except StopIteration:
                         pass
@@ -249,6 +250,24 @@ class ExternalMergeSorter:
             col: batch.column(col)[idx].as_py()
             for col in batch.schema.names
         }
+
+    def _make_sort_key(self, row: dict) -> tuple:
+        """Return a heap-comparable sort key matching Arrow's null-last semantics.
+
+        We sort by (host_rev, url, ts). Some rows can contain NULLs; Python cannot
+        compare None with strings, so we normalize to (is_null, value) pairs.
+        """
+
+        def key_part(value: object) -> tuple[int, str]:
+            if value is None:
+                return (1, "")  # nulls last
+            return (0, str(value))
+
+        return (
+            key_part(row.get("host_rev")),
+            key_part(row.get("url")),
+            key_part(row.get("ts")),
+        )
 
 
 def sort_file_external(args: Tuple[Path, Path, Path, int]) -> Tuple[Path, bool, str]:
