@@ -62,6 +62,7 @@ class PipelineConfig:
     heartbeat_seconds: int = 30
     cleanup_extraneous: bool = False
     cleanup_dry_run: bool = False
+    cleanup_source_archives: bool = False
     
     def __post_init__(self):
         self.ccindex_root = Path(self.ccindex_root)
@@ -189,68 +190,250 @@ class PipelineOrchestrator:
 
         return int(proc.returncode or 0)
 
-    def cleanup_collection_extraneous(self, collection: str) -> None:
-        """Best-effort cleanup of safe-to-delete extraneous artifacts for a collection."""
+    def _plan_collection_cleanup(self, collection: str) -> List[Tuple[Path, str]]:
+        """Compute a safe cleanup plan for a collection.
+
+        Returns a list of (path, reason) to remove.
+        """
+
+        plan: List[Tuple[Path, str]] = []
 
         parquet_dir = self._get_collection_parquet_dir(collection)
-        if not parquet_dir.exists():
-            return
+        if parquet_dir.exists():
+            # 1) Remove leftover temp files in the parquet output tree.
+            for p in parquet_dir.rglob("*.tmp"):
+                plan.append((p, "leftover tmp"))
+            for p in parquet_dir.rglob("*.tmp.parquet"):
+                plan.append((p, "leftover tmp parquet"))
 
+            # 2) Remove zero-byte parquet files (failed/partial writes).
+            for p in parquet_dir.glob("*.parquet"):
+                try:
+                    if p.is_file() and p.stat().st_size == 0:
+                        plan.append((p, "zero-byte parquet"))
+                except OSError:
+                    pass
+
+            # 3) Remove duplicate unsorted shards when a sorted twin exists.
+            for sorted_file in parquet_dir.glob("cdx-*.gz.sorted.parquet"):
+                unsorted_candidate = sorted_file.with_name(
+                    sorted_file.name.replace(".gz.sorted.parquet", ".gz.parquet")
+                )
+                if unsorted_candidate.exists():
+                    plan.append((unsorted_candidate, "duplicate unsorted (sorted exists)"))
+
+            # 4) Remove empty per-sort work dirs if they landed in the collection folder.
+            for d in parquet_dir.glob("cc_sort_*"):
+                if d.is_dir():
+                    try:
+                        if not any(d.iterdir()):
+                            plan.append((d, "empty sort work dir"))
+                    except OSError:
+                        pass
+
+        # 5) Optionally remove source archives once the collection is fully complete.
+        if getattr(self.config, "cleanup_source_archives", False):
+            status = self.validator.validate_collection(collection)
+            if status.get("complete"):
+                src_dir = self.config.ccindex_root / collection
+                if src_dir.exists():
+                    for p in src_dir.glob("*.tar.gz"):
+                        plan.append((p, "source tar.gz (collection complete)"))
+                    for p in src_dir.glob("cdx-*.gz"):
+                        plan.append((p, "source shard gz (collection complete)"))
+                    # Remove empty directory after deleting contents.
+                    try:
+                        if not any(src_dir.iterdir()):
+                            plan.append((src_dir, "empty source dir"))
+                    except OSError:
+                        pass
+
+        # De-dupe, preserve order.
+        seen: Set[Path] = set()
+        out: List[Tuple[Path, str]] = []
+        for p, reason in plan:
+            if p in seen:
+                continue
+            seen.add(p)
+            out.append((p, reason))
+        return out
+
+    def _execute_cleanup_plan(self, collection: str, plan: List[Tuple[Path, str]]) -> None:
         dry_run = bool(getattr(self.config, "cleanup_dry_run", False))
+
         removed = 0
         skipped = 0
+        bytes_total = 0
 
-        def _remove(path: Path, reason: str) -> None:
-            nonlocal removed, skipped
+        for path, reason in plan:
             try:
+                if not path.exists():
+                    continue
+
+                size = 0
+                try:
+                    if path.is_file():
+                        size = path.stat().st_size
+                except OSError:
+                    size = 0
+
                 if dry_run:
                     logger.info(f"[cleanup] would remove {path} ({reason})")
                     skipped += 1
-                    return
+                    bytes_total += size
+                    continue
+
                 if path.is_dir():
-                    # Only remove empty directories.
                     path.rmdir()
                 else:
                     path.unlink()
                 removed += 1
+                bytes_total += size
             except OSError as e:
                 logger.warning(f"[cleanup] failed to remove {path}: {e}")
 
-        # 1) Remove leftover temp files in the parquet output tree.
-        for p in parquet_dir.rglob("*.tmp"):
-            _remove(p, "leftover tmp")
-        for p in parquet_dir.rglob("*.tmp.parquet"):
-            _remove(p, "leftover tmp parquet")
-
-        # 2) Remove zero-byte parquet files (failed/partial writes).
-        for p in parquet_dir.glob("*.parquet"):
-            try:
-                if p.is_file() and p.stat().st_size == 0:
-                    _remove(p, "zero-byte parquet")
-            except OSError:
-                pass
-
-        # 3) Remove duplicate unsorted shards when a sorted twin exists.
-        for sorted_file in parquet_dir.glob("cdx-*.gz.sorted.parquet"):
-            unsorted_candidate = sorted_file.with_name(
-                sorted_file.name.replace(".gz.sorted.parquet", ".gz.parquet")
+        if dry_run:
+            logger.info(
+                f"[cleanup] dry-run complete for {collection}: would remove {skipped} item(s), approx {bytes_total/1024**3:.2f} GB"
             )
-            if unsorted_candidate.exists():
-                _remove(unsorted_candidate, "duplicate unsorted (sorted exists)")
+        else:
+            logger.info(
+                f"[cleanup] removed {removed} item(s) for {collection}, freed approx {bytes_total/1024**3:.2f} GB"
+            )
 
-        # 4) Remove empty per-sort work dirs if they landed in the collection folder.
-        for d in parquet_dir.glob("cc_sort_*"):
-            if d.is_dir():
+    def _split_cleanup_plan(self, collection: str, plan: List[Tuple[Path, str]]) -> Dict[str, List[Tuple[Path, str]]]:
+        """Split a cleanup plan into human-friendly categories for preview logs."""
+
+        categories: Dict[str, List[Tuple[Path, str]]] = defaultdict(list)
+        src_dir = (self.config.ccindex_root / collection).resolve()
+        parquet_dir = self._get_collection_parquet_dir(collection).resolve()
+
+        for path, reason in plan:
+            cat = "other"
+            # Prefer grouping by meaning/reason.
+            if "source" in reason:
+                cat = "source archives"
+            else:
+                # Fallback to path-based grouping.
                 try:
-                    if not any(d.iterdir()):
-                        _remove(d, "empty sort work dir")
+                    if path.resolve().is_relative_to(src_dir):
+                        cat = "source archives"
+                    elif path.resolve().is_relative_to(parquet_dir):
+                        cat = "parquet artifacts"
+                except Exception:
+                    # Older Python/path edge-cases: ignore.
+                    pass
+
+            if cat == "other":
+                cat = "parquet artifacts"
+            categories[cat].append((path, reason))
+
+        # Deterministic order for logging
+        ordered: Dict[str, List[Tuple[Path, str]]] = {}
+        for key in ["parquet artifacts", "source archives"]:
+            if key in categories and categories[key]:
+                ordered[key] = categories[key]
+        if "other" in categories and categories["other"]:
+            ordered["other"] = categories["other"]
+        return ordered
+
+    def cleanup_collection_extraneous(self, collection: str) -> None:
+        """Best-effort cleanup of safe-to-delete extraneous artifacts for a collection."""
+
+        plan = self._plan_collection_cleanup(collection)
+        if not plan:
+            return
+        self._execute_cleanup_plan(collection, plan)
+
+    def run_cleanup_only(self, *, assume_yes: bool = False) -> None:
+        """Run cleanup sweeps only (no pipeline stages).
+
+        If not in dry-run mode, prompts for confirmation unless assume_yes=True.
+        """
+
+        if not getattr(self.config, "cleanup_extraneous", False):
+            logger.info("[cleanup] cleanup-only requested; enabling safe extraneous cleanup")
+            self.config.cleanup_extraneous = True
+
+        self.collections = self.get_all_collections()
+        logger.info(f"[cleanup] Found {len(self.collections)} collection(s) to scan")
+
+        # Build a plan first so we can show what will be deleted.
+        all_plans: Dict[str, List[Tuple[Path, str]]] = {}
+        total_items = 0
+        total_bytes = 0
+        total_by_cat_items: Dict[str, int] = defaultdict(int)
+        total_by_cat_bytes: Dict[str, int] = defaultdict(int)
+
+        for collection in self.collections:
+            plan = self._plan_collection_cleanup(collection)
+            if not plan:
+                continue
+            all_plans[collection] = plan
+            total_items += len(plan)
+            split = self._split_cleanup_plan(collection, plan)
+            for cat, items in split.items():
+                total_by_cat_items[cat] += len(items)
+                for p, _reason in items:
+                    try:
+                        if p.is_file():
+                            total_by_cat_bytes[cat] += p.stat().st_size
+                    except OSError:
+                        pass
+
+            # Total bytes across all categories.
+            for p, _reason in plan:
+                try:
+                    if p.is_file():
+                        total_bytes += p.stat().st_size
                 except OSError:
                     pass
 
-        if dry_run:
-            logger.info(f"[cleanup] dry-run complete for {collection}: would remove {skipped} item(s)")
-        else:
-            logger.info(f"[cleanup] removed {removed} item(s) for {collection}")
+        logger.info(
+            f"[cleanup] Plan: {len(all_plans)} collection(s) have cleanup items; total {total_items} item(s), approx {total_bytes/1024**3:.2f} GB"
+        )
+        if total_by_cat_items:
+            for cat in ["parquet artifacts", "source archives"]:
+                if total_by_cat_items.get(cat):
+                    logger.info(
+                        f"[cleanup]   - {cat}: {total_by_cat_items[cat]} item(s), approx {total_by_cat_bytes[cat]/1024**3:.2f} GB"
+                    )
+
+        # Always show the plan when cleanup-only is requested.
+        original_dry_run = bool(self.config.cleanup_dry_run)
+        self.config.cleanup_dry_run = True
+        try:
+            for collection, plan in all_plans.items():
+                split = self._split_cleanup_plan(collection, plan)
+                logger.info(f"[cleanup] Preview for {collection} ({len(plan)} item(s))")
+                for cat, cat_plan in split.items():
+                    logger.info(f"[cleanup]   Section: {cat} ({len(cat_plan)} item(s))")
+                    self._execute_cleanup_plan(collection, cat_plan)
+        finally:
+            self.config.cleanup_dry_run = original_dry_run
+
+        if original_dry_run:
+            logger.info("[cleanup] Dry-run requested; no files deleted")
+            return
+
+        if not all_plans:
+            logger.info("[cleanup] Nothing to delete")
+            return
+
+        if not assume_yes:
+            if not sys.stdin.isatty():
+                logger.error("[cleanup] Refusing to delete without confirmation in non-interactive mode. Re-run with --yes or --cleanup-dry-run")
+                return
+            answer = input("Proceed with deletion? Type 'yes' to continue: ").strip().lower()
+            if answer != "yes":
+                logger.info("[cleanup] Aborted by user")
+                return
+
+        # Execute deletion.
+        logger.info("[cleanup] Proceeding with deletion...")
+        for collection, plan in all_plans.items():
+            logger.info(f"[cleanup] Sweeping {collection}...")
+            self._execute_cleanup_plan(collection, plan)
 
     def _collection_year(self, collection: str) -> Optional[str]:
         parts = collection.split('-')
@@ -892,6 +1075,21 @@ def main():
         action="store_true",
         help="Dry-run cleanup (log what would be removed, without deleting)",
     )
+    parser.add_argument(
+        "--cleanup-only",
+        action="store_true",
+        help="Only run cleanup sweeps (no download/convert/sort/index); supports --cleanup-dry-run",
+    )
+    parser.add_argument(
+        "--cleanup-source-archives",
+        action="store_true",
+        help="Also remove source archives (cdx-*.gz, *.tar.gz) for collections that are fully complete",
+    )
+    parser.add_argument(
+        "--yes",
+        action="store_true",
+        help="Assume yes for cleanup confirmations (use with care)",
+    )
     
     args = parser.parse_args()
     
@@ -906,6 +1104,7 @@ def main():
     config.heartbeat_seconds = int(args.heartbeat_seconds)
     config.cleanup_extraneous = bool(args.cleanup_extraneous)
     config.cleanup_dry_run = bool(args.cleanup_dry_run)
+    config.cleanup_source_archives = bool(args.cleanup_source_archives)
     
     # Log the active configuration
     logger.info("")
@@ -923,9 +1122,16 @@ def main():
     logger.info(f"  heartbeat_seconds:      {config.heartbeat_seconds}")
     logger.info(f"  cleanup_extraneous:     {config.cleanup_extraneous}")
     logger.info(f"  cleanup_dry_run:        {config.cleanup_dry_run}")
+    logger.info(f"  cleanup_source_archives:{config.cleanup_source_archives}")
+    logger.info(f"  cleanup_only:           {bool(args.cleanup_only)}")
     logger.info("")
     
     orchestrator = PipelineOrchestrator(config)
+
+    if args.cleanup_only:
+        orchestrator.run_cleanup_only(assume_yes=bool(args.yes))
+        return
+
     orchestrator.run_pipeline(resume=args.resume)
 
 
