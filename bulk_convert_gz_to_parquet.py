@@ -79,8 +79,10 @@ def _parse_cdxj_line(line: str) -> Optional[tuple[str, Optional[str], Optional[s
 
     surt = parts[0]
     ts = parts[1]
-    
-    # Convert in parallel with a heartbeat so long runs don't look stalled.
+
+    url: Optional[str] = None
+    if len(parts) >= 3:
+        # If third token is not JSON, it's a URL.
         if not parts[2].startswith("{"):
             url = parts[2]
     if not url:
@@ -90,7 +92,6 @@ def _parse_cdxj_line(line: str) -> Optional[tuple[str, Optional[str], Optional[s
 
 
 def _parquet_has_required_columns(parquet_path: Path) -> bool:
-        for ok, gz_name in pool.imap_unordered(_convert_one_worker, iterable, chunksize=1):
     try:
         pf = pq.ParquetFile(parquet_path)
         names = set(pf.schema_arrow.names)
@@ -299,11 +300,6 @@ def convert_collection(
     
     logger.info(f"Converting {len(work)} files with {workers} workers...")
 
-    def _convert_one(item: tuple[str, str, int]) -> tuple[bool, str]:
-        gz_s, out_s, chunk_size = item
-        ok = convert_gz_to_parquet(Path(gz_s), Path(out_s), chunk_size)
-        return ok, Path(gz_s).name
-
     # Convert in parallel with a heartbeat so long runs don't look stalled.
     success_count = 0
     fail_count = 0
@@ -314,7 +310,7 @@ def convert_collection(
 
     iterable = [(str(gz), str(out), 100000) for gz, out in work]
     with multiprocessing.Pool(workers) as pool:
-        for ok, gz_name in pool.imap_unordered(_convert_one, iterable, chunksize=1):
+        for ok, gz_name in pool.imap_unordered(_convert_one_worker, iterable, chunksize=1):
             done += 1
             if ok:
                 success_count += 1

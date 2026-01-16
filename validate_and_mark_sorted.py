@@ -72,21 +72,33 @@ def is_sorted_by_content(parquet_file: Path, sample_size: int = 1000) -> Tuple[b
         return False, f"Error: {e}"
 
 
-def sort_parquet_file(input_file: Path, output_file: Path, memory_limit_gb: float = 4.0) -> bool:
+def sort_parquet_file(
+    input_file: Path,
+    output_file: Path,
+    memory_limit_gb: float = 4.0,
+    temp_directory: Optional[Path] = None,
+) -> bool:
     """Sort a parquet file by host_rev, url, ts using DuckDB."""
     try:
         con = duckdb.connect(":memory:")
         con.execute(f"SET memory_limit='{memory_limit_gb}GB'")
         # Isolate DuckDB temp usage per-sort to avoid contention.
-        con.execute(f"SET temp_directory='{output_file.parent}'")
+        td = temp_directory if temp_directory else output_file.parent
+        con.execute(f"SET temp_directory='{td}'")
         con.execute("PRAGMA threads=1")
+
+        # NOTE: DuckDB parameter binding inside COPY/TO can be surprising; in some
+        # environments it may bind the output path to the first placeholder.
+        # Use escaped string literals instead.
+        in_path = str(input_file).replace("'", "''")
+        out_path = str(output_file).replace("'", "''")
         con.execute("""
             COPY (
-                SELECT * FROM read_parquet(?)
+                SELECT * FROM read_parquet('{in_path}')
                 ORDER BY host_rev, url, ts
             )
-            TO ? (FORMAT 'parquet', COMPRESSION 'zstd')
-        """, [str(input_file), str(output_file)])
+            TO '{out_path}' (FORMAT 'parquet', COMPRESSION 'zstd')
+        """.format(in_path=in_path, out_path=out_path))
         con.close()
         return True
     except Exception as e:
@@ -141,14 +153,22 @@ def sort_and_mark_one(args: Tuple[str, float, str]) -> Tuple[str, bool, str, str
     src = Path(src_path)
     tmp_root = Path(temp_root)
     work_dir: Optional[Path] = None
+    duckdb_temp_dir: Optional[Path] = None
 
     try:
+        # IMPORTANT: write tmp output in the destination directory so the final
+        # rename is atomic and doesn't fail across filesystems (e.g., /tmp -> /storage).
         safe = src.name.replace(os.sep, "_")
-        work_dir = tmp_root / f"cc_sort_{safe}"
+        work_dir = src.parent / f".cc_sort_work_{safe}"
         work_dir.mkdir(parents=True, exist_ok=True)
 
+        # DuckDB spill temp directory MUST be unique per sort when running in parallel,
+        # otherwise concurrent sorts can trample each other's duckdb_temp_storage_*.tmp.
+        duckdb_temp_dir = tmp_root / f"duckdb_sort_{safe}"
+        duckdb_temp_dir.mkdir(parents=True, exist_ok=True)
+
         sorted_tmp = work_dir / f"{src.name}.tmp.parquet"
-        if not sort_parquet_file(src, sorted_tmp, memory_per_sort_gb):
+        if not sort_parquet_file(src, sorted_tmp, memory_per_sort_gb, temp_directory=duckdb_temp_dir):
             return str(src), False, "sort failed", ""
 
         ok, reason = is_sorted_by_content(sorted_tmp)
@@ -165,18 +185,41 @@ def sort_and_mark_one(args: Tuple[str, float, str]) -> Tuple[str, bool, str, str
             new_name = src.name.replace('.parquet', '.sorted.parquet')
         out = src.parent / new_name
 
-        src.unlink()
-        sorted_tmp.replace(out)
+        # If a sorted output already exists, treat this as success and remove the duplicate unsorted.
+        if out.exists():
+            try:
+                src.unlink()
+            except Exception:
+                pass
+            if work_dir is not None:
+                shutil.rmtree(work_dir, ignore_errors=True)
+            return str(src), True, "sorted output already existed; removed duplicate", str(out)
+
+        # Put the sorted file in place first, then delete the source.
+        # Prefer atomic rename; fall back to copy+unlink if the temp dir is on a different filesystem.
+        try:
+            sorted_tmp.replace(out)
+        except OSError:
+            shutil.move(str(sorted_tmp), str(out))
+
+        try:
+            src.unlink()
+        except Exception:
+            pass
 
         # Best-effort cleanup: remove per-file temp directory (may include DuckDB spill files).
         if work_dir is not None:
             shutil.rmtree(work_dir, ignore_errors=True)
+        if duckdb_temp_dir is not None:
+            shutil.rmtree(duckdb_temp_dir, ignore_errors=True)
 
         return str(src), True, "sorted + marked", str(out)
     except Exception as e:
         try:
             if work_dir is not None:
                 shutil.rmtree(work_dir, ignore_errors=True)
+            if duckdb_temp_dir is not None:
+                shutil.rmtree(duckdb_temp_dir, ignore_errors=True)
         except Exception:
             pass
         return str(src), False, f"exception: {e}", ""
@@ -223,7 +266,8 @@ def main() -> int:
     print()
     
     # Find all parquet files
-    all_files = sorted(parquet_root.rglob("*.parquet"))
+    # rglob can return directories too; ensure we only process actual parquet files.
+    all_files = sorted(p for p in parquet_root.rglob("*.parquet") if p.is_file())
     print(f"Found {len(all_files)} parquet files")
     print()
     

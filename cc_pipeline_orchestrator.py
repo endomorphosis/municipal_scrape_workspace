@@ -63,6 +63,9 @@ class PipelineConfig:
     cleanup_extraneous: bool = False
     cleanup_dry_run: bool = False
     cleanup_source_archives: bool = False
+    sort_workers: Optional[int] = None
+    sort_memory_per_worker_gb: float = 4.0
+    sort_temp_dir: Optional[Path] = None
     
     def __post_init__(self):
         self.ccindex_root = Path(self.ccindex_root)
@@ -635,15 +638,32 @@ class PipelineOrchestrator:
             logger.warning(f"Legacy schema check skipped due to error: {e}")
         
         try:
+            sort_workers = int(self.config.sort_workers) if self.config.sort_workers else max(2, int(self.config.max_workers))
+            # Keep a conservative default per-sort memory unless user overrides.
+            sort_mem_gb = float(getattr(self.config, "sort_memory_per_worker_gb", 4.0) or 4.0)
+
+            # Use a temp dir on the same filesystem as the parquet output by default.
+            # This avoids /tmp space pressure and speeds up large external sorts.
+            sort_temp_dir = self.config.sort_temp_dir
+            if sort_temp_dir is None:
+                sort_temp_dir = parquet_dir / ".duckdb_sort_tmp"
+                try:
+                    sort_temp_dir.mkdir(parents=True, exist_ok=True)
+                except Exception:
+                    sort_temp_dir = None
             cmd = [
                 sys.executable,
                 "validate_and_mark_sorted.py",
                 "--parquet-root", str(parquet_dir),
                 "--sort-unsorted",
                 "--workers", str(self.config.max_workers),
-                "--sort-workers", str(min(2, max(1, self.config.max_workers))),
+                "--sort-workers", str(sort_workers),
+                "--memory-per-sort", str(sort_mem_gb),
                 "--heartbeat-seconds", str(int(getattr(self.config, "heartbeat_seconds", 30) or 30)),
             ]
+
+            if sort_temp_dir:
+                cmd.extend(["--temp-dir", str(sort_temp_dir)])
 
             # Stream output so progress is visible during long sorts.
             result = subprocess.run(cmd)
@@ -1090,6 +1110,24 @@ def main():
         action="store_true",
         help="Assume yes for cleanup confirmations (use with care)",
     )
+    parser.add_argument(
+        "--sort-workers",
+        type=int,
+        default=None,
+        help="Parallel workers for sorting unsorted parquet (default: uses --workers; beware memory/disk)",
+    )
+    parser.add_argument(
+        "--sort-memory-per-worker-gb",
+        type=float,
+        default=4.0,
+        help="DuckDB memory limit per sort worker in GB (default: 4.0)",
+    )
+    parser.add_argument(
+        "--sort-temp-dir",
+        type=Path,
+        default=None,
+        help="Temp directory for DuckDB sort spill (default: system temp)",
+    )
     
     args = parser.parse_args()
     
@@ -1105,6 +1143,9 @@ def main():
     config.cleanup_extraneous = bool(args.cleanup_extraneous)
     config.cleanup_dry_run = bool(args.cleanup_dry_run)
     config.cleanup_source_archives = bool(args.cleanup_source_archives)
+    config.sort_workers = args.sort_workers
+    config.sort_memory_per_worker_gb = float(args.sort_memory_per_worker_gb)
+    config.sort_temp_dir = args.sort_temp_dir
     
     # Log the active configuration
     logger.info("")
@@ -1124,6 +1165,9 @@ def main():
     logger.info(f"  cleanup_dry_run:        {config.cleanup_dry_run}")
     logger.info(f"  cleanup_source_archives:{config.cleanup_source_archives}")
     logger.info(f"  cleanup_only:           {bool(args.cleanup_only)}")
+    logger.info(f"  sort_workers:           {config.sort_workers if config.sort_workers else config.max_workers}")
+    logger.info(f"  sort_mem_per_worker_gb: {config.sort_memory_per_worker_gb}")
+    logger.info(f"  sort_temp_dir:          {config.sort_temp_dir}")
     logger.info("")
     
     orchestrator = PipelineOrchestrator(config)
