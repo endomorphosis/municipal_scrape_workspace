@@ -21,6 +21,7 @@ import json
 import logging
 import multiprocessing
 import os
+import selectors
 import shutil
 import subprocess
 import sys
@@ -58,6 +59,9 @@ class PipelineConfig:
     memory_limit_gb: float
     min_free_space_gb: float
     collections_filter: Optional[str] = None
+    heartbeat_seconds: int = 30
+    cleanup_extraneous: bool = False
+    cleanup_dry_run: bool = False
     
     def __post_init__(self):
         self.ccindex_root = Path(self.ccindex_root)
@@ -123,6 +127,130 @@ class PipelineOrchestrator:
         )
         self.collections: List[str] = []
         self.collection_status: Dict[str, dict] = {}
+
+    def _run_subprocess_with_heartbeat(
+        self,
+        cmd: List[str],
+        *,
+        cwd: Optional[Path] = None,
+        heartbeat_label: str = "",
+    ) -> int:
+        """Run a subprocess while streaming output and printing periodic heartbeats.
+
+        This avoids long silent stretches that look like a stall when the child
+        process is doing work without producing output.
+        """
+
+        hb_seconds = max(1, int(getattr(self.config, "heartbeat_seconds", 30) or 30))
+        label = f"[{heartbeat_label}] " if heartbeat_label else ""
+        logger.info(f"{label}Running: {' '.join(cmd)}")
+
+        start = time.monotonic()
+        last_event = start
+
+        proc = subprocess.Popen(
+            cmd,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+            text=True,
+            bufsize=1,
+            cwd=str(cwd) if cwd else None,
+        )
+
+        sel = selectors.DefaultSelector()
+        assert proc.stdout is not None
+        sel.register(proc.stdout, selectors.EVENT_READ)
+
+        try:
+            while True:
+                if proc.poll() is not None:
+                    # Drain remaining output
+                    for line in proc.stdout:
+                        logger.info(f"{label}{line.rstrip()}" )
+                    break
+
+                events = sel.select(timeout=hb_seconds)
+                if events:
+                    for key, _mask in events:
+                        line = key.fileobj.readline()
+                        if line:
+                            last_event = time.monotonic()
+                            logger.info(f"{label}{line.rstrip()}" )
+                else:
+                    now = time.monotonic()
+                    elapsed = now - start
+                    logger.info(f"{label}Heartbeat: still running (elapsed {elapsed/60:.1f} min)")
+                    last_event = now
+        finally:
+            try:
+                sel.unregister(proc.stdout)
+            except Exception:
+                pass
+
+        return int(proc.returncode or 0)
+
+    def cleanup_collection_extraneous(self, collection: str) -> None:
+        """Best-effort cleanup of safe-to-delete extraneous artifacts for a collection."""
+
+        parquet_dir = self._get_collection_parquet_dir(collection)
+        if not parquet_dir.exists():
+            return
+
+        dry_run = bool(getattr(self.config, "cleanup_dry_run", False))
+        removed = 0
+        skipped = 0
+
+        def _remove(path: Path, reason: str) -> None:
+            nonlocal removed, skipped
+            try:
+                if dry_run:
+                    logger.info(f"[cleanup] would remove {path} ({reason})")
+                    skipped += 1
+                    return
+                if path.is_dir():
+                    # Only remove empty directories.
+                    path.rmdir()
+                else:
+                    path.unlink()
+                removed += 1
+            except OSError as e:
+                logger.warning(f"[cleanup] failed to remove {path}: {e}")
+
+        # 1) Remove leftover temp files in the parquet output tree.
+        for p in parquet_dir.rglob("*.tmp"):
+            _remove(p, "leftover tmp")
+        for p in parquet_dir.rglob("*.tmp.parquet"):
+            _remove(p, "leftover tmp parquet")
+
+        # 2) Remove zero-byte parquet files (failed/partial writes).
+        for p in parquet_dir.glob("*.parquet"):
+            try:
+                if p.is_file() and p.stat().st_size == 0:
+                    _remove(p, "zero-byte parquet")
+            except OSError:
+                pass
+
+        # 3) Remove duplicate unsorted shards when a sorted twin exists.
+        for sorted_file in parquet_dir.glob("cdx-*.gz.sorted.parquet"):
+            unsorted_candidate = sorted_file.with_name(
+                sorted_file.name.replace(".gz.sorted.parquet", ".gz.parquet")
+            )
+            if unsorted_candidate.exists():
+                _remove(unsorted_candidate, "duplicate unsorted (sorted exists)")
+
+        # 4) Remove empty per-sort work dirs if they landed in the collection folder.
+        for d in parquet_dir.glob("cc_sort_*"):
+            if d.is_dir():
+                try:
+                    if not any(d.iterdir()):
+                        _remove(d, "empty sort work dir")
+                except OSError:
+                    pass
+
+        if dry_run:
+            logger.info(f"[cleanup] dry-run complete for {collection}: would remove {skipped} item(s)")
+        else:
+            logger.info(f"[cleanup] removed {removed} item(s) for {collection}")
 
     def _collection_year(self, collection: str) -> Optional[str]:
         parts = collection.split('-')
@@ -213,14 +341,13 @@ class PipelineOrchestrator:
             "bash", str(download_script),
             collection
         ]
-        
-        try:
-            result = subprocess.run(cmd, capture_output=True, text=True, check=True, cwd=str(self.config.ccindex_root))
+
+        rc = self._run_subprocess_with_heartbeat(cmd, cwd=self.config.ccindex_root, heartbeat_label=f"download:{collection}")
+        if rc == 0:
             logger.info(f"Downloaded {collection} successfully")
             return True
-        except subprocess.CalledProcessError as e:
-            logger.error(f"Failed to download {collection}: {e.stderr if e.stderr else e}")
-            return False
+        logger.error(f"Failed to download {collection} (exit {rc})")
+        return False
     
     def convert_collection(self, collection: str, sort_after: bool = True) -> bool:
         """Convert a collection's .gz files to parquet, optionally sorting immediately"""
@@ -247,7 +374,8 @@ class PipelineOrchestrator:
             "bulk_convert_gz_to_parquet.py",
             "--input-dir", str(ccindex_dir),
             "--output-dir", str(parquet_dir),
-            "--workers", str(self.config.max_workers)
+            "--workers", str(self.config.max_workers),
+            "--heartbeat-seconds", str(int(getattr(self.config, "heartbeat_seconds", 30) or 30)),
         ]
         
         try:
@@ -331,6 +459,7 @@ class PipelineOrchestrator:
                 "--sort-unsorted",
                 "--workers", str(self.config.max_workers),
                 "--sort-workers", str(min(2, max(1, self.config.max_workers))),
+                "--heartbeat-seconds", str(int(getattr(self.config, "heartbeat_seconds", 30) or 30)),
             ]
 
             # Stream output so progress is visible during long sorts.
@@ -353,6 +482,9 @@ class PipelineOrchestrator:
                         logger.warning(f"Failed to remove duplicate unsorted parquet {unsorted_candidate}: {e}")
             if removed:
                 logger.info(f"Removed {removed} duplicate unsorted parquet file(s) for {collection}")
+
+            if getattr(self.config, "cleanup_extraneous", False):
+                self.cleanup_collection_extraneous(collection)
 
             logger.info(f"Sorted/marked parquet files for {collection}")
             return True
@@ -392,17 +524,13 @@ class PipelineOrchestrator:
             "--duckdb-index-mode", "domain",
             "--domain-range-index"
         ]
-        
+
         try:
-            logger.info(f"Running: {' '.join(cmd)}")
-            result = subprocess.run(cmd, capture_output=True, text=True, check=True)
-            
-            # Log output for debugging
-            if result.stdout:
-                logger.info(f"Build output: {result.stdout[:500]}")
-            if result.stderr:
-                logger.warning(f"Build stderr: {result.stderr[:500]}")
-                
+            rc = self._run_subprocess_with_heartbeat(cmd, heartbeat_label=f"index:{collection}")
+            if rc != 0:
+                logger.error(f"Failed to build index for {collection} (exit {rc})")
+                return False
+
             logger.info(f"Built DuckDB index for {collection}")
             
             # Verify the index was created and has data
@@ -748,6 +876,22 @@ def main():
         action="store_true",
         help="Enable verbose debug logging"
     )
+    parser.add_argument(
+        "--heartbeat-seconds",
+        type=int,
+        default=30,
+        help="Print a periodic heartbeat every N seconds during long phases (default: 30)",
+    )
+    parser.add_argument(
+        "--cleanup-extraneous",
+        action="store_true",
+        help="Remove safe-to-delete extraneous artifacts (tmp files, duplicate unsorted shards, zero-byte outputs)",
+    )
+    parser.add_argument(
+        "--cleanup-dry-run",
+        action="store_true",
+        help="Dry-run cleanup (log what would be removed, without deleting)",
+    )
     
     args = parser.parse_args()
     
@@ -757,6 +901,11 @@ def main():
     
     # Load configuration from file with command-line overrides
     config = PipelineConfig.from_args(args)
+
+    # Apply runtime-only args (these are safe defaults if config file doesn't include them).
+    config.heartbeat_seconds = int(args.heartbeat_seconds)
+    config.cleanup_extraneous = bool(args.cleanup_extraneous)
+    config.cleanup_dry_run = bool(args.cleanup_dry_run)
     
     # Log the active configuration
     logger.info("")
@@ -771,6 +920,9 @@ def main():
     logger.info(f"  min_free:              {config.min_free_space_gb} GB")
     if config.collections_filter:
         logger.info(f"  filter:                {config.collections_filter}")
+    logger.info(f"  heartbeat_seconds:      {config.heartbeat_seconds}")
+    logger.info(f"  cleanup_extraneous:     {config.cleanup_extraneous}")
+    logger.info(f"  cleanup_dry_run:        {config.cleanup_dry_run}")
     logger.info("")
     
     orchestrator = PipelineOrchestrator(config)

@@ -12,6 +12,7 @@ import logging
 import multiprocessing
 import re
 import sys
+import time
 from pathlib import Path
 from typing import List, Optional
 
@@ -23,6 +24,11 @@ logger = logging.getLogger(__name__)
 
 
 _REQUIRE_COLUMNS_IF_PRESENT = {"host_rev", "url", "ts"}
+
+def _convert_one_worker(item: tuple[str, str, int]) -> tuple[bool, str]:
+    gz_s, out_s, chunk_size = item
+    ok = convert_gz_to_parquet(Path(gz_s), Path(out_s), chunk_size)
+    return ok, Path(gz_s).name
 
 
 def _extract_host(url: Optional[str]) -> Optional[str]:
@@ -73,10 +79,8 @@ def _parse_cdxj_line(line: str) -> Optional[tuple[str, Optional[str], Optional[s
 
     surt = parts[0]
     ts = parts[1]
-
-    url: Optional[str] = None
-    if len(parts) >= 3:
-        # If third token is not JSON, it's a URL.
+    
+    # Convert in parallel with a heartbeat so long runs don't look stalled.
         if not parts[2].startswith("{"):
             url = parts[2]
     if not url:
@@ -86,7 +90,7 @@ def _parse_cdxj_line(line: str) -> Optional[tuple[str, Optional[str], Optional[s
 
 
 def _parquet_has_required_columns(parquet_path: Path) -> bool:
-    """Best-effort schema check to avoid skipping old/incompatible parquet files."""
+        for ok, gz_name in pool.imap_unordered(_convert_one_worker, iterable, chunksize=1):
     try:
         pf = pq.ParquetFile(parquet_path)
         names = set(pf.schema_arrow.names)
@@ -249,7 +253,8 @@ def convert_collection(
     input_dir: Path,
     output_dir: Path,
     workers: int = 4,
-    skip_existing: bool = True
+    skip_existing: bool = True,
+    heartbeat_seconds: int = 30,
 ) -> tuple[int, int]:
     """Convert all .gz files in a collection directory"""
     
@@ -293,15 +298,47 @@ def convert_collection(
         return len(gz_files), len(gz_files)
     
     logger.info(f"Converting {len(work)} files with {workers} workers...")
-    
-    # Convert in parallel
+
+    def _convert_one(item: tuple[str, str, int]) -> tuple[bool, str]:
+        gz_s, out_s, chunk_size = item
+        ok = convert_gz_to_parquet(Path(gz_s), Path(out_s), chunk_size)
+        return ok, Path(gz_s).name
+
+    # Convert in parallel with a heartbeat so long runs don't look stalled.
+    success_count = 0
+    fail_count = 0
+    done = 0
+    total_work = len(work)
+    start = time.monotonic()
+    last_heartbeat = start
+
+    iterable = [(str(gz), str(out), 100000) for gz, out in work]
     with multiprocessing.Pool(workers) as pool:
-        results = pool.starmap(
-            convert_gz_to_parquet,
-            [(gz, out, 100000) for gz, out in work]
-        )
-    
-    success_count = sum(1 for r in results if r)
+        for ok, gz_name in pool.imap_unordered(_convert_one, iterable, chunksize=1):
+            done += 1
+            if ok:
+                success_count += 1
+            else:
+                fail_count += 1
+
+            now = time.monotonic()
+            if now - last_heartbeat >= max(1, int(heartbeat_seconds)):
+                elapsed = now - start
+                rate = done / elapsed if elapsed > 0 else 0.0
+                remaining = total_work - done
+                eta_s = (remaining / rate) if rate > 0 else 0.0
+                logger.info(
+                    "Heartbeat: %d/%d done (ok=%d, fail=%d), rate=%.2f files/s, eta=%.1f min (last=%s)",
+                    done,
+                    total_work,
+                    success_count,
+                    fail_count,
+                    rate,
+                    eta_s / 60.0,
+                    gz_name,
+                )
+                last_heartbeat = now
+
     logger.info(f"Converted {success_count}/{len(work)} files successfully")
 
     # Count skipped files as success for resume mode.
@@ -314,6 +351,12 @@ def main():
     parser.add_argument("--output-dir", type=Path, required=True, help="Output directory for parquet files")
     parser.add_argument("--workers", type=int, default=4, help="Number of parallel workers")
     parser.add_argument("--overwrite", action="store_true", help="Overwrite existing parquet files")
+    parser.add_argument(
+        "--heartbeat-seconds",
+        type=int,
+        default=30,
+        help="Print a periodic progress heartbeat every N seconds (default: 30)",
+    )
     
     args = parser.parse_args()
     
@@ -325,7 +368,8 @@ def main():
         args.input_dir,
         args.output_dir,
         workers=args.workers,
-        skip_existing=not args.overwrite
+        skip_existing=not args.overwrite,
+        heartbeat_seconds=args.heartbeat_seconds,
     )
     
     logger.info(f"Final: {success}/{total} files converted")

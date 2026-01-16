@@ -12,11 +12,13 @@ This script:
 import argparse
 import sys
 from pathlib import Path
-from typing import List, Tuple
-from concurrent.futures import ProcessPoolExecutor, as_completed
+from typing import List, Tuple, Optional
+from concurrent.futures import ProcessPoolExecutor, as_completed, wait, FIRST_COMPLETED
 import multiprocessing
 import os
 import tempfile
+import time
+import shutil
 
 import pyarrow.parquet as pq
 import duckdb
@@ -138,6 +140,7 @@ def sort_and_mark_one(args: Tuple[str, float, str]) -> Tuple[str, bool, str, str
     src_path, memory_per_sort_gb, temp_root = args
     src = Path(src_path)
     tmp_root = Path(temp_root)
+    work_dir: Optional[Path] = None
 
     try:
         safe = src.name.replace(os.sep, "_")
@@ -165,14 +168,17 @@ def sort_and_mark_one(args: Tuple[str, float, str]) -> Tuple[str, bool, str, str
         src.unlink()
         sorted_tmp.replace(out)
 
-        # Best-effort cleanup
-        try:
-            work_dir.rmdir()
-        except Exception:
-            pass
+        # Best-effort cleanup: remove per-file temp directory (may include DuckDB spill files).
+        if work_dir is not None:
+            shutil.rmtree(work_dir, ignore_errors=True)
 
         return str(src), True, "sorted + marked", str(out)
     except Exception as e:
+        try:
+            if work_dir is not None:
+                shutil.rmtree(work_dir, ignore_errors=True)
+        except Exception:
+            pass
         return str(src), False, f"exception: {e}", ""
 
 
@@ -194,6 +200,12 @@ def main() -> int:
         type=str,
         default=None,
         help="Temp directory for DuckDB external sort spill (default: system temp)",
+    )
+    ap.add_argument(
+        "--heartbeat-seconds",
+        type=int,
+        default=30,
+        help="Print a periodic heartbeat every N seconds during long phases (default: 30)",
     )
     
     args = ap.parse_args()
@@ -229,6 +241,9 @@ def main() -> int:
     print()
     
     completed = 0
+    heartbeat_seconds = max(1, int(args.heartbeat_seconds))
+    start_check = time.monotonic()
+    last_hb = start_check
     with ProcessPoolExecutor(max_workers=num_workers) as executor:
         # Submit all tasks
         futures = {
@@ -261,6 +276,16 @@ def main() -> int:
                 
                 if completed % 50 == 0:
                     print(f"Progress: {completed}/{len(all_files)} - Marked: {len(already_marked)}, Sorted: {len(sorted_unmarked)}, Unsorted: {len(unsorted_files)}", flush=True)
+
+                now = time.monotonic()
+                if now - last_hb >= heartbeat_seconds:
+                    elapsed = now - start_check
+                    print(
+                        f"Heartbeat(check): {completed}/{len(all_files)} done in {elapsed/60:.1f} min "
+                        f"(marked={len(already_marked)}, sorted={len(sorted_unmarked)}, unsorted={len(unsorted_files)}, errors={len(error_files)})",
+                        flush=True,
+                    )
+                    last_hb = now
                     
             except Exception as e:
                 print(f"[{completed}/{len(all_files)}] ⚠️  {pq_file.name} - Exception: {e}")
@@ -295,21 +320,41 @@ def main() -> int:
         with ProcessPoolExecutor(max_workers=sort_workers) as executor:
             work_items = [(str(p), float(args.memory_per_sort), str(temp_root)) for p in unsorted_files]
             futures = {executor.submit(sort_and_mark_one, item): item[0] for item in work_items}
+
             done = 0
-            for fut in as_completed(futures):
-                done += 1
-                src = futures[fut]
-                try:
-                    src_path, ok, msg, out_path = fut.result()
-                    if ok and out_path:
-                        sorted_count += 1
-                        print(f"✅ [{done}/{len(unsorted_files)}] {Path(src_path).name} -> {Path(out_path).name}")
-                    else:
+            start_sort = time.monotonic()
+            last_sort_hb = start_sort
+            pending = set(futures.keys())
+
+            while pending:
+                finished, pending = wait(pending, timeout=heartbeat_seconds, return_when=FIRST_COMPLETED)
+
+                if not finished:
+                    now = time.monotonic()
+                    if now - last_sort_hb >= heartbeat_seconds:
+                        elapsed = now - start_sort
+                        print(
+                            f"Heartbeat(sort): {done}/{len(unsorted_files)} done in {elapsed/60:.1f} min "
+                            f"(ok={sorted_count}, fail={failed_count}, pending={len(pending)})",
+                            flush=True,
+                        )
+                        last_sort_hb = now
+                    continue
+
+                for fut in finished:
+                    done += 1
+                    src = futures[fut]
+                    try:
+                        src_path, ok, msg, out_path = fut.result()
+                        if ok and out_path:
+                            sorted_count += 1
+                            print(f"✅ [{done}/{len(unsorted_files)}] {Path(src_path).name} -> {Path(out_path).name}")
+                        else:
+                            failed_count += 1
+                            print(f"❌ [{done}/{len(unsorted_files)}] {Path(src).name}: {msg}")
+                    except Exception as e:
                         failed_count += 1
-                        print(f"❌ [{done}/{len(unsorted_files)}] {Path(src).name}: {msg}")
-                except Exception as e:
-                    failed_count += 1
-                    print(f"❌ [{done}/{len(unsorted_files)}] {Path(src).name}: exception {e}")
+                        print(f"❌ [{done}/{len(unsorted_files)}] {Path(src).name}: exception {e}")
         
         print()
         print(f"Sorting complete:")
