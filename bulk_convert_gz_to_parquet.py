@@ -10,6 +10,7 @@ import gzip
 import json
 import logging
 import multiprocessing
+import re
 import sys
 from pathlib import Path
 from typing import List, Optional
@@ -19,6 +20,79 @@ import pyarrow.parquet as pq
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s [%(levelname)s] %(message)s')
 logger = logging.getLogger(__name__)
+
+
+_REQUIRE_COLUMNS_IF_PRESENT = {"host_rev", "url", "ts"}
+
+
+def _extract_host(url: Optional[str]) -> Optional[str]:
+    if not url:
+        return None
+    u = str(url).strip()
+    i = u.find("://")
+    if i == -1:
+        return None
+    start = i + 3
+    end = u.find("/", start)
+    host = u[start:] if end == -1 else u[start:end]
+    host = host.lower()
+    if host.startswith("www."):
+        host = host[4:]
+    return host or None
+
+
+def _host_to_rev(host: Optional[str]) -> Optional[str]:
+    if not host:
+        return None
+    parts = [p for p in str(host).lower().split(".") if p]
+    if not parts:
+        return None
+    return ",".join(reversed(parts))
+
+
+def _parse_cdxj_line(line: str) -> Optional[tuple[str, Optional[str], Optional[str], dict]]:
+    """Parse CC CDXJ: <surt> <ts> <json> OR <surt> <ts> <url> <json>."""
+    line = line.strip()
+    if not line or line.startswith("#"):
+        return None
+
+    json_pos = line.find("{")
+    meta: dict = {}
+    pre = line
+    if json_pos != -1:
+        pre = line[:json_pos].strip()
+        json_str = line[json_pos:].strip()
+        try:
+            meta = json.loads(json_str)
+        except Exception:
+            meta = {}
+
+    parts = pre.split()
+    if len(parts) < 2:
+        return None
+
+    surt = parts[0]
+    ts = parts[1]
+
+    url: Optional[str] = None
+    if len(parts) >= 3:
+        # If third token is not JSON, it's a URL.
+        if not parts[2].startswith("{"):
+            url = parts[2]
+    if not url:
+        url = meta.get("url") if isinstance(meta, dict) else None
+
+    return surt, ts, url, meta
+
+
+def _parquet_has_required_columns(parquet_path: Path) -> bool:
+    """Best-effort schema check to avoid skipping old/incompatible parquet files."""
+    try:
+        pf = pq.ParquetFile(parquet_path)
+        names = set(pf.schema_arrow.names)
+        return _REQUIRE_COLUMNS_IF_PRESENT.issubset(names)
+    except Exception:
+        return False
 
 
 def _coerce_int(value: object) -> Optional[int]:
@@ -56,34 +130,30 @@ def convert_gz_to_parquet(gz_path: Path, output_path: Path, chunk_size: int = 10
     try:
         logger.info(f"Converting {gz_path.name}...")
         
-        # Read and parse .gz file
+        # Read and parse .gz file (CDXJ)
         rows = []
         with gzip.open(gz_path, 'rt', encoding='utf-8', errors='replace') as f:
             for line_num, line in enumerate(f, 1):
-                line = line.strip()
-                if not line:
+                parsed = _parse_cdxj_line(line)
+                if not parsed:
                     continue
-                
-                parts = line.split(' ', 2)
-                if len(parts) < 3:
-                    continue
-                
-                surt, timestamp, rest = parts
-                try:
-                    json_data = json.loads(rest)
-                except json.JSONDecodeError:
-                    continue
-                
+                surt, ts, url, meta = parsed
+
+                host = _extract_host(url)
+                host_rev = _host_to_rev(host)
+
                 rows.append({
                     'surt': surt,
-                    'timestamp': timestamp,
-                    'url': json_data.get('url'),
-                    'status': _coerce_int(json_data.get('status')),
-                    'mime': json_data.get('mime'),
-                    'digest': json_data.get('digest'),
-                    'warc_filename': json_data.get('filename'),
-                    'warc_offset': _coerce_int(json_data.get('offset')),
-                    'warc_length': _coerce_int(json_data.get('length')),
+                    'ts': ts,
+                    'url': url,
+                    'host': host,
+                    'host_rev': host_rev,
+                    'status': _coerce_int(meta.get('status')),
+                    'mime': meta.get('mime'),
+                    'digest': meta.get('digest'),
+                    'warc_filename': meta.get('filename'),
+                    'warc_offset': _coerce_int(meta.get('offset')),
+                    'warc_length': _coerce_int(meta.get('length')),
                 })
         
         if not rows:
@@ -93,8 +163,10 @@ def convert_gz_to_parquet(gz_path: Path, output_path: Path, chunk_size: int = 10
         # Create Arrow table
         schema = pa.schema([
             ('surt', pa.string()),
-            ('timestamp', pa.string()),
+            ('ts', pa.string()),
             ('url', pa.string()),
+            ('host', pa.string()),
+            ('host_rev', pa.string()),
             ('status', pa.int32()),
             ('mime', pa.string()),
             ('digest', pa.string()),
@@ -142,17 +214,26 @@ def convert_collection(
     
     # Prepare work list
     work = []
+    skipped = 0
     for gz_file in gz_files:
         output_file = output_dir / f"{gz_file.name}.parquet"
         sorted_output_file = output_dir / f"{gz_file.name}.sorted.parquet"
 
         # Treat already-sorted outputs as "already converted" to avoid duplicating work.
-        if skip_existing and (output_file.exists() or sorted_output_file.exists()):
-            if sorted_output_file.exists() and not output_file.exists():
-                logger.info(f"Skipping existing sorted {sorted_output_file.name}")
-            else:
-                logger.info(f"Skipping existing {output_file.name}")
+        if skip_existing and sorted_output_file.exists():
+            logger.info(f"Skipping existing sorted {sorted_output_file.name}")
+            skipped += 1
             continue
+
+        if skip_existing and output_file.exists():
+            # Resume mode: if the existing parquet uses an older/incompatible schema,
+            # schedule a rebuild so downstream sort/index steps don't fail.
+            if _parquet_has_required_columns(output_file):
+                logger.info(f"Skipping existing {output_file.name}")
+                skipped += 1
+                continue
+            logger.warning(f"Rebuilding {output_file.name} (missing required columns: {sorted(_REQUIRE_COLUMNS_IF_PRESENT)})")
+
         work.append((gz_file, output_file))
     
     if not work:
@@ -170,8 +251,9 @@ def convert_collection(
     
     success_count = sum(1 for r in results if r)
     logger.info(f"Converted {success_count}/{len(work)} files successfully")
-    
-    return len(gz_files), success_count
+
+    # Count skipped files as success for resume mode.
+    return len(gz_files), skipped + success_count
 
 
 def main():

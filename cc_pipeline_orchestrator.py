@@ -276,10 +276,55 @@ class PipelineOrchestrator:
         logger.info(f"Sorting {collection} (validate + sort + mark)...")
 
         parquet_dir = self._get_collection_parquet_dir(collection)
+        ccindex_dir = self.config.ccindex_root / collection
         
         if not parquet_dir.exists():
             logger.error(f"Parquet directory does not exist: {parquet_dir}")
             return False
+
+        # Some older/partial runs produced parquet files without the required
+        # columns for downstream sorting/indexing (host_rev/url/ts). Detect and
+        # rebuild those in-place before attempting to sort.
+        try:
+            import pyarrow.parquet as pq  # local import to keep module deps light
+
+            def _has_required_cols(p: Path) -> bool:
+                try:
+                    pf = pq.ParquetFile(p)
+                    names = set(pf.schema_arrow.names)
+                    return {"host_rev", "url", "ts"}.issubset(names)
+                except Exception:
+                    return False
+
+            legacy_files = [
+                p
+                for p in parquet_dir.glob("cdx-*.gz.parquet")
+                if ".sorted." not in p.name and not _has_required_cols(p)
+            ]
+            if legacy_files:
+                logger.warning(
+                    f"Found {len(legacy_files)} parquet file(s) with legacy/invalid schema; rebuilding before sorting"
+                )
+                rebuild_cmd = [
+                    sys.executable,
+                    "bulk_convert_gz_to_parquet.py",
+                    "--input-dir",
+                    str(ccindex_dir),
+                    "--output-dir",
+                    str(parquet_dir),
+                    "--workers",
+                    str(self.config.max_workers),
+                ]
+                rebuild = subprocess.run(rebuild_cmd, capture_output=True, text=True)
+                if rebuild.stdout:
+                    logger.info(rebuild.stdout[-2000:])
+                if rebuild.stderr:
+                    logger.warning(f"stderr: {rebuild.stderr[-2000:]}")
+                if rebuild.returncode != 0:
+                    logger.error(f"Failed to rebuild legacy parquet files for {collection} (exit {rebuild.returncode})")
+                    return False
+        except Exception as e:
+            logger.warning(f"Legacy schema check skipped due to error: {e}")
         
         try:
             cmd = [
@@ -293,9 +338,9 @@ class PipelineOrchestrator:
             result = subprocess.run(cmd, capture_output=True, text=True)
             if result.stdout:
                 logger.info(result.stdout[-2000:])
+            if result.stderr:
+                logger.warning(f"stderr: {result.stderr[-2000:]}")
             if result.returncode != 0:
-                if result.stderr:
-                    logger.error(f"stderr: {result.stderr[-2000:]}")
                 logger.error(f"Failed to sort/mark parquet for {collection} (exit {result.returncode})")
                 return False
 

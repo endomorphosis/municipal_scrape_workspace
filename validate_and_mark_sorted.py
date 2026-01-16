@@ -213,6 +213,7 @@ def main() -> int:
     print()
     
     # Sort unsorted files if requested
+    failed_count = 0
     if unsorted_files and args.sort_unsorted and not args.verify_only:
         print("=" * 80)
         print("SORTING UNSORTED FILES")
@@ -220,7 +221,6 @@ def main() -> int:
         print()
         
         sorted_count = 0
-        failed_count = 0
         
         for i, unsorted_file in enumerate(unsorted_files, 1):
             print(f"[{i}/{len(unsorted_files)}] Sorting: {unsorted_file.name}")
@@ -267,6 +267,11 @@ def main() -> int:
         print("⚠️  WARNING: Some files are not sorted!")
         print("   Run with --sort-unsorted to fix")
         return 1
+
+    if args.sort_unsorted and failed_count:
+        print()
+        print(f"❌ Sorting failed for {failed_count} file(s)")
+        return 2
     
     print()
     print("✅ All files verified and marked as sorted")
