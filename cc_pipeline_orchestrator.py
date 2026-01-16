@@ -252,7 +252,8 @@ class PipelineOrchestrator:
         
         try:
             logger.debug(f"Running: {' '.join(cmd)}")
-            result = subprocess.run(cmd, capture_output=True, text=True, check=True)
+            # Stream subprocess output so the pipeline doesn't look "stalled" for long runs.
+            subprocess.run(cmd, check=True)
             logger.info(f"Converted {collection} successfully")
             
             # If requested, immediately sort the newly converted files
@@ -262,7 +263,7 @@ class PipelineOrchestrator:
             return True
         except subprocess.CalledProcessError as e:
             logger.error(f"Failed to convert {collection}: {e}")
-            logger.error(f"STDERR: {e.stderr}")
+            # stderr/stdout were streamed to the console; include only minimal context here.
             return False
     
     def sort_collection(self, collection: str) -> bool:
@@ -315,11 +316,7 @@ class PipelineOrchestrator:
                     "--workers",
                     str(self.config.max_workers),
                 ]
-                rebuild = subprocess.run(rebuild_cmd, capture_output=True, text=True)
-                if rebuild.stdout:
-                    logger.info(rebuild.stdout[-2000:])
-                if rebuild.stderr:
-                    logger.warning(f"stderr: {rebuild.stderr[-2000:]}")
+                rebuild = subprocess.run(rebuild_cmd)
                 if rebuild.returncode != 0:
                     logger.error(f"Failed to rebuild legacy parquet files for {collection} (exit {rebuild.returncode})")
                     return False
@@ -336,11 +333,8 @@ class PipelineOrchestrator:
                 "--sort-workers", str(min(2, max(1, self.config.max_workers))),
             ]
 
-            result = subprocess.run(cmd, capture_output=True, text=True)
-            if result.stdout:
-                logger.info(result.stdout[-2000:])
-            if result.stderr:
-                logger.warning(f"stderr: {result.stderr[-2000:]}")
+            # Stream output so progress is visible during long sorts.
+            result = subprocess.run(cmd)
             if result.returncode != 0:
                 logger.error(f"Failed to sort/mark parquet for {collection} (exit {result.returncode})")
                 return False

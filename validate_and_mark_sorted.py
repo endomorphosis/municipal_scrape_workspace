@@ -128,6 +128,54 @@ def check_single_file(pq_file: Path, parquet_root: Path, verify_only: bool) -> T
         return ('error', pq_file, False, str(e))
 
 
+def sort_and_mark_one(args: Tuple[str, float, str]) -> Tuple[str, bool, str, str]:
+    """Sort one parquet file and mark it as *.sorted.parquet.
+
+    Args tuple: (unsorted_file_path, memory_per_sort_gb, temp_root)
+    Returns: (source_path, success, message, output_path)
+    """
+
+    src_path, memory_per_sort_gb, temp_root = args
+    src = Path(src_path)
+    tmp_root = Path(temp_root)
+
+    try:
+        safe = src.name.replace(os.sep, "_")
+        work_dir = tmp_root / f"cc_sort_{safe}"
+        work_dir.mkdir(parents=True, exist_ok=True)
+
+        sorted_tmp = work_dir / f"{src.name}.tmp.parquet"
+        if not sort_parquet_file(src, sorted_tmp, memory_per_sort_gb):
+            return str(src), False, "sort failed", ""
+
+        ok, reason = is_sorted_by_content(sorted_tmp)
+        if not ok:
+            try:
+                sorted_tmp.unlink()
+            except Exception:
+                pass
+            return str(src), False, f"verification failed: {reason}", ""
+
+        if src.name.endswith('.gz.parquet'):
+            new_name = src.name.replace('.gz.parquet', '.gz.sorted.parquet')
+        else:
+            new_name = src.name.replace('.parquet', '.sorted.parquet')
+        out = src.parent / new_name
+
+        src.unlink()
+        sorted_tmp.replace(out)
+
+        # Best-effort cleanup
+        try:
+            work_dir.rmdir()
+        except Exception:
+            pass
+
+        return str(src), True, "sorted + marked", str(out)
+    except Exception as e:
+        return str(src), False, f"exception: {e}", ""
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description="Validate and mark sorted parquet files")
     ap.add_argument("--parquet-root", required=True, type=str, help="Root directory of parquet files")
@@ -243,60 +291,25 @@ def main() -> int:
         temp_root = Path(args.temp_dir).expanduser().resolve() if args.temp_dir else Path(tempfile.gettempdir())
         temp_root.mkdir(parents=True, exist_ok=True)
 
-        def _sort_one(p: Path) -> Tuple[Path, bool, str]:
-            # Per-file temp dir to avoid collisions.
-            safe = p.name.replace(os.sep, "_")
-            work_dir = temp_root / f"cc_sort_{safe}"
-            work_dir.mkdir(parents=True, exist_ok=True)
-
-            sorted_tmp = work_dir / f"{p.name}.tmp.parquet"
-            if not sort_parquet_file(p, sorted_tmp, args.memory_per_sort):
-                return p, False, "sort failed"
-
-            is_sorted, reason = is_sorted_by_content(sorted_tmp)
-            if not is_sorted:
-                try:
-                    sorted_tmp.unlink()
-                except Exception:
-                    pass
-                return p, False, f"verification failed: {reason}"
-
-            if p.name.endswith('.gz.parquet'):
-                new_name = p.name.replace('.gz.parquet', '.gz.sorted.parquet')
-            else:
-                new_name = p.name.replace('.parquet', '.sorted.parquet')
-            sorted_final = p.parent / new_name
-
-            # Replace: remove original unsorted then move sorted into place.
-            p.unlink()
-            sorted_tmp.replace(sorted_final)
-
-            # Cleanup temp dir (best-effort)
-            try:
-                work_dir.rmdir()
-            except Exception:
-                pass
-
-            return sorted_final, True, "sorted + marked"
-
         print(f"Sorting {len(unsorted_files)} file(s) with {sort_workers} worker(s)")
         with ProcessPoolExecutor(max_workers=sort_workers) as executor:
-            futures = {executor.submit(_sort_one, p): p for p in unsorted_files}
+            work_items = [(str(p), float(args.memory_per_sort), str(temp_root)) for p in unsorted_files]
+            futures = {executor.submit(sort_and_mark_one, item): item[0] for item in work_items}
             done = 0
             for fut in as_completed(futures):
                 done += 1
                 src = futures[fut]
                 try:
-                    out_path, ok, msg = fut.result()
-                    if ok:
+                    src_path, ok, msg, out_path = fut.result()
+                    if ok and out_path:
                         sorted_count += 1
-                        print(f"✅ [{done}/{len(unsorted_files)}] {src.name} -> {out_path.name}")
+                        print(f"✅ [{done}/{len(unsorted_files)}] {Path(src_path).name} -> {Path(out_path).name}")
                     else:
                         failed_count += 1
-                        print(f"❌ [{done}/{len(unsorted_files)}] {src.name}: {msg}")
+                        print(f"❌ [{done}/{len(unsorted_files)}] {Path(src).name}: {msg}")
                 except Exception as e:
                     failed_count += 1
-                    print(f"❌ [{done}/{len(unsorted_files)}] {src.name}: exception {e}")
+                    print(f"❌ [{done}/{len(unsorted_files)}] {Path(src).name}: exception {e}")
         
         print()
         print(f"Sorting complete:")
