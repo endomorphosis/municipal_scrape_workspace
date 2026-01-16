@@ -333,6 +333,7 @@ class PipelineOrchestrator:
                 "--parquet-root", str(parquet_dir),
                 "--sort-unsorted",
                 "--workers", str(self.config.max_workers),
+                "--sort-workers", str(min(2, max(1, self.config.max_workers))),
             ]
 
             result = subprocess.run(cmd, capture_output=True, text=True)
@@ -343,6 +344,21 @@ class PipelineOrchestrator:
             if result.returncode != 0:
                 logger.error(f"Failed to sort/mark parquet for {collection} (exit {result.returncode})")
                 return False
+
+            # Cleanup: if a prior sorter produced *.sorted.parquet but left the
+            # original *.parquet behind, the validator can report parquet_count > expected.
+            # Remove those duplicates so counts reflect unique shards.
+            removed = 0
+            for sorted_file in parquet_dir.glob("cdx-*.gz.sorted.parquet"):
+                unsorted_candidate = sorted_file.with_name(sorted_file.name.replace(".gz.sorted.parquet", ".gz.parquet"))
+                if unsorted_candidate.exists():
+                    try:
+                        unsorted_candidate.unlink()
+                        removed += 1
+                    except Exception as e:
+                        logger.warning(f"Failed to remove duplicate unsorted parquet {unsorted_candidate}: {e}")
+            if removed:
+                logger.info(f"Removed {removed} duplicate unsorted parquet file(s) for {collection}")
 
             logger.info(f"Sorted/marked parquet files for {collection}")
             return True

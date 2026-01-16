@@ -83,9 +83,21 @@ class CollectionValidator:
         """Check if parquet files exist for collection (numbered files)
         Returns: (files_found, expected_count, path)
         """
-        sorted_files = []
-        unsorted_files = []
+        sorted_files: List[Path] = []
+        unsorted_files: List[Path] = []
         collection_path = None
+
+        def _shard_id(p: Path) -> str:
+            name = p.name
+            if name.endswith('.gz.sorted.parquet'):
+                return name[: -len('.gz.sorted.parquet')]
+            if name.endswith('.gz.parquet'):
+                return name[: -len('.gz.parquet')]
+            if name.endswith('.sorted.parquet'):
+                return name[: -len('.sorted.parquet')]
+            if name.endswith('.parquet'):
+                return name[: -len('.parquet')]
+            return p.stem
         
         # Extract year from collection name
         year_match = collection.split('-')[2] if len(collection.split('-')) > 2 else None
@@ -118,9 +130,13 @@ class CollectionValidator:
             if sorted_files or unsorted_files:
                 collection_path = self.parquet_dir
         
-        total_count = len(sorted_files) + len(unsorted_files)
-        if total_count > 0:
-            return total_count, 300, collection_path
+        # De-dupe: if both sorted + unsorted exist for the same shard, count it once.
+        sorted_ids = {_shard_id(p) for p in sorted_files}
+        unsorted_ids = {_shard_id(p) for p in unsorted_files if _shard_id(p) not in sorted_ids}
+        total_unique = len(sorted_ids) + len(unsorted_ids)
+
+        if total_unique > 0:
+            return total_unique, 300, collection_path
         return 0, 300, None
     
     def check_parquet_sorted(self, parquet_path: Path) -> bool:
@@ -155,8 +171,20 @@ class CollectionValidator:
         """Check if all parquet files for a collection are sorted
         Returns: (sorted_count, total_count)
         """
-        sorted_files = []
-        unsorted_files = []
+        sorted_files: List[Path] = []
+        unsorted_files: List[Path] = []
+
+        def _shard_id(p: Path) -> str:
+            name = p.name
+            if name.endswith('.gz.sorted.parquet'):
+                return name[: -len('.gz.sorted.parquet')]
+            if name.endswith('.gz.parquet'):
+                return name[: -len('.gz.parquet')]
+            if name.endswith('.sorted.parquet'):
+                return name[: -len('.sorted.parquet')]
+            if name.endswith('.parquet'):
+                return name[: -len('.parquet')]
+            return p.stem
         
         # Extract year from collection name
         year_match = collection.split('-')[2] if len(collection.split('-')) > 2 else None
@@ -185,9 +213,12 @@ class CollectionValidator:
             unsorted_files = list(self.parquet_dir.glob(f"{collection}-cdx-*.gz.parquet"))
             unsorted_files = [f for f in unsorted_files if '.sorted.parquet' not in f.name]
         
-        total = len(sorted_files) + len(unsorted_files)
-        sorted_count = len(sorted_files)
-        return sorted_count, total
+        # De-dupe duplicates where both exist; duplicates happen if a sorter writes
+        # *.sorted.parquet but leaves the original *.parquet behind.
+        sorted_ids = {_shard_id(p) for p in sorted_files}
+        unsorted_ids = {_shard_id(p) for p in unsorted_files if _shard_id(p) not in sorted_ids}
+        total_unique = len(sorted_ids) + len(unsorted_ids)
+        return len(sorted_ids), total_unique
     
     def check_duckdb_index_exists(self, collection: str) -> Tuple[bool, List[Path]]:
         """Check if DuckDB pointer index exists for collection"""

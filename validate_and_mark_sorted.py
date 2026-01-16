@@ -15,6 +15,8 @@ from pathlib import Path
 from typing import List, Tuple
 from concurrent.futures import ProcessPoolExecutor, as_completed
 import multiprocessing
+import os
+import tempfile
 
 import pyarrow.parquet as pq
 import duckdb
@@ -73,6 +75,9 @@ def sort_parquet_file(input_file: Path, output_file: Path, memory_limit_gb: floa
     try:
         con = duckdb.connect(":memory:")
         con.execute(f"SET memory_limit='{memory_limit_gb}GB'")
+        # Isolate DuckDB temp usage per-sort to avoid contention.
+        con.execute(f"SET temp_directory='{output_file.parent}'")
+        con.execute("PRAGMA threads=1")
         con.execute("""
             COPY (
                 SELECT * FROM read_parquet(?)
@@ -130,6 +135,18 @@ def main() -> int:
     ap.add_argument("--verify-only", action="store_true", help="Only verify, don't mark or sort")
     ap.add_argument("--memory-per-sort", type=float, default=4.0, help="GB memory per sort operation")
     ap.add_argument("--workers", type=int, default=None, help="Number of parallel workers (default: CPU count)")
+    ap.add_argument(
+        "--sort-workers",
+        type=int,
+        default=1,
+        help="Parallel workers for sorting unsorted files (default: 1; keep low for memory safety)",
+    )
+    ap.add_argument(
+        "--temp-dir",
+        type=str,
+        default=None,
+        help="Temp directory for DuckDB external sort spill (default: system temp)",
+    )
     
     args = ap.parse_args()
     
@@ -221,39 +238,65 @@ def main() -> int:
         print()
         
         sorted_count = 0
-        
-        for i, unsorted_file in enumerate(unsorted_files, 1):
-            print(f"[{i}/{len(unsorted_files)}] Sorting: {unsorted_file.name}")
-            
-            # Create temporary sorted file
-            sorted_tmp = unsorted_file.with_suffix(".parquet.tmp")
-            
-            if sort_parquet_file(unsorted_file, sorted_tmp, args.memory_per_sort):
-                # Verify it's now sorted
-                is_sorted, reason = is_sorted_by_content(sorted_tmp)
-                
-                if is_sorted:
-                    # Create final sorted filename
-                    if unsorted_file.name.endswith('.gz.parquet'):
-                        new_name = unsorted_file.name.replace('.gz.parquet', '.gz.sorted.parquet')
-                    else:
-                        new_name = unsorted_file.name.replace('.parquet', '.sorted.parquet')
-                    
-                    sorted_final = unsorted_file.parent / new_name
-                    
-                    # Remove original and rename temp
-                    unsorted_file.unlink()
-                    sorted_tmp.rename(sorted_final)
-                    
-                    sorted_count += 1
-                    print(f"  ✅ Sorted, verified, and marked: {new_name}")
-                else:
-                    print(f"  ❌ Sort verification failed: {reason}")
+
+        sort_workers = max(1, int(args.sort_workers))
+        temp_root = Path(args.temp_dir).expanduser().resolve() if args.temp_dir else Path(tempfile.gettempdir())
+        temp_root.mkdir(parents=True, exist_ok=True)
+
+        def _sort_one(p: Path) -> Tuple[Path, bool, str]:
+            # Per-file temp dir to avoid collisions.
+            safe = p.name.replace(os.sep, "_")
+            work_dir = temp_root / f"cc_sort_{safe}"
+            work_dir.mkdir(parents=True, exist_ok=True)
+
+            sorted_tmp = work_dir / f"{p.name}.tmp.parquet"
+            if not sort_parquet_file(p, sorted_tmp, args.memory_per_sort):
+                return p, False, "sort failed"
+
+            is_sorted, reason = is_sorted_by_content(sorted_tmp)
+            if not is_sorted:
+                try:
                     sorted_tmp.unlink()
-                    failed_count += 1
+                except Exception:
+                    pass
+                return p, False, f"verification failed: {reason}"
+
+            if p.name.endswith('.gz.parquet'):
+                new_name = p.name.replace('.gz.parquet', '.gz.sorted.parquet')
             else:
-                failed_count += 1
-                print(f"  ❌ Sort operation failed")
+                new_name = p.name.replace('.parquet', '.sorted.parquet')
+            sorted_final = p.parent / new_name
+
+            # Replace: remove original unsorted then move sorted into place.
+            p.unlink()
+            sorted_tmp.replace(sorted_final)
+
+            # Cleanup temp dir (best-effort)
+            try:
+                work_dir.rmdir()
+            except Exception:
+                pass
+
+            return sorted_final, True, "sorted + marked"
+
+        print(f"Sorting {len(unsorted_files)} file(s) with {sort_workers} worker(s)")
+        with ProcessPoolExecutor(max_workers=sort_workers) as executor:
+            futures = {executor.submit(_sort_one, p): p for p in unsorted_files}
+            done = 0
+            for fut in as_completed(futures):
+                done += 1
+                src = futures[fut]
+                try:
+                    out_path, ok, msg = fut.result()
+                    if ok:
+                        sorted_count += 1
+                        print(f"✅ [{done}/{len(unsorted_files)}] {src.name} -> {out_path.name}")
+                    else:
+                        failed_count += 1
+                        print(f"❌ [{done}/{len(unsorted_files)}] {src.name}: {msg}")
+                except Exception as e:
+                    failed_count += 1
+                    print(f"❌ [{done}/{len(unsorted_files)}] {src.name}: exception {e}")
         
         print()
         print(f"Sorting complete:")

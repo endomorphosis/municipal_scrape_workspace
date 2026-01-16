@@ -126,70 +126,122 @@ def _coerce_int(value: object) -> Optional[int]:
 
 
 def convert_gz_to_parquet(gz_path: Path, output_path: Path, chunk_size: int = 100000) -> bool:
-    """Convert a single .gz file to parquet"""
+    """Convert a single .gz file to parquet.
+
+    Important: these shards can be 10M+ rows. We stream in chunks to avoid
+    huge RAM spikes (which can look like "stalled" workers / low CPU due to
+    swapping and allocator pressure).
+    """
+    schema = pa.schema(
+        [
+            ("surt", pa.string()),
+            ("ts", pa.string()),
+            ("url", pa.string()),
+            ("host", pa.string()),
+            ("host_rev", pa.string()),
+            ("status", pa.int32()),
+            ("mime", pa.string()),
+            ("digest", pa.string()),
+            ("warc_filename", pa.string()),
+            ("warc_offset", pa.int64()),
+            ("warc_length", pa.int64()),
+        ]
+    )
+
+    tmp_path = output_path.with_suffix(output_path.suffix + ".tmp")
+
+    def _flush(writer: pq.ParquetWriter, buf: dict) -> int:
+        if not buf["surt"]:
+            return 0
+        table = pa.table(buf, schema=schema)
+        writer.write_table(table)
+        n = len(buf["surt"])
+        for k in buf.keys():
+            buf[k].clear()
+        return n
+
     try:
         logger.info(f"Converting {gz_path.name}...")
-        
-        # Read and parse .gz file (CDXJ)
-        rows = []
-        with gzip.open(gz_path, 'rt', encoding='utf-8', errors='replace') as f:
-            for line_num, line in enumerate(f, 1):
-                parsed = _parse_cdxj_line(line)
-                if not parsed:
-                    continue
-                surt, ts, url, meta = parsed
 
-                host = _extract_host(url)
-                host_rev = _host_to_rev(host)
+        # Build columns as python lists; Arrow will convert efficiently.
+        buf = {
+            "surt": [],
+            "ts": [],
+            "url": [],
+            "host": [],
+            "host_rev": [],
+            "status": [],
+            "mime": [],
+            "digest": [],
+            "warc_filename": [],
+            "warc_offset": [],
+            "warc_length": [],
+        }
 
-                rows.append({
-                    'surt': surt,
-                    'ts': ts,
-                    'url': url,
-                    'host': host,
-                    'host_rev': host_rev,
-                    'status': _coerce_int(meta.get('status')),
-                    'mime': meta.get('mime'),
-                    'digest': meta.get('digest'),
-                    'warc_filename': meta.get('filename'),
-                    'warc_offset': _coerce_int(meta.get('offset')),
-                    'warc_length': _coerce_int(meta.get('length')),
-                })
-        
-        if not rows:
-            logger.warning(f"No valid rows in {gz_path.name}")
-            return False
-        
-        # Create Arrow table
-        schema = pa.schema([
-            ('surt', pa.string()),
-            ('ts', pa.string()),
-            ('url', pa.string()),
-            ('host', pa.string()),
-            ('host_rev', pa.string()),
-            ('status', pa.int32()),
-            ('mime', pa.string()),
-            ('digest', pa.string()),
-            ('warc_filename', pa.string()),
-            ('warc_offset', pa.int64()),
-            ('warc_length', pa.int64())
-        ])
-        
-        table = pa.Table.from_pylist(rows, schema=schema)
-        
-        # Write parquet file
-        pq.write_table(
-            table,
-            output_path,
-            compression='zstd',
-            compression_level=3
-        )
-        
-        logger.info(f"✓ Converted {gz_path.name} ({len(rows)} rows)")
+        total_rows = 0
+        writer: Optional[pq.ParquetWriter] = None
+
+        try:
+            with gzip.open(gz_path, "rt", encoding="utf-8", errors="replace") as f:
+                for line in f:
+                    parsed = _parse_cdxj_line(line)
+                    if not parsed:
+                        continue
+
+                    surt, ts, url, meta = parsed
+                    host = _extract_host(url)
+                    host_rev = _host_to_rev(host)
+
+                    buf["surt"].append(surt)
+                    buf["ts"].append(ts)
+                    buf["url"].append(url)
+                    buf["host"].append(host)
+                    buf["host_rev"].append(host_rev)
+                    buf["status"].append(_coerce_int(meta.get("status")))
+                    buf["mime"].append(meta.get("mime"))
+                    buf["digest"].append(meta.get("digest"))
+                    buf["warc_filename"].append(meta.get("filename"))
+                    buf["warc_offset"].append(_coerce_int(meta.get("offset")))
+                    buf["warc_length"].append(_coerce_int(meta.get("length")))
+
+                    if len(buf["surt"]) >= chunk_size:
+                        if writer is None:
+                            writer = pq.ParquetWriter(
+                                tmp_path,
+                                schema,
+                                compression="zstd",
+                                compression_level=3,
+                            )
+                        total_rows += _flush(writer, buf)
+
+            # Final flush
+            if writer is None:
+                # No data at all
+                if not buf["surt"]:
+                    logger.warning(f"No valid rows in {gz_path.name}")
+                    return False
+                writer = pq.ParquetWriter(
+                    tmp_path,
+                    schema,
+                    compression="zstd",
+                    compression_level=3,
+                )
+            total_rows += _flush(writer, buf)
+        finally:
+            if writer is not None:
+                writer.close()
+
+        # Atomic-ish replace
+        tmp_path.replace(output_path)
+        logger.info(f"✓ Converted {gz_path.name} ({total_rows} rows)")
         return True
-        
     except Exception as e:
         logger.error(f"Failed to convert {gz_path.name}: {e}")
+        try:
+            if tmp_path.exists():
+                tmp_path.unlink()
+        except Exception:
+            pass
         return False
 
 
