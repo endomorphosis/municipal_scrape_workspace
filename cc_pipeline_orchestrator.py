@@ -715,6 +715,7 @@ class PipelineOrchestrator:
         # find zero inputs if pointed at the parquet folder.
         cmd = [
             sys.executable,
+            "-u",
             "build_index_from_parquet.py",
             "--parquet-root", str(parquet_dir),
             "--output-db", str(duckdb_path),
@@ -905,8 +906,13 @@ class PipelineOrchestrator:
         )
         return False
     
-    def build_meta_indexes(self):
-        """Build year-level and master meta-indexes"""
+    def build_meta_indexes(self, *, year: Optional[str] = None) -> bool:
+        """Build year-level and master meta-indexes.
+
+        NOTE: This is intentionally only meant to run after an entire year of
+        collections is complete (not after a single collection filter like
+        '2024-26').
+        """
         try:
             # Step 1: Build year-level indexes
             logger.info("\nStep 1: Building year-level meta-indexes...")
@@ -918,9 +924,12 @@ class PipelineOrchestrator:
             cmd = [
                 sys.executable,
                 str(year_index_script),
-                "--collection-dir", str(self.config.duckdb_root),
-                "--output-dir", str(self.config.duckdb_root.parent / "cc_domain_by_year")
+                "--collection-dir", str(self.config.duckdb_collection_root),
+                "--output-dir", str(self.config.duckdb_year_root),
             ]
+
+            if year:
+                cmd += ["--year", str(year)]
             
             logger.info(f"Running: {' '.join(cmd)}")
             result = subprocess.run(cmd, capture_output=True, text=True, check=True)
@@ -937,8 +946,8 @@ class PipelineOrchestrator:
             cmd = [
                 sys.executable,
                 str(master_index_script),
-                "--year-dir", str(self.config.duckdb_root.parent / "cc_domain_by_year"),
-                "--output", str(self.config.duckdb_root.parent / "cc_master_index.duckdb")
+                "--year-dir", str(self.config.duckdb_year_root),
+                "--output", str(self.config.duckdb_master_root / "cc_master_index.duckdb"),
             ]
             
             logger.info(f"Running: {' '.join(cmd)}")
@@ -952,7 +961,7 @@ class PipelineOrchestrator:
                 sys.executable,
                 str(master_index_script),
                 "--stats",
-                "--output", str(self.config.duckdb_root.parent / "cc_master_index.duckdb")
+                "--output", str(self.config.duckdb_master_root / "cc_master_index.duckdb"),
             ]
             result = subprocess.run(cmd, capture_output=True, text=True, check=True)
             logger.info(result.stdout)
@@ -1016,12 +1025,23 @@ class PipelineOrchestrator:
                 pct = (s['sorted_count'] / s['parquet_expected'] * 100) if s['parquet_expected'] > 0 else 0
                 logger.info(f"  {c}: {pct:.1f}% sorted ({s['sorted_count']}/{s['parquet_expected']})")
         
-        # Build meta-indexes if all collections complete
+        # Build meta-indexes only after a full-year run is complete.
+        # If the user filtered to a single collection (e.g. '2024-26'), skip.
         if not incomplete:
-            logger.info("\n" + "=" * 80)
-            logger.info("Building Meta-Indexes")
-            logger.info("=" * 80)
-            self.build_meta_indexes()
+            filter_str = (self.config.collections_filter or "").strip()
+            is_full_year = len(filter_str) == 4 and filter_str.isdigit()
+            if is_full_year:
+                logger.info("\n" + "=" * 80)
+                logger.info("Building Meta-Indexes")
+                logger.info("=" * 80)
+                try:
+                    self.build_meta_indexes(year=filter_str)
+                except Exception as e:
+                    logger.error(f"Meta-index build failed (non-fatal): {e}")
+            else:
+                logger.info(
+                    f"Skipping meta-index build (filter={filter_str or 'None'}; only runs for full-year filters like '2024')."
+                )
 
 
 def main():

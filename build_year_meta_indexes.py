@@ -27,11 +27,16 @@ logger = logging.getLogger(__name__)
 def get_collection_indexes(collection_dir: Path) -> Dict[str, List[Path]]:
     """Group collection indexes by year"""
     indexes_by_year = defaultdict(list)
-    
-    for db_file in sorted(collection_dir.glob("cc_pointers_CC-MAIN-*.duckdb")):
-        # Extract year from filename: cc_pointers_CC-MAIN-2024-10.duckdb -> 2024
-        parts = db_file.stem.split('-')
-        if len(parts) >= 3:
+
+    # Support both legacy naming ('cc_pointers_CC-MAIN-....duckdb') and
+    # current per-collection naming ('CC-MAIN-....duckdb').
+    candidates = list(collection_dir.glob("cc_pointers_CC-MAIN-*.duckdb")) + list(collection_dir.glob("CC-MAIN-*.duckdb"))
+    for db_file in sorted(set(candidates)):
+        stem = db_file.stem
+        collection = stem.replace("cc_pointers_", "") if stem.startswith("cc_pointers_") else stem
+        parts = collection.split('-')
+        # Extract year from collection: CC-MAIN-2024-10 -> 2024
+        if len(parts) >= 3 and parts[2].isdigit():
             year = parts[2]
             indexes_by_year[year].append(db_file)
     
@@ -66,16 +71,29 @@ def build_year_meta_index(year: str, collection_dbs: List[Path], output_dir: Pat
     total_files = 0
     
     for i, db_path in enumerate(collection_dbs):
-        collection = db_path.stem.replace("cc_pointers_", "")
+        stem = db_path.stem
+        collection = stem.replace("cc_pointers_", "") if stem.startswith("cc_pointers_") else stem
         alias = f"coll_{i}"
         
         try:
             # Attach the collection database
             conn.execute(f"ATTACH DATABASE '{db_path}' AS {alias} (READ_ONLY)")
-            
-            # Get stats from the collection
-            domain_count = conn.execute(f"SELECT COUNT(*) FROM {alias}.domain_pointers").fetchone()[0]
-            file_count = conn.execute(f"SELECT COUNT(DISTINCT file_path) FROM {alias}.domain_pointers").fetchone()[0]
+
+            # Detect schema.
+            tables = {row[0] for row in conn.execute(
+                f"SELECT table_name FROM {alias}.information_schema.tables WHERE table_schema = 'main'"
+            ).fetchall()}
+
+            if 'domain_pointers' in tables:
+                domain_count = conn.execute(f"SELECT COUNT(*) FROM {alias}.domain_pointers").fetchone()[0]
+                # Legacy schema uses file_path.
+                file_count = conn.execute(f"SELECT COUNT(DISTINCT file_path) FROM {alias}.domain_pointers").fetchone()[0]
+            elif 'cc_domain_shards' in tables:
+                # Domain-only schema: one row per (host_rev, parquet_relpath, ...)
+                domain_count = conn.execute(f"SELECT COUNT(*) FROM {alias}.cc_domain_shards").fetchone()[0]
+                file_count = conn.execute(f"SELECT COUNT(DISTINCT parquet_relpath) FROM {alias}.cc_domain_shards").fetchone()[0]
+            else:
+                raise RuntimeError(f"Unsupported schema (no domain_pointers/cc_domain_shards). tables={sorted(tables)}")
             
             # Register this collection
             conn.execute("""

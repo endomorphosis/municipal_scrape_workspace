@@ -244,42 +244,46 @@ class CollectionValidator:
         return len(db_files) > 0, db_files
     
     def check_duckdb_index_sorted(self, db_path: Path) -> bool:
-        """Check if DuckDB pointer index is sorted by domain"""
+        """Check if DuckDB pointer index is sorted.
+
+        Supports both schemas:
+        - legacy: domain_pointers(domain, ...)
+        - domain-only: cc_domain_shards(host_rev, ...)
+        """
         # Check for .sorted marker file first (appended, not replaced)
         sorted_marker = Path(str(db_path) + '.sorted')
         if sorted_marker.exists():
             return True
         
-        # Fallback: check actual data sorting (expensive)
+        # Fallback: heuristic check using the first N rows.
+        # (DuckDB doesn't expose a stable rowid we can rely on across versions.)
         try:
             conn = duckdb.connect(str(db_path), read_only=True)
-            
-            # Get table name
-            tables = conn.execute("SHOW TABLES").fetchall()
+
+            tables = {row[0] for row in conn.execute("SHOW TABLES").fetchall()}
             if not tables:
                 conn.close()
                 return False
-            
-            table_name = tables[0][0]
-            
-            # Check if domain column exists and is sorted using a subquery
-            result = conn.execute(f"""
-                SELECT COUNT(*) as total,
-                       SUM(CASE WHEN is_sorted THEN 1 ELSE 0 END) as sorted_count
-                FROM (
-                    SELECT domain >= LAG(domain, 1, domain) OVER (ORDER BY rowid) as is_sorted
-                    FROM {table_name}
-                )
-            """).fetchone()
-            
+
+            if 'cc_domain_shards' in tables:
+                table_name = 'cc_domain_shards'
+                sort_col = 'host_rev'
+            elif 'domain_pointers' in tables:
+                table_name = 'domain_pointers'
+                sort_col = 'domain'
+            else:
+                conn.close()
+                return None
+
+            rows = conn.execute(
+                f"SELECT {sort_col} FROM {table_name} LIMIT 1000"
+            ).fetchall()
             conn.close()
-            
-            if result and result[0] > 0:
-                total, sorted_count = result
-                # All rows should be sorted
-                return sorted_count == total
-            
-            return True  # Empty table is sorted
+
+            values = [r[0] for r in rows if r and r[0] is not None]
+            if not values:
+                return True
+            return values == sorted(values)
             
         except Exception as e:
             # Skip locked files - they're likely being used

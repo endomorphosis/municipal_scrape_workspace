@@ -173,9 +173,14 @@ def main() -> int:
     ap = argparse.ArgumentParser(description="Build index from existing parquet files")
     ap.add_argument("--parquet-root", required=True, help="Root directory of parquet files")
     ap.add_argument("--output-db", required=True, help="Output DuckDB file")
-    ap.add_argument("--batch-size", type=int, default=100, help="Files per batch")
+    ap.add_argument(
+        "--batch-size",
+        type=int,
+        default=10,
+        help="Commit every N files (also controls progress cadence)",
+    )
     ap.add_argument("--extract-rowgroups", action="store_true", help="Extract row group ranges")
-    
+    ap.add_argument("--max-files", type=int, default=None, help="Only process up to N parquet files (for testing)")
     args = ap.parse_args()
     
     parquet_root = Path(args.parquet_root).expanduser().resolve()
@@ -206,6 +211,9 @@ def main() -> int:
     # Pipeline convention: sorted shards end with '.sorted.parquet' (commonly '.gz.sorted.parquet').
     sorted_candidates = [p for p in candidates if p.name.endswith(".sorted.parquet")]
     all_files = sorted(sorted_candidates if sorted_candidates else candidates)
+
+    if args.max_files is not None:
+        all_files = all_files[: max(0, int(args.max_files))]
 
     print(f"Found {len(all_files)} parquet files")
     print()
@@ -244,49 +252,120 @@ def main() -> int:
                 host_rev_max VARCHAR
             )
         """)
-    
-    # Process in batches
-    batch_size = args.batch_size
+
+    # Track progress per parquet file so reruns don't duplicate rows.
+    con.execute(
+        """
+        CREATE TABLE IF NOT EXISTS cc_indexed_parquet_files (
+            parquet_path VARCHAR PRIMARY KEY,
+            size_bytes BIGINT,
+            mtime_ns BIGINT,
+            indexed_at TIMESTAMP
+        )
+        """
+    )
+
+    commit_every = max(1, int(args.batch_size or 10))
     total_domains = 0
     total_rowgroups = 0
-    
-    for batch_start in range(0, len(all_files), batch_size):
-        batch_end = min(batch_start + batch_size, len(all_files))
-        batch = all_files[batch_start:batch_end]
-        
-        print(f"Processing batch {batch_start//batch_size + 1}/{(len(all_files) + batch_size - 1)//batch_size}")
-        print(f"  Files: {batch_start+1} to {batch_end}")
-        
-        # Extract domain mappings
-        batch_domains = []
-        for pq_file in batch:
-            domains = extract_domain_mappings_from_parquet(pq_file, parquet_root)
-            batch_domains.extend(domains)
-        
-        if batch_domains:
-            con.executemany(
-                "INSERT INTO cc_domain_shards VALUES (?, ?, ?, ?, ?, ?, ?)",
-                batch_domains
-            )
-            total_domains += len(batch_domains)
-            print(f"  Inserted {len(batch_domains)} domain mappings")
-        
-        # Extract row group ranges if requested
+    did_files = 0
+    skipped_files = 0
+
+    for idx, pq_file in enumerate(all_files, 1):
+        try:
+            st = pq_file.stat()
+            size_bytes = int(st.st_size)
+            mtime_ns = int(st.st_mtime_ns)
+        except Exception:
+            size_bytes = -1
+            mtime_ns = -1
+
+        pq_path_str = str(pq_file)
+        existing = con.execute(
+            "SELECT size_bytes, mtime_ns FROM cc_indexed_parquet_files WHERE parquet_path = ?",
+            [pq_path_str],
+        ).fetchone()
+        if existing and int(existing[0]) == size_bytes and int(existing[1]) == mtime_ns:
+            skipped_files += 1
+            if (idx % 50) == 0:
+                print(f"Progress {idx}/{len(all_files)} (did={did_files}, skipped={skipped_files})")
+            continue
+
+        # Parse collection/year from path (best-effort).
+        collection = None
+        year = None
+        for part in pq_file.parts:
+            if part.startswith('CC-MAIN-'):
+                collection = part
+                try:
+                    year = int(part.split('-')[2])
+                except Exception:
+                    year = None
+                break
+
+        shard_file = pq_file.name
+        try:
+            rel_path = pq_file.relative_to(parquet_root).as_posix()
+        except Exception:
+            rel_path = pq_path_str
+
+        print(f"[{idx}/{len(all_files)}] Indexing {shard_file}...")
+
+        # Make per-file idempotent.
+        con.execute("DELETE FROM cc_domain_shards WHERE source_path = ?", [pq_path_str])
         if args.extract_rowgroups:
-            batch_rowgroups = []
-            for pq_file in batch:
-                rowgroups = extract_rowgroup_ranges(pq_file, parquet_root)
-                batch_rowgroups.extend(rowgroups)
-            
-            if batch_rowgroups:
+            con.execute("DELETE FROM cc_parquet_rowgroups WHERE source_path = ?", [pq_path_str])
+
+        # Insert domain mappings directly via SQL (avoids huge Python lists).
+        con.execute(
+            """
+            INSERT INTO cc_domain_shards
+            SELECT ?, ?, ?, ?, ?, host, host_rev
+            FROM (
+                SELECT DISTINCT host, host_rev
+                FROM read_parquet(?)
+                WHERE host IS NOT NULL AND host_rev IS NOT NULL
+            )
+            """,
+            [pq_path_str, collection, year, shard_file, rel_path, pq_path_str],
+        )
+
+        try:
+            n_dom = con.execute(
+                "SELECT COUNT(*) FROM cc_domain_shards WHERE source_path = ?",
+                [pq_path_str],
+            ).fetchone()[0]
+        except Exception:
+            n_dom = 0
+        total_domains += int(n_dom or 0)
+
+        if args.extract_rowgroups:
+            rowgroups = extract_rowgroup_ranges(pq_file, parquet_root)
+            if rowgroups:
                 con.executemany(
                     "INSERT INTO cc_parquet_rowgroups VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
-                    batch_rowgroups
+                    rowgroups,
                 )
-                total_rowgroups += len(batch_rowgroups)
-                print(f"  Inserted {len(batch_rowgroups)} row group ranges")
-        
+                total_rowgroups += len(rowgroups)
+
+        con.execute("DELETE FROM cc_indexed_parquet_files WHERE parquet_path = ?", [pq_path_str])
+        con.execute(
+            "INSERT INTO cc_indexed_parquet_files (parquet_path, size_bytes, mtime_ns, indexed_at) VALUES (?, ?, ?, now())",
+            [pq_path_str, size_bytes, mtime_ns],
+        )
+
+        did_files += 1
+        if (did_files % commit_every) == 0:
+            con.commit()
+            print(f"Committed (did={did_files}, skipped={skipped_files})")
+
+        print(f"  Domains: {int(n_dom or 0):,}")
+        if args.extract_rowgroups:
+            print(f"  Row groups: {len(rowgroups) if rowgroups else 0}")
         print()
+
+    con.commit()
+    print(f"Processed files: {did_files:,} (skipped unchanged: {skipped_files:,})")
     
     # Create indexes
     print("Creating indexes...")
