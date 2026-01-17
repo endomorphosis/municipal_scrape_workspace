@@ -705,27 +705,20 @@ class PipelineOrchestrator:
             logger.error(f"Parquet directory does not exist: {parquet_dir}")
             return False
         
-        # Check for sorted files
-        sorted_files = list(parquet_dir.glob("*.gz.sorted.parquet"))
-        if not sorted_files:
-            logger.warning(f"No sorted parquet files found in {parquet_dir}")
-            # Fall back to unsorted files if needed
-            sorted_files = list(parquet_dir.glob("*.gz.parquet"))
-        
         # Store per-collection indexes in cc_pointers_by_collection
         duckdb_dir = self.config.duckdb_collection_root
         duckdb_dir.mkdir(parents=True, exist_ok=True)
         duckdb_path = duckdb_dir / f"{collection}.duckdb"
-        
-        # Use build_cc_pointer_duckdb.py - pass the SPECIFIC subdirectory
+
+        # Build index FROM the (sorted) parquet shards.
+        # Note: build_cc_pointer_duckdb.py ingests raw cdx-*.gz files, so it will
+        # find zero inputs if pointed at the parquet folder.
         cmd = [
             sys.executable,
-            "build_cc_pointer_duckdb.py",
-            "--input-root", str(parquet_dir),  # Point directly to the collection folder
-            "--db", str(duckdb_path),
-            "--threads", str(self.config.max_workers),
-            "--duckdb-index-mode", "domain",
-            "--domain-range-index"
+            "build_index_from_parquet.py",
+            "--parquet-root", str(parquet_dir),
+            "--output-db", str(duckdb_path),
+            "--extract-rowgroups",
         ]
 
         try:
@@ -999,12 +992,13 @@ class PipelineOrchestrator:
         
         # Process incomplete collections
         for collection in incomplete:
-            if not self.process_collection(collection):
+            ok = self.process_collection(collection)
+            # Rescan to update status (even on failure) so the summary reflects
+            # any successful work done before the failure.
+            self.collection_status[collection] = self.validator.validate_collection(collection)
+            if not ok:
                 logger.error(f"Failed to process {collection}, stopping pipeline")
                 break
-            
-            # Rescan to update status
-            self.collection_status[collection] = self.validator.validate_collection(collection)
         
         # Final summary
         logger.info("\n" + "=" * 80)

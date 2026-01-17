@@ -186,8 +186,27 @@ def main() -> int:
     print(f"Batch size:   {args.batch_size}")
     print()
     
-    # Find all parquet files
-    all_files = sorted(parquet_root.rglob("*.parquet"))
+    # Find all parquet files (files only) and ignore hidden/temp directories.
+    # Some stages create temporary work dirs; we don't want to treat directories
+    # as Parquet inputs or accidentally index scratch artifacts.
+    candidates: List[Path] = []
+    for p in parquet_root.rglob("*.parquet"):
+        try:
+            if not p.is_file():
+                continue
+            rel = p.relative_to(parquet_root)
+            # Skip any parquet files under hidden directories (e.g. .duckdb_sort_tmp)
+            if any(part.startswith(".") for part in rel.parts[:-1]):
+                continue
+            candidates.append(p)
+        except Exception:
+            continue
+
+    # Prefer sorted shards when present.
+    # Pipeline convention: sorted shards end with '.sorted.parquet' (commonly '.gz.sorted.parquet').
+    sorted_candidates = [p for p in candidates if p.name.endswith(".sorted.parquet")]
+    all_files = sorted(sorted_candidates if sorted_candidates else candidates)
+
     print(f"Found {len(all_files)} parquet files")
     print()
     
