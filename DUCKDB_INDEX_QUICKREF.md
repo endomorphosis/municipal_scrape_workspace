@@ -52,6 +52,30 @@ python3 search_cc_via_meta_indexes.py --domain 18f.gov --year 2024 --max-matches
 python3 search_cc_via_meta_indexes.py --domain 18f.gov --year 2024 --max-matches 5000 \
   | python3 warc_candidates_from_jsonl.py --format list --prefix https://data.commoncrawl.org/ --max-warcs 5 \
   | python3 verify_warc_retrieval.py --range 0:63
+
+# Also download the tested range chunk(s) to disk
+python3 search_cc_via_meta_indexes.py --domain 18f.gov --year 2024 --max-matches 5000 \
+	| python3 warc_candidates_from_jsonl.py --format list --prefix https://data.commoncrawl.org/ --max-warcs 3 \
+	| python3 verify_warc_retrieval.py --range 0:1023 --download-dir /tmp/cc_warc_smoketest --download-mode range
+
+# Or download full WARC.gz files (bigger; e.g. ~10s of MB each)
+python3 search_cc_via_meta_indexes.py --domain 18f.gov --year 2024 --max-matches 5000 \
+	| python3 warc_candidates_from_jsonl.py --format list --prefix https://data.commoncrawl.org/ --max-warcs 2 \
+	| python3 verify_warc_retrieval.py --download-dir /tmp/cc_warcs --download-mode full
+```
+
+## Download Exact Record Ranges (From Pointer Results)
+
+This downloads the *exact* WARC byte ranges for individual pointer records
+(using `warc_offset`/`warc_length`). It writes each record payload to a file and
+emits a JSONL manifest describing what was fetched.
+
+```bash
+python3 search_cc_via_meta_indexes.py --domain 18f.gov --year 2024 --max-matches 50 \
+	| python3 download_warc_records.py --out-dir /tmp/cc_warc_records --max-records 10
+
+# Validate that downloaded blobs decompress and contain a WARC header
+python3 validate_warc_record_blobs.py --dir /tmp/cc_warc_records
 ```
 
 Examples:

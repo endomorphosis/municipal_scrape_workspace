@@ -28,6 +28,7 @@ import time
 import urllib.error
 import urllib.request
 from dataclasses import dataclass
+from pathlib import Path
 from typing import Dict, Iterable, Iterator, List, Optional, Tuple
 
 
@@ -119,6 +120,98 @@ def _http_range_get(url: str, start: int, end_inclusive: int, timeout_s: float) 
         return int(status), headers, data
 
 
+def _safe_filename_from_url(url: str) -> str:
+    # Keep it simple: use the last path component.
+    # Example: .../CC-MAIN-....warc.gz
+    return url.rstrip("/").rsplit("/", 1)[-1] or "download.bin"
+
+
+def _download_to_file(
+    url: str,
+    out_path: Path,
+    *,
+    timeout_s: float,
+    range_tuple: Optional[Tuple[int, int]] = None,
+    overwrite: bool = False,
+    retries: int = 2,
+    chunk_bytes: int = 8 * 1024 * 1024,
+) -> Tuple[bool, str]:
+    """Download URL (full or byte range) to out_path.
+
+    Returns (ok, message).
+    """
+
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+
+    # Pre-flight: decide if we can skip.
+    expected_size: Optional[int] = None
+    if range_tuple is not None:
+        expected_size = int(range_tuple[1]) - int(range_tuple[0]) + 1
+    else:
+        try:
+            _, headers = _http_head(url, timeout_s=timeout_s)
+            clen = headers.get("content-length")
+            if clen and clen.isdigit():
+                expected_size = int(clen)
+        except Exception:
+            expected_size = None
+
+    if out_path.exists() and not overwrite and expected_size is not None:
+        try:
+            if out_path.stat().st_size == expected_size:
+                return True, f"skip_existing size={_format_size(expected_size)} path={out_path}"
+        except Exception:
+            pass
+
+    # Download with retries.
+    last_err: Optional[str] = None
+    for attempt in range(max(1, int(retries) + 1)):
+        try:
+            req = urllib.request.Request(url, method="GET")
+            if range_tuple is not None:
+                rs, re = range_tuple
+                req.add_header("Range", f"bytes={int(rs)}-{int(re)}")
+
+            tmp_path = out_path.with_suffix(out_path.suffix + ".part")
+            if tmp_path.exists() and overwrite:
+                try:
+                    tmp_path.unlink()
+                except Exception:
+                    pass
+
+            with urllib.request.urlopen(req, timeout=timeout_s) as resp:
+                status = getattr(resp, "status", 200)
+                if range_tuple is not None and int(status) != 206:
+                    raise RuntimeError(f"expected 206 for range GET, got {status}")
+
+                with tmp_path.open("wb") as f:
+                    while True:
+                        chunk = resp.read(int(chunk_bytes))
+                        if not chunk:
+                            break
+                        f.write(chunk)
+
+            # Validate size if known.
+            if expected_size is not None:
+                got = tmp_path.stat().st_size
+                if got != expected_size:
+                    raise RuntimeError(f"size mismatch expected={expected_size} got={got}")
+
+            # Atomic-ish finalize.
+            if out_path.exists() and overwrite:
+                out_path.unlink()
+            tmp_path.replace(out_path)
+            return True, f"downloaded bytes={_format_size(expected_size)} path={out_path}" if expected_size else f"downloaded path={out_path}"
+
+        except Exception as e:
+            last_err = f"{type(e).__name__}: {e}"
+            if attempt < max(1, int(retries) + 1):
+                time.sleep(1.0)
+            continue
+
+    return False, f"download_failed url={url} err={last_err}"
+
+
 def _format_size(n: Optional[int]) -> str:
     if n is None:
         return "?"
@@ -147,6 +240,21 @@ def main() -> int:
         help="Optional byte range to GET as START:END (inclusive), e.g. 0:63",
     )
     ap.add_argument("--show-bytes", action="store_true", default=False, help="Print first 64 bytes (hex) of the ranged GET")
+
+    ap.add_argument(
+        "--download-dir",
+        type=Path,
+        default=None,
+        help="If set, download each verified URL into this directory (optional)",
+    )
+    ap.add_argument(
+        "--download-mode",
+        choices=["none", "full", "range"],
+        default="none",
+        help="Download mode when --download-dir is provided (default: none)",
+    )
+    ap.add_argument("--overwrite", action="store_true", default=False, help="Overwrite existing downloads")
+    ap.add_argument("--retries", type=int, default=2, help="Download retries (default: 2)")
 
     args = ap.parse_args()
 
@@ -190,6 +298,34 @@ def main() -> int:
                 print(f"  RANGE {r_status} bytes={len(data)} content_range={cr!r}")
                 if args.show_bytes:
                     print("  DATA_HEX", data[:64].hex())
+
+            # Optional download.
+            if args.download_dir and args.download_mode != "none":
+                dl_dir = Path(args.download_dir).expanduser().resolve()
+                fname = _safe_filename_from_url(url)
+                out_path = dl_dir / fname
+
+                dl_range: Optional[Tuple[int, int]] = None
+                if args.download_mode == "range":
+                    if range_tuple is None:
+                        raise RuntimeError("--download-mode range requires --range")
+                    dl_range = range_tuple
+                    # Make the filename explicit.
+                    rs, re = dl_range
+                    out_path = dl_dir / f"{fname}.range.{rs}-{re}.bin"
+
+                ok_dl, msg_dl = _download_to_file(
+                    url,
+                    out_path,
+                    timeout_s=float(args.timeout),
+                    range_tuple=dl_range if args.download_mode == "range" else None,
+                    overwrite=bool(args.overwrite),
+                    retries=int(args.retries),
+                )
+                if ok_dl:
+                    print(f"  DOWNLOAD ok {msg_dl}")
+                else:
+                    _eprint(f"  DOWNLOAD fail {msg_dl}")
 
             ok += 1
 
