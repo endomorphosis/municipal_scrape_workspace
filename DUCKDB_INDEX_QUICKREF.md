@@ -5,6 +5,41 @@
 python3 search_parallel_duckdb_indexes.py <domain>
 ```
 
+## Search via Meta Indexes (Master → Year → Collection → Parquet → WARC)
+
+This is the recommended verification path once meta-indexes exist.
+
+```bash
+# Master meta-index (all registered years)
+python3 search_cc_via_meta_indexes.py --domain 18f.gov \
+	--master-db /storage/ccindex_duckdb/cc_pointers_master/cc_master_index.duckdb \
+	--parquet-root /storage/ccindex_parquet \
+	--max-matches 25
+
+# Restrict to a year (still starting from master)
+python3 search_cc_via_meta_indexes.py --domain 18f.gov --year 2024 --max-matches 25
+
+# Start from a year meta-index directly
+python3 search_cc_via_meta_indexes.py --domain 18f.gov \
+	--year-db /storage/ccindex_duckdb/cc_pointers_by_year/cc_pointers_2024.duckdb \
+	--parquet-root /storage/ccindex_parquet \
+	--max-matches 25
+```
+
+## Turn Pointer Results into Candidate WARC Files
+
+```bash
+# Unique list of WARC files to fetch
+python3 search_cc_via_meta_indexes.py --domain 18f.gov --year 2024 --max-matches 5000 \
+	| python3 warc_candidates_from_jsonl.py --format list \
+	> warc_candidates.txt
+
+# Summarize by WARC (counts/bytes), keep top 50
+python3 search_cc_via_meta_indexes.py --domain 18f.gov --year 2024 --max-matches 5000 \
+	| python3 warc_candidates_from_jsonl.py --format json --sort bytes --max-warcs 50 \
+	> warc_candidates_top50.json
+```
+
 Examples:
 ```bash
 # Search across all collections

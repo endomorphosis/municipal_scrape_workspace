@@ -69,6 +69,7 @@ def build_year_meta_index(year: str, collection_dbs: List[Path], output_dir: Pat
     # We'll use ATTACH DATABASE to reference each collection database
     total_domains = 0
     total_files = 0
+    registered = 0
     
     for i, db_path in enumerate(collection_dbs):
         stem = db_path.stem
@@ -80,14 +81,31 @@ def build_year_meta_index(year: str, collection_dbs: List[Path], output_dir: Pat
             conn.execute(f"ATTACH DATABASE '{db_path}' AS {alias} (READ_ONLY)")
 
             # Detect schema.
-            tables = {row[0] for row in conn.execute(
-                f"SELECT table_name FROM {alias}.information_schema.tables WHERE table_schema = 'main'"
-            ).fetchall()}
+            # NOTE: DuckDB's information_schema is global; for attached DBs
+            # use table_catalog=<alias> instead of <alias>.information_schema.
+            tables = {
+                row[0]
+                for row in conn.execute(
+                    """
+                    SELECT table_name
+                    FROM information_schema.tables
+                    WHERE table_schema = 'main' AND table_catalog = ?
+                    """,
+                    [alias],
+                ).fetchall()
+            }
 
             if 'domain_pointers' in tables:
                 domain_count = conn.execute(f"SELECT COUNT(*) FROM {alias}.domain_pointers").fetchone()[0]
-                # Legacy schema uses file_path.
-                file_count = conn.execute(f"SELECT COUNT(DISTINCT file_path) FROM {alias}.domain_pointers").fetchone()[0]
+                # Legacy schema used file_path; newer variants use parquet_file.
+                try:
+                    file_count = conn.execute(
+                        f"SELECT COUNT(DISTINCT file_path) FROM {alias}.domain_pointers"
+                    ).fetchone()[0]
+                except Exception:
+                    file_count = conn.execute(
+                        f"SELECT COUNT(DISTINCT parquet_file) FROM {alias}.domain_pointers"
+                    ).fetchone()[0]
             elif 'cc_domain_shards' in tables:
                 # Domain-only schema: one row per (host_rev, parquet_relpath, ...)
                 domain_count = conn.execute(f"SELECT COUNT(*) FROM {alias}.cc_domain_shards").fetchone()[0]
@@ -103,6 +121,7 @@ def build_year_meta_index(year: str, collection_dbs: List[Path], output_dir: Pat
             
             total_domains += domain_count
             total_files += file_count
+            registered += 1
             
             logger.info(f"  Registered {collection}: {domain_count:,} domains, {file_count:,} files")
             
@@ -124,10 +143,10 @@ def build_year_meta_index(year: str, collection_dbs: List[Path], output_dir: Pat
     conn.execute("""
         INSERT OR REPLACE INTO meta_info (year, collection_count, total_domains, total_files)
         VALUES (?, ?, ?, ?)
-    """, [year, len(collection_dbs), total_domains, total_files])
+    """, [year, registered, total_domains, total_files])
     
     conn.close()
-    logger.info(f"✓ Built year index for {year}: {total_domains:,} domains across {len(collection_dbs)} collections")
+    logger.info(f"✓ Built year index for {year}: {total_domains:,} domains across {registered} collections")
 
 
 def main():
