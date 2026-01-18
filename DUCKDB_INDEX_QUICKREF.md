@@ -34,10 +34,24 @@ python3 search_cc_via_meta_indexes.py --domain 18f.gov --year 2024 --max-matches
 	| python3 warc_candidates_from_jsonl.py --format list \
 	> warc_candidates.txt
 
+# Unique list of full download URLs
+python3 search_cc_via_meta_indexes.py --domain 18f.gov --year 2024 --max-matches 5000 \
+	| python3 warc_candidates_from_jsonl.py --format list --prefix https://data.commoncrawl.org/ \
+	> warc_candidate_urls.txt
+
 # Summarize by WARC (counts/bytes), keep top 50
 python3 search_cc_via_meta_indexes.py --domain 18f.gov --year 2024 --max-matches 5000 \
 	| python3 warc_candidates_from_jsonl.py --format json --sort bytes --max-warcs 50 \
 	> warc_candidates_top50.json
+```
+
+## Verify WARC URLs Are Fetchable
+
+```bash
+# Check a few candidates with HEAD and a tiny Range GET
+python3 search_cc_via_meta_indexes.py --domain 18f.gov --year 2024 --max-matches 5000 \
+  | python3 warc_candidates_from_jsonl.py --format list --prefix https://data.commoncrawl.org/ --max-warcs 5 \
+  | python3 verify_warc_retrieval.py --range 0:63
 ```
 
 Examples:

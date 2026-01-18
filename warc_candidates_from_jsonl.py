@@ -11,6 +11,10 @@ Examples:
   python search_cc_via_meta_indexes.py --domain 18f.gov --year 2024 --max-matches 2000 \
     | python warc_candidates_from_jsonl.py --format list
 
+    # Produce a unique list of full download URLs
+    python search_cc_via_meta_indexes.py --domain 18f.gov --year 2024 --max-matches 2000 \
+        | python warc_candidates_from_jsonl.py --format list --prefix https://data.commoncrawl.org/
+
   # Include counts + total bytes per WARC, emit JSON
   python search_cc_via_meta_indexes.py --domain 18f.gov --year 2024 --max-matches 2000 \
     | python warc_candidates_from_jsonl.py --format json --max-warcs 50
@@ -117,6 +121,15 @@ def main() -> int:
         help="Output format",
     )
     ap.add_argument(
+        "--prefix",
+        type=str,
+        default=None,
+        help=(
+            "Optional prefix to turn warc_filename into a full download URL. "
+            "Example: https://data.commoncrawl.org/ (a trailing '/' is added if missing)."
+        ),
+    )
+    ap.add_argument(
         "--sort",
         choices=["bytes", "count", "filename"],
         default="bytes",
@@ -143,14 +156,28 @@ def main() -> int:
         aggs = aggs[: max(0, int(args.max_warcs))]
 
     if args.format == "list":
+        prefix = None
+        if args.prefix:
+            prefix = str(args.prefix)
+            if prefix and not prefix.endswith("/"):
+                prefix += "/"
         for a in aggs:
-            sys.stdout.write(a.warc_filename + "\n")
+            if prefix:
+                sys.stdout.write(prefix + a.warc_filename.lstrip("/") + "\n")
+            else:
+                sys.stdout.write(a.warc_filename + "\n")
         return 0
 
     if args.format == "json":
+        prefix = None
+        if args.prefix:
+            prefix = str(args.prefix)
+            if prefix and not prefix.endswith("/"):
+                prefix += "/"
         out = [
             {
                 "warc_filename": a.warc_filename,
+                "download_url": (prefix + a.warc_filename.lstrip("/")) if prefix else None,
                 "record_count": a.record_count,
                 "total_warc_bytes": a.total_warc_bytes,
                 "min_offset": a.min_offset,
@@ -162,10 +189,16 @@ def main() -> int:
         return 0
 
     # csv
+    prefix = None
+    if args.prefix:
+        prefix = str(args.prefix)
+        if prefix and not prefix.endswith("/"):
+            prefix += "/"
     w = csv.writer(sys.stdout)
-    w.writerow(["warc_filename", "record_count", "total_warc_bytes", "min_offset", "max_offset_end"])
+    w.writerow(["warc_filename", "download_url", "record_count", "total_warc_bytes", "min_offset", "max_offset_end"])
     for a in aggs:
-        w.writerow([a.warc_filename, a.record_count, a.total_warc_bytes, a.min_offset, a.max_offset_end])
+        url = (prefix + a.warc_filename.lstrip("/")) if prefix else ""
+        w.writerow([a.warc_filename, url, a.record_count, a.total_warc_bytes, a.min_offset, a.max_offset_end])
 
     return 0
 
