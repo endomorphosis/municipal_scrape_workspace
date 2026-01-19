@@ -35,13 +35,37 @@ This directory contains tools that have been superseded by newer implementations
 
 #### sort_unsorted_files.py
 **Status**: Superseded  
-**Canonical tool**: `sort_unsorted_memory_aware.py` (if kept) or `sort_cc_parquet_shards.py`  
-**Reason**: Memory-aware version is more robust for large files.
+**Canonical tool**: `sort_unsorted_memory_aware.py`  
+**Reason**: Memory-aware version is more robust for large files and is used in active scripts.
 
 #### sort_parquet_external_merge.py
 **Status**: Superseded  
 **Canonical tool**: `sort_cc_parquet_shards.py`  
 **Reason**: Functionality covered by canonical sorter in the package.
+
+### Validation Tools (1 file)
+
+#### validate_and_mark_sorted.py
+**Status**: Superseded  
+**Canonical tool**: `validate_and_sort_parquet.py`  
+**Reason**: The canonical tool provides better integration with the pipeline.
+
+### Build Tools (1 file)
+
+#### build_duckdb_from_sorted_parquet.py
+**Status**: Superseded  
+**Canonical tool**: `build_duckdb_pointer_from_parquet.py`  
+**Reason**: Newer version with better features and integration.
+
+### Utility Tools (2 files)
+
+#### consolidate_parquet_files.py
+**Status**: One-off utility  
+**Reason**: One-time consolidation tool, not part of regular workflow. Not referenced in active scripts.
+
+#### compare_crawl_results.py
+**Status**: One-off analysis tool  
+**Reason**: Specific to municipal scrape result comparison. One-time analysis, not a reusable utility.
 
 ## Usage
 
@@ -73,4 +97,4 @@ python -m municipal_scrape_workspace.ccindex.search_parallel_duckdb_indexes --he
 ## Migration Date
 
 **Archived**: 2026-01-19  
-**Migration Phase**: Phase 6 of repository refactoring
+**Migration Phase**: Phase 6-7 of repository refactoring
