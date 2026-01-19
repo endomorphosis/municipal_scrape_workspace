@@ -8,16 +8,23 @@ This repo also contains Common Crawl (CC) index pipeline tooling (Parquet + Duck
 
 **The repository is undergoing a structural refactoring to improve organization and maintainability.**
 
-- 📘 **[REFACTORING_ROADMAP.md](REFACTORING_ROADMAP.md)** - Comprehensive guide with complete analysis (52 files, detailed plan, import patterns, dependency gaps)
-- 📄 **[REFACTORING_QUICKSTART.md](REFACTORING_QUICKSTART.md)** - Quick reference for common tasks and patterns
-- 📋 **[FILE_MIGRATION_MAP.md](FILE_MIGRATION_MAP.md)** - Complete file-by-file lookup table with status and actions
-- 📖 **[REPO_LAYOUT_README.md](REPO_LAYOUT_README.md)** - Repository layout conventions and rules
+👉 **Start Here**: [REFACTORING_INDEX.md](REFACTORING_INDEX.md) - Complete documentation navigation
+
+**Quick Links**:
+- 📘 [REFACTORING_ROADMAP.md](REFACTORING_ROADMAP.md) - Comprehensive guide (all details)
+- 📄 [REFACTORING_QUICKSTART.md](REFACTORING_QUICKSTART.md) - Quick reference
+- 📋 [FILE_MIGRATION_MAP.md](FILE_MIGRATION_MAP.md) - File lookup table
+- 📊 [REFACTORING_STATUS.md](REFACTORING_STATUS.md) - Progress dashboard
+- ✅ [REFACTORING_CHECKLIST.md](REFACTORING_CHECKLIST.md) - Execution checklist
 
 **Current Status** (2026-01-19):
-- ✅ 19 files migrated with wrappers
-- ⚠️ 4 files need wrapper fix
-- 📦 17 files awaiting migration
-- 🗄️ 7 files identified for archival
+- ✅ 19 files migrated with wrappers (37%)
+- ⚠️ 4 files need wrapper fix (8%)
+- 📦 17 files awaiting migration (33%)
+- 🗄️ 7 files identified for archival (13%)
+- ❓ 5 files need evaluation (10%)
+
+**Estimated Effort**: 6-8 hours focused work
 
 ## Quickstart
 
