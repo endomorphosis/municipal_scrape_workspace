@@ -20,6 +20,7 @@ from __future__ import annotations
 import argparse
 import asyncio
 import json
+import os
 import sys
 from dataclasses import dataclass
 from pathlib import Path
@@ -29,8 +30,24 @@ from typing import Any, Dict, Iterable, List, Optional, Tuple
 def _prefer_local_ipfs_datasets_py_repo() -> None:
     """Prefer a sibling checkout of ipfs_datasets_py on sys.path.
 
-    This municipal workspace commonly lives next to `/home/barberb/ipfs_datasets_py`.
+    Preferred order:
+      1) Already installed / importable
+      2) Local checkout pointed to by $IPFS_DATASETS_PY_ROOT
+      3) Sibling checkout at ../ipfs_datasets_py (dev convenience)
     """
+
+    try:
+        import ipfs_datasets_py  # noqa: F401
+        return
+    except Exception:
+        pass
+
+    env_root = os.environ.get("IPFS_DATASETS_PY_ROOT")
+    if env_root:
+        candidate = Path(env_root).expanduser().resolve()
+        if candidate.exists():
+            sys.path.insert(0, str(candidate))
+            return
 
     repo = Path(__file__).resolve().parent.parent / "ipfs_datasets_py"
     if repo.exists():

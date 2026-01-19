@@ -56,14 +56,41 @@ from typing import Any, Dict, Iterable, List, Optional, Tuple
 
 import duckdb
 
-# Prefer a local development checkout of ipfs_datasets_py (sibling to this repo)
-# so subpackages like `ipfs_datasets_py.mcp_server.tools.*` are importable.
-_local_ipfs_datasets_repo = Path(__file__).resolve().parent.parent / "ipfs_datasets_py"
-if _local_ipfs_datasets_repo.exists():
-    sys.path.insert(0, str(_local_ipfs_datasets_repo))
+def _ensure_ipfs_datasets_py_on_path() -> None:
+    """Ensure `ipfs_datasets_py` is importable.
 
-from ipfs_datasets_py.integrations import compute_cid_for_content
-from ipfs_datasets_py.unified_web_scraper import ScraperConfig, ScraperMethod, UnifiedWebScraper
+    Preferred order:
+      1) Already installed / importable
+      2) Local checkout pointed to by $IPFS_DATASETS_PY_ROOT
+      3) Sibling checkout at ../ipfs_datasets_py (dev convenience)
+    """
+
+    try:
+        import ipfs_datasets_py  # noqa: F401
+        return
+    except Exception:
+        pass
+
+    env_root = os.environ.get("IPFS_DATASETS_PY_ROOT")
+    if env_root:
+        candidate = Path(env_root).expanduser().resolve()
+        if candidate.exists():
+            sys.path.insert(0, str(candidate))
+            return
+
+    candidate = Path(__file__).resolve().parent.parent / "ipfs_datasets_py"
+    if candidate.exists():
+        sys.path.insert(0, str(candidate))
+
+
+_ensure_ipfs_datasets_py_on_path()
+
+from ipfs_datasets_py.integrations import compute_cid_for_content  # noqa: E402
+from ipfs_datasets_py.unified_web_scraper import (  # noqa: E402
+    ScraperConfig,
+    ScraperMethod,
+    UnifiedWebScraper,
+)
 
 
 def _log(worker_id: int, msg: str, level: str = "INFO") -> None:
