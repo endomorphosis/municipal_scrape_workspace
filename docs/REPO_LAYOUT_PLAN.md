@@ -1,4 +1,6 @@
-# Repo Layout Plan (Proposed)
+# Repo Layout Plan
+
+Status: mostly implemented. Canonical operational shell scripts live under `scripts/ops/` with root-level wrappers preserved for backwards compatibility.
 
 This repo currently has two large “themes” living side-by-side in the top-level directory:
 
@@ -25,9 +27,8 @@ The goal of this plan is to:
 │   │   └── … (more modules migrated over time)
 │   └── …
 ├── scripts/
-│   ├── ccindex/                         # operational CLI scripts (thin wrappers)
 │   ├── ops/                             # shell scripts (download, rebuild, monitor)
-│   └── municipal/                       # any non-package workflow scripts
+│   └── …                                # reserved for other script groupings
 ├── benchmarks/
 │   └── ccindex/                         # benchmark_*.py
 ├── docs/                                # design docs, quickrefs, runbooks
@@ -217,7 +218,7 @@ Legend:
   - current: `warc_candidates_from_jsonl.py`
 
 **Monitoring / schedulers / queueing**
-- KEEP → `scripts/ccindex/` (thin wrappers; not necessarily package)
+- KEEP → repo root for now (future: consider `src/municipal_scrape_workspace/ccindex/` or a dedicated `scripts/` subfolder)
   - `monitor_progress.py`, `monitor_cc_pointer_build.py`, `watchdog_cc_pointer_build.py`, `watchdog_monitor.py`
   - `queue_cc_pointer_build.py`, `launch_cc_pointer_build.py`, `cc_pointer_status.py`
 - ARCHIVE (likely superseded by orchestrator): `cc_pipeline_manager.py`
@@ -264,10 +265,9 @@ Legend:
 
 ## Next Steps (Suggested)
 
-1) Migrate `search_cc_via_meta_indexes.py` into the package + wrapper.
-2) Migrate meta-index builders (`build_year_meta_indexes.py`, `build_master_index.py`).
-3) Consolidate duplicates (pick canonical “search” and “build” scripts; archive the rest).
-4) Add console-script entry points (optional) for common commands:
+1) Consolidate/retire duplicate search scripts (keep one canonical DuckDB + one canonical pointer-index query path).
+2) Decide whether monitoring/queueing tools become package modules or live under a dedicated `scripts/` subfolder.
+3) Add console-script entry points (optional) for common commands:
    - `ccindex-search-meta`
    - `ccindex-build-year`
    - `ccindex-build-master`

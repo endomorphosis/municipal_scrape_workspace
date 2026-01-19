@@ -131,7 +131,8 @@ Orchestrates the full overnight index build process.
 
 **Usage:**
 ```bash
-./overnight_parallel_index_build.sh
+REPO_ROOT="/path/to/municipal_scrape_workspace"
+"${REPO_ROOT}/overnight_parallel_index_build.sh"
 ```
 
 **Steps:**
@@ -145,7 +146,9 @@ Orchestrates the full overnight index build process.
 
 **Run as background job:**
 ```bash
-nohup ./overnight_parallel_index_build.sh > logs/overnight_$(date +%Y%m%d_%H%M%S).log 2>&1 &
+REPO_ROOT="/path/to/municipal_scrape_workspace"
+mkdir -p "${REPO_ROOT}/logs"
+nohup "${REPO_ROOT}/overnight_parallel_index_build.sh" > "${REPO_ROOT}/logs/overnight_$(date +%Y%m%d_%H%M%S).log" 2>&1 &
 ```
 
 ## Search Performance Characteristics

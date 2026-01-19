@@ -14,6 +14,15 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "${SCRIPT_DIR}/../.." && pwd)"
 BENCHMARK_OUT_DIR="${REPO_ROOT}/benchmarks/ccindex"
 
+VENV_PYTHON="${VENV_PYTHON:-${REPO_ROOT}/.venv/bin/python}"
+if [[ -x "${VENV_PYTHON}" ]]; then
+    :
+elif command -v "${VENV_PYTHON}" >/dev/null 2>&1; then
+    :
+else
+    VENV_PYTHON="python3"
+fi
+
 LOG_FILE="${REPO_ROOT}/overnight_duckdb_build_$(date +%Y%m%d_%H%M%S).log"
 PARQUET_ROOT="/storage/ccindex_parquet/cc_pointers_by_year"
 DUCKDB_PATH="/storage/ccindex_duckdb/cc_pointers.duckdb"
@@ -53,7 +62,7 @@ wait_for_conversion() {
 validate_sorted_parquet() {
     log "Step 2: Validating all parquet files are sorted by domain..."
     
-    python3 << 'PYEOF' | tee -a "$LOG_FILE"
+    "${VENV_PYTHON}" << 'PYEOF' | tee -a "$LOG_FILE"
 import sys
 from pathlib import Path
 import pyarrow.parquet as pq
@@ -113,7 +122,7 @@ build_duckdb_index() {
     
     # Build the index
     log "  Building index from all 2024-2025 parquet files..."
-    python3 "${REPO_ROOT}/build_cc_pointer_duckdb.py" \
+    "${VENV_PYTHON}" "${REPO_ROOT}/build_cc_pointer_duckdb.py" \
         --input-root "$PARQUET_ROOT" \
         --db "$DUCKDB_PATH" \
         --collections-regex 'CC-MAIN-202[45]-.*' \
@@ -141,7 +150,7 @@ run_search_tests() {
     
     for domain in "${test_domains[@]}"; do
         log "  Testing domain: $domain"
-        python3 "${REPO_ROOT}/search_cc_domain.py" "$domain" --limit 10 2>&1 | tee -a "$LOG_FILE"
+        "${VENV_PYTHON}" "${REPO_ROOT}/search_cc_domain.py" "$domain" --limit 10 2>&1 | tee -a "$LOG_FILE"
     done
     
     log "  ✓ Search tests completed"
@@ -152,7 +161,7 @@ run_benchmark() {
 
     mkdir -p "${BENCHMARK_OUT_DIR}"
     
-    python3 "${REPO_ROOT}/benchmarks/ccindex/benchmark_cc_domain_search.py" \
+    "${VENV_PYTHON}" "${REPO_ROOT}/benchmarks/ccindex/benchmark_cc_domain_search.py" \
         --db "$DUCKDB_PATH" \
         --domains example.com google.com github.com wikipedia.org archive.org \
         --output "${BENCHMARK_OUT_DIR}/benchmark_results_$(date +%Y%m%d_%H%M%S).json" \

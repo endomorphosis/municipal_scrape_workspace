@@ -221,17 +221,25 @@ warc_length: int64      -- Record length in bytes
 
 ## Usage Examples
 
+Setup (portable):
+
+```bash
+REPO_ROOT="/path/to/municipal_scrape_workspace"
+VENV_PYTHON="${VENV_PYTHON:-${REPO_ROOT}/.venv/bin/python}"
+if [[ ! -x "${VENV_PYTHON}" ]]; then VENV_PYTHON="python3"; fi
+```
+
 ### Building the Index
 
 ```bash
 # Full build for 2024 collections
-./overnight_build_duckdb_index.sh --collections-regex 'CC-MAIN-2024-.*'
+"${REPO_ROOT}/overnight_build_duckdb_index.sh" --collections-regex 'CC-MAIN-2024-.*'
 
 # Quick test build (100 files)
-./overnight_build_duckdb_index.sh --quick
+"${REPO_ROOT}/overnight_build_duckdb_index.sh" --quick
 
 # Rebuild index for specific year
-python build_cc_pointer_duckdb.py \
+"${VENV_PYTHON}" "${REPO_ROOT}/build_cc_pointer_duckdb.py" \
   --input-root /storage/ccindex \
   --db /storage/ccindex_duckdb/cc_domain_by_year \
   --shard-by-year \
@@ -247,7 +255,7 @@ python build_cc_pointer_duckdb.py \
 
 ```bash
 # Search for a domain
-python search_cc_duckdb_index.py \
+"${VENV_PYTHON}" "${REPO_ROOT}/search_cc_duckdb_index.py" \
   --duckdb-dir /storage/ccindex_duckdb/cc_domain_by_year \
   --parquet-root /storage/ccindex_parquet/cc_pointers_by_year \
   --domain whitehouse.gov \
@@ -255,7 +263,7 @@ python search_cc_duckdb_index.py \
   --verbose
 
 # Search for URLs from file
-python search_cc_duckdb_index.py \
+"${VENV_PYTHON}" "${REPO_ROOT}/search_cc_duckdb_index.py" \
   --duckdb-dir /storage/ccindex_duckdb/cc_domain_by_year \
   --parquet-root /storage/ccindex_parquet/cc_pointers_by_year \
   --url-file my_urls.txt \

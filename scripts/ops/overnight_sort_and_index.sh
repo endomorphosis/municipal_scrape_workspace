@@ -134,7 +134,7 @@ if [ ${BUILD_EXIT} -eq 0 ]; then
             SIZE=$(ls -lh "${DB_FILE}" | awk '{print $5}')
             echo "Index ${year}: ${SIZE}"
             
-            /home/barberb/municipal_scrape_workspace/.venv/bin/python << PYEOF
+            "${VENV_PYTHON}" << PYEOF
 import duckdb
 con = duckdb.connect("${DB_FILE}", read_only=True)
 

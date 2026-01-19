@@ -13,6 +13,20 @@ When `--full-domain-crawl` is enabled, the orchestrator can discover all archive
 
 ## Methods
 
+## Setup (portable)
+
+Examples below assume you set a repo root and a Python interpreter. This avoids hardcoding a user-specific absolute path.
+
+```bash
+REPO_ROOT="/path/to/municipal_scrape_workspace"
+VENV_PYTHON="${VENV_PYTHON:-${REPO_ROOT}/.venv/bin/python}"
+
+# Fallback to system python if you are not using the repo venv
+if [[ ! -x "${VENV_PYTHON}" ]]; then
+  VENV_PYTHON="python3"
+fi
+```
+
 ### 1. Local Index Files (Recommended for Large-Scale)
 
 Download index segments from `data.commoncrawl.org` and filter locally. This is the fastest method and avoids rate limits.
@@ -34,7 +48,7 @@ wget https://data.commoncrawl.org/cc-index/collections/CC-MAIN-2024-10/indexes/c
 #### Use Local Index
 
 ```bash
-/home/barberb/municipal_scrape_workspace/.venv/bin/python orchestrate_municipal_scrape.py \
+"${VENV_PYTHON}" "${REPO_ROOT}/orchestrate_municipal_scrape.py" \
   --csv us_towns_and_counties_urls.csv \
   --out out_local_index \
   --num-workers 4 --worker-id 0 \
@@ -62,13 +76,13 @@ Python library that wraps the Common Crawl and Wayback Machine APIs with built-i
 #### Install
 
 ```bash
-/home/barberb/municipal_scrape_workspace/.venv/bin/pip install cdx_toolkit
+"${VENV_PYTHON}" -m pip install cdx_toolkit
 ```
 
 #### Use cdx_toolkit
 
 ```bash
-/home/barberb/municipal_scrape_workspace/.venv/bin/python orchestrate_municipal_scrape.py \
+"${VENV_PYTHON}" "${REPO_ROOT}/orchestrate_municipal_scrape.py" \
   --csv us_towns_and_counties_urls.csv \
   --out out_cdx_toolkit \
   --num-workers 4 --worker-id 0 \
@@ -96,7 +110,7 @@ Official recommended API. Queries the latest N collections via `collinfo.json` a
 #### Use index.commoncrawl.org
 
 ```bash
-/home/barberb/municipal_scrape_workspace/.venv/bin/python orchestrate_municipal_scrape.py \
+"${VENV_PYTHON}" "${REPO_ROOT}/orchestrate_municipal_scrape.py" \
   --csv us_towns_and_counties_urls.csv \
   --out out_index_api \
   --num-workers 4 --worker-id 0 \
@@ -135,7 +149,7 @@ Wayback Machine-style CDX server. Used only if index.commoncrawl.org fails.
 #### Use CDX Fallback
 
 ```bash
-/home/barberb/municipal_scrape_workspace/.venv/bin/python orchestrate_municipal_scrape.py \
+"${VENV_PYTHON}" "${REPO_ROOT}/orchestrate_municipal_scrape.py" \
   --csv us_towns_and_counties_urls.csv \
   --out out_cdx_fallback \
   --num-workers 4 --worker-id 0 \
@@ -197,7 +211,7 @@ See: https://commoncrawl.org/blog/index-to-warc-files-and-urls-in-columnar-forma
 ### Example 1: Small test with index API (default)
 
 ```bash
-/home/barberb/municipal_scrape_workspace/.venv/bin/python orchestrate_municipal_scrape.py \
+"${VENV_PYTHON}" "${REPO_ROOT}/orchestrate_municipal_scrape.py" \
   --csv us_towns_and_counties_urls.csv \
   --out out_test_index \
   --worker-id 0 --num-workers 1 \
@@ -213,7 +227,7 @@ wget -O /tmp/cc-index.gz https://data.commoncrawl.org/cc-index/collections/CC-MA
 
 # Launch 4 workers
 for i in {0..3}; do
-  /home/barberb/municipal_scrape_workspace/.venv/bin/python orchestrate_municipal_scrape.py \
+  "${VENV_PYTHON}" "${REPO_ROOT}/orchestrate_municipal_scrape.py" \
     --csv us_towns_and_counties_urls.csv \
     --out out_local_4w \
     --num-workers 4 --worker-id $i \
@@ -226,9 +240,9 @@ done
 ### Example 3: Use cdx_toolkit with conservative delay
 
 ```bash
-/home/barberb/municipal_scrape_workspace/.venv/bin/pip install cdx_toolkit
+"${VENV_PYTHON}" -m pip install cdx_toolkit
 
-/home/barberb/municipal_scrape_workspace/.venv/bin/python orchestrate_municipal_scrape.py \
+"${VENV_PYTHON}" "${REPO_ROOT}/orchestrate_municipal_scrape.py" \
   --csv us_towns_and_counties_urls.csv \
   --out out_cdx_toolkit \
   --num-workers 2 --worker-id 0 \

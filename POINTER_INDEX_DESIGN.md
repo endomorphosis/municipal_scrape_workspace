@@ -147,7 +147,8 @@ CREATE TABLE cc_ingested_files (
 ### Overnight Job: `overnight_build_pointer_index.sh`
 
 ```bash
-./overnight_build_pointer_index.sh
+REPO_ROOT="/path/to/municipal_scrape_workspace"
+"${REPO_ROOT}/overnight_build_pointer_index.sh"
 ```
 
 **Steps**:

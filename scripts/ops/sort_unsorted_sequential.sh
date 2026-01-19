@@ -4,6 +4,19 @@
 
 set -euo pipefail
 
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(cd "${SCRIPT_DIR}/../.." && pwd)"
+VENV_PYTHON="${VENV_PYTHON:-${REPO_ROOT}/.venv/bin/python}"
+
+if [[ -x "${VENV_PYTHON}" ]]; then
+    :
+elif command -v "${VENV_PYTHON}" >/dev/null 2>&1; then
+    :
+else
+    echo "ERROR: Python interpreter not found: ${VENV_PYTHON}" >&2
+    exit 1
+fi
+
 UNSORTED_LIST="$1"
 PARQUET_ROOT="/storage/ccindex_parquet"
 TEMP_DIR="/tmp/sort_sequential"
@@ -41,7 +54,7 @@ while IFS= read -r RELPATH; do
     SORTED_TMP="${TEMP_DIR}/$(basename ${FULL_PATH}).sorted.tmp"
     
     # Sort with DuckDB
-    /home/barberb/municipal_scrape_workspace/.venv/bin/python << PYEOF
+    "${VENV_PYTHON}" << PYEOF
 import duckdb
 import sys
 

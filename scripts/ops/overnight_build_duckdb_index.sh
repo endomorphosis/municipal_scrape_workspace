@@ -22,7 +22,7 @@
 #   CCINDEX_ROOT      - Root directory of CC index shards (default: /storage/ccindex)
 #   CCINDEX_PARQUET   - Root directory of parquet files (default: /storage/ccindex_parquet/cc_pointers_by_year)
 #   CCINDEX_DUCKDB    - Output directory for DuckDB files (default: /storage/ccindex_duckdb)
-#   VENV_PYTHON       - Python interpreter (default: /home/barberb/municipal_scrape_workspace/.venv/bin/python)
+#   VENV_PYTHON       - Python interpreter (default: ${REPO_ROOT}/.venv/bin/python; falls back to python3)
 
 set -euo pipefail
 
@@ -30,11 +30,10 @@ set -euo pipefail
 CCINDEX_ROOT="${CCINDEX_ROOT:-/storage/ccindex}"
 CCINDEX_PARQUET="${CCINDEX_PARQUET:-/storage/ccindex_parquet/cc_pointers_by_year}"
 CCINDEX_DUCKDB="${CCINDEX_DUCKDB:-/storage/ccindex_duckdb}"
-VENV_PYTHON="${VENV_PYTHON:-/home/barberb/municipal_scrape_workspace/.venv/bin/python}"
-
 COLLECTIONS_REGEX="CC-MAIN-2024-.*"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "${SCRIPT_DIR}/../.." && pwd)"
+VENV_PYTHON="${VENV_PYTHON:-${REPO_ROOT}/.venv/bin/python}"
 THREADS="$(nproc)"
 QUICK_MODE=0
 SKIP_BUILD=0
@@ -121,8 +120,12 @@ if [[ ! -d "${CCINDEX_PARQUET}" ]]; then
     mkdir -p "${CCINDEX_PARQUET}"
 fi
 
-if [[ ! -x "${VENV_PYTHON}" ]]; then
-    log "ERROR: Python interpreter not found or not executable: ${VENV_PYTHON}"
+if [[ -x "${VENV_PYTHON}" ]]; then
+    :
+elif command -v "${VENV_PYTHON}" >/dev/null 2>&1; then
+    :
+else
+    log "ERROR: Python interpreter not found: ${VENV_PYTHON}"
     exit 1
 fi
 
@@ -139,7 +142,7 @@ REPORT_FILE="${REPORT_DIR}/overnight_report_${TIMESTAMP}.txt"
 if [[ ${SKIP_BUILD} -eq 0 ]]; then
     log_section "Phase 1: Building DuckDB Domain Index"
     
-    BUILD_CMD="${VENV_PYTHON} build_cc_pointer_duckdb.py \
+    BUILD_CMD="${VENV_PYTHON} ${REPO_ROOT}/build_cc_pointer_duckdb.py \
         --input-root ${CCINDEX_ROOT} \
         --db ${DUCKDB_DIR} \
         --shard-by-year \
@@ -178,7 +181,7 @@ fi
 if [[ ${SKIP_BENCHMARK} -eq 0 ]] && [[ ${QUICK_MODE} -eq 0 ]]; then
     log_section "Phase 2: Running Search Benchmarks"
     
-    BENCHMARK_CMD="${VENV_PYTHON} benchmarks/ccindex/benchmark_cc_duckdb_search.py \
+    BENCHMARK_CMD="${VENV_PYTHON} ${REPO_ROOT}/benchmarks/ccindex/benchmark_cc_duckdb_search.py \
         --duckdb-dir ${DUCKDB_DIR} \
         --parquet-root ${CCINDEX_PARQUET} \
         --threads ${THREADS} \
@@ -207,7 +210,7 @@ if [[ ${SKIP_BENCHMARK} -eq 0 ]] && [[ ${QUICK_MODE} -eq 0 ]]; then
     TEST_DOMAIN="whitehouse.gov"
     log "Testing domain search: ${TEST_DOMAIN}"
     
-    SEARCH_CMD="${VENV_PYTHON} search_cc_duckdb_index.py \
+    SEARCH_CMD="${VENV_PYTHON} ${REPO_ROOT}/search_cc_duckdb_index.py \
         --duckdb-dir ${DUCKDB_DIR} \
         --parquet-root ${CCINDEX_PARQUET} \
         --domain ${TEST_DOMAIN} \
@@ -309,18 +312,18 @@ log_section "Phase 4: Generating Report"
     echo "============================================================================"
     echo ""
     echo "1. Run benchmark to validate performance:"
-    echo "   ${VENV_PYTHON} benchmarks/ccindex/benchmark_cc_duckdb_search.py \\"
+    echo "   ${VENV_PYTHON} ${REPO_ROOT}/benchmarks/ccindex/benchmark_cc_duckdb_search.py \\"
     echo "     --duckdb-dir ${DUCKDB_DIR} \\"
     echo "     --parquet-root ${CCINDEX_PARQUET}"
     echo ""
     echo "2. Test domain search:"
-    echo "   ${VENV_PYTHON} search_cc_duckdb_index.py \\"
+    echo "   ${VENV_PYTHON} ${REPO_ROOT}/search_cc_duckdb_index.py \\"
     echo "     --duckdb-dir ${DUCKDB_DIR} \\"
     echo "     --parquet-root ${CCINDEX_PARQUET} \\"
     echo "     --domain example.gov --verbose"
     echo ""
     echo "3. Search for URLs from file:"
-    echo "   ${VENV_PYTHON} search_cc_duckdb_index.py \\"
+    echo "   ${VENV_PYTHON} ${REPO_ROOT}/search_cc_duckdb_index.py \\"
     echo "     --duckdb-dir ${DUCKDB_DIR} \\"
     echo "     --parquet-root ${CCINDEX_PARQUET} \\"
     echo "     --url-file urls.txt --output results.jsonl"

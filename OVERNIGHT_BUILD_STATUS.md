@@ -81,15 +81,23 @@ CREATE INDEX idx_domain ON cc_pointers(domain);
 
 ## Search & Benchmark Tools
 
+Setup (portable):
+
+```bash
+REPO_ROOT="/path/to/municipal_scrape_workspace"
+VENV_PYTHON="${VENV_PYTHON:-${REPO_ROOT}/.venv/bin/python}"
+if [[ ! -x "${VENV_PYTHON}" ]]; then VENV_PYTHON="python3"; fi
+```
+
 ### 1. `search_cc_domain.py`
 Search for a domain and retrieve all WARC pointers.
 
 ```bash
 # Search using DuckDB index (fast)
-python3 search_cc_domain.py example.com --limit 100
+"${VENV_PYTHON}" "${REPO_ROOT}/search_cc_domain.py" example.com --limit 100
 
 # Compare DuckDB vs direct parquet scan
-python3 search_cc_domain.py example.com --mode both --show
+"${VENV_PYTHON}" "${REPO_ROOT}/search_cc_domain.py" example.com --mode both --show
 ```
 
 **Output**: List of URLs with WARC file locations and byte offsets
@@ -99,10 +107,10 @@ Comprehensive performance benchmarking.
 
 ```bash
 # Basic benchmark
-python3 benchmarks/ccindex/benchmark_cc_domain_search.py --domains example.com google.com github.com
+"${VENV_PYTHON}" "${REPO_ROOT}/benchmarks/ccindex/benchmark_cc_domain_search.py" --domains example.com google.com github.com
 
 # With cache clearing (requires sudo)
-python3 benchmarks/ccindex/benchmark_cc_domain_search.py --clear-cache --output results.json
+"${VENV_PYTHON}" "${REPO_ROOT}/benchmarks/ccindex/benchmark_cc_domain_search.py" --clear-cache --output results.json
 ```
 
 **Metrics**:
@@ -116,13 +124,13 @@ python3 benchmarks/ccindex/benchmark_cc_domain_search.py --clear-cache --output 
 
 ```bash
 # Check current status
-./monitor_overnight_build.sh
+"${REPO_ROOT}/monitor_overnight_build.sh"
 
 # Watch conversion log
-tail -f conversion_progress.log
+tail -f "${REPO_ROOT}/conversion_progress.log"
 
 # Watch orchestration log
-tail -f overnight_duckdb_*.log
+tail -f "${REPO_ROOT}"/overnight_duckdb_*.log
 
 # Check disk usage
 df -h /storage
@@ -189,7 +197,7 @@ The overnight job will:
 5. ⏳ Run benchmarks
 6. ⏳ Generate report
 
-You can check status anytime with `./monitor_overnight_build.sh`
+You can check status anytime with `${REPO_ROOT}/monitor_overnight_build.sh`
 
 ## Manual Override (If Needed)
 
@@ -203,7 +211,7 @@ pkill -f parallel_convert_missing.py
 pkill -f overnight_duckdb_complete.sh
 
 # Restart orchestration manually
-./overnight_duckdb_complete.sh
+"${REPO_ROOT}/overnight_duckdb_complete.sh"
 ```
 
 ## Success Criteria
@@ -219,4 +227,4 @@ pkill -f overnight_duckdb_complete.sh
 
 **Status**: Build in progress, monitoring active
 **ETA**: ~1-1.5 hours to completion
-**Monitor**: `./monitor_overnight_build.sh`
+**Monitor**: `${REPO_ROOT}/monitor_overnight_build.sh`

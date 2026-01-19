@@ -1,25 +1,39 @@
 #!/bin/bash
 # Quick reference for DuckDB pointer index operations
 
-cat << 'EOF'
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(cd "${SCRIPT_DIR}/../.." && pwd)"
+VENV_PYTHON="${VENV_PYTHON:-${REPO_ROOT}/.venv/bin/python}"
+
+if [[ -x "${VENV_PYTHON}" ]]; then
+  :
+elif command -v "${VENV_PYTHON}" >/dev/null 2>&1; then
+  :
+else
+  VENV_PYTHON="python3"
+fi
+
+cat << EOF
 ╔══════════════════════════════════════════════════════════════╗
 ║         DuckDB Pointer Index - Quick Reference               ║
 ╚══════════════════════════════════════════════════════════════╝
 
 📊 CHECK STATUS
-  ./monitor_overnight_build.sh
+  ${REPO_ROOT}/monitor_overnight_build.sh
   
 📋 VIEW LOGS
   tail -f conversion_progress.log         # Conversion progress
   tail -f overnight_duckdb_*.log          # Orchestration log
   
 🔍 SEARCH DOMAINS (after build completes)
-  python3 search_cc_domain.py example.com --limit 100
-  python3 search_cc_domain.py example.com --mode both --show
+  ${VENV_PYTHON} ${REPO_ROOT}/search_cc_domain.py example.com --limit 100
+  ${VENV_PYTHON} ${REPO_ROOT}/search_cc_domain.py example.com --mode both --show
   
 ⚡ RUN BENCHMARKS (after build completes)
-  python3 benchmarks/ccindex/benchmark_cc_domain_search.py
-  python3 benchmarks/ccindex/benchmark_cc_domain_search.py --clear-cache
+  ${VENV_PYTHON} ${REPO_ROOT}/benchmarks/ccindex/benchmark_cc_domain_search.py
+  ${VENV_PYTHON} ${REPO_ROOT}/benchmarks/ccindex/benchmark_cc_domain_search.py --clear-cache
   
 📁 FILE LOCATIONS
   Parquet:  /storage/ccindex_parquet/cc_pointers_by_year/
@@ -41,7 +55,7 @@ cat << 'EOF'
   pkill -f overnight_duckdb_complete.sh
   
 🔄 RESTART FROM SCRATCH
-  ./overnight_duckdb_complete.sh
+  ${REPO_ROOT}/overnight_duckdb_complete.sh
   
 📖 FULL DOCUMENTATION
   See: OVERNIGHT_BUILD_STATUS.md
