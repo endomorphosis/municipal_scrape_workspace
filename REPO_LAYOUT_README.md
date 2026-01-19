@@ -1,11 +1,25 @@
 # Repo Layout (Final Locations) + Refactor Checklist
 
+**📘 COMPREHENSIVE GUIDE**: See [REFACTORING_ROADMAP.md](REFACTORING_ROADMAP.md) for complete analysis and migration plan.  
+**📄 QUICK START**: See [REFACTORING_QUICKSTART.md](REFACTORING_QUICKSTART.md) for quick reference and action items.
+
 This document is the "source of truth" for where each script/module should live once the repo is fully migrated into its final layout.
 
 The working conventions here are:
 - **Canonical implementations live in structured folders** (`src/`, `scripts/ops/`, `benchmarks/`, `archive/`).
 - **Repo-root entrypoints are wrappers** that preserve backwards compatibility (`./foo.py`, `./bar.sh`).
 - **No `sys.path` hacks for intra-repo imports**. Package imports only.
+
+## Current Migration Status
+
+As of 2026-01-19:
+- **19 files** successfully migrated with root wrappers ✅
+- **4 files** in src/ but missing wrappers ⚠️
+- **17 files** awaiting migration 📦
+- **7 files** identified for archival 🗄️
+- **5 files** need evaluation ❓
+
+See [REFACTORING_ROADMAP.md](REFACTORING_ROADMAP.md) for complete file-by-file breakdown.
 
 ---
 
