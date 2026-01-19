@@ -4,6 +4,21 @@ This is a standalone Python package + git repo for the municipal scraping workfl
 
 This repo also contains Common Crawl (CC) index pipeline tooling (Parquet + DuckDB pointer indexes + meta-indexes). The CC tooling is being migrated into the installable package namespace under `municipal_scrape_workspace.ccindex`.
 
+## 📚 Refactoring Documentation
+
+**The repository is undergoing a structural refactoring to improve organization and maintainability.**
+
+- 📘 **[REFACTORING_ROADMAP.md](REFACTORING_ROADMAP.md)** - Comprehensive guide with complete analysis (52 files, detailed plan, import patterns, dependency gaps)
+- 📄 **[REFACTORING_QUICKSTART.md](REFACTORING_QUICKSTART.md)** - Quick reference for common tasks and patterns
+- 📋 **[FILE_MIGRATION_MAP.md](FILE_MIGRATION_MAP.md)** - Complete file-by-file lookup table with status and actions
+- 📖 **[REPO_LAYOUT_README.md](REPO_LAYOUT_README.md)** - Repository layout conventions and rules
+
+**Current Status** (2026-01-19):
+- ✅ 19 files migrated with wrappers
+- ⚠️ 4 files need wrapper fix
+- 📦 17 files awaiting migration
+- 🗄️ 7 files identified for archival
+
 ## Quickstart
 
 ```bash
