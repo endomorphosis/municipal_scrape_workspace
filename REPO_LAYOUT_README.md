@@ -82,6 +82,9 @@ These canonical implementations live under `src/municipal_scrape_workspace/ccind
   - `search_parallel_duckdb_indexes.py`
 - support:
   - `cc_domain_parquet_locator.py`
+  - `sort_cc_parquet_shards.py`
+  - `validate_and_sort_parquet.py`
+  - `parallel_validate_parquet.py`
   - `validate_collection_completeness.py`
   - `warc_candidates_from_jsonl.py`
   - `download_warc_records.py`
