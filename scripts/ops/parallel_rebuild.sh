@@ -4,6 +4,13 @@
 
 set -euo pipefail
 
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(cd "${SCRIPT_DIR}/../.." && pwd)"
+VENV_PYTHON="${VENV_PYTHON:-${REPO_ROOT}/.venv/bin/python}"
+if [[ ! -x "${VENV_PYTHON}" ]]; then
+    VENV_PYTHON="python3"
+fi
+
 TIMESTAMP=$(date +%Y%m%d_%H%M%S)
 LOG_FILE="/storage/ccindex_duckdb/logs/parallel_rebuild_${TIMESTAMP}.log"
 mkdir -p /storage/ccindex_duckdb/logs
@@ -47,7 +54,7 @@ echo ""
 
 SORTED_LIST="/tmp/sorted_files_${TIMESTAMP}.txt"
 
-/home/barberb/municipal_scrape_workspace/.venv/bin/python parallel_validate_parquet.py \
+"${VENV_PYTHON}" "${REPO_ROOT}/parallel_validate_parquet.py" \
     --parquet-root /storage/ccindex_parquet \
     --workers ${WORKERS} \
     --output "${SORTED_LIST}"
@@ -87,7 +94,7 @@ for YEAR in 2024 2025; do
         
         OUTPUT_DB="/storage/ccindex_duckdb/cc_domain_parallel/cc_pointers_${YEAR}.duckdb"
         
-        /home/barberb/municipal_scrape_workspace/.venv/bin/python build_index_from_parquet.py \
+        "${VENV_PYTHON}" "${REPO_ROOT}/build_index_from_parquet.py" \
             --parquet-root "${YEAR_DIR}" \
             --output-db "${OUTPUT_DB}" \
             --batch-size 50 \
@@ -112,7 +119,7 @@ echo ""
 
 for domain in "whitehouse.gov" "senate.gov"; do
     echo "Testing: ${domain}"
-    /home/barberb/municipal_scrape_workspace/.venv/bin/python validate_search_completeness.py \
+    "${VENV_PYTHON}" "${REPO_ROOT}/validate_search_completeness.py" \
         --duckdb-dir /storage/ccindex_duckdb/cc_domain_parallel \
         --parquet-root /storage/ccindex_parquet/cc_pointers_by_collection \
         --domain "${domain}" 2>&1 | head -20
@@ -131,7 +138,7 @@ for YEAR in 2024 2025; do
         SIZE=$(ls -lh "${DB_FILE}" | awk '{print $5}')
         echo "Index ${YEAR}: ${SIZE}"
         
-        /home/barberb/municipal_scrape_workspace/.venv/bin/python << PYEOF
+        "${VENV_PYTHON}" << PYEOF
 import duckdb
 con = duckdb.connect("${DB_FILE}", read_only=True)
 try:
@@ -153,7 +160,7 @@ echo "STEP 5: BENCHMARK"
 echo "===================================================================================="
 echo ""
 
-/home/barberb/municipal_scrape_workspace/.venv/bin/python benchmarks/ccindex/benchmark_cc_duckdb_search.py \
+"${VENV_PYTHON}" "${REPO_ROOT}/benchmarks/ccindex/benchmark_cc_duckdb_search.py" \
     --duckdb-dir /storage/ccindex_duckdb/cc_domain_parallel \
     --parquet-root /storage/ccindex_parquet/cc_pointers_by_collection \
     --quick 2>&1 || echo "Benchmark had issues (non-fatal)"

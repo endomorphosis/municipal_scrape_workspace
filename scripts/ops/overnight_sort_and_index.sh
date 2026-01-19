@@ -3,6 +3,13 @@
 
 set -euo pipefail
 
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(cd "${SCRIPT_DIR}/../.." && pwd)"
+VENV_PYTHON="${VENV_PYTHON:-${REPO_ROOT}/.venv/bin/python}"
+if [[ ! -x "${VENV_PYTHON}" ]]; then
+    VENV_PYTHON="python3"
+fi
+
 TIMESTAMP=$(date +%Y%m%d_%H%M%S)
 LOG_FILE="/storage/ccindex_duckdb/logs/overnight_sort_index_${TIMESTAMP}.log"
 mkdir -p /storage/ccindex_duckdb/logs
@@ -51,7 +58,7 @@ for pq_file in "${UNSORTED_FILES[@]}"; do
         
         SORTED_TMP="${pq_file}.sorted.tmp"
         
-        /home/barberb/municipal_scrape_workspace/.venv/bin/python << PYEOF
+        "${VENV_PYTHON}" << PYEOF
 import pyarrow.parquet as pq
 import pyarrow.compute as pc
 import duckdb
@@ -91,7 +98,7 @@ echo "STEP 2: Building domain index with row group ranges"
 echo "===================================================================================="
 echo ""
 
-/home/barberb/municipal_scrape_workspace/.venv/bin/python build_cc_pointer_duckdb.py \
+"${VENV_PYTHON}" "${REPO_ROOT}/build_cc_pointer_duckdb.py" \
     --input-root /storage/ccindex \
     --db /storage/ccindex_duckdb/cc_domain_by_year_sorted \
     --shard-by-year \
@@ -148,7 +155,7 @@ PYEOF
     
     # Run benchmark
     echo "Running benchmark with row group optimization..."
-    /home/barberb/municipal_scrape_workspace/.venv/bin/python benchmarks/ccindex/benchmark_cc_duckdb_search.py \
+    "${VENV_PYTHON}" "${REPO_ROOT}/benchmarks/ccindex/benchmark_cc_duckdb_search.py" \
         --duckdb-dir /storage/ccindex_duckdb/cc_domain_by_year_sorted \
         --parquet-root /storage/ccindex_parquet/cc_pointers_by_year \
         --quick

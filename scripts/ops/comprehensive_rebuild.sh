@@ -9,6 +9,13 @@
 
 set -euo pipefail
 
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(cd "${SCRIPT_DIR}/../.." && pwd)"
+VENV_PYTHON="${VENV_PYTHON:-${REPO_ROOT}/.venv/bin/python}"
+if [[ ! -x "${VENV_PYTHON}" ]]; then
+    VENV_PYTHON="python3"
+fi
+
 TIMESTAMP=$(date +%Y%m%d_%H%M%S)
 LOG_FILE="/storage/ccindex_duckdb/logs/comprehensive_rebuild_${TIMESTAMP}.log"
 mkdir -p /storage/ccindex_duckdb/logs
@@ -41,7 +48,7 @@ echo "STEP 1: FREE DISK SPACE"
 echo "===================================================================================="
 echo ""
 
-./cleanup_space.sh
+"${SCRIPT_DIR}/cleanup_space.sh"
 
 CLEANUP_EXIT=$?
 if [ ${CLEANUP_EXIT} -ne 0 ]; then
@@ -57,7 +64,7 @@ echo ""
 
 SORTED_LIST="/tmp/sorted_parquet_files_${TIMESTAMP}.txt"
 
-/home/barberb/municipal_scrape_workspace/.venv/bin/python validate_and_sort_parquet.py \
+"${VENV_PYTHON}" "${REPO_ROOT}/validate_and_sort_parquet.py" \
     --parquet-root /storage/ccindex_parquet/cc_pointers_by_year \
     --sort-unsorted \
     --output "${SORTED_LIST}"
@@ -81,7 +88,7 @@ echo "STEP 3: BUILD DOMAIN INDEX WITH ROW GROUP RANGES"
 echo "===================================================================================="
 echo ""
 
-/home/barberb/municipal_scrape_workspace/.venv/bin/python build_cc_pointer_duckdb.py \
+"${VENV_PYTHON}" "${REPO_ROOT}/build_cc_pointer_duckdb.py" \
     --input-root /storage/ccindex \
     --db /storage/ccindex_duckdb/cc_domain_sorted \
     --shard-by-year \
@@ -127,7 +134,7 @@ VALIDATION_FAILED=0
 for domain in "${TEST_DOMAINS[@]}"; do
     echo "Testing domain: ${domain}"
     
-    /home/barberb/municipal_scrape_workspace/.venv/bin/python validate_search_completeness.py \
+    "${VENV_PYTHON}" "${REPO_ROOT}/validate_search_completeness.py" \
         --duckdb-dir /storage/ccindex_duckdb/cc_domain_sorted \
         --parquet-root /storage/ccindex_parquet/cc_pointers_by_year \
         --domain "${domain}"
@@ -156,7 +163,7 @@ for year in 2024 2025; do
         SIZE=$(ls -lh "${DB_FILE}" | awk '{print $5}')
         echo "Index ${year}: ${SIZE}"
         
-        /home/barberb/municipal_scrape_workspace/.venv/bin/python << PYEOF
+        "${VENV_PYTHON}" << PYEOF
 import duckdb
 con = duckdb.connect("${DB_FILE}", read_only=True)
 
@@ -187,7 +194,7 @@ echo "STEP 6: BENCHMARKS"
 echo "===================================================================================="
 echo ""
 
-/home/barberb/municipal_scrape_workspace/.venv/bin/python benchmarks/ccindex/benchmark_cc_duckdb_search.py \
+"${VENV_PYTHON}" "${REPO_ROOT}/benchmarks/ccindex/benchmark_cc_duckdb_search.py" \
     --duckdb-dir /storage/ccindex_duckdb/cc_domain_sorted \
     --parquet-root /storage/ccindex_parquet/cc_pointers_by_year \
     --quick
