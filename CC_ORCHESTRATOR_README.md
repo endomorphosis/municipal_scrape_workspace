@@ -199,7 +199,7 @@ After indexing is complete, use these tools to search:
 python search_parallel_duckdb_indexes.py "example.gov"
 
 # Benchmark search performance
-python benchmark_parallel_duckdb_indexes.py "example.gov"
+python benchmarks/ccindex/benchmark_parallel_duckdb_indexes.py "example.gov"
 ```
 
 ### Validation Tools

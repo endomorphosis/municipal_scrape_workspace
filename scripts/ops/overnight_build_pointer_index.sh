@@ -243,7 +243,7 @@ log ""
 if [[ "${RUN_BENCHMARK:-0}" == "1" ]]; then
     log "STEP 5: Running performance benchmark..."
     
-    "${PYTHON}" "${SCRIPT_DIR}/benchmark_cc_pointer_search.py" \
+    "${PYTHON}" "${SCRIPT_DIR}/benchmarks/ccindex/benchmark_cc_pointer_search.py" \
         --db-dir "${DB_OUTPUT_DIR}" \
         --parquet-root "${CCINDEX_PARQUET}" \
         --count 50 \
@@ -273,7 +273,7 @@ log "    --db-dir ${DB_OUTPUT_DIR} \\"
 log "    --parquet-root ${CCINDEX_PARQUET}"
 log ""
 log "  # Run benchmark:"
-log "  ${PYTHON} benchmark_cc_pointer_search.py \\"
+log "  ${PYTHON} benchmarks/ccindex/benchmark_cc_pointer_search.py \\"
 log "    --db-dir ${DB_OUTPUT_DIR} \\"
 log "    --parquet-root ${CCINDEX_PARQUET}"
 log ""

@@ -205,17 +205,17 @@ The architecture is designed to scale:
 
 ### Scripts That Should Use This Architecture
 
-1. **`build_cc_pointer_duckdb_parallel.py`** (to be created)
+1. **`build_parallel_duckdb_indexes.py`**
    - Builds per-collection indexes in parallel
    - Creates metadata index
    - Handles errors gracefully
 
-2. **`search_parallel_duckdb_indexes.py`** (to be created)
+2. **`search_parallel_duckdb_indexes.py`**
    - Searches across all collection indexes
    - Aggregates results
    - Returns complete URL lists
 
-3. **`benchmark_parallel_duckdb_indexes.py`** (to be created)
+3. **`benchmarks/ccindex/benchmark_parallel_duckdb_indexes.py`**
    - Benchmarks search performance
    - Tests various query patterns
    - Validates scalability

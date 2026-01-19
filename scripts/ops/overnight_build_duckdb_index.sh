@@ -177,7 +177,7 @@ fi
 if [[ ${SKIP_BENCHMARK} -eq 0 ]] && [[ ${QUICK_MODE} -eq 0 ]]; then
     log_section "Phase 2: Running Search Benchmarks"
     
-    BENCHMARK_CMD="${VENV_PYTHON} benchmark_cc_duckdb_search.py \
+    BENCHMARK_CMD="${VENV_PYTHON} benchmarks/ccindex/benchmark_cc_duckdb_search.py \
         --duckdb-dir ${DUCKDB_DIR} \
         --parquet-root ${CCINDEX_PARQUET} \
         --threads ${THREADS} \
@@ -308,7 +308,7 @@ log_section "Phase 4: Generating Report"
     echo "============================================================================"
     echo ""
     echo "1. Run benchmark to validate performance:"
-    echo "   ${VENV_PYTHON} benchmark_cc_duckdb_search.py \\"
+    echo "   ${VENV_PYTHON} benchmarks/ccindex/benchmark_cc_duckdb_search.py \\"
     echo "     --duckdb-dir ${DUCKDB_DIR} \\"
     echo "     --parquet-root ${CCINDEX_PARQUET}"
     echo ""

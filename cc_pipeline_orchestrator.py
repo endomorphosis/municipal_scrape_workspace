@@ -34,9 +34,7 @@ from typing import Dict, List, Optional, Set, Tuple
 
 import psutil
 
-# Import existing validation logic
-sys.path.insert(0, str(Path(__file__).parent))
-from validate_collection_completeness import CollectionValidator
+from municipal_scrape_workspace.ccindex.validate_collection_completeness import CollectionValidator
 
 # Configure logging
 logging.basicConfig(

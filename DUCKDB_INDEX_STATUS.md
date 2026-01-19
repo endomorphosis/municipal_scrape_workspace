@@ -73,7 +73,7 @@ CC-MAIN-2024-33 (28 results):
 
 ### 3. Benchmark
 ```bash
-python3 benchmark_parallel_duckdb_indexes.py
+python3 benchmarks/ccindex/benchmark_parallel_duckdb_indexes.py
 ```
 Tests search performance across multiple domains and collections.
 
@@ -131,6 +131,6 @@ Tests search performance across multiple domains and collections.
 
 - `build_parallel_duckdb_indexes.py` - Index builder
 - `search_parallel_duckdb_indexes.py` - Search tool
-- `benchmark_parallel_duckdb_indexes.py` - Performance tester
+- `benchmarks/ccindex/benchmark_parallel_duckdb_indexes.py` - Performance tester
 - Logs: `logs/build_CC-MAIN-*.log`
-- Results: `benchmark_results.json`
+- Results: `benchmarks/ccindex/benchmark_results.json`

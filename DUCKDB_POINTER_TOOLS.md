@@ -6,7 +6,7 @@ This directory contains three comprehensive tools for testing, searching, and be
 
 1. **test_cc_pipeline.py** - Complete pipeline test suite
 2. **search_domain_duckdb_pointer.py** - Domain search tool
-3. **benchmark_duckdb_pointer.py** - Performance benchmark suite
+3. **benchmarks/ccindex/benchmark_duckdb_pointer.py** - Performance benchmark suite
 
 ## Design Philosophy
 
@@ -125,16 +125,16 @@ Comprehensive benchmark suite to validate performance characteristics.
 
 ```bash
 # Full benchmark
-./benchmark_duckdb_pointer.py
+python3 benchmarks/ccindex/benchmark_duckdb_pointer.py
 
 # Quick benchmark (smaller sample size)
-./benchmark_duckdb_pointer.py --quick
+python3 benchmarks/ccindex/benchmark_duckdb_pointer.py --quick
 
 # Custom sample size
-./benchmark_duckdb_pointer.py --sample-size 50
+python3 benchmarks/ccindex/benchmark_duckdb_pointer.py --sample-size 50
 
 # Custom database location
-./benchmark_duckdb_pointer.py --db /custom/path/domain_pointer.duckdb
+python3 benchmarks/ccindex/benchmark_duckdb_pointer.py --db /custom/path/domain_pointer.duckdb
 ```
 
 ### Benchmark Tests

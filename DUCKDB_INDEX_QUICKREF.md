@@ -105,7 +105,7 @@ tail -f logs/build_CC-MAIN-*_*.log
 
 ## Benchmark Performance
 ```bash
-python3 benchmark_parallel_duckdb_indexes.py
+python3 benchmarks/ccindex/benchmark_parallel_duckdb_indexes.py
 ```
 
 ## Check Status

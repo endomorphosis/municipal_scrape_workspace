@@ -18,8 +18,8 @@ cat << 'EOF'
   python3 search_cc_domain.py example.com --mode both --show
   
 ⚡ RUN BENCHMARKS (after build completes)
-  python3 benchmark_cc_domain_search.py
-  python3 benchmark_cc_domain_search.py --clear-cache
+  python3 benchmarks/ccindex/benchmark_cc_domain_search.py
+  python3 benchmarks/ccindex/benchmark_cc_domain_search.py --clear-cache
   
 📁 FILE LOCATIONS
   Parquet:  /storage/ccindex_parquet/cc_pointers_by_year/

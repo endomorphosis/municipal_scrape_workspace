@@ -10,7 +10,7 @@ parallel_convert_missing.py
   ✓ Handles 6,396 files with chunking
   ✓ Currently RUNNING
 
-convert_missing_with_chunks.py
+archive/ccindex/converters/convert_missing_with_chunks.py
   ✓ Single-threaded backup converter
   ✓ Chunked processing to avoid OOM
   ✓ 50k records per batch
@@ -25,12 +25,12 @@ search_cc_domain.py
 
 ⚡ BENCHMARKING
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-benchmark_cc_domain_search.py
+benchmarks/ccindex/benchmark_cc_domain_search.py
   ✓ Comprehensive performance testing
   ✓ Cold/warm cache comparison
   ✓ Multiple domain testing
   ✓ JSON output for analysis
-  ✓ Usage: python3 benchmark_cc_domain_search.py
+  ✓ Usage: python3 benchmarks/ccindex/benchmark_cc_domain_search.py
 
 🤖 ORCHESTRATION
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -104,7 +104,7 @@ QUICK START (AFTER BUILD COMPLETES)
 python3 search_cc_domain.py example.com --show
 
 # Run benchmarks
-python3 benchmark_cc_domain_search.py
+python3 benchmarks/ccindex/benchmark_cc_domain_search.py
 
 # Compare search methods
 python3 search_cc_domain.py example.com --mode both

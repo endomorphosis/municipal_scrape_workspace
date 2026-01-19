@@ -23,7 +23,7 @@ This document describes the design of the DuckDB pointer index system for fast C
 
 3. **Search Scripts** (Query Layer)
    - `search_cc_pointer_index.py`: Search for domain across all indexes
-   - `benchmark_cc_pointer_search.py`: Performance testing
+  - `benchmarks/ccindex/benchmark_cc_pointer_search.py`: Performance testing
 
 ## Key Design Decisions
 
@@ -211,7 +211,7 @@ crawl-data/CC-MAIN-2024-33/segments/.../warc/CC-MAIN-20240815234567-2.warc.gz:98
 ### Run Benchmark
 
 ```bash
-python benchmark_cc_pointer_search.py \
+python benchmarks/ccindex/benchmark_cc_pointer_search.py \
   --db-dir /storage/ccindex_duckdb \
   --parquet-root /storage/ccindex_parquet \
   --count 100
@@ -352,5 +352,5 @@ python build_cc_pointer_duckdb.py \
 **Next Steps**:
 1. Run overnight build: `./overnight_build_pointer_index.sh`
 2. Test search: `python search_cc_pointer_index.py --domain example.com ...`
-3. Run benchmark: `python benchmark_cc_pointer_search.py ...`
+3. Run benchmark: `python benchmarks/ccindex/benchmark_cc_pointer_search.py ...`
 4. Monitor performance and adjust as needed

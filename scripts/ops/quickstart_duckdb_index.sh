@@ -140,7 +140,7 @@ echo "Step 4: Running quick benchmark"
 echo "============================================================================"
 echo ""
 
-"${VENV_PYTHON}" "${SCRIPT_DIR}/benchmark_cc_duckdb_search.py" \
+"${VENV_PYTHON}" "${SCRIPT_DIR}/benchmarks/ccindex/benchmark_cc_duckdb_search.py" \
     --duckdb-dir "${TEST_DIR}/duckdb" \
     --parquet-root "${TEST_DIR}/parquet" \
     --quick

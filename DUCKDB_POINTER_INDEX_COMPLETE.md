@@ -101,17 +101,17 @@ python3 search_parallel_duckdb_indexes.py example.com --json
 - Single domain search: ~3s average
 - Parallel speedup depends on number of collections
 
-### 3. benchmark_parallel_duckdb_indexes.py
+### 3. benchmarks/ccindex/benchmark_parallel_duckdb_indexes.py
 
 Benchmark search performance with different patterns.
 
 **Usage:**
 ```bash
 # Full benchmark suite
-python3 benchmark_parallel_duckdb_indexes.py
+python3 benchmarks/ccindex/benchmark_parallel_duckdb_indexes.py
 
 # Custom benchmark for specific domain
-python3 benchmark_parallel_duckdb_indexes.py --custom example.com
+python3 benchmarks/ccindex/benchmark_parallel_duckdb_indexes.py --custom example.com
 ```
 
 **Tests:**
@@ -122,7 +122,7 @@ python3 benchmark_parallel_duckdb_indexes.py --custom example.com
 
 **Output:**
 - Average/min/max times for each test
-- Results saved to benchmark_results.json
+- Results saved to `benchmark_results_parallel_duckdb.json`
 - Calculates parallel speedup factor
 
 ### 4. overnight_parallel_index_build.sh
@@ -322,6 +322,6 @@ This indexing system provides:
 
 1. **build_parallel_duckdb_indexes.py** - Parallel index builder
 2. **search_parallel_duckdb_indexes.py** - Multi-collection search
-3. **benchmark_parallel_duckdb_indexes.py** - Performance benchmarking
+3. **benchmarks/ccindex/benchmark_parallel_duckdb_indexes.py** - Performance benchmarking
 4. **overnight_parallel_index_build.sh** - Orchestration script
 5. **DUCKDB_POINTER_INDEX_COMPLETE.md** - This documentation

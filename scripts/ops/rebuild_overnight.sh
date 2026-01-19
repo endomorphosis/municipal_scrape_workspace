@@ -76,7 +76,7 @@ if [ ${BUILD_EXIT} -eq 0 ]; then
         
         # Run quick benchmark
         echo "Running benchmark..."
-        /home/barberb/municipal_scrape_workspace/.venv/bin/python benchmark_cc_duckdb_search.py \
+        /home/barberb/municipal_scrape_workspace/.venv/bin/python benchmarks/ccindex/benchmark_cc_duckdb_search.py \
             --duckdb-dir /storage/ccindex_duckdb/cc_domain_by_year \
             --parquet-root /storage/ccindex_parquet/cc_pointers_by_year \
             --quick

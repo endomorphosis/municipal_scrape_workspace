@@ -279,14 +279,14 @@ python search_cc_duckdb_index.py \
 
 ```bash
 # Full benchmark suite
-python benchmark_cc_duckdb_search.py \
+python benchmarks/ccindex/benchmark_cc_duckdb_search.py \
   --duckdb-dir /storage/ccindex_duckdb/cc_domain_by_year \
   --parquet-root /storage/ccindex_parquet/cc_pointers_by_year \
   --sample-domains 200 \
   --sample-urls 1000
 
 # Quick benchmark
-python benchmark_cc_duckdb_search.py \
+python benchmarks/ccindex/benchmark_cc_duckdb_search.py \
   --duckdb-dir /storage/ccindex_duckdb/cc_domain_by_year \
   --parquet-root /storage/ccindex_parquet/cc_pointers_by_year \
   --quick

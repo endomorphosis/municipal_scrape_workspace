@@ -141,7 +141,7 @@ With tests in place, you can now:
 2. Create production scripts:
    - build_cc_pointer_duckdb_parallel.py
    - search_parallel_duckdb_indexes.py
-   - benchmark_parallel_duckdb_indexes.py
+   - benchmarks/ccindex/benchmark_parallel_duckdb_indexes.py
 
 3. Overnight job:
    - Validate all parquet files are sorted

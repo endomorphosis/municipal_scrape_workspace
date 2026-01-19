@@ -94,15 +94,15 @@ python3 search_cc_domain.py example.com --mode both --show
 
 **Output**: List of URLs with WARC file locations and byte offsets
 
-### 2. `benchmark_cc_domain_search.py`
+### 2. `benchmarks/ccindex/benchmark_cc_domain_search.py`
 Comprehensive performance benchmarking.
 
 ```bash
 # Basic benchmark
-python3 benchmark_cc_domain_search.py --domains example.com google.com github.com
+python3 benchmarks/ccindex/benchmark_cc_domain_search.py --domains example.com google.com github.com
 
 # With cache clearing (requires sudo)
-python3 benchmark_cc_domain_search.py --clear-cache --output results.json
+python3 benchmarks/ccindex/benchmark_cc_domain_search.py --clear-cache --output results.json
 ```
 
 **Metrics**:
@@ -174,10 +174,10 @@ Based on current progress (361/6,396 files in ~2 minutes):
 
 - `parallel_convert_missing.py` - Multi-process gz→parquet with memory management
 - `search_cc_domain.py` - Domain search with DuckDB and parquet modes
-- `benchmark_cc_domain_search.py` - Comprehensive performance testing
+- `benchmarks/ccindex/benchmark_cc_domain_search.py` - Comprehensive performance testing
 - `overnight_duckdb_complete.sh` - Full orchestration script
 - `monitor_overnight_build.sh` - Progress monitoring
-- `convert_missing_with_chunks.py` - Single-threaded chunked converter (backup)
+- `archive/ccindex/converters/convert_missing_with_chunks.py` - Single-threaded chunked converter (backup; archived)
 
 ## Next Steps (Automatic)
 

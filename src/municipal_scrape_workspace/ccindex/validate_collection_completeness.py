@@ -57,14 +57,23 @@ class CollectionValidator:
                         collections.add(coll_name)
         
         # Also scan DuckDB indexes
-        if self.duckdb_dir.exists():
-            for db_dir in [self.duckdb_dir / "cc_pointers_by_collection",
-                          self.duckdb_dir / "ccindex_duckdb"]:
-                if db_dir.exists():
-                    for db_file in db_dir.glob("CC-MAIN-*.duckdb"):
-                        coll_name = db_file.stem  # Remove .duckdb
-                        if coll_name.startswith("CC-MAIN-"):
-                            collections.add(coll_name)
+        if self.pointer_dir.exists():
+            # pointer_dir may be either the parent dir that contains subdirs
+            # (e.g., /storage/ccindex_duckdb) or the collection DB dir itself
+            # (e.g., /storage/ccindex_duckdb/cc_pointers_by_collection).
+            candidate_dirs = [
+                self.pointer_dir,
+                self.pointer_dir / "cc_pointers_by_collection",
+                self.pointer_dir / "ccindex_duckdb",
+            ]
+
+            for db_dir in candidate_dirs:
+                if not db_dir.exists():
+                    continue
+                for db_file in db_dir.glob("CC-MAIN-*.duckdb"):
+                    coll_name = db_file.stem  # Remove .duckdb
+                    if coll_name.startswith("CC-MAIN-"):
+                        collections.add(coll_name)
         
         return collections
     

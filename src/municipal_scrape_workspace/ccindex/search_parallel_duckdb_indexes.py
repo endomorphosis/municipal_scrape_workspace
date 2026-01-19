@@ -8,6 +8,8 @@ import time
 from pathlib import Path
 import multiprocessing as mp
 
+import argparse
+
 INDEX_DIR = Path("/storage/ccindex_duckdb/cc_pointers_by_collection")
 PARQUET_BASE = Path("/storage/ccindex_parquet/cc_pointers_by_year")
 
@@ -65,8 +67,20 @@ def search_domain(domain, max_workers=10):
     
     return all_results
 
+
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(description="Search across all per-collection DuckDB pointer indexes")
+    parser.add_argument("domain", help="Domain to search for (e.g., example.com)")
+    parser.add_argument(
+        "--max-workers",
+        type=int,
+        default=10,
+        help="Max parallel worker processes (default: 10)",
+    )
+
+    ns = parser.parse_args(argv)
+    search_domain(ns.domain, max_workers=int(ns.max_workers))
+    return 0
+
 if __name__ == "__main__":
-    if len(sys.argv) < 2:
-        print("Usage: search_parallel_duckdb_indexes.py <domain>")
-        sys.exit(1)
-    search_domain(sys.argv[1])
+    raise SystemExit(main())

@@ -39,7 +39,7 @@ python3 build_parallel_duckdb_indexes.py
 
 ### 3. Benchmark Performance
 ```bash
-./benchmark_parallel_duckdb_indexes.py
+python3 benchmarks/ccindex/benchmark_parallel_duckdb_indexes.py
 ```
 - Tests search performance across all indexes
 - Measures index size efficiency

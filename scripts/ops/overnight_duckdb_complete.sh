@@ -10,6 +10,9 @@
 
 set -euo pipefail
 
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+BENCHMARK_OUT_DIR="${SCRIPT_DIR}/benchmarks/ccindex"
+
 LOG_FILE="overnight_duckdb_build_$(date +%Y%m%d_%H%M%S).log"
 PARQUET_ROOT="/storage/ccindex_parquet/cc_pointers_by_year"
 DUCKDB_PATH="/storage/ccindex_duckdb/cc_pointers.duckdb"
@@ -145,11 +148,13 @@ run_search_tests() {
 
 run_benchmark() {
     log "Step 5: Running performance benchmark..."
+
+    mkdir -p "${BENCHMARK_OUT_DIR}"
     
-    python3 benchmark_cc_domain_search.py \
+    python3 benchmarks/ccindex/benchmark_cc_domain_search.py \
         --db "$DUCKDB_PATH" \
         --domains example.com google.com github.com wikipedia.org archive.org \
-        --output "benchmark_results_$(date +%Y%m%d_%H%M%S).json" \
+        --output "${BENCHMARK_OUT_DIR}/benchmark_results_$(date +%Y%m%d_%H%M%S).json" \
         2>&1 | tee -a "$LOG_FILE"
     
     log "  ✓ Benchmark completed"
