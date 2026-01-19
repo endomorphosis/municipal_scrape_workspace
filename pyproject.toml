@@ -13,7 +13,8 @@ dependencies = [
     # Install from the local ipfs_datasets_py checkout.
     # Rationale: upstream currently pins ipfs_kit_py via a git URL that triggers a broken submodule fetch.
     # The local checkout has been patched to use the known_good branch ZIP instead, enabling clean installs.
-    "ipfs_datasets_py @ file:///home/barberb/ipfs_datasets_py",
+    # Temporarily commented out to allow testing - see REFACTORING_ROADMAP.md § Dependency Gaps
+    # "ipfs_datasets_py @ file:///home/barberb/ipfs_datasets_py",
 ]
 
 [project.optional-dependencies]
