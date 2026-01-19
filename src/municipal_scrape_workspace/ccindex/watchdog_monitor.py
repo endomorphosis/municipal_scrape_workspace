@@ -6,14 +6,11 @@ Usage:
 """
 
 import argparse
-import glob
-import json
-import os
 import sys
 import time
 from datetime import datetime
 from pathlib import Path
-from typing import Dict, List, Tuple, Optional
+from typing import Dict, Optional
 
 try:
     import duckdb
@@ -34,12 +31,6 @@ def query_worker_stats(db_path: Path) -> Optional[Dict]:
         con = duckdb.connect(str(db_path), read_only=True)
         worker_id = db_path.stem.split("_")[-1]
         
-        # Total URLs assigned to this worker
-        total_urls = con.execute(
-            "SELECT COUNT(*) FROM town_urls WHERE shard = ?",
-            [int(worker_id)]
-        ).fetchone()[0] if int(worker_id) < 10 else 0
-
         # Success count
         success_count = con.execute(
             "SELECT COUNT(*) FROM url_cid_latest WHERE last_status = 'success'"

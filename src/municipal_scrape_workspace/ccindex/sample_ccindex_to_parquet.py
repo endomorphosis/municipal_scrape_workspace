@@ -21,10 +21,9 @@ from __future__ import annotations
 import argparse
 import gzip
 import json
-import os
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any, Dict, Iterator, List, Optional, Tuple
+from typing import Any, Dict, Iterator, List, Optional
 
 import pyarrow as pa
 import pyarrow.parquet as pq

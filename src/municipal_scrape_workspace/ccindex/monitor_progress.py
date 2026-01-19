@@ -21,7 +21,6 @@ def monitor_run(run_dir: str, max_wait_seconds: int = 3600):
         
         total_success = 0
         total_attempts = 0
-        total_blobs = 0
         
         for db_file in db_files:
             worker_id = db_file.split("worker_")[-1].split(".")[0]

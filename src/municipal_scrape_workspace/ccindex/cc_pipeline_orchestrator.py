@@ -16,11 +16,8 @@ Uses existing validator and HUD scripts for consistency.
 from __future__ import annotations
 
 import argparse
-import duckdb
 import json
 import logging
-import multiprocessing
-import os
 import selectors
 import shutil
 import subprocess
@@ -28,7 +25,6 @@ import sys
 import time
 from collections import defaultdict
 from dataclasses import dataclass
-from datetime import datetime
 from pathlib import Path
 from typing import Dict, List, Optional, Set, Tuple
 
@@ -148,7 +144,6 @@ class PipelineOrchestrator:
         logger.info(f"{label}Running: {' '.join(cmd)}")
 
         start = time.monotonic()
-        last_event = start
 
         proc = subprocess.Popen(
             cmd,
@@ -176,13 +171,11 @@ class PipelineOrchestrator:
                     for key, _mask in events:
                         line = key.fileobj.readline()
                         if line:
-                            last_event = time.monotonic()
                             logger.info(f"{label}{line.rstrip()}" )
                 else:
                     now = time.monotonic()
                     elapsed = now - start
                     logger.info(f"{label}Heartbeat: still running (elapsed {elapsed/60:.1f} min)")
-                    last_event = now
         finally:
             try:
                 sel.unregister(proc.stdout)

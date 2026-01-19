@@ -48,11 +48,9 @@ import os
 import re
 import subprocess
 import sys
-import time
-from dataclasses import asdict
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any, Dict, Iterable, List, Optional, Tuple
+from typing import Any, Dict, List, Optional, Tuple
 
 import duckdb
 

@@ -5,7 +5,6 @@ Regenerate a parquet file from original .gz source, with chunking for large file
 
 import argparse
 import gzip
-import sys
 from pathlib import Path
 
 import duckdb

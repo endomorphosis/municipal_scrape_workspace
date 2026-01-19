@@ -2,8 +2,6 @@
 """
 Parallel conversion of missing .gz files to .parquet with memory management
 """
-import os
-import sys
 import gzip
 import json
 import pyarrow as pa

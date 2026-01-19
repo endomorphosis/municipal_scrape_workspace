@@ -293,7 +293,6 @@ def main() -> int:
 
     while True:
         mem_av = _mem_available_gib()
-        swap_free = _swap_free_gib()
 
         running = _current_running(workers)
         running_count = len(running)

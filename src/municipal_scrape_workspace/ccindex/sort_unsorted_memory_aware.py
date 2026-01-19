@@ -6,11 +6,9 @@ Checks available memory before starting each sort job.
 
 import argparse
 import multiprocessing as mp
-import os
-import sys
 import time
 from pathlib import Path
-from typing import List, Tuple
+from typing import Tuple
 
 import duckdb
 import psutil
