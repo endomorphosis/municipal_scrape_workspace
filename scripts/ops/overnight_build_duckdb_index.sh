@@ -33,7 +33,8 @@ CCINDEX_DUCKDB="${CCINDEX_DUCKDB:-/storage/ccindex_duckdb}"
 VENV_PYTHON="${VENV_PYTHON:-/home/barberb/municipal_scrape_workspace/.venv/bin/python}"
 
 COLLECTIONS_REGEX="CC-MAIN-2024-.*"
-MAX_FILES=""
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(cd "${SCRIPT_DIR}/../.." && pwd)"
 THREADS="$(nproc)"
 QUICK_MODE=0
 SKIP_BUILD=0

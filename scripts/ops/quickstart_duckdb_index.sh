@@ -7,7 +7,8 @@
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-VENV_PYTHON="${VENV_PYTHON:-${SCRIPT_DIR}/../.venv/bin/python}"
+REPO_ROOT="$(cd "${SCRIPT_DIR}/../.." && pwd)"
+VENV_PYTHON="${VENV_PYTHON:-${REPO_ROOT}/.venv/bin/python}"
 
 # Test configuration
 TEST_DIR="/tmp/ccindex_test_$$"
@@ -51,7 +52,7 @@ echo "Step 1: Building test index (${TEST_MAX_FILES} files)..."
 echo "============================================================================"
 echo ""
 
-"${VENV_PYTHON}" "${SCRIPT_DIR}/build_cc_pointer_duckdb.py" \
+"${VENV_PYTHON}" "${REPO_ROOT}/build_cc_pointer_duckdb.py" \
     --input-root "${CCINDEX_ROOT}" \
     --db "${TEST_DIR}/duckdb" \
     --shard-by-year \
@@ -123,7 +124,7 @@ if [[ -f "${DB_FILE}" ]] && [[ -n "${SAMPLE_DOMAIN}" ]] && [[ "${SAMPLE_DOMAIN}"
     echo "Searching for domain: ${SAMPLE_DOMAIN}"
     echo ""
     
-    "${VENV_PYTHON}" "${SCRIPT_DIR}/search_cc_duckdb_index.py" \
+    "${VENV_PYTHON}" "${REPO_ROOT}/search_cc_duckdb_index.py" \
         --duckdb-dir "${TEST_DIR}/duckdb" \
         --parquet-root "${TEST_DIR}/parquet" \
         --domain "${SAMPLE_DOMAIN}" \
@@ -140,7 +141,7 @@ echo "Step 4: Running quick benchmark"
 echo "============================================================================"
 echo ""
 
-"${VENV_PYTHON}" "${SCRIPT_DIR}/benchmarks/ccindex/benchmark_cc_duckdb_search.py" \
+"${VENV_PYTHON}" "${REPO_ROOT}/benchmarks/ccindex/benchmark_cc_duckdb_search.py" \
     --duckdb-dir "${TEST_DIR}/duckdb" \
     --parquet-root "${TEST_DIR}/parquet" \
     --quick
@@ -155,13 +156,13 @@ echo ""
 echo "Next steps:"
 echo ""
 echo "1. Review the design documentation:"
-echo "   less ${SCRIPT_DIR}/DUCKDB_INDEX_DESIGN.md"
+echo "   less ${REPO_ROOT}/DUCKDB_INDEX_DESIGN.md"
 echo ""
 echo "2. Run the full overnight build:"
-echo "   ${SCRIPT_DIR}/overnight_build_duckdb_index.sh"
+echo "   ${REPO_ROOT}/overnight_build_duckdb_index.sh"
 echo ""
 echo "3. Or start with a larger test:"
-echo "   ${SCRIPT_DIR}/overnight_build_duckdb_index.sh --max-files 1000"
+echo "   ${REPO_ROOT}/overnight_build_duckdb_index.sh --max-files 1000"
 echo ""
 echo "Test directory will be cleaned up on exit."
 echo ""

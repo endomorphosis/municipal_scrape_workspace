@@ -12,14 +12,15 @@ set -euo pipefail
 #
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-VENV="${SCRIPT_DIR}/.venv"
+REPO_ROOT="$(cd "${SCRIPT_DIR}/../.." && pwd)"
+VENV="${REPO_ROOT}/.venv"
 PYTHON="${VENV}/bin/python"
 
 CCINDEX_ROOT="/storage/ccindex"
 CCINDEX_PARQUET="/storage/ccindex_parquet"
 CCINDEX_DUCKDB="/storage/ccindex_duckdb"
 
-LOG_DIR="${SCRIPT_DIR}/logs"
+LOG_DIR="${REPO_ROOT}/logs"
 mkdir -p "${LOG_DIR}"
 
 TIMESTAMP=$(date +%Y%m%d_%H%M%S)
@@ -53,7 +54,9 @@ log ""
 # ============================================================================
 log "STEP 1: Validating parquet files are sorted..."
 
-VALIDATION_SCRIPT="${SCRIPT_DIR}/validate_all_parquet_sorted.py"
+VALIDATION_SCRIPT="${REPO_ROOT}/tmp_ccindex/validate_all_parquet_sorted.py"
+
+mkdir -p "$(dirname "${VALIDATION_SCRIPT}")"
 
 if [[ ! -f "${VALIDATION_SCRIPT}" ]]; then
     log "Creating validation script..."
@@ -128,9 +131,9 @@ else
         log "STEP 1b: Sorting unsorted files..."
         
         # Use existing memory-aware sorting script
-        if [[ -f "${SCRIPT_DIR}/sort_unsorted_memory_aware.py" ]]; then
+        if [[ -f "${REPO_ROOT}/sort_unsorted_memory_aware.py" ]]; then
             log "Running memory-aware sorting..."
-            "${PYTHON}" "${SCRIPT_DIR}/sort_unsorted_memory_aware.py" \
+            "${PYTHON}" "${REPO_ROOT}/sort_unsorted_memory_aware.py" \
                 --parquet-dir "${CCINDEX_PARQUET}" \
                 --unsorted-list "${UNSORTED_FILES}" \
                 --max-memory-gb 50 \
@@ -164,7 +167,7 @@ mkdir -p "${DB_OUTPUT_DIR}"
 # Build index for 2024-2025 data
 log "Building pointer index for 2024-2025 collections..."
 
-"${PYTHON}" "${SCRIPT_DIR}/build_cc_pointer_duckdb.py" \
+"${PYTHON}" "${REPO_ROOT}/build_cc_pointer_duckdb.py" \
     --input-root "${CCINDEX_ROOT}" \
     --db "${DB_OUTPUT_DIR}" \
     --shard-by-year \
@@ -226,7 +229,7 @@ log "STEP 4: Testing search functionality..."
 TEST_DOMAIN="example.com"
 log "Testing search for: ${TEST_DOMAIN}"
 
-"${PYTHON}" "${SCRIPT_DIR}/search_cc_pointer_index.py" \
+"${PYTHON}" "${REPO_ROOT}/search_cc_pointer_index.py" \
     --domain "${TEST_DOMAIN}" \
     --db-dir "${DB_OUTPUT_DIR}" \
     --parquet-root "${CCINDEX_PARQUET}" \
@@ -243,7 +246,7 @@ log ""
 if [[ "${RUN_BENCHMARK:-0}" == "1" ]]; then
     log "STEP 5: Running performance benchmark..."
     
-    "${PYTHON}" "${SCRIPT_DIR}/benchmarks/ccindex/benchmark_cc_pointer_search.py" \
+    "${PYTHON}" "${REPO_ROOT}/benchmarks/ccindex/benchmark_cc_pointer_search.py" \
         --db-dir "${DB_OUTPUT_DIR}" \
         --parquet-root "${CCINDEX_PARQUET}" \
         --count 50 \
@@ -267,13 +270,13 @@ log ""
 log "Usage Examples:"
 log ""
 log "  # Search for a domain:"
-log "  ${PYTHON} search_cc_pointer_index.py \\"
+log "  ${PYTHON} ${REPO_ROOT}/search_cc_pointer_index.py \\"
 log "    --domain example.com \\"
 log "    --db-dir ${DB_OUTPUT_DIR} \\"
 log "    --parquet-root ${CCINDEX_PARQUET}"
 log ""
 log "  # Run benchmark:"
-log "  ${PYTHON} benchmarks/ccindex/benchmark_cc_pointer_search.py \\"
+log "  ${PYTHON} ${REPO_ROOT}/benchmarks/ccindex/benchmark_cc_pointer_search.py \\"
 log "    --db-dir ${DB_OUTPUT_DIR} \\"
 log "    --parquet-root ${CCINDEX_PARQUET}"
 log ""
