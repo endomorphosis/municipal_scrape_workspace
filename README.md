@@ -12,10 +12,16 @@ This repo also contains Common Crawl (CC) index pipeline tooling (Parquet + Duck
 
 **Essential Documentation**:
 - 📘 **[REFACTORED_STRUCTURE.md](REFACTORED_STRUCTURE.md)** - **PRIMARY GUIDE** Complete structure, file locations, import patterns, and usage
-- 📋 [FINAL_LAYOUT_README.md](FINAL_LAYOUT_README.md) - Detailed post-migration guide
-- 📄 [FILE_MIGRATION_MAP.md](FILE_MIGRATION_MAP.md) - Quick file location lookup table
-- 🎯 [MIGRATION_COMPLETE.md](MIGRATION_COMPLETE.md) - Migration summary & statistics
-- 📚 [REFACTORING_INDEX.md](REFACTORING_INDEX.md) - Complete refactoring documentation index
+- 📋 [docs/refactoring/FINAL_LAYOUT_README.md](docs/refactoring/FINAL_LAYOUT_README.md) - Detailed post-migration guide
+- 📄 [docs/refactoring/FILE_MIGRATION_MAP.md](docs/refactoring/FILE_MIGRATION_MAP.md) - Quick file location lookup table
+- 🎯 [docs/refactoring/MIGRATION_COMPLETE.md](docs/refactoring/MIGRATION_COMPLETE.md) - Migration summary & statistics
+- 📚 [docs/refactoring/REFACTORING_INDEX.md](docs/refactoring/REFACTORING_INDEX.md) - Complete refactoring documentation index
+
+**Documentation Organization**:
+- 📁 [docs/refactoring/](docs/refactoring/) - Refactoring process documentation
+- 📁 [docs/ccindex/](docs/ccindex/) - Common Crawl index documentation
+- 📁 [docs/pipeline/](docs/pipeline/) - Pipeline orchestration documentation
+- 📁 [docs/](docs/) - General project documentation
 
 **Final Status** (2026-01-20):
 - ✅ **52 files processed** (100% complete)
@@ -54,7 +60,7 @@ python -m municipal_scrape_workspace.ccindex.build_cc_pointer_duckdb --help
 municipal-scrape --help
 ```
 
-**📚 For detailed guide, see [FINAL_LAYOUT_README.md](FINAL_LAYOUT_README.md)**
+**📚 For detailed guide, see [REFACTORED_STRUCTURE.md](REFACTORED_STRUCTURE.md)**
 
 ## Publishing
 
