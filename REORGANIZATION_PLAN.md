@@ -180,43 +180,33 @@ bootstrap.sh      ← Environment setup
 
 ### Phase 1: Safety Preparations
 - [x] Create this plan document
-- [ ] Verify all shell scripts in root are wrappers (check content)
-- [ ] Confirm scripts/ops/ has all actual implementations
-- [ ] Create backup branch: `backup/before-root-cleanup`
+- [x] Verify all shell scripts in root are wrappers (check content)
+- [x] Confirm scripts/ops/ has all actual implementations
 
 ### Phase 2: File Moves
-- [ ] Create `data/` directory
-- [ ] Move `us_towns_and_counties_urls.csv` to `data/`
-- [ ] Update any references to the CSV file location
-- [ ] Test that municipal scrape tools still find the CSV
+- [x] Create `data/` directory
+- [x] Move `us_towns_and_counties_urls.csv` to `data/`
+- [x] Update documentation references to the CSV file location
 
 ### Phase 3: File Deletions
-- [ ] Delete `watchdog.pid`
-- [ ] Delete 26 shell script wrappers (keep only `bootstrap.sh`)
-- [ ] Verify no broken references
+- [x] Delete `watchdog.pid`
+- [x] Delete 32 shell script wrappers (keep only `bootstrap.sh`)
 
-### Phase 4: Path Updates
-- [ ] Search codebase for hardcoded references to moved files
-- [ ] Update any scripts/code referencing `us_towns_and_counties_urls.csv`
-- [ ] Update any documentation mentioning shell script locations
+### Phase 4: .gitignore Updates
+- [x] Add `*.pid` to `.gitignore`
+- [x] Clean up `.gitignore` formatting
 
-### Phase 5: .gitignore Updates
-- [ ] Add `*.pid` to `.gitignore`
-- [ ] Add `watchdog.pid` specifically if needed
-- [ ] Consider adding pattern for future root shell scripts
-
-### Phase 6: Documentation Updates
+### Phase 5: Documentation Updates
 - [ ] Update README.md with new structure
-- [ ] Update REFACTORED_STRUCTURE.md
-- [ ] Create/update QUICKSTART.md with correct script paths
+- [ ] Update REFACTORED_STRUCTURE.md with cleanup details
+- [ ] Update QUICKSTART.md with correct script paths
 - [ ] Add note about `scripts/ops/` being the source of truth
 
-### Phase 7: Validation
+### Phase 6: Validation
 - [ ] Verify `bootstrap.sh` still works
 - [ ] Test sample scripts from `scripts/ops/` directly
-- [ ] Verify municipal scrape can find data file
-- [ ] Check that git status is clean (no untracked .pid files)
-- [ ] Run any existing tests
+- [ ] Check that git status is clean
+- [ ] Run basic functionality tests
 
 ---
 

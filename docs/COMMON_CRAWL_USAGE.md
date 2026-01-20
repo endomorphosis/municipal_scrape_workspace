@@ -49,7 +49,7 @@ wget https://data.commoncrawl.org/cc-index/collections/CC-MAIN-2024-10/indexes/c
 
 ```bash
 "${VENV_PYTHON}" "${REPO_ROOT}/orchestrate_municipal_scrape.py" \
-  --csv us_towns_and_counties_urls.csv \
+  --csv data/us_towns_and_counties_urls.csv \
   --out out_local_index \
   --num-workers 4 --worker-id 0 \
   --full-domain-crawl \
@@ -83,7 +83,7 @@ Python library that wraps the Common Crawl and Wayback Machine APIs with built-i
 
 ```bash
 "${VENV_PYTHON}" "${REPO_ROOT}/orchestrate_municipal_scrape.py" \
-  --csv us_towns_and_counties_urls.csv \
+  --csv data/us_towns_and_counties_urls.csv \
   --out out_cdx_toolkit \
   --num-workers 4 --worker-id 0 \
   --full-domain-crawl \
@@ -111,7 +111,7 @@ Official recommended API. Queries the latest N collections via `collinfo.json` a
 
 ```bash
 "${VENV_PYTHON}" "${REPO_ROOT}/orchestrate_municipal_scrape.py" \
-  --csv us_towns_and_counties_urls.csv \
+  --csv data/us_towns_and_counties_urls.csv \
   --out out_index_api \
   --num-workers 4 --worker-id 0 \
   --full-domain-crawl \
@@ -150,7 +150,7 @@ Wayback Machine-style CDX server. Used only if index.commoncrawl.org fails.
 
 ```bash
 "${VENV_PYTHON}" "${REPO_ROOT}/orchestrate_municipal_scrape.py" \
-  --csv us_towns_and_counties_urls.csv \
+  --csv data/us_towns_and_counties_urls.csv \
   --out out_cdx_fallback \
   --num-workers 4 --worker-id 0 \
   --full-domain-crawl \
@@ -212,7 +212,7 @@ See: https://commoncrawl.org/blog/index-to-warc-files-and-urls-in-columnar-forma
 
 ```bash
 "${VENV_PYTHON}" "${REPO_ROOT}/orchestrate_municipal_scrape.py" \
-  --csv us_towns_and_counties_urls.csv \
+  --csv data/us_towns_and_counties_urls.csv \
   --out out_test_index \
   --worker-id 0 --num-workers 1 \
   --full-domain-crawl \
@@ -228,7 +228,7 @@ wget -O /tmp/cc-index.gz https://data.commoncrawl.org/cc-index/collections/CC-MA
 # Launch 4 workers
 for i in {0..3}; do
   "${VENV_PYTHON}" "${REPO_ROOT}/orchestrate_municipal_scrape.py" \
-    --csv us_towns_and_counties_urls.csv \
+    --csv data/us_towns_and_counties_urls.csv \
     --out out_local_4w \
     --num-workers 4 --worker-id $i \
     --full-domain-crawl \
@@ -243,7 +243,7 @@ done
 "${VENV_PYTHON}" -m pip install cdx_toolkit
 
 "${VENV_PYTHON}" "${REPO_ROOT}/orchestrate_municipal_scrape.py" \
-  --csv us_towns_and_counties_urls.csv \
+  --csv data/us_towns_and_counties_urls.csv \
   --out out_cdx_toolkit \
   --num-workers 2 --worker-id 0 \
   --full-domain-crawl \

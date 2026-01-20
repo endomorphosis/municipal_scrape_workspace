@@ -38,4 +38,7 @@ out_*/
 
 # Line-oriented logs/artifacts
 *.jsonl
-tail -f /tmp/comprehensive_20251231_040526.log
+
+# Process ID files
+*.pid
+watchdog.pid
