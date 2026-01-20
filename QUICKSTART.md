@@ -23,25 +23,21 @@ pip install -e '.[ccindex]'
 
 ## Running Tools
 
-### Three Methods to Run Python Tools
+### Two Methods to Run Python Tools
 
-#### Method 1: Root Wrappers (Backwards Compatible)
-```bash
-./search_cc_domain.py --domain example.com
-./build_cc_pointer_duckdb.py --help
-```
-
-#### Method 2: Python Modules (Recommended)
+#### Method 1: Python Modules
 ```bash
 python -m municipal_scrape_workspace.ccindex.search_cc_domain --domain example.com
 python -m municipal_scrape_workspace.ccindex.build_cc_pointer_duckdb --help
 ```
 
-#### Method 3: Console Scripts (Shortest)
+#### Method 2: Console Scripts (Shorter - After pip install)
 ```bash
 ccindex-search-domain --domain example.com
 ccindex-build-pointer --help
 ```
+
+**Note**: Root wrapper files have been removed. See [MIGRATION_GUIDE.md](MIGRATION_GUIDE.md) for migration instructions.
 
 ### Running Shell Scripts
 
@@ -63,18 +59,21 @@ scripts/ops/monitor_progress.sh
 ### 1. Search Common Crawl for a Domain
 
 ```bash
-# Using wrapper
-./search_cc_domain.py --domain example.com
+# Using Python module
+python -m municipal_scrape_workspace.ccindex.search_cc_domain --domain example.com
 
-# Using console script
+# Using console script (after pip install)
 ccindex-search-domain --domain example.com
 ```
 
 ### 2. Build DuckDB Pointer Index
 
 ```bash
-# Using wrapper
-./build_cc_pointer_duckdb.py --output-dir /path/to/indexes
+# Using Python module
+python -m municipal_scrape_workspace.ccindex.build_cc_pointer_duckdb --output-dir /path/to/indexes
+
+# Using console script
+ccindex-build-pointer --output-dir /path/to/indexes
 
 # Using shell script
 scripts/ops/overnight_build_duckdb_index.sh
@@ -83,8 +82,8 @@ scripts/ops/overnight_build_duckdb_index.sh
 ### 3. Orchestrate Full CC Pipeline
 
 ```bash
-# Using wrapper
-./cc_pipeline_orchestrator.py --config pipeline_config.json
+# Using Python module
+python -m municipal_scrape_workspace.ccindex.cc_pipeline_orchestrator --config pipeline_config.json
 
 # Using console script
 ccindex-orchestrate --config pipeline_config.json
@@ -108,6 +107,7 @@ python -m municipal_scrape_workspace.orchestrate_municipal_scrape \
 ## Documentation
 
 - **[README.md](README.md)** - Main entry point
+- **[MIGRATION_GUIDE.md](MIGRATION_GUIDE.md)** - **Migration guide for wrapper removal**
 - **[REFACTORED_STRUCTURE.md](REFACTORED_STRUCTURE.md)** - Complete structure guide
 - **[REORGANIZATION_PLAN.md](REORGANIZATION_PLAN.md)** - Root directory cleanup details
 - **[docs/](docs/)** - Detailed documentation
