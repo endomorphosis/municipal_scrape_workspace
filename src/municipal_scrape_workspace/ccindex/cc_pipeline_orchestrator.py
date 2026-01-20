@@ -18,6 +18,7 @@ from __future__ import annotations
 import argparse
 import json
 import logging
+import os
 import selectors
 import shutil
 import subprocess
@@ -503,28 +504,97 @@ class PipelineOrchestrator:
     def download_collection(self, collection: str) -> bool:
         """Download a collection's .gz files using existing download script"""
         logger.info(f"Downloading {collection}...")
-        
-        # Use the actual download script with collection-specific logic
-        download_script = Path(__file__).parent / "download_cc_indexes.sh"
-        if not download_script.exists():
-            logger.error(f"Download script not found: {download_script}")
+
+        download_script = self._resolve_download_script()
+        if not download_script:
+            logger.error(
+                "Download script not found. Expected scripts/ops/download_cc_indexes.sh in the repo, "
+                "or set $CCINDEX_DOWNLOAD_SCRIPT to an explicit path."
+            )
             return False
         
         # Download to collection-specific directory
         collection_dir = self.config.ccindex_root / collection
         collection_dir.mkdir(parents=True, exist_ok=True)
-        
+
+        parallel = int(self.config.max_workers or 8)
         cmd = [
-            "bash", str(download_script),
-            collection
+            "bash",
+            str(download_script),
+            collection,
+            str(collection_dir),
+            str(parallel),
         ]
 
-        rc = self._run_subprocess_with_heartbeat(cmd, cwd=self.config.ccindex_root, heartbeat_label=f"download:{collection}")
+        repo_root = self._resolve_repo_root()
+        rc = self._run_subprocess_with_heartbeat(
+            cmd,
+            cwd=repo_root,
+            heartbeat_label=f"download:{collection}",
+        )
         if rc == 0:
             logger.info(f"Downloaded {collection} successfully")
             return True
         logger.error(f"Failed to download {collection} (exit {rc})")
         return False
+
+    def _resolve_repo_root(self) -> Optional[Path]:
+        """Best-effort repo root detection.
+
+        Works for editable installs (module lives under the repo). If not found,
+        falls back to current working directory.
+        """
+
+        try:
+            here = Path(__file__).resolve()
+            for parent in [here.parent, *here.parents]:
+                if (parent / "pyproject.toml").exists() or (parent / ".git").exists():
+                    return parent
+        except Exception:
+            pass
+        return Path.cwd()
+
+    def _resolve_download_script(self) -> Optional[Path]:
+        """Locate the canonical download script after repo refactors."""
+
+        env = os.getenv("CCINDEX_DOWNLOAD_SCRIPT")
+        if env:
+            p = Path(env).expanduser()
+            if p.exists() and p.is_file():
+                return p
+
+        repo_root = self._resolve_repo_root()
+        candidates = [
+            repo_root / "scripts" / "ops" / "download_cc_indexes.sh",
+            repo_root / "download_cc_indexes.sh",
+            Path.cwd() / "scripts" / "ops" / "download_cc_indexes.sh",
+            Path.cwd() / "download_cc_indexes.sh",
+        ]
+        for p in candidates:
+            if p.exists() and p.is_file():
+                return p
+        return None
+
+    def run_download_only(self, *, resume: bool) -> None:
+        """Only run Stage 1 (download) for the selected collections."""
+
+        self.scan_all_collections()
+        targets = [c for c, s in self.collection_status.items() if s.get("tar_gz_count", 0) < s.get("tar_gz_expected", 0)]
+        if not targets:
+            logger.info("All selected collections already have their cdx-*.gz shards downloaded")
+            return
+
+        logger.info(f"Download-only mode: {len(targets)} collections need downloads")
+        for collection in sorted(targets):
+            status = self.collection_status.get(collection) or {}
+            have = int(status.get("tar_gz_count", 0) or 0)
+            exp = int(status.get("tar_gz_expected", 0) or 0)
+            logger.info(f"Downloading {collection} ({have}/{exp} shards present)")
+            ok = self.download_collection(collection)
+            # Refresh status after attempt.
+            self.collection_status[collection] = self.validator.validate_collection(collection)
+            if not ok:
+                raise SystemExit(f"Download failed for {collection}")
     
     def convert_collection(self, collection: str, sort_after: bool = True) -> bool:
         """Convert a collection's .gz files to parquet, optionally sorting immediately"""
@@ -1074,6 +1144,12 @@ def main() -> int:
         help="Filter collections (e.g., '2024' or '2025-05')"
     )
     parser.add_argument(
+        "--download-only",
+        action="store_true",
+        default=False,
+        help="Only download CC URL index shards (cdx-*.gz); do not convert/sort/index",
+    )
+    parser.add_argument(
         "--resume",
         action="store_true",
         default=True,
@@ -1179,6 +1255,10 @@ def main() -> int:
 
     if args.cleanup_only:
         orchestrator.run_cleanup_only(assume_yes=bool(args.yes))
+        return 0
+
+    if args.download_only:
+        orchestrator.run_download_only(resume=bool(args.resume))
         return 0
 
     orchestrator.run_pipeline(resume=args.resume)

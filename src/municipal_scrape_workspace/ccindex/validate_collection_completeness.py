@@ -9,6 +9,7 @@ Checks each Common Crawl collection to verify:
 """
 
 import json
+import os
 import sys
 from pathlib import Path
 from typing import Dict, List, Set, Tuple
@@ -22,11 +23,41 @@ class CollectionValidator:
         self.ccindex_dir = ccindex_dir
         self.parquet_dir = parquet_dir
         self.pointer_dir = pointer_dir
+
+    def _resolve_collinfo_path(self) -> Path | None:
+        """Resolve collinfo.json from common locations.
+
+        Order:
+        1) $CC_COLLINFO_PATH (explicit override)
+        2) Walk up from this module to find repo root and collinfo.json
+        3) Current working directory
+        """
+
+        env = os.getenv("CC_COLLINFO_PATH")
+        if env:
+            p = Path(env).expanduser()
+            if p.exists() and p.is_file():
+                return p
+
+        # Editable installs keep __file__ within the repo; try to find collinfo.json.
+        try:
+            here = Path(__file__).resolve()
+            for parent in [here.parent, *here.parents]:
+                candidate = parent / "collinfo.json"
+                if candidate.exists() and candidate.is_file():
+                    return candidate
+        except Exception:
+            pass
+
+        cwd_candidate = Path("collinfo.json")
+        if cwd_candidate.exists() and cwd_candidate.is_file():
+            return cwd_candidate
+        return None
         
     def get_all_collections(self) -> Set[str]:
         """Get all known Common Crawl collections from collinfo.json"""
-        collinfo_path = Path("collinfo.json")
-        if not collinfo_path.exists():
+        collinfo_path = self._resolve_collinfo_path()
+        if not collinfo_path:
             print("WARNING: collinfo.json not found, scanning directories instead")
             return self._scan_collections_from_files()
         
