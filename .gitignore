@@ -16,7 +16,12 @@ content_blobs/
 logs/
 
 ccindex_subset*
-*test*
+# Ignore test data files but not test source code
+*test*.log
+*test*.json
+*test*.csv
+*test*.parquet
+*test*.duckdb
 
 # Run/output directories
 out_*/
