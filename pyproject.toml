@@ -9,15 +9,16 @@ description = "Municipal scraping workspace that depends on ipfs_datasets_py"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
-  # Pull ipfs_datasets_py directly from GitHub so `ipfs-datasets` CLI is installed
-    # Install from the local ipfs_datasets_py checkout.
-    # Rationale: upstream currently pins ipfs_kit_py via a git URL that triggers a broken submodule fetch.
-    # The local checkout has been patched to use the known_good branch ZIP instead, enabling clean installs.
-    # Temporarily commented out to allow testing - see REFACTORING_ROADMAP.md § Dependency Gaps
-    # "ipfs_datasets_py @ file:///home/barberb/ipfs_datasets_py",
+  # ipfs_datasets_py has submodule issues when installing from git
+  # Making it optional - install with: pip install -e '.[ipfs]'
+  # Or set IPFS_DATASETS_PY_ROOT env var to local checkout
 ]
 
 [project.optional-dependencies]
+# Optional: IPFS datasets integration
+ipfs = [
+  "ipfs_datasets_py @ git+https://github.com/endomorphosis/ipfs_datasets_py.git@main",
+]
 # Optional: enable extra fallbacks like Playwright (you still need `playwright install chromium`).
 playwright = ["playwright>=1.45"]
 
@@ -29,8 +30,38 @@ ccindex = [
   "requests>=2.31.0",
 ]
 
+# Development dependencies (testing, linting, formatting)
+dev = [
+  "pytest>=7.0",
+  "pytest-cov>=4.0",
+  "pytest-asyncio>=0.21",
+  "black>=23.0",
+  "ruff>=0.1.0",
+  "mypy>=1.0",
+]
+
 [project.scripts]
+# Main CLI
 municipal-scrape = "municipal_scrape_workspace.cli:main"
+
+# Common Crawl search tools
+ccindex-search = "municipal_scrape_workspace.ccindex.search_cc_via_meta_indexes:main"
+ccindex-search-domain = "municipal_scrape_workspace.ccindex.search_cc_domain:main"
+ccindex-search-parallel = "municipal_scrape_workspace.ccindex.search_parallel_duckdb_indexes:main"
+
+# Index building tools
+ccindex-build-pointer = "municipal_scrape_workspace.ccindex.build_cc_pointer_duckdb:main"
+ccindex-build-parallel = "municipal_scrape_workspace.ccindex.build_parallel_duckdb_indexes:main"
+ccindex-build-meta = "municipal_scrape_workspace.ccindex.build_year_meta_indexes:main"
+
+# Orchestration tools
+ccindex-orchestrate = "municipal_scrape_workspace.ccindex.cc_pipeline_orchestrator:main"
+ccindex-watch = "municipal_scrape_workspace.ccindex.cc_pipeline_watch:main"
+ccindex-hud = "municipal_scrape_workspace.ccindex.cc_pipeline_hud:main"
+
+# Validation tools
+ccindex-validate = "municipal_scrape_workspace.ccindex.validate_collection_completeness:main"
+ccindex-validate-parquet = "municipal_scrape_workspace.ccindex.validate_and_sort_parquet:main"
 
 [tool.setuptools]
 package-dir = {"" = "src"}
