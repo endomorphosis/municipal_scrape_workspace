@@ -26,15 +26,15 @@ This repo also contains Common Crawl (CC) index pipeline tooling (Parquet + Duck
 
 **Final Status** (2026-01-20):
 - ✅ **52 Python files processed** (100% complete)
-- ✅ **41 files migrated** to `src/` with backwards-compatible wrappers
+- ✅ **41 files migrated** to `src/` (canonical implementations)
 - ✅ **11 files archived** in `archive/ccindex/superseded/`
-- ✅ **Root directory cleaned** - 32 shell script wrappers removed
+- ✅ **Root directory cleaned** - 73 files removed (32 shell wrappers + 41 Python wrappers)
 - ✅ **Data organized** - CSV files moved to `data/` directory
 - ✅ **Clean package structure** - follows Python best practices
 - ✅ **Proper imports** - no sys.path hacks
 - ✅ **Installable package** - works with `pip install -e .`
 - ✅ **Console script entry points** - 12+ command-line tools available
-- ✅ **Comprehensive documentation** - complete structure guide created
+- ✅ **Comprehensive documentation** - complete structure guide + migration guide
 
 ## Quickstart
 
@@ -49,17 +49,15 @@ pip install -e .
 # 3. (Optional) Install with CC index tooling dependencies
 pip install -e '.[ccindex]'
 
-# 4. Run tools - Three methods:
+# 4. Run tools - Two methods:
 
-# Method A: Via root wrappers (backwards compatible)
-./search_cc_domain.py --domain example.com
-./build_cc_pointer_duckdb.py --help
-
-# Method B: Via Python modules (recommended)
+# Method A: Via Python modules
 python -m municipal_scrape_workspace.ccindex.search_cc_domain --domain example.com
 python -m municipal_scrape_workspace.ccindex.build_cc_pointer_duckdb --help
 
-# Method C: Via console script (main CLI)
+# Method B: Via console scripts (shorter, after pip install)
+ccindex-search-domain --domain example.com
+ccindex-build-pointer --help
 municipal-scrape --help
 
 # 5. Run operational scripts:
@@ -78,7 +76,7 @@ scripts/ops/monitor_progress.sh
 municipal_scrape_workspace/
 ├── bootstrap.sh                     # Setup script
 ├── pyproject.toml                   # Package configuration
-├── data/                            # 🆕 Reference data files
+├── data/                            # Reference data files
 │   └── us_towns_and_counties_urls.csv
 ├── src/municipal_scrape_workspace/  # Canonical Python code
 │   ├── ccindex/                     # CC index tools (40 modules)
@@ -87,13 +85,14 @@ municipal_scrape_workspace/
 │   ├── download_cc_indexes.sh
 │   ├── overnight_build_*.sh
 │   └── ... (30+ scripts)
-├── <root>/*.py                      # Python wrappers (backwards compat)
 ├── docs/                            # Documentation
 ├── tests/                           # Test suite
 └── archive/                         # Archived/superseded files
 ```
 
-**Note**: Shell scripts have been consolidated to `scripts/ops/` directory. Use them directly from there.
+**Note**: 
+- All Python tools are accessed via Python modules or console scripts (see [MIGRATION_GUIDE.md](MIGRATION_GUIDE.md))
+- Shell scripts are in `scripts/ops/` directory
 
 ## Publishing
 
