@@ -8,8 +8,6 @@ from pathlib import Path
 def test_wrapper_imports():
     """Test that a root wrapper can import from src."""
     # We test this by importing the wrapper module directly
-    import sys
-    from pathlib import Path
     
     root = Path(__file__).parent.parent.parent
     sys.path.insert(0, str(root))
