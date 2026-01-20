@@ -2,28 +2,36 @@
 
 This is a standalone Python package + git repo for the municipal scraping workflow.
 
-This repo also contains Common Crawl (CC) index pipeline tooling (Parquet + DuckDB pointer indexes + meta-indexes). The CC tooling is being migrated into the installable package namespace under `municipal_scrape_workspace.ccindex`.
+This repo also contains Common Crawl (CC) index pipeline tooling (Parquet + DuckDB pointer indexes + meta-indexes). The CC tooling is fully organized under the installable package namespace `municipal_scrape_workspace.ccindex`.
 
 ## 📚 Repository Structure
 
-**✅ MIGRATION COMPLETE** - The repository has been successfully refactored for improved organization and maintainability.
+**✅ REFACTORING COMPLETE** - The repository has been successfully refactored for improved organization and maintainability.
 
-👉 **Start Here**: [FINAL_LAYOUT_README.md](FINAL_LAYOUT_README.md) - Complete post-migration guide
+👉 **Start Here**: [REFACTORED_STRUCTURE.md](REFACTORED_STRUCTURE.md) - **Complete authoritative guide to refactored repository**
 
-**Quick Links**:
-- 📘 [FINAL_LAYOUT_README.md](FINAL_LAYOUT_README.md) - **NEW!** Complete guide to final structure
-- 📋 [MIGRATION_COMPLETE.md](MIGRATION_COMPLETE.md) - **NEW!** Migration summary & next steps
-- 📄 [FILE_MIGRATION_MAP.md](FILE_MIGRATION_MAP.md) - File location lookup table
-- 📚 [REFACTORING_INDEX.md](REFACTORING_INDEX.md) - All refactoring documentation
+**Essential Documentation**:
+- 📘 **[REFACTORED_STRUCTURE.md](REFACTORED_STRUCTURE.md)** - **PRIMARY GUIDE** Complete structure, file locations, import patterns, and usage
+- 📋 [docs/refactoring/FINAL_LAYOUT_README.md](docs/refactoring/FINAL_LAYOUT_README.md) - Detailed post-migration guide
+- 📄 [docs/refactoring/FILE_MIGRATION_MAP.md](docs/refactoring/FILE_MIGRATION_MAP.md) - Quick file location lookup table
+- 🎯 [docs/refactoring/MIGRATION_COMPLETE.md](docs/refactoring/MIGRATION_COMPLETE.md) - Migration summary & statistics
+- 📚 [docs/refactoring/REFACTORING_INDEX.md](docs/refactoring/REFACTORING_INDEX.md) - Complete refactoring documentation index
 
-**Final Status** (2026-01-19):
+**Documentation Organization**:
+- 📁 [docs/refactoring/](docs/refactoring/) - Refactoring process documentation
+- 📁 [docs/ccindex/](docs/ccindex/) - Common Crawl index documentation
+- 📁 [docs/pipeline/](docs/pipeline/) - Pipeline orchestration documentation
+- 📁 [docs/](docs/) - General project documentation
+
+**Final Status** (2026-01-20):
 - ✅ **52 files processed** (100% complete)
 - ✅ **41 files migrated** to `src/` with backwards-compatible wrappers
 - ✅ **11 files archived** in `archive/ccindex/superseded/`
 - ✅ **Clean package structure** - follows Python best practices
 - ✅ **Proper imports** - no sys.path hacks
 - ✅ **Installable package** - works with `pip install -e .`
-- ⚠️ **1 known issue** - ipfs_datasets_py dependency needs fix (see [MIGRATION_COMPLETE.md](MIGRATION_COMPLETE.md))
+- ✅ **Console script entry points** - 12+ command-line tools available
+- ✅ **Comprehensive documentation** - complete structure guide created
 
 ## Quickstart
 
@@ -52,7 +60,7 @@ python -m municipal_scrape_workspace.ccindex.build_cc_pointer_duckdb --help
 municipal-scrape --help
 ```
 
-**📚 For detailed guide, see [FINAL_LAYOUT_README.md](FINAL_LAYOUT_README.md)**
+**📚 For detailed guide, see [REFACTORED_STRUCTURE.md](REFACTORED_STRUCTURE.md)**
 
 ## Publishing
 
