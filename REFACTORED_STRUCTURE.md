@@ -10,6 +10,19 @@
 
 The `municipal_scrape_workspace` repository has been successfully refactored from a flat structure with 52+ root-level Python files into a well-organized, installable Python package. This document serves as the authoritative guide to the final structure.
 
+### Recent Updates (2026-01-20)
+
+**Documentation Organization**: All documentation has been organized into logical subdirectories:
+- **docs/refactoring/** - Refactoring process documentation (13 files)
+- **docs/ccindex/** - Common Crawl index documentation (13 files)
+- **docs/pipeline/** - Pipeline orchestration documentation (9 files)
+- **docs/** - General documentation with comprehensive index
+
+**Root Directory Cleanup**: Reduced from 146 items to 93 items (36% reduction)
+- Log files moved to logs/ directory
+- Documentation organized into docs/ subdirectories
+- Only essential files remain in root
+
 ### What Changed
 
 **Before Refactoring:**
@@ -156,10 +169,38 @@ municipal_scrape_workspace/
 │   └── test_municipal_scrape/
 │       └── __init__.py
 │
-├── docs/                                        # Documentation
-│   ├── REPO_LAYOUT_PLAN.md
+├── docs/                                        # 📚 DOCUMENTATION (Organized)
+│   ├── README.md                               # Documentation index
 │   ├── COMMON_CRAWL_USAGE.md
-│   └── ...
+│   ├── REPO_LAYOUT_PLAN.md
+│   ├── CRITICAL_FINDINGS.md
+│   ├── TEST_SUITE_DOCUMENTATION.md
+│   │
+│   ├── refactoring/                            # Refactoring process docs (13 files)
+│   │   ├── REFACTORING_INDEX.md
+│   │   ├── MIGRATION_COMPLETE.md
+│   │   ├── FILE_MIGRATION_MAP.md
+│   │   ├── FINAL_LAYOUT_README.md
+│   │   └── ... (9 more)
+│   │
+│   ├── ccindex/                                # Common Crawl documentation (13 files)
+│   │   ├── INDEX_ARCHITECTURE.md
+│   │   ├── DUCKDB_INDEX_DESIGN.md
+│   │   ├── POINTER_INDEX_DESIGN.md
+│   │   ├── CC_INDEX_SPECIFICATION.md
+│   │   └── ... (9 more)
+│   │
+│   └── pipeline/                               # Pipeline docs (9 files)
+│       ├── CC_ORCHESTRATOR_README.md
+│       ├── PIPELINE_CONFIG_GUIDE.md
+│       ├── COLLECTION_TRACKING_FEATURE.md
+│       └── ... (6 more)
+│
+├── logs/                                       # 📋 LOG FILES (Archived)
+│   ├── conversion_progress.log
+│   ├── overnight_duckdb_build_*.log
+│   ├── pipeline_run.log
+│   └── ... (15 total log files)
 │
 ├── pyproject.toml                               # Package configuration
 ├── bootstrap.sh                                 # Setup script
