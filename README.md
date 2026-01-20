@@ -12,6 +12,7 @@ This repo also contains Common Crawl (CC) index pipeline tooling (Parquet + Duck
 
 **Essential Documentation**:
 - 📘 **[REFACTORED_STRUCTURE.md](REFACTORED_STRUCTURE.md)** - **PRIMARY GUIDE** Complete structure, file locations, import patterns, and usage
+- 🎯 **[REORGANIZATION_PLAN.md](REORGANIZATION_PLAN.md)** - **ROOT CLEANUP** Details of root directory reorganization
 - 📋 [docs/refactoring/FINAL_LAYOUT_README.md](docs/refactoring/FINAL_LAYOUT_README.md) - Detailed post-migration guide
 - 📄 [docs/refactoring/FILE_MIGRATION_MAP.md](docs/refactoring/FILE_MIGRATION_MAP.md) - Quick file location lookup table
 - 🎯 [docs/refactoring/MIGRATION_COMPLETE.md](docs/refactoring/MIGRATION_COMPLETE.md) - Migration summary & statistics
@@ -24,9 +25,11 @@ This repo also contains Common Crawl (CC) index pipeline tooling (Parquet + Duck
 - 📁 [docs/](docs/) - General project documentation
 
 **Final Status** (2026-01-20):
-- ✅ **52 files processed** (100% complete)
+- ✅ **52 Python files processed** (100% complete)
 - ✅ **41 files migrated** to `src/` with backwards-compatible wrappers
 - ✅ **11 files archived** in `archive/ccindex/superseded/`
+- ✅ **Root directory cleaned** - 32 shell script wrappers removed
+- ✅ **Data organized** - CSV files moved to `data/` directory
 - ✅ **Clean package structure** - follows Python best practices
 - ✅ **Proper imports** - no sys.path hacks
 - ✅ **Installable package** - works with `pip install -e .`
@@ -58,9 +61,39 @@ python -m municipal_scrape_workspace.ccindex.build_cc_pointer_duckdb --help
 
 # Method C: Via console script (main CLI)
 municipal-scrape --help
+
+# 5. Run operational scripts:
+
+# All shell scripts are in scripts/ops/ directory
+scripts/ops/download_cc_indexes.sh
+scripts/ops/overnight_build_duckdb_index.sh
+scripts/ops/monitor_progress.sh
 ```
 
 **📚 For detailed guide, see [REFACTORED_STRUCTURE.md](REFACTORED_STRUCTURE.md)**
+
+## Directory Structure
+
+```
+municipal_scrape_workspace/
+├── bootstrap.sh                     # Setup script
+├── pyproject.toml                   # Package configuration
+├── data/                            # 🆕 Reference data files
+│   └── us_towns_and_counties_urls.csv
+├── src/municipal_scrape_workspace/  # Canonical Python code
+│   ├── ccindex/                     # CC index tools (40 modules)
+│   └── ...
+├── scripts/ops/                     # All operational shell scripts
+│   ├── download_cc_indexes.sh
+│   ├── overnight_build_*.sh
+│   └── ... (30+ scripts)
+├── <root>/*.py                      # Python wrappers (backwards compat)
+├── docs/                            # Documentation
+├── tests/                           # Test suite
+└── archive/                         # Archived/superseded files
+```
+
+**Note**: Shell scripts have been consolidated to `scripts/ops/` directory. Use them directly from there.
 
 ## Publishing
 
