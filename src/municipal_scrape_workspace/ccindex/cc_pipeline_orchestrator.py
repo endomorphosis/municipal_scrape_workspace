@@ -477,18 +477,22 @@ class PipelineOrchestrator:
     def _get_collection_parquet_dir(self, collection: str) -> Path:
         """Return the on-disk parquet directory for a collection.
 
-        Canonical layout (matches existing 2024/2025 runs):
-          <parquet_root>/<year>/<collection>/
+                Canonical (historical) layout:
+                    <parquet_root>/cc_pointers_by_collection/<year>/<collection>/
 
-        Back-compat fallbacks:
-          <parquet_root>/cc_pointers_by_collection/<year>/<collection>/
-          <parquet_root>/<collection>/
+                Back-compat fallbacks:
+                    <parquet_root>/<year>/<collection>/
+                    <parquet_root>/<collection>/
+
+                Selection behavior:
+                - If any candidate already contains parquet files, prefer that path (resume-friendly).
+                - Otherwise, default to the canonical (historical) layout.
         """
 
         year = self._collection_year(collection)
         if year:
-            canonical = self.config.parquet_root / year / collection
-            backcompat = self.config.parquet_root / "cc_pointers_by_collection" / year / collection
+            canonical = self.config.parquet_root / "cc_pointers_by_collection" / year / collection
+            backcompat = self.config.parquet_root / year / collection
 
             # Prefer whichever already has data on disk.
             for candidate in (canonical, backcompat):
@@ -686,10 +690,10 @@ class PipelineOrchestrator:
     def sort_collection(self, collection: str) -> bool:
         """Sort a collection's parquet files by (host_rev, url, ts).
 
-        Uses validate_and_sort_parquet.py to:
-        - validate sorting,
-        - sort unsorted shards in-place, and
-        - rename/mark sorted shards to *.gz.sorted.parquet.
+        Uses validate_and_mark_sorted.py (compat tool) to:
+        - validate files,
+        - mark already-sorted shards as *.gz.sorted.parquet, and
+        - sort + mark unsorted shards.
         """
         logger.info(f"Sorting {collection} (validate + sort + mark)...")
 
@@ -742,15 +746,37 @@ class PipelineOrchestrator:
             logger.warning(f"Legacy schema check skipped due to error: {e}")
         
         try:
-            sort_script = self._resolve_ccindex_helper_script("validate_and_sort_parquet.py")
+            sort_workers = int(self.config.sort_workers) if self.config.sort_workers else max(1, int(self.config.max_workers))
+            sort_mem_gb = float(getattr(self.config, "sort_memory_per_worker_gb", 4.0) or 4.0)
+
+            # Prefer a temp dir on the same filesystem as parquet output.
+            sort_temp_dir = self.config.sort_temp_dir
+            if sort_temp_dir is None:
+                sort_temp_dir = parquet_dir / ".duckdb_sort_tmp"
+            try:
+                sort_temp_dir.mkdir(parents=True, exist_ok=True)
+            except Exception:
+                # Fall back to system temp if we can't create it.
+                sort_temp_dir = None
+
+            sort_script = self._resolve_ccindex_helper_script("validate_and_mark_sorted.py")
             cmd = [
                 sys.executable,
                 str(sort_script),
                 "--parquet-root",
                 str(parquet_dir),
                 "--sort-unsorted",
-                "--mark-sorted",
+                "--workers",
+                str(self.config.max_workers),
+                "--sort-workers",
+                str(sort_workers),
+                "--memory-per-sort",
+                str(sort_mem_gb),
+                "--heartbeat-seconds",
+                str(int(getattr(self.config, "heartbeat_seconds", 30) or 30)),
             ]
+            if sort_temp_dir is not None:
+                cmd.extend(["--temp-dir", str(sort_temp_dir)])
 
             # Stream output so progress is visible during long sorts.
             result = subprocess.run(cmd)
