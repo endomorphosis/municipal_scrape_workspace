@@ -126,6 +126,8 @@ def sort_parquet_file(
     try:
         con = duckdb.connect(":memory:")
         con.execute(f"SET memory_limit='{memory_limit_gb}GB'")
+        # Reduce memory pressure for large sorts.
+        con.execute("SET preserve_insertion_order=false")
         # Isolate DuckDB temp usage per-sort to avoid contention.
         td = temp_directory if temp_directory else output_file.parent
         con.execute(f"SET temp_directory='{td}'")
@@ -274,6 +276,15 @@ def sort_and_mark_one(args: Tuple[str, float, str]) -> Tuple[str, bool, str, str
 def main() -> int:
     ap = argparse.ArgumentParser(description="Validate and mark sorted parquet files")
     ap.add_argument("--parquet-root", required=True, type=str, help="Root directory of parquet files")
+    ap.add_argument(
+        "--only",
+        action="append",
+        default=None,
+        help=(
+            "Restrict processing to specific shard(s). Accepts base names like "
+            "'cdx-00257', 'cdx-00257.gz', 'cdx-00257.gz.parquet'. Can be repeated."
+        ),
+    )
     ap.add_argument("--sort-unsorted", action="store_true", help="Sort any unsorted files found")
     ap.add_argument("--verify-only", action="store_true", help="Only verify, don't mark or sort")
     ap.add_argument("--memory-per-sort", type=float, default=4.0, help="GB memory per sort operation")
@@ -312,6 +323,29 @@ def main() -> int:
     print()
 
     all_files = _iter_candidate_parquet_files(parquet_root)
+    if args.only:
+        only_raw = {str(x).strip() for x in args.only if str(x).strip()}
+
+        def _matches_only(p: Path) -> bool:
+            name = p.name
+            stem = name
+            for suf in (".gz.sorted.parquet", ".gz.parquet", ".sorted.parquet", ".parquet", ".gz"):
+                if stem.endswith(suf):
+                    stem = stem[: -len(suf)]
+            candidates = {
+                name,
+                name.replace(".sorted.", "."),
+                stem,
+                f"{stem}.gz",
+                f"{stem}.gz.parquet",
+                f"{stem}.gz.sorted.parquet",
+                f"{stem}.parquet",
+                f"{stem}.sorted.parquet",
+            }
+            return bool(candidates & only_raw)
+
+        all_files = [p for p in all_files if _matches_only(p)]
+
     print(f"Found {len(all_files)} parquet files")
     print()
 

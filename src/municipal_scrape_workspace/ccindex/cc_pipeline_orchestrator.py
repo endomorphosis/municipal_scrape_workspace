@@ -996,7 +996,28 @@ class PipelineOrchestrator:
             result = subprocess.run(cmd)
             if result.returncode != 0:
                 logger.error(f"Failed to sort/mark parquet for {collection} (exit {result.returncode})")
-                return False
+
+                # Auto-heal sort failures by retrying targeted sorts (with safer settings),
+                # then reconverting the failing parquet(s), and finally re-downloading the
+                # corresponding source .gz shard(s) if needed.
+                healed = self._autoheal_failed_sorts(
+                    collection=collection,
+                    parquet_dir=parquet_dir,
+                    ccindex_dir=ccindex_dir,
+                    sort_temp_dir=sort_temp_dir,
+                    baseline_sort_mem_gb=sort_mem_gb,
+                )
+                if not healed:
+                    return False
+
+                # Re-run the full validate+mark pass to ensure everything is marked and
+                # cleanup logic can run.
+                result2 = subprocess.run(cmd)
+                if result2.returncode != 0:
+                    logger.error(
+                        f"Sort auto-heal ran but final validation still failed for {collection} (exit {result2.returncode})"
+                    )
+                    return False
 
             # Cleanup: if a prior sorter produced *.sorted.parquet but left the
             # original *.parquet behind, the validator can report parquet_count > expected.
@@ -1021,6 +1042,176 @@ class PipelineOrchestrator:
         except Exception as e:
             logger.error(f"Failed to sort {collection}: {e}")
             return False
+
+    def _autoheal_failed_sorts(
+        self,
+        *,
+        collection: str,
+        parquet_dir: Path,
+        ccindex_dir: Path,
+        sort_temp_dir: Path | None,
+        baseline_sort_mem_gb: float,
+    ) -> bool:
+        """Attempt to heal shard-level sort failures.
+
+        Strategy per missing shard:
+        1) Retry sorting that shard alone with reduced parallelism and higher memory.
+        2) If still failing, delete/reconvert the parquet and retry sorting.
+        3) If still failing, re-download the source .gz shard, reconvert, and retry sorting.
+
+        Returns True if all missing shards are healed.
+        """
+
+        expected = {f"cdx-{i:05d}" for i in range(300)}
+
+        def _sorted_path(stem: str) -> Path:
+            return parquet_dir / f"{stem}.gz.sorted.parquet"
+
+        def _unsorted_path(stem: str) -> Path:
+            return parquet_dir / f"{stem}.gz.parquet"
+
+        present_sorted = {p.name[: -len(".gz.sorted.parquet")] for p in parquet_dir.glob("cdx-*.gz.sorted.parquet")}
+        missing = sorted(expected - present_sorted)
+        if not missing:
+            # Might be a non-count-based failure; treat as not healable here.
+            logger.warning(f"Sort failed for {collection}, but no missing shards were detected")
+            return False
+
+        logger.warning(f"Attempting sort auto-heal for {collection}: missing {len(missing)} sorted shard(s): {missing[:10]}{'...' if len(missing) > 10 else ''}")
+
+        sort_script = self._resolve_ccindex_helper_script("validate_and_mark_sorted.py")
+        convert_script = self._resolve_ccindex_helper_script("bulk_convert_gz_to_parquet.py")
+
+        def _run_targeted_sort(stem: str, *, memory_gb: float) -> bool:
+            unsorted = _unsorted_path(stem)
+            if not unsorted.exists():
+                # If the unsorted file is missing but sorted is too, we need reconvert.
+                return False
+
+            cmd = [
+                sys.executable,
+                str(sort_script),
+                "--parquet-root",
+                str(parquet_dir),
+                "--only",
+                unsorted.name,
+                "--sort-unsorted",
+                "--workers",
+                "1",
+                "--sort-workers",
+                "1",
+                "--memory-per-sort",
+                str(float(memory_gb)),
+                "--heartbeat-seconds",
+                str(int(getattr(self.config, "heartbeat_seconds", 30) or 30)),
+            ]
+            if sort_temp_dir is not None:
+                cmd.extend(["--temp-dir", str(sort_temp_dir)])
+            r = subprocess.run(cmd)
+            return r.returncode == 0 and _sorted_path(stem).exists()
+
+        def _cleanup_sort_artifacts(stem: str) -> None:
+            # Remove per-file work dir(s) created by validate_and_mark_sorted.
+            # It uses work_dir = src.parent / f".cc_sort_work_{safe}", where safe=src.name.
+            src_name = f"{stem}.gz.parquet"
+            work_dir = parquet_dir / f".cc_sort_work_{src_name}"
+            try:
+                if work_dir.exists() and work_dir.is_dir():
+                    shutil.rmtree(work_dir, ignore_errors=True)
+            except Exception:
+                pass
+
+            # Remove per-file DuckDB spill dir(s).
+            if sort_temp_dir is not None:
+                try:
+                    duckdb_tmp = sort_temp_dir / f"duckdb_sort_{src_name}"
+                    if duckdb_tmp.exists() and duckdb_tmp.is_dir():
+                        shutil.rmtree(duckdb_tmp, ignore_errors=True)
+                except Exception:
+                    pass
+
+        def _reconvert_shard(stem: str) -> bool:
+            # Delete existing parquet so bulk_convert will rebuild it.
+            u = _unsorted_path(stem)
+            s = _sorted_path(stem)
+            try:
+                s.unlink(missing_ok=True)
+            except Exception:
+                pass
+            try:
+                u.unlink(missing_ok=True)
+            except Exception:
+                pass
+            try:
+                (u.with_suffix(u.suffix + ".empty")).unlink(missing_ok=True)
+            except Exception:
+                pass
+
+            _cleanup_sort_artifacts(stem)
+
+            cmd = [
+                sys.executable,
+                str(convert_script),
+                "--input-dir",
+                str(ccindex_dir),
+                "--output-dir",
+                str(parquet_dir),
+                "--workers",
+                "1",
+                "--heartbeat-seconds",
+                str(int(getattr(self.config, "heartbeat_seconds", 30) or 30)),
+            ]
+            r = subprocess.run(cmd)
+            return r.returncode == 0 and u.exists()
+
+        for stem in missing:
+            # (A) Retry sorting with escalating memory.
+            mem_candidates: list[float] = []
+            base = float(baseline_sort_mem_gb or 4.0)
+            for mult in (1.0, 2.0, 4.0):
+                mem_candidates.append(min(32.0, max(2.0, base * mult)))
+            mem_candidates = sorted(dict.fromkeys(mem_candidates).keys())
+
+            for mem in mem_candidates:
+                if _sorted_path(stem).exists():
+                    break
+                logger.warning(f"Retrying sort for {collection}/{stem} with memory {mem}GB")
+                if _run_targeted_sort(stem, memory_gb=mem):
+                    logger.info(f"Healed sort for {collection}/{stem} by targeted re-sort")
+                    break
+
+            if _sorted_path(stem).exists():
+                continue
+
+            # (B) Reconvert -> resort.
+            logger.warning(f"Re-converting parquet for {collection}/{stem} and retrying sort")
+            if _reconvert_shard(stem):
+                for mem in mem_candidates:
+                    if _run_targeted_sort(stem, memory_gb=mem):
+                        logger.info(f"Healed sort for {collection}/{stem} after reconvert")
+                        break
+
+            if _sorted_path(stem).exists():
+                continue
+
+            # (C) Re-download -> reconvert -> resort.
+            logger.warning(f"Re-downloading source shard for {collection}/{stem} and retrying")
+            try:
+                self._heal_collection_gz_shards(collection, [f"{stem}.gz"])
+            except Exception as e:
+                logger.warning(f"Failed to auto-heal source shard {collection}/{stem}.gz: {e}")
+
+            if _reconvert_shard(stem):
+                for mem in mem_candidates:
+                    if _run_targeted_sort(stem, memory_gb=mem):
+                        logger.info(f"Healed sort for {collection}/{stem} after re-download + reconvert")
+                        break
+
+            if not _sorted_path(stem).exists():
+                logger.error(f"Unable to auto-heal sort for {collection}/{stem}")
+                return False
+
+        return True
 
     def _heal_collection_gz_shards(self, collection: str, gz_filenames: List[str]) -> int:
         """Ensure specific cdx-*.gz shards are present and gzip-valid.
