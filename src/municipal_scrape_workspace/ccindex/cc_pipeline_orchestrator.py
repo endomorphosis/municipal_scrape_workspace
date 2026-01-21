@@ -42,6 +42,13 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 
+# Default behavior: run the full pipeline for 2023 collections.
+# This can be overridden via --filter, pipeline_config.json (collections_filter),
+# or by setting $CC_DEFAULT_COLLECTION_FILTER.
+DEFAULT_COLLECTION_FILTER = os.getenv("CC_DEFAULT_COLLECTION_FILTER", "2023")
+DEFAULT_MAX_WORKERS = 8
+
+
 @dataclass
 class PipelineConfig:
     """Pipeline configuration"""
@@ -92,11 +99,15 @@ class PipelineConfig:
             if hasattr(args, 'parquet_root') and args.parquet_root:
                 logger.info(f"Overriding parquet_root: {args.parquet_root}")
                 config.parquet_root = Path(args.parquet_root)
-            if hasattr(args, 'workers') and args.workers:
+            if hasattr(args, 'workers') and args.workers is not None:
                 logger.info(f"Overriding workers: {args.workers}")
-                config.max_workers = args.workers
-            if hasattr(args, 'filter') and args.filter:
+                config.max_workers = int(args.workers)
+            if hasattr(args, 'filter') and args.filter is not None:
                 config.collections_filter = args.filter
+
+            # Ensure a sane default even if the config file omits max_workers.
+            if not getattr(config, "max_workers", None):
+                config.max_workers = DEFAULT_MAX_WORKERS
             return config
         else:
             logger.info(f"Config file {config_file} not found, using defaults")
@@ -107,11 +118,29 @@ class PipelineConfig:
                 duckdb_collection_root=Path('/storage/ccindex_duckdb/cc_pointers_by_collection'),
                 duckdb_year_root=Path('/storage/ccindex_duckdb/cc_pointers_by_year'),
                 duckdb_master_root=Path('/storage/ccindex_duckdb/cc_pointers_master'),
-                max_workers=args.workers if hasattr(args, 'workers') else 8,
+                max_workers=(int(args.workers) if hasattr(args, 'workers') and args.workers is not None else DEFAULT_MAX_WORKERS),
                 memory_limit_gb=10.0,
                 min_free_space_gb=50.0,
-                collections_filter=args.filter if hasattr(args, 'filter') and args.filter else None
+                collections_filter=args.filter if hasattr(args, 'filter') and args.filter is not None else None
             )
+
+
+def _normalize_collections_filter(value: Optional[str]) -> Optional[str]:
+    """Normalize user/config collection filters.
+
+    - None / empty -> None
+    - 'all', '*', 'none' -> None
+    - otherwise -> unchanged string
+    """
+
+    if value is None:
+        return None
+    s = str(value).strip()
+    if not s:
+        return None
+    if s.lower() in {"all", "*", "none"}:
+        return None
+    return s
 
 
 class PipelineOrchestrator:
@@ -1136,12 +1165,16 @@ def main() -> int:
     parser.add_argument(
         "--workers",
         type=int,
-        help="Maximum worker processes (overrides config file)"
+        help=f"Maximum worker processes (overrides config file; default: {DEFAULT_MAX_WORKERS} when not set)"
     )
     parser.add_argument(
         "--filter",
         type=str,
-        help="Filter collections (e.g., '2024' or '2025-05')"
+        help=(
+            "Filter collections (e.g., '2024' or '2025-05'). "
+            f"Default: '{DEFAULT_COLLECTION_FILTER}' when not set in config/CLI. "
+            "Use '--filter all' to process all collections."
+        ),
     )
     parser.add_argument(
         "--download-only",
@@ -1227,6 +1260,23 @@ def main() -> int:
     config.sort_workers = args.sort_workers
     config.sort_memory_per_worker_gb = float(args.sort_memory_per_worker_gb)
     config.sort_temp_dir = args.sort_temp_dir
+
+    # Normalize/assign defaults for core behavior.
+    config.max_workers = int(getattr(config, "max_workers", 0) or 0)
+    if config.max_workers <= 0:
+        config.max_workers = DEFAULT_MAX_WORKERS
+
+    # Default to 2023 collections unless the user/config explicitly specifies a filter.
+    raw_config_filter = getattr(config, "collections_filter", None)
+    if getattr(args, "filter", None) is not None:
+        # CLI always wins, including special values like 'all'/'none'/'*'.
+        config.collections_filter = _normalize_collections_filter(args.filter)
+    elif raw_config_filter is not None:
+        # Config explicitly specified a filter string.
+        config.collections_filter = _normalize_collections_filter(raw_config_filter)
+    else:
+        # No CLI filter and no config filter field -> apply default.
+        config.collections_filter = _normalize_collections_filter(DEFAULT_COLLECTION_FILTER)
     
     # Log the active configuration
     logger.info("")
