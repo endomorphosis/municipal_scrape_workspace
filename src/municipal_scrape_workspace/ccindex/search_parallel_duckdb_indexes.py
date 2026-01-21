@@ -11,7 +11,8 @@ import multiprocessing as mp
 import argparse
 
 INDEX_DIR = Path("/storage/ccindex_duckdb/cc_pointers_by_collection")
-PARQUET_BASE = Path("/storage/ccindex_parquet/cc_pointers_by_year")
+# Canonical parquet layout is cc_pointers_by_collection/<year>/<collection>/.
+PARQUET_BASE = Path("/storage/ccindex_parquet/cc_pointers_by_collection")
 
 def get_collection_indexes():
     return sorted(INDEX_DIR.glob("CC-MAIN-*.duckdb"))

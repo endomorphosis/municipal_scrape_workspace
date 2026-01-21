@@ -14,7 +14,9 @@ from pathlib import Path
 from datetime import datetime
 from collections import defaultdict
 
-PARQUET_DIR = Path("/storage/ccindex_parquet/cc_pointers_by_year")
+# Canonical parquet layout is cc_pointers_by_collection/<year>/<collection>/.
+# The older cc_pointers_by_year tree was an early development artifact.
+PARQUET_DIR = Path("/storage/ccindex_parquet/cc_pointers_by_collection")
 INDEX_DIR = Path("/storage/ccindex_duckdb/cc_pointers_by_collection")
 LOG_DIR = Path("logs")
 

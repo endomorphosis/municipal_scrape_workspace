@@ -137,7 +137,7 @@ def main():
                        default=Path('/storage/ccindex_duckdb/cc_pointers.duckdb'),
                        help='Path to DuckDB database')
     parser.add_argument('--parquet-root', type=Path,
-                       default=Path('/storage/ccindex_parquet/cc_pointers_by_year'),
+                       default=Path('/storage/ccindex_parquet/cc_pointers_by_collection'),
                        help='Path to parquet files root')
     parser.add_argument('--mode', choices=['duckdb', 'parquet', 'both'],
                        default='duckdb',

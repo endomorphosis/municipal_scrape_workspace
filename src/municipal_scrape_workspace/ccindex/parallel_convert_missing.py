@@ -12,7 +12,8 @@ from multiprocessing import Pool, cpu_count
 import psutil
 
 CCINDEX_ROOT = Path("/storage/ccindex")
-PARQUET_ROOT = Path("/storage/ccindex_parquet/cc_pointers_by_year")
+# Canonical parquet layout is cc_pointers_by_collection/<year>/<collection>/.
+PARQUET_ROOT = Path("/storage/ccindex_parquet/cc_pointers_by_collection")
 CHUNK_SIZE = 50000
 MAX_WORKERS = 8  # Conservative for memory
 

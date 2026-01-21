@@ -12,17 +12,17 @@ Designed for both interactive use and batch processing.
 Examples:
   # Find all shards for a domain
   python search_cc_duckdb_index.py --duckdb-dir /storage/ccindex_duckdb \
-    --parquet-root /storage/ccindex_parquet/cc_pointers_by_year \
+        --parquet-root /storage/ccindex_parquet/cc_pointers_by_collection \
     --domain example.gov
 
   # Search for specific URLs
   python search_cc_duckdb_index.py --duckdb-dir /storage/ccindex_duckdb \
-    --parquet-root /storage/ccindex_parquet/cc_pointers_by_year \
+        --parquet-root /storage/ccindex_parquet/cc_pointers_by_collection \
     --url-file urls.txt --output results.jsonl
 
   # Search with row group range optimization
   python search_cc_duckdb_index.py --duckdb-dir /storage/ccindex_duckdb \
-    --parquet-root /storage/ccindex_parquet/cc_pointers_by_year \
+        --parquet-root /storage/ccindex_parquet/cc_pointers_by_collection \
     --domain example.gov --use-rowgroup-ranges
 """
 
