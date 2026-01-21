@@ -72,6 +72,7 @@ class PipelineConfig:
     sort_workers: Optional[int] = None
     sort_memory_per_worker_gb: float = 4.0
     sort_temp_dir: Optional[Path] = None
+    force_reindex: bool = False
     
     def __post_init__(self):
         self.ccindex_root = Path(self.ccindex_root)
@@ -159,6 +160,31 @@ class PipelineOrchestrator:
         )
         self.collections: List[str] = []
         self.collection_status: Dict[str, dict] = {}
+        self.force_reindex: bool = bool(getattr(config, "force_reindex", False))
+
+    def _invalidate_duckdb_index(self, collection: str) -> None:
+        """Delete per-collection DuckDB index + marker files to force rebuild."""
+
+        duckdb_path = self.config.duckdb_collection_root / f"{collection}.duckdb"
+        candidates = [
+            duckdb_path,
+            Path(str(duckdb_path) + ".sorted"),
+            Path(str(duckdb_path) + ".wal"),
+            Path(str(duckdb_path) + ".shm"),
+            Path(str(duckdb_path) + "-wal"),
+            Path(str(duckdb_path) + "-shm"),
+        ]
+        removed = 0
+        for p in candidates:
+            try:
+                if p.exists():
+                    p.unlink(missing_ok=True)
+                    removed += 1
+            except Exception as e:
+                logger.warning(f"Failed to remove index artifact {p}: {e}")
+
+        if removed:
+            logger.info(f"  Force-reindex: removed {removed} DuckDB artifact(s) for {collection}")
 
     def _run_subprocess_with_heartbeat(
         self,
@@ -821,6 +847,21 @@ class PipelineOrchestrator:
                 logger.info(f"Converted {collection} successfully ({after_converted}/{expected})")
                 break
 
+            # If conversion is incomplete and the converter reported an error,
+            # proactively heal missing shards (corrupt/missing .gz) and retry.
+            if rc != 0 and attempt < max_attempts:
+                healed = 0
+                try:
+                    healed = _heal_broken_downloads_for_missing_parquets()
+                except Exception as e:
+                    logger.warning(f"Auto-heal attempt failed for {collection}: {e}")
+
+                if healed > 0:
+                    logger.warning(
+                        f"Healed {healed} shard(s) for {collection} after conversion error; retrying conversion"
+                    )
+                    continue
+
             if after_converted > before_converted:
                 logger.warning(
                     f"Conversion incomplete for {collection} after attempt {attempt}: {after_converted}/{expected} (exit {rc})"
@@ -1262,6 +1303,13 @@ class PipelineOrchestrator:
     def process_collection(self, collection: str) -> bool:
         """Process a single collection through all pipeline stages"""
         status = self.validator.validate_collection(collection)
+
+        if self.force_reindex:
+            # Force Stage 4 to re-run even if the collection is otherwise complete.
+            self._invalidate_duckdb_index(collection)
+            status["duckdb_index_exists"] = False
+            status["duckdb_index_sorted"] = False
+            status["complete"] = False
         
         logger.info(f"\nProcessing {collection}:")
         logger.info(f"  Downloaded: {status['tar_gz_count']}/{status['tar_gz_expected']}")
@@ -1421,14 +1469,20 @@ class PipelineOrchestrator:
         # Group collections by status
         incomplete = [c for c, s in self.collection_status.items() if not s.get('complete', False)]
         
-        if not incomplete:
+        if not incomplete and not self.force_reindex:
             logger.info("\n✓ All collections are complete!")
             return
-        
-        logger.info(f"\nProcessing {len(incomplete)} incomplete collections...")
+
+        targets = list(incomplete)
+        if self.force_reindex:
+            # When forcing reindex, we still want to process collections even if complete.
+            targets = list(self.collections)
+            logger.info(f"\nForce-reindex enabled: processing {len(targets)} collections for DuckDB rebuild")
+        else:
+            logger.info(f"\nProcessing {len(targets)} incomplete collections...")
         
         # Process incomplete collections
-        for collection in incomplete:
+        for collection in targets:
             ok = self.process_collection(collection)
             # Rescan to update status (even on failure) so the summary reflects
             # any successful work done before the failure.
@@ -1521,6 +1575,12 @@ def main() -> int:
         help="Only download CC URL index shards (cdx-*.gz); do not convert/sort/index",
     )
     parser.add_argument(
+        "--force-reindex",
+        action="store_true",
+        default=False,
+        help="Force rebuilding DuckDB indexes even if collections are complete",
+    )
+    parser.add_argument(
         "--resume",
         action="store_true",
         default=True,
@@ -1598,6 +1658,7 @@ def main() -> int:
     config.sort_workers = args.sort_workers
     config.sort_memory_per_worker_gb = float(args.sort_memory_per_worker_gb)
     config.sort_temp_dir = args.sort_temp_dir
+    config.force_reindex = bool(args.force_reindex)
 
     # Normalize/assign defaults for core behavior.
     config.max_workers = int(getattr(config, "max_workers", 0) or 0)
@@ -1634,6 +1695,7 @@ def main() -> int:
     logger.info(f"  cleanup_dry_run:        {config.cleanup_dry_run}")
     logger.info(f"  cleanup_source_archives:{config.cleanup_source_archives}")
     logger.info(f"  cleanup_only:           {bool(args.cleanup_only)}")
+    logger.info(f"  force_reindex:          {config.force_reindex}")
     logger.info(f"  sort_workers:           {config.sort_workers if config.sort_workers else config.max_workers}")
     logger.info(f"  sort_mem_per_worker_gb: {config.sort_memory_per_worker_gb}")
     logger.info(f"  sort_temp_dir:          {config.sort_temp_dir}")
