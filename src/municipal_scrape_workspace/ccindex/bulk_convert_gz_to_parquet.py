@@ -214,14 +214,23 @@ def convert_gz_to_parquet(gz_path: Path, output_path: Path, chunk_size: int = 10
 
             if writer is None:
                 if not buf["surt"]:
-                    logger.warning("No valid rows in %s", gz_path.name)
-                    return False
-                writer = pq.ParquetWriter(
-                    tmp_path,
-                    schema,
-                    compression="zstd",
-                    compression_level=3,
-                )
+                    # Some CC index shards can be empty / contain no parsable lines.
+                    # For resume + completeness, we still emit an empty Parquet file
+                    # with the expected schema so downstream stages can proceed.
+                    logger.warning("No valid rows in %s; writing empty parquet", gz_path.name)
+                    writer = pq.ParquetWriter(
+                        tmp_path,
+                        schema,
+                        compression="zstd",
+                        compression_level=3,
+                    )
+                else:
+                    writer = pq.ParquetWriter(
+                        tmp_path,
+                        schema,
+                        compression="zstd",
+                        compression_level=3,
+                    )
             total_rows += _flush(writer, buf)
         finally:
             if writer is not None:
