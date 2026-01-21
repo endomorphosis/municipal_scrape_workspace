@@ -654,6 +654,59 @@ class PipelineOrchestrator:
         
         parquet_dir = self._get_collection_parquet_dir(collection)
         parquet_dir.mkdir(parents=True, exist_ok=True)
+
+        # If a prior run produced an empty *.sorted.parquet shard (0 rows) without
+        # an explicit empty-marker, treat it as incomplete and force a reconvert.
+        # This prevents the pipeline from skipping forever on a bogus empty parquet.
+        invalidated = 0
+        try:
+            import pyarrow.parquet as pq
+
+            def _marker_for_sorted(sorted_path: Path) -> Path:
+                unsorted_candidate = sorted_path.with_name(
+                    sorted_path.name.replace(".gz.sorted.parquet", ".gz.parquet")
+                )
+                return unsorted_candidate.with_suffix(unsorted_candidate.suffix + ".empty")
+
+            for sorted_file in parquet_dir.glob("cdx-*.gz.sorted.parquet"):
+                try:
+                    pf = pq.ParquetFile(sorted_file)
+                    md = pf.metadata
+                    if md is None:
+                        continue
+                    if int(md.num_rows) != 0:
+                        continue
+
+                    marker = _marker_for_sorted(sorted_file)
+                    if marker.exists():
+                        continue
+
+                    # Unconfirmed empty: remove sorted shard so conversion+sorting can rebuild it.
+                    sorted_file.unlink(missing_ok=True)
+                    work_dir = parquet_dir / f".cc_sort_work_{sorted_file.name.replace('.gz.sorted.parquet', '.gz.parquet')}"
+                    if work_dir.exists() and work_dir.is_dir():
+                        shutil.rmtree(work_dir, ignore_errors=True)
+                    invalidated += 1
+                except Exception as e:
+                    logger.warning(f"Failed to inspect/invalidate {sorted_file}: {e}")
+
+            if invalidated:
+                # Force rebuild of the downstream index if we had to invalidate any shard.
+                duckdb_path = self.config.duckdb_collection_root / f"{collection}.duckdb"
+                try:
+                    if duckdb_path.exists():
+                        duckdb_path.unlink()
+                    sorted_marker = Path(str(duckdb_path) + ".sorted")
+                    if sorted_marker.exists():
+                        sorted_marker.unlink()
+                except Exception as e:
+                    logger.warning(f"Failed to invalidate DuckDB index for {collection}: {e}")
+
+                logger.warning(
+                    f"Invalidated {invalidated} unconfirmed empty sorted shard(s) for {collection}; will reconvert"
+                )
+        except Exception as e:
+            logger.warning(f"Empty-sorted preflight skipped due to error: {e}")
         
         # Count existing parquet files to track resume progress
         existing_parquet = list(parquet_dir.glob("cdx-*.gz.parquet"))

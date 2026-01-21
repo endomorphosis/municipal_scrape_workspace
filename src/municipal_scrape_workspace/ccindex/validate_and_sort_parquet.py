@@ -24,8 +24,9 @@ def check_if_sorted(parquet_file: Path, sample_size: int = 1000) -> Tuple[bool, 
     try:
         pf = pq.ParquetFile(parquet_file)
 
+        # An empty parquet file (valid schema but 0 row groups) is trivially sorted.
         if pf.metadata.num_row_groups == 0:
-            return False, "No row groups"
+            return True, "Empty parquet (no row groups)"
 
         # Check within first row group
         table = pf.read_row_group(0, columns=["host_rev"])

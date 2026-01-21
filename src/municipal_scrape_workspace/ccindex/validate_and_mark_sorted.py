@@ -72,8 +72,12 @@ def is_sorted_by_content(parquet_file: Path, sample_size: int = 1000) -> Tuple[b
     try:
         pf = pq.ParquetFile(parquet_file)
 
-        if pf.metadata is None or pf.metadata.num_row_groups == 0:
-            return False, "No row groups"
+        if pf.metadata is None:
+            return False, "Missing parquet metadata"
+
+        # An empty parquet file (valid schema but 0 row groups) is trivially sorted.
+        if pf.metadata.num_row_groups == 0:
+            return True, "Empty parquet (no row groups)"
 
         # Check within first row group
         table = pf.read_row_group(0, columns=["host_rev"])

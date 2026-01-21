@@ -24,6 +24,50 @@ class CollectionValidator:
         self.parquet_dir = parquet_dir
         self.pointer_dir = pointer_dir
 
+    def _empty_marker_path(self, parquet_path: Path) -> Path:
+        """Sidecar marker indicating a shard was converted and confirmed empty."""
+
+        return parquet_path.with_suffix(parquet_path.suffix + ".empty")
+
+    def _is_valid_parquet_file(self, parquet_path: Path) -> bool:
+        try:
+            pf = pq.ParquetFile(parquet_path)
+            return pf.metadata is not None
+        except Exception:
+            return False
+
+    def _parquet_num_rows(self, parquet_path: Path) -> int | None:
+        try:
+            pf = pq.ParquetFile(parquet_path)
+            if pf.metadata is None:
+                return None
+            return int(pf.metadata.num_rows)
+        except Exception:
+            return None
+
+    def _include_parquet_shard(self, parquet_path: Path, *, empty_confirmed_by: Path) -> bool:
+        """Return True if this shard should be counted as present.
+
+        Empty (0-row) shards are only counted when explicitly confirmed by an
+        .empty marker. This prevents old/buggy runs from getting stuck forever
+        skipping an empty parquet.
+        """
+
+        if not parquet_path.exists() or not parquet_path.is_file():
+            return False
+
+        if not self._is_valid_parquet_file(parquet_path):
+            return False
+
+        nrows = self._parquet_num_rows(parquet_path)
+        if nrows is None:
+            return False
+
+        if nrows == 0:
+            return empty_confirmed_by.exists()
+
+        return True
+
     def _resolve_collinfo_path(self) -> Path | None:
         """Resolve collinfo.json from common locations.
 
@@ -171,8 +215,24 @@ class CollectionValidator:
                 collection_path = self.parquet_dir
         
         # De-dupe: if both sorted + unsorted exist for the same shard, count it once.
-        sorted_ids = {_shard_id(p) for p in sorted_files}
-        unsorted_ids = {_shard_id(p) for p in unsorted_files if _shard_id(p) not in sorted_ids}
+        valid_sorted_ids: Set[str] = set()
+        for p in sorted_files:
+            unsorted_candidate = p.with_name(p.name.replace(".gz.sorted.parquet", ".gz.parquet"))
+            marker = self._empty_marker_path(unsorted_candidate)
+            if self._include_parquet_shard(p, empty_confirmed_by=marker):
+                valid_sorted_ids.add(_shard_id(p))
+
+        valid_unsorted_ids: Set[str] = set()
+        for p in unsorted_files:
+            shard_id = _shard_id(p)
+            if shard_id in valid_sorted_ids:
+                continue
+            marker = self._empty_marker_path(p)
+            if self._include_parquet_shard(p, empty_confirmed_by=marker):
+                valid_unsorted_ids.add(shard_id)
+
+        sorted_ids = valid_sorted_ids
+        unsorted_ids = valid_unsorted_ids
         total_unique = len(sorted_ids) + len(unsorted_ids)
 
         if total_unique > 0:
@@ -255,8 +315,24 @@ class CollectionValidator:
         
         # De-dupe duplicates where both exist; duplicates happen if a sorter writes
         # *.sorted.parquet but leaves the original *.parquet behind.
-        sorted_ids = {_shard_id(p) for p in sorted_files}
-        unsorted_ids = {_shard_id(p) for p in unsorted_files if _shard_id(p) not in sorted_ids}
+        valid_sorted_ids: Set[str] = set()
+        for p in sorted_files:
+            unsorted_candidate = p.with_name(p.name.replace(".gz.sorted.parquet", ".gz.parquet"))
+            marker = self._empty_marker_path(unsorted_candidate)
+            if self._include_parquet_shard(p, empty_confirmed_by=marker):
+                valid_sorted_ids.add(_shard_id(p))
+
+        valid_unsorted_ids: Set[str] = set()
+        for p in unsorted_files:
+            shard_id = _shard_id(p)
+            if shard_id in valid_sorted_ids:
+                continue
+            marker = self._empty_marker_path(p)
+            if self._include_parquet_shard(p, empty_confirmed_by=marker):
+                valid_unsorted_ids.add(shard_id)
+
+        sorted_ids = valid_sorted_ids
+        unsorted_ids = valid_unsorted_ids
         total_unique = len(sorted_ids) + len(unsorted_ids)
         return len(sorted_ids), total_unique
     

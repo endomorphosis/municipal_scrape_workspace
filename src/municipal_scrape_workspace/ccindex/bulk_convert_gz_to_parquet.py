@@ -104,6 +104,32 @@ def _parquet_has_required_columns(parquet_path: Path) -> bool:
         return False
 
 
+def _empty_marker_path(parquet_path: Path) -> Path:
+    """Sidecar marker indicating a shard was converted and confirmed empty."""
+
+    return parquet_path.with_suffix(parquet_path.suffix + ".empty")
+
+
+def _parquet_num_rows(parquet_path: Path) -> Optional[int]:
+    try:
+        pf = pq.ParquetFile(parquet_path)
+        if pf.metadata is None:
+            return None
+        return int(pf.metadata.num_rows)
+    except Exception:
+        return None
+
+
+def _parquet_is_effectively_empty(parquet_path: Path) -> bool:
+    """Return True if parquet exists but contains no data rows.
+
+    Treat unreadable/missing-metadata as NOT empty here (handled elsewhere).
+    """
+
+    n = _parquet_num_rows(parquet_path)
+    return n == 0
+
+
 def _coerce_int(value: object) -> Optional[int]:
     """Best-effort conversion of CC index numeric fields."""
 
@@ -148,6 +174,7 @@ def convert_gz_to_parquet(gz_path: Path, output_path: Path, chunk_size: int = 10
     )
 
     tmp_path = output_path.with_suffix(output_path.suffix + ".tmp")
+    empty_marker = _empty_marker_path(output_path)
 
     def _flush(writer: pq.ParquetWriter, buf: dict) -> int:
         if not buf["surt"]:
@@ -237,6 +264,15 @@ def convert_gz_to_parquet(gz_path: Path, output_path: Path, chunk_size: int = 10
                 writer.close()
 
         tmp_path.replace(output_path)
+        # Track truly-empty shards so resume runs can treat them as complete.
+        try:
+            if total_rows == 0:
+                empty_marker.write_text(f"empty source: {gz_path.name}\n", encoding="utf-8")
+            else:
+                if empty_marker.exists():
+                    empty_marker.unlink()
+        except Exception:
+            pass
         logger.info("✓ Converted %s (%d rows)", gz_path.name, total_rows)
         return True
     except Exception as e:
@@ -272,6 +308,7 @@ def convert_collection(
     for gz_file in gz_files:
         output_file = output_dir / f"{gz_file.name}.parquet"
         sorted_output_file = output_dir / f"{gz_file.name}.sorted.parquet"
+        empty_marker = _empty_marker_path(output_file)
 
         if skip_existing and sorted_output_file.exists():
             logger.info("Skipping existing sorted %s", sorted_output_file.name)
@@ -279,15 +316,31 @@ def convert_collection(
             continue
 
         if skip_existing and output_file.exists():
-            if _parquet_has_required_columns(output_file):
-                logger.info("Skipping existing %s", output_file.name)
-                skipped += 1
-                continue
-            logger.warning(
-                "Rebuilding %s (missing required columns: %s)",
-                output_file.name,
-                sorted(_REQUIRE_COLUMNS_IF_PRESENT),
-            )
+            # If the parquet is empty (0 rows), treat it as incomplete unless it has
+            # an explicit empty marker from a prior confirmed conversion.
+            try:
+                if _parquet_is_effectively_empty(output_file):
+                    if empty_marker.exists():
+                        logger.info("Skipping confirmed-empty %s", output_file.name)
+                        skipped += 1
+                        continue
+                    logger.warning(
+                        "Reconverting %s (empty parquet without marker)",
+                        output_file.name,
+                    )
+                elif _parquet_has_required_columns(output_file):
+                    logger.info("Skipping existing %s", output_file.name)
+                    skipped += 1
+                    continue
+                else:
+                    logger.warning(
+                        "Rebuilding %s (missing required columns: %s)",
+                        output_file.name,
+                        sorted(_REQUIRE_COLUMNS_IF_PRESENT),
+                    )
+            except Exception:
+                # If we can't inspect the parquet, force reconvert.
+                logger.warning("Rebuilding %s (unable to read parquet metadata)", output_file.name)
 
         work.append((gz_file, output_file))
 
