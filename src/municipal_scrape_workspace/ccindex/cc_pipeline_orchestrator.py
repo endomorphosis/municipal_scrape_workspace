@@ -1312,7 +1312,9 @@ class PipelineOrchestrator:
             status["complete"] = False
         
         logger.info(f"\nProcessing {collection}:")
-        logger.info(f"  Downloaded: {status['tar_gz_count']}/{status['tar_gz_expected']}")
+        sources_required = status['parquet_count'] < status['parquet_expected']
+        sources_note = "" if sources_required else " (optional; parquet complete)"
+        logger.info(f"  Sources: {status['tar_gz_count']}/{status['tar_gz_expected']}{sources_note}")
         logger.info(f"  Converted: {status['parquet_count']}/{status['parquet_expected']}")
         logger.info(f"  Sorted: {status['sorted_count']}/{status['parquet_expected']}")
         logger.info(f"  Indexed: {status['duckdb_index_exists']} (sorted: {status['duckdb_index_sorted']})")
@@ -1327,14 +1329,25 @@ class PipelineOrchestrator:
             return False
         
         # Stage 1: Download
-        if status['tar_gz_count'] < status['tar_gz_expected']:
+        # Source shards are only required to (re)run Stage 2 conversions. If parquet
+        # is already complete (e.g. after cleanup removed cdx-*.gz), do not
+        # re-download sources just to satisfy tar_gz_count.
+        if sources_required and status['tar_gz_count'] < status['tar_gz_expected']:
             logger.info(f"  Stage 1: Downloading {status['tar_gz_expected'] - status['tar_gz_count']} .gz files...")
             if not self.download_collection(collection):
                 return False
             status = self.validator.validate_collection(collection)
             logger.info(f"  ✓ Downloaded: {status['tar_gz_count']}/{status['tar_gz_expected']}")
-        else:
+        elif sources_required:
             logger.info(f"  ✓ Stage 1: Downloads complete ({status['tar_gz_count']}/{status['tar_gz_expected']})")
+        else:
+            if status['tar_gz_count'] < status['tar_gz_expected']:
+                logger.info(
+                    "  ✓ Stage 1: Sources missing but not required "
+                    f"(parquet complete: {status['parquet_count']}/{status['parquet_expected']})"
+                )
+            else:
+                logger.info(f"  ✓ Stage 1: Downloads complete ({status['tar_gz_count']}/{status['tar_gz_expected']})")
         
         # Stage 2: Convert
         if status['parquet_count'] < status['parquet_expected']:
@@ -1373,9 +1386,12 @@ class PipelineOrchestrator:
             logger.info(f"  ✓ {collection} processing complete")
             return True
 
+        # Recompute after final validation so the message reflects current needs.
+        # (Stage 2 may have run and changed parquet_count.)
+        sources_suffix_final = " (optional)" if status['parquet_count'] >= status['parquet_expected'] else ""
         logger.warning(
             f"  ⚠️  {collection} finished stages but is still incomplete: "
-            f"downloaded={status['tar_gz_count']}/{status['tar_gz_expected']} "
+            f"sources={status['tar_gz_count']}/{status['tar_gz_expected']}{sources_suffix_final} "
             f"converted={status['parquet_count']}/{status['parquet_expected']} "
             f"sorted={status['sorted_count']}/{status['parquet_expected']} "
             f"indexed={status['duckdb_index_exists']} (sorted={status['duckdb_index_sorted']})"
