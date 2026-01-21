@@ -477,16 +477,16 @@ class PipelineOrchestrator:
     def _get_collection_parquet_dir(self, collection: str) -> Path:
         """Return the on-disk parquet directory for a collection.
 
-                Canonical (historical) layout:
-                    <parquet_root>/cc_pointers_by_collection/<year>/<collection>/
+        Canonical (historical) layout:
+            <parquet_root>/cc_pointers_by_collection/<year>/<collection>/
 
-                Back-compat fallbacks:
-                    <parquet_root>/<year>/<collection>/
-                    <parquet_root>/<collection>/
+        Back-compat fallbacks:
+            <parquet_root>/<year>/<collection>/
+            <parquet_root>/<collection>/
 
-                Selection behavior:
-                - If any candidate already contains parquet files, prefer that path (resume-friendly).
-                - Otherwise, default to the canonical (historical) layout.
+        Selection behavior:
+        - If any candidate already contains parquet files, prefer that path (resume-friendly).
+        - Otherwise, default to the canonical (historical) layout.
         """
 
         year = self._collection_year(collection)
@@ -671,21 +671,82 @@ class PipelineOrchestrator:
             "--heartbeat-seconds", str(int(getattr(self.config, "heartbeat_seconds", 30) or 30)),
         ]
         
-        try:
-            logger.debug(f"Running: {' '.join(cmd)}")
-            # Stream subprocess output so the pipeline doesn't look "stalled" for long runs.
-            subprocess.run(cmd, check=True)
-            logger.info(f"Converted {collection} successfully")
-            
-            # If requested, immediately sort the newly converted files
-            if sort_after:
-                logger.info(f"Sorting newly converted files for {collection}...")
-                return self.sort_collection(collection)
-            return True
-        except subprocess.CalledProcessError as e:
-            logger.error(f"Failed to convert {collection}: {e}")
-            # stderr/stdout were streamed to the console; include only minimal context here.
+        def _count_converted_unique() -> Tuple[int, int]:
+            """Return (converted_unique, expected_gz_count).
+
+            Treat either *.gz.parquet or *.gz.sorted.parquet as converted.
+            """
+
+            gz_files = sorted(ccindex_dir.glob("cdx-*.gz"))
+            expected = len(gz_files)
+            if expected == 0:
+                return 0, 0
+
+            present = set()
+            for p in parquet_dir.glob("cdx-*.gz.parquet"):
+                present.add(p.name)
+            for p in parquet_dir.glob("cdx-*.gz.sorted.parquet"):
+                present.add(p.name.replace(".gz.sorted.parquet", ".gz.parquet"))
+
+            return len(present), expected
+
+        def _missing_examples(limit: int = 5) -> List[str]:
+            gz_files = sorted(ccindex_dir.glob("cdx-*.gz"))
+            expected_names = [f"{p.name}.parquet" for p in gz_files]
+            present = {p.name for p in parquet_dir.glob("cdx-*.gz.parquet")}
+            present |= {p.name.replace(".gz.sorted.parquet", ".gz.parquet") for p in parquet_dir.glob("cdx-*.gz.sorted.parquet")}
+            missing = [n for n in expected_names if n not in present]
+            return missing[: max(0, int(limit))]
+
+        # Retry a few times for resume robustness: bulk_convert exits 1 if any shard fails.
+        max_attempts = 3
+        for attempt in range(1, max_attempts + 1):
+            before_converted, expected = _count_converted_unique()
+            if expected == 0:
+                logger.error(f"No input shards found in {ccindex_dir}")
+                return False
+
+            if before_converted >= expected:
+                logger.info(f"Converted {collection} already complete ({before_converted}/{expected})")
+                break
+
+            if attempt > 1:
+                logger.warning(
+                    f"Retrying conversion for {collection}: attempt {attempt}/{max_attempts} (have {before_converted}/{expected})"
+                )
+
+            rc = self._run_subprocess_with_heartbeat(cmd, heartbeat_label=f"convert:{collection}")
+            after_converted, _expected2 = _count_converted_unique()
+
+            if after_converted >= expected:
+                logger.info(f"Converted {collection} successfully ({after_converted}/{expected})")
+                break
+
+            if after_converted > before_converted:
+                logger.warning(
+                    f"Conversion incomplete for {collection} after attempt {attempt}: {after_converted}/{expected} (exit {rc})"
+                )
+                continue
+
+            missing = _missing_examples()
+            logger.error(
+                f"Failed to convert {collection}: no progress made (exit {rc}); missing examples: {missing}"
+            )
             return False
+
+        final_converted, expected = _count_converted_unique()
+        if final_converted < expected:
+            missing = _missing_examples(limit=10)
+            logger.error(
+                f"Failed to fully convert {collection}: {final_converted}/{expected} shards present; missing examples: {missing}"
+            )
+            return False
+
+        # If requested, immediately sort the newly converted files
+        if sort_after:
+            logger.info(f"Sorting newly converted files for {collection}...")
+            return self.sort_collection(collection)
+        return True
     
     def sort_collection(self, collection: str) -> bool:
         """Sort a collection's parquet files by (host_rev, url, ts).
