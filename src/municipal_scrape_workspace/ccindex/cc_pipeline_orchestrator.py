@@ -465,24 +465,41 @@ class PipelineOrchestrator:
             return parts[2]
         return None
 
+    def _resolve_ccindex_helper_script(self, filename: str) -> Path:
+        """Resolve a helper script shipped alongside this module.
+
+        The orchestrator is typically invoked via `python -m ...`, so relying on
+        the current working directory for helper script discovery is fragile.
+        """
+
+        return (Path(__file__).resolve().parent / filename)
+
     def _get_collection_parquet_dir(self, collection: str) -> Path:
         """Return the on-disk parquet directory for a collection.
 
-        Prefer the validator's primary layout:
-          <parquet_root>/cc_pointers_by_collection/<year>/<collection>/
-        Fall back to:
+        Canonical layout (matches existing 2024/2025 runs):
           <parquet_root>/<year>/<collection>/
+
+        Back-compat fallbacks:
+          <parquet_root>/cc_pointers_by_collection/<year>/<collection>/
           <parquet_root>/<collection>/
         """
 
         year = self._collection_year(collection)
         if year:
-            primary = self.config.parquet_root / "cc_pointers_by_collection" / year / collection
-            if primary.exists():
-                return primary
-            secondary = self.config.parquet_root / year / collection
-            if secondary.exists():
-                return secondary
+            canonical = self.config.parquet_root / year / collection
+            backcompat = self.config.parquet_root / "cc_pointers_by_collection" / year / collection
+
+            # Prefer whichever already has data on disk.
+            for candidate in (canonical, backcompat):
+                try:
+                    if candidate.exists() and any(candidate.glob("*.parquet")):
+                        return candidate
+                except Exception:
+                    continue
+
+            # Default to canonical even if it doesn't exist yet.
+            return canonical
 
         return self.config.parquet_root / collection
         
@@ -631,12 +648,7 @@ class PipelineOrchestrator:
         
         ccindex_dir = self.config.ccindex_root / collection
         
-        # Prefer validator's primary structure.
-        year = self._collection_year(collection)
-        if year:
-            parquet_dir = self.config.parquet_root / "cc_pointers_by_collection" / year / collection
-        else:
-            parquet_dir = self.config.parquet_root / collection
+        parquet_dir = self._get_collection_parquet_dir(collection)
         parquet_dir.mkdir(parents=True, exist_ok=True)
         
         # Count existing parquet files to track resume progress
@@ -645,9 +657,10 @@ class PipelineOrchestrator:
         logger.info(f"  Resume: {len(existing_parquet)} parquet, {len(existing_sorted)} sorted already exist")
         
         # Use bulk_convert_gz_to_parquet.py to convert (it has skip_existing logic)
+        convert_script = self._resolve_ccindex_helper_script("bulk_convert_gz_to_parquet.py")
         cmd = [
             sys.executable,
-            "bulk_convert_gz_to_parquet.py",
+            str(convert_script),
             "--input-dir", str(ccindex_dir),
             "--output-dir", str(parquet_dir),
             "--workers", str(self.config.max_workers),
@@ -673,10 +686,10 @@ class PipelineOrchestrator:
     def sort_collection(self, collection: str) -> bool:
         """Sort a collection's parquet files by (host_rev, url, ts).
 
-        Uses validate_and_mark_sorted.py which:
-        - validates files,
-        - sorts any unsorted files, and
-        - renames them to *.gz.sorted.parquet (validator convention).
+        Uses validate_and_sort_parquet.py to:
+        - validate sorting,
+        - sort unsorted shards in-place, and
+        - rename/mark sorted shards to *.gz.sorted.parquet.
         """
         logger.info(f"Sorting {collection} (validate + sort + mark)...")
 
@@ -710,9 +723,10 @@ class PipelineOrchestrator:
                 logger.warning(
                     f"Found {len(legacy_files)} parquet file(s) with legacy/invalid schema; rebuilding before sorting"
                 )
+                convert_script = self._resolve_ccindex_helper_script("bulk_convert_gz_to_parquet.py")
                 rebuild_cmd = [
                     sys.executable,
-                    "bulk_convert_gz_to_parquet.py",
+                    str(convert_script),
                     "--input-dir",
                     str(ccindex_dir),
                     "--output-dir",
@@ -728,32 +742,15 @@ class PipelineOrchestrator:
             logger.warning(f"Legacy schema check skipped due to error: {e}")
         
         try:
-            sort_workers = int(self.config.sort_workers) if self.config.sort_workers else max(2, int(self.config.max_workers))
-            # Keep a conservative default per-sort memory unless user overrides.
-            sort_mem_gb = float(getattr(self.config, "sort_memory_per_worker_gb", 4.0) or 4.0)
-
-            # Use a temp dir on the same filesystem as the parquet output by default.
-            # This avoids /tmp space pressure and speeds up large external sorts.
-            sort_temp_dir = self.config.sort_temp_dir
-            if sort_temp_dir is None:
-                sort_temp_dir = parquet_dir / ".duckdb_sort_tmp"
-                try:
-                    sort_temp_dir.mkdir(parents=True, exist_ok=True)
-                except Exception:
-                    sort_temp_dir = None
+            sort_script = self._resolve_ccindex_helper_script("validate_and_sort_parquet.py")
             cmd = [
                 sys.executable,
-                "validate_and_mark_sorted.py",
-                "--parquet-root", str(parquet_dir),
+                str(sort_script),
+                "--parquet-root",
+                str(parquet_dir),
                 "--sort-unsorted",
-                "--workers", str(self.config.max_workers),
-                "--sort-workers", str(sort_workers),
-                "--memory-per-sort", str(sort_mem_gb),
-                "--heartbeat-seconds", str(int(getattr(self.config, "heartbeat_seconds", 30) or 30)),
+                "--mark-sorted",
             ]
-
-            if sort_temp_dir:
-                cmd.extend(["--temp-dir", str(sort_temp_dir)])
 
             # Stream output so progress is visible during long sorts.
             result = subprocess.run(cmd)
@@ -803,10 +800,11 @@ class PipelineOrchestrator:
         # Build index FROM the (sorted) parquet shards.
         # Note: build_cc_pointer_duckdb.py ingests raw cdx-*.gz files, so it will
         # find zero inputs if pointed at the parquet folder.
+        build_script = self._resolve_ccindex_helper_script("build_index_from_parquet.py")
         cmd = [
             sys.executable,
             "-u",
-            "build_index_from_parquet.py",
+            str(build_script),
             "--parquet-root", str(parquet_dir),
             "--output-db", str(duckdb_path),
             "--extract-rowgroups",

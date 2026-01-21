@@ -92,6 +92,11 @@ def main() -> int:
     ap.add_argument("--parquet-root", required=True, type=str, help="Root directory of parquet files")
     ap.add_argument("--sort-unsorted", action="store_true", help="Sort any unsorted files found")
     ap.add_argument("--verify-only", action="store_true", help="Only verify, don't sort")
+    ap.add_argument(
+        "--mark-sorted",
+        action="store_true",
+        help="Rename sorted files to *.sorted.parquet (validator/pipeline convention)",
+    )
     ap.add_argument("--output", type=str, help="Output file for list of sorted files")
 
     args = ap.parse_args()
@@ -107,6 +112,14 @@ def main() -> int:
     print("=" * 80)
     print(f"Root: {parquet_root}")
     print()
+
+    def _marked_name(p: Path) -> Path:
+        name = p.name
+        if name.endswith(".gz.parquet"):
+            return p.with_name(name[: -len(".gz.parquet")] + ".gz.sorted.parquet")
+        if name.endswith(".parquet") and not name.endswith(".sorted.parquet"):
+            return p.with_name(name[: -len(".parquet")] + ".sorted.parquet")
+        return p
 
     # Find all parquet files
     all_files = sorted(parquet_root.rglob("*.parquet"))
@@ -126,6 +139,24 @@ def main() -> int:
         rel_path = pq_file.relative_to(parquet_root)
 
         if is_sorted:
+            # Optionally mark as sorted by renaming to *.sorted.parquet.
+            if (
+                args.mark_sorted
+                and not args.verify_only
+                and not pq_file.name.endswith(".sorted.parquet")
+            ):
+                marked = _marked_name(pq_file)
+                try:
+                    if marked.exists() and marked != pq_file:
+                        # If both exist, treat the unmarked file as a duplicate and remove it.
+                        pq_file.unlink()
+                        pq_file = marked
+                    elif marked != pq_file:
+                        pq_file.rename(marked)
+                        pq_file = marked
+                except Exception as e:
+                    print(f"⚠️  Failed to mark sorted file {rel_path}: {e}", file=sys.stderr)
+
             sorted_files.append(pq_file)
         else:
             unsorted_files.append(pq_file)
@@ -164,17 +195,24 @@ def main() -> int:
             print(f"[{i}/{len(unsorted_files)}] Sorting: {unsorted_file.name}")
 
             sorted_tmp = unsorted_file.with_suffix(".parquet.sorted.tmp")
+            final_path = _marked_name(unsorted_file) if args.mark_sorted else unsorted_file
 
             if sort_parquet_file(unsorted_file, sorted_tmp):
                 # Verify it's now sorted
                 is_sorted, reason = check_if_sorted(sorted_tmp)
 
                 if is_sorted:
-                    # Replace original
+                    # Replace original (and optionally mark/rename)
+                    try:
+                        if final_path.exists() and final_path != unsorted_file:
+                            final_path.unlink()
+                    except Exception:
+                        pass
+
                     unsorted_file.unlink()
-                    sorted_tmp.rename(unsorted_file)
-                    print("  ✅ Sorted and verified")
-                    sorted_files.append(unsorted_file)
+                    sorted_tmp.rename(final_path)
+                    print("  ✅ Sorted and verified" + (" (marked)" if args.mark_sorted else ""))
+                    sorted_files.append(final_path)
                 else:
                     print(f"  ❌ Sort verification failed: {reason}")
                     sorted_tmp.unlink()
