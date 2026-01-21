@@ -85,13 +85,13 @@ Tests search performance across multiple domains and collections.
 - **CC-MAIN-2024-42**: 241,077 domains (18.6 min build time)
 
 ### In Progress
-- Currently indexing 5 collections from `/storage/ccindex_parquet/cc_pointers_by_year/`
+- Currently indexing 5 collections from `/storage/ccindex_parquet/cc_pointers_by_collection/<year>/<collection>/`
 - 711 parquet files total across 5 collections
 - Running with 5 workers (one per collection)
 
 ### Issues Identified
 - Some parquet files are corrupted ("No magic bytes found")
-- Files in `cc_pointers_by_year/2024/CC-MAIN-2024-22/` have issues
+- Files in `cc_pointers_by_collection/2024/CC-MAIN-2024-22/` have issues
 - Build script handles errors gracefully and continues
 
 ## Performance Metrics

@@ -24,17 +24,17 @@
 
 ### Parquet Files (Sorted by Domain)
 ```
-/storage/ccindex_parquet/cc_pointers_by_year/
+/storage/ccindex_parquet/cc_pointers_by_collection/
 ├── 2024/
 │   ├── CC-MAIN-2024-10/
-│   │   ├── cdx-00000.gz.parquet (sorted by domain)
-│   │   ├── cdx-00001.gz.parquet (sorted by domain)
+│   │   ├── cdx-00000.gz.sorted.parquet (sorted by domain)
+│   │   ├── cdx-00001.gz.sorted.parquet (sorted by domain)
 │   │   └── ...
 │   ├── CC-MAIN-2024-18/
 │   └── ... (all 2024 crawls)
 └── 2025/
-    ├── CC-MAIN-2025-05/
-    └── ... (all 2025 crawls)
+  ├── CC-MAIN-2025-05/
+  └── ... (all 2025 crawls)
 ```
 
 **Each parquet file contains**:

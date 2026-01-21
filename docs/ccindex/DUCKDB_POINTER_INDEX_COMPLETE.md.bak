@@ -1,7 +1,11 @@
-# DuckDB Domain Pointer Index - Complete System
+# DuckDB Domain Pointer Index - Complete System (Deprecated)
 
 ## Overview
 A fast domain-based search system for Common Crawl indexes using DuckDB with offset/range optimization.
+
+NOTE: This document is a historical snapshot (.bak). The current pipeline uses parquet under
+`/storage/ccindex_parquet/cc_pointers_by_collection/<year>/<collection>/` rather than the older
+`cc_pointers_by_year` parquet tree.
 
 ## Components Created
 

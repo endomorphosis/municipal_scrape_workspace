@@ -247,7 +247,7 @@ if [[ ! -x "${VENV_PYTHON}" ]]; then VENV_PYTHON="python3"; fi
   --duckdb-index-mode domain \
   --domain-index-action rebuild \
   --domain-range-index \
-  --parquet-out /storage/ccindex_parquet/cc_pointers_by_year \
+   --parquet-out /storage/ccindex_parquet/cc_pointers_by_collection \
   --create-indexes
 ```
 
@@ -257,7 +257,7 @@ if [[ ! -x "${VENV_PYTHON}" ]]; then VENV_PYTHON="python3"; fi
 # Search for a domain
 "${VENV_PYTHON}" "${REPO_ROOT}/search_cc_duckdb_index.py" \
   --duckdb-dir /storage/ccindex_duckdb/cc_domain_by_year \
-  --parquet-root /storage/ccindex_parquet/cc_pointers_by_year \
+   --parquet-root /storage/ccindex_parquet/cc_pointers_by_collection \
   --domain whitehouse.gov \
   --count-urls \
   --verbose
@@ -265,7 +265,7 @@ if [[ ! -x "${VENV_PYTHON}" ]]; then VENV_PYTHON="python3"; fi
 # Search for URLs from file
 "${VENV_PYTHON}" "${REPO_ROOT}/search_cc_duckdb_index.py" \
   --duckdb-dir /storage/ccindex_duckdb/cc_domain_by_year \
-  --parquet-root /storage/ccindex_parquet/cc_pointers_by_year \
+   --parquet-root /storage/ccindex_parquet/cc_pointers_by_collection \
   --url-file my_urls.txt \
   --output results.jsonl
 
@@ -278,7 +278,7 @@ python search_cc_duckdb_index.py \
 # Search with row group optimization
 python search_cc_duckdb_index.py \
   --duckdb-dir /storage/ccindex_duckdb/cc_domain_by_year \
-  --parquet-root /storage/ccindex_parquet/cc_pointers_by_year \
+   --parquet-root /storage/ccindex_parquet/cc_pointers_by_collection \
   --domain example.gov \
   --use-rowgroup-ranges
 ```
@@ -289,14 +289,14 @@ python search_cc_duckdb_index.py \
 # Full benchmark suite
 python benchmarks/ccindex/benchmark_cc_duckdb_search.py \
   --duckdb-dir /storage/ccindex_duckdb/cc_domain_by_year \
-  --parquet-root /storage/ccindex_parquet/cc_pointers_by_year \
+   --parquet-root /storage/ccindex_parquet/cc_pointers_by_collection \
   --sample-domains 200 \
   --sample-urls 1000
 
 # Quick benchmark
 python benchmarks/ccindex/benchmark_cc_duckdb_search.py \
   --duckdb-dir /storage/ccindex_duckdb/cc_domain_by_year \
-  --parquet-root /storage/ccindex_parquet/cc_pointers_by_year \
+   --parquet-root /storage/ccindex_parquet/cc_pointers_by_collection \
   --quick
 ```
 

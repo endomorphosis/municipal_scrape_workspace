@@ -13,7 +13,7 @@ The parallel DuckDB pointer index system provides:
 
 **Indexing in Progress:**
 - 5 collections currently being indexed
-- 711 sorted parquet files organized in /storage/ccindex_parquet/cc_pointers_by_year/
+- 711 sorted parquet files organized in /storage/ccindex_parquet/cc_pointers_by_collection/<year>/<collection>/
 - 9 DuckDB indexes already built (61MB total)
 - 6 worker processes running (5 collections + 1 manager)
 
@@ -106,7 +106,7 @@ Once indexing completes:
 
 ## File Locations
 
-- **Sorted Parquets**: `/storage/ccindex_parquet/cc_pointers_by_year/`
+- **Sorted Parquets**: `/storage/ccindex_parquet/cc_pointers_by_collection/<year>/<collection>/`
 - **DuckDB Indexes**: `/storage/ccindex_duckdb/cc_pointers_by_collection/`
 - **Build Logs**: `logs/build_<collection>_<timestamp>.log`
 - **Progress Files**: `/storage/ccindex_duckdb/cc_pointers_by_collection/<collection>_progress.json`
