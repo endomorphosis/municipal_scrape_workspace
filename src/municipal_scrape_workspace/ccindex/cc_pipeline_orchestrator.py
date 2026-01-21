@@ -16,6 +16,7 @@ Uses existing validator and HUD scripts for consistency.
 from __future__ import annotations
 
 import argparse
+import gzip
 import json
 import logging
 import os
@@ -24,10 +25,13 @@ import shutil
 import subprocess
 import sys
 import time
+import urllib.request
 from collections import defaultdict
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Dict, List, Optional, Set, Tuple
+
+from urllib.error import HTTPError, URLError
 
 import psutil
 
@@ -540,8 +544,16 @@ class PipelineOrchestrator:
         """Check if we have enough resources to proceed"""
         mem_gb = self.get_available_memory_gb()
         if mem_gb < self.config.memory_limit_gb:
-            logger.warning(f"Low memory: {mem_gb:.1f} GB available, need {self.config.memory_limit_gb:.1f} GB")
-            return False
+            # Allow a small tolerance for normal fluctuations so we don't abort
+            # when we're within ~5% (or 0.5GB) of the configured target.
+            limit = float(self.config.memory_limit_gb)
+            tolerance = max(0.5, 0.05 * limit)
+            logger.warning(f"Low memory: {mem_gb:.1f} GB available, need {limit:.1f} GB")
+            if mem_gb < (limit - tolerance):
+                return False
+            logger.warning(
+                f"Proceeding despite low memory (within {tolerance:.1f} GB tolerance); performance may be reduced"
+            )
         
         for path in [self.config.ccindex_root, self.config.parquet_root, self.config.duckdb_collection_root]:
             free_gb = self.get_free_space_gb(path)
@@ -657,7 +669,8 @@ class PipelineOrchestrator:
 
         # If a prior run produced an empty *.sorted.parquet shard (0 rows) without
         # an explicit empty-marker, treat it as incomplete and force a reconvert.
-        # This prevents the pipeline from skipping forever on a bogus empty parquet.
+        # Also invalidate obviously broken/unreadable sorted shards so resume doesn't
+        # skip forever.
         invalidated = 0
         try:
             import pyarrow.parquet as pq
@@ -688,7 +701,13 @@ class PipelineOrchestrator:
                         shutil.rmtree(work_dir, ignore_errors=True)
                     invalidated += 1
                 except Exception as e:
-                    logger.warning(f"Failed to inspect/invalidate {sorted_file}: {e}")
+                    # Corrupt parquet can cause resume to skip forever; force rebuild.
+                    try:
+                        sorted_file.unlink(missing_ok=True)
+                        invalidated += 1
+                        logger.warning(f"Invalidated unreadable sorted shard {sorted_file}: {e}")
+                    except Exception:
+                        logger.warning(f"Failed to inspect/invalidate {sorted_file}: {e}")
 
             if invalidated:
                 # Force rebuild of the downstream index if we had to invalidate any shard.
@@ -751,6 +770,33 @@ class PipelineOrchestrator:
             missing = [n for n in expected_names if n not in present]
             return missing[: max(0, int(limit))]
 
+        def _missing_all() -> List[str]:
+            gz_files = sorted(ccindex_dir.glob("cdx-*.gz"))
+            expected_names = [f"{p.name}.parquet" for p in gz_files]
+            present = {p.name for p in parquet_dir.glob("cdx-*.gz.parquet")}
+            present |= {
+                p.name.replace(".gz.sorted.parquet", ".gz.parquet")
+                for p in parquet_dir.glob("cdx-*.gz.sorted.parquet")
+            }
+            return [n for n in expected_names if n not in present]
+
+        def _heal_broken_downloads_for_missing_parquets() -> int:
+            """Attempt to repair missing conversions by re-downloading corrupt/missing .gz shards."""
+
+            missing_parquets = _missing_all()
+            if not missing_parquets:
+                return 0
+
+            missing_gz_names: List[str] = []
+            for name in missing_parquets:
+                if name.endswith(".parquet"):
+                    missing_gz_names.append(name[: -len(".parquet")])
+
+            if not missing_gz_names:
+                return 0
+
+            return self._heal_collection_gz_shards(collection, missing_gz_names)
+
         # Retry a few times for resume robustness: bulk_convert exits 1 if any shard fails.
         max_attempts = 3
         for attempt in range(1, max_attempts + 1):
@@ -785,6 +831,19 @@ class PipelineOrchestrator:
             logger.error(
                 f"Failed to convert {collection}: no progress made (exit {rc}); missing examples: {missing}"
             )
+
+            healed = 0
+            try:
+                healed = _heal_broken_downloads_for_missing_parquets()
+            except Exception as e:
+                logger.warning(f"Auto-heal attempt failed for {collection}: {e}")
+
+            if healed > 0 and attempt < max_attempts:
+                logger.warning(
+                    f"Healed {healed} shard(s) for {collection} (redownloaded corrupt/missing .gz); retrying conversion"
+                )
+                continue
+
             return False
 
         final_converted, expected = _count_converted_unique()
@@ -920,6 +979,147 @@ class PipelineOrchestrator:
             return True
         except Exception as e:
             logger.error(f"Failed to sort {collection}: {e}")
+            return False
+
+    def _heal_collection_gz_shards(self, collection: str, gz_filenames: List[str]) -> int:
+        """Ensure specific cdx-*.gz shards are present and gzip-valid.
+
+        Returns the number of shards re-downloaded.
+        """
+
+        ccindex_dir = self.config.ccindex_root / collection
+        ccindex_dir.mkdir(parents=True, exist_ok=True)
+
+        url_map = self._get_ccindex_shard_url_map(collection=collection, ccindex_dir=ccindex_dir)
+
+        redownloaded = 0
+        for gz_name in sorted(set(gz_filenames)):
+            gz_path = ccindex_dir / gz_name
+            needs_fetch = (
+                (not gz_path.exists())
+                or (gz_path.stat().st_size == 0)
+                or (not self._gzip_is_valid(gz_path))
+            )
+
+            if not needs_fetch:
+                continue
+
+            url = url_map.get(gz_name)
+            if not url:
+                logger.warning(f"No known download URL for {collection}/{gz_name}; cannot auto-heal this shard")
+                continue
+
+            try:
+                gz_path.unlink(missing_ok=True)
+            except Exception:
+                pass
+
+            ok = self._download_to_file(url=url, dest_path=gz_path, retries=3, timeout_seconds=120)
+            if not ok:
+                logger.warning(f"Failed to re-download {collection}/{gz_name} from {url}")
+                continue
+
+            if not self._gzip_is_valid(gz_path):
+                logger.warning(
+                    f"Re-downloaded {collection}/{gz_name} but gzip validation still fails; leaving it deleted"
+                )
+                try:
+                    gz_path.unlink(missing_ok=True)
+                except Exception:
+                    pass
+                continue
+
+            redownloaded += 1
+            logger.info(f"Healed shard {collection}/{gz_name} (re-downloaded + gzip-validated)")
+
+        return redownloaded
+
+    def _get_ccindex_shard_url_map(self, *, collection: str, ccindex_dir: Path) -> Dict[str, str]:
+        """Return basename (cdx-*.gz) -> full download URL for a collection."""
+
+        index_list_path = ccindex_dir / "index_files.txt"
+        paths: List[str] = []
+
+        if index_list_path.exists():
+            try:
+                paths = [
+                    line.strip()
+                    for line in index_list_path.read_text(encoding="utf-8", errors="ignore").splitlines()
+                    if line.strip().endswith(".gz")
+                ]
+            except Exception:
+                paths = []
+
+        if not paths:
+            list_url = f"https://data.commoncrawl.org/crawl-data/{collection}/cc-index.paths.gz"
+            logger.info(f"Fetching shard list for {collection} from {list_url}")
+            try:
+                req = urllib.request.Request(
+                    list_url,
+                    headers={"User-Agent": "municipal-scrape-workspace/ccindex"},
+                )
+                with urllib.request.urlopen(req, timeout=60) as resp:
+                    raw = resp.read()
+                text = gzip.decompress(raw).decode("utf-8", errors="ignore")
+                paths = [line.strip() for line in text.splitlines() if line.strip().endswith(".gz")]
+
+                try:
+                    index_list_path.write_text("\n".join(paths) + "\n", encoding="utf-8")
+                except Exception:
+                    pass
+            except Exception as e:
+                logger.warning(f"Failed to fetch shard list for {collection}: {e}")
+                paths = []
+
+        url_map: Dict[str, str] = {}
+        for p in paths:
+            name = os.path.basename(p)
+            if not name:
+                continue
+            url_map[name] = f"https://data.commoncrawl.org/{p}"
+        return url_map
+
+    def _download_to_file(self, *, url: str, dest_path: Path, retries: int, timeout_seconds: int) -> bool:
+        """Download a URL to a local file atomically."""
+
+        dest_path.parent.mkdir(parents=True, exist_ok=True)
+        tmp_path = dest_path.with_suffix(dest_path.suffix + ".tmp")
+
+        last_err: Optional[Exception] = None
+        for attempt in range(1, max(1, int(retries)) + 1):
+            try:
+                req = urllib.request.Request(
+                    url,
+                    headers={"User-Agent": "municipal-scrape-workspace/ccindex"},
+                )
+                with urllib.request.urlopen(req, timeout=int(timeout_seconds)) as resp:
+                    with open(tmp_path, "wb") as f:
+                        shutil.copyfileobj(resp, f)
+                os.replace(tmp_path, dest_path)
+                return True
+            except (HTTPError, URLError, TimeoutError, OSError) as e:
+                last_err = e
+                try:
+                    tmp_path.unlink(missing_ok=True)
+                except Exception:
+                    pass
+                time.sleep(min(10.0, 1.5 * attempt))
+
+        if last_err is not None:
+            logger.warning(f"Download failed after {retries} attempts: {url} ({last_err})")
+        return False
+
+    def _gzip_is_valid(self, path: Path) -> bool:
+        """Return True if the .gz file can be fully decompressed without errors."""
+
+        try:
+            if not path.exists() or path.stat().st_size == 0:
+                return False
+            with gzip.open(path, "rb") as f:
+                while f.read(8 * 1024 * 1024):
+                    pass
+            return True
+        except Exception:
             return False
     
     def build_index_for_collection(self, collection: str) -> bool:
