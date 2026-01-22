@@ -67,9 +67,11 @@ class PipelineConfig:
     min_free_space_gb: float
     collections_filter: Optional[str] = None
     heartbeat_seconds: int = 30
-    cleanup_extraneous: bool = False
+    # Default to reclaiming disk once a collection is fully complete.
+    # Can be overridden via pipeline_config.json or CLI flags.
+    cleanup_extraneous: bool = True
     cleanup_dry_run: bool = False
-    cleanup_source_archives: bool = False
+    cleanup_source_archives: bool = True
     sort_workers: Optional[int] = None
     sort_memory_per_worker_gb: float = 4.0
     sort_temp_dir: Optional[Path] = None
@@ -1632,6 +1634,9 @@ class PipelineOrchestrator:
         
         if status['complete']:
             logger.info(f"  ✓ {collection} is complete, skipping")
+            # Optional post-completion cleanup (useful on resume runs).
+            if getattr(self.config, "cleanup_extraneous", False) or getattr(self.config, "cleanup_source_archives", False):
+                self.cleanup_collection_extraneous(collection)
             return True
         
         # Check resources before each stage
@@ -1695,6 +1700,10 @@ class PipelineOrchestrator:
         status = self.validator.validate_collection(collection)
         if status.get('complete'):
             logger.info(f"  ✓ {collection} processing complete")
+            # Cleanup after the collection is truly complete (index exists + sorted).
+            # This is where optional source-archive cleanup can safely happen.
+            if getattr(self.config, "cleanup_extraneous", False) or getattr(self.config, "cleanup_source_archives", False):
+                self.cleanup_collection_extraneous(collection)
             return True
 
         # Recompute after final validation so the message reflects current needs.
@@ -1798,6 +1807,16 @@ class PipelineOrchestrator:
         
         if not incomplete and not self.force_reindex:
             logger.info("\n✓ All collections are complete!")
+
+            # Even if no work is needed, we may still want to reclaim disk by
+            # sweeping completed collections for cleanup items.
+            if getattr(self.config, "cleanup_extraneous", False) or getattr(self.config, "cleanup_source_archives", False):
+                logger.info("\n[cleanup] Sweeping completed collections...")
+                for collection in self.collections:
+                    try:
+                        self.cleanup_collection_extraneous(collection)
+                    except Exception as e:
+                        logger.warning(f"[cleanup] Sweep failed for {collection}: {e}")
             return
 
         targets = list(incomplete)
@@ -1926,8 +1945,17 @@ def main() -> int:
     )
     parser.add_argument(
         "--cleanup-extraneous",
+        dest="cleanup_extraneous",
         action="store_true",
-        help="Remove safe-to-delete extraneous artifacts (tmp files, duplicate unsorted shards, zero-byte outputs)",
+        default=None,
+        help="Enable cleanup of safe-to-delete artifacts (default: enabled)",
+    )
+    parser.add_argument(
+        "--no-cleanup-extraneous",
+        dest="cleanup_extraneous",
+        action="store_false",
+        default=None,
+        help="Disable cleanup of safe-to-delete artifacts",
     )
     parser.add_argument(
         "--cleanup-dry-run",
@@ -1941,8 +1969,17 @@ def main() -> int:
     )
     parser.add_argument(
         "--cleanup-source-archives",
+        dest="cleanup_source_archives",
         action="store_true",
-        help="Also remove source archives (cdx-*.gz, *.tar.gz) for collections that are fully complete",
+        default=None,
+        help="Enable removal of source archives (cdx-*.gz, *.tar.gz) once a collection is fully complete (default: enabled)",
+    )
+    parser.add_argument(
+        "--no-cleanup-source-archives",
+        dest="cleanup_source_archives",
+        action="store_false",
+        default=None,
+        help="Disable removal of source archives",
     )
     parser.add_argument(
         "--yes",
@@ -1979,9 +2016,11 @@ def main() -> int:
 
     # Apply runtime-only args (these are safe defaults if config file doesn't include them).
     config.heartbeat_seconds = int(args.heartbeat_seconds)
-    config.cleanup_extraneous = bool(args.cleanup_extraneous)
+    if getattr(args, "cleanup_extraneous", None) is not None:
+        config.cleanup_extraneous = bool(args.cleanup_extraneous)
     config.cleanup_dry_run = bool(args.cleanup_dry_run)
-    config.cleanup_source_archives = bool(args.cleanup_source_archives)
+    if getattr(args, "cleanup_source_archives", None) is not None:
+        config.cleanup_source_archives = bool(args.cleanup_source_archives)
     config.sort_workers = args.sort_workers
     config.sort_memory_per_worker_gb = float(args.sort_memory_per_worker_gb)
     config.sort_temp_dir = args.sort_temp_dir
@@ -2003,6 +2042,8 @@ def main() -> int:
     else:
         # No CLI filter and no config filter field -> apply default.
         config.collections_filter = _normalize_collections_filter(DEFAULT_COLLECTION_FILTER)
+
+    # Note: cleanup is enabled by default; use --no-cleanup-* flags to disable.
     
     # Log the active configuration
     logger.info("")
