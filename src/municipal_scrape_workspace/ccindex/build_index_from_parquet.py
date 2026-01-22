@@ -6,6 +6,7 @@ Reads parquet metadata only, processes in batches to manage memory.
 
 import argparse
 import sys
+import time
 from pathlib import Path
 from typing import Dict, List, Set
 
@@ -181,6 +182,18 @@ def main() -> int:
     )
     ap.add_argument("--extract-rowgroups", action="store_true", help="Extract row group ranges")
     ap.add_argument("--max-files", type=int, default=None, help="Only process up to N parquet files (for testing)")
+    ap.add_argument(
+        "--db-lock-retries",
+        type=int,
+        default=60,
+        help="Retries when DuckDB file is locked by another process (default: 60)",
+    )
+    ap.add_argument(
+        "--db-lock-sleep-seconds",
+        type=float,
+        default=2.0,
+        help="Sleep between DuckDB lock retries (default: 2.0)",
+    )
     args = ap.parse_args()
     
     parquet_root = Path(args.parquet_root).expanduser().resolve()
@@ -222,7 +235,32 @@ def main() -> int:
     output_db.parent.mkdir(parents=True, exist_ok=True)
     
     # Connect to output database
-    con = duckdb.connect(str(output_db))
+    con = None
+    retries = max(0, int(args.db_lock_retries or 0))
+    sleep_s = max(0.1, float(args.db_lock_sleep_seconds or 0.1))
+    for attempt in range(retries + 1):
+        try:
+            con = duckdb.connect(str(output_db))
+            break
+        except Exception as e:
+            msg = str(e)
+            is_lock = (
+                "Conflicting lock is held" in msg
+                or "Could not set lock on file" in msg
+                or "lock" in msg.lower() and "conflicting" in msg.lower()
+            )
+            if (not is_lock) or (attempt >= retries):
+                raise
+            waited = (attempt + 1) * sleep_s
+            print(
+                f"DuckDB file is locked ({output_db}); retrying in {sleep_s:.1f}s "
+                f"({attempt+1}/{retries})...",
+                file=sys.stderr,
+                flush=True,
+            )
+            time.sleep(sleep_s)
+
+    assert con is not None
     
     # Create tables
     con.execute("""
