@@ -465,7 +465,13 @@ def main() -> int:
                 # Older Python: no mp_context support.
                 return ProcessPoolExecutor(max_workers=max_workers)
 
-        def _run_sort_pass(files: List[Path], pass_workers: int) -> Tuple[int, List[Path], bool]:
+        def _run_sort_pass(
+            files: List[Path],
+            pass_workers: int,
+            *,
+            initial_inflight: int,
+            ramp_step_seconds: float,
+        ) -> Tuple[int, List[Path], bool]:
             """Run one sort pass.
 
             Returns: (num_succeeded, failed_files, pool_crashed)
@@ -482,15 +488,48 @@ def main() -> int:
             pool_crashed = False
 
             with _make_executor(pass_workers) as executor:
-                futures = {executor.submit(sort_and_mark_one, item): item[0] for item in work_items}
-
                 done = 0
                 start_sort = time.monotonic()
                 last_sort_hb = start_sort
-                pending = set(futures.keys())
 
-                while pending:
-                    finished, pending = wait(pending, timeout=heartbeat_seconds, return_when=FIRST_COMPLETED)
+                # Slow-start ramp: begin with a small number of in-flight tasks, then
+                # gradually increase up to pass_workers.
+                inflight_limit = max(1, min(int(initial_inflight), pass_workers))
+                next_ramp = start_sort + max(0.0, float(ramp_step_seconds or 0.0))
+                item_idx = 0
+                futures: dict = {}
+                pending: set = set()
+
+                def _submit_one() -> None:
+                    nonlocal item_idx
+                    if item_idx >= len(work_items):
+                        return
+                    item = work_items[item_idx]
+                    item_idx += 1
+                    fut = executor.submit(sort_and_mark_one, item)
+                    futures[fut] = item[0]
+                    pending.add(fut)
+
+                while item_idx < len(work_items) or pending:
+                    # Ramp up concurrency if requested.
+                    if ramp_step_seconds and ramp_step_seconds > 0:
+                        now = time.monotonic()
+                        while inflight_limit < pass_workers and now >= next_ramp:
+                            inflight_limit += 1
+                            next_ramp += float(ramp_step_seconds)
+
+                    while len(pending) < inflight_limit and item_idx < len(work_items):
+                        _submit_one()
+
+                    if not pending:
+                        continue
+
+                    # Don't sleep past a ramp boundary.
+                    timeout = float(heartbeat_seconds)
+                    if ramp_step_seconds and ramp_step_seconds > 0 and inflight_limit < pass_workers:
+                        timeout = max(0.5, min(timeout, max(0.5, next_ramp - time.monotonic())))
+
+                    finished, _still_pending = wait(pending, timeout=timeout, return_when=FIRST_COMPLETED)
 
                     if not finished:
                         now = time.monotonic()
@@ -498,15 +537,16 @@ def main() -> int:
                             elapsed = now - start_sort
                             print(
                                 f"Heartbeat(sort): {done}/{len(files)} done in {elapsed/60:.1f} min "
-                                f"(ok={ok_local}, fail={len(failed_local)}, pending={len(pending)})",
+                                f"(ok={ok_local}, fail={len(failed_local)}, inflight={len(pending)}/{inflight_limit}, remaining={len(work_items)-item_idx})",
                                 flush=True,
                             )
                             last_sort_hb = now
                         continue
 
                     for fut in finished:
+                        pending.discard(fut)
                         done += 1
-                        src = futures[fut]
+                        src = futures.get(fut, "")
                         try:
                             _src_path, ok, msg, out_path = fut.result()
                             if ok and out_path:
@@ -521,7 +561,7 @@ def main() -> int:
 
                             if _looks_like_pool_crash(e):
                                 pool_crashed = True
-                                # Cancel remaining work; we'll retry with safer settings.
+                                # Cancel remaining work; we'll retry after a backoff.
                                 for pfut in list(pending):
                                     psrc = futures.get(pfut)
                                     if psrc:
@@ -530,38 +570,69 @@ def main() -> int:
                                         pfut.cancel()
                                     except Exception:
                                         pass
-                                pending = set()
+                                pending.clear()
                                 break
 
             # De-dup (pool crash path can add duplicates).
             uniq_failed = sorted({p.resolve() for p in failed_local if p})
             return ok_local, uniq_failed, pool_crashed
 
-        # Pass 1: use requested workers.
-        ok1, failed1, crashed1 = _run_sort_pass(unsorted_files, sort_workers)
+        # Pass 1: run at full requested concurrency.
+        ok1, failed1, crashed1 = _run_sort_pass(
+            unsorted_files,
+            sort_workers,
+            initial_inflight=sort_workers,
+            ramp_step_seconds=0.0,
+        )
         sorted_count += ok1
         failed_count += len(failed1)
 
-        # Pass 2: if the pool crashed (or we had failures) with >1 workers,
-        # retry remaining failures sequentially with spawn (best-effort).
-        if failed1 and sort_workers > 1:
-            print()
-            if crashed1:
-                print(
-                    "⚠️  Detected process-pool crash during sorting. "
-                    "Retrying failed shards with --sort-workers 1 for stability...",
-                    flush=True,
-                )
-            else:
-                print(
-                    "⚠️  Retrying failed shards with --sort-workers 1 for stability...",
-                    flush=True,
-                )
+        # If we detected a pool crash, back off and retry the failures with a slow-start
+        # ramp back up to the original worker count.
+        retries = 0
+        retry_files = failed1
+        while retry_files and crashed1 and sort_workers > 1 and retries < 3:
+            retries += 1
+            backoff = float(30 * (2 ** (retries - 1)))
+            ramp_step = float(10 * retries)
 
-            ok2, failed2, _crashed2 = _run_sort_pass(failed1, 1)
+            print()
+            print(
+                f"⚠️  Detected process-pool crash during sorting. "
+                f"Backing off for {backoff:.0f}s, then retrying with slow-start ramp (to {sort_workers} workers, step={ramp_step:.0f}s)...",
+                flush=True,
+            )
+            time.sleep(backoff)
+
+            ok_r, failed_r, crashed_r = _run_sort_pass(
+                retry_files,
+                sort_workers,
+                initial_inflight=1,
+                ramp_step_seconds=ramp_step,
+            )
+            sorted_count += ok_r
+            # Replace the previously-counted failures with the latest failure set.
+            failed_count -= len(retry_files)
+            failed_count += len(failed_r)
+            retry_files = failed_r
+            crashed1 = crashed_r
+
+        # Last resort: if retries exhausted and we still have failures after pool crashes,
+        # try single-worker to make forward progress.
+        if retry_files and sort_workers > 1:
+            print()
+            print(
+                "⚠️  Retrying remaining failed shards with --sort-workers 1 as a last resort...",
+                flush=True,
+            )
+            ok2, failed2, _crashed2 = _run_sort_pass(
+                retry_files,
+                1,
+                initial_inflight=1,
+                ramp_step_seconds=0.0,
+            )
             sorted_count += ok2
-            # We counted failed1 already; replace that with failed2.
-            failed_count -= len(failed1)
+            failed_count -= len(retry_files)
             failed_count += len(failed2)
 
         print()

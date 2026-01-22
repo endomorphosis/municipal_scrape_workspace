@@ -27,6 +27,7 @@ import sys
 import time
 import urllib.request
 from collections import defaultdict
+from collections import deque
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Dict, List, Optional, Set, Tuple
@@ -161,6 +162,7 @@ class PipelineOrchestrator:
         self.collections: List[str] = []
         self.collection_status: Dict[str, dict] = {}
         self.force_reindex: bool = bool(getattr(config, "force_reindex", False))
+        self._last_subprocess_output_tail: List[str] = []
 
     def _invalidate_duckdb_index(self, collection: str) -> None:
         """Delete per-collection DuckDB index + marker files to force rebuild."""
@@ -192,6 +194,7 @@ class PipelineOrchestrator:
         *,
         cwd: Optional[Path] = None,
         heartbeat_label: str = "",
+        capture_tail_lines: int = 0,
     ) -> int:
         """Run a subprocess while streaming output and printing periodic heartbeats.
 
@@ -204,6 +207,10 @@ class PipelineOrchestrator:
         logger.info(f"{label}Running: {' '.join(cmd)}")
 
         start = time.monotonic()
+
+        tail: deque[str] | None = None
+        if capture_tail_lines and int(capture_tail_lines) > 0:
+            tail = deque(maxlen=int(capture_tail_lines))
 
         proc = subprocess.Popen(
             cmd,
@@ -223,7 +230,10 @@ class PipelineOrchestrator:
                 if proc.poll() is not None:
                     # Drain remaining output
                     for line in proc.stdout:
-                        logger.info(f"{label}{line.rstrip()}" )
+                        s = line.rstrip()
+                        logger.info(f"{label}{s}" )
+                        if tail is not None:
+                            tail.append(s)
                     break
 
                 events = sel.select(timeout=hb_seconds)
@@ -231,7 +241,10 @@ class PipelineOrchestrator:
                     for key, _mask in events:
                         line = key.fileobj.readline()
                         if line:
-                            logger.info(f"{label}{line.rstrip()}" )
+                            s = line.rstrip()
+                            logger.info(f"{label}{s}" )
+                            if tail is not None:
+                                tail.append(s)
                 else:
                     now = time.monotonic()
                     elapsed = now - start
@@ -241,6 +254,12 @@ class PipelineOrchestrator:
                 sel.unregister(proc.stdout)
             except Exception:
                 pass
+
+        # Store output tail for downstream error handling.
+        try:
+            self._last_subprocess_output_tail = list(tail) if tail is not None else []
+        except Exception:
+            self._last_subprocess_output_tail = []
 
         return int(proc.returncode or 0)
 
@@ -966,18 +985,25 @@ class PipelineOrchestrator:
             # Avoid oversubscribing memory and getting workers OOM-killed (which
             # manifests as BrokenProcessPool / "terminated abruptly").
             # Use a conservative fraction of *available system memory* for parallel sorts.
-            # (The config's memory_limit_gb is not a strict cap for overall system usage.)
+            # Only auto-cap when sort_workers was not explicitly set by the user.
             try:
                 avail_gb = float(psutil.virtual_memory().available) / (1024.0**3)
                 # Keep some headroom for Python/Arrow/OS page cache.
                 mem_budget = max(1.0, avail_gb * 0.8)
                 max_parallel_by_mem = max(1, int(mem_budget // max(0.1, sort_mem_gb)))
                 if sort_workers > max_parallel_by_mem:
-                    logger.warning(
-                        f"Reducing sort-workers for {collection} from {sort_workers} to {max_parallel_by_mem} "
-                        f"to fit available RAM (avail≈{avail_gb:.1f}GB, mem_budget≈{mem_budget:.1f}GB, mem_per_sort={sort_mem_gb}GB)"
-                    )
-                    sort_workers = max_parallel_by_mem
+                    if self.config.sort_workers is None:
+                        logger.warning(
+                            f"Reducing sort-workers for {collection} from {sort_workers} to {max_parallel_by_mem} "
+                            f"to fit available RAM (avail≈{avail_gb:.1f}GB, mem_budget≈{mem_budget:.1f}GB, mem_per_sort={sort_mem_gb}GB)"
+                        )
+                        sort_workers = max_parallel_by_mem
+                    else:
+                        logger.warning(
+                            f"sort-workers={sort_workers} may exceed safe parallelism for available RAM "
+                            f"(avail≈{avail_gb:.1f}GB, mem_budget≈{mem_budget:.1f}GB, mem_per_sort={sort_mem_gb}GB). "
+                            "Proceeding because --sort-workers was explicitly set."
+                        )
             except Exception:
                 pass
 
@@ -1400,11 +1426,87 @@ class PipelineOrchestrator:
             "--extract-rowgroups",
         ]
 
+        def _extract_indexing_shard_stem(output_tail: List[str]) -> Optional[str]:
+            # Look for the last emitted "Indexing cdx-00000.gz.sorted.parquet..." line.
+            import re
+
+            pat = re.compile(r"Indexing\s+(cdx-\d{5})\.gz\.sorted\.parquet")
+            for line in reversed(output_tail or []):
+                m = pat.search(line)
+                if m:
+                    return m.group(1)
+            return None
+
+        def _tail_has_corrupt_parquet_signal(output_tail: List[str]) -> bool:
+            s = "\n".join(output_tail or [])
+            # DuckDB raises this for invalid UTF-8 bytes in a VARCHAR column.
+            return "Invalid string encoding found in Parquet file" in s or "not valid UTF8" in s
+
+        def _ensure_sort_temp_dir() -> Path | None:
+            td = self.config.sort_temp_dir
+            if td is None:
+                td = parquet_dir / ".duckdb_sort_tmp"
+            try:
+                td.mkdir(parents=True, exist_ok=True)
+                return td
+            except Exception:
+                return None
+
         try:
-            rc = self._run_subprocess_with_heartbeat(cmd, heartbeat_label=f"index:{collection}")
+            rc = self._run_subprocess_with_heartbeat(
+                cmd,
+                heartbeat_label=f"index:{collection}",
+                capture_tail_lines=500,
+            )
             if rc != 0:
                 logger.error(f"Failed to build index for {collection} (exit {rc})")
-                return False
+
+                # Auto-heal common shard-level corruption cases (e.g. invalid UTF-8 in parquet).
+                tail = list(getattr(self, "_last_subprocess_output_tail", []) or [])
+                if _tail_has_corrupt_parquet_signal(tail):
+                    stem = _extract_indexing_shard_stem(tail)
+                    if stem:
+                        logger.warning(
+                            f"Index build failed due to corrupt parquet signal; attempting shard-level heal for {collection}/{stem}"
+                        )
+
+                        # Remove the likely-bad sorted shard so the sort auto-heal will rebuild it.
+                        try:
+                            (parquet_dir / f"{stem}.gz.sorted.parquet").unlink(missing_ok=True)
+                        except Exception:
+                            pass
+
+                        # Ensure any partial index artifacts are removed before retry.
+                        self._invalidate_duckdb_index(collection)
+
+                        healed = self._autoheal_failed_sorts(
+                            collection=collection,
+                            parquet_dir=parquet_dir,
+                            ccindex_dir=self.config.ccindex_root / collection,
+                            sort_temp_dir=_ensure_sort_temp_dir(),
+                            baseline_sort_mem_gb=float(getattr(self.config, "sort_memory_per_worker_gb", 4.0) or 4.0),
+                        )
+                        if healed:
+                            logger.info(f"Shard heal complete; retrying index build for {collection}")
+                            rc2 = self._run_subprocess_with_heartbeat(
+                                cmd,
+                                heartbeat_label=f"index:{collection}",
+                                capture_tail_lines=500,
+                            )
+                            if rc2 != 0:
+                                logger.error(f"Index rebuild still failing for {collection} (exit {rc2})")
+                                return False
+                            logger.info(f"Built DuckDB index for {collection} after shard heal")
+                        else:
+                            logger.error(f"Shard heal failed; cannot continue indexing for {collection}")
+                            return False
+                    else:
+                        logger.error(
+                            f"Index build failed with corrupt parquet signal but could not identify shard; not auto-healing"
+                        )
+                        return False
+                else:
+                    return False
 
             logger.info(f"Built DuckDB index for {collection}")
             
