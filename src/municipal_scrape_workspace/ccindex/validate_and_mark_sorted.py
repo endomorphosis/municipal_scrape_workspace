@@ -26,6 +26,7 @@ import sys
 import tempfile
 import time
 from concurrent.futures import FIRST_COMPLETED, ProcessPoolExecutor, as_completed, wait
+from concurrent.futures.process import BrokenProcessPool
 from pathlib import Path
 from typing import List, Optional, Tuple
 
@@ -445,45 +446,123 @@ def main() -> int:
         temp_root = Path(args.temp_dir).expanduser().resolve() if args.temp_dir else Path(tempfile.gettempdir())
         temp_root.mkdir(parents=True, exist_ok=True)
 
-        print(f"Sorting {len(unsorted_files)} file(s) with {sort_workers} worker(s)")
-        with ProcessPoolExecutor(max_workers=sort_workers) as executor:
-            work_items = [(str(p), float(args.memory_per_sort), str(temp_root)) for p in unsorted_files]
-            futures = {executor.submit(sort_and_mark_one, item): item[0] for item in work_items}
+        def _looks_like_pool_crash(exc: BaseException) -> bool:
+            msg = str(exc)
+            return (
+                isinstance(exc, BrokenProcessPool)
+                or "BrokenProcessPool" in msg
+                or "terminated abruptly" in msg
+                or "process pool" in msg and "terminated" in msg
+            )
 
-            done = 0
-            start_sort = time.monotonic()
-            last_sort_hb = start_sort
-            pending = set(futures.keys())
+        def _make_executor(max_workers: int) -> ProcessPoolExecutor:
+            """Prefer spawn for DuckDB/Arrow stability; fall back if unsupported."""
 
-            while pending:
-                finished, pending = wait(pending, timeout=heartbeat_seconds, return_when=FIRST_COMPLETED)
+            try:
+                ctx = multiprocessing.get_context("spawn")
+                return ProcessPoolExecutor(max_workers=max_workers, mp_context=ctx)
+            except TypeError:
+                # Older Python: no mp_context support.
+                return ProcessPoolExecutor(max_workers=max_workers)
 
-                if not finished:
-                    now = time.monotonic()
-                    if now - last_sort_hb >= heartbeat_seconds:
-                        elapsed = now - start_sort
-                        print(
-                            f"Heartbeat(sort): {done}/{len(unsorted_files)} done in {elapsed/60:.1f} min "
-                            f"(ok={sorted_count}, fail={failed_count}, pending={len(pending)})",
-                            flush=True,
-                        )
-                        last_sort_hb = now
-                    continue
+        def _run_sort_pass(files: List[Path], pass_workers: int) -> Tuple[int, List[Path], bool]:
+            """Run one sort pass.
 
-                for fut in finished:
-                    done += 1
-                    src = futures[fut]
-                    try:
-                        _src_path, ok, msg, out_path = fut.result()
-                        if ok and out_path:
-                            sorted_count += 1
-                            print(f"✅ [{done}/{len(unsorted_files)}] {Path(src).name} -> {Path(out_path).name}")
-                        else:
-                            failed_count += 1
-                            print(f"❌ [{done}/{len(unsorted_files)}] {Path(src).name}: {msg}")
-                    except Exception as e:
-                        failed_count += 1
-                        print(f"❌ [{done}/{len(unsorted_files)}] {Path(src).name}: exception {e}")
+            Returns: (num_succeeded, failed_files, pool_crashed)
+            """
+
+            if not files:
+                return 0, [], False
+
+            print(f"Sorting {len(files)} file(s) with {pass_workers} worker(s)")
+            work_items = [(str(p), float(args.memory_per_sort), str(temp_root)) for p in files]
+
+            ok_local = 0
+            failed_local: List[Path] = []
+            pool_crashed = False
+
+            with _make_executor(pass_workers) as executor:
+                futures = {executor.submit(sort_and_mark_one, item): item[0] for item in work_items}
+
+                done = 0
+                start_sort = time.monotonic()
+                last_sort_hb = start_sort
+                pending = set(futures.keys())
+
+                while pending:
+                    finished, pending = wait(pending, timeout=heartbeat_seconds, return_when=FIRST_COMPLETED)
+
+                    if not finished:
+                        now = time.monotonic()
+                        if now - last_sort_hb >= heartbeat_seconds:
+                            elapsed = now - start_sort
+                            print(
+                                f"Heartbeat(sort): {done}/{len(files)} done in {elapsed/60:.1f} min "
+                                f"(ok={ok_local}, fail={len(failed_local)}, pending={len(pending)})",
+                                flush=True,
+                            )
+                            last_sort_hb = now
+                        continue
+
+                    for fut in finished:
+                        done += 1
+                        src = futures[fut]
+                        try:
+                            _src_path, ok, msg, out_path = fut.result()
+                            if ok and out_path:
+                                ok_local += 1
+                                print(f"✅ [{done}/{len(files)}] {Path(src).name} -> {Path(out_path).name}")
+                            else:
+                                failed_local.append(Path(src))
+                                print(f"❌ [{done}/{len(files)}] {Path(src).name}: {msg}")
+                        except Exception as e:
+                            failed_local.append(Path(src))
+                            print(f"❌ [{done}/{len(files)}] {Path(src).name}: exception {e}")
+
+                            if _looks_like_pool_crash(e):
+                                pool_crashed = True
+                                # Cancel remaining work; we'll retry with safer settings.
+                                for pfut in list(pending):
+                                    psrc = futures.get(pfut)
+                                    if psrc:
+                                        failed_local.append(Path(psrc))
+                                    try:
+                                        pfut.cancel()
+                                    except Exception:
+                                        pass
+                                pending = set()
+                                break
+
+            # De-dup (pool crash path can add duplicates).
+            uniq_failed = sorted({p.resolve() for p in failed_local if p})
+            return ok_local, uniq_failed, pool_crashed
+
+        # Pass 1: use requested workers.
+        ok1, failed1, crashed1 = _run_sort_pass(unsorted_files, sort_workers)
+        sorted_count += ok1
+        failed_count += len(failed1)
+
+        # Pass 2: if the pool crashed (or we had failures) with >1 workers,
+        # retry remaining failures sequentially with spawn (best-effort).
+        if failed1 and sort_workers > 1:
+            print()
+            if crashed1:
+                print(
+                    "⚠️  Detected process-pool crash during sorting. "
+                    "Retrying failed shards with --sort-workers 1 for stability...",
+                    flush=True,
+                )
+            else:
+                print(
+                    "⚠️  Retrying failed shards with --sort-workers 1 for stability...",
+                    flush=True,
+                )
+
+            ok2, failed2, _crashed2 = _run_sort_pass(failed1, 1)
+            sorted_count += ok2
+            # We counted failed1 already; replace that with failed2.
+            failed_count -= len(failed1)
+            failed_count += len(failed2)
 
         print()
         print("Sorting complete:")

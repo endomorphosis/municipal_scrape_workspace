@@ -963,6 +963,22 @@ class PipelineOrchestrator:
             sort_workers = int(self.config.sort_workers) if self.config.sort_workers else max(1, int(self.config.max_workers))
             sort_mem_gb = float(getattr(self.config, "sort_memory_per_worker_gb", 4.0) or 4.0)
 
+            # Avoid oversubscribing memory and getting workers OOM-killed (which
+            # manifests as BrokenProcessPool / "terminated abruptly").
+            # Use a conservative fraction of the pipeline memory budget for parallel sorts.
+            try:
+                mem_budget = float(getattr(self.config, "memory_limit_gb", 10.0) or 10.0)
+                # Keep some headroom for Python/Arrow/OS page cache.
+                max_parallel_by_mem = max(1, int((mem_budget * 0.8) // max(0.1, sort_mem_gb)))
+                if sort_workers > max_parallel_by_mem:
+                    logger.warning(
+                        f"Reducing sort-workers for {collection} from {sort_workers} to {max_parallel_by_mem} "
+                        f"to fit memory budget (mem_budget={mem_budget}GB, mem_per_sort={sort_mem_gb}GB)"
+                    )
+                    sort_workers = max_parallel_by_mem
+            except Exception:
+                pass
+
             # Prefer a temp dir on the same filesystem as parquet output.
             sort_temp_dir = self.config.sort_temp_dir
             if sort_temp_dir is None:
