@@ -965,15 +965,17 @@ class PipelineOrchestrator:
 
             # Avoid oversubscribing memory and getting workers OOM-killed (which
             # manifests as BrokenProcessPool / "terminated abruptly").
-            # Use a conservative fraction of the pipeline memory budget for parallel sorts.
+            # Use a conservative fraction of *available system memory* for parallel sorts.
+            # (The config's memory_limit_gb is not a strict cap for overall system usage.)
             try:
-                mem_budget = float(getattr(self.config, "memory_limit_gb", 10.0) or 10.0)
+                avail_gb = float(psutil.virtual_memory().available) / (1024.0**3)
                 # Keep some headroom for Python/Arrow/OS page cache.
-                max_parallel_by_mem = max(1, int((mem_budget * 0.8) // max(0.1, sort_mem_gb)))
+                mem_budget = max(1.0, avail_gb * 0.8)
+                max_parallel_by_mem = max(1, int(mem_budget // max(0.1, sort_mem_gb)))
                 if sort_workers > max_parallel_by_mem:
                     logger.warning(
                         f"Reducing sort-workers for {collection} from {sort_workers} to {max_parallel_by_mem} "
-                        f"to fit memory budget (mem_budget={mem_budget}GB, mem_per_sort={sort_mem_gb}GB)"
+                        f"to fit available RAM (avail≈{avail_gb:.1f}GB, mem_budget≈{mem_budget:.1f}GB, mem_per_sort={sort_mem_gb}GB)"
                     )
                     sort_workers = max_parallel_by_mem
             except Exception:
