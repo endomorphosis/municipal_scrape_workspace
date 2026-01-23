@@ -73,3 +73,27 @@ def test_validate_and_sort_import():
     """Test validate_and_sort_parquet imports correctly."""
     from municipal_scrape_workspace.ccindex.validate_and_sort_parquet import main
     assert callable(main)
+
+
+def test_ccindex_api_import():
+    """Test ccindex.api imports correctly."""
+    from municipal_scrape_workspace.ccindex import api
+    assert callable(api.normalize_domain)
+
+
+def test_ccindex_cli_import():
+    """Test unified ccindex CLI imports correctly."""
+    from municipal_scrape_workspace.ccindex.cli import main
+    assert callable(main)
+
+
+def test_ccindex_mcp_server_import():
+    """Test ccindex MCP server module imports correctly."""
+    from municipal_scrape_workspace.ccindex.mcp_server import main
+    assert callable(main)
+
+
+def test_ccindex_dashboard_import():
+    """Test ccindex dashboard module imports correctly."""
+    from municipal_scrape_workspace.ccindex.dashboard import main
+    assert callable(main)

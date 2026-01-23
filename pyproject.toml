@@ -30,6 +30,17 @@ ccindex = [
   "requests>=2.31.0",
 ]
 
+# Optional: MCP server for ccindex (stdio JSON-RPC)
+ccindex-mcp = [
+  "mcp>=1.0.0",
+]
+
+# Optional: local web dashboard for ccindex
+ccindex-dashboard = [
+  "fastapi>=0.110.0",
+  "uvicorn>=0.27.0",
+]
+
 # Development dependencies (testing, linting, formatting)
 dev = [
   "pytest>=7.0",
@@ -43,6 +54,11 @@ dev = [
 [project.scripts]
 # Main CLI
 municipal-scrape = "municipal_scrape_workspace.cli:main"
+
+# Unified CCIndex CLI + MCP server
+ccindex = "municipal_scrape_workspace.ccindex.cli:main"
+ccindex-mcp = "municipal_scrape_workspace.ccindex.mcp_server:main"
+ccindex-dashboard = "municipal_scrape_workspace.ccindex.dashboard:main"
 
 # Common Crawl search tools
 ccindex-search = "municipal_scrape_workspace.ccindex.search_cc_via_meta_indexes:main"

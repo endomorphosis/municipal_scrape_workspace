@@ -4,12 +4,18 @@ import subprocess
 import sys
 from pathlib import Path
 
+import pytest
+
 
 def test_wrapper_imports():
     """Test that a root wrapper can import from src."""
     # We test this by importing the wrapper module directly
     
     root = Path(__file__).parent.parent.parent
+    wrapper = root / "search_cc_domain.py"
+    if not wrapper.exists():
+        pytest.skip(f"Wrapper scripts removed (expected): {wrapper}")
+
     sys.path.insert(0, str(root))
     
     # Import wrapper - should work without error

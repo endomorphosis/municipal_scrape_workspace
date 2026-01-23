@@ -19,6 +19,12 @@ pip install -e .
 
 # 3. (Optional) Install with CC index tools
 pip install -e '.[ccindex]'
+
+# 4. (Optional) Install MCP server for ccindex
+pip install -e '.[ccindex-mcp]'
+
+# 5. (Optional) Install ccindex dashboard
+pip install -e '.[ccindex-dashboard]'
 ```
 
 ## Running Tools
@@ -35,6 +41,17 @@ python -m municipal_scrape_workspace.ccindex.build_cc_pointer_duckdb --help
 ```bash
 ccindex-search-domain --domain example.com
 ccindex-build-pointer --help
+```
+
+#### Method 3: Unified ccindex CLI (Recommended)
+```bash
+# Meta-index search (master -> year -> collection -> parquet)
+ccindex search meta --domain example.com --max-matches 50 --stats
+
+# Delegate to the existing scripts when you want their full flag surface
+ccindex search domain -- --help
+ccindex build pointer -- --help
+ccindex orchestrate -- --help
 ```
 
 **Note**: Root wrapper files have been removed. See [MIGRATION_GUIDE.md](MIGRATION_GUIDE.md) for migration instructions.
@@ -64,6 +81,50 @@ python -m municipal_scrape_workspace.ccindex.search_cc_domain --domain example.c
 
 # Using console script (after pip install)
 ccindex-search-domain --domain example.com
+
+# Using unified ccindex CLI
+ccindex search meta --domain example.com --max-matches 50
+```
+
+### 1b. Use ccindex as a Library (Imports)
+
+```python
+from pathlib import Path
+from municipal_scrape_workspace.ccindex.api import search_domain_via_meta_indexes
+
+result = search_domain_via_meta_indexes(
+  "example.com",
+  parquet_root=Path("/storage/ccindex_parquet"),
+  max_matches=25,
+)
+
+print(result.emitted, result.elapsed_s)
+print(result.records[0])
+```
+
+### 1c. Run ccindex as an MCP Server
+
+```bash
+# after: pip install -e '.[ccindex-mcp]'
+ccindex mcp serve
+
+# (legacy entrypoint; still works)
+# ccindex-mcp
+```
+
+### 1d. Run ccindex Dashboard (Local “Archive-ish” UI)
+
+```bash
+# after: pip install -e '.[ccindex-dashboard]'
+
+# starts BOTH the dashboard and the MCP HTTP JSON-RPC endpoint used by the dashboard
+ccindex mcp start --host 127.0.0.1 --port 8787
+
+# (legacy entrypoint; still works)
+# ccindex-dashboard --host 127.0.0.1 --port 8787
+
+# then open:
+# http://127.0.0.1:8787
 ```
 
 ### 2. Build DuckDB Pointer Index
