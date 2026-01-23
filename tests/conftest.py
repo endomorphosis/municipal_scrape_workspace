@@ -5,6 +5,11 @@ import sys
 from pathlib import Path
 
 
+# Deprecated: repo-root wrapper scripts (e.g., ./search_cc_domain.py).
+# We no longer ship or support these; prefer the packaged CLI entrypoints.
+collect_ignore = ["test_ccindex/test_wrappers.py"]
+
+
 @pytest.fixture
 def repo_root():
     """Return the repository root directory."""
