@@ -20,14 +20,17 @@ def normalize_mcp_endpoint(endpoint: str) -> str:
     if not s:
         raise ValueError("endpoint is required")
 
+    # Support host:port shorthand (urlparse treats this as a scheme).
+    if "://" not in s and not s.startswith("/"):
+        s = "http://" + s
+
     # If the user passed a base URL, default to /mcp.
     parsed = urllib.parse.urlparse(s)
     if not parsed.scheme:
-        # Allow host:port or /mcp-like relative endpoints.
+        # Allow /mcp-like relative endpoints.
         if s.startswith("/"):
             return s if s.endswith("/mcp") else s.rstrip("/") + "/mcp"
-        s = "http://" + s
-        parsed = urllib.parse.urlparse(s)
+        raise ValueError(f"invalid endpoint: {endpoint}")
 
     if parsed.path.endswith("/mcp"):
         return urllib.parse.urlunparse(parsed)

@@ -9,12 +9,7 @@ from pathlib import Path
 
 import pytest
 
-
-# These are opt-in integration tests: they require Playwright + a browser install.
-# Enable with:
-#   RUN_PLAYWRIGHT=1 pytest -q -m integration
-if os.environ.get("RUN_PLAYWRIGHT") != "1":
-    pytest.skip("Playwright tests disabled. Set RUN_PLAYWRIGHT=1 to enable.", allow_module_level=True)
+pytestmark = pytest.mark.integration
 
 
 sync_api = pytest.importorskip("playwright.sync_api")
