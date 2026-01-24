@@ -196,7 +196,7 @@ def test_dashboard_search_reports_result_or_error(dashboard_base_url: str) -> No
         page.goto(f"{dashboard_base_url}/", wait_until="load")
 
         page.fill("#q", "example.com")
-        page.click("text=Search")
+        page.click("#searchForm button[type='submit']")
 
         page.wait_for_function(
             "() => document.querySelector('#status .badge.ok') || document.querySelector('#status .badge.err')",

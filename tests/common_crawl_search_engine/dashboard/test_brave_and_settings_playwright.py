@@ -1,23 +1,11 @@
-import json
-import os
-import socket
-import subprocess
-import sys
-import time
-import urllib.request
-from pathlib import Path
-
 import pytest
 
 
-# Opt-in integration tests: require Playwright + browser install.
-# Enable with:
-#   RUN_PLAYWRIGHT=1 pytest -q -m integration
-if os.environ.get("RUN_PLAYWRIGHT") != "1":
-    pytest.skip("Playwright tests disabled. Set RUN_PLAYWRIGHT=1 to enable.", allow_module_level=True)
-
-
-sync_api = pytest.importorskip("playwright.sync_api")
+pytest.skip(
+    "Deprecated: replaced by real three-panel E2E tests in "
+    "tests/common_crawl_search_engine/dashboard/test_panels_e2e_playwright.py",
+    allow_module_level=True,
+)
 
 
 def _pick_free_port() -> int:

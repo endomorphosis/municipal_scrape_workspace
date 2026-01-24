@@ -220,7 +220,7 @@ def test_search_panel_brave_to_record_e2e(dashboard_real, tmp_path: Path) -> Non
             page.goto(f"{base_url}/discover?parquet_root={parquet_root}", wait_until="domcontentloaded")
 
             page.fill("#dq", query)
-            page.click("text=Search")
+            page.click("#discoverForm button[type='submit']")
 
             page.wait_for_function(
                 "() => document.querySelector('#dstatus .badge.ok') || document.querySelector('#dstatus .badge.err')",
