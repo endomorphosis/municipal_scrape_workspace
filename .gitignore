@@ -8,13 +8,12 @@ dist/
 build/
 .ipynb_checkpoints/
 .DS_Store
-
 # Data/artifacts
 state/
 datasets/
 content_blobs/
 logs/
-
+artifacts/
 ccindex_subset*
 # Ignore test data files but not test source code
 *test*.log

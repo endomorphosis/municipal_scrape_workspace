@@ -104,7 +104,7 @@ def main() -> int:
             decode_gzip_text=bool(decode_gzip_text),
             max_preview_chars=int(max_preview_chars),
         )
-        return {
+        out: Dict[str, Any] = {
             "ok": res.ok,
             "status": res.status,
             "url": res.url,
@@ -115,6 +115,35 @@ def main() -> int:
             "decoded_text_preview": res.decoded_text_preview,
             "error": res.error,
         }
+
+        # Add a structured HTTP extraction when possible (useful for replay/render).
+        if res.ok and res.raw_base64:
+            try:
+                import base64 as _b64
+
+                raw = _b64.b64decode(res.raw_base64)
+                parsed = api.extract_http_from_warc_gzip_member(
+                    raw,
+                    max_body_bytes=int(max_bytes),
+                    max_preview_chars=int(max_preview_chars),
+                    include_body_base64=False,
+                )
+                out["http"] = {
+                    "ok": parsed.ok,
+                    "warc_headers": parsed.warc_headers,
+                    "status": parsed.http_status,
+                    "status_line": parsed.http_status_line,
+                    "headers": parsed.http_headers,
+                    "body_text_preview": parsed.body_text_preview,
+                    "body_is_html": parsed.body_is_html,
+                    "body_mime": parsed.body_mime,
+                    "body_charset": parsed.body_charset,
+                    "error": parsed.error,
+                }
+            except Exception as e:
+                out["http"] = {"ok": False, "error": f"parse_failed: {type(e).__name__}: {e}"}
+
+        return out
 
     @mcp.tool()
     def brave_search_ccindex(

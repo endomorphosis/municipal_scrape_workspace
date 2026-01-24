@@ -16,6 +16,8 @@ import importlib
 import sys
 import time
 from pathlib import Path
+from datetime import datetime
+import subprocess
 
 from common_crawl_search_engine.ccindex import api
 
@@ -170,8 +172,58 @@ def main(argv: list[str] | None = None) -> int:
         help="Master meta-index DuckDB",
     )
     ap_mcp_start.add_argument("--reload", action="store_true", default=False)
+    ap_mcp_start.add_argument(
+        "--detach",
+        action="store_true",
+        default=False,
+        help="Start the dashboard in the background and return immediately",
+    )
+
+    def _spawn_dashboard(*, host: str, port: int, master_db: Path, reload: bool) -> int:
+        logs_dir = Path("logs")
+        state_dir = Path("state")
+        logs_dir.mkdir(parents=True, exist_ok=True)
+        state_dir.mkdir(parents=True, exist_ok=True)
+
+        log_path = logs_dir / f"ccindex_dashboard_{int(port)}.log"
+        pid_path = state_dir / f"ccindex_dashboard_{int(port)}.pid"
+
+        args = [
+            sys.executable,
+            "-m",
+            "common_crawl_search_engine.dashboard",
+            "--host",
+            str(host),
+            "--port",
+            str(int(port)),
+            "--master-db",
+            str(master_db),
+        ]
+        if reload:
+            args.append("--reload")
+
+        with open(log_path, "a", encoding="utf-8") as logf:
+            proc = subprocess.Popen(
+                args,
+                stdout=logf,
+                stderr=subprocess.STDOUT,
+                start_new_session=True,
+            )
+        pid_path.write_text(str(proc.pid) + "\n", encoding="utf-8")
+        sys.stdout.write(f"Started dashboard pid={proc.pid} on http://{host}:{int(port)}\n")
+        sys.stdout.write(f"Log: {log_path}\n")
+        sys.stdout.write(f"PID file: {pid_path}\n")
+        return 0
 
     def _mcp_start(ns: argparse.Namespace) -> int:
+        if ns.detach:
+            return _spawn_dashboard(
+                host=str(ns.host),
+                port=int(ns.port),
+                master_db=Path(ns.master_db),
+                reload=bool(ns.reload),
+            )
+
         from common_crawl_search_engine.dashboard import main as dashboard_main
 
         args2: list[str] = [
@@ -201,6 +253,12 @@ def main(argv: list[str] | None = None) -> int:
         help="Master meta-index DuckDB",
     )
     ap_mcp_restart.add_argument("--reload", action="store_true", default=False)
+    ap_mcp_restart.add_argument(
+        "--detach",
+        action="store_true",
+        default=False,
+        help="Start the dashboard in the background and return immediately",
+    )
     ap_mcp_restart.add_argument(
         "--grace-seconds",
         type=float,
@@ -277,6 +335,14 @@ def main(argv: list[str] | None = None) -> int:
         _kill_listeners(str(ns.host), int(ns.port))
         time.sleep(max(0.0, float(ns.grace_seconds)))
 
+        if ns.detach:
+            return _spawn_dashboard(
+                host=str(ns.host),
+                port=int(ns.port),
+                master_db=Path(ns.master_db),
+                reload=bool(ns.reload),
+            )
+
         from common_crawl_search_engine.dashboard import main as dashboard_main
 
         args2: list[str] = [
@@ -292,6 +358,51 @@ def main(argv: list[str] | None = None) -> int:
         return int(dashboard_main(args2))
 
     ap_mcp_restart.set_defaults(func=_mcp_restart)
+
+    ap_mcp_analyze = sub_mcp.add_parser(
+        "analyze",
+        help="Run automated browser analysis of the dashboard (Playwright) and write screenshots/logs to artifacts/",
+    )
+    ap_mcp_analyze.add_argument("--domain", default="iana.org")
+    ap_mcp_analyze.add_argument("--parquet-root", type=Path, default=Path("/storage/ccindex_parquet"))
+    ap_mcp_analyze.add_argument(
+        "--master-db",
+        type=Path,
+        default=Path("/storage/ccindex_duckdb/cc_pointers_master/cc_master_index.duckdb"),
+    )
+    ap_mcp_analyze.add_argument(
+        "--artifacts-dir",
+        type=Path,
+        default=Path("artifacts/dashboard_analyze"),
+        help="Where to write screenshots and logs (a timestamped subfolder is created)",
+    )
+    ap_mcp_analyze.add_argument("--headed", action="store_true", default=False)
+    ap_mcp_analyze.add_argument("--timeout-s", type=float, default=60.0)
+
+    def _mcp_analyze(ns: argparse.Namespace) -> int:
+        try:
+            from common_crawl_search_engine.dashboard_e2e import run_dashboard_analysis
+        except Exception as e:
+            sys.stderr.write(f"Failed to import dashboard analyzer: {e}\n")
+            return 2
+
+        run_id = datetime.utcnow().strftime("%Y%m%d_%H%M%S")
+        out_dir = Path(ns.artifacts_dir) / run_id
+        out_dir.mkdir(parents=True, exist_ok=True)
+
+        ok = run_dashboard_analysis(
+            output_dir=out_dir,
+            domain=str(ns.domain),
+            parquet_root=Path(ns.parquet_root),
+            master_db=Path(ns.master_db),
+            headless=not bool(ns.headed),
+            timeout_s=float(ns.timeout_s),
+        )
+
+        sys.stdout.write(f"Artifacts: {out_dir}\n")
+        return 0 if ok else 1
+
+    ap_mcp_analyze.set_defaults(func=_mcp_analyze)
 
     ap_mcp_serve = sub_mcp.add_parser("serve", help="Start stdio MCP server (for MCP clients)")
     ap_mcp_serve.set_defaults(func=lambda a: _delegate("common_crawl_search_engine.mcp_server", []))

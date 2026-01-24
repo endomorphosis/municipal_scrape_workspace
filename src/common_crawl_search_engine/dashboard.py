@@ -144,7 +144,7 @@ def _jsonrpc_error(req_id: Any, code: int, message: str, data: Any = None) -> Di
 def create_app(master_db: Path) -> Any:
     try:
         from fastapi import FastAPI, Query, Request
-        from fastapi.responses import HTMLResponse, JSONResponse
+        from fastapi.responses import HTMLResponse, JSONResponse, Response
         from fastapi.staticfiles import StaticFiles
     except Exception as e:  # pragma: no cover
         raise SystemExit(
@@ -163,14 +163,14 @@ def create_app(master_db: Path) -> Any:
 
     # Support multiple layouts during re-org. We serve the first static dir we find.
     static_candidates = [
-      Path(__file__).parent / "static",
-      Path(__file__).parent / "ccsearch" / "static",
-      Path(__file__).parent / "ccindex" / "static",
+        Path(__file__).parent / "static",
+        Path(__file__).parent / "ccsearch" / "static",
+        Path(__file__).parent / "ccindex" / "static",
     ]
     for static_dir in static_candidates:
-      if static_dir.exists():
-        app.mount("/static", StaticFiles(directory=str(static_dir)), name="static")
-        break
+        if static_dir.exists():
+            app.mount("/static", StaticFiles(directory=str(static_dir)), name="static")
+            break
 
     @app.post("/mcp")
     async def mcp(request: Request) -> JSONResponse:
@@ -205,6 +205,8 @@ def create_app(master_db: Path) -> Any:
                         "warc_offset": {"type": "integer"},
                         "warc_length": {"type": "integer"},
                         "prefix": {"type": "string"},
+                      "max_bytes": {"type": "integer"},
+                      "max_preview_chars": {"type": "integer"},
                     },
                     "required": ["warc_filename", "warc_offset", "warc_length"],
                 },
@@ -274,9 +276,9 @@ def create_app(master_db: Path) -> Any:
                     warc_offset=int(tool_args.get("warc_offset") or 0),
                     warc_length=int(tool_args.get("warc_length") or 0),
                     prefix=str(tool_args.get("prefix") or "https://data.commoncrawl.org/"),
-                    max_bytes=2_000_000,
+                    max_bytes=int(tool_args.get("max_bytes") or 2_000_000),
                     decode_gzip_text=True,
-                    max_preview_chars=80_000,
+                    max_preview_chars=int(tool_args.get("max_preview_chars") or 80_000),
                 )
                 out = {
                     "ok": fetch.ok,
@@ -288,6 +290,36 @@ def create_app(master_db: Path) -> Any:
                     "decoded_text_preview": fetch.decoded_text_preview,
                     "error": fetch.error,
                 }
+
+                # Prefer a structured extraction of the HTTP payload.
+                if fetch.ok and fetch.raw_base64:
+                    try:
+                        import base64 as _b64
+
+                        raw = _b64.b64decode(fetch.raw_base64)
+                        parsed = api.extract_http_from_warc_gzip_member(
+                            raw,
+                            max_body_bytes=int(tool_args.get("max_bytes") or 2_000_000),
+                            max_preview_chars=int(tool_args.get("max_preview_chars") or 80_000),
+                            include_body_base64=False,
+                        )
+                        out["http"] = {
+                            "ok": parsed.ok,
+                            "warc_headers": parsed.warc_headers,
+                            "status": parsed.http_status,
+                            "status_line": parsed.http_status_line,
+                            "headers": parsed.http_headers,
+                            "body_text_preview": parsed.body_text_preview,
+                            "body_is_html": parsed.body_is_html,
+                            "body_mime": parsed.body_mime,
+                            "body_charset": parsed.body_charset,
+                            "error": parsed.error,
+                        }
+                    except Exception as e:
+                        out["http"] = {
+                            "ok": False,
+                            "error": f"parse_failed: {type(e).__name__}: {e}",
+                        }
             elif tool_name == "list_collections":
                 year = tool_args.get("year")
                 cols = api.list_collections(master_db=Path(master_db), year=str(year) if year else None)
@@ -390,7 +422,7 @@ def create_app(master_db: Path) -> Any:
       const warc = esc(r.warc_filename || '');
       const off = esc(r.warc_offset ?? '');
       const len = esc(r.warc_length ?? '');
-      const recHref = `/record?warc_filename=${{encodeURIComponent(r.warc_filename||'')}}&warc_offset=${{encodeURIComponent(r.warc_offset||'')}}&warc_length=${{encodeURIComponent(r.warc_length||'')}}`;
+      const recHref = `/record?warc_filename=${{encodeURIComponent(r.warc_filename||'')}}&warc_offset=${{encodeURIComponent(r.warc_offset||'')}}&warc_length=${{encodeURIComponent(r.warc_length||'')}}&parquet_root=${{encodeURIComponent(document.getElementById('parquet_root').value || '')}}`;
       return `
         <tr>
           <td class='small'>${{idx+1}}</td>
@@ -467,18 +499,55 @@ def create_app(master_db: Path) -> Any:
         )
         return _layout("ccindex", body)
 
+    @app.get("/download_record")
+    def download_record(
+        warc_filename: str,
+        warc_offset: int,
+        warc_length: int,
+        prefix: str = "https://data.commoncrawl.org/",
+        max_bytes: int = 20_000_000,
+    ) -> Response:
+        """Download the exact record byte-range as a file.
+
+        This is more practical than downloading the full multi-GB WARC.
+        """
+
+        fetch = api.fetch_warc_record_range(
+            warc_filename=str(warc_filename),
+            warc_offset=int(warc_offset),
+            warc_length=int(warc_length),
+            prefix=str(prefix),
+            max_bytes=int(max_bytes),
+            decode_gzip_text=False,
+            max_preview_chars=0,
+        )
+        if not fetch.ok or not fetch.raw_base64:
+            msg = fetch.error or "failed to fetch record"
+            return Response(content=msg, status_code=400, media_type="text/plain")
+
+        import base64
+
+        data = base64.b64decode(fetch.raw_base64)
+        safe_warc = Path(str(warc_filename)).name
+        fn = f"record_{safe_warc}_off{int(warc_offset)}_len{int(warc_length)}.warc.gz"
+        headers = {"Content-Disposition": f"attachment; filename={fn}"}
+        return Response(content=data, media_type="application/gzip", headers=headers)
+
     @app.get("/record", response_class=HTMLResponse)
     def record(
         warc_filename: str,
         warc_offset: int,
         warc_length: int,
         prefix: str = "https://data.commoncrawl.org/",
+      parquet_root: str = "/storage/ccindex_parquet",
     ) -> str:
         pointer = {
             "warc_filename": warc_filename,
             "warc_offset": int(warc_offset),
             "warc_length": int(warc_length),
             "prefix": prefix,
+        "max_bytes": 2_000_000,
+        "max_preview_chars": 80_000,
         }
 
         head = f"""
@@ -500,7 +569,15 @@ def create_app(master_db: Path) -> Any:
             "<div id='recBody' class='card' style='margin-top: 14px; display:none;'>"
             "<div class='row' style='align-items:center; justify-content: space-between;'>"
             "  <div class='small'>Best-effort render (scripts disabled)</div>"
-            "  <a class='code' id='dlLink' href='#' target='_blank' rel='noreferrer'>download range</a>"
+            "  <div style='display:flex; gap:12px; align-items:center;'>"
+            "    <a class='code' id='dlRangeLink' href='#' target='_blank' rel='noreferrer'>download record range</a>"
+            "    <a class='code' id='dlWarcLink' href='#' target='_blank' rel='noreferrer'>open full WARC</a>"
+            "  </div>"
+            "</div>"
+            "<div class='row' style='margin-top: 10px;'>"
+            "  <div class='field'><label>max_bytes</label><input id='max_bytes' type='number' min='1' step='1' value='2000000'></div>"
+            "  <div class='field'><label>max_preview_chars</label><input id='max_preview_chars' type='number' min='0' step='1' value='80000'></div>"
+            "  <div class='field'><button id='refetchBtn' type='button'>Re-fetch</button></div>"
             "</div>"
             "<div style='margin-top: 10px; border: 1px solid rgba(34, 48, 74, 0.7); border-radius: 10px; overflow:hidden;'>"
             "  <iframe id='recFrame' sandbox='' style='width: 100%; height: 70vh; border: 0; background: white;'></iframe>"
@@ -514,11 +591,16 @@ def create_app(master_db: Path) -> Any:
   import {{ ccindexMcp }} from '/static/ccindex-mcp-sdk.js';
 
   const pointer = {json.dumps(pointer)};
+  const parquetRoot = {json.dumps(str(parquet_root))};
   const statusEl = document.getElementById('recStatus');
   const bodyEl = document.getElementById('recBody');
   const previewEl = document.getElementById('recPreview');
   const frameEl = document.getElementById('recFrame');
-  const dlLinkEl = document.getElementById('dlLink');
+  const dlRangeLinkEl = document.getElementById('dlRangeLink');
+  const dlWarcLinkEl = document.getElementById('dlWarcLink');
+  const maxBytesEl = document.getElementById('max_bytes');
+  const maxPreviewEl = document.getElementById('max_preview_chars');
+  const refetchBtn = document.getElementById('refetchBtn');
 
   function esc(s) {{
     return String(s ?? '').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;');
@@ -526,6 +608,8 @@ def create_app(master_db: Path) -> Any:
 
   async function run() {{
     try {{
+      pointer.max_bytes = parseInt(maxBytesEl.value || '2000000', 10);
+      pointer.max_preview_chars = parseInt(maxPreviewEl.value || '80000', 10);
       const res = await ccindexMcp.callTool('fetch_warc_record', pointer);
       if (!res.ok) {{
         statusEl.innerHTML = `<span class='badge err'>error</span> <span class='code'>${{esc(res.error || 'unknown')}}</span>`;
@@ -545,18 +629,59 @@ def create_app(master_db: Path) -> Any:
       previewEl.textContent = preview;
 
       // Best-effort HTML extraction:
-      // WARC headers + HTTP response headers + body. We try to locate the HTTP
-      // response, then split headers/body on the first blank line.
+      // Prefer server-parsed HTTP payload, fall back to a string-slice heuristic.
       let htmlText = '';
-      const httpIdx = preview.indexOf('HTTP/');
-      if (httpIdx >= 0) {{
-        const httpPart = preview.slice(httpIdx);
-        const sep = httpPart.indexOf("\\r\\n\\r\\n");
-        if (sep >= 0) {{
-          htmlText = httpPart.slice(sep + 4);
-        }} else {{
-          const sep2 = httpPart.indexOf("\\n\\n");
-          if (sep2 >= 0) htmlText = httpPart.slice(sep2 + 2);
+      let redirectLoc = '';
+
+      if (res.http && res.http.ok) {{
+        const bodyText = res.http.body_text_preview || '';
+        if (res.http.body_is_html) {{
+          htmlText = bodyText;
+        }}
+        const hdrs = res.http.headers || {{}};
+        redirectLoc = String(hdrs.location || hdrs.Location || '').trim();
+      }} else {{
+        // WARC headers + HTTP response headers + body. We try to locate the HTTP
+        // response, then split headers/body on the first blank line.
+        const httpIdx = preview.indexOf('HTTP/');
+        if (httpIdx >= 0) {{
+          const httpPart = preview.slice(httpIdx);
+          const sep = httpPart.indexOf("\\r\\n\\r\\n");
+          if (sep >= 0) {{
+            htmlText = httpPart.slice(sep + 4);
+          }} else {{
+            const sep2 = httpPart.indexOf("\\n\\n");
+            if (sep2 >= 0) htmlText = httpPart.slice(sep2 + 2);
+          }}
+
+          const m = httpPart.match(/^Location:\\s*(.+)$/im);
+          if (m && m[1]) redirectLoc = String(m[1] || '').trim();
+        }}
+      }}
+
+      // If this was a redirect, offer a helper to follow it.
+      if (redirectLoc) {{
+        const followHref = `/?q=${{encodeURIComponent(redirectLoc)}}&parquet_root=${{encodeURIComponent(parquetRoot)}}&max_matches=25`;
+        statusEl.innerHTML += `<div class='small' style='margin-top:8px;'>redirect location: <a class='code' href='${{followHref}}'>${{esc(redirectLoc)}}</a> <button id='followBtn' type='button' style='margin-left:10px;'>follow in CCIndex</button></div>`;
+        const btn = document.getElementById('followBtn');
+        if (btn) {{
+          btn.addEventListener('click', async () => {{
+            try {{
+              statusEl.innerHTML = "<div class='small'>Following redirect via CCIndex…</div>";
+              const sres = await ccindexMcp.callTool('search_domain_meta', {{
+                domain: redirectLoc,
+                year: null,
+                max_matches: 25,
+                parquet_root: parquetRoot,
+              }});
+              const rec = (sres.records || [])[0];
+              if (!rec) throw new Error('No CCIndex records for redirect target');
+              const href = `/record?warc_filename=${{encodeURIComponent(rec.warc_filename||'')}}&warc_offset=${{encodeURIComponent(rec.warc_offset||'')}}&warc_length=${{encodeURIComponent(rec.warc_length||'')}}&parquet_root=${{encodeURIComponent(parquetRoot)}}`;
+              window.location.href = href;
+            }} catch (e) {{
+              statusEl.innerHTML = `<span class='badge err'>error</span> <span class='code'>${{esc(e.message || e)}}</span>`;
+            }}
+          }});
         }}
       }}
 
@@ -568,10 +693,10 @@ def create_app(master_db: Path) -> Any:
         frameEl.srcdoc = "<pre style='white-space:pre-wrap;word-break:break-word;padding:12px;'>No HTML detected in decoded preview.\\n\\nThis record may be non-HTML or the preview may be truncated.</pre>";
       }}
 
-      // Provide a direct download link for the range fetch.
-      if (res.url) {{
-        dlLinkEl.href = res.url;
-      }}
+      // Download helpers.
+      dlWarcLinkEl.href = (res.url || '#');
+      const rangeHref = `/download_record?warc_filename=${{encodeURIComponent(pointer.warc_filename)}}&warc_offset=${{encodeURIComponent(pointer.warc_offset)}}&warc_length=${{encodeURIComponent(pointer.warc_length)}}&prefix=${{encodeURIComponent(pointer.prefix)}}&max_bytes=${{encodeURIComponent(pointer.max_bytes)}}`;
+      dlRangeLinkEl.href = rangeHref;
 
       bodyEl.style.display = 'block';
     }} catch (e) {{
@@ -580,6 +705,7 @@ def create_app(master_db: Path) -> Any:
     }}
   }}
 
+  refetchBtn.addEventListener('click', () => run());
   run();
 </script>
 """

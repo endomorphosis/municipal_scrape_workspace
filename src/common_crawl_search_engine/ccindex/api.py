@@ -130,6 +130,21 @@ class WarcFetchResult:
 
 
 @dataclass(frozen=True)
+class WarcHttpExtractResult:
+    ok: bool
+    warc_headers: Dict[str, str]
+    http_status: Optional[int]
+    http_status_line: Optional[str]
+    http_headers: Dict[str, str]
+    body_base64: Optional[str]
+    body_text_preview: Optional[str]
+    body_is_html: bool
+    body_mime: Optional[str]
+    body_charset: Optional[str]
+    error: Optional[str]
+
+
+@dataclass(frozen=True)
 class BraveWebResult:
     title: str
     url: str
@@ -654,6 +669,359 @@ def warc_download_url(warc_filename_or_url: str, *, prefix: str = "https://data.
     return pref + warc.lstrip("/")
 
 
+def _default_warc_cache_dir() -> Optional[Path]:
+    """Return a default cache dir for fetched WARC byte ranges.
+
+    Disable by setting env var CCINDEX_WARC_CACHE_DIR='' (empty).
+    """
+
+    env = os.environ.get("CCINDEX_WARC_CACHE_DIR")
+    if env is not None and str(env).strip() == "":
+        return None
+    if env:
+        return Path(env)
+    return Path("state") / "warc_cache"
+
+
+def _sha256_hex(s: str) -> str:
+    return hashlib.sha256(s.encode("utf-8")).hexdigest()
+
+
+def _cache_path_for_range(cache_dir: Path, *, url: str, start: int, end_inclusive: int) -> Path:
+    key = _sha256_hex(f"range:{url}|{int(start)}|{int(end_inclusive)}")
+    return cache_dir / f"{key}.bin"
+
+
+def _maybe_prune_cache(cache_dir: Path, *, max_cache_bytes: int) -> None:
+    try:
+        limit = int(max_cache_bytes)
+    except Exception:
+        return
+    if limit <= 0:
+        return
+
+    try:
+        paths = [p for p in cache_dir.glob("*.bin") if p.is_file()]
+        total = 0
+        infos: List[Tuple[float, int, Path]] = []
+        for p in paths:
+            st = p.stat()
+            total += int(st.st_size)
+            infos.append((float(st.st_mtime), int(st.st_size), p))
+        if total <= limit:
+            return
+
+        # Delete oldest files first.
+        infos.sort(key=lambda t: t[0])
+        for _, sz, p in infos:
+            try:
+                p.unlink()
+                total -= int(sz)
+            except Exception:
+                continue
+            if total <= limit:
+                break
+    except Exception:
+        return
+
+
+def _http_range_get_cached(
+    *,
+    url: str,
+    start: int,
+    end_inclusive: int,
+    timeout_s: float,
+    cache_dir: Optional[Path],
+    cache_max_bytes: int,
+    cache_max_item_bytes: int,
+) -> Tuple[Optional[int], Optional[bytes], Optional[str]]:
+    """Return (status, data, error). Uses a best-effort on-disk cache."""
+
+    bytes_requested = int(end_inclusive) - int(start) + 1
+
+    cache_path: Optional[Path] = None
+    if cache_dir is not None:
+        try:
+            cache_dir = Path(cache_dir)
+            cache_dir.mkdir(parents=True, exist_ok=True)
+            if bytes_requested > 0 and bytes_requested <= int(cache_max_item_bytes):
+                cache_path = _cache_path_for_range(cache_dir, url=url, start=int(start), end_inclusive=int(end_inclusive))
+                if cache_path.exists() and cache_path.is_file():
+                    try:
+                        if cache_path.stat().st_size == bytes_requested:
+                            return 206, cache_path.read_bytes(), None
+                    except Exception:
+                        pass
+        except Exception:
+            cache_path = None
+
+    req = urllib.request.Request(url, method="GET")
+    req.add_header("Range", f"bytes={int(start)}-{int(end_inclusive)}")
+
+    try:
+        with urllib.request.urlopen(req, timeout=float(timeout_s)) as resp:
+            status = int(getattr(resp, "status", 200))
+            if status != 206:
+                # Don't read the body here; if the server ignores Range it may be
+                # a multi-GB response.
+                return status, None, f"expected 206 for range GET, got {status}"
+            data = resp.read()
+
+        if cache_path is not None and data is not None:
+            try:
+                tmp = cache_path.with_suffix(cache_path.suffix + ".part")
+                tmp.write_bytes(data)
+                if tmp.stat().st_size == bytes_requested:
+                    tmp.replace(cache_path)
+                    _maybe_prune_cache(cache_path.parent, max_cache_bytes=int(cache_max_bytes))
+                else:
+                    try:
+                        tmp.unlink()
+                    except Exception:
+                        pass
+            except Exception:
+                pass
+
+        return status, data, None
+    except urllib.error.HTTPError as e:
+        code = int(getattr(e, "code", 0)) if getattr(e, "code", None) is not None else None
+        return code, None, f"HTTPError {getattr(e, 'code', '?')}"
+    except urllib.error.URLError as e:
+        return None, None, f"URLError {getattr(e, 'reason', e)}"
+    except Exception as e:
+        return None, None, f"{type(e).__name__}: {e}"
+
+
+def _parse_headers_block(text: str) -> Dict[str, str]:
+    out: Dict[str, str] = {}
+    lines = [ln.strip("\r") for ln in text.splitlines() if ln.strip("\r")]
+    if not lines:
+        return out
+    out["_first_line"] = lines[0]
+    for ln in lines[1:]:
+        if ":" not in ln:
+            continue
+        k, v = ln.split(":", 1)
+        out[k.strip().lower()] = v.strip()
+    return out
+
+
+_CT_CHARSET_RE = re.compile(r"charset=([^;\s]+)", re.IGNORECASE)
+
+
+def _decode_chunked(body: bytes, *, max_output_bytes: int) -> Tuple[bytes, Optional[str]]:
+    """Best-effort HTTP/1.1 chunked transfer decoding."""
+
+    out = bytearray()
+    i = 0
+    n = len(body)
+    try:
+        while i < n:
+            j = body.find(b"\n", i)
+            if j == -1:
+                return bytes(out), "chunked: missing size line"
+            line = body[i : j + 1]
+            i = j + 1
+            line = line.strip()
+            if b";" in line:
+                line = line.split(b";", 1)[0]
+            if not line:
+                continue
+            size = int(line, 16)
+            if size == 0:
+                break
+            if i + size > n:
+                return bytes(out), "chunked: truncated"
+            out.extend(body[i : i + size])
+            if len(out) > int(max_output_bytes):
+                out = out[: int(max_output_bytes)]
+                return bytes(out), "chunked: output truncated"
+            i += size
+            # Skip CRLF after chunk
+            if i < n and body[i : i + 2] == b"\r\n":
+                i += 2
+            elif i < n and body[i : i + 1] == b"\n":
+                i += 1
+        return bytes(out), None
+    except Exception as e:
+        return bytes(out), f"chunked decode failed: {type(e).__name__}: {e}"
+
+
+def extract_http_from_warc_gzip_member(
+    gz_member_bytes: bytes,
+    *,
+    max_decompressed_bytes: int = 10_000_000,
+    max_body_bytes: int = 2_000_000,
+    max_preview_chars: int = 80_000,
+    include_body_base64: bool = False,
+) -> WarcHttpExtractResult:
+    """Extract HTTP response headers/body from a gzip-member WARC record."""
+
+    if not gz_member_bytes:
+        return WarcHttpExtractResult(
+            ok=False,
+            warc_headers={},
+            http_status=None,
+            http_status_line=None,
+            http_headers={},
+            body_base64=None,
+            body_text_preview=None,
+            body_is_html=False,
+            body_mime=None,
+            body_charset=None,
+            error="empty input",
+        )
+
+    try:
+        decompressed = gzip.decompress(gz_member_bytes)
+        if int(max_decompressed_bytes) > 0 and len(decompressed) > int(max_decompressed_bytes):
+            decompressed = decompressed[: int(max_decompressed_bytes)]
+    except Exception as e:
+        return WarcHttpExtractResult(
+            ok=False,
+            warc_headers={},
+            http_status=None,
+            http_status_line=None,
+            http_headers={},
+            body_base64=None,
+            body_text_preview=None,
+            body_is_html=False,
+            body_mime=None,
+            body_charset=None,
+            error=f"gzip_decompress_failed: {type(e).__name__}: {e}",
+        )
+
+    # Split WARC headers from payload.
+    sep = decompressed.find(b"\r\n\r\n")
+    sep_len = 4
+    if sep == -1:
+        sep = decompressed.find(b"\n\n")
+        sep_len = 2
+    if sep == -1:
+        return WarcHttpExtractResult(
+            ok=False,
+            warc_headers={},
+            http_status=None,
+            http_status_line=None,
+            http_headers={},
+            body_base64=None,
+            body_text_preview=None,
+            body_is_html=False,
+            body_mime=None,
+            body_charset=None,
+            error="missing_warc_header_separator",
+        )
+
+    warc_hdr_text = decompressed[:sep].decode("utf-8", errors="replace")
+    warc_headers = _parse_headers_block(warc_hdr_text)
+
+    payload = decompressed[sep + sep_len :]
+    http_idx = payload.find(b"HTTP/")
+    if http_idx == -1:
+        # Not an HTTP response record.
+        raw = payload[: int(max_body_bytes)] if payload else b""
+        prev = raw.decode("utf-8", errors="replace") if raw else ""
+        if prev and len(prev) > int(max_preview_chars):
+            prev = prev[: int(max_preview_chars)]
+        return WarcHttpExtractResult(
+            ok=True,
+            warc_headers=warc_headers,
+            http_status=None,
+            http_status_line=None,
+            http_headers={},
+            body_base64=base64.b64encode(raw).decode("ascii") if (include_body_base64 and raw) else None,
+            body_text_preview=prev or None,
+            body_is_html=False,
+            body_mime=None,
+            body_charset=None,
+            error="no_http_payload",
+        )
+
+    http_part = payload[http_idx:]
+    http_sep = http_part.find(b"\r\n\r\n")
+    http_sep_len = 4
+    if http_sep == -1:
+        http_sep = http_part.find(b"\n\n")
+        http_sep_len = 2
+    if http_sep == -1:
+        return WarcHttpExtractResult(
+            ok=False,
+            warc_headers=warc_headers,
+            http_status=None,
+            http_status_line=None,
+            http_headers={},
+            body_base64=None,
+            body_text_preview=None,
+            body_is_html=False,
+            body_mime=None,
+            body_charset=None,
+            error="missing_http_header_separator",
+        )
+
+    http_hdr_text = http_part[:http_sep].decode("iso-8859-1", errors="replace")
+    http_headers_all = _parse_headers_block(http_hdr_text)
+
+    status_line = http_headers_all.get("_first_line")
+    status_code: Optional[int] = None
+    if status_line:
+        parts = status_line.split()
+        if len(parts) >= 2:
+            try:
+                status_code = int(parts[1])
+            except Exception:
+                status_code = None
+
+    body = http_part[http_sep + http_sep_len :]
+    if int(max_body_bytes) > 0 and len(body) > int(max_body_bytes):
+        body = body[: int(max_body_bytes)]
+
+    te = http_headers_all.get("transfer-encoding", "")
+    if te and "chunked" in te.lower():
+        body2, _ = _decode_chunked(body, max_output_bytes=int(max_body_bytes))
+        body = body2
+
+    mime = None
+    charset = None
+    ct = http_headers_all.get("content-type")
+    if ct:
+        mime = ct.split(";", 1)[0].strip().lower() or None
+        m = _CT_CHARSET_RE.search(ct)
+        if m:
+            charset = m.group(1).strip("\"'").lower()
+
+    body_is_html = bool(mime == "text/html" or (mime and mime.endswith("+html")))
+    if not body_is_html and body[:64].lstrip().lower().startswith((b"<!doctype html", b"<html")):
+        body_is_html = True
+
+    body_text_preview: Optional[str] = None
+    if body:
+        enc = charset or "utf-8"
+        try:
+            body_text_preview = body.decode(enc, errors="replace")
+        except Exception:
+            body_text_preview = body.decode("utf-8", errors="replace")
+        if body_text_preview and len(body_text_preview) > int(max_preview_chars):
+            body_text_preview = body_text_preview[: int(max_preview_chars)]
+
+    body_b64 = base64.b64encode(body).decode("ascii") if (include_body_base64 and body) else None
+
+    http_headers = {k: v for k, v in http_headers_all.items() if k != "_first_line"}
+
+    return WarcHttpExtractResult(
+        ok=True,
+        warc_headers=warc_headers,
+        http_status=status_code,
+        http_status_line=status_line,
+        http_headers=http_headers,
+        body_base64=body_b64,
+        body_text_preview=body_text_preview,
+        body_is_html=body_is_html,
+        body_mime=mime,
+        body_charset=charset,
+        error=None,
+    )
+
+
 def fetch_warc_record_range(
     *,
     warc_filename: str,
@@ -664,6 +1032,9 @@ def fetch_warc_record_range(
     max_bytes: int = 2_000_000,
     decode_gzip_text: bool = True,
     max_preview_chars: int = 40_000,
+    cache_dir: Optional[Path] = None,
+    cache_max_bytes: int = 2_000_000_000,
+    cache_max_item_bytes: int = 25_000_000,
 ) -> WarcFetchResult:
     """Fetch the exact byte range for a WARC record pointer.
 
@@ -694,83 +1065,50 @@ def fetch_warc_record_range(
     end_inclusive = start + length - 1
     url = warc_download_url(warc_filename, prefix=prefix)
 
-    req = urllib.request.Request(url, method="GET")
-    req.add_header("Range", f"bytes={start}-{end_inclusive}")
+    if cache_dir is None:
+        cache_dir = _default_warc_cache_dir()
 
-    try:
-        with urllib.request.urlopen(req, timeout=float(timeout_s)) as resp:
-            status = int(getattr(resp, "status", 200))
-            if status != 206:
-                return WarcFetchResult(
-                    ok=False,
-                    status=status,
-                    url=url,
-                    bytes_requested=length,
-                    bytes_returned=0,
-                    sha256=None,
-                    raw_base64=None,
-                    decoded_text_preview=None,
-                    error=f"expected 206 for range GET, got {status}",
-                )
-
-            data = resp.read()
-
-        h = hashlib.sha256(data).hexdigest() if data else None
-        raw_b64 = base64.b64encode(data).decode("ascii") if data else None
-
-        preview: Optional[str] = None
-        if decode_gzip_text and data:
-            try:
-                decompressed = gzip.decompress(data)
-                preview = decompressed[: max(0, int(max_preview_chars))].decode("utf-8", errors="replace")
-            except Exception:
-                preview = None
-
-        return WarcFetchResult(
-            ok=True,
-            status=status,
-            url=url,
-            bytes_requested=length,
-            bytes_returned=len(data) if data else 0,
-            sha256=h,
-            raw_base64=raw_b64,
-            decoded_text_preview=preview,
-            error=None,
-        )
-
-    except urllib.error.HTTPError as e:
+    status, data, err = _http_range_get_cached(
+        url=url,
+        start=start,
+        end_inclusive=end_inclusive,
+        timeout_s=float(timeout_s),
+        cache_dir=cache_dir,
+        cache_max_bytes=int(cache_max_bytes),
+        cache_max_item_bytes=int(cache_max_item_bytes),
+    )
+    if data is None or err is not None:
         return WarcFetchResult(
             ok=False,
-            status=int(getattr(e, "code", 0)) if getattr(e, "code", None) is not None else None,
+            status=int(status) if status is not None else None,
             url=url,
             bytes_requested=length,
             bytes_returned=0,
             sha256=None,
             raw_base64=None,
             decoded_text_preview=None,
-            error=f"HTTPError {getattr(e, 'code', '?')}",
+            error=err or "fetch_failed",
         )
-    except urllib.error.URLError as e:
-        return WarcFetchResult(
-            ok=False,
-            status=None,
-            url=url,
-            bytes_requested=length,
-            bytes_returned=0,
-            sha256=None,
-            raw_base64=None,
-            decoded_text_preview=None,
-            error=f"URLError {getattr(e, 'reason', e)}",
-        )
-    except Exception as e:
-        return WarcFetchResult(
-            ok=False,
-            status=None,
-            url=url,
-            bytes_requested=length,
-            bytes_returned=0,
-            sha256=None,
-            raw_base64=None,
-            decoded_text_preview=None,
-            error=f"{type(e).__name__}: {e}",
-        )
+
+    h = hashlib.sha256(data).hexdigest() if data else None
+    raw_b64 = base64.b64encode(data).decode("ascii") if data else None
+
+    preview: Optional[str] = None
+    if decode_gzip_text and data:
+        try:
+            decompressed = gzip.decompress(data)
+            preview = decompressed[: max(0, int(max_preview_chars))].decode("utf-8", errors="replace")
+        except Exception:
+            preview = None
+
+    return WarcFetchResult(
+        ok=True,
+        status=int(status) if status is not None else None,
+        url=url,
+        bytes_requested=length,
+        bytes_returned=len(data) if data else 0,
+        sha256=h,
+        raw_base64=raw_b64,
+        decoded_text_preview=preview,
+        error=None,
+    )
