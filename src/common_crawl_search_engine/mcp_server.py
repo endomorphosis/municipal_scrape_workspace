@@ -157,6 +157,7 @@ def main() -> int:
     def brave_search_ccindex(
         query: str,
         count: int = 8,
+        offset: int = 0,
         parquet_root: str = "/storage/ccindex_parquet",
         master_db: str = "/storage/ccindex_duckdb/cc_pointers_master/cc_master_index.duckdb",
         year: Optional[str] = None,
@@ -164,15 +165,34 @@ def main() -> int:
     ) -> Dict[str, Any]:
         """Brave web search + resolve result URLs to CCIndex pointers."""
 
+        # Keep default count within Brave's supported max to avoid 422.
+        try:
+            from common_crawl_search_engine.ccsearch.brave_search import brave_web_search_max_count
+
+            brave_max = int(brave_web_search_max_count())
+        except Exception:
+            brave_max = 20
+        brave_max = max(1, int(brave_max))
+        if count is None:
+            count = brave_max
+
         res = api.brave_search_ccindex(
             str(query),
             count=int(count),
+            offset=int(offset or 0),
             parquet_root=Path(parquet_root).expanduser().resolve(),
             master_db=_maybe_path(master_db),
             year=str(year) if year else None,
             api_key=str(api_key) if api_key else None,
         )
-        return {"query": res.query, "elapsed_s": res.elapsed_s, "results": res.results}
+        return {
+            "query": res.query,
+            "count": res.count,
+            "offset": res.offset,
+            "total_results": res.total_results,
+            "elapsed_s": res.elapsed_s,
+            "results": res.results,
+        }
 
     @mcp.tool()
     def brave_cache_stats() -> Dict[str, Any]:

@@ -154,6 +154,9 @@ class BraveWebResult:
 @dataclass(frozen=True)
 class BraveSearchResolvedResult:
     query: str
+    count: int
+    offset: int
+    total_results: Optional[int]
     results: List[Dict[str, object]]
     elapsed_s: float
 
@@ -628,6 +631,7 @@ def brave_search_ccindex(
     query: str,
     *,
     count: int = 8,
+    offset: int = 0,
     parquet_root: Path = Path("/storage/ccindex_parquet"),
     master_db: Optional[Path] = Path("/storage/ccindex_duckdb/cc_pointers_master/cc_master_index.duckdb"),
     year: Optional[str] = None,
@@ -637,7 +641,42 @@ def brave_search_ccindex(
     """Brave web search + resolve result URLs to CCIndex pointers."""
 
     t0 = time.perf_counter()
-    results = brave_web_search(query, count=int(count), api_key=api_key)
+    # Prefer the meta-returning variant so callers can render real pagination.
+    from common_crawl_search_engine.ccsearch.brave_search import brave_web_search_page
+
+    page = brave_web_search_page(query, api_key=api_key, count=int(count), offset=int(offset))
+    meta = page.get("meta") if isinstance(page, dict) else None
+    items = page.get("items") if isinstance(page, dict) else None
+
+    total_results: Optional[int] = None
+    effective_count = int(count)
+    effective_offset = int(offset)
+    if isinstance(meta, dict):
+        try:
+            effective_count = int(meta.get("count")) if meta.get("count") is not None else int(count)
+        except Exception:
+            effective_count = int(count)
+        try:
+            effective_offset = int(meta.get("offset")) if meta.get("offset") is not None else int(offset)
+        except Exception:
+            effective_offset = int(offset)
+        v = meta.get("total")
+        if isinstance(v, (int, float)):
+            total_results = int(v)
+
+    results: List[BraveWebResult] = []
+    if isinstance(items, list):
+        for it in items:
+            if not isinstance(it, dict):
+                continue
+            results.append(
+                BraveWebResult(
+                    title=str(it.get("title") or ""),
+                    url=str(it.get("url") or ""),
+                    description=str(it.get("description") or ""),
+                )
+            )
+
     url_list = [r.url for r in results if r.url]
 
     resolved = resolve_urls_to_ccindex(
@@ -659,7 +698,14 @@ def brave_search_ccindex(
             }
         )
 
-    return BraveSearchResolvedResult(query=query, results=out, elapsed_s=(time.perf_counter() - t0))
+    return BraveSearchResolvedResult(
+        query=query,
+        count=int(effective_count),
+        offset=int(effective_offset),
+        total_results=total_results,
+        results=out,
+        elapsed_s=(time.perf_counter() - t0),
+    )
 
 
 def warc_download_url(warc_filename_or_url: str, *, prefix: str = "https://data.commoncrawl.org/") -> str:

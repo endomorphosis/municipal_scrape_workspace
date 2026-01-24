@@ -235,6 +235,9 @@ def create_app(master_db: Path) -> Any:
     # scope. Ensure Request is present globally so `request: Request` is treated
     # as the Starlette request object (not a required query param).
     globals()["Request"] = Request
+    globals()["Response"] = Response
+    globals()["HTMLResponse"] = HTMLResponse
+    globals()["JSONResponse"] = JSONResponse
 
     app = FastAPI(title="Common Crawl Search Engine Dashboard", version="0.1")
 
@@ -275,6 +278,16 @@ def create_app(master_db: Path) -> Any:
         await self.app(new_scope, receive, send)
 
     app.add_middleware(ForwardedPrefixMiddleware)
+
+    # Brave web search enforces a per-request max `count` (commonly 20). Keep
+    # UI/tool defaults in-bounds to avoid Brave HTTP 422 validation errors.
+    try:
+      from common_crawl_search_engine.ccsearch.brave_search import brave_web_search_max_count
+
+      brave_max_count = int(brave_web_search_max_count())
+    except Exception:
+      brave_max_count = 20
+    brave_max_count = max(1, int(brave_max_count))
 
     def _base_path(request: Request) -> str:
       root = str(getattr(request, "scope", {}).get("root_path") or "").strip()
@@ -398,7 +411,8 @@ def create_app(master_db: Path) -> Any:
             "type": "object",
             "properties": {
               "query": {"type": "string"},
-              "count": {"type": "integer"},
+              "count": {"type": "integer", "minimum": 1, "maximum": int(brave_max_count)},
+              "offset": {"type": "integer", "minimum": 0},
               "year": {"type": ["string", "null"]},
               "parquet_root": {"type": "string"},
             },
@@ -683,7 +697,8 @@ def create_app(master_db: Path) -> Any:
           q = str(tool_args.get("query") or "")
           year = tool_args.get("year")
           parquet_root = Path(str(tool_args.get("parquet_root") or "/storage/ccindex_parquet"))
-          count = int(tool_args.get("count") or 50)
+          count = int(tool_args.get("count") or int(brave_max_count))
+          offset = int(tool_args.get("offset") or 0)
 
           api_key = None
           if not (os.environ.get("BRAVE_SEARCH_API_KEY") or "").strip():
@@ -692,12 +707,20 @@ def create_app(master_db: Path) -> Any:
           res = api.brave_search_ccindex(
             q,
             count=count,
+            offset=offset,
             parquet_root=parquet_root,
             master_db=Path(master_db),
             year=str(year) if year else None,
             api_key=api_key,
           )
-          return {"query": res.query, "elapsed_s": res.elapsed_s, "results": res.results}
+          return {
+            "query": res.query,
+            "count": res.count,
+            "offset": res.offset,
+            "total_results": res.total_results,
+            "elapsed_s": res.elapsed_s,
+            "results": res.results,
+          }
 
         if tool_name == "brave_cache_stats":
           from common_crawl_search_engine.ccsearch.brave_search import brave_search_cache_stats
@@ -973,6 +996,8 @@ def create_app(master_db: Path) -> Any:
 <script type='module'>
   const basePath = document.querySelector("meta[name='ccindex-base-path']")?.content || '';
   const {{ ccindexMcp }} = await import(`${{basePath}}/static/ccindex-mcp-sdk.js`);
+
+  const braveMaxCount = {int(brave_max_count)};
 
   const initial = {json.dumps(initial)};
   const form = document.getElementById('searchForm');
@@ -2642,7 +2667,7 @@ def create_app(master_db: Path) -> Any:
         request: Request,
         q: str = Query(default="", description="brave query"),
         year: str = Query(default="", description="optional year"),
-        count: int = Query(default=50, ge=1, le=50),
+      count: int = Query(default=int(brave_max_count), ge=1, le=1000),
         parquet_root: str = Query(default="/storage/ccindex_parquet"),
         embed: int = Query(default=0, ge=0, le=1),
     ) -> str:
@@ -2687,7 +2712,7 @@ def create_app(master_db: Path) -> Any:
       </div>
       <div class='field'>
         <label>Count</label>
-        <input id='dcount' name='count' value='{int(count)}' type='number' min='1' max='50'>
+        <input id='dcount' name='count' value='{int(count)}' type='number' min='1' max='{int(brave_max_count)}'>
       </div>
       <div class='field' style='min-width: 320px; flex: 1;'>
         <label>Parquet root</label>
@@ -2791,17 +2816,25 @@ def create_app(master_db: Path) -> Any:
   }}
 
   let pageIndex = 0;
-  let pageSize = 6;
 
-  function renderPager(total, pageIndex, pageSize) {{
-    const totalN = Number(total) || 0;
-    const sizeN = Math.max(1, Number(pageSize) || 6);
-    const pages = Math.max(1, Math.ceil(totalN / sizeN));
-    const idx = Math.min(Math.max(0, Number(pageIndex) || 0), pages - 1);
-    const start = totalN ? (idx * sizeN + 1) : 0;
-    const end = Math.min(totalN, (idx + 1) * sizeN);
-    const prevDisabled = idx <= 0 ? 'disabled' : '';
-    const nextDisabled = idx >= pages - 1 ? 'disabled' : '';
+  function clampCount(n) {{
+    const x = parseInt(String(n || ''), 10);
+    const v = isNaN(x) ? braveMaxCount : x;
+    return Math.max(1, Math.min(braveMaxCount, v));
+  }}
+
+  function renderPager(meta) {{
+    const totalN = (meta && typeof meta.total_results === 'number') ? meta.total_results : 0;
+    const pagesKnown = totalN > 0;
+    const pageSize = clampCount(meta?.page_size ?? braveMaxCount);
+    const idx = Math.max(0, Number(meta?.page_index ?? 0) || 0);
+    const pages = pagesKnown ? Math.max(1, Math.ceil(totalN / pageSize)) : 0;
+    const idxC = pagesKnown ? Math.min(idx, pages - 1) : idx;
+    const start = (meta && typeof meta.offset === 'number') ? (meta.offset + 1) : (idxC * pageSize + 1);
+    const shown = Math.max(0, Number(meta?.shown ?? 0) || 0);
+    const end = shown ? (start + shown - 1) : start;
+    const prevDisabled = idxC <= 0 ? 'disabled' : '';
+    const nextDisabled = (meta && meta.has_next === false) ? 'disabled' : '';
 
     function pageButtonsHtml(pages, idx) {{
       const btns = [];
@@ -2833,48 +2866,47 @@ def create_app(master_db: Path) -> Any:
       return btns.join('');
     }}
 
+    const left = pagesKnown
+      ? ("Results " + String(start) + "–" + String(end) + " of " + String(totalN))
+      : (shown ? ("Results " + String(start) + "–" + String(end)) : "No results");
+    const pageInfo = pagesKnown
+      ? ("Page " + String(idxC + 1) + " of " + String(pages))
+      : ("Page " + String(idxC + 1));
+    const nums = pagesKnown
+      ? ("<div id='dpagerNumWrap' style='display:flex; gap: 6px; align-items:center;'>" + pageButtonsHtml(pages, idxC) + "</div>")
+      : "";
+
     return "<div style='padding: 12px; display:flex; gap: 10px; align-items:center; flex-wrap: wrap; border-bottom: 1px solid rgba(34,48,74,.7);'>"
-      + "<span class='small'>" + (totalN ? ("Results " + String(start) + "–" + String(end) + " of " + String(totalN)) : "No results") + "</span>"
+      + "<span class='small'>" + left + "</span>"
+      + "<span class='small'>•</span>"
+      + "<span class='small'>" + pageInfo + "</span>"
       + "<span class='small'>•</span>"
       + "<button type='button' id='dpagerPrev' " + prevDisabled + ">Prev</button>"
       + "<button type='button' id='dpagerNext' " + nextDisabled + ">Next</button>"
-      + "<div id='dpagerNumWrap' style='display:flex; gap: 6px; align-items:center;'>" + pageButtonsHtml(pages, idx) + "</div>"
-      + "<span class='small'>•</span>"
-      + "<span class='small'>Per page</span>"
-      + "<select id='dpagerSize' style='width:auto; min-width: 90px;'>"
-      + "<option value='4'>4</option><option value='6'>6</option><option value='8'>8</option><option value='10'>10</option>"
-      + "</select>"
+      + nums
       + "</div>";
   }}
 
-  function renderPagedResults(res) {{
-    const all = (res && res.results) ? res.results : [];
-    const total = all.length;
-    const sizeN = Math.max(1, Number(pageSize) || 6);
-    const pages = Math.max(1, Math.ceil(total / sizeN));
-    pageIndex = Math.min(Math.max(0, Number(pageIndex) || 0), pages - 1);
-    const start = pageIndex * sizeN;
-    const page = all.slice(start, start + sizeN);
-    const pager = renderPager(total, pageIndex, pageSize);
-    const body = render({{ ...res, results: page }});
-    resultsEl.innerHTML = pager + body;
+  function renderCurrent(res) {{
+    const shown = (res && res.results) ? res.results.length : 0;
+    const inputCount = clampCount(document.getElementById('dcount').value);
+    const effCount = clampCount(res?.count ?? inputCount);
+    const effOffset = Math.max(0, Number(res?.offset ?? (pageIndex * effCount)) || 0);
+    pageIndex = Math.max(0, Math.floor(effOffset / effCount));
+
+    const total = (typeof res?.total_results === 'number') ? res.total_results : null;
+    const hasNext = (total !== null) ? (effOffset + shown < total) : (shown >= effCount);
+
+    const pager = renderPager({{
+      total_results: (total !== null) ? total : 0,
+      page_index: pageIndex,
+      page_size: effCount,
+      offset: effOffset,
+      shown: shown,
+      has_next: hasNext,
+    }});
+    resultsEl.innerHTML = pager + render(res || {{results: []}});
     resultsEl.style.display = 'block';
-
-    const prevBtn = document.getElementById('dpagerPrev');
-    const nextBtn = document.getElementById('dpagerNext');
-    const sizeSel = document.getElementById('dpagerSize');
-    if (sizeSel) sizeSel.value = String(pageSize);
-
-    for (const b of Array.from(resultsEl.querySelectorAll("button[data-page]"))) {{
-      b.addEventListener('click', () => {{
-        const p = parseInt(b.getAttribute('data-page') || '0', 10);
-        pageIndex = isNaN(p) ? 0 : Math.max(0, p);
-        renderPagedResults(res);
-      }});
-    }}
-    if (prevBtn) prevBtn.addEventListener('click', () => {{ pageIndex = Math.max(0, Number(pageIndex) - 1); renderPagedResults(res); }});
-    if (nextBtn) nextBtn.addEventListener('click', () => {{ pageIndex = Number(pageIndex) + 1; renderPagedResults(res); }});
-    if (sizeSel) sizeSel.addEventListener('change', () => {{ pageSize = Math.max(1, parseInt(sizeSel.value || '6', 10)); pageIndex = 0; renderPagedResults(res); }});
   }}
 
   async function populateYears() {{
@@ -2913,13 +2945,13 @@ def create_app(master_db: Path) -> Any:
 
   function rerenderWithFilters() {{
     if (!lastResponse) return;
-    renderPagedResults(lastResponse);
+    renderCurrent(lastResponse);
   }}
 
   async function runDiscover() {{
     const q = document.getElementById('dq').value;
     const year = yearEl.value;
-    const count = parseInt(document.getElementById('dcount').value || '8', 10);
+    const count = clampCount(document.getElementById('dcount').value);
     const parquetRoot = document.getElementById('dparquet_root').value;
 
     if (!q.trim()) {{
@@ -2935,26 +2967,55 @@ def create_app(master_db: Path) -> Any:
       const res = await ccindexMcp.callTool('brave_search_ccindex', {{
         query: q,
         count,
+        offset: Math.max(0, Number(pageIndex) || 0) * count,
         year: year.trim() || null,
         parquet_root: parquetRoot,
       }});
 
       const elapsed = (typeof res.elapsed_s === 'number') ? res.elapsed_s.toFixed(2) : String(res.elapsed_s ?? '');
-      statusEl.innerHTML = `<span class='badge ok'>ok</span> elapsed_s=<span class='code'>${{esc(elapsed)}}</span> results=<span class='code'>${{esc((res.results||[]).length)}}</span>`;
+      const totalTxt = (typeof res.total_results === 'number') ? String(res.total_results) : 'unknown';
+      const offTxt = (typeof res.offset === 'number') ? String(res.offset) : String(pageIndex * count);
+      statusEl.innerHTML = `<span class='badge ok'>ok</span> elapsed_s=<span class='code'>${{esc(elapsed)}}</span> total=<span class='code'>${{esc(totalTxt)}}</span> offset=<span class='code'>${{esc(offTxt)}}</span> returned=<span class='code'>${{esc((res.results||[]).length)}}</span>`;
       lastResponse = res;
-      pageIndex = 0;
-      renderPagedResults(res);
+      // Sync page index to server-effective offset/count.
+      const effCount = clampCount(res.count ?? count);
+      const effOffset = Math.max(0, Number(res.offset || 0) || 0);
+      pageIndex = Math.max(0, Math.floor(effOffset / effCount));
+      renderCurrent(res);
     }} catch (e) {{
       statusEl.innerHTML = `<span class='badge err'>error</span> <span class='code'>${{esc(e.message || e)}}</span>`;
       resultsEl.style.display = 'none';
     }}
   }}
 
+  resultsEl.addEventListener('click', (ev) => {{
+    const t = ev.target;
+    if (!(t instanceof HTMLElement)) return;
+    const pageAttr = t.getAttribute('data-page');
+    if (pageAttr !== null) {{
+      const p = parseInt(pageAttr || '0', 10);
+      pageIndex = isNaN(p) ? 0 : Math.max(0, p);
+      runDiscover();
+      return;
+    }}
+    if (t.id === 'dpagerPrev') {{
+      pageIndex = Math.max(0, Number(pageIndex) - 1);
+      runDiscover();
+      return;
+    }}
+    if (t.id === 'dpagerNext') {{
+      pageIndex = Math.max(0, Number(pageIndex) + 1);
+      runDiscover();
+      return;
+    }}
+  }});
+
   statusFilterEl.addEventListener('change', () => rerenderWithFilters());
   mimeFilterEl.addEventListener('change', () => rerenderWithFilters());
 
   form.addEventListener('submit', (ev) => {{
     ev.preventDefault();
+    pageIndex = 0;
     runDiscover();
   }});
 

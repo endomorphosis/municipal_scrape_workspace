@@ -16,6 +16,41 @@ from pathlib import Path
 from typing import Dict, List, Optional
 
 
+def brave_web_search_max_count() -> int:
+    """Return the maximum per-request result count supported by Brave web search.
+
+    Brave enforces a server-side limit (commonly 20 for web search). We keep this
+    as an overridable setting so deployments can adjust if Brave changes limits.
+    """
+
+    try:
+        v = int((os.environ.get("BRAVE_SEARCH_MAX_COUNT") or "20").strip() or "20")
+    except Exception:
+        v = 20
+    return max(1, int(v))
+
+
+def _clamp_brave_count(count: int) -> int:
+    mx = brave_web_search_max_count()
+    try:
+        n = int(count)
+    except Exception:
+        n = mx
+    if n < 1:
+        return 1
+    if n > mx:
+        return mx
+    return n
+
+
+def _clamp_brave_offset(offset: int) -> int:
+    try:
+        n = int(offset)
+    except Exception:
+        n = 0
+    return 0 if n < 0 else n
+
+
 def _brave_cache_path() -> Path:
     # Prefer explicit override for testability and advanced use.
     p = (os.environ.get("BRAVE_SEARCH_CACHE_PATH") or "").strip()
@@ -177,6 +212,9 @@ def brave_web_search(
     if not q:
         return []
 
+    count = _clamp_brave_count(int(count))
+    offset = _clamp_brave_offset(int(offset))
+
     cache_disable = (os.environ.get("BRAVE_SEARCH_CACHE_DISABLE") or "").strip().lower() in {
         "1",
         "true",
@@ -185,9 +223,7 @@ def brave_web_search(
     }
     ttl_s = int((os.environ.get("BRAVE_SEARCH_CACHE_TTL_S") or "86400").strip() or "86400")
     max_entries = int((os.environ.get("BRAVE_SEARCH_CACHE_MAX_ENTRIES") or "1000").strip() or "1000")
-    cache_key = _brave_cache_key(
-        q=q, count=int(count), offset=int(offset), country=str(country), safesearch=str(safesearch)
-    )
+    cache_key = _brave_cache_key(q=q, count=int(count), offset=int(offset), country=str(country), safesearch=str(safesearch))
 
     if not cache_disable and ttl_s > 0:
         try:
@@ -281,3 +317,160 @@ def brave_web_search(
             pass
 
     return out
+
+
+def brave_web_search_page(
+    query: str,
+    *,
+    api_key: Optional[str] = None,
+    count: int = 10,
+    offset: int = 0,
+    country: str = "us",
+    safesearch: str = "moderate",
+) -> Dict[str, object]:
+    """Brave web search that also returns pagination metadata.
+
+    Returns:
+      {"items": [...], "meta": {"count": int, "offset": int, "total": int|None, "max_count": int}}
+
+    Notes:
+    - We clamp count/offset before sending to Brave to avoid HTTP 422.
+    - Brave's `web.total` (or similar field) is not guaranteed; if missing we return None.
+    """
+
+    token = (api_key or os.environ.get("BRAVE_SEARCH_API_KEY") or "").strip()
+    if not token:
+        raise RuntimeError("Missing BRAVE_SEARCH_API_KEY (set env var or pass api_key)")
+
+    q = (query or "").strip()
+    if not q:
+        return {"items": [], "meta": {"count": 0, "offset": 0, "total": 0, "max_count": brave_web_search_max_count()}}
+
+    count = _clamp_brave_count(int(count))
+    offset = _clamp_brave_offset(int(offset))
+
+    cache_disable = (os.environ.get("BRAVE_SEARCH_CACHE_DISABLE") or "").strip().lower() in {
+        "1",
+        "true",
+        "yes",
+        "on",
+    }
+    ttl_s = int((os.environ.get("BRAVE_SEARCH_CACHE_TTL_S") or "86400").strip() or "86400")
+    max_entries = int((os.environ.get("BRAVE_SEARCH_CACHE_MAX_ENTRIES") or "1000").strip() or "1000")
+    cache_key = _brave_cache_key(q=q, count=int(count), offset=int(offset), country=str(country), safesearch=str(safesearch))
+
+    if not cache_disable and ttl_s > 0:
+        try:
+            cache_path = _brave_cache_path()
+            with _locked_cache_file(cache_path) as f:
+                cache = _load_cache_dict(f)
+                ent = cache.get(cache_key)
+                if isinstance(ent, dict):
+                    ts = ent.get("ts")
+                    items = ent.get("items")
+                    meta = ent.get("meta")
+                    if isinstance(ts, (int, float)) and isinstance(items, list):
+                        if (time.time() - float(ts)) <= float(ttl_s):
+                            out_cached: List[Dict[str, str]] = []
+                            for it in items:
+                                if not isinstance(it, dict):
+                                    continue
+                                out_cached.append(
+                                    {
+                                        "title": str(it.get("title") or ""),
+                                        "url": str(it.get("url") or ""),
+                                        "description": str(it.get("description") or ""),
+                                    }
+                                )
+                            out_meta = meta if isinstance(meta, dict) else {}
+                            total = out_meta.get("total")
+                            total_int = int(total) if isinstance(total, (int, float)) else None
+                            return {
+                                "items": out_cached,
+                                "meta": {
+                                    "count": int(count),
+                                    "offset": int(offset),
+                                    "total": total_int,
+                                    "max_count": brave_web_search_max_count(),
+                                },
+                            }
+        except Exception:
+            pass
+
+    try:
+        import requests  # type: ignore
+    except Exception as e:  # pragma: no cover
+        raise RuntimeError(
+            "requests is required for Brave Search integration. Install with: pip install -e '.[ccindex]'"
+        ) from e
+
+    url = "https://api.search.brave.com/res/v1/web/search"
+    params = {
+        "q": q,
+        "count": int(count),
+        "offset": int(offset),
+        "country": str(country),
+        "safesearch": str(safesearch),
+    }
+    headers = {
+        "Accept": "application/json",
+        "X-Subscription-Token": token,
+    }
+
+    resp = requests.get(url, params=params, headers=headers, timeout=20)
+    if resp.status_code != 200:
+        raise RuntimeError(f"Brave Search HTTP {resp.status_code}: {resp.text[:500]}")
+
+    data = resp.json() if resp.content else {}
+    web = data.get("web") if isinstance(data, dict) else None
+
+    total_int = None
+    if isinstance(web, dict):
+        # Brave's schema may expose totals under different keys.
+        for k in ("total", "total_results", "totalResults"):
+            v = web.get(k)
+            if isinstance(v, (int, float)):
+                total_int = int(v)
+                break
+
+    items = web.get("results") if isinstance(web, dict) else None
+    if not isinstance(items, list):
+        out_items: List[Dict[str, str]] = []
+    else:
+        out_items = []
+        for it in items:
+            if not isinstance(it, dict):
+                continue
+            out_items.append(
+                {
+                    "title": str(it.get("title") or ""),
+                    "url": str(it.get("url") or ""),
+                    "description": str(it.get("description") or ""),
+                }
+            )
+
+    if not cache_disable and ttl_s > 0:
+        try:
+            cache_path = _brave_cache_path()
+            with _locked_cache_file(cache_path) as f:
+                cache = _load_cache_dict(f)
+                cache[cache_key] = {"ts": time.time(), "items": out_items, "meta": {"total": total_int}}
+
+                if max_entries > 0 and len(cache) > max_entries:
+                    def _ts(kv) -> float:
+                        v = kv[1]
+                        if isinstance(v, dict) and isinstance(v.get("ts"), (int, float)):
+                            return float(v["ts"])
+                        return 0.0
+
+                    keep = dict(sorted(cache.items(), key=_ts, reverse=True)[: int(max_entries)])
+                    cache = keep
+
+                _save_cache_dict(f, cache)
+        except Exception:
+            pass
+
+    return {
+        "items": out_items,
+        "meta": {"count": int(count), "offset": int(offset), "total": total_int, "max_count": brave_web_search_max_count()},
+    }
