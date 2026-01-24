@@ -8,8 +8,8 @@
 //   - tools/call  { name: string, arguments: object }
 
 export class CcindexMcpClient {
-  constructor({ endpoint = "/mcp" } = {}) {
-    this.endpoint = endpoint;
+  constructor({ endpoint } = {}) {
+    this.endpoint = endpoint || defaultEndpoint();
     this._id = 1;
   }
 
@@ -39,6 +39,19 @@ export class CcindexMcpClient {
 
   async callTool(name, args = {}) {
     return this._rpc("tools/call", { name, arguments: args });
+  }
+}
+
+function defaultEndpoint() {
+  try {
+    if (typeof window === "undefined") return "/mcp";
+
+    const meta = document.querySelector("meta[name='ccindex-base-path']");
+    const basePath = (meta && meta.content ? String(meta.content) : "").trim();
+    const normalized = basePath && basePath !== "/" ? basePath.replace(/\/$/, "") : "";
+    return `${normalized}/mcp`;
+  } catch (_e) {
+    return "/mcp";
   }
 }
 

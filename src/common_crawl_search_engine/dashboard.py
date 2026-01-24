@@ -105,12 +105,23 @@ def _q(s: Optional[str]) -> str:
     return "" if s is None else str(s)
 
 
-def _layout(title: str, body_html: str, *, embed: bool = False) -> str:
-    nav = """
+def _layout(title: str, body_html: str, *, embed: bool = False, base_path: str = "") -> str:
+    base_path = (base_path or "").strip()
+    if base_path != "/" and base_path.endswith("/"):
+        base_path = base_path[:-1]
+    if base_path and not base_path.startswith("/"):
+        base_path = "/" + base_path
+
+    def _p(path: str) -> str:
+        if not path.startswith("/"):
+            path = "/" + path
+        return f"{base_path}{path}" if base_path else path
+
+    nav = f"""
   <div style='margin-top: 10px; display:flex; gap: 12px; flex-wrap: wrap;'>
-    <a class='badge' href='/'>Wayback</a>
-    <a class='badge' href='/discover'>Search</a>
-    <a class='badge' href='/settings'>Settings</a>
+    <a class='badge' href='{html.escape(_p("/"))}'>Wayback</a>
+    <a class='badge' href='{html.escape(_p("/discover"))}'>Search</a>
+    <a class='badge' href='{html.escape(_p("/settings"))}'>Settings</a>
   </div>
 """
 
@@ -133,6 +144,7 @@ def _layout(title: str, body_html: str, *, embed: bool = False) -> str:
 <head>
   <meta charset='utf-8'>
   <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <meta name='ccindex-base-path' content='{html.escape(base_path)}'>
   <title>{html.escape(title)}</title>
   <style>{_CSS}</style>
 </head>
@@ -197,6 +209,50 @@ def create_app(master_db: Path) -> Any:
     globals()["Request"] = Request
 
     app = FastAPI(title="Common Crawl Search Engine Dashboard", version="0.1")
+
+    class ForwardedPrefixMiddleware:
+      """Honor reverse-proxy prefix headers (X-Forwarded-Prefix / X-Script-Name).
+
+      If the proxy forwards the prefix *and* also leaves it in the URL path,
+      we strip it so routes like `/mcp` still match.
+      """
+
+      def __init__(self, inner_app: Any) -> None:
+        self.app = inner_app
+
+      async def __call__(self, scope: Dict[str, Any], receive: Any, send: Any) -> None:
+        if scope.get("type") not in ("http", "websocket"):
+          await self.app(scope, receive, send)
+          return
+
+        headers = {k.decode("latin-1").lower(): v.decode("latin-1") for k, v in (scope.get("headers") or [])}
+        prefix = (headers.get("x-forwarded-prefix") or headers.get("x-script-name") or "").strip()
+        if not prefix:
+          await self.app(scope, receive, send)
+          return
+
+        if not prefix.startswith("/"):
+          prefix = "/" + prefix
+        if prefix != "/" and prefix.endswith("/"):
+          prefix = prefix[:-1]
+
+        new_scope = dict(scope)
+        new_scope["root_path"] = prefix
+
+        path = str(new_scope.get("path") or "")
+        if path.startswith(prefix):
+          stripped = path[len(prefix) :]
+          new_scope["path"] = stripped if stripped else "/"
+
+        await self.app(new_scope, receive, send)
+
+    app.add_middleware(ForwardedPrefixMiddleware)
+
+    def _base_path(request: Request) -> str:
+      root = str(getattr(request, "scope", {}).get("root_path") or "").strip()
+      if root != "/" and root.endswith("/"):
+        root = root[:-1]
+      return root
 
     if cors_allow_origins:
         try:
@@ -540,12 +596,14 @@ def create_app(master_db: Path) -> Any:
 
     @app.get("/", response_class=HTMLResponse)
     def home(
+        request: Request,
         q: str = Query(default="", description="domain or url"),
         year: str = Query(default="", description="optional year"),
         max_matches: int = Query(default=200, ge=1, le=5000),
         parquet_root: str = Query(default="/storage/ccindex_parquet"),
         embed: int = Query(default=0, ge=0, le=1),
     ) -> str:
+        base_path = _base_path(request)
         form = f"""
 <div class='card'>
   <div class='row'>
@@ -571,8 +629,8 @@ def create_app(master_db: Path) -> Any:
   </div>
   <div class='small' style='margin-top: 10px;'>
     Uses master meta-index: <span class='code'>{html.escape(str(master_db))}</span>
-    • MCP JSON-RPC: <span class='code'>POST /mcp</span>
-    • SDK: <a class='code' href='/static/ccindex-mcp-sdk.js'>ccindex-mcp-sdk.js</a>
+    • MCP JSON-RPC: <span class='code'>POST {html.escape(base_path + "/mcp")}</span>
+    • SDK: <a class='code' href='{html.escape(base_path + "/static/ccindex-mcp-sdk.js")}'>ccindex-mcp-sdk.js</a>
   </div>
 </div>
 """
@@ -587,7 +645,8 @@ def create_app(master_db: Path) -> Any:
                 "<div id='results' class='card' style='margin-top: 14px; padding: 0; display:none;'></div>",
                 f"""
 <script type='module'>
-  import {{ ccindexMcp }} from '/static/ccindex-mcp-sdk.js';
+  const basePath = document.querySelector("meta[name='ccindex-base-path']")?.content || '';
+  const {{ ccindexMcp }} = await import(`${{basePath}}/static/ccindex-mcp-sdk.js`);
 
   const initial = {json.dumps(initial)};
   const form = document.getElementById('searchForm');
@@ -613,7 +672,7 @@ def create_app(master_db: Path) -> Any:
       const warc = esc(r.warc_filename || '');
       const off = esc(r.warc_offset ?? '');
       const len = esc(r.warc_length ?? '');
-      const recHref = `/record?warc_filename=${{encodeURIComponent(r.warc_filename||'')}}&warc_offset=${{encodeURIComponent(r.warc_offset||'')}}&warc_length=${{encodeURIComponent(r.warc_length||'')}}&parquet_root=${{encodeURIComponent(document.getElementById('parquet_root').value || '')}}`;
+      const recHref = `${{basePath}}/record?warc_filename=${{encodeURIComponent(r.warc_filename||'')}}&warc_offset=${{encodeURIComponent(r.warc_offset||'')}}&warc_length=${{encodeURIComponent(r.warc_length||'')}}&parquet_root=${{encodeURIComponent(document.getElementById('parquet_root').value || '')}}`;
       return `
         <tr>
           <td class='small'>${{idx+1}}</td>
@@ -688,7 +747,7 @@ def create_app(master_db: Path) -> Any:
 """,
             ]
         )
-        return _layout("Common Crawl Search Engine", body, embed=bool(embed))
+        return _layout("Common Crawl Search Engine", body, embed=bool(embed), base_path=base_path)
 
     @app.get("/download_record")
     def download_record(
@@ -725,7 +784,8 @@ def create_app(master_db: Path) -> Any:
         return Response(content=data, media_type="application/gzip", headers=headers)
 
     @app.get("/settings", response_class=HTMLResponse)
-    def settings_page(embed: int = Query(default=0, ge=0, le=1)) -> str:
+    def settings_page(request: Request, embed: int = Query(default=0, ge=0, le=1)) -> str:
+        base_path = _base_path(request)
         s = _load_settings()
 
         # Surface server-side cache defaults (these are env-controlled).
@@ -845,6 +905,7 @@ def create_app(master_db: Path) -> Any:
 </div>
 
 <script type='module'>
+  const basePath = document.querySelector("meta[name='ccindex-base-path']")?.content || '';
   const esc = (s) => String(s ?? '');
   const modeEl = document.getElementById('default_cache_mode');
   const maxBytesEl = document.getElementById('default_max_bytes');
@@ -877,7 +938,7 @@ def create_app(master_db: Path) -> Any:
         brave_search_api_key: (String(braveKeyEl.value || '').trim() || null),
       }};
 
-      const resp = await fetch('/settings', {{
+      const resp = await fetch(`${{basePath}}/settings`, {{
         method: 'POST',
         headers: {{ 'content-type': 'application/json' }},
         body: JSON.stringify(payload),
@@ -893,7 +954,7 @@ def create_app(master_db: Path) -> Any:
   async function refreshCacheStats() {{
     cacheStatsEl.textContent = 'loading cache stats…';
     try {{
-      const resp = await fetch('/settings/cache_stats');
+      const resp = await fetch(`${{basePath}}/settings/cache_stats`);
       const res = await resp.json();
       if (!res.ok) throw new Error(res.error || 'stats failed');
       cacheStatsEl.textContent = `range_cache: ${{res.range.items}} items, ${{res.range.bytes}} bytes • full_warc_cache: ${{res.full.items}} items, ${{res.full.bytes}} bytes`;
@@ -905,7 +966,7 @@ def create_app(master_db: Path) -> Any:
   async function refreshBraveCacheStats() {{
     braveCacheStatsEl.textContent = 'loading Brave cache…';
     try {{
-      const resp = await fetch('/settings/brave_cache_stats');
+      const resp = await fetch(`${{basePath}}/settings/brave_cache_stats`);
       const res = await resp.json();
       if (!res.ok) throw new Error(res.error || 'stats failed');
       const path = esc(res.path || '');
@@ -921,7 +982,7 @@ def create_app(master_db: Path) -> Any:
   async function clearBraveCache() {{
     braveCacheStatsEl.textContent = 'clearing Brave cache…';
     try {{
-      const resp = await fetch('/settings/clear_brave_cache', {{ method: 'POST' }});
+      const resp = await fetch(`${{basePath}}/settings/clear_brave_cache`, {{ method: 'POST' }});
       const res = await resp.json();
       if (!res.ok) throw new Error(res.error || 'clear failed');
       braveCacheStatsEl.textContent = `cleared Brave cache: deleted=${{res.deleted}} freed_bytes=${{res.freed_bytes}}`;
@@ -934,7 +995,7 @@ def create_app(master_db: Path) -> Any:
   async function clearCache(which) {{
     cacheStatsEl.textContent = 'clearing…';
     try {{
-      const resp = await fetch('/settings/clear_cache', {{
+      const resp = await fetch(`${{basePath}}/settings/clear_cache`, {{
         method: 'POST',
         headers: {{ 'content-type': 'application/json' }},
         body: JSON.stringify({{ which }}),
@@ -956,7 +1017,7 @@ def create_app(master_db: Path) -> Any:
   document.getElementById('clearBraveKeyBtn').addEventListener('click', async () => {{
     statusEl.textContent = 'clearing brave key…';
     try {{
-      const resp = await fetch('/settings/clear_brave_key', {{ method: 'POST' }});
+      const resp = await fetch(`${{basePath}}/settings/clear_brave_key`, {{ method: 'POST' }});
       const res = await resp.json();
       if (!res.ok) throw new Error(res.error || 'clear failed');
       braveKeyEl.value = '';
@@ -970,7 +1031,7 @@ def create_app(master_db: Path) -> Any:
   refreshBraveCacheStats();
 </script>
 """
-        return _layout("Common Crawl Search Engine • Settings", body, embed=bool(embed))
+        return _layout("Common Crawl Search Engine • Settings", body, embed=bool(embed), base_path=base_path)
 
     @app.post("/settings")
     async def settings_save(request: Request) -> JSONResponse:
@@ -1180,12 +1241,14 @@ def create_app(master_db: Path) -> Any:
 
     @app.get("/record", response_class=HTMLResponse)
     def record(
+        request: Request,
         warc_filename: str,
         warc_offset: int,
         warc_length: int,
         prefix: str = "https://data.commoncrawl.org/",
         parquet_root: str = "/storage/ccindex_parquet",
     ) -> str:
+        base_path = _base_path(request)
         s = _load_settings()
         pointer = {
             "warc_filename": warc_filename,
@@ -1201,7 +1264,7 @@ def create_app(master_db: Path) -> Any:
 
         head = f"""
 <div class='card'>
-  <div><a href='/'>← back</a></div>
+  <div><a href='{html.escape(base_path + "/")}'>← back</a></div>
   <hr>
   <div class='small'>WARC pointer</div>
   <div class='code'>{html.escape(str(warc_filename))}</div>
@@ -1244,7 +1307,8 @@ def create_app(master_db: Path) -> Any:
             "</div>"
             f"""
 <script type='module'>
-  import {{ ccindexMcp }} from '/static/ccindex-mcp-sdk.js';
+  const basePath = document.querySelector("meta[name='ccindex-base-path']")?.content || '';
+  const {{ ccindexMcp }} = await import(`${{basePath}}/static/ccindex-mcp-sdk.js`);
 
   const pointer = {json.dumps(pointer)};
   const parquetRoot = {json.dumps(str(parquet_root))};
@@ -1331,7 +1395,7 @@ def create_app(master_db: Path) -> Any:
 
       // If this was a redirect, offer a helper to follow it.
       if (redirectLoc) {{
-        const followHref = `/?q=${{encodeURIComponent(redirectLoc)}}&parquet_root=${{encodeURIComponent(parquetRoot)}}&max_matches=25`;
+        const followHref = `${{basePath}}/?q=${{encodeURIComponent(redirectLoc)}}&parquet_root=${{encodeURIComponent(parquetRoot)}}&max_matches=25`;
         statusEl.innerHTML += `<div class='small' style='margin-top:8px;'>redirect location: <a class='code' href='${{followHref}}'>${{esc(redirectLoc)}}</a> <button id='followBtn' type='button' style='margin-left:10px;'>follow in CCIndex</button></div>`;
         const btn = document.getElementById('followBtn');
         if (btn) {{
@@ -1346,7 +1410,7 @@ def create_app(master_db: Path) -> Any:
               }});
               const rec = (sres.records || [])[0];
               if (!rec) throw new Error('No CCIndex records for redirect target');
-              const href = `/record?warc_filename=${{encodeURIComponent(rec.warc_filename||'')}}&warc_offset=${{encodeURIComponent(rec.warc_offset||'')}}&warc_length=${{encodeURIComponent(rec.warc_length||'')}}&parquet_root=${{encodeURIComponent(parquetRoot)}}`;
+              const href = `${{basePath}}/record?warc_filename=${{encodeURIComponent(rec.warc_filename||'')}}&warc_offset=${{encodeURIComponent(rec.warc_offset||'')}}&warc_length=${{encodeURIComponent(rec.warc_length||'')}}&parquet_root=${{encodeURIComponent(parquetRoot)}}`;
               window.location.href = href;
             }} catch (e) {{
               statusEl.innerHTML = `<span class='badge err'>error</span> <span class='code'>${{esc(e.message || e)}}</span>`;
@@ -1365,7 +1429,7 @@ def create_app(master_db: Path) -> Any:
 
       // Download helpers.
       dlWarcLinkEl.href = (res.url || '#');
-      const rangeHref = `/download_record?warc_filename=${{encodeURIComponent(pointer.warc_filename)}}&warc_offset=${{encodeURIComponent(pointer.warc_offset)}}&warc_length=${{encodeURIComponent(pointer.warc_length)}}&prefix=${{encodeURIComponent(pointer.prefix)}}&max_bytes=${{encodeURIComponent(pointer.max_bytes)}}`;
+      const rangeHref = `${{basePath}}/download_record?warc_filename=${{encodeURIComponent(pointer.warc_filename)}}&warc_offset=${{encodeURIComponent(pointer.warc_offset)}}&warc_length=${{encodeURIComponent(pointer.warc_length)}}&prefix=${{encodeURIComponent(pointer.prefix)}}&max_bytes=${{encodeURIComponent(pointer.max_bytes)}}`;
       dlRangeLinkEl.href = rangeHref;
 
       bodyEl.style.display = 'block';
@@ -1381,16 +1445,18 @@ def create_app(master_db: Path) -> Any:
 """
         )
 
-        return _layout("Common Crawl Search Engine • Record", body)
+        return _layout("Common Crawl Search Engine • Record", body, base_path=base_path)
 
     @app.get("/discover", response_class=HTMLResponse)
     def discover(
+        request: Request,
         q: str = Query(default="", description="brave query"),
         year: str = Query(default="", description="optional year"),
         count: int = Query(default=8, ge=1, le=20),
         parquet_root: str = Query(default="/storage/ccindex_parquet"),
-      embed: int = Query(default=0, ge=0, le=1),
+        embed: int = Query(default=0, ge=0, le=1),
     ) -> str:
+        base_path = _base_path(request)
         initial = {"q": q, "year": year, "count": int(count), "parquet_root": parquet_root}
 
         body = f"""
@@ -1422,7 +1488,7 @@ def create_app(master_db: Path) -> Any:
   </form>
   <div class='small' style='margin-top: 10px;'>
     Server-side Brave API key required: <span class='code'>BRAVE_SEARCH_API_KEY</span>
-    • MCP JSON-RPC: <span class='code'>POST /mcp</span>
+    • MCP JSON-RPC: <span class='code'>POST {html.escape(base_path + "/mcp")}</span>
   </div>
 </div>
 
@@ -1430,7 +1496,8 @@ def create_app(master_db: Path) -> Any:
 <div id='dresults' class='card' style='margin-top: 14px; display:none; padding: 0;'></div>
 
 <script type='module'>
-  import {{ ccindexMcp }} from '/static/ccindex-mcp-sdk.js';
+  const basePath = document.querySelector("meta[name='ccindex-base-path']")?.content || '';
+  const {{ ccindexMcp }} = await import(`${{basePath}}/static/ccindex-mcp-sdk.js`);
 
   const initial = {json.dumps(initial)};
   const form = document.getElementById('discoverForm');
@@ -1449,7 +1516,7 @@ def create_app(master_db: Path) -> Any:
   function firstRecordLink(ccMatches) {{
     const r = (ccMatches || [])[0];
     if (!r) return null;
-    return `/record?warc_filename=${{encodeURIComponent(r.warc_filename||'')}}&warc_offset=${{encodeURIComponent(r.warc_offset||'')}}&warc_length=${{encodeURIComponent(r.warc_length||'')}}`;
+    return `${{basePath}}/record?warc_filename=${{encodeURIComponent(r.warc_filename||'')}}&warc_offset=${{encodeURIComponent(r.warc_offset||'')}}&warc_length=${{encodeURIComponent(r.warc_length||'')}}`;
   }}
 
   function render(res) {{
@@ -1528,7 +1595,7 @@ def create_app(master_db: Path) -> Any:
 </script>
 """
 
-        return _layout("Common Crawl Search Engine • Search", body, embed=bool(embed))
+        return _layout("Common Crawl Search Engine • Search", body, embed=bool(embed), base_path=base_path)
 
     return app
 
