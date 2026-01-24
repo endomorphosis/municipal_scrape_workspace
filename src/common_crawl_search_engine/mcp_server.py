@@ -92,10 +92,13 @@ def main() -> int:
         max_bytes: int = 2_000_000,
         decode_gzip_text: bool = True,
         max_preview_chars: int = 40_000,
+        cache_mode: str = "range",
+        full_warc_cache_dir: Optional[str] = None,
+        full_warc_max_bytes: int = 5_000_000_000,
     ) -> Dict[str, Any]:
-        """Fetch a WARC record by exact byte range (offset/length) and return a decoded preview."""
+        """Fetch a WARC record by pointer using range or cached full WARC."""
 
-        res = api.fetch_warc_record_range(
+        res, source, local_path = api.fetch_warc_record(
             warc_filename=str(warc_filename),
             warc_offset=int(warc_offset),
             warc_length=int(warc_length),
@@ -103,11 +106,16 @@ def main() -> int:
             max_bytes=int(max_bytes),
             decode_gzip_text=bool(decode_gzip_text),
             max_preview_chars=int(max_preview_chars),
+            cache_mode=str(cache_mode),
+            full_warc_cache_dir=Path(full_warc_cache_dir).expanduser().resolve() if full_warc_cache_dir else None,
+            full_warc_max_bytes=int(full_warc_max_bytes),
         )
         out: Dict[str, Any] = {
             "ok": res.ok,
             "status": res.status,
             "url": res.url,
+            "source": source,
+            "local_warc_path": local_path,
             "bytes_requested": res.bytes_requested,
             "bytes_returned": res.bytes_returned,
             "sha256": res.sha256,

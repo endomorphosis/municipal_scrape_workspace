@@ -683,6 +683,266 @@ def _default_warc_cache_dir() -> Optional[Path]:
     return Path("state") / "warc_cache"
 
 
+def _default_full_warc_cache_dir() -> Optional[Path]:
+    """Return a default cache dir for full *.warc.gz downloads.
+
+    Disable by setting env var CCINDEX_FULL_WARC_CACHE_DIR='' (empty).
+    """
+
+    env = os.environ.get("CCINDEX_FULL_WARC_CACHE_DIR")
+    if env is not None and str(env).strip() == "":
+        return None
+    if env:
+        return Path(env)
+    return Path("state") / "warc_files"
+
+
+def _safe_cache_name_for_warc(warc_filename_or_url: str) -> str:
+    base = (warc_filename_or_url or "").strip().rstrip("/").rsplit("/", 1)[-1] or "warc.gz"
+    h = _sha256_hex(warc_filename_or_url)[:16]
+    # Keep the filename stable but also recognizable.
+    return f"{h}__{base}"
+
+
+def _full_warc_cache_path(cache_dir: Path, warc_filename_or_url: str) -> Path:
+    return cache_dir / _safe_cache_name_for_warc(warc_filename_or_url)
+
+
+def _http_head_content_length(url: str, *, timeout_s: float) -> Optional[int]:
+    try:
+        req = urllib.request.Request(url, method="HEAD")
+        with urllib.request.urlopen(req, timeout=float(timeout_s)) as resp:
+            clen = resp.headers.get("content-length")
+            if clen and str(clen).isdigit():
+                return int(clen)
+    except Exception:
+        return None
+    return None
+
+
+def ensure_full_warc_cached(
+    *,
+    warc_filename: str,
+    prefix: str = "https://data.commoncrawl.org/",
+    cache_dir: Optional[Path] = None,
+    timeout_s: float = 60.0,
+    max_full_bytes: int = 5_000_000_000,
+    overwrite: bool = False,
+) -> Path:
+    """Download and cache the full *.warc.gz file (last-ditch / bulk scraping mode).
+
+    This can reduce many small Range requests into a single large download, which
+    is useful when scraping many pages that live in the same WARC file.
+
+    Safety:
+    - Uses a max_full_bytes guard (default 5GB). Set <=0 to disable the limit.
+    - Writes to a .part file then renames.
+    """
+
+    url = warc_download_url(warc_filename, prefix=prefix)
+
+    if cache_dir is None:
+        cache_dir = _default_full_warc_cache_dir()
+    if cache_dir is None:
+        raise RuntimeError("full WARC cache disabled (CCINDEX_FULL_WARC_CACHE_DIR='')")
+
+    cache_dir = Path(cache_dir)
+    cache_dir.mkdir(parents=True, exist_ok=True)
+
+    out_path = _full_warc_cache_path(cache_dir, warc_filename)
+    if out_path.exists() and out_path.is_file() and not overwrite:
+        return out_path
+
+    # If size is known, guard before downloading.
+    clen = _http_head_content_length(url, timeout_s=float(timeout_s))
+    if clen is not None and int(max_full_bytes) > 0 and clen > int(max_full_bytes):
+        raise RuntimeError(f"full WARC too large: {clen} bytes > max_full_bytes={int(max_full_bytes)}")
+
+    req = urllib.request.Request(url, method="GET")
+    tmp = out_path.with_suffix(out_path.suffix + ".part")
+    if tmp.exists():
+        try:
+            tmp.unlink()
+        except Exception:
+            pass
+
+    # Stream to disk.
+    with urllib.request.urlopen(req, timeout=float(timeout_s)) as resp:
+        status = int(getattr(resp, "status", 200))
+        if status != 200:
+            raise RuntimeError(f"expected 200 for full GET, got {status}")
+
+        written = 0
+        chunk_bytes = 8 * 1024 * 1024
+        with tmp.open("wb") as f:
+            while True:
+                chunk = resp.read(chunk_bytes)
+                if not chunk:
+                    break
+                f.write(chunk)
+                written += len(chunk)
+                if int(max_full_bytes) > 0 and written > int(max_full_bytes):
+                    raise RuntimeError(f"download exceeded max_full_bytes={int(max_full_bytes)}")
+
+    # Optional sanity check against content-length if present.
+    if clen is not None:
+        try:
+            got = tmp.stat().st_size
+            if got != int(clen):
+                raise RuntimeError(f"size mismatch expected={clen} got={got}")
+        except Exception:
+            # If this fails, let it surface.
+            raise
+
+    if out_path.exists() and overwrite:
+        out_path.unlink()
+    tmp.replace(out_path)
+    return out_path
+
+
+def _read_local_range(path: Path, *, start: int, length: int, max_bytes: int) -> bytes:
+    if int(max_bytes) > 0 and int(length) > int(max_bytes):
+        raise RuntimeError(f"record too large for max_bytes={int(max_bytes)}: {int(length)}")
+    with path.open("rb") as f:
+        f.seek(int(start))
+        data = f.read(int(length))
+    if len(data) != int(length):
+        raise RuntimeError(f"local range short read expected={int(length)} got={len(data)}")
+    return data
+
+
+def fetch_warc_record(
+    *,
+    warc_filename: str,
+    warc_offset: int,
+    warc_length: int,
+    prefix: str = "https://data.commoncrawl.org/",
+    timeout_s: float = 30.0,
+    max_bytes: int = 2_000_000,
+    decode_gzip_text: bool = True,
+    max_preview_chars: int = 40_000,
+    cache_mode: str = "range",
+    range_cache_dir: Optional[Path] = None,
+    full_warc_cache_dir: Optional[Path] = None,
+    full_warc_max_bytes: int = 5_000_000_000,
+) -> Tuple[WarcFetchResult, str, Optional[str]]:
+    """Fetch a WARC record by pointer using either Range GET or a cached full WARC.
+
+    cache_mode:
+    - "range": HTTP Range GET (default; uses range blob cache)
+    - "auto": use cached full WARC if present; otherwise Range GET
+    - "full": ensure full WARC cached (download if needed), then read locally
+
+    Returns (result, source, local_path).
+    """
+
+    mode = (cache_mode or "range").strip().lower()
+    url = warc_download_url(warc_filename, prefix=prefix)
+
+    # Try local full WARC first for auto/full.
+    if mode in {"auto", "full"}:
+        if full_warc_cache_dir is None:
+            full_warc_cache_dir = _default_full_warc_cache_dir()
+        local_path: Optional[Path] = None
+        if full_warc_cache_dir is not None:
+            candidate = _full_warc_cache_path(Path(full_warc_cache_dir), warc_filename)
+            if candidate.exists() and candidate.is_file():
+                local_path = candidate
+            elif mode == "full":
+                try:
+                    local_path = ensure_full_warc_cached(
+                        warc_filename=str(warc_filename),
+                        prefix=str(prefix),
+                        cache_dir=Path(full_warc_cache_dir),
+                        timeout_s=float(timeout_s),
+                        max_full_bytes=int(full_warc_max_bytes),
+                        overwrite=False,
+                    )
+                except Exception as e:
+                    if mode == "full":
+                        return (
+                            WarcFetchResult(
+                                ok=False,
+                                status=None,
+                                url=url,
+                                bytes_requested=int(warc_length),
+                                bytes_returned=0,
+                                sha256=None,
+                                raw_base64=None,
+                                decoded_text_preview=None,
+                                error=f"full_warc_cache_failed: {type(e).__name__}: {e}",
+                            ),
+                            "full",
+                            None,
+                        )
+
+        if local_path is not None:
+            try:
+                data = _read_local_range(
+                    Path(local_path),
+                    start=int(warc_offset),
+                    length=int(warc_length),
+                    max_bytes=int(max_bytes),
+                )
+                h = hashlib.sha256(data).hexdigest() if data else None
+                raw_b64 = base64.b64encode(data).decode("ascii") if data else None
+
+                preview: Optional[str] = None
+                if decode_gzip_text and data:
+                    try:
+                        decompressed = gzip.decompress(data)
+                        preview = decompressed[: max(0, int(max_preview_chars))].decode("utf-8", errors="replace")
+                    except Exception:
+                        preview = None
+
+                return (
+                    WarcFetchResult(
+                        ok=True,
+                        status=200,
+                        url=url,
+                        bytes_requested=int(warc_length),
+                        bytes_returned=len(data) if data else 0,
+                        sha256=h,
+                        raw_base64=raw_b64,
+                        decoded_text_preview=preview,
+                        error=None,
+                    ),
+                    "full_cache",
+                    str(local_path),
+                )
+            except Exception as e:
+                if mode == "full":
+                    return (
+                        WarcFetchResult(
+                            ok=False,
+                            status=None,
+                            url=url,
+                            bytes_requested=int(warc_length),
+                            bytes_returned=0,
+                            sha256=None,
+                            raw_base64=None,
+                            decoded_text_preview=None,
+                            error=f"local_range_failed: {type(e).__name__}: {e}",
+                        ),
+                        "full_cache",
+                        str(local_path),
+                    )
+
+    # Fall back to ranged retrieval.
+    res = fetch_warc_record_range(
+        warc_filename=str(warc_filename),
+        warc_offset=int(warc_offset),
+        warc_length=int(warc_length),
+        prefix=str(prefix),
+        timeout_s=float(timeout_s),
+        max_bytes=int(max_bytes),
+        decode_gzip_text=bool(decode_gzip_text),
+        max_preview_chars=int(max_preview_chars),
+        cache_dir=range_cache_dir,
+    )
+    return res, "range", None
+
+
 def _sha256_hex(s: str) -> str:
     return hashlib.sha256(s.encode("utf-8")).hexdigest()
 

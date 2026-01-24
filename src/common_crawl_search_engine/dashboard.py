@@ -197,7 +197,7 @@ def create_app(master_db: Path) -> Any:
             },
             {
                 "name": "fetch_warc_record",
-                "description": "Fetch a WARC record via HTTP range and optionally decode a text preview",
+              "description": "Fetch a WARC record (range or cached full WARC) and optionally decode a text preview",
                 "inputSchema": {
                     "type": "object",
                     "properties": {
@@ -205,8 +205,11 @@ def create_app(master_db: Path) -> Any:
                         "warc_offset": {"type": "integer"},
                         "warc_length": {"type": "integer"},
                         "prefix": {"type": "string"},
-                      "max_bytes": {"type": "integer"},
-                      "max_preview_chars": {"type": "integer"},
+                  "max_bytes": {"type": "integer"},
+                  "max_preview_chars": {"type": "integer"},
+                  "cache_mode": {"type": "string", "enum": ["range", "auto", "full"]},
+                  "full_warc_cache_dir": {"type": ["string", "null"]},
+                  "full_warc_max_bytes": {"type": "integer"},
                     },
                     "required": ["warc_filename", "warc_offset", "warc_length"],
                 },
@@ -271,7 +274,7 @@ def create_app(master_db: Path) -> Any:
                     "records": res.records,
                 }
             elif tool_name == "fetch_warc_record":
-                fetch = api.fetch_warc_record_range(
+                fetch, source, local_path = api.fetch_warc_record(
                     warc_filename=str(tool_args.get("warc_filename") or ""),
                     warc_offset=int(tool_args.get("warc_offset") or 0),
                     warc_length=int(tool_args.get("warc_length") or 0),
@@ -279,11 +282,20 @@ def create_app(master_db: Path) -> Any:
                     max_bytes=int(tool_args.get("max_bytes") or 2_000_000),
                     decode_gzip_text=True,
                     max_preview_chars=int(tool_args.get("max_preview_chars") or 80_000),
+                    cache_mode=str(tool_args.get("cache_mode") or "range"),
+                    full_warc_cache_dir=(
+                        Path(str(tool_args.get("full_warc_cache_dir")))
+                        if tool_args.get("full_warc_cache_dir")
+                        else None
+                    ),
+                    full_warc_max_bytes=int(tool_args.get("full_warc_max_bytes") or 5_000_000_000),
                 )
                 out = {
                     "ok": fetch.ok,
                     "status": fetch.status,
                     "url": fetch.url,
+                    "source": source,
+                    "local_warc_path": local_path,
                     "bytes_requested": fetch.bytes_requested,
                     "bytes_returned": fetch.bytes_returned,
                     "sha256": fetch.sha256,
@@ -577,6 +589,13 @@ def create_app(master_db: Path) -> Any:
             "<div class='row' style='margin-top: 10px;'>"
             "  <div class='field'><label>max_bytes</label><input id='max_bytes' type='number' min='1' step='1' value='2000000'></div>"
             "  <div class='field'><label>max_preview_chars</label><input id='max_preview_chars' type='number' min='0' step='1' value='80000'></div>"
+            "  <div class='field'><label>cache_mode</label>"
+            "    <select id='cache_mode' style='padding: 10px 12px; border: 1px solid var(--border); background: rgba(15, 23, 42, 0.65); border-radius: 8px; color: var(--text);'>"
+            "      <option value='range' selected>range</option>"
+            "      <option value='auto'>auto</option>"
+            "      <option value='full'>full (download WARC)</option>"
+            "    </select>"
+            "  </div>"
             "  <div class='field'><button id='refetchBtn' type='button'>Re-fetch</button></div>"
             "</div>"
             "<div style='margin-top: 10px; border: 1px solid rgba(34, 48, 74, 0.7); border-radius: 10px; overflow:hidden;'>"
@@ -600,6 +619,7 @@ def create_app(master_db: Path) -> Any:
   const dlWarcLinkEl = document.getElementById('dlWarcLink');
   const maxBytesEl = document.getElementById('max_bytes');
   const maxPreviewEl = document.getElementById('max_preview_chars');
+  const cacheModeEl = document.getElementById('cache_mode');
   const refetchBtn = document.getElementById('refetchBtn');
 
   function esc(s) {{
@@ -610,6 +630,7 @@ def create_app(master_db: Path) -> Any:
     try {{
       pointer.max_bytes = parseInt(maxBytesEl.value || '2000000', 10);
       pointer.max_preview_chars = parseInt(maxPreviewEl.value || '80000', 10);
+      pointer.cache_mode = String(cacheModeEl.value || 'range');
       const res = await ccindexMcp.callTool('fetch_warc_record', pointer);
       if (!res.ok) {{
         statusEl.innerHTML = `<span class='badge err'>error</span> <span class='code'>${{esc(res.error || 'unknown')}}</span>`;
@@ -620,6 +641,7 @@ def create_app(master_db: Path) -> Any:
       statusEl.innerHTML = `
         <span class='badge ok'>ok</span>
         status=<span class='code'>${{esc(res.status)}}</span>
+        source=<span class='code'>${{esc(res.source || '')}}</span>
         bytes=<span class='code'>${{esc(res.bytes_returned)}}/${{esc(res.bytes_requested)}}</span>
         sha256=<span class='code'>${{esc(res.sha256 || '')}}</span>
         <div class='small'>download_url: <span class='code'>${{esc(res.url)}}</span></div>

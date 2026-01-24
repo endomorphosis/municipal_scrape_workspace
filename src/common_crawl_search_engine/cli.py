@@ -13,6 +13,7 @@ from __future__ import annotations
 
 import argparse
 import importlib
+import json
 import sys
 import time
 from pathlib import Path
@@ -61,6 +62,81 @@ def _cmd_search_meta(args: argparse.Namespace) -> int:
         )
 
     sys.stdout.write(api.to_jsonl(res.records))
+    return 0
+
+
+def _cmd_warc_cache(args: argparse.Namespace) -> int:
+    p = api.ensure_full_warc_cached(
+        warc_filename=str(args.warc_filename),
+        prefix=str(args.prefix),
+        cache_dir=Path(args.full_warc_cache_dir).expanduser().resolve() if args.full_warc_cache_dir else None,
+        timeout_s=float(args.timeout_s),
+        max_full_bytes=int(args.full_warc_max_bytes),
+        overwrite=bool(args.overwrite),
+    )
+    sys.stdout.write(str(p) + "\n")
+    return 0
+
+
+def _cmd_warc_fetch_record(args: argparse.Namespace) -> int:
+    fetch, source, local_path = api.fetch_warc_record(
+        warc_filename=str(args.warc_filename),
+        warc_offset=int(args.warc_offset),
+        warc_length=int(args.warc_length),
+        prefix=str(args.prefix),
+        timeout_s=float(args.timeout_s),
+        max_bytes=int(args.max_bytes),
+        decode_gzip_text=bool(args.decode_gzip_text),
+        max_preview_chars=int(args.max_preview_chars),
+        cache_mode=str(args.cache_mode),
+        full_warc_cache_dir=Path(args.full_warc_cache_dir).expanduser().resolve() if args.full_warc_cache_dir else None,
+        full_warc_max_bytes=int(args.full_warc_max_bytes),
+    )
+
+    out: dict[str, object] = {
+        "ok": fetch.ok,
+        "status": fetch.status,
+        "url": fetch.url,
+        "source": source,
+        "local_warc_path": local_path,
+        "bytes_requested": fetch.bytes_requested,
+        "bytes_returned": fetch.bytes_returned,
+        "sha256": fetch.sha256,
+        "decoded_text_preview": fetch.decoded_text_preview,
+        "error": fetch.error,
+    }
+
+    if args.include_raw_base64:
+        out["raw_base64"] = fetch.raw_base64
+
+    if args.http and fetch.ok and fetch.raw_base64:
+        try:
+            import base64 as _b64
+
+            raw = _b64.b64decode(fetch.raw_base64)
+            parsed = api.extract_http_from_warc_gzip_member(
+                raw,
+                max_body_bytes=int(args.max_bytes),
+                max_preview_chars=int(args.max_preview_chars),
+                include_body_base64=bool(args.include_http_body_base64),
+            )
+            out["http"] = {
+                "ok": parsed.ok,
+                "warc_headers": parsed.warc_headers,
+                "status": parsed.http_status,
+                "status_line": parsed.http_status_line,
+                "headers": parsed.http_headers,
+                "body_text_preview": parsed.body_text_preview,
+                "body_is_html": parsed.body_is_html,
+                "body_mime": parsed.body_mime,
+                "body_charset": parsed.body_charset,
+                "body_base64": parsed.body_base64,
+                "error": parsed.error,
+            }
+        except Exception as e:
+            out["http"] = {"ok": False, "error": f"parse_failed: {type(e).__name__}: {e}"}
+
+    sys.stdout.write(json.dumps(out, ensure_ascii=False) + "\n")
     return 0
 
 
@@ -406,6 +482,42 @@ def main(argv: list[str] | None = None) -> int:
 
     ap_mcp_serve = sub_mcp.add_parser("serve", help="Start stdio MCP server (for MCP clients)")
     ap_mcp_serve.set_defaults(func=lambda a: _delegate("common_crawl_search_engine.mcp_server", []))
+
+    # ---- warc ----
+    ap_warc = sub.add_parser("warc", help="WARC utilities (fetch records, cache full WARCs)")
+    sub_warc = ap_warc.add_subparsers(dest="warc_cmd", required=True)
+
+    ap_warc_cache = sub_warc.add_parser("cache", help="Download/cache a full *.warc.gz locally")
+    ap_warc_cache.add_argument("--warc-filename", required=True, help="Common Crawl WARC filename (path within CC)")
+    ap_warc_cache.add_argument("--prefix", default="https://data.commoncrawl.org/", help="WARC base URL prefix")
+    ap_warc_cache.add_argument(
+        "--full-warc-cache-dir",
+        default=None,
+        help="Where to store full WARCs (default: state/warc_files; disable via env CCINDEX_FULL_WARC_CACHE_DIR='')",
+    )
+    ap_warc_cache.add_argument("--full-warc-max-bytes", type=int, default=5_000_000_000)
+    ap_warc_cache.add_argument("--timeout-s", type=float, default=60.0)
+    ap_warc_cache.add_argument("--overwrite", action="store_true", default=False)
+    ap_warc_cache.set_defaults(func=_cmd_warc_cache)
+
+    ap_warc_fetch = sub_warc.add_parser("fetch-record", help="Fetch a WARC record by offset/length")
+    ap_warc_fetch.add_argument("--warc-filename", required=True)
+    ap_warc_fetch.add_argument("--warc-offset", type=int, required=True)
+    ap_warc_fetch.add_argument("--warc-length", type=int, required=True)
+    ap_warc_fetch.add_argument("--prefix", default="https://data.commoncrawl.org/")
+    ap_warc_fetch.add_argument("--timeout-s", type=float, default=30.0)
+    ap_warc_fetch.add_argument("--max-bytes", type=int, default=2_000_000)
+    ap_warc_fetch.add_argument("--decode-gzip-text", dest="decode_gzip_text", action="store_true", default=True)
+    ap_warc_fetch.add_argument("--no-decode-gzip-text", dest="decode_gzip_text", action="store_false")
+    ap_warc_fetch.add_argument("--max-preview-chars", type=int, default=80_000)
+    ap_warc_fetch.add_argument("--cache-mode", choices=["range", "auto", "full"], default="range")
+    ap_warc_fetch.add_argument("--full-warc-cache-dir", default=None)
+    ap_warc_fetch.add_argument("--full-warc-max-bytes", type=int, default=5_000_000_000)
+    ap_warc_fetch.add_argument("--include-raw-base64", action="store_true", default=False)
+    ap_warc_fetch.add_argument("--http", dest="http", action="store_true", default=True, help="Parse HTTP payload from WARC")
+    ap_warc_fetch.add_argument("--no-http", dest="http", action="store_false")
+    ap_warc_fetch.add_argument("--include-http-body-base64", action="store_true", default=False)
+    ap_warc_fetch.set_defaults(func=_cmd_warc_fetch_record)
 
     ns = ap.parse_args(argv)
     return int(ns.func(ns))
