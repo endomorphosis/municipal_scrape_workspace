@@ -96,6 +96,21 @@ button:hover { background: rgba(96, 165, 250, 0.28); }
 .table th, .table td { padding: 10px; border-top: 1px solid rgba(34, 48, 74, 0.7); vertical-align: top; }
 .table th { text-align: left; color: var(--muted); font-size: 12px; }
 
+.spinner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  border: 2px solid rgba(148, 163, 184, 0.35);
+  border-top-color: rgba(148, 163, 184, 0.95);
+  animation: spin 0.85s linear infinite;
+  vertical-align: -2px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
 pre { white-space: pre-wrap; word-break: break-word; }
 hr { border: none; border-top: 1px solid rgba(34, 48, 74, 0.7); margin: 12px 0; }
 """
@@ -1532,6 +1547,7 @@ def create_app(master_db: Path) -> Any:
           <th style='text-align:left; padding: 10px; width: 36px;'><input id='selAll' type='checkbox'></th>
           <th style='text-align:left; padding: 10px;'>Collection</th>
           <th style='text-align:left; padding: 10px; width: 110px;'>Status</th>
+          <th style='text-align:left; padding: 10px; width: 140px;'>Size on disk</th>
           <th style='text-align:left; padding: 10px;'>Name</th>
           <th style='text-align:left; padding: 10px;'>Time Range</th>
         </tr>
@@ -1597,6 +1613,8 @@ def create_app(master_db: Path) -> Any:
   let allCollections = [];
   let selectedIds = new Set();
   let lastBulkStatus = null;
+  let statusRefreshSeq = 0;
+  let statusLoading = false;
 
   function setStatus(obj) {
     if (typeof obj === 'string') { statusEl.textContent = obj; return; }
@@ -1627,7 +1645,7 @@ def create_app(master_db: Path) -> Any:
   function _classifyCollectionStatus(st) {
     if (!st || typeof st !== 'object') return 'unknown';
     if (st.ok === false || st.error) return 'error';
-    if (st.fully_complete === true) return 'complete';
+    if (st.fully_complete === true || st.complete === true) return 'complete';
     return 'partial';
   }
 
@@ -1636,6 +1654,17 @@ def create_app(master_db: Path) -> Any:
     if (cls === 'partial') return 'partial';
     if (cls === 'error') return 'error';
     return '—';
+  }
+
+  function fmtBytes(n) {
+    const v = Number(n || 0);
+    if (!Number.isFinite(v) || v <= 0) return '—';
+    const units = ['B','KB','MB','GB','TB','PB'];
+    let x = v;
+    let i = 0;
+    while (x >= 1024 && i < units.length - 1) { x /= 1024; i += 1; }
+    const digits = (i <= 1) ? 0 : (x < 10 ? 2 : (x < 100 ? 1 : 0));
+    return `${x.toFixed(digits)} ${units[i]}`;
   }
 
   function updateCollectionsInfo({ shownCount } = {}) {
@@ -1685,14 +1714,24 @@ def create_app(master_db: Path) -> Any:
       const st = (lastBulkStatus && lastBulkStatus.collections && typeof lastBulkStatus.collections === 'object')
         ? lastBulkStatus.collections[id]
         : null;
+      const isLoading = !!statusLoading && (!st || typeof st !== 'object');
       const cls = _classifyCollectionStatus(st);
       const label = _statusLabel(cls);
       const color = (cls === 'complete') ? '#067d68' : ((cls === 'error') ? '#b42318' : ((cls === 'partial') ? '#b54708' : '#667085'));
+      const sizeBytes = (st && typeof st === 'object') ? (st.size_on_disk_bytes ?? st.size_bytes ?? null) : null;
+
+      const statusCellHtml = isLoading
+        ? `<span class='spinner' title='loading'></span>`
+        : esc(label);
+      const sizeCellHtml = isLoading
+        ? `<span class='spinner' title='loading'></span>`
+        : esc(fmtBytes(sizeBytes));
       return `
         <tr>
           <td style='padding: 10px;'><input type='checkbox' data-coll='${esc(id)}' ${checked}></td>
           <td style='padding: 10px; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;'>${esc(id)}</td>
-          <td style='padding: 10px; color: ${color}; font-weight: 600;'>${esc(label)}</td>
+          <td style='padding: 10px; color: ${color}; font-weight: 600;'>${statusCellHtml}</td>
+          <td style='padding: 10px; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;'>${sizeCellHtml}</td>
           <td style='padding: 10px;'>${esc(name)}</td>
           <td style='padding: 10px;'>${esc(timeRange)}</td>
         </tr>`;
@@ -1721,6 +1760,10 @@ def create_app(master_db: Path) -> Any:
       allCollections = Array.isArray(res.collections) ? res.collections : [];
       renderCollections();
       setStatus({ ok: true, loaded: allCollections.length, source_path: res.source_path });
+
+      refreshAllStatusesInBackground().catch((e) => {
+        setStatus({ ok: false, error: String(e && e.message ? e.message : e) });
+      });
     } catch (e) {
       setStatus({ ok: false, error: String(e && e.message ? e.message : e) });
     }
@@ -1732,11 +1775,57 @@ def create_app(master_db: Path) -> Any:
     setStatus('Validating collections…');
     try {
       const res = await ccindexMcp.callTool('orchestrator_collections_status', { collections: cols, parallelism: 8 });
-      lastBulkStatus = res;
+      const existing = (lastBulkStatus && lastBulkStatus.collections && typeof lastBulkStatus.collections === 'object')
+        ? lastBulkStatus.collections
+        : {};
+      const merged = { ...existing };
+      if (res && res.collections && typeof res.collections === 'object') {
+        for (const [k, v] of Object.entries(res.collections)) merged[String(k)] = v;
+      }
+      lastBulkStatus = { ok: true, collections: merged, summary: res.summary || null };
       renderCollections();
       setStatus(res);
     } catch (e) {
       setStatus({ ok: false, error: String(e && e.message ? e.message : e) });
+    }
+  }
+
+  async function refreshAllStatusesInBackground() {
+    const seq = ++statusRefreshSeq;
+    statusLoading = true;
+    const ids = allCollections
+      .map((c) => String(c.id || c.collection || ''))
+      .filter((s) => s);
+    if (!ids.length) return;
+
+    const batchSize = 25;
+    const parallelism = 8;
+    const existing = (lastBulkStatus && lastBulkStatus.collections && typeof lastBulkStatus.collections === 'object')
+      ? lastBulkStatus.collections
+      : {};
+    const merged = { ...existing };
+
+    try {
+      renderCollections();
+
+      for (let i = 0; i < ids.length; i += batchSize) {
+        if (seq !== statusRefreshSeq) return; // superseded
+        const batch = ids.slice(i, i + batchSize);
+        setStatus(`Loading status ${i + 1}-${Math.min(i + batch.length, ids.length)} / ${ids.length}…`);
+        const res = await ccindexMcp.callTool('orchestrator_collections_status', { collections: batch, parallelism });
+        if (res && res.collections && typeof res.collections === 'object') {
+          for (const [k, v] of Object.entries(res.collections)) merged[String(k)] = v;
+          lastBulkStatus = { ok: true, collections: merged, summary: res.summary || null };
+          renderCollections();
+        }
+      }
+
+      setStatus({ ok: true, status_loaded: ids.length, summary: lastBulkStatus ? lastBulkStatus.summary : null });
+    } finally {
+      if (seq === statusRefreshSeq) {
+        statusLoading = false;
+        renderCollections();
+      }
     }
   }
 

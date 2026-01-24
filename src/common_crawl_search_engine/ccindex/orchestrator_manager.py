@@ -272,7 +272,15 @@ def build_pipeline_config(settings: Optional[Dict[str, Any]] = None) -> "object"
 
 
 def validate_collection_status(collection: str, *, settings: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
-    """Return orchestrator validator status for a single collection."""
+    """Return orchestrator validator status for a single collection.
+
+    This wraps the underlying validator output with a few normalized fields that
+    are useful for the dashboard/UI:
+    - ok: bool
+    - fully_complete: bool (normalized from legacy `complete`)
+    - size_on_disk_bytes: int (best-effort)
+    - size_breakdown_bytes: dict[str,int]
+    """
 
     cfg = build_pipeline_config(settings)
     from common_crawl_search_engine.ccindex.cc_pipeline_orchestrator import PipelineOrchestrator
@@ -280,7 +288,126 @@ def validate_collection_status(collection: str, *, settings: Optional[Dict[str, 
     with _collinfo_env_if_present():
         orch = PipelineOrchestrator(cfg)
         status = orch.validator.validate_collection(str(collection))
-    return status
+
+    if not isinstance(status, dict):
+        return {"ok": False, "error": "validator returned non-object", "collection": str(collection)}
+
+    coll = str(status.get("collection") or collection)
+
+    # Normalize completeness key naming.
+    fully_complete = bool(status.get("fully_complete")) or bool(status.get("complete"))
+
+    # Best-effort disk usage: duckdb + parquet + source gz (if present).
+    sizes = _collection_disk_usage_bytes(coll, settings=settings)
+    total_bytes = int(sum(int(v) for v in sizes.values() if isinstance(v, (int, float))))
+
+    out = dict(status)
+    out["ok"] = True
+    out["fully_complete"] = fully_complete
+    out["size_on_disk_bytes"] = int(total_bytes)
+    out["size_breakdown_bytes"] = sizes
+    return out
+
+
+def _safe_sum_file_sizes(paths: Iterable[Path]) -> int:
+    total = 0
+    for p in paths:
+        try:
+            if p.exists() and p.is_file():
+                total += int(p.stat().st_size)
+        except Exception:
+            continue
+    return int(total)
+
+
+def _collection_parquet_files(collection: str, *, parquet_root: Path) -> list[Path]:
+    """Return best-effort list of parquet artifacts for a collection."""
+
+    coll = str(collection)
+    parts = coll.split("-")
+    year = parts[2] if len(parts) > 2 else None
+
+    candidates: list[Path] = []
+    if year:
+        candidates.append(parquet_root / "cc_pointers_by_collection" / year / coll)
+        candidates.append(parquet_root / year / coll)
+    candidates.append(parquet_root)
+
+    out: list[Path] = []
+    seen: set[str] = set()
+    for d in candidates:
+        if not d.exists() or not d.is_dir():
+            continue
+
+        globs = [
+            "cdx-*.gz.parquet",
+            "cdx-*.gz.sorted.parquet",
+            f"{coll}-cdx-*.gz.parquet",
+            f"{coll}-cdx-*.gz.sorted.parquet",
+        ]
+        for pat in globs:
+            for fp in d.glob(pat):
+                key = str(fp.resolve())
+                if key in seen:
+                    continue
+                seen.add(key)
+                out.append(fp)
+    return out
+
+
+def _collection_gz_files(collection: str, *, ccindex_root: Path) -> list[Path]:
+    coll_dir = ccindex_root / str(collection)
+    if not coll_dir.exists() or not coll_dir.is_dir():
+        return []
+    return [p for p in coll_dir.glob("cdx-*.gz") if p.is_file()]
+
+
+def _collection_duckdb_files(collection: str, *, duckdb_collection_root: Path) -> list[Path]:
+    """Return duckdb + sidecar files (.wal/.shm) for a collection."""
+
+    base = duckdb_collection_root / f"{collection}.duckdb"
+    files = [base, base.with_suffix(base.suffix + ".wal"), base.with_suffix(base.suffix + ".shm")]
+    # Some runs may have variant filenames; include any matching duckdb in the dir.
+    try:
+        if duckdb_collection_root.exists() and duckdb_collection_root.is_dir():
+            for fp in duckdb_collection_root.glob(f"{collection}*.duckdb*"):
+                if fp.is_file():
+                    files.append(fp)
+    except Exception:
+        pass
+    # De-dupe
+    seen: set[str] = set()
+    out: list[Path] = []
+    for p in files:
+        try:
+            key = str(p.resolve())
+        except Exception:
+            key = str(p)
+        if key in seen:
+            continue
+        seen.add(key)
+        out.append(p)
+    return out
+
+
+def _collection_disk_usage_bytes(collection: str, *, settings: Optional[Dict[str, Any]] = None) -> dict[str, int]:
+    """Best-effort disk usage for a collection across pipeline artifacts."""
+
+    cfg = build_pipeline_config(settings)
+    # PipelineConfig uses these attribute names.
+    ccindex_root = Path(getattr(cfg, "ccindex_root"))
+    parquet_root = Path(getattr(cfg, "parquet_root"))
+    duckdb_collection_root = Path(getattr(cfg, "duckdb_collection_root"))
+
+    gz_bytes = _safe_sum_file_sizes(_collection_gz_files(collection, ccindex_root=ccindex_root))
+    parquet_bytes = _safe_sum_file_sizes(_collection_parquet_files(collection, parquet_root=parquet_root))
+    duckdb_bytes = _safe_sum_file_sizes(_collection_duckdb_files(collection, duckdb_collection_root=duckdb_collection_root))
+
+    return {
+        "tar_gz_bytes": int(gz_bytes),
+        "parquet_bytes": int(parquet_bytes),
+        "duckdb_bytes": int(duckdb_bytes),
+    }
 
 
 def validate_collections_status(
@@ -305,7 +432,7 @@ def validate_collections_status(
         try:
             return validate_collection_status(c, settings=settings)
         except Exception as e:
-            return {"ok": False, "error": str(e)}
+            return {"ok": False, "error": str(e), "collection": c}
 
     with ThreadPoolExecutor(max_workers=par) as ex:
         futs = {ex.submit(_one, c): c for c in cols}
@@ -313,13 +440,23 @@ def validate_collections_status(
             c = futs[fut]
             results[c] = fut.result()
 
-    # Basic summary: count fully_complete when the validator provides it.
+    # Basic summary: count normalized fully_complete.
     complete = 0
+    total_bytes = 0
     for _c, st in results.items():
-        if isinstance(st, dict) and st.get("fully_complete") is True:
-            complete += 1
+        if isinstance(st, dict):
+            if st.get("fully_complete") is True:
+                complete += 1
+            try:
+                total_bytes += int(st.get("size_on_disk_bytes") or 0)
+            except Exception:
+                pass
 
-    return {"ok": True, "collections": results, "summary": {"total": len(cols), "fully_complete": complete}}
+    return {
+        "ok": True,
+        "collections": results,
+        "summary": {"total": len(cols), "fully_complete": complete, "size_on_disk_bytes": int(total_bytes)},
+    }
 
 
 def delete_collection_index(collection: str, *, settings: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:

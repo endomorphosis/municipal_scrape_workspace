@@ -307,18 +307,18 @@ def test_settings_panel_save_and_cache_clear_affects_record_defaults(dashboard_r
 
             page.click("#clearRangeCacheBtn")
             page.wait_for_function(
-                                """() => {
-                                    const t = (document.querySelector('#cacheStats')?.textContent || '');
-                                    return t.includes('range_cache:') && t.includes('0 items');
-                                }""",
+                """() => {
+  const t = (document.querySelector('#cacheStats')?.textContent || '');
+  return t.includes('range_cache:') && t.includes('0 items');
+}""",
                 timeout=10_000,
             )
             page.click("#clearFullCacheBtn")
             page.wait_for_function(
-                                """() => {
-                                    const t = (document.querySelector('#cacheStats')?.textContent || '');
-                                    return t.includes('full_warc_cache:') && t.includes('0 items');
-                                }""",
+                """() => {
+  const t = (document.querySelector('#cacheStats')?.textContent || '');
+  return t.includes('full_warc_cache:') && t.includes('0 items');
+}""",
                 timeout=10_000,
             )
 
