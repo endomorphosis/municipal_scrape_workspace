@@ -148,14 +148,17 @@ exec "${SCRIPT_DIR}/scripts/ops/<script_name>.sh" "$@"
 
 ---
 
-#### 📚 Documentation Files (5 files) - KEEP AS-IS
+#### 📚 Documentation Files - KEEP AS-IS
 
 ```
 README.md                          ← Main entry point
 QUICKSTART.md                      ← Quick start guide
-REFACTORED_STRUCTURE.md            ← Complete structure guide (authoritative)
-REFACTORING_PROJECT_SUMMARY.md    ← Refactoring summary
-REFACTORING_VALIDATION.md          ← Validation report
+MIGRATION_GUIDE.md                 ← Root wrapper removal + command migration map
+docs/README.md                     ← Docs index (by component)
+docs/REPO_STRUCTURE.md             ← Current package/layout guide
+
+docs/municipal_scrape_workspace/refactoring/          ← Refactoring/migration docs
+docs/municipal_scrape_workspace/reorganization/       ← Historical reorganization plans/notes
 ```
 
 **Status**: ✅ **NO ACTION NEEDED**  

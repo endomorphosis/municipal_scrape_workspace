@@ -475,7 +475,7 @@ All shell wrappers were already removed in Phase 1 reorganization. Only `bootstr
 
 1. **Read Migration Guide:** [MIGRATION_GUIDE.md](MIGRATION_GUIDE.md)
 2. **Check File Locations:** [FINAL_REORGANIZATION_README.md](FINAL_REORGANIZATION_README.md)
-3. **View Structure:** [REFACTORED_STRUCTURE.md](REFACTORED_STRUCTURE.md)
+3. **View Structure:** [../../REPO_STRUCTURE.md](../../REPO_STRUCTURE.md) (current) or [../../../REFACTORED_STRUCTURE.md](../../../REFACTORED_STRUCTURE.md) (historical)
 4. **Quick Start:** [QUICKSTART.md](QUICKSTART.md)
 
 ### Common Questions

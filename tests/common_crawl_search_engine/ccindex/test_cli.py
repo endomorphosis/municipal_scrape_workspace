@@ -7,7 +7,7 @@ import sys
 def test_search_domain_help():
     """Test that search_cc_domain displays help."""
     result = subprocess.run(
-        [sys.executable, "-m", "municipal_scrape_workspace.ccindex.search_cc_domain", "--help"],
+        [sys.executable, "-m", "common_crawl_search_engine.ccindex.search_cc_domain", "--help"],
         capture_output=True,
         text=True,
         timeout=10
@@ -19,7 +19,7 @@ def test_search_domain_help():
 def test_build_pointer_help():
     """Test that build_cc_pointer_duckdb displays help."""
     result = subprocess.run(
-        [sys.executable, "-m", "municipal_scrape_workspace.ccindex.build_cc_pointer_duckdb", "--help"],
+        [sys.executable, "-m", "common_crawl_search_engine.ccindex.build_cc_pointer_duckdb", "--help"],
         capture_output=True,
         text=True,
         timeout=10
@@ -31,7 +31,7 @@ def test_build_pointer_help():
 def test_orchestrator_help():
     """Test that cc_pipeline_orchestrator displays help."""
     result = subprocess.run(
-        [sys.executable, "-m", "municipal_scrape_workspace.ccindex.cc_pipeline_orchestrator", "--help"],
+        [sys.executable, "-m", "common_crawl_search_engine.ccindex.cc_pipeline_orchestrator", "--help"],
         capture_output=True,
         text=True,
         timeout=10
@@ -43,7 +43,7 @@ def test_orchestrator_help():
 def test_validate_collection_help():
     """Test that validate_collection_completeness displays help."""
     result = subprocess.run(
-        [sys.executable, "-m", "municipal_scrape_workspace.ccindex.validate_collection_completeness", "--help"],
+        [sys.executable, "-m", "common_crawl_search_engine.ccindex.validate_collection_completeness", "--help"],
         capture_output=True,
         text=True,
         timeout=10
@@ -55,7 +55,7 @@ def test_validate_collection_help():
 def test_ccindex_unified_help():
     """Test that the unified ccindex CLI displays help."""
     result = subprocess.run(
-        [sys.executable, "-m", "municipal_scrape_workspace.ccindex.cli", "--help"],
+        [sys.executable, "-m", "common_crawl_search_engine.cli", "--help"],
         capture_output=True,
         text=True,
         timeout=10,
@@ -67,7 +67,7 @@ def test_ccindex_unified_help():
 def test_ccindex_mcp_help():
     """Test that `ccindex mcp --help` works."""
     result = subprocess.run(
-        [sys.executable, "-m", "municipal_scrape_workspace.ccindex.cli", "mcp", "--help"],
+        [sys.executable, "-m", "common_crawl_search_engine.cli", "mcp", "--help"],
         capture_output=True,
         text=True,
         timeout=10,

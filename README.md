@@ -2,27 +2,30 @@
 
 This is a standalone Python package + git repo for the municipal scraping workflow.
 
-This repo also contains Common Crawl (CC) index pipeline tooling (Parquet + DuckDB pointer indexes + meta-indexes). The CC tooling is fully organized under the installable package namespace `municipal_scrape_workspace.ccindex`.
+This repo also contains Common Crawl (CC) index pipeline tooling (Parquet + DuckDB pointer indexes + meta-indexes). The CC tooling now lives under the installable package namespace `common_crawl_search_engine`.
 
 ## 📚 Repository Structure
 
-**✅ REFACTORING COMPLETE** - The repository has been successfully refactored for improved organization and maintainability.
+**✅ REFACTORING / REORGANIZATION COMPLETE** - Code is split into two installable packages under `src/`:
 
-👉 **Start Here**: [REFACTORED_STRUCTURE.md](REFACTORED_STRUCTURE.md) - **Complete authoritative guide to refactored repository**
+- `common_crawl_search_engine` — Common Crawl indexing/search pipeline, unified `ccindex` CLI, dashboard, MCP server
+- `municipal_scrape_workspace` — municipal scraping orchestrator + wrapper CLI
+
+👉 **Start Here**:
+
+- [QUICKSTART.md](QUICKSTART.md)
+- [docs/README.md](docs/README.md) (component docs index)
 
 **Essential Documentation**:
-- 📘 **[REFACTORED_STRUCTURE.md](REFACTORED_STRUCTURE.md)** - **PRIMARY GUIDE** Complete structure, file locations, import patterns, and usage
-- 🎯 **[REORGANIZATION_PLAN.md](REORGANIZATION_PLAN.md)** - **ROOT CLEANUP** Details of root directory reorganization
-- 📋 [docs/refactoring/FINAL_LAYOUT_README.md](docs/refactoring/FINAL_LAYOUT_README.md) - Detailed post-migration guide
-- 📄 [docs/refactoring/FILE_MIGRATION_MAP.md](docs/refactoring/FILE_MIGRATION_MAP.md) - Quick file location lookup table
-- 🎯 [docs/refactoring/MIGRATION_COMPLETE.md](docs/refactoring/MIGRATION_COMPLETE.md) - Migration summary & statistics
-- 📚 [docs/refactoring/REFACTORING_INDEX.md](docs/refactoring/REFACTORING_INDEX.md) - Complete refactoring documentation index
+- 🎯 [docs/municipal_scrape_workspace/reorganization/REORGANIZATION_PLAN.md](docs/municipal_scrape_workspace/reorganization/REORGANIZATION_PLAN.md) — root directory cleanup plan/details
+- 📘 [MIGRATION_GUIDE.md](MIGRATION_GUIDE.md) — root wrapper removal + command migration map
+- 📁 [docs/common_crawl_search_engine/README.md](docs/common_crawl_search_engine/README.md) — CC tooling docs
+- 📁 [docs/municipal_scrape_workspace/README.md](docs/municipal_scrape_workspace/README.md) — municipal workflow docs
 
 **Documentation Organization**:
-- 📁 [docs/refactoring/](docs/refactoring/) - Refactoring process documentation
-- 📁 [docs/ccindex/](docs/ccindex/) - Common Crawl index documentation
-- 📁 [docs/pipeline/](docs/pipeline/) - Pipeline orchestration documentation
-- 📁 [docs/](docs/) - General project documentation
+- 📁 [docs/municipal_scrape_workspace/](docs/municipal_scrape_workspace/) - Municipal scrape + refactoring docs
+- 📁 [docs/common_crawl_search_engine/](docs/common_crawl_search_engine/) - Common Crawl search engine docs
+- 📁 [docs/](docs/) - Top-level docs index
 
 **Final Status** (2026-01-20):
 - ✅ **52 Python files processed** (100% complete)
@@ -52,8 +55,8 @@ pip install -e '.[ccindex]'
 # 4. Run tools - Two methods:
 
 # Method A: Via Python modules
-python -m municipal_scrape_workspace.ccindex.search_cc_domain --domain example.com
-python -m municipal_scrape_workspace.ccindex.build_cc_pointer_duckdb --help
+python -m common_crawl_search_engine.ccindex.search_cc_domain --domain example.com
+python -m common_crawl_search_engine.ccindex.build_cc_pointer_duckdb --help
 
 # Method B: Via console scripts (shorter, after pip install)
 ccindex-search-domain --domain example.com
@@ -68,7 +71,7 @@ scripts/ops/overnight_build_duckdb_index.sh
 scripts/ops/monitor_progress.sh
 ```
 
-**📚 For detailed guide, see [REFACTORED_STRUCTURE.md](REFACTORED_STRUCTURE.md)**
+**📚 For current structure, see [docs/REPO_STRUCTURE.md](docs/REPO_STRUCTURE.md)**
 
 ## Directory Structure
 
@@ -78,9 +81,9 @@ municipal_scrape_workspace/
 ├── pyproject.toml                   # Package configuration
 ├── data/                            # Reference data files
 │   └── us_towns_and_counties_urls.csv
-├── src/municipal_scrape_workspace/  # Canonical Python code
-│   ├── ccindex/                     # CC index tools (40 modules)
-│   └── ...
+├── src/                             # Canonical Python packages (src-layout)
+│   ├── common_crawl_search_engine/  # Common Crawl tooling (ccindex core + CLI/dashboard/MCP)
+│   └── municipal_scrape_workspace/  # Municipal scraping tooling
 ├── scripts/ops/                     # All operational shell scripts
 │   ├── download_cc_indexes.sh
 │   ├── overnight_build_*.sh

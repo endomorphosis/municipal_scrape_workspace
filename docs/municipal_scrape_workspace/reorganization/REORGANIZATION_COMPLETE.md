@@ -419,7 +419,7 @@ municipal_scrape_workspace/
 
 ## 📞 Questions?
 
-- **Structure questions**: See [REFACTORED_STRUCTURE.md](REFACTORED_STRUCTURE.md)
+- **Structure questions**: See [../../REPO_STRUCTURE.md](../../REPO_STRUCTURE.md) (current) or [../../../REFACTORED_STRUCTURE.md](../../../REFACTORED_STRUCTURE.md) (historical)
 - **Migration help**: See this document's Migration Guide section
 - **Shell scripts**: All in `scripts/ops/` directory
 - **Data files**: All in `data/` directory

@@ -33,8 +33,8 @@ pip install -e '.[ccindex-dashboard]'
 
 #### Method 1: Python Modules
 ```bash
-python -m municipal_scrape_workspace.ccindex.search_cc_domain --domain example.com
-python -m municipal_scrape_workspace.ccindex.build_cc_pointer_duckdb --help
+python -m common_crawl_search_engine.ccindex.search_cc_domain --domain example.com
+python -m common_crawl_search_engine.ccindex.build_cc_pointer_duckdb --help
 ```
 
 #### Method 2: Console Scripts (Shorter - After pip install)
@@ -77,7 +77,7 @@ scripts/ops/monitor_progress.sh
 
 ```bash
 # Using Python module
-python -m municipal_scrape_workspace.ccindex.search_cc_domain --domain example.com
+python -m common_crawl_search_engine.ccindex.search_cc_domain --domain example.com
 
 # Using console script (after pip install)
 ccindex-search-domain --domain example.com
@@ -90,7 +90,7 @@ ccindex search meta --domain example.com --max-matches 50
 
 ```python
 from pathlib import Path
-from municipal_scrape_workspace.ccindex.api import search_domain_via_meta_indexes
+from common_crawl_search_engine.ccindex.api import search_domain_via_meta_indexes
 
 result = search_domain_via_meta_indexes(
   "example.com",
@@ -131,7 +131,7 @@ ccindex mcp start --host 127.0.0.1 --port 8787
 
 ```bash
 # Using Python module
-python -m municipal_scrape_workspace.ccindex.build_cc_pointer_duckdb --output-dir /path/to/indexes
+python -m common_crawl_search_engine.ccindex.build_cc_pointer_duckdb --output-dir /path/to/indexes
 
 # Using console script
 ccindex-build-pointer --output-dir /path/to/indexes
@@ -144,7 +144,7 @@ scripts/ops/overnight_build_duckdb_index.sh
 
 ```bash
 # Using Python module
-python -m municipal_scrape_workspace.ccindex.cc_pipeline_orchestrator --config pipeline_config.json
+python -m common_crawl_search_engine.ccindex.cc_pipeline_orchestrator --config pipeline_config.json
 
 # Using console script
 ccindex-orchestrate --config pipeline_config.json
@@ -169,12 +169,14 @@ python -m municipal_scrape_workspace.orchestrate_municipal_scrape \
 
 - **[README.md](README.md)** - Main entry point
 - **[MIGRATION_GUIDE.md](MIGRATION_GUIDE.md)** - **Migration guide for wrapper removal**
-- **[REFACTORED_STRUCTURE.md](REFACTORED_STRUCTURE.md)** - Complete structure guide
-- **[REORGANIZATION_PLAN.md](REORGANIZATION_PLAN.md)** - Root directory cleanup details
+- **[docs/README.md](docs/README.md)** - Documentation index (by component)
+- **[docs/common_crawl_search_engine/README.md](docs/common_crawl_search_engine/README.md)** - CC search engine docs
+- **[docs/municipal_scrape_workspace/README.md](docs/municipal_scrape_workspace/README.md)** - Municipal scrape docs
+- **[docs/municipal_scrape_workspace/reorganization/REORGANIZATION_PLAN.md](docs/municipal_scrape_workspace/reorganization/REORGANIZATION_PLAN.md)** - Root directory cleanup details
 - **[docs/](docs/)** - Detailed documentation
 
 ## Need Help?
 
-1. Check [REFACTORED_STRUCTURE.md](REFACTORED_STRUCTURE.md) for complete structure
-2. See [docs/COMMON_CRAWL_USAGE.md](docs/COMMON_CRAWL_USAGE.md) for CC usage
-3. Review [REORGANIZATION_PLAN.md](REORGANIZATION_PLAN.md) for recent changes
+1. Start at [docs/README.md](docs/README.md) (component docs index)
+2. See [docs/municipal_scrape_workspace/COMMON_CRAWL_USAGE.md](docs/municipal_scrape_workspace/COMMON_CRAWL_USAGE.md) for CC usage
+3. Review [docs/municipal_scrape_workspace/reorganization/REORGANIZATION_PLAN.md](docs/municipal_scrape_workspace/reorganization/REORGANIZATION_PLAN.md) for recent changes

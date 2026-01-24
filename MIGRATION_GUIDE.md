@@ -20,7 +20,7 @@
 ### After (wrappers removed)
 ```bash
 # Use Python module format or console scripts
-python -m municipal_scrape_workspace.ccindex.search_cc_domain --domain example.com
+python -m common_crawl_search_engine.ccindex.search_cc_domain --domain example.com
 ccindex-search-domain --domain example.com  # After pip install
 ```
 
@@ -40,8 +40,8 @@ If you have shell scripts calling the wrappers, update them:
 ./build_cc_pointer_duckdb.py --output-dir /indexes
 
 # NEW (always works)
-python -m municipal_scrape_workspace.ccindex.search_cc_domain --domain example.com
-python -m municipal_scrape_workspace.ccindex.build_cc_pointer_duckdb --output-dir /indexes
+python -m common_crawl_search_engine.ccindex.search_cc_domain --domain example.com
+python -m common_crawl_search_engine.ccindex.build_cc_pointer_duckdb --output-dir /indexes
 ```
 
 **Pros:**
@@ -87,7 +87,7 @@ sys.path.insert(0, '/path/to/repo')
 import search_cc_domain
 
 # NEW - Import the module
-from municipal_scrape_workspace.ccindex import search_cc_domain
+from common_crawl_search_engine.ccindex import search_cc_domain
 
 # Call the main function
 result = search_cc_domain.main(['--domain', 'example.com'])
@@ -97,7 +97,7 @@ result = search_cc_domain.main(['--domain', 'example.com'])
 
 ```python
 # Direct import of main function
-from municipal_scrape_workspace.ccindex.search_cc_domain import main as search_domain
+from common_crawl_search_engine.ccindex.search_cc_domain import main as search_domain
 
 # Call it
 result = search_domain(['--domain', 'example.com'])
@@ -111,7 +111,7 @@ import subprocess
 # Call via Python module
 result = subprocess.run([
     'python', '-m',
-    'municipal_scrape_workspace.ccindex.search_cc_domain',
+    'common_crawl_search_engine.ccindex.search_cc_domain',
     '--domain', 'example.com'
 ], capture_output=True)
 
@@ -130,75 +130,75 @@ result = subprocess.run([
 
 | Old Command | New Python Module | Console Script |
 |-------------|-------------------|----------------|
-| `./search_cc_domain.py` | `python -m municipal_scrape_workspace.ccindex.search_cc_domain` | `ccindex-search-domain` |
-| `./search_cc_duckdb_index.py` | `python -m municipal_scrape_workspace.ccindex.search_cc_duckdb_index` | `ccindex-search-duckdb` |
-| `./search_cc_pointer_index.py` | `python -m municipal_scrape_workspace.ccindex.search_cc_pointer_index` | `ccindex-search-pointer` |
-| `./search_cc_via_meta_indexes.py` | `python -m municipal_scrape_workspace.ccindex.search_cc_via_meta_indexes` | `ccindex-search` |
-| `./search_parallel_duckdb_indexes.py` | `python -m municipal_scrape_workspace.ccindex.search_parallel_duckdb_indexes` | `ccindex-search-parallel` |
-| `./cc_domain_parquet_locator.py` | `python -m municipal_scrape_workspace.ccindex.cc_domain_parquet_locator` | N/A |
+| `./search_cc_domain.py` | `python -m common_crawl_search_engine.ccindex.search_cc_domain` | `ccindex-search-domain` |
+| `./search_cc_duckdb_index.py` | `python -m common_crawl_search_engine.ccindex.search_cc_duckdb_index` | `ccindex-search-duckdb` |
+| `./search_cc_pointer_index.py` | `python -m common_crawl_search_engine.ccindex.search_cc_pointer_index` | `ccindex-search-pointer` |
+| `./search_cc_via_meta_indexes.py` | `python -m common_crawl_search_engine.ccindex.search_cc_via_meta_indexes` | `ccindex-search` |
+| `./search_parallel_duckdb_indexes.py` | `python -m common_crawl_search_engine.ccindex.search_parallel_duckdb_indexes` | `ccindex-search-parallel` |
+| `./cc_domain_parquet_locator.py` | `python -m common_crawl_search_engine.ccindex.cc_domain_parquet_locator` | N/A |
 
 ### Build Tools
 
 | Old Command | New Python Module | Console Script |
 |-------------|-------------------|----------------|
-| `./build_cc_pointer_duckdb.py` | `python -m municipal_scrape_workspace.ccindex.build_cc_pointer_duckdb` | `ccindex-build-pointer` |
-| `./build_index_from_parquet.py` | `python -m municipal_scrape_workspace.ccindex.build_index_from_parquet` | N/A |
-| `./build_parallel_duckdb_indexes.py` | `python -m municipal_scrape_workspace.ccindex.build_parallel_duckdb_indexes` | `ccindex-build-parallel` |
-| `./build_duckdb_pointer_from_parquet.py` | `python -m municipal_scrape_workspace.ccindex.build_duckdb_pointer_from_parquet` | N/A |
-| `./build_cc_parquet_rowgroup_index.py` | `python -m municipal_scrape_workspace.ccindex.build_cc_parquet_rowgroup_index` | N/A |
-| `./build_year_meta_indexes.py` | `python -m municipal_scrape_workspace.ccindex.build_year_meta_indexes` | `ccindex-build-meta` |
-| `./build_master_index.py` | `python -m municipal_scrape_workspace.ccindex.build_master_index` | N/A |
+| `./build_cc_pointer_duckdb.py` | `python -m common_crawl_search_engine.ccindex.build_cc_pointer_duckdb` | `ccindex-build-pointer` |
+| `./build_index_from_parquet.py` | `python -m common_crawl_search_engine.ccindex.build_index_from_parquet` | N/A |
+| `./build_parallel_duckdb_indexes.py` | `python -m common_crawl_search_engine.ccindex.build_parallel_duckdb_indexes` | `ccindex-build-parallel` |
+| `./build_duckdb_pointer_from_parquet.py` | `python -m common_crawl_search_engine.ccindex.build_duckdb_pointer_from_parquet` | N/A |
+| `./build_cc_parquet_rowgroup_index.py` | `python -m common_crawl_search_engine.ccindex.build_cc_parquet_rowgroup_index` | N/A |
+| `./build_year_meta_indexes.py` | `python -m common_crawl_search_engine.ccindex.build_year_meta_indexes` | `ccindex-build-meta` |
+| `./build_master_index.py` | `python -m common_crawl_search_engine.ccindex.build_master_index` | N/A |
 
 ### Orchestration & Monitoring
 
 | Old Command | New Python Module | Console Script |
 |-------------|-------------------|----------------|
-| `./cc_pipeline_orchestrator.py` | `python -m municipal_scrape_workspace.ccindex.cc_pipeline_orchestrator` | `ccindex-orchestrate` |
-| `./cc_pipeline_watch.py` | `python -m municipal_scrape_workspace.ccindex.cc_pipeline_watch` | `ccindex-watch` |
-| `./cc_pipeline_hud.py` | `python -m municipal_scrape_workspace.ccindex.cc_pipeline_hud` | `ccindex-hud` |
-| `./monitor_progress.py` | `python -m municipal_scrape_workspace.ccindex.monitor_progress` | N/A |
-| `./monitor_cc_pointer_build.py` | `python -m municipal_scrape_workspace.ccindex.monitor_cc_pointer_build` | N/A |
-| `./cc_pointer_status.py` | `python -m municipal_scrape_workspace.ccindex.cc_pointer_status` | N/A |
-| `./queue_cc_pointer_build.py` | `python -m municipal_scrape_workspace.ccindex.queue_cc_pointer_build` | N/A |
-| `./launch_cc_pointer_build.py` | `python -m municipal_scrape_workspace.ccindex.launch_cc_pointer_build` | N/A |
-| `./watchdog_cc_pointer_build.py` | `python -m municipal_scrape_workspace.ccindex.watchdog_cc_pointer_build` | N/A |
-| `./watchdog_monitor.py` | `python -m municipal_scrape_workspace.ccindex.watchdog_monitor` | N/A |
+| `./cc_pipeline_orchestrator.py` | `python -m common_crawl_search_engine.ccindex.cc_pipeline_orchestrator` | `ccindex-orchestrate` |
+| `./cc_pipeline_watch.py` | `python -m common_crawl_search_engine.ccindex.cc_pipeline_watch` | `ccindex-watch` |
+| `./cc_pipeline_hud.py` | `python -m common_crawl_search_engine.ccindex.cc_pipeline_hud` | `ccindex-hud` |
+| `./monitor_progress.py` | `python -m common_crawl_search_engine.ccindex.monitor_progress` | N/A |
+| `./monitor_cc_pointer_build.py` | `python -m common_crawl_search_engine.ccindex.monitor_cc_pointer_build` | N/A |
+| `./cc_pointer_status.py` | `python -m common_crawl_search_engine.ccindex.cc_pointer_status` | N/A |
+| `./queue_cc_pointer_build.py` | `python -m common_crawl_search_engine.ccindex.queue_cc_pointer_build` | N/A |
+| `./launch_cc_pointer_build.py` | `python -m common_crawl_search_engine.ccindex.launch_cc_pointer_build` | N/A |
+| `./watchdog_cc_pointer_build.py` | `python -m common_crawl_search_engine.ccindex.watchdog_cc_pointer_build` | N/A |
+| `./watchdog_monitor.py` | `python -m common_crawl_search_engine.ccindex.watchdog_monitor` | N/A |
 
 ### Validation Tools
 
 | Old Command | New Python Module | Console Script |
 |-------------|-------------------|----------------|
-| `./validate_and_sort_parquet.py` | `python -m municipal_scrape_workspace.ccindex.validate_and_sort_parquet` | `ccindex-validate-parquet` |
-| `./validate_collection_completeness.py` | `python -m municipal_scrape_workspace.ccindex.validate_collection_completeness` | `ccindex-validate` |
-| `./validate_search_completeness.py` | `python -m municipal_scrape_workspace.ccindex.validate_search_completeness` | N/A |
-| `./validate_urlindex_sorted.py` | `python -m municipal_scrape_workspace.ccindex.validate_urlindex_sorted` | N/A |
-| `./validate_warc_record_blobs.py` | `python -m municipal_scrape_workspace.ccindex.validate_warc_record_blobs` | N/A |
-| `./verify_warc_retrieval.py` | `python -m municipal_scrape_workspace.ccindex.verify_warc_retrieval` | N/A |
-| `./parallel_validate_parquet.py` | `python -m municipal_scrape_workspace.ccindex.parallel_validate_parquet` | N/A |
+| `./validate_and_sort_parquet.py` | `python -m common_crawl_search_engine.ccindex.validate_and_sort_parquet` | `ccindex-validate-parquet` |
+| `./validate_collection_completeness.py` | `python -m common_crawl_search_engine.ccindex.validate_collection_completeness` | `ccindex-validate` |
+| `./validate_search_completeness.py` | `python -m common_crawl_search_engine.ccindex.validate_search_completeness` | N/A |
+| `./validate_urlindex_sorted.py` | `python -m common_crawl_search_engine.ccindex.validate_urlindex_sorted` | N/A |
+| `./validate_warc_record_blobs.py` | `python -m common_crawl_search_engine.ccindex.validate_warc_record_blobs` | N/A |
+| `./verify_warc_retrieval.py` | `python -m common_crawl_search_engine.ccindex.verify_warc_retrieval` | N/A |
+| `./parallel_validate_parquet.py` | `python -m common_crawl_search_engine.ccindex.parallel_validate_parquet` | N/A |
 
 ### Conversion Tools
 
 | Old Command | New Python Module | Console Script |
 |-------------|-------------------|----------------|
-| `./bulk_convert_gz_to_parquet.py` | `python -m municipal_scrape_workspace.ccindex.bulk_convert_gz_to_parquet` | N/A |
-| `./parallel_convert_missing.py` | `python -m municipal_scrape_workspace.ccindex.parallel_convert_missing` | N/A |
-| `./regenerate_parquet_from_gz.py` | `python -m municipal_scrape_workspace.ccindex.regenerate_parquet_from_gz` | N/A |
-| `./sample_ccindex_to_parquet.py` | `python -m municipal_scrape_workspace.ccindex.sample_ccindex_to_parquet` | N/A |
-| `./extract_cc_index_tarballs.py` | `python -m municipal_scrape_workspace.ccindex.extract_cc_index_tarballs` | N/A |
+| `./bulk_convert_gz_to_parquet.py` | `python -m common_crawl_search_engine.ccindex.bulk_convert_gz_to_parquet` | N/A |
+| `./parallel_convert_missing.py` | `python -m common_crawl_search_engine.ccindex.parallel_convert_missing` | N/A |
+| `./regenerate_parquet_from_gz.py` | `python -m common_crawl_search_engine.ccindex.regenerate_parquet_from_gz` | N/A |
+| `./sample_ccindex_to_parquet.py` | `python -m common_crawl_search_engine.ccindex.sample_ccindex_to_parquet` | N/A |
+| `./extract_cc_index_tarballs.py` | `python -m common_crawl_search_engine.ccindex.extract_cc_index_tarballs` | N/A |
 
 ### Sorting Tools
 
 | Old Command | New Python Module | Console Script |
 |-------------|-------------------|----------------|
-| `./sort_cc_parquet_shards.py` | `python -m municipal_scrape_workspace.ccindex.sort_cc_parquet_shards` | N/A |
-| `./sort_unsorted_memory_aware.py` | `python -m municipal_scrape_workspace.ccindex.sort_unsorted_memory_aware` | N/A |
+| `./sort_cc_parquet_shards.py` | `python -m common_crawl_search_engine.ccindex.sort_cc_parquet_shards` | N/A |
+| `./sort_unsorted_memory_aware.py` | `python -m common_crawl_search_engine.ccindex.sort_unsorted_memory_aware` | N/A |
 
 ### WARC Tools
 
 | Old Command | New Python Module | Console Script |
 |-------------|-------------------|----------------|
-| `./download_warc_records.py` | `python -m municipal_scrape_workspace.ccindex.download_warc_records` | N/A |
-| `./warc_candidates_from_jsonl.py` | `python -m municipal_scrape_workspace.ccindex.warc_candidates_from_jsonl` | N/A |
+| `./download_warc_records.py` | `python -m common_crawl_search_engine.ccindex.download_warc_records` | N/A |
+| `./warc_candidates_from_jsonl.py` | `python -m common_crawl_search_engine.ccindex.warc_candidates_from_jsonl` | N/A |
 
 ### Municipal Scraping
 
@@ -234,7 +234,7 @@ pip install -e '.[ccindex,ipfs,dev]'
 ccindex-search-domain --help
 
 # Test Python module
-python -m municipal_scrape_workspace.ccindex.search_cc_domain --help
+python -m common_crawl_search_engine.ccindex.search_cc_domain --help
 
 # Both should show help message
 ```
@@ -245,7 +245,7 @@ Use find/replace in your scripts:
 
 ```bash
 # Example: Update all references in your scripts
-find . -name "*.sh" -type f -exec sed -i 's|./search_cc_domain.py|python -m municipal_scrape_workspace.ccindex.search_cc_domain|g' {} +
+find . -name "*.sh" -type f -exec sed -i 's|./search_cc_domain.py|python -m common_crawl_search_engine.ccindex.search_cc_domain|g' {} +
 ```
 
 ---
@@ -262,9 +262,9 @@ find . -name "*.sh" -type f -exec sed -i 's|./search_cc_domain.py|python -m muni
 ./validate_collection_completeness.py --collection-dir /data
 
 # New script (Option A: Python modules)
-python -m municipal_scrape_workspace.ccindex.search_cc_domain --domain example.com > results1.txt
-python -m municipal_scrape_workspace.ccindex.search_cc_domain --domain test.com > results2.txt
-python -m municipal_scrape_workspace.ccindex.validate_collection_completeness --collection-dir /data
+python -m common_crawl_search_engine.ccindex.search_cc_domain --domain example.com > results1.txt
+python -m common_crawl_search_engine.ccindex.search_cc_domain --domain test.com > results2.txt
+python -m common_crawl_search_engine.ccindex.validate_collection_completeness --collection-dir /data
 
 # New script (Option B: Console scripts - after pip install)
 ccindex-search-domain --domain example.com > results1.txt
@@ -279,7 +279,7 @@ ccindex-validate --collection-dir /data
 0 2 * * * cd /path/to/repo && ./build_cc_pointer_duckdb.py --output-dir /indexes
 
 # New crontab entry (Option A)
-0 2 * * * cd /path/to/repo && python -m municipal_scrape_workspace.ccindex.build_cc_pointer_duckdb --output-dir /indexes
+0 2 * * * cd /path/to/repo && python -m common_crawl_search_engine.ccindex.build_cc_pointer_duckdb --output-dir /indexes
 
 # New crontab entry (Option B - after pip install)
 0 2 * * * ccindex-build-pointer --output-dir /indexes
@@ -296,12 +296,12 @@ subprocess.run(['./search_cc_domain.py', '--domain', 'example.com'])
 import subprocess
 subprocess.run([
     'python', '-m', 
-    'municipal_scrape_workspace.ccindex.search_cc_domain',
+    'common_crawl_search_engine.ccindex.search_cc_domain',
     '--domain', 'example.com'
 ])
 
 # New Python code (Option B: direct import)
-from municipal_scrape_workspace.ccindex.search_cc_domain import main
+from common_crawl_search_engine.ccindex.search_cc_domain import main
 result = main(['--domain', 'example.com'])
 
 # New Python code (Option C: console script - after pip install)
@@ -330,7 +330,7 @@ subprocess.run(['ccindex-search-domain', '--domain', 'example.com'])
 **A:** Use find/replace tools:
 ```bash
 # Replace in all shell scripts
-find . -name "*.sh" -type f -exec sed -i 's|./\([^.]*\)\.py|python -m municipal_scrape_workspace.ccindex.\1|g' {} +
+find . -name "*.sh" -type f -exec sed -i 's|./\([^.]*\)\.py|python -m common_crawl_search_engine.ccindex.\1|g' {} +
 ```
 
 ### Q: Can I create my own wrappers?
@@ -339,14 +339,14 @@ find . -name "*.sh" -type f -exec sed -i 's|./\([^.]*\)\.py|python -m municipal_
 ```bash
 #!/bin/bash
 # my-search-wrapper.sh
-python -m municipal_scrape_workspace.ccindex.search_cc_domain "$@"
+python -m common_crawl_search_engine.ccindex.search_cc_domain "$@"
 ```
 
 ### Q: What if I'm using the package as a library?
 
 **A:** No changes needed! If you were importing from the package, everything still works:
 ```python
-from municipal_scrape_workspace.ccindex import search_cc_domain
+from common_crawl_search_engine.ccindex import search_cc_domain
 # Still works exactly the same
 ```
 
@@ -359,7 +359,7 @@ Use this checklist to track your migration:
 - [ ] Read this migration guide completely
 - [ ] Install package: `pip install -e .` or `pip install -e '.[ccindex]'`
 - [ ] Test console scripts work: `ccindex-search-domain --help`
-- [ ] Test Python modules work: `python -m municipal_scrape_workspace.ccindex.search_cc_domain --help`
+- [ ] Test Python modules work: `python -m common_crawl_search_engine.ccindex.search_cc_domain --help`
 - [ ] Identify all scripts/code that call old wrappers
 - [ ] Update shell scripts to use Python modules or console scripts
 - [ ] Update Python code to use package imports
@@ -378,8 +378,8 @@ If you encounter issues during migration:
 
 1. **Check Installation**: Ensure package is installed with `pip list | grep municipal`
 2. **Check Console Scripts**: Run `ccindex-search-domain --help` to verify
-3. **Check Python Modules**: Run `python -m municipal_scrape_workspace.ccindex.search_cc_domain --help`
-4. **Check Documentation**: See REFACTORED_STRUCTURE.md for complete structure guide
+3. **Check Python Modules**: Run `python -m common_crawl_search_engine.ccindex.search_cc_domain --help`
+4. **Check Documentation**: See [docs/REPO_STRUCTURE.md](docs/REPO_STRUCTURE.md) for current structure
 5. **Create Issue**: If problems persist, open a GitHub issue
 
 ---
@@ -397,6 +397,6 @@ After migration, you'll enjoy:
 
 ---
 
-**Migration Support**: See REFACTORED_STRUCTURE.md for complete package structure  
+**Migration Support**: See [docs/REPO_STRUCTURE.md](docs/REPO_STRUCTURE.md) for current package structure  
 **Last Updated**: 2026-01-20  
 **Status**: Active - Wrappers have been removed
