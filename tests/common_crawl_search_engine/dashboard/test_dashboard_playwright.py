@@ -12,9 +12,6 @@ import pytest
 pytestmark = pytest.mark.integration
 
 
-sync_api = pytest.importorskip("playwright.sync_api")
-
-
 def _pick_free_port() -> int:
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         s.bind(("127.0.0.1", 0))
@@ -83,7 +80,12 @@ def dashboard_base_url(tmp_path_factory: pytest.TempPathFactory) -> str:
 
 @pytest.mark.integration
 def test_dashboard_home_loads_without_js_errors(dashboard_base_url: str) -> None:
-    with sync_api.sync_playwright() as p:
+    try:
+        from playwright.sync_api import sync_playwright
+    except Exception as e:  # noqa: BLE001
+        pytest.skip(f"Playwright not installed: {e}")
+
+    with sync_playwright() as p:
         try:
             browser = p.chromium.launch()
         except Exception as e:  # noqa: BLE001
@@ -116,7 +118,12 @@ def test_dashboard_home_loads_without_js_errors(dashboard_base_url: str) -> None
 
 @pytest.mark.integration
 def test_dashboard_serves_sdk_js(dashboard_base_url: str) -> None:
-    with sync_api.sync_playwright() as p:
+    try:
+        from playwright.sync_api import sync_playwright
+    except Exception as e:  # noqa: BLE001
+        pytest.skip(f"Playwright not installed: {e}")
+
+    with sync_playwright() as p:
         try:
             browser = p.chromium.launch()
         except Exception as e:  # noqa: BLE001
@@ -135,7 +142,12 @@ def test_dashboard_serves_sdk_js(dashboard_base_url: str) -> None:
 
 @pytest.mark.integration
 def test_dashboard_mcp_tools_list_works(dashboard_base_url: str) -> None:
-    with sync_api.sync_playwright() as p:
+    try:
+        from playwright.sync_api import sync_playwright
+    except Exception as e:  # noqa: BLE001
+        pytest.skip(f"Playwright not installed: {e}")
+
+    with sync_playwright() as p:
         try:
             browser = p.chromium.launch()
         except Exception as e:  # noqa: BLE001
@@ -177,8 +189,12 @@ def test_dashboard_search_reports_result_or_error(dashboard_base_url: str) -> No
     This catches regressions where the JS cannot reach /mcp at all (SDK import fails,
     fetch fails, CORS issues, etc.).
     """
+    try:
+        from playwright.sync_api import sync_playwright
+    except Exception as e:  # noqa: BLE001
+        pytest.skip(f"Playwright not installed: {e}")
 
-    with sync_api.sync_playwright() as p:
+    with sync_playwright() as p:
         try:
             browser = p.chromium.launch()
         except Exception as e:  # noqa: BLE001
