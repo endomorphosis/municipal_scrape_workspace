@@ -81,3 +81,21 @@ def test_dashboard_mcp_exposes_brave_cache_tools(tmp_path: Path, monkeypatch: py
     assert r3.status_code == 200
     out2 = r3.json()["result"]
     assert "path" in out2
+
+
+def test_dashboard_settings_page_renders(tmp_path: Path, monkeypatch: pytest.MonkeyPatch):
+    monkeypatch.setenv("BRAVE_SEARCH_CACHE_PATH", str(tmp_path / "brave_cache.json"))
+
+    from common_crawl_search_engine.dashboard import create_app
+
+    app = create_app(master_db=Path("/storage/ccindex_duckdb/cc_pointers_master/cc_master_index.duckdb"))
+
+    try:
+        from fastapi.testclient import TestClient
+    except Exception as e:  # pragma: no cover
+        raise RuntimeError(f"fastapi.testclient missing: {e}")
+
+    c = TestClient(app)
+    r = c.get("/settings")
+    assert r.status_code == 200
+    assert "ccindex-base-path" in r.text

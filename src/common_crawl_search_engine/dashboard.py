@@ -121,6 +121,7 @@ def _layout(title: str, body_html: str, *, embed: bool = False, base_path: str =
   <div style='margin-top: 10px; display:flex; gap: 12px; flex-wrap: wrap;'>
     <a class='badge' href='{html.escape(_p("/"))}'>Wayback</a>
     <a class='badge' href='{html.escape(_p("/discover"))}'>Search</a>
+    <a class='badge' href='{html.escape(_p("/index"))}'>Index</a>
     <a class='badge' href='{html.escape(_p("/settings"))}'>Settings</a>
   </div>
 """
@@ -387,6 +388,90 @@ def create_app(master_db: Path) -> Any:
           "description": "Clear the on-disk Brave Search cache",
           "inputSchema": {"type": "object", "properties": {}},
         },
+        {
+          "name": "orchestrator_settings_get",
+          "description": "Get persisted ccindex orchestrator settings",
+          "inputSchema": {"type": "object", "properties": {}},
+        },
+        {
+          "name": "orchestrator_settings_set",
+          "description": "Update persisted ccindex orchestrator settings (partial update)",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "settings": {"type": "object"}
+            },
+            "required": ["settings"],
+          },
+        },
+        {
+          "name": "orchestrator_collection_status",
+          "description": "Return validator status for a collection (download/convert/sort/index completeness)",
+          "inputSchema": {
+            "type": "object",
+            "properties": {"collection": {"type": "string"}},
+            "required": ["collection"],
+          },
+        },
+        {
+          "name": "orchestrator_delete_collection_index",
+          "description": "Delete per-collection DuckDB index artifacts so the next run rebuilds",
+          "inputSchema": {
+            "type": "object",
+            "properties": {"collection": {"type": "string"}},
+            "required": ["collection"],
+          },
+        },
+        {
+          "name": "orchestrator_job_plan",
+          "description": "Plan the orchestrator subprocess command for a long-running job",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "mode": {"type": "string", "enum": ["pipeline", "download_only", "cleanup_only", "build_meta_indexes"]},
+              "filter": {"type": ["string", "null"]},
+              "workers": {"type": ["integer", "null"]},
+              "force_reindex": {"type": ["boolean", "null"]},
+              "cleanup_dry_run": {"type": ["boolean", "null"]},
+              "yes": {"type": ["boolean", "null"]},
+              "heartbeat_seconds": {"type": ["integer", "null"]},
+              "sort_workers": {"type": ["integer", "null"]},
+              "sort_memory_per_worker_gb": {"type": ["number", "null"]},
+              "sort_temp_dir": {"type": ["string", "null"]}
+            },
+            "required": ["mode"],
+          },
+        },
+        {
+          "name": "orchestrator_job_start",
+          "description": "Start a long-running orchestrator job in a background subprocess",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "planned": {"type": "object"},
+              "label": {"type": "string"}
+            },
+            "required": ["planned"],
+          },
+        },
+        {
+          "name": "orchestrator_job_stop",
+          "description": "Stop a running orchestrator job by PID",
+          "inputSchema": {
+            "type": "object",
+            "properties": {"pid": {"type": "integer"}, "sig": {"type": "string"}},
+            "required": ["pid"],
+          },
+        },
+        {
+          "name": "orchestrator_job_tail",
+          "description": "Tail the orchestrator job log",
+          "inputSchema": {
+            "type": "object",
+            "properties": {"log_path": {"type": "string"}, "lines": {"type": "integer"}},
+            "required": ["log_path"],
+          },
+        },
       ]
 
       def _call_tool_sync(*, tool_name: str, tool_args: Dict[str, Any]) -> Any:
@@ -532,6 +617,80 @@ def create_app(master_db: Path) -> Any:
           from common_crawl_search_engine.ccsearch.brave_search import clear_brave_search_cache
 
           return clear_brave_search_cache()
+
+        if tool_name == "orchestrator_settings_get":
+          from common_crawl_search_engine.ccindex.orchestrator_manager import load_orchestrator_settings
+
+          return load_orchestrator_settings()
+
+        if tool_name == "orchestrator_settings_set":
+          from common_crawl_search_engine.ccindex.orchestrator_manager import save_orchestrator_settings
+
+          upd = tool_args.get("settings")
+          if not isinstance(upd, dict):
+            raise ValueError("settings must be an object")
+          return save_orchestrator_settings(upd)
+
+        if tool_name == "orchestrator_collection_status":
+          from common_crawl_search_engine.ccindex.orchestrator_manager import validate_collection_status
+
+          collection = str(tool_args.get("collection") or "").strip()
+          if not collection:
+            raise ValueError("collection is required")
+          return validate_collection_status(collection)
+
+        if tool_name == "orchestrator_delete_collection_index":
+          from common_crawl_search_engine.ccindex.orchestrator_manager import delete_collection_index
+
+          collection = str(tool_args.get("collection") or "").strip()
+          if not collection:
+            raise ValueError("collection is required")
+          return delete_collection_index(collection)
+
+        if tool_name == "orchestrator_job_plan":
+          from common_crawl_search_engine.ccindex.orchestrator_manager import plan_orchestrator_command
+
+          mode = str(tool_args.get("mode") or "").strip()
+          return plan_orchestrator_command(
+            mode=mode,  # type: ignore[arg-type]
+            filter=(tool_args.get("filter") if tool_args.get("filter") is not None else None),
+            workers=(int(tool_args.get("workers")) if tool_args.get("workers") is not None else None),
+            force_reindex=(bool(tool_args.get("force_reindex")) if tool_args.get("force_reindex") is not None else None),
+            cleanup_dry_run=(bool(tool_args.get("cleanup_dry_run")) if tool_args.get("cleanup_dry_run") is not None else None),
+            yes=(bool(tool_args.get("yes")) if tool_args.get("yes") is not None else None),
+            heartbeat_seconds=(int(tool_args.get("heartbeat_seconds")) if tool_args.get("heartbeat_seconds") is not None else None),
+            sort_workers=(int(tool_args.get("sort_workers")) if tool_args.get("sort_workers") is not None else None),
+            sort_memory_per_worker_gb=(float(tool_args.get("sort_memory_per_worker_gb")) if tool_args.get("sort_memory_per_worker_gb") is not None else None),
+            sort_temp_dir=(str(tool_args.get("sort_temp_dir")) if tool_args.get("sort_temp_dir") is not None else None),
+          )
+
+        if tool_name == "orchestrator_job_start":
+          from common_crawl_search_engine.ccindex.orchestrator_manager import start_orchestrator_job
+
+          planned = tool_args.get("planned")
+          if not isinstance(planned, dict):
+            raise ValueError("planned must be an object")
+          label = str(tool_args.get("label") or "orchestrator")
+          job = start_orchestrator_job(planned=planned, label=label)
+          return {"pid": job.pid, "log_path": job.log_path, "cmd": job.cmd}
+
+        if tool_name == "orchestrator_job_stop":
+          from common_crawl_search_engine.ccindex.orchestrator_manager import stop_job
+
+          pid = int(tool_args.get("pid") or 0)
+          if pid <= 0:
+            raise ValueError("pid is required")
+          sig = str(tool_args.get("sig") or "TERM")
+          return stop_job(pid, sig=sig)
+
+        if tool_name == "orchestrator_job_tail":
+          from common_crawl_search_engine.ccindex.orchestrator_manager import tail_file
+
+          log_path = str(tool_args.get("log_path") or "")
+          if not log_path:
+            raise ValueError("log_path is required")
+          lines = int(tool_args.get("lines") or 200)
+          return {"log_path": log_path, "tail": tail_file(log_path, lines=lines)}
 
         raise KeyError(tool_name)
 
@@ -904,8 +1063,104 @@ def create_app(master_db: Path) -> Any:
   </div>
 </div>
 
+<div class='card' style='margin-top: 14px;'>
+  <div class='small'>Orchestrator Settings (persisted to <span class='code'>state/orchestrator_settings.json</span>)</div>
+  <hr>
+  <div class='row'>
+    <div class='field' style='min-width: 420px; flex: 1;'>
+      <label>ccindex_root</label>
+      <input id='orch_ccindex_root' placeholder='/storage/ccindex'>
+    </div>
+    <div class='field' style='min-width: 420px; flex: 1;'>
+      <label>parquet_root</label>
+      <input id='orch_parquet_root' placeholder='/storage/ccindex_parquet'>
+    </div>
+  </div>
+  <div class='row' style='margin-top: 8px;'>
+    <div class='field' style='min-width: 420px; flex: 1;'>
+      <label>duckdb_collection_root</label>
+      <input id='orch_duckdb_collection_root' placeholder='/storage/ccindex_duckdb/cc_pointers_by_collection'>
+    </div>
+    <div class='field' style='min-width: 420px; flex: 1;'>
+      <label>duckdb_year_root</label>
+      <input id='orch_duckdb_year_root' placeholder='/storage/ccindex_duckdb/cc_pointers_by_year'>
+    </div>
+    <div class='field' style='min-width: 420px; flex: 1;'>
+      <label>duckdb_master_root</label>
+      <input id='orch_duckdb_master_root' placeholder='/storage/ccindex_duckdb/cc_pointers_master'>
+    </div>
+  </div>
+
+  <div class='row' style='margin-top: 8px;'>
+    <div class='field'>
+      <label>max_workers</label>
+      <input id='orch_max_workers' type='number' min='1' step='1' value='8'>
+    </div>
+    <div class='field'>
+      <label>heartbeat_seconds</label>
+      <input id='orch_heartbeat_seconds' type='number' min='1' step='1' value='30'>
+    </div>
+    <div class='field' style='min-width: 320px; flex: 1;'>
+      <label>collections_filter</label>
+      <input id='orch_collections_filter' placeholder='2024 or CC-MAIN-2024-10 or all'>
+    </div>
+  </div>
+
+  <div class='row' style='margin-top: 8px;'>
+    <div class='field'>
+      <label>cleanup_extraneous</label>
+      <select id='orch_cleanup_extraneous' style='padding: 10px 12px; border: 1px solid var(--border); background: rgba(15, 23, 42, 0.65); border-radius: 8px; color: var(--text);'>
+        <option value='1'>enabled</option>
+        <option value='0'>disabled</option>
+      </select>
+    </div>
+    <div class='field'>
+      <label>cleanup_source_archives</label>
+      <select id='orch_cleanup_source_archives' style='padding: 10px 12px; border: 1px solid var(--border); background: rgba(15, 23, 42, 0.65); border-radius: 8px; color: var(--text);'>
+        <option value='1'>enabled</option>
+        <option value='0'>disabled</option>
+      </select>
+    </div>
+    <div class='field'>
+      <label>cleanup_dry_run</label>
+      <select id='orch_cleanup_dry_run' style='padding: 10px 12px; border: 1px solid var(--border); background: rgba(15, 23, 42, 0.65); border-radius: 8px; color: var(--text);'>
+        <option value='0'>false</option>
+        <option value='1'>true</option>
+      </select>
+    </div>
+    <div class='field'>
+      <label>force_reindex</label>
+      <select id='orch_force_reindex' style='padding: 10px 12px; border: 1px solid var(--border); background: rgba(15, 23, 42, 0.65); border-radius: 8px; color: var(--text);'>
+        <option value='0'>false</option>
+        <option value='1'>true</option>
+      </select>
+    </div>
+  </div>
+
+  <div class='row' style='margin-top: 8px;'>
+    <div class='field'>
+      <label>sort_workers</label>
+      <input id='orch_sort_workers' type='number' min='1' step='1' placeholder='(blank = max_workers)'>
+    </div>
+    <div class='field'>
+      <label>sort_memory_per_worker_gb</label>
+      <input id='orch_sort_mem' type='number' min='0.5' step='0.5' value='4.0'>
+    </div>
+    <div class='field' style='min-width: 420px; flex: 1;'>
+      <label>sort_temp_dir (optional)</label>
+      <input id='orch_sort_temp_dir' placeholder='/mnt/ssd/tmp'>
+    </div>
+  </div>
+
+  <div style='margin-top:14px; display:flex; gap:10px; align-items:center;'>
+    <button id='saveOrchBtn' type='button'>Save orchestrator settings</button>
+    <span id='orchStatus' class='small'></span>
+  </div>
+</div>
+
 <script type='module'>
   const basePath = document.querySelector("meta[name='ccindex-base-path']")?.content || '';
+  const {{ ccindexMcp }} = await import(`${{basePath}}/static/ccindex-mcp-sdk.js`);
   const esc = (s) => String(s ?? '');
   const modeEl = document.getElementById('default_cache_mode');
   const maxBytesEl = document.getElementById('default_max_bytes');
@@ -920,7 +1175,78 @@ def create_app(master_db: Path) -> Any:
   const cacheStatsEl = document.getElementById('cacheStats');
   const braveCacheStatsEl = document.getElementById('braveCacheStats');
 
+  const orchCcindexRootEl = document.getElementById('orch_ccindex_root');
+  const orchParquetRootEl = document.getElementById('orch_parquet_root');
+  const orchDuckdbCollectionEl = document.getElementById('orch_duckdb_collection_root');
+  const orchDuckdbYearEl = document.getElementById('orch_duckdb_year_root');
+  const orchDuckdbMasterEl = document.getElementById('orch_duckdb_master_root');
+  const orchMaxWorkersEl = document.getElementById('orch_max_workers');
+  const orchHeartbeatEl = document.getElementById('orch_heartbeat_seconds');
+  const orchFilterEl = document.getElementById('orch_collections_filter');
+  const orchCleanupExtraneousEl = document.getElementById('orch_cleanup_extraneous');
+  const orchCleanupSourceEl = document.getElementById('orch_cleanup_source_archives');
+  const orchCleanupDryEl = document.getElementById('orch_cleanup_dry_run');
+  const orchForceReindexEl = document.getElementById('orch_force_reindex');
+  const orchSortWorkersEl = document.getElementById('orch_sort_workers');
+  const orchSortMemEl = document.getElementById('orch_sort_mem');
+  const orchSortTempEl = document.getElementById('orch_sort_temp_dir');
+  const orchStatusEl = document.getElementById('orchStatus');
+
   modeEl.value = {json.dumps(str(s.get("default_cache_mode") or "range"))};
+
+  async function loadOrchestratorSettings() {{
+    try {{
+      const s = await ccindexMcp.callTool('orchestrator_settings_get', {{}});
+      orchCcindexRootEl.value = esc(s.ccindex_root || '');
+      orchParquetRootEl.value = esc(s.parquet_root || '');
+      orchDuckdbCollectionEl.value = esc(s.duckdb_collection_root || '');
+      orchDuckdbYearEl.value = esc(s.duckdb_year_root || '');
+      orchDuckdbMasterEl.value = esc(s.duckdb_master_root || '');
+      orchMaxWorkersEl.value = esc(s.max_workers || '8');
+      orchHeartbeatEl.value = esc(s.heartbeat_seconds || '30');
+      orchFilterEl.value = esc(s.collections_filter || '');
+      orchCleanupExtraneousEl.value = s.cleanup_extraneous ? '1' : '0';
+      orchCleanupSourceEl.value = s.cleanup_source_archives ? '1' : '0';
+      orchCleanupDryEl.value = s.cleanup_dry_run ? '1' : '0';
+      orchForceReindexEl.value = s.force_reindex ? '1' : '0';
+      orchSortWorkersEl.value = s.sort_workers == null ? '' : esc(s.sort_workers);
+      orchSortMemEl.value = esc(s.sort_memory_per_worker_gb || '4.0');
+      orchSortTempEl.value = esc(s.sort_temp_dir || '');
+      orchStatusEl.textContent = '';
+    }} catch (e) {{
+      orchStatusEl.textContent = 'error loading: ' + esc(e.message || e);
+    }}
+  }}
+
+  document.getElementById('saveOrchBtn').addEventListener('click', async () => {{
+    orchStatusEl.textContent = 'saving…';
+    try {{
+      const payload = {{
+        ccindex_root: (String(orchCcindexRootEl.value || '').trim() || null),
+        parquet_root: (String(orchParquetRootEl.value || '').trim() || null),
+        duckdb_collection_root: (String(orchDuckdbCollectionEl.value || '').trim() || null),
+        duckdb_year_root: (String(orchDuckdbYearEl.value || '').trim() || null),
+        duckdb_master_root: (String(orchDuckdbMasterEl.value || '').trim() || null),
+        max_workers: parseInt(String(orchMaxWorkersEl.value || '8'), 10),
+        heartbeat_seconds: parseInt(String(orchHeartbeatEl.value || '30'), 10),
+        collections_filter: (String(orchFilterEl.value || '').trim() || null),
+        cleanup_extraneous: String(orchCleanupExtraneousEl.value || '1') === '1',
+        cleanup_source_archives: String(orchCleanupSourceEl.value || '1') === '1',
+        cleanup_dry_run: String(orchCleanupDryEl.value || '0') === '1',
+        force_reindex: String(orchForceReindexEl.value || '0') === '1',
+        sort_workers: (String(orchSortWorkersEl.value || '').trim() ? parseInt(String(orchSortWorkersEl.value), 10) : null),
+        sort_memory_per_worker_gb: parseFloat(String(orchSortMemEl.value || '4.0')),
+        sort_temp_dir: (String(orchSortTempEl.value || '').trim() || null),
+      }};
+
+      const res = await ccindexMcp.callTool('orchestrator_settings_set', {{ settings: payload }});
+      orchStatusEl.textContent = 'saved';
+      // Round-trip updated settings.
+      orchCcindexRootEl.value = esc(res.ccindex_root || '');
+    }} catch (e) {{
+      orchStatusEl.textContent = 'error: ' + esc(e.message || e);
+    }}
+  }});
 
   document.getElementById('saveBtn').addEventListener('click', async () => {{
     statusEl.textContent = 'saving…';
@@ -1029,9 +1355,170 @@ def create_app(master_db: Path) -> Any:
 
   refreshCacheStats();
   refreshBraveCacheStats();
+  loadOrchestratorSettings();
 </script>
 """
         return _layout("Common Crawl Search Engine • Settings", body, embed=bool(embed), base_path=base_path)
+
+    @app.get("/index", response_class=HTMLResponse)
+    def index_page(request: Request, embed: int = Query(default=0, ge=0, le=1)) -> str:
+        base_path = _base_path(request)
+
+        body = """
+<div class='card'>
+  <div class='small'>CCIndex Orchestrator (download / update / rebuild / delete indexes)</div>
+  <hr>
+
+  <div class='row'>
+    <div class='field' style='min-width: 420px; flex: 1;'>
+      <label>Collection</label>
+      <input id='collection' placeholder='CC-MAIN-2024-10'>
+      <div class='small'>Use a collection like <span class='code'>CC-MAIN-2024-10</span>.</div>
+    </div>
+    <div class='field'>
+      <label>Workers</label>
+      <input id='workers' type='number' min='1' step='1' value='8'>
+      <div class='small'>Overrides saved setting for this job only.</div>
+    </div>
+  </div>
+
+  <div class='row' style='margin-top: 8px;'>
+    <button id='btnStatus' type='button'>status</button>
+    <button id='btnDelete' type='button'>delete index</button>
+    <button id='btnUpdate' type='button'>update (run pipeline)</button>
+    <button id='btnRebuild' type='button'>rebuild (force reindex)</button>
+    <button id='btnDownloadOnly' type='button'>download-only</button>
+    <button id='btnCleanupOnly' type='button'>cleanup-only</button>
+  </div>
+
+  <div class='small' style='margin-top: 12px;'>Job output is written to <span class='code'>logs/</span> on the server.</div>
+  <div id='status' class='code' style='margin-top: 10px; white-space: pre-wrap; max-height: 320px; overflow: auto;'></div>
+
+  <hr>
+  <div class='row'>
+    <div class='field' style='min-width: 420px; flex: 1;'>
+      <label>Last job</label>
+      <input id='jobPid' placeholder='pid'>
+      <input id='jobLog' placeholder='log_path' style='margin-top: 6px;'>
+    </div>
+    <div class='field'>
+      <label>Log lines</label>
+      <input id='jobLines' type='number' min='10' step='10' value='200'>
+      <div class='row' style='margin-top: 8px;'>
+        <button id='btnTail' type='button'>tail</button>
+        <button id='btnStop' type='button'>stop</button>
+      </div>
+    </div>
+  </div>
+
+  <div class='small' style='margin-top: 12px;'>Persisted orchestrator settings live in <span class='code'>state/orchestrator_settings.json</span> (editable in Settings tab).</div>
+</div>
+
+<script type='module'>
+  const basePath = document.querySelector("meta[name='ccindex-base-path']")?.content || '';
+  const { ccindexMcp } = await import(`${basePath}/static/ccindex-mcp-sdk.js`);
+
+  const $ = (id) => document.getElementById(id);
+  const statusEl = $('status');
+
+  function setStatus(obj) {
+    if (typeof obj === 'string') { statusEl.textContent = obj; return; }
+    statusEl.textContent = JSON.stringify(obj, null, 2);
+  }
+
+  async function loadDefaults() {
+    try {
+      const s = await ccindexMcp.callTool('orchestrator_settings_get', {});
+      if (s && s.max_workers) $('workers').value = String(s.max_workers);
+      if (s && s.collections_filter && !$('collection').value) {
+        const f = String(s.collections_filter);
+        if (f.includes('CC-MAIN-')) $('collection').value = f;
+      }
+    } catch (e) {
+      // ignore
+    }
+  }
+
+  async function doStatus() {
+    const collection = String($('collection').value || '').trim();
+    if (!collection) return setStatus('collection is required');
+    setStatus('Fetching status…');
+    try {
+      const st = await ccindexMcp.callTool('orchestrator_collection_status', { collection });
+      setStatus(st);
+    } catch (e) {
+      setStatus({ ok: false, error: String(e && e.message ? e.message : e) });
+    }
+  }
+
+  async function doDelete() {
+    const collection = String($('collection').value || '').trim();
+    if (!collection) return setStatus('collection is required');
+    setStatus('Deleting index artifacts…');
+    try {
+      const res = await ccindexMcp.callTool('orchestrator_delete_collection_index', { collection });
+      setStatus(res);
+    } catch (e) {
+      setStatus({ ok: false, error: String(e && e.message ? e.message : e) });
+    }
+  }
+
+  async function startJob(mode, extra) {
+    const workers = parseInt(String($('workers').value || '8'), 10);
+    const collection = String($('collection').value || '').trim();
+    const filter = collection || null;
+
+    setStatus(`Planning ${mode} job…`);
+    const planned = await ccindexMcp.callTool('orchestrator_job_plan', {
+      mode,
+      filter,
+      workers: Number.isFinite(workers) ? workers : null,
+      ...extra,
+    });
+
+    const job = await ccindexMcp.callTool('orchestrator_job_start', { planned, label: `cc_pipeline_${mode}` });
+    $('jobPid').value = String(job.pid || '');
+    $('jobLog').value = String(job.log_path || '');
+    setStatus({ started: job });
+  }
+
+  $('btnStatus').addEventListener('click', () => doStatus());
+  $('btnDelete').addEventListener('click', () => doDelete());
+  $('btnUpdate').addEventListener('click', () => startJob('pipeline', { force_reindex: false }));
+  $('btnRebuild').addEventListener('click', () => startJob('pipeline', { force_reindex: true }));
+  $('btnDownloadOnly').addEventListener('click', () => startJob('download_only', {}));
+  $('btnCleanupOnly').addEventListener('click', () => startJob('cleanup_only', {}));
+
+  $('btnTail').addEventListener('click', async () => {
+    const log_path = String($('jobLog').value || '').trim();
+    const lines = parseInt(String($('jobLines').value || '200'), 10);
+    if (!log_path) return setStatus('log_path is required');
+    setStatus('Fetching log tail…');
+    try {
+      const res = await ccindexMcp.callTool('orchestrator_job_tail', { log_path, lines: Number.isFinite(lines) ? lines : 200 });
+      setStatus(res.tail || '');
+    } catch (e) {
+      setStatus({ ok: false, error: String(e && e.message ? e.message : e) });
+    }
+  });
+
+  $('btnStop').addEventListener('click', async () => {
+    const pid = parseInt(String($('jobPid').value || '0'), 10);
+    if (!pid) return setStatus('pid is required');
+    setStatus('Stopping job…');
+    try {
+      const res = await ccindexMcp.callTool('orchestrator_job_stop', { pid, sig: 'TERM' });
+      setStatus(res);
+    } catch (e) {
+      setStatus({ ok: false, error: String(e && e.message ? e.message : e) });
+    }
+  });
+
+  await loadDefaults();
+</script>
+"""
+
+        return _layout("Common Crawl Search Engine • Index", body, embed=bool(embed), base_path=base_path)
 
     @app.post("/settings")
     async def settings_save(request: Request) -> JSONResponse:

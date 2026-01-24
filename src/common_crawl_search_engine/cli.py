@@ -140,6 +140,127 @@ def _cmd_warc_fetch_record(args: argparse.Namespace) -> int:
     return 0
 
 
+def _cmd_index_settings_get(_args: argparse.Namespace) -> int:
+    from common_crawl_search_engine.ccindex.orchestrator_manager import load_orchestrator_settings
+
+    sys.stdout.write(json.dumps(load_orchestrator_settings(), ensure_ascii=False, indent=2) + "\n")
+    return 0
+
+
+def _cmd_index_settings_set(args: argparse.Namespace) -> int:
+    from common_crawl_search_engine.ccindex.orchestrator_manager import load_orchestrator_settings, save_orchestrator_settings
+
+    cur = load_orchestrator_settings()
+    updates: dict[str, object] = {}
+
+    if args.ccindex_root is not None:
+        updates["ccindex_root"] = str(args.ccindex_root)
+    if args.parquet_root is not None:
+        updates["parquet_root"] = str(args.parquet_root)
+    if args.duckdb_collection_root is not None:
+        updates["duckdb_collection_root"] = str(args.duckdb_collection_root)
+    if args.duckdb_year_root is not None:
+        updates["duckdb_year_root"] = str(args.duckdb_year_root)
+    if args.duckdb_master_root is not None:
+        updates["duckdb_master_root"] = str(args.duckdb_master_root)
+    if args.max_workers is not None:
+        updates["max_workers"] = int(args.max_workers)
+    if args.collections_filter is not None:
+        updates["collections_filter"] = str(args.collections_filter)
+    if args.heartbeat_seconds is not None:
+        updates["heartbeat_seconds"] = int(args.heartbeat_seconds)
+    if args.cleanup_extraneous is not None:
+        updates["cleanup_extraneous"] = bool(int(args.cleanup_extraneous))
+    if args.cleanup_source_archives is not None:
+        updates["cleanup_source_archives"] = bool(int(args.cleanup_source_archives))
+    if args.cleanup_dry_run is not None:
+        updates["cleanup_dry_run"] = bool(int(args.cleanup_dry_run))
+    if args.sort_workers is not None:
+        updates["sort_workers"] = int(args.sort_workers)
+    if args.sort_memory_per_worker_gb is not None:
+        updates["sort_memory_per_worker_gb"] = float(args.sort_memory_per_worker_gb)
+    if args.sort_temp_dir is not None:
+        updates["sort_temp_dir"] = str(args.sort_temp_dir)
+    if args.force_reindex is not None:
+        updates["force_reindex"] = bool(int(args.force_reindex))
+
+    merged = dict(cur)
+    merged.update(updates)
+    saved = save_orchestrator_settings(merged)
+    sys.stdout.write(json.dumps(saved, ensure_ascii=False, indent=2) + "\n")
+    return 0
+
+
+def _cmd_index_status(args: argparse.Namespace) -> int:
+    from common_crawl_search_engine.ccindex.orchestrator_manager import validate_collection_status
+
+    st = validate_collection_status(str(args.collection))
+    sys.stdout.write(json.dumps(st, ensure_ascii=False, indent=2) + "\n")
+    return 0
+
+
+def _cmd_index_delete(args: argparse.Namespace) -> int:
+    from common_crawl_search_engine.ccindex.orchestrator_manager import delete_collection_index
+
+    res = delete_collection_index(str(args.collection))
+    sys.stdout.write(json.dumps(res, ensure_ascii=False, indent=2) + "\n")
+    return 0
+
+
+def _cmd_index_job_plan(args: argparse.Namespace) -> int:
+    from common_crawl_search_engine.ccindex.orchestrator_manager import plan_orchestrator_command
+
+    planned = plan_orchestrator_command(
+        mode=str(args.mode),
+        filter=args.filter,
+        workers=args.workers,
+        force_reindex=args.force_reindex,
+        cleanup_dry_run=args.cleanup_dry_run,
+        yes=args.yes,
+        heartbeat_seconds=args.heartbeat_seconds,
+        sort_workers=args.sort_workers,
+        sort_memory_per_worker_gb=args.sort_memory_per_worker_gb,
+        sort_temp_dir=args.sort_temp_dir,
+    )
+    sys.stdout.write(json.dumps(planned, ensure_ascii=False, indent=2) + "\n")
+    return 0
+
+
+def _cmd_index_job_start(args: argparse.Namespace) -> int:
+    from common_crawl_search_engine.ccindex.orchestrator_manager import plan_orchestrator_command, start_orchestrator_job
+
+    planned = plan_orchestrator_command(
+        mode=str(args.mode),
+        filter=args.filter,
+        workers=args.workers,
+        force_reindex=args.force_reindex,
+        cleanup_dry_run=args.cleanup_dry_run,
+        yes=args.yes,
+        heartbeat_seconds=args.heartbeat_seconds,
+        sort_workers=args.sort_workers,
+        sort_memory_per_worker_gb=args.sort_memory_per_worker_gb,
+        sort_temp_dir=args.sort_temp_dir,
+    )
+    job = start_orchestrator_job(planned=planned, label=str(args.label or "orchestrator"))
+    sys.stdout.write(json.dumps({"pid": job.pid, "log_path": job.log_path, "cmd": job.cmd}, ensure_ascii=False) + "\n")
+    return 0
+
+
+def _cmd_index_job_stop(args: argparse.Namespace) -> int:
+    from common_crawl_search_engine.ccindex.orchestrator_manager import stop_job
+
+    res = stop_job(int(args.pid), sig=str(args.sig or "TERM"))
+    sys.stdout.write(json.dumps(res, ensure_ascii=False) + "\n")
+    return 0
+
+
+def _cmd_index_job_tail(args: argparse.Namespace) -> int:
+    from common_crawl_search_engine.ccindex.orchestrator_manager import tail_file
+
+    sys.stdout.write(tail_file(str(args.log_path), lines=int(args.lines or 200)) + "\n")
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(prog="ccindex", description="Common Crawl index CLI (unified entrypoint)")
     sub = ap.add_subparsers(dest="cmd", required=True)
@@ -230,6 +351,76 @@ def main(argv: list[str] | None = None) -> int:
     ap_val_pq = sub_val.add_parser("parquet", help="Validate and sort Parquet")
     ap_val_pq.add_argument("argv", nargs=argparse.REMAINDER)
     ap_val_pq.set_defaults(func=lambda a: _delegate("common_crawl_search_engine.ccindex.validate_and_sort_parquet", a.argv))
+
+    # ---- index (orchestrator management) ----
+    ap_index = sub.add_parser("index", help="Manage ccindex pipeline/indexes (orchestrator wrapper)")
+    sub_index = ap_index.add_subparsers(dest="index_cmd", required=True)
+
+    ap_isg = sub_index.add_parser("settings-get", help="Print persisted orchestrator settings")
+    ap_isg.set_defaults(func=_cmd_index_settings_get)
+
+    ap_iss = sub_index.add_parser("settings-set", help="Update persisted orchestrator settings")
+    ap_iss.add_argument("--ccindex-root", type=Path)
+    ap_iss.add_argument("--parquet-root", type=Path)
+    ap_iss.add_argument("--duckdb-collection-root", type=Path)
+    ap_iss.add_argument("--duckdb-year-root", type=Path)
+    ap_iss.add_argument("--duckdb-master-root", type=Path)
+    ap_iss.add_argument("--max-workers", type=int)
+    ap_iss.add_argument("--collections-filter", type=str)
+    ap_iss.add_argument("--heartbeat-seconds", type=int)
+    ap_iss.add_argument("--cleanup-extraneous", type=int, choices=[0, 1])
+    ap_iss.add_argument("--cleanup-source-archives", type=int, choices=[0, 1])
+    ap_iss.add_argument("--cleanup-dry-run", type=int, choices=[0, 1])
+    ap_iss.add_argument("--sort-workers", type=int)
+    ap_iss.add_argument("--sort-memory-per-worker-gb", type=float)
+    ap_iss.add_argument("--sort-temp-dir", type=Path)
+    ap_iss.add_argument("--force-reindex", type=int, choices=[0, 1])
+    ap_iss.set_defaults(func=_cmd_index_settings_set)
+
+    ap_istat = sub_index.add_parser("status", help="Show validator status for a collection")
+    ap_istat.add_argument("--collection", required=True)
+    ap_istat.set_defaults(func=_cmd_index_status)
+
+    ap_idel = sub_index.add_parser("delete", help="Delete per-collection DuckDB index artifacts")
+    ap_idel.add_argument("--collection", required=True)
+    ap_idel.set_defaults(func=_cmd_index_delete)
+
+    ap_plan = sub_index.add_parser("job-plan", help="Plan an orchestrator job command")
+    ap_plan.add_argument("--mode", required=True, choices=["pipeline", "download_only", "cleanup_only", "build_meta_indexes"])
+    ap_plan.add_argument("--filter", type=str, default=None)
+    ap_plan.add_argument("--workers", type=int, default=None)
+    ap_plan.add_argument("--force-reindex", action="store_true", default=None)
+    ap_plan.add_argument("--cleanup-dry-run", action="store_true", default=None)
+    ap_plan.add_argument("--yes", action="store_true", default=None)
+    ap_plan.add_argument("--heartbeat-seconds", type=int, default=None)
+    ap_plan.add_argument("--sort-workers", type=int, default=None)
+    ap_plan.add_argument("--sort-memory-per-worker-gb", type=float, default=None)
+    ap_plan.add_argument("--sort-temp-dir", type=str, default=None)
+    ap_plan.set_defaults(func=_cmd_index_job_plan)
+
+    ap_start = sub_index.add_parser("job-start", help="Start an orchestrator job in background")
+    ap_start.add_argument("--mode", required=True, choices=["pipeline", "download_only", "cleanup_only", "build_meta_indexes"])
+    ap_start.add_argument("--filter", type=str, default=None)
+    ap_start.add_argument("--workers", type=int, default=None)
+    ap_start.add_argument("--force-reindex", action="store_true", default=None)
+    ap_start.add_argument("--cleanup-dry-run", action="store_true", default=None)
+    ap_start.add_argument("--yes", action="store_true", default=None)
+    ap_start.add_argument("--heartbeat-seconds", type=int, default=None)
+    ap_start.add_argument("--sort-workers", type=int, default=None)
+    ap_start.add_argument("--sort-memory-per-worker-gb", type=float, default=None)
+    ap_start.add_argument("--sort-temp-dir", type=str, default=None)
+    ap_start.add_argument("--label", type=str, default="orchestrator")
+    ap_start.set_defaults(func=_cmd_index_job_start)
+
+    ap_stop = sub_index.add_parser("job-stop", help="Stop an orchestrator job")
+    ap_stop.add_argument("--pid", type=int, required=True)
+    ap_stop.add_argument("--sig", type=str, default="TERM")
+    ap_stop.set_defaults(func=_cmd_index_job_stop)
+
+    ap_tail = sub_index.add_parser("job-tail", help="Tail a job log")
+    ap_tail.add_argument("--log-path", required=True)
+    ap_tail.add_argument("--lines", type=int, default=200)
+    ap_tail.set_defaults(func=_cmd_index_job_tail)
 
     # ---- mcp ----
     ap_mcp = sub.add_parser("mcp", help="MCP server + dashboard")

@@ -40,6 +40,39 @@ export class CcindexMcpClient {
   async callTool(name, args = {}) {
     return this._rpc("tools/call", { name, arguments: args });
   }
+
+  // ---- Orchestrator helpers (Index tab) ----
+  async getOrchestratorSettings() {
+    return this.callTool("orchestrator_settings_get", {});
+  }
+
+  async setOrchestratorSettings(settings) {
+    return this.callTool("orchestrator_settings_set", { settings: settings || {} });
+  }
+
+  async orchestratorCollectionStatus(collection) {
+    return this.callTool("orchestrator_collection_status", { collection });
+  }
+
+  async orchestratorDeleteCollectionIndex(collection) {
+    return this.callTool("orchestrator_delete_collection_index", { collection });
+  }
+
+  async orchestratorJobPlan(params) {
+    return this.callTool("orchestrator_job_plan", params || {});
+  }
+
+  async orchestratorJobStart(planned, { label } = {}) {
+    return this.callTool("orchestrator_job_start", { planned, label: label || "orchestrator" });
+  }
+
+  async orchestratorJobTail(log_path, { lines } = {}) {
+    return this.callTool("orchestrator_job_tail", { log_path, lines: lines || 200 });
+  }
+
+  async orchestratorJobStop(pid, { sig } = {}) {
+    return this.callTool("orchestrator_job_stop", { pid, sig: sig || "TERM" });
+  }
 }
 
 function defaultEndpoint() {
