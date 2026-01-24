@@ -14,6 +14,7 @@ from __future__ import annotations
 import argparse
 import importlib
 import sys
+import time
 from pathlib import Path
 
 from common_crawl_search_engine.ccindex import api
@@ -186,6 +187,111 @@ def main(argv: list[str] | None = None) -> int:
         return int(dashboard_main(args2))
 
     ap_mcp_start.set_defaults(func=_mcp_start)
+
+    ap_mcp_restart = sub_mcp.add_parser(
+        "restart",
+        help="Stop any running dashboard on the port, then start it again",
+    )
+    ap_mcp_restart.add_argument("--host", default="127.0.0.1")
+    ap_mcp_restart.add_argument("--port", type=int, default=8787)
+    ap_mcp_restart.add_argument(
+        "--master-db",
+        type=Path,
+        default=Path("/storage/ccindex_duckdb/cc_pointers_master/cc_master_index.duckdb"),
+        help="Master meta-index DuckDB",
+    )
+    ap_mcp_restart.add_argument("--reload", action="store_true", default=False)
+    ap_mcp_restart.add_argument(
+        "--grace-seconds",
+        type=float,
+        default=3.0,
+        help="How long to wait after terminating the old server before starting",
+    )
+
+    def _kill_listeners(host: str, port: int) -> int:
+        """Best-effort kill of processes listening on host:port.
+
+        Uses psutil if available.
+        Returns number of processes signaled.
+        """
+
+        try:
+            import psutil  # type: ignore
+        except Exception:
+            sys.stderr.write(
+                "psutil not installed; cannot auto-kill existing server. "
+                "Install with: pip install -e '.[ccindex]'\n"
+            )
+            return 0
+
+        target_port = int(port)
+        target_host = str(host)
+        signaled: set[int] = set()
+
+        try:
+            for conn in psutil.net_connections(kind="inet"):
+                laddr = getattr(conn, "laddr", None)
+                if not laddr:
+                    continue
+                lhost = getattr(laddr, "ip", None) or (laddr[0] if isinstance(laddr, tuple) else None)
+                lport = getattr(laddr, "port", None) or (laddr[1] if isinstance(laddr, tuple) else None)
+                if int(lport or -1) != target_port:
+                    continue
+
+                # If host is 0.0.0.0, we accept any listener on that port.
+                if target_host not in ("0.0.0.0", "::") and lhost not in (target_host, "0.0.0.0", "::"):
+                    continue
+
+                pid = getattr(conn, "pid", None)
+                if not pid:
+                    continue
+                signaled.add(int(pid))
+        except Exception as e:
+            sys.stderr.write(f"Failed to enumerate listening processes: {e}\n")
+            return 0
+
+        killed = 0
+        for pid in sorted(signaled):
+            try:
+                p = psutil.Process(pid)
+                sys.stderr.write(f"Terminating pid={pid} ({' '.join(p.cmdline()[:3])})\n")
+                p.terminate()
+                killed += 1
+            except Exception as e:
+                sys.stderr.write(f"Failed to terminate pid={pid}: {e}\n")
+
+        # Give processes a moment to exit.
+        if killed:
+            time.sleep(0.5)
+            for pid in sorted(signaled):
+                try:
+                    p = psutil.Process(pid)
+                    if p.is_running():
+                        p.kill()
+                except Exception:
+                    pass
+
+        return killed
+
+    def _mcp_restart(ns: argparse.Namespace) -> int:
+        _kill_listeners(str(ns.host), int(ns.port))
+        time.sleep(max(0.0, float(ns.grace_seconds)))
+
+        from common_crawl_search_engine.dashboard import main as dashboard_main
+
+        args2: list[str] = [
+            "--host",
+            str(ns.host),
+            "--port",
+            str(int(ns.port)),
+            "--master-db",
+            str(ns.master_db),
+        ]
+        if ns.reload:
+            args2.append("--reload")
+        return int(dashboard_main(args2))
+
+    ap_mcp_restart.set_defaults(func=_mcp_restart)
 
     ap_mcp_serve = sub_mcp.add_parser("serve", help="Start stdio MCP server (for MCP clients)")
     ap_mcp_serve.set_defaults(func=lambda a: _delegate("common_crawl_search_engine.mcp_server", []))

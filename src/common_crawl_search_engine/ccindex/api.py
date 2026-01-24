@@ -283,28 +283,70 @@ def iter_warc_candidates_from_parquet(
     duckdb = _require_duckdb()
     like_pat = host_rev_prefix + ",%"
 
+    def _infer_collection(collection: object, warc_filename: object) -> object:
+        if collection not in (None, ""):
+            return collection
+        s = str(warc_filename or "")
+        # Typical WARC path: crawl-data/CC-MAIN-2024-10/segments/.../warc/...
+        marker = "CC-MAIN-"
+        idx = s.find(marker)
+        if idx == -1:
+            return None
+        rest = s[idx:]
+        seg = rest.split("/", 1)[0]
+        return seg or None
+
+    def _parquet_columns(con) -> set[str]:
+        rows = con.execute("DESCRIBE SELECT * FROM read_parquet(?)", [str(parquet_path)]).fetchall()
+        return {str(r[0]) for r in rows if r and r[0]}
+
     con = duckdb.connect(database=":memory:")
     try:
         con.execute("PRAGMA threads=4")
-        rows = con.execute(
-            """
+        cols = _parquet_columns(con)
+
+        # Build a schema-tolerant SELECT list.
+        def col_or_null(name: str) -> str:
+            return name if name in cols else f"NULL AS {name}"
+
+        select_list = ",\n                ".join(
+            [
+                col_or_null("collection"),
+                col_or_null("shard_file"),
+                col_or_null("url"),
+                col_or_null("ts"),
+                col_or_null("status"),
+                col_or_null("mime"),
+                col_or_null("digest"),
+                col_or_null("warc_filename"),
+                col_or_null("warc_offset"),
+                col_or_null("warc_length"),
+            ]
+        )
+
+        # Prefer host_rev filtering when available; fall back to host filtering.
+        params: list[object]
+        if "host_rev" in cols:
+            where_sql = "(host_rev = ? OR host_rev LIKE ?)"
+            params = [host_rev_prefix, like_pat]
+        elif "host" in cols:
+            # host_rev_prefix is reversed; reconstruct plain domain for host matches.
+            dom = ".".join(reversed(host_rev_prefix.split(".")))
+            where_sql = "(host = ? OR host LIKE ?)"
+            params = [dom, f"%.{dom}"]
+        else:
+            where_sql = "TRUE"
+            params = []
+
+        sql = f"""
             SELECT
-                collection,
-                shard_file,
-                url,
-                ts,
-                status,
-                mime,
-                digest,
-                warc_filename,
-                warc_offset,
-                warc_length
+                {select_list}
             FROM read_parquet(?)
-            WHERE host_rev = ? OR host_rev LIKE ?
+            WHERE {where_sql}
             LIMIT ?
-            """,
-            [str(parquet_path), host_rev_prefix, like_pat, int(limit)],
-        ).fetchall()
+        """
+
+        rows = con.execute(sql, [str(parquet_path), *params, int(limit)]).fetchall()
 
         for (
             collection,
@@ -319,7 +361,7 @@ def iter_warc_candidates_from_parquet(
             warc_length,
         ) in rows:
             yield {
-                "collection": collection,
+                "collection": _infer_collection(collection, warc_filename),
                 "shard_file": shard_file,
                 "url": url,
                 "timestamp": ts,
@@ -435,6 +477,34 @@ def search_domain_via_meta_indexes(
                 emitted += 1
                 if emitted >= int(max_matches):
                     break
+
+    # Prefer records that are more likely to render as a "Wayback" page.
+    # This improves the dashboard UX (and makes automated UI flows deterministic).
+    def _wayback_score(r: Dict[str, object]) -> tuple[int, int]:
+        wf = str(r.get("warc_filename") or "")
+        mime = str(r.get("mime") or "")
+        status = r.get("status")
+        try:
+            status_i = int(status) if status is not None else 0
+        except Exception:
+            status_i = 0
+
+        score = 0
+        if "/warc/" in wf:
+            score += 4
+        if "crawldiagnostics" in wf:
+            score -= 4
+        if status_i == 200:
+            score += 2
+        if mime.startswith("text/html"):
+            score += 1
+
+        # Secondary key: newer timestamps first when present.
+        ts = str(r.get("timestamp") or "")
+        ts_key = int(ts) if ts.isdigit() else 0
+        return (score, ts_key)
+
+    records.sort(key=_wayback_score, reverse=True)
 
     dt = time.perf_counter() - t0
     return MetaIndexSearchResult(

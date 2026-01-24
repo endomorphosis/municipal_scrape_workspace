@@ -551,11 +551,11 @@ def create_app(master_db: Path) -> Any:
       const httpIdx = preview.indexOf('HTTP/');
       if (httpIdx >= 0) {{
         const httpPart = preview.slice(httpIdx);
-        const sep = httpPart.indexOf("\r\n\r\n");
+        const sep = httpPart.indexOf("\\r\\n\\r\\n");
         if (sep >= 0) {{
           htmlText = httpPart.slice(sep + 4);
         }} else {{
-          const sep2 = httpPart.indexOf("\n\n");
+          const sep2 = httpPart.indexOf("\\n\\n");
           if (sep2 >= 0) htmlText = httpPart.slice(sep2 + 2);
         }}
       }}
@@ -565,7 +565,7 @@ def create_app(master_db: Path) -> Any:
       if ((htmlText || '').trim()) {{
         frameEl.srcdoc = htmlText;
       }} else {{
-        frameEl.srcdoc = "<pre style='white-space:pre-wrap;word-break:break-word;padding:12px;'>No HTML detected in decoded preview.\n\nThis record may be non-HTML or the preview may be truncated.</pre>";
+        frameEl.srcdoc = "<pre style='white-space:pre-wrap;word-break:break-word;padding:12px;'>No HTML detected in decoded preview.\\n\\nThis record may be non-HTML or the preview may be truncated.</pre>";
       }}
 
       // Provide a direct download link for the range fetch.
