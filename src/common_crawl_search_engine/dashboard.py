@@ -109,8 +109,7 @@ def _layout(title: str, body_html: str, *, embed: bool = False) -> str:
     nav = """
   <div style='margin-top: 10px; display:flex; gap: 12px; flex-wrap: wrap;'>
     <a class='badge' href='/'>Wayback</a>
-    <a class='badge' href='/discover'>Brave Search</a>
-    <a class='badge' href='/panels'>Panels</a>
+    <a class='badge' href='/discover'>Search</a>
     <a class='badge' href='/settings'>Settings</a>
   </div>
 """
@@ -593,52 +592,6 @@ def create_app(master_db: Path) -> Any:
             ]
         )
         return _layout("ccindex", body, embed=bool(embed))
-
-    @app.get("/panels", response_class=HTMLResponse)
-    def panels() -> str:
-        body = """
-<div class='card'>
-  <div class='small'>Three-panel view (Wayback-ish, Brave Search, Settings).</div>
-  <div class='small' style='margin-top:6px;'>Tip: open a panel in a new tab if you prefer full-page navigation.</div>
-  <hr>
-  <div class='row' style='gap: 8px; align-items: center;'>
-    <button id='tabWayback' type='button'>Wayback</button>
-    <button id='tabBrave' type='button'>Brave Search</button>
-    <button id='tabSettings' type='button'>Settings</button>
-    <div style='flex:1;'></div>
-    <a class='code' href='/' target='_blank' rel='noreferrer'>open Wayback</a>
-    <a class='code' href='/discover' target='_blank' rel='noreferrer'>open Brave</a>
-    <a class='code' href='/settings' target='_blank' rel='noreferrer'>open Settings</a>
-  </div>
-</div>
-
-<div class='card' style='margin-top: 14px; padding: 0; overflow: hidden;'>
-  <iframe id='frameWayback' src='/?embed=1' style='width:100%; height: 80vh; border:0;'></iframe>
-  <iframe id='frameBrave' src='/discover?embed=1' style='width:100%; height: 80vh; border:0; display:none;'></iframe>
-  <iframe id='frameSettings' src='/settings?embed=1' style='width:100%; height: 80vh; border:0; display:none;'></iframe>
-</div>
-
-<script>
-  const tabs = {
-    wayback: { btn: document.getElementById('tabWayback'), frame: document.getElementById('frameWayback') },
-    brave: { btn: document.getElementById('tabBrave'), frame: document.getElementById('frameBrave') },
-    settings: { btn: document.getElementById('tabSettings'), frame: document.getElementById('frameSettings') },
-  };
-
-  function show(which) {
-    for (const [k, v] of Object.entries(tabs)) {
-      v.frame.style.display = (k === which) ? 'block' : 'none';
-      v.btn.style.opacity = (k === which) ? '1.0' : '0.72';
-    }
-  }
-
-  tabs.wayback.btn.addEventListener('click', () => show('wayback'));
-  tabs.brave.btn.addEventListener('click', () => show('brave'));
-  tabs.settings.btn.addEventListener('click', () => show('settings'));
-  show('wayback');
-</script>
-"""
-        return _layout("ccindex panels", body)
 
     @app.get("/download_record")
     def download_record(
@@ -1139,6 +1092,8 @@ def create_app(master_db: Path) -> Any:
   const maxPreviewEl = document.getElementById('max_preview_chars');
   const cacheModeEl = document.getElementById('cache_mode');
   const refetchBtn = document.getElementById('refetchBtn');
+
+  cacheModeEl.value = String(pointer.cache_mode || 'range');
 
   function esc(s) {{
     return String(s ?? '').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;');
