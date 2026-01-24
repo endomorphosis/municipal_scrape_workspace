@@ -9,6 +9,7 @@ from __future__ import annotations
 import argparse
 import html
 import json
+import os
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
@@ -109,6 +110,7 @@ def _layout(title: str, body_html: str) -> str:
   <div style='margin-top: 10px; display:flex; gap: 12px;'>
     <a class='badge' href='/'>Wayback</a>
     <a class='badge' href='/discover'>Discover</a>
+    <a class='badge' href='/settings'>Settings</a>
   </div>
 """
     return f"""<!doctype html>
@@ -160,6 +162,38 @@ def create_app(master_db: Path) -> Any:
     globals()["Request"] = Request
 
     app = FastAPI(title="ccindex dashboard", version="0.1")
+
+    def _settings_path() -> Path:
+      state_dir = Path("state")
+      state_dir.mkdir(parents=True, exist_ok=True)
+      return state_dir / "dashboard_settings.json"
+
+    def _default_settings() -> Dict[str, Any]:
+      return {
+        "default_cache_mode": "range",  # range | auto | full
+        "default_max_bytes": 2_000_000,
+        "default_max_preview_chars": 80_000,
+        "full_warc_cache_dir": None,
+        "full_warc_max_bytes": 5_000_000_000,
+      }
+
+    def _load_settings() -> Dict[str, Any]:
+      p = _settings_path()
+      if not p.exists():
+        return _default_settings()
+      try:
+        data = json.loads(p.read_text(encoding="utf-8"))
+        if not isinstance(data, dict):
+          return _default_settings()
+        out = _default_settings()
+        out.update({k: data.get(k) for k in out.keys()})
+        return out
+      except Exception:
+        return _default_settings()
+
+    def _save_settings(settings: Dict[str, Any]) -> None:
+      p = _settings_path()
+      p.write_text(json.dumps(settings, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
     # Support multiple layouts during re-org. We serve the first static dir we find.
     static_candidates = [
@@ -274,64 +308,72 @@ def create_app(master_db: Path) -> Any:
                     "records": res.records,
                 }
             elif tool_name == "fetch_warc_record":
-                fetch, source, local_path = api.fetch_warc_record(
-                    warc_filename=str(tool_args.get("warc_filename") or ""),
-                    warc_offset=int(tool_args.get("warc_offset") or 0),
-                    warc_length=int(tool_args.get("warc_length") or 0),
-                    prefix=str(tool_args.get("prefix") or "https://data.commoncrawl.org/"),
-                    max_bytes=int(tool_args.get("max_bytes") or 2_000_000),
-                    decode_gzip_text=True,
-                    max_preview_chars=int(tool_args.get("max_preview_chars") or 80_000),
-                    cache_mode=str(tool_args.get("cache_mode") or "range"),
-                    full_warc_cache_dir=(
-                        Path(str(tool_args.get("full_warc_cache_dir")))
-                        if tool_args.get("full_warc_cache_dir")
-                        else None
-                    ),
-                    full_warc_max_bytes=int(tool_args.get("full_warc_max_bytes") or 5_000_000_000),
-                )
-                out = {
-                    "ok": fetch.ok,
-                    "status": fetch.status,
-                    "url": fetch.url,
-                    "source": source,
-                    "local_warc_path": local_path,
-                    "bytes_requested": fetch.bytes_requested,
-                    "bytes_returned": fetch.bytes_returned,
-                    "sha256": fetch.sha256,
-                    "decoded_text_preview": fetch.decoded_text_preview,
-                    "error": fetch.error,
-                }
+              s = _load_settings()
+              max_bytes = int(tool_args.get("max_bytes") or int(s.get("default_max_bytes") or 2_000_000))
+              max_preview_chars = int(
+                tool_args.get("max_preview_chars")
+                or int(s.get("default_max_preview_chars") or 80_000)
+              )
 
-                # Prefer a structured extraction of the HTTP payload.
-                if fetch.ok and fetch.raw_base64:
-                    try:
-                        import base64 as _b64
+              fetch, source, local_path = api.fetch_warc_record(
+                warc_filename=str(tool_args.get("warc_filename") or ""),
+                warc_offset=int(tool_args.get("warc_offset") or 0),
+                warc_length=int(tool_args.get("warc_length") or 0),
+                prefix=str(tool_args.get("prefix") or "https://data.commoncrawl.org/"),
+                max_bytes=max_bytes,
+                decode_gzip_text=True,
+                max_preview_chars=max_preview_chars,
+                cache_mode=str(tool_args.get("cache_mode") or str(s.get("default_cache_mode") or "range")),
+                full_warc_cache_dir=(
+                  Path(str(tool_args.get("full_warc_cache_dir")))
+                  if tool_args.get("full_warc_cache_dir")
+                  else (Path(str(s.get("full_warc_cache_dir"))) if s.get("full_warc_cache_dir") else None)
+                ),
+                full_warc_max_bytes=int(
+                  tool_args.get("full_warc_max_bytes")
+                  or int(s.get("full_warc_max_bytes") or 5_000_000_000)
+                ),
+              )
 
-                        raw = _b64.b64decode(fetch.raw_base64)
-                        parsed = api.extract_http_from_warc_gzip_member(
-                            raw,
-                            max_body_bytes=int(tool_args.get("max_bytes") or 2_000_000),
-                            max_preview_chars=int(tool_args.get("max_preview_chars") or 80_000),
-                            include_body_base64=False,
-                        )
-                        out["http"] = {
-                            "ok": parsed.ok,
-                            "warc_headers": parsed.warc_headers,
-                            "status": parsed.http_status,
-                            "status_line": parsed.http_status_line,
-                            "headers": parsed.http_headers,
-                            "body_text_preview": parsed.body_text_preview,
-                            "body_is_html": parsed.body_is_html,
-                            "body_mime": parsed.body_mime,
-                            "body_charset": parsed.body_charset,
-                            "error": parsed.error,
-                        }
-                    except Exception as e:
-                        out["http"] = {
-                            "ok": False,
-                            "error": f"parse_failed: {type(e).__name__}: {e}",
-                        }
+              out = {
+                "ok": fetch.ok,
+                "status": fetch.status,
+                "url": fetch.url,
+                "source": source,
+                "local_warc_path": local_path,
+                "bytes_requested": fetch.bytes_requested,
+                "bytes_returned": fetch.bytes_returned,
+                "sha256": fetch.sha256,
+                "decoded_text_preview": fetch.decoded_text_preview,
+                "error": fetch.error,
+              }
+
+              # Prefer a structured extraction of the HTTP payload.
+              if fetch.ok and fetch.raw_base64:
+                try:
+                  import base64 as _b64
+
+                  raw = _b64.b64decode(fetch.raw_base64)
+                  parsed = api.extract_http_from_warc_gzip_member(
+                    raw,
+                    max_body_bytes=max_bytes,
+                    max_preview_chars=max_preview_chars,
+                    include_body_base64=False,
+                  )
+                  out["http"] = {
+                    "ok": parsed.ok,
+                    "warc_headers": parsed.warc_headers,
+                    "status": parsed.http_status,
+                    "status_line": parsed.http_status_line,
+                    "headers": parsed.http_headers,
+                    "body_text_preview": parsed.body_text_preview,
+                    "body_is_html": parsed.body_is_html,
+                    "body_mime": parsed.body_mime,
+                    "body_charset": parsed.body_charset,
+                    "error": parsed.error,
+                  }
+                except Exception as e:
+                  out["http"] = {"ok": False, "error": f"parse_failed: {type(e).__name__}: {e}"}
             elif tool_name == "list_collections":
                 year = tool_args.get("year")
                 cols = api.list_collections(master_db=Path(master_db), year=str(year) if year else None)
@@ -545,21 +587,150 @@ def create_app(master_db: Path) -> Any:
         headers = {"Content-Disposition": f"attachment; filename={fn}"}
         return Response(content=data, media_type="application/gzip", headers=headers)
 
+    @app.get("/settings", response_class=HTMLResponse)
+    def settings_page() -> str:
+        s = _load_settings()
+
+        # Surface server-side cache defaults (these are env-controlled).
+        range_cache_env = os.environ.get("CCINDEX_WARC_CACHE_DIR")
+        full_cache_env = os.environ.get("CCINDEX_FULL_WARC_CACHE_DIR")
+        range_cache_hint = "state/warc_cache" if (range_cache_env is None or range_cache_env.strip()) else "disabled"
+        full_cache_hint = "state/warc_files" if (full_cache_env is None or full_cache_env.strip()) else "disabled"
+
+        body = f"""
+<div class='card'>
+  <div class='small'>Dashboard Settings (persisted to <span class='code'>state/dashboard_settings.json</span>)</div>
+  <hr>
+  <div class='row'>
+    <div class='field'>
+      <label>default_cache_mode</label>
+      <select id='default_cache_mode' style='padding: 10px 12px; border: 1px solid var(--border); background: rgba(15, 23, 42, 0.65); border-radius: 8px; color: var(--text);'>
+        <option value='range'>range</option>
+        <option value='auto'>auto</option>
+        <option value='full'>full (download WARC)</option>
+      </select>
+    </div>
+    <div class='field'>
+      <label>default_max_bytes</label>
+      <input id='default_max_bytes' type='number' min='1' step='1' value='{html.escape(str(s.get("default_max_bytes") or 2000000))}'>
+    </div>
+    <div class='field'>
+      <label>default_max_preview_chars</label>
+      <input id='default_max_preview_chars' type='number' min='0' step='1' value='{html.escape(str(s.get("default_max_preview_chars") or 80000))}'>
+    </div>
+  </div>
+
+  <hr>
+  <div class='small'>Full-WARC cache (opt-in fallback)</div>
+  <div class='row' style='margin-top:10px;'>
+    <div class='field' style='min-width:520px; flex: 1;'>
+      <label>full_warc_cache_dir (optional override)</label>
+      <input id='full_warc_cache_dir' value='{html.escape(str(s.get("full_warc_cache_dir") or ""))}' placeholder='state/warc_files'>
+      <div class='small'>Leave empty to use the default (<span class='code'>{html.escape(full_cache_hint)}</span>)</div>
+    </div>
+    <div class='field'>
+      <label>full_warc_max_bytes</label>
+      <input id='full_warc_max_bytes' type='number' min='0' step='1' value='{html.escape(str(s.get("full_warc_max_bytes") or 5000000000))}'>
+      <div class='small'>0 disables the size guard</div>
+    </div>
+  </div>
+
+  <hr>
+  <div class='small'>Range cache (always used for Range mode)</div>
+  <div class='small'>Server-side default: <span class='code'>{html.escape(range_cache_hint)}</span> (env: <span class='code'>CCINDEX_WARC_CACHE_DIR</span>)</div>
+
+  <div style='margin-top:14px; display:flex; gap:10px; align-items:center;'>
+    <button id='saveBtn' type='button'>Save</button>
+    <span id='status' class='small'></span>
+  </div>
+</div>
+
+<script type='module'>
+  const esc = (s) => String(s ?? '');
+  const modeEl = document.getElementById('default_cache_mode');
+  const maxBytesEl = document.getElementById('default_max_bytes');
+  const maxPrevEl = document.getElementById('default_max_preview_chars');
+  const fullDirEl = document.getElementById('full_warc_cache_dir');
+  const fullMaxEl = document.getElementById('full_warc_max_bytes');
+  const statusEl = document.getElementById('status');
+
+  modeEl.value = {json.dumps(str(s.get("default_cache_mode") or "range"))};
+
+  document.getElementById('saveBtn').addEventListener('click', async () => {{
+    statusEl.textContent = 'saving…';
+    try {{
+      const payload = {{
+        default_cache_mode: String(modeEl.value || 'range'),
+        default_max_bytes: parseInt(maxBytesEl.value || '2000000', 10),
+        default_max_preview_chars: parseInt(maxPrevEl.value || '80000', 10),
+        full_warc_cache_dir: (String(fullDirEl.value || '').trim() || null),
+        full_warc_max_bytes: parseInt(fullMaxEl.value || '5000000000', 10),
+      }};
+
+      const resp = await fetch('/settings', {{
+        method: 'POST',
+        headers: {{ 'content-type': 'application/json' }},
+        body: JSON.stringify(payload),
+      }});
+      const res = await resp.json();
+      if (!res.ok) throw new Error(res.error || 'save failed');
+      statusEl.textContent = 'saved';
+    }} catch (e) {{
+      statusEl.textContent = 'error: ' + esc(e.message || e);
+    }}
+  }});
+</script>
+"""
+        return _layout("ccindex settings", body)
+
+    @app.post("/settings")
+    async def settings_save(request: Request) -> JSONResponse:
+        try:
+            payload = await request.json()
+            if not isinstance(payload, dict):
+                return JSONResponse({"ok": False, "error": "invalid payload"}, status_code=400)
+
+            out = _default_settings()
+            mode = str(payload.get("default_cache_mode") or out["default_cache_mode"]).strip().lower()
+            if mode not in ("range", "auto", "full"):
+                return JSONResponse({"ok": False, "error": "default_cache_mode must be range|auto|full"}, status_code=400)
+            out["default_cache_mode"] = mode
+
+            out["default_max_bytes"] = int(payload.get("default_max_bytes") or out["default_max_bytes"])
+            out["default_max_preview_chars"] = int(payload.get("default_max_preview_chars") or out["default_max_preview_chars"])
+
+            full_dir = payload.get("full_warc_cache_dir")
+            if full_dir is None or str(full_dir).strip() == "":
+                out["full_warc_cache_dir"] = None
+            else:
+                out["full_warc_cache_dir"] = str(full_dir)
+
+            out["full_warc_max_bytes"] = int(payload.get("full_warc_max_bytes") or out["full_warc_max_bytes"])
+
+            _save_settings(out)
+            return JSONResponse({"ok": True, "settings": out})
+        except Exception as e:
+            return JSONResponse({"ok": False, "error": f"{type(e).__name__}: {e}"}, status_code=500)
+
     @app.get("/record", response_class=HTMLResponse)
     def record(
         warc_filename: str,
         warc_offset: int,
         warc_length: int,
         prefix: str = "https://data.commoncrawl.org/",
-      parquet_root: str = "/storage/ccindex_parquet",
+        parquet_root: str = "/storage/ccindex_parquet",
     ) -> str:
+        s = _load_settings()
         pointer = {
             "warc_filename": warc_filename,
             "warc_offset": int(warc_offset),
             "warc_length": int(warc_length),
             "prefix": prefix,
-        "max_bytes": 2_000_000,
-        "max_preview_chars": 80_000,
+            "max_bytes": int(s.get("default_max_bytes") or 2_000_000),
+            "max_preview_chars": int(s.get("default_max_preview_chars") or 80_000),
+            "cache_mode": str(s.get("default_cache_mode") or "range"),
+            "full_warc_cache_dir": s.get("full_warc_cache_dir"),
+            "full_warc_max_bytes": int(s.get("full_warc_max_bytes") or 5_000_000_000),
         }
 
         head = f"""
@@ -587,8 +758,8 @@ def create_app(master_db: Path) -> Any:
             "  </div>"
             "</div>"
             "<div class='row' style='margin-top: 10px;'>"
-            "  <div class='field'><label>max_bytes</label><input id='max_bytes' type='number' min='1' step='1' value='2000000'></div>"
-            "  <div class='field'><label>max_preview_chars</label><input id='max_preview_chars' type='number' min='0' step='1' value='80000'></div>"
+            f"  <div class='field'><label>max_bytes</label><input id='max_bytes' type='number' min='1' step='1' value='{html.escape(str(pointer.get('max_bytes') or 2000000))}'></div>"
+            f"  <div class='field'><label>max_preview_chars</label><input id='max_preview_chars' type='number' min='0' step='1' value='{html.escape(str(pointer.get('max_preview_chars') or 80000))}'></div>"
             "  <div class='field'><label>cache_mode</label>"
             "    <select id='cache_mode' style='padding: 10px 12px; border: 1px solid var(--border); background: rgba(15, 23, 42, 0.65); border-radius: 8px; color: var(--text);'>"
             "      <option value='range' selected>range</option>"
@@ -631,6 +802,11 @@ def create_app(master_db: Path) -> Any:
       pointer.max_bytes = parseInt(maxBytesEl.value || '2000000', 10);
       pointer.max_preview_chars = parseInt(maxPreviewEl.value || '80000', 10);
       pointer.cache_mode = String(cacheModeEl.value || 'range');
+
+      // If settings provided full-warc cache options, keep passing them.
+      if (pointer.full_warc_cache_dir) pointer.full_warc_cache_dir = String(pointer.full_warc_cache_dir);
+      if (pointer.full_warc_max_bytes) pointer.full_warc_max_bytes = parseInt(String(pointer.full_warc_max_bytes), 10);
+
       const res = await ccindexMcp.callTool('fetch_warc_record', pointer);
       if (!res.ok) {{
         statusEl.innerHTML = `<span class='badge err'>error</span> <span class='code'>${{esc(res.error || 'unknown')}}</span>`;
