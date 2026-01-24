@@ -105,14 +105,30 @@ def _q(s: Optional[str]) -> str:
     return "" if s is None else str(s)
 
 
-def _layout(title: str, body_html: str) -> str:
+def _layout(title: str, body_html: str, *, embed: bool = False) -> str:
     nav = """
-  <div style='margin-top: 10px; display:flex; gap: 12px;'>
+  <div style='margin-top: 10px; display:flex; gap: 12px; flex-wrap: wrap;'>
     <a class='badge' href='/'>Wayback</a>
-    <a class='badge' href='/discover'>Discover</a>
+    <a class='badge' href='/discover'>Brave Search</a>
+    <a class='badge' href='/panels'>Panels</a>
     <a class='badge' href='/settings'>Settings</a>
   </div>
 """
+
+    header_html = ""
+    if not embed:
+        header_html = f"""
+<header>
+  <div class='brand'>
+    <h1>ccindex</h1>
+    <span>local dashboard • Common Crawl pointers → WARC</span>
+  </div>
+{nav}
+</header>
+"""
+
+    main_style = "" if not embed else "max-width:none; padding: 12px;"
+
     return f"""<!doctype html>
 <html>
 <head>
@@ -122,14 +138,8 @@ def _layout(title: str, body_html: str) -> str:
   <style>{_CSS}</style>
 </head>
 <body>
-<header>
-  <div class='brand'>
-    <h1>ccindex</h1>
-    <span>local dashboard • Common Crawl pointers → WARC</span>
-  </div>
-{nav}
-</header>
-<main>
+{header_html}
+<main style='{main_style}'>
 {body_html}
 </main>
 </body>
@@ -173,8 +183,12 @@ def create_app(master_db: Path) -> Any:
         "default_cache_mode": "range",  # range | auto | full
         "default_max_bytes": 2_000_000,
         "default_max_preview_chars": 80_000,
+        "range_cache_max_bytes": 2_000_000_000,
+        "range_cache_max_item_bytes": 25_000_000,
         "full_warc_cache_dir": None,
         "full_warc_max_bytes": 5_000_000_000,
+        "full_warc_cache_max_total_bytes": 0,
+        "brave_search_api_key": None,
       }
 
     def _load_settings() -> Dict[str, Any]:
@@ -244,6 +258,9 @@ def create_app(master_db: Path) -> Any:
                   "cache_mode": {"type": "string", "enum": ["range", "auto", "full"]},
                   "full_warc_cache_dir": {"type": ["string", "null"]},
                   "full_warc_max_bytes": {"type": "integer"},
+                  "full_warc_cache_max_total_bytes": {"type": "integer"},
+                  "range_cache_max_bytes": {"type": "integer"},
+                  "range_cache_max_item_bytes": {"type": "integer"},
                     },
                     "required": ["warc_filename", "warc_offset", "warc_length"],
                 },
@@ -315,6 +332,19 @@ def create_app(master_db: Path) -> Any:
                 or int(s.get("default_max_preview_chars") or 80_000)
               )
 
+              range_cache_max_bytes = int(
+                tool_args.get("range_cache_max_bytes")
+                or int(s.get("range_cache_max_bytes") or 2_000_000_000)
+              )
+              range_cache_max_item_bytes = int(
+                tool_args.get("range_cache_max_item_bytes")
+                or int(s.get("range_cache_max_item_bytes") or 25_000_000)
+              )
+              full_warc_cache_max_total_bytes = int(
+                tool_args.get("full_warc_cache_max_total_bytes")
+                or int(s.get("full_warc_cache_max_total_bytes") or 0)
+              )
+
               fetch, source, local_path = api.fetch_warc_record(
                 warc_filename=str(tool_args.get("warc_filename") or ""),
                 warc_offset=int(tool_args.get("warc_offset") or 0),
@@ -324,6 +354,8 @@ def create_app(master_db: Path) -> Any:
                 decode_gzip_text=True,
                 max_preview_chars=max_preview_chars,
                 cache_mode=str(tool_args.get("cache_mode") or str(s.get("default_cache_mode") or "range")),
+                range_cache_max_bytes=range_cache_max_bytes,
+                range_cache_max_item_bytes=range_cache_max_item_bytes,
                 full_warc_cache_dir=(
                   Path(str(tool_args.get("full_warc_cache_dir")))
                   if tool_args.get("full_warc_cache_dir")
@@ -333,6 +365,7 @@ def create_app(master_db: Path) -> Any:
                   tool_args.get("full_warc_max_bytes")
                   or int(s.get("full_warc_max_bytes") or 5_000_000_000)
                 ),
+                full_warc_cache_max_total_bytes=full_warc_cache_max_total_bytes,
               )
 
               out = {
@@ -382,10 +415,16 @@ def create_app(master_db: Path) -> Any:
                     for c in cols
                 ]
             elif tool_name == "brave_search_ccindex":
+                s = _load_settings()
                 q = str(tool_args.get("query") or "")
                 year = tool_args.get("year")
                 parquet_root = Path(str(tool_args.get("parquet_root") or "/storage/ccindex_parquet"))
                 count = int(tool_args.get("count") or 8)
+
+                # Prefer env var BRAVE_SEARCH_API_KEY if set; otherwise use saved key.
+                api_key = None
+                if not (os.environ.get("BRAVE_SEARCH_API_KEY") or "").strip():
+                    api_key = (str(s.get("brave_search_api_key") or "").strip() or None)
 
                 res = api.brave_search_ccindex(
                     q,
@@ -393,6 +432,7 @@ def create_app(master_db: Path) -> Any:
                     parquet_root=parquet_root,
                     master_db=Path(master_db),
                     year=str(year) if year else None,
+                    api_key=api_key,
                 )
                 out = {"query": res.query, "elapsed_s": res.elapsed_s, "results": res.results}
             else:
@@ -408,6 +448,7 @@ def create_app(master_db: Path) -> Any:
         year: str = Query(default="", description="optional year"),
         max_matches: int = Query(default=200, ge=1, le=5000),
         parquet_root: str = Query(default="/storage/ccindex_parquet"),
+        embed: int = Query(default=0, ge=0, le=1),
     ) -> str:
         form = f"""
 <div class='card'>
@@ -551,7 +592,53 @@ def create_app(master_db: Path) -> Any:
 """,
             ]
         )
-        return _layout("ccindex", body)
+        return _layout("ccindex", body, embed=bool(embed))
+
+    @app.get("/panels", response_class=HTMLResponse)
+    def panels() -> str:
+        body = """
+<div class='card'>
+  <div class='small'>Three-panel view (Wayback-ish, Brave Search, Settings).</div>
+  <div class='small' style='margin-top:6px;'>Tip: open a panel in a new tab if you prefer full-page navigation.</div>
+  <hr>
+  <div class='row' style='gap: 8px; align-items: center;'>
+    <button id='tabWayback' type='button'>Wayback</button>
+    <button id='tabBrave' type='button'>Brave Search</button>
+    <button id='tabSettings' type='button'>Settings</button>
+    <div style='flex:1;'></div>
+    <a class='code' href='/' target='_blank' rel='noreferrer'>open Wayback</a>
+    <a class='code' href='/discover' target='_blank' rel='noreferrer'>open Brave</a>
+    <a class='code' href='/settings' target='_blank' rel='noreferrer'>open Settings</a>
+  </div>
+</div>
+
+<div class='card' style='margin-top: 14px; padding: 0; overflow: hidden;'>
+  <iframe id='frameWayback' src='/?embed=1' style='width:100%; height: 80vh; border:0;'></iframe>
+  <iframe id='frameBrave' src='/discover?embed=1' style='width:100%; height: 80vh; border:0; display:none;'></iframe>
+  <iframe id='frameSettings' src='/settings?embed=1' style='width:100%; height: 80vh; border:0; display:none;'></iframe>
+</div>
+
+<script>
+  const tabs = {
+    wayback: { btn: document.getElementById('tabWayback'), frame: document.getElementById('frameWayback') },
+    brave: { btn: document.getElementById('tabBrave'), frame: document.getElementById('frameBrave') },
+    settings: { btn: document.getElementById('tabSettings'), frame: document.getElementById('frameSettings') },
+  };
+
+  function show(which) {
+    for (const [k, v] of Object.entries(tabs)) {
+      v.frame.style.display = (k === which) ? 'block' : 'none';
+      v.btn.style.opacity = (k === which) ? '1.0' : '0.72';
+    }
+  }
+
+  tabs.wayback.btn.addEventListener('click', () => show('wayback'));
+  tabs.brave.btn.addEventListener('click', () => show('brave'));
+  tabs.settings.btn.addEventListener('click', () => show('settings'));
+  show('wayback');
+</script>
+"""
+        return _layout("ccindex panels", body)
 
     @app.get("/download_record")
     def download_record(
@@ -588,7 +675,7 @@ def create_app(master_db: Path) -> Any:
         return Response(content=data, media_type="application/gzip", headers=headers)
 
     @app.get("/settings", response_class=HTMLResponse)
-    def settings_page() -> str:
+    def settings_page(embed: int = Query(default=0, ge=0, le=1)) -> str:
         s = _load_settings()
 
         # Surface server-side cache defaults (these are env-controlled).
@@ -596,6 +683,9 @@ def create_app(master_db: Path) -> Any:
         full_cache_env = os.environ.get("CCINDEX_FULL_WARC_CACHE_DIR")
         range_cache_hint = "state/warc_cache" if (range_cache_env is None or range_cache_env.strip()) else "disabled"
         full_cache_hint = "state/warc_files" if (full_cache_env is None or full_cache_env.strip()) else "disabled"
+
+        brave_env_set = bool((os.environ.get("BRAVE_SEARCH_API_KEY") or "").strip())
+        brave_saved_set = bool((str(s.get("brave_search_api_key") or "").strip()))
 
         body = f"""
 <div class='card'>
@@ -621,6 +711,20 @@ def create_app(master_db: Path) -> Any:
   </div>
 
   <hr>
+  <div class='small'>Brave Search API</div>
+  <div class='row' style='margin-top:10px;'>
+    <div class='field' style='min-width:520px; flex: 1;'>
+      <label>brave_search_api_key</label>
+      <input id='brave_search_api_key' type='password' value='' placeholder='(leave blank to keep current)'>
+      <div class='small'>env set: <span class='code'>{str(brave_env_set).lower()}</span> • saved key present: <span class='code'>{str(brave_saved_set).lower()}</span></div>
+    </div>
+    <div class='field'>
+      <label>&nbsp;</label>
+      <button id='clearBraveKeyBtn' type='button'>Clear saved key</button>
+    </div>
+  </div>
+
+  <hr>
   <div class='small'>Full-WARC cache (opt-in fallback)</div>
   <div class='row' style='margin-top:10px;'>
     <div class='field' style='min-width:520px; flex: 1;'>
@@ -633,11 +737,40 @@ def create_app(master_db: Path) -> Any:
       <input id='full_warc_max_bytes' type='number' min='0' step='1' value='{html.escape(str(s.get("full_warc_max_bytes") or 5000000000))}'>
       <div class='small'>0 disables the size guard</div>
     </div>
+    <div class='field'>
+      <label>full_warc_cache_max_total_bytes</label>
+      <input id='full_warc_cache_max_total_bytes' type='number' min='0' step='1' value='{html.escape(str(s.get("full_warc_cache_max_total_bytes") or 0))}'>
+      <div class='small'>0 disables pruning (delete oldest first)</div>
+    </div>
   </div>
 
   <hr>
   <div class='small'>Range cache (always used for Range mode)</div>
   <div class='small'>Server-side default: <span class='code'>{html.escape(range_cache_hint)}</span> (env: <span class='code'>CCINDEX_WARC_CACHE_DIR</span>)</div>
+
+  <div class='row' style='margin-top:10px;'>
+    <div class='field'>
+      <label>range_cache_max_bytes</label>
+      <input id='range_cache_max_bytes' type='number' min='0' step='1' value='{html.escape(str(s.get("range_cache_max_bytes") or 2000000000))}'>
+    </div>
+    <div class='field'>
+      <label>range_cache_max_item_bytes</label>
+      <input id='range_cache_max_item_bytes' type='number' min='0' step='1' value='{html.escape(str(s.get("range_cache_max_item_bytes") or 25000000))}'>
+    </div>
+    <div class='field'>
+      <label>&nbsp;</label>
+      <button id='refreshCacheStatsBtn' type='button'>Refresh cache stats</button>
+    </div>
+    <div class='field'>
+      <label>&nbsp;</label>
+      <button id='clearRangeCacheBtn' type='button'>Clear range cache</button>
+    </div>
+    <div class='field'>
+      <label>&nbsp;</label>
+      <button id='clearFullCacheBtn' type='button'>Clear full-WARC cache</button>
+    </div>
+  </div>
+  <div id='cacheStats' class='small' style='margin-top:8px;'></div>
 
   <div style='margin-top:14px; display:flex; gap:10px; align-items:center;'>
     <button id='saveBtn' type='button'>Save</button>
@@ -652,7 +785,12 @@ def create_app(master_db: Path) -> Any:
   const maxPrevEl = document.getElementById('default_max_preview_chars');
   const fullDirEl = document.getElementById('full_warc_cache_dir');
   const fullMaxEl = document.getElementById('full_warc_max_bytes');
+  const fullTotalEl = document.getElementById('full_warc_cache_max_total_bytes');
+  const rangeMaxEl = document.getElementById('range_cache_max_bytes');
+  const rangeItemMaxEl = document.getElementById('range_cache_max_item_bytes');
+  const braveKeyEl = document.getElementById('brave_search_api_key');
   const statusEl = document.getElementById('status');
+  const cacheStatsEl = document.getElementById('cacheStats');
 
   modeEl.value = {json.dumps(str(s.get("default_cache_mode") or "range"))};
 
@@ -663,8 +801,13 @@ def create_app(master_db: Path) -> Any:
         default_cache_mode: String(modeEl.value || 'range'),
         default_max_bytes: parseInt(maxBytesEl.value || '2000000', 10),
         default_max_preview_chars: parseInt(maxPrevEl.value || '80000', 10),
+        range_cache_max_bytes: parseInt(rangeMaxEl.value || '2000000000', 10),
+        range_cache_max_item_bytes: parseInt(rangeItemMaxEl.value || '25000000', 10),
         full_warc_cache_dir: (String(fullDirEl.value || '').trim() || null),
         full_warc_max_bytes: parseInt(fullMaxEl.value || '5000000000', 10),
+        full_warc_cache_max_total_bytes: parseInt(fullTotalEl.value || '0', 10),
+        // If blank, server keeps current saved key.
+        brave_search_api_key: (String(braveKeyEl.value || '').trim() || null),
       }};
 
       const resp = await fetch('/settings', {{
@@ -679,9 +822,56 @@ def create_app(master_db: Path) -> Any:
       statusEl.textContent = 'error: ' + esc(e.message || e);
     }}
   }});
+
+  async function refreshCacheStats() {{
+    cacheStatsEl.textContent = 'loading cache stats…';
+    try {{
+      const resp = await fetch('/settings/cache_stats');
+      const res = await resp.json();
+      if (!res.ok) throw new Error(res.error || 'stats failed');
+      cacheStatsEl.textContent = `range_cache: ${res.range.items} items, ${res.range.bytes} bytes • full_warc_cache: ${res.full.items} items, ${res.full.bytes} bytes`;
+    }} catch (e) {{
+      cacheStatsEl.textContent = 'cache stats error: ' + esc(e.message || e);
+    }}
+  }}
+
+  async function clearCache(which) {{
+    cacheStatsEl.textContent = 'clearing…';
+    try {{
+      const resp = await fetch('/settings/clear_cache', {{
+        method: 'POST',
+        headers: {{ 'content-type': 'application/json' }},
+        body: JSON.stringify({{ which }}),
+      }});
+      const res = await resp.json();
+      if (!res.ok) throw new Error(res.error || 'clear failed');
+      cacheStatsEl.textContent = `cleared ${which}: deleted=${res.deleted_items} freed_bytes=${res.freed_bytes}`;
+      await refreshCacheStats();
+    }} catch (e) {{
+      cacheStatsEl.textContent = 'clear error: ' + esc(e.message || e);
+    }}
+  }}
+
+  document.getElementById('refreshCacheStatsBtn').addEventListener('click', () => refreshCacheStats());
+  document.getElementById('clearRangeCacheBtn').addEventListener('click', () => clearCache('range'));
+  document.getElementById('clearFullCacheBtn').addEventListener('click', () => clearCache('full'));
+  document.getElementById('clearBraveKeyBtn').addEventListener('click', async () => {{
+    statusEl.textContent = 'clearing brave key…';
+    try {{
+      const resp = await fetch('/settings/clear_brave_key', {{ method: 'POST' }});
+      const res = await resp.json();
+      if (!res.ok) throw new Error(res.error || 'clear failed');
+      braveKeyEl.value = '';
+      statusEl.textContent = 'cleared';
+    }} catch (e) {{
+      statusEl.textContent = 'error: ' + esc(e.message || e);
+    }}
+  }});
+
+  refreshCacheStats();
 </script>
 """
-        return _layout("ccindex settings", body)
+        return _layout("ccindex settings", body, embed=bool(embed))
 
     @app.post("/settings")
     async def settings_save(request: Request) -> JSONResponse:
@@ -690,14 +880,28 @@ def create_app(master_db: Path) -> Any:
             if not isinstance(payload, dict):
                 return JSONResponse({"ok": False, "error": "invalid payload"}, status_code=400)
 
+            prev = _load_settings()
             out = _default_settings()
+
+            # Preserve sensitive values by default.
+            out["brave_search_api_key"] = prev.get("brave_search_api_key")
+
             mode = str(payload.get("default_cache_mode") or out["default_cache_mode"]).strip().lower()
             if mode not in ("range", "auto", "full"):
-                return JSONResponse({"ok": False, "error": "default_cache_mode must be range|auto|full"}, status_code=400)
+                return JSONResponse(
+                    {"ok": False, "error": "default_cache_mode must be range|auto|full"}, status_code=400
+                )
             out["default_cache_mode"] = mode
 
             out["default_max_bytes"] = int(payload.get("default_max_bytes") or out["default_max_bytes"])
-            out["default_max_preview_chars"] = int(payload.get("default_max_preview_chars") or out["default_max_preview_chars"])
+            out["default_max_preview_chars"] = int(
+                payload.get("default_max_preview_chars") or out["default_max_preview_chars"]
+            )
+
+            out["range_cache_max_bytes"] = int(payload.get("range_cache_max_bytes") or out["range_cache_max_bytes"])
+            out["range_cache_max_item_bytes"] = int(
+                payload.get("range_cache_max_item_bytes") or out["range_cache_max_item_bytes"]
+            )
 
             full_dir = payload.get("full_warc_cache_dir")
             if full_dir is None or str(full_dir).strip() == "":
@@ -706,9 +910,152 @@ def create_app(master_db: Path) -> Any:
                 out["full_warc_cache_dir"] = str(full_dir)
 
             out["full_warc_max_bytes"] = int(payload.get("full_warc_max_bytes") or out["full_warc_max_bytes"])
+            out["full_warc_cache_max_total_bytes"] = int(
+                payload.get("full_warc_cache_max_total_bytes") or out["full_warc_cache_max_total_bytes"]
+            )
+
+            # Brave key: if provided and non-empty, replace.
+            if "brave_search_api_key" in payload:
+                v = payload.get("brave_search_api_key")
+                if v is not None and str(v).strip() != "":
+                    out["brave_search_api_key"] = str(v).strip()
 
             _save_settings(out)
             return JSONResponse({"ok": True, "settings": out})
+        except Exception as e:
+            return JSONResponse({"ok": False, "error": f"{type(e).__name__}: {e}"}, status_code=500)
+
+    @app.get("/settings/cache_stats")
+    def settings_cache_stats() -> JSONResponse:
+        try:
+            s = _load_settings()
+
+            def _dir_stats(p: Optional[Path], *, glob: str) -> Dict[str, int]:
+                if p is None:
+                    return {"items": 0, "bytes": 0}
+                try:
+                    items = 0
+                    total = 0
+                    for fp in p.glob(glob):
+                        if not fp.is_file():
+                            continue
+                        items += 1
+                        try:
+                            total += int(fp.stat().st_size)
+                        except Exception:
+                            pass
+                    return {"items": items, "bytes": total}
+                except Exception:
+                    return {"items": 0, "bytes": 0}
+
+            # Range cache dir (env + default behavior mirrors api._default_warc_cache_dir).
+            range_env = os.environ.get("CCINDEX_WARC_CACHE_DIR")
+            range_dir: Optional[Path]
+            if range_env is not None and str(range_env).strip() == "":
+                range_dir = None
+            elif range_env:
+                range_dir = Path(range_env)
+            else:
+                range_dir = Path("state") / "warc_cache"
+
+            full_dir: Optional[Path]
+            if s.get("full_warc_cache_dir"):
+                full_dir = Path(str(s.get("full_warc_cache_dir")))
+            else:
+                full_env = os.environ.get("CCINDEX_FULL_WARC_CACHE_DIR")
+                if full_env is not None and str(full_env).strip() == "":
+                    full_dir = None
+                elif full_env:
+                    full_dir = Path(full_env)
+                else:
+                    full_dir = Path("state") / "warc_files"
+
+            return JSONResponse(
+                {
+                    "ok": True,
+                    "range": _dir_stats(range_dir, glob="*.bin"),
+                    "full": _dir_stats(full_dir, glob="*"),
+                }
+            )
+        except Exception as e:
+            return JSONResponse({"ok": False, "error": f"{type(e).__name__}: {e}"}, status_code=500)
+
+    @app.post("/settings/clear_cache")
+    async def settings_clear_cache(request: Request) -> JSONResponse:
+        try:
+            payload = await request.json()
+            which = str((payload or {}).get("which") or "").strip().lower()
+            if which not in {"range", "full", "all"}:
+                return JSONResponse({"ok": False, "error": "which must be range|full|all"}, status_code=400)
+
+            s = _load_settings()
+
+            def _clear_dir(p: Optional[Path], *, glob: str) -> tuple[int, int]:
+                if p is None:
+                    return 0, 0
+                deleted = 0
+                freed = 0
+                try:
+                    for fp in list(p.glob(glob)):
+                        if not fp.is_file():
+                            continue
+                        try:
+                            freed += int(fp.stat().st_size)
+                        except Exception:
+                            pass
+                        try:
+                            fp.unlink()
+                            deleted += 1
+                        except Exception:
+                            pass
+                except Exception:
+                    pass
+                return deleted, freed
+
+            # Resolve dirs (same as stats).
+            range_env = os.environ.get("CCINDEX_WARC_CACHE_DIR")
+            range_dir: Optional[Path]
+            if range_env is not None and str(range_env).strip() == "":
+                range_dir = None
+            elif range_env:
+                range_dir = Path(range_env)
+            else:
+                range_dir = Path("state") / "warc_cache"
+
+            full_dir: Optional[Path]
+            if s.get("full_warc_cache_dir"):
+                full_dir = Path(str(s.get("full_warc_cache_dir")))
+            else:
+                full_env = os.environ.get("CCINDEX_FULL_WARC_CACHE_DIR")
+                if full_env is not None and str(full_env).strip() == "":
+                    full_dir = None
+                elif full_env:
+                    full_dir = Path(full_env)
+                else:
+                    full_dir = Path("state") / "warc_files"
+
+            deleted_total = 0
+            freed_total = 0
+            if which in {"range", "all"}:
+                d, b = _clear_dir(range_dir, glob="*.bin")
+                deleted_total += d
+                freed_total += b
+            if which in {"full", "all"}:
+                d, b = _clear_dir(full_dir, glob="*")
+                deleted_total += d
+                freed_total += b
+
+            return JSONResponse({"ok": True, "deleted_items": deleted_total, "freed_bytes": freed_total})
+        except Exception as e:
+            return JSONResponse({"ok": False, "error": f"{type(e).__name__}: {e}"}, status_code=500)
+
+    @app.post("/settings/clear_brave_key")
+    def settings_clear_brave_key() -> JSONResponse:
+        try:
+            s = _load_settings()
+            s["brave_search_api_key"] = None
+            _save_settings(s)
+            return JSONResponse({"ok": True})
         except Exception as e:
             return JSONResponse({"ok": False, "error": f"{type(e).__name__}: {e}"}, status_code=500)
 
@@ -823,6 +1170,10 @@ def create_app(master_db: Path) -> Any:
         <div class='small'>download_url: <span class='code'>${{esc(res.url)}}</span></div>
       `;
 
+      if (res.local_warc_path) {{
+        statusEl.innerHTML += `<div class='small'>local_warc_path: <span class='code'>${{esc(res.local_warc_path)}}</span></div>`;
+      }}
+
       const preview = res.decoded_text_preview || '';
       previewEl.textContent = preview;
 
@@ -917,6 +1268,7 @@ def create_app(master_db: Path) -> Any:
         year: str = Query(default="", description="optional year"),
         count: int = Query(default=8, ge=1, le=20),
         parquet_root: str = Query(default="/storage/ccindex_parquet"),
+      embed: int = Query(default=0, ge=0, le=1),
     ) -> str:
         initial = {"q": q, "year": year, "count": int(count), "parquet_root": parquet_root}
 
@@ -1055,7 +1407,7 @@ def create_app(master_db: Path) -> Any:
 </script>
 """
 
-        return _layout("ccindex discover", body)
+        return _layout("ccindex discover", body, embed=bool(embed))
 
     return app
 

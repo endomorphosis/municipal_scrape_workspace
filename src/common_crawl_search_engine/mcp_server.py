@@ -160,6 +160,7 @@ def main() -> int:
         parquet_root: str = "/storage/ccindex_parquet",
         master_db: str = "/storage/ccindex_duckdb/cc_pointers_master/cc_master_index.duckdb",
         year: Optional[str] = None,
+        api_key: Optional[str] = None,
     ) -> Dict[str, Any]:
         """Brave web search + resolve result URLs to CCIndex pointers."""
 
@@ -169,6 +170,7 @@ def main() -> int:
             parquet_root=Path(parquet_root).expanduser().resolve(),
             master_db=_maybe_path(master_db),
             year=str(year) if year else None,
+            api_key=str(api_key) if api_key else None,
         )
         return {"query": res.query, "elapsed_s": res.elapsed_s, "results": res.results}
 

@@ -632,11 +632,12 @@ def brave_search_ccindex(
     master_db: Optional[Path] = Path("/storage/ccindex_duckdb/cc_pointers_master/cc_master_index.duckdb"),
     year: Optional[str] = None,
     per_url_limit: int = 3,
+    api_key: Optional[str] = None,
 ) -> BraveSearchResolvedResult:
     """Brave web search + resolve result URLs to CCIndex pointers."""
 
     t0 = time.perf_counter()
-    results = brave_web_search(query, count=int(count))
+    results = brave_web_search(query, count=int(count), api_key=api_key)
     url_list = [r.url for r in results if r.url]
 
     resolved = resolve_urls_to_ccindex(
@@ -727,6 +728,7 @@ def ensure_full_warc_cached(
     cache_dir: Optional[Path] = None,
     timeout_s: float = 60.0,
     max_full_bytes: int = 5_000_000_000,
+    cache_max_total_bytes: int = 0,
     overwrite: bool = False,
 ) -> Path:
     """Download and cache the full *.warc.gz file (last-ditch / bulk scraping mode).
@@ -737,6 +739,7 @@ def ensure_full_warc_cached(
     Safety:
     - Uses a max_full_bytes guard (default 5GB). Set <=0 to disable the limit.
     - Writes to a .part file then renames.
+    - Optionally prunes the full-WARC cache to cache_max_total_bytes (0 disables).
     """
 
     url = warc_download_url(warc_filename, prefix=prefix)
@@ -797,6 +800,8 @@ def ensure_full_warc_cached(
     if out_path.exists() and overwrite:
         out_path.unlink()
     tmp.replace(out_path)
+
+    _maybe_prune_cache_glob(cache_dir, glob="*", max_cache_bytes=int(cache_max_total_bytes))
     return out_path
 
 
@@ -823,8 +828,11 @@ def fetch_warc_record(
     max_preview_chars: int = 40_000,
     cache_mode: str = "range",
     range_cache_dir: Optional[Path] = None,
+    range_cache_max_bytes: int = 2_000_000_000,
+    range_cache_max_item_bytes: int = 25_000_000,
     full_warc_cache_dir: Optional[Path] = None,
     full_warc_max_bytes: int = 5_000_000_000,
+    full_warc_cache_max_total_bytes: int = 0,
 ) -> Tuple[WarcFetchResult, str, Optional[str]]:
     """Fetch a WARC record by pointer using either Range GET or a cached full WARC.
 
@@ -856,6 +864,7 @@ def fetch_warc_record(
                         cache_dir=Path(full_warc_cache_dir),
                         timeout_s=float(timeout_s),
                         max_full_bytes=int(full_warc_max_bytes),
+                        cache_max_total_bytes=int(full_warc_cache_max_total_bytes),
                         overwrite=False,
                     )
                 except Exception as e:
@@ -939,6 +948,8 @@ def fetch_warc_record(
         decode_gzip_text=bool(decode_gzip_text),
         max_preview_chars=int(max_preview_chars),
         cache_dir=range_cache_dir,
+        cache_max_bytes=int(range_cache_max_bytes),
+        cache_max_item_bytes=int(range_cache_max_item_bytes),
     )
     return res, "range", None
 
@@ -953,6 +964,10 @@ def _cache_path_for_range(cache_dir: Path, *, url: str, start: int, end_inclusiv
 
 
 def _maybe_prune_cache(cache_dir: Path, *, max_cache_bytes: int) -> None:
+    _maybe_prune_cache_glob(cache_dir, glob="*.bin", max_cache_bytes=int(max_cache_bytes))
+
+
+def _maybe_prune_cache_glob(cache_dir: Path, *, glob: str, max_cache_bytes: int) -> None:
     try:
         limit = int(max_cache_bytes)
     except Exception:
@@ -961,7 +976,7 @@ def _maybe_prune_cache(cache_dir: Path, *, max_cache_bytes: int) -> None:
         return
 
     try:
-        paths = [p for p in cache_dir.glob("*.bin") if p.is_file()]
+        paths = [p for p in cache_dir.glob(str(glob)) if p.is_file()]
         total = 0
         infos: List[Tuple[float, int, Path]] = []
         for p in paths:
