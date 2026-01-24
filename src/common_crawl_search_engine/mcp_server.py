@@ -175,6 +175,22 @@ def main() -> int:
         return {"query": res.query, "elapsed_s": res.elapsed_s, "results": res.results}
 
     @mcp.tool()
+    def brave_cache_stats() -> Dict[str, Any]:
+        """Return stats for the on-disk Brave Search cache."""
+
+        from common_crawl_search_engine.ccsearch.brave_search import brave_search_cache_stats
+
+        return brave_search_cache_stats()
+
+    @mcp.tool()
+    def brave_cache_clear() -> Dict[str, Any]:
+        """Clear the on-disk Brave Search cache."""
+
+        from common_crawl_search_engine.ccsearch.brave_search import clear_brave_search_cache
+
+        return clear_brave_search_cache()
+
+    @mcp.tool()
     def normalize_domain(domain_or_url: str) -> str:
         return api.normalize_domain(domain_or_url)
 

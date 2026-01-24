@@ -119,8 +119,8 @@ def _layout(title: str, body_html: str, *, embed: bool = False) -> str:
         header_html = f"""
 <header>
   <div class='brand'>
-    <h1>ccindex</h1>
-    <span>local dashboard • Common Crawl pointers → WARC</span>
+    <h1>Common Crawl Search Engine</h1>
+    <span>MCP server • search + WARC replay</span>
   </div>
 {nav}
 </header>
@@ -170,7 +170,7 @@ def create_app(master_db: Path) -> Any:
     # as the Starlette request object (not a required query param).
     globals()["Request"] = Request
 
-    app = FastAPI(title="ccindex dashboard", version="0.1")
+    app = FastAPI(title="Common Crawl Search Engine Dashboard", version="0.1")
 
     def _settings_path() -> Path:
       state_dir = Path("state")
@@ -283,6 +283,16 @@ def create_app(master_db: Path) -> Any:
                     "required": ["query"],
                 },
             },
+            {
+              "name": "brave_cache_stats",
+              "description": "Return stats for the on-disk Brave Search cache",
+              "inputSchema": {"type": "object", "properties": {}},
+            },
+            {
+              "name": "brave_cache_clear",
+              "description": "Clear the on-disk Brave Search cache",
+              "inputSchema": {"type": "object", "properties": {}},
+            },
         ]
 
         if method == "tools/list":
@@ -382,6 +392,16 @@ def create_app(master_db: Path) -> Any:
 
               # Prefer a structured extraction of the HTTP payload.
               if fetch.ok and fetch.raw_base64:
+                {
+                  "name": "brave_cache_stats",
+                  "description": "Return stats for the on-disk Brave Search cache",
+                  "inputSchema": {"type": "object", "properties": {}},
+                },
+                {
+                  "name": "brave_cache_clear",
+                  "description": "Clear the on-disk Brave Search cache",
+                  "inputSchema": {"type": "object", "properties": {}},
+                },
                 try:
                   import base64 as _b64
 
@@ -434,6 +454,14 @@ def create_app(master_db: Path) -> Any:
                     api_key=api_key,
                 )
                 out = {"query": res.query, "elapsed_s": res.elapsed_s, "results": res.results}
+            elif tool_name == "brave_cache_stats":
+                from common_crawl_search_engine.ccsearch.brave_search import brave_search_cache_stats
+
+                out = brave_search_cache_stats()
+            elif tool_name == "brave_cache_clear":
+                from common_crawl_search_engine.ccsearch.brave_search import clear_brave_search_cache
+
+                out = clear_brave_search_cache()
             else:
                 return JSONResponse(_jsonrpc_error(req_id, -32601, f"Unknown tool: {tool_name}"))
 
@@ -591,7 +619,7 @@ def create_app(master_db: Path) -> Any:
 """,
             ]
         )
-        return _layout("ccindex", body, embed=bool(embed))
+        return _layout("Common Crawl Search Engine", body, embed=bool(embed))
 
     @app.get("/download_record")
     def download_record(
@@ -677,6 +705,22 @@ def create_app(master_db: Path) -> Any:
     </div>
   </div>
 
+  <div class='row' style='margin-top:8px;'>
+    <div class='field' style='min-width:520px; flex: 1;'>
+      <label>Brave search cache (on-disk)</label>
+      <div class='small'>Caches Brave search results to avoid repeated API calls.</div>
+      <div id='braveCacheStats' class='small' style='margin-top:6px;'></div>
+    </div>
+    <div class='field'>
+      <label>&nbsp;</label>
+      <button id='refreshBraveCacheStatsBtn' type='button'>Refresh Brave cache</button>
+    </div>
+    <div class='field'>
+      <label>&nbsp;</label>
+      <button id='clearBraveCacheBtn' type='button'>Clear Brave cache</button>
+    </div>
+  </div>
+
   <hr>
   <div class='small'>Full-WARC cache (opt-in fallback)</div>
   <div class='row' style='margin-top:10px;'>
@@ -744,6 +788,7 @@ def create_app(master_db: Path) -> Any:
   const braveKeyEl = document.getElementById('brave_search_api_key');
   const statusEl = document.getElementById('status');
   const cacheStatsEl = document.getElementById('cacheStats');
+  const braveCacheStatsEl = document.getElementById('braveCacheStats');
 
   modeEl.value = {json.dumps(str(s.get("default_cache_mode") or "range"))};
 
@@ -788,6 +833,35 @@ def create_app(master_db: Path) -> Any:
     }}
   }}
 
+  async function refreshBraveCacheStats() {{
+    braveCacheStatsEl.textContent = 'loading Brave cache…';
+    try {{
+      const resp = await fetch('/settings/brave_cache_stats');
+      const res = await resp.json();
+      if (!res.ok) throw new Error(res.error || 'stats failed');
+      const path = esc(res.path || '');
+      const disabled = !!res.disabled;
+      const ttl = parseInt(res.ttl_s || '0', 10);
+      const ttlText = (ttl > 0) ? `${{ttl}}s` : 'disabled';
+      braveCacheStatsEl.textContent = `path: ${{path}} • ${{res.entries}} entries, ${{res.bytes}} bytes • ttl: ${{ttlText}} • disabled: ${{disabled}}`;
+    }} catch (e) {{
+      braveCacheStatsEl.textContent = 'Brave cache stats error: ' + esc(e.message || e);
+    }}
+  }}
+
+  async function clearBraveCache() {{
+    braveCacheStatsEl.textContent = 'clearing Brave cache…';
+    try {{
+      const resp = await fetch('/settings/clear_brave_cache', {{ method: 'POST' }});
+      const res = await resp.json();
+      if (!res.ok) throw new Error(res.error || 'clear failed');
+      braveCacheStatsEl.textContent = `cleared Brave cache: deleted=${{res.deleted}} freed_bytes=${{res.freed_bytes}}`;
+      await refreshBraveCacheStats();
+    }} catch (e) {{
+      braveCacheStatsEl.textContent = 'Brave cache clear error: ' + esc(e.message || e);
+    }}
+  }}
+
   async function clearCache(which) {{
     cacheStatsEl.textContent = 'clearing…';
     try {{
@@ -808,6 +882,8 @@ def create_app(master_db: Path) -> Any:
   document.getElementById('refreshCacheStatsBtn').addEventListener('click', () => refreshCacheStats());
   document.getElementById('clearRangeCacheBtn').addEventListener('click', () => clearCache('range'));
   document.getElementById('clearFullCacheBtn').addEventListener('click', () => clearCache('full'));
+  document.getElementById('refreshBraveCacheStatsBtn').addEventListener('click', () => refreshBraveCacheStats());
+  document.getElementById('clearBraveCacheBtn').addEventListener('click', () => clearBraveCache());
   document.getElementById('clearBraveKeyBtn').addEventListener('click', async () => {{
     statusEl.textContent = 'clearing brave key…';
     try {{
@@ -822,9 +898,10 @@ def create_app(master_db: Path) -> Any:
   }});
 
   refreshCacheStats();
+  refreshBraveCacheStats();
 </script>
 """
-        return _layout("ccindex settings", body, embed=bool(embed))
+        return _layout("Common Crawl Search Engine • Settings", body, embed=bool(embed))
 
     @app.post("/settings")
     async def settings_save(request: Request) -> JSONResponse:
@@ -1009,6 +1086,26 @@ def create_app(master_db: Path) -> Any:
             s["brave_search_api_key"] = None
             _save_settings(s)
             return JSONResponse({"ok": True})
+        except Exception as e:
+            return JSONResponse({"ok": False, "error": f"{type(e).__name__}: {e}"}, status_code=500)
+
+    @app.get("/settings/brave_cache_stats")
+    def settings_brave_cache_stats() -> JSONResponse:
+        try:
+            from common_crawl_search_engine.ccsearch.brave_search import brave_search_cache_stats
+
+            stats = brave_search_cache_stats()
+            return JSONResponse({"ok": True, **stats})
+        except Exception as e:
+            return JSONResponse({"ok": False, "error": f"{type(e).__name__}: {e}"}, status_code=500)
+
+    @app.post("/settings/clear_brave_cache")
+    def settings_clear_brave_cache() -> JSONResponse:
+        try:
+            from common_crawl_search_engine.ccsearch.brave_search import clear_brave_search_cache
+
+            res = clear_brave_search_cache()
+            return JSONResponse({"ok": True, **res})
         except Exception as e:
             return JSONResponse({"ok": False, "error": f"{type(e).__name__}: {e}"}, status_code=500)
 
@@ -1215,7 +1312,7 @@ def create_app(master_db: Path) -> Any:
 """
         )
 
-        return _layout("ccindex record", body)
+        return _layout("Common Crawl Search Engine • Record", body)
 
     @app.get("/discover", response_class=HTMLResponse)
     def discover(
@@ -1362,7 +1459,7 @@ def create_app(master_db: Path) -> Any:
 </script>
 """
 
-        return _layout("ccindex discover", body, embed=bool(embed))
+        return _layout("Common Crawl Search Engine • Search", body, embed=bool(embed))
 
     return app
 

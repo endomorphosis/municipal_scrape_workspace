@@ -483,6 +483,30 @@ def main(argv: list[str] | None = None) -> int:
     ap_mcp_serve = sub_mcp.add_parser("serve", help="Start stdio MCP server (for MCP clients)")
     ap_mcp_serve.set_defaults(func=lambda a: _delegate("common_crawl_search_engine.mcp_server", []))
 
+    # ---- brave cache ----
+    ap_bcache = sub.add_parser("brave-cache", help="Brave Search cache utilities")
+    sub_bcache = ap_bcache.add_subparsers(dest="brave_cache_cmd", required=True)
+
+    ap_bcache_stats = sub_bcache.add_parser("stats", help="Show Brave Search cache stats")
+
+    def _bcache_stats(_ns: argparse.Namespace) -> int:
+        from common_crawl_search_engine.ccsearch.brave_search import brave_search_cache_stats
+
+        sys.stdout.write(json.dumps(brave_search_cache_stats(), ensure_ascii=False) + "\n")
+        return 0
+
+    ap_bcache_stats.set_defaults(func=_bcache_stats)
+
+    ap_bcache_clear = sub_bcache.add_parser("clear", help="Clear Brave Search cache")
+
+    def _bcache_clear(_ns: argparse.Namespace) -> int:
+        from common_crawl_search_engine.ccsearch.brave_search import clear_brave_search_cache
+
+        sys.stdout.write(json.dumps(clear_brave_search_cache(), ensure_ascii=False) + "\n")
+        return 0
+
+    ap_bcache_clear.set_defaults(func=_bcache_clear)
+
     # ---- warc ----
     ap_warc = sub.add_parser("warc", help="WARC utilities (fetch records, cache full WARCs)")
     sub_warc = ap_warc.add_subparsers(dest="warc_cmd", required=True)

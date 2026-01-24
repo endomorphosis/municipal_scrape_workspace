@@ -2,6 +2,9 @@
 
 import subprocess
 import sys
+import json
+import os
+from pathlib import Path
 
 
 def test_search_domain_help():
@@ -74,3 +77,30 @@ def test_ccindex_mcp_help():
     )
     assert result.returncode == 0
     assert "mcp" in result.stdout.lower()
+
+
+def test_ccindex_brave_cache_stats_and_clear(tmp_path: Path):
+    env = dict(**os.environ)
+    env["BRAVE_SEARCH_CACHE_PATH"] = str(tmp_path / "brave_cache.json")
+
+    r1 = subprocess.run(
+        [sys.executable, "-m", "common_crawl_search_engine.cli", "brave-cache", "stats"],
+        capture_output=True,
+        text=True,
+        timeout=10,
+        env=env,
+    )
+    assert r1.returncode == 0
+    s = json.loads(r1.stdout)
+    assert "path" in s
+
+    r2 = subprocess.run(
+        [sys.executable, "-m", "common_crawl_search_engine.cli", "brave-cache", "clear"],
+        capture_output=True,
+        text=True,
+        timeout=10,
+        env=env,
+    )
+    assert r2.returncode == 0
+    c = json.loads(r2.stdout)
+    assert "path" in c

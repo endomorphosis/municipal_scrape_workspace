@@ -7,8 +7,150 @@ Higher-level workflows (resolving Brave URLs to CCIndex pointers) live in
 
 from __future__ import annotations
 
+import hashlib
+import json
 import os
+import time
+from contextlib import contextmanager
+from pathlib import Path
 from typing import Dict, List, Optional
+
+
+def _brave_cache_path() -> Path:
+    # Prefer explicit override for testability and advanced use.
+    p = (os.environ.get("BRAVE_SEARCH_CACHE_PATH") or "").strip()
+    if p:
+        return Path(p).expanduser()
+
+    state_dir = Path((os.environ.get("CCINDEX_STATE_DIR") or "state").strip() or "state")
+    return state_dir / "brave_search_cache.json"
+
+
+def brave_search_cache_path() -> Path:
+    """Return the on-disk Brave Search cache file path."""
+
+    return _brave_cache_path()
+
+
+def brave_search_cache_stats() -> Dict[str, object]:
+    """Return best-effort stats about the Brave Search on-disk cache."""
+
+    path = _brave_cache_path()
+    exists = path.exists() and path.is_file()
+    size_bytes = int(path.stat().st_size) if exists else 0
+
+    entries = 0
+    newest_ts = None
+    oldest_ts = None
+    if exists:
+        try:
+            raw = path.read_text(encoding="utf-8").strip()
+            data = json.loads(raw) if raw else {}
+            if isinstance(data, dict):
+                entries = len(data)
+                for v in data.values():
+                    if not isinstance(v, dict):
+                        continue
+                    ts = v.get("ts")
+                    if not isinstance(ts, (int, float)):
+                        continue
+                    newest_ts = float(ts) if newest_ts is None else max(float(ts), float(newest_ts))
+                    oldest_ts = float(ts) if oldest_ts is None else min(float(ts), float(oldest_ts))
+        except Exception:
+            pass
+
+    return {
+        "path": str(path),
+        "exists": bool(exists),
+        "entries": int(entries),
+        "bytes": int(size_bytes),
+        "oldest_ts": oldest_ts,
+        "newest_ts": newest_ts,
+        "ttl_s": int((os.environ.get("BRAVE_SEARCH_CACHE_TTL_S") or "86400").strip() or "86400"),
+        "disabled": (os.environ.get("BRAVE_SEARCH_CACHE_DISABLE") or "").strip().lower()
+        in {"1", "true", "yes", "on"},
+    }
+
+
+def clear_brave_search_cache() -> Dict[str, object]:
+    """Delete the Brave Search cache file if present."""
+
+    path = _brave_cache_path()
+    try:
+        if path.exists() and path.is_file():
+            try:
+                freed = int(path.stat().st_size)
+            except Exception:
+                freed = 0
+            try:
+                path.unlink()
+                return {"deleted": True, "freed_bytes": freed, "path": str(path)}
+            except Exception:
+                # Fallback: truncate.
+                try:
+                    path.write_text("{}\n", encoding="utf-8")
+                    return {"deleted": False, "freed_bytes": freed, "path": str(path), "truncated": True}
+                except Exception:
+                    return {"deleted": False, "freed_bytes": 0, "path": str(path)}
+        return {"deleted": False, "freed_bytes": 0, "path": str(path)}
+    except Exception:
+        return {"deleted": False, "freed_bytes": 0, "path": str(path)}
+
+
+def _brave_cache_key(*, q: str, count: int, offset: int, country: str, safesearch: str) -> str:
+    payload = {
+        "q": q,
+        "count": int(count),
+        "offset": int(offset),
+        "country": str(country),
+        "safesearch": str(safesearch),
+    }
+    raw = json.dumps(payload, sort_keys=True, separators=(",", ":")).encode("utf-8")
+    return hashlib.sha256(raw).hexdigest()
+
+
+@contextmanager
+def _locked_cache_file(path: Path):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    f = path.open("a+", encoding="utf-8")
+    try:
+        try:
+            import fcntl  # type: ignore
+
+            fcntl.flock(f.fileno(), fcntl.LOCK_EX)
+        except Exception:
+            # Best-effort lock; if unavailable, proceed without locking.
+            pass
+        yield f
+    finally:
+        try:
+            f.close()
+        except Exception:
+            pass
+
+
+def _load_cache_dict(f) -> Dict[str, dict]:
+    try:
+        f.seek(0)
+        raw = f.read().strip()
+        if not raw:
+            return {}
+        data = json.loads(raw)
+        return data if isinstance(data, dict) else {}
+    except Exception:
+        return {}
+
+
+def _save_cache_dict(f, data: Dict[str, dict]) -> None:
+    f.seek(0)
+    f.truncate()
+    json.dump(data, f, sort_keys=True, indent=2)
+    f.write("\n")
+    try:
+        f.flush()
+        os.fsync(f.fileno())
+    except Exception:
+        pass
 
 
 def brave_web_search(
@@ -34,6 +176,45 @@ def brave_web_search(
     q = (query or "").strip()
     if not q:
         return []
+
+    cache_disable = (os.environ.get("BRAVE_SEARCH_CACHE_DISABLE") or "").strip().lower() in {
+        "1",
+        "true",
+        "yes",
+        "on",
+    }
+    ttl_s = int((os.environ.get("BRAVE_SEARCH_CACHE_TTL_S") or "86400").strip() or "86400")
+    max_entries = int((os.environ.get("BRAVE_SEARCH_CACHE_MAX_ENTRIES") or "1000").strip() or "1000")
+    cache_key = _brave_cache_key(
+        q=q, count=int(count), offset=int(offset), country=str(country), safesearch=str(safesearch)
+    )
+
+    if not cache_disable and ttl_s > 0:
+        try:
+            cache_path = _brave_cache_path()
+            with _locked_cache_file(cache_path) as f:
+                cache = _load_cache_dict(f)
+                ent = cache.get(cache_key)
+                if isinstance(ent, dict):
+                    ts = ent.get("ts")
+                    items = ent.get("items")
+                    if isinstance(ts, (int, float)) and isinstance(items, list):
+                        if (time.time() - float(ts)) <= float(ttl_s):
+                            out_cached: List[Dict[str, str]] = []
+                            for it in items:
+                                if not isinstance(it, dict):
+                                    continue
+                                out_cached.append(
+                                    {
+                                        "title": str(it.get("title") or ""),
+                                        "url": str(it.get("url") or ""),
+                                        "description": str(it.get("description") or ""),
+                                    }
+                                )
+                            return out_cached
+        except Exception:
+            # Cache is best-effort; fall back to live request.
+            pass
 
     try:
         import requests  # type: ignore
@@ -76,5 +257,27 @@ def brave_web_search(
                 "description": str(it.get("description") or ""),
             }
         )
+
+    if not cache_disable and ttl_s > 0:
+        try:
+            cache_path = _brave_cache_path()
+            with _locked_cache_file(cache_path) as f:
+                cache = _load_cache_dict(f)
+                cache[cache_key] = {"ts": time.time(), "items": out}
+
+                if max_entries > 0 and len(cache) > max_entries:
+                    # Evict oldest entries by timestamp.
+                    def _ts(kv) -> float:
+                        v = kv[1]
+                        if isinstance(v, dict) and isinstance(v.get("ts"), (int, float)):
+                            return float(v["ts"])
+                        return 0.0
+
+                    keep = dict(sorted(cache.items(), key=_ts, reverse=True)[: int(max_entries)])
+                    cache = keep
+
+                _save_cache_dict(f, cache)
+        except Exception:
+            pass
 
     return out
