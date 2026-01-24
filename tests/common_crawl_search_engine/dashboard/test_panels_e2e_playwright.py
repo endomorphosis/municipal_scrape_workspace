@@ -89,6 +89,15 @@ def dashboard_real(tmp_path: Path) -> tuple[str, subprocess.Popen[str], Path, Pa
             proc.kill()
             proc.wait(timeout=8)
 
+        # Safe to read stdout only after the process has exited.
+        if proc.stdout is not None:
+            try:
+                out = proc.stdout.read() or ""
+            except Exception:  # noqa: BLE001
+                out = ""
+            if out:
+                (tmp_path / "dashboard_stdout.log").write_text(out)
+
 
 @pytest.mark.integration
 @pytest.mark.skipif(not RUN_PLAYWRIGHT, reason="Set RUN_PLAYWRIGHT=1 to enable")
@@ -178,10 +187,7 @@ def test_wayback_panel_e2e(dashboard_real, tmp_path: Path) -> None:
                 (tmp_path / "wayback_console.log").write_text("\n".join(console_lines))
             browser.close()
 
-    if proc.stdout is not None:
-        out = proc.stdout.read() or ""
-        if out:
-            (run_dir / "dashboard_wayback.log").write_text(out)
+    # Dashboard stdout is captured by the fixture teardown.
 
 
 @pytest.mark.integration
@@ -248,10 +254,7 @@ def test_search_panel_brave_to_record_e2e(dashboard_real, tmp_path: Path) -> Non
                 (tmp_path / "search_console.log").write_text("\n".join(console_lines))
             browser.close()
 
-    if proc.stdout is not None:
-        out = proc.stdout.read() or ""
-        if out:
-            (run_dir / "dashboard_search.log").write_text(out)
+    # Dashboard stdout is captured by the fixture teardown.
 
 
 @pytest.mark.integration
@@ -304,14 +307,24 @@ def test_settings_panel_save_and_cache_clear_affects_record_defaults(dashboard_r
 
             page.click("#clearRangeCacheBtn")
             page.wait_for_function(
-                "() => (document.querySelector('#cacheStats')?.textContent || '').includes('cleared range')",
+                                """() => {
+                                    const t = (document.querySelector('#cacheStats')?.textContent || '');
+                                    return t.includes('range_cache:') && t.includes('0 items');
+                                }""",
                 timeout=10_000,
             )
             page.click("#clearFullCacheBtn")
             page.wait_for_function(
-                "() => (document.querySelector('#cacheStats')?.textContent || '').includes('cleared full')",
+                                """() => {
+                                    const t = (document.querySelector('#cacheStats')?.textContent || '');
+                                    return t.includes('full_warc_cache:') && t.includes('0 items');
+                                }""",
                 timeout=10_000,
             )
+
+            # Verify files were actually removed before doing any fetch that might repopulate caches.
+            assert list(range_cache.glob("*.bin")) == []
+            assert list(full_cache.glob("*")) == []
 
             # Verify settings affect the Wayback/record panel defaults.
             search_url = f"{base_url}/?q={domain}&max_matches=3&parquet_root={parquet_root}"
@@ -342,10 +355,6 @@ def test_settings_panel_save_and_cache_clear_affects_record_defaults(dashboard_r
         finally:
             browser.close()
 
-    assert list(range_cache.glob("*.bin")) == []
-    assert list(full_cache.glob("*")) == []
+    # Note: later navigation may legitimately repopulate caches (especially in full mode).
 
-    if proc.stdout is not None:
-        out = proc.stdout.read() or ""
-        if out:
-            (run_dir / "dashboard_settings.log").write_text(out)
+    # Dashboard stdout is captured by the fixture teardown.

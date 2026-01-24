@@ -782,7 +782,7 @@ def create_app(master_db: Path) -> Any:
       const resp = await fetch('/settings/cache_stats');
       const res = await resp.json();
       if (!res.ok) throw new Error(res.error || 'stats failed');
-      cacheStatsEl.textContent = `range_cache: ${res.range.items} items, ${res.range.bytes} bytes • full_warc_cache: ${res.full.items} items, ${res.full.bytes} bytes`;
+      cacheStatsEl.textContent = `range_cache: ${{res.range.items}} items, ${{res.range.bytes}} bytes • full_warc_cache: ${{res.full.items}} items, ${{res.full.bytes}} bytes`;
     }} catch (e) {{
       cacheStatsEl.textContent = 'cache stats error: ' + esc(e.message || e);
     }}
@@ -798,7 +798,7 @@ def create_app(master_db: Path) -> Any:
       }});
       const res = await resp.json();
       if (!res.ok) throw new Error(res.error || 'clear failed');
-      cacheStatsEl.textContent = `cleared ${which}: deleted=${res.deleted_items} freed_bytes=${res.freed_bytes}`;
+      cacheStatsEl.textContent = `cleared ${{which}}: deleted=${{res.deleted_items}} freed_bytes=${{res.freed_bytes}}`;
       await refreshCacheStats();
     }} catch (e) {{
       cacheStatsEl.textContent = 'clear error: ' + esc(e.message || e);
