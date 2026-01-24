@@ -18,12 +18,17 @@ import signal
 import subprocess
 import sys
 import time
+import urllib.request
+from contextlib import contextmanager
 from dataclasses import dataclass
+from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any, Dict, Literal, Optional
+from typing import Any, Dict, Iterable, Literal, Optional
 
 
 JobMode = Literal["pipeline", "download_only", "cleanup_only", "build_meta_indexes"]
+
+DEFAULT_COLLINFO_URL = "https://index.commoncrawl.org/collinfo.json"
 
 
 def _state_dir() -> Path:
@@ -37,6 +42,102 @@ def orchestrator_settings_path() -> Path:
     if p:
         return Path(p).expanduser().resolve()
     return _state_dir() / "orchestrator_settings.json"
+
+
+def collinfo_cache_path() -> Path:
+    p = os.environ.get("CCINDEX_COLLINFO_CACHE_PATH")
+    if p:
+        return Path(p).expanduser().resolve()
+    return _state_dir() / "collinfo.json"
+
+
+def _iso_now() -> str:
+    return datetime.now(timezone.utc).replace(microsecond=0).isoformat()
+
+
+def _resolve_repo_collinfo_fallback() -> Path | None:
+    """Best-effort resolve of a repo-shipped collinfo.json."""
+
+    try:
+        here = Path(__file__).resolve()
+        for parent in [here.parent, *here.parents]:
+            candidate = parent / "collinfo.json"
+            if candidate.exists() and candidate.is_file():
+                return candidate
+    except Exception:
+        return None
+    return None
+
+
+def load_collinfo(*, prefer_cache: bool = True) -> dict[str, Any]:
+    """Load Common Crawl collinfo JSON.
+
+    Returns a dict with keys:
+      - ok: bool
+      - source_path: str | None
+      - fetched_at: str | None
+      - collections: list[dict]
+    """
+
+    cache = collinfo_cache_path()
+    if prefer_cache and cache.exists():
+        try:
+            data = json.loads(cache.read_text(encoding="utf-8"))
+            if isinstance(data, list):
+                return {"ok": True, "source_path": str(cache), "fetched_at": None, "collections": data}
+        except Exception:
+            pass
+
+    repo = _resolve_repo_collinfo_fallback()
+    if repo and repo.exists():
+        try:
+            data = json.loads(repo.read_text(encoding="utf-8"))
+            if isinstance(data, list):
+                return {"ok": True, "source_path": str(repo), "fetched_at": None, "collections": data}
+        except Exception:
+            pass
+
+    return {"ok": False, "source_path": None, "fetched_at": None, "collections": []}
+
+
+def update_collinfo(*, url: str = DEFAULT_COLLINFO_URL, timeout_s: float = 15.0) -> dict[str, Any]:
+    """Fetch collinfo.json from Common Crawl and persist to state."""
+
+    req = urllib.request.Request(str(url), headers={"user-agent": "ccindex-dashboard/1.0"})
+    with urllib.request.urlopen(req, timeout=float(timeout_s)) as resp:
+        raw = resp.read()
+
+    data = json.loads(raw.decode("utf-8"))
+    if not isinstance(data, list):
+        raise ValueError("collinfo payload is not a list")
+
+    out_path = collinfo_cache_path()
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    out_path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    return {
+        "ok": True,
+        "url": str(url),
+        "path": str(out_path),
+        "fetched_at": _iso_now(),
+        "count": len(data),
+    }
+
+
+@contextmanager
+def _collinfo_env_if_present() -> Iterable[None]:
+    """Temporarily set $CC_COLLINFO_PATH if we have a cached collinfo.json."""
+
+    old = os.environ.get("CC_COLLINFO_PATH")
+    p = collinfo_cache_path()
+    try:
+        if p.exists():
+            os.environ["CC_COLLINFO_PATH"] = str(p)
+        yield
+    finally:
+        if old is None:
+            os.environ.pop("CC_COLLINFO_PATH", None)
+        else:
+            os.environ["CC_COLLINFO_PATH"] = old
 
 
 def _pipeline_config_path_default() -> Path:
@@ -176,9 +277,49 @@ def validate_collection_status(collection: str, *, settings: Optional[Dict[str, 
     cfg = build_pipeline_config(settings)
     from common_crawl_search_engine.ccindex.cc_pipeline_orchestrator import PipelineOrchestrator
 
-    orch = PipelineOrchestrator(cfg)
-    status = orch.validator.validate_collection(str(collection))
+    with _collinfo_env_if_present():
+        orch = PipelineOrchestrator(cfg)
+        status = orch.validator.validate_collection(str(collection))
     return status
+
+
+def validate_collections_status(
+    collections: list[str],
+    *,
+    settings: Optional[Dict[str, Any]] = None,
+    parallelism: int = 8,
+) -> Dict[str, Any]:
+    """Validate many collections, returning a mapping and a small summary."""
+
+    from concurrent.futures import ThreadPoolExecutor, as_completed
+
+    cols = [str(c).strip() for c in collections if str(c).strip()]
+    cols = sorted(set(cols))
+    if not cols:
+        return {"ok": True, "collections": {}, "summary": {"total": 0}}
+
+    results: dict[str, Any] = {}
+    par = max(1, int(parallelism or 1))
+
+    def _one(c: str) -> Any:
+        try:
+            return validate_collection_status(c, settings=settings)
+        except Exception as e:
+            return {"ok": False, "error": str(e)}
+
+    with ThreadPoolExecutor(max_workers=par) as ex:
+        futs = {ex.submit(_one, c): c for c in cols}
+        for fut in as_completed(futs):
+            c = futs[fut]
+            results[c] = fut.result()
+
+    # Basic summary: count fully_complete when the validator provides it.
+    complete = 0
+    for _c, st in results.items():
+        if isinstance(st, dict) and st.get("fully_complete") is True:
+            complete += 1
+
+    return {"ok": True, "collections": results, "summary": {"total": len(cols), "fully_complete": complete}}
 
 
 def delete_collection_index(collection: str, *, settings: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
@@ -187,14 +328,31 @@ def delete_collection_index(collection: str, *, settings: Optional[Dict[str, Any
     cfg = build_pipeline_config(settings)
     from common_crawl_search_engine.ccindex.cc_pipeline_orchestrator import PipelineOrchestrator
 
-    orch = PipelineOrchestrator(cfg)
-    before = orch.validator.validate_collection(str(collection))
+    with _collinfo_env_if_present():
+        orch = PipelineOrchestrator(cfg)
+        before = orch.validator.validate_collection(str(collection))
 
-    # This method deletes the index + marker/wal/shm files.
-    orch._invalidate_duckdb_index(str(collection))  # type: ignore[attr-defined]
+        # This method deletes the index + marker/wal/shm files.
+        orch._invalidate_duckdb_index(str(collection))  # type: ignore[attr-defined]
 
-    after = orch.validator.validate_collection(str(collection))
+        after = orch.validator.validate_collection(str(collection))
     return {"collection": str(collection), "before": before, "after": after}
+
+
+def delete_collection_indexes(
+    collections: list[str],
+    *,
+    settings: Optional[Dict[str, Any]] = None,
+) -> Dict[str, Any]:
+    cols = [str(c).strip() for c in collections if str(c).strip()]
+    cols = sorted(set(cols))
+    out: dict[str, Any] = {}
+    for c in cols:
+        try:
+            out[c] = delete_collection_index(c, settings=settings)
+        except Exception as e:
+            out[c] = {"ok": False, "error": str(e)}
+    return {"ok": True, "collections": out, "summary": {"total": len(cols)}}
 
 
 def _logs_dir() -> Path:
@@ -208,6 +366,66 @@ class OrchestratorJob:
     pid: int
     log_path: str
     cmd: list[str]
+
+
+def _jobs_registry_path() -> Path:
+    p = os.environ.get("CCINDEX_JOBS_REGISTRY_PATH")
+    if p:
+        return Path(p).expanduser().resolve()
+    return _state_dir() / "orchestrator_jobs.jsonl"
+
+
+def _append_job_record(rec: dict[str, Any]) -> None:
+    p = _jobs_registry_path()
+    p.parent.mkdir(parents=True, exist_ok=True)
+    with open(p, "a", encoding="utf-8") as f:
+        f.write(json.dumps(rec, ensure_ascii=False) + "\n")
+
+
+def list_jobs(*, limit: int = 50) -> list[dict[str, Any]]:
+    p = _jobs_registry_path()
+    if not p.exists():
+        return []
+    try:
+        lines = p.read_text(encoding="utf-8", errors="replace").splitlines()
+    except Exception:
+        return []
+    out: list[dict[str, Any]] = []
+    for line in lines[-max(1, int(limit)) :]:
+        try:
+            obj = json.loads(line)
+            if isinstance(obj, dict):
+                out.append(obj)
+        except Exception:
+            continue
+    # newest first
+    return list(reversed(out))
+
+
+def _parse_progress_from_tail(tail: str) -> dict[str, Any]:
+    """Heuristic log parsing: infer current stage/collection from recent lines."""
+
+    stage = None
+    collection = None
+    last_line = None
+    for line in tail.splitlines()[::-1]:
+        s = line.strip()
+        if not s:
+            continue
+        if last_line is None:
+            last_line = s
+        # orchestrator uses log prefixes like "[cleanup]", "[download]", etc.
+        if s.startswith("[") and "]" in s:
+            stage = s[1 : s.index("]")]
+        # common patterns: "Sweeping CC-MAIN-...." or "Downloading CC-MAIN-...."
+        if "CC-MAIN-" in s:
+            idx = s.find("CC-MAIN-")
+            tok = s[idx:].split()[0].rstrip(".:,)")
+            if tok.startswith("CC-MAIN-"):
+                collection = tok
+        if stage and collection:
+            break
+    return {"stage": stage, "collection": collection, "last_line": last_line}
 
 
 def plan_orchestrator_command(
@@ -310,15 +528,30 @@ def start_orchestrator_job(*, planned: Dict[str, Any], label: str = "orchestrato
         f.write(f"# cmd: {' '.join(cmd)}\n")
         f.flush()
 
+        env = dict(os.environ)
+        # Ensure validator/orchestrator sees our freshest collinfo, if present.
+        cp = collinfo_cache_path()
+        if cp.exists():
+            env["CC_COLLINFO_PATH"] = str(cp)
+
         proc = subprocess.Popen(
             cmd,
             stdout=f,
             stderr=subprocess.STDOUT,
             text=True,
             cwd=str(Path.cwd()),
+            env=env,
         )
 
-    return OrchestratorJob(pid=int(proc.pid), log_path=str(log_path), cmd=list(cmd))
+    job = OrchestratorJob(pid=int(proc.pid), log_path=str(log_path), cmd=list(cmd))
+    _append_job_record({
+        "pid": job.pid,
+        "log_path": job.log_path,
+        "cmd": job.cmd,
+        "label": str(label),
+        "started_at": _iso_now(),
+    })
+    return job
 
 
 def job_is_alive(pid: int) -> bool:
@@ -356,3 +589,17 @@ def tail_file(path: str, *, lines: int = 200) -> str:
         return "\n".join(data[-n:])
     except Exception:
         return ""
+
+
+def job_status(*, pid: int | None = None, log_path: str | None = None, lines: int = 200) -> Dict[str, Any]:
+    lp = str(log_path or "").strip() or None
+    p = int(pid) if pid is not None else None
+    tail = tail_file(lp, lines=int(lines)) if lp else ""
+    return {
+        "ok": True,
+        "pid": p,
+        "alive": (job_is_alive(p) if p else None),
+        "log_path": lp,
+        "tail": tail,
+        "progress": _parse_progress_from_tail(tail) if tail else {"stage": None, "collection": None, "last_line": None},
+    }

@@ -27,6 +27,12 @@ def test_mcp_tools_include_orchestrator():
     assert "orchestrator_collection_status" in names
     assert "orchestrator_delete_collection_index" in names
     assert "orchestrator_job_plan" in names
+    assert "cc_collinfo_list" in names
+    assert "cc_collinfo_update" in names
+    assert "orchestrator_collections_status" in names
+    assert "orchestrator_delete_collection_indexes" in names
+    assert "orchestrator_jobs_list" in names
+    assert "orchestrator_job_status" in names
 
 
 def test_orchestrator_settings_round_trip(tmp_path: Path, monkeypatch: pytest.MonkeyPatch):
@@ -121,7 +127,62 @@ def test_dashboard_index_page_renders(tmp_path: Path, monkeypatch: pytest.Monkey
     r = c.get("/index")
     assert r.status_code == 200
     assert "ccindex-base-path" in r.text
-    assert "CCIndex Orchestrator" in r.text
+    assert "Orchestrator Console" in r.text
+
+
+def test_collinfo_update_and_list_round_trip(tmp_path: Path, monkeypatch: pytest.MonkeyPatch):
+    # Isolate collinfo cache to a temp file.
+    cache_path = tmp_path / "collinfo.json"
+    monkeypatch.setenv("CCINDEX_COLLINFO_CACHE_PATH", str(cache_path))
+
+    # Provide a local collinfo payload.
+    src = tmp_path / "src_collinfo.json"
+    src.write_text(
+        "[\n  {\"id\": \"CC-MAIN-2099-01\", \"name\": \"Test Crawl\"}\n]\n",
+        encoding="utf-8",
+    )
+
+    from common_crawl_search_engine.dashboard import create_app
+
+    app = create_app(master_db=Path("/storage/ccindex_duckdb/cc_pointers_master/cc_master_index.duckdb"))
+
+    try:
+        from fastapi.testclient import TestClient
+    except Exception as e:  # pragma: no cover
+        raise RuntimeError(f"fastapi.testclient missing: {e}")
+
+    c = TestClient(app)
+
+    # Update from file:// URL.
+    r = c.post(
+        "/mcp",
+        json={
+            "jsonrpc": "2.0",
+            "id": 10,
+            "method": "tools/call",
+            "params": {"name": "cc_collinfo_update", "arguments": {"url": src.as_uri()}},
+        },
+    )
+    assert r.status_code == 200
+    out = r.json()["result"]
+    assert out.get("ok") is True
+    assert cache_path.exists()
+
+    # List should read from the cache.
+    r2 = c.post(
+        "/mcp",
+        json={
+            "jsonrpc": "2.0",
+            "id": 11,
+            "method": "tools/call",
+            "params": {"name": "cc_collinfo_list", "arguments": {"prefer_cache": True}},
+        },
+    )
+    assert r2.status_code == 200
+    out2 = r2.json()["result"]
+    assert out2.get("ok") is True
+    assert isinstance(out2.get("collections"), list)
+    assert any(c.get("id") == "CC-MAIN-2099-01" for c in out2["collections"])
 
 
 def test_mcp_batch_tools_list_and_orchestrator_get(tmp_path: Path, monkeypatch: pytest.MonkeyPatch):

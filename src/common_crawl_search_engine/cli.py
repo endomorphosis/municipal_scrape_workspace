@@ -261,6 +261,59 @@ def _cmd_index_job_tail(args: argparse.Namespace) -> int:
     return 0
 
 
+def _cmd_index_collinfo_list(args: argparse.Namespace) -> int:
+    from common_crawl_search_engine.ccindex.orchestrator_manager import load_collinfo
+
+    res = load_collinfo(prefer_cache=bool(int(args.prefer_cache)))
+    sys.stdout.write(json.dumps(res, ensure_ascii=False, indent=2) + "\n")
+    return 0
+
+
+def _cmd_index_collinfo_update(args: argparse.Namespace) -> int:
+    from common_crawl_search_engine.ccindex.orchestrator_manager import update_collinfo
+
+    res = update_collinfo(url=str(args.url), timeout_s=float(args.timeout_s))
+    sys.stdout.write(json.dumps(res, ensure_ascii=False, indent=2) + "\n")
+    return 0
+
+
+def _cmd_index_bulk_status(args: argparse.Namespace) -> int:
+    from common_crawl_search_engine.ccindex.orchestrator_manager import validate_collections_status
+
+    cols = [c for c in (args.collections or []) if str(c).strip()]
+    res = validate_collections_status(cols, parallelism=int(args.parallelism or 8))
+    sys.stdout.write(json.dumps(res, ensure_ascii=False, indent=2) + "\n")
+    return 0
+
+
+def _cmd_index_bulk_delete(args: argparse.Namespace) -> int:
+    from common_crawl_search_engine.ccindex.orchestrator_manager import delete_collection_indexes
+
+    cols = [c for c in (args.collections or []) if str(c).strip()]
+    res = delete_collection_indexes(cols)
+    sys.stdout.write(json.dumps(res, ensure_ascii=False, indent=2) + "\n")
+    return 0
+
+
+def _cmd_index_jobs_list(args: argparse.Namespace) -> int:
+    from common_crawl_search_engine.ccindex.orchestrator_manager import list_jobs
+
+    sys.stdout.write(json.dumps({"ok": True, "jobs": list_jobs(limit=int(args.limit or 50))}, ensure_ascii=False, indent=2) + "\n")
+    return 0
+
+
+def _cmd_index_job_status(args: argparse.Namespace) -> int:
+    from common_crawl_search_engine.ccindex.orchestrator_manager import job_status
+
+    res = job_status(
+        pid=(int(args.pid) if args.pid is not None else None),
+        log_path=(str(args.log_path) if args.log_path is not None else None),
+        lines=int(args.lines or 200),
+    )
+    sys.stdout.write(json.dumps(res, ensure_ascii=False, indent=2) + "\n")
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(prog="ccindex", description="Common Crawl index CLI (unified entrypoint)")
     sub = ap.add_subparsers(dest="cmd", required=True)
@@ -421,6 +474,40 @@ def main(argv: list[str] | None = None) -> int:
     ap_tail.add_argument("--log-path", required=True)
     ap_tail.add_argument("--lines", type=int, default=200)
     ap_tail.set_defaults(func=_cmd_index_job_tail)
+
+    ap_collinfo = sub_index.add_parser("collinfo", help="Manage cached Common Crawl collinfo.json")
+    sub_ci = ap_collinfo.add_subparsers(dest="collinfo_cmd", required=True)
+
+    ap_ci_list = sub_ci.add_parser("list", help="List cached collinfo collections")
+    ap_ci_list.add_argument("--prefer-cache", type=int, choices=[0, 1], default=1)
+    ap_ci_list.set_defaults(func=_cmd_index_collinfo_list)
+
+    ap_ci_upd = sub_ci.add_parser("update", help="Refresh cached collinfo.json from Common Crawl")
+    ap_ci_upd.add_argument("--url", type=str, default="https://index.commoncrawl.org/collinfo.json")
+    ap_ci_upd.add_argument("--timeout-s", type=float, default=15.0)
+    ap_ci_upd.set_defaults(func=_cmd_index_collinfo_update)
+
+    ap_bstat = sub_index.add_parser("bulk-status", help="Validate multiple collections")
+    ap_bstat.add_argument("--collections", nargs="+", required=True)
+    ap_bstat.add_argument("--parallelism", type=int, default=8)
+    ap_bstat.set_defaults(func=_cmd_index_bulk_status)
+
+    ap_bdel = sub_index.add_parser("bulk-delete", help="Delete DuckDB index artifacts for multiple collections")
+    ap_bdel.add_argument("--collections", nargs="+", required=True)
+    ap_bdel.set_defaults(func=_cmd_index_bulk_delete)
+
+    ap_jlist = sub_index.add_parser("jobs", help="Job history + status")
+    sub_jobs = ap_jlist.add_subparsers(dest="jobs_cmd", required=True)
+
+    ap_jls = sub_jobs.add_parser("list", help="List recent jobs")
+    ap_jls.add_argument("--limit", type=int, default=50)
+    ap_jls.set_defaults(func=_cmd_index_jobs_list)
+
+    ap_js = sub_jobs.add_parser("status", help="Show job status and progress")
+    ap_js.add_argument("--pid", type=int, default=None)
+    ap_js.add_argument("--log-path", type=str, default=None)
+    ap_js.add_argument("--lines", type=int, default=200)
+    ap_js.set_defaults(func=_cmd_index_job_status)
 
     # ---- mcp ----
     ap_mcp = sub.add_parser("mcp", help="MCP server + dashboard")

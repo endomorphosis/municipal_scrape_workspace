@@ -73,6 +73,43 @@ export class CcindexMcpClient {
   async orchestratorJobStop(pid, { sig } = {}) {
     return this.callTool("orchestrator_job_stop", { pid, sig: sig || "TERM" });
   }
+
+  // ---- Collection catalog (Common Crawl collinfo) ----
+  async collinfoList({ prefer_cache } = {}) {
+    return this.callTool("cc_collinfo_list", { prefer_cache: prefer_cache ?? true });
+  }
+
+  async collinfoUpdate({ url, timeout_s } = {}) {
+    return this.callTool("cc_collinfo_update", {
+      url: url ?? "https://index.commoncrawl.org/collinfo.json",
+      timeout_s: timeout_s ?? 15.0,
+    });
+  }
+
+  // ---- Bulk operations ----
+  async orchestratorCollectionsStatus(collections, { parallelism } = {}) {
+    return this.callTool("orchestrator_collections_status", {
+      collections: collections || [],
+      parallelism: parallelism ?? 8,
+    });
+  }
+
+  async orchestratorDeleteCollectionIndexes(collections) {
+    return this.callTool("orchestrator_delete_collection_indexes", { collections: collections || [] });
+  }
+
+  // ---- Jobs ----
+  async orchestratorJobsList({ limit } = {}) {
+    return this.callTool("orchestrator_jobs_list", { limit: limit ?? 50 });
+  }
+
+  async orchestratorJobStatus({ pid, log_path, lines } = {}) {
+    return this.callTool("orchestrator_job_status", {
+      pid: pid ?? null,
+      log_path: log_path ?? null,
+      lines: lines ?? 200,
+    });
+  }
 }
 
 function defaultEndpoint() {

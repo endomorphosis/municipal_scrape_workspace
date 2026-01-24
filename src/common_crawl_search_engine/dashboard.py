@@ -472,6 +472,70 @@ def create_app(master_db: Path) -> Any:
             "required": ["log_path"],
           },
         },
+        {
+          "name": "cc_collinfo_list",
+          "description": "List known Common Crawl collections from cached collinfo.json (or repo fallback)",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "prefer_cache": {"type": ["boolean", "null"]},
+            },
+          },
+        },
+        {
+          "name": "cc_collinfo_update",
+          "description": "Refresh cached collinfo.json from the Common Crawl website",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "url": {"type": ["string", "null"]},
+              "timeout_s": {"type": ["number", "null"]},
+            },
+          },
+        },
+        {
+          "name": "orchestrator_collections_status",
+          "description": "Return validator status for many collections",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "collections": {"type": "array", "items": {"type": "string"}},
+              "parallelism": {"type": ["integer", "null"]},
+            },
+            "required": ["collections"],
+          },
+        },
+        {
+          "name": "orchestrator_delete_collection_indexes",
+          "description": "Delete DuckDB index artifacts for multiple collections",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "collections": {"type": "array", "items": {"type": "string"}},
+            },
+            "required": ["collections"],
+          },
+        },
+        {
+          "name": "orchestrator_jobs_list",
+          "description": "List recent orchestrator jobs started from the dashboard/CLI",
+          "inputSchema": {
+            "type": "object",
+            "properties": {"limit": {"type": ["integer", "null"]}},
+          },
+        },
+        {
+          "name": "orchestrator_job_status",
+          "description": "Get running/dead status and heuristic progress for a job",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "pid": {"type": ["integer", "null"]},
+              "log_path": {"type": ["string", "null"]},
+              "lines": {"type": ["integer", "null"]},
+            },
+          },
+        },
       ]
 
       def _call_tool_sync(*, tool_name: str, tool_args: Dict[str, Any]) -> Any:
@@ -691,6 +755,60 @@ def create_app(master_db: Path) -> Any:
             raise ValueError("log_path is required")
           lines = int(tool_args.get("lines") or 200)
           return {"log_path": log_path, "tail": tail_file(log_path, lines=lines)}
+
+        if tool_name == "cc_collinfo_list":
+          from common_crawl_search_engine.ccindex.orchestrator_manager import load_collinfo
+
+          prefer_cache = tool_args.get("prefer_cache")
+          return load_collinfo(prefer_cache=(bool(prefer_cache) if prefer_cache is not None else True))
+
+        if tool_name == "cc_collinfo_update":
+          from common_crawl_search_engine.ccindex.orchestrator_manager import update_collinfo
+
+          url = tool_args.get("url")
+          timeout_s = tool_args.get("timeout_s")
+          return update_collinfo(
+            url=(str(url) if url is not None else "https://index.commoncrawl.org/collinfo.json"),
+            timeout_s=(float(timeout_s) if timeout_s is not None else 15.0),
+          )
+
+        if tool_name == "orchestrator_collections_status":
+          from common_crawl_search_engine.ccindex.orchestrator_manager import validate_collections_status
+
+          cols = tool_args.get("collections")
+          if not isinstance(cols, list):
+            raise ValueError("collections must be an array")
+          parallelism = tool_args.get("parallelism")
+          return validate_collections_status(
+            [str(c) for c in cols],
+            parallelism=(int(parallelism) if parallelism is not None else 8),
+          )
+
+        if tool_name == "orchestrator_delete_collection_indexes":
+          from common_crawl_search_engine.ccindex.orchestrator_manager import delete_collection_indexes
+
+          cols = tool_args.get("collections")
+          if not isinstance(cols, list):
+            raise ValueError("collections must be an array")
+          return delete_collection_indexes([str(c) for c in cols])
+
+        if tool_name == "orchestrator_jobs_list":
+          from common_crawl_search_engine.ccindex.orchestrator_manager import list_jobs
+
+          limit = tool_args.get("limit")
+          return {"ok": True, "jobs": list_jobs(limit=(int(limit) if limit is not None else 50))}
+
+        if tool_name == "orchestrator_job_status":
+          from common_crawl_search_engine.ccindex.orchestrator_manager import job_status
+
+          pid = tool_args.get("pid")
+          log_path = tool_args.get("log_path")
+          lines = tool_args.get("lines")
+          return job_status(
+            pid=(int(pid) if pid is not None else None),
+            log_path=(str(log_path) if log_path is not None else None),
+            lines=(int(lines) if lines is not None else 200),
+          )
 
         raise KeyError(tool_name)
 
@@ -1366,38 +1484,67 @@ def create_app(master_db: Path) -> Any:
 
         body = """
 <div class='card'>
-  <div class='small'>CCIndex Orchestrator (download / update / rebuild / delete indexes)</div>
-  <hr>
+  <div class='small'>CCIndex Orchestrator Console (all collections)</div>
+  <div class='small' style='margin-top: 6px;'>
+    Collections are sourced from cached <span class='code'>collinfo.json</span>. Refresh pulls from
+    <span class='code'>https://index.commoncrawl.org/collinfo.json</span>.
+  </div>
+</div>
 
+<div class='card' style='margin-top: 14px;'>
   <div class='row'>
     <div class='field' style='min-width: 420px; flex: 1;'>
-      <label>Collection</label>
-      <input id='collection' placeholder='CC-MAIN-2024-10'>
-      <div class='small'>Use a collection like <span class='code'>CC-MAIN-2024-10</span>.</div>
+      <label>Filter</label>
+      <input id='filterText' placeholder='e.g. 2024 or CC-MAIN-2024-10'>
+      <div class='small'>Client-side filter (does not change orchestrator settings).</div>
     </div>
     <div class='field'>
       <label>Workers</label>
       <input id='workers' type='number' min='1' step='1' value='8'>
-      <div class='small'>Overrides saved setting for this job only.</div>
+      <div class='small'>Overrides saved setting for jobs started here.</div>
     </div>
   </div>
 
   <div class='row' style='margin-top: 8px;'>
-    <button id='btnStatus' type='button'>status</button>
-    <button id='btnDelete' type='button'>delete index</button>
-    <button id='btnUpdate' type='button'>update (run pipeline)</button>
-    <button id='btnRebuild' type='button'>rebuild (force reindex)</button>
-    <button id='btnDownloadOnly' type='button'>download-only</button>
-    <button id='btnCleanupOnly' type='button'>cleanup-only</button>
+    <button id='btnCollinfoList' type='button'>load collections</button>
+    <button id='btnCollinfoUpdate' type='button'>refresh collinfo</button>
+    <button id='btnBulkStatus' type='button'>bulk status</button>
+    <button id='btnBulkDelete' type='button'>bulk delete indexes</button>
+    <select id='jobMode'>
+      <option value='pipeline'>update (pipeline)</option>
+      <option value='pipeline_force'>rebuild (force reindex)</option>
+      <option value='download_only'>download-only</option>
+      <option value='cleanup_only'>cleanup-only</option>
+      <option value='build_meta_indexes'>build meta-indexes</option>
+    </select>
+    <button id='btnStartJobs' type='button'>start jobs for selected</button>
   </div>
 
-  <div class='small' style='margin-top: 12px;'>Job output is written to <span class='code'>logs/</span> on the server.</div>
-  <div id='status' class='code' style='margin-top: 10px; white-space: pre-wrap; max-height: 320px; overflow: auto;'></div>
+  <div class='small' style='margin-top: 10px;'>
+    Tip: select many collections, then start jobs. Each selection starts its own background subprocess.
+  </div>
 
-  <hr>
+  <div id='collectionsInfo' class='small' style='margin-top: 10px;'></div>
+  <div style='margin-top: 10px; overflow: auto; max-height: 360px; border: 1px solid #eee; border-radius: 8px;'>
+    <table class='table' style='width: 100%; border-collapse: collapse;'>
+      <thead>
+        <tr>
+          <th style='text-align:left; padding: 10px; width: 36px;'><input id='selAll' type='checkbox'></th>
+          <th style='text-align:left; padding: 10px;'>Collection</th>
+          <th style='text-align:left; padding: 10px; width: 110px;'>Status</th>
+          <th style='text-align:left; padding: 10px;'>Name</th>
+          <th style='text-align:left; padding: 10px;'>Time Range</th>
+        </tr>
+      </thead>
+      <tbody id='collectionsTbody'></tbody>
+    </table>
+  </div>
+</div>
+
+<div class='card' style='margin-top: 14px;'>
   <div class='row'>
     <div class='field' style='min-width: 420px; flex: 1;'>
-      <label>Last job</label>
+      <label>Job (pid / log)</label>
       <input id='jobPid' placeholder='pid'>
       <input id='jobLog' placeholder='log_path' style='margin-top: 6px;'>
     </div>
@@ -1405,11 +1552,34 @@ def create_app(master_db: Path) -> Any:
       <label>Log lines</label>
       <input id='jobLines' type='number' min='10' step='10' value='200'>
       <div class='row' style='margin-top: 8px;'>
+        <button id='btnJobStatus' type='button'>status</button>
         <button id='btnTail' type='button'>tail</button>
         <button id='btnStop' type='button'>stop</button>
       </div>
     </div>
   </div>
+
+  <div class='row' style='margin-top: 10px;'>
+    <button id='btnJobsList' type='button'>load recent jobs</button>
+    <div class='small' style='margin-left: 10px;'>Stored in <span class='code'>state/orchestrator_jobs.jsonl</span></div>
+  </div>
+
+  <div id='jobsTbodyWrap' style='margin-top: 10px; overflow:auto; max-height: 220px; border: 1px solid #eee; border-radius: 8px;'>
+    <table class='table' style='width: 100%; border-collapse: collapse;'>
+      <thead>
+        <tr>
+          <th style='text-align:left; padding: 10px;'>When</th>
+          <th style='text-align:left; padding: 10px;'>Label</th>
+          <th style='text-align:left; padding: 10px;'>PID</th>
+          <th style='text-align:left; padding: 10px;'>Log</th>
+          <th style='text-align:left; padding: 10px; width: 90px;'>Open</th>
+        </tr>
+      </thead>
+      <tbody id='jobsTbody'></tbody>
+    </table>
+  </div>
+
+  <div id='status' class='code' style='margin-top: 12px; white-space: pre-wrap; max-height: 320px; overflow: auto;'></div>
 
   <div class='small' style='margin-top: 12px;'>Persisted orchestrator settings live in <span class='code'>state/orchestrator_settings.json</span> (editable in Settings tab).</div>
 </div>
@@ -1420,74 +1590,251 @@ def create_app(master_db: Path) -> Any:
 
   const $ = (id) => document.getElementById(id);
   const statusEl = $('status');
+  const collectionsInfoEl = $('collectionsInfo');
+  const collectionsTbody = $('collectionsTbody');
+  const jobsTbody = $('jobsTbody');
+
+  let allCollections = [];
+  let selectedIds = new Set();
+  let lastBulkStatus = null;
 
   function setStatus(obj) {
     if (typeof obj === 'string') { statusEl.textContent = obj; return; }
     statusEl.textContent = JSON.stringify(obj, null, 2);
   }
 
+  function esc(s) {
+    return String(s ?? '')
+      .replaceAll('&','&amp;')
+      .replaceAll('<','&lt;')
+      .replaceAll('>','&gt;')
+      .replaceAll('"','&quot;');
+  }
+
   async function loadDefaults() {
     try {
       const s = await ccindexMcp.callTool('orchestrator_settings_get', {});
       if (s && s.max_workers) $('workers').value = String(s.max_workers);
-      if (s && s.collections_filter && !$('collection').value) {
-        const f = String(s.collections_filter);
-        if (f.includes('CC-MAIN-')) $('collection').value = f;
-      }
     } catch (e) {
       // ignore
     }
   }
 
-  async function doStatus() {
-    const collection = String($('collection').value || '').trim();
-    if (!collection) return setStatus('collection is required');
-    setStatus('Fetching status…');
+  function selectedCollections() {
+    return Array.from(selectedIds);
+  }
+
+  function _classifyCollectionStatus(st) {
+    if (!st || typeof st !== 'object') return 'unknown';
+    if (st.ok === false || st.error) return 'error';
+    if (st.fully_complete === true) return 'complete';
+    return 'partial';
+  }
+
+  function _statusLabel(cls) {
+    if (cls === 'complete') return 'complete';
+    if (cls === 'partial') return 'partial';
+    if (cls === 'error') return 'error';
+    return '—';
+  }
+
+  function updateCollectionsInfo({ shownCount } = {}) {
+    const shown = Number.isFinite(shownCount) ? shownCount : filteredCollections().length;
+    const total = allCollections.length;
+    const selected = selectedCollections();
+
+    let statusSummary = '';
+    if (lastBulkStatus && lastBulkStatus.collections && typeof lastBulkStatus.collections === 'object') {
+      let complete = 0;
+      let partial = 0;
+      let error = 0;
+      for (const id of selected) {
+        const st = lastBulkStatus.collections[id];
+        const cls = _classifyCollectionStatus(st);
+        if (cls === 'complete') complete += 1;
+        else if (cls === 'partial') partial += 1;
+        else if (cls === 'error') error += 1;
+      }
+      statusSummary = ` Status: complete=${complete} partial=${partial} error=${error}.`;
+    }
+
+    collectionsInfoEl.textContent = `Showing ${shown} / ${total} collections. Selected: ${selected.length}.${statusSummary}`;
+  }
+
+  function filteredCollections() {
+    const ft = String($('filterText').value || '').trim().toLowerCase();
+    if (!ft) return allCollections;
+    return allCollections.filter((c) => {
+      const id = String(c.id || c.collection || '').toLowerCase();
+      const name = String(c.name || '').toLowerCase();
+      return id.includes(ft) || name.includes(ft);
+    });
+  }
+
+  function renderCollections() {
+    const cols = filteredCollections();
+    collectionsTbody.innerHTML = cols.map((c) => {
+      const id = String(c.id || c.collection || '');
+      const name = String(c.name || '');
+      const tr = String(c['time_range'] || c['timeRange'] || '');
+      const from = c['from'] || c['crawl-start'] || c['crawlStart'] || '';
+      const to = c['to'] || c['crawl-end'] || c['crawlEnd'] || '';
+      const timeRange = tr || ((from || to) ? `${from || ''} ${to ? '→ ' + to : ''}`.trim() : '');
+      const checked = selectedIds.has(id) ? "checked" : "";
+
+      const st = (lastBulkStatus && lastBulkStatus.collections && typeof lastBulkStatus.collections === 'object')
+        ? lastBulkStatus.collections[id]
+        : null;
+      const cls = _classifyCollectionStatus(st);
+      const label = _statusLabel(cls);
+      const color = (cls === 'complete') ? '#067d68' : ((cls === 'error') ? '#b42318' : ((cls === 'partial') ? '#b54708' : '#667085'));
+      return `
+        <tr>
+          <td style='padding: 10px;'><input type='checkbox' data-coll='${esc(id)}' ${checked}></td>
+          <td style='padding: 10px; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;'>${esc(id)}</td>
+          <td style='padding: 10px; color: ${color}; font-weight: 600;'>${esc(label)}</td>
+          <td style='padding: 10px;'>${esc(name)}</td>
+          <td style='padding: 10px;'>${esc(timeRange)}</td>
+        </tr>`;
+    }).join('');
+
+    for (const el of document.querySelectorAll('input[data-coll][type=checkbox]')) {
+      el.addEventListener('change', () => {
+        const id = String(el.getAttribute('data-coll') || '');
+        if (!id) return;
+        if (el.checked) selectedIds.add(id); else selectedIds.delete(id);
+        updateCollectionsInfo({ shownCount: cols.length });
+      });
+    }
+
+    updateCollectionsInfo({ shownCount: cols.length });
+  }
+
+  async function loadCollections({ refresh } = {}) {
     try {
-      const st = await ccindexMcp.callTool('orchestrator_collection_status', { collection });
-      setStatus(st);
+      if (refresh) {
+        setStatus('Refreshing collinfo…');
+        await ccindexMcp.callTool('cc_collinfo_update', {});
+      }
+      setStatus('Loading collection catalog…');
+      const res = await ccindexMcp.callTool('cc_collinfo_list', { prefer_cache: true });
+      allCollections = Array.isArray(res.collections) ? res.collections : [];
+      renderCollections();
+      setStatus({ ok: true, loaded: allCollections.length, source_path: res.source_path });
     } catch (e) {
       setStatus({ ok: false, error: String(e && e.message ? e.message : e) });
     }
   }
 
-  async function doDelete() {
-    const collection = String($('collection').value || '').trim();
-    if (!collection) return setStatus('collection is required');
-    setStatus('Deleting index artifacts…');
+  async function doBulkStatus() {
+    const cols = selectedCollections();
+    if (!cols.length) return setStatus('select at least one collection');
+    setStatus('Validating collections…');
     try {
-      const res = await ccindexMcp.callTool('orchestrator_delete_collection_index', { collection });
+      const res = await ccindexMcp.callTool('orchestrator_collections_status', { collections: cols, parallelism: 8 });
+      lastBulkStatus = res;
+      renderCollections();
       setStatus(res);
     } catch (e) {
       setStatus({ ok: false, error: String(e && e.message ? e.message : e) });
     }
   }
 
-  async function startJob(mode, extra) {
-    const workers = parseInt(String($('workers').value || '8'), 10);
-    const collection = String($('collection').value || '').trim();
-    const filter = collection || null;
-
-    setStatus(`Planning ${mode} job…`);
-    const planned = await ccindexMcp.callTool('orchestrator_job_plan', {
-      mode,
-      filter,
-      workers: Number.isFinite(workers) ? workers : null,
-      ...extra,
-    });
-
-    const job = await ccindexMcp.callTool('orchestrator_job_start', { planned, label: `cc_pipeline_${mode}` });
-    $('jobPid').value = String(job.pid || '');
-    $('jobLog').value = String(job.log_path || '');
-    setStatus({ started: job });
+  async function doBulkDelete() {
+    const cols = selectedCollections();
+    if (!cols.length) return setStatus('select at least one collection');
+    if (!confirm(`Delete DuckDB index artifacts for ${cols.length} collections?`)) return;
+    setStatus('Deleting index artifacts…');
+    try {
+      const res = await ccindexMcp.callTool('orchestrator_delete_collection_indexes', { collections: cols });
+      setStatus(res);
+    } catch (e) {
+      setStatus({ ok: false, error: String(e && e.message ? e.message : e) });
+    }
   }
 
-  $('btnStatus').addEventListener('click', () => doStatus());
-  $('btnDelete').addEventListener('click', () => doDelete());
-  $('btnUpdate').addEventListener('click', () => startJob('pipeline', { force_reindex: false }));
-  $('btnRebuild').addEventListener('click', () => startJob('pipeline', { force_reindex: true }));
-  $('btnDownloadOnly').addEventListener('click', () => startJob('download_only', {}));
-  $('btnCleanupOnly').addEventListener('click', () => startJob('cleanup_only', {}));
+  async function startJobsForSelected() {
+    const cols = selectedCollections();
+    if (!cols.length) return setStatus('select at least one collection');
+
+    const modeSel = String($('jobMode').value || 'pipeline');
+    let mode = modeSel;
+    let extra = {};
+    if (modeSel === 'pipeline_force') {
+      mode = 'pipeline';
+      extra = { force_reindex: true };
+    } else if (modeSel === 'pipeline') {
+      extra = { force_reindex: false };
+    }
+
+    const workers = parseInt(String($('workers').value || '8'), 10);
+    if (!confirm(`Start ${modeSel} jobs for ${cols.length} collections?`)) return;
+
+    const started = [];
+    for (const c of cols) {
+      setStatus(`Planning ${modeSel} for ${c}…`);
+      const planned = await ccindexMcp.callTool('orchestrator_job_plan', {
+        mode,
+        filter: c,
+        workers: Number.isFinite(workers) ? workers : null,
+        ...extra,
+      });
+      const job = await ccindexMcp.callTool('orchestrator_job_start', { planned, label: `cc_pipeline_${modeSel}_${c}` });
+      started.push({ collection: c, job });
+      $('jobPid').value = String(job.pid || '');
+      $('jobLog').value = String(job.log_path || '');
+    }
+    setStatus({ ok: true, started_count: started.length, started });
+  }
+
+  async function loadJobs() {
+    try {
+      const res = await ccindexMcp.callTool('orchestrator_jobs_list', { limit: 50 });
+      const jobs = Array.isArray(res.jobs) ? res.jobs : [];
+      jobsTbody.innerHTML = jobs.map((j) => {
+        const when = String(j.started_at || '');
+        const label = String(j.label || '');
+        const pid = String(j.pid || '');
+        const lp = String(j.log_path || '');
+        return `
+          <tr>
+            <td style='padding: 10px;'>${esc(when)}</td>
+            <td style='padding: 10px;'>${esc(label)}</td>
+            <td style='padding: 10px;'>${esc(pid)}</td>
+            <td style='padding: 10px; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;'>${esc(lp)}</td>
+            <td style='padding: 10px;'><button type='button' data-open-job='1' data-pid='${esc(pid)}' data-log='${esc(lp)}'>open</button></td>
+          </tr>`;
+      }).join('');
+
+      for (const btn of document.querySelectorAll('button[data-open-job]')) {
+        btn.addEventListener('click', () => {
+          $('jobPid').value = String(btn.getAttribute('data-pid') || '');
+          $('jobLog').value = String(btn.getAttribute('data-log') || '');
+        });
+      }
+      setStatus({ ok: true, jobs_count: jobs.length });
+    } catch (e) {
+      setStatus({ ok: false, error: String(e && e.message ? e.message : e) });
+    }
+  }
+
+  $('btnCollinfoList').addEventListener('click', () => loadCollections({ refresh: false }));
+  $('btnCollinfoUpdate').addEventListener('click', () => loadCollections({ refresh: true }));
+  $('btnBulkStatus').addEventListener('click', () => doBulkStatus());
+  $('btnBulkDelete').addEventListener('click', () => doBulkDelete());
+  $('btnStartJobs').addEventListener('click', () => startJobsForSelected());
+  $('btnJobsList').addEventListener('click', () => loadJobs());
+
+  $('filterText').addEventListener('input', () => renderCollections());
+  $('selAll').addEventListener('change', (e) => {
+    const checked = !!(e && e.target && e.target.checked);
+    for (const c of filteredCollections()) {
+      const id = String(c.id || c.collection || '');
+      if (!id) continue;
+      if (checked) selectedIds.add(id); else selectedIds.delete(id);
+    }
+    renderCollections();
+  });
 
   $('btnTail').addEventListener('click', async () => {
     const log_path = String($('jobLog').value || '').trim();
@@ -1497,6 +1844,21 @@ def create_app(master_db: Path) -> Any:
     try {
       const res = await ccindexMcp.callTool('orchestrator_job_tail', { log_path, lines: Number.isFinite(lines) ? lines : 200 });
       setStatus(res.tail || '');
+    } catch (e) {
+      setStatus({ ok: false, error: String(e && e.message ? e.message : e) });
+    }
+  });
+
+  $('btnJobStatus').addEventListener('click', async () => {
+    const pidRaw = String($('jobPid').value || '').trim();
+    const pid = pidRaw ? parseInt(pidRaw, 10) : null;
+    const log_path = String($('jobLog').value || '').trim() || null;
+    const lines = parseInt(String($('jobLines').value || '200'), 10);
+    if (!pid && !log_path) return setStatus('pid or log_path is required');
+    setStatus('Fetching job status…');
+    try {
+      const res = await ccindexMcp.callTool('orchestrator_job_status', { pid, log_path, lines: Number.isFinite(lines) ? lines : 200 });
+      setStatus(res);
     } catch (e) {
       setStatus({ ok: false, error: String(e && e.message ? e.message : e) });
     }
@@ -1515,6 +1877,7 @@ def create_app(master_db: Path) -> Any:
   });
 
   await loadDefaults();
+  await loadCollections({ refresh: false });
 </script>
 """
 
