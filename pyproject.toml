@@ -56,28 +56,28 @@ dev = [
 municipal-scrape = "municipal_scrape_workspace.cli:main"
 
 # Unified CCIndex CLI + MCP server
-ccindex = "municipal_scrape_workspace.ccindex.cli:main"
-ccindex-mcp = "municipal_scrape_workspace.ccindex.mcp_server:main"
-ccindex-dashboard = "municipal_scrape_workspace.ccindex.dashboard:main"
+ccindex = "common_crawl_search_engine.cli:main"
+ccindex-mcp = "common_crawl_search_engine.mcp_server:main"
+ccindex-dashboard = "common_crawl_search_engine.dashboard:main"
 
 # Common Crawl search tools
-ccindex-search = "municipal_scrape_workspace.ccindex.search_cc_via_meta_indexes:main"
-ccindex-search-domain = "municipal_scrape_workspace.ccindex.search_cc_domain:main"
-ccindex-search-parallel = "municipal_scrape_workspace.ccindex.search_parallel_duckdb_indexes:main"
+ccindex-search = "common_crawl_search_engine.ccindex.search_cc_via_meta_indexes:main"
+ccindex-search-domain = "common_crawl_search_engine.ccindex.search_cc_domain:main"
+ccindex-search-parallel = "common_crawl_search_engine.ccindex.search_parallel_duckdb_indexes:main"
 
 # Index building tools
-ccindex-build-pointer = "municipal_scrape_workspace.ccindex.build_cc_pointer_duckdb:main"
-ccindex-build-parallel = "municipal_scrape_workspace.ccindex.build_parallel_duckdb_indexes:main"
-ccindex-build-meta = "municipal_scrape_workspace.ccindex.build_year_meta_indexes:main"
+ccindex-build-pointer = "common_crawl_search_engine.ccindex.build_cc_pointer_duckdb:main"
+ccindex-build-parallel = "common_crawl_search_engine.ccindex.build_parallel_duckdb_indexes:main"
+ccindex-build-meta = "common_crawl_search_engine.ccindex.build_year_meta_indexes:main"
 
 # Orchestration tools
-ccindex-orchestrate = "municipal_scrape_workspace.ccindex.cc_pipeline_orchestrator:main"
-ccindex-watch = "municipal_scrape_workspace.ccindex.cc_pipeline_watch:main"
-ccindex-hud = "municipal_scrape_workspace.ccindex.cc_pipeline_hud:main"
+ccindex-orchestrate = "common_crawl_search_engine.ccindex.cc_pipeline_orchestrator:main"
+ccindex-watch = "common_crawl_search_engine.ccindex.cc_pipeline_watch:main"
+ccindex-hud = "common_crawl_search_engine.ccindex.cc_pipeline_hud:main"
 
 # Validation tools
-ccindex-validate = "municipal_scrape_workspace.ccindex.validate_collection_completeness:main"
-ccindex-validate-parquet = "municipal_scrape_workspace.ccindex.validate_and_sort_parquet:main"
+ccindex-validate = "common_crawl_search_engine.ccindex.validate_collection_completeness:main"
+ccindex-validate-parquet = "common_crawl_search_engine.ccindex.validate_and_sort_parquet:main"
 
 [tool.setuptools]
 package-dir = {"" = "src"}

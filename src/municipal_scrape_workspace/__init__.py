@@ -1,2 +1,4 @@
-__all__ = ["__version__"]
-__version__ = "0.1.0"
+"""Municipal scraping workspace package.
+
+This package intentionally stays separate from `common_crawl_search_engine`.
+"""

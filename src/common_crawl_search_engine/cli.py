@@ -1,12 +1,12 @@
-"""Unified ccindex CLI.
+"""Unified ccindex CLI (application layer).
 
-This complements the existing `ccindex-*` console scripts by providing a single
-entrypoint with subcommands.
+This module is separated from the core library code in
+`common_crawl_search_engine.ccindex` so the extraction boundary is clean.
 
 Examples:
-  ccindex search meta --domain 18f.gov --max-matches 50
-  ccindex search domain example.com --db /storage/ccindex_duckdb/cc_pointers.duckdb
-  ccindex orchestrate --config pipeline_config.json
+    python -m common_crawl_search_engine.cli --help
+    ccindex search meta --domain 18f.gov --max-matches 50
+    ccindex mcp start
 """
 
 from __future__ import annotations
@@ -16,7 +16,7 @@ import importlib
 import sys
 from pathlib import Path
 
-from . import api
+from common_crawl_search_engine.ccindex import api
 
 
 def _delegate(module_path: str, argv: list[str]) -> int:
@@ -29,8 +29,11 @@ def _delegate(module_path: str, argv: list[str]) -> int:
     old_argv = sys.argv
     sys.argv = [module_path] + list(argv)
     try:
-        rc = mod.main()
-        return int(rc) if rc is not None else 0
+        # Some legacy modules accept main(argv), others define main() and read sys.argv.
+        try:
+            return int(mod.main(argv))
+        except TypeError:
+            return int(mod.main())
     finally:
         sys.argv = old_argv
 
@@ -94,12 +97,12 @@ def main(argv: list[str] | None = None) -> int:
 
     ap_domain = sub_search.add_parser("domain", help="Delegate to search_cc_domain (legacy behavior)")
     ap_domain.add_argument("argv", nargs=argparse.REMAINDER, help="Arguments for search_cc_domain")
-    ap_domain.set_defaults(func=lambda a: _delegate("municipal_scrape_workspace.ccindex.search_cc_domain", a.argv))
+    ap_domain.set_defaults(func=lambda a: _delegate("common_crawl_search_engine.ccindex.search_cc_domain", a.argv))
 
     ap_parallel = sub_search.add_parser("parallel", help="Delegate to search_parallel_duckdb_indexes")
     ap_parallel.add_argument("argv", nargs=argparse.REMAINDER)
     ap_parallel.set_defaults(
-        func=lambda a: _delegate("municipal_scrape_workspace.ccindex.search_parallel_duckdb_indexes", a.argv)
+        func=lambda a: _delegate("common_crawl_search_engine.ccindex.search_parallel_duckdb_indexes", a.argv)
     )
 
     # ---- build ----
@@ -108,30 +111,32 @@ def main(argv: list[str] | None = None) -> int:
 
     ap_build_pointer = sub_build.add_parser("pointer", help="Build pointer DuckDB index")
     ap_build_pointer.add_argument("argv", nargs=argparse.REMAINDER)
-    ap_build_pointer.set_defaults(func=lambda a: _delegate("municipal_scrape_workspace.ccindex.build_cc_pointer_duckdb", a.argv))
+    ap_build_pointer.set_defaults(
+        func=lambda a: _delegate("common_crawl_search_engine.ccindex.build_cc_pointer_duckdb", a.argv)
+    )
 
     ap_build_parallel = sub_build.add_parser("parallel", help="Build parallel DuckDB indexes")
     ap_build_parallel.add_argument("argv", nargs=argparse.REMAINDER)
     ap_build_parallel.set_defaults(
-        func=lambda a: _delegate("municipal_scrape_workspace.ccindex.build_parallel_duckdb_indexes", a.argv)
+        func=lambda a: _delegate("common_crawl_search_engine.ccindex.build_parallel_duckdb_indexes", a.argv)
     )
 
     ap_build_meta = sub_build.add_parser("meta", help="Build year meta-indexes")
     ap_build_meta.add_argument("argv", nargs=argparse.REMAINDER)
-    ap_build_meta.set_defaults(func=lambda a: _delegate("municipal_scrape_workspace.ccindex.build_year_meta_indexes", a.argv))
+    ap_build_meta.set_defaults(func=lambda a: _delegate("common_crawl_search_engine.ccindex.build_year_meta_indexes", a.argv))
 
     # ---- orchestration ----
     ap_orch = sub.add_parser("orchestrate", help="Delegate to pipeline orchestrator")
     ap_orch.add_argument("argv", nargs=argparse.REMAINDER)
-    ap_orch.set_defaults(func=lambda a: _delegate("municipal_scrape_workspace.ccindex.cc_pipeline_orchestrator", a.argv))
+    ap_orch.set_defaults(func=lambda a: _delegate("common_crawl_search_engine.ccindex.cc_pipeline_orchestrator", a.argv))
 
     ap_watch = sub.add_parser("watch", help="Delegate to pipeline watch")
     ap_watch.add_argument("argv", nargs=argparse.REMAINDER)
-    ap_watch.set_defaults(func=lambda a: _delegate("municipal_scrape_workspace.ccindex.cc_pipeline_watch", a.argv))
+    ap_watch.set_defaults(func=lambda a: _delegate("common_crawl_search_engine.ccindex.cc_pipeline_watch", a.argv))
 
     ap_hud = sub.add_parser("hud", help="Delegate to pipeline HUD")
     ap_hud.add_argument("argv", nargs=argparse.REMAINDER)
-    ap_hud.set_defaults(func=lambda a: _delegate("municipal_scrape_workspace.ccindex.cc_pipeline_hud", a.argv))
+    ap_hud.set_defaults(func=lambda a: _delegate("common_crawl_search_engine.ccindex.cc_pipeline_hud", a.argv))
 
     # ---- validate ----
     ap_validate = sub.add_parser("validate", help="Validation tools")
@@ -140,12 +145,12 @@ def main(argv: list[str] | None = None) -> int:
     ap_val_coll = sub_val.add_parser("collection", help="Validate collection completeness")
     ap_val_coll.add_argument("argv", nargs=argparse.REMAINDER)
     ap_val_coll.set_defaults(
-        func=lambda a: _delegate("municipal_scrape_workspace.ccindex.validate_collection_completeness", a.argv)
+        func=lambda a: _delegate("common_crawl_search_engine.ccindex.validate_collection_completeness", a.argv)
     )
 
     ap_val_pq = sub_val.add_parser("parquet", help="Validate and sort Parquet")
     ap_val_pq.add_argument("argv", nargs=argparse.REMAINDER)
-    ap_val_pq.set_defaults(func=lambda a: _delegate("municipal_scrape_workspace.ccindex.validate_and_sort_parquet", a.argv))
+    ap_val_pq.set_defaults(func=lambda a: _delegate("common_crawl_search_engine.ccindex.validate_and_sort_parquet", a.argv))
 
     # ---- mcp ----
     ap_mcp = sub.add_parser("mcp", help="MCP server + dashboard")
@@ -166,7 +171,7 @@ def main(argv: list[str] | None = None) -> int:
     ap_mcp_start.add_argument("--reload", action="store_true", default=False)
 
     def _mcp_start(ns: argparse.Namespace) -> int:
-        from municipal_scrape_workspace.ccindex import dashboard
+        from common_crawl_search_engine.dashboard import main as dashboard_main
 
         args2: list[str] = [
             "--host",
@@ -178,12 +183,12 @@ def main(argv: list[str] | None = None) -> int:
         ]
         if ns.reload:
             args2.append("--reload")
-        return int(dashboard.main(args2))
+        return int(dashboard_main(args2))
 
     ap_mcp_start.set_defaults(func=_mcp_start)
 
     ap_mcp_serve = sub_mcp.add_parser("serve", help="Start stdio MCP server (for MCP clients)")
-    ap_mcp_serve.set_defaults(func=lambda a: _delegate("municipal_scrape_workspace.ccindex.mcp_server", []))
+    ap_mcp_serve.set_defaults(func=lambda a: _delegate("common_crawl_search_engine.mcp_server", []))
 
     ns = ap.parse_args(argv)
     return int(ns.func(ns))

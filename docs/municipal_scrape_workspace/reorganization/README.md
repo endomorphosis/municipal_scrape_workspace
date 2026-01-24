@@ -1,0 +1,11 @@
+# Reorganization Notes
+
+This folder contains historical notes and plans from the repo cleanups/reorganizations.
+
+## Files
+
+- [REORGANIZATION_PLAN.md](REORGANIZATION_PLAN.md)
+- [REORGANIZATION_OPTIONS.md](REORGANIZATION_OPTIONS.md)
+- [REORGANIZATION_FINAL.md](REORGANIZATION_FINAL.md)
+- [REORGANIZATION_COMPLETE.md](REORGANIZATION_COMPLETE.md)
+- [FINAL_REORGANIZATION_README.md](FINAL_REORGANIZATION_README.md)

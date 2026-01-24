@@ -12,11 +12,12 @@ The `municipal_scrape_workspace` repository has been successfully refactored fro
 
 ### Recent Updates (2026-01-20)
 
-**Documentation Organization**: All documentation has been organized into logical subdirectories:
-- **docs/refactoring/** - Refactoring process documentation (13 files)
-- **docs/ccindex/** - Common Crawl index documentation (13 files)
-- **docs/pipeline/** - Pipeline orchestration documentation (9 files)
-- **docs/** - General documentation with comprehensive index
+**Documentation Organization**: Documentation is now split by component:
+- **docs/common_crawl_search_engine/** - Common Crawl indexing/search docs
+- **docs/municipal_scrape_workspace/** - Municipal scrape + refactoring docs
+- **docs/** - Top-level docs index
+
+> Note (2026-01-24): Common Crawl tooling has been moved out of `municipal_scrape_workspace.ccindex` into the standalone `common_crawl_search_engine` package. Parts of this document describe the earlier post-refactor layout and should be treated as historical.
 
 **Root Directory Cleanup**: Reduced from 146 items to 93 items (36% reduction)
 - Log files moved to logs/ directory

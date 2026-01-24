@@ -461,51 +461,23 @@ def brave_web_search(
 ) -> List[BraveWebResult]:
     """Search the web using Brave Search API.
 
-    Requires env var `BRAVE_SEARCH_API_KEY` or explicit api_key.
+    The HTTP integration lives in `common_crawl_search_engine.ccsearch.brave_search`.
+    This function adapts results into the stable `BraveWebResult` dataclass.
     """
 
-    token = (api_key or os.environ.get("BRAVE_SEARCH_API_KEY") or "").strip()
-    if not token:
-        raise RuntimeError("Missing BRAVE_SEARCH_API_KEY (set env var or pass api_key)")
+    from common_crawl_search_engine.ccsearch.brave_search import brave_web_search as _brave_web_search
 
-    q = (query or "").strip()
-    if not q:
-        return []
-
-    try:
-        import requests  # type: ignore
-    except Exception as e:  # pragma: no cover
-        raise RuntimeError(
-            "requests is required for Brave Search integration. Install with: pip install -e '.[ccindex]'"
-        ) from e
-
-    url = "https://api.search.brave.com/res/v1/web/search"
-    params = {
-        "q": q,
-        "count": int(count),
-        "offset": int(offset),
-        "country": str(country),
-        "safesearch": str(safesearch),
-    }
-    headers = {
-        "Accept": "application/json",
-        "X-Subscription-Token": token,
-    }
-
-    resp = requests.get(url, params=params, headers=headers, timeout=20)
-    if resp.status_code != 200:
-        raise RuntimeError(f"Brave Search HTTP {resp.status_code}: {resp.text[:500]}")
-
-    data = resp.json() if resp.content else {}
-    web = data.get("web") if isinstance(data, dict) else None
-    items = web.get("results") if isinstance(web, dict) else None
-    if not isinstance(items, list):
-        return []
+    items = _brave_web_search(
+        query,
+        api_key=api_key,
+        count=int(count),
+        offset=int(offset),
+        country=str(country),
+        safesearch=str(safesearch),
+    )
 
     out: List[BraveWebResult] = []
     for it in items:
-        if not isinstance(it, dict):
-            continue
         out.append(
             BraveWebResult(
                 title=str(it.get("title") or ""),
@@ -513,7 +485,6 @@ def brave_web_search(
                 description=str(it.get("description") or ""),
             )
         )
-
     return out
 
 

@@ -36,7 +36,7 @@ from urllib.error import HTTPError, URLError
 
 import psutil
 
-from municipal_scrape_workspace.ccindex.validate_collection_completeness import CollectionValidator
+from .validate_collection_completeness import CollectionValidator
 
 # Configure logging
 logging.basicConfig(

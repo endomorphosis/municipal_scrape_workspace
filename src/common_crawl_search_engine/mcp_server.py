@@ -1,22 +1,11 @@
-"""MCP server for ccindex.
-
-This exposes a small set of high-value ccindex operations as MCP tools.
-
-Install with:
-  pip install -e '.[ccindex-mcp]'
-
-Run:
-  ccindex-mcp
-
-By default the server uses stdio transport (the MCP SDK default).
-"""
+"""MCP stdio server for ccindex (application layer)."""
 
 from __future__ import annotations
 
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
-from . import api
+from common_crawl_search_engine.ccindex import api
 
 
 def _maybe_path(p: Optional[str]) -> Optional[Path]:
@@ -30,12 +19,10 @@ def _maybe_path(p: Optional[str]) -> Optional[Path]:
 
 def main() -> int:
     try:
-        # MCP Python SDK (FastMCP API)
         from mcp.server.fastmcp import FastMCP  # type: ignore
     except Exception as e:  # pragma: no cover
         raise SystemExit(
-            "Missing MCP dependency. Install with: pip install -e '.[ccindex-mcp]'\n"
-            f"Import error: {e}"
+            "Missing MCP dependency. Install with: pip install -e '.[ccindex-mcp]'\n" f"Import error: {e}"
         )
 
     mcp = FastMCP("ccindex")
@@ -88,10 +75,7 @@ def main() -> int:
         }
 
     @mcp.tool()
-    def parquet_shards_for_domain(
-        collection_db: str,
-        domain: str,
-    ) -> Dict[str, Any]:
+    def parquet_shards_for_domain(collection_db: str, domain: str) -> Dict[str, Any]:
         """Return parquet shard relpaths for a domain for a single collection DB."""
 
         dom = api.normalize_domain(domain)
@@ -133,15 +117,30 @@ def main() -> int:
         }
 
     @mcp.tool()
-    def normalize_domain(domain_or_url: str) -> str:
-        """Normalize a domain or URL into a hostname."""
+    def brave_search_ccindex(
+        query: str,
+        count: int = 8,
+        parquet_root: str = "/storage/ccindex_parquet",
+        master_db: str = "/storage/ccindex_duckdb/cc_pointers_master/cc_master_index.duckdb",
+        year: Optional[str] = None,
+    ) -> Dict[str, Any]:
+        """Brave web search + resolve result URLs to CCIndex pointers."""
 
+        res = api.brave_search_ccindex(
+            str(query),
+            count=int(count),
+            parquet_root=Path(parquet_root).expanduser().resolve(),
+            master_db=_maybe_path(master_db),
+            year=str(year) if year else None,
+        )
+        return {"query": res.query, "elapsed_s": res.elapsed_s, "results": res.results}
+
+    @mcp.tool()
+    def normalize_domain(domain_or_url: str) -> str:
         return api.normalize_domain(domain_or_url)
 
     @mcp.tool()
     def host_to_rev(host: str) -> str:
-        """Convert host like 'a.b.c' to 'c,b,a'."""
-
         return api.host_to_rev(host)
 
     mcp.run()
