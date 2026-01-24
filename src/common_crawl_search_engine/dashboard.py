@@ -152,16 +152,42 @@ def _jsonrpc_error(req_id: Any, code: int, message: str, data: Any = None) -> Di
     return {"jsonrpc": "2.0", "id": req_id, "error": err}
 
 
+_DEFAULT_MASTER_DB = Path("/storage/ccindex_duckdb/cc_pointers_master/cc_master_index.duckdb")
+
+
+def _env_master_db() -> Path:
+    raw = (
+        os.environ.get("CCINDEX_MASTER_DB")
+        or os.environ.get("COMMON_CRAWL_MASTER_DB")
+        or os.environ.get("CCSEARCH_MASTER_DB")
+        or ""
+    ).strip()
+    if raw:
+        return Path(raw).expanduser().resolve()
+    return _DEFAULT_MASTER_DB
+
+
 def create_app(master_db: Path) -> Any:
     try:
         from fastapi import FastAPI, Query, Request
         from fastapi.responses import HTMLResponse, JSONResponse, Response
         from fastapi.staticfiles import StaticFiles
+        from starlette.concurrency import run_in_threadpool
     except Exception as e:  # pragma: no cover
         raise SystemExit(
             "Missing dashboard dependencies. Install with: pip install -e '.[ccindex-dashboard]'\n"
             f"Import error: {e}"
         )
+
+    # Optional CORS for remote JS SDK usage.
+    cors_origins_raw = (os.environ.get("CCINDEX_CORS_ORIGINS") or os.environ.get("CCSEARCH_CORS_ORIGINS") or "").strip()
+    cors_allow_origins: list[str] = []
+    cors_allow_credentials = True
+    if cors_origins_raw:
+        cors_allow_origins = [o.strip() for o in cors_origins_raw.split(",") if o.strip()]
+        if cors_allow_origins == ["*"]:
+            # With wildcard origins, credentials must be disabled.
+            cors_allow_credentials = False
 
     # NOTE: This module uses `from __future__ import annotations`, which stores
     # type annotations as strings. FastAPI resolves those strings using the
@@ -171,6 +197,21 @@ def create_app(master_db: Path) -> Any:
     globals()["Request"] = Request
 
     app = FastAPI(title="Common Crawl Search Engine Dashboard", version="0.1")
+
+    if cors_allow_origins:
+        try:
+            from fastapi.middleware.cors import CORSMiddleware
+
+            app.add_middleware(
+                CORSMiddleware,
+                allow_origins=cors_allow_origins,
+                allow_credentials=cors_allow_credentials,
+                allow_methods=["*"],
+                allow_headers=["*"],
+            )
+        except Exception:
+            # CORS is best-effort; if middleware isn't available, proceed.
+            pass
 
     def _settings_path() -> Path:
       state_dir = Path("state")
@@ -220,254 +261,282 @@ def create_app(master_db: Path) -> Any:
             break
 
     @app.post("/mcp")
-    async def mcp(request: Request) -> JSONResponse:
-        payload = await request.json()
-        req_id = payload.get("id")
-        method = payload.get("method")
-        params = payload.get("params")
+    async def mcp(request: Request) -> Response:
+      payload = await request.json()
 
-        tools = [
-            {
-                "name": "search_domain_meta",
-                "description": "Search CCIndex via meta-indexes for a domain",
-                "inputSchema": {
-                    "type": "object",
-                    "properties": {
-                        "domain": {"type": "string"},
-                        "year": {"type": ["string", "null"]},
-                        "parquet_root": {"type": "string"},
-                        "master_db": {"type": "string"},
-                        "max_matches": {"type": "integer"},
-                    },
-                    "required": ["domain"],
-                },
+      tools = [
+        {
+          "name": "search_domain_meta",
+          "description": "Search CCIndex via meta-indexes for a domain",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "domain": {"type": "string"},
+              "year": {"type": ["string", "null"]},
+              "parquet_root": {"type": "string"},
+              "master_db": {"type": "string"},
+              "max_matches": {"type": "integer"},
             },
-            {
-                "name": "fetch_warc_record",
-              "description": "Fetch a WARC record (range or cached full WARC) and optionally decode a text preview",
-                "inputSchema": {
-                    "type": "object",
-                    "properties": {
-                        "warc_filename": {"type": "string"},
-                        "warc_offset": {"type": "integer"},
-                        "warc_length": {"type": "integer"},
-                        "prefix": {"type": "string"},
-                  "max_bytes": {"type": "integer"},
-                  "max_preview_chars": {"type": "integer"},
-                  "cache_mode": {"type": "string", "enum": ["range", "auto", "full"]},
-                  "full_warc_cache_dir": {"type": ["string", "null"]},
-                  "full_warc_max_bytes": {"type": "integer"},
-                  "full_warc_cache_max_total_bytes": {"type": "integer"},
-                  "range_cache_max_bytes": {"type": "integer"},
-                  "range_cache_max_item_bytes": {"type": "integer"},
-                    },
-                    "required": ["warc_filename", "warc_offset", "warc_length"],
-                },
+            "required": ["domain"],
+          },
+        },
+        {
+          "name": "fetch_warc_record",
+          "description": "Fetch a WARC record (range or cached full WARC) and optionally decode a text preview",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "warc_filename": {"type": "string"},
+              "warc_offset": {"type": "integer"},
+              "warc_length": {"type": "integer"},
+              "prefix": {"type": "string"},
+              "max_bytes": {"type": "integer"},
+              "max_preview_chars": {"type": "integer"},
+              "cache_mode": {"type": "string", "enum": ["range", "auto", "full"]},
+              "full_warc_cache_dir": {"type": ["string", "null"]},
+              "full_warc_max_bytes": {"type": "integer"},
+              "full_warc_cache_max_total_bytes": {"type": "integer"},
+              "range_cache_max_bytes": {"type": "integer"},
+              "range_cache_max_item_bytes": {"type": "integer"},
             },
-            {
-                "name": "list_collections",
-                "description": "List registered collections from master meta-index",
-                "inputSchema": {"type": "object", "properties": {"year": {"type": ["string", "null"]}}},
+            "required": ["warc_filename", "warc_offset", "warc_length"],
+          },
+        },
+        {
+          "name": "list_collections",
+          "description": "List registered collections from master meta-index",
+          "inputSchema": {"type": "object", "properties": {"year": {"type": ["string", "null"]}}},
+        },
+        {
+          "name": "brave_search_ccindex",
+          "description": "Brave web search + resolve result URLs to CCIndex pointers (no live-site visits)",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "query": {"type": "string"},
+              "count": {"type": "integer"},
+              "year": {"type": ["string", "null"]},
+              "parquet_root": {"type": "string"},
             },
-            {
-                "name": "brave_search_ccindex",
-                "description": "Brave web search + resolve result URLs to CCIndex pointers (no live-site visits)",
-                "inputSchema": {
-                    "type": "object",
-                    "properties": {
-                        "query": {"type": "string"},
-                        "count": {"type": "integer"},
-                        "year": {"type": ["string", "null"]},
-                        "parquet_root": {"type": "string"},
-                    },
-                    "required": ["query"],
-                },
-            },
-            {
-              "name": "brave_cache_stats",
-              "description": "Return stats for the on-disk Brave Search cache",
-              "inputSchema": {"type": "object", "properties": {}},
-            },
-            {
-              "name": "brave_cache_clear",
-              "description": "Clear the on-disk Brave Search cache",
-              "inputSchema": {"type": "object", "properties": {}},
-            },
-        ]
+            "required": ["query"],
+          },
+        },
+        {
+          "name": "brave_cache_stats",
+          "description": "Return stats for the on-disk Brave Search cache",
+          "inputSchema": {"type": "object", "properties": {}},
+        },
+        {
+          "name": "brave_cache_clear",
+          "description": "Clear the on-disk Brave Search cache",
+          "inputSchema": {"type": "object", "properties": {}},
+        },
+      ]
+
+      def _call_tool_sync(*, tool_name: str, tool_args: Dict[str, Any]) -> Any:
+        if tool_name == "search_domain_meta":
+          q = str(tool_args.get("domain") or "")
+          year = tool_args.get("year")
+          parquet_root = Path(str(tool_args.get("parquet_root") or "/storage/ccindex_parquet"))
+          master_db_arg = Path(str(tool_args.get("master_db") or str(master_db)))
+          max_matches = int(tool_args.get("max_matches") or 200)
+
+          res = api.search_domain_via_meta_indexes(
+            q,
+            parquet_root=parquet_root,
+            master_db=master_db_arg,
+            year=str(year) if year else None,
+            max_matches=max_matches,
+          )
+          return {
+            "meta_source": res.meta_source,
+            "collections_considered": res.collections_considered,
+            "emitted": res.emitted,
+            "elapsed_s": res.elapsed_s,
+            "records": res.records,
+          }
+
+        if tool_name == "fetch_warc_record":
+          s = _load_settings()
+          max_bytes = int(tool_args.get("max_bytes") or int(s.get("default_max_bytes") or 2_000_000))
+          max_preview_chars = int(
+            tool_args.get("max_preview_chars") or int(s.get("default_max_preview_chars") or 80_000)
+          )
+
+          range_cache_max_bytes = int(
+            tool_args.get("range_cache_max_bytes") or int(s.get("range_cache_max_bytes") or 2_000_000_000)
+          )
+          range_cache_max_item_bytes = int(
+            tool_args.get("range_cache_max_item_bytes")
+            or int(s.get("range_cache_max_item_bytes") or 25_000_000)
+          )
+          full_warc_cache_max_total_bytes = int(
+            tool_args.get("full_warc_cache_max_total_bytes")
+            or int(s.get("full_warc_cache_max_total_bytes") or 0)
+          )
+
+          fetch, source, local_path = api.fetch_warc_record(
+            warc_filename=str(tool_args.get("warc_filename") or ""),
+            warc_offset=int(tool_args.get("warc_offset") or 0),
+            warc_length=int(tool_args.get("warc_length") or 0),
+            prefix=str(tool_args.get("prefix") or "https://data.commoncrawl.org/"),
+            max_bytes=max_bytes,
+            decode_gzip_text=True,
+            max_preview_chars=max_preview_chars,
+            cache_mode=str(tool_args.get("cache_mode") or str(s.get("default_cache_mode") or "range")),
+            range_cache_max_bytes=range_cache_max_bytes,
+            range_cache_max_item_bytes=range_cache_max_item_bytes,
+            full_warc_cache_dir=(
+              Path(str(tool_args.get("full_warc_cache_dir")))
+              if tool_args.get("full_warc_cache_dir")
+              else (Path(str(s.get("full_warc_cache_dir"))) if s.get("full_warc_cache_dir") else None)
+            ),
+            full_warc_max_bytes=int(
+              tool_args.get("full_warc_max_bytes") or int(s.get("full_warc_max_bytes") or 5_000_000_000)
+            ),
+            full_warc_cache_max_total_bytes=full_warc_cache_max_total_bytes,
+          )
+
+          out: Dict[str, Any] = {
+            "ok": fetch.ok,
+            "status": fetch.status,
+            "url": fetch.url,
+            "source": source,
+            "local_warc_path": local_path,
+            "bytes_requested": fetch.bytes_requested,
+            "bytes_returned": fetch.bytes_returned,
+            "sha256": fetch.sha256,
+            "decoded_text_preview": fetch.decoded_text_preview,
+            "error": fetch.error,
+          }
+
+          if fetch.ok and fetch.raw_base64:
+            try:
+              import base64 as _b64
+
+              raw = _b64.b64decode(fetch.raw_base64)
+              parsed = api.extract_http_from_warc_gzip_member(
+                raw,
+                max_body_bytes=max_bytes,
+                max_preview_chars=max_preview_chars,
+                include_body_base64=False,
+              )
+              out["http"] = {
+                "ok": parsed.ok,
+                "warc_headers": parsed.warc_headers,
+                "status": parsed.http_status,
+                "status_line": parsed.http_status_line,
+                "headers": parsed.http_headers,
+                "body_text_preview": parsed.body_text_preview,
+                "body_is_html": parsed.body_is_html,
+                "body_mime": parsed.body_mime,
+                "body_charset": parsed.body_charset,
+                "error": parsed.error,
+              }
+            except Exception as e:
+              out["http"] = {"ok": False, "error": f"parse_failed: {type(e).__name__}: {e}"}
+
+          return out
+
+        if tool_name == "list_collections":
+          year = tool_args.get("year")
+          cols = api.list_collections(master_db=Path(master_db), year=str(year) if year else None)
+          return [
+            {"year": c.year, "collection": c.collection, "collection_db_path": str(c.collection_db_path)}
+            for c in cols
+          ]
+
+        if tool_name == "brave_search_ccindex":
+          s = _load_settings()
+          q = str(tool_args.get("query") or "")
+          year = tool_args.get("year")
+          parquet_root = Path(str(tool_args.get("parquet_root") or "/storage/ccindex_parquet"))
+          count = int(tool_args.get("count") or 8)
+
+          api_key = None
+          if not (os.environ.get("BRAVE_SEARCH_API_KEY") or "").strip():
+            api_key = (str(s.get("brave_search_api_key") or "").strip() or None)
+
+          res = api.brave_search_ccindex(
+            q,
+            count=count,
+            parquet_root=parquet_root,
+            master_db=Path(master_db),
+            year=str(year) if year else None,
+            api_key=api_key,
+          )
+          return {"query": res.query, "elapsed_s": res.elapsed_s, "results": res.results}
+
+        if tool_name == "brave_cache_stats":
+          from common_crawl_search_engine.ccsearch.brave_search import brave_search_cache_stats
+
+          return brave_search_cache_stats()
+
+        if tool_name == "brave_cache_clear":
+          from common_crawl_search_engine.ccsearch.brave_search import clear_brave_search_cache
+
+          return clear_brave_search_cache()
+
+        raise KeyError(tool_name)
+
+      async def _handle_one(req: Dict[str, Any]) -> Optional[Dict[str, Any]]:
+        req_id = req.get("id")
+        method = req.get("method")
+        params = req.get("params")
+
+        # Notification: no id means no response.
+        if req_id is None:
+          return None
 
         if method == "tools/list":
-            return JSONResponse({"jsonrpc": "2.0", "id": req_id, "result": {"tools": tools}})
+          return {"jsonrpc": "2.0", "id": req_id, "result": {"tools": tools}}
 
         if method != "tools/call":
-            return JSONResponse(_jsonrpc_error(req_id, -32601, f"Method not found: {method}"))
+          return _jsonrpc_error(req_id, -32601, f"Method not found: {method}")
 
         if not isinstance(params, dict):
-            return JSONResponse(_jsonrpc_error(req_id, -32602, "Invalid params"))
+          return _jsonrpc_error(req_id, -32602, "Invalid params")
 
         tool_name = params.get("name")
         tool_args = params.get("arguments") or {}
         if not isinstance(tool_name, str) or not tool_name:
-            return JSONResponse(_jsonrpc_error(req_id, -32602, "Missing tool name"))
+          return _jsonrpc_error(req_id, -32602, "Missing tool name")
         if not isinstance(tool_args, dict):
-            return JSONResponse(_jsonrpc_error(req_id, -32602, "Tool arguments must be an object"))
+          return _jsonrpc_error(req_id, -32602, "Tool arguments must be an object")
 
         try:
-            if tool_name == "search_domain_meta":
-                q = str(tool_args.get("domain") or "")
-                year = tool_args.get("year")
-                parquet_root = Path(str(tool_args.get("parquet_root") or "/storage/ccindex_parquet"))
-                master_db_arg = Path(str(tool_args.get("master_db") or str(master_db)))
-                max_matches = int(tool_args.get("max_matches") or 200)
-
-                res = api.search_domain_via_meta_indexes(
-                    q,
-                    parquet_root=parquet_root,
-                    master_db=master_db_arg,
-                    year=str(year) if year else None,
-                    max_matches=max_matches,
-                )
-                out: Any = {
-                    "meta_source": res.meta_source,
-                    "collections_considered": res.collections_considered,
-                    "emitted": res.emitted,
-                    "elapsed_s": res.elapsed_s,
-                    "records": res.records,
-                }
-            elif tool_name == "fetch_warc_record":
-              s = _load_settings()
-              max_bytes = int(tool_args.get("max_bytes") or int(s.get("default_max_bytes") or 2_000_000))
-              max_preview_chars = int(
-                tool_args.get("max_preview_chars")
-                or int(s.get("default_max_preview_chars") or 80_000)
-              )
-
-              range_cache_max_bytes = int(
-                tool_args.get("range_cache_max_bytes")
-                or int(s.get("range_cache_max_bytes") or 2_000_000_000)
-              )
-              range_cache_max_item_bytes = int(
-                tool_args.get("range_cache_max_item_bytes")
-                or int(s.get("range_cache_max_item_bytes") or 25_000_000)
-              )
-              full_warc_cache_max_total_bytes = int(
-                tool_args.get("full_warc_cache_max_total_bytes")
-                or int(s.get("full_warc_cache_max_total_bytes") or 0)
-              )
-
-              fetch, source, local_path = api.fetch_warc_record(
-                warc_filename=str(tool_args.get("warc_filename") or ""),
-                warc_offset=int(tool_args.get("warc_offset") or 0),
-                warc_length=int(tool_args.get("warc_length") or 0),
-                prefix=str(tool_args.get("prefix") or "https://data.commoncrawl.org/"),
-                max_bytes=max_bytes,
-                decode_gzip_text=True,
-                max_preview_chars=max_preview_chars,
-                cache_mode=str(tool_args.get("cache_mode") or str(s.get("default_cache_mode") or "range")),
-                range_cache_max_bytes=range_cache_max_bytes,
-                range_cache_max_item_bytes=range_cache_max_item_bytes,
-                full_warc_cache_dir=(
-                  Path(str(tool_args.get("full_warc_cache_dir")))
-                  if tool_args.get("full_warc_cache_dir")
-                  else (Path(str(s.get("full_warc_cache_dir"))) if s.get("full_warc_cache_dir") else None)
-                ),
-                full_warc_max_bytes=int(
-                  tool_args.get("full_warc_max_bytes")
-                  or int(s.get("full_warc_max_bytes") or 5_000_000_000)
-                ),
-                full_warc_cache_max_total_bytes=full_warc_cache_max_total_bytes,
-              )
-
-              out = {
-                "ok": fetch.ok,
-                "status": fetch.status,
-                "url": fetch.url,
-                "source": source,
-                "local_warc_path": local_path,
-                "bytes_requested": fetch.bytes_requested,
-                "bytes_returned": fetch.bytes_returned,
-                "sha256": fetch.sha256,
-                "decoded_text_preview": fetch.decoded_text_preview,
-                "error": fetch.error,
-              }
-
-              # Prefer a structured extraction of the HTTP payload.
-              if fetch.ok and fetch.raw_base64:
-                {
-                  "name": "brave_cache_stats",
-                  "description": "Return stats for the on-disk Brave Search cache",
-                  "inputSchema": {"type": "object", "properties": {}},
-                },
-                {
-                  "name": "brave_cache_clear",
-                  "description": "Clear the on-disk Brave Search cache",
-                  "inputSchema": {"type": "object", "properties": {}},
-                },
-                try:
-                  import base64 as _b64
-
-                  raw = _b64.b64decode(fetch.raw_base64)
-                  parsed = api.extract_http_from_warc_gzip_member(
-                    raw,
-                    max_body_bytes=max_bytes,
-                    max_preview_chars=max_preview_chars,
-                    include_body_base64=False,
-                  )
-                  out["http"] = {
-                    "ok": parsed.ok,
-                    "warc_headers": parsed.warc_headers,
-                    "status": parsed.http_status,
-                    "status_line": parsed.http_status_line,
-                    "headers": parsed.http_headers,
-                    "body_text_preview": parsed.body_text_preview,
-                    "body_is_html": parsed.body_is_html,
-                    "body_mime": parsed.body_mime,
-                    "body_charset": parsed.body_charset,
-                    "error": parsed.error,
-                  }
-                except Exception as e:
-                  out["http"] = {"ok": False, "error": f"parse_failed: {type(e).__name__}: {e}"}
-            elif tool_name == "list_collections":
-                year = tool_args.get("year")
-                cols = api.list_collections(master_db=Path(master_db), year=str(year) if year else None)
-                out = [
-                    {"year": c.year, "collection": c.collection, "collection_db_path": str(c.collection_db_path)}
-                    for c in cols
-                ]
-            elif tool_name == "brave_search_ccindex":
-                s = _load_settings()
-                q = str(tool_args.get("query") or "")
-                year = tool_args.get("year")
-                parquet_root = Path(str(tool_args.get("parquet_root") or "/storage/ccindex_parquet"))
-                count = int(tool_args.get("count") or 8)
-
-                # Prefer env var BRAVE_SEARCH_API_KEY if set; otherwise use saved key.
-                api_key = None
-                if not (os.environ.get("BRAVE_SEARCH_API_KEY") or "").strip():
-                    api_key = (str(s.get("brave_search_api_key") or "").strip() or None)
-
-                res = api.brave_search_ccindex(
-                    q,
-                    count=count,
-                    parquet_root=parquet_root,
-                    master_db=Path(master_db),
-                    year=str(year) if year else None,
-                    api_key=api_key,
-                )
-                out = {"query": res.query, "elapsed_s": res.elapsed_s, "results": res.results}
-            elif tool_name == "brave_cache_stats":
-                from common_crawl_search_engine.ccsearch.brave_search import brave_search_cache_stats
-
-                out = brave_search_cache_stats()
-            elif tool_name == "brave_cache_clear":
-                from common_crawl_search_engine.ccsearch.brave_search import clear_brave_search_cache
-
-                out = clear_brave_search_cache()
-            else:
-                return JSONResponse(_jsonrpc_error(req_id, -32601, f"Unknown tool: {tool_name}"))
-
-            return JSONResponse({"jsonrpc": "2.0", "id": req_id, "result": out})
+          out = await run_in_threadpool(_call_tool_sync, tool_name=tool_name, tool_args=tool_args)
+          return {"jsonrpc": "2.0", "id": req_id, "result": out}
+        except KeyError:
+          return _jsonrpc_error(req_id, -32601, f"Unknown tool: {tool_name}")
         except Exception as e:
-            return JSONResponse(_jsonrpc_error(req_id, -32000, f"Tool error: {type(e).__name__}: {e}"))
+          return _jsonrpc_error(req_id, -32000, f"Tool error: {type(e).__name__}: {e}")
+
+      if isinstance(payload, list):
+        responses: list[Dict[str, Any]] = []
+        for item in payload:
+          if not isinstance(item, dict):
+            responses.append(_jsonrpc_error(None, -32600, "Invalid Request"))
+            continue
+          r = await _handle_one(item)
+          if r is not None:
+            responses.append(r)
+
+        if not responses:
+          return Response(status_code=204)
+        return JSONResponse(responses)
+
+      if not isinstance(payload, dict):
+        return JSONResponse(_jsonrpc_error(None, -32600, "Invalid Request"))
+
+      resp = await _handle_one(payload)
+      if resp is None:
+        return Response(status_code=204)
+      return JSONResponse(resp)
+
+    @app.get("/healthz")
+    def healthz() -> Dict[str, Any]:
+      return {"ok": True}
 
     @app.get("/", response_class=HTMLResponse)
     def home(
@@ -1465,16 +1534,22 @@ def create_app(master_db: Path) -> Any:
 
 
 def main(argv: Optional[List[str]] = None) -> int:
-    ap = argparse.ArgumentParser(description="Run the ccindex web dashboard")
+    ap = argparse.ArgumentParser(description="Run the Common Crawl Search Engine dashboard + MCP JSON-RPC")
     ap.add_argument("--host", default="127.0.0.1")
     ap.add_argument("--port", type=int, default=8787)
     ap.add_argument(
         "--master-db",
         type=Path,
-        default=Path("/storage/ccindex_duckdb/cc_pointers_master/cc_master_index.duckdb"),
+        default=_DEFAULT_MASTER_DB,
         help="Master meta-index DuckDB",
     )
     ap.add_argument("--reload", action="store_true", default=False, help="Enable uvicorn reload")
+    ap.add_argument(
+        "--workers",
+        type=int,
+        default=int(os.environ.get("CCINDEX_DASHBOARD_WORKERS") or 1),
+        help="Uvicorn worker processes (recommended behind reverse proxies)",
+    )
 
     args = ap.parse_args(argv)
 
@@ -1486,9 +1561,43 @@ def main(argv: Optional[List[str]] = None) -> int:
             f"Import error: {e}"
         )
 
-    app = create_app(master_db=Path(args.master_db).expanduser().resolve())
-    uvicorn.run(app, host=str(args.host), port=int(args.port), reload=bool(args.reload))
+    resolved_master_db = Path(args.master_db).expanduser().resolve()
+
+    # When using multiple workers or reload, uvicorn needs an import string.
+    # We pass configuration through env vars so workers can construct the app.
+    os.environ["CCINDEX_MASTER_DB"] = str(resolved_master_db)
+
+    workers = max(1, int(args.workers or 1))
+    if workers > 1 or bool(args.reload):
+        uvicorn.run(
+            "common_crawl_search_engine.dashboard:app",
+            host=str(args.host),
+            port=int(args.port),
+            reload=bool(args.reload),
+            workers=workers,
+            proxy_headers=True,
+            forwarded_allow_ips="*",
+        )
+    else:
+        app_obj = create_app(master_db=resolved_master_db)
+        uvicorn.run(
+            app_obj,
+            host=str(args.host),
+            port=int(args.port),
+            reload=False,
+            proxy_headers=True,
+            forwarded_allow_ips="*",
+        )
+
     return 0
+
+
+def create_app_from_env() -> Any:
+    return create_app(master_db=_env_master_db())
+
+
+# Importable ASGI app for `uvicorn common_crawl_search_engine.dashboard:app --workers N`.
+app = create_app_from_env()
 
 
 if __name__ == "__main__":

@@ -249,13 +249,19 @@ def main(argv: list[str] | None = None) -> int:
     )
     ap_mcp_start.add_argument("--reload", action="store_true", default=False)
     ap_mcp_start.add_argument(
+        "--workers",
+        type=int,
+        default=1,
+        help="Uvicorn worker processes (recommended behind reverse proxies)",
+    )
+    ap_mcp_start.add_argument(
         "--detach",
         action="store_true",
         default=False,
         help="Start the dashboard in the background and return immediately",
     )
 
-    def _spawn_dashboard(*, host: str, port: int, master_db: Path, reload: bool) -> int:
+    def _spawn_dashboard(*, host: str, port: int, master_db: Path, reload: bool, workers: int) -> int:
         logs_dir = Path("logs")
         state_dir = Path("state")
         logs_dir.mkdir(parents=True, exist_ok=True)
@@ -277,6 +283,8 @@ def main(argv: list[str] | None = None) -> int:
         ]
         if reload:
             args.append("--reload")
+        if int(workers or 1) != 1:
+            args.extend(["--workers", str(int(workers))])
 
         with open(log_path, "a", encoding="utf-8") as logf:
             proc = subprocess.Popen(
@@ -298,6 +306,7 @@ def main(argv: list[str] | None = None) -> int:
                 port=int(ns.port),
                 master_db=Path(ns.master_db),
                 reload=bool(ns.reload),
+                workers=int(ns.workers or 1),
             )
 
         from common_crawl_search_engine.dashboard import main as dashboard_main
@@ -312,6 +321,8 @@ def main(argv: list[str] | None = None) -> int:
         ]
         if ns.reload:
             args2.append("--reload")
+        if int(ns.workers or 1) != 1:
+            args2.extend(["--workers", str(int(ns.workers))])
         return int(dashboard_main(args2))
 
     ap_mcp_start.set_defaults(func=_mcp_start)
@@ -329,6 +340,12 @@ def main(argv: list[str] | None = None) -> int:
         help="Master meta-index DuckDB",
     )
     ap_mcp_restart.add_argument("--reload", action="store_true", default=False)
+    ap_mcp_restart.add_argument(
+        "--workers",
+        type=int,
+        default=1,
+        help="Uvicorn worker processes (recommended behind reverse proxies)",
+    )
     ap_mcp_restart.add_argument(
         "--detach",
         action="store_true",
@@ -417,6 +434,7 @@ def main(argv: list[str] | None = None) -> int:
                 port=int(ns.port),
                 master_db=Path(ns.master_db),
                 reload=bool(ns.reload),
+                workers=int(ns.workers or 1),
             )
 
         from common_crawl_search_engine.dashboard import main as dashboard_main
@@ -431,6 +449,8 @@ def main(argv: list[str] | None = None) -> int:
         ]
         if ns.reload:
             args2.append("--reload")
+        if int(ns.workers or 1) != 1:
+            args2.extend(["--workers", str(int(ns.workers))])
         return int(dashboard_main(args2))
 
     ap_mcp_restart.set_defaults(func=_mcp_restart)
