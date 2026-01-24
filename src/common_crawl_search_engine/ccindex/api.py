@@ -157,6 +157,7 @@ class BraveSearchResolvedResult:
     count: int
     offset: int
     total_results: Optional[int]
+    brave_cached: bool
     results: List[Dict[str, object]]
     elapsed_s: float
 
@@ -649,6 +650,7 @@ def brave_search_ccindex(
     items = page.get("items") if isinstance(page, dict) else None
 
     total_results: Optional[int] = None
+    brave_cached = False
     effective_count = int(count)
     effective_offset = int(offset)
     if isinstance(meta, dict):
@@ -663,6 +665,7 @@ def brave_search_ccindex(
         v = meta.get("total")
         if isinstance(v, (int, float)):
             total_results = int(v)
+        brave_cached = bool(meta.get("cached"))
 
     results: List[BraveWebResult] = []
     if isinstance(items, list):
@@ -703,6 +706,7 @@ def brave_search_ccindex(
         count=int(effective_count),
         offset=int(effective_offset),
         total_results=total_results,
+        brave_cached=bool(brave_cached),
         results=out,
         elapsed_s=(time.perf_counter() - t0),
     )

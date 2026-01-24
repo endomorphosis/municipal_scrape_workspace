@@ -718,6 +718,7 @@ def create_app(master_db: Path) -> Any:
             "count": res.count,
             "offset": res.offset,
             "total_results": res.total_results,
+            "brave_cached": res.brave_cached,
             "elapsed_s": res.elapsed_s,
             "results": res.results,
           }
@@ -2736,6 +2737,8 @@ def create_app(master_db: Path) -> Any:
   const basePath = document.querySelector("meta[name='ccindex-base-path']")?.content || '';
   const {{ ccindexMcp }} = await import(`${{basePath}}/static/ccindex-mcp-sdk.js`);
 
+  const braveMaxCount = {int(brave_max_count)};
+
   const initial = {json.dumps(initial)};
   const form = document.getElementById('discoverForm');
   const statusEl = document.getElementById('dstatus');
@@ -2975,7 +2978,8 @@ def create_app(master_db: Path) -> Any:
       const elapsed = (typeof res.elapsed_s === 'number') ? res.elapsed_s.toFixed(2) : String(res.elapsed_s ?? '');
       const totalTxt = (typeof res.total_results === 'number') ? String(res.total_results) : 'unknown';
       const offTxt = (typeof res.offset === 'number') ? String(res.offset) : String(pageIndex * count);
-      statusEl.innerHTML = `<span class='badge ok'>ok</span> elapsed_s=<span class='code'>${{esc(elapsed)}}</span> total=<span class='code'>${{esc(totalTxt)}}</span> offset=<span class='code'>${{esc(offTxt)}}</span> returned=<span class='code'>${{esc((res.results||[]).length)}}</span>`;
+      const cachedTxt = (res && (res.brave_cached === true)) ? 'yes' : 'no';
+      statusEl.innerHTML = `<span class='badge ok'>ok</span> elapsed_s=<span class='code'>${{esc(elapsed)}}</span> cached=<span class='code'>${{esc(cachedTxt)}}</span> total=<span class='code'>${{esc(totalTxt)}}</span> offset=<span class='code'>${{esc(offTxt)}}</span> returned=<span class='code'>${{esc((res.results||[]).length)}}</span>`;
       lastResponse = res;
       // Sync page index to server-effective offset/count.
       const effCount = clampCount(res.count ?? count);

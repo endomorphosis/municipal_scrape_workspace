@@ -344,7 +344,10 @@ def brave_web_search_page(
 
     q = (query or "").strip()
     if not q:
-        return {"items": [], "meta": {"count": 0, "offset": 0, "total": 0, "max_count": brave_web_search_max_count()}}
+        return {
+            "items": [],
+            "meta": {"count": 0, "offset": 0, "total": 0, "max_count": brave_web_search_max_count(), "cached": True},
+        }
 
     count = _clamp_brave_count(int(count))
     offset = _clamp_brave_offset(int(offset))
@@ -385,6 +388,7 @@ def brave_web_search_page(
                             out_meta = meta if isinstance(meta, dict) else {}
                             total = out_meta.get("total")
                             total_int = int(total) if isinstance(total, (int, float)) else None
+                            age_s = time.time() - float(ts)
                             return {
                                 "items": out_cached,
                                 "meta": {
@@ -392,6 +396,8 @@ def brave_web_search_page(
                                     "offset": int(offset),
                                     "total": total_int,
                                     "max_count": brave_web_search_max_count(),
+                                    "cached": True,
+                                    "cache_age_s": float(age_s),
                                 },
                             }
         except Exception:
@@ -472,5 +478,11 @@ def brave_web_search_page(
 
     return {
         "items": out_items,
-        "meta": {"count": int(count), "offset": int(offset), "total": total_int, "max_count": brave_web_search_max_count()},
+        "meta": {
+            "count": int(count),
+            "offset": int(offset),
+            "total": total_int,
+            "max_count": brave_web_search_max_count(),
+            "cached": False,
+        },
     }

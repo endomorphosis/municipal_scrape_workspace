@@ -190,6 +190,7 @@ def main() -> int:
             "count": res.count,
             "offset": res.offset,
             "total_results": res.total_results,
+            "brave_cached": res.brave_cached,
             "elapsed_s": res.elapsed_s,
             "results": res.results,
         }
