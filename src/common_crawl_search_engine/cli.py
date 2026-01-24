@@ -23,6 +23,20 @@ import subprocess
 from common_crawl_search_engine.ccindex import api
 
 
+def _mcp_endpoint_from_env_or_args(endpoint: str | None) -> str | None:
+    ep = str(endpoint or "").strip() if endpoint is not None else ""
+    if ep:
+        return ep
+    env = str((__import__("os").environ.get("CCINDEX_MCP_ENDPOINT") or "")).strip()
+    return env or None
+
+
+def _mcp_client_from_endpoint(endpoint: str, *, timeout_s: float = 30.0):
+    from common_crawl_search_engine.mcp_client import CcindexMcpClient
+
+    return CcindexMcpClient(endpoint=str(endpoint), timeout_s=float(timeout_s))
+
+
 def _delegate(module_path: str, argv: list[str]) -> int:
     """Delegate to an existing module's main() using the provided argv."""
 
@@ -141,6 +155,13 @@ def _cmd_warc_fetch_record(args: argparse.Namespace) -> int:
 
 
 def _cmd_index_settings_get(_args: argparse.Namespace) -> int:
+    endpoint = _mcp_endpoint_from_env_or_args(getattr(_args, "endpoint", None))
+    timeout_s = float(getattr(_args, "timeout_s", 30.0) or 30.0)
+    if endpoint:
+        c = _mcp_client_from_endpoint(endpoint, timeout_s=timeout_s)
+        sys.stdout.write(json.dumps(c.get_orchestrator_settings(), ensure_ascii=False, indent=2) + "\n")
+        return 0
+
     from common_crawl_search_engine.ccindex.orchestrator_manager import load_orchestrator_settings
 
     sys.stdout.write(json.dumps(load_orchestrator_settings(), ensure_ascii=False, indent=2) + "\n")
@@ -148,9 +169,9 @@ def _cmd_index_settings_get(_args: argparse.Namespace) -> int:
 
 
 def _cmd_index_settings_set(args: argparse.Namespace) -> int:
-    from common_crawl_search_engine.ccindex.orchestrator_manager import load_orchestrator_settings, save_orchestrator_settings
+    endpoint = _mcp_endpoint_from_env_or_args(getattr(args, "endpoint", None))
+    timeout_s = float(getattr(args, "timeout_s", 30.0) or 30.0)
 
-    cur = load_orchestrator_settings()
     updates: dict[str, object] = {}
 
     if args.ccindex_root is not None:
@@ -184,6 +205,17 @@ def _cmd_index_settings_set(args: argparse.Namespace) -> int:
     if args.force_reindex is not None:
         updates["force_reindex"] = bool(int(args.force_reindex))
 
+    if endpoint:
+        c = _mcp_client_from_endpoint(endpoint, timeout_s=timeout_s)
+        out = c.set_orchestrator_settings(updates)
+        sys.stdout.write(json.dumps(out, ensure_ascii=False, indent=2) + "\n")
+        return 0
+
+    from common_crawl_search_engine.ccindex.orchestrator_manager import load_orchestrator_settings, save_orchestrator_settings
+
+    cur = load_orchestrator_settings()
+    updates: dict[str, object] = {}
+
     merged = dict(cur)
     merged.update(updates)
     saved = save_orchestrator_settings(merged)
@@ -192,6 +224,14 @@ def _cmd_index_settings_set(args: argparse.Namespace) -> int:
 
 
 def _cmd_index_status(args: argparse.Namespace) -> int:
+    endpoint = _mcp_endpoint_from_env_or_args(getattr(args, "endpoint", None))
+    timeout_s = float(getattr(args, "timeout_s", 30.0) or 30.0)
+    if endpoint:
+        c = _mcp_client_from_endpoint(endpoint, timeout_s=timeout_s)
+        st = c.call_tool("orchestrator_collection_status", {"collection": str(args.collection)})
+        sys.stdout.write(json.dumps(st, ensure_ascii=False, indent=2) + "\n")
+        return 0
+
     from common_crawl_search_engine.ccindex.orchestrator_manager import validate_collection_status
 
     st = validate_collection_status(str(args.collection))
@@ -200,6 +240,14 @@ def _cmd_index_status(args: argparse.Namespace) -> int:
 
 
 def _cmd_index_delete(args: argparse.Namespace) -> int:
+    endpoint = _mcp_endpoint_from_env_or_args(getattr(args, "endpoint", None))
+    timeout_s = float(getattr(args, "timeout_s", 30.0) or 30.0)
+    if endpoint:
+        c = _mcp_client_from_endpoint(endpoint, timeout_s=timeout_s)
+        res = c.call_tool("orchestrator_delete_collection_index", {"collection": str(args.collection)})
+        sys.stdout.write(json.dumps(res, ensure_ascii=False, indent=2) + "\n")
+        return 0
+
     from common_crawl_search_engine.ccindex.orchestrator_manager import delete_collection_index
 
     res = delete_collection_index(str(args.collection))
@@ -208,6 +256,26 @@ def _cmd_index_delete(args: argparse.Namespace) -> int:
 
 
 def _cmd_index_job_plan(args: argparse.Namespace) -> int:
+    endpoint = _mcp_endpoint_from_env_or_args(getattr(args, "endpoint", None))
+    timeout_s = float(getattr(args, "timeout_s", 30.0) or 30.0)
+    payload = {
+        "mode": str(args.mode),
+        "filter": args.filter,
+        "workers": args.workers,
+        "force_reindex": args.force_reindex,
+        "cleanup_dry_run": args.cleanup_dry_run,
+        "yes": args.yes,
+        "heartbeat_seconds": args.heartbeat_seconds,
+        "sort_workers": args.sort_workers,
+        "sort_memory_per_worker_gb": args.sort_memory_per_worker_gb,
+        "sort_temp_dir": args.sort_temp_dir,
+    }
+    if endpoint:
+        c = _mcp_client_from_endpoint(endpoint, timeout_s=timeout_s)
+        planned = c.call_tool("orchestrator_job_plan", payload)
+        sys.stdout.write(json.dumps(planned, ensure_ascii=False, indent=2) + "\n")
+        return 0
+
     from common_crawl_search_engine.ccindex.orchestrator_manager import plan_orchestrator_command
 
     planned = plan_orchestrator_command(
@@ -227,6 +295,27 @@ def _cmd_index_job_plan(args: argparse.Namespace) -> int:
 
 
 def _cmd_index_job_start(args: argparse.Namespace) -> int:
+    endpoint = _mcp_endpoint_from_env_or_args(getattr(args, "endpoint", None))
+    timeout_s = float(getattr(args, "timeout_s", 30.0) or 30.0)
+    payload = {
+        "mode": str(args.mode),
+        "filter": args.filter,
+        "workers": args.workers,
+        "force_reindex": args.force_reindex,
+        "cleanup_dry_run": args.cleanup_dry_run,
+        "yes": args.yes,
+        "heartbeat_seconds": args.heartbeat_seconds,
+        "sort_workers": args.sort_workers,
+        "sort_memory_per_worker_gb": args.sort_memory_per_worker_gb,
+        "sort_temp_dir": args.sort_temp_dir,
+    }
+    if endpoint:
+        c = _mcp_client_from_endpoint(endpoint, timeout_s=timeout_s)
+        planned = c.call_tool("orchestrator_job_plan", payload)
+        job = c.call_tool("orchestrator_job_start", {"planned": planned, "label": str(args.label or "orchestrator")})
+        sys.stdout.write(json.dumps(job, ensure_ascii=False) + "\n")
+        return 0
+
     from common_crawl_search_engine.ccindex.orchestrator_manager import plan_orchestrator_command, start_orchestrator_job
 
     planned = plan_orchestrator_command(
@@ -247,6 +336,14 @@ def _cmd_index_job_start(args: argparse.Namespace) -> int:
 
 
 def _cmd_index_job_stop(args: argparse.Namespace) -> int:
+    endpoint = _mcp_endpoint_from_env_or_args(getattr(args, "endpoint", None))
+    timeout_s = float(getattr(args, "timeout_s", 30.0) or 30.0)
+    if endpoint:
+        c = _mcp_client_from_endpoint(endpoint, timeout_s=timeout_s)
+        res = c.call_tool("orchestrator_job_stop", {"pid": int(args.pid), "sig": str(args.sig or "TERM")})
+        sys.stdout.write(json.dumps(res, ensure_ascii=False) + "\n")
+        return 0
+
     from common_crawl_search_engine.ccindex.orchestrator_manager import stop_job
 
     res = stop_job(int(args.pid), sig=str(args.sig or "TERM"))
@@ -255,6 +352,14 @@ def _cmd_index_job_stop(args: argparse.Namespace) -> int:
 
 
 def _cmd_index_job_tail(args: argparse.Namespace) -> int:
+    endpoint = _mcp_endpoint_from_env_or_args(getattr(args, "endpoint", None))
+    timeout_s = float(getattr(args, "timeout_s", 30.0) or 30.0)
+    if endpoint:
+        c = _mcp_client_from_endpoint(endpoint, timeout_s=timeout_s)
+        res = c.call_tool("orchestrator_job_tail", {"log_path": str(args.log_path), "lines": int(args.lines or 200)})
+        sys.stdout.write(str(res.get("tail") if isinstance(res, dict) else res) + "\n")
+        return 0
+
     from common_crawl_search_engine.ccindex.orchestrator_manager import tail_file
 
     sys.stdout.write(tail_file(str(args.log_path), lines=int(args.lines or 200)) + "\n")
@@ -262,6 +367,14 @@ def _cmd_index_job_tail(args: argparse.Namespace) -> int:
 
 
 def _cmd_index_collinfo_list(args: argparse.Namespace) -> int:
+    endpoint = _mcp_endpoint_from_env_or_args(getattr(args, "endpoint", None))
+    timeout_s = float(getattr(args, "timeout_s", 30.0) or 30.0)
+    if endpoint:
+        c = _mcp_client_from_endpoint(endpoint, timeout_s=timeout_s)
+        res = c.collinfo_list(prefer_cache=bool(int(args.prefer_cache)))
+        sys.stdout.write(json.dumps(res, ensure_ascii=False, indent=2) + "\n")
+        return 0
+
     from common_crawl_search_engine.ccindex.orchestrator_manager import load_collinfo
 
     res = load_collinfo(prefer_cache=bool(int(args.prefer_cache)))
@@ -270,6 +383,14 @@ def _cmd_index_collinfo_list(args: argparse.Namespace) -> int:
 
 
 def _cmd_index_collinfo_update(args: argparse.Namespace) -> int:
+    endpoint = _mcp_endpoint_from_env_or_args(getattr(args, "endpoint", None))
+    timeout_s = float(getattr(args, "timeout_s", 30.0) or 30.0)
+    if endpoint:
+        c = _mcp_client_from_endpoint(endpoint, timeout_s=timeout_s)
+        res = c.collinfo_update(url=str(args.url), timeout_s=float(args.timeout_s))
+        sys.stdout.write(json.dumps(res, ensure_ascii=False, indent=2) + "\n")
+        return 0
+
     from common_crawl_search_engine.ccindex.orchestrator_manager import update_collinfo
 
     res = update_collinfo(url=str(args.url), timeout_s=float(args.timeout_s))
@@ -278,24 +399,48 @@ def _cmd_index_collinfo_update(args: argparse.Namespace) -> int:
 
 
 def _cmd_index_bulk_status(args: argparse.Namespace) -> int:
+    endpoint = _mcp_endpoint_from_env_or_args(getattr(args, "endpoint", None))
+    timeout_s = float(getattr(args, "timeout_s", 30.0) or 30.0)
+    cols = [c for c in (args.collections or []) if str(c).strip()]
+    if endpoint:
+        c = _mcp_client_from_endpoint(endpoint, timeout_s=timeout_s)
+        res = c.collections_status(cols, parallelism=int(args.parallelism or 8))
+        sys.stdout.write(json.dumps(res, ensure_ascii=False, indent=2) + "\n")
+        return 0
+
     from common_crawl_search_engine.ccindex.orchestrator_manager import validate_collections_status
 
-    cols = [c for c in (args.collections or []) if str(c).strip()]
     res = validate_collections_status(cols, parallelism=int(args.parallelism or 8))
     sys.stdout.write(json.dumps(res, ensure_ascii=False, indent=2) + "\n")
     return 0
 
 
 def _cmd_index_bulk_delete(args: argparse.Namespace) -> int:
+    endpoint = _mcp_endpoint_from_env_or_args(getattr(args, "endpoint", None))
+    timeout_s = float(getattr(args, "timeout_s", 30.0) or 30.0)
+    cols = [c for c in (args.collections or []) if str(c).strip()]
+    if endpoint:
+        c = _mcp_client_from_endpoint(endpoint, timeout_s=timeout_s)
+        res = c.delete_collection_indexes(cols)
+        sys.stdout.write(json.dumps(res, ensure_ascii=False, indent=2) + "\n")
+        return 0
+
     from common_crawl_search_engine.ccindex.orchestrator_manager import delete_collection_indexes
 
-    cols = [c for c in (args.collections or []) if str(c).strip()]
     res = delete_collection_indexes(cols)
     sys.stdout.write(json.dumps(res, ensure_ascii=False, indent=2) + "\n")
     return 0
 
 
 def _cmd_index_jobs_list(args: argparse.Namespace) -> int:
+    endpoint = _mcp_endpoint_from_env_or_args(getattr(args, "endpoint", None))
+    timeout_s = float(getattr(args, "timeout_s", 30.0) or 30.0)
+    if endpoint:
+        c = _mcp_client_from_endpoint(endpoint, timeout_s=timeout_s)
+        res = c.jobs_list(limit=int(args.limit or 50))
+        sys.stdout.write(json.dumps(res, ensure_ascii=False, indent=2) + "\n")
+        return 0
+
     from common_crawl_search_engine.ccindex.orchestrator_manager import list_jobs
 
     sys.stdout.write(json.dumps({"ok": True, "jobs": list_jobs(limit=int(args.limit or 50))}, ensure_ascii=False, indent=2) + "\n")
@@ -303,6 +448,18 @@ def _cmd_index_jobs_list(args: argparse.Namespace) -> int:
 
 
 def _cmd_index_job_status(args: argparse.Namespace) -> int:
+    endpoint = _mcp_endpoint_from_env_or_args(getattr(args, "endpoint", None))
+    timeout_s = float(getattr(args, "timeout_s", 30.0) or 30.0)
+    if endpoint:
+        c = _mcp_client_from_endpoint(endpoint, timeout_s=timeout_s)
+        res = c.job_status(
+            pid=(int(args.pid) if args.pid is not None else None),
+            log_path=(str(args.log_path) if args.log_path is not None else None),
+            lines=int(args.lines or 200),
+        )
+        sys.stdout.write(json.dumps(res, ensure_ascii=False, indent=2) + "\n")
+        return 0
+
     from common_crawl_search_engine.ccindex.orchestrator_manager import job_status
 
     res = job_status(
@@ -311,6 +468,34 @@ def _cmd_index_job_status(args: argparse.Namespace) -> int:
         lines=int(args.lines or 200),
     )
     sys.stdout.write(json.dumps(res, ensure_ascii=False, indent=2) + "\n")
+    return 0
+
+
+def _cmd_mcp_tools(args: argparse.Namespace) -> int:
+    endpoint = _mcp_endpoint_from_env_or_args(getattr(args, "endpoint", None))
+    if not endpoint:
+        raise SystemExit("--endpoint or $CCINDEX_MCP_ENDPOINT is required")
+    c = _mcp_client_from_endpoint(endpoint, timeout_s=float(args.timeout_s or 30.0))
+    sys.stdout.write(json.dumps(c.list_tools(), ensure_ascii=False, indent=2) + "\n")
+    return 0
+
+
+def _cmd_mcp_call(args: argparse.Namespace) -> int:
+    endpoint = _mcp_endpoint_from_env_or_args(getattr(args, "endpoint", None))
+    if not endpoint:
+        raise SystemExit("--endpoint or $CCINDEX_MCP_ENDPOINT is required")
+    c = _mcp_client_from_endpoint(endpoint, timeout_s=float(args.timeout_s or 30.0))
+    tool = str(args.tool or "").strip()
+    if not tool:
+        raise SystemExit("--tool is required")
+    arguments: dict[str, Any] = {}
+    if args.args_json is not None:
+        raw = str(args.args_json)
+        arguments = json.loads(raw) if raw.strip() else {}
+        if not isinstance(arguments, dict):
+            raise SystemExit("--args-json must be a JSON object")
+    out = c.call_tool(tool, arguments)
+    sys.stdout.write(json.dumps(out, ensure_ascii=False, indent=2) + "\n")
     return 0
 
 
@@ -407,6 +592,18 @@ def main(argv: list[str] | None = None) -> int:
 
     # ---- index (orchestrator management) ----
     ap_index = sub.add_parser("index", help="Manage ccindex pipeline/indexes (orchestrator wrapper)")
+    ap_index.add_argument(
+        "--endpoint",
+        type=str,
+        default=None,
+        help="Remote MCP endpoint (e.g. http://host:8787/mcp). If set, commands use network instead of local disk.",
+    )
+    ap_index.add_argument(
+        "--timeout-s",
+        type=float,
+        default=30.0,
+        help="Network timeout (seconds) when using --endpoint.",
+    )
     sub_index = ap_index.add_subparsers(dest="index_cmd", required=True)
 
     ap_isg = sub_index.add_parser("settings-get", help="Print persisted orchestrator settings")
@@ -512,6 +709,23 @@ def main(argv: list[str] | None = None) -> int:
     # ---- mcp ----
     ap_mcp = sub.add_parser("mcp", help="MCP server + dashboard")
     sub_mcp = ap_mcp.add_subparsers(dest="mcp_cmd", required=True)
+
+    ap_mcp_tools = sub_mcp.add_parser("tools", help="List MCP tools from a remote endpoint")
+    ap_mcp_tools.add_argument("--endpoint", type=str, default=None)
+    ap_mcp_tools.add_argument("--timeout-s", type=float, default=30.0)
+    ap_mcp_tools.set_defaults(func=_cmd_mcp_tools)
+
+    ap_mcp_call = sub_mcp.add_parser("call", help="Call an MCP tool on a remote endpoint")
+    ap_mcp_call.add_argument("--endpoint", type=str, default=None)
+    ap_mcp_call.add_argument("--timeout-s", type=float, default=30.0)
+    ap_mcp_call.add_argument("--tool", type=str, required=True)
+    ap_mcp_call.add_argument(
+        "--args-json",
+        type=str,
+        default=None,
+        help="JSON object string passed as tool arguments (e.g. '{\"collection\":\"CC-MAIN-2024-10\"}').",
+    )
+    ap_mcp_call.set_defaults(func=_cmd_mcp_call)
 
     ap_mcp_start = sub_mcp.add_parser(
         "start",
