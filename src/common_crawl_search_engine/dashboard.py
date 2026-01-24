@@ -430,6 +430,16 @@ def create_app(master_db: Path) -> Any:
           "inputSchema": {"type": "object", "properties": {}},
         },
         {
+          "name": "brave_resolve_cache_stats",
+          "description": "Return stats for the on-disk Brave->CCIndex resolve cache",
+          "inputSchema": {"type": "object", "properties": {}},
+        },
+        {
+          "name": "brave_resolve_cache_clear",
+          "description": "Clear the on-disk Brave->CCIndex resolve cache",
+          "inputSchema": {"type": "object", "properties": {}},
+        },
+        {
           "name": "orchestrator_settings_get",
           "description": "Get persisted ccindex orchestrator settings",
           "inputSchema": {"type": "object", "properties": {}},
@@ -719,7 +729,13 @@ def create_app(master_db: Path) -> Any:
             "offset": res.offset,
             "total_results": res.total_results,
             "brave_cached": res.brave_cached,
+            "resolved_cached": res.resolved_cached,
             "elapsed_s": res.elapsed_s,
+            "brave_elapsed_s": res.brave_elapsed_s,
+            "resolve_elapsed_s": res.resolve_elapsed_s,
+            "resolve_mode": res.resolve_mode,
+            "resolve_domains": res.resolve_domains,
+            "resolve_parquet_files": res.resolve_parquet_files,
             "results": res.results,
           }
 
@@ -732,6 +748,16 @@ def create_app(master_db: Path) -> Any:
           from common_crawl_search_engine.ccsearch.brave_search import clear_brave_search_cache
 
           return clear_brave_search_cache()
+
+        if tool_name == "brave_resolve_cache_stats":
+          from common_crawl_search_engine.ccindex.api import brave_resolve_cache_stats
+
+          return brave_resolve_cache_stats()
+
+        if tool_name == "brave_resolve_cache_clear":
+          from common_crawl_search_engine.ccindex.api import clear_brave_resolve_cache
+
+          return clear_brave_resolve_cache()
 
         if tool_name == "orchestrator_settings_get":
           from common_crawl_search_engine.ccindex.orchestrator_manager import load_orchestrator_settings
@@ -1419,6 +1445,22 @@ def create_app(master_db: Path) -> Any:
     </div>
   </div>
 
+  <div class='row' style='margin-top:8px;'>
+    <div class='field' style='min-width:520px; flex: 1;'>
+      <label>Brave resolve cache (on-disk)</label>
+      <div class='small'>Caches resolved CCIndex pointers for Brave result URLs (avoids re-resolving on repeat queries).</div>
+      <div id='braveResolveCacheStats' class='small' style='margin-top:6px;'></div>
+    </div>
+    <div class='field'>
+      <label>&nbsp;</label>
+      <button id='refreshBraveResolveCacheStatsBtn' type='button'>Refresh resolve cache</button>
+    </div>
+    <div class='field'>
+      <label>&nbsp;</label>
+      <button id='clearBraveResolveCacheBtn' type='button'>Clear resolve cache</button>
+    </div>
+  </div>
+
   <hr>
   <div class='small'>Full-WARC cache (opt-in fallback)</div>
   <div class='row' style='margin-top:10px;'>
@@ -1584,6 +1626,7 @@ def create_app(master_db: Path) -> Any:
   const statusEl = document.getElementById('status');
   const cacheStatsEl = document.getElementById('cacheStats');
   const braveCacheStatsEl = document.getElementById('braveCacheStats');
+  const braveResolveCacheStatsEl = document.getElementById('braveResolveCacheStats');
 
   const orchCcindexRootEl = document.getElementById('orch_ccindex_root');
   const orchParquetRootEl = document.getElementById('orch_parquet_root');
@@ -1715,6 +1758,22 @@ def create_app(master_db: Path) -> Any:
     }}
   }}
 
+  async function refreshBraveResolveCacheStats() {{
+    braveResolveCacheStatsEl.textContent = 'loading resolve cache…';
+    try {{
+      const resp = await fetch(`${{basePath}}/settings/brave_resolve_cache_stats`);
+      const res = await resp.json();
+      if (!res.ok) throw new Error(res.error || 'stats failed');
+      const path = esc(res.path || '');
+      const disabled = !!res.disabled;
+      const ttl = parseInt(res.ttl_s || '0', 10);
+      const ttlText = (ttl > 0) ? `${{ttl}}s` : 'disabled';
+      braveResolveCacheStatsEl.textContent = `path: ${{path}} • ${{res.entries}} entries, ${{res.bytes}} bytes • ttl: ${{ttlText}} • disabled: ${{disabled}}`;
+    }} catch (e) {{
+      braveResolveCacheStatsEl.textContent = 'Resolve cache stats error: ' + esc(e.message || e);
+    }}
+  }}
+
   async function clearBraveCache() {{
     braveCacheStatsEl.textContent = 'clearing Brave cache…';
     try {{
@@ -1725,6 +1784,19 @@ def create_app(master_db: Path) -> Any:
       await refreshBraveCacheStats();
     }} catch (e) {{
       braveCacheStatsEl.textContent = 'Brave cache clear error: ' + esc(e.message || e);
+    }}
+  }}
+
+  async function clearBraveResolveCache() {{
+    braveResolveCacheStatsEl.textContent = 'clearing resolve cache…';
+    try {{
+      const resp = await fetch(`${{basePath}}/settings/clear_brave_resolve_cache`, {{ method: 'POST' }});
+      const res = await resp.json();
+      if (!res.ok) throw new Error(res.error || 'clear failed');
+      braveResolveCacheStatsEl.textContent = `cleared resolve cache: deleted=${{res.deleted}} freed_bytes=${{res.freed_bytes}}`;
+      await refreshBraveResolveCacheStats();
+    }} catch (e) {{
+      braveResolveCacheStatsEl.textContent = 'Resolve cache clear error: ' + esc(e.message || e);
     }}
   }}
 
@@ -1750,6 +1822,8 @@ def create_app(master_db: Path) -> Any:
   document.getElementById('clearFullCacheBtn').addEventListener('click', () => clearCache('full'));
   document.getElementById('refreshBraveCacheStatsBtn').addEventListener('click', () => refreshBraveCacheStats());
   document.getElementById('clearBraveCacheBtn').addEventListener('click', () => clearBraveCache());
+  document.getElementById('refreshBraveResolveCacheStatsBtn').addEventListener('click', () => refreshBraveResolveCacheStats());
+  document.getElementById('clearBraveResolveCacheBtn').addEventListener('click', () => clearBraveResolveCache());
   document.getElementById('clearBraveKeyBtn').addEventListener('click', async () => {{
     statusEl.textContent = 'clearing brave key…';
     try {{
@@ -1765,6 +1839,7 @@ def create_app(master_db: Path) -> Any:
 
   refreshCacheStats();
   refreshBraveCacheStats();
+  refreshBraveResolveCacheStats();
   loadOrchestratorSettings();
 </script>
 """
@@ -2455,6 +2530,26 @@ def create_app(master_db: Path) -> Any:
         except Exception as e:
             return JSONResponse({"ok": False, "error": f"{type(e).__name__}: {e}"}, status_code=500)
 
+        @app.get("/settings/brave_resolve_cache_stats")
+        def settings_brave_resolve_cache_stats() -> JSONResponse:
+          try:
+            from common_crawl_search_engine.ccindex.api import brave_resolve_cache_stats
+
+            stats = brave_resolve_cache_stats()
+            return JSONResponse({"ok": True, **stats})
+          except Exception as e:
+            return JSONResponse({"ok": False, "error": f"{type(e).__name__}: {e}"}, status_code=500)
+
+        @app.post("/settings/clear_brave_resolve_cache")
+        def settings_clear_brave_resolve_cache() -> JSONResponse:
+          try:
+            from common_crawl_search_engine.ccindex.api import clear_brave_resolve_cache
+
+            res = clear_brave_resolve_cache()
+            return JSONResponse({"ok": True, **res})
+          except Exception as e:
+            return JSONResponse({"ok": False, "error": f"{type(e).__name__}: {e}"}, status_code=500)
+
     @app.get("/record", response_class=HTMLResponse)
     def record(
         request: Request,
@@ -2976,10 +3071,13 @@ def create_app(master_db: Path) -> Any:
       }});
 
       const elapsed = (typeof res.elapsed_s === 'number') ? res.elapsed_s.toFixed(2) : String(res.elapsed_s ?? '');
+      const braveElapsed = (typeof res.brave_elapsed_s === 'number') ? res.brave_elapsed_s.toFixed(2) : '';
+      const resolveElapsed = (typeof res.resolve_elapsed_s === 'number') ? res.resolve_elapsed_s.toFixed(2) : '';
       const totalTxt = (typeof res.total_results === 'number') ? String(res.total_results) : 'unknown';
       const offTxt = (typeof res.offset === 'number') ? String(res.offset) : String(pageIndex * count);
-      const cachedTxt = (res && (res.brave_cached === true)) ? 'yes' : 'no';
-      statusEl.innerHTML = `<span class='badge ok'>ok</span> elapsed_s=<span class='code'>${{esc(elapsed)}}</span> cached=<span class='code'>${{esc(cachedTxt)}}</span> total=<span class='code'>${{esc(totalTxt)}}</span> offset=<span class='code'>${{esc(offTxt)}}</span> returned=<span class='code'>${{esc((res.results||[]).length)}}</span>`;
+      const braveCachedTxt = (res && (res.brave_cached === true)) ? 'yes' : 'no';
+      const resolvedCachedTxt = (res && (res.resolved_cached === true)) ? 'yes' : 'no';
+      statusEl.innerHTML = `<span class='badge ok'>ok</span> elapsed_s=<span class='code'>${{esc(elapsed)}}</span> brave_s=<span class='code'>${{esc(braveElapsed)}}</span> resolve_s=<span class='code'>${{esc(resolveElapsed)}}</span> brave_cached=<span class='code'>${{esc(braveCachedTxt)}}</span> resolved_cached=<span class='code'>${{esc(resolvedCachedTxt)}}</span> total=<span class='code'>${{esc(totalTxt)}}</span> offset=<span class='code'>${{esc(offTxt)}}</span> returned=<span class='code'>${{esc((res.results||[]).length)}}</span>`;
       lastResponse = res;
       // Sync page index to server-effective offset/count.
       const effCount = clampCount(res.count ?? count);

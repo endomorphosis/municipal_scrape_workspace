@@ -158,8 +158,210 @@ class BraveSearchResolvedResult:
     offset: int
     total_results: Optional[int]
     brave_cached: bool
+    resolved_cached: bool
     results: List[Dict[str, object]]
     elapsed_s: float
+    brave_elapsed_s: float
+    resolve_elapsed_s: float
+    resolve_mode: str
+    resolve_domains: int
+    resolve_parquet_files: int
+
+
+def _url_variants_for_lookup(url: str) -> List[str]:
+    """Generate a small set of URL variants likely to exist in CCIndex.
+
+    This helps bridge minor differences (http/https, www, trailing slash) while
+    still allowing an exact join on the Parquet `url` column.
+    """
+
+    u = (url or "").strip()
+    if not u:
+        return []
+
+    # Ensure scheme for parsing.
+    parse_u = u
+    if not re.match(r"^https?://", parse_u, flags=re.IGNORECASE):
+        parse_u = "https://" + parse_u
+
+    try:
+        p = urllib.parse.urlsplit(parse_u)
+    except Exception:
+        return [u]
+
+    scheme = (p.scheme or "").lower()
+    netloc = (p.netloc or "").strip()
+    path = p.path or ""
+    query = ("?" + p.query) if p.query else ""
+
+    if not netloc:
+        return [u]
+
+    schemes = [scheme] if scheme in {"http", "https"} else ["https"]
+    if "http" in schemes and "https" not in schemes:
+        schemes.append("https")
+    if "https" in schemes and "http" not in schemes:
+        schemes.append("http")
+
+    netlocs = [netloc]
+    low = netloc.lower()
+    if low.startswith("www."):
+        netlocs.append(netloc[4:])
+    else:
+        netlocs.append("www." + netloc)
+
+    paths = [path]
+    if path.endswith("/"):
+        paths.append(path.rstrip("/"))
+    else:
+        paths.append(path + "/")
+
+    out: List[str] = []
+    seen = set()
+    for sch in schemes:
+        for nl in netlocs:
+            for pa in paths:
+                cand = f"{sch}://{nl}{pa}{query}"
+                cand = cand.replace("///", "//")
+                if cand not in seen:
+                    seen.add(cand)
+                    out.append(cand)
+
+    # Preserve the original (as-is) first if it is already absolute.
+    if re.match(r"^https?://", u, flags=re.IGNORECASE) and u not in seen:
+        out.insert(0, u)
+    return out
+
+
+def _brave_resolve_cache_path() -> Path:
+    p = (os.environ.get("BRAVE_RESOLVE_CACHE_PATH") or "").strip()
+    if p:
+        return Path(p).expanduser()
+    state_dir = Path((os.environ.get("CCINDEX_STATE_DIR") or "state").strip() or "state")
+    return state_dir / "brave_resolve_ccindex_cache.json"
+
+
+def brave_resolve_cache_stats() -> Dict[str, object]:
+    """Return best-effort stats about the Brave->CCIndex resolve cache."""
+
+    path = _brave_resolve_cache_path()
+    exists = path.exists() and path.is_file()
+    size_bytes = int(path.stat().st_size) if exists else 0
+
+    entries = 0
+    newest_ts = None
+    oldest_ts = None
+    if exists:
+        try:
+            raw = path.read_text(encoding="utf-8").strip()
+            data = json.loads(raw) if raw else {}
+            if isinstance(data, dict):
+                entries = len(data)
+                for v in data.values():
+                    if not isinstance(v, dict):
+                        continue
+                    ts = v.get("ts")
+                    if not isinstance(ts, (int, float)):
+                        continue
+                    newest_ts = float(ts) if newest_ts is None else max(float(ts), float(newest_ts))
+                    oldest_ts = float(ts) if oldest_ts is None else min(float(ts), float(oldest_ts))
+        except Exception:
+            pass
+
+    return {
+        "path": str(path),
+        "exists": bool(exists),
+        "entries": int(entries),
+        "bytes": int(size_bytes),
+        "oldest_ts": oldest_ts,
+        "newest_ts": newest_ts,
+        "ttl_s": int((os.environ.get("BRAVE_RESOLVE_CACHE_TTL_S") or "86400").strip() or "86400"),
+        "disabled": (os.environ.get("BRAVE_RESOLVE_CACHE_DISABLE") or "").strip().lower() in {"1", "true", "yes", "on"},
+    }
+
+
+def clear_brave_resolve_cache() -> Dict[str, object]:
+    """Delete the Brave->CCIndex resolve cache file if present."""
+
+    path = _brave_resolve_cache_path()
+    try:
+        if path.exists() and path.is_file():
+            try:
+                freed = int(path.stat().st_size)
+            except Exception:
+                freed = 0
+            try:
+                path.unlink()
+                return {"deleted": True, "freed_bytes": freed, "path": str(path)}
+            except Exception:
+                try:
+                    path.write_text("{}\n", encoding="utf-8")
+                    return {"deleted": False, "freed_bytes": freed, "path": str(path), "truncated": True}
+                except Exception:
+                    return {"deleted": False, "freed_bytes": 0, "path": str(path)}
+        return {"deleted": False, "freed_bytes": 0, "path": str(path)}
+    except Exception:
+        return {"deleted": False, "freed_bytes": 0, "path": str(path)}
+
+
+def _brave_resolve_cache_key(
+    *,
+    query: str,
+    count: int,
+    offset: int,
+    year: Optional[str],
+    parquet_root: Path,
+    master_db: Optional[Path],
+    per_url_limit: int,
+) -> str:
+    payload = {
+        "v": 1,
+        "query": str(query),
+        "count": int(count),
+        "offset": int(offset),
+        "year": (str(year) if year else None),
+        "parquet_root": str(parquet_root),
+        "master_db": (str(master_db) if master_db else None),
+        "per_url_limit": int(per_url_limit),
+    }
+    raw = json.dumps(payload, sort_keys=True, separators=(",", ":")).encode("utf-8")
+    return hashlib.sha256(raw).hexdigest()
+
+
+def _load_cache_dict(path: Path) -> Dict[str, dict]:
+    try:
+        raw = path.read_text(encoding="utf-8").strip() if (path.exists() and path.is_file()) else ""
+        data = json.loads(raw) if raw else {}
+        return data if isinstance(data, dict) else {}
+    except Exception:
+        return {}
+
+
+def _save_cache_dict(path: Path, data: Dict[str, dict]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    tmp = path.with_suffix(path.suffix + ".tmp")
+    tmp.write_text(json.dumps(data, sort_keys=True, indent=2) + "\n", encoding="utf-8")
+    try:
+        tmp.replace(path)
+    except Exception:
+        # Best-effort fallback.
+        path.write_text(json.dumps(data, sort_keys=True, indent=2) + "\n", encoding="utf-8")
+
+
+def _maybe_evict_oldest(cache: Dict[str, dict], *, max_entries: int) -> Dict[str, dict]:
+    if max_entries <= 0 or len(cache) <= max_entries:
+        return cache
+    try:
+        def _ts(kv) -> float:
+            v = kv[1]
+            if isinstance(v, dict) and isinstance(v.get("ts"), (int, float)):
+                return float(v["ts"])
+            return 0.0
+
+        keep = dict(sorted(cache.items(), key=_ts, reverse=True)[: int(max_entries)])
+        return keep
+    except Exception:
+        return cache
 
 
 def _require_duckdb() -> "object":
@@ -586,44 +788,232 @@ def resolve_urls_to_ccindex(
     max_matches_per_domain: int = 400,
     per_url_limit: int = 5,
 ) -> Dict[str, List[Dict[str, object]]]:
-    """Resolve a list of URLs to candidate CCIndex WARC pointers."""
+    """Resolve a list of URLs to candidate CCIndex WARC pointers.
+
+    Fast path (default): batch URL lookups by joining a temp URL table against
+    targeted Parquet shards (shards determined via collection-domain shard maps).
+    Fallback: the previous domain-scan approach (more robust but can be slow for
+    many distinct domains).
+    """
 
     want = [u for u in urls if (u or "").strip()]
     if not want:
         return {}
 
+    def _via_domain_scan(scan_urls: Sequence[str]) -> Dict[str, List[Dict[str, object]]]:
+        domain_to_urls: Dict[str, List[str]] = {}
+        for u in scan_urls:
+            dom = normalize_domain(u)
+            if not dom:
+                continue
+            domain_to_urls.setdefault(dom, []).append(u)
+
+        out: Dict[str, List[Dict[str, object]]] = {u: [] for u in scan_urls if (u or "").strip()}
+        for dom, dom_urls in domain_to_urls.items():
+            res = search_domain_via_meta_indexes(
+                dom,
+                parquet_root=parquet_root,
+                master_db=master_db,
+                year=year,
+                max_matches=int(max_matches_per_domain),
+            )
+
+            canon_to_requested: Dict[str, List[str]] = {}
+            for u in dom_urls:
+                canon_to_requested.setdefault(_canonicalize_url_for_match(u), []).append(u)
+
+            for rec in res.records:
+                rec_url = str(rec.get("url") or "")
+                canon = _canonicalize_url_for_match(rec_url)
+                reqs = canon_to_requested.get(canon)
+                if not reqs:
+                    continue
+                for requested in reqs:
+                    if len(out[requested]) >= int(per_url_limit):
+                        continue
+                    out[requested].append(rec)
+        return out
+
+    # If we can't use meta-index info, fall back.
+    if master_db is None:
+        return _via_domain_scan(want)
+
+    # Batch join approach.
+    try:
+        duckdb = _require_duckdb()
+    except Exception:
+        return _via_domain_scan(want)
+
+    parquet_root = Path(parquet_root).expanduser().resolve()
+    master_db = Path(master_db).expanduser().resolve()
+
+    # Group URLs by domain and precompute host_rev_prefix.
     domain_to_urls: Dict[str, List[str]] = {}
+    domain_to_hostrev: Dict[str, str] = {}
     for u in want:
         dom = normalize_domain(u)
         if not dom:
             continue
         domain_to_urls.setdefault(dom, []).append(u)
+        if dom not in domain_to_hostrev:
+            hr = host_to_rev(dom)
+            if hr:
+                domain_to_hostrev[dom] = hr
+
+    if not domain_to_urls:
+        return {u: [] for u in want}
+
+    # Load collections once.
+    collections = load_collections_from_master(master_db, year)
+    if not collections:
+        return {u: [] for u in want}
+
+    # Prefer newest collections first for URL lookups.
+    collections = list(reversed(collections))
+
+    # Build URL variant table.
+    variant_rows: List[Tuple[str, str]] = []
+    for requested in want:
+        for v in _url_variants_for_lookup(requested):
+            variant_rows.append((v, requested))
 
     out: Dict[str, List[Dict[str, object]]] = {u: [] for u in want}
+    per_url_counts: Dict[str, int] = {u: 0 for u in want}
 
-    for dom, dom_urls in domain_to_urls.items():
-        res = search_domain_via_meta_indexes(
-            dom,
-            parquet_root=parquet_root,
-            master_db=master_db,
-            year=year,
-            max_matches=int(max_matches_per_domain),
-        )
+    parquet_files_scanned = 0
 
-        canon_to_requested: Dict[str, List[str]] = {}
-        for u in dom_urls:
-            canon_to_requested.setdefault(_canonicalize_url_for_match(u), []).append(u)
+    con = duckdb.connect(database=":memory:")
+    try:
+        con.execute("PRAGMA threads=4")
+        con.execute("CREATE TABLE search_urls (url VARCHAR, requested_url VARCHAR)")
+        con.executemany("INSERT INTO search_urls VALUES (?, ?)", variant_rows)
 
-        for rec in res.records:
-            rec_url = str(rec.get("url") or "")
-            canon = _canonicalize_url_for_match(rec_url)
-            reqs = canon_to_requested.get(canon)
-            if not reqs:
+        def _parquet_columns(pq_path: Path) -> set[str]:
+            rows = con.execute("DESCRIBE SELECT * FROM read_parquet(?)", [str(pq_path)]).fetchall()
+            return {str(r[0]) for r in rows if r and r[0]}
+
+        def col_or_null(cols: set[str], name: str) -> str:
+            return f"p.{name} AS {name}" if name in cols else f"NULL AS {name}"
+
+        # Iterate collections newest-first and stop once all URLs are satisfied.
+        for cref in collections:
+            if all(per_url_counts.get(u, 0) >= int(per_url_limit) for u in want):
+                break
+
+            cdb = cref.collection_db_path
+            if not cdb.exists():
                 continue
-            for requested in reqs:
-                if len(out[requested]) >= int(per_url_limit):
+            parquet_dir = get_collection_parquet_dir(parquet_root, cref.collection)
+            if not parquet_dir.exists():
+                continue
+
+            # Get shard relpaths for all requested domains using one connection per collection.
+            relpaths: List[str] = []
+            con_c = duckdb.connect(str(cdb), read_only=True)
+            try:
+                if not _duckdb_has_table(con_c, "cc_domain_shards"):
                     continue
-                out[requested].append(rec)
+                for host_rev_prefix in domain_to_hostrev.values():
+                    like_pat = host_rev_prefix + ",%"
+                    rows = con_c.execute(
+                        """
+                        SELECT DISTINCT parquet_relpath
+                        FROM cc_domain_shards
+                        WHERE host_rev = ? OR host_rev LIKE ?
+                        """,
+                        [host_rev_prefix, like_pat],
+                    ).fetchall()
+                    for r in rows:
+                        if r and r[0]:
+                            relpaths.append(str(r[0]))
+            finally:
+                con_c.close()
+
+            if not relpaths:
+                continue
+
+            # De-dupe within the collection.
+            relpaths = sorted(set(relpaths))
+            for rel in relpaths:
+                if all(per_url_counts.get(u, 0) >= int(per_url_limit) for u in want):
+                    break
+                pq = (parquet_dir / rel).resolve()
+                if not pq.exists():
+                    continue
+
+                cols = _parquet_columns(pq)
+                select_list = ", ".join(
+                    [
+                        col_or_null(cols, "collection"),
+                        col_or_null(cols, "shard_file"),
+                        col_or_null(cols, "url"),
+                        col_or_null(cols, "ts"),
+                        col_or_null(cols, "status"),
+                        col_or_null(cols, "mime"),
+                        col_or_null(cols, "digest"),
+                        col_or_null(cols, "warc_filename"),
+                        col_or_null(cols, "warc_offset"),
+                        col_or_null(cols, "warc_length"),
+                    ]
+                )
+
+                parquet_files_scanned += 1
+                rows = con.execute(
+                    f"""
+                    SELECT s.requested_url, {select_list}
+                    FROM read_parquet(?) p
+                    INNER JOIN search_urls s ON p.url = s.url
+                    """,
+                    [str(pq)],
+                ).fetchall()
+
+                for row in rows:
+                    if not row:
+                        continue
+                    requested_url = str(row[0] or "")
+                    if not requested_url or requested_url not in out:
+                        continue
+                    if per_url_counts.get(requested_url, 0) >= int(per_url_limit):
+                        continue
+
+                    (
+                        _requested,
+                        collection,
+                        shard_file,
+                        url,
+                        ts,
+                        status,
+                        mime,
+                        digest,
+                        warc_filename,
+                        warc_offset,
+                        warc_length,
+                    ) = row
+                    rec = {
+                        "collection": collection,
+                        "shard_file": shard_file,
+                        "url": url,
+                        "timestamp": ts,
+                        "status": int(status) if status is not None else None,
+                        "mime": mime,
+                        "digest": digest,
+                        "warc_filename": warc_filename,
+                        "warc_offset": int(warc_offset) if warc_offset is not None else None,
+                        "warc_length": int(warc_length) if warc_length is not None else None,
+                        "parquet_path": str(pq),
+                    }
+                    out[requested_url].append(rec)
+                    per_url_counts[requested_url] = per_url_counts.get(requested_url, 0) + 1
+    finally:
+        con.close()
+
+    # Fallback for any URLs still unresolved.
+    missing = [u for u in want if not out.get(u)]
+    if missing:
+        fallback = _via_domain_scan(missing)
+        for u, recs in fallback.items():
+            if recs:
+                out[u] = recs
 
     return out
 
@@ -642,10 +1032,63 @@ def brave_search_ccindex(
     """Brave web search + resolve result URLs to CCIndex pointers."""
 
     t0 = time.perf_counter()
+
+    # Second-layer cache: caches the *resolved* result set (Brave results + CCIndex pointers).
+    resolve_cache_disable = (os.environ.get("BRAVE_RESOLVE_CACHE_DISABLE") or "").strip().lower() in {
+        "1",
+        "true",
+        "yes",
+        "on",
+    }
+    resolve_ttl_s = int((os.environ.get("BRAVE_RESOLVE_CACHE_TTL_S") or "86400").strip() or "86400")
+    resolve_max_entries = int((os.environ.get("BRAVE_RESOLVE_CACHE_MAX_ENTRIES") or "2000").strip() or "2000")
+    cache_path = _brave_resolve_cache_path()
+
+    if not resolve_cache_disable and resolve_ttl_s > 0:
+        try:
+            cache_key = _brave_resolve_cache_key(
+                query=str(query),
+                count=int(count),
+                offset=int(offset),
+                year=str(year) if year else None,
+                parquet_root=Path(parquet_root),
+                master_db=Path(master_db) if master_db is not None else None,
+                per_url_limit=int(per_url_limit),
+            )
+            cache = _load_cache_dict(cache_path)
+            ent = cache.get(cache_key)
+            if isinstance(ent, dict):
+                ts = ent.get("ts")
+                payload = ent.get("result")
+                if isinstance(ts, (int, float)) and isinstance(payload, dict):
+                    if (time.time() - float(ts)) <= float(resolve_ttl_s):
+                        return BraveSearchResolvedResult(
+                            query=str(payload.get("query") or query),
+                            count=int(payload.get("count") or int(count)),
+                            offset=int(payload.get("offset") or int(offset)),
+                            total_results=(
+                                int(payload.get("total_results"))
+                                if isinstance(payload.get("total_results"), (int, float))
+                                else None
+                            ),
+                            brave_cached=bool(payload.get("brave_cached")),
+                            resolved_cached=True,
+                            results=list(payload.get("results") or []),
+                            elapsed_s=(time.perf_counter() - t0),
+                            brave_elapsed_s=float(payload.get("brave_elapsed_s") or 0.0),
+                            resolve_elapsed_s=float(payload.get("resolve_elapsed_s") or 0.0),
+                            resolve_mode=str(payload.get("resolve_mode") or "cache"),
+                            resolve_domains=int(payload.get("resolve_domains") or 0),
+                            resolve_parquet_files=int(payload.get("resolve_parquet_files") or 0),
+                        )
+        except Exception:
+            pass
     # Prefer the meta-returning variant so callers can render real pagination.
     from common_crawl_search_engine.ccsearch.brave_search import brave_web_search_page
 
+    t_brave0 = time.perf_counter()
     page = brave_web_search_page(query, api_key=api_key, count=int(count), offset=int(offset))
+    brave_elapsed_s = time.perf_counter() - t_brave0
     meta = page.get("meta") if isinstance(page, dict) else None
     items = page.get("items") if isinstance(page, dict) else None
 
@@ -682,6 +1125,7 @@ def brave_search_ccindex(
 
     url_list = [r.url for r in results if r.url]
 
+    t_res0 = time.perf_counter()
     resolved = resolve_urls_to_ccindex(
         url_list,
         parquet_root=parquet_root,
@@ -689,6 +1133,13 @@ def brave_search_ccindex(
         year=year,
         per_url_limit=int(per_url_limit),
     )
+    resolve_elapsed_s = time.perf_counter() - t_res0
+
+    # Best-effort resolve stats.
+    resolve_domains = len({normalize_domain(u) for u in url_list if normalize_domain(u)})
+    # We can't easily count parquet files scanned from here without deeper plumbing.
+    resolve_parquet_files = 0
+    resolve_mode = "auto"
 
     out: List[Dict[str, object]] = []
     for r in results:
@@ -701,15 +1152,56 @@ def brave_search_ccindex(
             }
         )
 
-    return BraveSearchResolvedResult(
+    res_obj = BraveSearchResolvedResult(
         query=query,
         count=int(effective_count),
         offset=int(effective_offset),
         total_results=total_results,
         brave_cached=bool(brave_cached),
+        resolved_cached=False,
         results=out,
         elapsed_s=(time.perf_counter() - t0),
+        brave_elapsed_s=float(brave_elapsed_s),
+        resolve_elapsed_s=float(resolve_elapsed_s),
+        resolve_mode=str(resolve_mode),
+        resolve_domains=int(resolve_domains),
+        resolve_parquet_files=int(resolve_parquet_files),
     )
+
+    if not resolve_cache_disable and resolve_ttl_s > 0:
+        try:
+            cache_key = _brave_resolve_cache_key(
+                query=str(query),
+                count=int(count),
+                offset=int(offset),
+                year=str(year) if year else None,
+                parquet_root=Path(parquet_root),
+                master_db=Path(master_db) if master_db is not None else None,
+                per_url_limit=int(per_url_limit),
+            )
+            cache = _load_cache_dict(cache_path)
+            cache[cache_key] = {
+                "ts": time.time(),
+                "result": {
+                    "query": res_obj.query,
+                    "count": res_obj.count,
+                    "offset": res_obj.offset,
+                    "total_results": res_obj.total_results,
+                    "brave_cached": res_obj.brave_cached,
+                    "brave_elapsed_s": res_obj.brave_elapsed_s,
+                    "resolve_elapsed_s": res_obj.resolve_elapsed_s,
+                    "resolve_mode": res_obj.resolve_mode,
+                    "resolve_domains": res_obj.resolve_domains,
+                    "resolve_parquet_files": res_obj.resolve_parquet_files,
+                    "results": res_obj.results,
+                },
+            }
+            cache = _maybe_evict_oldest(cache, max_entries=int(resolve_max_entries))
+            _save_cache_dict(cache_path, cache)
+        except Exception:
+            pass
+
+    return res_obj
 
 
 def warc_download_url(warc_filename_or_url: str, *, prefix: str = "https://data.commoncrawl.org/") -> str:

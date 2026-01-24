@@ -191,7 +191,13 @@ def main() -> int:
             "offset": res.offset,
             "total_results": res.total_results,
             "brave_cached": res.brave_cached,
+            "resolved_cached": res.resolved_cached,
             "elapsed_s": res.elapsed_s,
+            "brave_elapsed_s": res.brave_elapsed_s,
+            "resolve_elapsed_s": res.resolve_elapsed_s,
+            "resolve_mode": res.resolve_mode,
+            "resolve_domains": res.resolve_domains,
+            "resolve_parquet_files": res.resolve_parquet_files,
             "results": res.results,
         }
 
@@ -210,6 +216,22 @@ def main() -> int:
         from common_crawl_search_engine.ccsearch.brave_search import clear_brave_search_cache
 
         return clear_brave_search_cache()
+
+    @mcp.tool()
+    def brave_resolve_cache_stats() -> Dict[str, Any]:
+        """Return stats for the on-disk Brave->CCIndex resolve cache."""
+
+        from common_crawl_search_engine.ccindex.api import brave_resolve_cache_stats
+
+        return brave_resolve_cache_stats()
+
+    @mcp.tool()
+    def brave_resolve_cache_clear() -> Dict[str, Any]:
+        """Clear the on-disk Brave->CCIndex resolve cache."""
+
+        from common_crawl_search_engine.ccindex.api import clear_brave_resolve_cache
+
+        return clear_brave_resolve_cache()
 
     @mcp.tool()
     def normalize_domain(domain_or_url: str) -> str:
