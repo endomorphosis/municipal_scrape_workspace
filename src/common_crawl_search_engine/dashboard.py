@@ -68,6 +68,14 @@ input {
   border-radius: 8px;
   color: var(--text);
 }
+select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  background: rgba(15, 23, 42, 0.65);
+  border-radius: 8px;
+  color: var(--text);
+}
 button {
   padding: 10px 14px;
   border: 1px solid var(--border);
@@ -95,6 +103,10 @@ button:hover { background: rgba(96, 165, 250, 0.28); }
 .table { width: 100%; border-collapse: collapse; }
 .table th, .table td { padding: 10px; border-top: 1px solid rgba(34, 48, 74, 0.7); vertical-align: top; }
 .table th { text-align: left; color: var(--muted); font-size: 12px; }
+
+/* Prevent long URLs/WARC filenames from blowing out tables */
+.table td { overflow-wrap: anywhere; word-break: break-word; }
+.table td .code { overflow-wrap: anywhere; word-break: break-word; }
 
 .spinner {
   display: inline-block;
@@ -671,7 +683,7 @@ def create_app(master_db: Path) -> Any:
           q = str(tool_args.get("query") or "")
           year = tool_args.get("year")
           parquet_root = Path(str(tool_args.get("parquet_root") or "/storage/ccindex_parquet"))
-          count = int(tool_args.get("count") or 8)
+          count = int(tool_args.get("count") or 50)
 
           api_key = None
           if not (os.environ.get("BRAVE_SEARCH_API_KEY") or "").strip():
@@ -891,7 +903,7 @@ def create_app(master_db: Path) -> Any:
         request: Request,
         q: str = Query(default="", description="domain or url"),
         year: str = Query(default="", description="optional year"),
-        max_matches: int = Query(default=200, ge=1, le=5000),
+        max_matches: int = Query(default=500, ge=1, le=5000),
         parquet_root: str = Query(default="/storage/ccindex_parquet"),
         embed: int = Query(default=0, ge=0, le=1),
     ) -> str:
@@ -905,7 +917,29 @@ def create_app(master_db: Path) -> Any:
     </div>
     <div class='field'>
       <label>Year (optional)</label>
-      <input id='year' name='year' value='{html.escape(_q(year))}' placeholder='2024'>
+      <select id='year' name='year'></select>
+    </div>
+    <div class='field'>
+      <label>Status (optional)</label>
+      <select id='status_filter'>
+        <option value=''>any</option>
+        <option value='200'>200</option>
+        <option value='301'>301</option>
+        <option value='302'>302</option>
+        <option value='404'>404</option>
+        <option value='500'>500</option>
+      </select>
+    </div>
+    <div class='field' style='min-width: 220px;'>
+      <label>MIME (optional)</label>
+      <select id='mime_filter'>
+        <option value=''>any</option>
+        <option value='text/html'>text/html</option>
+        <option value='application/pdf'>application/pdf</option>
+        <option value='text/plain'>text/plain</option>
+        <option value='application/json'>application/json</option>
+        <option value='application/xml'>application/xml</option>
+      </select>
     </div>
     <div class='field'>
       <label>Max matches</label>
@@ -944,6 +978,14 @@ def create_app(master_db: Path) -> Any:
   const form = document.getElementById('searchForm');
   const statusEl = document.getElementById('status');
   const resultsEl = document.getElementById('results');
+  const yearEl = document.getElementById('year');
+  const statusFilterEl = document.getElementById('status_filter');
+  const mimeFilterEl = document.getElementById('mime_filter');
+
+  let lastRecords = [];
+  let baseStatusHtml = "";
+  let pageIndex = 0;
+  let pageSize = 50;
 
   function esc(s) {{
     return String(s ?? '')
@@ -954,8 +996,10 @@ def create_app(master_db: Path) -> Any:
       .replaceAll("'",'&#39;');
   }}
 
-  function renderTable(records) {{
-    const rows = (records || []).map((r, idx) => {{
+  function renderTable(records, pageIndex, pageSize) {{
+    const start = Math.max(0, (Number(pageIndex) || 0) * (Number(pageSize) || 50));
+    const page = (records || []).slice(start, start + (Number(pageSize) || 50));
+    const rows = page.map((r, idx) => {{
       const url = esc(r.url || '');
       const ts = esc(r.timestamp || '');
       const status = esc(r.status ?? '');
@@ -967,7 +1011,7 @@ def create_app(master_db: Path) -> Any:
       const recHref = `${{basePath}}/record?warc_filename=${{encodeURIComponent(r.warc_filename||'')}}&warc_offset=${{encodeURIComponent(r.warc_offset||'')}}&warc_length=${{encodeURIComponent(r.warc_length||'')}}&parquet_root=${{encodeURIComponent(document.getElementById('parquet_root').value || '')}}`;
       return `
         <tr>
-          <td class='small'>${{idx+1}}</td>
+          <td class='small'>${{start + idx + 1}}</td>
           <td><div class='code'>${{url}}</div><div class='small'>${{ts}}</div></td>
           <td><span class='badge'>${{status}}</span><div class='small'>${{mime}}</div></td>
           <td><div class='code'>${{coll}}</div><div class='small code'>${{warc}}</div></td>
@@ -987,9 +1031,195 @@ def create_app(master_db: Path) -> Any:
     `;
   }}
 
+  function renderPager(total, pageIndex, pageSize) {{
+    const totalN = Number(total) || 0;
+    const sizeN = Math.max(1, Number(pageSize) || 50);
+    const pages = Math.max(1, Math.ceil(totalN / sizeN));
+    const idx = Math.min(Math.max(0, Number(pageIndex) || 0), pages - 1);
+    const start = totalN ? (idx * sizeN + 1) : 0;
+    const end = Math.min(totalN, (idx + 1) * sizeN);
+    const prevDisabled = idx <= 0 ? 'disabled' : '';
+    const nextDisabled = idx >= pages - 1 ? 'disabled' : '';
+
+    function pageButtonsHtml(pages, idx) {{
+      const btns = [];
+      const maxButtons = 9;
+      const window = 2;
+
+      function addBtn(p, label, active) {{
+        const dis = active ? 'disabled' : '';
+        const style = active ? " style='opacity:0.9; border-color: rgba(96,165,250,0.55); background: rgba(96,165,250,0.28);'" : '';
+        btns.push("<button type='button' data-page='" + String(p) + "' " + dis + style + ">" + String(label) + "</button>");
+      }}
+
+      function addEllipsis() {{
+        btns.push("<span class='small' style='padding:0 4px;'>…</span>");
+      }}
+
+      if (pages <= maxButtons) {{
+        for (let p = 0; p < pages; p++) addBtn(p, String(p + 1), p === idx);
+        return btns.join('');
+      }}
+
+      addBtn(0, '1', idx === 0);
+      let startP = Math.max(1, idx - window);
+      let endP = Math.min(pages - 2, idx + window);
+      if (startP > 1) addEllipsis();
+      for (let p = startP; p <= endP; p++) addBtn(p, String(p + 1), p === idx);
+      if (endP < pages - 2) addEllipsis();
+      addBtn(pages - 1, String(pages), idx === pages - 1);
+      return btns.join('');
+    }}
+
+    return "<div style='padding: 12px; display:flex; gap: 10px; align-items:center; flex-wrap: wrap; border-bottom: 1px solid rgba(34, 48, 74, 0.7);'>"
+      + "<span class='small'>" + (totalN ? ("Rows " + String(start) + "–" + String(end) + " of " + String(totalN)) : "No results") + "</span>"
+      + "<span class='small'>•</span>"
+      + "<button type='button' id='pagerPrev' " + prevDisabled + ">Prev</button>"
+      + "<button type='button' id='pagerNext' " + nextDisabled + ">Next</button>"
+      + "<div id='pagerNumWrap' style='display:flex; gap: 6px; align-items:center;'>" + pageButtonsHtml(pages, idx) + "</div>"
+      + "<span class='small'>•</span>"
+      + "<span class='small'>Per page</span>"
+      + "<select id='pagerSize' style='width:auto; min-width: 90px;'>"
+      + "<option value='25'>25</option><option value='50'>50</option><option value='100'>100</option><option value='200'>200</option>"
+      + "</select>"
+      + "</div>";
+  }}
+
+  function setSelectOptions(selectEl, options, selectedValue) {{
+    const want = String(selectedValue ?? '');
+    const existing = new Set(Array.from(selectEl.options).map(o => o.value));
+    const toAdd = options.filter(o => !existing.has(String(o.value)));
+    if (toAdd.length) {{
+      for (const opt of toAdd) {{
+        const o = document.createElement('option');
+        o.value = String(opt.value);
+        o.textContent = String(opt.label ?? opt.value);
+        selectEl.appendChild(o);
+      }}
+    }}
+    if (want) selectEl.value = want;
+  }}
+
+  async function populateYears() {{
+    const initialYear = String(initial.year || '').trim();
+    const current = (new Date()).getFullYear();
+    const fallbackYears = [];
+    for (let y = current; y >= 2010; y--) fallbackYears.push(String(y));
+
+    yearEl.innerHTML = "<option value=''>any</option>";
+    try {{
+      const info = await ccindexMcp.callTool('cc_collinfo_list', {{}});
+      const years = new Set();
+      for (const it of (info.collections || [])) {{
+        const id = String(it.id || '');
+        const m = id.match(/CC-MAIN-([0-9]{{4}})-/);
+        if (m && m[1]) years.add(m[1]);
+      }}
+      const sorted = Array.from(years).sort().reverse();
+      const use = sorted.length ? sorted : fallbackYears;
+      for (const y of use) {{
+        const o = document.createElement('option');
+        o.value = String(y);
+        o.textContent = String(y);
+        yearEl.appendChild(o);
+      }}
+    }} catch (e) {{
+      for (const y of fallbackYears) {{
+        const o = document.createElement('option');
+        o.value = String(y);
+        o.textContent = String(y);
+        yearEl.appendChild(o);
+      }}
+    }}
+    if (initialYear) yearEl.value = initialYear;
+  }}
+
+  function applyFilters(records) {{
+    const statusWanted = String(statusFilterEl.value || '').trim();
+    const mimeWanted = String(mimeFilterEl.value || '').trim();
+    return (records || []).filter((r) => {{
+      const s = String(r.status ?? '').trim();
+      const m = String(r.mime ?? '').trim();
+      if (statusWanted && s !== statusWanted) return false;
+      if (mimeWanted && m !== mimeWanted) return false;
+      return true;
+    }});
+  }}
+
+  function updateFilterOptionsFromRecords(records) {{
+    const statuses = new Set();
+    const mimes = new Set();
+    for (const r of (records || [])) {{
+      const s = String(r.status ?? '').trim();
+      const m = String(r.mime ?? '').trim();
+      if (s) statuses.add(s);
+      if (m) mimes.add(m);
+    }}
+
+    const statusOpts = Array.from(statuses)
+      .sort((a, b) => Number(a) - Number(b))
+      .map((v) => ({{ value: v, label: v }}));
+    const mimeOpts = Array.from(mimes)
+      .sort()
+      .map((v) => ({{ value: v, label: v }}));
+
+    const prevStatus = statusFilterEl.value;
+    const prevMime = mimeFilterEl.value;
+    setSelectOptions(statusFilterEl, statusOpts, prevStatus);
+    setSelectOptions(mimeFilterEl, mimeOpts, prevMime);
+  }}
+
+  function renderFiltered() {{
+    const filtered = applyFilters(lastRecords);
+
+    const total = (filtered || []).length;
+    const sizeN = Math.max(1, Number(pageSize) || 50);
+    const pages = Math.max(1, Math.ceil(total / sizeN));
+    pageIndex = Math.min(Math.max(0, Number(pageIndex) || 0), pages - 1);
+
+    const pagerHtml = renderPager(total, pageIndex, pageSize);
+    const tableHtml = renderTable(filtered, pageIndex, pageSize);
+    resultsEl.innerHTML = pagerHtml + tableHtml;
+    resultsEl.style.display = 'block';
+
+    const showing = filtered.length;
+    const totalAll = (lastRecords || []).length;
+    const extra = (showing === totalAll)
+      ? ''
+      : (" <span class='small'>(showing " + String(showing) + "/" + String(totalAll) + " after filters)</span>");
+    statusEl.innerHTML = baseStatusHtml + extra;
+
+    const prevBtn = document.getElementById('pagerPrev');
+    const nextBtn = document.getElementById('pagerNext');
+    const sizeSel = document.getElementById('pagerSize');
+    if (sizeSel) sizeSel.value = String(pageSize);
+
+    for (const b of Array.from(resultsEl.querySelectorAll("button[data-page]"))) {{
+      b.addEventListener('click', () => {{
+        const p = parseInt(b.getAttribute('data-page') || '0', 10);
+        pageIndex = isNaN(p) ? 0 : Math.max(0, p);
+        renderFiltered();
+      }});
+    }}
+
+    if (prevBtn) prevBtn.addEventListener('click', () => {{
+      pageIndex = Math.max(0, Number(pageIndex) - 1);
+      renderFiltered();
+    }});
+    if (nextBtn) nextBtn.addEventListener('click', () => {{
+      pageIndex = Number(pageIndex) + 1;
+      renderFiltered();
+    }});
+    if (sizeSel) sizeSel.addEventListener('change', () => {{
+      pageSize = Math.max(1, parseInt(sizeSel.value || '50', 10));
+      pageIndex = 0;
+      renderFiltered();
+    }});
+  }}
+
   async function runSearch() {{
     const q = document.getElementById('q').value;
-    const year = document.getElementById('year').value;
+    const year = yearEl.value;
     const maxMatches = parseInt(document.getElementById('max_matches').value || '200', 10);
     const parquetRoot = document.getElementById('parquet_root').value;
 
@@ -1011,26 +1241,47 @@ def create_app(master_db: Path) -> Any:
       }});
 
       const elapsed = (typeof res.elapsed_s === 'number') ? res.elapsed_s.toFixed(2) : String(res.elapsed_s ?? '');
+      const returned = (res.records || []).length;
+      const cappedNote = (returned >= maxMatches)
+        ? " <span class='small'>(hit limit; increase Max matches for more)</span>"
+        : "";
       statusEl.innerHTML = `
         <span class='badge ok'>ok</span>
         meta_source=<span class='code'>${{esc(res.meta_source)}}</span>
         collections=<span class='code'>${{esc(res.collections_considered)}}</span>
-        emitted=<span class='code'>${{esc(res.emitted)}}</span>
+        returned=<span class='code'>${{esc(returned)}}</span>
+        limit=<span class='code'>${{esc(maxMatches)}}</span>
         elapsed_s=<span class='code'>${{esc(elapsed)}}</span>
+        ${{cappedNote}}
       `;
+      baseStatusHtml = statusEl.innerHTML;
 
-      resultsEl.innerHTML = renderTable(res.records || []);
-      resultsEl.style.display = 'block';
+      lastRecords = res.records || [];
+      pageIndex = 0;
+      updateFilterOptionsFromRecords(lastRecords);
+      renderFiltered();
     }} catch (e) {{
       statusEl.innerHTML = `<span class='badge err'>error</span> <span class='code'>${{esc(e.message || e)}}</span>`;
       resultsEl.style.display = 'none';
     }}
   }}
 
+  statusFilterEl.addEventListener('change', () => {{
+    if ((lastRecords || []).length) {{ pageIndex = 0; renderFiltered(); }}
+  }});
+  mimeFilterEl.addEventListener('change', () => {{
+    if ((lastRecords || []).length) {{ pageIndex = 0; renderFiltered(); }}
+  }});
+
   form.addEventListener('submit', (ev) => {{
     ev.preventDefault();
     runSearch();
   }});
+
+  await populateYears();
+
+  // Preserve any previously-typed year by setting the select value.
+  if (String(initial.year || '').trim()) yearEl.value = String(initial.year).trim();
 
   if ((initial.q || '').trim()) {{
     runSearch();
@@ -2391,7 +2642,7 @@ def create_app(master_db: Path) -> Any:
         request: Request,
         q: str = Query(default="", description="brave query"),
         year: str = Query(default="", description="optional year"),
-        count: int = Query(default=8, ge=1, le=20),
+        count: int = Query(default=50, ge=1, le=50),
         parquet_root: str = Query(default="/storage/ccindex_parquet"),
         embed: int = Query(default=0, ge=0, le=1),
     ) -> str:
@@ -2410,11 +2661,33 @@ def create_app(master_db: Path) -> Any:
       </div>
       <div class='field'>
         <label>Year (optional)</label>
-        <input id='dyear' name='year' value='{html.escape(_q(year))}' placeholder='2024'>
+        <select id='dyear' name='year'></select>
+      </div>
+      <div class='field'>
+        <label>Status (optional)</label>
+        <select id='dstatus_filter'>
+          <option value=''>any</option>
+          <option value='200'>200</option>
+          <option value='301'>301</option>
+          <option value='302'>302</option>
+          <option value='404'>404</option>
+          <option value='500'>500</option>
+        </select>
+      </div>
+      <div class='field' style='min-width: 220px;'>
+        <label>MIME (optional)</label>
+        <select id='dmime_filter'>
+          <option value=''>any</option>
+          <option value='text/html'>text/html</option>
+          <option value='application/pdf'>application/pdf</option>
+          <option value='text/plain'>text/plain</option>
+          <option value='application/json'>application/json</option>
+          <option value='application/xml'>application/xml</option>
+        </select>
       </div>
       <div class='field'>
         <label>Count</label>
-        <input id='dcount' name='count' value='{int(count)}' type='number' min='1' max='20'>
+        <input id='dcount' name='count' value='{int(count)}' type='number' min='1' max='50'>
       </div>
       <div class='field' style='min-width: 320px; flex: 1;'>
         <label>Parquet root</label>
@@ -2442,6 +2715,11 @@ def create_app(master_db: Path) -> Any:
   const form = document.getElementById('discoverForm');
   const statusEl = document.getElementById('dstatus');
   const resultsEl = document.getElementById('dresults');
+  const yearEl = document.getElementById('dyear');
+  const statusFilterEl = document.getElementById('dstatus_filter');
+  const mimeFilterEl = document.getElementById('dmime_filter');
+
+  let lastResponse = null;
 
   function esc(s) {{
     return String(s ?? '')
@@ -2450,6 +2728,18 @@ def create_app(master_db: Path) -> Any:
       .replaceAll('>','&gt;')
       .replaceAll('"','&quot;')
       .replaceAll("'",'&#39;');
+  }}
+
+  function applyFiltersToMatches(ccMatches) {{
+    const statusWanted = String(statusFilterEl.value || '').trim();
+    const mimeWanted = String(mimeFilterEl.value || '').trim();
+    return (ccMatches || []).filter((m) => {{
+      const s = String(m.status ?? '').trim();
+      const mt = String(m.mime ?? '').trim();
+      if (statusWanted && s !== statusWanted) return false;
+      if (mimeWanted && mt !== mimeWanted) return false;
+      return true;
+    }});
   }}
 
   function firstRecordLink(ccMatches) {{
@@ -2464,8 +2754,18 @@ def create_app(master_db: Path) -> Any:
       const url = esc(it.url || '');
       const desc = esc(it.description || '');
       const matches = it.cc_matches || [];
-      const view = firstRecordLink(matches);
-      const badge = matches.length ? `<span class='badge ok'>${{matches.length}} captures</span>` : `<span class='badge'>no capture</span>`;
+      const filteredMatches = applyFiltersToMatches(matches);
+      const view = firstRecordLink(filteredMatches);
+      const filtersApplied = Boolean((statusFilterEl.value || '').trim() || (mimeFilterEl.value || '').trim());
+      const baseCount = matches.length;
+      const shownCount = filteredMatches.length;
+      const plural = (shownCount === 1) ? '' : 's';
+      const badgeText = shownCount
+        ? (String(shownCount) + ' capture' + plural)
+        : (filtersApplied && baseCount ? ('0 (filtered from ' + String(baseCount) + ')') : 'no capture');
+      const badge = shownCount
+        ? `<span class='badge ok'>${{badgeText}}</span>`
+        : `<span class='badge'>${{badgeText}}</span>`;
       const actions = view
         ? `<a class='code' href='${{view}}'>view record</a>`
         : `<span class='small'>no record found</span>`;
@@ -2490,9 +2790,135 @@ def create_app(master_db: Path) -> Any:
     return `<div>${{items || "<div class='small' style='padding: 12px;'>No results.</div>"}}</div>`;
   }}
 
+  let pageIndex = 0;
+  let pageSize = 6;
+
+  function renderPager(total, pageIndex, pageSize) {{
+    const totalN = Number(total) || 0;
+    const sizeN = Math.max(1, Number(pageSize) || 6);
+    const pages = Math.max(1, Math.ceil(totalN / sizeN));
+    const idx = Math.min(Math.max(0, Number(pageIndex) || 0), pages - 1);
+    const start = totalN ? (idx * sizeN + 1) : 0;
+    const end = Math.min(totalN, (idx + 1) * sizeN);
+    const prevDisabled = idx <= 0 ? 'disabled' : '';
+    const nextDisabled = idx >= pages - 1 ? 'disabled' : '';
+
+    function pageButtonsHtml(pages, idx) {{
+      const btns = [];
+      const maxButtons = 9;
+      const window = 2;
+
+      function addBtn(p, label, active) {{
+        const dis = active ? 'disabled' : '';
+        const style = active ? " style='opacity:0.9; border-color: rgba(96,165,250,0.55); background: rgba(96,165,250,0.28);'" : '';
+        btns.push("<button type='button' data-page='" + String(p) + "' " + dis + style + ">" + String(label) + "</button>");
+      }}
+
+      function addEllipsis() {{
+        btns.push("<span class='small' style='padding:0 4px;'>…</span>");
+      }}
+
+      if (pages <= maxButtons) {{
+        for (let p = 0; p < pages; p++) addBtn(p, String(p + 1), p === idx);
+        return btns.join('');
+      }}
+
+      addBtn(0, '1', idx === 0);
+      let startP = Math.max(1, idx - window);
+      let endP = Math.min(pages - 2, idx + window);
+      if (startP > 1) addEllipsis();
+      for (let p = startP; p <= endP; p++) addBtn(p, String(p + 1), p === idx);
+      if (endP < pages - 2) addEllipsis();
+      addBtn(pages - 1, String(pages), idx === pages - 1);
+      return btns.join('');
+    }}
+
+    return "<div style='padding: 12px; display:flex; gap: 10px; align-items:center; flex-wrap: wrap; border-bottom: 1px solid rgba(34,48,74,.7);'>"
+      + "<span class='small'>" + (totalN ? ("Results " + String(start) + "–" + String(end) + " of " + String(totalN)) : "No results") + "</span>"
+      + "<span class='small'>•</span>"
+      + "<button type='button' id='dpagerPrev' " + prevDisabled + ">Prev</button>"
+      + "<button type='button' id='dpagerNext' " + nextDisabled + ">Next</button>"
+      + "<div id='dpagerNumWrap' style='display:flex; gap: 6px; align-items:center;'>" + pageButtonsHtml(pages, idx) + "</div>"
+      + "<span class='small'>•</span>"
+      + "<span class='small'>Per page</span>"
+      + "<select id='dpagerSize' style='width:auto; min-width: 90px;'>"
+      + "<option value='4'>4</option><option value='6'>6</option><option value='8'>8</option><option value='10'>10</option>"
+      + "</select>"
+      + "</div>";
+  }}
+
+  function renderPagedResults(res) {{
+    const all = (res && res.results) ? res.results : [];
+    const total = all.length;
+    const sizeN = Math.max(1, Number(pageSize) || 6);
+    const pages = Math.max(1, Math.ceil(total / sizeN));
+    pageIndex = Math.min(Math.max(0, Number(pageIndex) || 0), pages - 1);
+    const start = pageIndex * sizeN;
+    const page = all.slice(start, start + sizeN);
+    const pager = renderPager(total, pageIndex, pageSize);
+    const body = render({{ ...res, results: page }});
+    resultsEl.innerHTML = pager + body;
+    resultsEl.style.display = 'block';
+
+    const prevBtn = document.getElementById('dpagerPrev');
+    const nextBtn = document.getElementById('dpagerNext');
+    const sizeSel = document.getElementById('dpagerSize');
+    if (sizeSel) sizeSel.value = String(pageSize);
+
+    for (const b of Array.from(resultsEl.querySelectorAll("button[data-page]"))) {{
+      b.addEventListener('click', () => {{
+        const p = parseInt(b.getAttribute('data-page') || '0', 10);
+        pageIndex = isNaN(p) ? 0 : Math.max(0, p);
+        renderPagedResults(res);
+      }});
+    }}
+    if (prevBtn) prevBtn.addEventListener('click', () => {{ pageIndex = Math.max(0, Number(pageIndex) - 1); renderPagedResults(res); }});
+    if (nextBtn) nextBtn.addEventListener('click', () => {{ pageIndex = Number(pageIndex) + 1; renderPagedResults(res); }});
+    if (sizeSel) sizeSel.addEventListener('change', () => {{ pageSize = Math.max(1, parseInt(sizeSel.value || '6', 10)); pageIndex = 0; renderPagedResults(res); }});
+  }}
+
+  async function populateYears() {{
+    const initialYear = String(initial.year || '').trim();
+    const current = (new Date()).getFullYear();
+    const fallbackYears = [];
+    for (let y = current; y >= 2010; y--) fallbackYears.push(String(y));
+
+    yearEl.innerHTML = "<option value=''>any</option>";
+    try {{
+      const info = await ccindexMcp.callTool('cc_collinfo_list', {{}});
+      const years = new Set();
+      for (const it of (info.collections || [])) {{
+        const id = String(it.id || '');
+        const m = id.match(/CC-MAIN-([0-9]{{4}})-/);
+        if (m && m[1]) years.add(m[1]);
+      }}
+      const sorted = Array.from(years).sort().reverse();
+      const use = sorted.length ? sorted : fallbackYears;
+      for (const y of use) {{
+        const o = document.createElement('option');
+        o.value = String(y);
+        o.textContent = String(y);
+        yearEl.appendChild(o);
+      }}
+    }} catch (e) {{
+      for (const y of fallbackYears) {{
+        const o = document.createElement('option');
+        o.value = String(y);
+        o.textContent = String(y);
+        yearEl.appendChild(o);
+      }}
+    }}
+    if (initialYear) yearEl.value = initialYear;
+  }}
+
+  function rerenderWithFilters() {{
+    if (!lastResponse) return;
+    renderPagedResults(lastResponse);
+  }}
+
   async function runDiscover() {{
     const q = document.getElementById('dq').value;
-    const year = document.getElementById('dyear').value;
+    const year = yearEl.value;
     const count = parseInt(document.getElementById('dcount').value || '8', 10);
     const parquetRoot = document.getElementById('dparquet_root').value;
 
@@ -2515,18 +2941,24 @@ def create_app(master_db: Path) -> Any:
 
       const elapsed = (typeof res.elapsed_s === 'number') ? res.elapsed_s.toFixed(2) : String(res.elapsed_s ?? '');
       statusEl.innerHTML = `<span class='badge ok'>ok</span> elapsed_s=<span class='code'>${{esc(elapsed)}}</span> results=<span class='code'>${{esc((res.results||[]).length)}}</span>`;
-      resultsEl.innerHTML = render(res);
-      resultsEl.style.display = 'block';
+      lastResponse = res;
+      pageIndex = 0;
+      renderPagedResults(res);
     }} catch (e) {{
       statusEl.innerHTML = `<span class='badge err'>error</span> <span class='code'>${{esc(e.message || e)}}</span>`;
       resultsEl.style.display = 'none';
     }}
   }}
 
+  statusFilterEl.addEventListener('change', () => rerenderWithFilters());
+  mimeFilterEl.addEventListener('change', () => rerenderWithFilters());
+
   form.addEventListener('submit', (ev) => {{
     ev.preventDefault();
     runDiscover();
   }});
+
+  await populateYears();
 
   if ((initial.q || '').trim()) {{
     runDiscover();
