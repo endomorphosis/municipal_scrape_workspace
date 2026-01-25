@@ -121,6 +121,7 @@ def sort_parquet_file(
     output_file: Path,
     memory_limit_gb: float = 4.0,
     temp_directory: Optional[Path] = None,
+    row_group_size: Optional[int] = None,
 ) -> bool:
     """Sort a parquet file by host_rev, url, ts using DuckDB."""
 
@@ -137,14 +138,24 @@ def sort_parquet_file(
         # DuckDB parameter binding inside COPY/TO can be surprising; use escaped literals.
         in_path = str(input_file).replace("'", "''")
         out_path = str(output_file).replace("'", "''")
+        copy_opts = ["FORMAT 'parquet'", "COMPRESSION 'zstd'"]
+        if row_group_size is not None:
+            try:
+                rgs = int(row_group_size)
+                if rgs > 0:
+                    copy_opts.append(f"ROW_GROUP_SIZE {rgs}")
+            except Exception:
+                pass
+        opt_sql = ", ".join(copy_opts)
+
         con.execute(
             """
             COPY (
                 SELECT * FROM read_parquet('{in_path}')
                 ORDER BY host_rev, url, ts
             )
-            TO '{out_path}' (FORMAT 'parquet', COMPRESSION 'zstd')
-            """.format(in_path=in_path, out_path=out_path)
+            TO '{out_path}' ({opt_sql})
+            """.format(in_path=in_path, out_path=out_path, opt_sql=opt_sql)
         )
         con.close()
         return True
@@ -195,14 +206,17 @@ def check_single_file(pq_file: Path, parquet_root: Path, verify_only: bool) -> T
         return ("error", pq_file, False, str(e))
 
 
-def sort_and_mark_one(args: Tuple[str, float, str]) -> Tuple[str, bool, str, str]:
-    """Sort one parquet file and mark it as *.sorted.parquet.
+def sort_and_mark_one(args: Tuple[str, float, str, Optional[int], str]) -> Tuple[str, bool, str, str]:
+    """Sort or rewrite one parquet file.
 
-    Args tuple: (unsorted_file_path, memory_per_sort_gb, temp_root)
+    Args tuple: (src_path, memory_per_sort_gb, temp_root, row_group_size, mode)
+        - mode='sort': sort unsorted file and write a new *.sorted.parquet next to it
+        - mode='rewrite': rewrite an already-sorted *.sorted.parquet in-place (keeps name)
+
     Returns: (source_path, success, message, output_path)
     """
 
-    src_path, memory_per_sort_gb, temp_root = args
+    src_path, memory_per_sort_gb, temp_root, row_group_size, mode = args
     src = Path(src_path)
     tmp_root = Path(temp_root)
     work_dir: Optional[Path] = None
@@ -219,7 +233,39 @@ def sort_and_mark_one(args: Tuple[str, float, str]) -> Tuple[str, bool, str, str
         duckdb_temp_dir.mkdir(parents=True, exist_ok=True)
 
         sorted_tmp = work_dir / f"{src.name}.tmp.parquet"
-        if not sort_parquet_file(src, sorted_tmp, memory_per_sort_gb, temp_directory=duckdb_temp_dir):
+
+        if str(mode) == "rewrite":
+            if not src.name.endswith(".sorted.parquet"):
+                return str(src), False, "rewrite requested but source is not *.sorted.parquet", ""
+
+            if not sort_parquet_file(
+                src,
+                sorted_tmp,
+                memory_per_sort_gb,
+                temp_directory=duckdb_temp_dir,
+                row_group_size=row_group_size,
+            ):
+                return str(src), False, "rewrite failed", ""
+
+            ok, reason = is_sorted_by_content(sorted_tmp)
+            if not ok:
+                try:
+                    sorted_tmp.unlink()
+                except Exception:
+                    pass
+                return str(src), False, f"rewrite verification failed: {reason}", ""
+
+            sorted_tmp.replace(src)
+            return str(src), True, "rewritten", str(src)
+
+        # Default: sort an unsorted file and produce a sorted sibling.
+        if not sort_parquet_file(
+            src,
+            sorted_tmp,
+            memory_per_sort_gb,
+            temp_directory=duckdb_temp_dir,
+            row_group_size=row_group_size,
+        ):
             return str(src), False, "sort failed", ""
 
         ok, reason = is_sorted_by_content(sorted_tmp)
@@ -242,26 +288,10 @@ def sort_and_mark_one(args: Tuple[str, float, str]) -> Tuple[str, bool, str, str
                 src.unlink()
             except Exception:
                 pass
-            if work_dir is not None:
-                shutil.rmtree(work_dir, ignore_errors=True)
-            return str(src), True, "sorted output already existed; removed duplicate", str(out)
+            return str(src), True, "already sorted (output existed)", str(out)
 
-        try:
-            sorted_tmp.replace(out)
-        except OSError:
-            shutil.move(str(sorted_tmp), str(out))
-
-        try:
-            src.unlink()
-        except Exception:
-            pass
-
-        if work_dir is not None:
-            shutil.rmtree(work_dir, ignore_errors=True)
-        if duckdb_temp_dir is not None:
-            shutil.rmtree(duckdb_temp_dir, ignore_errors=True)
-
-        return str(src), True, "sorted + marked", str(out)
+        sorted_tmp.replace(out)
+        return str(src), True, "sorted", str(out)
 
     except Exception as e:
         try:
@@ -285,6 +315,19 @@ def main() -> int:
             "Restrict processing to specific shard(s). Accepts base names like "
             "'cdx-00257', 'cdx-00257.gz', 'cdx-00257.gz.parquet'. Can be repeated."
         ),
+    )
+    ap.add_argument(
+        "--row-group-size",
+        type=int,
+        default=None,
+        help="Optional Parquet row group size in rows when rewriting sorted shards (default: DuckDB default)",
+    )
+
+    ap.add_argument(
+        "--rewrite-sorted",
+        action="store_true",
+        default=False,
+        help="Also rewrite already-sorted *.sorted.parquet files (keeps name) to apply row-group-size / normalization",
     )
     ap.add_argument("--sort-unsorted", action="store_true", help="Sort any unsorted files found")
     ap.add_argument("--verify-only", action="store_true", help="Only verify, don't mark or sort")
@@ -434,7 +477,7 @@ def main() -> int:
     print()
 
     failed_count = 0
-    if unsorted_files and args.sort_unsorted and not args.verify_only:
+    if (unsorted_files or args.rewrite_sorted) and args.sort_unsorted and not args.verify_only:
         print("=" * 80)
         print("SORTING UNSORTED FILES")
         print("=" * 80)
@@ -445,6 +488,13 @@ def main() -> int:
         sort_workers = max(1, int(args.sort_workers))
         temp_root = Path(args.temp_dir).expanduser().resolve() if args.temp_dir else Path(tempfile.gettempdir())
         temp_root.mkdir(parents=True, exist_ok=True)
+
+        rewrite_files: List[Path] = []
+        if args.rewrite_sorted:
+            # Only rewrite already-marked sorted files.
+            rewrite_files = list(already_marked)
+            if rewrite_files:
+                print(f"Rewrite enabled: will rewrite {len(rewrite_files)} already-sorted file(s)")
 
         def _looks_like_pool_crash(exc: BaseException) -> bool:
             msg = str(exc)
@@ -480,8 +530,12 @@ def main() -> int:
             if not files:
                 return 0, [], False
 
-            print(f"Sorting {len(files)} file(s) with {pass_workers} worker(s)")
-            work_items = [(str(p), float(args.memory_per_sort), str(temp_root)) for p in files]
+            print(f"Processing {len(files)} file(s) with {pass_workers} worker(s)")
+            # Encode per-file mode.
+            work_items = []
+            for p in files:
+                mode = "rewrite" if (args.rewrite_sorted and p.name.endswith(".sorted.parquet")) else "sort"
+                work_items.append((str(p), float(args.memory_per_sort), str(temp_root), args.row_group_size, mode))
 
             ok_local = 0
             failed_local: List[Path] = []
@@ -551,7 +605,7 @@ def main() -> int:
                             _src_path, ok, msg, out_path = fut.result()
                             if ok and out_path:
                                 ok_local += 1
-                                print(f"✅ [{done}/{len(files)}] {Path(src).name} -> {Path(out_path).name}")
+                                print(f"✅ [{done}/{len(files)}] {Path(src).name} -> {Path(out_path).name} ({msg})")
                             else:
                                 failed_local.append(Path(src))
                                 print(f"❌ [{done}/{len(files)}] {Path(src).name}: {msg}")
@@ -578,8 +632,9 @@ def main() -> int:
             return ok_local, uniq_failed, pool_crashed
 
         # Pass 1: run at full requested concurrency.
+        files_to_process = list(unsorted_files) + list(rewrite_files)
         ok1, failed1, crashed1 = _run_sort_pass(
-            unsorted_files,
+            files_to_process,
             sort_workers,
             initial_inflight=sort_workers,
             ramp_step_seconds=0.0,

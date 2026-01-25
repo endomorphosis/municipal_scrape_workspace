@@ -48,6 +48,53 @@ def _domain_pointer_parquet_root() -> Path:
     return Path((os.environ.get("CC_DOMAIN_POINTER_PARQUET_ROOT") or "/storage/ccindex_parquet/cc_pointers_by_collection")).expanduser().resolve()
 
 
+def _rowgroup_slice_index_dir() -> Path:
+    """Directory containing per-collection rowgroup slice index DBs.
+
+    Expected layout:
+      <dir>/<collection>.domain_rowgroups.duckdb
+    """
+
+    raw = (
+        os.environ.get("CC_DOMAIN_ROWGROUP_INDEX_DIR")
+        or os.environ.get("BRAVE_RESOLVE_ROWGROUP_INDEX_DIR")
+        or "/storage/ccindex_duckdb/cc_domain_rowgroups_by_collection"
+    )
+    return Path(str(raw)).expanduser().resolve()
+
+
+@lru_cache(maxsize=512)
+def _rowgroup_index_db_for_collection(collection: str) -> Optional[Path]:
+    """Best-effort locate the rowgroup slice index DB for a collection."""
+
+    env_db = (os.environ.get("BRAVE_RESOLVE_ROWGROUP_INDEX_DB") or os.environ.get("CC_DOMAIN_ROWGROUP_INDEX_DB") or "").strip()
+    if env_db:
+        try:
+            p = Path(env_db).expanduser().resolve()
+            return p if p.exists() and p.is_file() else None
+        except Exception:
+            return None
+
+    d = _rowgroup_slice_index_dir()
+    try:
+        if not d.exists():
+            return None
+    except Exception:
+        return None
+
+    for cand in [
+        d / f"{collection}.domain_rowgroups.duckdb",
+        d / f"{collection}.rowgroups.duckdb",
+        d / f"{collection}.duckdb",
+    ]:
+        try:
+            if cand.exists() and cand.is_file():
+                return cand.resolve()
+        except Exception:
+            continue
+    return None
+
+
 @lru_cache(maxsize=8)
 def _cc_pointers_duckdb_paths() -> List[Path]:
     """Return best-effort DuckDB paths that contain a URL-level `cc_pointers` table.
@@ -1223,6 +1270,273 @@ def resolve_urls_to_ccindex(
             union_by_name = union_by_name_env not in {"0", "false", "no", "off"}
             union_by_name_sql = "true" if union_by_name else "false"
 
+            # Optional fast path: use a domain->rowgroup slice index (cc_domain_rowgroups)
+            # to read only relevant rowgroups via PyArrow.
+            rg_mode = (os.environ.get("BRAVE_RESOLVE_ROWGROUP_SLICE_MODE") or "off").strip().lower()
+            if rg_mode not in {"auto", "on", "off"}:
+                rg_mode = "off"
+
+            # If enabled, try to use the per-collection rowgroup slice index DB.
+            # In prod, these are expected under /storage/ccindex_duckdb/cc_domain_rowgroups_by_collection.
+
+            def _resolve_with_rowgroup_slice_for_collection(
+                *,
+                coll: str,
+                host_revs_for_domain: Sequence[str],
+                variant_to_requested: Dict[str, List[str]],
+                want_cols: Sequence[str],
+            ) -> tuple[int, int]:
+                """Try to satisfy URL matches for this collection using cc_domain_rowgroups.
+
+                Returns: (parquet_files_opened, rowgroups_read)
+                """
+
+                nonlocal rows_returned
+                nonlocal parquet_files_scanned
+                nonlocal collections_scanned
+
+                if not host_revs_for_domain:
+                    return (0, 0)
+                if not variant_to_requested:
+                    return (0, 0)
+
+                dbp = _rowgroup_index_db_for_collection(str(coll))
+                if dbp is None:
+                    return (0, 0)
+
+                # Import lazily so this path has zero overhead unless enabled.
+                try:
+                    import pyarrow as pa  # type: ignore
+                    import pyarrow.compute as pc  # type: ignore
+                    import pyarrow.parquet as pq  # type: ignore
+                except Exception:
+                    return (0, 0)
+
+                con_rg = duckdb.connect(str(dbp), read_only=True)
+                try:
+                    if not _duckdb_has_table(con_rg, "cc_domain_rowgroups"):
+                        return (0, 0)
+
+                    cols_rg = _duckdb_table_columns(con_rg, "cc_domain_rowgroups")
+
+                    where_parts: List[str] = []
+                    params: List[object] = []
+
+                    if "collection" in cols_rg:
+                        where_parts.append("collection = ?")
+                        params.append(str(coll))
+
+                    if "host_rev" not in cols_rg:
+                        return (0, 0)
+
+                    hr_placeholders = ",".join(["?"] * len(host_revs_for_domain))
+                    where_parts.append(f"host_rev IN ({hr_placeholders})")
+                    params.extend(list(host_revs_for_domain))
+
+                    if "row_group" not in cols_rg or "dom_rg_row_start" not in cols_rg or "dom_rg_row_end" not in cols_rg:
+                        return (0, 0)
+
+                    if "source_path" not in cols_rg and "parquet_relpath" not in cols_rg:
+                        return (0, 0)
+
+                    where_sql = " AND ".join(where_parts) if where_parts else "1=1"
+                    # Fetch both paths (when available) so we can fall back if one doesn't resolve.
+                    sel_source = "source_path" if "source_path" in cols_rg else "NULL"
+                    sel_rel = "parquet_relpath" if "parquet_relpath" in cols_rg else "NULL"
+
+                    seg_rows = con_rg.execute(
+                        f"""
+                        SELECT {sel_source} AS source_path, {sel_rel} AS parquet_relpath,
+                               row_group, dom_rg_row_start, dom_rg_row_end
+                        FROM cc_domain_rowgroups
+                        WHERE {where_sql}
+                        ORDER BY source_path, parquet_relpath, row_group, dom_rg_row_start
+                        """,
+                        params,
+                    ).fetchall()
+
+                    if not seg_rows:
+                        return (0, 0)
+
+                finally:
+                    try:
+                        con_rg.close()
+                    except Exception:
+                        pass
+
+                parquet_dir = get_collection_parquet_dir(parquet_root, coll)
+                variant_urls = list(variant_to_requested.keys())
+                if not variant_urls:
+                    return (0, 0)
+                variant_arr = pa.array(variant_urls)
+
+                opened_files = 0
+                rowgroups_read = 0
+                counted_collection = False
+                pf_cache: Dict[str, object] = {}
+                schema_cols_cache: Dict[str, set[str]] = {}
+
+                for source_path_raw, parquet_rel_raw, row_group, dom_rg_start, dom_rg_end in seg_rows:
+                    if all(per_url_counts.get(u, 0) >= int(per_url_limit) for u in dom_urls):
+                        break
+
+                    pq_path: Optional[Path] = None
+                    sp = str(source_path_raw or "").strip()
+                    rel = str(parquet_rel_raw or "").strip()
+
+                    if sp:
+                        try:
+                            cand = Path(sp).expanduser().resolve()
+                            if cand.exists():
+                                pq_path = cand
+                        except Exception:
+                            pq_path = None
+
+                    if pq_path is None and rel:
+                        try:
+                            cand = (parquet_dir / rel).resolve()
+                            if cand.exists():
+                                pq_path = cand
+                        except Exception:
+                            pq_path = None
+
+                    if pq_path is None:
+                        continue
+
+                    ps = str(pq_path)
+                    pf = pf_cache.get(ps)
+                    if pf is None:
+                        try:
+                            pf = pq.ParquetFile(ps)
+                        except Exception:
+                            continue
+                        pf_cache[ps] = pf
+                        opened_files += 1
+                        parquet_files_scanned += 1
+
+                        # Count the collection once when we successfully open the first shard.
+                        if not counted_collection:
+                            collections_scanned += 1
+                            counted_collection = True
+
+                        try:
+                            schema_cols_cache[ps] = {str(n) for n in pf.schema.names}
+                        except Exception:
+                            schema_cols_cache[ps] = set()
+
+                    avail = schema_cols_cache.get(ps) or set()
+                    cols_to_read = [c for c in want_cols if c in avail]
+                    if "url" not in cols_to_read:
+                        continue
+
+                    try:
+                        rg = int(row_group)
+                        s0 = int(dom_rg_start)
+                        s1 = int(dom_rg_end)
+                    except Exception:
+                        continue
+                    if s1 <= s0:
+                        continue
+
+                    try:
+                        t_rg = pf.read_row_group(rg, columns=cols_to_read)
+                        rowgroups_read += 1
+                    except Exception:
+                        continue
+
+                    try:
+                        t_rg = t_rg.slice(s0, s1 - s0)
+                    except Exception:
+                        continue
+
+                    try:
+                        url_col = t_rg.column(t_rg.schema.get_field_index("url"))
+                        mask = pc.is_in(url_col, value_set=variant_arr)
+                        t_hit = t_rg.filter(mask)
+                    except Exception:
+                        continue
+
+                    if t_hit.num_rows <= 0:
+                        continue
+
+                    # Materialize only the URL column to drive mapping; other columns are pulled by index.
+                    try:
+                        hit_urls = t_hit.column(t_hit.schema.get_field_index("url")).to_pylist()
+                    except Exception:
+                        continue
+
+                    # Derive shard_file from parquet filename.
+                    try:
+                        name = pq_path.name
+                        suf = ".sorted.parquet"
+                        shard_file = name[: -len(suf)] if name.endswith(suf) else name
+                        shard_file = shard_file or None
+                    except Exception:
+                        shard_file = None
+
+                    # Pull remaining columns once; if missing, treat as NULL.
+                    def _col_pylist(colname: str) -> Optional[List[object]]:
+                        if colname not in avail or colname not in {f.name for f in t_hit.schema}:
+                            return None
+                        try:
+                            return t_hit.column(t_hit.schema.get_field_index(colname)).to_pylist()
+                        except Exception:
+                            return None
+
+                    ts_list = _col_pylist("ts")
+                    status_list = _col_pylist("status")
+                    mime_list = _col_pylist("mime")
+                    digest_list = _col_pylist("digest")
+                    warc_fn_list = _col_pylist("warc_filename")
+                    warc_off_list = _col_pylist("warc_offset")
+                    warc_len_list = _col_pylist("warc_length")
+
+                    for j, hit_url in enumerate(hit_urls):
+                        if not hit_url:
+                            continue
+                        requested_list = variant_to_requested.get(str(hit_url))
+                        if not requested_list:
+                            continue
+
+                        rec = {
+                            "collection": str(coll),
+                            "shard_file": shard_file,
+                            "url": str(hit_url),
+                            "timestamp": (ts_list[j] if ts_list is not None and j < len(ts_list) else None),
+                            "status": (
+                                int(status_list[j])
+                                if status_list is not None and j < len(status_list) and status_list[j] is not None
+                                else None
+                            ),
+                            "mime": (mime_list[j] if mime_list is not None and j < len(mime_list) else None),
+                            "digest": (digest_list[j] if digest_list is not None and j < len(digest_list) else None),
+                            "warc_filename": (
+                                warc_fn_list[j] if warc_fn_list is not None and j < len(warc_fn_list) else None
+                            ),
+                            "warc_offset": (
+                                int(warc_off_list[j])
+                                if warc_off_list is not None and j < len(warc_off_list) and warc_off_list[j] is not None
+                                else None
+                            ),
+                            "warc_length": (
+                                int(warc_len_list[j])
+                                if warc_len_list is not None and j < len(warc_len_list) and warc_len_list[j] is not None
+                                else None
+                            ),
+                            "parquet_path": str(pq_path),
+                        }
+
+                        for requested_url in requested_list:
+                            if requested_url not in matches:
+                                continue
+                            if per_url_counts.get(requested_url, 0) >= int(per_url_limit):
+                                continue
+                            matches[requested_url].append(rec)
+                            per_url_counts[requested_url] = per_url_counts.get(requested_url, 0) + 1
+                            rows_returned += 1
+
+                return (opened_files, rowgroups_read)
+
             try:
                 batch_sz = int((os.environ.get("BRAVE_RESOLVE_PARQUET_BATCH") or "16").strip() or "16")
             except Exception:
@@ -1607,6 +1921,40 @@ def resolve_urls_to_ccindex(
                 host_revs = [r for r in sorted(host_revs_set) if r]
             except Exception:
                 host_revs = [host_rev_prefix] if host_rev_prefix else []
+
+            # If enabled, try the rowgroup-slice approach before any Parquet full scans.
+            # This avoids DuckDB read_parquet filtering when we can directly read the relevant rowgroups.
+            rg_enabled = rg_mode == "on" or (rg_mode == "auto" and (_rowgroup_slice_index_dir().exists() or bool(os.environ.get("BRAVE_RESOLVE_ROWGROUP_INDEX_DB") or "")))
+            if rg_enabled and host_revs and not all(per_url_counts.get(u, 0) >= int(per_url_limit) for u in dom_urls):
+                try:
+                    variant_to_requested: Dict[str, List[str]] = {}
+                    for v, req in variant_rows:
+                        variant_to_requested.setdefault(str(v), []).append(str(req))
+
+                    want_cols = [
+                        "url",
+                        "ts",
+                        "status",
+                        "mime",
+                        "digest",
+                        "warc_filename",
+                        "warc_offset",
+                        "warc_length",
+                    ]
+
+                    # Scan collections newest-first; stop as soon as all URLs are satisfied.
+                    for cref in collections:
+                        if all(per_url_counts.get(u, 0) >= int(per_url_limit) for u in dom_urls):
+                            break
+                        _resolve_with_rowgroup_slice_for_collection(
+                            coll=str(cref.collection),
+                            host_revs_for_domain=host_revs,
+                            variant_to_requested=variant_to_requested,
+                            want_cols=want_cols,
+                        )
+                except Exception:
+                    # Fall back silently to existing Parquet scan strategies.
+                    pass
 
             def _lookup_domain_pointers(
                 cref: CollectionRef,

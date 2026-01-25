@@ -75,7 +75,21 @@ class PipelineConfig:
     sort_workers: Optional[int] = None
     sort_memory_per_worker_gb: float = 4.0
     sort_temp_dir: Optional[Path] = None
+    sort_row_group_size: Optional[int] = None
+    rewrite_sorted_parquet: bool = False
+    rewrite_sorted_limit: Optional[int] = None
     force_reindex: bool = False
+
+    # Optional: build per-collection domain->rowgroup slice index DBs (cc_domain_rowgroups)
+    # used by the resolver to read only the relevant Parquet row groups.
+    build_domain_rowgroup_index: bool = True
+    domain_rowgroup_index_root: Optional[Path] = None
+    domain_rowgroup_index_batch_size: int = 1
+
+    # Optional: maintain global per-year domain lookup DBs (cc_domain_shards + cc_parquet_rowgroups)
+    # under a separate root (e.g. /storage/ccindex_duckdb/cc_domain_by_year_sorted).
+    update_domain_year_index: bool = False
+    domain_year_index_root: Optional[Path] = None
     
     def __post_init__(self):
         self.ccindex_root = Path(self.ccindex_root)
@@ -83,6 +97,12 @@ class PipelineConfig:
         self.duckdb_collection_root = Path(self.duckdb_collection_root)
         self.duckdb_year_root = Path(self.duckdb_year_root)
         self.duckdb_master_root = Path(self.duckdb_master_root)
+
+        if self.domain_year_index_root is not None:
+            self.domain_year_index_root = Path(self.domain_year_index_root)
+
+        if self.domain_rowgroup_index_root is not None:
+            self.domain_rowgroup_index_root = Path(self.domain_rowgroup_index_root)
     
     @classmethod
     def from_json(cls, path: Path) -> 'PipelineConfig':
@@ -516,6 +536,303 @@ class PipelineOrchestrator:
             return parts[2]
         return None
 
+    def _recommend_sort_row_group_size(self, parquet_dir: Path) -> Optional[int]:
+        """Recommend a Parquet row group size (rows) for sorted shard rewrites.
+
+        Goal: balance row-group pruning (smaller groups) with metadata/index size
+        and scan throughput (larger groups). We estimate rows-per-group by sampling
+        a representative Parquet shard's on-disk bytes/row and targeting a fixed
+        row-group byte budget.
+
+        This is a heuristic; callers may override via config/CLI.
+        """
+
+        try:
+            import pyarrow.parquet as pq  # local import
+        except Exception:
+            return None
+
+        # Prefer any already-sorted shard as the sample (it reflects the desired layout).
+        sorted_candidates: List[Path] = []
+        try:
+            sorted_candidates = sorted(parquet_dir.glob("cdx-*.gz.sorted.parquet"))
+        except Exception:
+            sorted_candidates = []
+
+        # Heuristic fallback controls.
+        try:
+            target_mb = int((os.environ.get("CC_SORT_ROW_GROUP_TARGET_MB") or "128").strip() or 128)
+        except Exception:
+            target_mb = 128
+        target_mb = max(16, min(512, int(target_mb)))
+        target_bytes = float(target_mb) * 1024.0 * 1024.0
+
+        def _bytes_per_row_for_file(p: Path) -> Optional[float]:
+            try:
+                st = p.stat()
+                size_b = float(st.st_size)
+                if size_b <= 0:
+                    return None
+                pf = pq.ParquetFile(p)
+                md = pf.metadata
+                if md is None:
+                    return None
+                rows_f = float(int(md.num_rows or 0))
+                if rows_f <= 0:
+                    return None
+                return max(1.0, size_b / rows_f)
+            except Exception:
+                return None
+
+        # (1) Domain-count optimizer path: use sampled host_rev run lengths from a sorted shard.
+        # We now prefer smaller row groups because the retrieval path reads only the relevant
+        # row groups and slices down to the exact domain range.
+        #
+        # Default strategy: choose a row_group_size near a high percentile of per-domain row
+        # counts so that most domains fit into a single row group (or only a few).
+        # Fallback strategy (opt-in): a simple walltime-ish cost model.
+        if sorted_candidates:
+            sample = sorted_candidates[0]
+            bytes_per_row = _bytes_per_row_for_file(sample)
+            if bytes_per_row is not None:
+                try:
+                    import duckdb
+
+                    sample_runs = int((os.environ.get("CC_SORT_ROW_GROUP_RUN_SAMPLES") or "20000").strip() or 20000)
+                except Exception:
+                    sample_runs = 20000
+                sample_runs = max(2000, min(200000, int(sample_runs)))
+
+                strategy = (os.environ.get("CC_SORT_ROW_GROUP_STRATEGY") or "domain_pct").strip().lower()
+                if strategy not in {"domain_pct", "walltime"}:
+                    strategy = "domain_pct"
+
+                # Candidate sizes (rows). Keep the set small + interpretable.
+                # Include smaller sizes since we slice rowgroups rather than scanning full files.
+                candidates = [10_000, 20_000, 30_000, 50_000, 75_000, 100_000, 150_000, 200_000, 300_000]
+
+                # Extract a sample of contiguous run lengths (domain row counts) from the sorted file.
+                # We operate in SQL to avoid materializing full host_rev columns in Python.
+                con = duckdb.connect(database=":memory:")
+                try:
+                    con.execute("PRAGMA threads=4")
+                    con.execute("PRAGMA preserve_insertion_order=true")
+
+                    # Compute run lengths by detecting host_rev boundaries.
+                    # NOTE: relying on file order from read_parquet; for our sorted shards this
+                    # should match the physical ordering from the sort stage.
+                    run_query = f"""
+                    WITH base AS (
+                        SELECT host_rev
+                        FROM read_parquet(?)
+                        WHERE host_rev IS NOT NULL
+                    ),
+                    numbered AS (
+                        SELECT host_rev, row_number() OVER () AS rn
+                        FROM base
+                    ),
+                    flagged AS (
+                        SELECT
+                            host_rev,
+                            rn,
+                            CASE WHEN host_rev = lag(host_rev) OVER (ORDER BY rn) THEN 0 ELSE 1 END AS is_new
+                        FROM numbered
+                    ),
+                    grouped AS (
+                        SELECT host_rev, rn, sum(is_new) OVER (ORDER BY rn) AS grp
+                        FROM flagged
+                    ),
+                    runs AS (
+                        SELECT grp, count(*)::BIGINT AS run_len
+                        FROM grouped
+                        GROUP BY grp
+                    )
+                    SELECT run_len
+                    FROM runs
+                    USING SAMPLE reservoir({sample_runs})
+                    REPEATABLE (42)
+                    """
+                    run_lens = [int(r[0]) for r in con.execute(run_query, [str(sample)]).fetchall() if r and r[0] is not None]
+                finally:
+                    try:
+                        con.close()
+                    except Exception:
+                        pass
+
+                if run_lens:
+                    import math
+
+                    run_lens_sorted = sorted(int(x) for x in run_lens if x is not None and int(x) > 0)
+                    if strategy == "domain_pct" and run_lens_sorted:
+                        try:
+                            pct = float((os.environ.get("CC_SORT_ROW_GROUP_DOMAIN_PCT") or "90").strip() or 90.0)
+                        except Exception:
+                            pct = 90.0
+                        pct = max(50.0, min(99.9, float(pct)))
+
+                        # Nearest-rank percentile.
+                        idx = int(math.ceil((pct / 100.0) * float(len(run_lens_sorted)))) - 1
+                        idx = max(0, min(len(run_lens_sorted) - 1, idx))
+                        target = int(run_lens_sorted[idx])
+
+                        # Clamp + round to stabilize.
+                        target = max(10_000, min(200_000, int(target)))
+                        target = int(math.ceil(float(target) / 5000.0) * 5000)
+                        target = max(10_000, min(200_000, int(target)))
+
+                        # Avoid ultra-tiny rowgroups (bytes-wise) even if domains are small.
+                        try:
+                            min_mb = float((os.environ.get("CC_SORT_ROW_GROUP_MIN_MB") or "8").strip() or 8.0)
+                        except Exception:
+                            min_mb = 8.0
+                        min_mb = max(1.0, min(64.0, float(min_mb)))
+                        min_rows_by_bytes = int((min_mb * 1024.0 * 1024.0) / max(1.0, float(bytes_per_row)))
+                        if target < min_rows_by_bytes:
+                            target = int(math.ceil(float(min_rows_by_bytes) / 5000.0) * 5000)
+                            target = max(10_000, min(200_000, int(target)))
+
+                        # Stay within candidate envelope.
+                        target = max(int(min(candidates)), min(int(max(candidates)), int(target)))
+
+                        p50 = run_lens_sorted[len(run_lens_sorted) // 2]
+                        p90_idx = int(math.ceil(0.90 * float(len(run_lens_sorted)))) - 1
+                        p99_idx = int(math.ceil(0.99 * float(len(run_lens_sorted)))) - 1
+                        p90 = run_lens_sorted[max(0, min(len(run_lens_sorted) - 1, p90_idx))]
+                        p99 = run_lens_sorted[max(0, min(len(run_lens_sorted) - 1, p99_idx))]
+
+                        logger.info(
+                            f"Auto row-group-size (domain pct): sample={sample.name} bytes/row≈{bytes_per_row:.2f} "
+                            f"runs={len(run_lens_sorted):,} p50={p50:,} p90={p90:,} p99={p99:,} "
+                            f"target_p{pct:g}≈{int(run_lens_sorted[idx]):,} => row_group_size≈{target:,} rows"
+                        )
+                        return int(target)
+
+                    # Walltime-ish cost model fallback (opt-in via CC_SORT_ROW_GROUP_STRATEGY=walltime).
+                    try:
+                        overhead_mb = float((os.environ.get("CC_SORT_ROW_GROUP_OVERHEAD_MB") or "2").strip() or 2.0)
+                    except Exception:
+                        overhead_mb = 2.0
+                    overhead_mb = max(0.0, min(64.0, float(overhead_mb)))
+                    overhead_bytes = float(overhead_mb) * 1024.0 * 1024.0
+
+                    def score(k: int) -> float:
+                        tot = 0.0
+                        for L in run_lens:
+                            groups = int(math.ceil(float(L) / float(k)))
+                            tot += float(groups) * (float(k) * float(bytes_per_row) + overhead_bytes)
+                        return tot / float(len(run_lens))
+
+                    best_k = None
+                    best_score = None
+                    for k in candidates:
+                        s = score(int(k))
+                        if best_score is None or s < best_score:
+                            best_score = s
+                            best_k = int(k)
+
+                    if best_k is not None:
+                        logger.info(
+                            f"Auto row-group-size (walltime model): sample={sample.name} bytes/row≈{bytes_per_row:.2f} "
+                            f"run_samples={len(run_lens):,} overhead≈{overhead_mb:.1f}MB => row_group_size≈{best_k:,} rows"
+                        )
+                        return int(best_k)
+
+        # (2) Fallback: choose rows targeting a fixed MB per row group using bytes/row.
+        # This is stable and reasonably performant when run-length sampling isn't available.
+        candidates_fallback: List[Path] = []
+        try:
+            candidates_fallback = sorted_candidates if sorted_candidates else sorted(parquet_dir.glob("cdx-*.gz.parquet"))
+        except Exception:
+            candidates_fallback = sorted_candidates
+        if not candidates_fallback:
+            return None
+
+        sample = candidates_fallback[0]
+        bytes_per_row = _bytes_per_row_for_file(sample)
+        if bytes_per_row is None:
+            return None
+        est_rows = int(target_bytes / float(bytes_per_row))
+        est_rows = max(50_000, min(1_000_000, int(est_rows)))
+        est_rows = int(round(est_rows / 10_000.0) * 10_000)
+        est_rows = max(50_000, min(1_000_000, int(est_rows)))
+        logger.info(
+            f"Auto row-group-size (bytes target): sample={sample.name} bytes/row≈{bytes_per_row:.2f} "
+            f"target≈{target_mb}MB => row_group_size≈{est_rows:,} rows"
+        )
+        return int(est_rows)
+
+    def _update_domain_year_index(self, year: str) -> bool:
+        """Incrementally build/update the global per-year domain+rowgroup index.
+
+        Uses build_index_from_parquet.py to index Parquet metadata (domains + rowgroups).
+        This is designed to be called repeatedly; it is idempotent and skips unchanged files.
+        """
+
+        if not bool(getattr(self.config, "update_domain_year_index", False)):
+            return True
+
+        root = getattr(self.config, "domain_year_index_root", None)
+        if root is None:
+            root = Path("/storage/ccindex_duckdb/cc_domain_by_year_sorted")
+        root = Path(root).expanduser().resolve()
+        root.mkdir(parents=True, exist_ok=True)
+
+        build_script = self._resolve_ccindex_helper_script("build_index_from_parquet.py")
+        if not build_script.exists():
+            logger.error(f"Domain-year index builder not found: {build_script}")
+            return False
+
+        out_db = (root / f"cc_pointers_{year}.duckdb").resolve()
+
+        # Candidate parquet roots to cover both canonical and back-compat layouts.
+        # We keep these narrow (per-year) to avoid scanning the entire parquet tree each time.
+        candidates = [
+            (self.config.parquet_root / "cc_pointers_by_collection" / str(year)).resolve(),
+            (self.config.parquet_root / "cc_pointers_by_year" / str(year)).resolve(),
+            (self.config.parquet_root / str(year)).resolve(),
+        ]
+
+        did_any = False
+        for pq_root in candidates:
+            try:
+                if not pq_root.exists():
+                    continue
+                # Skip empty roots quickly.
+                if not any(pq_root.rglob("*.parquet")):
+                    continue
+            except Exception:
+                continue
+
+            did_any = True
+            cmd = [
+                sys.executable,
+                "-u",
+                str(build_script),
+                "--parquet-root",
+                str(pq_root),
+                "--output-db",
+                str(out_db),
+                "--extract-rowgroups",
+                "--db-lock-retries",
+                "120",
+                "--db-lock-sleep-seconds",
+                "2.0",
+            ]
+            rc = self._run_subprocess_with_heartbeat(
+                cmd,
+                heartbeat_label=f"domain-year-index:{year}",
+            )
+            if rc != 0:
+                logger.error(f"Failed to update domain-year index for {year} from {pq_root} (exit {rc})")
+                return False
+
+        if not did_any:
+            logger.warning(f"Domain-year index update requested, but no parquet roots found for year {year}")
+            return True
+
+        logger.info(f"Updated domain-year index for {year}: {out_db}")
+        return True
+
     def _resolve_ccindex_helper_script(self, filename: str) -> Path:
         """Resolve a helper script shipped alongside this module.
 
@@ -602,7 +919,17 @@ class PipelineOrchestrator:
                 f"Proceeding despite low memory (within {tolerance:.1f} GB tolerance); performance may be reduced"
             )
         
-        for path in [self.config.ccindex_root, self.config.parquet_root, self.config.duckdb_collection_root]:
+        extra_roots: list[Path] = []
+        try:
+            if bool(getattr(self.config, "build_domain_rowgroup_index", False)):
+                rr = getattr(self.config, "domain_rowgroup_index_root", None)
+                if rr is None:
+                    rr = Path("/storage/ccindex_duckdb/cc_domain_rowgroups_by_collection")
+                extra_roots.append(Path(rr))
+        except Exception:
+            pass
+
+        for path in [self.config.ccindex_root, self.config.parquet_root, self.config.duckdb_collection_root, *extra_roots]:
             free_gb = self.get_free_space_gb(path)
             if free_gb < self.config.min_free_space_gb:
                 logger.warning(f"Low disk space at {path}: {free_gb:.1f} GB free, need {self.config.min_free_space_gb:.1f} GB")
@@ -711,8 +1038,13 @@ class PipelineOrchestrator:
         
         ccindex_dir = self.config.ccindex_root / collection
         
-        parquet_dir = self._get_collection_parquet_dir(collection)
+            try:
         parquet_dir.mkdir(parents=True, exist_ok=True)
+                def _marker_for_sorted(sorted_path: Path) -> Path:
+                    unsorted_candidate = sorted_path.with_name(
+                        sorted_path.name.replace(".gz.sorted.parquet", ".gz.parquet")
+                    )
+                    return unsorted_candidate.with_suffix(unsorted_candidate.suffix + ".empty")
 
         # If a prior run produced an empty *.sorted.parquet shard (0 rows) without
         # an explicit empty-marker, treat it as incomplete and force a reconvert.
@@ -906,7 +1238,7 @@ class PipelineOrchestrator:
                 )
                 continue
 
-            return False
+            if parquet_dir.exists():
 
         final_converted, expected = _count_converted_unique()
         if final_converted < expected:
@@ -1035,6 +1367,49 @@ class PipelineOrchestrator:
                 "--heartbeat-seconds",
                 str(int(getattr(self.config, "heartbeat_seconds", 30) or 30)),
             ]
+
+            if bool(getattr(self.config, "rewrite_sorted_parquet", False)):
+                cmd.append("--rewrite-sorted")
+
+                # Optionally restrict to a small subset of shards for a pilot run.
+                limit = getattr(self.config, "rewrite_sorted_limit", None)
+                if limit is not None:
+                    try:
+                        n = int(limit)
+                    except Exception:
+                        n = 0
+                    n = max(0, n)
+                    if n > 0:
+                        sorted_shards = sorted(parquet_dir.glob("cdx-*.gz.sorted.parquet"))
+                        if not sorted_shards:
+                            logger.warning(f"rewrite_sorted_limit={n} requested but no *.gz.sorted.parquet shards found")
+                        else:
+                            n = min(n, len(sorted_shards))
+
+                            # Choose a representative spread across shard numbers (deterministic).
+                            if n == 1:
+                                picks = [sorted_shards[len(sorted_shards) // 2]]
+                            else:
+                                idxs = [int(round(i * (len(sorted_shards) - 1) / (n - 1))) for i in range(n)]
+                                picks = [sorted_shards[i] for i in idxs]
+
+                            logger.info(
+                                f"Rewrite pilot: limiting rewrite to {len(picks)}/{len(sorted_shards)} sorted shard(s): "
+                                + ", ".join(p.name for p in picks)
+                            )
+                            for p in picks:
+                                cmd.extend(["--only", p.name])
+
+            row_group_size = getattr(self.config, "sort_row_group_size", None)
+            if row_group_size is None:
+                row_group_size = self._recommend_sort_row_group_size(parquet_dir)
+            if row_group_size is not None:
+                try:
+                    if int(row_group_size) > 0:
+                        logger.info(f"Using row_group_size={int(row_group_size):,} rows for {collection}")
+                        cmd.extend(["--row-group-size", str(int(row_group_size))])
+                except Exception:
+                    pass
             if sort_temp_dir is not None:
                 cmd.extend(["--temp-dir", str(sort_temp_dir)])
 
@@ -1151,6 +1526,17 @@ class PipelineOrchestrator:
                 "--heartbeat-seconds",
                 str(int(getattr(self.config, "heartbeat_seconds", 30) or 30)),
             ]
+
+            # Keep row-group sizing consistent with the main sort path.
+            row_group_size = getattr(self.config, "sort_row_group_size", None)
+            if row_group_size is None:
+                row_group_size = self._recommend_sort_row_group_size(parquet_dir)
+            if row_group_size is not None:
+                try:
+                    if int(row_group_size) > 0:
+                        cmd.extend(["--row-group-size", str(int(row_group_size))])
+                except Exception:
+                    pass
             if sort_temp_dir is not None:
                 cmd.extend(["--temp-dir", str(sort_temp_dir)])
             r = subprocess.run(cmd)
@@ -1539,6 +1925,13 @@ class PipelineOrchestrator:
                                 return True
                             
                             logger.info(f"  Index contains {row_count:,} entries")
+
+                            if 'cc_parquet_rowgroups' in tables:
+                                try:
+                                    rg_count = conn.execute("SELECT COUNT(*) FROM cc_parquet_rowgroups").fetchone()[0]
+                                    logger.info(f"  Rowgroup ranges: {rg_count:,}")
+                                except Exception as e:
+                                    logger.warning(f"  Failed to read cc_parquet_rowgroups stats: {e}")
                             
                             # Check first entry
                             first_domain = conn.execute(first_domain_query).fetchone()
@@ -1612,6 +2005,76 @@ class PipelineOrchestrator:
             if e.stderr:
                 logger.error(f"stderr: {e.stderr}")
             return False
+
+    def _domain_rowgroup_index_root(self) -> Path:
+        root = getattr(self.config, "domain_rowgroup_index_root", None)
+        if root is None:
+            root = Path("/storage/ccindex_duckdb/cc_domain_rowgroups_by_collection")
+        return Path(root).expanduser().resolve()
+
+    def _domain_rowgroup_index_path(self, collection: str) -> Path:
+        return (self._domain_rowgroup_index_root() / f"{collection}.domain_rowgroups.duckdb").resolve()
+
+    def _invalidate_domain_rowgroup_index(self, collection: str) -> None:
+        p = self._domain_rowgroup_index_path(collection)
+        try:
+            if p.exists():
+                p.unlink()
+        except Exception:
+            pass
+
+    def build_domain_rowgroup_index_for_collection(self, collection: str) -> bool:
+        """Build/update a per-collection domain->rowgroup slice index (cc_domain_rowgroups)."""
+
+        if not bool(getattr(self.config, "build_domain_rowgroup_index", True)):
+            return True
+
+        parquet_dir = self._get_collection_parquet_dir(collection)
+        if not parquet_dir.exists():
+            logger.error(f"Parquet directory does not exist: {parquet_dir}")
+            return False
+
+        out_root = self._domain_rowgroup_index_root()
+        out_root.mkdir(parents=True, exist_ok=True)
+        out_db = self._domain_rowgroup_index_path(collection)
+
+        build_script = self._resolve_ccindex_helper_script("build_domain_rowgroup_index.py")
+        if not build_script.exists():
+            logger.error(f"Rowgroup slice index builder not found: {build_script}")
+            return False
+
+        try:
+            batch_sz = int(getattr(self.config, "domain_rowgroup_index_batch_size", 1) or 1)
+        except Exception:
+            batch_sz = 1
+        batch_sz = max(1, min(32, int(batch_sz)))
+
+        cmd = [
+            sys.executable,
+            "-u",
+            str(build_script),
+            "--parquet-root",
+            str(parquet_dir),
+            "--output-db",
+            str(out_db),
+            "--batch-size",
+            str(batch_sz),
+        ]
+
+        rc = self._run_subprocess_with_heartbeat(
+            cmd,
+            heartbeat_label=f"rowgroup-slice-index:{collection}",
+        )
+        if rc != 0:
+            logger.error(f"Failed to build domain rowgroup index for {collection} (exit {rc})")
+            return False
+
+        try:
+            logger.info(f"Built domain rowgroup index for {collection}: {out_db} ({out_db.stat().st_size:,} bytes)")
+        except Exception:
+            logger.info(f"Built domain rowgroup index for {collection}: {out_db}")
+
+        return True
     
     def process_collection(self, collection: str) -> bool:
         """Process a single collection through all pipeline stages"""
@@ -1620,6 +2083,7 @@ class PipelineOrchestrator:
         if self.force_reindex:
             # Force Stage 4 to re-run even if the collection is otherwise complete.
             self._invalidate_duckdb_index(collection)
+            self._invalidate_domain_rowgroup_index(collection)
             status["duckdb_index_exists"] = False
             status["duckdb_index_sorted"] = False
             status["complete"] = False
@@ -1675,18 +2139,41 @@ class PipelineOrchestrator:
         else:
             logger.info(f"  ✓ Stage 2: Conversions complete ({status['parquet_count']}/{status['parquet_expected']})")
         
-        # Stage 3: Sort
-        if status['sorted_count'] < status['parquet_expected']:
-            logger.info(f"  Stage 3: Sorting {status['parquet_expected'] - status['sorted_count']} parquet files...")
+        # Stage 3: Sort (optionally rewrite already-sorted shards to apply an optimized row-group-size)
+        force_sort = bool(getattr(self.config, "rewrite_sorted_parquet", False))
+        if force_sort or status['sorted_count'] < status['parquet_expected']:
+            if force_sort:
+                logger.info("  Stage 3: Rewriting sorted parquet files (row-group optimization enabled)...")
+            else:
+                logger.info(f"  Stage 3: Sorting {status['parquet_expected'] - status['sorted_count']} parquet files...")
             if not self.sort_collection(collection):
                 return False
             status = self.validator.validate_collection(collection)
             logger.info(f"  ✓ Sorted: {status['sorted_count']}/{status['parquet_expected']}")
         else:
             logger.info(f"  ✓ Stage 3: Sorting complete ({status['sorted_count']}/{status['parquet_expected']})")
+
+        # Stage 3.5: Update global per-year domain+rowgroup metadata index (optional)
+        year = self._collection_year(collection)
+        if year and bool(getattr(self.config, "update_domain_year_index", False)):
+            logger.info(f"  Stage 3.5: Updating domain-year index for {year}...")
+            if not self._update_domain_year_index(year):
+                return False
+            logger.info(f"  ✓ Stage 3.5: Domain-year index updated for {year}")
         
         # Stage 4: Index
-        if not status['duckdb_index_exists'] or not status['duckdb_index_sorted']:
+        # If we rewrote sorted parquet row groups, the rowgroup metadata must be rebuilt.
+        force_index = bool(getattr(self.config, "force_reindex", False)) or bool(getattr(self.config, "rewrite_sorted_parquet", False))
+        if force_index:
+            # Full rewrite implies full metadata rewrite; pilot rewrite should prefer incremental index update.
+            limit = getattr(self.config, "rewrite_sorted_limit", None)
+            if bool(getattr(self.config, "rewrite_sorted_parquet", False)) and limit is not None:
+                logger.info(f"  Stage 4: Incremental index refresh (pilot rewrite; limit={limit})")
+            else:
+                self._invalidate_duckdb_index(collection)
+                self._invalidate_domain_rowgroup_index(collection)
+
+        if force_index or (not status['duckdb_index_exists'] or not status['duckdb_index_sorted']):
             logger.info(f"  Stage 4: Building DuckDB index (exists: {status['duckdb_index_exists']}, sorted: {status['duckdb_index_sorted']})...")
             if not self.build_index_for_collection(collection):
                 return False
@@ -1695,6 +2182,13 @@ class PipelineOrchestrator:
             logger.info(f"  ✓ Index built and verified: exists={status['duckdb_index_exists']}, sorted={status['duckdb_index_sorted']}")
         else:
             logger.info(f"  ✓ Stage 4: Index complete and sorted")
+
+        # Stage 4.5: Build per-collection domain->rowgroup slice index (optional)
+        if bool(getattr(self.config, "build_domain_rowgroup_index", True)):
+            logger.info("  Stage 4.5: Building domain rowgroup slice index (cc_domain_rowgroups)...")
+            if not self.build_domain_rowgroup_index_for_collection(collection):
+                return False
+            logger.info("  ✓ Stage 4.5: Domain rowgroup slice index built")
         
         # Final re-validation gate: only claim completion if validator agrees.
         status = self.validator.validate_collection(collection)
@@ -2004,6 +2498,72 @@ def main() -> int:
         default=None,
         help="Temp directory for DuckDB sort spill (default: system temp)",
     )
+
+    parser.add_argument(
+        "--sort-row-group-size",
+        type=int,
+        default=None,
+        help="Optional Parquet row group size in rows when rewriting sorted shards (default: DuckDB default)",
+    )
+
+    parser.add_argument(
+        "--rewrite-sorted-parquet",
+        action="store_true",
+        default=False,
+        help="Rewrite already-sorted *.sorted.parquet shards to apply optimized row-group sizing; implies index rebuild",
+    )
+    parser.add_argument(
+        "--rewrite-sorted-limit",
+        type=int,
+        default=None,
+        help="When --rewrite-sorted-parquet is set, only rewrite N representative sorted shards (pilot mode)",
+    )
+
+    parser.add_argument(
+        "--update-domain-year-index",
+        action="store_true",
+        default=False,
+        help=(
+            "After sorting each collection, incrementally update the per-year global domain+rowgroup index "
+            "(cc_domain_shards + cc_parquet_rowgroups) using build_index_from_parquet.py"
+        ),
+    )
+    parser.add_argument(
+        "--domain-year-index-root",
+        type=Path,
+        default=None,
+        help="Output directory for per-year domain index DBs (default: /storage/ccindex_duckdb/cc_domain_by_year_sorted)",
+    )
+
+    parser.add_argument(
+        "--build-domain-rowgroup-index",
+        dest="build_domain_rowgroup_index",
+        action="store_true",
+        default=None,
+        help=(
+            "Build per-collection domain->rowgroup slice index DBs (cc_domain_rowgroups) used by the resolver "
+            "to read only relevant Parquet row groups (default: enabled)"
+        ),
+    )
+    parser.add_argument(
+        "--no-build-domain-rowgroup-index",
+        dest="build_domain_rowgroup_index",
+        action="store_false",
+        default=None,
+        help="Disable building the per-collection domain rowgroup slice index",
+    )
+    parser.add_argument(
+        "--domain-rowgroup-index-root",
+        type=Path,
+        default=None,
+        help="Output directory for per-collection domain rowgroup slice DBs (default: /storage/ccindex_duckdb/cc_domain_rowgroups_by_collection)",
+    )
+    parser.add_argument(
+        "--domain-rowgroup-index-batch-size",
+        type=int,
+        default=1,
+        help="Commit every N parquet files while building the rowgroup slice index (default: 1)",
+    )
     
     args = parser.parse_args()
     
@@ -2024,7 +2584,18 @@ def main() -> int:
     config.sort_workers = args.sort_workers
     config.sort_memory_per_worker_gb = float(args.sort_memory_per_worker_gb)
     config.sort_temp_dir = args.sort_temp_dir
+    config.sort_row_group_size = args.sort_row_group_size
+    config.rewrite_sorted_parquet = bool(getattr(args, "rewrite_sorted_parquet", False))
+    config.rewrite_sorted_limit = getattr(args, "rewrite_sorted_limit", None)
     config.force_reindex = bool(args.force_reindex)
+
+    config.update_domain_year_index = bool(getattr(args, "update_domain_year_index", False))
+    config.domain_year_index_root = getattr(args, "domain_year_index_root", None)
+
+    if getattr(args, "build_domain_rowgroup_index", None) is not None:
+        config.build_domain_rowgroup_index = bool(getattr(args, "build_domain_rowgroup_index"))
+    config.domain_rowgroup_index_root = getattr(args, "domain_rowgroup_index_root", None)
+    config.domain_rowgroup_index_batch_size = int(getattr(args, "domain_rowgroup_index_batch_size", 1) or 1)
 
     # Normalize/assign defaults for core behavior.
     config.max_workers = int(getattr(config, "max_workers", 0) or 0)
@@ -2067,6 +2638,20 @@ def main() -> int:
     logger.info(f"  sort_workers:           {config.sort_workers if config.sort_workers else config.max_workers}")
     logger.info(f"  sort_mem_per_worker_gb: {config.sort_memory_per_worker_gb}")
     logger.info(f"  sort_temp_dir:          {config.sort_temp_dir}")
+    logger.info(f"  sort_row_group_size:    {config.sort_row_group_size if config.sort_row_group_size is not None else 'auto'}")
+    logger.info(f"  rewrite_sorted_parquet: {config.rewrite_sorted_parquet}")
+    if config.rewrite_sorted_parquet:
+        logger.info(f"  rewrite_sorted_limit:   {config.rewrite_sorted_limit}")
+    logger.info(f"  update_domain_year_index:{config.update_domain_year_index}")
+    if config.update_domain_year_index:
+        logger.info(
+            f"  domain_year_index_root:  {config.domain_year_index_root or Path('/storage/ccindex_duckdb/cc_domain_by_year_sorted')}")
+    logger.info(f"  build_domain_rowgroup_index:{bool(getattr(config, 'build_domain_rowgroup_index', True))}")
+    if bool(getattr(config, 'build_domain_rowgroup_index', True)):
+        logger.info(
+            f"  domain_rowgroup_index_root: {getattr(config, 'domain_rowgroup_index_root', None) or Path('/storage/ccindex_duckdb/cc_domain_rowgroups_by_collection')}")
+        logger.info(
+            f"  domain_rowgroup_index_batch_size: {int(getattr(config, 'domain_rowgroup_index_batch_size', 1) or 1)}")
     logger.info("")
     
     orchestrator = PipelineOrchestrator(config)

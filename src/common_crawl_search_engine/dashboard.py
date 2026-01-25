@@ -534,7 +534,11 @@ def create_app(master_db: Path) -> Any:
               "heartbeat_seconds": {"type": ["integer", "null"]},
               "sort_workers": {"type": ["integer", "null"]},
               "sort_memory_per_worker_gb": {"type": ["number", "null"]},
-              "sort_temp_dir": {"type": ["string", "null"]}
+              "sort_temp_dir": {"type": ["string", "null"]},
+
+              "build_domain_rowgroup_index": {"type": ["boolean", "null"]},
+              "domain_rowgroup_index_root": {"type": ["string", "null"]},
+              "domain_rowgroup_index_batch_size": {"type": ["integer", "null"]}
             },
             "required": ["mode"],
           },
@@ -857,6 +861,10 @@ def create_app(master_db: Path) -> Any:
             sort_workers=(int(tool_args.get("sort_workers")) if tool_args.get("sort_workers") is not None else None),
             sort_memory_per_worker_gb=(float(tool_args.get("sort_memory_per_worker_gb")) if tool_args.get("sort_memory_per_worker_gb") is not None else None),
             sort_temp_dir=(str(tool_args.get("sort_temp_dir")) if tool_args.get("sort_temp_dir") is not None else None),
+
+            build_domain_rowgroup_index=(bool(tool_args.get("build_domain_rowgroup_index")) if tool_args.get("build_domain_rowgroup_index") is not None else None),
+            domain_rowgroup_index_root=(str(tool_args.get("domain_rowgroup_index_root")) if tool_args.get("domain_rowgroup_index_root") is not None else None),
+            domain_rowgroup_index_batch_size=(int(tool_args.get("domain_rowgroup_index_batch_size")) if tool_args.get("domain_rowgroup_index_batch_size") is not None else None),
           )
 
         if tool_name == "orchestrator_job_start":
@@ -1647,6 +1655,25 @@ def create_app(master_db: Path) -> Any:
 
   <div class='row' style='margin-top: 8px;'>
     <div class='field'>
+      <label>build_domain_rowgroup_index</label>
+      <select id='orch_build_domain_rowgroup_index' style='padding: 10px 12px; border: 1px solid var(--border); background: rgba(15, 23, 42, 0.65); border-radius: 8px; color: var(--text);'>
+        <option value='1'>enabled</option>
+        <option value='0'>disabled</option>
+      </select>
+    </div>
+    <div class='field' style='min-width: 520px; flex: 1;'>
+      <label>domain_rowgroup_index_root</label>
+      <input id='orch_domain_rowgroup_index_root' placeholder='/storage/ccindex_duckdb/cc_domain_rowgroups_by_collection'>
+      <div class='small'>Directory for per-collection <span class='code'>*.domain_rowgroups.duckdb</span> outputs</div>
+    </div>
+    <div class='field'>
+      <label>domain_rowgroup_index_batch_size</label>
+      <input id='orch_domain_rowgroup_index_batch_size' type='number' min='1' step='1' value='1'>
+    </div>
+  </div>
+
+  <div class='row' style='margin-top: 8px;'>
+    <div class='field'>
       <label>cleanup_extraneous</label>
       <select id='orch_cleanup_extraneous' style='padding: 10px 12px; border: 1px solid var(--border); background: rgba(15, 23, 42, 0.65); border-radius: 8px; color: var(--text);'>
         <option value='1'>enabled</option>
@@ -1726,6 +1753,9 @@ def create_app(master_db: Path) -> Any:
   const orchMaxWorkersEl = document.getElementById('orch_max_workers');
   const orchHeartbeatEl = document.getElementById('orch_heartbeat_seconds');
   const orchFilterEl = document.getElementById('orch_collections_filter');
+  const orchBuildDomainRowgroupIndexEl = document.getElementById('orch_build_domain_rowgroup_index');
+  const orchDomainRowgroupIndexRootEl = document.getElementById('orch_domain_rowgroup_index_root');
+  const orchDomainRowgroupIndexBatchSizeEl = document.getElementById('orch_domain_rowgroup_index_batch_size');
   const orchCleanupExtraneousEl = document.getElementById('orch_cleanup_extraneous');
   const orchCleanupSourceEl = document.getElementById('orch_cleanup_source_archives');
   const orchCleanupDryEl = document.getElementById('orch_cleanup_dry_run');
@@ -1746,6 +1776,9 @@ def create_app(master_db: Path) -> Any:
       orchDuckdbCollectionEl.value = esc(s.duckdb_collection_root || '');
       orchDuckdbYearEl.value = esc(s.duckdb_year_root || '');
       orchDuckdbMasterEl.value = esc(s.duckdb_master_root || '');
+      orchBuildDomainRowgroupIndexEl.value = s.build_domain_rowgroup_index ? '1' : '0';
+      orchDomainRowgroupIndexRootEl.value = esc(s.domain_rowgroup_index_root || '');
+      orchDomainRowgroupIndexBatchSizeEl.value = esc(s.domain_rowgroup_index_batch_size || '1');
       orchMaxWorkersEl.value = esc(s.max_workers || '8');
       orchHeartbeatEl.value = esc(s.heartbeat_seconds || '30');
       orchFilterEl.value = esc(s.collections_filter || '');
@@ -1771,6 +1804,9 @@ def create_app(master_db: Path) -> Any:
         duckdb_collection_root: (String(orchDuckdbCollectionEl.value || '').trim() || null),
         duckdb_year_root: (String(orchDuckdbYearEl.value || '').trim() || null),
         duckdb_master_root: (String(orchDuckdbMasterEl.value || '').trim() || null),
+        build_domain_rowgroup_index: String(orchBuildDomainRowgroupIndexEl.value || '1') === '1',
+        domain_rowgroup_index_root: (String(orchDomainRowgroupIndexRootEl.value || '').trim() || null),
+        domain_rowgroup_index_batch_size: parseInt(String(orchDomainRowgroupIndexBatchSizeEl.value || '1'), 10),
         max_workers: parseInt(String(orchMaxWorkersEl.value || '8'), 10),
         heartbeat_seconds: parseInt(String(orchHeartbeatEl.value || '30'), 10),
         collections_filter: (String(orchFilterEl.value || '').trim() || null),
@@ -1966,6 +2002,27 @@ def create_app(master_db: Path) -> Any:
     </div>
   </div>
 
+  <div class='row' style='margin-top: 10px;'>
+    <div class='field'>
+      <label>Rowgroup index build (per-run)</label>
+      <select id='rgBuildMode'>
+        <option value='default'>use saved setting</option>
+        <option value='enabled'>force enabled</option>
+        <option value='disabled'>force disabled</option>
+      </select>
+      <div class='small'>Only affects jobs started here.</div>
+    </div>
+    <div class='field' style='min-width: 520px; flex: 1;'>
+      <label>Rowgroup index root (per-run)</label>
+      <input id='rgRoot' placeholder='/storage/ccindex_duckdb/cc_domain_rowgroups_by_collection'>
+      <div class='small'>Blank = use saved setting/default.</div>
+    </div>
+    <div class='field'>
+      <label>Rowgroup index batch size (per-run)</label>
+      <input id='rgBatch' type='number' min='1' step='1' placeholder='(blank = saved)'>
+    </div>
+  </div>
+
   <div class='row' style='margin-top: 8px;'>
     <button id='btnCollinfoList' type='button'>load collections</button>
     <button id='btnCollinfoUpdate' type='button'>refresh collinfo</button>
@@ -2079,6 +2136,15 @@ def create_app(master_db: Path) -> Any:
     try {
       const s = await ccindexMcp.callTool('orchestrator_settings_get', {});
       if (s && s.max_workers) $('workers').value = String(s.max_workers);
+      // Helpful placeholders (do not persist).
+      if (s && (s.domain_rowgroup_index_root || s.domain_rowgroup_index_root === '')) {
+        const v = String(s.domain_rowgroup_index_root || '').trim();
+        if (v) $('rgRoot').placeholder = v;
+      }
+      if (s && s.domain_rowgroup_index_batch_size) {
+        const n = parseInt(String(s.domain_rowgroup_index_batch_size), 10);
+        if (Number.isFinite(n) && n > 0) $('rgBatch').placeholder = String(n);
+      }
     } catch (e) {
       // ignore
     }
@@ -2303,6 +2369,22 @@ def create_app(master_db: Path) -> Any:
     }
 
     const workers = parseInt(String($('workers').value || '8'), 10);
+
+    // Per-run overrides for rowgroup index build.
+    const rgBuildMode = String($('rgBuildMode').value || 'default');
+    let build_domain_rowgroup_index = null;
+    if (rgBuildMode === 'enabled') build_domain_rowgroup_index = true;
+    else if (rgBuildMode === 'disabled') build_domain_rowgroup_index = false;
+
+    const rgRootRaw = String($('rgRoot').value || '').trim();
+    const domain_rowgroup_index_root = rgRootRaw ? rgRootRaw : null;
+
+    const rgBatchRaw = String($('rgBatch').value || '').trim();
+    const rgBatchParsed = rgBatchRaw ? parseInt(rgBatchRaw, 10) : null;
+    const domain_rowgroup_index_batch_size = (Number.isFinite(rgBatchParsed) && rgBatchParsed && rgBatchParsed > 0)
+      ? rgBatchParsed
+      : null;
+
     if (!confirm(`Start ${modeSel} jobs for ${cols.length} collections?`)) return;
 
     const started = [];
@@ -2312,6 +2394,9 @@ def create_app(master_db: Path) -> Any:
         mode,
         filter: c,
         workers: Number.isFinite(workers) ? workers : null,
+        build_domain_rowgroup_index,
+        domain_rowgroup_index_root,
+        domain_rowgroup_index_batch_size,
         ...extra,
       });
       const job = await ccindexMcp.callTool('orchestrator_job_start', { planned, label: `cc_pipeline_${modeSel}_${c}` });

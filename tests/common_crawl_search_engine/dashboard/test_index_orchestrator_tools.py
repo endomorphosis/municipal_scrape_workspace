@@ -68,6 +68,31 @@ def test_orchestrator_settings_round_trip(tmp_path: Path, monkeypatch: pytest.Mo
     assert int(out.get("max_workers") or 0) == 3
     assert str(out.get("collections_filter")) == "2024-10"
 
+    # Set rowgroup-index knobs
+    r_rg = c.post(
+        "/mcp",
+        json={
+            "jsonrpc": "2.0",
+            "id": 20,
+            "method": "tools/call",
+            "params": {
+                "name": "orchestrator_settings_set",
+                "arguments": {
+                    "settings": {
+                        "build_domain_rowgroup_index": False,
+                        "domain_rowgroup_index_root": str(tmp_path / "rg_root"),
+                        "domain_rowgroup_index_batch_size": 7,
+                    }
+                },
+            },
+        },
+    )
+    assert r_rg.status_code == 200
+    out_rg = r_rg.json()["result"]
+    assert out_rg.get("build_domain_rowgroup_index") is False
+    assert str(out_rg.get("domain_rowgroup_index_root")) == str(tmp_path / "rg_root")
+    assert int(out_rg.get("domain_rowgroup_index_batch_size") or 0) == 7
+
     # Get
     r2 = c.post(
         "/mcp",
@@ -77,6 +102,9 @@ def test_orchestrator_settings_round_trip(tmp_path: Path, monkeypatch: pytest.Mo
     out2 = r2.json()["result"]
     assert int(out2.get("max_workers") or 0) == 3
     assert str(out2.get("collections_filter")) == "2024-10"
+    assert out2.get("build_domain_rowgroup_index") is False
+    assert str(out2.get("domain_rowgroup_index_root")) == str(tmp_path / "rg_root")
+    assert int(out2.get("domain_rowgroup_index_batch_size") or 0) == 7
 
     # And the file exists.
     assert Path(os.environ["CCINDEX_ORCHESTRATOR_SETTINGS_PATH"]).exists()
@@ -109,6 +137,54 @@ def test_orchestrator_job_plan_returns_cmd(tmp_path: Path, monkeypatch: pytest.M
     planned = r.json()["result"]
     assert isinstance(planned.get("cmd"), list)
     assert "common_crawl_search_engine.ccindex.cc_pipeline_orchestrator" in " ".join(planned["cmd"])
+
+    cmd_str = " ".join(planned["cmd"])
+    assert "--build-domain-rowgroup-index" in cmd_str or "--no-build-domain-rowgroup-index" in cmd_str
+    assert "--domain-rowgroup-index-batch-size" in cmd_str
+
+
+def test_orchestrator_job_plan_allows_rowgroup_index_overrides(tmp_path: Path, monkeypatch: pytest.MonkeyPatch):
+    monkeypatch.setenv("CCINDEX_ORCHESTRATOR_SETTINGS_PATH", str(tmp_path / "orch_settings.json"))
+
+    from common_crawl_search_engine.dashboard import create_app
+
+    app = create_app(master_db=Path("/storage/ccindex_duckdb/cc_pointers_master/cc_master_index.duckdb"))
+
+    try:
+        from fastapi.testclient import TestClient
+    except Exception as e:  # pragma: no cover
+        raise RuntimeError(f"fastapi.testclient missing: {e}")
+
+    c = TestClient(app)
+
+    r = c.post(
+        "/mcp",
+        json={
+            "jsonrpc": "2.0",
+            "id": 40,
+            "method": "tools/call",
+            "params": {
+                "name": "orchestrator_job_plan",
+                "arguments": {
+                    "mode": "pipeline",
+                    "filter": "CC-MAIN-2024-10",
+                    "workers": 2,
+                    "build_domain_rowgroup_index": False,
+                    "domain_rowgroup_index_root": "/tmp/cc_rowgroups_test",
+                    "domain_rowgroup_index_batch_size": 12345,
+                },
+            },
+        },
+    )
+    assert r.status_code == 200
+    planned = r.json()["result"]
+
+    cmd_str = " ".join(planned["cmd"])
+    assert "--no-build-domain-rowgroup-index" in cmd_str
+    assert "--domain-rowgroup-index-root" in cmd_str
+    assert "/tmp/cc_rowgroups_test" in cmd_str
+    assert "--domain-rowgroup-index-batch-size" in cmd_str
+    assert "12345" in cmd_str
 
 
 def test_dashboard_index_page_renders(tmp_path: Path, monkeypatch: pytest.MonkeyPatch):

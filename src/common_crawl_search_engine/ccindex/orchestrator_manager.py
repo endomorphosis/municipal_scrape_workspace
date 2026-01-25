@@ -167,6 +167,9 @@ def default_orchestrator_settings() -> Dict[str, Any]:
         "duckdb_collection_root": str(cfg.get("duckdb_collection_root") or "/storage/ccindex_duckdb/cc_pointers_by_collection"),
         "duckdb_year_root": str(cfg.get("duckdb_year_root") or "/storage/ccindex_duckdb/cc_pointers_by_year"),
         "duckdb_master_root": str(cfg.get("duckdb_master_root") or "/storage/ccindex_duckdb/cc_pointers_master"),
+        "build_domain_rowgroup_index": bool(cfg.get("build_domain_rowgroup_index", True)),
+        "domain_rowgroup_index_root": str(cfg.get("domain_rowgroup_index_root") or "/storage/ccindex_duckdb/cc_domain_rowgroups_by_collection"),
+        "domain_rowgroup_index_batch_size": int(cfg.get("domain_rowgroup_index_batch_size") or 1),
         "max_workers": int(cfg.get("max_workers") or 8),
         "collections_filter": cfg.get("collections_filter"),
         "heartbeat_seconds": int(cfg.get("heartbeat_seconds") or 30),
@@ -206,6 +209,13 @@ def load_orchestrator_settings() -> Dict[str, Any]:
         out["sort_memory_per_worker_gb"] = float(out.get("sort_memory_per_worker_gb") or defaults["sort_memory_per_worker_gb"])
         out["force_reindex"] = bool(out.get("force_reindex"))
 
+        out["build_domain_rowgroup_index"] = bool(out.get("build_domain_rowgroup_index"))
+        out["domain_rowgroup_index_batch_size"] = int(out.get("domain_rowgroup_index_batch_size") or defaults["domain_rowgroup_index_batch_size"])
+
+        if out.get("domain_rowgroup_index_root") is not None:
+            s = str(out.get("domain_rowgroup_index_root") or "").strip()
+            out["domain_rowgroup_index_root"] = s or None
+
         if out.get("collections_filter") is not None:
             s = str(out.get("collections_filter") or "").strip()
             out["collections_filter"] = s if s else None
@@ -227,7 +237,9 @@ def load_orchestrator_settings() -> Dict[str, Any]:
 
 def save_orchestrator_settings(settings: Dict[str, Any]) -> Dict[str, Any]:
     defaults = default_orchestrator_settings()
-    out = dict(defaults)
+    # Merge updates into existing persisted settings (partial update semantics).
+    existing = load_orchestrator_settings()
+    out = dict(existing)
     for k in defaults.keys():
         if k in settings:
             out[k] = settings.get(k)
@@ -236,6 +248,12 @@ def save_orchestrator_settings(settings: Dict[str, Any]) -> Dict[str, Any]:
     out["max_workers"] = int(out.get("max_workers") or defaults["max_workers"])
     out["heartbeat_seconds"] = int(out.get("heartbeat_seconds") or defaults["heartbeat_seconds"])
     out["sort_memory_per_worker_gb"] = float(out.get("sort_memory_per_worker_gb") or defaults["sort_memory_per_worker_gb"])
+
+    out["build_domain_rowgroup_index"] = bool(out.get("build_domain_rowgroup_index"))
+    out["domain_rowgroup_index_batch_size"] = int(out.get("domain_rowgroup_index_batch_size") or defaults["domain_rowgroup_index_batch_size"])
+    if out.get("domain_rowgroup_index_root") is not None:
+        s = str(out.get("domain_rowgroup_index_root") or "").strip()
+        out["domain_rowgroup_index_root"] = s or None
 
     p = orchestrator_settings_path()
     p.parent.mkdir(parents=True, exist_ok=True)
@@ -256,6 +274,9 @@ def build_pipeline_config(settings: Optional[Dict[str, Any]] = None) -> "object"
         duckdb_collection_root=Path(str(s.get("duckdb_collection_root") or "/storage/ccindex_duckdb/cc_pointers_by_collection")),
         duckdb_year_root=Path(str(s.get("duckdb_year_root") or "/storage/ccindex_duckdb/cc_pointers_by_year")),
         duckdb_master_root=Path(str(s.get("duckdb_master_root") or "/storage/ccindex_duckdb/cc_pointers_master")),
+        build_domain_rowgroup_index=bool(s.get("build_domain_rowgroup_index", True)),
+        domain_rowgroup_index_root=(Path(str(s["domain_rowgroup_index_root"])) if s.get("domain_rowgroup_index_root") else None),
+        domain_rowgroup_index_batch_size=int(s.get("domain_rowgroup_index_batch_size") or 1),
         max_workers=int(s.get("max_workers") or 8),
         memory_limit_gb=float(_load_pipeline_config_defaults().get("memory_limit_gb") or 10.0),
         min_free_space_gb=float(_load_pipeline_config_defaults().get("min_free_space_gb") or 50.0),
@@ -578,6 +599,9 @@ def plan_orchestrator_command(
     sort_workers: Optional[int] = None,
     sort_memory_per_worker_gb: Optional[float] = None,
     sort_temp_dir: Optional[str] = None,
+    build_domain_rowgroup_index: Optional[bool] = None,
+    domain_rowgroup_index_root: Optional[str] = None,
+    domain_rowgroup_index_batch_size: Optional[int] = None,
     settings: Optional[Dict[str, Any]] = None,
 ) -> Dict[str, Any]:
     s = load_orchestrator_settings() if settings is None else dict(settings)
@@ -600,6 +624,29 @@ def plan_orchestrator_command(
 
     eff_hb = int(heartbeat_seconds) if heartbeat_seconds is not None else int(s.get("heartbeat_seconds") or 30)
     cmd += ["--heartbeat-seconds", str(eff_hb)]
+
+    # Rowgroup-slice index build knobs (can be overridden per run)
+    eff_build_rg = bool(build_domain_rowgroup_index) if build_domain_rowgroup_index is not None else bool(s.get("build_domain_rowgroup_index", True))
+    if eff_build_rg:
+        cmd += ["--build-domain-rowgroup-index"]
+    else:
+        cmd += ["--no-build-domain-rowgroup-index"]
+
+    if domain_rowgroup_index_root is not None:
+        eff_rg_root = str(domain_rowgroup_index_root or "").strip() or None
+    else:
+        eff_rg_root = str(s.get("domain_rowgroup_index_root") or "").strip() or None
+    if eff_rg_root:
+        cmd += ["--domain-rowgroup-index-root", str(eff_rg_root)]
+
+    try:
+        if domain_rowgroup_index_batch_size is not None:
+            batch_sz = int(domain_rowgroup_index_batch_size)
+        else:
+            batch_sz = int(s.get("domain_rowgroup_index_batch_size") or 1)
+    except Exception:
+        batch_sz = 1
+    cmd += ["--domain-rowgroup-index-batch-size", str(max(1, batch_sz))]
 
     if bool(cleanup_dry_run) if cleanup_dry_run is not None else bool(s.get("cleanup_dry_run")):
         cmd += ["--cleanup-dry-run"]
