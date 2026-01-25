@@ -25,6 +25,7 @@ import shutil
 import sys
 import tempfile
 import time
+import uuid
 from concurrent.futures import FIRST_COMPLETED, ProcessPoolExecutor, as_completed, wait
 from concurrent.futures.process import BrokenProcessPool
 from pathlib import Path
@@ -229,10 +230,16 @@ def sort_and_mark_one(args: Tuple[str, float, str, Optional[int], str]) -> Tuple
         work_dir.mkdir(parents=True, exist_ok=True)
 
         # DuckDB spill temp directory MUST be unique per sort when running in parallel.
-        duckdb_temp_dir = tmp_root / f"duckdb_sort_{safe}"
+        # Include pid + random suffix so duplicate submissions (or stale workers)
+        # can't contend on the same directory.
+        unique_tag = f"{os.getpid()}_{uuid.uuid4().hex[:8]}"
+        duckdb_temp_dir = tmp_root / f"duckdb_sort_{safe}_{unique_tag}"
         duckdb_temp_dir.mkdir(parents=True, exist_ok=True)
 
-        sorted_tmp = work_dir / f"{src.name}.tmp.parquet"
+        # Output temp parquet must also be unique per attempt; DuckDB will take an OS
+        # lock on the output path. If the same shard is submitted twice (rare but has
+        # happened in production runs), a fixed tmp name causes hard failures.
+        sorted_tmp = work_dir / f"{src.name}.{unique_tag}.tmp.parquet"
 
         if str(mode) == "rewrite":
             if not src.name.endswith(".sorted.parquet"):
@@ -256,6 +263,10 @@ def sort_and_mark_one(args: Tuple[str, float, str, Optional[int], str]) -> Tuple
                 return str(src), False, f"rewrite verification failed: {reason}", ""
 
             sorted_tmp.replace(src)
+            try:
+                shutil.rmtree(work_dir, ignore_errors=True)
+            except Exception:
+                pass
             return str(src), True, "rewritten", str(src)
 
         # Default: sort an unsorted file and produce a sorted sibling.
@@ -291,6 +302,10 @@ def sort_and_mark_one(args: Tuple[str, float, str, Optional[int], str]) -> Tuple
             return str(src), True, "already sorted (output existed)", str(out)
 
         sorted_tmp.replace(out)
+        try:
+            shutil.rmtree(work_dir, ignore_errors=True)
+        except Exception:
+            pass
         return str(src), True, "sorted", str(out)
 
     except Exception as e:
@@ -717,7 +732,14 @@ def main() -> int:
         print("Sorting complete:")
         print(f"  Succeeded: {sorted_count}")
         print(f"  Failed:    {failed_count}")
-        print(f"  Total sorted files: {len(already_marked) + len(sorted_unmarked) + sorted_count}/{len(all_files)}")
+        # When rewrite is enabled, `sorted_count` includes rewrites of already-sorted files,
+        # so it is not meaningful to report it as "total sorted files".
+        total_sorted = len(already_marked) + len(sorted_unmarked)
+        if args.rewrite_sorted:
+            print(f"  Total files processed in sort/rewrite: {sorted_count + failed_count}")
+            print(f"  Total files sorted (marked + newly marked): {total_sorted}/{len(all_files)}")
+        else:
+            print(f"  Total sorted files: {total_sorted + sorted_count}/{len(all_files)}")
 
     if unsorted_files and not args.sort_unsorted:
         print()
