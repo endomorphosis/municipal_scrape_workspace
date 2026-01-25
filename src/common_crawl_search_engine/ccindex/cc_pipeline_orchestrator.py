@@ -80,6 +80,12 @@ class PipelineConfig:
     rewrite_sorted_limit: Optional[int] = None
     force_reindex: bool = False
 
+    # Operational safety: when processing many collections (e.g. --filter all),
+    # optionally restrict work to collections that already have parquet shards on disk.
+    # This avoids triggering large historical downloads when the goal is to rebuild
+    # indexes/rowgroups for existing parquet.
+    existing_parquet_only: bool = False
+
     # Optional: build per-collection domain->rowgroup slice index DBs (cc_domain_rowgroups)
     # used by the resolver to read only the relevant Parquet row groups.
     build_domain_rowgroup_index: bool = True
@@ -889,10 +895,55 @@ class PipelineOrchestrator:
         """Scan status of all collections using validator"""
         self.collections = self.get_all_collections()
         logger.info(f"Found {len(self.collections)} collections")
-        
-        for collection in self.collections:
-            status = self.validator.validate_collection(collection)
+
+        total = len(self.collections)
+        hb_seconds = max(1, int(getattr(self.config, "heartbeat_seconds", 30) or 30))
+        logger.info(
+            f"Scanning collection status (validator checks parquet metadata; may take a while). "
+            f"Heartbeat every ~{hb_seconds}s"
+        )
+
+        started = time.monotonic()
+        last_hb = started
+        last_done = 0
+
+        for idx, collection in enumerate(self.collections, start=1):
+            now = time.monotonic()
+            if (now - last_hb) >= hb_seconds:
+                elapsed = now - started
+                rate = (last_done / elapsed) if elapsed > 0 else 0.0
+                eta_min = ((total - last_done) / rate / 60.0) if rate > 0 else None
+                eta = f"~{eta_min:.1f} min" if eta_min is not None else "unknown"
+                logger.info(
+                    f"[scan] Heartbeat: {last_done}/{total} validated; next={collection}; "
+                    f"elapsed {elapsed/60:.1f} min; eta {eta}"
+                )
+                last_hb = now
+
+            logger.info(f"[scan] Validating {idx}/{total}: {collection}")
+            t0 = time.monotonic()
+            try:
+                status = self.validator.validate_collection(collection)
+            except Exception as e:
+                logger.exception(f"[scan] Validator crashed for {collection}: {e}")
+                status = {"collection": collection, "error": str(e), "complete": False}
+
+            dt = time.monotonic() - t0
+            # Short, stable summary for debugging slow scans.
+            try:
+                gz = f"{int(status.get('tar_gz_count', 0) or 0)}/{int(status.get('tar_gz_expected', 0) or 0)}"
+                pq = f"{int(status.get('parquet_count', 0) or 0)}/{int(status.get('parquet_expected', 0) or 0)}"
+                so = f"{int(status.get('sorted_count', 0) or 0)}/{int(status.get('sorted_expected', 0) or 0)}"
+                db = "yes" if bool(status.get("duckdb_index_exists")) else "no"
+                complete = bool(status.get("complete"))
+                logger.info(
+                    f"[scan] Done {collection} in {dt:.1f}s (gz {gz}, pq {pq}, sorted {so}, duckdb {db}, complete={complete})"
+                )
+            except Exception:
+                logger.info(f"[scan] Done {collection} in {dt:.1f}s")
+
             self.collection_status[collection] = status
+            last_done = idx
     
     def get_available_memory_gb(self) -> float:
         """Get available system memory in GB"""
@@ -2322,12 +2373,30 @@ class PipelineOrchestrator:
             return
 
         targets = list(incomplete)
-        if self.force_reindex:
-            # When forcing reindex, we still want to process collections even if complete.
-            targets = list(self.collections)
-            logger.info(f"\nForce-reindex enabled: processing {len(targets)} collections for DuckDB rebuild")
+
+        if bool(getattr(self.config, "existing_parquet_only", False)):
+            parquet_present = [
+                c
+                for c in self.collections
+                if int((self.collection_status.get(c) or {}).get("parquet_count", 0) or 0) > 0
+            ]
+            if self.force_reindex:
+                targets = parquet_present
+                logger.info(
+                    f"\nForce-reindex enabled (existing-parquet-only): processing {len(targets)} collections with parquet on disk"
+                )
+            else:
+                targets = [c for c in targets if c in set(parquet_present)]
+                logger.info(
+                    f"\nProcessing {len(targets)} incomplete collections with parquet on disk (existing-parquet-only)..."
+                )
         else:
-            logger.info(f"\nProcessing {len(targets)} incomplete collections...")
+            if self.force_reindex:
+                # When forcing reindex, we still want to process collections even if complete.
+                targets = list(self.collections)
+                logger.info(f"\nForce-reindex enabled: processing {len(targets)} collections for DuckDB rebuild")
+            else:
+                logger.info(f"\nProcessing {len(targets)} incomplete collections...")
         
         # Process incomplete collections
         for collection in targets:
@@ -2444,6 +2513,16 @@ def main() -> int:
         type=int,
         default=30,
         help="Print a periodic heartbeat every N seconds during long phases (default: 30)",
+    )
+
+    parser.add_argument(
+        "--existing-parquet-only",
+        action="store_true",
+        default=False,
+        help=(
+            "Only process collections that already have parquet shards on disk. "
+            "Useful with '--filter all' to avoid triggering large historical downloads when the goal is to resort/rewrite/reindex existing parquet."
+        ),
     )
     parser.add_argument(
         "--cleanup-extraneous",
@@ -2584,6 +2663,7 @@ def main() -> int:
 
     # Apply runtime-only args (these are safe defaults if config file doesn't include them).
     config.heartbeat_seconds = int(args.heartbeat_seconds)
+    config.existing_parquet_only = bool(getattr(args, "existing_parquet_only", False))
     if getattr(args, "cleanup_extraneous", None) is not None:
         config.cleanup_extraneous = bool(args.cleanup_extraneous)
     config.cleanup_dry_run = bool(args.cleanup_dry_run)
