@@ -555,16 +555,34 @@ def main() -> int:
                 pending: set = set()
 
                 def _submit_one() -> None:
-                    nonlocal item_idx
+                    nonlocal item_idx, pool_crashed
                     if item_idx >= len(work_items):
                         return
                     item = work_items[item_idx]
                     item_idx += 1
-                    fut = executor.submit(sort_and_mark_one, item)
+                    try:
+                        fut = executor.submit(sort_and_mark_one, item)
+                    except Exception as e:
+                        # If the underlying pool crashed, don't raise here; mark the pool as
+                        # unusable and let the caller retry with backoff / reduced parallelism.
+                        if _looks_like_pool_crash(e):
+                            pool_crashed = True
+                            failed_local.append(Path(item[0]))
+                            print(f"❌ submit failed for {Path(item[0]).name}: {e}")
+                            return
+                        raise
                     futures[fut] = item[0]
                     pending.add(fut)
 
                 while item_idx < len(work_items) or pending:
+                    if pool_crashed:
+                        # Stop early; retry logic in the caller will handle remaining shards.
+                        try:
+                            for pfut in list(pending):
+                                pfut.cancel()
+                        except Exception:
+                            pass
+                        break
                     # Ramp up concurrency if requested.
                     if ramp_step_seconds and ramp_step_seconds > 0:
                         now = time.monotonic()
@@ -574,6 +592,11 @@ def main() -> int:
 
                     while len(pending) < inflight_limit and item_idx < len(work_items):
                         _submit_one()
+                        if pool_crashed:
+                            break
+
+                    if pool_crashed:
+                        continue
 
                     if not pending:
                         continue
