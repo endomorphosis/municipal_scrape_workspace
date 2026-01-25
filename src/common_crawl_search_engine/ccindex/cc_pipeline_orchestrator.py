@@ -1037,14 +1037,15 @@ class PipelineOrchestrator:
         logger.info(f"Converting {collection} to parquet (sort_after={sort_after})...")
         
         ccindex_dir = self.config.ccindex_root / collection
-        
-            try:
+
+        parquet_dir = self._get_collection_parquet_dir(collection)
         parquet_dir.mkdir(parents=True, exist_ok=True)
-                def _marker_for_sorted(sorted_path: Path) -> Path:
-                    unsorted_candidate = sorted_path.with_name(
-                        sorted_path.name.replace(".gz.sorted.parquet", ".gz.parquet")
-                    )
-                    return unsorted_candidate.with_suffix(unsorted_candidate.suffix + ".empty")
+
+        def _marker_for_sorted(sorted_path: Path) -> Path:
+            unsorted_candidate = sorted_path.with_name(
+                sorted_path.name.replace(".gz.sorted.parquet", ".gz.parquet")
+            )
+            return unsorted_candidate.with_suffix(unsorted_candidate.suffix + ".empty")
 
         # If a prior run produced an empty *.sorted.parquet shard (0 rows) without
         # an explicit empty-marker, treat it as incomplete and force a reconvert.
@@ -1053,12 +1054,6 @@ class PipelineOrchestrator:
         invalidated = 0
         try:
             import pyarrow.parquet as pq
-
-            def _marker_for_sorted(sorted_path: Path) -> Path:
-                unsorted_candidate = sorted_path.with_name(
-                    sorted_path.name.replace(".gz.sorted.parquet", ".gz.parquet")
-                )
-                return unsorted_candidate.with_suffix(unsorted_candidate.suffix + ".empty")
 
             for sorted_file in parquet_dir.glob("cdx-*.gz.sorted.parquet"):
                 try:
@@ -1237,8 +1232,6 @@ class PipelineOrchestrator:
                     f"Healed {healed} shard(s) for {collection} (redownloaded corrupt/missing .gz); retrying conversion"
                 )
                 continue
-
-            if parquet_dir.exists():
 
         final_converted, expected = _count_converted_unique()
         if final_converted < expected:
