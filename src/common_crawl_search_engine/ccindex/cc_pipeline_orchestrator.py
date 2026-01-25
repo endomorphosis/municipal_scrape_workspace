@@ -901,7 +901,16 @@ class PipelineOrchestrator:
     
     def get_free_space_gb(self, path: Path) -> float:
         """Get free disk space in GB"""
-        usage = shutil.disk_usage(str(path))
+        p = Path(path)
+        # disk_usage() requires the path to exist; for configured output roots we may
+        # not have created them yet.
+        try:
+            while not p.exists() and p != p.parent:
+                p = p.parent
+        except Exception:
+            p = Path("/")
+
+        usage = shutil.disk_usage(str(p))
         return usage.free / (1024 ** 3)
     
     def check_resources(self) -> bool:
@@ -925,7 +934,13 @@ class PipelineOrchestrator:
                 rr = getattr(self.config, "domain_rowgroup_index_root", None)
                 if rr is None:
                     rr = Path("/storage/ccindex_duckdb/cc_domain_rowgroups_by_collection")
-                extra_roots.append(Path(rr))
+                rr_p = Path(rr)
+                # Create now so later phases (and disk checks) don't crash.
+                try:
+                    rr_p.mkdir(parents=True, exist_ok=True)
+                except Exception:
+                    pass
+                extra_roots.append(rr_p)
         except Exception:
             pass
 
