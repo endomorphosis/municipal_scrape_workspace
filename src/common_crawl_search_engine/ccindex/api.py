@@ -25,9 +25,107 @@ import time
 import urllib.error
 import urllib.parse
 import urllib.request
-from dataclasses import dataclass
+from dataclasses import dataclass, field
+from functools import lru_cache
 from pathlib import Path
 from typing import Dict, Iterable, Iterator, List, Optional, Sequence, Tuple
+
+
+# Process-level memo: whether per-collection DBs tend to include a URL-level `cc_pointers`
+# table (as opposed to domain-only `cc_domain_shards`). Probing this can be expensive.
+_CC_POINTERS_FASTPATH_AVAILABLE: Optional[bool] = None
+
+
+# Process-level memo: whether the per-collection domain pointer indexes exist.
+_DOMAIN_POINTER_INDEX_AVAILABLE: Optional[bool] = None
+
+
+def _domain_pointer_index_dir() -> Path:
+    return Path((os.environ.get("CC_DOMAIN_POINTER_INDEX_DIR") or "/storage/ccindex_duckdb/cc_pointers_by_collection")).expanduser().resolve()
+
+
+def _domain_pointer_parquet_root() -> Path:
+    return Path((os.environ.get("CC_DOMAIN_POINTER_PARQUET_ROOT") or "/storage/ccindex_parquet/cc_pointers_by_collection")).expanduser().resolve()
+
+
+@lru_cache(maxsize=8)
+def _cc_pointers_duckdb_paths() -> List[Path]:
+    """Return best-effort DuckDB paths that contain a URL-level `cc_pointers` table.
+
+    These DBs can be used as a fast pre-check before scanning Parquet shards.
+
+    Sources:
+    - CCINDEX_CC_POINTERS_DB / CCINDEX_CC_POINTERS_DBS: comma-separated file/dir paths
+    - Auto (best-effort): /storage/ccindex_duckdb/cc_pointers_dev.duckdb if present
+    """
+
+    raw = (
+        os.environ.get("CCINDEX_CC_POINTERS_DBS")
+        or os.environ.get("CCINDEX_CC_POINTERS_DB")
+        or os.environ.get("CC_POINTERS_DB")
+        or ""
+    ).strip()
+
+    parts: List[str] = []
+    if raw:
+        parts = [p.strip() for p in raw.split(",") if p.strip()]
+    else:
+        # Best-effort auto: this repo sometimes builds a single-collection URL pointer DB
+        # as a development artifact; using it as a pre-check is safe (fall back to Parquet).
+        dev = Path("/storage/ccindex_duckdb/cc_pointers_dev.duckdb")
+        if dev.exists() and dev.is_file():
+            parts = [str(dev)]
+
+    out: List[Path] = []
+    seen = set()
+    for p in parts:
+        try:
+            pp = Path(p).expanduser().resolve()
+        except Exception:
+            continue
+
+        if pp.is_dir():
+            try:
+                for child in sorted(pp.glob("*.duckdb")):
+                    cps = str(child)
+                    if cps not in seen and child.is_file():
+                        seen.add(cps)
+                        out.append(child)
+            except Exception:
+                continue
+        else:
+            cps = str(pp)
+            if cps not in seen and pp.exists() and pp.is_file():
+                seen.add(cps)
+                out.append(pp)
+
+    # Cap to keep accidental directory globs bounded.
+    return out[:20]
+
+
+@lru_cache(maxsize=16384)
+def _collection_has_table(collection_db: str, table_name: str) -> bool:
+    """Cache information_schema table existence checks per collection DB."""
+
+    duckdb = _require_duckdb()
+    con = duckdb.connect(str(collection_db), read_only=True)
+    try:
+        return bool(_duckdb_has_table(con, str(table_name)))
+    finally:
+        try:
+            con.close()
+        except Exception:
+            pass
+
+
+def _duckdb_threads() -> int:
+    v = (os.environ.get("CCINDEX_DUCKDB_THREADS") or os.environ.get("DUCKDB_THREADS") or "").strip()
+    if v.isdigit():
+        return max(1, int(v))
+    try:
+        return max(1, int(os.cpu_count() or 4))
+    except Exception:
+        return 4
 
 
 def normalize_domain(domain_or_url: str) -> str:
@@ -166,6 +264,7 @@ class BraveSearchResolvedResult:
     resolve_mode: str
     resolve_domains: int
     resolve_parquet_files: int
+    resolve_stats: Dict[str, object] = field(default_factory=dict)
 
 
 def _url_variants_for_lookup(url: str) -> List[str]:
@@ -389,6 +488,23 @@ def _duckdb_has_table(con: "object", table_name: str) -> bool:
     return row is not None
 
 
+def _duckdb_table_columns(con: "object", table_name: str) -> set[str]:
+    """Return lowercase column names for a table in the main schema (best-effort)."""
+
+    try:
+        rows = con.execute(
+            """
+            SELECT lower(column_name)
+            FROM information_schema.columns
+            WHERE table_schema = 'main' AND table_name = ?
+            """,
+            [str(table_name)],
+        ).fetchall()
+        return {str(r[0]) for r in rows if r and r[0]}
+    except Exception:
+        return set()
+
+
 def load_collections_from_master(master_db: Path, year: Optional[str] = None) -> List[CollectionRef]:
     duckdb = _require_duckdb()
     con = duckdb.connect(str(master_db), read_only=True)
@@ -473,26 +589,57 @@ def load_collections_from_year_db(year_db: Path) -> List[CollectionRef]:
         con.close()
 
 
-def parquet_relpaths_for_domain(collection_db: Path, host_rev_prefix: str) -> List[str]:
+def parquet_relpaths_for_domain(
+    collection_db: Path,
+    host_rev_prefix: str,
+    *,
+    include_subdomains: bool = True,
+) -> List[str]:
     duckdb = _require_duckdb()
-    like_pat = host_rev_prefix + ",%"
+
+    # Avoid an information_schema query for every call.
+    if not _collection_has_table(str(collection_db), "cc_domain_shards"):
+        return []
+
+    like_pat = host_rev_prefix + ",%" if include_subdomains else None
 
     con = duckdb.connect(str(collection_db), read_only=True)
     try:
-        if not _duckdb_has_table(con, "cc_domain_shards"):
-            return []
-        rows = con.execute(
-            """
-            SELECT DISTINCT parquet_relpath
-            FROM cc_domain_shards
-            WHERE host_rev = ? OR host_rev LIKE ?
-            ORDER BY parquet_relpath
-            """,
-            [host_rev_prefix, like_pat],
-        ).fetchall()
-        return [str(r[0]) for r in rows if r and r[0]]
+        if include_subdomains:
+            rows = con.execute(
+                """
+                SELECT parquet_relpath
+                FROM cc_domain_shards
+                WHERE host_rev = ? OR host_rev LIKE ?
+                """,
+                [host_rev_prefix, like_pat],
+            ).fetchall()
+        else:
+            rows = con.execute(
+                """
+                SELECT parquet_relpath
+                FROM cc_domain_shards
+                WHERE host_rev = ?
+                """,
+                [host_rev_prefix],
+            ).fetchall()
+        # De-dupe in Python (often cheaper than DISTINCT+ORDER BY in DuckDB).
+        out: List[str] = []
+        seen = set()
+        for r in rows:
+            if not r or not r[0]:
+                continue
+            v = str(r[0])
+            if v in seen:
+                continue
+            seen.add(v)
+            out.append(v)
+        return out
     finally:
-        con.close()
+        try:
+            con.close()
+        except Exception:
+            pass
 
 
 def iter_warc_candidates_from_parquet(
@@ -787,29 +934,124 @@ def resolve_urls_to_ccindex(
     year: Optional[str] = None,
     max_matches_per_domain: int = 400,
     per_url_limit: int = 5,
+    stats_out: Optional[Dict[str, object]] = None,
+    trace_events: bool = False,
 ) -> Dict[str, List[Dict[str, object]]]:
     """Resolve a list of URLs to candidate CCIndex WARC pointers.
 
-    Fast path (default): batch URL lookups by joining a temp URL table against
-    targeted Parquet shards (shards determined via collection-domain shard maps).
-    Fallback: the previous domain-scan approach (more robust but can be slow for
-    many distinct domains).
+    Strategy: group URLs by domain, then run `search_domain_via_meta_indexes()` for
+    each domain in parallel and filter results down to the specific URLs.
     """
 
     want = [u for u in urls if (u or "").strip()]
     if not want:
         return {}
 
-    def _via_domain_scan(scan_urls: Sequence[str]) -> Dict[str, List[Dict[str, object]]]:
-        domain_to_urls: Dict[str, List[str]] = {}
-        for u in scan_urls:
-            dom = normalize_domain(u)
-            if not dom:
-                continue
-            domain_to_urls.setdefault(dom, []).append(u)
+    # If we can't use meta-index info, we can't resolve to CCIndex pointers.
+    if master_db is None:
+        if stats_out is not None:
+            stats_out["resolve_mode"] = "disabled_no_master_db"
+            stats_out["collections_scanned"] = 0
+            stats_out["parquet_files_scanned"] = 0
+        return {u: [] for u in want}
 
-        out: Dict[str, List[Dict[str, object]]] = {u: [] for u in scan_urls if (u or "").strip()}
-        for dom, dom_urls in domain_to_urls.items():
+    def _emit(evt: Dict[str, object]) -> None:
+        if not trace_events:
+            return
+        try:
+            state_dir = Path((os.environ.get("CCINDEX_STATE_DIR") or "state").strip() or "state")
+            p = Path((os.environ.get("CCINDEX_EVENT_LOG_PATH") or str(state_dir / "ccindex_events.jsonl")).strip())
+            p.parent.mkdir(parents=True, exist_ok=True)
+            evt = dict(evt)
+            evt.setdefault("ts", time.time())
+            p.open("a", encoding="utf-8").write(json.dumps(evt, ensure_ascii=False) + "\n")
+        except Exception:
+            pass
+
+    parquet_root = Path(parquet_root).expanduser().resolve()
+    master_db = Path(master_db).expanduser().resolve()
+
+    # Group URLs by domain.
+    domain_to_urls: Dict[str, List[str]] = {}
+    for u in want:
+        dom = normalize_domain(u)
+        if not dom:
+            continue
+        domain_to_urls.setdefault(dom, []).append(u)
+
+    if not domain_to_urls:
+        return {u: [] for u in want}
+
+    strategy = (os.environ.get("BRAVE_RESOLVE_STRATEGY") or "meta_parallel").strip().lower()
+    if strategy in {"url_join", "domain_url_join", "domain_url_join_parallel"}:
+        resolve_strategy = "domain_url_join_parallel"
+    else:
+        resolve_strategy = "meta_parallel"
+
+    # Parallel per-domain resolve.
+    from concurrent.futures import ThreadPoolExecutor, as_completed
+    import threading
+
+    # Keep output stable even if we skip domains due to normalization errors.
+    out: Dict[str, List[Dict[str, object]]] = {u: [] for u in want}
+
+    domains = sorted(domain_to_urls.keys())
+    if not domains:
+        return out
+
+    try:
+        env_workers = (os.environ.get("BRAVE_RESOLVE_WORKERS") or "").strip()
+        max_workers = int(env_workers) if env_workers else 0
+    except Exception:
+        max_workers = 0
+    if max_workers <= 0:
+        cpu = os.cpu_count() or 4
+        max_workers = min(len(domains), max(2, cpu))
+    max_workers = max(1, int(max_workers))
+
+    collections_scanned_total = 0
+    parquet_files_scanned_total = 0
+    collections_considered_total = 0
+    emitted_total = 0
+    domain_errors = 0
+
+    # Per-domain diagnostics (written once per domain by workers).
+    _dom_lock = threading.Lock()
+    _dom_details: Dict[str, Dict[str, object]] = {}
+
+    # Aggregate stage timing (best-effort) across domains.
+    setup_s_total = 0.0
+    schema_s_total = 0.0
+    query_s_total = 0.0
+    filter_s_total = 0.0
+    relpaths_s_total = 0.0
+    relpaths_wall_s_total = 0.0
+    domain_pointers_s_total = 0.0
+    domain_pointers_wall_s_total = 0.0
+
+    _emit(
+        {
+            "event": "resolve_urls_to_ccindex_start",
+            "domains": len(domains),
+            "urls": len(want),
+            "workers": int(max_workers),
+            "year": (str(year) if year else None),
+        }
+    )
+
+    def _resolve_one_domain_meta(
+        dom: str,
+    ) -> tuple[str, Dict[str, List[Dict[str, object]]], int, int, float, Optional[str]]:
+        dom_urls = domain_to_urls.get(dom) or []
+        canon_to_requested: Dict[str, List[str]] = {}
+        for u in dom_urls:
+            if (u or "").strip():
+                canon_to_requested.setdefault(_canonicalize_url_for_match(u), []).append(u)
+
+        t_dom0 = time.perf_counter()
+        t_search0 = time.perf_counter()
+        _emit({"event": "resolve_domain_start", "domain": dom, "urls": len(dom_urls)})
+        try:
             res = search_domain_via_meta_indexes(
                 dom,
                 parquet_root=parquet_root,
@@ -817,204 +1059,1375 @@ def resolve_urls_to_ccindex(
                 year=year,
                 max_matches=int(max_matches_per_domain),
             )
+        except Exception as e:
+            dt = time.perf_counter() - t_dom0
+            _emit({"event": "resolve_domain_error", "domain": dom, "elapsed_s": float(dt), "error": str(e)})
+            with _dom_lock:
+                _dom_details[dom] = {
+                    "domain": dom,
+                    "mode": "meta_parallel",
+                    "urls": int(len(dom_urls)),
+                    "elapsed_s": float(dt),
+                    "error": str(e),
+                }
+            return (dom, {}, 0, 0, float(dt), str(e))
 
-            canon_to_requested: Dict[str, List[str]] = {}
-            for u in dom_urls:
-                canon_to_requested.setdefault(_canonicalize_url_for_match(u), []).append(u)
+        search_s = time.perf_counter() - t_search0
 
-            for rec in res.records:
-                rec_url = str(rec.get("url") or "")
-                canon = _canonicalize_url_for_match(rec_url)
-                reqs = canon_to_requested.get(canon)
-                if not reqs:
+        t_filter0 = time.perf_counter()
+        matches: Dict[str, List[Dict[str, object]]] = {}
+        matched = 0
+        for rec in res.records:
+            rec_url = str(rec.get("url") or "")
+            canon = _canonicalize_url_for_match(rec_url)
+            reqs = canon_to_requested.get(canon)
+            if not reqs:
+                continue
+            for requested in reqs:
+                bucket = matches.setdefault(requested, [])
+                if len(bucket) >= int(per_url_limit):
                     continue
-                for requested in reqs:
-                    if len(out[requested]) >= int(per_url_limit):
-                        continue
-                    out[requested].append(rec)
-        return out
+                bucket.append(rec)
+                matched += 1
 
-    # If we can't use meta-index info, fall back.
-    if master_db is None:
-        return _via_domain_scan(want)
+            filter_s = time.perf_counter() - t_filter0
 
-    # Batch join approach.
-    try:
-        duckdb = _require_duckdb()
-    except Exception:
-        return _via_domain_scan(want)
+        dt = time.perf_counter() - t_dom0
+        _emit(
+            {
+                "event": "resolve_domain_done",
+                "domain": dom,
+                "elapsed_s": float(dt),
+                "records": int(res.emitted),
+                "collections_considered": int(res.collections_considered),
+                "matched": int(matched),
+                "search_s": float(search_s),
+                "filter_s": float(filter_s),
+            }
+        )
 
-    parquet_root = Path(parquet_root).expanduser().resolve()
-    master_db = Path(master_db).expanduser().resolve()
+        with _dom_lock:
+            _dom_details[dom] = {
+                "domain": dom,
+                "mode": "meta_parallel",
+                "urls": int(len(dom_urls)),
+                "elapsed_s": float(dt),
+                "collections_considered": int(res.collections_considered),
+                "records_emitted": int(res.emitted),
+                "matched_records": int(matched),
+                "search_s": float(search_s),
+                "filter_s": float(filter_s),
+            }
+        return (dom, matches, int(res.collections_considered), int(res.emitted), float(dt), None)
 
-    # Group URLs by domain and precompute host_rev_prefix.
-    domain_to_urls: Dict[str, List[str]] = {}
-    domain_to_hostrev: Dict[str, str] = {}
-    for u in want:
-        dom = normalize_domain(u)
-        if not dom:
-            continue
-        domain_to_urls.setdefault(dom, []).append(u)
-        if dom not in domain_to_hostrev:
-            hr = host_to_rev(dom)
-            if hr:
-                domain_to_hostrev[dom] = hr
+    def _resolve_one_domain_url_join(
+        dom: str,
+    ) -> tuple[str, Dict[str, List[Dict[str, object]]], int, int, float, Optional[str]]:
+        # We need DuckDB for Parquet reads.
+        try:
+            duckdb = _require_duckdb()
+        except Exception as e:
+            return (dom, {}, 0, 0, 0.0, str(e))
 
-    if not domain_to_urls:
-        return {u: [] for u in want}
+        # Load collections once per call (newest first tends to satisfy Brave URLs faster).
+        collections = load_collections_from_master(master_db, year)
+        if not collections:
+            return (dom, {}, 0, 0, 0.0, None)
+        collections = list(reversed(collections))
 
-    # Load collections once.
-    collections = load_collections_from_master(master_db, year)
-    if not collections:
-        return {u: [] for u in want}
+        dom_urls = domain_to_urls.get(dom) or []
+        dom_urls = list(dict.fromkeys([u for u in dom_urls if (u or "").strip()]))
+        if not dom_urls:
+            return (dom, {}, 0, 0, 0.0, None)
 
-    # Prefer newest collections first for URL lookups.
-    collections = list(reversed(collections))
+        host_rev_prefix = host_to_rev(dom)
+        if not host_rev_prefix:
+            return (dom, {}, 0, 0, 0.0, "could_not_compute_host_rev")
 
-    # Build URL variant table.
-    variant_rows: List[Tuple[str, str]] = []
-    for requested in want:
-        for v in _url_variants_for_lookup(requested):
-            variant_rows.append((v, requested))
+        variant_rows: List[Tuple[str, str]] = []
+        for requested in dom_urls:
+            for v in _url_variants_for_lookup(requested):
+                variant_rows.append((v, requested))
 
-    out: Dict[str, List[Dict[str, object]]] = {u: [] for u in want}
-    per_url_counts: Dict[str, int] = {u: 0 for u in want}
+        if not variant_rows:
+            return (dom, {}, 0, 0, 0.0, "no_url_variants")
 
-    parquet_files_scanned = 0
+        matches: Dict[str, List[Dict[str, object]]] = {u: [] for u in dom_urls}
+        per_url_counts: Dict[str, int] = {u: 0 for u in dom_urls}
 
-    con = duckdb.connect(database=":memory:")
-    try:
-        con.execute("PRAGMA threads=4")
-        con.execute("CREATE TABLE search_urls (url VARCHAR, requested_url VARCHAR)")
-        con.executemany("INSERT INTO search_urls VALUES (?, ?)", variant_rows)
+        collections_scanned = 0
+        parquet_files_scanned = 0
 
-        def _parquet_columns(pq_path: Path) -> set[str]:
-            rows = con.execute("DESCRIBE SELECT * FROM read_parquet(?)", [str(pq_path)]).fetchall()
-            return {str(r[0]) for r in rows if r and r[0]}
+        t_dom0 = time.perf_counter()
+        setup_s = 0.0
+        schema_s = 0.0
+        query_s = 0.0
+        cc_pointers_s = 0.0
+        cc_pointers_calls = 0
+        cc_pointers_rows = 0
+        cc_pointers_check_s = 0.0
+        relpaths_s = 0.0
+        relpaths_wall_s = 0.0
+        relpaths_calls = 0
+        domain_pointers_s = 0.0
+        domain_pointers_wall_s = 0.0
+        domain_pointers_calls = 0
+        domain_pointers_rows = 0
+        batches = 0
+        rows_returned = 0
+        _emit({"event": "resolve_domain_start", "domain": dom, "urls": len(dom_urls)})
 
-        def col_or_null(cols: set[str], name: str) -> str:
-            return f"p.{name} AS {name}" if name in cols else f"NULL AS {name}"
-
-        # Iterate collections newest-first and stop once all URLs are satisfied.
-        for cref in collections:
-            if all(per_url_counts.get(u, 0) >= int(per_url_limit) for u in want):
-                break
-
-            cdb = cref.collection_db_path
-            if not cdb.exists():
-                continue
-            parquet_dir = get_collection_parquet_dir(parquet_root, cref.collection)
-            if not parquet_dir.exists():
-                continue
-
-            # Get shard relpaths for all requested domains using one connection per collection.
-            relpaths: List[str] = []
-            con_c = duckdb.connect(str(cdb), read_only=True)
+        t_setup0 = time.perf_counter()
+        con = duckdb.connect(database=":memory:")
+        try:
+            con.execute(f"PRAGMA threads={int(_duckdb_threads())}")
+            # Helps reuse Parquet metadata across repeated reads within the process.
             try:
-                if not _duckdb_has_table(con_c, "cc_domain_shards"):
-                    continue
-                for host_rev_prefix in domain_to_hostrev.values():
-                    like_pat = host_rev_prefix + ",%"
-                    rows = con_c.execute(
-                        """
-                        SELECT DISTINCT parquet_relpath
-                        FROM cc_domain_shards
-                        WHERE host_rev = ? OR host_rev LIKE ?
-                        """,
-                        [host_rev_prefix, like_pat],
-                    ).fetchall()
-                    for r in rows:
-                        if r and r[0]:
-                            relpaths.append(str(r[0]))
-            finally:
-                con_c.close()
+                con.execute("PRAGMA enable_object_cache=true")
+            except Exception:
+                pass
 
-            if not relpaths:
-                continue
+            # Avoid Python-level executemany overhead by building the small URL table via VALUES.
+            values_sql = ",".join(["(?, ?)"] * len(variant_rows))
+            params: List[object] = []
+            for u, req in variant_rows:
+                params.append(u)
+                params.append(req)
+            con.execute(
+                f"CREATE TABLE search_urls AS SELECT * FROM (VALUES {values_sql}) AS t(url, requested_url)",
+                params,
+            )
 
-            # De-dupe within the collection.
-            relpaths = sorted(set(relpaths))
-            for rel in relpaths:
-                if all(per_url_counts.get(u, 0) >= int(per_url_limit) for u in want):
-                    break
-                pq = (parquet_dir / rel).resolve()
-                if not pq.exists():
-                    continue
+            setup_s = time.perf_counter() - t_setup0
 
-                cols = _parquet_columns(pq)
-                select_list = ", ".join(
-                    [
-                        col_or_null(cols, "collection"),
-                        col_or_null(cols, "shard_file"),
-                        col_or_null(cols, "url"),
-                        col_or_null(cols, "ts"),
-                        col_or_null(cols, "status"),
-                        col_or_null(cols, "mime"),
-                        col_or_null(cols, "digest"),
-                        col_or_null(cols, "warc_filename"),
-                        col_or_null(cols, "warc_offset"),
-                        col_or_null(cols, "warc_length"),
-                    ]
+            def _parquet_columns(pq_path: Path) -> set[str]:
+                rows = con.execute("DESCRIBE SELECT * FROM read_parquet(?)", [str(pq_path)]).fetchall()
+                return {str(r[0]) for r in rows if r and r[0]}
+
+            def col_or_null(cols: set[str], name: str) -> str:
+                return f"p.{name} AS {name}" if name in cols else f"NULL AS {name}"
+
+            def col_or_null_multi(cols: set[str], names: Sequence[str], *, alias: str) -> str:
+                for n in names:
+                    nn = str(n).lower()
+                    if nn in cols:
+                        return f"p.{nn} AS {alias}"
+                return f"NULL AS {alias}"
+
+            parquet_cols: Optional[set[str]] = None
+            parquet_select_list: Optional[str] = None
+
+            # union_by_name is safer across schema drift, but can be slower.
+            # If your pointer Parquet schema is consistent, disabling it may reduce query time.
+            union_by_name_env = (os.environ.get("BRAVE_RESOLVE_UNION_BY_NAME") or "1").strip().lower()
+            union_by_name = union_by_name_env not in {"0", "false", "no", "off"}
+            union_by_name_sql = "true" if union_by_name else "false"
+
+            try:
+                batch_sz = int((os.environ.get("BRAVE_RESOLVE_PARQUET_BATCH") or "16").strip() or "16")
+            except Exception:
+                batch_sz = 16
+            batch_sz = max(1, min(64, int(batch_sz)))
+
+            def _collection_sort_key(coll: str) -> tuple[int, int, str]:
+                """Newest-first sort key for CC collections."""
+
+                try:
+                    m = re.match(r"^CC-MAIN-(\d{4})-(\d{2})$", str(coll))
+                    if m:
+                        return (int(m.group(1)), int(m.group(2)), str(coll))
+                except Exception:
+                    pass
+                return (0, 0, str(coll))
+
+            # Fast path (optional): if per-collection DBs include a URL-level pointer table
+            # (`cc_pointers`), query it directly and avoid Parquet entirely.
+            #
+            # Many deployments only have domain-only DBs (`cc_domain_shards`). Opening dozens of
+            # DB files just to discover `cc_pointers` doesn't exist can cost 10s+, so default to
+            # an auto-probed mode.
+            cc_mode = (os.environ.get("BRAVE_RESOLVE_CC_POINTERS_MODE") or "auto").strip().lower()
+            if cc_mode not in {"auto", "on", "off"}:
+                cc_mode = "auto"
+
+            cc_pointers_global_dbs = _cc_pointers_duckdb_paths()
+
+            # Fast pre-check: query any global `cc_pointers` DBs (if present) before scanning Parquet.
+            # This is especially useful when you have a single-collection or per-year URL pointer DB.
+            if cc_mode != "off" and cc_pointers_global_dbs:
+                for db_path in cc_pointers_global_dbs:
+                    if all(per_url_counts.get(u, 0) >= int(per_url_limit) for u in dom_urls):
+                        break
+                    try:
+                        con_g = duckdb.connect(str(db_path), read_only=True)
+                    except Exception:
+                        continue
+
+                    t_cc0 = time.perf_counter()
+                    try:
+                        if not _duckdb_has_table(con_g, "cc_pointers"):
+                            continue
+                        cols_p = _duckdb_table_columns(con_g, "cc_pointers")
+                        cc_pointers_calls += 1
+
+                        values_sql = ",".join(["(?, ?)"] * len(variant_rows))
+                        params: List[object] = []
+                        for (u, req) in variant_rows:
+                            params.append(u)
+                            params.append(req)
+
+                        select_list = ", ".join(
+                            [
+                                col_or_null(cols_p, "collection"),
+                                col_or_null(cols_p, "shard_file"),
+                                col_or_null(cols_p, "url"),
+                                col_or_null_multi(cols_p, ["ts", "timestamp"], alias="ts"),
+                                col_or_null(cols_p, "status"),
+                                col_or_null(cols_p, "mime"),
+                                col_or_null(cols_p, "digest"),
+                                col_or_null(cols_p, "warc_filename"),
+                                col_or_null(cols_p, "warc_offset"),
+                                col_or_null(cols_p, "warc_length"),
+                            ]
+                        )
+
+                        rows = con_g.execute(
+                            f"""
+                            WITH search_urls(url, requested_url) AS (VALUES {values_sql})
+                            SELECT s.requested_url, {select_list}
+                            FROM cc_pointers p
+                            INNER JOIN search_urls s ON p.url = s.url
+                            """,
+                            params,
+                        ).fetchall()
+
+                        cc_pointers_rows += int(len(rows))
+                        for row in rows:
+                            if not row:
+                                continue
+                            requested_url = str(row[0] or "")
+                            if not requested_url or requested_url not in matches:
+                                continue
+                            if per_url_counts.get(requested_url, 0) >= int(per_url_limit):
+                                continue
+
+                            (
+                                _requested,
+                                collection,
+                                shard_file,
+                                url,
+                                ts,
+                                status,
+                                mime,
+                                digest,
+                                warc_filename,
+                                warc_offset,
+                                warc_length,
+                            ) = row
+
+                            rec = {
+                                "collection": (collection if collection is not None else None),
+                                "shard_file": shard_file,
+                                "url": url,
+                                "timestamp": ts,
+                                "status": int(status) if status is not None else None,
+                                "mime": mime,
+                                "digest": digest,
+                                "warc_filename": warc_filename,
+                                "warc_offset": int(warc_offset) if warc_offset is not None else None,
+                                "warc_length": int(warc_length) if warc_length is not None else None,
+                                "parquet_path": "",
+                            }
+                            matches[requested_url].append(rec)
+                            per_url_counts[requested_url] = per_url_counts.get(requested_url, 0) + 1
+                    finally:
+                        cc_pointers_s += float(time.perf_counter() - t_cc0)
+                        try:
+                            con_g.close()
+                        except Exception:
+                            pass
+
+            global _CC_POINTERS_FASTPATH_AVAILABLE
+
+            if cc_mode == "off":
+                cc_pointers_enabled = False
+            elif cc_mode == "on":
+                cc_pointers_enabled = True
+            else:
+                # Only probe per-collection DBs when we *don't* already have a global URL pointer DB.
+                # Probing can be expensive (opening many DB files).
+                if cc_pointers_global_dbs:
+                    cc_pointers_enabled = False
+                elif _CC_POINTERS_FASTPATH_AVAILABLE is None:
+                    # Probe a couple newest collections.
+                    probed = 0
+                    found = False
+                    for cref in collections[:2]:
+                        cdb = cref.collection_db_path
+                        if not cdb.exists():
+                            continue
+                        probed += 1
+                        t_chk0 = time.perf_counter()
+                        try:
+                            con_probe = duckdb.connect(str(cdb), read_only=True)
+                            try:
+                                if _duckdb_has_table(con_probe, "cc_pointers"):
+                                    found = True
+                                    break
+                            finally:
+                                try:
+                                    con_probe.close()
+                                except Exception:
+                                    pass
+                        finally:
+                            cc_pointers_check_s += float(time.perf_counter() - t_chk0)
+                    _CC_POINTERS_FASTPATH_AVAILABLE = bool(found) if probed > 0 else False
+
+                cc_pointers_enabled = bool(_CC_POINTERS_FASTPATH_AVAILABLE)
+
+            if cc_pointers_enabled:
+                for cref in collections:
+                    if all(per_url_counts.get(u, 0) >= int(per_url_limit) for u in dom_urls):
+                        break
+
+                    cdb = cref.collection_db_path
+                    if not cdb.exists():
+                        continue
+
+                    t_chk0 = time.perf_counter()
+                    con_c = duckdb.connect(str(cdb), read_only=True)
+                    try:
+                        has_tbl = _duckdb_has_table(con_c, "cc_pointers")
+                    finally:
+                        cc_pointers_check_s += float(time.perf_counter() - t_chk0)
+
+                    if not has_tbl:
+                        try:
+                            con_c.close()
+                        except Exception:
+                            pass
+                        continue
+
+                    t_cc0 = time.perf_counter()
+                    try:
+                        cols_p = _duckdb_table_columns(con_c, "cc_pointers")
+                        cc_pointers_calls += 1
+                        collections_scanned += 1
+
+                        # Use a VALUES CTE so we can keep the connection read-only.
+                        values_sql = ",".join(["(?, ?)"] * len(variant_rows))
+                        params: List[object] = []
+                        for (u, req) in variant_rows:
+                            params.append(u)
+                            params.append(req)
+
+                        select_list = ", ".join(
+                            [
+                                col_or_null(cols_p, "collection"),
+                                col_or_null(cols_p, "shard_file"),
+                                col_or_null(cols_p, "url"),
+                                col_or_null_multi(cols_p, ["ts", "timestamp"], alias="ts"),
+                                col_or_null(cols_p, "status"),
+                                col_or_null(cols_p, "mime"),
+                                col_or_null(cols_p, "digest"),
+                                col_or_null(cols_p, "warc_filename"),
+                                col_or_null(cols_p, "warc_offset"),
+                                col_or_null(cols_p, "warc_length"),
+                            ]
+                        )
+
+                        rows = con_c.execute(
+                            f"""
+                            WITH search_urls(url, requested_url) AS (VALUES {values_sql})
+                            SELECT s.requested_url, {select_list}
+                            FROM cc_pointers p
+                            INNER JOIN search_urls s ON p.url = s.url
+                            """,
+                            params,
+                        ).fetchall()
+
+                        cc_pointers_rows += int(len(rows))
+                        for row in rows:
+                            if not row:
+                                continue
+                            requested_url = str(row[0] or "")
+                            if not requested_url or requested_url not in matches:
+                                continue
+                            if per_url_counts.get(requested_url, 0) >= int(per_url_limit):
+                                continue
+
+                            (
+                                _requested,
+                                collection,
+                                shard_file,
+                                url,
+                                ts,
+                                status,
+                                mime,
+                                digest,
+                                warc_filename,
+                                warc_offset,
+                                warc_length,
+                            ) = row
+
+                            rec = {
+                                "collection": (collection if collection is not None else str(cref.collection)),
+                                "shard_file": shard_file,
+                                "url": url,
+                                "timestamp": ts,
+                                "status": int(status) if status is not None else None,
+                                "mime": mime,
+                                "digest": digest,
+                                "warc_filename": warc_filename,
+                                "warc_offset": int(warc_offset) if warc_offset is not None else None,
+                                "warc_length": int(warc_length) if warc_length is not None else None,
+                                "parquet_path": "",
+                            }
+                            matches[requested_url].append(rec)
+                            per_url_counts[requested_url] = per_url_counts.get(requested_url, 0) + 1
+                    finally:
+                        cc_pointers_s += float(time.perf_counter() - t_cc0)
+                        try:
+                            con_c.close()
+                        except Exception:
+                            pass
+
+            # If `cc_pointers` satisfied all requested URLs, skip Parquet scans entirely.
+            if all(per_url_counts.get(u, 0) >= int(per_url_limit) for u in dom_urls):
+                matches = {u: recs for (u, recs) in matches.items() if recs}
+                dt = time.perf_counter() - t_dom0
+                _emit(
+                    {
+                        "event": "resolve_domain_done",
+                        "domain": dom,
+                        "elapsed_s": float(dt),
+                        "collections_scanned": int(collections_scanned),
+                        "parquet_files_scanned": int(parquet_files_scanned),
+                        "matched_urls": int(len(matches)),
+                        "setup_s": float(setup_s),
+                        "schema_s": float(schema_s),
+                        "query_s": float(query_s),
+                        "cc_pointers_s": float(cc_pointers_s),
+                        "cc_pointers_calls": int(cc_pointers_calls),
+                        "cc_pointers_rows": int(cc_pointers_rows),
+                        "cc_pointers_check_s": float(cc_pointers_check_s),
+                        "relpaths_s": float(relpaths_s),
+                        "relpaths_wall_s": float(relpaths_wall_s),
+                        "relpaths_calls": int(relpaths_calls),
+                        "domain_pointers_s": float(domain_pointers_s),
+                        "domain_pointers_wall_s": float(domain_pointers_wall_s),
+                        "domain_pointers_calls": int(domain_pointers_calls),
+                        "domain_pointers_rows": int(domain_pointers_rows),
+                        "batches": int(batches),
+                        "rows_returned": int(rows_returned),
+                    }
                 )
 
-                parquet_files_scanned += 1
-                rows = con.execute(
-                    f"""
-                    SELECT s.requested_url, {select_list}
-                    FROM read_parquet(?) p
-                    INNER JOIN search_urls s ON p.url = s.url
-                    """,
-                    [str(pq)],
-                ).fetchall()
-
-                for row in rows:
-                    if not row:
-                        continue
-                    requested_url = str(row[0] or "")
-                    if not requested_url or requested_url not in out:
-                        continue
-                    if per_url_counts.get(requested_url, 0) >= int(per_url_limit):
-                        continue
-
-                    (
-                        _requested,
-                        collection,
-                        shard_file,
-                        url,
-                        ts,
-                        status,
-                        mime,
-                        digest,
-                        warc_filename,
-                        warc_offset,
-                        warc_length,
-                    ) = row
-                    rec = {
-                        "collection": collection,
-                        "shard_file": shard_file,
-                        "url": url,
-                        "timestamp": ts,
-                        "status": int(status) if status is not None else None,
-                        "mime": mime,
-                        "digest": digest,
-                        "warc_filename": warc_filename,
-                        "warc_offset": int(warc_offset) if warc_offset is not None else None,
-                        "warc_length": int(warc_length) if warc_length is not None else None,
-                        "parquet_path": str(pq),
+                with _dom_lock:
+                    _dom_details[dom] = {
+                        "domain": dom,
+                        "mode": "domain_url_join_parallel",
+                        "urls": int(len(dom_urls)),
+                        "elapsed_s": float(dt),
+                        "collections_scanned": int(collections_scanned),
+                        "parquet_files_scanned": int(parquet_files_scanned),
+                        "matched_urls": int(len(matches)),
+                        "setup_s": float(setup_s),
+                        "schema_s": float(schema_s),
+                        "query_s": float(query_s),
+                        "cc_pointers_s": float(cc_pointers_s),
+                        "cc_pointers_calls": int(cc_pointers_calls),
+                        "cc_pointers_rows": int(cc_pointers_rows),
+                        "cc_pointers_check_s": float(cc_pointers_check_s),
+                        "relpaths_s": float(relpaths_s),
+                        "relpaths_wall_s": float(relpaths_wall_s),
+                        "relpaths_calls": int(relpaths_calls),
+                        "domain_pointers_s": float(domain_pointers_s),
+                        "domain_pointers_wall_s": float(domain_pointers_wall_s),
+                        "domain_pointers_calls": int(domain_pointers_calls),
+                        "domain_pointers_rows": int(domain_pointers_rows),
+                        "batches": int(batches),
+                        "rows_returned": int(rows_returned),
                     }
-                    out[requested_url].append(rec)
-                    per_url_counts[requested_url] = per_url_counts.get(requested_url, 0) + 1
-    finally:
-        con.close()
+                return (dom, matches, int(collections_scanned), int(parquet_files_scanned), float(dt), None)
 
-    # Fallback for any URLs still unresolved.
-    missing = [u for u in want if not out.get(u)]
-    if missing:
-        fallback = _via_domain_scan(missing)
-        for u, recs in fallback.items():
-            if recs:
-                out[u] = recs
+            # Shared worker setting for per-collection lookups.
+            try:
+                env_relw = (os.environ.get("BRAVE_RESOLVE_RELPATH_WORKERS") or "").strip()
+                rel_workers = int(env_relw) if env_relw else 4
+            except Exception:
+                rel_workers = 4
+            rel_workers = max(1, min(8, int(rel_workers)))
 
+            # Optional fast path: use the prebuilt domain pointer indexes (domain -> parquet_file + row range)
+            # to avoid per-collection cc_domain_shards relpath lookups.
+            dp_mode = (os.environ.get("BRAVE_RESOLVE_DOMAIN_POINTERS_MODE") or "auto").strip().lower()
+            if dp_mode not in {"auto", "on", "off"}:
+                dp_mode = "auto"
+
+            global _DOMAIN_POINTER_INDEX_AVAILABLE
+            dp_enabled: bool
+            if dp_mode == "off":
+                dp_enabled = False
+            elif dp_mode == "on":
+                dp_enabled = True
+            else:
+                if _DOMAIN_POINTER_INDEX_AVAILABLE is None:
+                    try:
+                        idir = _domain_pointer_index_dir()
+                        _DOMAIN_POINTER_INDEX_AVAILABLE = bool(idir.exists() and (idir / "master_index.duckdb").exists())
+                    except Exception:
+                        _DOMAIN_POINTER_INDEX_AVAILABLE = False
+                dp_enabled = bool(_DOMAIN_POINTER_INDEX_AVAILABLE)
+
+            # Build a small set of host_rev keys derived from the actual URLs we are resolving.
+            # This is both tighter (avoids scanning every subdomain shard) and more correct than
+            # only using the normalized domain.
+            host_revs: List[str] = []
+            try:
+                host_revs_set = {host_to_rev(dom), host_to_rev("www." + dom)}
+                for u in dom_urls:
+                    uu = (u or "").strip()
+                    if not uu:
+                        continue
+                    if not re.match(r"^https?://", uu, flags=re.IGNORECASE):
+                        uu = "https://" + uu
+                    try:
+                        p = urllib.parse.urlsplit(uu)
+                        h = (p.hostname or "").strip().lower()
+                    except Exception:
+                        h = ""
+                    if not h:
+                        continue
+                    host_revs_set.add(host_to_rev(h))
+                    if h.startswith("www."):
+                        host_revs_set.add(host_to_rev(h[4:]))
+                    else:
+                        host_revs_set.add(host_to_rev("www." + h))
+                host_revs = [r for r in sorted(host_revs_set) if r]
+            except Exception:
+                host_revs = [host_rev_prefix] if host_rev_prefix else []
+
+            def _lookup_domain_pointers(
+                cref: CollectionRef,
+            ) -> tuple[str, List[Path], float, int]:
+                """Return [parquet_path] candidates for this collection.
+
+                Uses cc_domain_shards(host_rev -> source_path/parquet_relpath) when present.
+                """
+
+                t0 = time.perf_counter()
+                idx_db = Path(cref.collection_db_path)
+                if not idx_db.exists():
+                    return (str(cref.collection), [], float(time.perf_counter() - t0), 0)
+
+                con_i = duckdb.connect(str(idx_db), read_only=True)
+                try:
+                    if not host_revs:
+                        return (str(cref.collection), [], float(time.perf_counter() - t0), 0)
+
+                    if not _duckdb_has_table(con_i, "cc_domain_shards"):
+                        return (str(cref.collection), [], float(time.perf_counter() - t0), 0)
+
+                    placeholders = ",".join(["?"] * len(host_revs))
+                    rows = con_i.execute(
+                        f"""
+                        SELECT source_path, parquet_relpath
+                        FROM cc_domain_shards
+                        WHERE host_rev IN ({placeholders})
+                        """,
+                        host_revs,
+                    ).fetchall()
+
+                    pq_paths: List[Path] = []
+                    seen = set()
+                    parquet_dir: Optional[Path] = None
+                    for sp, rel in rows:
+                        sp_s = str(sp or "").strip()
+                        rel_s = str(rel or "").strip()
+                        p: Optional[Path] = None
+                        if sp_s:
+                            p = Path(sp_s)
+                        elif rel_s:
+                            if parquet_dir is None:
+                                parquet_dir = get_collection_parquet_dir(parquet_root, cref.collection)
+                            p = (parquet_dir / rel_s).resolve()
+                        if p is None:
+                            continue
+                        ps = str(p)
+                        if not ps or ps in seen:
+                            continue
+                        seen.add(ps)
+                        if p.exists():
+                            pq_paths.append(p)
+
+                    return (str(cref.collection), pq_paths, float(time.perf_counter() - t0), int(len(rows)))
+                finally:
+                    try:
+                        con_i.close()
+                    except Exception:
+                        pass
+
+            if dp_enabled:
+                did_dp_scan = False
+                try:
+                    env_dpb = (os.environ.get("BRAVE_RESOLVE_DOMAIN_POINTERS_BATCH") or "").strip()
+                    dp_batch = int(env_dpb) if env_dpb else (int(rel_workers) * 2)
+                except Exception:
+                    dp_batch = int(rel_workers) * 2
+                dp_batch = max(1, min(64, int(dp_batch)))
+
+                from concurrent.futures import ThreadPoolExecutor as _TPE2, as_completed as _as_completed2
+
+                # Prefer global per-year domain indexes when available.
+                # These avoid opening many per-collection DBs just to discover shard Parquet files.
+                covered_years: set[str] = set()
+                global_coll_to_pq: Dict[str, List[Path]] = {}
+                if host_revs:
+                    try:
+                        by_year_dir: Optional[Path] = None
+                        for cand in [
+                            Path("/storage/ccindex_duckdb/cc_domain_by_year_sorted"),
+                            Path("/storage/ccindex_duckdb/cc_domain_by_year"),
+                        ]:
+                            if cand.exists():
+                                by_year_dir = cand
+                                break
+
+                        if by_year_dir is not None:
+                            years = sorted({str(c.year) for c in collections if getattr(c, "year", None)}, reverse=True)
+                            for y in years:
+                                dbp = (by_year_dir / f"cc_pointers_{y}.duckdb").resolve()
+                                if not dbp.exists():
+                                    continue
+                                covered_years.add(str(y))
+
+                                t_wall0 = time.perf_counter()
+                                t0 = time.perf_counter()
+                                con_y = duckdb.connect(str(dbp), read_only=True)
+                                try:
+                                    if not _duckdb_has_table(con_y, "cc_domain_shards"):
+                                        continue
+                                    placeholders = ",".join(["?"] * len(host_revs))
+                                    rows = con_y.execute(
+                                        f"""
+                                        SELECT source_path, collection, parquet_relpath
+                                        FROM cc_domain_shards
+                                        WHERE host_rev IN ({placeholders})
+                                        """,
+                                        host_revs,
+                                    ).fetchall()
+                                finally:
+                                    try:
+                                        con_y.close()
+                                    except Exception:
+                                        pass
+
+                                dt = float(time.perf_counter() - t0)
+                                domain_pointers_calls += 1
+                                domain_pointers_s += dt
+                                domain_pointers_rows += int(len(rows) if rows else 0)
+                                domain_pointers_wall_s += float(time.perf_counter() - t_wall0)
+
+                                if not rows:
+                                    continue
+
+                                for sp, coll, rel in rows:
+                                    coll_s = str(coll or "").strip()
+                                    if not coll_s:
+                                        continue
+                                    sp_s = str(sp or "").strip()
+                                    rel_s = str(rel or "").strip()
+                                    pth: Optional[Path] = None
+                                    if sp_s:
+                                        pth = Path(sp_s)
+                                    elif rel_s:
+                                        pdir = get_collection_parquet_dir(parquet_root, coll_s)
+                                        pth = (pdir / rel_s).resolve()
+                                    if pth is None or not pth.exists():
+                                        continue
+                                    global_coll_to_pq.setdefault(coll_s, []).append(pth)
+                    except Exception:
+                        pass
+
+                # If we found any Parquet shards via global-by-year lookup, scan them now.
+                if global_coll_to_pq:
+                    did_dp_scan = True
+
+                    # De-dupe within each collection.
+                    for _c, _paths in list(global_coll_to_pq.items()):
+                        seen = set()
+                        uniq: List[Path] = []
+                        for pth in _paths:
+                            ps = str(pth)
+                            if ps and ps not in seen:
+                                seen.add(ps)
+                                uniq.append(pth)
+                        global_coll_to_pq[_c] = uniq
+
+                    # Process newest collections first to maximize the chance we can stop early.
+                    ordered_colls = sorted(global_coll_to_pq.keys(), key=_collection_sort_key, reverse=True)
+
+                    batch_files: List[Path] = []
+                    file_to_coll: Dict[str, str] = {}
+                    for _c in ordered_colls:
+                        _paths = global_coll_to_pq.get(_c) or []
+                        for pth in _paths:
+                            batch_files.append(pth)
+                            ps = str(pth)
+                            if ps and ps not in file_to_coll:
+                                file_to_coll[ps] = str(_c)
+
+                    if batch_files:
+                        if parquet_cols is None:
+                            t_schema0 = time.perf_counter()
+                            parquet_cols = _parquet_columns(batch_files[0])
+                            schema_s += time.perf_counter() - t_schema0
+                            parquet_select_list = ", ".join(
+                                [
+                                    "p.filename AS parquet_path",
+                                    "pf.collection AS collection",
+                                    "NULL AS shard_file",
+                                    col_or_null(parquet_cols, "url"),
+                                    col_or_null(parquet_cols, "ts"),
+                                    col_or_null(parquet_cols, "status"),
+                                    col_or_null(parquet_cols, "mime"),
+                                    col_or_null(parquet_cols, "digest"),
+                                    col_or_null(parquet_cols, "warc_filename"),
+                                    col_or_null(parquet_cols, "warc_offset"),
+                                    col_or_null(parquet_cols, "warc_length"),
+                                ]
+                            )
+
+                        select_list = parquet_select_list or "p.filename AS parquet_path"
+                        for i in range(0, len(batch_files), batch_sz):
+                            if all(per_url_counts.get(u, 0) >= int(per_url_limit) for u in dom_urls):
+                                break
+
+                            batch = batch_files[i : i + batch_sz]
+                            parquet_files_scanned += len(batch)
+                            collections_scanned += len(global_coll_to_pq)
+                            batches += 1
+
+                            map_rows = [(str(p), file_to_coll.get(str(p), "")) for p in batch]
+                            values_sql = ",".join(["(?, ?)"] * len(map_rows))
+                            map_params: List[object] = []
+                            for fp, coll in map_rows:
+                                map_params.append(fp)
+                                map_params.append(coll)
+
+                            placeholders = ",".join(["?"] * len(batch))
+                            t_q0 = time.perf_counter()
+                            try:
+                                rows = con.execute(
+                                    f"""
+                                    WITH parquet_files(parquet_path, collection) AS (VALUES {values_sql})
+                                    SELECT s.requested_url, {select_list}
+                                    FROM read_parquet([{placeholders}], filename=true, union_by_name={union_by_name_sql}) p
+                                    INNER JOIN parquet_files pf ON pf.parquet_path = p.filename
+                                    INNER JOIN search_urls s ON p.url = s.url
+                                    """,
+                                    (map_params + [str(p) for p in batch]),
+                                ).fetchall()
+                            finally:
+                                query_s += float(time.perf_counter() - t_q0)
+                            rows_returned += int(len(rows))
+
+                            if not rows:
+                                continue
+
+                            for row in rows:
+                                if not row:
+                                    continue
+                                requested_url = str(row[0] or "")
+                                if not requested_url or requested_url not in matches:
+                                    continue
+                                if per_url_counts.get(requested_url, 0) >= int(per_url_limit):
+                                    continue
+
+                                (
+                                    _requested,
+                                    parquet_path,
+                                    collection,
+                                    shard_file,
+                                    url,
+                                    ts,
+                                    status,
+                                    mime,
+                                    digest,
+                                    warc_filename,
+                                    warc_offset,
+                                    warc_length,
+                                ) = row
+
+                                if shard_file in (None, ""):
+                                    try:
+                                        pp = str(parquet_path or "")
+                                        name = Path(pp).name
+                                        suf = ".sorted.parquet"
+                                        shard_file = name[: -len(suf)] if name.endswith(suf) else name
+                                        shard_file = shard_file or None
+                                    except Exception:
+                                        shard_file = None
+
+                                rec = {
+                                    "collection": collection,
+                                    "shard_file": shard_file,
+                                    "url": url,
+                                    "timestamp": ts,
+                                    "status": int(status) if status is not None else None,
+                                    "mime": mime,
+                                    "digest": digest,
+                                    "warc_filename": warc_filename,
+                                    "warc_offset": int(warc_offset) if warc_offset is not None else None,
+                                    "warc_length": int(warc_length) if warc_length is not None else None,
+                                    "parquet_path": str(parquet_path or ""),
+                                }
+                                matches[requested_url].append(rec)
+                                per_url_counts[requested_url] = per_url_counts.get(requested_url, 0) + 1
+
+                # Only use per-collection domain pointers for years without a global-by-year index.
+                collections_remaining = [c for c in collections if str(getattr(c, "year", "")) not in covered_years]
+
+                # Scan newest collections first, but interleave index lookup with scanning so we can stop early.
+                for start in range(0, len(collections_remaining), int(dp_batch)):
+                    if all(per_url_counts.get(u, 0) >= int(per_url_limit) for u in dom_urls):
+                        break
+
+                    batch_cols = collections_remaining[start : start + int(dp_batch)]
+                    t_dpwall0 = time.perf_counter()
+                    coll_to_pq: Dict[str, List[Path]] = {}
+
+                    try:
+                        with _TPE2(max_workers=min(int(rel_workers), max(1, len(batch_cols)))) as dex:
+                            futs = [dex.submit(_lookup_domain_pointers, cref) for cref in batch_cols]
+                            for fut in _as_completed2(futs):
+                                try:
+                                    coll, pq_paths, dt, rows_n = fut.result()
+                                except Exception:
+                                    continue
+                                domain_pointers_calls += 1
+                                domain_pointers_s += float(dt)
+                                domain_pointers_rows += int(rows_n)
+                                if pq_paths:
+                                    coll_to_pq[coll] = pq_paths
+                    finally:
+                        domain_pointers_wall_s += float(time.perf_counter() - t_dpwall0)
+
+                    if not coll_to_pq:
+                        continue
+
+                    did_dp_scan = True
+
+                    # Preserve newest-first ordering based on the batch_cols sequence.
+                    ordered_colls = [
+                        str(c.collection) for c in batch_cols if str(getattr(c, "collection", "")) in coll_to_pq
+                    ]
+                    batch_files: List[Path] = []
+                    for _coll in ordered_colls:
+                        paths = coll_to_pq.get(_coll) or []
+                        if paths:
+                            batch_files.extend(paths)
+
+                    file_to_coll: Dict[str, str] = {}
+                    for _coll, paths in coll_to_pq.items():
+                        for pth in paths:
+                            ps = str(pth)
+                            if ps and ps not in file_to_coll:
+                                file_to_coll[ps] = str(_coll)
+
+                    if not batch_files:
+                        continue
+
+                    if parquet_cols is None:
+                        t_schema0 = time.perf_counter()
+                        parquet_cols = _parquet_columns(batch_files[0])
+                        schema_s += time.perf_counter() - t_schema0
+                        parquet_select_list = ", ".join(
+                            [
+                                "p.filename AS parquet_path",
+                                "pf.collection AS collection",
+                                "NULL AS shard_file",
+                                col_or_null(parquet_cols, "url"),
+                                col_or_null(parquet_cols, "ts"),
+                                col_or_null(parquet_cols, "status"),
+                                col_or_null(parquet_cols, "mime"),
+                                col_or_null(parquet_cols, "digest"),
+                                col_or_null(parquet_cols, "warc_filename"),
+                                col_or_null(parquet_cols, "warc_offset"),
+                                col_or_null(parquet_cols, "warc_length"),
+                            ]
+                        )
+
+                    select_list = parquet_select_list or "p.filename AS parquet_path"
+                    for i in range(0, len(batch_files), batch_sz):
+                        if all(per_url_counts.get(u, 0) >= int(per_url_limit) for u in dom_urls):
+                            break
+
+                        batch = batch_files[i : i + batch_sz]
+                        parquet_files_scanned += len(batch)
+                        collections_scanned += len(coll_to_pq)
+                        batches += 1
+
+                        # Attach collection from the known file->collection mapping.
+                        map_rows = [(str(p), file_to_coll.get(str(p), "")) for p in batch]
+                        values_sql = ",".join(["(?, ?)"] * len(map_rows))
+                        map_params: List[object] = []
+                        for fp, coll in map_rows:
+                            map_params.append(fp)
+                            map_params.append(coll)
+
+                        placeholders = ",".join(["?"] * len(batch))
+                        t_q0 = time.perf_counter()
+                        try:
+                            rows = con.execute(
+                                f"""
+                                WITH parquet_files(parquet_path, collection) AS (VALUES {values_sql})
+                                SELECT s.requested_url, {select_list}
+                                FROM read_parquet([{placeholders}], filename=true, union_by_name={union_by_name_sql}) p
+                                INNER JOIN parquet_files pf ON pf.parquet_path = p.filename
+                                INNER JOIN search_urls s ON p.url = s.url
+                                """,
+                                (map_params + [str(p) for p in batch]),
+                            ).fetchall()
+                        finally:
+                            query_s += float(time.perf_counter() - t_q0)
+                        rows_returned += int(len(rows))
+
+                        if not rows:
+                            continue
+
+                        for row in rows:
+                            if not row:
+                                continue
+                            requested_url = str(row[0] or "")
+                            if not requested_url or requested_url not in matches:
+                                continue
+                            if per_url_counts.get(requested_url, 0) >= int(per_url_limit):
+                                continue
+
+                            (
+                                _requested,
+                                parquet_path,
+                                collection,
+                                shard_file,
+                                url,
+                                ts,
+                                status,
+                                mime,
+                                digest,
+                                warc_filename,
+                                warc_offset,
+                                warc_length,
+                            ) = row
+
+                            if shard_file in (None, ""):
+                                try:
+                                    pp = str(parquet_path or "")
+                                    name = Path(pp).name
+                                    suf = ".sorted.parquet"
+                                    shard_file = name[: -len(suf)] if name.endswith(suf) else name
+                                    shard_file = shard_file or None
+                                except Exception:
+                                    shard_file = None
+
+                            rec = {
+                                "collection": collection,
+                                "shard_file": shard_file,
+                                "url": url,
+                                "timestamp": ts,
+                                "status": int(status) if status is not None else None,
+                                "mime": mime,
+                                "digest": digest,
+                                "warc_filename": warc_filename,
+                                "warc_offset": int(warc_offset) if warc_offset is not None else None,
+                                "warc_length": int(warc_length) if warc_length is not None else None,
+                                "parquet_path": str(parquet_path or ""),
+                            }
+                            matches[requested_url].append(rec)
+                            per_url_counts[requested_url] = per_url_counts.get(requested_url, 0) + 1
+
+                # If the domain pointer index path satisfied all requested URLs, skip relpaths+shards.
+                if all(per_url_counts.get(u, 0) >= int(per_url_limit) for u in dom_urls):
+                    # Continue to finalization path (emit stats) without doing relpath lookups.
+                    pass
+                else:
+                    # If we successfully scanned Parquet shards discovered via cc_domain_shards,
+                    # do not also do relpath discovery (which is an alternate path to the same shards).
+                    # This avoids doing 40+ per-collection DB lookups for URLs that may not exist.
+                    if not did_dp_scan:
+                        dp_enabled = False
+
+            # The per-collection cc_domain_shards lookup (parquet_relpaths_for_domain) is often the
+            # dominant cost, so only do it if we still need more matches.
+            candidates: List[tuple[CollectionRef, Path]] = []
+            if (not dp_enabled) and (not all(per_url_counts.get(u, 0) >= int(per_url_limit) for u in dom_urls)):
+                for cref in collections:
+                    cdb = cref.collection_db_path
+                    if not cdb.exists():
+                        continue
+                    parquet_dir = get_collection_parquet_dir(parquet_root, cref.collection)
+                    if not parquet_dir.exists():
+                        continue
+                    candidates.append((cref, parquet_dir))
+
+            def _lookup_one(cref: CollectionRef, parquet_dir: Path) -> tuple[str, List[Path], float]:
+                t0 = time.perf_counter()
+                relpaths = parquet_relpaths_for_domain(
+                    cref.collection_db_path,
+                    host_rev_prefix,
+                    include_subdomains=False,
+                )
+                dt = time.perf_counter() - t0
+                pq_paths: List[Path] = []
+                if relpaths:
+                    for rel in relpaths:
+                        pq = (parquet_dir / rel).resolve()
+                        if pq.exists():
+                            pq_paths.append(pq)
+                return (str(cref.collection), pq_paths, float(dt))
+
+            from concurrent.futures import ThreadPoolExecutor as _TPE, as_completed as _as_completed
+
+            # NOTE: relpath lookup can dominate. We do it in parallel, but *in ordered batches*
+            # interleaved with Parquet scanning so we can stop early once URLs are satisfied.
+            try:
+                env_relb = (os.environ.get("BRAVE_RESOLVE_RELPATH_BATCH") or "").strip()
+                rel_batch = int(env_relb) if env_relb else (int(rel_workers) * 2)
+            except Exception:
+                rel_batch = int(rel_workers) * 2
+            rel_batch = max(1, min(64, int(rel_batch)))
+
+            for start in range(0, len(candidates), int(rel_batch)):
+                if all(per_url_counts.get(u, 0) >= int(per_url_limit) for u in dom_urls):
+                    break
+
+                batch_cands = candidates[start : start + int(rel_batch)]
+                coll_to_pq: Dict[str, List[Path]] = {}
+
+                t_relwall0 = time.perf_counter()
+                try:
+                    with _TPE(max_workers=min(int(rel_workers), max(1, len(batch_cands)))) as rex:
+                        futs = [rex.submit(_lookup_one, cref, pdir) for (cref, pdir) in batch_cands]
+                        for fut in _as_completed(futs):
+                            try:
+                                coll, pq_paths, dt = fut.result()
+                            except Exception:
+                                continue
+                            relpaths_calls += 1
+                            relpaths_s += float(dt)
+                            if pq_paths:
+                                coll_to_pq[coll] = pq_paths
+                finally:
+                    relpaths_wall_s += float(time.perf_counter() - t_relwall0)
+
+                # Flatten parquet paths for this batch and scan them in larger chunks.
+                # This avoids running 30-50 separate DuckDB queries when each collection
+                # only yields 1 shard file.
+                ordered_colls = [str(cref.collection) for (cref, _pdir) in batch_cands]
+                batch_files: List[Path] = []
+                for coll in ordered_colls:
+                    paths = coll_to_pq.get(str(coll)) or []
+                    if paths:
+                        collections_scanned += 1
+                        batch_files.extend(paths)
+
+                file_to_coll: Dict[str, str] = {}
+                for coll, paths in coll_to_pq.items():
+                    for pth in paths:
+                        ps = str(pth)
+                        if ps and ps not in file_to_coll:
+                            file_to_coll[ps] = str(coll)
+
+                if not batch_files:
+                    continue
+
+                if parquet_cols is None:
+                    t_schema0 = time.perf_counter()
+                    parquet_cols = _parquet_columns(batch_files[0])
+                    schema_s += time.perf_counter() - t_schema0
+                    parquet_select_list = ", ".join(
+                        [
+                            "p.filename AS parquet_path",
+                            "pf.collection AS collection",
+                            "NULL AS shard_file",
+                            col_or_null(parquet_cols, "url"),
+                            col_or_null(parquet_cols, "ts"),
+                            col_or_null(parquet_cols, "status"),
+                            col_or_null(parquet_cols, "mime"),
+                            col_or_null(parquet_cols, "digest"),
+                            col_or_null(parquet_cols, "warc_filename"),
+                            col_or_null(parquet_cols, "warc_offset"),
+                            col_or_null(parquet_cols, "warc_length"),
+                        ]
+                    )
+
+                select_list = parquet_select_list or "p.filename AS parquet_path"
+                for i in range(0, len(batch_files), batch_sz):
+                    if all(per_url_counts.get(u, 0) >= int(per_url_limit) for u in dom_urls):
+                        break
+
+                    batch = batch_files[i : i + batch_sz]
+                    parquet_files_scanned += len(batch)
+
+                    t_q0 = time.perf_counter()
+                    batches += 1
+
+                    # Attach collection from the known file->collection mapping.
+                    map_rows = [(str(p), file_to_coll.get(str(p), "")) for p in batch]
+                    values_sql = ",".join(["(?, ?)"] * len(map_rows))
+                    map_params: List[object] = []
+                    for fp, coll in map_rows:
+                        map_params.append(fp)
+                        map_params.append(coll)
+
+                    placeholders = ",".join(["?"] * len(batch))
+                    rows = con.execute(
+                        f"""
+                        WITH parquet_files(parquet_path, collection) AS (VALUES {values_sql})
+                        SELECT s.requested_url, {select_list}
+                        FROM read_parquet([{placeholders}], filename=true, union_by_name={union_by_name_sql}) p
+                        INNER JOIN parquet_files pf ON pf.parquet_path = p.filename
+                        INNER JOIN search_urls s ON p.url = s.url
+                        """,
+                        (map_params + [str(p) for p in batch]),
+                    ).fetchall()
+
+                    q_dt = time.perf_counter() - t_q0
+                    query_s += q_dt
+                    rows_returned += len(rows)
+
+                    for row in rows:
+                        if not row:
+                            continue
+                        requested_url = str(row[0] or "")
+                        if not requested_url or requested_url not in matches:
+                            continue
+                        if per_url_counts.get(requested_url, 0) >= int(per_url_limit):
+                            continue
+
+                        (
+                            _requested,
+                            parquet_path,
+                            collection,
+                            shard_file,
+                            url,
+                            ts,
+                            status,
+                            mime,
+                            digest,
+                            warc_filename,
+                            warc_offset,
+                            warc_length,
+                        ) = row
+                        if shard_file in (None, ""):
+                            try:
+                                pp = str(parquet_path or "")
+                                name = Path(pp).name
+                                suf = ".sorted.parquet"
+                                shard_file = name[: -len(suf)] if name.endswith(suf) else name
+                                shard_file = shard_file or None
+                            except Exception:
+                                shard_file = None
+                        rec = {
+                            "collection": collection,
+                            "shard_file": shard_file,
+                            "url": url,
+                            "timestamp": ts,
+                            "status": int(status) if status is not None else None,
+                            "mime": mime,
+                            "digest": digest,
+                            "warc_filename": warc_filename,
+                            "warc_offset": int(warc_offset) if warc_offset is not None else None,
+                            "warc_length": int(warc_length) if warc_length is not None else None,
+                            "parquet_path": str(parquet_path or ""),
+                        }
+                        matches[requested_url].append(rec)
+                        per_url_counts[requested_url] = per_url_counts.get(requested_url, 0) + 1
+        except Exception as e:
+            dt = time.perf_counter() - t_dom0
+            _emit({"event": "resolve_domain_error", "domain": dom, "elapsed_s": float(dt), "error": str(e)})
+            with _dom_lock:
+                _dom_details[dom] = {
+                    "domain": dom,
+                    "mode": "domain_url_join_parallel",
+                    "urls": int(len(dom_urls)),
+                    "elapsed_s": float(dt),
+                    "collections_scanned": int(collections_scanned),
+                    "parquet_files_scanned": int(parquet_files_scanned),
+                    "setup_s": float(setup_s),
+                    "schema_s": float(schema_s),
+                    "query_s": float(query_s),
+                    "cc_pointers_s": float(cc_pointers_s),
+                    "cc_pointers_calls": int(cc_pointers_calls),
+                    "cc_pointers_rows": int(cc_pointers_rows),
+                    "cc_pointers_check_s": float(cc_pointers_check_s),
+                    "relpaths_s": float(relpaths_s),
+                    "relpaths_wall_s": float(relpaths_wall_s),
+                    "relpaths_calls": int(relpaths_calls),
+                    "domain_pointers_s": float(domain_pointers_s),
+                    "domain_pointers_wall_s": float(domain_pointers_wall_s),
+                    "domain_pointers_calls": int(domain_pointers_calls),
+                    "domain_pointers_rows": int(domain_pointers_rows),
+                    "batches": int(batches),
+                    "rows_returned": int(rows_returned),
+                    "error": str(e),
+                }
+            return (dom, {}, int(collections_scanned), int(parquet_files_scanned), float(dt), str(e))
+        finally:
+            try:
+                con.close()
+            except Exception:
+                pass
+
+        matches = {u: recs for (u, recs) in matches.items() if recs}
+        dt = time.perf_counter() - t_dom0
+        _emit(
+            {
+                "event": "resolve_domain_done",
+                "domain": dom,
+                "elapsed_s": float(dt),
+                "collections_scanned": int(collections_scanned),
+                "parquet_files_scanned": int(parquet_files_scanned),
+                "matched_urls": int(len(matches)),
+                "setup_s": float(setup_s),
+                "schema_s": float(schema_s),
+                "query_s": float(query_s),
+                "cc_pointers_s": float(cc_pointers_s),
+                "cc_pointers_calls": int(cc_pointers_calls),
+                "cc_pointers_rows": int(cc_pointers_rows),
+                "cc_pointers_check_s": float(cc_pointers_check_s),
+                "relpaths_s": float(relpaths_s),
+                "relpaths_wall_s": float(relpaths_wall_s),
+                "relpaths_calls": int(relpaths_calls),
+                "domain_pointers_s": float(domain_pointers_s),
+                "domain_pointers_wall_s": float(domain_pointers_wall_s),
+                "domain_pointers_calls": int(domain_pointers_calls),
+                "domain_pointers_rows": int(domain_pointers_rows),
+                "batches": int(batches),
+                "rows_returned": int(rows_returned),
+            }
+        )
+
+        with _dom_lock:
+            _dom_details[dom] = {
+                "domain": dom,
+                "mode": "domain_url_join_parallel",
+                "urls": int(len(dom_urls)),
+                "elapsed_s": float(dt),
+                "collections_scanned": int(collections_scanned),
+                "parquet_files_scanned": int(parquet_files_scanned),
+                "matched_urls": int(len(matches)),
+                "setup_s": float(setup_s),
+                "schema_s": float(schema_s),
+                "query_s": float(query_s),
+                "cc_pointers_s": float(cc_pointers_s),
+                "cc_pointers_calls": int(cc_pointers_calls),
+                "cc_pointers_rows": int(cc_pointers_rows),
+                "cc_pointers_check_s": float(cc_pointers_check_s),
+                "relpaths_s": float(relpaths_s),
+                "relpaths_wall_s": float(relpaths_wall_s),
+                "relpaths_calls": int(relpaths_calls),
+                "domain_pointers_s": float(domain_pointers_s),
+                "domain_pointers_wall_s": float(domain_pointers_wall_s),
+                "domain_pointers_calls": int(domain_pointers_calls),
+                "domain_pointers_rows": int(domain_pointers_rows),
+                "batches": int(batches),
+                "rows_returned": int(rows_returned),
+            }
+        return (dom, matches, int(collections_scanned), int(parquet_files_scanned), float(dt), None)
+
+    _resolve_one_domain = (
+        _resolve_one_domain_url_join if resolve_strategy == "domain_url_join_parallel" else _resolve_one_domain_meta
+    )
+
+    with ThreadPoolExecutor(max_workers=int(max_workers)) as ex:
+        futs = {ex.submit(_resolve_one_domain, dom): dom for dom in domains}
+        for fut in as_completed(futs):
+            dom = futs.get(fut) or ""
+            try:
+                _dom, matches, considered, emitted, _elapsed, err = fut.result()
+            except Exception as e:
+                domain_errors += 1
+                _emit({"event": "resolve_domain_error", "domain": dom, "error": str(e)})
+                continue
+
+            if err is not None:
+                domain_errors += 1
+
+            if resolve_strategy == "domain_url_join_parallel":
+                collections_scanned_total += int(considered)
+                parquet_files_scanned_total += int(emitted)
+            else:
+                collections_considered_total += int(considered)
+                emitted_total += int(emitted)
+            for requested, recs in matches.items():
+                if requested in out and recs:
+                    out[requested] = recs
+
+    # Compute aggregated timing and top slow domains.
+    try:
+        details = list(_dom_details.values())
+        details_sorted = sorted(
+            [d for d in details if isinstance(d, dict)],
+            key=lambda d: float(d.get("elapsed_s") or 0.0),
+            reverse=True,
+        )
+
+        for d in details_sorted:
+            if str(d.get("mode") or "") == "domain_url_join_parallel":
+                setup_s_total += float(d.get("setup_s") or 0.0)
+                schema_s_total += float(d.get("schema_s") or 0.0)
+                query_s_total += float(d.get("query_s") or 0.0)
+                relpaths_s_total += float(d.get("relpaths_s") or 0.0)
+                relpaths_wall_s_total += float(d.get("relpaths_wall_s") or 0.0)
+                domain_pointers_s_total += float(d.get("domain_pointers_s") or 0.0)
+                domain_pointers_wall_s_total += float(d.get("domain_pointers_wall_s") or 0.0)
+            else:
+                filter_s_total += float(d.get("filter_s") or 0.0)
+    except Exception:
+        details_sorted = []
+
+    if stats_out is not None:
+        stats_out["resolve_mode"] = str(resolve_strategy)
+        if resolve_strategy == "domain_url_join_parallel":
+            stats_out["collections_scanned"] = int(collections_scanned_total)
+            stats_out["parquet_files_scanned"] = int(parquet_files_scanned_total)
+        else:
+            stats_out["collections_scanned"] = 0
+            stats_out["parquet_files_scanned"] = 0
+            stats_out["collections_considered_total"] = int(collections_considered_total)
+            stats_out["records_emitted_total"] = int(emitted_total)
+        stats_out["resolve_workers"] = int(max_workers)
+        stats_out["domain_errors"] = int(domain_errors)
+        # Diagnostics to help pinpoint what dominates resolve time.
+        stats_out["domains_top"] = details_sorted[:10]
+        stats_out["timing_sums"] = {
+            "setup_s_total": float(setup_s_total),
+            "schema_s_total": float(schema_s_total),
+            "query_s_total": float(query_s_total),
+            "cc_pointers_s_total": float(
+                sum(float(d.get("cc_pointers_s") or 0.0) for d in details_sorted if isinstance(d, dict))
+            ),
+            "cc_pointers_check_s_total": float(
+                sum(float(d.get("cc_pointers_check_s") or 0.0) for d in details_sorted if isinstance(d, dict))
+            ),
+            "filter_s_total": float(filter_s_total),
+            "relpaths_s_total": float(relpaths_s_total),
+            "relpaths_wall_s_total": float(relpaths_wall_s_total),
+            "domain_pointers_s_total": float(domain_pointers_s_total),
+            "domain_pointers_wall_s_total": float(domain_pointers_wall_s_total),
+        }
+
+    _emit(
+        {
+            "event": "resolve_urls_to_ccindex_done",
+            "domains": len(domains),
+            "urls": len(want),
+            "workers": int(max_workers),
+            "domain_errors": int(domain_errors),
+        }
+    )
     return out
 
 
@@ -1080,11 +2493,42 @@ def brave_search_ccindex(
                             resolve_mode=str(payload.get("resolve_mode") or "cache"),
                             resolve_domains=int(payload.get("resolve_domains") or 0),
                             resolve_parquet_files=int(payload.get("resolve_parquet_files") or 0),
+                            resolve_stats=(
+                                payload.get("resolve_stats")
+                                if isinstance(payload.get("resolve_stats"), dict)
+                                else {}
+                            ),
                         )
         except Exception:
             pass
     # Prefer the meta-returning variant so callers can render real pagination.
     from common_crawl_search_engine.ccsearch.brave_search import brave_web_search_page
+
+    trace = (os.environ.get("CCINDEX_BRAVE_TRACE") or "").strip().lower() in {"1", "true", "yes", "on"}
+    trace = trace or bool((os.environ.get("CCINDEX_EVENT_LOG_PATH") or "").strip())
+
+    if trace:
+        # Uses the same event log as the resolve stage.
+        try:
+            state_dir = Path((os.environ.get("CCINDEX_STATE_DIR") or "state").strip() or "state")
+            p = Path((os.environ.get("CCINDEX_EVENT_LOG_PATH") or str(state_dir / "ccindex_events.jsonl")).strip())
+            p.parent.mkdir(parents=True, exist_ok=True)
+            p.open("a", encoding="utf-8").write(
+                json.dumps(
+                    {
+                        "event": "brave_search_ccindex_start",
+                        "ts": time.time(),
+                        "query": str(query),
+                        "count": int(count),
+                        "offset": int(offset),
+                        "year": (str(year) if year else None),
+                    },
+                    ensure_ascii=False,
+                )
+                + "\n"
+            )
+        except Exception:
+            pass
 
     t_brave0 = time.perf_counter()
     page = brave_web_search_page(query, api_key=api_key, count=int(count), offset=int(offset))
@@ -1126,20 +2570,22 @@ def brave_search_ccindex(
     url_list = [r.url for r in results if r.url]
 
     t_res0 = time.perf_counter()
+    resolve_stats: Dict[str, object] = {}
     resolved = resolve_urls_to_ccindex(
         url_list,
         parquet_root=parquet_root,
         master_db=master_db,
         year=year,
         per_url_limit=int(per_url_limit),
+        stats_out=resolve_stats,
+        trace_events=bool(trace),
     )
     resolve_elapsed_s = time.perf_counter() - t_res0
 
     # Best-effort resolve stats.
     resolve_domains = len({normalize_domain(u) for u in url_list if normalize_domain(u)})
-    # We can't easily count parquet files scanned from here without deeper plumbing.
-    resolve_parquet_files = 0
-    resolve_mode = "auto"
+    resolve_parquet_files = int(resolve_stats.get("parquet_files_scanned") or 0)
+    resolve_mode = str(resolve_stats.get("resolve_mode") or "auto")
 
     out: List[Dict[str, object]] = []
     for r in results:
@@ -1166,7 +2612,34 @@ def brave_search_ccindex(
         resolve_mode=str(resolve_mode),
         resolve_domains=int(resolve_domains),
         resolve_parquet_files=int(resolve_parquet_files),
+        resolve_stats=dict(resolve_stats),
     )
+
+    if trace:
+        try:
+            state_dir = Path((os.environ.get("CCINDEX_STATE_DIR") or "state").strip() or "state")
+            p = Path((os.environ.get("CCINDEX_EVENT_LOG_PATH") or str(state_dir / "ccindex_events.jsonl")).strip())
+            p.parent.mkdir(parents=True, exist_ok=True)
+            p.open("a", encoding="utf-8").write(
+                json.dumps(
+                    {
+                        "event": "brave_search_ccindex_done",
+                        "ts": time.time(),
+                        "elapsed_s": float(res_obj.elapsed_s),
+                        "brave_elapsed_s": float(res_obj.brave_elapsed_s),
+                        "resolve_elapsed_s": float(res_obj.resolve_elapsed_s),
+                        "brave_cached": bool(res_obj.brave_cached),
+                        "resolved_cached": bool(res_obj.resolved_cached),
+                        "resolve_mode": str(res_obj.resolve_mode),
+                        "resolve_domains": int(res_obj.resolve_domains),
+                        "resolve_parquet_files": int(res_obj.resolve_parquet_files),
+                    },
+                    ensure_ascii=False,
+                )
+                + "\n"
+            )
+        except Exception:
+            pass
 
     if not resolve_cache_disable and resolve_ttl_s > 0:
         try:
@@ -1193,6 +2666,7 @@ def brave_search_ccindex(
                     "resolve_mode": res_obj.resolve_mode,
                     "resolve_domains": res_obj.resolve_domains,
                     "resolve_parquet_files": res_obj.resolve_parquet_files,
+                    "resolve_stats": res_obj.resolve_stats,
                     "results": res_obj.results,
                 },
             }

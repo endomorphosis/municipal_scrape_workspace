@@ -326,7 +326,53 @@ def create_app(master_db: Path) -> Any:
         "full_warc_max_bytes": 5_000_000_000,
         "full_warc_cache_max_total_bytes": 0,
         "brave_search_api_key": None,
+        # Brave URL->CCIndex resolution knobs (used by ccindex.api via env vars).
+        "brave_resolve_strategy": "meta_parallel",  # meta_parallel | domain_url_join_parallel
+        "brave_resolve_workers": None,  # null/None means auto
+        "brave_resolve_relpath_workers": None,  # BRAVE_RESOLVE_RELPATH_WORKERS (blank = resolver default)
       }
+
+    def _apply_brave_resolve_env_from_settings(settings: Dict[str, Any]) -> None:
+      """Apply Brave resolve settings to the current process environment."""
+
+      try:
+        strat = str(settings.get("brave_resolve_strategy") or "meta_parallel").strip()
+      except Exception:
+        strat = "meta_parallel"
+      if strat not in {"meta_parallel", "domain_url_join_parallel"}:
+        strat = "meta_parallel"
+
+      os.environ["BRAVE_RESOLVE_STRATEGY"] = strat
+
+      v = settings.get("brave_resolve_workers")
+      workers: Optional[int] = None
+      try:
+        if v is None or str(v).strip() == "":
+          workers = None
+        else:
+          workers = int(v)
+      except Exception:
+        workers = None
+
+      if workers is not None and workers > 0:
+        os.environ["BRAVE_RESOLVE_WORKERS"] = str(int(workers))
+      else:
+        os.environ.pop("BRAVE_RESOLVE_WORKERS", None)
+
+      v = settings.get("brave_resolve_relpath_workers")
+      rel_workers: Optional[int] = None
+      try:
+        if v is None or str(v).strip() == "":
+          rel_workers = None
+        else:
+          rel_workers = int(v)
+      except Exception:
+        rel_workers = None
+
+      if rel_workers is not None and rel_workers > 0:
+        os.environ["BRAVE_RESOLVE_RELPATH_WORKERS"] = str(int(rel_workers))
+      else:
+        os.environ.pop("BRAVE_RESOLVE_RELPATH_WORKERS", None)
 
     def _load_settings() -> Dict[str, Any]:
       p = _settings_path()
@@ -704,6 +750,7 @@ def create_app(master_db: Path) -> Any:
 
         if tool_name == "brave_search_ccindex":
           s = _load_settings()
+          _apply_brave_resolve_env_from_settings(s)
           q = str(tool_args.get("query") or "")
           year = tool_args.get("year")
           parquet_root = Path(str(tool_args.get("parquet_root") or "/storage/ccindex_parquet"))
@@ -734,8 +781,15 @@ def create_app(master_db: Path) -> Any:
             "brave_elapsed_s": res.brave_elapsed_s,
             "resolve_elapsed_s": res.resolve_elapsed_s,
             "resolve_mode": res.resolve_mode,
+            "resolve_strategy": (os.environ.get("BRAVE_RESOLVE_STRATEGY") or "").strip() or None,
+            "resolve_workers": (
+              int(os.environ.get("BRAVE_RESOLVE_WORKERS"))
+              if (os.environ.get("BRAVE_RESOLVE_WORKERS") or "").strip().isdigit()
+              else None
+            ),
             "resolve_domains": res.resolve_domains,
             "resolve_parquet_files": res.resolve_parquet_files,
+            "resolve_stats": getattr(res, "resolve_stats", {}) or {},
             "results": res.results,
           }
 
@@ -1383,6 +1437,9 @@ def create_app(master_db: Path) -> Any:
         base_path = _base_path(request)
         s = _load_settings()
 
+        # Ensure the current process reflects persisted resolve settings.
+        _apply_brave_resolve_env_from_settings(s)
+
         # Surface server-side cache defaults (these are env-controlled).
         range_cache_env = os.environ.get("CCINDEX_WARC_CACHE_DIR")
         full_cache_env = os.environ.get("CCINDEX_FULL_WARC_CACHE_DIR")
@@ -1391,6 +1448,13 @@ def create_app(master_db: Path) -> Any:
 
         brave_env_set = bool((os.environ.get("BRAVE_SEARCH_API_KEY") or "").strip())
         brave_saved_set = bool((str(s.get("brave_search_api_key") or "").strip()))
+
+        brave_resolve_strategy = str(s.get("brave_resolve_strategy") or "meta_parallel")
+        brave_resolve_workers = s.get("brave_resolve_workers")
+        brave_resolve_relpath_workers = s.get("brave_resolve_relpath_workers")
+        active_strategy = (os.environ.get("BRAVE_RESOLVE_STRATEGY") or "").strip() or "meta_parallel"
+        active_workers = (os.environ.get("BRAVE_RESOLVE_WORKERS") or "").strip()
+        active_relpath_workers = (os.environ.get("BRAVE_RESOLVE_RELPATH_WORKERS") or "").strip()
 
         body = f"""
 <div class='card'>
@@ -1426,6 +1490,29 @@ def create_app(master_db: Path) -> Any:
     <div class='field'>
       <label>&nbsp;</label>
       <button id='clearBraveKeyBtn' type='button'>Clear saved key</button>
+    </div>
+  </div>
+
+  <hr>
+  <div class='small'>Brave resolve (Brave URLs → CCIndex pointers)</div>
+  <div class='row' style='margin-top:10px;'>
+    <div class='field' style='min-width: 320px;'>
+      <label>brave_resolve_strategy</label>
+      <select id='brave_resolve_strategy' style='padding: 10px 12px; border: 1px solid var(--border); background: rgba(15, 23, 42, 0.65); border-radius: 8px; color: var(--text);'>
+        <option value='meta_parallel'>meta_parallel (default)</option>
+        <option value='domain_url_join_parallel'>domain_url_join_parallel (more exhaustive)</option>
+      </select>
+      <div class='small'>active: <span class='code'>{html.escape(active_strategy)}</span></div>
+    </div>
+    <div class='field' style='min-width: 220px;'>
+      <label>brave_resolve_workers</label>
+      <input id='brave_resolve_workers' type='number' min='1' step='1' value='{html.escape(str(brave_resolve_workers or ""))}' placeholder='(blank = auto)'>
+      <div class='small'>active: <span class='code'>{html.escape(active_workers if active_workers else "auto")}</span></div>
+    </div>
+    <div class='field' style='min-width: 260px;'>
+      <label>brave_resolve_relpath_workers</label>
+      <input id='brave_resolve_relpath_workers' type='number' min='1' step='1' value='{html.escape(str(brave_resolve_relpath_workers or ""))}' placeholder='(blank = default)'>
+      <div class='small'>active: <span class='code'>{html.escape(active_relpath_workers if active_relpath_workers else "default")}</span></div>
     </div>
   </div>
 
@@ -1623,6 +1710,9 @@ def create_app(master_db: Path) -> Any:
   const rangeMaxEl = document.getElementById('range_cache_max_bytes');
   const rangeItemMaxEl = document.getElementById('range_cache_max_item_bytes');
   const braveKeyEl = document.getElementById('brave_search_api_key');
+  const braveResolveStrategyEl = document.getElementById('brave_resolve_strategy');
+  const braveResolveWorkersEl = document.getElementById('brave_resolve_workers');
+  const braveResolveRelpathWorkersEl = document.getElementById('brave_resolve_relpath_workers');
   const statusEl = document.getElementById('status');
   const cacheStatsEl = document.getElementById('cacheStats');
   const braveCacheStatsEl = document.getElementById('braveCacheStats');
@@ -1646,6 +1736,7 @@ def create_app(master_db: Path) -> Any:
   const orchStatusEl = document.getElementById('orchStatus');
 
   modeEl.value = {json.dumps(str(s.get("default_cache_mode") or "range"))};
+  braveResolveStrategyEl.value = {json.dumps(str(brave_resolve_strategy or "meta_parallel"))};
 
   async function loadOrchestratorSettings() {{
     try {{
@@ -1715,6 +1806,9 @@ def create_app(master_db: Path) -> Any:
         full_warc_cache_max_total_bytes: parseInt(fullTotalEl.value || '0', 10),
         // If blank, server keeps current saved key.
         brave_search_api_key: (String(braveKeyEl.value || '').trim() || null),
+        brave_resolve_strategy: (String(braveResolveStrategyEl.value || 'meta_parallel').trim() || 'meta_parallel'),
+        brave_resolve_workers: (String(braveResolveWorkersEl.value || '').trim() ? parseInt(String(braveResolveWorkersEl.value), 10) : null),
+        brave_resolve_relpath_workers: (String(braveResolveRelpathWorkersEl.value || '').trim() ? parseInt(String(braveResolveRelpathWorkersEl.value), 10) : null),
       }};
 
       const resp = await fetch(`${{basePath}}/settings`, {{
@@ -2336,6 +2430,10 @@ def create_app(master_db: Path) -> Any:
 
             # Preserve sensitive values by default.
             out["brave_search_api_key"] = prev.get("brave_search_api_key")
+            # Preserve resolve knobs by default.
+            out["brave_resolve_strategy"] = prev.get("brave_resolve_strategy") or out["brave_resolve_strategy"]
+            out["brave_resolve_workers"] = prev.get("brave_resolve_workers")
+            out["brave_resolve_relpath_workers"] = prev.get("brave_resolve_relpath_workers")
 
             mode = str(payload.get("default_cache_mode") or out["default_cache_mode"]).strip().lower()
             if mode not in ("range", "auto", "full"):
@@ -2371,7 +2469,49 @@ def create_app(master_db: Path) -> Any:
                 if v is not None and str(v).strip() != "":
                     out["brave_search_api_key"] = str(v).strip()
 
+            # Brave resolve strategy/workers.
+            if "brave_resolve_strategy" in payload:
+              st = str(payload.get("brave_resolve_strategy") or "meta_parallel").strip()
+              if st not in {"meta_parallel", "domain_url_join_parallel"}:
+                return JSONResponse(
+                  {"ok": False, "error": "brave_resolve_strategy must be meta_parallel|domain_url_join_parallel"},
+                  status_code=400,
+                )
+              out["brave_resolve_strategy"] = st
+
+            if "brave_resolve_workers" in payload:
+              w = payload.get("brave_resolve_workers")
+              if w is None or str(w).strip() == "":
+                out["brave_resolve_workers"] = None
+              else:
+                try:
+                  wi = int(w)
+                except Exception:
+                  return JSONResponse({"ok": False, "error": "brave_resolve_workers must be an integer"}, status_code=400)
+                if wi <= 0:
+                  out["brave_resolve_workers"] = None
+                else:
+                  out["brave_resolve_workers"] = int(wi)
+
+            if "brave_resolve_relpath_workers" in payload:
+              w = payload.get("brave_resolve_relpath_workers")
+              if w is None or str(w).strip() == "":
+                out["brave_resolve_relpath_workers"] = None
+              else:
+                try:
+                  wi = int(w)
+                except Exception:
+                  return JSONResponse(
+                    {"ok": False, "error": "brave_resolve_relpath_workers must be an integer"},
+                    status_code=400,
+                  )
+                if wi <= 0:
+                  out["brave_resolve_relpath_workers"] = None
+                else:
+                  out["brave_resolve_relpath_workers"] = int(wi)
+
             _save_settings(out)
+            _apply_brave_resolve_env_from_settings(out)
             return JSONResponse({"ok": True, "settings": out})
         except Exception as e:
             return JSONResponse({"ok": False, "error": f"{type(e).__name__}: {e}"}, status_code=500)
@@ -3077,7 +3217,10 @@ def create_app(master_db: Path) -> Any:
       const offTxt = (typeof res.offset === 'number') ? String(res.offset) : String(pageIndex * count);
       const braveCachedTxt = (res && (res.brave_cached === true)) ? 'yes' : 'no';
       const resolvedCachedTxt = (res && (res.resolved_cached === true)) ? 'yes' : 'no';
+      const stratTxt = String(res.resolve_strategy || '').trim() || '(default)';
+      const workersTxt = (res.resolve_workers == null) ? 'auto' : String(res.resolve_workers);
       statusEl.innerHTML = `<span class='badge ok'>ok</span> elapsed_s=<span class='code'>${{esc(elapsed)}}</span> brave_s=<span class='code'>${{esc(braveElapsed)}}</span> resolve_s=<span class='code'>${{esc(resolveElapsed)}}</span> brave_cached=<span class='code'>${{esc(braveCachedTxt)}}</span> resolved_cached=<span class='code'>${{esc(resolvedCachedTxt)}}</span> total=<span class='code'>${{esc(totalTxt)}}</span> offset=<span class='code'>${{esc(offTxt)}}</span> returned=<span class='code'>${{esc((res.results||[]).length)}}</span>`;
+      statusEl.innerHTML += ` <span class='small'>resolve_strategy=<span class='code'>${{esc(stratTxt)}}</span> workers=<span class='code'>${{esc(workersTxt)}}</span></span>`;
       lastResponse = res;
       // Sync page index to server-effective offset/count.
       const effCount = clampCount(res.count ?? count);
