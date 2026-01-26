@@ -399,7 +399,7 @@ def main() -> int:
 
         print(f"  Domains: {int(n_dom or 0):,}")
         if args.extract_rowgroups:
-            print(f"  Row groups: {len(rowgroups) if rowgroups else 0}")
+            print(f"  Row groups (this file): {len(rowgroups) if rowgroups else 0}")
         print()
 
     con.commit()

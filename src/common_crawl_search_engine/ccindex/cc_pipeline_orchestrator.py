@@ -709,7 +709,8 @@ class PipelineOrchestrator:
                         logger.info(
                             f"Auto row-group-size (domain pct): sample={sample.name} bytes/row≈{bytes_per_row:.2f} "
                             f"runs={len(run_lens_sorted):,} p50={p50:,} p90={p90:,} p99={p99:,} "
-                            f"target_p{pct:g}≈{int(run_lens_sorted[idx]):,} => row_group_size≈{target:,} rows"
+                            f"target_p{pct:g}≈{int(run_lens_sorted[idx]):,} min_mb={min_mb:.1f}=>min_rows≈{min_rows_by_bytes:,} "
+                            f"=> row_group_size≈{target:,} rows"
                         )
                         return int(target)
 
