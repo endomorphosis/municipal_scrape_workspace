@@ -123,7 +123,7 @@ def sort_parquet_file(
     memory_limit_gb: float = 4.0,
     temp_directory: Optional[Path] = None,
     row_group_size: Optional[int] = None,
-) -> bool:
+) -> Tuple[bool, str]:
     """Sort a parquet file by host_rev, url, ts using DuckDB."""
 
     try:
@@ -159,10 +159,92 @@ def sort_parquet_file(
             """.format(in_path=in_path, out_path=out_path, opt_sql=opt_sql)
         )
         con.close()
-        return True
+        return True, ""
     except Exception as e:
-        print(f"❌ Error sorting {input_file.name}: {e}", file=sys.stderr)
-        return False
+        msg = str(e)
+        print(f"❌ Error sorting {input_file.name}: {msg}", file=sys.stderr)
+        return False, msg
+
+
+def _row_group_sizes_to_try(row_group_size: Optional[int]) -> List[Optional[int]]:
+    """Generate a small set of fallback row_group_size values.
+
+    We only vary row_group_size to reduce memory pressure in DuckDB's parquet
+    writer. This can help when rewriting very wide shards.
+    """
+
+    if row_group_size is None:
+        return [None]
+    try:
+        rgs = int(row_group_size)
+    except Exception:
+        return [None]
+
+    if rgs <= 0:
+        return [None]
+
+    sizes: List[Optional[int]] = []
+    cur = rgs
+    min_rgs = 5_000
+    while True:
+        if cur not in sizes:
+            sizes.append(cur)
+        if cur <= min_rgs:
+            break
+        cur = max(min_rgs, cur // 2)
+    return sizes
+
+
+def rewrite_sorted_parquet_file(
+    input_file: Path,
+    output_file: Path,
+    memory_limit_gb: float = 4.0,
+    temp_directory: Optional[Path] = None,
+    row_group_size: Optional[int] = None,
+) -> Tuple[bool, str]:
+    """Rewrite an already-sorted parquet file without re-sorting.
+
+    This is used to apply row-group sizing / compression tweaks while keeping the
+    existing physical ordering. It intentionally avoids ORDER BY, which can be
+    expensive and may OOM on large shards.
+    """
+
+    try:
+        con = duckdb.connect(":memory:")
+        con.execute(f"SET memory_limit='{memory_limit_gb}GB'")
+        # Preserve scan order; we rely on the file already being sorted.
+        con.execute("SET preserve_insertion_order=true")
+        td = temp_directory if temp_directory else output_file.parent
+        con.execute(f"SET temp_directory='{td}'")
+        # Keep deterministic + low-memory.
+        con.execute("PRAGMA threads=1")
+
+        in_path = str(input_file).replace("'", "''")
+        out_path = str(output_file).replace("'", "''")
+        copy_opts = ["FORMAT 'parquet'", "COMPRESSION 'zstd'"]
+        if row_group_size is not None:
+            try:
+                rgs = int(row_group_size)
+                if rgs > 0:
+                    copy_opts.append(f"ROW_GROUP_SIZE {rgs}")
+            except Exception:
+                pass
+        opt_sql = ", ".join(copy_opts)
+
+        con.execute(
+            """
+            COPY (
+                SELECT * FROM read_parquet('{in_path}')
+            )
+            TO '{out_path}' ({opt_sql})
+            """.format(in_path=in_path, out_path=out_path, opt_sql=opt_sql)
+        )
+        con.close()
+        return True, ""
+    except Exception as e:
+        msg = str(e)
+        print(f"❌ Error rewriting {input_file.name}: {msg}", file=sys.stderr)
+        return False, msg
 
 
 def check_single_file(pq_file: Path, parquet_root: Path, verify_only: bool) -> Tuple[str, Path, bool, str]:
@@ -245,22 +327,98 @@ def sort_and_mark_one(args: Tuple[str, float, str, Optional[int], str]) -> Tuple
             if not src.name.endswith(".sorted.parquet"):
                 return str(src), False, "rewrite requested but source is not *.sorted.parquet", ""
 
-            if not sort_parquet_file(
-                src,
-                sorted_tmp,
-                memory_per_sort_gb,
-                temp_directory=duckdb_temp_dir,
-                row_group_size=row_group_size,
-            ):
-                return str(src), False, "rewrite failed", ""
+            # Some older runs have incorrectly-marked *.sorted.parquet shards.
+            # If the source isn't actually sorted, do a full sort-in-place.
+            src_sorted, src_reason = is_sorted_by_content(src)
+            if not src_sorted:
+                sort_ok = False
+                last_err = ""
+                for rgs_try in _row_group_sizes_to_try(row_group_size):
+                    ok, err = sort_parquet_file(
+                        src,
+                        sorted_tmp,
+                        memory_per_sort_gb,
+                        temp_directory=duckdb_temp_dir,
+                        row_group_size=rgs_try,
+                    )
+                    if ok:
+                        sort_ok = True
+                        break
+                    last_err = err
+                if not sort_ok:
+                    return str(src), False, f"source not sorted ({src_reason}); sort failed: {last_err}", ""
+
+                ok, reason = is_sorted_by_content(sorted_tmp)
+                if not ok:
+                    try:
+                        sorted_tmp.unlink()
+                    except Exception:
+                        pass
+                    return str(src), False, f"sort verification failed: {reason}", ""
+
+                sorted_tmp.replace(src)
+                try:
+                    shutil.rmtree(work_dir, ignore_errors=True)
+                except Exception:
+                    pass
+                return str(src), True, f"sorted (was mis-marked; {src_reason})", str(src)
+
+            rewrite_ok = False
+            last_err = ""
+            for rgs_try in _row_group_sizes_to_try(row_group_size):
+                ok, err = rewrite_sorted_parquet_file(
+                    src,
+                    sorted_tmp,
+                    memory_per_sort_gb,
+                    temp_directory=duckdb_temp_dir,
+                    row_group_size=rgs_try,
+                )
+                if ok:
+                    rewrite_ok = True
+                    break
+                last_err = err
+                if "Out of Memory" not in (err or ""):
+                    break
+
+            if not rewrite_ok:
+                return str(src), False, f"rewrite failed: {last_err}", ""
 
             ok, reason = is_sorted_by_content(sorted_tmp)
             if not ok:
+                # If the output isn't sorted, fall back to a full sort. This can
+                # happen when the input was incorrectly marked as sorted.
                 try:
                     sorted_tmp.unlink()
                 except Exception:
                     pass
-                return str(src), False, f"rewrite verification failed: {reason}", ""
+
+                sort_ok = False
+                last_err = ""
+                for rgs_try in _row_group_sizes_to_try(row_group_size):
+                    ok2, err2 = sort_parquet_file(
+                        src,
+                        sorted_tmp,
+                        memory_per_sort_gb,
+                        temp_directory=duckdb_temp_dir,
+                        row_group_size=rgs_try,
+                    )
+                    if ok2:
+                        sort_ok = True
+                        break
+                    last_err = err2
+                    if "Out of Memory" not in (err2 or ""):
+                        break
+
+                if not sort_ok:
+                    return str(src), False, f"rewrite verification failed: {reason}; sort fallback failed: {last_err}", ""
+
+                ok3, reason3 = is_sorted_by_content(sorted_tmp)
+                if not ok3:
+                    try:
+                        sorted_tmp.unlink()
+                    except Exception:
+                        pass
+                    return str(src), False, f"sort fallback verification failed: {reason3}", ""
 
             sorted_tmp.replace(src)
             try:
@@ -270,14 +428,25 @@ def sort_and_mark_one(args: Tuple[str, float, str, Optional[int], str]) -> Tuple
             return str(src), True, "rewritten", str(src)
 
         # Default: sort an unsorted file and produce a sorted sibling.
-        if not sort_parquet_file(
-            src,
-            sorted_tmp,
-            memory_per_sort_gb,
-            temp_directory=duckdb_temp_dir,
-            row_group_size=row_group_size,
-        ):
-            return str(src), False, "sort failed", ""
+        sort_ok = False
+        last_err = ""
+        for rgs_try in _row_group_sizes_to_try(row_group_size):
+            ok, err = sort_parquet_file(
+                src,
+                sorted_tmp,
+                memory_per_sort_gb,
+                temp_directory=duckdb_temp_dir,
+                row_group_size=rgs_try,
+            )
+            if ok:
+                sort_ok = True
+                break
+            last_err = err
+            if "Out of Memory" not in (err or ""):
+                break
+
+        if not sort_ok:
+            return str(src), False, f"sort failed: {last_err}", ""
 
         ok, reason = is_sorted_by_content(sorted_tmp)
         if not ok:
