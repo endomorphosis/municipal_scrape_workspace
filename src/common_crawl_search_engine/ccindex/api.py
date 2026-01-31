@@ -63,6 +63,52 @@ def _rowgroup_slice_index_dir() -> Path:
     return Path(str(raw)).expanduser().resolve()
 
 
+def _rowgroup_slice_year_index_dir() -> Path:
+    """Directory containing per-year rowgroup slice index DBs.
+
+    Expected layout:
+      <dir>/cc_domain_rowgroups_<year>.duckdb
+    """
+
+    raw = (
+        os.environ.get("CC_DOMAIN_ROWGROUP_YEAR_DIR")
+        or os.environ.get("BRAVE_RESOLVE_ROWGROUP_YEAR_DIR")
+        or "/storage/ccindex_duckdb/cc_domain_rowgroups_by_year"
+    )
+    return Path(str(raw)).expanduser().resolve()
+
+
+@lru_cache(maxsize=64)
+def _rowgroup_year_index_db_for_year(year: str) -> Optional[Path]:
+    env_db = (os.environ.get("BRAVE_RESOLVE_ROWGROUP_YEAR_DB") or os.environ.get("CC_DOMAIN_ROWGROUP_YEAR_DB") or "").strip()
+    if env_db:
+        try:
+            p = Path(env_db).expanduser().resolve()
+            return p if p.exists() and p.is_file() else None
+        except Exception:
+            return None
+
+    d = _rowgroup_slice_year_index_dir()
+    try:
+        if not d.exists():
+            return None
+    except Exception:
+        return None
+
+    for cand in [
+        d / f"cc_domain_rowgroups_{year}.duckdb",
+        d / f"rowgroups_{year}.duckdb",
+        d / f"{year}.domain_rowgroups.duckdb",
+        d / f"{year}.duckdb",
+    ]:
+        try:
+            if cand.exists() and cand.is_file():
+                return cand.resolve()
+        except Exception:
+            continue
+    return None
+
+
 @lru_cache(maxsize=512)
 def _rowgroup_index_db_for_collection(collection: str) -> Optional[Path]:
     """Best-effort locate the rowgroup slice index DB for a collection."""
@@ -185,6 +231,100 @@ def _rowgroup_segments_cached(
         if not rows:
             return ((), "no_segments")
 
+        return (tuple(tuple(r) for r in rows), "")
+    finally:
+        try:
+            con_rg.close()
+        except Exception:
+            pass
+
+
+try:
+    _RG_YEAR_SEGMENT_CACHE_MAX = int((os.environ.get("BRAVE_RESOLVE_ROWGROUP_YEAR_SEGMENT_CACHE") or "128").strip())
+except Exception:
+    _RG_YEAR_SEGMENT_CACHE_MAX = 128
+_RG_YEAR_SEGMENT_CACHE_MAX = max(1, min(1024, int(_RG_YEAR_SEGMENT_CACHE_MAX)))
+
+
+@lru_cache(maxsize=_RG_YEAR_SEGMENT_CACHE_MAX)
+def _rowgroup_segments_by_year_cached(
+    year: str,
+    collections_key: tuple[str, ...],
+    host_revs_key: tuple[str, ...],
+) -> tuple[tuple[tuple[object, object, object, object, object, object], ...], str]:
+    """Return cached rowgroup segments from the per-year DB.
+
+    Returns (segments, reason). Segment rows include collection.
+    """
+
+    if not year:
+        return ((), "no_year")
+    if not host_revs_key:
+        return ((), "no_host_revs")
+    if not collections_key:
+        return ((), "no_collections")
+
+    dbp = _rowgroup_year_index_db_for_year(str(year))
+    if dbp is None:
+        return ((), "db_missing")
+
+    try:
+        duckdb = _require_duckdb()
+    except Exception:
+        return ((), "duckdb_missing")
+
+    con_rg = duckdb.connect(str(dbp), read_only=True)
+    try:
+        try:
+            env_threads = (os.environ.get("BRAVE_RESOLVE_ROWGROUP_DB_THREADS") or "").strip()
+            rg_threads = int(env_threads) if env_threads else 4
+        except Exception:
+            rg_threads = 4
+        rg_threads = max(1, min(16, int(rg_threads)))
+        try:
+            con_rg.execute(f"PRAGMA threads={int(rg_threads)}")
+        except Exception:
+            pass
+        try:
+            mem_limit = (os.environ.get("BRAVE_RESOLVE_ROWGROUP_DB_MEMORY_LIMIT") or "1GB").strip()
+            if mem_limit:
+                con_rg.execute(f"PRAGMA memory_limit='{mem_limit}'")
+        except Exception:
+            pass
+
+        if not _duckdb_has_table(con_rg, "cc_domain_rowgroups"):
+            return ((), "table_missing")
+
+        cols_rg = _duckdb_table_columns(con_rg, "cc_domain_rowgroups")
+        if "collection" not in cols_rg:
+            return ((), "collection_missing")
+        if "host_rev" not in cols_rg:
+            return ((), "host_rev_missing")
+        if "row_group" not in cols_rg or "dom_rg_row_start" not in cols_rg or "dom_rg_row_end" not in cols_rg:
+            return ((), "rowgroup_cols_missing")
+        if "source_path" not in cols_rg and "parquet_relpath" not in cols_rg:
+            return ((), "path_cols_missing")
+
+        coll_placeholders = ",".join(["?"] * len(collections_key))
+        host_placeholders = ",".join(["?"] * len(host_revs_key))
+        params: List[object] = list(collections_key) + list(host_revs_key)
+        sel_source = "source_path" if "source_path" in cols_rg else "NULL"
+        sel_rel = "parquet_relpath" if "parquet_relpath" in cols_rg else "NULL"
+
+        rows = con_rg.execute(
+            f"""
+            SELECT collection, {sel_source} AS source_path, {sel_rel} AS parquet_relpath,
+                   row_group, dom_rg_row_start, dom_rg_row_end
+            FROM cc_domain_rowgroups
+            WHERE collection IN ({coll_placeholders})
+              AND host_rev IN ({host_placeholders})
+            ORDER BY collection, source_path, parquet_relpath, row_group, dom_rg_row_start
+            """,
+            params,
+        ).fetchall()
+
+        if not rows:
+            return ((), "no_segments")
         return (tuple(tuple(r) for r in rows), "")
     finally:
         try:
@@ -1470,6 +1610,7 @@ def resolve_urls_to_ccindex(
                 host_revs_for_domain: Sequence[str],
                 variant_to_requested: Dict[str, List[str]],
                 want_cols: Sequence[str],
+                seg_rows_override: Optional[Sequence[Sequence[object]]] = None,
             ) -> tuple[Dict[str, List[Dict[str, object]]], Dict[str, int]]:
                 """Try to satisfy URL matches for this collection using cc_domain_rowgroups.
 
@@ -1497,13 +1638,16 @@ def resolve_urls_to_ccindex(
                     _emit({"event": "rowgroup_slice_skip", "collection": str(coll), "reason": "pyarrow_missing"})
                     return ({}, {"rows_returned": 0, "parquet_files_scanned": 0, "collections_scanned": 0})
 
-                seg_rows, seg_reason = _rowgroup_segments_cached(str(coll), tuple(host_revs_for_domain))
-                if seg_reason:
-                    _emit({"event": "rowgroup_slice_skip", "collection": str(coll), "reason": seg_reason})
-                    return ({}, {"rows_returned": 0, "parquet_files_scanned": 0, "collections_scanned": 0})
-                if not seg_rows:
-                    _emit({"event": "rowgroup_slice_skip", "collection": str(coll), "reason": "no_segments"})
-                    return ({}, {"rows_returned": 0, "parquet_files_scanned": 0, "collections_scanned": 0})
+                if seg_rows_override is not None:
+                    seg_rows = seg_rows_override
+                else:
+                    seg_rows, seg_reason = _rowgroup_segments_cached(str(coll), tuple(host_revs_for_domain))
+                    if seg_reason:
+                        _emit({"event": "rowgroup_slice_skip", "collection": str(coll), "reason": seg_reason})
+                        return ({}, {"rows_returned": 0, "parquet_files_scanned": 0, "collections_scanned": 0})
+                    if not seg_rows:
+                        _emit({"event": "rowgroup_slice_skip", "collection": str(coll), "reason": "no_segments"})
+                        return ({}, {"rows_returned": 0, "parquet_files_scanned": 0, "collections_scanned": 0})
 
                 parquet_dir = get_collection_parquet_dir(parquet_root, coll)
                 variant_urls = list(variant_to_requested.keys())
@@ -2143,6 +2287,37 @@ def resolve_urls_to_ccindex(
                         "warc_length",
                     ]
 
+                    collections_by_year: Dict[str, List[CollectionRef]] = {}
+                    for cref in collections:
+                        y = str(getattr(cref, "year", "") or "")
+                        if not y:
+                            continue
+                        collections_by_year.setdefault(y, []).append(cref)
+
+                    year_segments: Dict[str, Dict[str, List[Sequence[object]]]] = {}
+                    for y, ycols in collections_by_year.items():
+                        ydb = _rowgroup_year_index_db_for_year(y)
+                        if ydb is None:
+                            continue
+                        coll_key = tuple(sorted({str(c.collection) for c in ycols if str(c.collection)}))
+                        seg_rows, seg_reason = _rowgroup_segments_by_year_cached(y, coll_key, tuple(host_revs))
+                        if seg_reason:
+                            _emit({"event": "rowgroup_slice_skip", "collection": f"year:{y}", "reason": seg_reason})
+                            continue
+                        if not seg_rows:
+                            continue
+
+                        by_coll: Dict[str, List[Sequence[object]]] = {}
+                        for row in seg_rows:
+                            if not row or len(row) < 6:
+                                continue
+                            coll = str(row[0] or "")
+                            if not coll:
+                                continue
+                            by_coll.setdefault(coll, []).append(row[1:])
+                        if by_coll:
+                            year_segments[y] = by_coll
+
                     def _merge_rowgroup_matches(local_matches: Dict[str, List[Dict[str, object]]]) -> None:
                         nonlocal rows_returned
                         for requested_url, recs in local_matches.items():
@@ -2167,11 +2342,16 @@ def resolve_urls_to_ccindex(
                         for cref in collections:
                             if all(per_url_counts.get(u, 0) >= int(per_url_limit) for u in dom_urls):
                                 break
+                            seg_override = None
+                            y = str(getattr(cref, "year", "") or "")
+                            if y and y in year_segments:
+                                seg_override = year_segments.get(y, {}).get(str(cref.collection))
                             local_matches, local_stats = _resolve_with_rowgroup_slice_for_collection(
                                 coll=str(cref.collection),
                                 host_revs_for_domain=host_revs,
                                 variant_to_requested=variant_to_requested,
                                 want_cols=want_cols,
+                                seg_rows_override=seg_override,
                             )
                             _merge_rowgroup_matches(local_matches)
                             parquet_files_scanned += int(local_stats.get("parquet_files_scanned") or 0)
@@ -2189,6 +2369,10 @@ def resolve_urls_to_ccindex(
                                     host_revs_for_domain=host_revs,
                                     variant_to_requested=variant_to_requested,
                                     want_cols=want_cols,
+                                    seg_rows_override=(
+                                        year_segments.get(str(getattr(cref, "year", "") or ""), {})
+                                        .get(str(cref.collection))
+                                    ),
                                 ): str(cref.collection)
                                 for cref in collections
                             }
