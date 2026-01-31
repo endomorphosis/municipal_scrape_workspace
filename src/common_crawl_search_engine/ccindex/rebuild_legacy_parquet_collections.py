@@ -51,14 +51,15 @@ def _legacy_collections(parquet_root: Path) -> List[Tuple[str, Path]]:
     return out
 
 
-def _run_rebuild(input_ccindex_root: Path, collection: str, output_dir: Path, workers: int) -> None:
+def _run_rebuild(input_ccindex_root: Path, collection: str, output_dir: Path, workers: int) -> bool:
     script = Path(__file__).resolve().parent / "bulk_convert_gz_to_parquet.py"
     if not script.exists():
         raise SystemExit(f"Missing helper: {script}")
 
     ccindex_dir = input_ccindex_root / collection
     if not ccindex_dir.exists():
-        raise SystemExit(f"Missing ccindex dir for collection: {ccindex_dir}")
+        print(f"Missing ccindex dir for collection: {ccindex_dir}")
+        return False
 
     cmd = [
         sys.executable,
@@ -72,6 +73,7 @@ def _run_rebuild(input_ccindex_root: Path, collection: str, output_dir: Path, wo
     ]
     print(" ".join(cmd))
     subprocess.check_call(cmd)
+    return True
 
 
 def main(argv: Iterable[str] | None = None) -> int:
