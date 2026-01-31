@@ -15,6 +15,7 @@ Examples:
 - `python3 benchmarks/ccindex/benchmark_cc_duckdb_search.py --quick`
 - `python3 benchmarks/ccindex/benchmark_cc_pointer_search.py --count 50`
 - `python3 benchmarks/ccindex/benchmark_parallel_duckdb_indexes.py`
+- `python3 benchmarks/ccindex/benchmark_rowgroup_year_vs_collection.py --year 2024 --samples 100 --repeats 3 --workers 8`
 
 ## Outputs
 

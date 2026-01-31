@@ -245,6 +245,9 @@ except Exception:
     _RG_YEAR_SEGMENT_CACHE_MAX = 128
 _RG_YEAR_SEGMENT_CACHE_MAX = max(1, min(1024, int(_RG_YEAR_SEGMENT_CACHE_MAX)))
 
+# Cache per-year segment source preference (year, collection_count, host_rev_count) -> source
+_ROWGROUP_SEGMENT_PREF_CACHE: Dict[Tuple[str, int, int], str] = {}
+
 
 @lru_cache(maxsize=_RG_YEAR_SEGMENT_CACHE_MAX)
 def _rowgroup_segments_by_year_cached(
@@ -2302,6 +2305,13 @@ def resolve_urls_to_ccindex(
                         "warc_length",
                     ]
 
+                    try:
+                        env_rg_workers = (os.environ.get("BRAVE_RESOLVE_ROWGROUP_WORKERS") or "").strip()
+                        rg_workers = int(env_rg_workers) if env_rg_workers else 8
+                    except Exception:
+                        rg_workers = 8
+                    rg_workers = max(1, min(8, int(rg_workers)))
+
                     collections_by_year: Dict[str, List[CollectionRef]] = {}
                     for cref in collections:
                         y = str(getattr(cref, "year", "") or "")
@@ -2310,28 +2320,95 @@ def resolve_urls_to_ccindex(
                         collections_by_year.setdefault(y, []).append(cref)
 
                     year_segments: Dict[str, Dict[str, List[Sequence[object]]]] = {}
+                    collection_segments: Dict[str, List[Sequence[object]]] = {}
+                    segment_source_by_year: Dict[str, str] = {}
+
+                    seg_pref_env = (os.environ.get("BRAVE_RESOLVE_ROWGROUP_SEGMENT_SOURCE") or "fastest").strip().lower()
+                    if seg_pref_env not in {"fastest", "auto", "year", "collection"}:
+                        seg_pref_env = "fastest"
+
                     for y, ycols in collections_by_year.items():
-                        ydb = _rowgroup_year_index_db_for_year(y)
-                        if ydb is None:
-                            continue
                         coll_key = tuple(sorted({str(c.collection) for c in ycols if str(c.collection)}))
-                        seg_rows, seg_reason = _rowgroup_segments_by_year_cached(y, coll_key, tuple(host_revs))
-                        if seg_reason:
-                            _emit({"event": "rowgroup_slice_skip", "collection": f"year:{y}", "reason": seg_reason})
-                            continue
-                        if not seg_rows:
+                        if not coll_key:
                             continue
 
-                        by_coll: Dict[str, List[Sequence[object]]] = {}
-                        for row in seg_rows:
-                            if not row or len(row) < 6:
-                                continue
-                            coll = str(row[0] or "")
-                            if not coll:
-                                continue
-                            by_coll.setdefault(coll, []).append(row[1:])
-                        if by_coll:
-                            year_segments[y] = by_coll
+                        pref_key = (str(y), int(len(coll_key)), int(len(host_revs)))
+                        pref = seg_pref_env
+                        if pref in {"auto", "fastest"}:
+                            pref = _ROWGROUP_SEGMENT_PREF_CACHE.get(pref_key, "fastest")
+
+                        year_rows: Sequence[Sequence[object]] = []
+                        year_reason = ""
+                        year_time = None
+                        if pref in {"year", "fastest"}:
+                            ydb = _rowgroup_year_index_db_for_year(y)
+                            if ydb is None:
+                                year_reason = "db_missing"
+                            else:
+                                t0 = time.perf_counter()
+                                year_rows, year_reason = _rowgroup_segments_by_year_cached(y, coll_key, tuple(host_revs))
+                                year_time = time.perf_counter() - t0
+                            if year_reason:
+                                _emit({"event": "rowgroup_slice_skip", "collection": f"year:{y}", "reason": year_reason})
+
+                        coll_time = None
+                        if pref in {"collection", "fastest"}:
+                            t0 = time.perf_counter()
+                            try:
+                                from concurrent.futures import ThreadPoolExecutor as _SegTPE, as_completed as _seg_ac
+
+                                def _fetch_coll_segments(cname: str) -> Tuple[str, Sequence[Sequence[object]], str]:
+                                    segs, reason = _rowgroup_segments_cached(cname, tuple(host_revs))
+                                    return (cname, segs, reason)
+
+                                coll_workers = max(1, min(int(rg_workers), len(ycols)))
+                                with _SegTPE(max_workers=coll_workers) as sx:
+                                    futs = {sx.submit(_fetch_coll_segments, str(c.collection)): str(c.collection) for c in ycols}
+                                    for fut in _seg_ac(futs):
+                                        cname = futs.get(fut, "")
+                                        try:
+                                            cname, segs, reason = fut.result()
+                                        except Exception:
+                                            continue
+                                        if reason:
+                                            _emit({"event": "rowgroup_slice_skip", "collection": str(cname), "reason": reason})
+                                            continue
+                                        if segs:
+                                            collection_segments[str(cname)] = list(segs)
+                            finally:
+                                coll_time = time.perf_counter() - t0
+
+                        chosen = pref
+                        if pref in {"auto", "fastest"}:
+                            chosen = "year"
+                            if year_reason or not year_rows:
+                                chosen = "collection"
+                            elif coll_time is not None and year_time is not None and coll_time < year_time:
+                                chosen = "collection"
+                            _ROWGROUP_SEGMENT_PREF_CACHE[pref_key] = chosen
+                            _emit(
+                                {
+                                    "event": "rowgroup_segment_source",
+                                    "year": str(y),
+                                    "chosen": str(chosen),
+                                    "year_time_s": None if year_time is None else float(f"{year_time:.4f}"),
+                                    "collection_time_s": None if coll_time is None else float(f"{coll_time:.4f}"),
+                                }
+                            )
+
+                        segment_source_by_year[str(y)] = str(chosen)
+
+                        if chosen == "year" and year_rows:
+                            by_coll: Dict[str, List[Sequence[object]]] = {}
+                            for row in year_rows:
+                                if not row or len(row) < 6:
+                                    continue
+                                coll = str(row[0] or "")
+                                if not coll:
+                                    continue
+                                by_coll.setdefault(coll, []).append(row[1:])
+                            if by_coll:
+                                year_segments[str(y)] = by_coll
 
                     def _merge_rowgroup_matches(local_matches: Dict[str, List[Dict[str, object]]]) -> None:
                         nonlocal rows_returned
@@ -2345,22 +2422,30 @@ def resolve_urls_to_ccindex(
                                 per_url_counts[requested_url] = per_url_counts.get(requested_url, 0) + 1
                                 rows_returned += 1
 
-                    try:
-                        env_rg_workers = (os.environ.get("BRAVE_RESOLVE_ROWGROUP_WORKERS") or "").strip()
-                        rg_workers = int(env_rg_workers) if env_rg_workers else 8
-                    except Exception:
-                        rg_workers = 8
-                    rg_workers = max(1, min(8, int(rg_workers)))
+                    def _seg_override_for(cref: CollectionRef) -> Optional[Sequence[Sequence[object]]]:
+                        y = str(getattr(cref, "year", "") or "")
+                        coll_name = str(cref.collection)
+                        if y:
+                            source = segment_source_by_year.get(str(y), "")
+                            if source == "year":
+                                seg = year_segments.get(str(y), {}).get(coll_name)
+                                if seg is not None:
+                                    return seg
+                            if source == "collection":
+                                seg = collection_segments.get(coll_name)
+                                if seg is not None:
+                                    return seg
+                            seg = year_segments.get(str(y), {}).get(coll_name)
+                            if seg is not None:
+                                return seg
+                        return collection_segments.get(coll_name)
 
                     if rg_workers <= 1 or len(collections) <= 1:
                         # Sequential scan (newest-first), stop as soon as all URLs are satisfied.
                         for cref in collections:
                             if all(per_url_counts.get(u, 0) >= int(per_url_limit) for u in dom_urls):
                                 break
-                            seg_override = None
-                            y = str(getattr(cref, "year", "") or "")
-                            if y and y in year_segments:
-                                seg_override = year_segments.get(y, {}).get(str(cref.collection))
+                            seg_override = _seg_override_for(cref)
                             local_matches, local_stats = _resolve_with_rowgroup_slice_for_collection(
                                 coll=str(cref.collection),
                                 host_revs_for_domain=host_revs,
@@ -2384,10 +2469,7 @@ def resolve_urls_to_ccindex(
                                     host_revs_for_domain=host_revs,
                                     variant_to_requested=variant_to_requested,
                                     want_cols=want_cols,
-                                    seg_rows_override=(
-                                        year_segments.get(str(getattr(cref, "year", "") or ""), {})
-                                        .get(str(cref.collection))
-                                    ),
+                                    seg_rows_override=_seg_override_for(cref),
                                 ): str(cref.collection)
                                 for cref in collections
                             }
