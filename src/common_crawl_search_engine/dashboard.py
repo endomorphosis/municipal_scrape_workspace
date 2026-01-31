@@ -23,6 +23,7 @@ def _ensure_default_search_env() -> None:
     os.environ.setdefault("CCINDEX_BRAVE_TRACE", "1")
     os.environ.setdefault("BRAVE_RESOLVE_STRATEGY", "domain_url_join_parallel")
     os.environ.setdefault("BRAVE_RESOLVE_ROWGROUP_SLICE_MODE", "auto")
+    os.environ.setdefault("BRAVE_RESOLVE_SKIP_LEGACY_SCHEMA", "1")
 
 
 _CSS = """

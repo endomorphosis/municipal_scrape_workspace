@@ -245,6 +245,54 @@ def get_collection_parquet_dir(parquet_root: Path, collection: str) -> Path:
     return parquet_root / collection
 
 
+@lru_cache(maxsize=512)
+def _collection_parquet_has_columns(
+    collection: str,
+    parquet_root: str,
+    required_cols: tuple[str, ...] = ("collection",),
+) -> bool:
+    """Best-effort check whether a collection's Parquet shards include required columns.
+
+    Returns True when we cannot determine the schema (so callers don't skip by mistake).
+    """
+
+    try:
+        root = Path(parquet_root).expanduser().resolve()
+    except Exception:
+        return True
+
+    try:
+        coll_dir = get_collection_parquet_dir(root, collection)
+    except Exception:
+        return True
+
+    try:
+        if not coll_dir.exists():
+            return True
+    except Exception:
+        return True
+
+    try:
+        shard = next(iter(sorted(coll_dir.glob("cdx-*.parquet"))), None)
+    except Exception:
+        shard = None
+    if shard is None:
+        return True
+
+    try:
+        import pyarrow.parquet as pq  # type: ignore
+    except Exception:
+        return True
+
+    try:
+        pf = pq.ParquetFile(str(shard))
+        names = {str(n) for n in pf.schema.names}
+    except Exception:
+        return True
+
+    return all(str(c) in names for c in required_cols)
+
+
 @dataclass(frozen=True)
 class CollectionRef:
     year: Optional[str]
@@ -2008,6 +2056,24 @@ def resolve_urls_to_ccindex(
                     # Fall back silently to existing Parquet scan strategies.
                     pass
 
+            skip_legacy_env = (os.environ.get("BRAVE_RESOLVE_SKIP_LEGACY_SCHEMA") or "").strip().lower()
+            skip_legacy = skip_legacy_env in {"1", "true", "yes", "on"}
+
+            def _allow_collection(coll: str) -> bool:
+                if not skip_legacy:
+                    return True
+                ok = _collection_parquet_has_columns(str(coll), str(parquet_root), ("collection",))
+                if not ok:
+                    _emit(
+                        {
+                            "event": "resolve_skip_legacy_collection",
+                            "domain": dom,
+                            "collection": str(coll),
+                            "reason": "missing_collection_col",
+                        }
+                    )
+                return ok
+
             def _lookup_domain_pointers(
                 cref: CollectionRef,
             ) -> tuple[str, List[Path], float, int]:
@@ -2135,6 +2201,8 @@ def resolve_urls_to_ccindex(
                                 for sp, coll, rel in rows:
                                     coll_s = str(coll or "").strip()
                                     if not coll_s:
+                                        continue
+                                    if not _allow_collection(coll_s):
                                         continue
                                     sp_s = str(sp or "").strip()
                                     rel_s = str(rel or "").strip()
@@ -2308,7 +2376,8 @@ def resolve_urls_to_ccindex(
                                 domain_pointers_s += float(dt)
                                 domain_pointers_rows += int(rows_n)
                                 if pq_paths:
-                                    coll_to_pq[coll] = pq_paths
+                                    if _allow_collection(str(coll)):
+                                        coll_to_pq[coll] = pq_paths
                     finally:
                         domain_pointers_wall_s += float(time.perf_counter() - t_dpwall0)
 
@@ -2461,6 +2530,8 @@ def resolve_urls_to_ccindex(
                 for cref in collections:
                     cdb = cref.collection_db_path
                     if not cdb.exists():
+                        continue
+                    if not _allow_collection(str(cref.collection)):
                         continue
                     parquet_dir = get_collection_parquet_dir(parquet_root, cref.collection)
                     if not parquet_dir.exists():
