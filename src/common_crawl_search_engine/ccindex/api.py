@@ -1251,6 +1251,14 @@ def resolve_urls_to_ccindex(
                 rows = con.execute("DESCRIBE SELECT * FROM read_parquet(?)", [str(pq_path)]).fetchall()
                 return {str(r[0]) for r in rows if r and r[0]}
 
+            def _parquet_columns_for_batch(batch: Sequence[Path]) -> set[str]:
+                placeholders = ",".join(["?"] * len(batch))
+                rows = con.execute(
+                    f"DESCRIBE SELECT * FROM read_parquet([{placeholders}], filename=true, union_by_name={union_by_name_sql})",
+                    [str(p) for p in batch],
+                ).fetchall()
+                return {str(r[0]) for r in rows if r and r[0]}
+
             def col_or_null(cols: set[str], name: str) -> str:
                 return f"p.{name} AS {name}" if name in cols else f"NULL AS {name}"
 
@@ -2127,9 +2135,13 @@ def resolve_urls_to_ccindex(
                                 file_to_coll[ps] = str(_c)
 
                     if batch_files:
-                        if parquet_cols is None:
+                        for i in range(0, len(batch_files), batch_sz):
+                            if all(per_url_counts.get(u, 0) >= int(per_url_limit) for u in dom_urls):
+                                break
+
+                            batch = batch_files[i : i + batch_sz]
                             t_schema0 = time.perf_counter()
-                            parquet_cols = _parquet_columns(batch_files[0])
+                            parquet_cols = _parquet_columns_for_batch(batch) if batch else set()
                             schema_s += time.perf_counter() - t_schema0
                             parquet_select_list = ", ".join(
                                 [
@@ -2146,13 +2158,7 @@ def resolve_urls_to_ccindex(
                                     col_or_null(parquet_cols, "warc_length"),
                                 ]
                             )
-
-                        select_list = parquet_select_list or "p.filename AS parquet_path"
-                        for i in range(0, len(batch_files), batch_sz):
-                            if all(per_url_counts.get(u, 0) >= int(per_url_limit) for u in dom_urls):
-                                break
-
-                            batch = batch_files[i : i + batch_sz]
+                            select_list = parquet_select_list or "p.filename AS parquet_path"
                             parquet_files_scanned += len(batch)
                             collections_scanned += len(global_coll_to_pq)
                             batches += 1
@@ -2287,9 +2293,13 @@ def resolve_urls_to_ccindex(
                     if not batch_files:
                         continue
 
-                    if parquet_cols is None:
+                    for i in range(0, len(batch_files), batch_sz):
+                        if all(per_url_counts.get(u, 0) >= int(per_url_limit) for u in dom_urls):
+                            break
+
+                        batch = batch_files[i : i + batch_sz]
                         t_schema0 = time.perf_counter()
-                        parquet_cols = _parquet_columns(batch_files[0])
+                        parquet_cols = _parquet_columns_for_batch(batch) if batch else set()
                         schema_s += time.perf_counter() - t_schema0
                         parquet_select_list = ", ".join(
                             [
@@ -2306,13 +2316,7 @@ def resolve_urls_to_ccindex(
                                 col_or_null(parquet_cols, "warc_length"),
                             ]
                         )
-
-                    select_list = parquet_select_list or "p.filename AS parquet_path"
-                    for i in range(0, len(batch_files), batch_sz):
-                        if all(per_url_counts.get(u, 0) >= int(per_url_limit) for u in dom_urls):
-                            break
-
-                        batch = batch_files[i : i + batch_sz]
+                        select_list = parquet_select_list or "p.filename AS parquet_path"
                         parquet_files_scanned += len(batch)
                         collections_scanned += len(coll_to_pq)
                         batches += 1
@@ -2490,9 +2494,13 @@ def resolve_urls_to_ccindex(
                 if not batch_files:
                     continue
 
-                if parquet_cols is None:
+                for i in range(0, len(batch_files), batch_sz):
+                    if all(per_url_counts.get(u, 0) >= int(per_url_limit) for u in dom_urls):
+                        break
+
+                    batch = batch_files[i : i + batch_sz]
                     t_schema0 = time.perf_counter()
-                    parquet_cols = _parquet_columns(batch_files[0])
+                    parquet_cols = _parquet_columns_for_batch(batch) if batch else set()
                     schema_s += time.perf_counter() - t_schema0
                     parquet_select_list = ", ".join(
                         [
@@ -2509,13 +2517,7 @@ def resolve_urls_to_ccindex(
                             col_or_null(parquet_cols, "warc_length"),
                         ]
                     )
-
-                select_list = parquet_select_list or "p.filename AS parquet_path"
-                for i in range(0, len(batch_files), batch_sz):
-                    if all(per_url_counts.get(u, 0) >= int(per_url_limit) for u in dom_urls):
-                        break
-
-                    batch = batch_files[i : i + batch_sz]
+                    select_list = parquet_select_list or "p.filename AS parquet_path"
                     parquet_files_scanned += len(batch)
 
                     t_q0 = time.perf_counter()
