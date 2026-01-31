@@ -95,6 +95,88 @@ def _rowgroup_index_db_for_collection(collection: str) -> Optional[Path]:
     return None
 
 
+try:
+    _RG_SEGMENT_CACHE_MAX = int((os.environ.get("BRAVE_RESOLVE_ROWGROUP_SEGMENT_CACHE") or "256").strip())
+except Exception:
+    _RG_SEGMENT_CACHE_MAX = 256
+_RG_SEGMENT_CACHE_MAX = max(1, min(4096, int(_RG_SEGMENT_CACHE_MAX)))
+
+
+@lru_cache(maxsize=_RG_SEGMENT_CACHE_MAX)
+def _rowgroup_segments_cached(
+    collection: str,
+    host_revs_key: tuple[str, ...],
+) -> tuple[tuple[tuple[object, object, object, object, object], ...], str]:
+    """Return cached rowgroup slice segments for a collection and host_rev set.
+
+    Returns (segments, reason). `reason` is empty when segments are usable.
+    """
+
+    if not host_revs_key:
+        return ((), "no_host_revs")
+
+    dbp = _rowgroup_index_db_for_collection(str(collection))
+    if dbp is None:
+        return ((), "db_missing")
+
+    try:
+        duckdb = _require_duckdb()
+    except Exception:
+        return ((), "duckdb_missing")
+
+    con_rg = duckdb.connect(str(dbp), read_only=True)
+    try:
+        if not _duckdb_has_table(con_rg, "cc_domain_rowgroups"):
+            return ((), "table_missing")
+
+        cols_rg = _duckdb_table_columns(con_rg, "cc_domain_rowgroups")
+
+        if "host_rev" not in cols_rg:
+            return ((), "host_rev_missing")
+
+        if "row_group" not in cols_rg or "dom_rg_row_start" not in cols_rg or "dom_rg_row_end" not in cols_rg:
+            return ((), "rowgroup_cols_missing")
+
+        if "source_path" not in cols_rg and "parquet_relpath" not in cols_rg:
+            return ((), "path_cols_missing")
+
+        where_parts: List[str] = []
+        params: List[object] = []
+
+        if "collection" in cols_rg:
+            where_parts.append("collection = ?")
+            params.append(str(collection))
+
+        hr_placeholders = ",".join(["?"] * len(host_revs_key))
+        where_parts.append(f"host_rev IN ({hr_placeholders})")
+        params.extend(list(host_revs_key))
+
+        where_sql = " AND ".join(where_parts) if where_parts else "1=1"
+        sel_source = "source_path" if "source_path" in cols_rg else "NULL"
+        sel_rel = "parquet_relpath" if "parquet_relpath" in cols_rg else "NULL"
+
+        rows = con_rg.execute(
+            f"""
+            SELECT {sel_source} AS source_path, {sel_rel} AS parquet_relpath,
+                   row_group, dom_rg_row_start, dom_rg_row_end
+            FROM cc_domain_rowgroups
+            WHERE {where_sql}
+            ORDER BY source_path, parquet_relpath, row_group, dom_rg_row_start
+            """,
+            params,
+        ).fetchall()
+
+        if not rows:
+            return ((), "no_segments")
+
+        return (tuple(tuple(r) for r in rows), "")
+    finally:
+        try:
+            con_rg.close()
+        except Exception:
+            pass
+
+
 @lru_cache(maxsize=8)
 def _cc_pointers_duckdb_paths() -> List[Path]:
     """Return best-effort DuckDB paths that contain a URL-level `cc_pointers` table.
