@@ -126,6 +126,22 @@ def _rowgroup_segments_cached(
 
     con_rg = duckdb.connect(str(dbp), read_only=True)
     try:
+        try:
+            env_threads = (os.environ.get("BRAVE_RESOLVE_ROWGROUP_DB_THREADS") or "").strip()
+            rg_threads = int(env_threads) if env_threads else 4
+        except Exception:
+            rg_threads = 4
+        rg_threads = max(1, min(16, int(rg_threads)))
+        try:
+            con_rg.execute(f"PRAGMA threads={int(rg_threads)}")
+        except Exception:
+            pass
+        try:
+            mem_limit = (os.environ.get("BRAVE_RESOLVE_ROWGROUP_DB_MEMORY_LIMIT") or "1GB").strip()
+            if mem_limit:
+                con_rg.execute(f"PRAGMA memory_limit='{mem_limit}'")
+        except Exception:
+            pass
         if not _duckdb_has_table(con_rg, "cc_domain_rowgroups"):
             return ((), "table_missing")
 
@@ -175,6 +191,21 @@ def _rowgroup_segments_cached(
             con_rg.close()
         except Exception:
             pass
+
+
+@lru_cache(maxsize=8192)
+def _parquet_schema_columns_cached(path: str) -> frozenset[str]:
+    """Cached parquet schema columns for a file path."""
+
+    try:
+        import pyarrow.parquet as pq  # type: ignore
+    except Exception:
+        return frozenset()
+    try:
+        pf = pq.ParquetFile(str(path))
+        return frozenset(str(n) for n in pf.schema.names)
+    except Exception:
+        return frozenset()
 
 
 @lru_cache(maxsize=8)
@@ -278,6 +309,22 @@ def host_to_rev(host: str) -> str:
 
     parts = [p for p in (host or "").lower().split(".") if p]
     return ",".join(reversed(parts))
+
+
+@lru_cache(maxsize=4096)
+def _host_to_rev_cached(host: str) -> str:
+    return host_to_rev(host)
+
+
+@lru_cache(maxsize=2048)
+def _host_revs_for_domain_year(domain: str, year: Optional[str]) -> tuple[str, ...]:
+    """Cache base host_rev keys for a domain+year (domain + www.domain)."""
+
+    dom = (domain or "").strip().lower()
+    if not dom:
+        return ()
+    revs = {_host_to_rev_cached(dom), _host_to_rev_cached("www." + dom)}
+    return tuple(r for r in sorted(revs) if r)
 
 
 def _canonicalize_url_for_match(url: str) -> str:
@@ -1469,7 +1516,6 @@ def resolve_urls_to_ccindex(
                 counted_collection = False
                 matched_rows = 0
                 pf_cache: Dict[str, object] = {}
-                schema_cols_cache: Dict[str, set[str]] = {}
 
                 # Group segments by parquet file and row_group to avoid repeated reads.
                 file_groups: "Dict[str, Dict[int, List[Tuple[int, int]]]]" = {}
@@ -1510,6 +1556,21 @@ def resolve_urls_to_ccindex(
                             file_groups[ps] = group
                         group.setdefault(int(rg), []).append((int(s0), int(s1)))
 
+                    def _coalesce_ranges(ranges: List[Tuple[int, int]]) -> List[Tuple[int, int]]:
+                        if not ranges:
+                            return []
+                        ranges = sorted(ranges, key=lambda r: (int(r[0]), int(r[1])))
+                        merged: List[Tuple[int, int]] = []
+                        cur_start, cur_end = ranges[0]
+                        for s0, s1 in ranges[1:]:
+                            if int(s0) <= int(cur_end):
+                                cur_end = max(int(cur_end), int(s1))
+                            else:
+                                merged.append((int(cur_start), int(cur_end)))
+                                cur_start, cur_end = int(s0), int(s1)
+                        merged.append((int(cur_start), int(cur_end)))
+                        return merged
+
                     for ps, rg_map in file_groups.items():
                         pf = pf_cache.get(ps)
                         if pf is None:
@@ -1525,12 +1586,7 @@ def resolve_urls_to_ccindex(
                                 local_collections_scanned += 1
                                 counted_collection = True
 
-                            try:
-                                schema_cols_cache[ps] = {str(n) for n in pf.schema.names}
-                            except Exception:
-                                schema_cols_cache[ps] = set()
-
-                        avail = schema_cols_cache.get(ps) or set()
+                        avail = set(_parquet_schema_columns_cached(ps))
                         cols_to_read = [c for c in want_cols if c in avail]
                         if "url" not in cols_to_read:
                             continue
@@ -1541,6 +1597,7 @@ def resolve_urls_to_ccindex(
                             pq_path = Path(ps)
 
                         for rg, ranges in rg_map.items():
+                            ranges = _coalesce_ranges(ranges)
                             try:
                                 t_rg = pf.read_row_group(int(rg), columns=cols_to_read)
                                 rowgroups_read += 1
@@ -2019,7 +2076,8 @@ def resolve_urls_to_ccindex(
             # only using the normalized domain.
             host_revs: List[str] = []
             try:
-                host_revs_set = {host_to_rev(dom), host_to_rev("www." + dom)}
+                base_revs = set(_host_revs_for_domain_year(dom, str(year) if year else None))
+                host_revs_set = set(base_revs)
                 for u in dom_urls:
                     uu = (u or "").strip()
                     if not uu:
@@ -2033,11 +2091,11 @@ def resolve_urls_to_ccindex(
                         h = ""
                     if not h:
                         continue
-                    host_revs_set.add(host_to_rev(h))
+                    host_revs_set.add(_host_to_rev_cached(h))
                     if h.startswith("www."):
-                        host_revs_set.add(host_to_rev(h[4:]))
+                        host_revs_set.add(_host_to_rev_cached(h[4:]))
                     else:
-                        host_revs_set.add(host_to_rev("www." + h))
+                        host_revs_set.add(_host_to_rev_cached("www." + h))
                 host_revs = [r for r in sorted(host_revs_set) if r]
             except Exception:
                 host_revs = [host_rev_prefix] if host_rev_prefix else []
