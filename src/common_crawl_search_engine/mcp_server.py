@@ -2,10 +2,20 @@
 
 from __future__ import annotations
 
+import os
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
 from common_crawl_search_engine.ccindex import api
+
+
+def _ensure_default_search_env() -> None:
+    state_dir = Path((os.environ.get("CCINDEX_STATE_DIR") or "state").strip() or "state")
+    state_dir.mkdir(parents=True, exist_ok=True)
+    os.environ.setdefault("CCINDEX_EVENT_LOG_PATH", str(state_dir / "ccindex_events.jsonl"))
+    os.environ.setdefault("CCINDEX_BRAVE_TRACE", "1")
+    os.environ.setdefault("BRAVE_RESOLVE_STRATEGY", "domain_url_join_parallel")
+    os.environ.setdefault("BRAVE_RESOLVE_ROWGROUP_SLICE_MODE", "auto")
 
 
 def _maybe_path(p: Optional[str]) -> Optional[Path]:
@@ -18,6 +28,7 @@ def _maybe_path(p: Optional[str]) -> Optional[Path]:
 
 
 def main() -> int:
+    _ensure_default_search_env()
     try:
         from mcp.server.fastmcp import FastMCP  # type: ignore
     except Exception as e:  # pragma: no cover

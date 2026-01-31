@@ -1029,7 +1029,7 @@ def resolve_urls_to_ccindex(
     if not domain_to_urls:
         return {u: [] for u in want}
 
-    strategy = (os.environ.get("BRAVE_RESOLVE_STRATEGY") or "meta_parallel").strip().lower()
+    strategy = (os.environ.get("BRAVE_RESOLVE_STRATEGY") or "domain_url_join_parallel").strip().lower()
     if strategy in {"url_join", "domain_url_join", "domain_url_join_parallel"}:
         resolve_strategy = "domain_url_join_parallel"
     else:
@@ -1272,7 +1272,7 @@ def resolve_urls_to_ccindex(
 
             # Optional fast path: use a domain->rowgroup slice index (cc_domain_rowgroups)
             # to read only relevant rowgroups via PyArrow.
-            rg_mode = (os.environ.get("BRAVE_RESOLVE_ROWGROUP_SLICE_MODE") or "off").strip().lower()
+            rg_mode = (os.environ.get("BRAVE_RESOLVE_ROWGROUP_SLICE_MODE") or "auto").strip().lower()
             if rg_mode not in {"auto", "on", "off"}:
                 rg_mode = "off"
 

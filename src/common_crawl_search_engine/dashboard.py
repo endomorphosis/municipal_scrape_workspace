@@ -16,6 +16,15 @@ from typing import Any, Dict, List, Optional
 from common_crawl_search_engine.ccindex import api
 
 
+def _ensure_default_search_env() -> None:
+    state_dir = Path((os.environ.get("CCINDEX_STATE_DIR") or "state").strip() or "state")
+    state_dir.mkdir(parents=True, exist_ok=True)
+    os.environ.setdefault("CCINDEX_EVENT_LOG_PATH", str(state_dir / "ccindex_events.jsonl"))
+    os.environ.setdefault("CCINDEX_BRAVE_TRACE", "1")
+    os.environ.setdefault("BRAVE_RESOLVE_STRATEGY", "domain_url_join_parallel")
+    os.environ.setdefault("BRAVE_RESOLVE_ROWGROUP_SLICE_MODE", "auto")
+
+
 _CSS = """
 :root {
   --bg: #0b0f1a;
@@ -3363,6 +3372,7 @@ def create_app(master_db: Path) -> Any:
 
 
 def main(argv: Optional[List[str]] = None) -> int:
+    _ensure_default_search_env()
     ap = argparse.ArgumentParser(description="Run the Common Crawl Search Engine dashboard + MCP JSON-RPC")
     ap.add_argument("--host", default="127.0.0.1")
     ap.add_argument("--port", type=int, default=8787)
@@ -3422,6 +3432,7 @@ def main(argv: Optional[List[str]] = None) -> int:
 
 
 def create_app_from_env() -> Any:
+    _ensure_default_search_env()
     return create_app(master_db=_env_master_db())
 
 
