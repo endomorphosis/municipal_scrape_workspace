@@ -1304,12 +1304,15 @@ def resolve_urls_to_ccindex(
                 nonlocal collections_scanned
 
                 if not host_revs_for_domain:
+                    _emit({"event": "rowgroup_slice_skip", "collection": str(coll), "reason": "no_host_revs"})
                     return (0, 0)
                 if not variant_to_requested:
+                    _emit({"event": "rowgroup_slice_skip", "collection": str(coll), "reason": "no_variants"})
                     return (0, 0)
 
                 dbp = _rowgroup_index_db_for_collection(str(coll))
                 if dbp is None:
+                    _emit({"event": "rowgroup_slice_skip", "collection": str(coll), "reason": "db_missing"})
                     return (0, 0)
 
                 # Import lazily so this path has zero overhead unless enabled.
@@ -1318,11 +1321,13 @@ def resolve_urls_to_ccindex(
                     import pyarrow.compute as pc  # type: ignore
                     import pyarrow.parquet as pq  # type: ignore
                 except Exception:
+                    _emit({"event": "rowgroup_slice_skip", "collection": str(coll), "reason": "pyarrow_missing"})
                     return (0, 0)
 
                 con_rg = duckdb.connect(str(dbp), read_only=True)
                 try:
                     if not _duckdb_has_table(con_rg, "cc_domain_rowgroups"):
+                        _emit({"event": "rowgroup_slice_skip", "collection": str(coll), "reason": "table_missing"})
                         return (0, 0)
 
                     cols_rg = _duckdb_table_columns(con_rg, "cc_domain_rowgroups")
@@ -1335,6 +1340,7 @@ def resolve_urls_to_ccindex(
                         params.append(str(coll))
 
                     if "host_rev" not in cols_rg:
+                        _emit({"event": "rowgroup_slice_skip", "collection": str(coll), "reason": "host_rev_missing"})
                         return (0, 0)
 
                     hr_placeholders = ",".join(["?"] * len(host_revs_for_domain))
@@ -1342,9 +1348,11 @@ def resolve_urls_to_ccindex(
                     params.extend(list(host_revs_for_domain))
 
                     if "row_group" not in cols_rg or "dom_rg_row_start" not in cols_rg or "dom_rg_row_end" not in cols_rg:
+                        _emit({"event": "rowgroup_slice_skip", "collection": str(coll), "reason": "rowgroup_cols_missing"})
                         return (0, 0)
 
                     if "source_path" not in cols_rg and "parquet_relpath" not in cols_rg:
+                        _emit({"event": "rowgroup_slice_skip", "collection": str(coll), "reason": "path_cols_missing"})
                         return (0, 0)
 
                     where_sql = " AND ".join(where_parts) if where_parts else "1=1"
@@ -1364,6 +1372,7 @@ def resolve_urls_to_ccindex(
                     ).fetchall()
 
                     if not seg_rows:
+                        _emit({"event": "rowgroup_slice_skip", "collection": str(coll), "reason": "no_segments"})
                         return (0, 0)
 
                 finally:
@@ -1381,6 +1390,7 @@ def resolve_urls_to_ccindex(
                 opened_files = 0
                 rowgroups_read = 0
                 counted_collection = False
+                matched_rows = 0
                 pf_cache: Dict[str, object] = {}
                 schema_cols_cache: Dict[str, set[str]] = {}
 
@@ -1466,6 +1476,7 @@ def resolve_urls_to_ccindex(
 
                     if t_hit.num_rows <= 0:
                         continue
+                    matched_rows += int(t_hit.num_rows)
 
                     # Materialize only the URL column to drive mapping; other columns are pulled by index.
                     try:
@@ -1543,6 +1554,16 @@ def resolve_urls_to_ccindex(
                             per_url_counts[requested_url] = per_url_counts.get(requested_url, 0) + 1
                             rows_returned += 1
 
+                _emit(
+                    {
+                        "event": "rowgroup_slice_read",
+                        "collection": str(coll),
+                        "opened_files": int(opened_files),
+                        "rowgroups_read": int(rowgroups_read),
+                        "matched_rows": int(matched_rows),
+                        "segments": int(len(seg_rows)),
+                    }
+                )
                 return (opened_files, rowgroups_read)
 
             try:
@@ -1933,6 +1954,29 @@ def resolve_urls_to_ccindex(
             # If enabled, try the rowgroup-slice approach before any Parquet full scans.
             # This avoids DuckDB read_parquet filtering when we can directly read the relevant rowgroups.
             rg_enabled = rg_mode == "on" or (rg_mode == "auto" and (_rowgroup_slice_index_dir().exists() or bool(os.environ.get("BRAVE_RESOLVE_ROWGROUP_INDEX_DB") or "")))
+            _emit(
+                {
+                    "event": "resolve_rowgroup_mode",
+                    "domain": dom,
+                    "rg_mode": rg_mode,
+                    "rg_enabled": bool(rg_enabled),
+                    "rowgroup_dir": str(_rowgroup_slice_index_dir()),
+                    "rowgroup_dir_exists": bool(_rowgroup_slice_index_dir().exists()),
+                }
+            )
+            if rg_enabled:
+                rg_before = len(collections)
+                collections = [cref for cref in collections if _rowgroup_index_db_for_collection(str(cref.collection))]
+                _emit(
+                    {
+                        "event": "resolve_rowgroup_collections",
+                        "domain": dom,
+                        "collections_before": int(rg_before),
+                        "collections_after": int(len(collections)),
+                    }
+                )
+                if not collections:
+                    return (dom, matches, 0, 0, 0.0, "no_rowgroup_collections")
             if rg_enabled and host_revs and not all(per_url_counts.get(u, 0) >= int(per_url_limit) for u in dom_urls):
                 try:
                     variant_to_requested: Dict[str, List[str]] = {}
