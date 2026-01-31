@@ -1341,27 +1341,28 @@ def resolve_urls_to_ccindex(
                 host_revs_for_domain: Sequence[str],
                 variant_to_requested: Dict[str, List[str]],
                 want_cols: Sequence[str],
-            ) -> tuple[int, int]:
+            ) -> tuple[Dict[str, List[Dict[str, object]]], Dict[str, int]]:
                 """Try to satisfy URL matches for this collection using cc_domain_rowgroups.
 
-                Returns: (parquet_files_opened, rowgroups_read)
+                Returns: (matches_by_requested_url, stats)
                 """
 
-                nonlocal rows_returned
-                nonlocal parquet_files_scanned
-                nonlocal collections_scanned
+                local_matches: Dict[str, List[Dict[str, object]]] = {}
+                local_rows_returned = 0
+                local_parquet_files_scanned = 0
+                local_collections_scanned = 0
 
                 if not host_revs_for_domain:
                     _emit({"event": "rowgroup_slice_skip", "collection": str(coll), "reason": "no_host_revs"})
-                    return (0, 0)
+                    return ({}, {"rows_returned": 0, "parquet_files_scanned": 0, "collections_scanned": 0})
                 if not variant_to_requested:
                     _emit({"event": "rowgroup_slice_skip", "collection": str(coll), "reason": "no_variants"})
-                    return (0, 0)
+                    return ({}, {"rows_returned": 0, "parquet_files_scanned": 0, "collections_scanned": 0})
 
                 dbp = _rowgroup_index_db_for_collection(str(coll))
                 if dbp is None:
                     _emit({"event": "rowgroup_slice_skip", "collection": str(coll), "reason": "db_missing"})
-                    return (0, 0)
+                    return ({}, {"rows_returned": 0, "parquet_files_scanned": 0, "collections_scanned": 0})
 
                 # Import lazily so this path has zero overhead unless enabled.
                 try:
@@ -1370,13 +1371,13 @@ def resolve_urls_to_ccindex(
                     import pyarrow.parquet as pq  # type: ignore
                 except Exception:
                     _emit({"event": "rowgroup_slice_skip", "collection": str(coll), "reason": "pyarrow_missing"})
-                    return (0, 0)
+                    return ({}, {"rows_returned": 0, "parquet_files_scanned": 0, "collections_scanned": 0})
 
                 con_rg = duckdb.connect(str(dbp), read_only=True)
                 try:
                     if not _duckdb_has_table(con_rg, "cc_domain_rowgroups"):
                         _emit({"event": "rowgroup_slice_skip", "collection": str(coll), "reason": "table_missing"})
-                        return (0, 0)
+                        return ({}, {"rows_returned": 0, "parquet_files_scanned": 0, "collections_scanned": 0})
 
                     cols_rg = _duckdb_table_columns(con_rg, "cc_domain_rowgroups")
 
@@ -1389,7 +1390,7 @@ def resolve_urls_to_ccindex(
 
                     if "host_rev" not in cols_rg:
                         _emit({"event": "rowgroup_slice_skip", "collection": str(coll), "reason": "host_rev_missing"})
-                        return (0, 0)
+                        return ({}, {"rows_returned": 0, "parquet_files_scanned": 0, "collections_scanned": 0})
 
                     hr_placeholders = ",".join(["?"] * len(host_revs_for_domain))
                     where_parts.append(f"host_rev IN ({hr_placeholders})")
@@ -1397,11 +1398,11 @@ def resolve_urls_to_ccindex(
 
                     if "row_group" not in cols_rg or "dom_rg_row_start" not in cols_rg or "dom_rg_row_end" not in cols_rg:
                         _emit({"event": "rowgroup_slice_skip", "collection": str(coll), "reason": "rowgroup_cols_missing"})
-                        return (0, 0)
+                        return ({}, {"rows_returned": 0, "parquet_files_scanned": 0, "collections_scanned": 0})
 
                     if "source_path" not in cols_rg and "parquet_relpath" not in cols_rg:
                         _emit({"event": "rowgroup_slice_skip", "collection": str(coll), "reason": "path_cols_missing"})
-                        return (0, 0)
+                        return ({}, {"rows_returned": 0, "parquet_files_scanned": 0, "collections_scanned": 0})
 
                     where_sql = " AND ".join(where_parts) if where_parts else "1=1"
                     # Fetch both paths (when available) so we can fall back if one doesn't resolve.
@@ -1421,7 +1422,7 @@ def resolve_urls_to_ccindex(
 
                     if not seg_rows:
                         _emit({"event": "rowgroup_slice_skip", "collection": str(coll), "reason": "no_segments"})
-                        return (0, 0)
+                        return ({}, {"rows_returned": 0, "parquet_files_scanned": 0, "collections_scanned": 0})
 
                 finally:
                     try:
@@ -1432,7 +1433,7 @@ def resolve_urls_to_ccindex(
                 parquet_dir = get_collection_parquet_dir(parquet_root, coll)
                 variant_urls = list(variant_to_requested.keys())
                 if not variant_urls:
-                    return (0, 0)
+                    return ({}, {"rows_returned": 0, "parquet_files_scanned": 0, "collections_scanned": 0})
                 variant_arr = pa.array(variant_urls)
 
                 opened_files = 0
@@ -1443,9 +1444,6 @@ def resolve_urls_to_ccindex(
                 schema_cols_cache: Dict[str, set[str]] = {}
 
                 for source_path_raw, parquet_rel_raw, row_group, dom_rg_start, dom_rg_end in seg_rows:
-                    if all(per_url_counts.get(u, 0) >= int(per_url_limit) for u in dom_urls):
-                        break
-
                     pq_path: Optional[Path] = None
                     sp = str(source_path_raw or "").strip()
                     rel = str(parquet_rel_raw or "").strip()
@@ -1478,11 +1476,11 @@ def resolve_urls_to_ccindex(
                             continue
                         pf_cache[ps] = pf
                         opened_files += 1
-                        parquet_files_scanned += 1
+                        local_parquet_files_scanned += 1
 
                         # Count the collection once when we successfully open the first shard.
                         if not counted_collection:
-                            collections_scanned += 1
+                            local_collections_scanned += 1
                             counted_collection = True
 
                         try:
@@ -1594,13 +1592,9 @@ def resolve_urls_to_ccindex(
                         }
 
                         for requested_url in requested_list:
-                            if requested_url not in matches:
-                                continue
-                            if per_url_counts.get(requested_url, 0) >= int(per_url_limit):
-                                continue
-                            matches[requested_url].append(rec)
-                            per_url_counts[requested_url] = per_url_counts.get(requested_url, 0) + 1
-                            rows_returned += 1
+                            bucket = local_matches.setdefault(requested_url, [])
+                            bucket.append(rec)
+                            local_rows_returned += 1
 
                 _emit(
                     {
@@ -1612,7 +1606,14 @@ def resolve_urls_to_ccindex(
                         "segments": int(len(seg_rows)),
                     }
                 )
-                return (opened_files, rowgroups_read)
+                return (
+                    local_matches,
+                    {
+                        "rows_returned": int(local_rows_returned),
+                        "parquet_files_scanned": int(local_parquet_files_scanned),
+                        "collections_scanned": int(local_collections_scanned),
+                    },
+                )
 
             try:
                 batch_sz = int((os.environ.get("BRAVE_RESOLVE_PARQUET_BATCH") or "16").strip() or "16")
@@ -2042,16 +2043,69 @@ def resolve_urls_to_ccindex(
                         "warc_length",
                     ]
 
-                    # Scan collections newest-first; stop as soon as all URLs are satisfied.
-                    for cref in collections:
-                        if all(per_url_counts.get(u, 0) >= int(per_url_limit) for u in dom_urls):
-                            break
-                        _resolve_with_rowgroup_slice_for_collection(
-                            coll=str(cref.collection),
-                            host_revs_for_domain=host_revs,
-                            variant_to_requested=variant_to_requested,
-                            want_cols=want_cols,
-                        )
+                    def _merge_rowgroup_matches(local_matches: Dict[str, List[Dict[str, object]]]) -> None:
+                        nonlocal rows_returned
+                        for requested_url, recs in local_matches.items():
+                            if requested_url not in matches:
+                                continue
+                            for rec in recs:
+                                if per_url_counts.get(requested_url, 0) >= int(per_url_limit):
+                                    break
+                                matches[requested_url].append(rec)
+                                per_url_counts[requested_url] = per_url_counts.get(requested_url, 0) + 1
+                                rows_returned += 1
+
+                    try:
+                        env_rg_workers = (os.environ.get("BRAVE_RESOLVE_ROWGROUP_WORKERS") or "").strip()
+                        rg_workers = int(env_rg_workers) if env_rg_workers else 8
+                    except Exception:
+                        rg_workers = 8
+                    rg_workers = max(1, min(8, int(rg_workers)))
+
+                    if rg_workers <= 1 or len(collections) <= 1:
+                        # Sequential scan (newest-first), stop as soon as all URLs are satisfied.
+                        for cref in collections:
+                            if all(per_url_counts.get(u, 0) >= int(per_url_limit) for u in dom_urls):
+                                break
+                            local_matches, local_stats = _resolve_with_rowgroup_slice_for_collection(
+                                coll=str(cref.collection),
+                                host_revs_for_domain=host_revs,
+                                variant_to_requested=variant_to_requested,
+                                want_cols=want_cols,
+                            )
+                            _merge_rowgroup_matches(local_matches)
+                            parquet_files_scanned += int(local_stats.get("parquet_files_scanned") or 0)
+                            collections_scanned += int(local_stats.get("collections_scanned") or 0)
+                    else:
+                        # Parallel scan across collections (merge results in newest-first order).
+                        from concurrent.futures import ThreadPoolExecutor as _RG_TPE, as_completed as _rg_as_completed
+
+                        results_by_coll: Dict[str, tuple[Dict[str, List[Dict[str, object]]], Dict[str, int]]] = {}
+                        with _RG_TPE(max_workers=min(int(rg_workers), len(collections))) as rex:
+                            futs = {
+                                rex.submit(
+                                    _resolve_with_rowgroup_slice_for_collection,
+                                    coll=str(cref.collection),
+                                    host_revs_for_domain=host_revs,
+                                    variant_to_requested=variant_to_requested,
+                                    want_cols=want_cols,
+                                ): str(cref.collection)
+                                for cref in collections
+                            }
+                            for fut in _rg_as_completed(futs):
+                                coll = futs.get(fut, "")
+                                try:
+                                    results_by_coll[coll] = fut.result()
+                                except Exception:
+                                    results_by_coll[coll] = ({}, {})
+
+                        for cref in collections:
+                            if all(per_url_counts.get(u, 0) >= int(per_url_limit) for u in dom_urls):
+                                break
+                            local_matches, local_stats = results_by_coll.get(str(cref.collection), ({}, {}))
+                            _merge_rowgroup_matches(local_matches)
+                            parquet_files_scanned += int(local_stats.get("parquet_files_scanned") or 0)
+                            collections_scanned += int(local_stats.get("collections_scanned") or 0)
                 except Exception:
                     # Fall back silently to existing Parquet scan strategies.
                     pass
