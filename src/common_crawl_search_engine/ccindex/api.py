@@ -2246,7 +2246,15 @@ def resolve_urls_to_ccindex(
 
             # If enabled, try the rowgroup-slice approach before any Parquet full scans.
             # This avoids DuckDB read_parquet filtering when we can directly read the relevant rowgroups.
-            rg_enabled = rg_mode == "on" or (rg_mode == "auto" and (_rowgroup_slice_index_dir().exists() or bool(os.environ.get("BRAVE_RESOLVE_ROWGROUP_INDEX_DB") or "")))
+            rg_enabled = rg_mode == "on" or (
+                rg_mode == "auto"
+                and (
+                    _rowgroup_slice_index_dir().exists()
+                    or _rowgroup_slice_year_index_dir().exists()
+                    or bool(os.environ.get("BRAVE_RESOLVE_ROWGROUP_INDEX_DB") or "")
+                    or bool(os.environ.get("BRAVE_RESOLVE_ROWGROUP_YEAR_DB") or "")
+                )
+            )
             _emit(
                 {
                     "event": "resolve_rowgroup_mode",
@@ -2259,7 +2267,14 @@ def resolve_urls_to_ccindex(
             )
             if rg_enabled:
                 rg_before = len(collections)
-                collections = [cref for cref in collections if _rowgroup_index_db_for_collection(str(cref.collection))]
+                collections = [
+                    cref
+                    for cref in collections
+                    if (
+                        _rowgroup_index_db_for_collection(str(cref.collection))
+                        or _rowgroup_year_index_db_for_year(str(getattr(cref, "year", "") or ""))
+                    )
+                ]
                 _emit(
                     {
                         "event": "resolve_rowgroup_collections",

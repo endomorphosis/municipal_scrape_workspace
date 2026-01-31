@@ -88,16 +88,38 @@ def build_year_index(collection_dir: Path, year: str, output_db: Path, *, overwr
         if not files:
             raise SystemExit(f"No collection DBs found for year {year} in {collection_dir}")
 
+        start_time = time.time()
+        last_log = start_time
+        print(
+            f"year_start {year} collections={len(files)} output_db={output_db}",
+            flush=True,
+        )
+
         for idx, db_path in enumerate(files, 1):
             collection = db_path.stem.replace(".domain_rowgroups", "")
+            print(f"collection_start {collection}", flush=True)
             t0 = time.time()
             rows = _copy_collection(con, db_path, collection)
             total += rows
             dt = time.time() - t0
-            print(f"[{idx}/{len(files)}] {collection}: {rows} rows in {dt:.2f}s")
+            print(f"[{idx}/{len(files)}] {collection}: {rows} rows in {dt:.2f}s", flush=True)
+
+            now = time.time()
+            if (now - last_log) >= 60:
+                rate = total / max(1.0, (now - start_time))
+                print(
+                    f"year_progress {year} copied={idx}/{len(files)} rows={total} "
+                    f"elapsed_s={int(now - start_time)} rate={rate:.1f}/s",
+                    flush=True,
+                )
+                last_log = now
 
         con.execute("ANALYZE")
-        print(f"Wrote {total} rows to {output_db}")
+        elapsed = time.time() - start_time
+        print(
+            f"year_done {year} rows={total} elapsed_s={int(elapsed)} output_db={output_db}",
+            flush=True,
+        )
     finally:
         con.close()
 

@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import urllib.request
 import subprocess
 import sys
 from pathlib import Path
@@ -51,7 +52,63 @@ def _legacy_collections(parquet_root: Path) -> List[Tuple[str, Path]]:
     return out
 
 
-def _run_rebuild(input_ccindex_root: Path, collection: str, output_dir: Path, workers: int) -> bool:
+def _download_missing_shards(
+    *,
+    collection_dir: Path,
+    base_url: str,
+    max_files: int,
+) -> int:
+    index_list_path = collection_dir / "index_files.txt"
+    if not index_list_path.exists():
+        return 0
+
+    try:
+        lines = [
+            line.strip()
+            for line in index_list_path.read_text(encoding="utf-8", errors="ignore").splitlines()
+            if line.strip().endswith(".gz")
+        ]
+    except Exception:
+        return 0
+
+    if not lines:
+        return 0
+
+    base = str(base_url).rstrip("/") + "/"
+    downloaded = 0
+    for rel in lines:
+        if max_files and downloaded >= int(max_files):
+            break
+        fname = Path(rel).name
+        dest = collection_dir / fname
+        if dest.exists():
+            continue
+        url = base + rel.lstrip("/")
+        tmp = dest.with_suffix(dest.suffix + ".part")
+        try:
+            urllib.request.urlretrieve(url, tmp)
+            tmp.rename(dest)
+            downloaded += 1
+        except Exception:
+            try:
+                if tmp.exists():
+                    tmp.unlink()
+            except Exception:
+                pass
+            continue
+    return downloaded
+
+
+def _run_rebuild(
+    input_ccindex_root: Path,
+    collection: str,
+    output_dir: Path,
+    workers: int,
+    *,
+    download_missing: bool,
+    download_base: str,
+    download_max_files: int,
+) -> bool:
     script = Path(__file__).resolve().parent / "bulk_convert_gz_to_parquet.py"
     if not script.exists():
         raise SystemExit(f"Missing helper: {script}")
@@ -60,6 +117,15 @@ def _run_rebuild(input_ccindex_root: Path, collection: str, output_dir: Path, wo
     if not ccindex_dir.exists():
         print(f"Missing ccindex dir for collection: {ccindex_dir}")
         return False
+
+    if download_missing:
+        fetched = _download_missing_shards(
+            collection_dir=ccindex_dir,
+            base_url=download_base,
+            max_files=int(download_max_files),
+        )
+        if fetched:
+            print(f"Downloaded {fetched} shard(s) for {collection}")
 
     cmd = [
         sys.executable,
@@ -91,6 +157,18 @@ def main(argv: Iterable[str] | None = None) -> int:
     ap.add_argument("--workers", type=int, default=8)
     ap.add_argument("--rebuild", action="store_true", help="Run rebuild for detected collections")
     ap.add_argument("--collections", default="", help="Comma-separated list to rebuild")
+    ap.add_argument("--download-missing", action="store_true", help="Download shards listed in index_files.txt")
+    ap.add_argument(
+        "--download-base",
+        default="https://data.commoncrawl.org/",
+        help="Base URL for index_files.txt paths",
+    )
+    ap.add_argument(
+        "--download-max-files",
+        type=int,
+        default=0,
+        help="Limit downloads per collection (0 = no limit)",
+    )
 
     args = ap.parse_args(list(argv) if argv is not None else None)
 
@@ -126,7 +204,15 @@ def main(argv: Iterable[str] | None = None) -> int:
             raise SystemExit(f"Invalid collection name: {c}")
         output_dir = parquet_root / "cc_pointers_by_collection" / y / c
         output_dir.mkdir(parents=True, exist_ok=True)
-        _run_rebuild(ccindex_root, c, output_dir, workers=int(args.workers))
+        _run_rebuild(
+            ccindex_root,
+            c,
+            output_dir,
+            workers=int(args.workers),
+            download_missing=bool(args.download_missing),
+            download_base=str(args.download_base),
+            download_max_files=int(args.download_max_files),
+        )
 
     return 0
 
