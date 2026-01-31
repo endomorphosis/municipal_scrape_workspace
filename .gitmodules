@@ -1,0 +1,3 @@
+[submodule "src/common_crawl_search_engine"]
+	path = src/common_crawl_search_engine
+	url = https://github.com/endomorphosis/common_crawl_search_engine
