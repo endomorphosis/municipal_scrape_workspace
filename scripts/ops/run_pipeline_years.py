@@ -64,8 +64,11 @@ def main(argv: list[str] | None = None) -> int:
 	ap.add_argument(
 		"--sort-temp-dir-base",
 		type=Path,
-		default=Path("state/duckdb_tmp"),
-		help="Base temp directory; per-year dirs will be created under this path",
+		default=Path("/storage/ccindex_parquet/tmp/duckdb_sort"),
+		help=(
+			"Base temp directory for DuckDB sort spill; per-year dirs will be created under this path. "
+			"Default: /storage/ccindex_parquet/tmp/duckdb_sort (keeps temp files on the same ZFS dataset as parquet outputs)"
+		),
 	)
 
 	ap.add_argument(
