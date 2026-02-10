@@ -23,11 +23,13 @@ TS=${TS:-$(date +%Y%m%d_%H%M%S)}
 WORKERS=${WORKERS:-8}
 # Requested sort concurrency. Effective concurrency is auto-computed at runtime.
 SORT_WORKERS=${SORT_WORKERS:-$WORKERS}
-SORT_MEM_GB=${SORT_MEM_GB:-12.0}
-SORT_RESERVE_GB=${SORT_RESERVE_GB:-6.0}
+# Default sort sizing tuned for ZFS + ARC-aware accounting.
+# With current ARC reclaimable, this typically allows ~5 sort workers.
+SORT_MEM_GB=${SORT_MEM_GB:-6.0}
+SORT_RESERVE_GB=${SORT_RESERVE_GB:-8.0}
 ARC_FRACTION=${ARC_FRACTION:-0.50}
 SWAP_FREE_MIN_GB=${SWAP_FREE_MIN_GB:-1.0}
-SWAP_LOW_SORT_WORKERS_CAP=${SWAP_LOW_SORT_WORKERS_CAP:-2}
+SWAP_LOW_SORT_WORKERS_CAP=${SWAP_LOW_SORT_WORKERS_CAP:-5}
 HB_SECS=${HB_SECS:-30}
 
 # Prevent multiple recovery runners from running at once.

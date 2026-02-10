@@ -1,0 +1,6 @@
+# Minimal requirements for ops scripts (Hugging Face upload via Xet backend).
+# Kept intentionally small so it doesn't force-install the whole workspace.
+
+# Xet is the current accelerated backend for large uploads/downloads.
+# As of huggingface_hub>=0.32.0, hf_xet is installed automatically.
+huggingface_hub>=0.32.0
