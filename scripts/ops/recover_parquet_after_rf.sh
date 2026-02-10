@@ -30,6 +30,21 @@ SWAP_FREE_MIN_GB=${SWAP_FREE_MIN_GB:-1.0}
 SWAP_LOW_SORT_WORKERS_CAP=${SWAP_LOW_SORT_WORKERS_CAP:-2}
 HB_SECS=${HB_SECS:-30}
 
+# Prevent multiple recovery runners from running at once.
+# This avoids two scripts competing and/or both waiting on the same orchestrator.
+mkdir -p logs
+exec 9>"logs/orchestrator_recover_runner.lock"
+if ! flock -n 9; then
+  echo "[$(date -Is)] Another recover_parquet_after_rf.sh runner is already active; exiting." >&2
+  exit 1
+fi
+
+# Propagate ZFS ARC accounting preference into the orchestrator + helper scripts.
+# Orchestrator/helpers read CC_ARC_FRACTION; this runner historically used ARC_FRACTION.
+# Unify them so a user can set either one and get consistent behavior.
+export CC_ARC_FRACTION="${CC_ARC_FRACTION:-$ARC_FRACTION}"
+ARC_FRACTION="$CC_ARC_FRACTION"
+
 mem_available_gb() {
   awk '/MemAvailable:/ {printf "%.3f\n", $2/1024/1024}' /proc/meminfo 2>/dev/null || echo "0"
 }
@@ -125,10 +140,10 @@ run_one() {
     effective_sort_workers=$(compute_sort_workers "$requested_sort_workers" "$SORT_MEM_GB" "$SORT_RESERVE_GB")
 
     echo "==== $(date -Is) START recover ${filter} (attempt ${attempt}/${max_attempts}) ====" | tee -a "$logf"
-    echo "[$(date -Is)] sort_workers requested=${requested_sort_workers} effective=${effective_sort_workers} mem_per_worker_gb=${SORT_MEM_GB} reserve_gb=${SORT_RESERVE_GB} mem_available_gb=$(mem_available_gb) arc_reclaimable_gb=$(zfs_arc_reclaimable_gb) arc_fraction=${ARC_FRACTION} effective_avail_gb=$(effective_available_gb) swap_free_gb=$(swap_free_gb)" | tee -a "$logf"
+    echo "[$(date -Is)] sort_workers requested=${requested_sort_workers} effective=${effective_sort_workers} mem_per_worker_gb=${SORT_MEM_GB} reserve_gb=${SORT_RESERVE_GB} mem_available_gb=$(mem_available_gb) arc_reclaimable_gb=$(zfs_arc_reclaimable_gb) arc_fraction=${ARC_FRACTION} CC_ARC_FRACTION=${CC_ARC_FRACTION} effective_avail_gb=$(effective_available_gb) swap_free_gb=$(swap_free_gb)" | tee -a "$logf"
 
     set +e
-    PYTHONPATH=src python3 -u -m common_crawl_search_engine.ccindex.cc_pipeline_orchestrator \
+    PYTHONPATH=src CC_ARC_FRACTION="$CC_ARC_FRACTION" python3 -u -m common_crawl_search_engine.ccindex.cc_pipeline_orchestrator \
       --config pipeline_config.json \
       --filter "$filter" \
       --workers "$WORKERS" \
