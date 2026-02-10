@@ -6,6 +6,8 @@ set -euo pipefail
 # sources into /storage/ccindex/<collection>/.
 
 COLLECTIONS=(
+  "CC-MAIN-2023-14"
+  "CC-MAIN-2023-23"
   "CC-MAIN-2023-40"
   "CC-MAIN-2023-50"
   "CC-MAIN-2024-10"
