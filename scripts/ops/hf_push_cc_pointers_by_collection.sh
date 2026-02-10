@@ -69,6 +69,12 @@ COLLECTIONS=${COLLECTIONS:-""}
 # - all: delete all resume state under SRC_DIR/.cache/huggingface/upload for selected scope
 PURGE_UPLOAD_CACHE=${PURGE_UPLOAD_CACHE:-invalid}
 
+# Save computed sha256 hashes outside the dataset tree to speed up restarts.
+# Values: off | ro | rw
+SHA256_CACHE=${SHA256_CACHE:-rw}
+# Optional override for where to store the SQLite DB. Default is $HF_HOME/sha256_cache.sqlite.
+SHA256_CACHE_DB=${SHA256_CACHE_DB:-""}
+
 # LFS is deprecated in this environment (DNS often fails for lfs.* hostnames).
 # By default, require Xet to be enabled on the destination repo.
 REQUIRE_XET=${REQUIRE_XET:-1}
@@ -91,6 +97,10 @@ echo "  HF_HUB_DISABLE_PROGRESS_BARS=$HF_HUB_DISABLE_PROGRESS_BARS"
 echo "  REQUIRE_XET=$REQUIRE_XET"
 echo "  MAX_GET_UPLOAD_MODE_WORKERS=$MAX_GET_UPLOAD_MODE_WORKERS"
 echo "  MAX_PREUPLOAD_WORKERS=$MAX_PREUPLOAD_WORKERS"
+echo "  SHA256_CACHE=$SHA256_CACHE"
+if [ -n "$SHA256_CACHE_DB" ]; then
+  echo "  SHA256_CACHE_DB=$SHA256_CACHE_DB"
+fi
 if [ -n "${HF_ENDPOINT:-}" ]; then
   echo "  HF_ENDPOINT=$HF_ENDPOINT"
 fi
@@ -252,6 +262,8 @@ PYTHONPATH=src "$PY_BIN" -u scripts/ops/hf_upload_cc_pointers_by_collection.py \
   --num-workers "$NUM_WORKERS" \
   --max-get-upload-mode-workers "$MAX_GET_UPLOAD_MODE_WORKERS" \
   --max-preupload-workers "$MAX_PREUPLOAD_WORKERS" \
+  --sha256-cache "$SHA256_CACHE" \
+  $( [ -n "$SHA256_CACHE_DB" ] && echo --sha256-cache-db "$SHA256_CACHE_DB" ) \
   --print-report-every "$PRINT_REPORT_EVERY" \
   --heartbeat-seconds "$HEARTBEAT_SECONDS" \
   --max-retries "$MAX_RETRIES" \

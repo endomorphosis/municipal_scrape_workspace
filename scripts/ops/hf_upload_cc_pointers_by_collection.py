@@ -41,6 +41,91 @@ logger = logging.getLogger("hf_upload_cc_pointers_by_collection")
 
 _HF_ULF_PATCHED = False
 _RATE_LIMIT_WARMUP_DIRS: list[Path] = []
+_SRC_ROOT: Path | None = None
+_SHA256_CACHE: "Sha256Cache | None" = None
+
+
+class Sha256Cache:
+    def __init__(self, db_path: Path, *, mode: str) -> None:
+        self.db_path = db_path
+        self.mode = mode  # 'off' | 'ro' | 'rw'
+        self._lock = threading.Lock()
+        self._hits = 0
+        self._misses = 0
+
+        if self.mode == "off":
+            self._conn = None
+            return
+
+        try:
+            import duckdb  # type: ignore
+        except Exception as e:
+            raise RuntimeError("duckdb is required for --sha256-cache (set --sha256-cache=off to disable)") from e
+
+        self.db_path.parent.mkdir(parents=True, exist_ok=True)
+        # DuckDB connection is not thread-safe; serialize access via lock.
+        self._conn = duckdb.connect(str(self.db_path))
+        self._conn.execute(
+            "CREATE TABLE IF NOT EXISTS sha256_cache ("
+            "  path_in_repo VARCHAR PRIMARY KEY,"
+            "  size UBIGINT NOT NULL,"
+            "  mtime_ns UBIGINT NOT NULL,"
+            "  sha256 VARCHAR NOT NULL,"
+            "  updated_at BIGINT NOT NULL"
+            ")"
+        )
+
+    def close(self) -> None:
+        if self._conn is None:
+            return
+        with self._lock:
+            try:
+                self._conn.close()
+            except Exception:
+                pass
+
+    def get(self, path_in_repo: str, *, size: int, mtime_ns: int) -> str | None:
+        if self._conn is None:
+            return None
+        with self._lock:
+            row = self._conn.execute(
+                "SELECT size, mtime_ns, sha256 FROM sha256_cache WHERE path_in_repo = ?",
+                [path_in_repo],
+            ).fetchone()
+        if not row:
+            self._misses += 1
+            return None
+        cached_size, cached_mtime_ns, cached_sha = row
+        if int(cached_size) == int(size) and int(cached_mtime_ns) == int(mtime_ns):
+            self._hits += 1
+            return str(cached_sha)
+        self._misses += 1
+        return None
+
+    def set(self, path_in_repo: str, *, size: int, mtime_ns: int, sha256_hex: str) -> None:
+        if self._conn is None or self.mode != "rw":
+            return
+        now = int(time.time())
+        with self._lock:
+            # DuckDB supports ON CONFLICT for PRIMARY KEY.
+            self._conn.execute(
+                "INSERT INTO sha256_cache(path_in_repo,size,mtime_ns,sha256,updated_at) VALUES(?,?,?,?,?) "
+                "ON CONFLICT(path_in_repo) DO UPDATE SET size=excluded.size, mtime_ns=excluded.mtime_ns, sha256=excluded.sha256, updated_at=excluded.updated_at",
+                [path_in_repo, int(size), int(mtime_ns), sha256_hex, now],
+            )
+
+    def stats(self) -> tuple[int, int]:
+        return self._hits, self._misses
+
+
+def _set_src_root(src: Path) -> None:
+    global _SRC_ROOT
+    _SRC_ROOT = src
+
+
+def _set_sha256_cache(cache: Sha256Cache | None) -> None:
+    global _SHA256_CACHE
+    _SHA256_CACHE = cache
 
 
 def _set_rate_limit_warmup_dirs(dirs: list[Path]) -> None:
@@ -51,12 +136,17 @@ def _set_rate_limit_warmup_dirs(dirs: list[Path]) -> None:
 def _rate_limit_warmup(max_seconds: int) -> None:
     # Best-effort: keep CPU busy and warm page cache while waiting.
     try:
-        _warm_hash_dirs(list(_RATE_LIMIT_WARMUP_DIRS), max_seconds=max_seconds)
+        _warm_hash_dirs(list(_RATE_LIMIT_WARMUP_DIRS), max_seconds=max_seconds, sha256_cache=_SHA256_CACHE)
     except Exception:
         logger.debug("Warmup during rate limit failed", exc_info=True)
 
 
-def _patch_hf_upload_large_folder(*, max_get_upload_mode_workers: int, max_preupload_workers: int) -> None:
+def _patch_hf_upload_large_folder(
+    *,
+    max_get_upload_mode_workers: int,
+    max_preupload_workers: int,
+    sha256_cache: Sha256Cache | None,
+) -> None:
     """Patch huggingface_hub internals to reduce rate-limit bursts.
 
     huggingface_hub.upload_large_folder starts N worker threads and lets many threads
@@ -79,6 +169,34 @@ def _patch_hf_upload_large_folder(*, max_get_upload_mode_workers: int, max_preup
 
     max_get_upload_mode_workers = max(1, int(max_get_upload_mode_workers))
     max_preupload_workers = max(1, int(max_preupload_workers))
+
+    # 0) Patch sha256 computation to reuse persisted hashes across runs.
+    # upload_large_folder must compute sha256 for each file before it can query upload mode.
+    orig_compute_sha256 = getattr(ulf, "_compute_sha256", None)
+    if callable(orig_compute_sha256) and sha256_cache is not None and sha256_cache.mode != "off":
+
+        def _compute_sha256_cached(item):  # type: ignore[no-untyped-def]
+            paths, metadata = item
+            try:
+                st = paths.file_path.stat()
+                cached = sha256_cache.get(paths.path_in_repo, size=st.st_size, mtime_ns=st.st_mtime_ns)
+                if cached:
+                    metadata.sha256 = cached
+                    metadata.save(paths)
+                    return
+            except Exception:
+                # Fall back to upstream behavior on any cache issue.
+                pass
+
+            orig_compute_sha256(item)
+            try:
+                if getattr(metadata, "sha256", None):
+                    st = paths.file_path.stat()
+                    sha256_cache.set(paths.path_in_repo, size=st.st_size, mtime_ns=st.st_mtime_ns, sha256_hex=metadata.sha256)
+            except Exception:
+                pass
+
+        ulf._compute_sha256 = _compute_sha256_cached  # type: ignore[assignment]
 
     # 1) Patch job selection to cap concurrent API-heavy jobs.
     orig_determine = getattr(ulf, "_determine_next_job", None)
@@ -129,7 +247,6 @@ def _patch_hf_upload_large_folder(*, max_get_upload_mode_workers: int, max_preup
                 # 6. Get upload mode if at least 1 file and no worker is getting upload mode (still capped)
                 elif (
                     status.queue_get_upload_mode.qsize() > 0
-                    and status.nb_workers_get_upload_mode == 0
                     and status.nb_workers_get_upload_mode < max_get_upload_mode_workers
                 ):
                     status.nb_workers_get_upload_mode += 1
@@ -296,7 +413,7 @@ def _sleep_with_reset_log(seconds: int, *, reason: str) -> None:
     time.sleep(seconds)
 
 
-def _warm_hash_dirs(dirs: list[Path], *, max_seconds: int) -> None:
+def _warm_hash_dirs(dirs: list[Path], *, max_seconds: int, sha256_cache: Sha256Cache | None = None) -> None:
     """Hash files locally to keep CPU busy and warm OS page cache during rate-limit waits.
 
     This does not reduce HF API request count directly, but it can make subsequent hashing
@@ -337,8 +454,17 @@ def _warm_hash_dirs(dirs: list[Path], *, max_seconds: int) -> None:
                         hashed_bytes += len(chunk)
                         if time.time() >= end:
                             break
-                _ = h.hexdigest()
+                digest = h.hexdigest()
                 hashed_files += 1
+
+                # Best-effort: persist hash for future restarts.
+                if sha256_cache is not None and sha256_cache.mode != "off" and _SRC_ROOT is not None:
+                    try:
+                        rel = p.resolve().relative_to(_SRC_ROOT.resolve()).as_posix()
+                        st = p.stat()
+                        sha256_cache.set(rel, size=st.st_size, mtime_ns=st.st_mtime_ns, sha256_hex=digest)
+                    except Exception:
+                        pass
             except Exception:
                 logger.debug("Warm-hash failed for %s", p, exc_info=True)
 
@@ -596,6 +722,7 @@ def _upload_one_year(
                 _patch_hf_upload_large_folder(
                     max_get_upload_mode_workers=max_get_upload_mode_workers,
                     max_preupload_workers=max_preupload_workers,
+                    sha256_cache=_SHA256_CACHE,
                 )
                 api.upload_large_folder(
                     repo_id=repo_id,
@@ -633,7 +760,7 @@ def _upload_one_year(
                     # While waiting for reset, do local work: hash/warm-cache upcoming collections.
                     warm_secs = max(0, min(int(sleep_for) - 5, 295))
                     if warmup_dirs and warm_secs > 0:
-                        _warm_hash_dirs(warmup_dirs, max_seconds=warm_secs)
+                        _warm_hash_dirs(warmup_dirs, max_seconds=warm_secs, sha256_cache=_SHA256_CACHE)
 
                     _sleep_with_reset_log(sleep_for, reason=f"Rate limited for {label}")
                     # On the next retry, we will reduce concurrency if configured.
@@ -847,6 +974,22 @@ def main(argv: Iterable[str] | None = None) -> int:
         ),
     )
     ap.add_argument(
+        "--sha256-cache",
+        choices=["off", "ro", "rw"],
+        default="rw",
+        help=(
+            "Persist sha256 hashes to speed up restarts. Stored outside the dataset tree (under HF_HOME by default). "
+            "Use 'ro' to reuse without writing, or 'off' to disable."
+        ),
+    )
+    ap.add_argument(
+        "--sha256-cache-db",
+        default="",
+        help=(
+            "Optional path to DuckDB sha256 cache DB. Defaults to $HF_HOME/sha256_cache.duckdb (recommended)."
+        ),
+    )
+    ap.add_argument(
         "--create-repo",
         action="store_true",
         help="Create the dataset repo if missing (public by default)",
@@ -903,6 +1046,23 @@ def main(argv: Iterable[str] | None = None) -> int:
     src = Path(args.src)
     if not src.is_dir():
         raise SystemExit(f"Source directory not found: {src}")
+
+    _set_src_root(src.resolve())
+
+    sha256_cache: Sha256Cache | None = None
+    try:
+        if args.sha256_cache != "off":
+            hf_home_str = os.environ.get("HF_HOME")
+            if hf_home_str:
+                default_db = Path(hf_home_str) / "sha256_cache.duckdb"
+            else:
+                default_db = Path.home() / ".cache" / "huggingface" / "sha256_cache.duckdb"
+            db_path = Path(args.sha256_cache_db).expanduser().resolve() if args.sha256_cache_db else default_db
+            sha256_cache = Sha256Cache(db_path, mode=str(args.sha256_cache))
+            _set_sha256_cache(sha256_cache)
+            logger.info("SHA256 cache enabled: mode=%s db=%s", args.sha256_cache, db_path)
+    except Exception:
+        logger.warning("Failed to initialize SHA256 cache; proceeding without it", exc_info=True)
 
     # Enable hf_transfer acceleration if user configured it.
     # (No-op if package isn't installed; HF hub will fall back.)
@@ -964,6 +1124,10 @@ def main(argv: Iterable[str] | None = None) -> int:
         logger.warning("Interrupted by user (KeyboardInterrupt)")
         return 130
     finally:
+        if sha256_cache is not None:
+            hits, misses = sha256_cache.stats()
+            logger.info("SHA256 cache stats: hits=%s misses=%s", hits, misses)
+            sha256_cache.close()
         stop_hb.set()
         hb_thread.join(timeout=2)
 
