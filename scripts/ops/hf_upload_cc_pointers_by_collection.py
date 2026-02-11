@@ -307,6 +307,8 @@ def _patch_hf_upload_large_folder(
         def _get_upload_mode_retry(items, api, repo_id, repo_type, revision):  # type: ignore[no-untyped-def]
             while True:
                 try:
+                    t0 = time.time()
+                    logger.info("GET_UPLOAD_MODE batch start: n=%s", len(items))
                     return orig_get_upload_mode(items, api=api, repo_id=repo_id, repo_type=repo_type, revision=revision)
                 except KeyboardInterrupt:
                     raise
@@ -320,6 +322,9 @@ def _patch_hf_upload_large_folder(
                         _sleep_with_reset_log(sleep_for, reason="HF 429 during get upload mode")
                         continue
                     raise
+                finally:
+                    dt = time.time() - t0
+                    logger.info("GET_UPLOAD_MODE batch end: n=%s elapsed=%.1fs", len(items), dt)
 
         ulf._get_upload_mode = _get_upload_mode_retry  # type: ignore[assignment]
 
@@ -330,6 +335,8 @@ def _patch_hf_upload_large_folder(
         def _preupload_lfs_retry(items, api, repo_id, repo_type, revision):  # type: ignore[no-untyped-def]
             while True:
                 try:
+                    t0 = time.time()
+                    logger.info("PREUPLOAD batch start: n=%s", len(items))
                     return orig_preupload(items, api=api, repo_id=repo_id, repo_type=repo_type, revision=revision)
                 except KeyboardInterrupt:
                     raise
@@ -343,6 +350,9 @@ def _patch_hf_upload_large_folder(
                         _sleep_with_reset_log(sleep_for, reason="HF 429 during preupload")
                         continue
                     raise
+                finally:
+                    dt = time.time() - t0
+                    logger.info("PREUPLOAD batch end: n=%s elapsed=%.1fs", len(items), dt)
 
         ulf._preupload_lfs = _preupload_lfs_retry  # type: ignore[assignment]
 
