@@ -27,6 +27,27 @@ pip install -e '.[ccindex-mcp]'
 pip install -e '.[ccindex-dashboard]'
 ```
 
+## Using `ipfs_datasets_py` via Submodule (with venv deps)
+
+If you want **dependencies installed in the venv**, but want to import/run
+`ipfs_datasets_py` **from the git submodule** (not from site-packages), use the
+wrapper:
+
+```bash
+# Ensure installs go into the repo venv
+scripts/ops/venv_pip.sh install -e .
+
+# Runs .venv/bin/python, and sets PYTHONPATH to prefer ./ipfs_datasets_py/
+scripts/ops/venv_python.sh -c "import ipfs_datasets_py.web_archiving; print('ok')"
+
+# Example: run a repo script that uses ipfs_datasets_py.web_archiving
+scripts/ops/venv_python.sh scripts/kyle_slop/scrape_remaining_with_web_archiving.py --help
+```
+
+Notes:
+- This repo’s `./bootstrap.sh` already creates the venv and installs the main workspace package.
+- The wrapper only changes import resolution (via `PYTHONPATH`); it does not pip-install the submodule.
+
 ## Running Tools
 
 ### Two Methods to Run Python Tools
