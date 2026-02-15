@@ -48,6 +48,38 @@ def _sha256_hex(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
 
 
+def _parse_html_for_fields(html: str, *, base_url: str) -> Tuple[str, str, List[Dict[str, str]]]:
+    title = ""
+    text = ""
+    links: List[Dict[str, str]] = []
+    if not html:
+        return title, text, links
+
+    try:
+        from bs4 import BeautifulSoup
+        from urllib.parse import urljoin
+
+        soup = BeautifulSoup(html, "html.parser")
+        title_tag = soup.find("title")
+        title = title_tag.get_text() if title_tag else ""
+
+        for script in soup(["script", "style"]):
+            script.decompose()
+        text = soup.get_text(separator="\n", strip=True)
+
+        for link in soup.find_all("a", href=True):
+            href = link.get("href")
+            if not href:
+                continue
+            if href.startswith("/"):
+                href = urljoin(base_url, href)
+            links.append({"url": href, "text": link.get_text(strip=True)})
+    except Exception:
+        pass
+
+    return title, text, links
+
+
 @dataclass(frozen=True)
 class CrawlPage:
     gnis: str
@@ -188,6 +220,124 @@ def _crawl_site(
     return pages, summary
 
 
+def _try_common_crawl_domain(
+    *,
+    gnis: str,
+    place_name: str,
+    state_code: str,
+    root_url: str,
+    max_pages: int,
+    timeout_s: float,
+) -> Tuple[Optional[List[CrawlPage]], Dict[str, Any]]:
+    """Attempt a domain-first scrape using Common Crawl pointers.
+
+    Returns (pages_or_none, summary). When Common Crawl isn't available or fails,
+    pages_or_none is None and caller should fall back to origin crawling.
+    """
+
+    try:
+        from common_crawl_search_engine.ccindex import api as ccapi
+    except Exception as e:
+        return None, {"status": "cc_unavailable", "error": f"import failed: {type(e).__name__}: {e}"}
+
+    try:
+        res = ccapi.search_domain_via_meta_indexes(
+            root_url,
+            parquet_root=Path("/storage/ccindex_parquet"),
+            master_db=Path("/storage/ccindex_duckdb/cc_pointers_master/cc_master_index.duckdb"),
+            max_matches=int(max_pages),
+        )
+        records = list(getattr(res, "records", []) or [])
+        if not records:
+            return None, {"status": "cc_no_records", "error": "no records"}
+
+        pages: List[CrawlPage] = []
+        errors: List[str] = []
+
+        for r in records[: int(max_pages)]:
+            try:
+                wf = r.get("warc_filename")
+                off = r.get("warc_offset")
+                ln = r.get("warc_length")
+                page_url = str(r.get("url") or root_url)
+                if not wf or off is None or ln is None:
+                    errors.append(f"pointer missing fields for url={page_url}")
+                    continue
+
+                fetch, source, local_path = ccapi.fetch_warc_record(
+                    warc_filename=str(wf),
+                    warc_offset=int(off),
+                    warc_length=int(ln),
+                    timeout_s=float(timeout_s),
+                    max_bytes=2_000_000,
+                    decode_gzip_text=False,
+                    cache_mode="range",
+                )
+                if not getattr(fetch, "ok", False) or not getattr(fetch, "raw_base64", None):
+                    errors.append(f"fetch failed url={page_url} err={getattr(fetch, 'error', None)}")
+                    continue
+
+                import base64
+
+                gz_bytes = base64.b64decode(fetch.raw_base64)
+                http = ccapi.extract_http_from_warc_gzip_member(
+                    gz_bytes,
+                    max_body_bytes=2_000_000,
+                    max_preview_chars=200_000,
+                )
+
+                html = http.body_text_preview or ""
+                title, text, links = _parse_html_for_fields(html, base_url=page_url)
+
+                fetched_at = datetime.now().isoformat()
+                pages.append(
+                    CrawlPage(
+                        gnis=str(gnis),
+                        place_name=place_name,
+                        state_code=state_code,
+                        root_url=root_url,
+                        url=page_url,
+                        depth=0,
+                        fetched_at=fetched_at,
+                        method_used="common_crawl",
+                        title=title,
+                        html=html,
+                        text=text,
+                        links_json=json.dumps(links, ensure_ascii=False),
+                        metadata_json=json.dumps(
+                            {
+                                "cc_record": r,
+                                "cc_source": source,
+                                "cc_local_warc_path": local_path,
+                                "http_status": http.http_status,
+                                "http_mime": http.body_mime,
+                                "http_charset": http.body_charset,
+                                "http_ok": http.ok,
+                                "http_error": http.error,
+                            },
+                            ensure_ascii=False,
+                        ),
+                        url_sha256=_sha256_hex(page_url.encode("utf-8")),
+                        content_sha256=_sha256_hex((html or text).encode("utf-8", errors="ignore")),
+                    )
+                )
+            except Exception as e:
+                errors.append(f"record failed: {type(e).__name__}: {e}")
+                continue
+
+        if not pages:
+            return None, {"status": "cc_failed", "error": "no pages", "errors": errors}
+
+        return pages, {
+            "status": "cc_ok",
+            "attempted": len(records[: int(max_pages)]),
+            "saved": len(pages),
+            "errors": errors,
+        }
+    except Exception as e:
+        return None, {"status": "cc_error", "error": f"{type(e).__name__}: {e}"}
+
+
 def _append_parquet(out_parquet: Path, rows: List[Dict[str, Any]]) -> None:
     out_parquet.parent.mkdir(parents=True, exist_ok=True)
 
@@ -237,11 +387,14 @@ def main() -> int:
 
     # Constrain to methods we know exist in this environment.
     config = ScraperConfig(
-        preferred_methods=[ScraperMethod.BEAUTIFULSOUP, ScraperMethod.REQUESTS_ONLY],
+        preferred_methods=[ScraperMethod.COMMON_CRAWL, ScraperMethod.BEAUTIFULSOUP, ScraperMethod.REQUESTS_ONLY],
         fallback_enabled=True,
         extract_links=True,
         extract_text=True,
         rate_limit_delay=0.0,
+        common_crawl_max_matches=int(args.max_pages),
+        common_crawl_parquet_root="/storage/ccindex_parquet",
+        common_crawl_master_db="/storage/ccindex_duckdb/cc_pointers_master/cc_master_index.duckdb",
     )
     scraper = UnifiedWebScraper(config=config)
 
@@ -279,17 +432,43 @@ def main() -> int:
             continue
 
         root_url = urls[0]
-        pages, summary = _crawl_site(
-            scraper=scraper,
+
+        # 1) Try Common Crawl domain-first (avoids origin fetch / Cloudflare).
+        pages_cc, cc_summary = _try_common_crawl_domain(
             gnis=gnis,
             place_name=place_name,
             state_code=state_code,
             root_url=root_url,
-            start_urls=urls,
             max_pages=int(args.max_pages),
-            max_depth=int(args.max_depth),
-            rate_limit_seconds=float(args.rate_limit_seconds),
+            timeout_s=float(config.timeout),
         )
+
+        if pages_cc is not None:
+            pages, summary = pages_cc, {
+                "gnis": str(gnis),
+                "root_url": root_url,
+                "root_domain": _domain(root_url),
+                "attempted": cc_summary.get("attempted", 0),
+                "saved": cc_summary.get("saved", 0),
+                "max_pages": int(args.max_pages),
+                "max_depth": 0,
+                "errors": cc_summary.get("errors", []),
+                "cc_status": cc_summary.get("status"),
+                "cc_error": cc_summary.get("error"),
+            }
+        else:
+            # 2) Fall back to origin crawling (UnifiedWebScraper).
+            pages, summary = _crawl_site(
+                scraper=scraper,
+                gnis=gnis,
+                place_name=place_name,
+                state_code=state_code,
+                root_url=root_url,
+                start_urls=urls,
+                max_pages=int(args.max_pages),
+                max_depth=int(args.max_depth),
+                rate_limit_seconds=float(args.rate_limit_seconds),
+            )
 
         for p in pages:
             all_page_rows.append(p.__dict__)
