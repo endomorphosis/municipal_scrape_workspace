@@ -337,6 +337,16 @@ def _patch_hf_upload_large_folder(
                 try:
                     t0 = time.time()
                     logger.info("PREUPLOAD batch start: n=%s", len(items))
+
+                    stop_evt = threading.Event()
+
+                    def _watchdog() -> None:
+                        # Log periodically to make long uploads visible.
+                        while not stop_evt.wait(60):
+                            logger.info("PREUPLOAD still running: n=%s elapsed=%.1fs", len(items), time.time() - t0)
+
+                    wd = threading.Thread(target=_watchdog, name="preupload_watchdog", daemon=True)
+                    wd.start()
                     return orig_preupload(items, api=api, repo_id=repo_id, repo_type=repo_type, revision=revision)
                 except KeyboardInterrupt:
                     raise
@@ -351,6 +361,10 @@ def _patch_hf_upload_large_folder(
                         continue
                     raise
                 finally:
+                    try:
+                        stop_evt.set()
+                    except Exception:
+                        pass
                     dt = time.time() - t0
                     logger.info("PREUPLOAD batch end: n=%s elapsed=%.1fs", len(items), dt)
 

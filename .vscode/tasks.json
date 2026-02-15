@@ -1,0 +1,17 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "HF upload (1 worker)",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-lc",
+        "USE_VENV=1 SKIP_CREATE=1 REQUIRE_XET=1 CHUNK_BY=collection NUM_WORKERS=1 MAX_GET_UPLOAD_MODE_WORKERS=1 MAX_PREUPLOAD_WORKERS=1 SHA256_CACHE=rw PURGE_UPLOAD_CACHE=invalid ./scripts/ops/hf_push_cc_pointers_by_collection.sh"
+      ],
+      "isBackground": true,
+      "problemMatcher": [],
+      "group": "build"
+    }
+  ]
+}
