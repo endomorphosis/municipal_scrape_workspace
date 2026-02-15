@@ -1,7 +1,0 @@
-DB: /storage/ccindex_duckdb/cc_domain_pointer.duckdb
-Files to consider: 0
-
-Processed shard files this run: 0
-Processed rows this run:       0
-New ingested files this run:  0
-New ingested rows this run:   0
