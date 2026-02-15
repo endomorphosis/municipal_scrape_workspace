@@ -1,0 +1,249 @@
+{"id":"jud-ca-dc","branch":"judicial","court_type":"court_of_appeals","name":"U.S. Court of Appeals for the District of Columbia Circuit","url":"https://www.cadc.uscourts.gov/"}
+{"id":"jud-ca-1","branch":"judicial","court_type":"court_of_appeals","name":"U.S. Court of Appeals for the First Circuit","url":"https://www.ca1.uscourts.gov/"}
+{"id":"jud-ca-2","branch":"judicial","court_type":"court_of_appeals","name":"U.S. Court of Appeals for the Second Circuit","url":"https://www.ca2.uscourts.gov/"}
+{"id":"jud-ca-3","branch":"judicial","court_type":"court_of_appeals","name":"U.S. Court of Appeals for the Third Circuit","url":"https://www.ca3.uscourts.gov/"}
+{"id":"jud-ca-4","branch":"judicial","court_type":"court_of_appeals","name":"U.S. Court of Appeals for the Fourth Circuit","url":"https://www.ca4.uscourts.gov/"}
+{"id":"jud-ca-5","branch":"judicial","court_type":"court_of_appeals","name":"U.S. Court of Appeals for the Fifth Circuit","url":"https://www.ca5.uscourts.gov/"}
+{"id":"jud-ca-6","branch":"judicial","court_type":"court_of_appeals","name":"U.S. Court of Appeals for the Sixth Circuit","url":"https://www.ca6.uscourts.gov/"}
+{"id":"jud-ca-7","branch":"judicial","court_type":"court_of_appeals","name":"U.S. Court of Appeals for the Seventh Circuit","url":"https://www.ca7.uscourts.gov/"}
+{"id":"jud-ca-8","branch":"judicial","court_type":"court_of_appeals","name":"U.S. Court of Appeals for the Eighth Circuit","url":"https://www.ca8.uscourts.gov/"}
+{"id":"jud-ca-9","branch":"judicial","court_type":"court_of_appeals","name":"U.S. Court of Appeals for the Ninth Circuit","url":"https://www.ca9.uscourts.gov/"}
+{"id":"jud-ca-10","branch":"judicial","court_type":"court_of_appeals","name":"U.S. Court of Appeals for the Tenth Circuit","url":"https://www.ca10.uscourts.gov/"}
+{"id":"jud-ca-11","branch":"judicial","court_type":"court_of_appeals","name":"U.S. Court of Appeals for the Eleventh Circuit","url":"https://www.ca11.uscourts.gov/"}
+{"id":"jud-ca-fc","branch":"judicial","court_type":"court_of_appeals","name":"U.S. Court of Appeals for the Federal Circuit","url":"https://www.cafc.uscourts.gov/"}
+
+{"id":"jud-dist-almd","branch":"judicial","court_type":"district_court","name":"U.S. District Court — Middle District of Alabama","url":"https://www.almd.uscourts.gov/"}
+{"id":"jud-dist-alnd","branch":"judicial","court_type":"district_court","name":"U.S. District Court — Northern District of Alabama","url":"https://www.alnd.uscourts.gov/"}
+{"id":"jud-dist-alsd","branch":"judicial","court_type":"district_court","name":"U.S. District Court — Southern District of Alabama","url":"https://www.alsd.uscourts.gov/"}
+{"id":"jud-bankr-almb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — Middle District of Alabama","url":"https://www.almb.uscourts.gov/"}
+{"id":"jud-bankr-alnb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — Northern District of Alabama","url":"https://www.alnb.uscourts.gov/"}
+{"id":"jud-bankr-alsb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — Southern District of Alabama","url":"https://www.alsb.uscourts.gov/"}
+
+{"id":"jud-dist-akd","branch":"judicial","court_type":"district_court","name":"U.S. District Court — District of Alaska","url":"https://www.akd.uscourts.gov/"}
+{"id":"jud-bankr-akb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — District of Alaska","url":"https://www.akb.uscourts.gov/"}
+
+{"id":"jud-dist-azd","branch":"judicial","court_type":"district_court","name":"U.S. District Court — District of Arizona","url":"https://www.azd.uscourts.gov/"}
+{"id":"jud-bankr-azb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — District of Arizona","url":"https://www.azb.uscourts.gov/"}
+
+{"id":"jud-dist-are","branch":"judicial","court_type":"district_court","name":"U.S. District Court — Eastern District of Arkansas","url":"https://www.are.uscourts.gov/"}
+{"id":"jud-dist-arwd","branch":"judicial","court_type":"district_court","name":"U.S. District Court — Western District of Arkansas","url":"https://www.arwd.uscourts.gov/"}
+{"id":"jud-bankr-areb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — Eastern & Western Districts of Arkansas","url":"https://www.areb.uscourts.gov/"}
+
+{"id":"jud-dist-cacd","branch":"judicial","court_type":"district_court","name":"U.S. District Court — Central District of California","url":"https://www.cacd.uscourts.gov/"}
+{"id":"jud-dist-caed","branch":"judicial","court_type":"district_court","name":"U.S. District Court — Eastern District of California","url":"https://www.caed.uscourts.gov/"}
+{"id":"jud-dist-cand","branch":"judicial","court_type":"district_court","name":"U.S. District Court — Northern District of California","url":"https://www.cand.uscourts.gov/"}
+{"id":"jud-dist-casd","branch":"judicial","court_type":"district_court","name":"U.S. District Court — Southern District of California","url":"https://www.casd.uscourts.gov/"}
+{"id":"jud-bankr-cacb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — Central District of California","url":"https://www.cacb.uscourts.gov/"}
+{"id":"jud-bankr-caeb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — Eastern District of California","url":"https://www.caeb.uscourts.gov/"}
+{"id":"jud-bankr-canb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — Northern District of California","url":"https://www.canb.uscourts.gov/"}
+{"id":"jud-bankr-casb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — Southern District of California","url":"https://www.casb.uscourts.gov/"}
+
+{"id":"jud-dist-cod","branch":"judicial","court_type":"district_court","name":"U.S. District Court — District of Colorado","url":"https://www.cod.uscourts.gov/"}
+{"id":"jud-bankr-cob","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — District of Colorado","url":"https://www.cob.uscourts.gov/"}
+
+{"id":"jud-dist-ctd","branch":"judicial","court_type":"district_court","name":"U.S. District Court — District of Connecticut","url":"https://www.ctd.uscourts.gov/"}
+{"id":"jud-bankr-ctb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — District of Connecticut","url":"https://www.ctb.uscourts.gov/"}
+
+{"id":"jud-dist-ded","branch":"judicial","court_type":"district_court","name":"U.S. District Court — District of Delaware","url":"https://www.ded.uscourts.gov/"}
+{"id":"jud-bankr-deb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — District of Delaware","url":"https://www.deb.uscourts.gov/"}
+
+{"id":"jud-dist-dcd","branch":"judicial","court_type":"district_court","name":"U.S. District Court — District of Columbia","url":"https://www.dcd.uscourts.gov/"}
+{"id":"jud-bankr-dcb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — District of Columbia","url":"https://www.dcb.uscourts.gov/"}
+
+{"id":"jud-dist-flmd","branch":"judicial","court_type":"district_court","name":"U.S. District Court — Middle District of Florida","url":"https://www.flmd.uscourts.gov/"}
+{"id":"jud-dist-flnd","branch":"judicial","court_type":"district_court","name":"U.S. District Court — Northern District of Florida","url":"https://www.flnd.uscourts.gov/"}
+{"id":"jud-dist-flsd","branch":"judicial","court_type":"district_court","name":"U.S. District Court — Southern District of Florida","url":"https://www.flsd.uscourts.gov/"}
+{"id":"jud-bankr-flmb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — Middle District of Florida","url":"https://www.flmb.uscourts.gov/"}
+{"id":"jud-bankr-flnb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — Northern District of Florida","url":"https://www.flnb.uscourts.gov/"}
+{"id":"jud-bankr-flsb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — Southern District of Florida","url":"https://www.flsb.uscourts.gov/"}
+
+{"id":"jud-dist-gamd","branch":"judicial","court_type":"district_court","name":"U.S. District Court — Middle District of Georgia","url":"https://www.gamd.uscourts.gov/"}
+{"id":"jud-dist-gand","branch":"judicial","court_type":"district_court","name":"U.S. District Court — Northern District of Georgia","url":"https://www.gand.uscourts.gov/"}
+{"id":"jud-dist-gasd","branch":"judicial","court_type":"district_court","name":"U.S. District Court — Southern District of Georgia","url":"https://www.gasd.uscourts.gov/"}
+{"id":"jud-bankr-gamb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — Middle District of Georgia","url":"https://www.gamb.uscourts.gov/"}
+{"id":"jud-bankr-ganb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — Northern District of Georgia","url":"https://www.ganb.uscourts.gov/"}
+{"id":"jud-bankr-gasb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — Southern District of Georgia","url":"https://www.gasb.uscourts.gov/"}
+
+{"id":"jud-dist-gud","branch":"judicial","court_type":"district_court","name":"U.S. District Court — District of Guam","url":"https://www.gud.uscourts.gov/"}
+
+{"id":"jud-dist-hid","branch":"judicial","court_type":"district_court","name":"U.S. District Court — District of Hawaii","url":"https://www.hid.uscourts.gov/"}
+{"id":"jud-bankr-hib","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — District of Hawaii","url":"https://www.hib.uscourts.gov/"}
+
+{"id":"jud-dist-id","branch":"judicial","court_type":"district_court","name":"U.S. District Court — District of Idaho","url":"https://www.id.uscourts.gov/"}
+
+{"id":"jud-dist-ilcd","branch":"judicial","court_type":"district_court","name":"U.S. District Court — Central District of Illinois","url":"https://www.ilcd.uscourts.gov/"}
+{"id":"jud-dist-ilnd","branch":"judicial","court_type":"district_court","name":"U.S. District Court — Northern District of Illinois","url":"https://www.ilnd.uscourts.gov/"}
+{"id":"jud-dist-ilsd","branch":"judicial","court_type":"district_court","name":"U.S. District Court — Southern District of Illinois","url":"https://www.ilsd.uscourts.gov/"}
+{"id":"jud-bankr-ilcb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — Central District of Illinois","url":"https://www.ilcb.uscourts.gov/"}
+{"id":"jud-bankr-ilnb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — Northern District of Illinois","url":"https://www.ilnb.uscourts.gov/"}
+{"id":"jud-bankr-ilsb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — Southern District of Illinois","url":"https://www.ilsb.uscourts.gov/"}
+
+{"id":"jud-dist-innd","branch":"judicial","court_type":"district_court","name":"U.S. District Court — Northern District of Indiana","url":"https://www.innd.uscourts.gov/"}
+{"id":"jud-dist-insd","branch":"judicial","court_type":"district_court","name":"U.S. District Court — Southern District of Indiana","url":"https://www.insd.uscourts.gov/"}
+{"id":"jud-bankr-innb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — Northern District of Indiana","url":"https://www.innb.uscourts.gov/"}
+{"id":"jud-bankr-insb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — Southern District of Indiana","url":"https://www.insb.uscourts.gov/"}
+
+{"id":"jud-dist-iand","branch":"judicial","court_type":"district_court","name":"U.S. District Court — Northern District of Iowa","url":"https://www.iand.uscourts.gov/"}
+{"id":"jud-dist-iasd","branch":"judicial","court_type":"district_court","name":"U.S. District Court — Southern District of Iowa","url":"https://www.iasd.uscourts.gov/"}
+{"id":"jud-bankr-ianb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — Northern District of Iowa","url":"https://www.ianb.uscourts.gov/"}
+{"id":"jud-bankr-iasb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — Southern District of Iowa","url":"https://www.iasb.uscourts.gov/"}
+
+{"id":"jud-dist-ksd","branch":"judicial","court_type":"district_court","name":"U.S. District Court — District of Kansas","url":"https://www.ksd.uscourts.gov/"}
+{"id":"jud-bankr-ksb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — District of Kansas","url":"https://www.ksb.uscourts.gov/"}
+
+{"id":"jud-dist-kyed","branch":"judicial","court_type":"district_court","name":"U.S. District Court — Eastern District of Kentucky","url":"https://www.kyed.uscourts.gov/"}
+{"id":"jud-dist-kywd","branch":"judicial","court_type":"district_court","name":"U.S. District Court — Western District of Kentucky","url":"https://www.kywd.uscourts.gov/"}
+{"id":"jud-bankr-kyeb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — Eastern District of Kentucky","url":"https://www.kyeb.uscourts.gov/"}
+{"id":"jud-bankr-kywb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — Western District of Kentucky","url":"https://www.kywb.uscourts.gov/"}
+
+{"id":"jud-dist-laed","branch":"judicial","court_type":"district_court","name":"U.S. District Court — Eastern District of Louisiana","url":"https://www.laed.uscourts.gov/"}
+{"id":"jud-dist-lamd","branch":"judicial","court_type":"district_court","name":"U.S. District Court — Middle District of Louisiana","url":"https://www.lamd.uscourts.gov/"}
+{"id":"jud-dist-lawd","branch":"judicial","court_type":"district_court","name":"U.S. District Court — Western District of Louisiana","url":"https://www.lawd.uscourts.gov/"}
+{"id":"jud-bankr-laeb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — Eastern District of Louisiana","url":"https://www.laeb.uscourts.gov/"}
+{"id":"jud-bankr-lamb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — Middle District of Louisiana","url":"https://www.lamb.uscourts.gov/"}
+{"id":"jud-bankr-lawb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — Western District of Louisiana","url":"https://www.lawb.uscourts.gov/"}
+
+{"id":"jud-dist-med","branch":"judicial","court_type":"district_court","name":"U.S. District Court — District of Maine","url":"https://www.med.uscourts.gov/"}
+{"id":"jud-bankr-meb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — District of Maine","url":"https://www.meb.uscourts.gov/"}
+
+{"id":"jud-dist-mdd","branch":"judicial","court_type":"district_court","name":"U.S. District Court — District of Maryland","url":"https://www.mdd.uscourts.gov/"}
+{"id":"jud-bankr-mdb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — District of Maryland","url":"https://www.mdb.uscourts.gov/"}
+
+{"id":"jud-dist-mad","branch":"judicial","court_type":"district_court","name":"U.S. District Court — District of Massachusetts","url":"https://www.mad.uscourts.gov/"}
+{"id":"jud-bankr-mab","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — District of Massachusetts","url":"https://www.mab.uscourts.gov/"}
+
+{"id":"jud-dist-mied","branch":"judicial","court_type":"district_court","name":"U.S. District Court — Eastern District of Michigan","url":"https://www.mied.uscourts.gov/"}
+{"id":"jud-dist-miwd","branch":"judicial","court_type":"district_court","name":"U.S. District Court — Western District of Michigan","url":"https://www.miwd.uscourts.gov/"}
+{"id":"jud-bankr-mieb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — Eastern District of Michigan","url":"https://www.mieb.uscourts.gov/"}
+{"id":"jud-bankr-miwb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — Western District of Michigan","url":"https://www.miwb.uscourts.gov/"}
+
+{"id":"jud-dist-mnd","branch":"judicial","court_type":"district_court","name":"U.S. District Court — District of Minnesota","url":"https://www.mnd.uscourts.gov/"}
+{"id":"jud-bankr-mnb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — District of Minnesota","url":"https://www.mnb.uscourts.gov/"}
+
+{"id":"jud-dist-msnd","branch":"judicial","court_type":"district_court","name":"U.S. District Court — Northern District of Mississippi","url":"https://www.msnd.uscourts.gov/"}
+{"id":"jud-dist-mssd","branch":"judicial","court_type":"district_court","name":"U.S. District Court — Southern District of Mississippi","url":"https://www.mssd.uscourts.gov/"}
+{"id":"jud-bankr-msnb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — Northern District of Mississippi","url":"https://www.msnb.uscourts.gov/"}
+{"id":"jud-bankr-mssb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — Southern District of Mississippi","url":"https://www.mssb.uscourts.gov/"}
+
+{"id":"jud-dist-moed","branch":"judicial","court_type":"district_court","name":"U.S. District Court — Eastern District of Missouri","url":"https://www.moed.uscourts.gov/"}
+{"id":"jud-dist-mow","branch":"judicial","court_type":"district_court","name":"U.S. District Court — Western District of Missouri","url":"https://www.mow.uscourts.gov/"}
+{"id":"jud-bankr-moeb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — Eastern District of Missouri","url":"https://www.moeb.uscourts.gov/"}
+
+{"id":"jud-dist-mtd","branch":"judicial","court_type":"district_court","name":"U.S. District Court — District of Montana","url":"https://www.mtd.uscourts.gov/"}
+{"id":"jud-bankr-mtb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — District of Montana","url":"https://www.mtb.uscourts.gov/"}
+
+{"id":"jud-dist-ned","branch":"judicial","court_type":"district_court","name":"U.S. District Court — District of Nebraska","url":"https://www.ned.uscourts.gov/"}
+{"id":"jud-bankr-neb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — District of Nebraska","url":"https://www.neb.uscourts.gov/"}
+
+{"id":"jud-dist-nvd","branch":"judicial","court_type":"district_court","name":"U.S. District Court — District of Nevada","url":"https://www.nvd.uscourts.gov/"}
+{"id":"jud-bankr-nvb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — District of Nevada","url":"https://www.nvb.uscourts.gov/"}
+
+{"id":"jud-dist-nhd","branch":"judicial","court_type":"district_court","name":"U.S. District Court — District of New Hampshire","url":"https://www.nhd.uscourts.gov/"}
+{"id":"jud-bankr-nhb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — District of New Hampshire","url":"https://www.nhb.uscourts.gov/"}
+
+{"id":"jud-dist-njd","branch":"judicial","court_type":"district_court","name":"U.S. District Court — District of New Jersey","url":"https://www.njd.uscourts.gov/"}
+{"id":"jud-bankr-njb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — District of New Jersey","url":"https://www.njb.uscourts.gov/"}
+
+{"id":"jud-dist-nmd","branch":"judicial","court_type":"district_court","name":"U.S. District Court — District of New Mexico","url":"https://www.nmd.uscourts.gov/"}
+{"id":"jud-bankr-nmb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — District of New Mexico","url":"https://www.nmb.uscourts.gov/"}
+
+{"id":"jud-dist-nyed","branch":"judicial","court_type":"district_court","name":"U.S. District Court — Eastern District of New York","url":"https://www.nyed.uscourts.gov/"}
+{"id":"jud-dist-nynd","branch":"judicial","court_type":"district_court","name":"U.S. District Court — Northern District of New York","url":"https://www.nynd.uscourts.gov/"}
+{"id":"jud-dist-nysd","branch":"judicial","court_type":"district_court","name":"U.S. District Court — Southern District of New York","url":"https://www.nysd.uscourts.gov/"}
+{"id":"jud-dist-nywd","branch":"judicial","court_type":"district_court","name":"U.S. District Court — Western District of New York","url":"https://www.nywd.uscourts.gov/"}
+{"id":"jud-bankr-nyeb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — Eastern District of New York","url":"https://www.nyeb.uscourts.gov/"}
+{"id":"jud-bankr-nynb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — Northern District of New York","url":"https://www.nynb.uscourts.gov/"}
+{"id":"jud-bankr-nysb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — Southern District of New York","url":"https://www.nysb.uscourts.gov/"}
+{"id":"jud-bankr-nywb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — Western District of New York","url":"https://www.nywb.uscourts.gov/"}
+
+{"id":"jud-dist-nced","branch":"judicial","court_type":"district_court","name":"U.S. District Court — Eastern District of North Carolina","url":"https://www.nced.uscourts.gov/"}
+{"id":"jud-dist-ncmd","branch":"judicial","court_type":"district_court","name":"U.S. District Court — Middle District of North Carolina","url":"https://www.ncmd.uscourts.gov/"}
+{"id":"jud-dist-ncwd","branch":"judicial","court_type":"district_court","name":"U.S. District Court — Western District of North Carolina","url":"https://www.ncwd.uscourts.gov/"}
+{"id":"jud-bankr-nceb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — Eastern District of North Carolina","url":"https://www.nceb.uscourts.gov/"}
+{"id":"jud-bankr-ncmb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — Middle District of North Carolina","url":"https://www.ncmb.uscourts.gov/"}
+{"id":"jud-bankr-ncwb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — Western District of North Carolina","url":"https://www.ncwb.uscourts.gov/"}
+
+{"id":"jud-dist-ndd","branch":"judicial","court_type":"district_court","name":"U.S. District Court — District of North Dakota","url":"https://www.ndd.uscourts.gov/"}
+{"id":"jud-bankr-ndb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — District of North Dakota","url":"https://www.ndb.uscourts.gov/"}
+
+{"id":"jud-dist-nmid","branch":"judicial","court_type":"district_court","name":"U.S. District Court — District of the Northern Mariana Islands","url":"https://www.nmid.uscourts.gov/"}
+
+{"id":"jud-dist-ohnd","branch":"judicial","court_type":"district_court","name":"U.S. District Court — Northern District of Ohio","url":"https://www.ohnd.uscourts.gov/"}
+{"id":"jud-dist-ohsd","branch":"judicial","court_type":"district_court","name":"U.S. District Court — Southern District of Ohio","url":"https://www.ohsd.uscourts.gov/"}
+{"id":"jud-bankr-ohnb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — Northern District of Ohio","url":"https://www.ohnb.uscourts.gov/"}
+{"id":"jud-bankr-ohsb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — Southern District of Ohio","url":"https://www.ohsb.uscourts.gov/"}
+
+{"id":"jud-dist-oked","branch":"judicial","court_type":"district_court","name":"U.S. District Court — Eastern District of Oklahoma","url":"https://www.oked.uscourts.gov/"}
+{"id":"jud-dist-oknd","branch":"judicial","court_type":"district_court","name":"U.S. District Court — Northern District of Oklahoma","url":"https://www.oknd.uscourts.gov/"}
+{"id":"jud-dist-okwd","branch":"judicial","court_type":"district_court","name":"U.S. District Court — Western District of Oklahoma","url":"https://www.okwd.uscourts.gov/"}
+{"id":"jud-bankr-okeb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — Eastern District of Oklahoma","url":"https://www.okeb.uscourts.gov/"}
+{"id":"jud-bankr-oknb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — Northern District of Oklahoma","url":"https://www.oknb.uscourts.gov/"}
+{"id":"jud-bankr-okwb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — Western District of Oklahoma","url":"https://www.okwb.uscourts.gov/"}
+
+{"id":"jud-dist-ord","branch":"judicial","court_type":"district_court","name":"U.S. District Court — District of Oregon","url":"https://www.ord.uscourts.gov/"}
+{"id":"jud-bankr-orb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — District of Oregon","url":"https://www.orb.uscourts.gov/"}
+
+{"id":"jud-dist-paed","branch":"judicial","court_type":"district_court","name":"U.S. District Court — Eastern District of Pennsylvania","url":"https://www.paed.uscourts.gov/"}
+{"id":"jud-dist-pamd","branch":"judicial","court_type":"district_court","name":"U.S. District Court — Middle District of Pennsylvania","url":"https://www.pamd.uscourts.gov/"}
+{"id":"jud-dist-pawd","branch":"judicial","court_type":"district_court","name":"U.S. District Court — Western District of Pennsylvania","url":"https://www.pawd.uscourts.gov/"}
+{"id":"jud-bankr-paeb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — Eastern District of Pennsylvania","url":"https://www.paeb.uscourts.gov/"}
+{"id":"jud-bankr-pamb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — Middle District of Pennsylvania","url":"https://www.pamb.uscourts.gov/"}
+{"id":"jud-bankr-pawb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — Western District of Pennsylvania","url":"https://www.pawb.uscourts.gov/"}
+
+{"id":"jud-dist-prd","branch":"judicial","court_type":"district_court","name":"U.S. District Court — District of Puerto Rico","url":"https://www.prd.uscourts.gov/"}
+{"id":"jud-bankr-prb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — District of Puerto Rico","url":"https://www.prb.uscourts.gov/"}
+
+{"id":"jud-dist-rid","branch":"judicial","court_type":"district_court","name":"U.S. District Court — District of Rhode Island","url":"https://www.rid.uscourts.gov/"}
+{"id":"jud-bankr-rib","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — District of Rhode Island","url":"https://www.rib.uscourts.gov/"}
+
+{"id":"jud-dist-scd","branch":"judicial","court_type":"district_court","name":"U.S. District Court — District of South Carolina","url":"https://www.scd.uscourts.gov/"}
+{"id":"jud-bankr-scb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — District of South Carolina","url":"https://www.scb.uscourts.gov/"}
+
+{"id":"jud-dist-sdd","branch":"judicial","court_type":"district_court","name":"U.S. District Court — District of South Dakota","url":"https://www.sdd.uscourts.gov/"}
+{"id":"jud-bankr-sdb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — District of South Dakota","url":"https://www.sdb.uscourts.gov/"}
+
+{"id":"jud-dist-tned","branch":"judicial","court_type":"district_court","name":"U.S. District Court — Eastern District of Tennessee","url":"https://www.tned.uscourts.gov/"}
+{"id":"jud-dist-tnmd","branch":"judicial","court_type":"district_court","name":"U.S. District Court — Middle District of Tennessee","url":"https://www.tnmd.uscourts.gov/"}
+{"id":"jud-dist-tnwd","branch":"judicial","court_type":"district_court","name":"U.S. District Court — Western District of Tennessee","url":"https://www.tnwd.uscourts.gov/"}
+{"id":"jud-bankr-tneb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — Eastern District of Tennessee","url":"https://www.tneb.uscourts.gov/"}
+{"id":"jud-bankr-tnmb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — Middle District of Tennessee","url":"https://www.tnmb.uscourts.gov/"}
+{"id":"jud-bankr-tnwb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — Western District of Tennessee","url":"https://www.tnwb.uscourts.gov/"}
+
+{"id":"jud-dist-txed","branch":"judicial","court_type":"district_court","name":"U.S. District Court — Eastern District of Texas","url":"https://www.txed.uscourts.gov/"}
+{"id":"jud-dist-txnd","branch":"judicial","court_type":"district_court","name":"U.S. District Court — Northern District of Texas","url":"https://www.txnd.uscourts.gov/"}
+{"id":"jud-dist-txs","branch":"judicial","court_type":"district_court","name":"U.S. District Court — Southern District of Texas","url":"https://www.txs.uscourts.gov/"}
+{"id":"jud-dist-txwd","branch":"judicial","court_type":"district_court","name":"U.S. District Court — Western District of Texas","url":"https://www.txwd.uscourts.gov/"}
+{"id":"jud-bankr-txeb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — Eastern District of Texas","url":"https://www.txeb.uscourts.gov/"}
+{"id":"jud-bankr-txnb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — Northern District of Texas","url":"https://www.txnb.uscourts.gov/"}
+{"id":"jud-bankr-txwb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — Western District of Texas","url":"https://www.txwb.uscourts.gov/"}
+
+{"id":"jud-dist-utd","branch":"judicial","court_type":"district_court","name":"U.S. District Court — District of Utah","url":"https://www.utd.uscourts.gov/"}
+{"id":"jud-bankr-utb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — District of Utah","url":"https://www.utb.uscourts.gov/"}
+
+{"id":"jud-dist-vtd","branch":"judicial","court_type":"district_court","name":"U.S. District Court — District of Vermont","url":"https://www.vtd.uscourts.gov/"}
+{"id":"jud-bankr-vtb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — District of Vermont","url":"https://www.vtb.uscourts.gov/"}
+
+{"id":"jud-dist-vid","branch":"judicial","court_type":"district_court","name":"U.S. District Court — District of the Virgin Islands","url":"https://www.vid.uscourts.gov/"}
+
+{"id":"jud-dist-vaed","branch":"judicial","court_type":"district_court","name":"U.S. District Court — Eastern District of Virginia","url":"https://www.vaed.uscourts.gov/"}
+{"id":"jud-dist-vawd","branch":"judicial","court_type":"district_court","name":"U.S. District Court — Western District of Virginia","url":"https://www.vawd.uscourts.gov/"}
+{"id":"jud-bankr-vaeb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — Eastern District of Virginia","url":"https://www.vaeb.uscourts.gov/"}
+{"id":"jud-bankr-vawb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — Western District of Virginia","url":"https://www.vawb.uscourts.gov/"}
+
+{"id":"jud-dist-waed","branch":"judicial","court_type":"district_court","name":"U.S. District Court — Eastern District of Washington","url":"https://www.waed.uscourts.gov/"}
+{"id":"jud-dist-wawd","branch":"judicial","court_type":"district_court","name":"U.S. District Court — Western District of Washington","url":"https://www.wawd.uscourts.gov/"}
+{"id":"jud-bankr-waeb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — Eastern District of Washington","url":"https://www.waeb.uscourts.gov/"}
+{"id":"jud-bankr-wawb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — Western District of Washington","url":"https://www.wawb.uscourts.gov/"}
+
+{"id":"jud-dist-wvnd","branch":"judicial","court_type":"district_court","name":"U.S. District Court — Northern District of West Virginia","url":"https://www.wvnd.uscourts.gov/"}
+{"id":"jud-dist-wvsd","branch":"judicial","court_type":"district_court","name":"U.S. District Court — Southern District of West Virginia","url":"https://www.wvsd.uscourts.gov/"}
+{"id":"jud-bankr-wvnb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — Northern District of West Virginia","url":"https://www.wvnb.uscourts.gov/"}
+{"id":"jud-bankr-wvsb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — Southern District of West Virginia","url":"https://www.wvsb.uscourts.gov/"}
+
+{"id":"jud-dist-wied","branch":"judicial","court_type":"district_court","name":"U.S. District Court — Eastern District of Wisconsin","url":"https://www.wied.uscourts.gov/"}
+{"id":"jud-dist-wiwd","branch":"judicial","court_type":"district_court","name":"U.S. District Court — Western District of Wisconsin","url":"https://www.wiwd.uscourts.gov/"}
+{"id":"jud-bankr-wieb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — Eastern District of Wisconsin","url":"https://www.wieb.uscourts.gov/"}
+{"id":"jud-bankr-wiwb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — Western District of Wisconsin","url":"https://www.wiwb.uscourts.gov/"}
+
+{"id":"jud-dist-wyd","branch":"judicial","court_type":"district_court","name":"U.S. District Court — District of Wyoming","url":"https://www.wyd.uscourts.gov/"}
+{"id":"jud-bankr-wyb","branch":"judicial","court_type":"bankruptcy_court","name":"U.S. Bankruptcy Court — District of Wyoming","url":"https://www.wyb.uscourts.gov/"}
