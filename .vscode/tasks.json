@@ -12,6 +12,66 @@
       "isBackground": true,
       "problemMatcher": [],
       "group": "build"
+    },
+    {
+      "label": "CC plan: pointers-from-csv",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-lc",
+        "PYTHONPATH=src python -m common_crawl_search_engine.cli plan pointers-from-csv -- --csv data/us_towns_and_counties_urls.csv"
+      ],
+      "isBackground": true,
+      "problemMatcher": [],
+      "group": "build"
+    },
+    {
+      "label": "CC plan: pointers-from-csv (debug 5)",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-lc",
+        "PYTHONPATH=src python -m common_crawl_search_engine.cli plan pointers-from-csv -- --csv data/us_towns_and_counties_urls.csv --domains-limit 5 --max-matches 2000 --domain-workers 4"
+      ],
+      "isBackground": false,
+      "problemMatcher": [],
+      "group": "build"
+    },
+    {
+      "label": "CC plan: slices-from-pointers",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-lc",
+        "RUN_ID=$(cat datasets/CCINDEX_WARC_CACHE_DIR/slice_indexes/LATEST.txt); P=datasets/CCINDEX_WARC_CACHE_DIR/slice_indexes/$RUN_ID/pointers.parquet; if [ ! -f \"$P\" ]; then P=datasets/CCINDEX_WARC_CACHE_DIR/slice_indexes/$RUN_ID/pointers.jsonl; fi; PYTHONPATH=src python -m common_crawl_search_engine.cli plan slices-from-pointers -- --pointers-jsonl \"$P\""
+      ],
+      "isBackground": false,
+      "problemMatcher": [],
+      "group": "build"
+    },
+    {
+      "label": "CC plan: fetch-slices",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-lc",
+        "PYTHONPATH=src python -m common_crawl_search_engine.cli plan fetch-slices -- --workers 32"
+      ],
+      "isBackground": true,
+      "problemMatcher": [],
+      "group": "build"
+    },
+    {
+      "label": "CC plan: extract-from-cache",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-lc",
+        "PYTHONPATH=src python -m common_crawl_search_engine.cli plan extract-from-cache -- --workers 16"
+      ],
+      "isBackground": true,
+      "problemMatcher": [],
+      "group": "build"
     }
   ]
 }
