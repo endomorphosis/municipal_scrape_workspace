@@ -21,13 +21,16 @@ Important:
 from __future__ import annotations
 
 import argparse
+import base64
 import json
+import os
 import re
 import sys
 import time
 import urllib.parse
 import urllib.request
 from collections import deque
+from pathlib import Path
 from html.parser import HTMLParser
 from typing import Any, Dict, Iterable, List, Optional, Set, Tuple
 
@@ -119,12 +122,147 @@ def http_get(
     accept: str = "text/html,*/*",
     user_agent: str = DEFAULT_USER_AGENT,
 ) -> bytes:
+    def _should_try_cc_fallback() -> bool:
+        a = (accept or "").lower()
+        if "text/html" not in a:
+            return False
+        try:
+            scheme = urllib.parse.urlparse(url).scheme.lower()
+        except Exception:
+            scheme = ""
+        return scheme in {"http", "https"}
+
+    def _http_get_via_common_crawl() -> Optional[bytes]:
+        """Best-effort: use Common Crawl pointer indexes to replay a URL.
+
+        Returns HTML bytes (truncated) or None if unavailable.
+        """
+
+        # Ensure `src/` is importable when this script is run directly.
+        try:
+            root = Path(__file__).resolve().parents[2]
+            src = root / "src"
+            if src.exists() and str(src) not in sys.path:
+                sys.path.insert(0, str(src))
+        except Exception:
+            pass
+
+        try:
+            from common_crawl_search_engine.ccindex import api as ccapi  # type: ignore
+        except Exception:
+            return None
+
+        def _pointer_score(r: Dict[str, object]) -> Tuple[int, int]:
+            wf = str(r.get("warc_filename") or "")
+            mime = str(r.get("mime") or "")
+            status = r.get("status")
+            try:
+                status_i = int(status) if status is not None else 0
+            except Exception:
+                status_i = 0
+            score = 0
+            if "/warc/" in wf:
+                score += 4
+            if "crawldiagnostics" in wf:
+                score -= 2
+            if status_i == 200:
+                score += 3
+            elif 300 <= status_i < 400:
+                score += 1
+            if mime.startswith("text/html"):
+                score += 1
+            ts = str(r.get("timestamp") or "")
+            ts_key = int(ts) if ts.isdigit() else 0
+            return (score, ts_key)
+
+        try:
+            # Force the faster resolve strategy for on-the-fly fallbacks.
+            old_strategy = os.environ.get("BRAVE_RESOLVE_STRATEGY")
+            os.environ["BRAVE_RESOLVE_STRATEGY"] = "meta_parallel"
+            try:
+                now_year = time.gmtime().tm_year
+                years = [str(now_year), str(now_year - 1), str(now_year - 2)]
+                all_recs: List[Dict[str, object]] = []
+                stats: Dict[str, object] = {}
+                for y in years:
+                    resolved = ccapi.resolve_urls_to_ccindex(
+                        [url],
+                        year=y,
+                        per_url_limit=3,
+                        max_matches_per_domain=400,
+                        stats_out=stats,
+                    )
+                    all_recs.extend((resolved or {}).get(url) or [])
+                    if all_recs:
+                        break
+            finally:
+                if old_strategy is None:
+                    os.environ.pop("BRAVE_RESOLVE_STRATEGY", None)
+                else:
+                    os.environ["BRAVE_RESOLVE_STRATEGY"] = old_strategy
+
+            if not all_recs:
+                sys.stderr.write(f"WARN common_crawl_no_pointers url={url}\n")
+                return None
+
+            all_recs.sort(key=_pointer_score, reverse=True)
+            rec = all_recs[0]
+            warc_filename = str(rec.get("warc_filename") or "")
+            warc_offset = rec.get("warc_offset")
+            warc_length = rec.get("warc_length")
+            if not warc_filename or warc_offset is None or warc_length is None:
+                sys.stderr.write(f"WARN common_crawl_bad_pointer url={url}\n")
+                return None
+
+            max_bytes = 2_000_000
+            fetch_res, _source, _local_path = ccapi.fetch_warc_record(
+                warc_filename=warc_filename,
+                warc_offset=int(warc_offset),
+                warc_length=int(warc_length),
+                timeout_s=min(30.0, float(max(1, int(timeout)))),
+                max_bytes=int(max_bytes),
+                decode_gzip_text=False,
+                cache_mode="range",
+            )
+            if not fetch_res.ok or not fetch_res.raw_base64:
+                sys.stderr.write(f"WARN common_crawl_fetch_failed url={url} err={fetch_res.error}\n")
+                return None
+
+            gz_member = base64.b64decode(fetch_res.raw_base64)
+            parsed = ccapi.extract_http_from_warc_gzip_member(
+                gz_member,
+                max_body_bytes=int(max_bytes),
+                include_body_base64=True,
+            )
+            if not parsed.ok:
+                sys.stderr.write(f"WARN common_crawl_extract_failed url={url} err={parsed.error}\n")
+                return None
+            body_b64 = getattr(parsed, "body_base64", None)
+            if not body_b64:
+                return None
+            body = base64.b64decode(body_b64)
+            if body:
+                return body
+            return None
+        except Exception as e:
+            sys.stderr.write(f"WARN common_crawl_fallback_error url={url} err={type(e).__name__}: {e}\n")
+            return None
+
     req = urllib.request.Request(
         url,
         headers={"User-Agent": user_agent, "Accept": accept},
     )
-    with urllib.request.urlopen(req, timeout=timeout) as resp:
-        return resp.read()
+    try:
+        with urllib.request.urlopen(req, timeout=timeout) as resp:
+            return resp.read()
+    except Exception as e:
+        if _should_try_cc_fallback():
+            sys.stderr.write(f"WARN live_fetch_failed trying_common_crawl url={url} err={type(e).__name__}: {e}\n")
+            cc = _http_get_via_common_crawl()
+            if cc:
+                sys.stderr.write(f"INFO common_crawl_fetch_ok url={url} bytes={len(cc)}\n")
+                return cc
+        raise
 
 
 def http_get_json(url: str, timeout: int = 60, user_agent: str = DEFAULT_USER_AGENT) -> Any:
@@ -288,6 +426,19 @@ AGENCY_PATH_HINTS = [
     "secretary",
     "treasurer",
     "attorney",
+    # Spanish / territories
+    "departamento",
+    "agencia",
+    "agencias",
+    "directorio",
+    "gobierno",
+    # Spanish / territories
+    "departamento",
+    "departamentos",
+    "agencia",
+    "agencias",
+    "directorio",
+    "gobierno",
 ]
 
 CRAWL_PATH_HINTS = sorted(set(AGENCY_PATH_HINTS + [
@@ -309,6 +460,12 @@ def looks_agency_anchor(text: str, url: str) -> bool:
         return False
     # avoid obvious nav / utility links
     if t.strip().startswith("skip to"):
+        return False
+    if t.strip().startswith("turn on ") or t.strip().startswith("turn off "):
+        return False
+    if "accessible mode" in t:
+        return False
+    if t.strip() in {"site navigation", "navigation"}:
         return False
     if any(x in t for x in [
         "privacy",
@@ -354,7 +511,12 @@ def target_path_looks_agency_like(url: str) -> bool:
     except Exception:
         return False
     # Intentionally narrower than crawl hints.
-    tokens = ["agency", "agencies", "department", "departments", "board", "boards", "commission", "commissions", "office", "offices", "bureau", "authority", "administration"]
+    tokens = [
+        "agency", "agencies", "department", "departments",
+        "agencia", "agencias", "departamento", "departamentos", "directorio",
+        "board", "boards", "commission", "commissions",
+        "office", "offices", "bureau", "authority", "administration",
+    ]
     return any(t in path for t in tokens)
 
 
@@ -363,7 +525,14 @@ def is_directory_like_page(url: str) -> bool:
         path = urllib.parse.urlparse(url).path.lower()
     except Exception:
         return False
-    return any(x in path for x in ["agency", "agencies", "departments", "department", "directory", "cabinet", "boards", "commissions"])
+    return any(
+        x in path
+        for x in [
+            "agency", "agencies", "departments", "department", "directory",
+            "agencia", "agencias", "departamento", "departamentos", "directorio", "gobierno",
+            "cabinet", "boards", "commissions",
+        ]
+    )
 
 
 def looks_reasonable_agency_name(text: str) -> bool:
@@ -374,6 +543,12 @@ def looks_reasonable_agency_name(text: str) -> bool:
         return False
     low = t.lower()
     if low.strip().startswith("skip to"):
+        return False
+    if low.strip().startswith("turn on ") or low.strip().startswith("turn off "):
+        return False
+    if "accessible mode" in low:
+        return False
+    if low.strip() in {"site navigation", "navigation"}:
         return False
     if any(x in low for x in ["privacy", "accessibility", "site map", "sitemap", "contact", "login", "search"]):
         return False
@@ -459,6 +634,7 @@ def seeds_from_congress_legislatures(user_agent: str = DEFAULT_USER_AGENT) -> Li
 def seeds_from_usagov_portals(
     user_agent: str = DEFAULT_USER_AGENT,
     timeout_s: int = DEFAULT_SEED_TIMEOUT_S,
+    only_jurisdiction_name: Optional[str] = None,
 ) -> List[Dict[str, Any]]:
     """
     USA.gov index page points to state/territory pages and/or directly to portals.
@@ -470,16 +646,42 @@ def seeds_from_usagov_portals(
     except Exception as e:
         sys.stderr.write(f"[state_domains] WARN: failed to fetch {USAGOV_STATES_URL}: {e}\n")
         return []
-    index_links = parse_links(USAGOV_STATES_URL, index_html)
+    # Prefer anchors (URL + text) so we can infer the jurisdiction name
+    # from the index page even if the per-state page title/URL is opaque.
+    index_anchors = parse_anchors(USAGOV_STATES_URL, index_html)
 
     # Candidate per-jurisdiction pages (structure can change; keep broad):
-    per_pages = [
-        u for u in index_links
-        if host_of(u).endswith("usa.gov") and (
-            "/state-" in u or "/states/" in u or "/state/" in u
-        )
-    ]
+    per_pages: List[str] = []
+    per_page_text: Dict[str, str] = {}
+    for u, atext in index_anchors:
+        if not host_of(u).endswith("usa.gov"):
+            continue
+        if ("/state-" in u) or ("/states/" in u) or ("/state/" in u):
+            per_pages.append(u)
+            # Keep the longest/most-informative anchor text we see.
+            if atext and (len(atext) > len(per_page_text.get(u, ""))):
+                per_page_text[u] = atext
     per_pages = sorted(set(per_pages))
+
+    # If the caller wants a specific jurisdiction, try to pre-filter the per-state
+    # pages using the index anchor text so we don't fetch every page.
+    if only_jurisdiction_name:
+        target = None
+        for k in STATE_ABBR.keys():
+            if k.lower() == only_jurisdiction_name.lower():
+                target = k
+                break
+        if target:
+            only_jurisdiction_name = target
+
+        filtered: List[str] = []
+        for page in per_pages:
+            hinted = infer_jurisdiction_name(page_url="", page_title="", hint_text=per_page_text.get(page, ""))
+            if hinted and hinted == only_jurisdiction_name:
+                filtered.append(page)
+        # Fall back to the full list if we couldn't confidently match.
+        if filtered:
+            per_pages = filtered
 
     seeds: List[Dict[str, Any]] = []
     seen_hosts: Set[str] = set()
@@ -503,9 +705,10 @@ def seeds_from_usagov_portals(
             sys.stderr.write(f"[state_domains] WARN: failed to parse anchors for {page}: {e}\n")
             continue
 
-        # Try to infer jurisdiction name from the page itself.
+        # Try to infer jurisdiction name from the page itself; if that fails,
+        # fall back to the index-page anchor text (often exactly the state name).
         page_title = html_title(html)
-        juris_name = infer_jurisdiction_name(page, page_title)
+        juris_name = infer_jurisdiction_name(page, page_title, hint_text=per_page_text.get(page, ""))
         juris_abbr = STATE_ABBR.get(juris_name) if juris_name else None
 
         # pick best-scoring external government-ish link as portal
@@ -542,15 +745,22 @@ def seeds_from_usagov_portals(
     return seeds
 
 
-def infer_jurisdiction_name(page_url: str, page_title: str) -> Optional[str]:
-    """Best-effort mapping of USA.gov per-state page -> state/territory name."""
-    hay = " ".join([page_url or "", page_title or ""]).lower()
+def infer_jurisdiction_name(page_url: str, page_title: str, hint_text: str = "") -> Optional[str]:
+    """Best-effort mapping of USA.gov per-state page -> state/territory name.
+
+    We primarily look at the per-state page URL/title, but also accept a hint
+    from the USA.gov index anchor text (which is often the canonical name).
+    """
+    hay = " ".join([page_url or "", page_title or "", hint_text or ""]).lower()
     # Prefer longest names first (e.g., "Northern Mariana Islands")
     for name in sorted(STATE_ABBR.keys(), key=len, reverse=True):
-        if name.lower() in hay:
+        n = name.lower()
+        if n in hay:
             return name
-        # Common phrasing
-        if ("state of " + name.lower()) in hay:
+        if ("state of " + n) in hay:
+            return name
+        # Anchor text may be exactly the name.
+        if (hint_text or "").strip().lower() == n:
             return name
     return None
 
@@ -586,6 +796,8 @@ def portal_candidate_score(juris_name: str, abbr: Optional[str], url: str, ancho
         score += 2.0
 
     # Anchor text hints.
+    if t and t == juris_name.strip().lower():
+        score += 2.0
     if "official" in t:
         score += 2.5
     if "website" in t:
@@ -594,6 +806,12 @@ def portal_candidate_score(juris_name: str, abbr: Optional[str], url: str, ancho
         score += 1.0
     if "state" in t:
         score += 0.5
+
+    # Penalize links that look like a single agency/department site.
+    # USA.gov per-state pages often list agencies; we still prefer the main portal.
+    agencyish = ["department", "agency", "commission", "board", "authority", "bureau", "office"]
+    if any(a in t for a in agencyish) and (t != juris_name.strip().lower()):
+        score -= 1.5
 
     # Penalize likely branch sites when we're trying to find the executive portal.
     bad_tokens = [
@@ -697,8 +915,111 @@ def crawl_agencies_from_portal(
     for p in common_paths:
         start_urls.append(urllib.parse.urljoin(base_origin, p))
 
+    # Some state portals use generic URL paths (e.g., /Pages/...) where directory
+    # hints show up in anchor text rather than the URL. Allow limited expansion
+    # based on anchor text hints to avoid missing agency directories.
+    CRAWL_ANCHOR_HINTS = [
+        "agency",
+        "agencies",
+        "department",
+        "departments",
+        "directory",
+        "government",
+        "state government",
+        "cabinet",
+        "executive",
+    ]
+
     q = deque([(u, 0) for u in sorted(set(start_urls))])
     visited: Set[str] = set()
+
+    def _cc_discover_seed_pages_for_host(host: str) -> List[str]:
+        """Best-effort seed expansion using Common Crawl domain search.
+
+        This is a fallback for cases where live fetches time out or the portal
+        uses unexpected paths (e.g., /Pages/allagencies.aspx).
+        """
+
+        try:
+            root = Path(__file__).resolve().parents[2]
+            src = root / "src"
+            if src.exists() and str(src) not in sys.path:
+                sys.path.insert(0, str(src))
+        except Exception:
+            pass
+
+        try:
+            from common_crawl_search_engine.ccindex import api as ccapi  # type: ignore
+        except Exception:
+            return []
+
+        hints = [
+            "/agenc",
+            "allagenc",
+            "/depart",
+            "departamento",
+            "departamentos",
+            "cabinet",
+            "commission",
+            "commissions",
+            "board",
+            "boards",
+            "government",
+            "gobierno",
+            "directory",
+            "directorio",
+            "agencias",
+        ]
+
+        def _looks_dir_url(u: str) -> bool:
+            try:
+                p = urllib.parse.urlparse(u)
+                if p.netloc.lower() != host.lower():
+                    return False
+                path = (p.path or "").lower()
+                q = (p.query or "").lower()
+            except Exception:
+                return False
+            hay = path + "?" + q
+            return any(h in hay for h in hints)
+
+        out: List[str] = []
+        seen: Set[str] = set()
+
+        now_year = time.gmtime().tm_year
+        years = [str(now_year), str(now_year - 1), str(now_year - 2), str(now_year - 3), str(now_year - 4)]
+
+        old_strategy = os.environ.get("BRAVE_RESOLVE_STRATEGY")
+        os.environ["BRAVE_RESOLVE_STRATEGY"] = "meta_parallel"
+        try:
+            for y in years:
+                try:
+                    res = ccapi.search_domain_via_meta_indexes(
+                        host,
+                        year=y,
+                        max_matches=400,
+                    )
+                except Exception:
+                    continue
+
+                for r in res.records:
+                    u = str(r.get("url") or "")
+                    if not u or not _looks_dir_url(u):
+                        continue
+                    u = strip_fragment_and_query(u)
+                    if u in seen:
+                        continue
+                    seen.add(u)
+                    out.append(u)
+                    if len(out) >= 25:
+                        return out
+        finally:
+            if old_strategy is None:
+                os.environ.pop("BRAVE_RESOLVE_STRATEGY", None)
+            else:
+                os.environ["BRAVE_RESOLVE_STRATEGY"] = old_strategy
+
+        return out
 
     emitted_keys: Set[Tuple[Optional[str], str, str]] = set()  # (jurisdiction, agency_name_norm, host)
     agencies: List[Dict[str, Any]] = []
@@ -754,6 +1075,8 @@ def crawl_agencies_from_portal(
         )
 
     pages_fetched = 0
+    fetch_failures = 0
+    cc_seeded = False
     while q and pages_fetched < max_pages:
         url, depth = q.popleft()
         url = strip_fragment_and_query(url)
@@ -770,6 +1093,15 @@ def crawl_agencies_from_portal(
         try:
             html = http_get(url)
         except Exception:
+            fetch_failures += 1
+            # If we are failing to fetch the common start URLs (timeouts, blocks, etc.),
+            # fall back to Common Crawl domain search to locate likely directory pages.
+            if (not cc_seeded) and fetch_failures >= 5 and pages_fetched <= 1:
+                extra = _cc_discover_seed_pages_for_host(seed_host)
+                if extra:
+                    for u in extra:
+                        q.appendleft((u, 0))
+                    cc_seeded = True
             continue
         pages_fetched += 1
 
@@ -802,9 +1134,12 @@ def crawl_agencies_from_portal(
                     path = urllib.parse.urlparse(a_url).path.lower()
                 except Exception:
                     path = ""
-                # Restrict crawling to directory-like paths even from the homepage to avoid drifting
-                # into generic content (which often links to federal/county resources).
-                if any(h in path for h in CRAWL_PATH_HINTS):
+                a_low = (a_text_n or "").lower()
+                path_hint = any(h in path for h in CRAWL_PATH_HINTS)
+                text_hint = any(h in a_low for h in CRAWL_ANCHOR_HINTS)
+                # Prefer path hints, but allow a limited text-hint expansion to discover
+                # directories hiding behind generic paths.
+                if path_hint or text_hint:
                     q.append((a_url, depth + 1))
 
         time.sleep(sleep_s)
@@ -995,9 +1330,23 @@ def main() -> None:
     ap.add_argument("--jurisdiction", default="", help="Limit to a single jurisdiction by name (e.g., 'Oregon')")
     args = ap.parse_args()
 
+    # Normalize input to canonical key casing if possible.
+    if args.jurisdiction:
+        j = None
+        for k in STATE_ABBR.keys():
+            if k.lower() == args.jurisdiction.lower():
+                j = k
+                break
+        if j:
+            args.jurisdiction = j
+
     # Build spine seeds
     seeds = []
-    seeds += seeds_from_usagov_portals(user_agent=args.user_agent, timeout_s=args.seed_timeout)
+    seeds += seeds_from_usagov_portals(
+        user_agent=args.user_agent,
+        timeout_s=args.seed_timeout,
+        only_jurisdiction_name=(args.jurisdiction or None),
+    )
     if args.mode == "hosts":
         seeds += seeds_from_congress_legislatures(user_agent=args.user_agent)
 
@@ -1045,17 +1394,6 @@ def main() -> None:
                 if k not in emitted:
                     emitted.add(k)
                     emit_record(rec)
-
-        # Optional filtering by jurisdiction name (not abbreviation)
-        if args.jurisdiction:
-            # Normalize input to canonical key casing if possible
-            j = None
-            for k in STATE_ABBR.keys():
-                if k.lower() == args.jurisdiction.lower():
-                    j = k
-                    break
-            if j:
-                args.jurisdiction = j
 
         # Crawl each spine seed
         for seed in seeds:
