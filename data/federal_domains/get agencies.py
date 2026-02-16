@@ -194,15 +194,34 @@ def govinfo_api_latest_govman_package(api_key: str) -> str:
 
 
 def bulk_list_govman_editions() -> List[str]:
+    """List GOVMAN editions from bulkdata without requiring an API key.
+
+    The GOVMAN bulkdata root lists YEAR folders (e.g. /GOVMAN/2025).
+    Each year folder contains one or more ZIPs named GOVMAN-YYYY-MM-DD.zip.
     """
-    Attempts to list GOVMAN editions from bulkdata.
-    govinfo bulkdata endpoints commonly return XML-ish directory listings.
-    """
-    raw = http_get(GOVMAN_BULK_BASE, accept="application/xml,text/xml,*/*")
+    raw = http_get(GOVMAN_BULK_BASE, accept="application/xml,text/xml,text/html,*/*")
     text = raw.decode("utf-8", "replace")
-    # Heuristic: find all GOVMAN-YYYY-MM-DD strings in the listing.
-    editions = sorted(set(m.group(0) for m in RE_GOVMAN_EDITION.finditer(text)))
-    return editions
+
+    # Year folders: <name>2025</name> and/or /GOVMAN/2025
+    years = sorted(set(int(y) for y in re.findall(r"\b(19\d{2}|20\d{2})\b", text) if y.isdigit()))
+    # Be conservative: govinfo lists lots of years; we only care about those that have GOVMAN zips.
+
+    editions: Set[str] = set()
+    for y in sorted(years, reverse=True):
+        try:
+            year_url = f"{GOVMAN_BULK_BASE}/{y}"
+            raw_y = http_get(year_url, accept="application/xml,text/xml,text/html,*/*")
+            text_y = raw_y.decode("utf-8", "replace")
+        except Exception:
+            continue
+        for m in RE_GOVMAN_EDITION.finditer(text_y):
+            editions.add(m.group(0))
+        # Small optimization: if we found at least one edition in the newest years, stop early.
+        if editions and y >= max(years) - 1:
+            # keep scanning the next year only; otherwise stop
+            continue
+
+    return sorted(editions)
 
 
 def choose_latest_edition(editions: List[str]) -> str:
@@ -216,19 +235,22 @@ def choose_latest_edition(editions: List[str]) -> str:
 
 
 def bulk_find_govman_zip_url(edition: str) -> Optional[str]:
+    """Resolve an edition like GOVMAN-YYYY-MM-DD to a bulkdata ZIP URL.
+
+    Current bulkdata layout is /GOVMAN/YYYY/GOVMAN-YYYY-MM-DD.zip.
     """
-    Many govinfo bulk collections provide a ZIP for the edition.
-    We don't assume exact filenames; we search the edition directory listing for a .zip.
-    """
-    edition_url = f"{GOVMAN_BULK_BASE}/{edition}"
-    raw = http_get(edition_url, accept="application/xml,text/xml,*/*")
-    text = raw.decode("utf-8", "replace")
-    # Find a zip filename that contains the edition
-    m = re.search(rf'({re.escape(edition)}[^"<\s]*\.zip)\b', text, flags=re.IGNORECASE)
-    if m:
-        return f"{edition_url}/{m.group(1)}"
-    # Fallback: sometimes it's just {edition}.zip
-    guess = f"{edition_url}/{edition}.zip"
+    ed = (edition or "").strip()
+    if not ed:
+        return None
+    if ed.lower().endswith(".zip"):
+        ed = ed[:-4]
+
+    m = RE_GOVMAN_EDITION.search(ed)
+    if not m:
+        return None
+    year = m.group(1)
+
+    guess = f"{GOVMAN_BULK_BASE}/{year}/{ed}.zip"
     try:
         http_get(guess, accept="application/zip,*/*", timeout=30)
         return guess
