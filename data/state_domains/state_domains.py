@@ -44,7 +44,7 @@ DEFAULT_MAX_PAGES_PER_SEED = 200
 DEFAULT_MAX_DEPTH = 2
 DEFAULT_SLEEP_S = 0.25
 DEFAULT_WIKI_SLEEP_S = 0.2
-DEFAULT_SEED_TIMEOUT_S = 20
+DEFAULT_SEED_TIMEOUT_S = 30
 
 DEFAULT_USER_AGENT = (
     "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
@@ -486,10 +486,21 @@ def seeds_from_usagov_portals(
 
     # Follow per-state pages to discover portals
     for page in per_pages:
+        html = None
         try:
             html = http_get(page, user_agent=user_agent, timeout=timeout_s)
+        except Exception as e1:
+            # Retry once with a more forgiving timeout. Some USA.gov pages are occasionally slow.
+            try:
+                html = http_get(page, user_agent=user_agent, timeout=max(timeout_s * 3, 45))
+            except Exception as e2:
+                sys.stderr.write(f"[state_domains] WARN: failed to fetch per-state seed page {page}: {e2} (first error: {e1})\n")
+                continue
+
+        try:
             anchors = parse_anchors(page, html)
-        except Exception:
+        except Exception as e:
+            sys.stderr.write(f"[state_domains] WARN: failed to parse anchors for {page}: {e}\n")
             continue
 
         # Try to infer jurisdiction name from the page itself.
@@ -709,6 +720,16 @@ def crawl_agencies_from_portal(
         if (not looks_government_host(a_host)) and (a_host != seed_host):
             # Many portals link to non-gov partners; default to dropping those.
             return
+        # Avoid emitting generic directory links as "agencies" (including other-language variants).
+        try:
+            pth = urllib.parse.urlparse(a_url).path.lower().rstrip("/")
+        except Exception:
+            pth = ""
+        if a_host == seed_host and pth in {"/agency", "/agencies", "/departments", "/departments-and-agencies", "/government/agencies"}:
+            low = a_name.lower()
+            if any(x in low for x in ["agency", "agenc", "depart", "government", "gubernamental", "gouvernement", "minister", "ministerio", "instituciones", "institutions"]):
+                return
+
         key = (jurisdiction, a_name.lower(), a_host)
         if key in emitted_keys:
             return
@@ -781,7 +802,9 @@ def crawl_agencies_from_portal(
                     path = urllib.parse.urlparse(a_url).path.lower()
                 except Exception:
                     path = ""
-                if depth == 0 or any(h in path for h in CRAWL_PATH_HINTS):
+                # Restrict crawling to directory-like paths even from the homepage to avoid drifting
+                # into generic content (which often links to federal/county resources).
+                if any(h in path for h in CRAWL_PATH_HINTS):
                     q.append((a_url, depth + 1))
 
         time.sleep(sleep_s)
