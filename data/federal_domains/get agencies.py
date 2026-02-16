@@ -27,15 +27,15 @@ Refs:
 from __future__ import annotations
 
 import argparse
-import dataclasses
 import datetime as dt
+import glob
 import json
 import re
 import sys
 import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
-from typing import Any, Dict, Iterable, List, Optional, Tuple
+from typing import Any, Dict, Iterable, List, Optional, Set, Tuple
 
 
 # ---------------- HTTP helpers ----------------
@@ -61,6 +61,102 @@ def get_host(url: str) -> str:
         return urllib.parse.urlparse(url).netloc.lower()
     except Exception:
         return ""
+
+
+def canonical_host(host: str) -> str:
+    h = (host or "").strip().lower()
+    if h.startswith("www."):
+        h = h[4:]
+    return h
+
+
+def normalize_origin_url(url: str) -> str:
+    """Normalize to scheme://host/ (empty if url is empty/unparseable)."""
+    u = (url or "").strip()
+    if not u:
+        return ""
+    try:
+        p = urllib.parse.urlparse(u)
+        scheme = p.scheme or "https"
+        host = canonical_host(p.netloc)
+        if not host:
+            return ""
+        return urllib.parse.urlunparse((scheme, host, "/", "", "", ""))
+    except Exception:
+        return ""
+
+
+def norm_name(name: Optional[str]) -> str:
+    n = (name or "").strip().lower()
+    n = re.sub(r"\s+", " ", n)
+    return n
+
+
+_NAME_STOPWORDS = {
+    "u", "s", "us", "u.s", "united", "states",
+    "department", "dept", "of", "the",
+    "office", "agency", "administration", "commission", "committee",
+    "bureau", "service", "council", "board", "authority",
+    "and", "for", "on", "in", "to",
+}
+
+
+def name_signature(name: Optional[str]) -> Set[str]:
+    n = (name or "").strip().lower()
+    n = re.sub(r"[^a-z0-9\s]+", " ", n)
+    toks = [t for t in n.split() if t and t not in _NAME_STOPWORDS]
+    return set(toks)
+
+
+def names_similar(a: Optional[str], b: Optional[str]) -> bool:
+    sa = name_signature(a)
+    sb = name_signature(b)
+    if not sa or not sb:
+        return False
+    if sa.issubset(sb) or sb.issubset(sa):
+        return True
+    inter = len(sa & sb)
+    union = len(sa | sb)
+    if union == 0:
+        return False
+    return (inter / union) >= 0.60
+
+
+def try_read_jsonlish(path: str) -> List[Dict[str, Any]]:
+    """Reads JSONL-ish files (one JSON object per line, with blank lines allowed).
+
+    Also supports:
+      - a single JSON array
+      - a single JSON object
+    """
+    raw = open(path, "r", encoding="utf-8").read()
+    txt = raw.strip()
+    if not txt:
+        return []
+
+    # Fast path: whole-file JSON
+    if txt.startswith("[") or txt.startswith("{"):
+        try:
+            data = json.loads(txt)
+            if isinstance(data, list):
+                return [x for x in data if isinstance(x, dict)]
+            if isinstance(data, dict):
+                return [data]
+        except Exception:
+            pass
+
+    out: List[Dict[str, Any]] = []
+    for line in raw.splitlines():
+        s = line.strip()
+        if not s:
+            continue
+        try:
+            obj = json.loads(s)
+        except Exception:
+            continue
+        if isinstance(obj, dict):
+            out.append(obj)
+    return out
 
 
 # ---------------- Source 1: GOVMAN via govinfo bulkdata ----------------
@@ -228,10 +324,11 @@ def parse_govman_xml_docs(xml_docs: List[Tuple[str, bytes]]) -> List[Dict[str, A
                     "source": "govinfo.gov bulkdata GOVMAN (U.S. Government Manual XML)",
                     "source_file": filename,
                     "name": name,
-                    "website": url,
-                    "host": get_host(url),
+                    "website": normalize_origin_url(url) or url,
+                    "host": canonical_host(get_host(url)),
                     "description": desc,
                     "branch_hint": branch_hint,
+                    "kind": "entity",
                 }
                 entities.append(ent)
 
@@ -265,11 +362,13 @@ def fetch_fr_agencies() -> List[Dict[str, Any]]:
             "slug": a.get("slug"),
             "parent_fr_agency_id": a.get("parent_id"),
             "child_fr_agency_ids": a.get("child_ids") or [],
-            "website": a.get("agency_url") or "",
-            "host": get_host(a.get("agency_url") or ""),
+            "website": normalize_origin_url(a.get("agency_url") or "") or (a.get("agency_url") or ""),
+            "host": canonical_host(get_host(a.get("agency_url") or "")),
             "fr_page_url": a.get("url"),
             "fr_json_url": a.get("json_url"),
             "description": a.get("description") or "",
+            "branch": "executive",
+            "kind": "agency",
         })
     return out
 
@@ -296,11 +395,39 @@ def fetch_uscourts_court_links() -> List[Dict[str, Any]]:
         out.append({
             "source": "uscourts.gov court-website-links",
             "name": None,
-            "website": u,
-            "host": get_host(u),
+            "website": normalize_origin_url(u) or u,
+            "host": canonical_host(get_host(u)),
             "branch": "judicial",
+            "kind": "court",
             "entity_type": "court_website",
         })
+    return out
+
+
+def load_curated_records(glob_pattern: str) -> List[Dict[str, Any]]:
+    paths = sorted(glob.glob(glob_pattern))
+    out: List[Dict[str, Any]] = []
+    for p in paths:
+        for obj in try_read_jsonlish(p):
+            if not isinstance(obj, dict):
+                continue
+            website = obj.get("website") or obj.get("url") or obj.get("base_url") or ""
+            host = obj.get("host") or get_host(website)
+            rec = dict(obj)
+            rec.setdefault("source", f"curated:{p}")
+            rec.setdefault("name", obj.get("name") or obj.get("site_name"))
+            rec["website"] = normalize_origin_url(website) or (website or "")
+            rec["host"] = canonical_host(host)
+            # Prefer your curated kind/branch if present
+            if "kind" not in rec:
+                if rec.get("court_type") or (rec.get("branch") == "judicial"):
+                    rec["kind"] = "court"
+                else:
+                    rec["kind"] = "entity"
+            if "branch" not in rec:
+                # If file is e.g. legislative/judicial lists, they already include it.
+                rec["branch"] = None
+            out.append(rec)
     return out
 
 
@@ -367,94 +494,240 @@ def guess_branch(name: Optional[str], website: str, branch_hint: str = "") -> Tu
     return "other", 0.40, ["no strong signals"]
 
 
-def stable_id(branch: str, host: str, name: Optional[str]) -> str:
+def stable_id(branch: str, kind: str, host: str, name: Optional[str]) -> str:
     # Deterministic-ish, human-readable ID
     slug = re.sub(r"[^a-z0-9]+", "-", (name or host or "unknown").strip().lower()).strip("-")
     slug = slug[:60] if slug else "unknown"
     host_part = re.sub(r"[^a-z0-9]+", "-", host.lower()).strip("-")[:60]
-    return f"{branch}:{host_part or 'nohost'}:{slug}"
+    kind_part = re.sub(r"[^a-z0-9]+", "-", (kind or "entity").strip().lower()).strip("-")[:40] or "entity"
+    return f"{branch}:{kind_part}:{host_part or 'nohost'}:{slug}"
 
 
-def merge_records(primary: List[Dict[str, Any]], secondary: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+def merge_records(all_records: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    """Merge records into one canonical row per entity.
+
+    Strategy:
+      - Prefer merging by canonical host when present.
+      - Otherwise fall back to normalized name.
+      - Preserve aliases + sources; optionally retain raw provenance.
     """
-    Merge by host+name where possible; keep provenance.
-    """
-    index: Dict[Tuple[str, str], Dict[str, Any]] = {}
 
-    def key(r: Dict[str, Any]) -> Tuple[str, str]:
-        return ((r.get("host") or "").lower(), (r.get("name") or "").strip().lower())
+    index: Dict[Tuple[Any, ...], Dict[str, Any]] = {}
+    host_to_keys: Dict[str, List[Tuple[Any, ...]]] = {}
+
+    def record_key(r: Dict[str, Any]) -> Optional[Tuple[Any, ...]]:
+        fr_id = r.get("fr_agency_id")
+        if fr_id is not None:
+            try:
+                return ("fr", int(fr_id))
+            except Exception:
+                return ("fr", str(fr_id))
+        host = canonical_host(r.get("host") or get_host(r.get("website") or ""))
+        name = norm_name(r.get("name"))
+        if host and name:
+            return ("host_name", host, name)
+        if host:
+            return ("host_only", host)
+        if name:
+            return ("name_only", name)
+        return None
+
+    def score_website(u: str, source: str) -> int:
+        url = (u or "").strip().lower()
+        s = (source or "")
+        score = 0
+        if url.startswith("https://"):
+            score += 3
+        if url.startswith("http"):
+            score += 1
+        # Curated should win ties.
+        if s.startswith("curated:"):
+            score += 5
+        if "govinfo.gov bulkdata GOVMAN" in s:
+            score += 2
+        if "federalregister.gov" in s:
+            score += 1
+        if "uscourts.gov" in s:
+            score += 1
+        return score
 
     def upsert(r: Dict[str, Any]) -> None:
-        k = key(r)
+        k = record_key(r)
+        if not k:
+            return
+
+        source = r.get("source")
+        website = normalize_origin_url(r.get("website") or "") or (r.get("website") or "")
+        host = canonical_host(r.get("host") or get_host(website))
+        name = (r.get("name") or "").strip() or None
+        kind = (r.get("kind") or r.get("entity_type") or "entity")
+        branch = r.get("branch")
+        desc = (r.get("description") or "").strip()
+        branch_hint = (r.get("branch_hint") or "").strip()
+
+        # If key would create a new row but host already exists, try a conservative
+        # same-host merge when names are very similar (prevents host-only overmerge).
+        if k not in index and host and name:
+            for existing_key in host_to_keys.get(host, []):
+                existing = index.get(existing_key)
+                if not existing:
+                    continue
+                if names_similar(existing.get("name"), name):
+                    k = existing_key
+                    break
+
         if k not in index:
             index[k] = {
                 "sources": [],
-                "name": r.get("name"),
-                "website": r.get("website") or "",
-                "host": r.get("host") or get_host(r.get("website") or ""),
-                "description": r.get("description") or "",
+                "name": name,
+                "aliases": set(),
+                "website": website,
+                "host": host,
+                "description": desc,
+                "kind": kind,
+                "branch": branch,
+                "branch_hint": branch_hint,
                 "raw": [],
+                "_website_score": score_website(website, source or ""),
             }
-        index[k]["sources"].append(r.get("source"))
-        index[k]["raw"].append(r)
+            if host:
+                host_to_keys.setdefault(host, []).append(k)
 
-        # Prefer a non-empty website and description
-        if not index[k]["website"] and r.get("website"):
-            index[k]["website"] = r["website"]
-            index[k]["host"] = get_host(r["website"])
-        if (not index[k]["description"]) and r.get("description"):
-            index[k]["description"] = r["description"]
+        row = index[k]
+        row["sources"].append(source)
+        row["raw"].append(r)
 
-    for r in primary:
+        if name and name != row.get("name"):
+            row["aliases"].add(name)
+        if row.get("name") is None and name:
+            row["name"] = name
+        if not row.get("host") and host:
+            row["host"] = host
+
+        ws = score_website(website, source or "")
+        if website and (not row.get("website") or ws > (row.get("_website_score") or 0)):
+            row["website"] = website
+            row["host"] = canonical_host(get_host(website)) or row.get("host")
+            row["_website_score"] = ws
+
+        if desc and (not row.get("description")):
+            row["description"] = desc
+
+        # Prefer explicit branch/kind if any source provides it
+        if (not row.get("branch")) and branch:
+            row["branch"] = branch
+        if (row.get("kind") in (None, "entity")) and kind:
+            row["kind"] = kind
+        if (not row.get("branch_hint")) and branch_hint:
+            row["branch_hint"] = branch_hint
+
+        # Preserve FR identifiers if present
+        for f in (
+            "fr_agency_id",
+            "short_name",
+            "slug",
+            "parent_fr_agency_id",
+            "child_fr_agency_ids",
+            "fr_page_url",
+            "fr_json_url",
+        ):
+            if f in r and r.get(f) is not None and f not in row:
+                row[f] = r.get(f)
+
+    for r in all_records:
         upsert(r)
-    for r in secondary:
-        upsert(r)
 
-    return list(index.values())
+    merged: List[Dict[str, Any]] = []
+    for row in index.values():
+        aliases = sorted(set(a for a in (row.get("aliases") or set()) if a))
+        row["aliases"] = aliases
+        row["sources"] = sorted(set(s for s in (row.get("sources") or []) if s))
+        row.pop("_website_score", None)
+        merged.append(row)
+    return merged
 
 
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", default="-", help="Output JSONL path or '-' for stdout")
+    ap.add_argument(
+        "--curated-glob",
+        default="data/federal_domains/[0-9].json",
+        help="Glob for curated JSON/JSONL seed records (defaults to data/federal_domains/{1,2,3}.json)",
+    )
+    ap.add_argument("--no-curated", action="store_true", help="Do not load curated seed records")
     ap.add_argument("--govinfo-key", default="", help="Optional api.data.gov key for govinfo API (to find latest GOVMAN edition)")
     ap.add_argument("--govman-edition", default="", help="Optional explicit edition like GOVMAN-2024-12-01")
+    ap.add_argument("--skip-govman", action="store_true", help="Skip GOVMAN download/parse (faster, less comprehensive)")
     ap.add_argument("--skip-fr", action="store_true", help="Skip FederalRegister agency crosswalk")
     ap.add_argument("--skip-uscourts", action="store_true", help="Skip USCourts court website links")
+    ap.add_argument(
+        "--branch",
+        default="all",
+        choices=["all", "executive", "legislative", "judicial", "other"],
+        help="Filter output to a single branch (default: all)",
+    )
+    ap.add_argument(
+        "--kinds",
+        default="all",
+        help="Comma-separated kind filter (e.g. agency,court,entity). Default: all",
+    )
+    ap.add_argument(
+        "--include-sources",
+        action="store_true",
+        help="Include curated meta records with kind=source in output",
+    )
+    ap.add_argument("--include-provenance", action="store_true", help="Include raw source records in output")
     args = ap.parse_args()
 
-    # ---- GOVMAN edition selection ----
-    edition = args.govman_edition.strip()
+    wanted_kinds: Optional[Set[str]]
+    if args.kinds.strip().lower() == "all":
+        wanted_kinds = None
+    else:
+        wanted_kinds = set(k.strip().lower() for k in args.kinds.split(",") if k.strip())
 
-    if not edition:
-        if args.govinfo_key:
-            try:
-                edition = govinfo_api_latest_govman_package(args.govinfo_key)
-            except Exception as e:
-                print(f"[warn] govinfo API path failed: {e}", file=sys.stderr)
-
-    if not edition:
+    curated: List[Dict[str, Any]] = []
+    if not args.no_curated:
         try:
-            editions = bulk_list_govman_editions()
-            if not editions:
-                raise RuntimeError("No editions found in bulk listing.")
-            edition = choose_latest_edition(editions)
+            curated = load_curated_records(args.curated_glob)
         except Exception as e:
+            print(f"[warn] Curated load failed: {e}", file=sys.stderr)
+
+    govman_entities: List[Dict[str, Any]] = []
+    if not args.skip_govman:
+        # ---- GOVMAN edition selection ----
+        edition = args.govman_edition.strip()
+
+        if not edition:
+            if args.govinfo_key:
+                try:
+                    edition = govinfo_api_latest_govman_package(args.govinfo_key)
+                except Exception as e:
+                    print(f"[warn] govinfo API path failed: {e}", file=sys.stderr)
+
+        if not edition:
+            try:
+                editions = bulk_list_govman_editions()
+                if not editions:
+                    raise RuntimeError("No editions found in bulk listing.")
+                edition = choose_latest_edition(editions)
+            except Exception as e:
+                raise SystemExit(
+                    "Could not auto-discover GOVMAN edition from bulkdata.\n"
+                    f"Error: {e}\n"
+                    "Fix: pass --govman-edition GOVMAN-YYYY-MM-DD (and optionally update logic), or run with --skip-govman.\n"
+                )
+
+        # ---- Download GOVMAN XML ----
+        zip_url = bulk_find_govman_zip_url(edition)
+        if not zip_url:
             raise SystemExit(
-                "Could not auto-discover GOVMAN edition from bulkdata.\n"
-                f"Error: {e}\n"
-                "Fix: pass --govman-edition GOVMAN-YYYY-MM-DD (and optionally update logic).\n"
+                f"Could not find GOVMAN zip for {edition} via bulkdata listing.\n"
+                "Fix: inspect https://www.govinfo.gov/bulkdata/GOVMAN manually and adjust bulk_find_govman_zip_url()."
             )
 
-    # ---- Download GOVMAN XML ----
-    zip_url = bulk_find_govman_zip_url(edition)
-    if not zip_url:
-        raise SystemExit(
-            f"Could not find GOVMAN zip for {edition} via bulkdata listing.\n"
-            "Fix: inspect https://www.govinfo.gov/bulkdata/GOVMAN manually and adjust bulk_find_govman_zip_url()."
-        )
-
-    xml_docs = download_and_extract_govman_xml(zip_url)
-    govman_entities = parse_govman_xml_docs(xml_docs)
+        xml_docs = download_and_extract_govman_xml(zip_url)
+        govman_entities = parse_govman_xml_docs(xml_docs)
 
     # ---- Optional: FR agencies ----
     fr_entities: List[Dict[str, Any]] = []
@@ -473,25 +746,65 @@ def main() -> None:
             print(f"[warn] USCourts court link fetch failed: {e}", file=sys.stderr)
 
     # ---- Merge + normalize ----
-    merged = merge_records(govman_entities, fr_entities + court_entities)
+    merged = merge_records(curated + govman_entities + fr_entities + court_entities)
 
     out_f = sys.stdout if args.out == "-" else open(args.out, "w", encoding="utf-8")
     try:
         for r in merged:
-            branch, conf, reasons = guess_branch(r.get("name"), r.get("website", ""), branch_hint="")
-            rid = stable_id(branch, r.get("host") or "", r.get("name"))
-            rec = {
+            # If any source had an explicit branch, trust it.
+            explicit_branch = (r.get("branch") or "").strip().lower() if isinstance(r.get("branch"), str) else None
+            if explicit_branch in ("executive", "legislative", "judicial"):
+                branch, conf, reasons = explicit_branch, 1.0, ["explicit branch"]
+            else:
+                branch, conf, reasons = guess_branch(r.get("name"), r.get("website", ""), branch_hint=r.get("branch_hint") or "")
+
+            kind = (r.get("kind") or "entity").strip().lower()
+            if kind == "court_website":
+                kind = "court"
+
+            if (not args.include_sources) and kind == "source":
+                continue
+
+            # Filters
+            if args.branch != "all" and branch != args.branch:
+                continue
+            if wanted_kinds is not None and kind not in wanted_kinds:
+                continue
+
+            host = canonical_host(r.get("host") or get_host(r.get("website") or ""))
+            website = normalize_origin_url(r.get("website") or "") or (r.get("website") or "")
+
+            rid = stable_id(branch, kind, host or "", r.get("name"))
+            rec: Dict[str, Any] = {
                 "id": rid,
+                "kind": kind,
                 "branch": branch,
                 "branch_confidence": conf,
                 "branch_reasons": reasons,
                 "name": r.get("name"),
-                "website": r.get("website"),
-                "host": r.get("host"),
-                "description": r.get("description"),
-                "sources": sorted(set(r.get("sources") or [])),
-                "provenance": r.get("raw"),  # keep raw source objects for later reconciliation
+                "aliases": r.get("aliases") or [],
+                "website": website,
+                "host": host,
+                "description": r.get("description") or "",
+                "sources": r.get("sources") or [],
             }
+
+            # Attach FR metadata if present
+            for f in (
+                "fr_agency_id",
+                "short_name",
+                "slug",
+                "parent_fr_agency_id",
+                "child_fr_agency_ids",
+                "fr_page_url",
+                "fr_json_url",
+            ):
+                if f in r:
+                    rec[f] = r.get(f)
+
+            if args.include_provenance:
+                rec["provenance"] = r.get("raw")
+
             out_f.write(json.dumps(rec, ensure_ascii=False) + "\n")
     finally:
         if out_f is not sys.stdout:

@@ -45,6 +45,15 @@ DEFAULT_MAX_DEPTH = 2
 DEFAULT_SLEEP_S = 0.25
 DEFAULT_WIKI_SLEEP_S = 0.2
 
+DEFAULT_USER_AGENT = (
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
+    "(KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
+)
+
+DEFAULT_MODE = "agencies"  # agencies | hosts
+DEFAULT_AGENCY_MAX_PAGES = 120
+DEFAULT_AGENCY_MAX_DEPTH = 3
+
 
 # ---------------- Helpers ----------------
 
@@ -65,17 +74,60 @@ class LinkExtractor(HTMLParser):
             self.links.append(href)
 
 
-def http_get(url: str, timeout: int = 45, accept: str = "text/html,*/*") -> bytes:
+class AnchorExtractor(HTMLParser):
+    """Collect (href, anchor_text) pairs."""
+
+    def __init__(self):
+        super().__init__()
+        self.anchors: List[Tuple[str, str]] = []
+        self._in_a = False
+        self._href: Optional[str] = None
+        self._text_parts: List[str] = []
+
+    def handle_starttag(self, tag, attrs):
+        if tag.lower() != "a":
+            return
+        href = None
+        for k, v in attrs:
+            if k.lower() == "href":
+                href = v
+                break
+        if href:
+            self._in_a = True
+            self._href = href
+            self._text_parts = []
+
+    def handle_data(self, data):
+        if self._in_a and data:
+            self._text_parts.append(data)
+
+    def handle_endtag(self, tag):
+        if tag.lower() != "a":
+            return
+        if self._in_a and self._href:
+            text = " ".join(self._text_parts).strip()
+            self.anchors.append((self._href, text))
+        self._in_a = False
+        self._href = None
+        self._text_parts = []
+
+
+def http_get(
+    url: str,
+    timeout: int = 45,
+    accept: str = "text/html,*/*",
+    user_agent: str = DEFAULT_USER_AGENT,
+) -> bytes:
     req = urllib.request.Request(
         url,
-        headers={"User-Agent": "state-domain-seeder/2.0", "Accept": accept},
+        headers={"User-Agent": user_agent, "Accept": accept},
     )
     with urllib.request.urlopen(req, timeout=timeout) as resp:
         return resp.read()
 
 
-def http_get_json(url: str, timeout: int = 60) -> Any:
-    raw = http_get(url, timeout=timeout, accept="application/json,*/*")
+def http_get_json(url: str, timeout: int = 60, user_agent: str = DEFAULT_USER_AGENT) -> Any:
+    raw = http_get(url, timeout=timeout, accept="application/json,*/*", user_agent=user_agent)
     return json.loads(raw.decode("utf-8", errors="replace"))
 
 
@@ -87,6 +139,52 @@ def parse_links(base_url: str, html_bytes: bytes) -> List[str]:
     for href in p.links:
         out.append(urllib.parse.urljoin(base_url, href))
     return out
+
+
+def parse_anchors(base_url: str, html_bytes: bytes) -> List[Tuple[str, str]]:
+    text = html_bytes.decode("utf-8", errors="replace")
+    p = AnchorExtractor()
+    p.feed(text)
+    out: List[Tuple[str, str]] = []
+    for href, atext in p.anchors:
+        out.append((urllib.parse.urljoin(base_url, href), (atext or "").strip()))
+    return out
+
+
+def strip_fragment_and_query(url: str) -> str:
+    try:
+        p = urllib.parse.urlparse(url)
+        return urllib.parse.urlunparse((p.scheme, p.netloc, p.path, "", "", ""))
+    except Exception:
+        return url
+
+
+def looks_html_url(url: str) -> bool:
+    u = url.lower()
+    if any(u.startswith(x) for x in ["mailto:", "tel:", "javascript:"]):
+        return False
+    if re.search(r"\.(pdf|zip|jpg|jpeg|png|gif|mp4|docx?|xlsx?|pptx?|csv|json|xml)($|\?)", u):
+        return False
+    return True
+
+
+def text_normalize(s: str) -> str:
+    s = (s or "").strip()
+    s = re.sub(r"\s+", " ", s)
+    return s
+
+
+def html_title(html_bytes: bytes) -> str:
+    try:
+        text = html_bytes.decode("utf-8", errors="replace")
+    except Exception:
+        return ""
+    m = re.search(r"<title[^>]*>(.*?)</title>", text, flags=re.IGNORECASE | re.DOTALL)
+    if not m:
+        return ""
+    t = re.sub(r"\s+", " ", m.group(1)).strip()
+    t = re.sub(r"\s+-\s+.*$", "", t).strip()  # common pattern: "X - Official Site"
+    return t
 
 
 def host_of(url: str) -> str:
@@ -119,6 +217,30 @@ def looks_government_host(host: str) -> bool:
     return False
 
 
+def is_same_host(url: str, host: str) -> bool:
+    try:
+        return urllib.parse.urlparse(url).netloc.lower() == host.lower()
+    except Exception:
+        return False
+
+
+def is_social_or_noise_host(host: str) -> bool:
+    h = (host or "").lower()
+    return any(
+        h.endswith(x)
+        for x in [
+            "facebook.com",
+            "twitter.com",
+            "x.com",
+            "instagram.com",
+            "linkedin.com",
+            "youtube.com",
+            "youtu.be",
+            "tiktok.com",
+        ]
+    )
+
+
 def registrableish_domain(host: str) -> str:
     """
     Minimal registrable-ish extraction. Good enough for .gov and common *.us patterns.
@@ -135,6 +257,80 @@ def registrableish_domain(host: str) -> str:
     if parts[-1] == "us" and len(parts) >= 3:
         return ".".join(parts[-3:])
     return ".".join(parts[-2:])
+
+
+AGENCY_NAME_HINTS = [
+    "department",
+    "dept",
+    "agency",
+    "commission",
+    "board",
+    "office",
+    "bureau",
+    "authority",
+    "administration",
+    "secretary",
+    "treasurer",
+    "attorney general",
+    "governor",
+]
+
+AGENCY_PATH_HINTS = [
+    "agency",
+    "agencies",
+    "departments",
+    "department",
+    "boards",
+    "commissions",
+    "offices",
+    "cabinet",
+    "secretary",
+    "treasurer",
+    "attorney",
+    "gov",
+]
+
+CRAWL_PATH_HINTS = sorted(set(AGENCY_PATH_HINTS + [
+    "directory",
+    "government",
+    "about",
+    "state-government",
+    "state_agencies",
+    "state-agencies",
+]))
+
+
+def looks_agency_anchor(text: str, url: str) -> bool:
+    t = (text or "").lower()
+    u = (url or "").lower()
+    if not text_normalize(text):
+        return False
+    if len(text_normalize(text)) < 4:
+        return False
+    # avoid obvious nav / utility links
+    if any(x in t for x in ["privacy", "accessibility", "site map", "sitemap", "contact", "login", "search"]):
+        return False
+    # avoid directory / section headers
+    if t.strip() in [
+        "state government",
+        "government",
+        "agencies",
+        "state agencies",
+        "state agency directory",
+        "agency directory",
+    ]:
+        return False
+    if any(h in t for h in AGENCY_NAME_HINTS):
+        return True
+    # URL hints
+    try:
+        p = urllib.parse.urlparse(url)
+        path = p.path.lower()
+    except Exception:
+        path = u
+    if any(h in path for h in AGENCY_PATH_HINTS):
+        return True
+    return False
 
 
 def branch_guess(host: str, context: str = "") -> Tuple[str, float]:
@@ -165,12 +361,16 @@ def branch_guess(host: str, context: str = "") -> Tuple[str, float]:
 
 # ---------------- Seeds: USA.gov and Congress.gov ----------------
 
-def seeds_from_congress_legislatures() -> List[Dict[str, Any]]:
+def seeds_from_congress_legislatures(user_agent: str = DEFAULT_USER_AGENT) -> List[Dict[str, Any]]:
     """
     Pull legislature site links from Congress.gov directory page.
     (We don't rely on any fixed HTML structure beyond external hrefs.)
     """
-    html = http_get(CONGRESS_LEG_URL)
+    try:
+        html = http_get(CONGRESS_LEG_URL, user_agent=user_agent)
+    except Exception as e:
+        sys.stderr.write(f"[state_domains] WARN: failed to fetch {CONGRESS_LEG_URL}: {e}\n")
+        return []
     links = parse_links(CONGRESS_LEG_URL, html)
 
     seeds: List[Dict[str, Any]] = []
@@ -196,13 +396,17 @@ def seeds_from_congress_legislatures() -> List[Dict[str, Any]]:
     return seeds
 
 
-def seeds_from_usagov_portals() -> List[Dict[str, Any]]:
+def seeds_from_usagov_portals(user_agent: str = DEFAULT_USER_AGENT) -> List[Dict[str, Any]]:
     """
     USA.gov index page points to state/territory pages and/or directly to portals.
     We crawl the index page and then, for any USA.gov state page discovered, crawl one level
     to find an external government portal.
     """
-    index_html = http_get(USAGOV_STATES_URL)
+    try:
+        index_html = http_get(USAGOV_STATES_URL, user_agent=user_agent)
+    except Exception as e:
+        sys.stderr.write(f"[state_domains] WARN: failed to fetch {USAGOV_STATES_URL}: {e}\n")
+        return []
     index_links = parse_links(USAGOV_STATES_URL, index_html)
 
     # Candidate per-jurisdiction pages (structure can change; keep broad):
@@ -237,10 +441,15 @@ def seeds_from_usagov_portals() -> List[Dict[str, Any]]:
     # Follow per-state pages to discover portals
     for page in per_pages:
         try:
-            html = http_get(page)
+            html = http_get(page, user_agent=user_agent)
             links = parse_links(page, html)
         except Exception:
             continue
+
+        # Try to infer jurisdiction name from the page itself.
+        page_title = html_title(html)
+        juris_name = infer_jurisdiction_name(page, page_title)
+        juris_abbr = STATE_ABBR.get(juris_name) if juris_name else None
 
         # pick first external government-ish link as portal
         portal = None
@@ -262,11 +471,26 @@ def seeds_from_usagov_portals() -> List[Dict[str, Any]]:
                     "seed_source": USAGOV_STATES_URL,
                     "seed_source_ref": "usa.gov state governments",
                     "seed_notes": f"discovered via {page}",
+                    "jurisdiction": juris_abbr,
+                    "name": juris_name,
                 })
 
         time.sleep(DEFAULT_SLEEP_S)
 
     return seeds
+
+
+def infer_jurisdiction_name(page_url: str, page_title: str) -> Optional[str]:
+    """Best-effort mapping of USA.gov per-state page -> state/territory name."""
+    hay = " ".join([page_url or "", page_title or ""]).lower()
+    # Prefer longest names first (e.g., "Northern Mariana Islands")
+    for name in sorted(STATE_ABBR.keys(), key=len, reverse=True):
+        if name.lower() in hay:
+            return name
+        # Common phrasing
+        if ("state of " + name.lower()) in hay:
+            return name
+    return None
 
 
 # ---------------- Discovery crawl from seeds ----------------
@@ -311,6 +535,137 @@ def crawl_seed_same_host(seed_url: str, max_pages: int, max_depth: int, sleep_s:
 
     outbound_hosts.add(seed_host)
     return outbound_hosts
+
+
+def crawl_agencies_from_portal(
+    seed: Dict[str, Any],
+    max_pages: int,
+    max_depth: int,
+    sleep_s: float,
+) -> List[Dict[str, Any]]:
+    """Crawl a state portal to find links that look like state agencies and return agency records."""
+    seed_url = seed.get("seed_url") or ""
+    seed_host = host_of(seed_url)
+    if not seed_host:
+        return []
+
+    jurisdiction = seed.get("jurisdiction")
+    name = seed.get("name")
+
+    # Seed queue with portal root plus a few common directory paths.
+    base_origin = normalize_origin(seed_url) or ("https://" + seed_host + "/")
+    common_paths = [
+        "agencies",
+        "agency",
+        "government/agencies",
+        "government",
+        "about",
+        "about/government",
+        "directory",
+        "departments",
+        "departments-and-agencies",
+        "state-agencies",
+        "state-government",
+        "state-government/agencies",
+    ]
+    start_urls = [base_origin]
+    for p in common_paths:
+        start_urls.append(urllib.parse.urljoin(base_origin, p))
+
+    q = deque([(u, 0) for u in sorted(set(start_urls))])
+    visited: Set[str] = set()
+
+    emitted_keys: Set[Tuple[Optional[str], str, str]] = set()  # (jurisdiction, agency_name_norm, host)
+    agencies: List[Dict[str, Any]] = []
+
+    def maybe_emit(agency_name: str, agency_url: str, found_on: str, anchor_text: str) -> None:
+        a_name = text_normalize(agency_name)
+        if not a_name:
+            return
+        # Avoid emitting the portal itself as an "agency".
+        if a_name.lower() in ["home", "homepage"]:
+            return
+
+        a_url = strip_fragment_and_query(agency_url)
+        a_host = host_of(a_url)
+        if not a_host:
+            return
+        if is_social_or_noise_host(a_host):
+            return
+        if (not looks_government_host(a_host)) and (a_host != seed_host):
+            # Many portals link to non-gov partners; default to dropping those.
+            return
+        key = (jurisdiction, a_name.lower(), a_host)
+        if key in emitted_keys:
+            return
+        emitted_keys.add(key)
+        agencies.append(
+            {
+                "jurisdiction": jurisdiction,
+                "name": name,
+                "branch": "executive",
+                "agency_name": a_name,
+                "agency_url": a_url,
+                "host": a_host,
+                "domain": registrableish_domain(a_host),
+                "seed_url": base_origin,
+                "seed_source": seed.get("seed_source"),
+                "discovered_from": "portal_agency_crawl",
+                "provenance": {
+                    "found_on": found_on,
+                    "anchor_text": text_normalize(anchor_text)[:500],
+                },
+            }
+        )
+
+    pages_fetched = 0
+    while q and pages_fetched < max_pages:
+        url, depth = q.popleft()
+        url = strip_fragment_and_query(url)
+        if url in visited:
+            continue
+        visited.add(url)
+
+        # Keep crawl constrained to the portal host for page fetching.
+        if not is_same_host(url, seed_host):
+            continue
+        if not looks_html_url(url):
+            continue
+
+        try:
+            html = http_get(url)
+        except Exception:
+            continue
+        pages_fetched += 1
+
+        # Extract anchors for agency candidates and next pages.
+        try:
+            anchors = parse_anchors(url, html)
+        except Exception:
+            anchors = []
+
+        for a_url, a_text in anchors:
+            if not a_url or not looks_html_url(a_url):
+                continue
+            a_text_n = text_normalize(a_text)
+
+            # Emit agency records.
+            if looks_agency_anchor(a_text_n, a_url):
+                maybe_emit(a_text_n, a_url, found_on=url, anchor_text=a_text)
+
+            # Queue more pages, but keep it conservative.
+            if depth < max_depth and is_same_host(a_url, seed_host):
+                # Only chase likely directory / government pages beyond depth 0.
+                try:
+                    path = urllib.parse.urlparse(a_url).path.lower()
+                except Exception:
+                    path = ""
+                if depth == 0 or any(h in path for h in CRAWL_PATH_HINTS):
+                    q.append((a_url, depth + 1))
+
+        time.sleep(sleep_s)
+
+    return agencies
 
 
 # ---------------- Wikipedia enrichment ----------------
@@ -477,9 +832,18 @@ STATE_ABBR: Dict[str, str] = {
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", default="-", help="Output JSONL path or '-' for stdout")
+    ap.add_argument("--user-agent", default=DEFAULT_USER_AGENT, help="User-Agent header for HTTP requests")
+    ap.add_argument(
+        "--mode",
+        default=DEFAULT_MODE,
+        choices=["agencies", "hosts"],
+        help="Output mode: 'agencies' emits agency records; 'hosts' emits discovered hosts (legacy)",
+    )
     ap.add_argument("--max-pages", type=int, default=DEFAULT_MAX_PAGES_PER_SEED)
     ap.add_argument("--max-depth", type=int, default=DEFAULT_MAX_DEPTH)
     ap.add_argument("--sleep", type=float, default=DEFAULT_SLEEP_S)
+    ap.add_argument("--agency-max-pages", type=int, default=DEFAULT_AGENCY_MAX_PAGES)
+    ap.add_argument("--agency-max-depth", type=int, default=DEFAULT_AGENCY_MAX_DEPTH)
     ap.add_argument("--keep-non-gov", action="store_true", help="Also keep non-gov hosts (default: drop)")
     ap.add_argument("--wikipedia", action="store_true", help="Enable Wikipedia enrichment (extlinks + .gov page)")
     ap.add_argument("--wikipedia-per-state", action="store_true", help="Also query per-state Wikipedia pages (slower)")
@@ -488,8 +852,9 @@ def main() -> None:
 
     # Build spine seeds
     seeds = []
-    seeds += seeds_from_usagov_portals()
-    seeds += seeds_from_congress_legislatures()
+    seeds += seeds_from_usagov_portals(user_agent=args.user_agent)
+    if args.mode == "hosts":
+        seeds += seeds_from_congress_legislatures(user_agent=args.user_agent)
 
     # Optional: Wikipedia portal domains from '.gov' page (not state-mapped here; still useful seeds)
     wiki_dotgov_hosts: List[Tuple[str, str]] = []
@@ -502,6 +867,12 @@ def main() -> None:
     # Output
     out_f = sys.stdout if args.out == "-" else open(args.out, "w", encoding="utf-8")
     try:
+        def emit_record(rec: Dict[str, Any]) -> None:
+            try:
+                out_f.write(json.dumps(rec, ensure_ascii=False) + "\n")
+            except BrokenPipeError:
+                raise SystemExit(0)
+
         emitted: Set[Tuple[Optional[str], str, str]] = set()  # (jurisdiction, branch, host)
 
         # Emit Wikipedia '.gov' portal seeds first (unscoped)
@@ -524,16 +895,52 @@ def main() -> None:
                 k = (rec["jurisdiction"], rec["branch"], rec["host"])
                 if k not in emitted:
                     emitted.add(k)
-                    out_f.write(json.dumps(rec, ensure_ascii=False) + "\n")
+                    emit_record(rec)
+
+        # Optional filtering by jurisdiction name (not abbreviation)
+        if args.jurisdiction:
+            # Normalize input to canonical key casing if possible
+            j = None
+            for k in STATE_ABBR.keys():
+                if k.lower() == args.jurisdiction.lower():
+                    j = k
+                    break
+            if j:
+                args.jurisdiction = j
 
         # Crawl each spine seed
         for seed in seeds:
             seed_url = seed["seed_url"]
             seed_branch = seed["seed_branch"]
 
-            # If user limited to a jurisdiction, we can only apply that filter after mapping.
-            # This script currently doesn’t guarantee mapping of every seed to a state.
-            # We'll still run, but you can post-filter downstream.
+            # Filter to a single jurisdiction if the seed is mapped.
+            if args.jurisdiction:
+                if seed.get("name") and seed.get("name") != args.jurisdiction:
+                    continue
+                # If unmapped, skip when jurisdiction is requested.
+                if not seed.get("name"):
+                    continue
+
+            # Agency mode: only makes sense for executive portal seeds.
+            if args.mode == "agencies":
+                if seed_branch != "executive":
+                    continue
+                agencies = crawl_agencies_from_portal(
+                    seed,
+                    max_pages=args.agency_max_pages,
+                    max_depth=args.agency_max_depth,
+                    sleep_s=args.sleep,
+                )
+                for rec in agencies:
+                    # De-dupe by (jurisdiction, agency_name, host)
+                    k = (rec.get("jurisdiction"), rec.get("agency_name", "").lower(), rec.get("host", ""))
+                    if k in emitted:
+                        continue
+                    emitted.add(k)
+                    emit_record(rec)
+                continue
+
+            # Host mode (legacy): crawl and emit discovered hosts.
             hosts = crawl_seed_same_host(seed_url, args.max_pages, args.max_depth, args.sleep)
 
             for h in sorted(hosts):
@@ -563,7 +970,7 @@ def main() -> None:
                 k = (rec["jurisdiction"], rec["branch"], rec["host"])
                 if k not in emitted:
                     emitted.add(k)
-                    out_f.write(json.dumps(rec, ensure_ascii=False) + "\n")
+                    emit_record(rec)
 
         # Optional: per-state Wikipedia enrichment (slow but can fill judiciary/court domains)
         if args.wikipedia and args.wikipedia_per_state:
@@ -606,7 +1013,7 @@ def main() -> None:
                     k = (rec["jurisdiction"], rec["branch"], rec["host"])
                     if k not in emitted:
                         emitted.add(k)
-                        out_f.write(json.dumps(rec, ensure_ascii=False) + "\n")
+                        emit_record(rec)
 
                 time.sleep(DEFAULT_WIKI_SLEEP_S)
 
