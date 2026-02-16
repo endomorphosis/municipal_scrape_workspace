@@ -484,28 +484,11 @@ def seeds_from_usagov_portals(
     seeds: List[Dict[str, Any]] = []
     seen_hosts: Set[str] = set()
 
-    # Also, sometimes the index includes direct external portal links; keep them too.
-    for u in index_links:
-        h = host_of(u)
-        if not h or h.endswith("usa.gov"):
-            continue
-        if looks_government_host(h):
-            origin = normalize_origin(u)
-            if origin and h not in seen_hosts:
-                seen_hosts.add(h)
-                seeds.append({
-                    "seed_branch": "executive",
-                    "seed_url": origin,
-                    "seed_source": USAGOV_STATES_URL,
-                    "seed_source_ref": "usa.gov state governments",
-                    "seed_notes": "direct portal link on index page",
-                })
-
     # Follow per-state pages to discover portals
     for page in per_pages:
         try:
             html = http_get(page, user_agent=user_agent, timeout=timeout_s)
-            links = parse_links(page, html)
+            anchors = parse_anchors(page, html)
         except Exception:
             continue
 
@@ -514,15 +497,20 @@ def seeds_from_usagov_portals(
         juris_name = infer_jurisdiction_name(page, page_title)
         juris_abbr = STATE_ABBR.get(juris_name) if juris_name else None
 
-        # pick first external government-ish link as portal
+        # pick best-scoring external government-ish link as portal
         portal = None
-        for u in links:
-            h = host_of(u)
-            if not h or h.endswith("usa.gov"):
-                continue
-            if looks_government_host(h):
-                portal = normalize_origin(u)
-                break
+        best_score = -1e9
+        if juris_name:
+            for u, atext in anchors:
+                h = host_of(u)
+                if not h or h.endswith("usa.gov"):
+                    continue
+                if not looks_government_host(h):
+                    continue
+                s = portal_candidate_score(juris_name, juris_abbr, u, atext)
+                if s > best_score:
+                    best_score = s
+                    portal = normalize_origin(u)
 
         if portal:
             ph = host_of(portal)
@@ -554,6 +542,69 @@ def infer_jurisdiction_name(page_url: str, page_title: str) -> Optional[str]:
         if ("state of " + name.lower()) in hay:
             return name
     return None
+
+
+def state_slug(name: str) -> str:
+    return re.sub(r"[^a-z]", "", (name or "").lower())
+
+
+def portal_candidate_score(juris_name: str, abbr: Optional[str], url: str, anchor_text: str) -> float:
+    """Heuristic score for selecting an official state portal from a USA.gov per-state page."""
+    host = host_of(url)
+    if not host or host.endswith("usa.gov"):
+        return -1e9
+    if not looks_government_host(host):
+        return -1e9
+    if is_social_or_noise_host(host):
+        return -1e9
+
+    t = (anchor_text or "").strip().lower()
+    slug = state_slug(juris_name)
+    ab = (abbr or "").lower()
+
+    score = 0.0
+    if host.endswith(".gov"):
+        score += 1.0
+
+    # Prefer the obvious state portal domains.
+    if slug and host in {f"{slug}.gov", f"www.{slug}.gov"}:
+        score += 8.0
+    if slug and slug in host:
+        score += 3.0
+    if ab and ab in host.split("."):
+        score += 2.0
+
+    # Anchor text hints.
+    if "official" in t:
+        score += 2.5
+    if "website" in t:
+        score += 1.5
+    if "government" in t or "gov" in t:
+        score += 1.0
+    if "state" in t:
+        score += 0.5
+
+    # Penalize likely branch sites when we're trying to find the executive portal.
+    bad_tokens = [
+        "attorney general",
+        "courts",
+        "judiciary",
+        "supreme court",
+        "legislature",
+        "senate",
+        "house",
+    ]
+    if any(bt in t for bt in bad_tokens):
+        score -= 4.0
+    if any(x in host for x in ["court", "courts", "judiciary", "leg", "legislature", "senate", "house", "doj"]):
+        score -= 2.5
+    if "ag" in host.split("."):
+        score -= 2.0
+
+    # Prefer shorter, higher-level hosts.
+    score -= 0.15 * len(host)
+    score -= 0.5 * max(0, len(host.split(".")) - 3)
+    return score
 
 
 # ---------------- Discovery crawl from seeds ----------------
