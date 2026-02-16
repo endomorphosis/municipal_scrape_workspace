@@ -86,6 +86,30 @@ def normalize_origin_url(url: str) -> str:
         return ""
 
 
+def normalize_seed_url(url: str) -> str:
+    """Normalize to scheme://host/path (no query/fragment), preserving path.
+
+    This is useful for crawl/index seed lists where a non-root path is meaningful.
+    Trailing slashes are removed except for the root path.
+    """
+    u = (url or "").strip()
+    if not u:
+        return ""
+    try:
+        p = urllib.parse.urlparse(u)
+        scheme = p.scheme or "https"
+        host = canonical_host(p.netloc)
+        if not host:
+            return ""
+        path = p.path or "/"
+        path = re.sub(r"/{2,}", "/", path)
+        if path != "/" and path.endswith("/"):
+            path = path[:-1]
+        return urllib.parse.urlunparse((scheme, host, path, "", "", ""))
+    except Exception:
+        return ""
+
+
 def norm_name(name: Optional[str]) -> str:
     n = (name or "").strip().lower()
     n = re.sub(r"\s+", " ", n)
@@ -342,11 +366,14 @@ def parse_govman_xml_docs(xml_docs: List[Tuple[str, bytes]]) -> List[Dict[str, A
                 desc = find_first_text(node, DESC_PATHS) or ""
                 branch_hint = find_first_text(node, BRANCH_HINT_PATHS) or ""
 
+                seed_url = normalize_seed_url(url)
+
                 ent = {
                     "source": "govinfo.gov bulkdata GOVMAN (U.S. Government Manual XML)",
                     "source_file": filename,
                     "name": name,
                     "website": normalize_origin_url(url) or url,
+                    "seed_url": seed_url,
                     "host": canonical_host(get_host(url)),
                     "description": desc,
                     "branch_hint": branch_hint,
@@ -376,6 +403,7 @@ def fetch_fr_agencies() -> List[Dict[str, Any]]:
         raise RuntimeError("Unexpected FR agencies response shape.")
     out = []
     for a in data:
+        agency_url = a.get("agency_url") or ""
         out.append({
             "source": "federalregister.gov/api/v1/agencies",
             "fr_agency_id": a.get("id"),
@@ -384,8 +412,9 @@ def fetch_fr_agencies() -> List[Dict[str, Any]]:
             "slug": a.get("slug"),
             "parent_fr_agency_id": a.get("parent_id"),
             "child_fr_agency_ids": a.get("child_ids") or [],
-            "website": normalize_origin_url(a.get("agency_url") or "") or (a.get("agency_url") or ""),
-            "host": canonical_host(get_host(a.get("agency_url") or "")),
+            "website": normalize_origin_url(agency_url) or agency_url,
+            "seed_url": normalize_seed_url(agency_url),
+            "host": canonical_host(get_host(agency_url)),
             "fr_page_url": a.get("url"),
             "fr_json_url": a.get("json_url"),
             "description": a.get("description") or "",
@@ -418,6 +447,7 @@ def fetch_uscourts_court_links() -> List[Dict[str, Any]]:
             "source": "uscourts.gov court-website-links",
             "name": None,
             "website": normalize_origin_url(u) or u,
+            "seed_url": normalize_seed_url(u),
             "host": canonical_host(get_host(u)),
             "branch": "judicial",
             "kind": "court",
@@ -433,12 +463,13 @@ def load_curated_records(glob_pattern: str) -> List[Dict[str, Any]]:
         for obj in try_read_jsonlish(p):
             if not isinstance(obj, dict):
                 continue
-            website = obj.get("website") or obj.get("url") or obj.get("base_url") or ""
-            host = obj.get("host") or get_host(website)
+            seed_in = obj.get("website") or obj.get("url") or obj.get("base_url") or ""
+            host = obj.get("host") or get_host(seed_in)
             rec = dict(obj)
             rec.setdefault("source", f"curated:{p}")
             rec.setdefault("name", obj.get("name") or obj.get("site_name"))
-            rec["website"] = normalize_origin_url(website) or (website or "")
+            rec["website"] = normalize_origin_url(seed_in) or (seed_in or "")
+            rec["seed_url"] = normalize_seed_url(seed_in)
             rec["host"] = canonical_host(host)
             # Prefer your curated kind/branch if present
             if "kind" not in rec:
@@ -580,6 +611,7 @@ def merge_records(all_records: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
 
         source = r.get("source")
         website = normalize_origin_url(r.get("website") or "") or (r.get("website") or "")
+        seed_url = normalize_seed_url(r.get("seed_url") or r.get("website") or "")
         host = canonical_host(r.get("host") or get_host(website))
         name = (r.get("name") or "").strip() or None
         kind = (r.get("kind") or r.get("entity_type") or "entity")
@@ -604,6 +636,7 @@ def merge_records(all_records: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
                 "name": name,
                 "aliases": set(),
                 "website": website,
+                "seed_urls": set(),
                 "host": host,
                 "description": desc,
                 "kind": kind,
@@ -618,6 +651,9 @@ def merge_records(all_records: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
         row = index[k]
         row["sources"].append(source)
         row["raw"].append(r)
+
+        if seed_url:
+            row["seed_urls"].add(seed_url)
 
         if name and name != row.get("name"):
             row["aliases"].add(name)
@@ -664,6 +700,7 @@ def merge_records(all_records: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
         aliases = sorted(set(a for a in (row.get("aliases") or set()) if a))
         row["aliases"] = aliases
         row["sources"] = sorted(set(s for s in (row.get("sources") or []) if s))
+        row["seed_urls"] = sorted(set(u for u in (row.get("seed_urls") or set()) if u))
         row.pop("_website_score", None)
         merged.append(row)
     return merged
@@ -810,6 +847,10 @@ def main() -> None:
                 "description": r.get("description") or "",
                 "sources": r.get("sources") or [],
             }
+
+            seed_urls = r.get("seed_urls") or []
+            if seed_urls:
+                rec["seed_urls"] = seed_urls
 
             # Attach FR metadata if present
             for f in (

@@ -44,6 +44,7 @@ DEFAULT_MAX_PAGES_PER_SEED = 200
 DEFAULT_MAX_DEPTH = 2
 DEFAULT_SLEEP_S = 0.25
 DEFAULT_WIKI_SLEEP_S = 0.2
+DEFAULT_SEED_TIMEOUT_S = 20
 
 DEFAULT_USER_AGENT = (
     "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
@@ -287,7 +288,6 @@ AGENCY_PATH_HINTS = [
     "secretary",
     "treasurer",
     "attorney",
-    "gov",
 ]
 
 CRAWL_PATH_HINTS = sorted(set(AGENCY_PATH_HINTS + [
@@ -308,7 +308,22 @@ def looks_agency_anchor(text: str, url: str) -> bool:
     if len(text_normalize(text)) < 4:
         return False
     # avoid obvious nav / utility links
-    if any(x in t for x in ["privacy", "accessibility", "site map", "sitemap", "contact", "login", "search"]):
+    if t.strip().startswith("skip to"):
+        return False
+    if any(x in t for x in [
+        "privacy",
+        "accessibility",
+        "site map",
+        "sitemap",
+        "contact",
+        "login",
+        "search",
+        "live chat",
+        "chat",
+        "subscribe",
+        "sign up",
+        "newsletter",
+    ]):
         return False
     # avoid directory / section headers
     if t.strip() in [
@@ -331,6 +346,51 @@ def looks_agency_anchor(text: str, url: str) -> bool:
     if any(h in path for h in AGENCY_PATH_HINTS):
         return True
     return False
+
+
+def target_path_looks_agency_like(url: str) -> bool:
+    try:
+        path = urllib.parse.urlparse(url).path.lower()
+    except Exception:
+        return False
+    # Intentionally narrower than crawl hints.
+    tokens = ["agency", "agencies", "department", "departments", "board", "boards", "commission", "commissions", "office", "offices", "bureau", "authority", "administration"]
+    return any(t in path for t in tokens)
+
+
+def is_directory_like_page(url: str) -> bool:
+    try:
+        path = urllib.parse.urlparse(url).path.lower()
+    except Exception:
+        return False
+    return any(x in path for x in ["agency", "agencies", "departments", "department", "directory", "cabinet", "boards", "commissions"])
+
+
+def looks_reasonable_agency_name(text: str) -> bool:
+    t = text_normalize(text)
+    if not t:
+        return False
+    if len(t) < 5 or len(t) > 120:
+        return False
+    low = t.lower()
+    if low.strip().startswith("skip to"):
+        return False
+    if any(x in low for x in ["privacy", "accessibility", "site map", "sitemap", "contact", "login", "search"]):
+        return False
+    if any(x in low for x in ["live chat", "chat", "send us a message", "file a complaint", "complaint"]):
+        return False
+    if low.strip() in [
+        "home",
+        "homepage",
+        "government",
+        "state government",
+        "agencies",
+        "state agencies",
+        "state agency directory",
+        "agency directory",
+    ]:
+        return False
+    return True
 
 
 def branch_guess(host: str, context: str = "") -> Tuple[str, float]:
@@ -367,7 +427,7 @@ def seeds_from_congress_legislatures(user_agent: str = DEFAULT_USER_AGENT) -> Li
     (We don't rely on any fixed HTML structure beyond external hrefs.)
     """
     try:
-        html = http_get(CONGRESS_LEG_URL, user_agent=user_agent)
+        html = http_get(CONGRESS_LEG_URL, user_agent=user_agent, timeout=DEFAULT_SEED_TIMEOUT_S)
     except Exception as e:
         sys.stderr.write(f"[state_domains] WARN: failed to fetch {CONGRESS_LEG_URL}: {e}\n")
         return []
@@ -396,14 +456,17 @@ def seeds_from_congress_legislatures(user_agent: str = DEFAULT_USER_AGENT) -> Li
     return seeds
 
 
-def seeds_from_usagov_portals(user_agent: str = DEFAULT_USER_AGENT) -> List[Dict[str, Any]]:
+def seeds_from_usagov_portals(
+    user_agent: str = DEFAULT_USER_AGENT,
+    timeout_s: int = DEFAULT_SEED_TIMEOUT_S,
+) -> List[Dict[str, Any]]:
     """
     USA.gov index page points to state/territory pages and/or directly to portals.
     We crawl the index page and then, for any USA.gov state page discovered, crawl one level
     to find an external government portal.
     """
     try:
-        index_html = http_get(USAGOV_STATES_URL, user_agent=user_agent)
+        index_html = http_get(USAGOV_STATES_URL, user_agent=user_agent, timeout=timeout_s)
     except Exception as e:
         sys.stderr.write(f"[state_domains] WARN: failed to fetch {USAGOV_STATES_URL}: {e}\n")
         return []
@@ -441,7 +504,7 @@ def seeds_from_usagov_portals(user_agent: str = DEFAULT_USER_AGENT) -> List[Dict
     # Follow per-state pages to discover portals
     for page in per_pages:
         try:
-            html = http_get(page, user_agent=user_agent)
+            html = http_get(page, user_agent=user_agent, timeout=timeout_s)
             links = parse_links(page, html)
         except Exception:
             continue
@@ -644,6 +707,8 @@ def crawl_agencies_from_portal(
         except Exception:
             anchors = []
 
+        directory_context = is_directory_like_page(url)
+
         for a_url, a_text in anchors:
             if not a_url or not looks_html_url(a_url):
                 continue
@@ -652,6 +717,11 @@ def crawl_agencies_from_portal(
             # Emit agency records.
             if looks_agency_anchor(a_text_n, a_url):
                 maybe_emit(a_text_n, a_url, found_on=url, anchor_text=a_text)
+            elif directory_context and looks_reasonable_agency_name(a_text_n):
+                # On directory-like pages, many agencies are listed without keywords like "Department".
+                a_host = host_of(a_url)
+                if a_host and (a_host != seed_host or target_path_looks_agency_like(a_url)):
+                    maybe_emit(a_text_n, a_url, found_on=url, anchor_text=a_text)
 
             # Queue more pages, but keep it conservative.
             if depth < max_depth and is_same_host(a_url, seed_host):
@@ -833,6 +903,7 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", default="-", help="Output JSONL path or '-' for stdout")
     ap.add_argument("--user-agent", default=DEFAULT_USER_AGENT, help="User-Agent header for HTTP requests")
+    ap.add_argument("--seed-timeout", type=int, default=DEFAULT_SEED_TIMEOUT_S, help="Timeout (seconds) for seed page fetches")
     ap.add_argument(
         "--mode",
         default=DEFAULT_MODE,
@@ -852,7 +923,7 @@ def main() -> None:
 
     # Build spine seeds
     seeds = []
-    seeds += seeds_from_usagov_portals(user_agent=args.user_agent)
+    seeds += seeds_from_usagov_portals(user_agent=args.user_agent, timeout_s=args.seed_timeout)
     if args.mode == "hosts":
         seeds += seeds_from_congress_legislatures(user_agent=args.user_agent)
 
@@ -865,11 +936,15 @@ def main() -> None:
             wiki_dotgov_hosts = []
 
     # Output
-    out_f = sys.stdout if args.out == "-" else open(args.out, "w", encoding="utf-8")
+    out_f = sys.stdout if args.out == "-" else open(args.out, "w", encoding="utf-8", buffering=1)
     try:
         def emit_record(rec: Dict[str, Any]) -> None:
             try:
                 out_f.write(json.dumps(rec, ensure_ascii=False) + "\n")
+                try:
+                    out_f.flush()
+                except Exception:
+                    pass
             except BrokenPipeError:
                 raise SystemExit(0)
 

@@ -38,5 +38,8 @@ out_*/
 # Line-oriented logs/artifacts
 *.jsonl
 
+# Track canonical federal domain seed outputs
+!data/federal_domains/*.jsonl
+
 # Process ID files
 *.pid
