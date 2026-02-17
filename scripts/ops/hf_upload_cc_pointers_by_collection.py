@@ -31,9 +31,10 @@ import time
 import hashlib
 import urllib.request
 from pathlib import Path
-from typing import Iterable, List
+from typing import Iterable, List, Sequence
 
 from huggingface_hub import HfApi
+from huggingface_hub.utils import HfHubHTTPError
 
 
 logger = logging.getLogger("hf_upload_cc_pointers_by_collection")
@@ -235,6 +236,19 @@ def _patch_hf_upload_large_folder(
                 elif (
                     status.queue_preupload_lfs.qsize() >= status.upload_batch_size
                     and status.nb_workers_preupload_lfs < max_preupload_workers
+                ):
+                    status.nb_workers_preupload_lfs += 1
+                    return (ulf.WorkerJob.PREUPLOAD_LFS, ulf._get_n(status.queue_preupload_lfs, status.upload_batch_size))
+
+                # 4b. Preupload final LFS/Xet batch (capped)
+                # Without this, small uploads (< upload_batch_size) can stall forever in WAIT.
+                elif (
+                    status.queue_preupload_lfs.qsize() > 0
+                    and status.nb_workers_preupload_lfs < max_preupload_workers
+                    and status.queue_sha256.qsize() == 0
+                    and status.queue_get_upload_mode.qsize() == 0
+                    and status.nb_workers_sha256 == 0
+                    and status.nb_workers_get_upload_mode == 0
                 ):
                     status.nb_workers_preupload_lfs += 1
                     return (ulf.WorkerJob.PREUPLOAD_LFS, ulf._get_n(status.queue_preupload_lfs, status.upload_batch_size))
@@ -665,6 +679,103 @@ def _iter_years(src: Path, years_arg: List[str] | None) -> List[str]:
     return _find_year_dirs(src)
 
 
+def _local_file_set(
+    src: Path,
+    *,
+    year: str,
+    collection: str | None = None,
+    include_suffixes: Sequence[str] = (".parquet",),
+) -> set[str]:
+    """Return relative file paths (from `src`) for a year or year/collection subtree.
+
+    By default, includes only Parquet shards. Use `include_suffixes` to support uploading
+    other artifact types (e.g., DuckDB indexes) while still excluding editor backups.
+    """
+    base = src / year
+    if collection is not None:
+        base = base / collection
+    if not base.is_dir():
+        return set()
+    inc = [str(s) for s in include_suffixes if str(s)]
+    # By default, only upload parquet shards. Some collections may contain artifacts like
+    # `*.parquet.bak` which should never be pushed to the Hub.
+    return {
+        str(p.relative_to(src)).replace("\\", "/")
+        for p in base.rglob("*")
+        if p.is_file() and any(p.name.endswith(suf) for suf in inc)
+    }
+
+
+def _remote_existing_paths(
+    api: HfApi,
+    repo_id: str,
+    paths: list[str],
+    *,
+    batch_size: int = 100,
+    max_retries: int = 5,
+    retry_sleep_seconds: int = 5,
+) -> set[str]:
+    """Return the subset of `paths` that already exist on the remote.
+
+    Uses `get_paths_info` (batched) instead of tree listing. Tree listing can return 404
+    for folders that don't exist yet; that situation should be treated as "remote empty".
+    """
+
+    if not paths:
+        return set()
+
+    existing: set[str] = set()
+    bs = max(1, int(batch_size))
+    for i in range(0, len(paths), bs):
+        chunk = paths[i : i + bs]
+        attempt = 1
+        while True:
+            try:
+                infos = api.get_paths_info(repo_id=repo_id, paths=chunk, repo_type="dataset")
+                for info in infos:
+                    p = getattr(info, "path", None)
+                    if p:
+                        existing.add(p)
+                break
+            except HfHubHTTPError as e:
+                status = getattr(getattr(e, "response", None), "status_code", None)
+                # If the repo/path doesn't exist yet, treat as remote empty for this chunk.
+                if status == 404:
+                    break
+                if status == 429 or (isinstance(status, int) and status >= 500):
+                    if attempt >= max_retries:
+                        raise
+                    sleep_for = retry_sleep_seconds * (2 ** (attempt - 1))
+                    sleep_for = min(sleep_for, 300)
+                    logger.warning(
+                        "get_paths_info rate-limited/transient failure (status=%s); retrying in %ss (attempt %s/%s)",
+                        status,
+                        sleep_for,
+                        attempt,
+                        max_retries,
+                    )
+                    time.sleep(sleep_for)
+                    attempt += 1
+                    continue
+                raise
+    return existing
+
+
+def _remote_file_set(api: HfApi, repo_id: str, *, year: str, collection: str | None = None) -> set[str]:
+    """Return remote repo file paths for a year or year/collection subtree."""
+    prefix = f"{year}" if collection is None else f"{year}/{collection}"
+    out: set[str] = set()
+    for item in api.list_repo_tree(
+        repo_id=repo_id,
+        repo_type="dataset",
+        path_in_repo=prefix,
+        recursive=True,
+    ):
+        if getattr(item, "type", None) == "file" or item.__class__.__name__ == "RepoFile":
+            out.add(getattr(item, "path"))
+    return out
+
+
 def _upload_one_year(
     api: HfApi,
     repo_id: str,
@@ -680,6 +791,7 @@ def _upload_one_year(
     purge_upload_cache: str,
     max_get_upload_mode_workers: int,
     max_preupload_workers: int,
+    include_suffixes: tuple[str, ...],
 ) -> None:
     year_dir = src / year
     if not year_dir.is_dir():
@@ -811,6 +923,36 @@ def _upload_one_year(
             _do_upload([f"{year}/**"], label=f"year={year}")
         else:
             for i, coll in enumerate(collection_dirs):
+                # Operator visibility: compare local vs remote state before uploading.
+                local_files = _local_file_set(src, year=year, collection=coll, include_suffixes=include_suffixes)
+                if not local_files:
+                    logger.warning("No local parquet files for year=%s coll=%s; skipping", year, coll)
+                    continue
+
+                # Compute remote existence by probing only the paths we might upload.
+                # This avoids tree-listing quirks (e.g., 404 for a folder that doesn't exist yet).
+                local_list = sorted(local_files)
+                remote_present = _remote_existing_paths(api, repo_id, local_list)
+                missing = sorted(local_files - remote_present)
+
+                logger.info(
+                    "Remote status year=%s coll=%s: remote_present=%s local=%s missing=%s",
+                    year,
+                    coll,
+                    len(remote_present),
+                    len(local_files),
+                    len(missing),
+                )
+                if missing:
+                    logger.info("Missing examples year=%s coll=%s: %s", year, coll, missing[:10])
+
+                if not missing:
+                    logger.info("Skipping upload: year=%s coll=%s already complete on remote", year, coll)
+                    continue
+
+                # Upload only what the Hub is missing.
+                allow_patterns = missing
+
                 _purge_upload_cache(src, year=year, collection=coll, mode=purge_upload_cache)
                 warmup = []
                 # During rate limiting, use the wait time to hash upcoming collections.
@@ -819,10 +961,27 @@ def _upload_one_year(
                     warmup.append(src / year / collection_dirs[i + 1])
                 _set_rate_limit_warmup_dirs(warmup)
                 _do_upload(
-                    [f"{year}/{coll}/**"],
+                    allow_patterns,
                     label=f"year={year} coll={coll}",
                     warmup_dirs=warmup,
                 )
+
+                # Post-upload check (best-effort): helps confirm we can proceed.
+                try:
+                    remote_present_after = _remote_existing_paths(api, repo_id, local_list)
+                    missing_after = sorted(local_files - remote_present_after)
+                    logger.info(
+                        "Post-upload remote status year=%s coll=%s: remote_present=%s local=%s missing=%s",
+                        year,
+                        coll,
+                        len(remote_present_after),
+                        len(local_files),
+                        len(missing_after),
+                    )
+                    if missing_after:
+                        logger.warning("Still missing after upload year=%s coll=%s: %s", year, coll, missing_after[:10])
+                except Exception:
+                    logger.debug("Failed post-upload remote listing for year=%s coll=%s", year, coll, exc_info=True)
     else:
         raise SystemExit(f"Unsupported chunk_by: {chunk_by} (expected 'year' or 'collection')")
 
@@ -952,6 +1111,15 @@ def main(argv: Iterable[str] | None = None) -> int:
         help=(
             "Optional collection names to upload (e.g. CC-MAIN-2023-06). "
             "If provided, only these collections are uploaded for each selected year."
+        ),
+    )
+    ap.add_argument(
+        "--include-suffix",
+        action="append",
+        default=None,
+        help=(
+            "Only include files whose *name* ends with this suffix when enumerating local files. "
+            "Can be passed multiple times. Default: --include-suffix=.parquet"
         ),
     )
     ap.add_argument(
@@ -1143,6 +1311,7 @@ def main(argv: Iterable[str] | None = None) -> int:
                 purge_upload_cache=str(args.purge_upload_cache),
                 max_get_upload_mode_workers=max(1, int(args.max_get_upload_mode_workers)),
                 max_preupload_workers=max(1, int(args.max_preupload_workers)),
+                include_suffixes=tuple(args.include_suffix) if args.include_suffix else (".parquet",),
             )
     except KeyboardInterrupt:
         logger.warning("Interrupted by user (KeyboardInterrupt)")

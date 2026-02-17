@@ -1,0 +1,11 @@
+{
+  "ccindex_root": "/home/barberb/ccindex_storage/ccindex",
+  "parquet_root": "/home/barberb/ccindex_storage/parquet",
+  "duckdb_collection_root": "/home/barberb/ccindex_storage/duckdb/cc_pointers_by_collection",
+  "duckdb_year_root": "/home/barberb/ccindex_storage/duckdb/cc_pointers_by_year",
+  "duckdb_master_root": "/home/barberb/ccindex_storage/duckdb/cc_pointers_master",
+  "max_workers": 8,
+  "memory_limit_gb": 10.0,
+  "min_free_space_gb": 50.0,
+  "collections_filter": null
+}

@@ -1,0 +1,11 @@
+{
+  "ccindex_root": "/tmp/cc_orch_root/ccindex_root",
+  "parquet_root": "/tmp/cc_orch_root/parquet_root",
+  "duckdb_collection_root": "/tmp/cc_orch_root/duckdb_root/cc_pointers_by_collection",
+  "duckdb_year_root": "/tmp/cc_orch_root/duckdb_root/cc_pointers_by_year",
+  "duckdb_master_root": "/tmp/cc_orch_root/duckdb_root/cc_pointers_master",
+  "max_workers": 8,
+  "memory_limit_gb": 10.0,
+  "min_free_space_gb": 1.0,
+  "collections_filter": null
+}

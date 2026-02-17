@@ -58,7 +58,14 @@ CHUNK_BY=${CHUNK_BY:-collection}
 
 # Keep HF cache/locks out of the dataset directory tree.
 # IMPORTANT: /storage may not be writable; default under /storage/ccindex_parquet which exists.
-HF_CACHE_DIR=${HF_CACHE_DIR:-/storage/ccindex_parquet/hf_cache}
+DEFAULT_HF_CACHE_DIR=/storage/ccindex_parquet/hf_cache
+if [ -z "${HF_CACHE_DIR:-}" ]; then
+  HF_CACHE_DIR="$DEFAULT_HF_CACHE_DIR"
+  # If /storage isn't writable on this machine, fall back to a per-user cache dir.
+  if ! mkdir -p "$HF_CACHE_DIR" >/dev/null 2>&1; then
+    HF_CACHE_DIR="${HOME}/.cache/ccindex_hf_cache"
+  fi
+fi
 
 # Optional: upload only these collections (space-separated), e.g.
 #   COLLECTIONS="CC-MAIN-2023-06 CC-MAIN-2023-14"
@@ -83,7 +90,7 @@ TS=$(date +%Y%m%d_%H%M%S)
 LOG_FILE=${LOG_FILE:-logs/hf_upload_cc_pointers_by_collection_${TS}.log}
 
 mkdir -p logs
-mkdir -p "$HF_CACHE_DIR" || true
+mkdir -p "$HF_CACHE_DIR"
 
 echo "Starting HF upload"
 echo "  SRC_DIR=$SRC_DIR"
