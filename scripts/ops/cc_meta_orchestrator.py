@@ -291,6 +291,27 @@ def main(argv: Iterable[str] | None = None) -> int:
         print(f"\n=== Collection {collection} ===", flush=True)
         filter_str = _collection_to_filter(collection)
 
+        # Fast-path: skip collections that are already complete.
+        # This matters when resuming a long year run after fixing a single broken collection.
+        validate_cmd = [
+            sys.executable,
+            "-u",
+            str(VALIDATE),
+            "--collection",
+            collection,
+            "--ccindex-dir",
+            str(ccindex_root),
+            "--parquet-dir",
+            str(parquet_root),
+            "--pointer-dir",
+            str(duckdb_parent),
+            "--json",
+        ]
+        pre_status = _run_capture_json(validate_cmd, env=env)
+        if bool(pre_status.get("complete")):
+            print(f"[skip] already complete: {collection}", flush=True)
+            continue
+
         complete = False
         last_status: dict | None = None
 
@@ -302,9 +323,27 @@ def main(argv: Iterable[str] | None = None) -> int:
 
         # Scan patterns for detecting OOM/sort instability.
         scan_patterns: list[tuple[str, re.Pattern[str]]] = [
-            ("oom", re.compile(r"out of memory|MemoryError|std::bad_alloc|cannot allocate memory|oom[- ]kill|killed|SIGKILL", re.I)),
-            ("pool_crash", re.compile(r"BrokenProcessPool|process-pool crash|process pool.*terminated|terminated abruptly", re.I)),
-            ("sort_failed", re.compile(r"sorting failed|sort failed", re.I)),
+            (
+                "oom",
+                re.compile(
+                    r"out of memory|MemoryError|std::bad_alloc|cannot allocate memory|oom[- ]kill|killed|SIGKILL",
+                    re.I,
+                ),
+            ),
+            (
+                "pool_crash",
+                re.compile(
+                    r"BrokenProcessPool|process-pool crash|process pool.*terminated|terminated abruptly|segmentation fault|segfault",
+                    re.I,
+                ),
+            ),
+            (
+                "sort_failed",
+                re.compile(
+                    r"sorting failed|sort failed|duckdb sort crashed|segmentation fault|segfault",
+                    re.I,
+                ),
+            ),
         ]
 
         while attempt_idx < int(args.max_attempts_per_collection):
