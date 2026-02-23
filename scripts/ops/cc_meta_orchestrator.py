@@ -19,6 +19,7 @@ import json
 import os
 import re
 import shutil
+import selectors
 import subprocess
 import sys
 import tempfile
@@ -51,6 +52,8 @@ def _run_stream_and_scan(
     *,
     env: dict[str, str] | None = None,
     scan_patterns: list[tuple[str, re.Pattern[str]]] | None = None,
+    heartbeat_seconds: int | None = None,
+    heartbeat_label: str | None = None,
 ) -> tuple[int, dict[str, bool]]:
     """Run a subprocess while streaming output, and scan for failure signals.
 
@@ -73,13 +76,71 @@ def _run_stream_and_scan(
     )
     assert proc.stdout is not None
 
-    for line in proc.stdout:
-        # Keep parent logs identical to a normal run.
-        sys.stdout.write(line)
-        sys.stdout.flush()
-        for k, p in pats:
-            if not flags.get(k) and p.search(line):
-                flags[k] = True
+    hb_s: int | None = None
+    if heartbeat_seconds is not None:
+        try:
+            hb_s = int(heartbeat_seconds)
+        except Exception:
+            hb_s = None
+        if hb_s is not None and hb_s <= 0:
+            hb_s = None
+
+    label = (heartbeat_label or "").strip() or "child"
+    sel = selectors.DefaultSelector()
+    sel.register(proc.stdout, selectors.EVENT_READ)
+    start = time.monotonic()
+    last_output = start
+    last_hb = start
+
+    def _emit_heartbeat(now: float) -> None:
+        elapsed = now - start
+        print(f"[meta] heartbeat: {label} running for {elapsed:.0f}s", flush=True)
+
+    while True:
+        now = time.monotonic()
+        if proc.poll() is not None:
+            # Child exited; drain any remaining output.
+            while True:
+                line = proc.stdout.readline()
+                if not line:
+                    break
+                sys.stdout.write(line)
+                sys.stdout.flush()
+                last_output = time.monotonic()
+                for k, p in pats:
+                    if not flags.get(k) and p.search(line):
+                        flags[k] = True
+            break
+
+        timeout = 1.0
+        events = sel.select(timeout=timeout)
+        if events:
+            for key, _mask in events:
+                line = key.fileobj.readline()
+                if not line:
+                    continue
+                # Keep parent logs identical to a normal run.
+                sys.stdout.write(line)
+                sys.stdout.flush()
+                last_output = time.monotonic()
+                for k, p in pats:
+                    if not flags.get(k) and p.search(line):
+                        flags[k] = True
+        else:
+            if hb_s is not None:
+                now = time.monotonic()
+                if (now - last_output) >= hb_s and (now - last_hb) >= hb_s:
+                    _emit_heartbeat(now)
+                    last_hb = now
+
+    try:
+        sel.unregister(proc.stdout)
+    except Exception:
+        pass
+    try:
+        sel.close()
+    except Exception:
+        pass
 
     rc = int(proc.wait())
     return rc, flags
@@ -156,10 +217,10 @@ def _iter_collections_from_filter(filter_str: str) -> list[str]:
 
 def _default_attempt_plans() -> list[AttemptPlan]:
     return [
-        AttemptPlan(workers=8, sort_workers=1, sort_mem_gb=20.0),
-        AttemptPlan(workers=12, sort_workers=1, sort_mem_gb=28.0),
-        AttemptPlan(workers=16, sort_workers=2, sort_mem_gb=32.0),
-        AttemptPlan(workers=24, sort_workers=2, sort_mem_gb=48.0),
+        AttemptPlan(workers=8, sort_workers=8, sort_mem_gb=20.0),
+        AttemptPlan(workers=12, sort_workers=8, sort_mem_gb=28.0),
+        AttemptPlan(workers=16, sort_workers=8, sort_mem_gb=32.0),
+        AttemptPlan(workers=24, sort_workers=8, sort_mem_gb=48.0),
     ]
 
 
@@ -232,6 +293,16 @@ def main(argv: Iterable[str] | None = None) -> int:
     )
 
     ap.add_argument(
+        "--default-sort-workers",
+        type=int,
+        default=None,
+        help=(
+            "Override sort_workers for every attempt plan (including --attempt-plans-json). "
+            "This controls validate_and_mark_sorted.py parallelism and the 'Processing ... with X worker(s)' log."
+        ),
+    )
+
+    ap.add_argument(
         "--domain-rowgroup-index-root",
         default="/home/barberb/ccindex_storage/duckdb/cc_domain_rowgroups_by_collection",
         help="Where to write per-collection domain_rowgroups DuckDBs (avoid /storage default)",
@@ -283,6 +354,10 @@ def main(argv: Iterable[str] | None = None) -> int:
         plans = [AttemptPlan(**p) for p in raw]
     else:
         plans = _default_attempt_plans()
+
+    if args.default_sort_workers is not None:
+        forced = max(1, int(args.default_sort_workers))
+        plans = [AttemptPlan(workers=p.workers, sort_workers=forced, sort_mem_gb=p.sort_mem_gb) for p in plans]
 
     env = os.environ.copy()
     env["PYTHONPATH"] = str(REPO_ROOT / "src")
@@ -389,7 +464,13 @@ def main(argv: Iterable[str] | None = None) -> int:
             if args.no_build_domain_rowgroup_index:
                 orch_cmd.append("--no-build-domain-rowgroup-index")
 
-            rc, flags = _run_stream_and_scan(orch_cmd, env=env, scan_patterns=scan_patterns)
+            rc, flags = _run_stream_and_scan(
+                orch_cmd,
+                env=env,
+                scan_patterns=scan_patterns,
+                heartbeat_seconds=int(args.heartbeat_seconds),
+                heartbeat_label=f"orchestrator {collection} attempt {attempt_idx}",
+            )
             print(f"[attempt {attempt_idx}] orchestrator rc={rc} flags={flags}", flush=True)
 
             validate_cmd = [
