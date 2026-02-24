@@ -85,6 +85,7 @@ class OregonORSArchivalDownloader:
         chapter_start: int = 1,
         chapter_end: Optional[int] = None,
         force: bool = False,
+        workers: int = 1,
     ) -> Dict[str, Any]:
         """Download and organize Oregon ORS chapters into local folders."""
 
@@ -115,23 +116,22 @@ class OregonORSArchivalDownloader:
 
         logger.info("Preparing to download %s Oregon chapter pages", len(filtered_urls))
 
-        chapter_manifest: List[Dict[str, Any]] = []
-        parsed_summary_rows: List[Dict[str, Any]] = []
+        worker_count = max(1, int(workers))
+        logger.info("Using %s parallel worker(s)", worker_count)
+        semaphore = asyncio.Semaphore(worker_count)
 
-        for index, chapter_url in enumerate(filtered_urls, start=1):
+        async def _process_chapter(index: int, chapter_url: str) -> Dict[str, Any]:
             chapter_num = self.chapter_number_from_url(chapter_url)
             if chapter_num is None:
-                continue
+                return {"manifest": None, "summary": None}
 
             file_path = self.raw_dir / f"ors{chapter_num:03d}.html"
-            if file_path.exists() and not force:
-                logger.info("[%s/%s] Skipping existing %s", index, len(filtered_urls), file_path.name)
-                existing_bytes = file_path.read_bytes()
-                parsed_summary_rows.append(
-                    self.extract_chapter_summary(existing_bytes, chapter_url, chapter_num, "cached", str(file_path))
-                )
-                chapter_manifest.append(
-                    {
+            async with semaphore:
+                if file_path.exists() and not force:
+                    logger.info("[%s/%s] Skipping existing %s", index, len(filtered_urls), file_path.name)
+                    existing_bytes = file_path.read_bytes()
+                    summary = self.extract_chapter_summary(existing_bytes, chapter_url, chapter_num, "cached", str(file_path))
+                    manifest = {
                         "chapter_number": chapter_num,
                         "url": chapter_url,
                         "file": str(file_path),
@@ -140,19 +140,15 @@ class OregonORSArchivalDownloader:
                         "status": "skipped_existing",
                         "sha256": hashlib.sha256(existing_bytes).hexdigest(),
                     }
-                )
-                continue
+                    return {"manifest": manifest, "summary": summary}
 
-            try:
-                fetch = await self.fetch_with_fallback(chapter_url)
-                file_path.write_bytes(fetch.content)
-                file_sha = hashlib.sha256(fetch.content).hexdigest()
+                try:
+                    fetch = await self.fetch_with_fallback(chapter_url)
+                    file_path.write_bytes(fetch.content)
+                    file_sha = hashlib.sha256(fetch.content).hexdigest()
 
-                summary = self.extract_chapter_summary(fetch.content, chapter_url, chapter_num, fetch.source, str(file_path))
-                parsed_summary_rows.append(summary)
-
-                chapter_manifest.append(
-                    {
+                    summary = self.extract_chapter_summary(fetch.content, chapter_url, chapter_num, fetch.source, str(file_path))
+                    manifest = {
                         "chapter_number": chapter_num,
                         "url": chapter_url,
                         "file": str(file_path),
@@ -164,22 +160,42 @@ class OregonORSArchivalDownloader:
                         "status": "downloaded",
                         "sha256": file_sha,
                     }
-                )
-                logger.info("[%s/%s] Saved %s via %s", index, len(filtered_urls), file_path.name, fetch.source)
-
-            except Exception as exc:
-                logger.warning("[%s/%s] Failed %s: %s", index, len(filtered_urls), chapter_url, exc)
-                chapter_manifest.append(
-                    {
-                        "chapter_number": chapter_num,
-                        "url": chapter_url,
-                        "status": "error",
-                        "error": str(exc),
+                    logger.info("[%s/%s] Saved %s via %s", index, len(filtered_urls), file_path.name, fetch.source)
+                    result = {"manifest": manifest, "summary": summary}
+                except Exception as exc:
+                    logger.warning("[%s/%s] Failed %s: %s", index, len(filtered_urls), chapter_url, exc)
+                    result = {
+                        "manifest": {
+                            "chapter_number": chapter_num,
+                            "url": chapter_url,
+                            "status": "error",
+                            "error": str(exc),
+                        },
+                        "summary": None,
                     }
-                )
 
-            if self.delay_seconds > 0:
-                time.sleep(self.delay_seconds)
+                if self.delay_seconds > 0:
+                    await asyncio.sleep(self.delay_seconds)
+                return result
+
+        chapter_jobs = [
+            _process_chapter(index=index, chapter_url=chapter_url)
+            for index, chapter_url in enumerate(filtered_urls, start=1)
+        ]
+        chapter_results = await asyncio.gather(*chapter_jobs)
+
+        chapter_manifest: List[Dict[str, Any]] = []
+        parsed_summary_rows: List[Dict[str, Any]] = []
+        for item in chapter_results:
+            manifest = item.get("manifest")
+            summary = item.get("summary")
+            if isinstance(manifest, dict):
+                chapter_manifest.append(manifest)
+            if isinstance(summary, dict):
+                parsed_summary_rows.append(summary)
+
+        chapter_manifest.sort(key=lambda row: int(row.get("chapter_number") or 0))
+        parsed_summary_rows.sort(key=lambda row: int(row.get("chapter_number") or 0))
 
         parsed_jsonl = self.parsed_dir / "chapter_summaries.jsonl"
         with parsed_jsonl.open("w", encoding="utf-8") as handle:
@@ -226,11 +242,11 @@ class OregonORSArchivalDownloader:
     async def fetch_with_fallback(self, url: str) -> FetchResult:
         """Fetch URL directly; fallback to web-archiving sources when blocked."""
 
-        direct = self._fetch_direct(url)
+        direct = await asyncio.to_thread(self._fetch_direct, url)
         if direct is not None:
             return direct
 
-        common_crawl = await self._fetch_from_common_crawl(url)
+        common_crawl = await asyncio.to_thread(self._fetch_from_common_crawl, url)
         if common_crawl is not None:
             return common_crawl
 
@@ -262,7 +278,7 @@ class OregonORSArchivalDownloader:
             logger.info("Direct fetch failed for %s: %s", url, exc)
             return None
 
-    async def _fetch_from_common_crawl(self, url: str) -> Optional[FetchResult]:
+    def _fetch_from_common_crawl(self, url: str) -> Optional[FetchResult]:
         """Attempt to recover page content from Common Crawl search/index metadata."""
         parsed = urlparse(url)
         if not parsed.netloc:
@@ -492,7 +508,7 @@ class OregonORSArchivalDownloader:
         except Exception as exc:
             logger.debug("Wayback latest capture lookup failed for %s: %s", url, exc)
 
-        cdx_fallback = self._fetch_from_wayback_cdx_direct(url)
+        cdx_fallback = await asyncio.to_thread(self._fetch_from_wayback_cdx_direct, url)
         if cdx_fallback is not None:
             return cdx_fallback
 
@@ -697,6 +713,7 @@ def _build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--chapter-start", type=int, default=1)
     parser.add_argument("--chapter-end", type=int, default=None)
     parser.add_argument("--delay-seconds", type=float, default=0.4)
+    parser.add_argument("--workers", type=int, default=1, help="Number of parallel chapter workers")
     parser.add_argument("--timeout-seconds", type=int, default=30)
     parser.add_argument("--force", action="store_true", help="Redownload even if local HTML exists")
     parser.add_argument("--log-level", default="INFO")
@@ -714,6 +731,7 @@ async def _run_async(args: argparse.Namespace) -> Dict[str, Any]:
         chapter_start=args.chapter_start,
         chapter_end=args.chapter_end,
         force=args.force,
+        workers=args.workers,
     )
 
 

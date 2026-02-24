@@ -1,0 +1,13 @@
+{
+  "status": "success",
+  "started_at": "2026-02-24T07:23:11.959876+00:00",
+  "requested_count": 580,
+  "successful_count": 538,
+  "source_counts": {
+    "cached": 538,
+    "unknown": 42
+  },
+  "workers": 8,
+  "url_list_file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/ors_urls_from_pointers_cleaned.txt",
+  "manifest_file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/manifests/pointer_full_manifest_20260224_072311.json"
+}

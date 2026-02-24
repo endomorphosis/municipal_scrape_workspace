@@ -1,0 +1,4600 @@
+[
+  {
+    "index": 1,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors001.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors001.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "001"
+  },
+  {
+    "index": 2,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors002.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors002.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "002"
+  },
+  {
+    "index": 3,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors003.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors003.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "003"
+  },
+  {
+    "index": 4,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors004.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors004.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "004"
+  },
+  {
+    "index": 5,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors005.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors005.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "005"
+  },
+  {
+    "index": 6,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors007.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors007.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "007"
+  },
+  {
+    "index": 7,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors008.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors008.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "008"
+  },
+  {
+    "index": 8,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors009.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors009.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "009"
+  },
+  {
+    "index": 9,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors010.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors010.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "010"
+  },
+  {
+    "index": 10,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors011.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors011.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "011"
+  },
+  {
+    "index": 11,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors012.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "012"
+  },
+  {
+    "index": 12,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors014.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors014.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "014"
+  },
+  {
+    "index": 13,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors015.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "015"
+  },
+  {
+    "index": 14,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors017.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors017.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "017"
+  },
+  {
+    "index": 15,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors018.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors018.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "018"
+  },
+  {
+    "index": 16,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors019.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors019.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "019"
+  },
+  {
+    "index": 17,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors020.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors020.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "020"
+  },
+  {
+    "index": 18,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors021.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors021.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "021"
+  },
+  {
+    "index": 19,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors024.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors024.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "024"
+  },
+  {
+    "index": 20,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors025.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors025.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "025"
+  },
+  {
+    "index": 21,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors028.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors028.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "028"
+  },
+  {
+    "index": 22,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors030.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors030.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "030"
+  },
+  {
+    "index": 23,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors031.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors031.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "031"
+  },
+  {
+    "index": 24,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors033.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors033.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "033"
+  },
+  {
+    "index": 25,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors034.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors034.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "034"
+  },
+  {
+    "index": 26,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors035.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "035"
+  },
+  {
+    "index": 27,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors036.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors036.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "036"
+  },
+  {
+    "index": 28,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors037.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors037.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "037"
+  },
+  {
+    "index": 29,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors040.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors040.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "040"
+  },
+  {
+    "index": 30,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors041.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors041.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "041"
+  },
+  {
+    "index": 31,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors043.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors043.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "043"
+  },
+  {
+    "index": 32,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors044.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors044.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "044"
+  },
+  {
+    "index": 33,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors045.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors045.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "045"
+  },
+  {
+    "index": 34,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors046.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors046.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "046"
+  },
+  {
+    "index": 35,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors051.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors051.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "051"
+  },
+  {
+    "index": 36,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors052.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors052.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "052"
+  },
+  {
+    "index": 37,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors053.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors053.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "053"
+  },
+  {
+    "index": 38,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors054.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors054.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "054"
+  },
+  {
+    "index": 39,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors055.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors055.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "055"
+  },
+  {
+    "index": 40,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors056.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors056.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "056"
+  },
+  {
+    "index": 41,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors058.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors058.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "058"
+  },
+  {
+    "index": 42,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors059.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors059.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "059"
+  },
+  {
+    "index": 43,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors060.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors060.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "060"
+  },
+  {
+    "index": 44,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors062.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors062.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "062"
+  },
+  {
+    "index": 45,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors063.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors063.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "063"
+  },
+  {
+    "index": 46,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors065.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors065.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "065"
+  },
+  {
+    "index": 47,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors067.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors067.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "067"
+  },
+  {
+    "index": 48,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors068.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "068"
+  },
+  {
+    "index": 49,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors070.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors070.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "070"
+  },
+  {
+    "index": 50,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors071.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors071.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "071"
+  },
+  {
+    "index": 51,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors072.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors072.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "072"
+  },
+  {
+    "index": 52,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors072a.html",
+    "status": "error",
+    "error": "Unable to fetch URL via direct or archival fallback: https://www.oregonlegislature.gov/bills_laws/ors/ors072a.html",
+    "chapter_id": "072a"
+  },
+  {
+    "index": 53,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors073.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors073.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "073"
+  },
+  {
+    "index": 54,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors074.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors074.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "074"
+  },
+  {
+    "index": 55,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors074a.html",
+    "status": "error",
+    "error": "Unable to fetch URL via direct or archival fallback: https://www.oregonlegislature.gov/bills_laws/ors/ors074a.html",
+    "chapter_id": "074a"
+  },
+  {
+    "index": 56,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors075.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors075.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "075"
+  },
+  {
+    "index": 57,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors077.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors077.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "077"
+  },
+  {
+    "index": 58,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors078.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors078.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "078"
+  },
+  {
+    "index": 59,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors079.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors079.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "079"
+  },
+  {
+    "index": 60,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors080.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors080.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "080"
+  },
+  {
+    "index": 61,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors081.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors081.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "081"
+  },
+  {
+    "index": 62,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors082.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors082.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "082"
+  },
+  {
+    "index": 63,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors083.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors083.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "083"
+  },
+  {
+    "index": 64,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors084.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors084.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "084"
+  },
+  {
+    "index": 65,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors086.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors086.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "086"
+  },
+  {
+    "index": 66,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors086a.html",
+    "status": "error",
+    "error": "Unable to fetch URL via direct or archival fallback: https://www.oregonlegislature.gov/bills_laws/ors/ors086a.html",
+    "chapter_id": "086a"
+  },
+  {
+    "index": 67,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors087.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors087.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "087"
+  },
+  {
+    "index": 68,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors088.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors088.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "088"
+  },
+  {
+    "index": 69,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors090.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors090.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "090"
+  },
+  {
+    "index": 70,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors091.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors091.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "091"
+  },
+  {
+    "index": 71,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors092.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors092.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "092"
+  },
+  {
+    "index": 72,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors093.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors093.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "093"
+  },
+  {
+    "index": 73,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors094.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors094.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "094"
+  },
+  {
+    "index": 74,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors095.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors095.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "095"
+  },
+  {
+    "index": 75,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors096.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors096.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "096"
+  },
+  {
+    "index": 76,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors097.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors097.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "097"
+  },
+  {
+    "index": 77,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors098.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors098.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "098"
+  },
+  {
+    "index": 78,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors099.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors099.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "099"
+  },
+  {
+    "index": 79,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors100.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors100.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "100"
+  },
+  {
+    "index": 80,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors101.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors101.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "101"
+  },
+  {
+    "index": 81,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors105.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors105.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "105"
+  },
+  {
+    "index": 82,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors106.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors106.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "106"
+  },
+  {
+    "index": 83,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors107.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors107.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "107"
+  },
+  {
+    "index": 84,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors108.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors108.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "108"
+  },
+  {
+    "index": 85,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors109.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors109.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "109"
+  },
+  {
+    "index": 86,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors110.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors110.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "110"
+  },
+  {
+    "index": 87,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors111.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "111"
+  },
+  {
+    "index": 88,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors112.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors112.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "112"
+  },
+  {
+    "index": 89,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors113.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors113.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "113"
+  },
+  {
+    "index": 90,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors114.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors114.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "114"
+  },
+  {
+    "index": 91,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors115.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "115"
+  },
+  {
+    "index": 92,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors116.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "116"
+  },
+  {
+    "index": 93,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors117.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors117.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "117"
+  },
+  {
+    "index": 94,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors118.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors118.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "118"
+  },
+  {
+    "index": 95,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors119.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors119.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "119"
+  },
+  {
+    "index": 96,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors124.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors124.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "124"
+  },
+  {
+    "index": 97,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors125.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors125.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "125"
+  },
+  {
+    "index": 98,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors126.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors126.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "126"
+  },
+  {
+    "index": 99,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors127.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors127.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "127"
+  },
+  {
+    "index": 100,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors128.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors128.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "128"
+  },
+  {
+    "index": 101,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors129.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors129.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "129"
+  },
+  {
+    "index": 102,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors130.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors130.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "130"
+  },
+  {
+    "index": 103,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors131.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors131.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "131"
+  },
+  {
+    "index": 104,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors131a.html",
+    "status": "error",
+    "error": "Unable to fetch URL via direct or archival fallback: https://www.oregonlegislature.gov/bills_laws/ors/ors131a.html",
+    "chapter_id": "131a"
+  },
+  {
+    "index": 105,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors132.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors132.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "132"
+  },
+  {
+    "index": 106,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors133.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors133.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "133"
+  },
+  {
+    "index": 107,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors135.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors135.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "135"
+  },
+  {
+    "index": 108,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors136.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors136.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "136"
+  },
+  {
+    "index": 109,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors137.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors137.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "137"
+  },
+  {
+    "index": 110,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors138.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors138.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "138"
+  },
+  {
+    "index": 111,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors144.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors144.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "144"
+  },
+  {
+    "index": 112,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors146.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors146.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "146"
+  },
+  {
+    "index": 113,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors147.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors147.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "147"
+  },
+  {
+    "index": 114,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors151.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors151.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "151"
+  },
+  {
+    "index": 115,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors153.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors153.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "153"
+  },
+  {
+    "index": 116,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors156.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors156.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "156"
+  },
+  {
+    "index": 117,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors157.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors157.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "157"
+  },
+  {
+    "index": 118,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors161.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors161.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "161"
+  },
+  {
+    "index": 119,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors162.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors162.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "162"
+  },
+  {
+    "index": 120,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors163.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors163.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "163"
+  },
+  {
+    "index": 121,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors163a.html",
+    "status": "error",
+    "error": "Unable to fetch URL via direct or archival fallback: https://www.oregonlegislature.gov/bills_laws/ors/ors163a.html",
+    "chapter_id": "163a"
+  },
+  {
+    "index": 122,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors164.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors164.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "164"
+  },
+  {
+    "index": 123,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors165.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors165.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "165"
+  },
+  {
+    "index": 124,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors166.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors166.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "166"
+  },
+  {
+    "index": 125,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors167.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors167.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "167"
+  },
+  {
+    "index": 126,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors169.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors169.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "169"
+  },
+  {
+    "index": 127,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors171.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors171.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "171"
+  },
+  {
+    "index": 128,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors172.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors172.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "172"
+  },
+  {
+    "index": 129,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors173.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors173.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "173"
+  },
+  {
+    "index": 130,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors174.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "174"
+  },
+  {
+    "index": 131,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors176.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors176.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "176"
+  },
+  {
+    "index": 132,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors177.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors177.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "177"
+  },
+  {
+    "index": 133,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors178.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors178.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "178"
+  },
+  {
+    "index": 134,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors179.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors179.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "179"
+  },
+  {
+    "index": 135,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors180.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors180.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "180"
+  },
+  {
+    "index": 136,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors181.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors181.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "181"
+  },
+  {
+    "index": 137,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors181a.html",
+    "status": "error",
+    "error": "Unable to fetch URL via direct or archival fallback: https://www.oregonlegislature.gov/bills_laws/ors/ors181a.html",
+    "chapter_id": "181a"
+  },
+  {
+    "index": 138,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors182.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors182.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "182"
+  },
+  {
+    "index": 139,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors183.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors183.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "183"
+  },
+  {
+    "index": 140,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors184.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors184.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "184"
+  },
+  {
+    "index": 141,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors185.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors185.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "185"
+  },
+  {
+    "index": 142,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors186.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors186.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "186"
+  },
+  {
+    "index": 143,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors187.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "187"
+  },
+  {
+    "index": 144,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors188.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors188.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "188"
+  },
+  {
+    "index": 145,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors190.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors190.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "190"
+  },
+  {
+    "index": 146,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors191.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors191.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "191"
+  },
+  {
+    "index": 147,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors192.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors192.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "192"
+  },
+  {
+    "index": 148,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors193.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors193.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "193"
+  },
+  {
+    "index": 149,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors194.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors194.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "194"
+  },
+  {
+    "index": 150,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors195.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors195.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "195"
+  },
+  {
+    "index": 151,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors196.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors196.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "196"
+  },
+  {
+    "index": 152,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors197.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors197.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "197"
+  },
+  {
+    "index": 153,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors197a.html",
+    "status": "error",
+    "error": "Unable to fetch URL via direct or archival fallback: https://www.oregonlegislature.gov/bills_laws/ors/ors197a.html",
+    "chapter_id": "197a"
+  },
+  {
+    "index": 154,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors198.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors198.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "198"
+  },
+  {
+    "index": 155,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors199.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors199.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "199"
+  },
+  {
+    "index": 156,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors200.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors200.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "200"
+  },
+  {
+    "index": 157,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors201.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors201.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "201"
+  },
+  {
+    "index": 158,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors202.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors202.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "202"
+  },
+  {
+    "index": 159,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors203.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors203.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "203"
+  },
+  {
+    "index": 160,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors204.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors204.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "204"
+  },
+  {
+    "index": 161,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors205.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors205.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "205"
+  },
+  {
+    "index": 162,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors206.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors206.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "206"
+  },
+  {
+    "index": 163,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors208.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors208.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "208"
+  },
+  {
+    "index": 164,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors209.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors209.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "209"
+  },
+  {
+    "index": 165,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors210.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors210.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "210"
+  },
+  {
+    "index": 166,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors215.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors215.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "215"
+  },
+  {
+    "index": 167,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors221.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors221.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "221"
+  },
+  {
+    "index": 168,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors222.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors222.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "222"
+  },
+  {
+    "index": 169,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors223.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors223.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "223"
+  },
+  {
+    "index": 170,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors224.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors224.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "224"
+  },
+  {
+    "index": 171,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors225.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors225.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "225"
+  },
+  {
+    "index": 172,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors226.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors226.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "226"
+  },
+  {
+    "index": 173,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors227.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors227.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "227"
+  },
+  {
+    "index": 174,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors236.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors236.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "236"
+  },
+  {
+    "index": 175,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors237.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors237.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "237"
+  },
+  {
+    "index": 176,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors238.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors238.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "238"
+  },
+  {
+    "index": 177,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors238a.html",
+    "status": "error",
+    "error": "Unable to fetch URL via direct or archival fallback: https://www.oregonlegislature.gov/bills_laws/ors/ors238a.html",
+    "chapter_id": "238a"
+  },
+  {
+    "index": 178,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors240.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors240.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "240"
+  },
+  {
+    "index": 179,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors241.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors241.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "241"
+  },
+  {
+    "index": 180,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors242.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors242.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "242"
+  },
+  {
+    "index": 181,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors243.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors243.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "243"
+  },
+  {
+    "index": 182,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors244.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors244.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "244"
+  },
+  {
+    "index": 183,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors246.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors246.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "246"
+  },
+  {
+    "index": 184,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors247.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors247.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "247"
+  },
+  {
+    "index": 185,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors248.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors248.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "248"
+  },
+  {
+    "index": 186,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors249.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors249.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "249"
+  },
+  {
+    "index": 187,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors250.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors250.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "250"
+  },
+  {
+    "index": 188,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors251.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors251.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "251"
+  },
+  {
+    "index": 189,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors253.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "253"
+  },
+  {
+    "index": 190,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors254.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors254.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "254"
+  },
+  {
+    "index": 191,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors255.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors255.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "255"
+  },
+  {
+    "index": 192,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors258.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "258"
+  },
+  {
+    "index": 193,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors260.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors260.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "260"
+  },
+  {
+    "index": 194,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors261.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors261.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "261"
+  },
+  {
+    "index": 195,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors262.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors262.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "262"
+  },
+  {
+    "index": 196,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors263.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors263.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "263"
+  },
+  {
+    "index": 197,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors264.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors264.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "264"
+  },
+  {
+    "index": 198,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors265.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors265.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "265"
+  },
+  {
+    "index": 199,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors266.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors266.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "266"
+  },
+  {
+    "index": 200,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors267.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors267.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "267"
+  },
+  {
+    "index": 201,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors268.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors268.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "268"
+  },
+  {
+    "index": 202,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors270.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors270.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "270"
+  },
+  {
+    "index": 203,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors271.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors271.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "271"
+  },
+  {
+    "index": 204,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors272.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors272.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "272"
+  },
+  {
+    "index": 205,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors273.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors273.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "273"
+  },
+  {
+    "index": 206,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors274.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors274.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "274"
+  },
+  {
+    "index": 207,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors275.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors275.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "275"
+  },
+  {
+    "index": 208,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors276.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors276.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "276"
+  },
+  {
+    "index": 209,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors276a.html",
+    "status": "error",
+    "error": "Unable to fetch URL via direct or archival fallback: https://www.oregonlegislature.gov/bills_laws/ors/ors276a.html",
+    "chapter_id": "276a"
+  },
+  {
+    "index": 210,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors278.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors278.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "278"
+  },
+  {
+    "index": 211,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors279.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors279.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "279"
+  },
+  {
+    "index": 212,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors279a.html",
+    "status": "error",
+    "error": "Unable to fetch URL via direct or archival fallback: https://www.oregonlegislature.gov/bills_laws/ors/ors279a.html",
+    "chapter_id": "279a"
+  },
+  {
+    "index": 213,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors279b.html",
+    "status": "error",
+    "error": "Unable to fetch URL via direct or archival fallback: https://www.oregonlegislature.gov/bills_laws/ors/ors279b.html",
+    "chapter_id": "279b"
+  },
+  {
+    "index": 214,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors279c.html",
+    "status": "error",
+    "error": "Unable to fetch URL via direct or archival fallback: https://www.oregonlegislature.gov/bills_laws/ors/ors279c.html",
+    "chapter_id": "279c"
+  },
+  {
+    "index": 215,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors280.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors280.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "280"
+  },
+  {
+    "index": 216,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors282.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors282.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "282"
+  },
+  {
+    "index": 217,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors283.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors283.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "283"
+  },
+  {
+    "index": 218,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors284.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors284.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "284"
+  },
+  {
+    "index": 219,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors285a.html",
+    "status": "error",
+    "error": "Unable to fetch URL via direct or archival fallback: https://www.oregonlegislature.gov/bills_laws/ors/ors285a.html",
+    "chapter_id": "285a"
+  },
+  {
+    "index": 220,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors285b.html",
+    "status": "error",
+    "error": "Unable to fetch URL via direct or archival fallback: https://www.oregonlegislature.gov/bills_laws/ors/ors285b.html",
+    "chapter_id": "285b"
+  },
+  {
+    "index": 221,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors285c.html",
+    "status": "error",
+    "error": "Unable to fetch URL via direct or archival fallback: https://www.oregonlegislature.gov/bills_laws/ors/ors285c.html",
+    "chapter_id": "285c"
+  },
+  {
+    "index": 222,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors286.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "286"
+  },
+  {
+    "index": 223,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors286a.html",
+    "status": "error",
+    "error": "Unable to fetch URL via direct or archival fallback: https://www.oregonlegislature.gov/bills_laws/ors/ors286a.html",
+    "chapter_id": "286a"
+  },
+  {
+    "index": 224,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors287.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors287.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "287"
+  },
+  {
+    "index": 225,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors287a.html",
+    "status": "error",
+    "error": "Unable to fetch URL via direct or archival fallback: https://www.oregonlegislature.gov/bills_laws/ors/ors287a.html",
+    "chapter_id": "287a"
+  },
+  {
+    "index": 226,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors289.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors289.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "289"
+  },
+  {
+    "index": 227,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors291.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors291.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "291"
+  },
+  {
+    "index": 228,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors292.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors292.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "292"
+  },
+  {
+    "index": 229,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors293.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors293.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "293"
+  },
+  {
+    "index": 230,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors294.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors294.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "294"
+  },
+  {
+    "index": 231,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors295.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors295.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "295"
+  },
+  {
+    "index": 232,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors297.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors297.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "297"
+  },
+  {
+    "index": 233,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors305.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors305.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "305"
+  },
+  {
+    "index": 234,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors306.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors306.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "306"
+  },
+  {
+    "index": 235,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors307.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors307.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "307"
+  },
+  {
+    "index": 236,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors308.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors308.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "308"
+  },
+  {
+    "index": 237,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors308a.html",
+    "status": "error",
+    "error": "Unable to fetch URL via direct or archival fallback: https://www.oregonlegislature.gov/bills_laws/ors/ors308a.html",
+    "chapter_id": "308a"
+  },
+  {
+    "index": 238,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors309.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors309.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "309"
+  },
+  {
+    "index": 239,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors310.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors310.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "310"
+  },
+  {
+    "index": 240,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors311.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors311.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "311"
+  },
+  {
+    "index": 241,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors312.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors312.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "312"
+  },
+  {
+    "index": 242,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors314.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors314.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "314"
+  },
+  {
+    "index": 243,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors315.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors315.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "315"
+  },
+  {
+    "index": 244,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors316.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors316.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "316"
+  },
+  {
+    "index": 245,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors317.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors317.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "317"
+  },
+  {
+    "index": 246,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors317a.html",
+    "status": "error",
+    "error": "Unable to fetch URL via direct or archival fallback: https://www.oregonlegislature.gov/bills_laws/ors/ors317a.html",
+    "chapter_id": "317a"
+  },
+  {
+    "index": 247,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors318.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors318.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "318"
+  },
+  {
+    "index": 248,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors319.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors319.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "319"
+  },
+  {
+    "index": 249,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors320.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors320.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "320"
+  },
+  {
+    "index": 250,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors321.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors321.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "321"
+  },
+  {
+    "index": 251,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors323.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors323.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "323"
+  },
+  {
+    "index": 252,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors324.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors324.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "324"
+  },
+  {
+    "index": 253,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors326.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors326.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "326"
+  },
+  {
+    "index": 254,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors327.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors327.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "327"
+  },
+  {
+    "index": 255,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors328.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors328.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "328"
+  },
+  {
+    "index": 256,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors329.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors329.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "329"
+  },
+  {
+    "index": 257,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors329a.html",
+    "status": "error",
+    "error": "Unable to fetch URL via direct or archival fallback: https://www.oregonlegislature.gov/bills_laws/ors/ors329a.html",
+    "chapter_id": "329a"
+  },
+  {
+    "index": 258,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors332.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors332.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "332"
+  },
+  {
+    "index": 259,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors333.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors333.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "333"
+  },
+  {
+    "index": 260,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors334.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors334.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "334"
+  },
+  {
+    "index": 261,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors335.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors335.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "335"
+  },
+  {
+    "index": 262,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors336.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors336.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "336"
+  },
+  {
+    "index": 263,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors337.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors337.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "337"
+  },
+  {
+    "index": 264,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors338.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors338.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "338"
+  },
+  {
+    "index": 265,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors339.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors339.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "339"
+  },
+  {
+    "index": 266,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors340.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors340.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "340"
+  },
+  {
+    "index": 267,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors341.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors341.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "341"
+  },
+  {
+    "index": 268,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors342.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors342.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "342"
+  },
+  {
+    "index": 269,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors343.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors343.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "343"
+  },
+  {
+    "index": 270,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors344.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors344.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "344"
+  },
+  {
+    "index": 271,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors345.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors345.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "345"
+  },
+  {
+    "index": 272,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors346.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors346.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "346"
+  },
+  {
+    "index": 273,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors348.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors348.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "348"
+  },
+  {
+    "index": 274,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors350.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors350.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "350"
+  },
+  {
+    "index": 275,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors351.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors351.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "351"
+  },
+  {
+    "index": 276,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors352.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors352.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "352"
+  },
+  {
+    "index": 277,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors353.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors353.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "353"
+  },
+  {
+    "index": 278,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors354.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors354.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "354"
+  },
+  {
+    "index": 279,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors357.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors357.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "357"
+  },
+  {
+    "index": 280,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors358.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors358.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "358"
+  },
+  {
+    "index": 281,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors359.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "359"
+  },
+  {
+    "index": 282,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors366.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors366.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "366"
+  },
+  {
+    "index": 283,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors367.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors367.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "367"
+  },
+  {
+    "index": 284,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors368.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors368.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "368"
+  },
+  {
+    "index": 285,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors370.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors370.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "370"
+  },
+  {
+    "index": 286,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors371.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors371.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "371"
+  },
+  {
+    "index": 287,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors372.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors372.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "372"
+  },
+  {
+    "index": 288,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors373.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors373.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "373"
+  },
+  {
+    "index": 289,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors374.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors374.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "374"
+  },
+  {
+    "index": 290,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors376.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors376.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "376"
+  },
+  {
+    "index": 291,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors377.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors377.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "377"
+  },
+  {
+    "index": 292,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors381.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors381.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "381"
+  },
+  {
+    "index": 293,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors382.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors382.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "382"
+  },
+  {
+    "index": 294,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors383.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors383.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "383"
+  },
+  {
+    "index": 295,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors390.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors390.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "390"
+  },
+  {
+    "index": 296,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors391.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors391.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "391"
+  },
+  {
+    "index": 297,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors396.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors396.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "396"
+  },
+  {
+    "index": 298,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors398.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors398.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "398"
+  },
+  {
+    "index": 299,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors399.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors399.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "399"
+  },
+  {
+    "index": 300,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors401.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors401.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "401"
+  },
+  {
+    "index": 301,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors402.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors402.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "402"
+  },
+  {
+    "index": 302,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors403.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors403.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "403"
+  },
+  {
+    "index": 303,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors404.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors404.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "404"
+  },
+  {
+    "index": 304,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors406.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors406.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "406"
+  },
+  {
+    "index": 305,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors407.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors407.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "407"
+  },
+  {
+    "index": 306,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors408.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors408.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "408"
+  },
+  {
+    "index": 307,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors409.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors409.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "409"
+  },
+  {
+    "index": 308,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors410.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors410.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "410"
+  },
+  {
+    "index": 309,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors411.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors411.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "411"
+  },
+  {
+    "index": 310,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors412.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors412.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "412"
+  },
+  {
+    "index": 311,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors413.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors413.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "413"
+  },
+  {
+    "index": 312,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors414.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors414.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "414"
+  },
+  {
+    "index": 313,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors415.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors415.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "415"
+  },
+  {
+    "index": 314,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors416.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors416.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "416"
+  },
+  {
+    "index": 315,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors417.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors417.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "417"
+  },
+  {
+    "index": 316,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors418.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors418.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "418"
+  },
+  {
+    "index": 317,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors419a.html",
+    "status": "error",
+    "error": "Unable to fetch URL via direct or archival fallback: https://www.oregonlegislature.gov/bills_laws/ors/ors419a.html",
+    "chapter_id": "419a"
+  },
+  {
+    "index": 318,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors419b.html",
+    "status": "error",
+    "error": "Unable to fetch URL via direct or archival fallback: https://www.oregonlegislature.gov/bills_laws/ors/ors419b.html",
+    "chapter_id": "419b"
+  },
+  {
+    "index": 319,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors419c.html",
+    "status": "error",
+    "error": "Unable to fetch URL via direct or archival fallback: https://www.oregonlegislature.gov/bills_laws/ors/ors419c.html",
+    "chapter_id": "419c"
+  },
+  {
+    "index": 320,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors420.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors420.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "420"
+  },
+  {
+    "index": 321,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors420a.html",
+    "status": "error",
+    "error": "Unable to fetch URL via direct or archival fallback: https://www.oregonlegislature.gov/bills_laws/ors/ors420a.html",
+    "chapter_id": "420a"
+  },
+  {
+    "index": 322,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors421.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors421.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "421"
+  },
+  {
+    "index": 323,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors423.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors423.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "423"
+  },
+  {
+    "index": 324,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors426.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors426.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "426"
+  },
+  {
+    "index": 325,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors427.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors427.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "427"
+  },
+  {
+    "index": 326,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors430.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors430.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "430"
+  },
+  {
+    "index": 327,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors431.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors431.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "431"
+  },
+  {
+    "index": 328,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors431a.html",
+    "status": "error",
+    "error": "Unable to fetch URL via direct or archival fallback: https://www.oregonlegislature.gov/bills_laws/ors/ors431a.html",
+    "chapter_id": "431a"
+  },
+  {
+    "index": 329,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors432.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors432.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "432"
+  },
+  {
+    "index": 330,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors433.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors433.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "433"
+  },
+  {
+    "index": 331,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors435.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors435.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "435"
+  },
+  {
+    "index": 332,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors436.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "436"
+  },
+  {
+    "index": 333,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors437.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "437"
+  },
+  {
+    "index": 334,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors438.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors438.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "438"
+  },
+  {
+    "index": 335,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors440.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "440"
+  },
+  {
+    "index": 336,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors441.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors441.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "441"
+  },
+  {
+    "index": 337,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors442.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors442.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "442"
+  },
+  {
+    "index": 338,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors443.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors443.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "443"
+  },
+  {
+    "index": 339,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors444.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors444.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "444"
+  },
+  {
+    "index": 340,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors445.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors445.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "445"
+  },
+  {
+    "index": 341,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors446.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors446.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "446"
+  },
+  {
+    "index": 342,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors447.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "447"
+  },
+  {
+    "index": 343,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors448.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors448.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "448"
+  },
+  {
+    "index": 344,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors450.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors450.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "450"
+  },
+  {
+    "index": 345,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors451.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors451.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "451"
+  },
+  {
+    "index": 346,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors452.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors452.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "452"
+  },
+  {
+    "index": 347,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors453.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors453.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "453"
+  },
+  {
+    "index": 348,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors454.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors454.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "454"
+  },
+  {
+    "index": 349,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors455.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors455.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "455"
+  },
+  {
+    "index": 350,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors456.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors456.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "456"
+  },
+  {
+    "index": 351,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors457.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors457.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "457"
+  },
+  {
+    "index": 352,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors458.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors458.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "458"
+  },
+  {
+    "index": 353,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors459.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors459.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "459"
+  },
+  {
+    "index": 354,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors459a.html",
+    "status": "error",
+    "error": "Unable to fetch URL via direct or archival fallback: https://www.oregonlegislature.gov/bills_laws/ors/ors459a.html",
+    "chapter_id": "459a"
+  },
+  {
+    "index": 355,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors460.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "460"
+  },
+  {
+    "index": 356,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors461.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors461.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "461"
+  },
+  {
+    "index": 357,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors462.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors462.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "462"
+  },
+  {
+    "index": 358,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors463.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors463.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "463"
+  },
+  {
+    "index": 359,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors464.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors464.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "464"
+  },
+  {
+    "index": 360,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors465.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors465.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "465"
+  },
+  {
+    "index": 361,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors466.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors466.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "466"
+  },
+  {
+    "index": 362,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors467.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors467.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "467"
+  },
+  {
+    "index": 363,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors468.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors468.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "468"
+  },
+  {
+    "index": 364,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors468a.html",
+    "status": "error",
+    "error": "Unable to fetch URL via direct or archival fallback: https://www.oregonlegislature.gov/bills_laws/ors/ors468a.html",
+    "chapter_id": "468a"
+  },
+  {
+    "index": 365,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors468b.html",
+    "status": "error",
+    "error": "Unable to fetch URL via direct or archival fallback: https://www.oregonlegislature.gov/bills_laws/ors/ors468b.html",
+    "chapter_id": "468b"
+  },
+  {
+    "index": 366,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors469.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors469.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "469"
+  },
+  {
+    "index": 367,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors469a.html",
+    "status": "error",
+    "error": "Unable to fetch URL via direct or archival fallback: https://www.oregonlegislature.gov/bills_laws/ors/ors469a.html",
+    "chapter_id": "469a"
+  },
+  {
+    "index": 368,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors469b.html",
+    "status": "error",
+    "error": "Unable to fetch URL via direct or archival fallback: https://www.oregonlegislature.gov/bills_laws/ors/ors469b.html",
+    "chapter_id": "469b"
+  },
+  {
+    "index": 369,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors470.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors470.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "470"
+  },
+  {
+    "index": 370,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors471.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors471.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "471"
+  },
+  {
+    "index": 371,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors472.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors472.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "472"
+  },
+  {
+    "index": 372,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors473.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors473.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "473"
+  },
+  {
+    "index": 373,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors474.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors474.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "474"
+  },
+  {
+    "index": 374,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors475.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors475.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "475"
+  },
+  {
+    "index": 375,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors475a.html",
+    "status": "error",
+    "error": "Unable to fetch URL via direct or archival fallback: https://www.oregonlegislature.gov/bills_laws/ors/ors475a.html",
+    "chapter_id": "475a"
+  },
+  {
+    "index": 376,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors475b.html",
+    "status": "error",
+    "error": "Unable to fetch URL via direct or archival fallback: https://www.oregonlegislature.gov/bills_laws/ors/ors475b.html",
+    "chapter_id": "475b"
+  },
+  {
+    "index": 377,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors475c.html",
+    "status": "error",
+    "error": "Unable to fetch URL via direct or archival fallback: https://www.oregonlegislature.gov/bills_laws/ors/ors475c.html",
+    "chapter_id": "475c"
+  },
+  {
+    "index": 378,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors476.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors476.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "476"
+  },
+  {
+    "index": 379,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors477.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors477.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "477"
+  },
+  {
+    "index": 380,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors478.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors478.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "478"
+  },
+  {
+    "index": 381,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors479.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors479.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "479"
+  },
+  {
+    "index": 382,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors480.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors480.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "480"
+  },
+  {
+    "index": 383,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors481.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors481.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "481"
+  },
+  {
+    "index": 384,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors496.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors496.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "496"
+  },
+  {
+    "index": 385,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors497.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors497.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "497"
+  },
+  {
+    "index": 386,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors498.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors498.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "498"
+  },
+  {
+    "index": 387,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors501.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors501.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "501"
+  },
+  {
+    "index": 388,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors506.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors506.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "506"
+  },
+  {
+    "index": 389,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors508.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors508.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "508"
+  },
+  {
+    "index": 390,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors509.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors509.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "509"
+  },
+  {
+    "index": 391,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors513.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors513.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "513"
+  },
+  {
+    "index": 392,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors516.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors516.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "516"
+  },
+  {
+    "index": 393,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors517.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors517.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "517"
+  },
+  {
+    "index": 394,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors520.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors520.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "520"
+  },
+  {
+    "index": 395,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors522.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors522.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "522"
+  },
+  {
+    "index": 396,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors523.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors523.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "523"
+  },
+  {
+    "index": 397,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors526.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors526.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "526"
+  },
+  {
+    "index": 398,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors527.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors527.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "527"
+  },
+  {
+    "index": 399,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors530.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors530.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "530"
+  },
+  {
+    "index": 400,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors532.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors532.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "532"
+  },
+  {
+    "index": 401,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors536.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors536.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "536"
+  },
+  {
+    "index": 402,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors537.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors537.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "537"
+  },
+  {
+    "index": 403,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors538.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors538.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "538"
+  },
+  {
+    "index": 404,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors539.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors539.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "539"
+  },
+  {
+    "index": 405,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors540.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors540.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "540"
+  },
+  {
+    "index": 406,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors541.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors541.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "541"
+  },
+  {
+    "index": 407,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors542.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors542.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "542"
+  },
+  {
+    "index": 408,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors543.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors543.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "543"
+  },
+  {
+    "index": 409,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors543a.html",
+    "status": "error",
+    "error": "Unable to fetch URL via direct or archival fallback: https://www.oregonlegislature.gov/bills_laws/ors/ors543a.html",
+    "chapter_id": "543a"
+  },
+  {
+    "index": 410,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors545.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors545.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "545"
+  },
+  {
+    "index": 411,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors547.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors547.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "547"
+  },
+  {
+    "index": 412,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors548.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors548.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "548"
+  },
+  {
+    "index": 413,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors549.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors549.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "549"
+  },
+  {
+    "index": 414,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors550.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors550.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "550"
+  },
+  {
+    "index": 415,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors551.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors551.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "551"
+  },
+  {
+    "index": 416,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors552.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "552"
+  },
+  {
+    "index": 417,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors553.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors553.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "553"
+  },
+  {
+    "index": 418,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors554.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors554.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "554"
+  },
+  {
+    "index": 419,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors555.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors555.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "555"
+  },
+  {
+    "index": 420,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors558.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors558.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "558"
+  },
+  {
+    "index": 421,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors561.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors561.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "561"
+  },
+  {
+    "index": 422,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors564.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors564.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "564"
+  },
+  {
+    "index": 423,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors565.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors565.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "565"
+  },
+  {
+    "index": 424,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors567.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors567.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "567"
+  },
+  {
+    "index": 425,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors568.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors568.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "568"
+  },
+  {
+    "index": 426,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors569.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors569.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "569"
+  },
+  {
+    "index": 427,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors570.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors570.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "570"
+  },
+  {
+    "index": 428,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors571.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors571.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "571"
+  },
+  {
+    "index": 429,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors576.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors576.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "576"
+  },
+  {
+    "index": 430,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors577.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors577.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "577"
+  },
+  {
+    "index": 431,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors578.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors578.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "578"
+  },
+  {
+    "index": 432,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors586.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors586.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "586"
+  },
+  {
+    "index": 433,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors587.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors587.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "587"
+  },
+  {
+    "index": 434,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors596.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "596"
+  },
+  {
+    "index": 435,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors599.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors599.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "599"
+  },
+  {
+    "index": 436,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors600.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors600.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "600"
+  },
+  {
+    "index": 437,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors601.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors601.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "601"
+  },
+  {
+    "index": 438,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors602.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors602.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "602"
+  },
+  {
+    "index": 439,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors603.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors603.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "603"
+  },
+  {
+    "index": 440,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors604.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors604.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "604"
+  },
+  {
+    "index": 441,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors607.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors607.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "607"
+  },
+  {
+    "index": 442,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors608.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors608.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "608"
+  },
+  {
+    "index": 443,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors609.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors609.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "609"
+  },
+  {
+    "index": 444,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors610.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors610.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "610"
+  },
+  {
+    "index": 445,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors616.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors616.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "616"
+  },
+  {
+    "index": 446,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors618.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors618.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "618"
+  },
+  {
+    "index": 447,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors619.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors619.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "619"
+  },
+  {
+    "index": 448,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors621.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors621.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "621"
+  },
+  {
+    "index": 449,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors622.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors622.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "622"
+  },
+  {
+    "index": 450,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors624.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors624.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "624"
+  },
+  {
+    "index": 451,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors625.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors625.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "625"
+  },
+  {
+    "index": 452,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors628.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors628.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "628"
+  },
+  {
+    "index": 453,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors632.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors632.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "632"
+  },
+  {
+    "index": 454,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors633.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors633.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "633"
+  },
+  {
+    "index": 455,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors634.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors634.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "634"
+  },
+  {
+    "index": 456,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors635.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors635.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "635"
+  },
+  {
+    "index": 457,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors645.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors645.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "645"
+  },
+  {
+    "index": 458,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors646.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors646.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "646"
+  },
+  {
+    "index": 459,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors646a.html",
+    "status": "error",
+    "error": "Unable to fetch URL via direct or archival fallback: https://www.oregonlegislature.gov/bills_laws/ors/ors646a.html",
+    "chapter_id": "646a"
+  },
+  {
+    "index": 460,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors647.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors647.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "647"
+  },
+  {
+    "index": 461,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors648.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors648.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "648"
+  },
+  {
+    "index": 462,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors650.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors650.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "650"
+  },
+  {
+    "index": 463,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors651.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors651.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "651"
+  },
+  {
+    "index": 464,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors652.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors652.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "652"
+  },
+  {
+    "index": 465,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors653.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors653.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "653"
+  },
+  {
+    "index": 466,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors654.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors654.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "654"
+  },
+  {
+    "index": 467,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors656.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors656.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "656"
+  },
+  {
+    "index": 468,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors657.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors657.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "657"
+  },
+  {
+    "index": 469,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html",
+    "status": "error",
+    "error": "Unable to fetch URL via direct or archival fallback: https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html",
+    "chapter_id": "657a"
+  },
+  {
+    "index": 470,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors657b.html",
+    "status": "error",
+    "error": "Unable to fetch URL via direct or archival fallback: https://www.oregonlegislature.gov/bills_laws/ors/ors657b.html",
+    "chapter_id": "657b"
+  },
+  {
+    "index": 471,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors658.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors658.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "658"
+  },
+  {
+    "index": 472,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors659.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors659.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "659"
+  },
+  {
+    "index": 473,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors659a.html",
+    "status": "error",
+    "error": "Unable to fetch URL via direct or archival fallback: https://www.oregonlegislature.gov/bills_laws/ors/ors659a.html",
+    "chapter_id": "659a"
+  },
+  {
+    "index": 474,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors660.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors660.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "660"
+  },
+  {
+    "index": 475,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors661.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors661.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "661"
+  },
+  {
+    "index": 476,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors662.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors662.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "662"
+  },
+  {
+    "index": 477,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors663.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors663.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "663"
+  },
+  {
+    "index": 478,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors670.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors670.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "670"
+  },
+  {
+    "index": 479,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors671.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors671.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "671"
+  },
+  {
+    "index": 480,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors672.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors672.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "672"
+  },
+  {
+    "index": 481,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors673.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors673.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "673"
+  },
+  {
+    "index": 482,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors674.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors674.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "674"
+  },
+  {
+    "index": 483,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors675.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors675.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "675"
+  },
+  {
+    "index": 484,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors676.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors676.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "676"
+  },
+  {
+    "index": 485,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors677.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors677.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "677"
+  },
+  {
+    "index": 486,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors678.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors678.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "678"
+  },
+  {
+    "index": 487,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors679.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors679.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "679"
+  },
+  {
+    "index": 488,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors680.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors680.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "680"
+  },
+  {
+    "index": 489,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors681.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors681.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "681"
+  },
+  {
+    "index": 490,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors682.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors682.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "682"
+  },
+  {
+    "index": 491,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors683.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "683"
+  },
+  {
+    "index": 492,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors684.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors684.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "684"
+  },
+  {
+    "index": 493,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors685.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors685.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "685"
+  },
+  {
+    "index": 494,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors686.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors686.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "686"
+  },
+  {
+    "index": 495,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors687.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors687.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "687"
+  },
+  {
+    "index": 496,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors688.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors688.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "688"
+  },
+  {
+    "index": 497,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors689.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors689.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "689"
+  },
+  {
+    "index": 498,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors690.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors690.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "690"
+  },
+  {
+    "index": 499,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors691.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors691.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "691"
+  },
+  {
+    "index": 500,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors692.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors692.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "692"
+  },
+  {
+    "index": 501,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors693.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors693.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "693"
+  },
+  {
+    "index": 502,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors694.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors694.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "694"
+  },
+  {
+    "index": 503,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors696.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors696.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "696"
+  },
+  {
+    "index": 504,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors697.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors697.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "697"
+  },
+  {
+    "index": 505,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors698.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "698"
+  },
+  {
+    "index": 506,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors699.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors699.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "699"
+  },
+  {
+    "index": 507,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors700.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors700.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "700"
+  },
+  {
+    "index": 508,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors701.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors701.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "701"
+  },
+  {
+    "index": 509,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors702.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors702.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "702"
+  },
+  {
+    "index": 510,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors703.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors703.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "703"
+  },
+  {
+    "index": 511,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors704.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors704.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "704"
+  },
+  {
+    "index": 512,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors705.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors705.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "705"
+  },
+  {
+    "index": 513,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors706.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors706.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "706"
+  },
+  {
+    "index": 514,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors707.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors707.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "707"
+  },
+  {
+    "index": 515,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors708a.html",
+    "status": "error",
+    "error": "Unable to fetch URL via direct or archival fallback: https://www.oregonlegislature.gov/bills_laws/ors/ors708a.html",
+    "chapter_id": "708a"
+  },
+  {
+    "index": 516,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors709.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors709.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "709"
+  },
+  {
+    "index": 517,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors711.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors711.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "711"
+  },
+  {
+    "index": 518,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors713.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors713.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "713"
+  },
+  {
+    "index": 519,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors714.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors714.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "714"
+  },
+  {
+    "index": 520,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors715.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors715.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "715"
+  },
+  {
+    "index": 521,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors716.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors716.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "716"
+  },
+  {
+    "index": 522,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors717.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors717.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "717"
+  },
+  {
+    "index": 523,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors723.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors723.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "723"
+  },
+  {
+    "index": 524,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors725.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors725.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "725"
+  },
+  {
+    "index": 525,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html",
+    "status": "error",
+    "error": "Unable to fetch URL via direct or archival fallback: https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html",
+    "chapter_id": "725a"
+  },
+  {
+    "index": 526,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors726.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors726.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "726"
+  },
+  {
+    "index": 527,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors731.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors731.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "731"
+  },
+  {
+    "index": 528,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors732.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors732.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "732"
+  },
+  {
+    "index": 529,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors733.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors733.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "733"
+  },
+  {
+    "index": 530,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors734.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors734.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "734"
+  },
+  {
+    "index": 531,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors735.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors735.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "735"
+  },
+  {
+    "index": 532,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors737.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors737.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "737"
+  },
+  {
+    "index": 533,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors741.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors741.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "741"
+  },
+  {
+    "index": 534,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors742.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors742.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "742"
+  },
+  {
+    "index": 535,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors743.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors743.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "743"
+  },
+  {
+    "index": 536,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors743a.html",
+    "status": "error",
+    "error": "Unable to fetch URL via direct or archival fallback: https://www.oregonlegislature.gov/bills_laws/ors/ors743a.html",
+    "chapter_id": "743a"
+  },
+  {
+    "index": 537,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors743b.html",
+    "status": "error",
+    "error": "Unable to fetch URL via direct or archival fallback: https://www.oregonlegislature.gov/bills_laws/ors/ors743b.html",
+    "chapter_id": "743b"
+  },
+  {
+    "index": 538,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors744.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors744.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "744"
+  },
+  {
+    "index": 539,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors746.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors746.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "746"
+  },
+  {
+    "index": 540,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors748.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors748.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "748"
+  },
+  {
+    "index": 541,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors750.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors750.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "750"
+  },
+  {
+    "index": 542,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors751.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors751.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "751"
+  },
+  {
+    "index": 543,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors752.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors752.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "752"
+  },
+  {
+    "index": 544,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors756.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors756.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "756"
+  },
+  {
+    "index": 545,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors757.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors757.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "757"
+  },
+  {
+    "index": 546,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors758.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors758.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "758"
+  },
+  {
+    "index": 547,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors759.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors759.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "759"
+  },
+  {
+    "index": 548,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors772.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors772.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "772"
+  },
+  {
+    "index": 549,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors774.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors774.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "774"
+  },
+  {
+    "index": 550,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors776.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "776"
+  },
+  {
+    "index": 551,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors777.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors777.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "777"
+  },
+  {
+    "index": 552,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors778.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "778"
+  },
+  {
+    "index": 553,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors783.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors783.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "783"
+  },
+  {
+    "index": 554,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors801.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors801.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "801"
+  },
+  {
+    "index": 555,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors802.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors802.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "802"
+  },
+  {
+    "index": 556,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors803.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors803.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "803"
+  },
+  {
+    "index": 557,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors805.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors805.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "805"
+  },
+  {
+    "index": 558,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors806.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors806.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "806"
+  },
+  {
+    "index": 559,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors807.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors807.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "807"
+  },
+  {
+    "index": 560,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors809.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors809.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "809"
+  },
+  {
+    "index": 561,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors810.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors810.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "810"
+  },
+  {
+    "index": 562,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors811.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors811.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "811"
+  },
+  {
+    "index": 563,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors813.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors813.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "813"
+  },
+  {
+    "index": 564,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors814.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "814"
+  },
+  {
+    "index": 565,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors815.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors815.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "815"
+  },
+  {
+    "index": 566,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors816.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors816.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "816"
+  },
+  {
+    "index": 567,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors818.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors818.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "818"
+  },
+  {
+    "index": 568,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors819.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors819.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "819"
+  },
+  {
+    "index": 569,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors820.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors820.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "820"
+  },
+  {
+    "index": 570,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors821.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors821.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "821"
+  },
+  {
+    "index": 571,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors822.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors822.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "822"
+  },
+  {
+    "index": 572,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors823.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors823.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "823"
+  },
+  {
+    "index": 573,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors824.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors824.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "824"
+  },
+  {
+    "index": 574,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors825.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors825.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "825"
+  },
+  {
+    "index": 575,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors826.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors826.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "826"
+  },
+  {
+    "index": 576,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors830.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors830.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "830"
+  },
+  {
+    "index": 577,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors835.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors835.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "835"
+  },
+  {
+    "index": 578,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors836.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors836.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "836"
+  },
+  {
+    "index": 579,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors837.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors837.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "837"
+  },
+  {
+    "index": 580,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors838.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors838.html",
+    "status": "skipped_existing",
+    "source": "cached",
+    "chapter_id": "838"
+  }
+]

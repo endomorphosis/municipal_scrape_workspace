@@ -1,13 +1,14 @@
 {
   "status": "success",
-  "started_at": "2026-02-24T05:07:19.583376+00:00",
-  "finished_at": "2026-02-24T05:08:47.507651+00:00",
+  "started_at": "2026-02-24T05:30:01.235971+00:00",
+  "finished_at": "2026-02-24T06:34:39.900526+00:00",
   "seed_url": "https://www.oregonlegislature.gov/bills_laws/ors/ors001.html",
   "output_dir": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon",
-  "requested_count": 1,
-  "successful_count": 1,
+  "requested_count": 999,
+  "successful_count": 999,
   "source_counts": {
-    "wayback": 1
+    "cached": 14,
+    "common_crawl": 985
   },
   "manifest_file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/manifests/chapter_manifest.json",
   "parsed_summary_file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/parsed/chapter_summaries.jsonl"
