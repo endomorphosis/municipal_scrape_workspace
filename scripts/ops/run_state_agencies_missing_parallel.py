@@ -63,6 +63,7 @@ def main(argv: list[str]) -> int:
     p.add_argument("--per-state-timeout", type=int, default=1200)
     p.add_argument("--agency-max-pages", type=int, default=250)
     p.add_argument("--agency-max-depth", type=int, default=3)
+    p.add_argument("--agency-max-seconds", type=int, default=300)
     p.add_argument("--sleep", type=float, default=0.2)
     p.add_argument("--seed-timeout", type=int, default=30)
     p.add_argument(
@@ -75,6 +76,11 @@ def main(argv: list[str]) -> int:
         action="store_true",
         help="Remove existing *.jsonl and *.stderr.log before running",
     )
+    p.add_argument(
+        "--only-abbr",
+        default="",
+        help="Comma-separated list of abbreviations to run (e.g., 'ID,MI'); default runs all items in missing_list",
+    )
     args = p.parse_args(argv)
 
     missing_list = Path(args.missing_list)
@@ -82,6 +88,12 @@ def main(argv: list[str]) -> int:
     outdir.mkdir(parents=True, exist_ok=True)
 
     items = _load_items(missing_list)
+
+    if args.only_abbr:
+        wanted = {x.strip().upper() for x in str(args.only_abbr).split(",") if x.strip()}
+        items = [it for it in items if it.abbr.upper() in wanted]
+        if not items:
+            raise SystemExit(f"No items match --only-abbr={args.only_abbr!r}")
 
     if args.clean:
         for pat in ("*.jsonl", "*.stderr.log", "run_summary.json"):
@@ -110,6 +122,8 @@ def main(argv: list[str]) -> int:
             str(args.agency_max_pages),
             "--agency-max-depth",
             str(args.agency_max_depth),
+            "--agency-max-seconds",
+            str(args.agency_max_seconds),
             "--sleep",
             str(args.sleep),
             "--seed-timeout",
@@ -169,10 +183,32 @@ def main(argv: list[str]) -> int:
             )
 
     results = sorted(results, key=lambda r: r["abbr"])
-    (outdir / "run_summary.json").write_text(json.dumps(results, indent=2), "utf-8")
+
+    summary_path = outdir / "run_summary.json"
+    if args.only_abbr and summary_path.exists():
+        try:
+            existing = json.loads(summary_path.read_text("utf-8"))
+            if not isinstance(existing, list):
+                existing = []
+        except Exception:
+            existing = []
+        by_abbr: dict[str, dict[str, Any]] = {}
+        for r in existing:
+            try:
+                ab = str(r.get("abbr", "")).upper()
+            except Exception:
+                ab = ""
+            if ab:
+                by_abbr[ab] = dict(r)
+        for r in results:
+            by_abbr[str(r.get("abbr", "")).upper()] = r
+        merged = [by_abbr[k] for k in sorted(by_abbr.keys())]
+        summary_path.write_text(json.dumps(merged, indent=2), "utf-8")
+    else:
+        summary_path.write_text(json.dumps(results, indent=2), "utf-8")
 
     bad = [r for r in results if r["rc"] != 0 or r["lines"] <= 0]
-    print(f"wrote {outdir / 'run_summary.json'}")
+    print(f"wrote {summary_path}")
     print(f"failed_or_empty {len(bad)}")
     for r in bad:
         print(

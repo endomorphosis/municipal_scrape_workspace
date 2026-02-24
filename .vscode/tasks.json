@@ -38,6 +38,18 @@
       "group": "build"
     },
     {
+      "label": "CC plan: pointers-from-jsonl (state agencies)",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-lc",
+        "PYTHONPATH=src python -m common_crawl_search_engine.cli plan pointers-from-jsonl -- --jsonl artifacts/state_agencies_all.jsonl --domain-workers 12 --max-matches 0 --max-parquet-files 0 --per-parquet-limit 0"
+      ],
+      "isBackground": true,
+      "problemMatcher": [],
+      "group": "build"
+    },
+    {
       "label": "CC plan: slices-from-pointers",
       "type": "shell",
       "command": "bash",

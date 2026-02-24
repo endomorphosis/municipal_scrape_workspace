@@ -22,6 +22,7 @@ from __future__ import annotations
 
 import argparse
 import base64
+import gzip
 import json
 import os
 import re
@@ -29,6 +30,7 @@ import sys
 import time
 import urllib.parse
 import urllib.request
+import zlib
 from collections import deque
 from pathlib import Path
 from html.parser import HTMLParser
@@ -57,6 +59,7 @@ DEFAULT_USER_AGENT = (
 DEFAULT_MODE = "agencies"  # agencies | hosts
 DEFAULT_AGENCY_MAX_PAGES = 120
 DEFAULT_AGENCY_MAX_DEPTH = 3
+DEFAULT_AGENCY_MAX_SECONDS = 300
 
 
 # ---------------- Helpers ----------------
@@ -132,6 +135,17 @@ def http_get(
             scheme = ""
         return scheme in {"http", "https"}
 
+    def _looks_like_html_payload(body: bytes) -> bool:
+        if not body:
+            return False
+        head = body[:8192].lstrip().lower()
+        if head.startswith((b"<!doctype html", b"<html")):
+            return True
+        # Heuristic: common tags / anchors
+        if b"<head" in head or b"<body" in head or b"<a " in head or b"</a>" in head:
+            return True
+        return False
+
     def _http_get_via_common_crawl() -> Optional[bytes]:
         """Best-effort: use Common Crawl pointer indexes to replay a URL.
 
@@ -151,6 +165,30 @@ def http_get(
             from common_crawl_search_engine.ccindex import api as ccapi  # type: ignore
         except Exception:
             return None
+
+        def _maybe_decompress_http_body(body: bytes, http_headers: Dict[str, str]) -> bytes:
+            if not body:
+                return body
+            enc = (http_headers.get("content-encoding") or "").lower().strip()
+            try:
+                # Some CC WARC payloads preserve Content-Encoding.
+                if "gzip" in enc or body.startswith(b"\x1f\x8b"):
+                    return gzip.decompress(body)
+                if "deflate" in enc:
+                    return zlib.decompress(body)
+            except Exception:
+                return body
+            return body
+
+        def _looks_like_html_bytes(body: bytes) -> bool:
+            if not body:
+                return False
+            head = body[:4096].lstrip().lower()
+            if head.startswith((b"<!doctype html", b"<html")):
+                return True
+            if b"<head" in head or b"<body" in head or b"<a " in head:
+                return True
+            return False
 
         def _pointer_score(r: Dict[str, object]) -> Tuple[int, int]:
             wf = str(r.get("warc_filename") or "")
@@ -206,47 +244,127 @@ def http_get(
                 return None
 
             all_recs.sort(key=_pointer_score, reverse=True)
-            rec = all_recs[0]
-            warc_filename = str(rec.get("warc_filename") or "")
-            warc_offset = rec.get("warc_offset")
-            warc_length = rec.get("warc_length")
-            if not warc_filename or warc_offset is None or warc_length is None:
-                sys.stderr.write(f"WARN common_crawl_bad_pointer url={url}\n")
-                return None
 
             max_bytes = 2_000_000
-            fetch_res, _source, _local_path = ccapi.fetch_warc_record(
-                warc_filename=warc_filename,
-                warc_offset=int(warc_offset),
-                warc_length=int(warc_length),
-                timeout_s=min(30.0, float(max(1, int(timeout)))),
-                max_bytes=int(max_bytes),
-                decode_gzip_text=False,
-                cache_mode="range",
-            )
-            if not fetch_res.ok or not fetch_res.raw_base64:
-                sys.stderr.write(f"WARN common_crawl_fetch_failed url={url} err={fetch_res.error}\n")
-                return None
+            best_any: Optional[bytes] = None
+            # Try a few candidates because CCIndex often has multiple variants
+            # (redirects, compressed payloads, diagnostics records, etc.).
+            for rec in all_recs[:5]:
+                warc_filename = str(rec.get("warc_filename") or "")
+                warc_offset = rec.get("warc_offset")
+                warc_length = rec.get("warc_length")
+                if not warc_filename or warc_offset is None or warc_length is None:
+                    continue
 
-            gz_member = base64.b64decode(fetch_res.raw_base64)
-            parsed = ccapi.extract_http_from_warc_gzip_member(
-                gz_member,
-                max_body_bytes=int(max_bytes),
-                include_body_base64=True,
-            )
-            if not parsed.ok:
-                sys.stderr.write(f"WARN common_crawl_extract_failed url={url} err={parsed.error}\n")
-                return None
-            body_b64 = getattr(parsed, "body_base64", None)
-            if not body_b64:
-                return None
-            body = base64.b64decode(body_b64)
-            if body:
-                return body
+                fetch_res, _source, _local_path = ccapi.fetch_warc_record(
+                    warc_filename=warc_filename,
+                    warc_offset=int(warc_offset),
+                    warc_length=int(warc_length),
+                    timeout_s=min(30.0, float(max(1, int(timeout)))),
+                    max_bytes=int(max_bytes),
+                    decode_gzip_text=False,
+                    cache_mode="range",
+                )
+                if not fetch_res.ok or not fetch_res.raw_base64:
+                    continue
+
+                gz_member = base64.b64decode(fetch_res.raw_base64)
+                parsed = ccapi.extract_http_from_warc_gzip_member(
+                    gz_member,
+                    max_body_bytes=int(max_bytes),
+                    include_body_base64=True,
+                )
+                if not parsed.ok:
+                    continue
+                body_b64 = getattr(parsed, "body_base64", None)
+                if not body_b64:
+                    continue
+                body_raw = base64.b64decode(body_b64)
+                body = _maybe_decompress_http_body(body_raw, getattr(parsed, "http_headers", {}) or {})
+                if not body:
+                    continue
+
+                if best_any is None or len(body) > len(best_any):
+                    best_any = body
+
+                # Prefer real HTML with enough substance.
+                if (getattr(parsed, "body_is_html", False) or _looks_like_html_bytes(body)) and len(body) >= 512:
+                    return body
+
+            if best_any:
+                return best_any
+            sys.stderr.write(f"WARN common_crawl_fetch_failed url={url} err=no_usable_pointers\n")
             return None
         except Exception as e:
             sys.stderr.write(f"WARN common_crawl_fallback_error url={url} err={type(e).__name__}: {e}\n")
             return None
+
+    def _http_get_via_wayback() -> Optional[bytes]:
+        """Best-effort: fetch an archived HTML snapshot from the Wayback Machine."""
+
+        if not _should_try_cc_fallback():
+            return None
+
+        # CDX API returns captures; we pick the most recent successful HTML-ish one.
+        cdx = "https://web.archive.org/cdx/search/cdx"
+        params = {
+            "url": url,
+            "output": "json",
+            "fl": "timestamp,original,statuscode,mimetype",
+            "filter": "statuscode:200",
+            "collapse": "digest",
+            "limit": "6",
+        }
+        cdx_url = cdx + "?" + urllib.parse.urlencode(params)
+
+        try:
+            req = urllib.request.Request(
+                cdx_url,
+                headers={"User-Agent": user_agent, "Accept": "application/json,*/*"},
+            )
+            with urllib.request.urlopen(req, timeout=min(30, max(5, int(timeout)))) as resp:
+                raw = resp.read()
+        except Exception:
+            return None
+
+        try:
+            data = json.loads(raw.decode("utf-8", errors="replace"))
+        except Exception:
+            return None
+        if not isinstance(data, list) or len(data) < 2:
+            return None
+
+        # rows: [header], then [timestamp, original, statuscode, mimetype]
+        best_ts = ""
+        for row in data[1:]:
+            try:
+                ts = str(row[0])
+                mimetype = str(row[3] if len(row) > 3 else "")
+            except Exception:
+                continue
+            if not ts.isdigit():
+                continue
+            # Prefer HTML captures, but allow unknown mimetype.
+            if mimetype and ("html" not in mimetype.lower()):
+                continue
+            if ts > best_ts:
+                best_ts = ts
+
+        if not best_ts:
+            return None
+
+        # id_ asks for the "raw" archived content for the original URL.
+        wb_url = f"https://web.archive.org/web/{best_ts}id_/{url}"
+        try:
+            req2 = urllib.request.Request(
+                wb_url,
+                headers={"User-Agent": user_agent, "Accept": accept},
+            )
+            with urllib.request.urlopen(req2, timeout=min(45, max(5, int(timeout)))) as resp2:
+                body = resp2.read()
+        except Exception:
+            return None
+        return body or None
 
     req = urllib.request.Request(
         url,
@@ -259,9 +377,17 @@ def http_get(
         if _should_try_cc_fallback():
             sys.stderr.write(f"WARN live_fetch_failed trying_common_crawl url={url} err={type(e).__name__}: {e}\n")
             cc = _http_get_via_common_crawl()
-            if cc:
+            if cc and (len(cc) >= 512 or _looks_like_html_payload(cc)):
                 sys.stderr.write(f"INFO common_crawl_fetch_ok url={url} bytes={len(cc)}\n")
                 return cc
+            if cc:
+                sys.stderr.write(f"WARN common_crawl_too_small url={url} bytes={len(cc)}\n")
+
+            sys.stderr.write(f"WARN live_fetch_failed trying_wayback url={url}\n")
+            wb = _http_get_via_wayback()
+            if wb and (len(wb) >= 512 or _looks_like_html_payload(wb)):
+                sys.stderr.write(f"INFO wayback_fetch_ok url={url} bytes={len(wb)}\n")
+                return wb
         raise
 
 
@@ -736,6 +862,7 @@ def seeds_from_usagov_portals(
                     "seed_source": USAGOV_STATES_URL,
                     "seed_source_ref": "usa.gov state governments",
                     "seed_notes": f"discovered via {page}",
+                    "usagov_page_url": page,
                     "jurisdiction": juris_abbr,
                     "name": juris_name,
                 })
@@ -752,6 +879,22 @@ def infer_jurisdiction_name(page_url: str, page_title: str, hint_text: str = "")
     from the USA.gov index anchor text (which is often the canonical name).
     """
     hay = " ".join([page_url or "", page_title or "", hint_text or ""]).lower()
+
+    # Common aliases / abbreviations that appear on USA.gov anchor text.
+    aliases = {
+        "u.s. virgin islands": "United States Virgin Islands",
+        "us virgin islands": "United States Virgin Islands",
+        "u s virgin islands": "United States Virgin Islands",
+        "u.s. vi": "United States Virgin Islands",
+        "washington, dc": "District of Columbia",
+        "washington dc": "District of Columbia",
+        "d.c.": "District of Columbia",
+        "dc": "District of Columbia",
+    }
+    for k, v in aliases.items():
+        if k in hay:
+            return v
+
     # Prefer longest names first (e.g., "Northern Mariana Islands")
     for name in sorted(STATE_ABBR.keys(), key=len, reverse=True):
         n = name.lower()
@@ -885,6 +1028,7 @@ def crawl_agencies_from_portal(
     max_pages: int,
     max_depth: int,
     sleep_s: float,
+    max_seconds: float,
 ) -> List[Dict[str, Any]]:
     """Crawl a state portal to find links that look like state agencies and return agency records."""
     seed_url = seed.get("seed_url") or ""
@@ -894,6 +1038,8 @@ def crawl_agencies_from_portal(
 
     jurisdiction = seed.get("jurisdiction")
     name = seed.get("name")
+
+    usagov_page_url = seed.get("usagov_page_url") or ""
 
     # Seed queue with portal root plus a few common directory paths.
     base_origin = normalize_origin(seed_url) or ("https://" + seed_host + "/")
@@ -932,6 +1078,9 @@ def crawl_agencies_from_portal(
 
     q = deque([(u, 0) for u in sorted(set(start_urls))])
     visited: Set[str] = set()
+
+    # For blocked/slow portals, keep per-page timeouts lower and lean on CC replay.
+    PAGE_TIMEOUT_S = 18
 
     def _cc_discover_seed_pages_for_host(host: str) -> List[str]:
         """Best-effort seed expansion using Common Crawl domain search.
@@ -1021,6 +1170,76 @@ def crawl_agencies_from_portal(
 
         return out
 
+    def _cc_discover_agency_urls_for_host(host: str) -> List[str]:
+        """Discover likely agency pages from Common Crawl even if the directory page is JS-heavy."""
+
+        try:
+            root = Path(__file__).resolve().parents[2]
+            src = root / "src"
+            if src.exists() and str(src) not in sys.path:
+                sys.path.insert(0, str(src))
+        except Exception:
+            pass
+
+        try:
+            from common_crawl_search_engine.ccindex import api as ccapi  # type: ignore
+        except Exception:
+            return []
+
+        patterns = [
+            re.compile(r"^/(government/)?state-agencies?/[^/]+/?$", re.IGNORECASE),
+            re.compile(r"^/(government/)?agencies?/[^/]+/?$", re.IGNORECASE),
+            re.compile(r"^/(departments?|department)/[^/]+/?$", re.IGNORECASE),
+        ]
+
+        out: List[str] = []
+        seen: Set[str] = set()
+
+        now_year = time.gmtime().tm_year
+        years = [str(now_year), str(now_year - 1), str(now_year - 2), str(now_year - 3), str(now_year - 4)]
+
+        old_strategy = os.environ.get("BRAVE_RESOLVE_STRATEGY")
+        os.environ["BRAVE_RESOLVE_STRATEGY"] = "meta_parallel"
+        try:
+            for y in years:
+                try:
+                    res = ccapi.search_domain_via_meta_indexes(
+                        host,
+                        year=y,
+                        max_matches=800,
+                    )
+                except Exception:
+                    continue
+
+                for r in res.records:
+                    u = str(r.get("url") or "")
+                    if not u:
+                        continue
+                    try:
+                        p = urllib.parse.urlparse(u)
+                        if p.netloc.lower() != host.lower():
+                            continue
+                        path = (p.path or "")
+                    except Exception:
+                        continue
+
+                    if not any(pat.match(path) for pat in patterns):
+                        continue
+                    u2 = strip_fragment_and_query(u)
+                    if u2 in seen:
+                        continue
+                    seen.add(u2)
+                    out.append(u2)
+                    if len(out) >= 80:
+                        return out
+        finally:
+            if old_strategy is None:
+                os.environ.pop("BRAVE_RESOLVE_STRATEGY", None)
+            else:
+                os.environ["BRAVE_RESOLVE_STRATEGY"] = old_strategy
+
+        return out
+
     emitted_keys: Set[Tuple[Optional[str], str, str]] = set()  # (jurisdiction, agency_name_norm, host)
     agencies: List[Dict[str, Any]] = []
 
@@ -1077,7 +1296,36 @@ def crawl_agencies_from_portal(
     pages_fetched = 0
     fetch_failures = 0
     cc_seeded = False
+    cc_agency_urls_emitted = False
+    started_s = time.time()
+
+    # First, try to emit agency links directly from the USA.gov per-jurisdiction page.
+    # This often contains a curated list of agencies and works even when the portal blocks.
+    if usagov_page_url and host_of(usagov_page_url).endswith("usa.gov"):
+        try:
+            us_html = http_get(usagov_page_url, timeout=min(45, max(10, int(DEFAULT_SEED_TIMEOUT_S))))
+            us_anchors = parse_anchors(usagov_page_url, us_html)
+            for a_url, a_text in us_anchors:
+                a_text_n = text_normalize(a_text)
+                if not a_url or not looks_html_url(a_url):
+                    continue
+                a_host = host_of(a_url)
+                if not a_host or a_host.endswith("usa.gov"):
+                    continue
+                if is_social_or_noise_host(a_host):
+                    continue
+                if a_host == seed_host:
+                    continue
+                if not looks_government_host(a_host):
+                    continue
+                if looks_agency_anchor(a_text_n, a_url) or looks_reasonable_agency_name(a_text_n):
+                    maybe_emit(a_text_n, a_url, found_on=usagov_page_url, anchor_text=a_text)
+        except Exception:
+            pass
     while q and pages_fetched < max_pages:
+        if max_seconds and (time.time() - started_s) > float(max_seconds):
+            sys.stderr.write(f"WARN crawl_time_budget_exceeded host={seed_host} seconds={max_seconds}\n")
+            break
         url, depth = q.popleft()
         url = strip_fragment_and_query(url)
         if url in visited:
@@ -1091,7 +1339,7 @@ def crawl_agencies_from_portal(
             continue
 
         try:
-            html = http_get(url)
+            html = http_get(url, timeout=PAGE_TIMEOUT_S)
         except Exception:
             fetch_failures += 1
             # If we are failing to fetch the common start URLs (timeouts, blocks, etc.),
@@ -1105,11 +1353,48 @@ def crawl_agencies_from_portal(
             continue
         pages_fetched += 1
 
+        # Avoid spending a long time on portals that are mostly unreachable.
+        if fetch_failures >= 80 and pages_fetched <= 6:
+            sys.stderr.write(f"WARN crawl_aborting_unreachable host={seed_host} fetched={pages_fetched} failures={fetch_failures}\n")
+            break
+
         # Extract anchors for agency candidates and next pages.
         try:
             anchors = parse_anchors(url, html)
         except Exception:
             anchors = []
+
+        # If early pages don't yield any agencies, try CC-based discovery even when
+        # fetches technically "work" (common for JS-heavy portals or blocked directories).
+        if (not cc_seeded) and pages_fetched <= 3 and len(agencies) == 0:
+            # Heuristic: very few anchors or very small HTML is usually not enough.
+            if len(anchors) < 8 or len(html) < 2_000:
+                extra = _cc_discover_seed_pages_for_host(seed_host)
+                if extra:
+                    sys.stderr.write(f"INFO cc_seed_pages host={seed_host} n={len(extra)}\n")
+                    for u in extra:
+                        q.appendleft((u, 0))
+                    cc_seeded = True
+
+        # Final fallback: if we still have no agencies late in the crawl, emit
+        # agency URLs discovered directly from CC for common directory patterns.
+        if (not cc_agency_urls_emitted) and pages_fetched >= 5 and len(agencies) == 0:
+            cc_urls = _cc_discover_agency_urls_for_host(seed_host)
+            if cc_urls:
+                sys.stderr.write(f"INFO cc_agency_url_fallback host={seed_host} n={len(cc_urls)}\n")
+                for u in cc_urls[:200]:
+                    # Derive a readable name from the last path segment.
+                    try:
+                        seg = urllib.parse.urlparse(u).path.rstrip("/").split("/")[-1]
+                    except Exception:
+                        seg = ""
+                    seg = urllib.parse.unquote(seg)
+                    seg = re.sub(r"[-_]+", " ", seg).strip()
+                    if not seg:
+                        continue
+                    guessed = " ".join(w.capitalize() for w in seg.split())
+                    maybe_emit(guessed, u, found_on="common_crawl_domain_search", anchor_text="")
+                cc_agency_urls_emitted = True
 
         directory_context = is_directory_like_page(url)
 
@@ -1324,6 +1609,7 @@ def main() -> None:
     ap.add_argument("--sleep", type=float, default=DEFAULT_SLEEP_S)
     ap.add_argument("--agency-max-pages", type=int, default=DEFAULT_AGENCY_MAX_PAGES)
     ap.add_argument("--agency-max-depth", type=int, default=DEFAULT_AGENCY_MAX_DEPTH)
+    ap.add_argument("--agency-max-seconds", type=int, default=DEFAULT_AGENCY_MAX_SECONDS)
     ap.add_argument("--keep-non-gov", action="store_true", help="Also keep non-gov hosts (default: drop)")
     ap.add_argument("--wikipedia", action="store_true", help="Enable Wikipedia enrichment (extlinks + .gov page)")
     ap.add_argument("--wikipedia-per-state", action="store_true", help="Also query per-state Wikipedia pages (slower)")
@@ -1417,6 +1703,7 @@ def main() -> None:
                     max_pages=args.agency_max_pages,
                     max_depth=args.agency_max_depth,
                     sleep_s=args.sleep,
+                    max_seconds=float(args.agency_max_seconds),
                 )
                 for rec in agencies:
                     # De-dupe by (jurisdiction, agency_name, host)
