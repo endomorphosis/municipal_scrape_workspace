@@ -22,6 +22,8 @@ ccindex_subset*
 *test*.parquet
 *test*.duckdb
 
+**/raw_html*
+
 # Run/output directories
 out_*/
 

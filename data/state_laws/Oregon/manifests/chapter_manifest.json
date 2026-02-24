@@ -1,0 +1,14 @@
+[
+  {
+    "chapter_number": 1,
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors001.html",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors001.html",
+    "source": "wayback",
+    "fetched_at": "2026-02-24T05:08:46.954547+00:00",
+    "status_code": 200,
+    "archive_url": "https://web.archive.org/web/20220120113244id_/https://www.oregonlegislature.gov/bills_laws/ors/ors001.html",
+    "archive_timestamp": "20220120113244",
+    "status": "downloaded",
+    "sha256": "302eda9b04e73c4e8747b523e7adb09b598de1a42ff20634527bc9b5238cc162"
+  }
+]
