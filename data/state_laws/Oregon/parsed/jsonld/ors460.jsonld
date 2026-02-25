@@ -1,0 +1,2575 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "orlaw": "https://www.oregonlegislature.gov/ors#"
+  },
+  "@type": "Legislation",
+  "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html",
+  "identifier": "ORS Chapter 460",
+  "name": "ORS Chapter 460 — Elevators; Amusement Rides",
+  "legislationType": "Statute",
+  "jurisdiction": "US-OR",
+  "isPartOf": {
+    "@type": "CreativeWork",
+    "identifier": "ORS",
+    "name": "Oregon Revised Statutes",
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors"
+  },
+  "dateModified": "2026-02-25T08:11:25.708223+00:00",
+  "source_file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors460.html",
+  "hasPart": [
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html#section-460.005",
+      "identifier": "ORS 460.005",
+      "name": "Section 460.005",
+      "text": "Definitions for ORS 460.005 to 460.175. As used in ORS 460.005 to 460.175, unless the context requires otherwise: (1) Alteration means a change or addition to equipment, other than the ordinary repair or replacement of an existing part of the equipment. (2) Certified elevator inspector means an employee or representative of a casualty insurance company or companies who has passed the required examination and has been issued a certificate of competency as an elevator inspector by the Department of Consumer and Business Services. (3) Elevator means a hoisting and lowering mechanism equipped with a car or platform that moves in guides, and that serves two or more landings, and includes but is not limited to dumbwaiters, escalators, manlifts, platform hoists, vertical parking units for motor vehicles and moving walks. (4) Elevator contractor license means an authorization issued by the department under ORS 460.005 to 460.175 for the licensee to engage in the business of installing, altering, repairing and maintaining elevators. (5) Installation permit means a permit issued by the department for the installation, alteration or repair of an elevator. (6) Minimum safety standards means safety standards provided by ORS 460.005 to",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Alteration means a change or addition to equipment, other than the ordinary repair or replacement of an existing part of the equipment.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Certified elevator inspector means an employee or representative of a casualty insurance company or companies who has passed the required examination and has been issued a certificate of competency as an elevator inspector by the Department of Consumer and Business Services.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Elevator means a hoisting and lowering mechanism equipped with a car or platform that moves in guides, and that serves two or more landings, and includes but is not limited to dumbwaiters, escalators, manlifts, platform hoists, vertical parking units for motor vehicles and moving walks.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Elevator contractor license means an authorization issued by the department under ORS 460.005 to 460.175 for the licensee to engage in the business of installing, altering, repairing and maintaining elevators.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "Installation permit means a permit issued by the department for the installation, alteration or repair of an elevator.",
+          "subsections": []
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "Minimum safety standards means safety standards provided by ORS 460.005 to",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 1,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html#section-460.010",
+      "identifier": "ORS 460.010",
+      "name": "Section 460.010",
+      "text": "[Repealed by 1961 c.427 22]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 2,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html#section-460.015",
+      "identifier": "ORS 460.015",
+      "name": "Section 460.015",
+      "text": "Short title of ORS 460.005 to 460.175. ORS 460.005 to 460.175 may be cited as the Elevator Safety Law.",
+      "history_citation_blocks": [
+        "1961 c.427 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "1961 c.427 1",
+          "year": 1961,
+          "chapter": "427",
+          "section": "1"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 3,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html#section-460.020",
+      "identifier": "ORS 460.020",
+      "name": "Section 460.020",
+      "text": "[Repealed by 1957 c.398 9]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 4,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html#section-460.024",
+      "identifier": "ORS 460.024",
+      "name": "Section 460.024",
+      "text": "Policy. The purpose of ORS 460.005 to 460.175 is to protect the health and safety of the people of Oregon from the danger of unsafe elevators. To accomplish this purpose the Legislative Assembly intends by ORS 460.005 to 460.175: (1) To provide minimum safety standards for the installation, alteration, repair and maintenance of elevators to be operated in this state. (2) To ensure compliance with minimum safety standards in installation, alteration, repair and maintenance of elevators to be operated within the state. (3) To provide for the administration and enforcement of ORS 460.005 to 460.175 by the Department of Consumer and Business Services. (4) To provide for defraying the cost of administering and enforcing ORS 460.005 to",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "To provide minimum safety standards for the installation, alteration, repair and maintenance of elevators to be operated in this state.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "To ensure compliance with minimum safety standards in installation, alteration, repair and maintenance of elevators to be operated within the state.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "To provide for the administration and enforcement of ORS 460.005 to 460.175 by the Department of Consumer and Business Services.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "To provide for defraying the cost of administering and enforcing ORS 460.005 to",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 5,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html#section-460.025",
+      "identifier": "ORS 460.025",
+      "name": "Section 460.025",
+      "text": "[1957 c.398 2,3; repealed by 1961 c.427 22]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 6,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html#section-460.027",
+      "identifier": "ORS 460.027",
+      "name": "Section 460.027",
+      "text": "",
+      "history_citation_blocks": [
+        "1957 c.398 4; repealed by 1961 c.427 22"
+      ],
+      "history_citations": [
+        {
+          "raw": "1957 c.398 4",
+          "year": 1957,
+          "chapter": "398",
+          "section": "4"
+        },
+        {
+          "raw": "repealed by 1961 c.427 22"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 7,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html#section-460.030",
+      "identifier": "ORS 460.030",
+      "name": "Section 460.030",
+      "text": "",
+      "history_citation_blocks": [
+        "Amended by 1955 c.138 1; 1957 c.398 5; 1957 c.465 3; repealed by 1961 c.427 22"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1955 c.138 1"
+        },
+        {
+          "raw": "1957 c.398 5",
+          "year": 1957,
+          "chapter": "398",
+          "section": "5"
+        },
+        {
+          "raw": "1957 c.465 3",
+          "year": 1957,
+          "chapter": "465",
+          "section": "3"
+        },
+        {
+          "raw": "repealed by 1961 c.427 22"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 8,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html#section-460.035",
+      "identifier": "ORS 460.035",
+      "name": "Section 460.035",
+      "text": "Exemptions from operation of ORS 460.005 to 460.175. (1) Fees are not required under ORS 460.005 to 460.175 to install, alter, repair, operate or maintain an elevator: (a) Under the supervision of the United States Government. (b) That is a nonpower-driven lifting device. (c) Located in a private residence, except for initial installation. (2) The owner or user of an elevator described in subsection (1) of this section may request that the Department of Consumer and Business Services inspect the elevator. If the department performs the inspection, the department, notwithstanding subsection (1) of this section, may collect the appropriate fee for performing the inspection. (3) Pipes installed in an elevator hoistway prior to July 1, 1961, that do not convey gases or liquids that would endanger life if discharged into the hoistway need not be removed. (4) ORS 460.005 to 460.175 do not apply to: (a) Belt, bucket, scoop, roller or similar type material conveyors. (b) Hoists for raising or lowering materials and that are provided with unguided hooks, slings and similar means for attachment to the materials. (c) Material hoists used only to raise and lower building material in buildings under construction. (d) Stackers that serve one floor only. (e) Window-washing scaffolds. (f) Nonpower-driven lifting devices. (g) Amusement rides. (h) Mine elevators. (i) Elevators under the supervision of the United States Government. (j) Elevators located in private residences, except for initial installation permits and installation inspections. (k) Other elevators and equipment as provided by the department by rule.",
+      "history_citation_blocks": [
+        "1961 c.427 4; 1963 c.330 2; 1973 c.528 3; 2001 c.104 198; 2005 c.22 339; 2005 c.616 2; 2009 c.696 3"
+      ],
+      "history_citations": [
+        {
+          "raw": "1961 c.427 4",
+          "year": 1961,
+          "chapter": "427",
+          "section": "4"
+        },
+        {
+          "raw": "1963 c.330 2",
+          "year": 1963,
+          "chapter": "330",
+          "section": "2"
+        },
+        {
+          "raw": "1973 c.528 3",
+          "year": 1973,
+          "chapter": "528",
+          "section": "3"
+        },
+        {
+          "raw": "2001 c.104 198",
+          "year": 2001,
+          "chapter": "104",
+          "section": "198"
+        },
+        {
+          "raw": "2005 c.22 339",
+          "year": 2005,
+          "chapter": "22",
+          "section": "339"
+        },
+        {
+          "raw": "2005 c.616 2",
+          "year": 2005,
+          "chapter": "616",
+          "section": "2"
+        },
+        {
+          "raw": "2009 c.696 3",
+          "year": 2009,
+          "chapter": "696",
+          "section": "3"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Fees are not required under ORS 460.005 to 460.175 to install, alter, repair, operate or maintain an elevator: of this section may request that the Department of Consumer and Business Services inspect the elevator. If the department performs the inspection, the department, notwithstanding subsection of this section, may collect the appropriate fee for performing the inspection.",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Under the supervision of the United States Government.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "That is a nonpower-driven lifting device.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Located in a private residence, except for initial installation.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The owner or user of an elevator described in subsection",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Pipes installed in an elevator hoistway prior to July 1, 1961, that do not convey gases or liquids that would endanger life if discharged into the hoistway need not be removed.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "ORS 460.005 to 460.175 do not apply to:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Belt, bucket, scoop, roller or similar type material conveyors.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Hoists for raising or lowering materials and that are provided with unguided hooks, slings and similar means for attachment to the materials.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Material hoists used only to raise and lower building material in buildings under construction.",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "Stackers that serve one floor only.",
+              "subsections": []
+            },
+            {
+              "label": "(e)",
+              "token": "e",
+              "kind": "alpha_lower",
+              "text": "Window-washing scaffolds.",
+              "subsections": []
+            },
+            {
+              "label": "(f)",
+              "token": "f",
+              "kind": "alpha_lower",
+              "text": "Nonpower-driven lifting devices.",
+              "subsections": []
+            },
+            {
+              "label": "(g)",
+              "token": "g",
+              "kind": "alpha_lower",
+              "text": "Amusement rides.",
+              "subsections": []
+            },
+            {
+              "label": "(h)",
+              "token": "h",
+              "kind": "alpha_lower",
+              "text": "Mine elevators.",
+              "subsections": []
+            },
+            {
+              "label": "(i)",
+              "token": "i",
+              "kind": "alpha_lower",
+              "text": "Elevators under the supervision of the United States Government.",
+              "subsections": []
+            },
+            {
+              "label": "(j)",
+              "token": "j",
+              "kind": "alpha_lower",
+              "text": "Elevators located in private residences, except for initial installation permits and installation inspections.",
+              "subsections": []
+            },
+            {
+              "label": "(k)",
+              "token": "k",
+              "kind": "alpha_lower",
+              "text": "Other elevators and equipment as provided by the department by rule.",
+              "subsections": []
+            }
+          ]
+        }
+      ],
+      "parser_warnings": [],
+      "position": 9,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html#section-460.040",
+      "identifier": "ORS 460.040",
+      "name": "Section 460.040",
+      "text": "",
+      "history_citation_blocks": [
+        "Amended by 1955 c.138 2; 1957 c.398 6; 1957 c.465 4; repealed by 1961 c.427 22"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1955 c.138 2"
+        },
+        {
+          "raw": "1957 c.398 6",
+          "year": 1957,
+          "chapter": "398",
+          "section": "6"
+        },
+        {
+          "raw": "1957 c.465 4",
+          "year": 1957,
+          "chapter": "465",
+          "section": "4"
+        },
+        {
+          "raw": "repealed by 1961 c.427 22"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 10,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html#section-460.045",
+      "identifier": "ORS 460.045",
+      "name": "Section 460.045",
+      "text": "Permits, licenses, certificates and authorizations required. A person may not: (1) Engage in the business of installation, alteration, repair or maintenance of an elevator without an elevator contractor license issued under ORS 460.005 to",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Engage in the business of installation, alteration, repair or maintenance of an elevator without an elevator contractor license issued under ORS 460.005 to",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 11,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html#section-460.047",
+      "identifier": "ORS 460.047",
+      "name": "Section 460.047",
+      "text": "Persons authorized to conduct mechanical and electrical repairs in industrial plant. Notwithstanding ORS 460.045 (2), the following persons may conduct electrical and mechanical repairs on an elevator located in an industrial plant: (1) A limited supervising electrician licensed under ORS 479.630 (3). (2) A limited journeyman electrician licensed under ORS 479.630 (5).",
+      "history_citation_blocks": [
+        "1999 c.1031 8"
+      ],
+      "history_citations": [
+        {
+          "raw": "1999 c.1031 8",
+          "year": 1999,
+          "chapter": "1031",
+          "section": "8"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": ", the following persons may conduct electrical and mechanical repairs on an elevator located in an industrial plant: A limited journeyman electrician licensed under ORS 479.630",
+          "subsections": []
+        },
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A limited supervising electrician licensed under ORS 479.630",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": ".",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": ".",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 12,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html#section-460.048",
+      "identifier": "ORS 460.048",
+      "name": "Section 460.048",
+      "text": "",
+      "history_citation_blocks": [
+        "1973 c.528 6; repealed by 2009 c.696 26"
+      ],
+      "history_citations": [
+        {
+          "raw": "1973 c.528 6",
+          "year": 1973,
+          "chapter": "528",
+          "section": "6"
+        },
+        {
+          "raw": "repealed by 2009 c.696 26"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 13,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html#section-460.050",
+      "identifier": "ORS 460.050",
+      "name": "Section 460.050",
+      "text": "[Amended by 1957 c.398 7; repealed by 1961 c.427 22]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 14,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html#section-460.055",
+      "identifier": "ORS 460.055",
+      "name": "Section 460.055",
+      "text": "Elevator permits; examination of applicant for elevator inspector certificate; lapse of certificates; rules. (1) The Department of Consumer and Business Services shall give its decision within a reasonable time, not exceeding 30 days: (a) Approving or rejecting plans and pertinent data for proposed elevator installations or alterations submitted for the departments examination. (b) Issuing or denying an installation permit. (c) Issuing or denying a certificate of competency to applicants after examinations for the certificate have been taken. (d) Issuing or denying operating permits for elevators inspected by a member of the departments staff of elevator inspectors or by a certified elevator inspector. (2) Except as provided in subsection (3) of this section operating permits may not be issued or renewed for elevators failing to meet minimum safety standards. (3) A provisional operating permit may be issued for elevators whose safety standards vary from the minimum safety standards, if in the opinion of the department no immediate hazard to health or safety exists. The department shall issue a provisional operating permit for a specific period of time determined by the department at the time the permit is granted. During the life of the provisional operating permit, the elevator must be brought into compliance with the safety standards found at variance at the time of the issuance of the provisional permit. (4) The department may adopt rules regarding installation permits and operating permits. The rules may include, but need not be limited to, rules for the use of standardized forms and terms and conditions for permit validity. (5) The department shall issue a certificate of competency as an elevator inspector only to an individual who has passed an examination administered by the department for that purpose and who is employed by the department or is a representative of a casualty insurance company or companies as an elevator inspector. The examination shall: (a) Include questions, the answers to which are confined to matters that will aid in determining the fitness and competency of the applicant for the intended service. (b) Include a practical demonstration of manipulative skill directly related to the intended service, or the requirement of previous related experience in lieu of a practical demonstration. (c) Be maintained on file with the records of practical demonstrations for no less than three years and shall be produced by the department upon the request of any court, or the Electrical and Elevator Board, or a person with a legitimate interest. (6) If for a period of more than two years after the person is issued a certificate of competency as an elevator inspector, a holder of the certificate is not employed as an elevator inspector, the person is not entitled to renewal of the certificate. The person may qualify for issuance of a new certificate in the manner provided for in subsection (5) of this section.",
+      "history_citation_blocks": [
+        "1961 c.427 6; 1963 c.330 3; 1973 c.528 7; 2009 c.696 5"
+      ],
+      "history_citations": [
+        {
+          "raw": "1961 c.427 6",
+          "year": 1961,
+          "chapter": "427",
+          "section": "6"
+        },
+        {
+          "raw": "1963 c.330 3",
+          "year": 1963,
+          "chapter": "330",
+          "section": "3"
+        },
+        {
+          "raw": "1973 c.528 7",
+          "year": 1973,
+          "chapter": "528",
+          "section": "7"
+        },
+        {
+          "raw": "2009 c.696 5",
+          "year": 2009,
+          "chapter": "696",
+          "section": "5"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The Department of Consumer and Business Services shall give its decision within a reasonable time, not exceeding 30 days:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Approving or rejecting plans and pertinent data for proposed elevator installations or alterations submitted for the departments examination.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Issuing or denying an installation permit.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Issuing or denying a certificate of competency to applicants after examinations for the certificate have been taken.",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "Issuing or denying operating permits for elevators inspected by a member of the departments staff of elevator inspectors or by a certified elevator inspector.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Except as provided in subsection",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "of this section operating permits may not be issued or renewed for elevators failing to meet minimum safety standards. A provisional operating permit may be issued for elevators whose safety standards vary from the minimum safety standards, if in the opinion of the department no immediate hazard to health or safety exists. The department shall issue a provisional operating permit for a specific period of time determined by the department at the time the permit is granted. During the life of the provisional operating permit, the elevator must be brought into compliance with the safety standards found at variance at the time of the issuance of the provisional permit.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "The department may adopt rules regarding installation permits and operating permits. The rules may include, but need not be limited to, rules for the use of standardized forms and terms and conditions for permit validity.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "The department shall issue a certificate of competency as an elevator inspector only to an individual who has passed an examination administered by the department for that purpose and who is employed by the department or is a representative of a casualty insurance company or companies as an elevator inspector. The examination shall: of this section.",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Include questions, the answers to which are confined to matters that will aid in determining the fitness and competency of the applicant for the intended service.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Include a practical demonstration of manipulative skill directly related to the intended service, or the requirement of previous related experience in lieu of a practical demonstration.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Be maintained on file with the records of practical demonstrations for no less than three years and shall be produced by the department upon the request of any court, or the Electrical and Elevator Board, or a person with a legitimate interest.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "If for a period of more than two years after the person is issued a certificate of competency as an elevator inspector, a holder of the certificate is not employed as an elevator inspector, the person is not entitled to renewal of the certificate. The person may qualify for issuance of a new certificate in the manner provided for in subsection",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 15,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html#section-460.057",
+      "identifier": "ORS 460.057",
+      "name": "Section 460.057",
+      "text": "Limited mechanical license. The Department of Consumer and Business Services may issue a special limited license to a person who can document to the satisfaction of the department that the person possesses sufficient work experience in the mechanical aspects of elevator installation, alteration, maintenance and repair acquired prior to October 23, 1999. In addition to any other conditions or limitations imposed by department rule on the scope of work that may be performed under the license, the license shall limit the person to performing mechanical installation, alteration, maintenance and repair on elevators.",
+      "history_citation_blocks": [
+        "1999 c.1031 7; 2005 c.758 23"
+      ],
+      "history_citations": [
+        {
+          "raw": "1999 c.1031 7",
+          "year": 1999,
+          "chapter": "1031",
+          "section": "7"
+        },
+        {
+          "raw": "2005 c.758 23",
+          "year": 2005,
+          "chapter": "758",
+          "section": "23"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 16,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html#section-460.059",
+      "identifier": "ORS 460.059",
+      "name": "Section 460.059",
+      "text": "Limited apprentice license. The Department of Consumer and Business Services may issue a special limited license to a person engaged in an approved apprenticeship program that allows the person to engage in the installation, alteration, maintenance and repair of elevators. The department, after consultation with the Electrical and Elevator Board, shall establish conditions and the specific scope of work that may be performed by a person licensed under this section.",
+      "history_citation_blocks": [
+        "1999 c.1031 6; 2005 c.758 24"
+      ],
+      "history_citations": [
+        {
+          "raw": "1999 c.1031 6",
+          "year": 1999,
+          "chapter": "1031",
+          "section": "6"
+        },
+        {
+          "raw": "2005 c.758 24",
+          "year": 2005,
+          "chapter": "758",
+          "section": "24"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 17,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html#section-460.060",
+      "identifier": "ORS 460.060",
+      "name": "Section 460.060",
+      "text": "[Amended by 1957 c.398 8; repealed by 1961 c.427 22]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 18,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html#section-460.061",
+      "identifier": "ORS 460.061",
+      "name": "Section 460.061",
+      "text": "Mechanical work on reciprocating conveyors; rules; fees. (1) As used in this section, reciprocating conveyor means a self-contained, power-driven stationary device that moves objects on a platform equipped with safety guards, or that moves individuals on a motorized chair, along a predetermined horizontal, inclined or vertical path between loading and discharge points. (2) The Department of Consumer and Business Services may adopt rules establishing a reciprocating conveyor mechanic license and a restricted reciprocating conveyor mechanic license that allow the holder to install, alter, repair and maintain the mechanical portions of reciprocating conveyors. (3) If the department adopts rules under this section, the rules shall include, but need not be limited to, rules that establish: (a) Subject to subsection (4) of this section, the type of work experience and training required to qualify for a reciprocating conveyor mechanic license or restricted reciprocating conveyor mechanic license; (b) Supervision and oversight requirements for reciprocating conveyor mechanics or restricted reciprocating conveyor mechanics; and (c) Procedures for administering and enforcing this section and the rules adopted under this section. (4) An applicant for a reciprocating conveyor mechanic license must demonstrate 3,000 hours of work experience in the installation, alteration, repair and maintenance of reciprocating conveyors or of other forms of elevators identified by the department by rule. (5) ORS 460.045 (2) does not apply to a reciprocating conveyor mechanic or restricted reciprocating conveyor mechanic engaged in installing, altering, repairing or maintaining the mechanical portions of a reciprocating conveyor. (6) Department rules adopted under this section may not prohibit a person who holds a license issued under ORS 460.057, 460.059 or 479.630 (6) from installing, altering, repairing or maintaining reciprocating conveyors or prohibit a limited journeyman electrician licensed under ORS 479.630 (5) from repairing or maintaining a reciprocating conveyor located in an industrial plant. (7) Notwithstanding ORS 460.045 (2), a person is exempt from any licensing requirement established by rules adopted under this section or established under ORS 460.057, 460.059 or 479.630 (6) when engaging in the installation, alteration, repair or maintenance of the mechanical portions of a reciprocating conveyor that is located in a residence and designed for moving an individual on a motorized chair. (8)(a) The fee for the issuance or renewal of a reciprocating conveyor mechanic license is $100 per year. (b) The fee for the issuance or renewal of a restricted reciprocating conveyor mechanic license is $50 for a three-year period.",
+      "history_citation_blocks": [
+        "2007 c.642 2"
+      ],
+      "history_citations": [
+        {
+          "raw": "2007 c.642 2",
+          "year": 2007,
+          "chapter": "642",
+          "section": "2"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "As used in this section, reciprocating conveyor means a self-contained, power-driven stationary device that moves objects on a platform equipped with safety guards, or that moves individuals on a motorized chair, along a predetermined horizontal, inclined or vertical path between loading and discharge points.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The Department of Consumer and Business Services may adopt rules establishing a reciprocating conveyor mechanic license and a restricted reciprocating conveyor mechanic license that allow the holder to install, alter, repair and maintain the mechanical portions of reciprocating conveyors. does not apply to a reciprocating conveyor mechanic or restricted reciprocating conveyor mechanic engaged in installing, altering, repairing or maintaining the mechanical portions of a reciprocating conveyor. , a person is exempt from any licensing requirement established by rules adopted under this section or established under ORS 460.057, 460.059 or 479.630",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "If the department adopts rules under this section, the rules shall include, but need not be limited to, rules that establish:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Subject to subsection",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "of this section, the type of work experience and training required to qualify for a reciprocating conveyor mechanic license or restricted reciprocating conveyor mechanic license; An applicant for a reciprocating conveyor mechanic license must demonstrate 3,000 hours of work experience in the installation, alteration, repair and maintenance of reciprocating conveyors or of other forms of elevators identified by the department by rule.",
+          "subsections": [
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Supervision and oversight requirements for reciprocating conveyor mechanics or restricted reciprocating conveyor mechanics; and",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Procedures for administering and enforcing this section and the rules adopted under this section.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "ORS 460.045 from repairing or maintaining a reciprocating conveyor located in an industrial plant.",
+          "subsections": []
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "Department rules adopted under this section may not prohibit a person who holds a license issued under ORS 460.057, 460.059 or 479.630 from installing, altering, repairing or maintaining reciprocating conveyors or prohibit a limited journeyman electrician licensed under ORS 479.630 when engaging in the installation, alteration, repair or maintenance of the mechanical portions of a reciprocating conveyor that is located in a residence and designed for moving an individual on a motorized chair.",
+          "subsections": []
+        },
+        {
+          "label": "(7)",
+          "token": "7",
+          "kind": "numeric",
+          "text": "Notwithstanding ORS 460.045",
+          "subsections": []
+        },
+        {
+          "label": "(8)",
+          "token": "8",
+          "kind": "numeric",
+          "text": "(a) The fee for the issuance or renewal of a reciprocating conveyor mechanic license is $100 per year.",
+          "subsections": [
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "The fee for the issuance or renewal of a restricted reciprocating conveyor mechanic license is $50 for a three-year period.",
+              "subsections": []
+            }
+          ]
+        }
+      ],
+      "parser_warnings": [],
+      "position": 19,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html#section-460.065",
+      "identifier": "ORS 460.065",
+      "name": "Section 460.065",
+      "text": "Expiration and renewal of permit or certificate; rules. (1) A certified elevator inspector certificate of competency expires on December 31 of the year in which the certificate is issued or on a date established by rule of the Department of Consumer and Business Services. (2) An elevator installation permit or operating permit expires on a date established by department rule. (3) Except as provided in ORS 460.055, a holder of a valid elevator inspector certificate of competency or elevator operating permit who has complied with ORS 460.005 to 460.175 and the rules adopted under ORS 460.085 (1) is entitled to renewal at the expiration of the certificate or permit.",
+      "history_citation_blocks": [
+        "1961 c.427 7,8; 1973 c.528 8; 2005 c.616 4; 2005 c.758 25a; 2007 c.768 5; 2009 c.696 6"
+      ],
+      "history_citations": [
+        {
+          "raw": "1961 c.427 7,8"
+        },
+        {
+          "raw": "1973 c.528 8",
+          "year": 1973,
+          "chapter": "528",
+          "section": "8"
+        },
+        {
+          "raw": "2005 c.616 4",
+          "year": 2005,
+          "chapter": "616",
+          "section": "4"
+        },
+        {
+          "raw": "2005 c.758 25a",
+          "year": 2005,
+          "chapter": "758",
+          "section": "25a"
+        },
+        {
+          "raw": "2007 c.768 5",
+          "year": 2007,
+          "chapter": "768",
+          "section": "5"
+        },
+        {
+          "raw": "2009 c.696 6",
+          "year": 2009,
+          "chapter": "696",
+          "section": "6"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A certified elevator inspector certificate of competency expires on December 31 of the year in which the certificate is issued or on a date established by rule of the Department of Consumer and Business Services. is entitled to renewal at the expiration of the certificate or permit.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "An elevator installation permit or operating permit expires on a date established by department rule.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Except as provided in ORS 460.055, a holder of a valid elevator inspector certificate of competency or elevator operating permit who has complied with ORS 460.005 to 460.175 and the rules adopted under ORS 460.085",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 20,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html#section-460.070",
+      "identifier": "ORS 460.070",
+      "name": "Section 460.070",
+      "text": "[Formerly 651.180; repealed by 1961 c.427 22]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 21,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html#section-460.075",
+      "identifier": "ORS 460.075",
+      "name": "Section 460.075",
+      "text": "Cancellation, suspension and revocation of permits, authorizations and certificates. (1) Subject to the provisions of ORS chapter 183, the Department of Consumer and Business Services may cancel, revoke or suspend the installation permit, temporary operation authorization or operating permit for any elevator that does not comply with minimum safety standards. (2) Subject to the provisions of ORS chapter 183, the department may suspend or revoke the certificate of competency of any certified elevator inspector: (a) Whom the department finds to be performing the work in a manner inconsistent with the intent and purposes of ORS 460.005 to 460.175. (b) Who fails to file in advance with the department the name of any company for which the inspector performs an inspection. (c) Who willfully violates ORS 460.005 to 460.175 or rules adopted under ORS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Subject to the provisions of ORS chapter 183, the Department of Consumer and Business Services may cancel, revoke or suspend the installation permit, temporary operation authorization or operating permit for any elevator that does not comply with minimum safety standards.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Subject to the provisions of ORS chapter 183, the department may suspend or revoke the certificate of competency of any certified elevator inspector:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Whom the department finds to be performing the work in a manner inconsistent with the intent and purposes of ORS 460.005 to 460.175.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Who fails to file in advance with the department the name of any company for which the inspector performs an inspection.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Who willfully violates ORS 460.005 to 460.175 or rules adopted under ORS",
+              "subsections": []
+            }
+          ]
+        }
+      ],
+      "parser_warnings": [],
+      "position": 22,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html#section-460.085",
+      "identifier": "ORS 460.085",
+      "name": "Section 460.085",
+      "text": "Rules; granting of exceptions; fees. (1) In accordance with the applicable provisions of ORS chapter 183, the Director of the Department of Consumer and Business Services, after consultation with the Electrical and Elevator Board, shall adopt reasonable rules: (a) Establishing safety standards applicable to the installation of elevators. (b) Establishing safety standards applicable to the alteration, repair or maintenance of elevators. The director may provide differing standards for elevators installed prior to July 1, 1961, and after July 1, 1961. (c) Governing the issuance, renewal, suspension and revocation of permits and certificates of competency issued under ORS 460.005 to 460.175. (d) Prescribing the time, place and circumstances under which permits, licenses and certificates of competency shall be exhibited for inspection. (e) Governing the internal organization and procedure of the Department of Consumer and Business Services for administering and enforcing ORS 460.005 to 460.175. (f) Prescribing, requiring and governing reports by the departments staff of elevator inspectors and certified elevator inspectors on elevators inspected by them. (g) Establishing standards, criteria and intervals for the periodic inspection under ORS 460.125 of the various types of elevators. (h) Establishing standards for the inspection of, and safety testing on, a new or altered elevator prior to placement of the elevator into service. (i) Establishing reasonable fees, in addition to the fees established by ORS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "In accordance with the applicable provisions of ORS chapter 183, the Director of the Department of Consumer and Business Services, after consultation with the Electrical and Elevator Board, shall adopt reasonable rules:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Establishing safety standards applicable to the installation of elevators.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Establishing safety standards applicable to the alteration, repair or maintenance of elevators. The director may provide differing standards for elevators installed prior to July 1, 1961, and after July 1, 1961.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Governing the issuance, renewal, suspension and revocation of permits and certificates of competency issued under ORS 460.005 to 460.175.",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "Prescribing the time, place and circumstances under which permits, licenses and certificates of competency shall be exhibited for inspection.",
+              "subsections": []
+            },
+            {
+              "label": "(e)",
+              "token": "e",
+              "kind": "alpha_lower",
+              "text": "Governing the internal organization and procedure of the Department of Consumer and Business Services for administering and enforcing ORS 460.005 to 460.175.",
+              "subsections": []
+            },
+            {
+              "label": "(f)",
+              "token": "f",
+              "kind": "alpha_lower",
+              "text": "Prescribing, requiring and governing reports by the departments staff of elevator inspectors and certified elevator inspectors on elevators inspected by them.",
+              "subsections": []
+            },
+            {
+              "label": "(g)",
+              "token": "g",
+              "kind": "alpha_lower",
+              "text": "Establishing standards, criteria and intervals for the periodic inspection under ORS 460.125 of the various types of elevators.",
+              "subsections": []
+            },
+            {
+              "label": "(h)",
+              "token": "h",
+              "kind": "alpha_lower",
+              "text": "Establishing standards for the inspection of, and safety testing on, a new or altered elevator prior to placement of the elevator into service.",
+              "subsections": []
+            },
+            {
+              "label": "(i)",
+              "token": "i",
+              "kind": "alpha_lower",
+              "text": "Establishing reasonable fees, in addition to the fees established by ORS",
+              "subsections": []
+            }
+          ]
+        }
+      ],
+      "parser_warnings": [],
+      "position": 23,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html#section-460.095",
+      "identifier": "ORS 460.095",
+      "name": "Section 460.095",
+      "text": "",
+      "history_citation_blocks": [
+        "1961 c.427 10; 1963 c.330 5; repealed by 1973 c.528 20"
+      ],
+      "history_citations": [
+        {
+          "raw": "1961 c.427 10",
+          "year": 1961,
+          "chapter": "427",
+          "section": "10"
+        },
+        {
+          "raw": "1963 c.330 5",
+          "year": 1963,
+          "chapter": "330",
+          "section": "5"
+        },
+        {
+          "raw": "repealed by 1973 c.528 20"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 24,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html#section-460.105",
+      "identifier": "ORS 460.105",
+      "name": "Section 460.105",
+      "text": "",
+      "history_citation_blocks": [
+        "1961 c.427 11; 1963 c.330 6; repealed by 1973 c.528 20"
+      ],
+      "history_citations": [
+        {
+          "raw": "1961 c.427 11",
+          "year": 1961,
+          "chapter": "427",
+          "section": "11"
+        },
+        {
+          "raw": "1963 c.330 6",
+          "year": 1963,
+          "chapter": "330",
+          "section": "6"
+        },
+        {
+          "raw": "repealed by 1973 c.528 20"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 25,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html#section-460.115",
+      "identifier": "ORS 460.115",
+      "name": "Section 460.115",
+      "text": "",
+      "history_citation_blocks": [
+        "1961 c.427 13; 1963 c.330 7; 1969 c.314 48; 1973 c.528 11; 1975 c.429 18; 1987 c.414 31a; repealed by 1993 c.744 101"
+      ],
+      "history_citations": [
+        {
+          "raw": "1961 c.427 13",
+          "year": 1961,
+          "chapter": "427",
+          "section": "13"
+        },
+        {
+          "raw": "1963 c.330 7",
+          "year": 1963,
+          "chapter": "330",
+          "section": "7"
+        },
+        {
+          "raw": "1969 c.314 48",
+          "year": 1969,
+          "chapter": "314",
+          "section": "48"
+        },
+        {
+          "raw": "1973 c.528 11",
+          "year": 1973,
+          "chapter": "528",
+          "section": "11"
+        },
+        {
+          "raw": "1975 c.429 18",
+          "year": 1975,
+          "chapter": "429",
+          "section": "18"
+        },
+        {
+          "raw": "1987 c.414 31a",
+          "year": 1987,
+          "chapter": "414",
+          "section": "31a"
+        },
+        {
+          "raw": "repealed by 1993 c.744 101"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 26,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html#section-460.125",
+      "identifier": "ORS 460.125",
+      "name": "Section 460.125",
+      "text": "Periodic inspection of elevators and permits; action upon finding noncompliance. (1) The Department of Consumer and Business Services shall: (a) Except as provided in this subsection, periodically inspect each elevator to ascertain if the elevator is being operated and maintained in accordance with ORS 460.005 to 460.175. The department is not required to inspect an elevator if the department is notified in writing, by the employer of a certified elevator inspector, that inspection will be made by the certified inspector and a copy of the inspection report is filed with the department within 30 days of the date the elevator is due for inspection. (b) Periodically check the authenticity, appropriateness and expiration date of elevator operating permits. (c) Review with the Electrical and Elevator Board any appeals from the decisions of the inspectors. (d) To the extent necessary to ensure safety, perform inspections and witness safety tests of new or altered elevators before the elevators are placed in service. (2) Inspection reports provided to owners, users or other affected parties shall contain a notification of the right of appeal as provided in ORS 460.155. (3) If the department finds that an elevator is not being operated in compliance with ORS 460.005 to 460.175, and the rules adopted under ORS 460.005 to",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The Department of Consumer and Business Services shall:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Except as provided in this subsection, periodically inspect each elevator to ascertain if the elevator is being operated and maintained in accordance with ORS 460.005 to 460.175. The department is not required to inspect an elevator if the department is notified in writing, by the employer of a certified elevator inspector, that inspection will be made by the certified inspector and a copy of the inspection report is filed with the department within 30 days of the date the elevator is due for inspection.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Periodically check the authenticity, appropriateness and expiration date of elevator operating permits.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Review with the Electrical and Elevator Board any appeals from the decisions of the inspectors.",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "To the extent necessary to ensure safety, perform inspections and witness safety tests of new or altered elevators before the elevators are placed in service.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Inspection reports provided to owners, users or other affected parties shall contain a notification of the right of appeal as provided in ORS 460.155.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "If the department finds that an elevator is not being operated in compliance with ORS 460.005 to 460.175, and the rules adopted under ORS 460.005 to",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 27,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html#section-460.135",
+      "identifier": "ORS 460.135",
+      "name": "Section 460.135",
+      "text": "Entry on premises for inspection purposes. For the purpose of discharging any duty imposed by or exercising any authority conferred by ORS 460.005 to 460.175, the Department of Consumer and Business Services may, during reasonable hours, enter any building, enclosure or upon any premises where an elevator is in operation or about to be put into operation. No person shall obstruct or interfere with the department in the performance of its duties or the exercise of any authority conferred by ORS 460.005 to 460.175.",
+      "history_citation_blocks": [
+        "1961 c.427 17; 1973 c.528 13"
+      ],
+      "history_citations": [
+        {
+          "raw": "1961 c.427 17",
+          "year": 1961,
+          "chapter": "427",
+          "section": "17"
+        },
+        {
+          "raw": "1973 c.528 13",
+          "year": 1973,
+          "chapter": "528",
+          "section": "13"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 28,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html#section-460.145",
+      "identifier": "ORS 460.145",
+      "name": "Section 460.145",
+      "text": "Restraining violations. When it appears to the Department of Consumer and Business Services that a person subject to ORS 460.005 to 460.175 is engaged or about to engage in an act or practice which constitutes a violation of ORS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 29,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html#section-460.155",
+      "identifier": "ORS 460.155",
+      "name": "Section 460.155",
+      "text": "Appeals from adverse rulings of department. (1) The Department of Consumer and Business Services shall hear the appeal of an appellant: (a) Who has filed a written request: (A) Within 10 days of receiving written notice that an injunction will be sought; or (B) Within 30 days after receiving notice that a permit or certificate of competency will be canceled, revoked or suspended; or (b) Who is affected by a notice described in paragraph (a) of this subsection. (2) If there is a timely appeal, the injunction will not be sought or the permit or certificate of competency will not be canceled, suspended or revoked pending the appeal unless the reason for the injunction, cancellation, suspension or revocation constitutes an immediate menace to health or safety. (3) The department shall likewise hear the appeal of an appellant who has filed a written request and who has reason to desire a change in the minimum safety standards or the rules under ORS 460.005 to 460.175, or has been denied a permit under ORS 460.055 or a certificate of competency. (4) The department shall set the time and place for hearing and give the appellant 10 days written notice. (5) All appeals shall be heard within three months of receipt of the request, except that if immediate menace to health or safety is involved the appeal shall be heard within 20 days of receipt of the request. (6)(a) Two or more appeals may be consolidated for hearing, if based upon substantially the same facts. (b) The department and the appellant may subpoena witnesses who shall receive the same compensation and mileage pay as circuit court witnesses. (c) The appeal shall be heard by the department before the Electrical and Elevator Board. (d) A written record shall be kept. (e) The department shall determine the appeal after consultation with and giving consideration to the views of the board. (7) Judicial review of any final order or decision of the department shall be taken pursuant to the provisions of ORS chapter 183.",
+      "history_citation_blocks": [
+        "1961 c.427 24; 1963 c.330 9; 1973 c.528 15; 2005 c.758 28"
+      ],
+      "history_citations": [
+        {
+          "raw": "1961 c.427 24",
+          "year": 1961,
+          "chapter": "427",
+          "section": "24"
+        },
+        {
+          "raw": "1963 c.330 9",
+          "year": 1963,
+          "chapter": "330",
+          "section": "9"
+        },
+        {
+          "raw": "1973 c.528 15",
+          "year": 1973,
+          "chapter": "528",
+          "section": "15"
+        },
+        {
+          "raw": "2005 c.758 28",
+          "year": 2005,
+          "chapter": "758",
+          "section": "28"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The Department of Consumer and Business Services shall hear the appeal of an appellant:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Who has filed a written request: of this subsection.",
+              "subsections": [
+                {
+                  "label": "(A)",
+                  "token": "A",
+                  "kind": "alpha_upper",
+                  "text": "Within 10 days of receiving written notice that an injunction will be sought; or",
+                  "subsections": []
+                },
+                {
+                  "label": "(B)",
+                  "token": "B",
+                  "kind": "alpha_upper",
+                  "text": "Within 30 days after receiving notice that a permit or certificate of competency will be canceled, revoked or suspended; or",
+                  "subsections": []
+                }
+              ]
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Who is affected by a notice described in paragraph",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "If there is a timely appeal, the injunction will not be sought or the permit or certificate of competency will not be canceled, suspended or revoked pending the appeal unless the reason for the injunction, cancellation, suspension or revocation constitutes an immediate menace to health or safety.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The department shall likewise hear the appeal of an appellant who has filed a written request and who has reason to desire a change in the minimum safety standards or the rules under ORS 460.005 to 460.175, or has been denied a permit under ORS 460.055 or a certificate of competency.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "The department shall set the time and place for hearing and give the appellant 10 days written notice.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "All appeals shall be heard within three months of receipt of the request, except that if immediate menace to health or safety is involved the appeal shall be heard within 20 days of receipt of the request.",
+          "subsections": []
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "(a) Two or more appeals may be consolidated for hearing, if based upon substantially the same facts.",
+          "subsections": [
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "The department and the appellant may subpoena witnesses who shall receive the same compensation and mileage pay as circuit court witnesses.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "The appeal shall be heard by the department before the Electrical and Elevator Board.",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "A written record shall be kept.",
+              "subsections": []
+            },
+            {
+              "label": "(e)",
+              "token": "e",
+              "kind": "alpha_lower",
+              "text": "The department shall determine the appeal after consultation with and giving consideration to the views of the board.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(7)",
+          "token": "7",
+          "kind": "numeric",
+          "text": "Judicial review of any final order or decision of the department shall be taken pursuant to the provisions of ORS chapter 183.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 30,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html#section-460.165",
+      "identifier": "ORS 460.165",
+      "name": "Section 460.165",
+      "text": "Fees; failure to pay fee. (1) Subject to ORS 460.035 (1) and 460.085 (1), the Department of Consumer and Business Services may collect the following fees: (a) For each year of an elevator contractors license for each place of business operated by the applicant, $195. (b) For the submission of plans and other pertinent data when required, for each elevator, $78. (c) For each year of an inspection period for an operating permit: (A) A dumbwaiter, sidewalk elevator, residential elevator, residential inclinator or subveyor, $60. (B) An escalator, lowerator, manlift, stagelift, inclined elevator, platform hoist or moving walk, $98. (C) A power-driven elevator with a four floor rise or under, $88. (D) A power-driven elevator with over a four floor rise, but under a 10-floor rise, $108. (E) A power-driven elevator with a 10-floor rise or over, but under a 20-floor rise, $134. (F) A power-driven elevator with a 20-floor rise or over, $157. (d) For a reinspection, $75. (e) For special inspections of hoisting or lowering mechanisms other than elevators, or for inspections, testing, consultations, site visits or other services for which no fee is otherwise specified, $75 per hour for travel and inspection time. (f) For an elevator installation permit, if the total cost of the installation or alteration is: (A) $1,000 or under, $98. (B) Over $1,000 but under $15,000, $98 plus $13 for each $1,000 or fraction of $1,000 by which the cost exceeds $1,000. (C) $15,000 or over but under $50,000, $280 plus $8 for each $1,000 or fraction of $1,000 by which the cost exceeds $15,000. (D) $50,000 or over, $553 plus $3 for each $1,000 or fraction of $1,000 by which the cost exceeds $50,000. (2) If an owner or user of any elevator equipment fails to pay a fee required under this section within 90 days after the billing date, the department may consider the fee delinquent and double the amount of the fee.",
+      "history_citation_blocks": [
+        "1961 c.427 20; 1973 c.832 5; 1977 c.874 1; 1981 c.566 1; 1981 c.897 52; 1991 c.201 2; 1995 c.696 21; 2003 c.14 293; 2005 c.616 7; 2007 c.71 143; 2009 c.696 10"
+      ],
+      "history_citations": [
+        {
+          "raw": "1961 c.427 20",
+          "year": 1961,
+          "chapter": "427",
+          "section": "20"
+        },
+        {
+          "raw": "1973 c.832 5",
+          "year": 1973,
+          "chapter": "832",
+          "section": "5"
+        },
+        {
+          "raw": "1977 c.874 1",
+          "year": 1977,
+          "chapter": "874",
+          "section": "1"
+        },
+        {
+          "raw": "1981 c.566 1",
+          "year": 1981,
+          "chapter": "566",
+          "section": "1"
+        },
+        {
+          "raw": "1981 c.897 52",
+          "year": 1981,
+          "chapter": "897",
+          "section": "52"
+        },
+        {
+          "raw": "1991 c.201 2",
+          "year": 1991,
+          "chapter": "201",
+          "section": "2"
+        },
+        {
+          "raw": "1995 c.696 21",
+          "year": 1995,
+          "chapter": "696",
+          "section": "21"
+        },
+        {
+          "raw": "2003 c.14 293",
+          "year": 2003,
+          "chapter": "14",
+          "section": "293"
+        },
+        {
+          "raw": "2005 c.616 7",
+          "year": 2005,
+          "chapter": "616",
+          "section": "7"
+        },
+        {
+          "raw": "2007 c.71 143",
+          "year": 2007,
+          "chapter": "71",
+          "section": "143"
+        },
+        {
+          "raw": "2009 c.696 10",
+          "year": 2009,
+          "chapter": "696",
+          "section": "10"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Subject to ORS 460.035 and 460.085 , the Department of Consumer and Business Services may collect the following fees:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "For each year of an elevator contractors license for each place of business operated by the applicant, $195.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "For the submission of plans and other pertinent data when required, for each elevator, $78.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "For each year of an inspection period for an operating permit:",
+              "subsections": [
+                {
+                  "label": "(A)",
+                  "token": "A",
+                  "kind": "alpha_upper",
+                  "text": "A dumbwaiter, sidewalk elevator, residential elevator, residential inclinator or subveyor, $60.",
+                  "subsections": []
+                },
+                {
+                  "label": "(B)",
+                  "token": "B",
+                  "kind": "alpha_upper",
+                  "text": "An escalator, lowerator, manlift, stagelift, inclined elevator, platform hoist or moving walk, $98.",
+                  "subsections": []
+                },
+                {
+                  "label": "(C)",
+                  "token": "C",
+                  "kind": "alpha_upper",
+                  "text": "A power-driven elevator with a four floor rise or under, $88.",
+                  "subsections": []
+                },
+                {
+                  "label": "(D)",
+                  "token": "D",
+                  "kind": "alpha_upper",
+                  "text": "A power-driven elevator with over a four floor rise, but under a 10-floor rise, $108.",
+                  "subsections": []
+                },
+                {
+                  "label": "(E)",
+                  "token": "E",
+                  "kind": "alpha_upper",
+                  "text": "A power-driven elevator with a 10-floor rise or over, but under a 20-floor rise, $134.",
+                  "subsections": []
+                },
+                {
+                  "label": "(F)",
+                  "token": "F",
+                  "kind": "alpha_upper",
+                  "text": "A power-driven elevator with a 20-floor rise or over, $157.",
+                  "subsections": []
+                }
+              ]
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "For a reinspection, $75.",
+              "subsections": []
+            },
+            {
+              "label": "(e)",
+              "token": "e",
+              "kind": "alpha_lower",
+              "text": "For special inspections of hoisting or lowering mechanisms other than elevators, or for inspections, testing, consultations, site visits or other services for which no fee is otherwise specified, $75 per hour for travel and inspection time.",
+              "subsections": []
+            },
+            {
+              "label": "(f)",
+              "token": "f",
+              "kind": "alpha_lower",
+              "text": "For an elevator installation permit, if the total cost of the installation or alteration is:",
+              "subsections": [
+                {
+                  "label": "(A)",
+                  "token": "A",
+                  "kind": "alpha_upper",
+                  "text": "$1,000 or under, $98.",
+                  "subsections": []
+                },
+                {
+                  "label": "(B)",
+                  "token": "B",
+                  "kind": "alpha_upper",
+                  "text": "Over $1,000 but under $15,000, $98 plus $13 for each $1,000 or fraction of $1,000 by which the cost exceeds $1,000.",
+                  "subsections": []
+                },
+                {
+                  "label": "(C)",
+                  "token": "C",
+                  "kind": "alpha_upper",
+                  "text": "$15,000 or over but under $50,000, $280 plus $8 for each $1,000 or fraction of $1,000 by which the cost exceeds $15,000.",
+                  "subsections": []
+                },
+                {
+                  "label": "(D)",
+                  "token": "D",
+                  "kind": "alpha_upper",
+                  "text": "$50,000 or over, $553 plus $3 for each $1,000 or fraction of $1,000 by which the cost exceeds $50,000.",
+                  "subsections": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "If an owner or user of any elevator equipment fails to pay a fee required under this section within 90 days after the billing date, the department may consider the fee delinquent and double the amount of the fee.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 31,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html#section-460.175",
+      "identifier": "ORS 460.175",
+      "name": "or by rules adopted under ORS 460.005 to 460.175.",
+      "text": "(7) Moving walk means a power-driven, horizontal or inclined, or combination, passenger-carrying device, in which the passenger-carrying surface remains parallel to its direction of motion, and is uninterrupted. (8) Operating permit means a permit issued by the department for the operation of an elevator. (9) Platform hoist means a hoisting and lowering mechanism equipped with an open platform that moves in a substantially vertical direction and that travels a limited distance above or below a building floor or dock level. (10) Provisional operating permit means a permit issued by the department on the basis of a variance from the minimum safety standards under ORS 460.005 to",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(7)",
+          "token": "7",
+          "kind": "numeric",
+          "text": "Moving walk means a power-driven, horizontal or inclined, or combination, passenger-carrying device, in which the passenger-carrying surface remains parallel to its direction of motion, and is uninterrupted.",
+          "subsections": []
+        },
+        {
+          "label": "(8)",
+          "token": "8",
+          "kind": "numeric",
+          "text": "Operating permit means a permit issued by the department for the operation of an elevator.",
+          "subsections": []
+        },
+        {
+          "label": "(9)",
+          "token": "9",
+          "kind": "numeric",
+          "text": "Platform hoist means a hoisting and lowering mechanism equipped with an open platform that moves in a substantially vertical direction and that travels a limited distance above or below a building floor or dock level.",
+          "subsections": []
+        },
+        {
+          "label": "(10)",
+          "token": "10",
+          "kind": "numeric",
+          "text": "Provisional operating permit means a permit issued by the department on the basis of a variance from the minimum safety standards under ORS 460.005 to",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 32,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html#section-460.210",
+      "identifier": "ORS 460.210",
+      "name": "Section 460.210",
+      "text": "[1963 c.276 1,2,3,4; renumbered 456.965]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 33,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html#section-460.220",
+      "identifier": "ORS 460.220",
+      "name": "Section 460.220",
+      "text": "",
+      "history_citation_blocks": [
+        "1963 c.276 6; renumbered 456.970"
+      ],
+      "history_citations": [
+        {
+          "raw": "1963 c.276 6",
+          "year": 1963,
+          "chapter": "276",
+          "section": "6"
+        },
+        {
+          "raw": "renumbered 456.970"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 34,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html#section-460.230",
+      "identifier": "ORS 460.230",
+      "name": "Section 460.230",
+      "text": "[1963 c.276 5; renumbered 456.975] AMUSEMENT RIDES AND DEVICES",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 35,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html#section-460.310",
+      "identifier": "ORS 460.310",
+      "name": "Section 460.310",
+      "text": "Definitions for ORS 460.310 to 460.370. As used in ORS 460.310 to 460.370, unless the context requires otherwise: (1) Amusement devices means a structure, electrical or mechanical contrivance or combination thereof which is intended to supply revenue to the owner or operator of the device by providing or offering to provide amusement, pleasures, thrills or excitement at carnivals, fairs or amusement parks. Amusement device does not include games, concessions and associated structures. (2) Amusement ride means any vehicle, boat or other mechanical device except water slides moving upon or within a flow perimeter or structure, along cables, rails or ground, through the air by centrifugal force or otherwise, or across water, that is used to convey one or more individuals for amusement, entertainment, diversion or recreation. The term amusement ride includes, but is not limited to: (a) Rides commonly known as Ferris wheels, carousels, parachute towers, bungee jumping, tunnels of love and roller coasters. (b) Equipment generally associated with winter sports activities, such as ski lifts, ski tows, j-bars, t-bars, ski mobiles, chair lifts and aerial tramways. (c) Equipment not originally designed to be used as an amusement ride, such as cranes or other lifting devices, when used as part of an amusement ride or device. (3) Amusement ride inspector means an employee or representative of a casualty insurance company or companies who is qualified and regularly employed or otherwise authorized by the insurance company to inspect amusement rides and devices for safety. (4) Department means the Department of Consumer and Business Services. (5) Director means the Director of the Department of Consumer and Business Services. (6) Water slide means a recreational device designed to provide a descending ride on a flowing water film into a splash down pool at the base of the slide.",
+      "history_citation_blocks": [
+        "1959 c.619 1; 1967 c.295 1; 1971 c.753 52; 1981 c.566 6; 1985 c.705 1; 1987 c.414 32; 1993 c.164 1; 1993 c.744 111"
+      ],
+      "history_citations": [
+        {
+          "raw": "1959 c.619 1",
+          "year": 1959,
+          "chapter": "619",
+          "section": "1"
+        },
+        {
+          "raw": "1967 c.295 1",
+          "year": 1967,
+          "chapter": "295",
+          "section": "1"
+        },
+        {
+          "raw": "1971 c.753 52",
+          "year": 1971,
+          "chapter": "753",
+          "section": "52"
+        },
+        {
+          "raw": "1981 c.566 6",
+          "year": 1981,
+          "chapter": "566",
+          "section": "6"
+        },
+        {
+          "raw": "1985 c.705 1",
+          "year": 1985,
+          "chapter": "705",
+          "section": "1"
+        },
+        {
+          "raw": "1987 c.414 32",
+          "year": 1987,
+          "chapter": "414",
+          "section": "32"
+        },
+        {
+          "raw": "1993 c.164 1",
+          "year": 1993,
+          "chapter": "164",
+          "section": "1"
+        },
+        {
+          "raw": "1993 c.744 111",
+          "year": 1993,
+          "chapter": "744",
+          "section": "111"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Amusement devices means a structure, electrical or mechanical contrivance or combination thereof which is intended to supply revenue to the owner or operator of the device by providing or offering to provide amusement, pleasures, thrills or excitement at carnivals, fairs or amusement parks. Amusement device does not include games, concessions and associated structures.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Amusement ride means any vehicle, boat or other mechanical device except water slides moving upon or within a flow perimeter or structure, along cables, rails or ground, through the air by centrifugal force or otherwise, or across water, that is used to convey one or more individuals for amusement, entertainment, diversion or recreation. The term amusement ride includes, but is not limited to:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Rides commonly known as Ferris wheels, carousels, parachute towers, bungee jumping, tunnels of love and roller coasters.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Equipment generally associated with winter sports activities, such as ski lifts, ski tows, j-bars, t-bars, ski mobiles, chair lifts and aerial tramways.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Equipment not originally designed to be used as an amusement ride, such as cranes or other lifting devices, when used as part of an amusement ride or device.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Amusement ride inspector means an employee or representative of a casualty insurance company or companies who is qualified and regularly employed or otherwise authorized by the insurance company to inspect amusement rides and devices for safety.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Department means the Department of Consumer and Business Services.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "Director means the Director of the Department of Consumer and Business Services.",
+          "subsections": []
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "Water slide means a recreational device designed to provide a descending ride on a flowing water film into a splash down pool at the base of the slide.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 36,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html#section-460.320",
+      "identifier": "ORS 460.320",
+      "name": "Section 460.320",
+      "text": "Permit and insurance required; notice of termination of insurance; rules. (1) No person shall: (a) Operate an amusement ride or device without a valid operation permit therefor issued under ORS 460.330, or allow an amusement ride or device owned, leased, controlled or managed by the person to be so operated. (b) Operate an amusement ride or device without first having obtained insurance from a company authorized to transact insurance in this state or an eligible surplus lines insurer as defined in ORS 735.405. The insurance policy shall insure the public and all persons riding or otherwise in contact with the ride or device against loss or injury, in an amount not less than $1 million per occurrence and an aggregate total of not less than $2 million. (2) Whenever an insurance company notifies its insured that it will no longer insure an amusement ride or device, or that insurance on a ride or device is no longer in force, the insurance company shall also notify the Department of Consumer and Business Services, in a form and manner prescribed by rule by the department, of the description or identification number of the ride or device for which insurance is canceled or suspended or is not to be renewed.",
+      "history_citation_blocks": [
+        "1959 c.619 2; 1981 c.566 7; 1985 c.705 2; 1993 c.164 2"
+      ],
+      "history_citations": [
+        {
+          "raw": "1959 c.619 2",
+          "year": 1959,
+          "chapter": "619",
+          "section": "2"
+        },
+        {
+          "raw": "1981 c.566 7",
+          "year": 1981,
+          "chapter": "566",
+          "section": "7"
+        },
+        {
+          "raw": "1985 c.705 2",
+          "year": 1985,
+          "chapter": "705",
+          "section": "2"
+        },
+        {
+          "raw": "1993 c.164 2",
+          "year": 1993,
+          "chapter": "164",
+          "section": "2"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "No person shall:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Operate an amusement ride or device without a valid operation permit therefor issued under ORS 460.330, or allow an amusement ride or device owned, leased, controlled or managed by the person to be so operated.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Operate an amusement ride or device without first having obtained insurance from a company authorized to transact insurance in this state or an eligible surplus lines insurer as defined in ORS 735.405. The insurance policy shall insure the public and all persons riding or otherwise in contact with the ride or device against loss or injury, in an amount not less than $1 million per occurrence and an aggregate total of not less than $2 million.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Whenever an insurance company notifies its insured that it will no longer insure an amusement ride or device, or that insurance on a ride or device is no longer in force, the insurance company shall also notify the Department of Consumer and Business Services, in a form and manner prescribed by rule by the department, of the description or identification number of the ride or device for which insurance is canceled or suspended or is not to be renewed.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 37,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html#section-460.330",
+      "identifier": "ORS 460.330",
+      "name": "Section 460.330",
+      "text": "Application for and issuance of permit; fees; rules. (1) An application for an operating permit to operate an amusement ride or device shall be made on an annual basis by the person owning the ride or device or the persons agent or lessee. The application shall be on forms provided by the Department of Consumer and Business Services. (2) An application for an annual operating permit shall include an inspection report by an amusement ride inspector employed or otherwise authorized to inspect by the insurance carrier insuring the ride or device. The inspector shall indorse upon the application any restrictions and conditions that, in the inspectors judgment, should be imposed upon the operation of the amusement ride or device to protect human life and property. In addition, the inspector shall indicate whether the amusement ride or device: (a) Meets the underwriters standards; (b) Meets safety standards approved by ASTM International; and (c) Is assembled and operated in compliance with the manual supplied by the manufacturer of the ride or device. (3) The inspection shall be performed no more than 90 days prior to the issuance or renewal date of the permit. The department may issue a temporary renewal permit without the required inspection report, allowing continued operation of a previously inspected ride or device if it appears to the department that the owner or operator has attempted to obtain an inspection, but inspection services are temporarily unavailable. (4) An application shall include the name of the insurance carrier and the number of the insurance policy insuring the ride or device as required by ORS 460.320 (1)(b). (5) The department shall disapprove and reject an application for a permit if it determines that the: (a) Owner or lessee of the amusement ride or device is not insured as required by ORS 460.320 (1)(b); (b) Operation does not meet safety standards as guided by the safety standards approved by ASTM International; (c) Amusement ride or device is not assembled and operated in compliance with the manual supplied by the manufacturer; or (d) Operation may endanger human life or property. (6) Upon approval of an application and payment of fees as prescribed by rule, the department shall issue a permit authorizing operation of the amusement ride or device.",
+      "history_citation_blocks": [
+        "1959 c.619 3,4; 1971 c.753 53; 1977 c.874 2; 1981 c.566 8; 1985 c.705 3; 1993 c.164 3; 2013 c.1 67"
+      ],
+      "history_citations": [
+        {
+          "raw": "1959 c.619 3,4"
+        },
+        {
+          "raw": "1971 c.753 53",
+          "year": 1971,
+          "chapter": "753",
+          "section": "53"
+        },
+        {
+          "raw": "1977 c.874 2",
+          "year": 1977,
+          "chapter": "874",
+          "section": "2"
+        },
+        {
+          "raw": "1981 c.566 8",
+          "year": 1981,
+          "chapter": "566",
+          "section": "8"
+        },
+        {
+          "raw": "1985 c.705 3",
+          "year": 1985,
+          "chapter": "705",
+          "section": "3"
+        },
+        {
+          "raw": "1993 c.164 3",
+          "year": 1993,
+          "chapter": "164",
+          "section": "3"
+        },
+        {
+          "raw": "2013 c.1 67",
+          "year": 2013,
+          "chapter": "1",
+          "section": "67"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "An application for an operating permit to operate an amusement ride or device shall be made on an annual basis by the person owning the ride or device or the persons agent or lessee. The application shall be on forms provided by the Department of Consumer and Business Services. (b). (b);",
+          "subsections": [
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Operation does not meet safety standards as guided by the safety standards approved by ASTM International;",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Amusement ride or device is not assembled and operated in compliance with the manual supplied by the manufacturer; or",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "Operation may endanger human life or property.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "An application for an annual operating permit shall include an inspection report by an amusement ride inspector employed or otherwise authorized to inspect by the insurance carrier insuring the ride or device. The inspector shall indorse upon the application any restrictions and conditions that, in the inspectors judgment, should be imposed upon the operation of the amusement ride or device to protect human life and property. In addition, the inspector shall indicate whether the amusement ride or device:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Meets the underwriters standards;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Meets safety standards approved by ASTM International; and",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Is assembled and operated in compliance with the manual supplied by the manufacturer of the ride or device.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The inspection shall be performed no more than 90 days prior to the issuance or renewal date of the permit. The department may issue a temporary renewal permit without the required inspection report, allowing continued operation of a previously inspected ride or device if it appears to the department that the owner or operator has attempted to obtain an inspection, but inspection services are temporarily unavailable.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "An application shall include the name of the insurance carrier and the number of the insurance policy insuring the ride or device as required by ORS 460.320",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "The department shall disapprove and reject an application for a permit if it determines that the:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Owner or lessee of the amusement ride or device is not insured as required by ORS 460.320",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "Upon approval of an application and payment of fees as prescribed by rule, the department shall issue a permit authorizing operation of the amusement ride or device.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 38,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html#section-460.340",
+      "identifier": "ORS 460.340",
+      "name": "Section 460.340",
+      "text": "Duration of permit. Permits issued under ORS 460.330 are valid until the amusement ride or device is materially rebuilt or materially modified so as to change the original action of the said amusement ride or device, but in no case for longer than one year after the date of issuance as follows: (1) If an amusement ride or device is altered so as to change the original action of the said amusement ride or device, such amusement ride or device shall be subject to a new inspection and shall apply for a new permit under ORS 460.330. (2) If an amusement ride or device is moved and installed in another place but is not altered so as to change the original action of the said amusement ride or device, no new permit shall be required; provided, however, a permit has been issued previously under ORS 460.330 and has not been operative for longer than a one-year period.",
+      "history_citation_blocks": [
+        "1959 c.619 5; 1985 c.705 4; 1993 c.164 4"
+      ],
+      "history_citations": [
+        {
+          "raw": "1959 c.619 5",
+          "year": 1959,
+          "chapter": "619",
+          "section": "5"
+        },
+        {
+          "raw": "1985 c.705 4",
+          "year": 1985,
+          "chapter": "705",
+          "section": "4"
+        },
+        {
+          "raw": "1993 c.164 4",
+          "year": 1993,
+          "chapter": "164",
+          "section": "4"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "If an amusement ride or device is altered so as to change the original action of the said amusement ride or device, such amusement ride or device shall be subject to a new inspection and shall apply for a new permit under ORS 460.330.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "If an amusement ride or device is moved and installed in another place but is not altered so as to change the original action of the said amusement ride or device, no new permit shall be required; provided, however, a permit has been issued previously under ORS 460.330 and has not been operative for longer than a one-year period.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 39,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html#section-460.345",
+      "identifier": "ORS 460.345",
+      "name": "Section 460.345",
+      "text": "Expiration of permits. Subject to ORS 460.340, the expiration date of the amusement ride or device operating permits shall be one year from the original date of issuance and thereafter on the anniversary date of issuance. [Formerly",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 40,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html#section-460.350",
+      "identifier": "ORS 460.350",
+      "name": "Section 460.350",
+      "text": "Enforcing compliance with law. (1) In addition to the inspections required under ORS 460.330, the Department of Consumer and Business Services may cause an amusement ride or device to be inspected at any reasonable time to insure compliance with ORS 460.310 to 460.370. (2) The department may deny, suspend or revoke a permit at any time if, in its judgment, the amusement ride or device for which the permit was issued is not installed or being operated in compliance with ORS 460.310 to 460.370. (3) The department may disconnect an unlawfully installed or operated amusement ride or device from its source of power at any time and prevent its use until the amusement ride or device is brought into compliance with ORS 460.310 to",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "In addition to the inspections required under ORS 460.330, the Department of Consumer and Business Services may cause an amusement ride or device to be inspected at any reasonable time to insure compliance with ORS 460.310 to 460.370.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The department may deny, suspend or revoke a permit at any time if, in its judgment, the amusement ride or device for which the permit was issued is not installed or being operated in compliance with ORS 460.310 to 460.370.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The department may disconnect an unlawfully installed or operated amusement ride or device from its source of power at any time and prevent its use until the amusement ride or device is brought into compliance with ORS 460.310 to",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 41,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html#section-460.352",
+      "identifier": "ORS 460.352",
+      "name": "Section 460.352",
+      "text": "Grounds for cancellation, suspension or revocation of permit. Subject to the provisions of ORS chapter 183, the Department of Consumer and Business Services shall cancel, revoke or suspend the operating permit for any person who fails to comply with the minimum safety standards provided by ORS 460.310 to 460.370. [Formerly",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 42,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html#section-460.355",
+      "identifier": "ORS 460.355",
+      "name": "Section 460.355",
+      "text": "Rules; required standards of care; exemption of regulated or inspected rides or devices. (1) In adopting rules pursuant to ORS 460.360 (1), applicable to equipment mentioned in ORS 460.310 (2)(b), the Department of Consumer and Business Services shall be guided by the safety standards approved by ASTM International. (2) The owner or operator shall be deemed not a common carrier; however, such owner or operator shall exercise the highest degree of care for the safety of users. (3) If the department finds that the United States Forest Service or other agency of government has jurisdiction over and regulates and provides inspection of the equipment mentioned in ORS 460.310 (2)(b) pursuant to promulgated safety standards not lower than provided by ORS 460.310 to 460.370, it shall by its rules exempt operators from the requirements of ORS 460.310 to 460.370. (4) The department shall adopt rules to: (a) Govern the issuance, renewal, suspension and revocation of permits and certificates of competency issued under ORS 460.310 to 460.370. (b) Govern the internal organization and procedure of the department for administering and enforcing ORS 460.310 to 460.370. (c) Govern reports by the departments staff of amusement ride inspectors on amusement rides or devices inspected by them. (d) Set permit fees sufficient to pay but not to exceed the departments costs of carrying out the amusement ride program. (5) In adopting rules under this section, the department shall consider: (a) Technological advances in the amusement ride industry. (b) The practicability of following the standards under consideration, if adopted. (c) The probability, extent and gravity of the injury to the public or property that would result from failure to follow the standards under consideration. (d) Safety standards followed, proposed or approved by responsible members of the amusement ride industry and by ASTM International.",
+      "history_citation_blocks": [
+        "1967 c.295 3; 1981 c.566 13; 1985 c.705 6; 1993 c.18 116; 1993 c.164 6; 1993 c.744 247; 2013 c.1 68"
+      ],
+      "history_citations": [
+        {
+          "raw": "1967 c.295 3",
+          "year": 1967,
+          "chapter": "295",
+          "section": "3"
+        },
+        {
+          "raw": "1981 c.566 13",
+          "year": 1981,
+          "chapter": "566",
+          "section": "13"
+        },
+        {
+          "raw": "1985 c.705 6",
+          "year": 1985,
+          "chapter": "705",
+          "section": "6"
+        },
+        {
+          "raw": "1993 c.18 116",
+          "year": 1993,
+          "chapter": "18",
+          "section": "116"
+        },
+        {
+          "raw": "1993 c.164 6",
+          "year": 1993,
+          "chapter": "164",
+          "section": "6"
+        },
+        {
+          "raw": "1993 c.744 247",
+          "year": 1993,
+          "chapter": "744",
+          "section": "247"
+        },
+        {
+          "raw": "2013 c.1 68",
+          "year": 2013,
+          "chapter": "1",
+          "section": "68"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "In adopting rules pursuant to ORS 460.360 , applicable to equipment mentioned in ORS 460.310",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "(b), the Department of Consumer and Business Services shall be guided by the safety standards approved by ASTM International. The owner or operator shall be deemed not a common carrier; however, such owner or operator shall exercise the highest degree of care for the safety of users. (b) pursuant to promulgated safety standards not lower than provided by ORS 460.310 to 460.370, it shall by its rules exempt operators from the requirements of ORS 460.310 to 460.370.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "If the department finds that the United States Forest Service or other agency of government has jurisdiction over and regulates and provides inspection of the equipment mentioned in ORS 460.310",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "The department shall adopt rules to:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Govern the issuance, renewal, suspension and revocation of permits and certificates of competency issued under ORS 460.310 to 460.370.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Govern the internal organization and procedure of the department for administering and enforcing ORS 460.310 to 460.370.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Govern reports by the departments staff of amusement ride inspectors on amusement rides or devices inspected by them.",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "Set permit fees sufficient to pay but not to exceed the departments costs of carrying out the amusement ride program.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "In adopting rules under this section, the department shall consider:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Technological advances in the amusement ride industry.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "The practicability of following the standards under consideration, if adopted.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "The probability, extent and gravity of the injury to the public or property that would result from failure to follow the standards under consideration.",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "Safety standards followed, proposed or approved by responsible members of the amusement ride industry and by ASTM International.",
+              "subsections": []
+            }
+          ]
+        }
+      ],
+      "parser_warnings": [],
+      "position": 43,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html#section-460.360",
+      "identifier": "ORS 460.360",
+      "name": "Section 460.360",
+      "text": "Rules; applicability of Administrative Procedures Act. (1) The Department of Consumer and Business Services shall, in compliance with ORS chapter 183, make, amend, repeal, promulgate and enforce rules to carry out ORS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The Department of Consumer and Business Services shall, in compliance with ORS chapter 183, make, amend, repeal, promulgate and enforce rules to carry out ORS",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 44,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html#section-460.370",
+      "identifier": "ORS 460.370",
+      "name": "Section 460.370",
+      "text": "Deposit of fees. All moneys from fees collected by the Department of Consumer and Business Services under ORS 460.310 to 460.370 shall be paid into the Consumer and Business Services Fund created by ORS 705.145 and are continuously appropriated to the department for use as provided in ORS 455.022.",
+      "history_citation_blocks": [
+        "1959 c.619 8; 1967 c.92 3; 1973 c.834 40; 1993 c.744 112; 2001 c.710 12; 2011 c.597 203"
+      ],
+      "history_citations": [
+        {
+          "raw": "1959 c.619 8",
+          "year": 1959,
+          "chapter": "619",
+          "section": "8"
+        },
+        {
+          "raw": "1967 c.92 3",
+          "year": 1967,
+          "chapter": "92",
+          "section": "3"
+        },
+        {
+          "raw": "1973 c.834 40",
+          "year": 1973,
+          "chapter": "834",
+          "section": "40"
+        },
+        {
+          "raw": "1993 c.744 112",
+          "year": 1993,
+          "chapter": "744",
+          "section": "112"
+        },
+        {
+          "raw": "2001 c.710 12",
+          "year": 2001,
+          "chapter": "710",
+          "section": "12"
+        },
+        {
+          "raw": "2011 c.597 203",
+          "year": 2011,
+          "chapter": "597",
+          "section": "203"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 45,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html#section-460.380",
+      "identifier": "ORS 460.380",
+      "name": "Section 460.380",
+      "text": "",
+      "history_citation_blocks": [
+        "1959 c.619 9; repealed by 1981 c.566 16"
+      ],
+      "history_citations": [
+        {
+          "raw": "1959 c.619 9",
+          "year": 1959,
+          "chapter": "619",
+          "section": "9"
+        },
+        {
+          "raw": "repealed by 1981 c.566 16"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 46,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html#section-460.390",
+      "identifier": "ORS 460.390",
+      "name": "Section 460.390",
+      "text": "",
+      "history_citation_blocks": [
+        "1981 c.566 10; 1985 c.705 7; repealed by 1993 c.164 9"
+      ],
+      "history_citations": [
+        {
+          "raw": "1981 c.566 10",
+          "year": 1981,
+          "chapter": "566",
+          "section": "10"
+        },
+        {
+          "raw": "1985 c.705 7",
+          "year": 1985,
+          "chapter": "705",
+          "section": "7"
+        },
+        {
+          "raw": "repealed by 1993 c.164 9"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 47,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html#section-460.400",
+      "identifier": "ORS 460.400",
+      "name": "]",
+      "text": "",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 48,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html#section-460.410",
+      "identifier": "ORS 460.410",
+      "name": "Section 460.410",
+      "text": "[1981 c.566 12; 1985 c.705 8; 1993 c.164 8; renumbered 460.345 in 2001] PENALTIES",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 49,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html#section-460.990",
+      "identifier": "ORS 460.990",
+      "name": "Section 460.990",
+      "text": "Penalties. (1) Violation of any of the provisions of ORS 460.005 to 460.175 is a Class C misdemeanor. (2) Violation of any provisions of ORS 460.310 to 460.370 is a Class B misdemeanor. [Subsection (2) enacted as 1959 c.619 10; 1961 c.427 25; subsection (1) enacted as 1961 c.427 21; 1985 c.705 9; 2011 c.597 204] _______________",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Violation of any of the provisions of ORS 460.005 to 460.175 is a Class C misdemeanor. enacted as 1961 c.427 21; 1985 c.705 9; 2011 c.597 204] _______________",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Violation of any provisions of ORS 460.310 to 460.370 is a Class B misdemeanor. [Subsection enacted as 1959 c.619 10; 1961 c.427 25; subsection",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 50,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors460.html"
+    }
+  ],
+  "alternateName": "Elevators; Amusement Rides",
+  "legislationDate": "2023"
+}

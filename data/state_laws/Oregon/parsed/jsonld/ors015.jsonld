@@ -1,0 +1,1430 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "orlaw": "https://www.oregonlegislature.gov/ors#"
+  },
+  "@type": "Legislation",
+  "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html",
+  "identifier": "ORS Chapter 15",
+  "name": "ORS Chapter 15 — Choice of Laws",
+  "legislationType": "Statute",
+  "jurisdiction": "US-OR",
+  "isPartOf": {
+    "@type": "CreativeWork",
+    "identifier": "ORS",
+    "name": "Oregon Revised Statutes",
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors"
+  },
+  "dateModified": "2026-02-25T08:11:13.407011+00:00",
+  "source_file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors015.html",
+  "hasPart": [
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html#section-15.010",
+      "identifier": "ORS 15.010",
+      "name": "Section 15.010",
+      "text": "[Repealed by 1979 c.284 199]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 1,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html#section-15.020",
+      "identifier": "ORS 15.020",
+      "name": "Section 15.020",
+      "text": "[Amended by 1977 c.877 2; repealed by 1979 c.284 199]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 2,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html#section-15.030",
+      "identifier": "ORS 15.030",
+      "name": "Section 15.030",
+      "text": "[Repealed by 1979 c.284 199]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 3,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html#section-15.040",
+      "identifier": "ORS 15.040",
+      "name": "Section 15.040",
+      "text": "",
+      "history_citation_blocks": [
+        "Amended by 1963 c.310 1; 1967 c.297 1; 1969 c.181 1; 1971 c.192 1; 1977 c.877 3; repealed by 1979 c.284 199"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1963 c.310 1"
+        },
+        {
+          "raw": "1967 c.297 1",
+          "year": 1967,
+          "chapter": "297",
+          "section": "1"
+        },
+        {
+          "raw": "1969 c.181 1",
+          "year": 1969,
+          "chapter": "181",
+          "section": "1"
+        },
+        {
+          "raw": "1971 c.192 1",
+          "year": 1971,
+          "chapter": "192",
+          "section": "1"
+        },
+        {
+          "raw": "1977 c.877 3",
+          "year": 1977,
+          "chapter": "877",
+          "section": "3"
+        },
+        {
+          "raw": "repealed by 1979 c.284 199"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 4,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html#section-15.050",
+      "identifier": "ORS 15.050",
+      "name": "Section 15.050",
+      "text": "[Repealed by 1969 c.181 2]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 5,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html#section-15.060",
+      "identifier": "ORS 15.060",
+      "name": "Section 15.060",
+      "text": "",
+      "history_citation_blocks": [
+        "Amended by 1955 c.165 1; 1973 c.827 5; 1977 c.877 4; repealed by 1979 c.284 199"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1955 c.165 1"
+        },
+        {
+          "raw": "1973 c.827 5",
+          "year": 1973,
+          "chapter": "827",
+          "section": "5"
+        },
+        {
+          "raw": "1977 c.877 4",
+          "year": 1977,
+          "chapter": "877",
+          "section": "4"
+        },
+        {
+          "raw": "repealed by 1979 c.284 199"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 6,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html#section-15.070",
+      "identifier": "ORS 15.070",
+      "name": "Section 15.070",
+      "text": "[Repealed by 1979 c.284 199]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 7,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html#section-15.080",
+      "identifier": "ORS 15.080",
+      "name": "Section 15.080",
+      "text": "",
+      "history_citation_blocks": [
+        "Amended by 1961 c.344 98; 1963 c.310 2; 1967 c.581 1; 1973 c.823 87; 1975 c.604 1; 1977 c.877 5; repealed by 1979 c.284 199"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1961 c.344 98"
+        },
+        {
+          "raw": "1963 c.310 2",
+          "year": 1963,
+          "chapter": "310",
+          "section": "2"
+        },
+        {
+          "raw": "1967 c.581 1",
+          "year": 1967,
+          "chapter": "581",
+          "section": "1"
+        },
+        {
+          "raw": "1973 c.823 87",
+          "year": 1973,
+          "chapter": "823",
+          "section": "87"
+        },
+        {
+          "raw": "1975 c.604 1",
+          "year": 1975,
+          "chapter": "604",
+          "section": "1"
+        },
+        {
+          "raw": "1977 c.877 5",
+          "year": 1977,
+          "chapter": "877",
+          "section": "5"
+        },
+        {
+          "raw": "repealed by 1979 c.284 199"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 8,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html#section-15.085",
+      "identifier": "ORS 15.085",
+      "name": "Section 15.085",
+      "text": "",
+      "history_citation_blocks": [
+        "1963 c.445 2; 1969 c.597 257; 1971 c.779 1; repealed by 1979 c.284 199"
+      ],
+      "history_citations": [
+        {
+          "raw": "1963 c.445 2",
+          "year": 1963,
+          "chapter": "445",
+          "section": "2"
+        },
+        {
+          "raw": "1969 c.597 257",
+          "year": 1969,
+          "chapter": "597",
+          "section": "257"
+        },
+        {
+          "raw": "1971 c.779 1",
+          "year": 1971,
+          "chapter": "779",
+          "section": "1"
+        },
+        {
+          "raw": "repealed by 1979 c.284 199"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 9,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html#section-15.090",
+      "identifier": "ORS 15.090",
+      "name": "Section 15.090",
+      "text": "[Repealed by 1979 c.284 199]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 10,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html#section-15.100",
+      "identifier": "ORS 15.100",
+      "name": "Section 15.100",
+      "text": "[Renumbered 18.135]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 11,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html#section-15.110",
+      "identifier": "ORS 15.110",
+      "name": "Section 15.110",
+      "text": "",
+      "history_citation_blocks": [
+        "Amended by 1955 c.293 1; 1973 c.827 6; 1977 c.877 6; repealed by 1979 c.284 199"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1955 c.293 1"
+        },
+        {
+          "raw": "1973 c.827 6",
+          "year": 1973,
+          "chapter": "827",
+          "section": "6"
+        },
+        {
+          "raw": "1977 c.877 6",
+          "year": 1977,
+          "chapter": "877",
+          "section": "6"
+        },
+        {
+          "raw": "repealed by 1979 c.284 199"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 12,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html#section-15.120",
+      "identifier": "ORS 15.120",
+      "name": "Section 15.120",
+      "text": "[Repealed by 1979 c.284 199]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 13,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html#section-15.130",
+      "identifier": "ORS 15.130",
+      "name": "Section 15.130",
+      "text": "",
+      "history_citation_blocks": [
+        "Amended by 1955 c.70 1; 1965 c.329 1; 1973 c.529 1; repealed by 1979 c.284 199"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1955 c.70 1"
+        },
+        {
+          "raw": "1965 c.329 1",
+          "year": 1965,
+          "chapter": "329",
+          "section": "1"
+        },
+        {
+          "raw": "1973 c.529 1",
+          "year": 1973,
+          "chapter": "529",
+          "section": "1"
+        },
+        {
+          "raw": "repealed by 1979 c.284 199"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 14,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html#section-15.140",
+      "identifier": "ORS 15.140",
+      "name": "Section 15.140",
+      "text": "[Repealed by 1979 c.284 199]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 15,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html#section-15.150",
+      "identifier": "ORS 15.150",
+      "name": "Section 15.150",
+      "text": "[Repealed by 1979 c.284 199]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 16,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html#section-15.160",
+      "identifier": "ORS 15.160",
+      "name": "Section 15.160",
+      "text": "",
+      "history_citation_blocks": [
+        "Amended by 1961 c.353 1; 1977 c.877 7; repealed by 1979 c.284 199"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1961 c.353 1"
+        },
+        {
+          "raw": "1977 c.877 7",
+          "year": 1977,
+          "chapter": "877",
+          "section": "7"
+        },
+        {
+          "raw": "repealed by 1979 c.284 199"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 17,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html#section-15.170",
+      "identifier": "ORS 15.170",
+      "name": "Section 15.170",
+      "text": "[Repealed by 1979 c.284 199]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 18,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html#section-15.180",
+      "identifier": "ORS 15.180",
+      "name": "Section 15.180",
+      "text": "[Repealed by 1979 c.284 199]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 19,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html#section-15.190",
+      "identifier": "ORS 15.190",
+      "name": "Section 15.190",
+      "text": "",
+      "history_citation_blocks": [
+        "Amended by 1955 c.287 15; subsection (5) of 1955 part derived from 1955 c.287 33, 34; 1959 c.440 1; 1967 c.410 1; 1969 c.389 1; 1973 c.60 1; 1977 c.877 8; repealed by 1979 c.284 199"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1955 c.287 15"
+        },
+        {
+          "raw": "subsection (5) of 1955 part derived from 1955 c.287 33, 34"
+        },
+        {
+          "raw": "1959 c.440 1",
+          "year": 1959,
+          "chapter": "440",
+          "section": "1"
+        },
+        {
+          "raw": "1967 c.410 1",
+          "year": 1967,
+          "chapter": "410",
+          "section": "1"
+        },
+        {
+          "raw": "1969 c.389 1",
+          "year": 1969,
+          "chapter": "389",
+          "section": "1"
+        },
+        {
+          "raw": "1973 c.60 1",
+          "year": 1973,
+          "chapter": "60",
+          "section": "1"
+        },
+        {
+          "raw": "1977 c.877 8",
+          "year": 1977,
+          "chapter": "877",
+          "section": "8"
+        },
+        {
+          "raw": "repealed by 1979 c.284 199"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 20,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html#section-15.200",
+      "identifier": "ORS 15.200",
+      "name": "Section 15.200",
+      "text": "",
+      "history_citation_blocks": [
+        "Amended by 1955 c.287 16; subsection (3) of 1955 part derived from 1955 c.287 33, 34; 1959 c.440 2; 1961 c.146 1; repealed by 1979 c.284 199"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1955 c.287 16"
+        },
+        {
+          "raw": "subsection (3) of 1955 part derived from 1955 c.287 33, 34"
+        },
+        {
+          "raw": "1959 c.440 2",
+          "year": 1959,
+          "chapter": "440",
+          "section": "2"
+        },
+        {
+          "raw": "1961 c.146 1",
+          "year": 1961,
+          "chapter": "146",
+          "section": "1"
+        },
+        {
+          "raw": "repealed by 1979 c.284 199"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 21,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html#section-15.210",
+      "identifier": "ORS 15.210",
+      "name": "Section 15.210",
+      "text": "",
+      "history_citation_blocks": [
+        "1975 c.623 7; repealed by 1979 c.284 199"
+      ],
+      "history_citations": [
+        {
+          "raw": "1975 c.623 7",
+          "year": 1975,
+          "chapter": "623",
+          "section": "7"
+        },
+        {
+          "raw": "repealed by 1979 c.284 199"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 22,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html#section-15.220",
+      "identifier": "ORS 15.220",
+      "name": "Section 15.220",
+      "text": "[1975 c.623 8; repealed by 1979 c.284 199] CHOICE OF LAW FOR CONTRACTS (Generally)",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 23,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html#section-15.300",
+      "identifier": "ORS 15.300",
+      "name": "Section 15.300",
+      "text": "Definitions for ORS 15.300 to 15.380. For the purposes of ORS 15.300 to 15.380: (1) Law means any rule of general legal applicability adopted by a state, whether that rule is domestic or foreign and whether derived from international law, a constitution, statute, other publicly adopted measure or published judicial precedent. Except for references to the law of Oregon, law does not include rules governing choice of law. (2) State means the United States, any state of the United States, any territory, possession or other jurisdiction of the United States, any Indian tribe, other Native American group or Native Hawaiian group that is recognized by federal law or formally acknowledged by a state of the United States, and any foreign country, including any territorial subdivision or other entity with its own system of laws. [Formerly 81.100]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Law means any rule of general legal applicability adopted by a state, whether that rule is domestic or foreign and whether derived from international law, a constitution, statute, other publicly adopted measure or published judicial precedent. Except for references to the law of Oregon, law does not include rules governing choice of law.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "State means the United States, any state of the United States, any territory, possession or other jurisdiction of the United States, any Indian tribe, other Native American group or Native Hawaiian group that is recognized by federal law or formally acknowledged by a state of the United States, and any foreign country, including any territorial subdivision or other entity with its own system of laws. [Formerly 81.100]",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 24,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html#section-15.305",
+      "identifier": "ORS 15.305",
+      "name": "Section 15.305",
+      "text": "Applicability. ORS 15.300 to 15.380 govern the choice of law applicable to any contract, or part of a contract, when a choice between the laws of different states is at issue. ORS 15.300 to 15.380 do not apply if another Oregon statute expressly designates the law applicable to the contract or part of a contract. ORS 15.320 does not apply to any contract in which one of the parties is a financial institution, as defined by 15 U.S.C. 6827, as in effect on January 1, 2002. [Formerly 81.102] (Contracts Governed by Oregon Law)",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 25,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html#section-15.320",
+      "identifier": "ORS 15.320",
+      "name": "Section 15.320",
+      "text": "Specific types of contracts governed by Oregon law. Notwithstanding any other provision of ORS 15.300 to 15.380, but subject to the limitations on applicability imposed by ORS 15.305, the law of Oregon applies to the following contracts: (1) A contract for services to be rendered in Oregon, or for goods to be delivered in Oregon, if Oregon or any of its agencies or subdivisions is a party to the contract. The application of Oregons law pursuant to this subsection may be waived by a person authorized by Oregons law to make the waiver. (2) A contract for construction work to be performed primarily in Oregon. (3) A contract of employment for services to be rendered primarily in Oregon by a resident of Oregon. (4)(a) A consumer contract, if: (A) The consumer is a resident of Oregon at the time of contracting; and (B) The consumers assent to the contract is obtained in Oregon, or the consumer is induced to enter into the contract in substantial measure by an invitation or advertisement in Oregon. (b) For the purposes of this subsection, a consumer contract is a contract for the supply of goods or services that are designed primarily for personal, familial or household use. [Formerly 81.105]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A contract for services to be rendered in Oregon, or for goods to be delivered in Oregon, if Oregon or any of its agencies or subdivisions is a party to the contract. The application of Oregons law pursuant to this subsection may be waived by a person authorized by Oregons law to make the waiver.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "A contract for construction work to be performed primarily in Oregon.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "A contract of employment for services to be rendered primarily in Oregon by a resident of Oregon.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "(a) A consumer contract, if:",
+          "subsections": [
+            {
+              "label": "(A)",
+              "token": "A",
+              "kind": "alpha_upper",
+              "text": "The consumer is a resident of Oregon at the time of contracting; and",
+              "subsections": []
+            },
+            {
+              "label": "(B)",
+              "token": "B",
+              "kind": "alpha_upper",
+              "text": "The consumers assent to the contract is obtained in Oregon, or the consumer is induced to enter into the contract in substantial measure by an invitation or advertisement in Oregon.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "For the purposes of this subsection, a consumer contract is a contract for the supply of goods or services that are designed primarily for personal, familial or household use. [Formerly 81.105]",
+              "subsections": []
+            }
+          ]
+        }
+      ],
+      "parser_warnings": [],
+      "position": 26,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html#section-15.325",
+      "identifier": "ORS 15.325",
+      "name": "Section 15.325",
+      "text": "Validity of form. A contract is valid as to form if the contract meets the requirements prescribed either by the law chosen by the parties under ORS 15.350 and 15.355, the law applicable under ORS 15.320, 15.360 or 15.380, or the law of the state from which any party or the partys agent has assented to the contract unless that state has no other connection to the parties or the transaction. [Formerly 81.110]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 27,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html#section-15.330",
+      "identifier": "ORS 15.330",
+      "name": ", 15.335 or 15.380, the rights and duties of the parties with regard to",
+      "text": "an issue in a contract are governed by the law, in light of the multistate elements of the contract, that is the most appropriate for a resolution of that issue. The most appropriate law is determined by: (1) Identifying the states that have a relevant connection with the transaction or the parties, such as the place of negotiation, making, performance or subject matter of the contract, or the domicile, habitual residence or pertinent place of business of a party; (2) Identifying the policies underlying any apparently conflicting laws of these states that are relevant to the issue; and (3) Evaluating the relative strength and pertinence of these policies in: (a) Meeting the needs and giving effect to the policies of the interstate and international systems; and (b) Facilitating the planning of transactions, protecting a party from undue imposition by another party, giving effect to justified expectations of the parties concerning which states law applies to the issue and minimizing adverse effects on strong legal policies of other states. [Formerly 81.130] (Presumptive Rules)",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Identifying the states that have a relevant connection with the transaction or the parties, such as the place of negotiation, making, performance or subject matter of the contract, or the domicile, habitual residence or pertinent place of business of a party;",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Identifying the policies underlying any apparently conflicting laws of these states that are relevant to the issue; and",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Evaluating the relative strength and pertinence of these policies in:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Meeting the needs and giving effect to the policies of the interstate and international systems; and",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Facilitating the planning of transactions, protecting a party from undue imposition by another party, giving effect to justified expectations of the parties concerning which states law applies to the issue and minimizing adverse effects on strong legal policies of other states. [Formerly 81.130] (Presumptive Rules)",
+              "subsections": []
+            }
+          ]
+        }
+      ],
+      "parser_warnings": [],
+      "position": 28,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html#section-15.335",
+      "identifier": "ORS 15.335",
+      "name": ", contracts described in subsection (2) of this section are governed by",
+      "text": "the law of the state specified in subsection (2) of this section unless a party demonstrates that the application of that law would be clearly inappropriate under the principles of ORS 15.360. (2)(a) Contracts involving the occupancy of real property, the land use of property or the recording of interests in real property are governed by the law of the state where the property is situated. (b) Contracts for personal services are governed by the law of the state where the services are to be primarily rendered pursuant to the contract. (c) Contracts for franchises, as defined in ORS 650.005, except for licensing clauses in such contracts, are governed by the law of the state where the franchise is to operate pursuant to the contract. (d) Licensing contracts and licensing clauses in contracts for franchises, as defined in ORS 650.005, are governed by the law of the state where the licensor has its place of business or residence with the closest connection to the transactions between the parties. For purposes of this subsection, licensing means a grant of a privilege, created by contract, that allows one party, the licensee, to use the property or right of another party, the licensor. (e) Agency contracts are governed by the law of the state where the agents duties are to be primarily performed. [Formerly 81.135] CHOICE OF LAW FOR TORTS AND OTHER NONCONTRACTUAL CLAIMS (Generally)",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "of this section unless a party demonstrates that the application of that law would be clearly inappropriate under the principles of ORS 15.360. (a) Contracts involving the occupancy of real property, the land use of property or the recording of interests in real property are governed by the law of the state where the property is situated.",
+          "subsections": [
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Contracts for personal services are governed by the law of the state where the services are to be primarily rendered pursuant to the contract.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Contracts for franchises, as defined in ORS 650.005, except for licensing clauses in such contracts, are governed by the law of the state where the franchise is to operate pursuant to the contract.",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "Licensing contracts and licensing clauses in contracts for franchises, as defined in ORS 650.005, are governed by the law of the state where the licensor has its place of business or residence with the closest connection to the transactions between the parties. For purposes of this subsection, licensing means a grant of a privilege, created by contract, that allows one party, the licensee, to use the property or right of another party, the licensor.",
+              "subsections": []
+            },
+            {
+              "label": "(e)",
+              "token": "e",
+              "kind": "alpha_lower",
+              "text": "Agency contracts are governed by the law of the state where the agents duties are to be primarily performed. [Formerly 81.135] CHOICE OF LAW FOR TORTS AND OTHER NONCONTRACTUAL CLAIMS (Generally)",
+              "subsections": []
+            }
+          ]
+        }
+      ],
+      "parser_warnings": [],
+      "position": 29,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html#section-15.350",
+      "identifier": "ORS 15.350",
+      "name": "Section 15.350",
+      "text": "Choice of law made by parties. (1) Except as specifically provided by ORS 15.320, 15.325, 15.330, 15.335 or 15.355, the contractual rights and duties of the parties are governed by the law or laws that the parties have chosen. The choice of law may extend to the entire contract or to part of a contract. (2) The choice of law must be express or clearly demonstrated from the terms of the contract. In a standard-form contract drafted primarily by only one of the parties, any choice of law must be express and conspicuous. (3) The choice of law may be made or modified after the parties enter into the contract. Any choice of law made or modified after the parties enter into the contract must be by express agreement. (4) Unless the parties provide otherwise, a choice of law or modification of that choice operates retrospectively to the time the parties entered into the contract. Retrospective operation under the provisions of this subsection may not prejudice the rights of third parties. [Formerly 81.120]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Except as specifically provided by ORS 15.320, 15.325, 15.330, 15.335 or 15.355, the contractual rights and duties of the parties are governed by the law or laws that the parties have chosen. The choice of law may extend to the entire contract or to part of a contract.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The choice of law must be express or clearly demonstrated from the terms of the contract. In a standard-form contract drafted primarily by only one of the parties, any choice of law must be express and conspicuous.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The choice of law may be made or modified after the parties enter into the contract. Any choice of law made or modified after the parties enter into the contract must be by express agreement.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Unless the parties provide otherwise, a choice of law or modification of that choice operates retrospectively to the time the parties entered into the contract. Retrospective operation under the provisions of this subsection may not prejudice the rights of third parties. [Formerly 81.120]",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 30,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html#section-15.355",
+      "identifier": "ORS 15.355",
+      "name": "Section 15.355",
+      "text": "Limitations on choice of law by parties. (1) The law chosen by the parties pursuant to ORS 15.350 does not apply to the extent that its application would: (a) Require a party to perform an act prohibited by the law of the state where the act is to be performed under the contract; (b) Prohibit a party from performing an act required by the law of the state where it is to be performed under the contract; or (c) Contravene an established fundamental policy embodied in the law that would otherwise govern the issue in dispute under ORS 15.360. (2) For purposes of subsection (1)(c) of this section, an established policy is fundamental only if the policy reflects objectives or gives effect to essential public or societal institutions beyond the allocation of rights and obligations of parties to a contract at issue. [Formerly 81.125]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The law chosen by the parties pursuant to ORS 15.350 does not apply to the extent that its application would: (c) of this section, an established policy is fundamental only if the policy reflects objectives or gives effect to essential public or societal institutions beyond the allocation of rights and obligations of parties to a contract at issue. [Formerly 81.125]",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Require a party to perform an act prohibited by the law of the state where the act is to be performed under the contract;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Prohibit a party from performing an act required by the law of the state where it is to be performed under the contract; or",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Contravene an established fundamental policy embodied in the law that would otherwise govern the issue in dispute under ORS 15.360.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "For purposes of subsection",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 31,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html#section-15.360",
+      "identifier": "ORS 15.360",
+      "name": "or 15.380 so provides.",
+      "text": "(2) In a consumer contract or employment contract, the consumer or employee whose assent to a contract was obtained in the state of the partys residence, or whose conduct leading to the contract was primarily confined to that state, may invoke the law of that state to establish that the party did not consent to the contract or that the consent was not valid by reason of fraud or duress. [Formerly 81.115] (Choice of Law Made by Parties)",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "In a consumer contract or employment contract, the consumer or employee whose assent to a contract was obtained in the state of the partys residence, or whose conduct leading to the contract was primarily confined to that state, may invoke the law of that state to establish that the party did not consent to the contract or that the consent was not valid by reason of fraud or duress. [Formerly 81.115] (Choice of Law Made by Parties)",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 32,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html#section-15.380",
+      "identifier": "ORS 15.380",
+      "name": "Section 15.380",
+      "text": "Presumptive rules for specific types of contracts. (1) To the extent that an effective choice of law has not been made by the parties pursuant to ORS 15.350 or 15.355, or is not prescribed by ORS 15.320, 15.325, 15.330 or",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "To the extent that an effective choice of law has not been made by the parties pursuant to ORS 15.350 or 15.355, or is not prescribed by ORS 15.320, 15.325, 15.330 or",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 33,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html#section-15.400",
+      "identifier": "ORS 15.400",
+      "name": "Section 15.400",
+      "text": "Definitions for ORS 15.400 to 15.460. For the purposes of ORS 15.400 to 15.460: (1) Conduct means an act or omission that has occurred or that may occur in the future. (2) Domicile means the place identified under ORS 15.420. (3) Injury means physical or nonphysical harm to a person or property caused by the conduct of another person. (4) Law, when used in reference to the law of another state, does not include that states choice-of-law rules. (5) Noncontractual claim means a claim, other than a claim for failure to perform a contractual or other consensual obligation, that arises from a tort as defined in ORS 30.260, or any conduct that caused or may cause injury compensable by damages, without regard to whether damages are sought. (6) Person means a person as defined in ORS 174.100 and a public body. (7) Public body means a public body as defined in ORS 174.109, the Oregon Health and Science University, and the Oregon State Bar. (8) State means, unless the context requires otherwise, the United States, any state, territory, possession or other jurisdiction of the United States, any Indian tribe or other Native American, Hawaiian or Alaskan group recognized by federal law or formally acknowledged by a state of the United States, and any foreign country or territorial subdivision of such country that has its own system of laws. [Formerly 31.850]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Conduct means an act or omission that has occurred or that may occur in the future.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Domicile means the place identified under ORS 15.420.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Injury means physical or nonphysical harm to a person or property caused by the conduct of another person.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Law, when used in reference to the law of another state, does not include that states choice-of-law rules.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "Noncontractual claim means a claim, other than a claim for failure to perform a contractual or other consensual obligation, that arises from a tort as defined in ORS 30.260, or any conduct that caused or may cause injury compensable by damages, without regard to whether damages are sought.",
+          "subsections": []
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "Person means a person as defined in ORS 174.100 and a public body.",
+          "subsections": []
+        },
+        {
+          "label": "(7)",
+          "token": "7",
+          "kind": "numeric",
+          "text": "Public body means a public body as defined in ORS 174.109, the Oregon Health and Science University, and the Oregon State Bar.",
+          "subsections": []
+        },
+        {
+          "label": "(8)",
+          "token": "8",
+          "kind": "numeric",
+          "text": "State means, unless the context requires otherwise, the United States, any state, territory, possession or other jurisdiction of the United States, any Indian tribe or other Native American, Hawaiian or Alaskan group recognized by federal law or formally acknowledged by a state of the United States, and any foreign country or territorial subdivision of such country that has its own system of laws. [Formerly 31.850]",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 34,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html#section-15.405",
+      "identifier": "ORS 15.405",
+      "name": "Section 15.405",
+      "text": "Applicability. ORS 15.400 to 15.460 govern the choice of law applicable to noncontractual claims when a choice between or among the laws of more than one state is at issue. ORS 15.400 to 15.460 do not supersede the provisions of other Oregon statutes that expressly designate the law governing a particular noncontractual claim. [Formerly 31.855] (Preliminary Issues)",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 35,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html#section-15.410",
+      "identifier": "ORS 15.410",
+      "name": "Section 15.410",
+      "text": "Characterization. (1) Oregon law determines the scope and meaning of terms used in ORS 15.400 to",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Oregon law determines the scope and meaning of terms used in ORS 15.400 to",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 36,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html#section-15.415",
+      "identifier": "ORS 15.415",
+      "name": "Section 15.415",
+      "text": "Localization and other factual determinations. For the purposes of ORS 15.400 to 15.460, the following issues are determined under Oregon law: (1) What conduct caused the injury, and where the conduct occurred. If injurious conduct occurs in more than one state, the state where the conduct occurred that is primarily responsible for the injury is the state where the injurious conduct occurred. (2) Who caused the injury. If a person is liable for the conduct of another person, both persons are considered to have caused the injury. (3) Where the injury occurred. If the same conduct causes injury in more than one state, the place of injury is in the state in which most of the injurious effects occurred or may occur. If different persons suffer injury in different states by reason of the same conduct, the place of injury is determined separately for each person. If a person suffers loss by reason of injury or death of another person, the place of injury is determined based on the injury to the other person. (4) Who suffered the injury. If a claim is made for loss caused by injury or death of another person, both the claimant and the other person are considered to be injured persons. [Formerly 31.862]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "What conduct caused the injury, and where the conduct occurred. If injurious conduct occurs in more than one state, the state where the conduct occurred that is primarily responsible for the injury is the state where the injurious conduct occurred.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Who caused the injury. If a person is liable for the conduct of another person, both persons are considered to have caused the injury.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Where the injury occurred. If the same conduct causes injury in more than one state, the place of injury is in the state in which most of the injurious effects occurred or may occur. If different persons suffer injury in different states by reason of the same conduct, the place of injury is determined separately for each person. If a person suffers loss by reason of injury or death of another person, the place of injury is determined based on the injury to the other person.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Who suffered the injury. If a claim is made for loss caused by injury or death of another person, both the claimant and the other person are considered to be injured persons. [Formerly 31.862]",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 37,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html#section-15.420",
+      "identifier": "ORS 15.420",
+      "name": "Section 15.420",
+      "text": "Determining domicile. For the purposes of ORS 15.400 to 15.460: (1)(a) The domicile of a natural person is in the state in which the person resides with the intent to make it the persons home for an indefinite period of time. (b) A domicile once established continues until it is superseded by the acquisition of a new domicile. If a persons intent to change domicile is legally ineffective, the previously established domicile continues to be the persons domicile. (c) If a persons intent to have a domicile in a given state would be legally effective but cannot be ascertained, the state in which the person resides is the persons domicile, and if the person resides in more than one state, the residence state that has the most pertinent connection to the disputed issue is deemed to be the domicile with regard to that issue. (2) The domicile of a person other than a natural person is located in the state in which the person maintains its principal place of business. If the dispute arises from activities directed from another state in which the person maintains a place of business other than the principal place of business, either state may be considered as the domicile at the choice of the other party. (3) The domicile of a person is determined as of the date of the injury for which the noncontractual claim is made. [Formerly 31.865] (Claims Governed by Oregon Law)",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "(a) The domicile of a natural person is in the state in which the person resides with the intent to make it the persons home for an indefinite period of time.",
+          "subsections": [
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "A domicile once established continues until it is superseded by the acquisition of a new domicile. If a persons intent to change domicile is legally ineffective, the previously established domicile continues to be the persons domicile.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "If a persons intent to have a domicile in a given state would be legally effective but cannot be ascertained, the state in which the person resides is the persons domicile, and if the person resides in more than one state, the residence state that has the most pertinent connection to the disputed issue is deemed to be the domicile with regard to that issue.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The domicile of a person other than a natural person is located in the state in which the person maintains its principal place of business. If the dispute arises from activities directed from another state in which the person maintains a place of business other than the principal place of business, either state may be considered as the domicile at the choice of the other party.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The domicile of a person is determined as of the date of the injury for which the noncontractual claim is made. [Formerly 31.865] (Claims Governed by Oregon Law)",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 38,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html#section-15.430",
+      "identifier": "ORS 15.430",
+      "name": "Section 15.430",
+      "text": "Claims governed by Oregon law. Notwithstanding ORS 15.440, 15.445 and",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 39,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html#section-15.435",
+      "identifier": "ORS 15.435",
+      "name": "Section 15.435",
+      "text": "Product liability civil actions. (1) Notwithstanding ORS 15.440 and",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Notwithstanding ORS 15.440 and",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 40,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html#section-15.440",
+      "identifier": "ORS 15.440",
+      "name": "Section 15.440",
+      "text": "General rules. (1) Noncontractual claims between an injured person and the person whose conduct caused the injury are governed by the law of the state designated in this section. (2)(a) If the injured person and the person whose conduct caused the injury were domiciled in the same state, the law of that state governs. However, the law of the state in which the injurious conduct occurred determines the standard of care by which the conduct is judged. If the injury occurred in a state other than the one in which the conduct occurred, the provisions of subsection (3)(c) of this section apply. (b) For the purposes of this section, persons domiciled in different states shall be treated as if domiciled in the same state to the extent that laws of those states on the disputed issues would produce the same outcome. (3) If the injured person and the person whose conduct caused the injury were domiciled in different states and the laws of those states on the disputed issues would produce a different outcome, the law of the state designated in this subsection governs. (a) If both the injurious conduct and the resulting injury occurred in the same state, the law of that state governs if either the injured person or the person whose conduct caused the injury was domiciled in that state. (b) If both the injurious conduct and the resulting injury occurred in a state other than the state in which either the injured person or the person whose conduct caused the injury were domiciled, the law of the state of conduct and injury governs. If a party demonstrates that, under the circumstances of the particular case, the application of that law to a disputed issue will not serve the objectives of that law, that issue will be governed by the law selected under ORS 15.445. (c) If the injurious conduct occurred in one state and the resulting injury in another state, the law of the state of conduct governs. However, the law of the state of injury governs if: (A) The activities of the person whose conduct caused the injury were such as to make foreseeable the occurrence of injury in that state; and (B) The injured person formally requests the application of that states law by a pleading or amended pleading. The request shall be deemed to encompass all claims and issues against that defendant. (4) If a party demonstrates that application to a disputed issue of the law of a state other than the state designated by subsection (2) or (3) of this section is substantially more appropriate under the principles of ORS 15.445, that issue is governed by the law of the other state. [Formerly 31.875]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Noncontractual claims between an injured person and the person whose conduct caused the injury are governed by the law of the state designated in this section.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "(a) If the injured person and the person whose conduct caused the injury were domiciled in the same state, the law of that state governs. However, the law of the state in which the injurious conduct occurred determines the standard of care by which the conduct is judged. If the injury occurred in a state other than the one in which the conduct occurred, the provisions of subsection or",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "(c) of this section apply. If the injured person and the person whose conduct caused the injury were domiciled in different states and the laws of those states on the disputed issues would produce a different outcome, the law of the state designated in this subsection governs. of this section is substantially more appropriate under the principles of ORS 15.445, that issue is governed by the law of the other state. [Formerly 31.875]",
+          "subsections": [
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "For the purposes of this section, persons domiciled in different states shall be treated as if domiciled in the same state to the extent that laws of those states on the disputed issues would produce the same outcome. If both the injurious conduct and the resulting injury occurred in a state other than the state in which either the injured person or the person whose conduct caused the injury were domiciled, the law of the state of conduct and injury governs. If a party demonstrates that, under the circumstances of the particular case, the application of that law to a disputed issue will not serve the objectives of that law, that issue will be governed by the law selected under ORS 15.445.",
+              "subsections": []
+            },
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "If both the injurious conduct and the resulting injury occurred in the same state, the law of that state governs if either the injured person or the person whose conduct caused the injury was domiciled in that state.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "If the injurious conduct occurred in one state and the resulting injury in another state, the law of the state of conduct governs. However, the law of the state of injury governs if:",
+              "subsections": [
+                {
+                  "label": "(A)",
+                  "token": "A",
+                  "kind": "alpha_upper",
+                  "text": "The activities of the person whose conduct caused the injury were such as to make foreseeable the occurrence of injury in that state; and",
+                  "subsections": []
+                },
+                {
+                  "label": "(B)",
+                  "token": "B",
+                  "kind": "alpha_upper",
+                  "text": "The injured person formally requests the application of that states law by a pleading or amended pleading. The request shall be deemed to encompass all claims and issues against that defendant.",
+                  "subsections": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "If a party demonstrates that application to a disputed issue of the law of a state other than the state designated by subsection",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 41,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html#section-15.445",
+      "identifier": "ORS 15.445",
+      "name": ", Oregon law applies to product liability civil actions, as defined in",
+      "text": "ORS 30.900, if: (a) The injured person was domiciled in Oregon and the injury occurred in Oregon; or (b) The injured person was domiciled in Oregon or the injury occurred in Oregon, and the product: (A) Was manufactured or produced in Oregon; or (B) Was delivered when new for use or consumption in Oregon. (2) Subsection (1) of this section does not apply to a product liability civil action if a defendant demonstrates that the use in Oregon of the product that caused the injury could not have been foreseen and that none of the defendants products of the same type were available in Oregon in the ordinary course of trade at the time of the injury. (3) If a party demonstrates that the application of the law of a state other than Oregon to a disputed issue is substantially more appropriate under the principles of ORS 15.445, that issue shall be governed by the law of the other state. (4) All noncontractual claims or issues in product liability civil actions not provided for or not disposed of under this section are governed by the law of the state determined under ORS 15.445. [Formerly 31.872] (Choice of Law)",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(a)",
+          "token": "a",
+          "kind": "alpha_lower",
+          "text": "The injured person was domiciled in Oregon and the injury occurred in Oregon; or",
+          "subsections": []
+        },
+        {
+          "label": "(b)",
+          "token": "b",
+          "kind": "alpha_lower",
+          "text": "The injured person was domiciled in Oregon or the injury occurred in Oregon, and the product:",
+          "subsections": [
+            {
+              "label": "(A)",
+              "token": "A",
+              "kind": "alpha_upper",
+              "text": "Was manufactured or produced in Oregon; or",
+              "subsections": []
+            },
+            {
+              "label": "(B)",
+              "token": "B",
+              "kind": "alpha_upper",
+              "text": "Was delivered when new for use or consumption in Oregon.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Subsection",
+          "subsections": []
+        },
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "of this section does not apply to a product liability civil action if a defendant demonstrates that the use in Oregon of the product that caused the injury could not have been foreseen and that none of the defendants products of the same type were available in Oregon in the ordinary course of trade at the time of the injury.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "If a party demonstrates that the application of the law of a state other than Oregon to a disputed issue is substantially more appropriate under the principles of ORS 15.445, that issue shall be governed by the law of the other state.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "All noncontractual claims or issues in product liability civil actions not provided for or not disposed of under this section are governed by the law of the state determined under ORS 15.445. [Formerly 31.872] (Choice of Law)",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 42,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html#section-15.450",
+      "identifier": "ORS 15.450",
+      "name": ", but subject to ORS 15.300 to 15.380, an agreement providing that an",
+      "text": "issue or issues falling within the scope of ORS 15.400 to 15.460 will be governed by the law of a state other than Oregon is enforceable in Oregon if the agreement was entered into after the parties had knowledge of the events giving rise to the dispute. [Formerly 31.885]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 43,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html#section-15.455",
+      "identifier": "ORS 15.455",
+      "name": ", Oregon law governs noncontractual claims in the following actions:",
+      "text": "(1) Actions in which, after the events giving rise to the dispute, the parties agree to the application of Oregon law. (2) Actions in which none of the parties raises the issue of applicability of foreign law. (3) Actions in which the party or parties who rely on foreign law fail to assist the court in establishing the relevant provisions of foreign law after being requested by the court to do so. (4) Actions filed against a public body of the State of Oregon, unless the application of Oregon law is waived by a person authorized by Oregon law to make the waiver on behalf of the public body. (5) Actions against an owner, lessor or possessor of land, buildings or other real property situated in Oregon that seek to recover for, or to prevent, injury on that property and arising out of conduct that occurs in Oregon. (6) Actions between an employer and an employee who is primarily employed in Oregon that arise out of an injury that occurs in Oregon. (7) Actions for professional malpractice arising from services rendered entirely in Oregon by personnel licensed to perform those services under Oregon law. (8)(a) Actions against a provider of reproductive health care or gender-affirming treatment, as those terms are defined in ORS 24.500, if the reproductive health care or gender-affirming treatment at issue was provided in this state. (b) Actions against a patient receiving reproductive health care or gender-affirming treatment if the reproductive health care or gender-affirming treatment at issue was received in this state. (c) Actions against any person who provides aid, assistance, resources or support to a person in providing or receiving reproductive health care or gender-affirming treatment in this state.",
+      "history_citation_blocks": [
+        "Formerly 31.870; 2023 c.228 49"
+      ],
+      "history_citations": [
+        {
+          "raw": "Formerly 31.870"
+        },
+        {
+          "raw": "2023 c.228 49",
+          "year": 2023,
+          "chapter": "228",
+          "section": "49"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Actions in which, after the events giving rise to the dispute, the parties agree to the application of Oregon law.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Actions in which none of the parties raises the issue of applicability of foreign law.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Actions in which the party or parties who rely on foreign law fail to assist the court in establishing the relevant provisions of foreign law after being requested by the court to do so.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Actions filed against a public body of the State of Oregon, unless the application of Oregon law is waived by a person authorized by Oregon law to make the waiver on behalf of the public body.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "Actions against an owner, lessor or possessor of land, buildings or other real property situated in Oregon that seek to recover for, or to prevent, injury on that property and arising out of conduct that occurs in Oregon.",
+          "subsections": []
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "Actions between an employer and an employee who is primarily employed in Oregon that arise out of an injury that occurs in Oregon.",
+          "subsections": []
+        },
+        {
+          "label": "(7)",
+          "token": "7",
+          "kind": "numeric",
+          "text": "Actions for professional malpractice arising from services rendered entirely in Oregon by personnel licensed to perform those services under Oregon law.",
+          "subsections": []
+        },
+        {
+          "label": "(8)",
+          "token": "8",
+          "kind": "numeric",
+          "text": "(a) Actions against a provider of reproductive health care or gender-affirming treatment, as those terms are defined in ORS 24.500, if the reproductive health care or gender-affirming treatment at issue was provided in this state.",
+          "subsections": [
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Actions against a patient receiving reproductive health care or gender-affirming treatment if the reproductive health care or gender-affirming treatment at issue was received in this state.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Actions against any person who provides aid, assistance, resources or support to a person in providing or receiving reproductive health care or gender-affirming treatment in this state.",
+              "subsections": []
+            }
+          ]
+        }
+      ],
+      "parser_warnings": [],
+      "position": 44,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html#section-15.460",
+      "identifier": "ORS 15.460",
+      "name": "Section 15.460",
+      "text": "Commentary. The Oregon Law Commission shall make available on the website maintained by the commission a copy of the commentary approved by the commission for the provisions of ORS 15.400 to 15.460. [Formerly 31.890] _______________",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 45,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors015.html"
+    }
+  ],
+  "alternateName": "Choice of Laws",
+  "legislationDate": "2023"
+}

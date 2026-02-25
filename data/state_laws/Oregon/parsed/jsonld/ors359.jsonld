@@ -1,0 +1,2832 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "orlaw": "https://www.oregonlegislature.gov/ors#"
+  },
+  "@type": "Legislation",
+  "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html",
+  "identifier": "ORS Chapter 359",
+  "name": "ORS Chapter 359 — Art and Culture",
+  "legislationType": "Statute",
+  "jurisdiction": "US-OR",
+  "isPartOf": {
+    "@type": "CreativeWork",
+    "identifier": "ORS",
+    "name": "Oregon Revised Statutes",
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors"
+  },
+  "dateModified": "2026-02-25T08:11:23.004756+00:00",
+  "source_file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors359.html",
+  "hasPart": [
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html#section-359.010",
+      "identifier": "ORS 359.010",
+      "name": "Section 359.010",
+      "text": "Definitions for ORS 359.010 to 359.142. As used in ORS 359.010 to 359.142, unless the context requires otherwise: (1) Arts includes, but is not limited to: (a) Instrumental and vocal music; (b) Dance, drama and folk art; (c) Creative writing and poetry; (d) Architecture and landscaping design and the fields allied to them; (e) Museum-related activities including, but not limited to: (A) Exhibitions; (B) Curation and maintenance of art work collections; and (C) Education relating to works of art, artists and art history; (f) Painting, sculpture and photography; (g) Graphic and craft arts; (h) Industrial design; (i) Costume and fashion design; (j) Motion pictures, television and radio; (k) Tape and sound recording; (L) The history, criticism, theory and practice of the arts; and (m) The presentation, performance, execution and exhibition of art forms described in this subsection. (2) Association means a nonprofit, private, incorporated or unincorporated institution, foundation, museum, organization, society or group, whether local, state, regional or national, that is operating, or doing business, in Oregon. (3) Local agencies includes cities, counties and other public corporations and their officers, boards and commissions. (4) Private corporation means a corporation organized for profit and authorized to do business in this state. (5) Public agencies means state agencies and local agencies. (6) State agencies includes state officers, departments, boards and commissions.",
+      "history_citation_blocks": [
+        "1967 c.321 1; 1993 c.209 5; 2017 c.274 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "1967 c.321 1",
+          "year": 1967,
+          "chapter": "321",
+          "section": "1"
+        },
+        {
+          "raw": "1993 c.209 5",
+          "year": 1993,
+          "chapter": "209",
+          "section": "5"
+        },
+        {
+          "raw": "2017 c.274 1",
+          "year": 2017,
+          "chapter": "274",
+          "section": "1"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Arts includes, but is not limited to:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Instrumental and vocal music;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Dance, drama and folk art;",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Creative writing and poetry;",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "Architecture and landscaping design and the fields allied to them;",
+              "subsections": []
+            },
+            {
+              "label": "(e)",
+              "token": "e",
+              "kind": "alpha_lower",
+              "text": "Museum-related activities including, but not limited to:",
+              "subsections": [
+                {
+                  "label": "(A)",
+                  "token": "A",
+                  "kind": "alpha_upper",
+                  "text": "Exhibitions;",
+                  "subsections": []
+                },
+                {
+                  "label": "(B)",
+                  "token": "B",
+                  "kind": "alpha_upper",
+                  "text": "Curation and maintenance of art work collections; and",
+                  "subsections": []
+                },
+                {
+                  "label": "(C)",
+                  "token": "C",
+                  "kind": "alpha_upper",
+                  "text": "Education relating to works of art, artists and art history;",
+                  "subsections": []
+                }
+              ]
+            },
+            {
+              "label": "(f)",
+              "token": "f",
+              "kind": "alpha_lower",
+              "text": "Painting, sculpture and photography;",
+              "subsections": []
+            },
+            {
+              "label": "(g)",
+              "token": "g",
+              "kind": "alpha_lower",
+              "text": "Graphic and craft arts;",
+              "subsections": []
+            },
+            {
+              "label": "(h)",
+              "token": "h",
+              "kind": "alpha_lower",
+              "text": "Industrial design;",
+              "subsections": []
+            },
+            {
+              "label": "(i)",
+              "token": "i",
+              "kind": "alpha_lower",
+              "text": "Costume and fashion design;",
+              "subsections": []
+            },
+            {
+              "label": "(j)",
+              "token": "j",
+              "kind": "alpha_lower",
+              "text": "Motion pictures, television and radio;",
+              "subsections": []
+            },
+            {
+              "label": "(k)",
+              "token": "k",
+              "kind": "alpha_lower",
+              "text": "Tape and sound recording;",
+              "subsections": [
+                {
+                  "label": "(L)",
+                  "token": "L",
+                  "kind": "alpha_upper",
+                  "text": "The history, criticism, theory and practice of the arts; and",
+                  "subsections": []
+                }
+              ]
+            },
+            {
+              "label": "(m)",
+              "token": "m",
+              "kind": "alpha_lower",
+              "text": "The presentation, performance, execution and exhibition of art forms described in this subsection.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Association means a nonprofit, private, incorporated or unincorporated institution, foundation, museum, organization, society or group, whether local, state, regional or national, that is operating, or doing business, in Oregon.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Local agencies includes cities, counties and other public corporations and their officers, boards and commissions.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Private corporation means a corporation organized for profit and authorized to do business in this state.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "Public agencies means state agencies and local agencies.",
+          "subsections": []
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "State agencies includes state officers, departments, boards and commissions.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 1,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html#section-359.020",
+      "identifier": "ORS 359.020",
+      "name": "Section 359.020",
+      "text": "Oregon Arts Commission; members; term; qualifications; vacancy; term limit; officers; quorum; compensation and expenses. (1) The Oregon Arts Commission is created as a policy-making and advisory body within the Oregon Business Development Department. The commission shall consist of nine members appointed by the Governor. The term of a member is four years, and the member shall serve until a successor is appointed and qualifies. (2) Persons appointed members of the commission shall be citizens of Oregon well qualified by experience to make policy and recommendations in areas of concern to the Arts Program of the Oregon Business Development Department and otherwise to perform the duties of the office. (3) In case of a vacancy on the commission for any cause, the Governor shall appoint a successor to serve for the unexpired term. (4) A member of the commission may be appointed to serve two consecutive terms. A member who serves two consecutive terms shall not be eligible for reappointment within one year following the expiration of the second term. (5) A member of the commission is entitled to compensation and expenses as provided in ORS 292.495. (6) The commission shall select one of its members to chair the commission for such term and with duties and powers necessary to perform the functions of the office as the commission determines. (7) A majority of the members of the commission constitutes a quorum for the transaction of business.",
+      "history_citation_blocks": [
+        "1967 c.321 2; 1969 c.314 28; 1979 c.729 1; 1985 c.491 1; 1993 c.209 6"
+      ],
+      "history_citations": [
+        {
+          "raw": "1967 c.321 2",
+          "year": 1967,
+          "chapter": "321",
+          "section": "2"
+        },
+        {
+          "raw": "1969 c.314 28",
+          "year": 1969,
+          "chapter": "314",
+          "section": "28"
+        },
+        {
+          "raw": "1979 c.729 1",
+          "year": 1979,
+          "chapter": "729",
+          "section": "1"
+        },
+        {
+          "raw": "1985 c.491 1",
+          "year": 1985,
+          "chapter": "491",
+          "section": "1"
+        },
+        {
+          "raw": "1993 c.209 6",
+          "year": 1993,
+          "chapter": "209",
+          "section": "6"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The Oregon Arts Commission is created as a policy-making and advisory body within the Oregon Business Development Department. The commission shall consist of nine members appointed by the Governor. The term of a member is four years, and the member shall serve until a successor is appointed and qualifies.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Persons appointed members of the commission shall be citizens of Oregon well qualified by experience to make policy and recommendations in areas of concern to the Arts Program of the Oregon Business Development Department and otherwise to perform the duties of the office.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "In case of a vacancy on the commission for any cause, the Governor shall appoint a successor to serve for the unexpired term.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "A member of the commission may be appointed to serve two consecutive terms. A member who serves two consecutive terms shall not be eligible for reappointment within one year following the expiration of the second term.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "A member of the commission is entitled to compensation and expenses as provided in ORS 292.495.",
+          "subsections": []
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "The commission shall select one of its members to chair the commission for such term and with duties and powers necessary to perform the functions of the office as the commission determines.",
+          "subsections": []
+        },
+        {
+          "label": "(7)",
+          "token": "7",
+          "kind": "numeric",
+          "text": "A majority of the members of the commission constitutes a quorum for the transaction of business.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 2,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html#section-359.025",
+      "identifier": "ORS 359.025",
+      "name": "Section 359.025",
+      "text": "Commission duties. (1) The Oregon Arts Commission shall perform the following duties: (a) Serve as a body to advise governmental bodies and agencies and private persons on the development and implementation of state policies and programs relating to the arts, heritage, historic preservation, humanities and culture, and to assist in the coordination of these activities. (b) Advise the Governor, the Director of the Oregon Business Development Department and the Oregon Business Development Commission on all matters relating to the arts that pertain to the powers, duties and functions of the Arts Program of the Oregon Business Development Department. (c) Develop a recommended biennial budget for the operation of the Arts Program that will be submitted to the director and the Governor. (d) Seek and receive the views of all levels of government and the private sector with respect to state programs and policies for the promotion and assistance of the arts. (e) Prepare and submit suggested administrative rules to the director that the Oregon Arts Commission determines are necessary for the operation of the programs of the Arts Program. (f) Establish policies and procedures for grant programs administered by the Arts Program, including policies and procedures that: (A) Ensure that the criteria used to determine eligibility for grant awards are designed to take into consideration the regional differences in public access to, or in opportunities for engagement in, arts and cultural development in this state; and (B) Promote investment in communities where opportunities for engagement in arts and cultural development are limited. (g) Suggest rules to the director for grant programs administered by the Arts Program, including rules that are consistent with the policies and procedures established by the commission under this section. (2)(a) In addition to the duties imposed by subsection (1) of this section, the Oregon Arts Commission shall establish policies and provide management and operational staff support for the Trust for Cultural Development Board. (b) Notwithstanding paragraph (a) of this subsection, the Trust for Cultural Development Board shall make any decisions relating to the investment and disbursement of moneys in the Trust for Cultural Development Account.",
+      "history_citation_blocks": [
+        "1993 c.209 7; 1995 c.79 200; 2003 c.713 1; 2017 c.274 2"
+      ],
+      "history_citations": [
+        {
+          "raw": "1993 c.209 7",
+          "year": 1993,
+          "chapter": "209",
+          "section": "7"
+        },
+        {
+          "raw": "1995 c.79 200",
+          "year": 1995,
+          "chapter": "79",
+          "section": "200"
+        },
+        {
+          "raw": "2003 c.713 1",
+          "year": 2003,
+          "chapter": "713",
+          "section": "1"
+        },
+        {
+          "raw": "2017 c.274 2",
+          "year": 2017,
+          "chapter": "274",
+          "section": "2"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The Oregon Arts Commission shall perform the following duties: of this section, the Oregon Arts Commission shall establish policies and provide management and operational staff support for the Trust for Cultural Development Board.",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Serve as a body to advise governmental bodies and agencies and private persons on the development and implementation of state policies and programs relating to the arts, heritage, historic preservation, humanities and culture, and to assist in the coordination of these activities. of this subsection, the Trust for Cultural Development Board shall make any decisions relating to the investment and disbursement of moneys in the Trust for Cultural Development Account.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Advise the Governor, the Director of the Oregon Business Development Department and the Oregon Business Development Commission on all matters relating to the arts that pertain to the powers, duties and functions of the Arts Program of the Oregon Business Development Department. Notwithstanding paragraph",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Develop a recommended biennial budget for the operation of the Arts Program that will be submitted to the director and the Governor.",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "Seek and receive the views of all levels of government and the private sector with respect to state programs and policies for the promotion and assistance of the arts.",
+              "subsections": []
+            },
+            {
+              "label": "(e)",
+              "token": "e",
+              "kind": "alpha_lower",
+              "text": "Prepare and submit suggested administrative rules to the director that the Oregon Arts Commission determines are necessary for the operation of the programs of the Arts Program.",
+              "subsections": []
+            },
+            {
+              "label": "(f)",
+              "token": "f",
+              "kind": "alpha_lower",
+              "text": "Establish policies and procedures for grant programs administered by the Arts Program, including policies and procedures that:",
+              "subsections": [
+                {
+                  "label": "(A)",
+                  "token": "A",
+                  "kind": "alpha_upper",
+                  "text": "Ensure that the criteria used to determine eligibility for grant awards are designed to take into consideration the regional differences in public access to, or in opportunities for engagement in, arts and cultural development in this state; and",
+                  "subsections": []
+                },
+                {
+                  "label": "(B)",
+                  "token": "B",
+                  "kind": "alpha_upper",
+                  "text": "Promote investment in communities where opportunities for engagement in arts and cultural development are limited.",
+                  "subsections": []
+                }
+              ]
+            },
+            {
+              "label": "(g)",
+              "token": "g",
+              "kind": "alpha_lower",
+              "text": "Suggest rules to the director for grant programs administered by the Arts Program, including rules that are consistent with the policies and procedures established by the commission under this section.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "(a) In addition to the duties imposed by subsection",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 3,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html#section-359.030",
+      "identifier": "ORS 359.030",
+      "name": "Section 359.030",
+      "text": "Objectives of Arts Program. The objectives of the Arts Program of the Oregon Business Development Department are: (1) To complement, assist and strengthen existing or planned programs and activities of public and private associations in the arts to promote the broadest statewide public benefit, while maintaining high artistic and scholarly standards. (2) To encourage and give greater opportunities and recognition to individual Oregon artists whose work is, or gives promise of being, of high quality. (3) To stimulate and encourage private and local initiative and financial support in connection with programs and activities in the arts.",
+      "history_citation_blocks": [
+        "1967 c.321 7; 1993 c.209 8; 2017 c.274 5"
+      ],
+      "history_citations": [
+        {
+          "raw": "1967 c.321 7",
+          "year": 1967,
+          "chapter": "321",
+          "section": "7"
+        },
+        {
+          "raw": "1993 c.209 8",
+          "year": 1993,
+          "chapter": "209",
+          "section": "8"
+        },
+        {
+          "raw": "2017 c.274 5",
+          "year": 2017,
+          "chapter": "274",
+          "section": "5"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "To complement, assist and strengthen existing or planned programs and activities of public and private associations in the arts to promote the broadest statewide public benefit, while maintaining high artistic and scholarly standards.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "To encourage and give greater opportunities and recognition to individual Oregon artists whose work is, or gives promise of being, of high quality.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "To stimulate and encourage private and local initiative and financial support in connection with programs and activities in the arts.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 4,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html#section-359.040",
+      "identifier": "ORS 359.040",
+      "name": "Section 359.040",
+      "text": "Duties of Arts Program. To carry out its objectives the Arts Program of the Oregon Business Development Department shall: (1) Develop programs and plans: (a) To encourage broad public participation in, and understanding of, programs in the arts. (b) To encourage public interest in conserving and understanding the cultural and artistic heritage of the state and of its people. (c) To encourage increased recognition of the contributions of the arts to the richness of community life and to the development of the individual. (d) To assist communities within the state in establishing or conserving local cultural, historical and artistic programs. (e) To stimulate and encourage throughout the state the presentation, enjoyment and study of the arts among the youth and elderly people. (f) To encourage and facilitate, where feasible, wider circulation throughout the state of noteworthy programs, productions, exhibitions and performances which demonstrate the artistic and cultural resources and accomplishments of the people of Oregon. (g) To encourage and facilitate, where feasible, programs, productions, exhibitions and performances in Oregon of outstanding works of art and artistic talent in the fields of the arts, which may be brought from outside the state. (2) Develop, maintain and make available to the public, information concerning: (a) The cultural and artistic resources and activities within the state. (b) The organizations and groups conducting, supporting or fostering programs and activities involving the employment, conservation and presentation of such resources. (3) Advise and assist upon request and within the limits of the funds available: (a) The Governor and other state officers, public agencies, the legislature, communities of the state and the public concerning the development, housing, presentation and conservation of the artistic and cultural resources within the state. (b) State agencies concerning the acceptance and disposition of gifts of art to the state. (4) Develop an honors program in the arts, which includes the means for recognizing distinguished artists and other Oregon citizens whose creative works or effort or whose services of philanthropy on behalf of the arts are such as to merit the official appreciation of the people of Oregon. (5) Manage the Trust for Cultural Development Account established by ORS 359.405.",
+      "history_citation_blocks": [
+        "1967 c.321 8; 1993 c.209 9; 2003 c.713 2"
+      ],
+      "history_citations": [
+        {
+          "raw": "1967 c.321 8",
+          "year": 1967,
+          "chapter": "321",
+          "section": "8"
+        },
+        {
+          "raw": "1993 c.209 9",
+          "year": 1993,
+          "chapter": "209",
+          "section": "9"
+        },
+        {
+          "raw": "2003 c.713 2",
+          "year": 2003,
+          "chapter": "713",
+          "section": "2"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Develop programs and plans:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "To encourage broad public participation in, and understanding of, programs in the arts.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "To encourage public interest in conserving and understanding the cultural and artistic heritage of the state and of its people.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "To encourage increased recognition of the contributions of the arts to the richness of community life and to the development of the individual.",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "To assist communities within the state in establishing or conserving local cultural, historical and artistic programs.",
+              "subsections": []
+            },
+            {
+              "label": "(e)",
+              "token": "e",
+              "kind": "alpha_lower",
+              "text": "To stimulate and encourage throughout the state the presentation, enjoyment and study of the arts among the youth and elderly people.",
+              "subsections": []
+            },
+            {
+              "label": "(f)",
+              "token": "f",
+              "kind": "alpha_lower",
+              "text": "To encourage and facilitate, where feasible, wider circulation throughout the state of noteworthy programs, productions, exhibitions and performances which demonstrate the artistic and cultural resources and accomplishments of the people of Oregon.",
+              "subsections": []
+            },
+            {
+              "label": "(g)",
+              "token": "g",
+              "kind": "alpha_lower",
+              "text": "To encourage and facilitate, where feasible, programs, productions, exhibitions and performances in Oregon of outstanding works of art and artistic talent in the fields of the arts, which may be brought from outside the state.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Develop, maintain and make available to the public, information concerning:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "The cultural and artistic resources and activities within the state.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "The organizations and groups conducting, supporting or fostering programs and activities involving the employment, conservation and presentation of such resources.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Advise and assist upon request and within the limits of the funds available:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "The Governor and other state officers, public agencies, the legislature, communities of the state and the public concerning the development, housing, presentation and conservation of the artistic and cultural resources within the state.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "State agencies concerning the acceptance and disposition of gifts of art to the state.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Develop an honors program in the arts, which includes the means for recognizing distinguished artists and other Oregon citizens whose creative works or effort or whose services of philanthropy on behalf of the arts are such as to merit the official appreciation of the people of Oregon.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "Manage the Trust for Cultural Development Account established by ORS 359.405.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 5,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html#section-359.050",
+      "identifier": "ORS 359.050",
+      "name": "Section 359.050",
+      "text": "Powers of Arts Program. (1) In performing its duties, the Arts Program of the Oregon Business Development Department, within the limits of available funds, may: (a) Conduct hearings and conferences to develop facts, to explain programs and activities, and to obtain advice. (b) Enter into agreements with other public agencies and with associations and individuals for services that will assist the Oregon Arts Commission or the Trust for Cultural Development Board. (c) Enter into agreements with other public agencies of Oregon or with agencies of other states or the federal government, and with private corporations, associations and individuals in Oregon or other states for cooperative endeavors which further the objectives and programs of the commission. (d) Make grants to local agencies, to associations or to individuals for the development and conservation of programs in the arts, such grants to be made in accordance with policies and procedures adopted by the commission under ORS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "In performing its duties, the Arts Program of the Oregon Business Development Department, within the limits of available funds, may:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Conduct hearings and conferences to develop facts, to explain programs and activities, and to obtain advice.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Enter into agreements with other public agencies and with associations and individuals for services that will assist the Oregon Arts Commission or the Trust for Cultural Development Board.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Enter into agreements with other public agencies of Oregon or with agencies of other states or the federal government, and with private corporations, associations and individuals in Oregon or other states for cooperative endeavors which further the objectives and programs of the commission.",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "Make grants to local agencies, to associations or to individuals for the development and conservation of programs in the arts, such grants to be made in accordance with policies and procedures adopted by the commission under ORS",
+              "subsections": []
+            }
+          ]
+        }
+      ],
+      "parser_warnings": [],
+      "position": 6,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html#section-359.060",
+      "identifier": "ORS 359.060",
+      "name": "Section 359.060",
+      "text": "",
+      "history_citation_blocks": [
+        "1967 c.321 4; repealed by 1993 c.209 22"
+      ],
+      "history_citations": [
+        {
+          "raw": "1967 c.321 4",
+          "year": 1967,
+          "chapter": "321",
+          "section": "4"
+        },
+        {
+          "raw": "repealed by 1993 c.209 22"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 7,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html#section-359.065",
+      "identifier": "ORS 359.065",
+      "name": "Section 359.065",
+      "text": "Arts Program established. (1) The Arts Program is established as an administrative section within the Oregon Business Development Department. The program is subject to the supervision of the Administrator of the Arts Program. The program shall consist of the administrator and all personnel employed in the program. (2) The program shall provide the Oregon Arts Commission with staff and other assistance as necessary for the commission to perform its duties.",
+      "history_citation_blocks": [
+        "1993 c.209 1; 1993 c.736 76"
+      ],
+      "history_citations": [
+        {
+          "raw": "1993 c.209 1",
+          "year": 1993,
+          "chapter": "209",
+          "section": "1"
+        },
+        {
+          "raw": "1993 c.736 76",
+          "year": 1993,
+          "chapter": "736",
+          "section": "76"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The Arts Program is established as an administrative section within the Oregon Business Development Department. The program is subject to the supervision of the Administrator of the Arts Program. The program shall consist of the administrator and all personnel employed in the program.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The program shall provide the Oregon Arts Commission with staff and other assistance as necessary for the commission to perform its duties.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 8,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html#section-359.070",
+      "identifier": "ORS 359.070",
+      "name": "Section 359.070",
+      "text": "",
+      "history_citation_blocks": [
+        "1967 c.321 5; repealed by 1993 c.209 22"
+      ],
+      "history_citations": [
+        {
+          "raw": "1967 c.321 5",
+          "year": 1967,
+          "chapter": "321",
+          "section": "5"
+        },
+        {
+          "raw": "repealed by 1993 c.209 22"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 9,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html#section-359.080",
+      "identifier": "ORS 359.080",
+      "name": "Section 359.080",
+      "text": "",
+      "history_citation_blocks": [
+        "1967 c.321 6; repealed by 1993 c.209 22"
+      ],
+      "history_citations": [
+        {
+          "raw": "1967 c.321 6",
+          "year": 1967,
+          "chapter": "321",
+          "section": "6"
+        },
+        {
+          "raw": "repealed by 1993 c.209 22"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 10,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html#section-359.090",
+      "identifier": "ORS 359.090",
+      "name": "Section 359.090",
+      "text": "",
+      "history_citation_blocks": [
+        "1967 c.321 13; repealed by 1975 c.605 33"
+      ],
+      "history_citations": [
+        {
+          "raw": "1967 c.321 13",
+          "year": 1967,
+          "chapter": "321",
+          "section": "13"
+        },
+        {
+          "raw": "repealed by 1975 c.605 33"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 11,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html#section-359.095",
+      "identifier": "ORS 359.095",
+      "name": "Section 359.095",
+      "text": "",
+      "history_citation_blocks": [
+        "1975 c.53 4; repealed by 1979 c.729 3"
+      ],
+      "history_citations": [
+        {
+          "raw": "1975 c.53 4",
+          "year": 1975,
+          "chapter": "53",
+          "section": "4"
+        },
+        {
+          "raw": "repealed by 1979 c.729 3"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 12,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html#section-359.100",
+      "identifier": "ORS 359.100",
+      "name": "Section 359.100",
+      "text": "Grants and services from public and private sources. (1) The Arts Program of the Oregon Business Development Department shall prepare and study plans for participation of public agencies and associations in federal government programs for the support and encouragement of the arts. (2) The program may apply for and accept grants or services from the federal government or any of its agencies, from associations, individuals and private corporations to carry out the purposes of ORS 359.010 to 359.142. (3) Grants or services from individuals, associations or private corporations shall not be accepted if restricted to a use which would be contrary to the laws of this state.",
+      "history_citation_blocks": [
+        "1967 c.321 10; 1993 c.209 11"
+      ],
+      "history_citations": [
+        {
+          "raw": "1967 c.321 10",
+          "year": 1967,
+          "chapter": "321",
+          "section": "10"
+        },
+        {
+          "raw": "1993 c.209 11",
+          "year": 1993,
+          "chapter": "209",
+          "section": "11"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The Arts Program of the Oregon Business Development Department shall prepare and study plans for participation of public agencies and associations in federal government programs for the support and encouragement of the arts.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The program may apply for and accept grants or services from the federal government or any of its agencies, from associations, individuals and private corporations to carry out the purposes of ORS 359.010 to 359.142.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Grants or services from individuals, associations or private corporations shall not be accepted if restricted to a use which would be contrary to the laws of this state.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 13,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html#section-359.110",
+      "identifier": "ORS 359.110",
+      "name": "Section 359.110",
+      "text": "Gifts; Arts Program as custodian. (1) The Arts Program of the Oregon Business Development Department may solicit and accept gifts, bequests or devises of money, securities or other property of whatever character to carry out the purposes of ORS 359.010 to 359.142. A restricted gift, bequest or devise shall not be accepted if such restriction would be contrary to the laws of this state. (2) The program shall be the custodian of any securities or other property accepted as a gift, bequest or devise. The program shall hold such property as trustee for the state and shall conserve and administer such property to carry out the purposes of ORS 359.010 to 359.142. Except as prohibited by law or restricted by the terms of the gift, bequest or devise, the program may sell or exchange any property accepted as a gift, bequest or devise as it may from time to time determine. The income from such money, securities or other property shall be credited to the Arts Trust Account established by ORS 359.120.",
+      "history_citation_blocks": [
+        "1967 c.321 11; 1993 c.209 12"
+      ],
+      "history_citations": [
+        {
+          "raw": "1967 c.321 11",
+          "year": 1967,
+          "chapter": "321",
+          "section": "11"
+        },
+        {
+          "raw": "1993 c.209 12",
+          "year": 1993,
+          "chapter": "209",
+          "section": "12"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The Arts Program of the Oregon Business Development Department may solicit and accept gifts, bequests or devises of money, securities or other property of whatever character to carry out the purposes of ORS 359.010 to 359.142. A restricted gift, bequest or devise shall not be accepted if such restriction would be contrary to the laws of this state.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The program shall be the custodian of any securities or other property accepted as a gift, bequest or devise. The program shall hold such property as trustee for the state and shall conserve and administer such property to carry out the purposes of ORS 359.010 to 359.142. Except as prohibited by law or restricted by the terms of the gift, bequest or devise, the program may sell or exchange any property accepted as a gift, bequest or devise as it may from time to time determine. The income from such money, securities or other property shall be credited to the Arts Trust Account established by ORS 359.120.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 14,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html#section-359.120",
+      "identifier": "ORS 359.120",
+      "name": "Section 359.120",
+      "text": "Arts Trust Account. There hereby is established an account separate and distinct from the General Fund to be known as the Arts Trust Account. Except for moneys received for the purposes of the Trust for Cultural Development Account, all moneys received by the Arts Program of the Oregon Business Development Department pursuant to ORS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 15,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html#section-359.130",
+      "identifier": "ORS 359.130",
+      "name": "Section 359.130",
+      "text": "Powers not granted or transferred. (1) The Arts Program of the Oregon Business Development Department shall not direct, supervise or control the policy, programs, personnel, curriculum or administration of any public or private agency, school, association or entity having to do with the arts. (2) Nothing in ORS 359.010 to 359.142 is intended to transfer from any other state agency to the program any duty or power granted by statute to such other state agency prior to July 1, 1967.",
+      "history_citation_blocks": [
+        "1967 c.321 14; 1993 c.209 14"
+      ],
+      "history_citations": [
+        {
+          "raw": "1967 c.321 14",
+          "year": 1967,
+          "chapter": "321",
+          "section": "14"
+        },
+        {
+          "raw": "1993 c.209 14",
+          "year": 1993,
+          "chapter": "209",
+          "section": "14"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The Arts Program of the Oregon Business Development Department shall not direct, supervise or control the policy, programs, personnel, curriculum or administration of any public or private agency, school, association or entity having to do with the arts.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Nothing in ORS 359.010 to 359.142 is intended to transfer from any other state agency to the program any duty or power granted by statute to such other state agency prior to July 1, 1967.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 16,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html#section-359.135",
+      "identifier": "ORS 359.135",
+      "name": "Section 359.135",
+      "text": "Administrator; appointment; salary; duties. (1) The Director of the Oregon Business Development Department, upon consultation with and the approval of the Oregon Arts Commission, shall appoint the Administrator of the Arts Program who shall serve at the pleasure of the director. (2) The administrator shall receive such salary as may be provided by law or as fixed by the director. (3) The administrator shall be the administrative head of the program. (4) The administrator may suggest rules to the director for the government of the program, the conduct of its employees and the assignment and performance of its business and the custody, use and preservation of its records, papers and property.",
+      "history_citation_blocks": [
+        "1993 c.209 2; 2017 c.274 3"
+      ],
+      "history_citations": [
+        {
+          "raw": "1993 c.209 2",
+          "year": 1993,
+          "chapter": "209",
+          "section": "2"
+        },
+        {
+          "raw": "2017 c.274 3",
+          "year": 2017,
+          "chapter": "274",
+          "section": "3"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The Director of the Oregon Business Development Department, upon consultation with and the approval of the Oregon Arts Commission, shall appoint the Administrator of the Arts Program who shall serve at the pleasure of the director.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The administrator shall receive such salary as may be provided by law or as fixed by the director.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The administrator shall be the administrative head of the program.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "The administrator may suggest rules to the director for the government of the program, the conduct of its employees and the assignment and performance of its business and the custody, use and preservation of its records, papers and property.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 17,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html#section-359.137",
+      "identifier": "ORS 359.137",
+      "name": "Section 359.137",
+      "text": "Staff. The Arts Program of the Oregon Business Development Department shall employ, in accordance with the State Personnel Relations Law, the staff necessary to allow the program to carry out the provisions of ORS 359.010 to 359.142.",
+      "history_citation_blocks": [
+        "1993 c.209 3"
+      ],
+      "history_citations": [
+        {
+          "raw": "1993 c.209 3",
+          "year": 1993,
+          "chapter": "209",
+          "section": "3"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 18,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html#section-359.140",
+      "identifier": "ORS 359.140",
+      "name": "Section 359.140",
+      "text": "",
+      "history_citation_blocks": [
+        "1981 c.411 3; 1987 c.758 3; 1989 c.987 20; repealed by 1993 c.209 23"
+      ],
+      "history_citations": [
+        {
+          "raw": "1981 c.411 3",
+          "year": 1981,
+          "chapter": "411",
+          "section": "3"
+        },
+        {
+          "raw": "1987 c.758 3",
+          "year": 1987,
+          "chapter": "758",
+          "section": "3"
+        },
+        {
+          "raw": "1989 c.987 20",
+          "year": 1989,
+          "chapter": "987",
+          "section": "20"
+        },
+        {
+          "raw": "repealed by 1993 c.209 23"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 19,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html#section-359.142",
+      "identifier": "ORS 359.142",
+      "name": "Section 359.142",
+      "text": "Rules. The Director of the Oregon Business Development Department, in accordance with ORS chapter 183, may adopt such rules for the operation of the Arts Program as the director determines necessary or convenient for the program to perform its duties and functions.",
+      "history_citation_blocks": [
+        "1993 c.209 4"
+      ],
+      "history_citations": [
+        {
+          "raw": "1993 c.209 4",
+          "year": 1993,
+          "chapter": "209",
+          "section": "4"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 20,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html#section-359.150",
+      "identifier": "ORS 359.150",
+      "name": "Section 359.150",
+      "text": "[1981 c.411 4; 1993 c.209 15; repealed by 1993 c.209 23] ART TRANSACTIONS (Consignments)",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 21,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html#section-359.200",
+      "identifier": "ORS 359.200",
+      "name": "Section 359.200",
+      "text": "Definitions for ORS 359.200 to 359.255. As used in ORS 359.200 to 359.255: (1) Art dealer means an individual, partnership, firm, association or corporation, other than a public auctioneer, that undertakes to sell a work of fine art created by another. (2) Artist means the creator of a work of fine art or, if the artist is deceased, the artists personal representative, heirs or legatees. (3) Consignee means an art dealer who receives and accepts a work of fine art from a consignor for the purpose of sale or exhibition, or both, to the public on a commission or fee or other basis of compensation. (4) Consignment means delivery of a work of fine art to an art dealer for the purpose of sale or exhibition, or both, to the public by the art dealer at other than a public auction. (5) Consignor means an artist or any person who delivers a work of fine art to an art dealer for the purpose of sale or exhibition, or both, to the public on a commission or fee or other basis of compensation. (6) Fine art means: (a) An original work of visual art such as a painting, sculpture, drawing, mosaic or photograph; (b) A work of calligraphy; (c) A work of original graphic art such as an etching, lithograph, offset print, silk screen or other work of similar nature; (d) A craft work in materials including but not limited to clay, textile, fiber, wood, metal, plastic, glass or similar materials; or (e) A work in mixed media such as a collage or any combination of the art media described in this subsection.",
+      "history_citation_blocks": [
+        "1981 c.410 1; 1985 c.830 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "1981 c.410 1",
+          "year": 1981,
+          "chapter": "410",
+          "section": "1"
+        },
+        {
+          "raw": "1985 c.830 1",
+          "year": 1985,
+          "chapter": "830",
+          "section": "1"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Art dealer means an individual, partnership, firm, association or corporation, other than a public auctioneer, that undertakes to sell a work of fine art created by another.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Artist means the creator of a work of fine art or, if the artist is deceased, the artists personal representative, heirs or legatees.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Consignee means an art dealer who receives and accepts a work of fine art from a consignor for the purpose of sale or exhibition, or both, to the public on a commission or fee or other basis of compensation.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Consignment means delivery of a work of fine art to an art dealer for the purpose of sale or exhibition, or both, to the public by the art dealer at other than a public auction.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "Consignor means an artist or any person who delivers a work of fine art to an art dealer for the purpose of sale or exhibition, or both, to the public on a commission or fee or other basis of compensation.",
+          "subsections": []
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "Fine art means:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "An original work of visual art such as a painting, sculpture, drawing, mosaic or photograph;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "A work of calligraphy;",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "A work of original graphic art such as an etching, lithograph, offset print, silk screen or other work of similar nature;",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "A craft work in materials including but not limited to clay, textile, fiber, wood, metal, plastic, glass or similar materials; or",
+              "subsections": []
+            },
+            {
+              "label": "(e)",
+              "token": "e",
+              "kind": "alpha_lower",
+              "text": "A work in mixed media such as a collage or any combination of the art media described in this subsection.",
+              "subsections": []
+            }
+          ]
+        }
+      ],
+      "parser_warnings": [],
+      "position": 22,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html#section-359.205",
+      "identifier": "ORS 359.205",
+      "name": "Section 359.205",
+      "text": "Delivery of art work to dealer as consignment; exception for direct sale work as trust property. (1) Notwithstanding any custom, practice or usage of the trade to the contrary, whenever a consignor delivers or causes to be delivered a work of fine art to an art dealer in this state for the purpose of exhibition or sale, or both, on a commission, fee or other basis of compensation, the delivery to, and acceptance by, the art dealer of the work of fine art constitutes a consignment unless the delivery to the art dealer is pursuant to an outright sale for which the consignor receives or has received compensation for the work of fine art upon delivery. (2) A work of fine art is trust property in the hands of the art dealer, who is trustee for the benefit of the consignor until the work of fine art is sold to a bona fide third party. (3) The proceeds of the sale of a work of fine art are trust property in the hands of the art dealer who is trustee for the benefit of the consignor until the amount due the consignor from the sale is paid. Nothing in this subsection requires a separate trust account for each consignor. (4) A work of fine art that is trust property when initially accepted by the art dealer remains trust property notwithstanding the subsequent purchase of the work of fine art by the art dealer directly or indirectly for the art dealers own account, until the purchase price is paid in full to the consignor. (5) The trust relationship described in this section imposes no duty greater than the duties described in ORS 359.200 to 359.210, 359.220, 359.225, 359.250 and",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Notwithstanding any custom, practice or usage of the trade to the contrary, whenever a consignor delivers or causes to be delivered a work of fine art to an art dealer in this state for the purpose of exhibition or sale, or both, on a commission, fee or other basis of compensation, the delivery to, and acceptance by, the art dealer of the work of fine art constitutes a consignment unless the delivery to the art dealer is pursuant to an outright sale for which the consignor receives or has received compensation for the work of fine art upon delivery.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "A work of fine art is trust property in the hands of the art dealer, who is trustee for the benefit of the consignor until the work of fine art is sold to a bona fide third party.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The proceeds of the sale of a work of fine art are trust property in the hands of the art dealer who is trustee for the benefit of the consignor until the amount due the consignor from the sale is paid. Nothing in this subsection requires a separate trust account for each consignor.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "A work of fine art that is trust property when initially accepted by the art dealer remains trust property notwithstanding the subsequent purchase of the work of fine art by the art dealer directly or indirectly for the art dealers own account, until the purchase price is paid in full to the consignor.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "The trust relationship described in this section imposes no duty greater than the duties described in ORS 359.200 to 359.210, 359.220, 359.225, 359.250 and",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 23,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html#section-359.210",
+      "identifier": "ORS 359.210",
+      "name": "Section 359.210",
+      "text": "Effect of treating art work delivery as consignment; name of purchaser to be supplied on demand; remedy. (1) A consignment of a work of fine art has the following effect: (a) The consignee, after the delivery of fine art, is the agent of the consignor for the purpose of the exhibition or sale, or both, of the work of fine art within this state. (b) The work of fine art, or the consignors portion of the proceeds from the sale of the work, is not subject to the claims of a creditor of the consignee. (c) A consignee is liable for the loss of or damage to the work of fine art while it is in the consignees possession if the loss or damage is caused by the failure of the consignee to use the highest degree of care. For the purpose of this subsection, the value of the work of fine art is the value established in a written agreement between the consignor and consignee prior to the loss or damage or, if no written agreement regarding the value of the work of fine art exists, the consignors portion of the fair market value of the work of fine art. (d) The consignee may not be held liable for the loss of or damage to the work of fine art if the consignor fails to remove the work within a period of 30 days following the date agreed upon for removal of the work in the written contract between the consignor and the consignee or, if no written agreement regarding a removal date exists, 30 days after notice to remove the work of fine art is sent by registered mail or by certified mail with return receipt to the consignor at the consignors last-known address. (2) Upon written demand from the consignor, the consignee shall furnish the consignor with the name and address of the purchaser of the consignors work, and the date of purchase and the price paid for the work, for any sale totaling $100 or more. (3) The consignees failure to furnish the information specified under subsection (2) of this section entitles the consignor to obtain an injunction ordering the disclosure of the information and money damages in an amount equal to three times the consignors portion of the retail value of the work.",
+      "history_citation_blocks": [
+        "1981 c.410 3; 1985 c.830 3; 1991 c.249 28; 2011 c.230 2"
+      ],
+      "history_citations": [
+        {
+          "raw": "1981 c.410 3",
+          "year": 1981,
+          "chapter": "410",
+          "section": "3"
+        },
+        {
+          "raw": "1985 c.830 3",
+          "year": 1985,
+          "chapter": "830",
+          "section": "3"
+        },
+        {
+          "raw": "1991 c.249 28",
+          "year": 1991,
+          "chapter": "249",
+          "section": "28"
+        },
+        {
+          "raw": "2011 c.230 2",
+          "year": 2011,
+          "chapter": "230",
+          "section": "2"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A consignment of a work of fine art has the following effect:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "The consignee, after the delivery of fine art, is the agent of the consignor for the purpose of the exhibition or sale, or both, of the work of fine art within this state.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "The work of fine art, or the consignors portion of the proceeds from the sale of the work, is not subject to the claims of a creditor of the consignee.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "A consignee is liable for the loss of or damage to the work of fine art while it is in the consignees possession if the loss or damage is caused by the failure of the consignee to use the highest degree of care. For the purpose of this subsection, the value of the work of fine art is the value established in a written agreement between the consignor and consignee prior to the loss or damage or, if no written agreement regarding the value of the work of fine art exists, the consignors portion of the fair market value of the work of fine art.",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "The consignee may not be held liable for the loss of or damage to the work of fine art if the consignor fails to remove the work within a period of 30 days following the date agreed upon for removal of the work in the written contract between the consignor and the consignee or, if no written agreement regarding a removal date exists, 30 days after notice to remove the work of fine art is sent by registered mail or by certified mail with return receipt to the consignor at the consignors last-known address.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Upon written demand from the consignor, the consignee shall furnish the consignor with the name and address of the purchaser of the consignors work, and the date of purchase and the price paid for the work, for any sale totaling $100 or more. of this section entitles the consignor to obtain an injunction ordering the disclosure of the information and money damages in an amount equal to three times the consignors portion of the retail value of the work.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The consignees failure to furnish the information specified under subsection",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 24,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html#section-359.215",
+      "identifier": "ORS 359.215",
+      "name": "Section 359.215",
+      "text": "Consignment does not create rights in consignee greater than those of consignor. A consignment of a work of fine art does not convey title to or create an estate in the work or grant a right to possession superior to that of the consignor notwithstanding the power or authority of the consignee to transfer or convey to a third person all of the right, title and interest of the consignor in and to the work.",
+      "history_citation_blocks": [
+        "1981 c.410 4"
+      ],
+      "history_citations": [
+        {
+          "raw": "1981 c.410 4",
+          "year": 1981,
+          "chapter": "410",
+          "section": "4"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 25,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html#section-359.220",
+      "identifier": "ORS 359.220",
+      "name": "Section 359.220",
+      "text": "Consignment contract requirements. An art dealer may accept a work of fine art, on a fee, commission or other compensation basis, on consignment from a consignor only if, prior to or at the time of acceptance, the art dealer enters into a written contract with the consignor establishing: (1) The retail value of the work of fine art; (2) The time within which the proceeds of the sale are to be paid to the consignor, if the work of fine art is sold; (3) The minimum price for the sale of the work of fine art; and (4) The fee, commission or other compensation basis of the art dealer.",
+      "history_citation_blocks": [
+        "1981 c.410 5; 1985 c.830 4; 2011 c.230 3"
+      ],
+      "history_citations": [
+        {
+          "raw": "1981 c.410 5",
+          "year": 1981,
+          "chapter": "410",
+          "section": "5"
+        },
+        {
+          "raw": "1985 c.830 4",
+          "year": 1985,
+          "chapter": "830",
+          "section": "4"
+        },
+        {
+          "raw": "2011 c.230 3",
+          "year": 2011,
+          "chapter": "230",
+          "section": "3"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The retail value of the work of fine art;",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The time within which the proceeds of the sale are to be paid to the consignor, if the work of fine art is sold;",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The minimum price for the sale of the work of fine art; and",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "The fee, commission or other compensation basis of the art dealer.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 26,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html#section-359.225",
+      "identifier": "ORS 359.225",
+      "name": "Section 359.225",
+      "text": "Payment of sale proceeds of consigned work; consignors portion of funds not subject to claims of consignees creditors. The proceeds from a sale of a work of fine art on consignment shall be paid to the consignor within 30 days of receipt by the consignee unless the consignor expressly agrees otherwise in writing. If the sale of the work of fine art is on installment, the funds from the installment shall first be applied to pay any balance due the consignor on the sale, unless the consignor expressly agrees in writing that the proceeds on each installment shall be paid according to the percentage established by the consignment agreement. The consignors portion of funds received on the sale of the work of fine art or on installment are not subject to the claims of a creditor of the consignee.",
+      "history_citation_blocks": [
+        "1981 c.410 6; 1985 c.830 5; 2011 c.230 4"
+      ],
+      "history_citations": [
+        {
+          "raw": "1981 c.410 6",
+          "year": 1981,
+          "chapter": "410",
+          "section": "6"
+        },
+        {
+          "raw": "1985 c.830 5",
+          "year": 1985,
+          "chapter": "830",
+          "section": "5"
+        },
+        {
+          "raw": "2011 c.230 4",
+          "year": 2011,
+          "chapter": "230",
+          "section": "4"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 27,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html#section-359.230",
+      "identifier": "ORS 359.230",
+      "name": "Section 359.230",
+      "text": "Contract provision waiving protections for consignor is void. Any provision of a contract or agreement pursuant to which the consignor waives any of the provisions of ORS 359.200 to 359.255 is void.",
+      "history_citation_blocks": [
+        "1981 c.410 7; 2011 c.230 5"
+      ],
+      "history_citations": [
+        {
+          "raw": "1981 c.410 7",
+          "year": 1981,
+          "chapter": "410",
+          "section": "7"
+        },
+        {
+          "raw": "2011 c.230 5",
+          "year": 2011,
+          "chapter": "230",
+          "section": "5"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 28,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html#section-359.235",
+      "identifier": "ORS 359.235",
+      "name": "Section 359.235",
+      "text": "ORS 359.200 to 359.240 not to affect prior transactions; effect of Uniform Commercial Code. (1) Nothing in ORS 359.200 to 359.255 is intended to affect any written or oral contract or agreement in existence prior to November 1, 1981, unless the parties agree by mutual written consent that ORS 359.200 to 359.255 apply or the contract is extended or renewed after November 1, 1981. (2) ORS 359.200 to 359.255 is applicable notwithstanding the absence of, or conflict with, any written agreement, receipt, note or memorandum entered into on or after November 1, 1981, between the consignor and the consignee concerning any matter covered by ORS 359.200 to 359.255. ORS 359.200 to 359.255 controls over any conflicting provisions of the Uniform Commercial Code.",
+      "history_citation_blocks": [
+        "1981 c.410 8,10; 2011 c.230 6"
+      ],
+      "history_citations": [
+        {
+          "raw": "1981 c.410 8,10"
+        },
+        {
+          "raw": "2011 c.230 6",
+          "year": 2011,
+          "chapter": "230",
+          "section": "6"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Nothing in ORS 359.200 to 359.255 is intended to affect any written or oral contract or agreement in existence prior to November 1, 1981, unless the parties agree by mutual written consent that ORS 359.200 to 359.255 apply or the contract is extended or renewed after November 1, 1981.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "ORS 359.200 to 359.255 is applicable notwithstanding the absence of, or conflict with, any written agreement, receipt, note or memorandum entered into on or after November 1, 1981, between the consignor and the consignee concerning any matter covered by ORS 359.200 to 359.255. ORS 359.200 to 359.255 controls over any conflicting provisions of the Uniform Commercial Code.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 29,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html#section-359.240",
+      "identifier": "ORS 359.240",
+      "name": "Section 359.240",
+      "text": "Secreting, withholding or appropriating art work or sale proceeds; penalty. (1) It is unlawful for a consignee willfully and knowingly to secrete, withhold or appropriate a work of fine art or the proceeds from the sale of a work of fine art for the consignees own use or the use of any person other than the consignor, except pursuant to a bona fide sale or as otherwise consistent with the terms of consignment. (2) Violation of this section is a Class C felony.",
+      "history_citation_blocks": [
+        "1981 c.410 9; 2011 c.230 7"
+      ],
+      "history_citations": [
+        {
+          "raw": "1981 c.410 9",
+          "year": 1981,
+          "chapter": "410",
+          "section": "9"
+        },
+        {
+          "raw": "2011 c.230 7",
+          "year": 2011,
+          "chapter": "230",
+          "section": "7"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "It is unlawful for a consignee willfully and knowingly to secrete, withhold or appropriate a work of fine art or the proceeds from the sale of a work of fine art for the consignees own use or the use of any person other than the consignor, except pursuant to a bona fide sale or as otherwise consistent with the terms of consignment.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Violation of this section is a Class C felony.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 30,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html#section-359.250",
+      "identifier": "ORS 359.250",
+      "name": "Section 359.250",
+      "text": "Liability of art dealer for violation of ORS 359.220. (1) An art dealer who violates ORS 359.220 is liable to the consignor for $100 plus actual damages, including incidental damages sustained as a result of the violation. (2) If an art dealer violates ORS 359.220, the consignors obligation for compensation to the art dealer is voidable by the consignor.",
+      "history_citation_blocks": [
+        "1985 c.830 7; 2011 c.230 8"
+      ],
+      "history_citations": [
+        {
+          "raw": "1985 c.830 7",
+          "year": 1985,
+          "chapter": "830",
+          "section": "7"
+        },
+        {
+          "raw": "2011 c.230 8",
+          "year": 2011,
+          "chapter": "230",
+          "section": "8"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "An art dealer who violates ORS 359.220 is liable to the consignor for $100 plus actual damages, including incidental damages sustained as a result of the violation.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "If an art dealer violates ORS 359.220, the consignors obligation for compensation to the art dealer is voidable by the consignor.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 31,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html#section-359.255",
+      "identifier": "ORS 359.255",
+      "name": "Section 359.255",
+      "text": "Attorney fees. In any action under any provision of ORS 359.200 to 359.255, the court may award reasonable attorney fees and costs to the prevailing party. [1985 c.830 8] (Fine Print Disclosure Statements)",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 32,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html#section-359.300",
+      "identifier": "ORS 359.300",
+      "name": "Section 359.300",
+      "text": "Definitions for ORS 359.300 to 359.315. As used in ORS 359.300 to 359.315: (1) Artist means the person who conceived or created or conceived and created the master image for, or which served as a model for, the print. (2) Fine print includes, but is not limited to, an engraving, etching, woodcut, lithograph, monoprint or serigraph. (3) Impression means the printed image on suitable material whether paper or any other substance, made off the plate by printing, stamping, casting or any other process commonly used in the graphic arts. (4) Plate means the plate, stone, block or other material used for the purpose of creating the print from which the impression or impressions were taken. (5) A fine print is signed if the artist autographs the finished print, irrespective of whether it was signed or unsigned in the plate. (6) Reproduction means a copy of a fine print, but not a unique print made from the original plate.",
+      "history_citation_blocks": [
+        "1981 c.726 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "1981 c.726 1",
+          "year": 1981,
+          "chapter": "726",
+          "section": "1"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Artist means the person who conceived or created or conceived and created the master image for, or which served as a model for, the print.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Fine print includes, but is not limited to, an engraving, etching, woodcut, lithograph, monoprint or serigraph.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Impression means the printed image on suitable material whether paper or any other substance, made off the plate by printing, stamping, casting or any other process commonly used in the graphic arts.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Plate means the plate, stone, block or other material used for the purpose of creating the print from which the impression or impressions were taken.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "A fine print is signed if the artist autographs the finished print, irrespective of whether it was signed or unsigned in the plate.",
+          "subsections": []
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "Reproduction means a copy of a fine print, but not a unique print made from the original plate.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 33,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html#section-359.305",
+      "identifier": "ORS 359.305",
+      "name": "Section 359.305",
+      "text": "Disclosure statements required; disclaimer; exception for reproduction. (1) No person, engaged in the business of selling fine prints, shall sell a fine print, at wholesale or at retail, unless the person furnishes the purchaser a certificate or a written invoice or receipt for the purchase price which clearly and conspicuously discloses and warrants all of the applicable information about a fine print set forth in ORS 359.310. (2) If the seller disclaims knowledge as to any applicable item of information set forth in ORS 359.310, the seller shall so state specifically and categorically with regard to each such item. (3) If the seller describes a fine print as a reproduction, the seller need not furnish any further information.",
+      "history_citation_blocks": [
+        "1981 c.726 2"
+      ],
+      "history_citations": [
+        {
+          "raw": "1981 c.726 2",
+          "year": 1981,
+          "chapter": "726",
+          "section": "2"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "No person, engaged in the business of selling fine prints, shall sell a fine print, at wholesale or at retail, unless the person furnishes the purchaser a certificate or a written invoice or receipt for the purchase price which clearly and conspicuously discloses and warrants all of the applicable information about a fine print set forth in ORS 359.310.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "If the seller disclaims knowledge as to any applicable item of information set forth in ORS 359.310, the seller shall so state specifically and categorically with regard to each such item.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "If the seller describes a fine print as a reproduction, the seller need not furnish any further information.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 34,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html#section-359.310",
+      "identifier": "ORS 359.310",
+      "name": "Section 359.310",
+      "text": "Contents of disclosure statement. The following information about a fine print shall be furnished as provided in ORS 359.305: (1) The name of the artist and the year when printed. (2) Exclusive of trial proofs, whether the edition is being offered as a limited edition, and, if so: (a) The authorized maximum number of signed or numbered impressions, or both, in the edition; (b) The authorized maximum number of unsigned or unnumbered impressions, or both, in the edition; (c) The authorized maximum number of artists, publishers, printers or other proofs, if any, outside of the regular edition; and (d) The total size of the edition. (3) Whether the plate has been destroyed, effaced, altered, defaced or canceled after the current edition. (4) If there were any prior states of the same impression, the total number of states and a designation of the state to which the subject print relates. (5) If there were any prior or later editions from the same plate, the series number of the subject edition and the total size of all other editions. (6) Whether the edition is a posthumous edition or restrike and, if so, whether the plate has been reworked. (7) The name of the workshop, if any, where the edition was printed.",
+      "history_citation_blocks": [
+        "1981 c.726 3"
+      ],
+      "history_citations": [
+        {
+          "raw": "1981 c.726 3",
+          "year": 1981,
+          "chapter": "726",
+          "section": "3"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The name of the artist and the year when printed.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Exclusive of trial proofs, whether the edition is being offered as a limited edition, and, if so:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "The authorized maximum number of signed or numbered impressions, or both, in the edition;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "The authorized maximum number of unsigned or unnumbered impressions, or both, in the edition;",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "The authorized maximum number of artists, publishers, printers or other proofs, if any, outside of the regular edition; and",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "The total size of the edition.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Whether the plate has been destroyed, effaced, altered, defaced or canceled after the current edition.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "If there were any prior states of the same impression, the total number of states and a designation of the state to which the subject print relates.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "If there were any prior or later editions from the same plate, the series number of the subject edition and the total size of all other editions.",
+          "subsections": []
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "Whether the edition is a posthumous edition or restrike and, if so, whether the plate has been reworked.",
+          "subsections": []
+        },
+        {
+          "label": "(7)",
+          "token": "7",
+          "kind": "numeric",
+          "text": "The name of the workshop, if any, where the edition was printed.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 35,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html#section-359.315",
+      "identifier": "ORS 359.315",
+      "name": "Section 359.315",
+      "text": "Liability for failure to disclose; treble damages. (1) A person who offers or sells a fine print in violation of ORS 359.300 to 359.315 shall be liable to the person purchasing such fine print. The purchaser may recover the consideration paid for such print, with interest at the legal rate upon the tender of the print. (2) In any case in which a person willfully offers or sells a fine print in violation of ORS 359.300 to 359.315, the person purchasing the fine print may recover from the person who offers or sells the fine print an amount equal to three times the amount required under subsection (1) of this section. [1981 c.726 5] (Art Work Reproduction Rights)",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A person who offers or sells a fine print in violation of ORS 359.300 to 359.315 shall be liable to the person purchasing such fine print. The purchaser may recover the consideration paid for such print, with interest at the legal rate upon the tender of the print. of this section. [1981 c.726 5] (Art Work Reproduction Rights)",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "In any case in which a person willfully offers or sells a fine print in violation of ORS 359.300 to 359.315, the person purchasing the fine print may recover from the person who offers or sells the fine print an amount equal to three times the amount required under subsection",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 36,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html#section-359.350",
+      "identifier": "ORS 359.350",
+      "name": "Section 359.350",
+      "text": "Definitions for ORS 359.350 to 359.365. As used in ORS 359.350 to 359.365: (1) Artist means the creator of a work of fine art. (2) Fine art means a painting, sculpture, drawing, photograph, craft work, fiber art or work of graphic art. (3) Fine print includes, but is not limited to, an engraving, etching, woodcut, lithograph, monoprint or serigraph, but does not include industrial designs. (4) Industrial design means the aesthetic appearance of an article used in commerce. (5) Work of fine art means any work of visual or graphic art of any media including, but not limited to, painting, fine print, drawing, sculpture, craft, photography or film.",
+      "history_citation_blocks": [
+        "1981 c.824 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "1981 c.824 1",
+          "year": 1981,
+          "chapter": "824",
+          "section": "1"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Artist means the creator of a work of fine art.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Fine art means a painting, sculpture, drawing, photograph, craft work, fiber art or work of graphic art.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Fine print includes, but is not limited to, an engraving, etching, woodcut, lithograph, monoprint or serigraph, but does not include industrial designs.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Industrial design means the aesthetic appearance of an article used in commerce.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "Work of fine art means any work of visual or graphic art of any media including, but not limited to, painting, fine print, drawing, sculpture, craft, photography or film.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 37,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html#section-359.355",
+      "identifier": "ORS 359.355",
+      "name": "Section 359.355",
+      "text": "Art work reproduction rights retained by artist unless expressly transferred; effect of federal copyright laws. (1) Whenever a work of fine art is sold or otherwise transferred by or on behalf of the artist who created it, or the heirs or personal representatives thereof, the right of reproduction thereof is reserved to the grantor until the right passes into the public domain pursuant to federal copyright laws unless the right is sooner expressly transferred by an instrument, note or memorandum in writing signed by the owner of the rights conveyed or the duly authorized agent thereof. (2) Nothing contained in this section is intended to prohibit the fair use, as defined in the federal copyright law (17 U.S.C. 107), of such work of fine art.",
+      "history_citation_blocks": [
+        "1981 c.824 2"
+      ],
+      "history_citations": [
+        {
+          "raw": "1981 c.824 2",
+          "year": 1981,
+          "chapter": "824",
+          "section": "2"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Whenever a work of fine art is sold or otherwise transferred by or on behalf of the artist who created it, or the heirs or personal representatives thereof, the right of reproduction thereof is reserved to the grantor until the right passes into the public domain pursuant to federal copyright laws unless the right is sooner expressly transferred by an instrument, note or memorandum in writing signed by the owner of the rights conveyed or the duly authorized agent thereof.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Nothing contained in this section is intended to prohibit the fair use, as defined in the federal copyright law (17 U.S.C. 107), of such work of fine art.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 38,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html#section-359.360",
+      "identifier": "ORS 359.360",
+      "name": "Section 359.360",
+      "text": "Ownership of physical work of art remains with artist unless expressly transferred. Whenever an exclusive or nonexclusive conveyance of any right to reproduce, prepare derivative works based on, distribute copies of or publicly display a work of fine art is made by or on behalf of the artist who created it or the owner at the time of the conveyance, ownership of the physical work of fine art shall remain with and be reserved to the artist or owner, as the case may be, unless such right of ownership is expressly transferred by an instrument, note, memorandum or other writing, signed by the artist, the owner or the duly authorized agent thereof.",
+      "history_citation_blocks": [
+        "1981 c.824 3"
+      ],
+      "history_citations": [
+        {
+          "raw": "1981 c.824 3",
+          "year": 1981,
+          "chapter": "824",
+          "section": "3"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 39,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html#section-359.365",
+      "identifier": "ORS 359.365",
+      "name": "Section 359.365",
+      "text": "Ambiguity in agreement transferring right to reproduce art work resolved in favor of artist. Whenever an exclusive or nonexclusive conveyance of any right to reproduce, prepare derivative works based on, distribute copies of or publicly display a work of fine art is made by or on behalf of the artist who created it or the owner at the time of the conveyance, any ambiguity with respect to the nature or extent of the rights conveyed shall be resolved in favor of the reservation of rights by the artist or owner unless in any given case the federal copyright law (17 U.S.C. 1 et seq.) provides to the contrary. [1981 c.824 4] TRUST FOR CULTURAL DEVELOPMENT (Generally)",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 40,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html#section-359.400",
+      "identifier": "ORS 359.400",
+      "name": "Section 359.400",
+      "text": "Definitions for ORS 359.400 to 359.444. As used in ORS 359.400 to 359.444: (1) Community Cultural Participation Grant Program means the program created by ORS 359.436. (2) Core partner agencies means the Oregon Arts Commission, the Oregon Council for the Humanities, the Oregon Heritage Commission, the Oregon Historical Society and the State Historic Preservation Officer. (3) Cultural Development Grant Program means the program created by ORS 359.431. (4) Cultural organization means: (a) An entity that is: (A) Exempt from federal income tax under section 501(c)(3) of the Internal Revenue Code; and (B) Organized primarily for the purpose of producing, promoting or presenting the arts, heritage and humanities to the public or organized primarily for identifying, documenting, interpreting and preserving cultural resources. (b) A federally recognized Indian tribe. (5) Trust for Cultural Development Account means the account established by ORS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Community Cultural Participation Grant Program means the program created by ORS 359.436.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Core partner agencies means the Oregon Arts Commission, the Oregon Council for the Humanities, the Oregon Heritage Commission, the Oregon Historical Society and the State Historic Preservation Officer.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Cultural Development Grant Program means the program created by ORS 359.431.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Cultural organization means:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "An entity that is:",
+              "subsections": [
+                {
+                  "label": "(A)",
+                  "token": "A",
+                  "kind": "alpha_upper",
+                  "text": "Exempt from federal income tax under section 501(c)(3) of the Internal Revenue Code; and",
+                  "subsections": []
+                },
+                {
+                  "label": "(B)",
+                  "token": "B",
+                  "kind": "alpha_upper",
+                  "text": "Organized primarily for the purpose of producing, promoting or presenting the arts, heritage and humanities to the public or organized primarily for identifying, documenting, interpreting and preserving cultural resources.",
+                  "subsections": []
+                }
+              ]
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "A federally recognized Indian tribe.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "Trust for Cultural Development Account means the account established by ORS",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 41,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html#section-359.405",
+      "identifier": "ORS 359.405",
+      "name": "Section 359.405",
+      "text": "Trust for Cultural Development Account. (1) The Trust for Cultural Development Account is established in the State Treasury, separate and distinct from the General Fund. Investment earnings, interest and other income earned by the Trust for Cultural Development Account shall be credited to the account. The primary purpose of the account is to serve as a repository for both public and private moneys designated to fund specific arts, heritage and humanities programs. (2) All moneys in the Trust for Cultural Development Account are appropriated continuously to the Oregon Business Development Department for the Arts Program for the purposes of ORS 359.400 to 359.444.",
+      "history_citation_blocks": [
+        "Formerly 285A.216; 2003 c.713 7; 2015 c.668 3"
+      ],
+      "history_citations": [
+        {
+          "raw": "Formerly 285A.216"
+        },
+        {
+          "raw": "2003 c.713 7",
+          "year": 2003,
+          "chapter": "713",
+          "section": "7"
+        },
+        {
+          "raw": "2015 c.668 3",
+          "year": 2015,
+          "chapter": "668",
+          "section": "3"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The Trust for Cultural Development Account is established in the State Treasury, separate and distinct from the General Fund. Investment earnings, interest and other income earned by the Trust for Cultural Development Account shall be credited to the account. The primary purpose of the account is to serve as a repository for both public and private moneys designated to fund specific arts, heritage and humanities programs.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "All moneys in the Trust for Cultural Development Account are appropriated continuously to the Oregon Business Development Department for the Arts Program for the purposes of ORS 359.400 to 359.444.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 42,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html#section-359.407",
+      "identifier": "ORS 359.407",
+      "name": "Section 359.407",
+      "text": "Use of moneys transferred to trust for marketing and promotional costs. (1) Notwithstanding ORS 359.405, moneys transferred to the Trust for Cultural Development Account pursuant to ORS 805.261 may be used for marketing and promotional costs to increase the amount of moneys in the Trust for Cultural Development Account. (2) Amounts used for marketing and promotional costs as described in subsection (1) of this section are not considered part of the Trust for Cultural Development Account for the purpose of making disbursements under ORS 359.426. [2009 c.775 3] Note:",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Notwithstanding ORS 359.405, moneys transferred to the Trust for Cultural Development Account pursuant to ORS 805.261 may be used for marketing and promotional costs to increase the amount of moneys in the Trust for Cultural Development Account. of this section are not considered part of the Trust for Cultural Development Account for the purpose of making disbursements under ORS 359.426. [2009 c.775 3] Note:",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Amounts used for marketing and promotional costs as described in subsection",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 43,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html#section-359.410",
+      "identifier": "ORS 359.410",
+      "name": "Section 359.410",
+      "text": "Board established; membership; chairperson. (1) There is established a Trust for Cultural Development Board consisting of 11 members appointed by the Governor. The membership of the board must reflect the geographical and cultural diversity of this state. Each member must have a background that demonstrates a commitment to Oregons culture. (2) The Speaker of the House of Representatives and the President of the Senate shall each appoint a member of the Legislative Assembly to be a nonvoting advisory member of the board. (3) The term of office of each appointed member is four years, but a member serves at the pleasure of the appointing authority. Before the expiration of the term of a member, the appointing authority shall appoint a successor whose term begins on November 1 next following. A member is eligible for reappointment. If there is a vacancy for any cause, the appointing authority shall make an appointment to become immediately effective for the unexpired term. (4) The appointment of board members by the Governor is subject to confirmation by the Senate in the manner prescribed in ORS 171.562 and 171.565. (5) A member of the board is entitled to compensation and expenses as provided in ORS 292.495. (6) The board shall elect one of its voting members as chairperson and another as vice chairperson, for the terms and with the duties and powers necessary for the performance of the functions of such offices as the board determines.",
+      "history_citation_blocks": [
+        "2001 c.954 4; 2003 c.713 8; 2009 c.775 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "2001 c.954 4",
+          "year": 2001,
+          "chapter": "954",
+          "section": "4"
+        },
+        {
+          "raw": "2003 c.713 8",
+          "year": 2003,
+          "chapter": "713",
+          "section": "8"
+        },
+        {
+          "raw": "2009 c.775 1",
+          "year": 2009,
+          "chapter": "775",
+          "section": "1"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "There is established a Trust for Cultural Development Board consisting of 11 members appointed by the Governor. The membership of the board must reflect the geographical and cultural diversity of this state. Each member must have a background that demonstrates a commitment to Oregons culture.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The Speaker of the House of Representatives and the President of the Senate shall each appoint a member of the Legislative Assembly to be a nonvoting advisory member of the board.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The term of office of each appointed member is four years, but a member serves at the pleasure of the appointing authority. Before the expiration of the term of a member, the appointing authority shall appoint a successor whose term begins on November 1 next following. A member is eligible for reappointment. If there is a vacancy for any cause, the appointing authority shall make an appointment to become immediately effective for the unexpired term.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "The appointment of board members by the Governor is subject to confirmation by the Senate in the manner prescribed in ORS 171.562 and 171.565.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "A member of the board is entitled to compensation and expenses as provided in ORS 292.495.",
+          "subsections": []
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "The board shall elect one of its voting members as chairperson and another as vice chairperson, for the terms and with the duties and powers necessary for the performance of the functions of such offices as the board determines.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 44,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html#section-359.413",
+      "identifier": "ORS 359.413",
+      "name": "Section 359.413",
+      "text": "Board quorum; meetings. (1) A majority of the members of the Trust for Cultural Development Board constitutes a quorum for the transaction of business. (2) The board shall meet at least once every three months at a place, day and hour determined by the chairperson. The board also shall meet at other times and places specified by the call of the chairperson or of a majority of the members of the board. (3) The chairperson shall invite representatives of the core partner agencies to all meetings of the board.",
+      "history_citation_blocks": [
+        "2001 c.954 6"
+      ],
+      "history_citations": [
+        {
+          "raw": "2001 c.954 6",
+          "year": 2001,
+          "chapter": "954",
+          "section": "6"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A majority of the members of the Trust for Cultural Development Board constitutes a quorum for the transaction of business.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The board shall meet at least once every three months at a place, day and hour determined by the chairperson. The board also shall meet at other times and places specified by the call of the chairperson or of a majority of the members of the board.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The chairperson shall invite representatives of the core partner agencies to all meetings of the board.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 45,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html#section-359.416",
+      "identifier": "ORS 359.416",
+      "name": "Section 359.416",
+      "text": "Board duties; rules. (1) The Trust for Cultural Development Board shall oversee management of the Trust for Cultural Development Account and shall provide direction to the Administrator of the Arts Program for the coordination, administration and evaluation of the Cultural Development Grant Program, the Community Cultural Participation Grant Program and the use of funds received by core partner agencies under ORS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The Trust for Cultural Development Board shall oversee management of the Trust for Cultural Development Account and shall provide direction to the Administrator of the Arts Program for the coordination, administration and evaluation of the Cultural Development Grant Program, the Community Cultural Participation Grant Program and the use of funds received by core partner agencies under ORS",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 46,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html#section-359.421",
+      "identifier": "ORS 359.421",
+      "name": "Section 359.421",
+      "text": "Board staff; staff duties. The Administrator of the Arts Program shall provide staff support to the Trust for Cultural Development Board. Under the direction of the board, the administrator shall: (1) Coordinate grant management; (2) Provide Trust for Cultural Development Account management and accounting; (3) Work with cultural agencies and their constituents to communicate with and educate the public on the role culture plays in the lives of citizens and communities; and (4) Evaluate the Cultural Development Grant Program, the Community Cultural Participation Grant Program and the use of funds received under section 13, chapter 954, Oregon Laws 2001, by core partner agencies.",
+      "history_citation_blocks": [
+        "2001 c.954 8; 2003 c.713 10"
+      ],
+      "history_citations": [
+        {
+          "raw": "2001 c.954 8",
+          "year": 2001,
+          "chapter": "954",
+          "section": "8"
+        },
+        {
+          "raw": "2003 c.713 10",
+          "year": 2003,
+          "chapter": "713",
+          "section": "10"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Coordinate grant management;",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Provide Trust for Cultural Development Account management and accounting;",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Work with cultural agencies and their constituents to communicate with and educate the public on the role culture plays in the lives of citizens and communities; and",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Evaluate the Cultural Development Grant Program, the Community Cultural Participation Grant Program and the use of funds received under section 13, chapter 954, Oregon Laws 2001, by core partner agencies.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 47,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html#section-359.423",
+      "identifier": "ORS 359.423",
+      "name": "Section 359.423",
+      "text": "Board solicitation or acceptance of gifts, bequests, devises of money, securities or other property. (1)(a) The Trust for Cultural Development Board may solicit and accept gifts, bequests or devises of money, securities or other property of any kind to carry out the purposes of ORS 359.400 to 359.444. (b) Notwithstanding paragraph (a) of this subsection, a restricted gift, bequest or devise may not be accepted if the restriction is contrary to the laws of this state. (2)(a) The board shall be the custodian of any property accepted pursuant to this section. (b) The board shall hold the property as trustee for the state and shall conserve and administer the property to carry out the purposes of ORS 359.400 to",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "(a) The Trust for Cultural Development Board may solicit and accept gifts, bequests or devises of money, securities or other property of any kind to carry out the purposes of ORS 359.400 to 359.444.",
+          "subsections": [
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Notwithstanding paragraph",
+              "subsections": []
+            },
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "of this subsection, a restricted gift, bequest or devise may not be accepted if the restriction is contrary to the laws of this state.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "(a) The board shall be the custodian of any property accepted pursuant to this section.",
+          "subsections": [
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "The board shall hold the property as trustee for the state and shall conserve and administer the property to carry out the purposes of ORS 359.400 to",
+              "subsections": []
+            }
+          ]
+        }
+      ],
+      "parser_warnings": [],
+      "position": 48,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html#section-359.426",
+      "identifier": "ORS 359.426",
+      "name": "Section 359.426",
+      "text": "Percentage that may be disbursed; allowable uses. (1) Under the direction of the Trust for Cultural Development Board, each fiscal year the Arts Program shall disburse no less than 50 percent, but no more than 60 percent, of all moneys raised for and deposited in the Trust for Cultural Development Account during the previous fiscal year, and all interest earned on the moneys, as of July 1. (2) The amount determined under subsection (1) of this section shall be distributed as follows: (a) 50 percent to the preservation of, stabilization of and investment in Oregons cultural resources through the Cultural Development Grant Program as provided under ORS 359.431. (b) 25 percent to Oregons counties and to the nine federally recognized Indian tribes through the Community Cultural Participation Grant Program as provided under ORS 359.436. (c) 25 percent to the core partner agencies as provided under ORS 359.441. (3) Each fiscal year, the Arts Program shall assess the total value of the Trust for Cultural Development Account for the previous fiscal year and may distribute up to five percent of that value for administrative purposes, including: (a) Supporting the operations of the Trust for Cultural Development Board and the Trust for Cultural Development Account; (b) Facilitating technical assistance; (c) Local cultural planning; and (d) Other activities that encourage cultural activity.",
+      "history_citation_blocks": [
+        "2001 c.954 9; 2003 c.713 11; 2015 c.668 4; 2023 c.552 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "2001 c.954 9",
+          "year": 2001,
+          "chapter": "954",
+          "section": "9"
+        },
+        {
+          "raw": "2003 c.713 11",
+          "year": 2003,
+          "chapter": "713",
+          "section": "11"
+        },
+        {
+          "raw": "2015 c.668 4",
+          "year": 2015,
+          "chapter": "668",
+          "section": "4"
+        },
+        {
+          "raw": "2023 c.552 1",
+          "year": 2023,
+          "chapter": "552",
+          "section": "1"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Under the direction of the Trust for Cultural Development Board, each fiscal year the Arts Program shall disburse no less than 50 percent, but no more than 60 percent, of all moneys raised for and deposited in the Trust for Cultural Development Account during the previous fiscal year, and all interest earned on the moneys, as of July 1. of this section shall be distributed as follows:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "50 percent to the preservation of, stabilization of and investment in Oregons cultural resources through the Cultural Development Grant Program as provided under ORS 359.431.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "25 percent to Oregons counties and to the nine federally recognized Indian tribes through the Community Cultural Participation Grant Program as provided under ORS 359.436.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "25 percent to the core partner agencies as provided under ORS 359.441.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The amount determined under subsection",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Each fiscal year, the Arts Program shall assess the total value of the Trust for Cultural Development Account for the previous fiscal year and may distribute up to five percent of that value for administrative purposes, including:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Supporting the operations of the Trust for Cultural Development Board and the Trust for Cultural Development Account;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Facilitating technical assistance;",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Local cultural planning; and",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "Other activities that encourage cultural activity.",
+              "subsections": []
+            }
+          ]
+        }
+      ],
+      "parser_warnings": [],
+      "position": 49,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html#section-359.431",
+      "identifier": "ORS 359.431",
+      "name": "Section 359.431",
+      "text": "Cultural Development Grant Program; grant uses; priorities; matching funds. (1) There is created the Cultural Development Grant Program to be administered by the Administrator of the Arts Program under the direction of the Trust for Cultural Development Board. The purpose of the program is to provide preservation of, stabilization of and investment in Oregons cultural resources. The Arts Program under the direction of the Trust for Cultural Development Board shall make Cultural Development Grants to cultural organizations through a request for proposal process. (2) The grants may be used: (a) To address significant opportunities to advance, preserve or stabilize cultural resources; and (b) To invest in the development of new cultural resources. (3) The Trust for Cultural Development Board shall give priority when awarding grants to: (a) Proposals that have a broad cultural impact beyond the applicant itself. (b) Proposals from applicants that have culture as a priority within the mission of the applicant. (4) Applicants that receive a grant under this section shall be required to match the grant amount in an amount as determined by the board.",
+      "history_citation_blocks": [
+        "2001 c.954 10; 2003 c.713 12"
+      ],
+      "history_citations": [
+        {
+          "raw": "2001 c.954 10",
+          "year": 2001,
+          "chapter": "954",
+          "section": "10"
+        },
+        {
+          "raw": "2003 c.713 12",
+          "year": 2003,
+          "chapter": "713",
+          "section": "12"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "There is created the Cultural Development Grant Program to be administered by the Administrator of the Arts Program under the direction of the Trust for Cultural Development Board. The purpose of the program is to provide preservation of, stabilization of and investment in Oregons cultural resources. The Arts Program under the direction of the Trust for Cultural Development Board shall make Cultural Development Grants to cultural organizations through a request for proposal process.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The grants may be used:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "To address significant opportunities to advance, preserve or stabilize cultural resources; and",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "To invest in the development of new cultural resources.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The Trust for Cultural Development Board shall give priority when awarding grants to:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Proposals that have a broad cultural impact beyond the applicant itself.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Proposals from applicants that have culture as a priority within the mission of the applicant.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Applicants that receive a grant under this section shall be required to match the grant amount in an amount as determined by the board.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 50,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html#section-359.436",
+      "identifier": "ORS 359.436",
+      "name": "Section 359.436",
+      "text": "Community Cultural Participation Grant Program; local cultural plans. (1) There is created the Community Cultural Participation Grant Program to be administered by the Administrator of the Arts Program under the direction of the Trust for Cultural Development Board. The purpose of the program is to provide funds to counties and federally recognized Indian tribes for local cultural activities. The Arts Program under the direction of the board shall make Community Cultural Participation Grants to counties and tribes. (2) The board shall develop guidelines for local cultural plans. (3) A local cultural plan shall: (a) Identify priorities and specific strategies for building public cultural participation across cultural disciplines and organizations. The strategies may include the involvement of partners outside of the cultural sector such as business organizations, schools and health and human services organizations. (b) Identify annual benchmarks to determine the impact of grant funds. (c) Specify local leadership and governance for grant fund management and for ongoing planning and development of benchmarks. (4) Local cultural plans shall be broadly disseminated within each county or tribe. The local cultural plans shall be used to encourage planning and collaboration among cultural entities. (5) The Administrator of the Arts Program shall provide technical assistance to counties and tribes to support local cultural planning.",
+      "history_citation_blocks": [
+        "2001 c.954 11; 2003 c.713 13"
+      ],
+      "history_citations": [
+        {
+          "raw": "2001 c.954 11",
+          "year": 2001,
+          "chapter": "954",
+          "section": "11"
+        },
+        {
+          "raw": "2003 c.713 13",
+          "year": 2003,
+          "chapter": "713",
+          "section": "13"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "There is created the Community Cultural Participation Grant Program to be administered by the Administrator of the Arts Program under the direction of the Trust for Cultural Development Board. The purpose of the program is to provide funds to counties and federally recognized Indian tribes for local cultural activities. The Arts Program under the direction of the board shall make Community Cultural Participation Grants to counties and tribes.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The board shall develop guidelines for local cultural plans.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "A local cultural plan shall:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Identify priorities and specific strategies for building public cultural participation across cultural disciplines and organizations. The strategies may include the involvement of partners outside of the cultural sector such as business organizations, schools and health and human services organizations.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Identify annual benchmarks to determine the impact of grant funds.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Specify local leadership and governance for grant fund management and for ongoing planning and development of benchmarks.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Local cultural plans shall be broadly disseminated within each county or tribe. The local cultural plans shall be used to encourage planning and collaboration among cultural entities.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "The Administrator of the Arts Program shall provide technical assistance to counties and tribes to support local cultural planning.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 51,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html#section-359.441",
+      "identifier": "ORS 359.441",
+      "name": "Section 359.441",
+      "text": "Core partner agencies disbursement. (1) The Arts Program, under the direction of the Trust for Cultural Development Board, shall distribute the amount disbursed from the Trust for Cultural Development Account under ORS 359.426 (2)(c) to the core partner agencies as follows: (a) The Arts Program shall allocate 20 percent of the amount disbursed under ORS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The Arts Program, under the direction of the Trust for Cultural Development Board, shall distribute the amount disbursed from the Trust for Cultural Development Account under ORS 359.426",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "(c) to the core partner agencies as follows:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "The Arts Program shall allocate 20 percent of the amount disbursed under ORS",
+              "subsections": []
+            }
+          ]
+        }
+      ],
+      "parser_warnings": [],
+      "position": 52,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html#section-359.444",
+      "identifier": "ORS 359.444",
+      "name": "Section 359.444",
+      "text": "Allowable uses of funds by core partner agencies. (1) A core partner agency may use funds received under ORS 359.426 (2)(c) to: (a) Carry out the mission and mandate of the agency; (b) Serve more grantees; and (c) Encourage new cultural undertakings. (2) Each core partner agency shall expend a portion of the amount received under ORS 359.426 (2)(c) as determined by the Trust for Cultural Development Board each fiscal year to fund development of qualitative benchmarks and culture within Oregon. The evaluation of benchmarks may be done in partnership with one or more higher education institutions in Oregon. It is intended that this partnership will stimulate research and investigation of the ways in which culture and related cultural policy will impact the state over a 10-year period. [2001 c.954 16; 2023 c.552 3] _______________",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A core partner agency may use funds received under ORS 359.426",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "(c) to: Each core partner agency shall expend a portion of the amount received under ORS 359.426 (c) as determined by the Trust for Cultural Development Board each fiscal year to fund development of qualitative benchmarks and culture within Oregon. The evaluation of benchmarks may be done in partnership with one or more higher education institutions in Oregon. It is intended that this partnership will stimulate research and investigation of the ways in which culture and related cultural policy will impact the state over a 10-year period. [2001 c.954 16; 2023 c.552 3] _______________",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Carry out the mission and mandate of the agency;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Serve more grantees; and",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Encourage new cultural undertakings.",
+              "subsections": []
+            }
+          ]
+        }
+      ],
+      "parser_warnings": [],
+      "position": 53,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors359.html"
+    }
+  ],
+  "alternateName": "Art and Culture",
+  "legislationDate": "2023"
+}

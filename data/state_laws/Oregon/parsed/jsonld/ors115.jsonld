@@ -1,0 +1,2139 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "orlaw": "https://www.oregonlegislature.gov/ors#"
+  },
+  "@type": "Legislation",
+  "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html",
+  "identifier": "ORS Chapter 115",
+  "name": "ORS Chapter 115 — Claims; Actions and Suits",
+  "legislationType": "Statute",
+  "jurisdiction": "US-OR",
+  "isPartOf": {
+    "@type": "CreativeWork",
+    "identifier": "ORS",
+    "name": "Oregon Revised Statutes",
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors"
+  },
+  "dateModified": "2026-02-25T08:11:15.985471+00:00",
+  "source_file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors115.html",
+  "hasPart": [
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html#section-115.001",
+      "identifier": "ORS 115.001",
+      "name": "Section 115.001",
+      "text": "Effect of direction to pay debts, charges, taxes or expenses. A mere testamentary direction to pay debts, charges, taxes or expenses of administration shall not be considered a direction for exoneration from encumbrances.",
+      "history_citation_blocks": [
+        "1973 c.506 35"
+      ],
+      "history_citations": [
+        {
+          "raw": "1973 c.506 35",
+          "year": 1973,
+          "chapter": "506",
+          "section": "35"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 1,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html#section-115.003",
+      "identifier": "ORS 115.003",
+      "name": "Section 115.003",
+      "text": "Personal representative to make diligent search for claimants; notice to claimants; contents; proof of compliance; exception for estates with no known assets. (1) Except as provided in subsection (6) of this section, during the three months following appointment, unless a longer time is allowed by the court, the personal representative shall make reasonably diligent efforts to investigate the financial records and affairs of the decedent and shall take such further actions as may be reasonably necessary to ascertain the identity and address of each person who has or asserts a claim against the estate. The personal representative shall request and the court shall allow a longer time for ascertaining claims if the personal representative cannot complete reasonably diligent efforts to identify persons with claims during the time required by this section or by a previous order of the court. (2) Not later than 30 days after expiration of the period, including any extensions, described in subsection (1) or (6) of this section, the personal representative shall cause to be delivered or mailed to each person known by the personal representative during such period to have or assert a claim against the estate a notice containing the information required in subsection (3) of this section. The personal representative is not required to give notice on account of a claim that has already been presented, accepted or paid in full or on account of a claim that is merely conjectural. The personal representative may also cause such a notice to be delivered or mailed to any person discovered by the personal representative after expiration of the period described in subsection (1) or (6) of this section to have or assert a claim against the estate. (3) The notice shall include: (a) The title of the court in which the estate proceeding is pending; (b) The name of the decedent; (c) The name of the personal representative and the address at which claims are to be presented; (d) A statement that claims against the estate not presented to the personal representative within 45 days of the date of the notice may be barred; and (e) The date of the notice, which shall be the date on which it is delivered or mailed. (4) Not later than 60 days after expiration of the period, including any extensions, described in subsection (1) or (6) of this section, the personal representative shall cause to be filed in the estate proceeding proof of compliance with subsections (1) and (2) of this section. The proof shall include a copy of the form of any notice delivered or mailed, the date on which each notice was delivered or mailed and the name and address of the person to whom each notice was delivered or mailed. (5) The failure of the personal representative to make reasonably diligent efforts to ascertain claims as required by subsection (1) of this section or to cause a notice to be delivered or mailed as required by subsection (2) of this section is a breach of duty to the persons concerned, but does not affect the validity of appointment, duties or powers or the exercise of duties or powers. (6)(a) This section does not apply if the petition for appointment of the personal representative states that no assets of the estate are known to the petitioner and no assets of the estate have come into the possession or knowledge of the personal representative. (b) If the petition for appointment of the personal representative states that no assets of the estate are known to the petitioner and assets of the estate later come into the possession or knowledge of the personal representative, the personal representative shall comply with this section. The three-month period for compliance with subsection (1) of this section begins on the date of filing of the inventory or supplemental inventory first showing assets of the estate.",
+      "history_citation_blocks": [
+        "1989 c.229 2; 2007 c.284 12; 2017 c.169 54; 2019 c.414 6"
+      ],
+      "history_citations": [
+        {
+          "raw": "1989 c.229 2",
+          "year": 1989,
+          "chapter": "229",
+          "section": "2"
+        },
+        {
+          "raw": "2007 c.284 12",
+          "year": 2007,
+          "chapter": "284",
+          "section": "12"
+        },
+        {
+          "raw": "2017 c.169 54",
+          "year": 2017,
+          "chapter": "169",
+          "section": "54"
+        },
+        {
+          "raw": "2019 c.414 6",
+          "year": 2019,
+          "chapter": "414",
+          "section": "6"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Except as provided in subsection or and of this section or to cause a notice to be delivered or mailed as required by subsection of this section begins on the date of filing of the inventory or supplemental inventory first showing assets of the estate.",
+          "subsections": []
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "of this section, during the three months following appointment, unless a longer time is allowed by the court, the personal representative shall make reasonably diligent efforts to investigate the financial records and affairs of the decedent and shall take such further actions as may be reasonably necessary to ascertain the identity and address of each person who has or asserts a claim against the estate. The personal representative shall request and the court shall allow a longer time for ascertaining claims if the personal representative cannot complete reasonably diligent efforts to identify persons with claims during the time required by this section or by a previous order of the court. of this section, the personal representative shall cause to be delivered or mailed to each person known by the personal representative during such period to have or assert a claim against the estate a notice containing the information required in subsection of this section to have or assert a claim against the estate. of this section, the personal representative shall cause to be filed in the estate proceeding proof of compliance with subsections (a) This section does not apply if the petition for appointment of the personal representative states that no assets of the estate are known to the petitioner and no assets of the estate have come into the possession or knowledge of the personal representative.",
+          "subsections": [
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "If the petition for appointment of the personal representative states that no assets of the estate are known to the petitioner and assets of the estate later come into the possession or knowledge of the personal representative, the personal representative shall comply with this section. The three-month period for compliance with subsection",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Not later than 30 days after expiration of the period, including any extensions, described in subsection of this section. The proof shall include a copy of the form of any notice delivered or mailed, the date on which each notice was delivered or mailed and the name and address of the person to whom each notice was delivered or mailed. of this section is a breach of duty to the persons concerned, but does not affect the validity of appointment, duties or powers or the exercise of duties or powers.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "of this section. The personal representative is not required to give notice on account of a claim that has already been presented, accepted or paid in full or on account of a claim that is merely conjectural. The personal representative may also cause such a notice to be delivered or mailed to any person discovered by the personal representative after expiration of the period described in subsection The notice shall include:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "The title of the court in which the estate proceeding is pending;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "The name of the decedent;",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "The name of the personal representative and the address at which claims are to be presented;",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "A statement that claims against the estate not presented to the personal representative within 45 days of the date of the notice may be barred; and",
+              "subsections": []
+            },
+            {
+              "label": "(e)",
+              "token": "e",
+              "kind": "alpha_lower",
+              "text": "The date of the notice, which shall be the date on which it is delivered or mailed.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Not later than 60 days after expiration of the period, including any extensions, described in subsection",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "The failure of the personal representative to make reasonably diligent efforts to ascertain claims as required by subsection",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 2,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html#section-115.004",
+      "identifier": "ORS 115.004",
+      "name": "Section 115.004",
+      "text": "Recovery for failure to make search or give notice; indemnification; time for commencing action. If, as a result of breach of a duty imposed by ORS 115.003, a claim or any part of a claim is not paid from the estate during administration, the amount of the claim may be recovered as follows: (1) The claimant shall have a cause of action against the personal representative and the surety for the personal representative for the amount the claimant would have been paid from the estate had all claims not barred from payment been presented within the time required by ORS 115.005 (2) and allowed by the personal representative, provided that any payment on account of a judgment entered under subsection (2) of this section shall also satisfy a judgment entered under this subsection in the amount of the payment. (2) The claimant shall have a cause of action against each interested person who received a distribution or other payment from the estate for the amount by which the payment received would have been reduced by payment of the claim from the estate had all claims not barred from payment been presented within the time required by ORS 115.005 (2) and allowed by the personal representative, provided that any payment on account of a judgment entered under subsection (1) of this section shall also satisfy a pro rata portion of each judgment entered under this subsection. (3) Each interested person who received a distribution or other payment from the estate shall indemnify the personal representative and the surety for the personal representative against liability on the claim in the amount by which the payment received would have been reduced by payment of the claim from the estate had all claims not barred from payment been presented within the time required by ORS 115.005 (2) and allowed by the personal representative. (4) Each interested person who received a distribution or other payment from the estate shall indemnify the personal representative and the surety for the personal representative against the reasonable costs, including attorney fees, of defense of the action in the same proportion and to the same extent as such distributee would be required to indemnify against the claim under subsection (3) of this section: (a) If the personal representative prevails against the claimant, in such proportion of the full amount of such costs; or (b) If the claimant prevails against the personal representative, in such proportion of the amount of any such costs which could have been reasonably incurred by the estate upon disallowance of the claim had it been presented within the time required by ORS 115.005 (2). (5) Except as provided in subsection (6) of this section, an action under this section against a personal representative, the surety for a personal representative or an interested person shall be commenced within two years after the death of the decedent or within the statute of limitations applicable to the claim, whichever is earlier. (6) An action for indemnity under subsection (3) or (4) of this section shall be commenced within the time required by subsection (5) of this section, unless: (a) Notice of the action giving rise to the claim for indemnity is given to each party from whom indemnity is sought personally or by mail to the partys last-known address within 180 days after the complaint in the action is served on the party seeking indemnity; and (b) The action is commenced within one year after a judgment in the action giving rise to the claim for indemnity becomes final and not subject to further appeal.",
+      "history_citation_blocks": [
+        "1989 c.229 3"
+      ],
+      "history_citations": [
+        {
+          "raw": "1989 c.229 3",
+          "year": 1989,
+          "chapter": "229",
+          "section": "3"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The claimant shall have a cause of action against the personal representative and the surety for the personal representative for the amount the claimant would have been paid from the estate had all claims not barred from payment been presented within the time required by ORS 115.005 of this section shall also satisfy a pro rata portion of each judgment entered under this subsection.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "and allowed by the personal representative, provided that any payment on account of a judgment entered under subsection of this section shall also satisfy a judgment entered under this subsection in the amount of the payment. The claimant shall have a cause of action against each interested person who received a distribution or other payment from the estate for the amount by which the payment received would have been reduced by payment of the claim from the estate had all claims not barred from payment been presented within the time required by ORS 115.005 and allowed by the personal representative.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Each interested person who received a distribution or other payment from the estate shall indemnify the personal representative and the surety for the personal representative against liability on the claim in the amount by which the payment received would have been reduced by payment of the claim from the estate had all claims not barred from payment been presented within the time required by ORS 115.005 of this section:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "If the personal representative prevails against the claimant, in such proportion of the full amount of such costs; or",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "If the claimant prevails against the personal representative, in such proportion of the amount of any such costs which could have been reasonably incurred by the estate upon disallowance of the claim had it been presented within the time required by ORS 115.005",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Each interested person who received a distribution or other payment from the estate shall indemnify the personal representative and the surety for the personal representative against the reasonable costs, including attorney fees, of defense of the action in the same proportion and to the same extent as such distributee would be required to indemnify against the claim under subsection of this section shall be commenced within the time required by subsection",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "Except as provided in subsection of this section, unless:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Notice of the action giving rise to the claim for indemnity is given to each party from whom indemnity is sought personally or by mail to the partys last-known address within 180 days after the complaint in the action is served on the party seeking indemnity; and",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "The action is commenced within one year after a judgment in the action giving rise to the claim for indemnity becomes final and not subject to further appeal.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "of this section, an action under this section against a personal representative, the surety for a personal representative or an interested person shall be commenced within two years after the death of the decedent or within the statute of limitations applicable to the claim, whichever is earlier. An action for indemnity under subsection",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 3,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html#section-115.005",
+      "identifier": "ORS 115.005",
+      "name": "Section 115.005",
+      "text": "Presentation of claims; time limitations. (1)(a) Claims against the estate of a decedent, other than claims of the personal representative as a creditor of the decedent, shall be presented to the personal representative. Filing a claim with the court does not constitute presentation to the personal representative. Except as provided in paragraph (b) of this subsection, a claim is presented to the personal representative when the claim is mailed or personally delivered to the personal representative at: (A) The address for the personal representative included in the petition for appointment of the personal representative under ORS 113.035; (B) The address provided for presentation of claims under ORS 115.003; or (C) The address provided for presentation of claims in the published notice under ORS 113.155 or 113.225. (b) In addition to the addresses for the presentation of claims under paragraph (a) of this subsection, the personal representative may authorize creditors to present claims by electronic mail or facsimile communication to a designated electronic mail address or facsimile number. If the personal representative authorizes alternative methods of presentation under this subsection, a claim is presented to the personal representative when it is sent to the electronic mail address or the facsimile number designated by the personal representative for the presentation of claims, unless the sender receives a notice that the electronic mail was not delivered or the facsimile communication was not successful. If the personal representative denies receiving the electronic mail or facsimile communication, the burden of proof is on the creditor to demonstrate that the electronic mail was properly addressed and sent or that the facsimile communication was properly addressed and successfully delivered or transmitted. (2) Except as provided in subsection (3) of this section, a claim is barred from payment from the estate if not presented within the statute of limitations applicable to the claim and before the later of: (a) Four months after the date of publication of notice to interested persons; or (b) If the claim was one with respect to which the personal representative was required to deliver or mail a notice under ORS 115.003 (2), 45 days after a notice meeting the requirements of ORS 115.003 (3) is delivered or mailed to the last-known address of the person asserting the claim. (3) A claim against the estate presented after claims are barred under subsection (2) of this section shall be paid from the estate if the claim: (a) Is presented before the expiration of the statute of limitations applicable to the claim and before the personal representative files the final account; (b) Is presented by a person who did not receive a notice under ORS 115.003 mailed or delivered more than 30 days prior to the date on which the claim is presented and who is not an assignee of a person who received such notice; and (c) Would be allowable but for the time at which the claim is presented. (4) A claim against an estate may be paid under subsection (3) of this section only after payment of all expenses having priority over claims under ORS 115.125 and payment of all previously presented claims. (5) This section does not affect or prevent: (a) Any proceeding to enforce a mortgage, pledge or other lien upon property of the estate, or to quiet title or reform any instrument with respect to title to property; or (b) To the limits of the insurance protection only, any proceeding to establish liability of the decedent or the personal representative for which the decedent or personal representative is protected by liability insurance at the time the proceeding is commenced. [1969 c.591 141; 1973 c.506 29; 1989 c.229 4; 1993 c.214 1; 2001 c.620 3; 2003 c.523 1; 2017 c.169 27; 2023 c.18 8] Note: Section 11, chapter 18, Oregon Laws 2023, provides: Sec. 11. The amendments to statutes by sections 1 to 10 of this 2023 Act apply to probate proceedings commenced on or after the effective date of this 2023 Act [January 1, 2024].",
+      "history_citation_blocks": [
+        "2023 c.18 11"
+      ],
+      "history_citations": [
+        {
+          "raw": "2023 c.18 11",
+          "year": 2023,
+          "chapter": "18",
+          "section": "11"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "(a) Claims against the estate of a decedent, other than claims of the personal representative as a creditor of the decedent, shall be presented to the personal representative. Filing a claim with the court does not constitute presentation to the personal representative. Except as provided in paragraph",
+          "subsections": [
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "of this subsection, a claim is presented to the personal representative when the claim is mailed or personally delivered to the personal representative at: In addition to the addresses for the presentation of claims under paragraph",
+              "subsections": [
+                {
+                  "label": "(A)",
+                  "token": "A",
+                  "kind": "alpha_upper",
+                  "text": "The address for the personal representative included in the petition for appointment of the personal representative under ORS 113.035;",
+                  "subsections": []
+                },
+                {
+                  "label": "(B)",
+                  "token": "B",
+                  "kind": "alpha_upper",
+                  "text": "The address provided for presentation of claims under ORS 115.003; or",
+                  "subsections": []
+                },
+                {
+                  "label": "(C)",
+                  "token": "C",
+                  "kind": "alpha_upper",
+                  "text": "The address provided for presentation of claims in the published notice under ORS 113.155 or 113.225.",
+                  "subsections": []
+                }
+              ]
+            },
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "of this subsection, the personal representative may authorize creditors to present claims by electronic mail or facsimile communication to a designated electronic mail address or facsimile number. If the personal representative authorizes alternative methods of presentation under this subsection, a claim is presented to the personal representative when it is sent to the electronic mail address or the facsimile number designated by the personal representative for the presentation of claims, unless the sender receives a notice that the electronic mail was not delivered or the facsimile communication was not successful. If the personal representative denies receiving the electronic mail or facsimile communication, the burden of proof is on the creditor to demonstrate that the electronic mail was properly addressed and sent or that the facsimile communication was properly addressed and successfully delivered or transmitted.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Except as provided in subsection , 45 days after a notice meeting the requirements of ORS 115.003 of this section shall be paid from the estate if the claim:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Is presented before the expiration of the statute of limitations applicable to the claim and before the personal representative files the final account;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Is presented by a person who did not receive a notice under ORS 115.003 mailed or delivered more than 30 days prior to the date on which the claim is presented and who is not an assignee of a person who received such notice; and",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Would be allowable but for the time at which the claim is presented.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "of this section, a claim is barred from payment from the estate if not presented within the statute of limitations applicable to the claim and before the later of: is delivered or mailed to the last-known address of the person asserting the claim. A claim against the estate presented after claims are barred under subsection of this section only after payment of all expenses having priority over claims under ORS 115.125 and payment of all previously presented claims.",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Four months after the date of publication of notice to interested persons; or",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "If the claim was one with respect to which the personal representative was required to deliver or mail a notice under ORS 115.003",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "A claim against an estate may be paid under subsection",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "This section does not affect or prevent:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Any proceeding to enforce a mortgage, pledge or other lien upon property of the estate, or to quiet title or reform any instrument with respect to title to property; or",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "To the limits of the insurance protection only, any proceeding to establish liability of the decedent or the personal representative for which the decedent or personal representative is protected by liability insurance at the time the proceeding is commenced. [1969 c.591 141; 1973 c.506 29; 1989 c.229 4; 1993 c.214 1; 2001 c.620 3; 2003 c.523 1; 2017 c.169 27; 2023 c.18 8] Note: Section 11, chapter 18, Oregon Laws 2023, provides: Sec. 11. The amendments to statutes by sections 1 to 10 of this 2023 Act apply to probate proceedings commenced on or after the effective date of this 2023 Act [January 1, 2024].",
+              "subsections": []
+            }
+          ]
+        }
+      ],
+      "parser_warnings": [],
+      "position": 4,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html#section-115.008",
+      "identifier": "ORS 115.008",
+      "name": "Section 115.008",
+      "text": "Application of time limitations to public bodies. Notwithstanding ORS 12.250, and except as otherwise specifically provided in this chapter, all statutes of limitation and other time limitations imposed under this chapter apply to actions brought in the name of the state, or brought in the name of any county or public corporation, and to actions brought for the benefit of the state or for the benefit of any county or public corporation.",
+      "history_citation_blocks": [
+        "1999 c.675 3; 2001 c.620 4"
+      ],
+      "history_citations": [
+        {
+          "raw": "1999 c.675 3",
+          "year": 1999,
+          "chapter": "675",
+          "section": "3"
+        },
+        {
+          "raw": "2001 c.620 4",
+          "year": 2001,
+          "chapter": "620",
+          "section": "4"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 5,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html#section-115.010",
+      "identifier": "ORS 115.010",
+      "name": "Section 115.010",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 6,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html#section-115.015",
+      "identifier": "ORS 115.015",
+      "name": "Section 115.015",
+      "text": "",
+      "history_citation_blocks": [
+        "1969 c.591 141a; 1973 c.506 30; repealed by 1989 c.229 15"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.591 141a",
+          "year": 1969,
+          "chapter": "591",
+          "section": "141a"
+        },
+        {
+          "raw": "1973 c.506 30",
+          "year": 1973,
+          "chapter": "506",
+          "section": "30"
+        },
+        {
+          "raw": "repealed by 1989 c.229 15"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 7,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html#section-115.020",
+      "identifier": "ORS 115.020",
+      "name": "Section 115.020",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 8,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html#section-115.025",
+      "identifier": "ORS 115.025",
+      "name": "Section 115.025",
+      "text": "Form of claims. Each claim presented shall: (1) Be in writing. (2) Describe the nature and the amount of the claim, if ascertainable. (3) State the names and addresses of the claimant and, if any, the attorney of the claimant.",
+      "history_citation_blocks": [
+        "1969 c.591 142; 1973 c.506 31; 2017 c.169 55"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.591 142",
+          "year": 1969,
+          "chapter": "591",
+          "section": "142"
+        },
+        {
+          "raw": "1973 c.506 31",
+          "year": 1973,
+          "chapter": "506",
+          "section": "31"
+        },
+        {
+          "raw": "2017 c.169 55",
+          "year": 2017,
+          "chapter": "169",
+          "section": "55"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Be in writing.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Describe the nature and the amount of the claim, if ascertainable.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "State the names and addresses of the claimant and, if any, the attorney of the claimant.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 9,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html#section-115.035",
+      "identifier": "ORS 115.035",
+      "name": "Section 115.035",
+      "text": "Waiver of defect or insufficiency. A defect of form of a claim timely presented may be waived by the personal representative or by the court.",
+      "history_citation_blocks": [
+        "1969 c.591 143; 1973 c.506 32"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.591 143",
+          "year": 1969,
+          "chapter": "591",
+          "section": "143"
+        },
+        {
+          "raw": "1973 c.506 32",
+          "year": 1973,
+          "chapter": "506",
+          "section": "32"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 10,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html#section-115.045",
+      "identifier": "ORS 115.045",
+      "name": "Section 115.045",
+      "text": "Written evidence of claim. When it appears that there is written evidence of a claim that has been presented to the personal representative, the claimant, upon demand by the personal representative, shall produce the evidence or account for its nonproduction.",
+      "history_citation_blocks": [
+        "1969 c.591 144"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.591 144",
+          "year": 1969,
+          "chapter": "591",
+          "section": "144"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 11,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html#section-115.055",
+      "identifier": "ORS 115.055",
+      "name": "Section 115.055",
+      "text": "Claims on debts due. If a claim on a debt due is presented and allowed, allowance shall be in the amount of the debt remaining unpaid on the date of allowance.",
+      "history_citation_blocks": [
+        "1969 c.591 145"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.591 145",
+          "year": 1969,
+          "chapter": "591",
+          "section": "145"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 12,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html#section-115.065",
+      "identifier": "ORS 115.065",
+      "name": "Section 115.065",
+      "text": "Claims on secured debts due. (1) A claim on a debt due for which the creditor holds security may be presented as a claim on an unsecured debt due. A creditor who presents a claim under this subsection does not waive the creditors security interest and may recover a deficiency as provided in subsection (5) of this section. (2) If the claim is presented, the claim shall describe the security generally. If the security is an encumbrance that is recorded, it is sufficient to describe the encumbrance by reference to the book and page or document number, date and place of recording or filing. (3) If the claim is presented and allowed, allowance shall be in the amount of the debt remaining unpaid on the date of allowance. (4) If the creditor surrenders the security, payment shall be on the basis of the amount allowed. (5) If the creditor does not surrender the security, payment shall be on the basis of: (a) If the creditor exhausts the security before receiving payment, unless precluded by other law, the amount allowed, less the amount realized on exhausting the security; or (b) If the creditor does not exhaust the security before receiving payment or does not have the right to exhaust the security, the amount allowed, less the value of the security determined by agreement or as the court may order. (6) The personal representative may convey the secured property to the creditor in consideration of the satisfaction or partial satisfaction of the claim.",
+      "history_citation_blocks": [
+        "1969 c.591 146; 1989 c.229 5; 2017 c.169 28"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.591 146",
+          "year": 1969,
+          "chapter": "591",
+          "section": "146"
+        },
+        {
+          "raw": "1989 c.229 5",
+          "year": 1989,
+          "chapter": "229",
+          "section": "5"
+        },
+        {
+          "raw": "2017 c.169 28",
+          "year": 2017,
+          "chapter": "169",
+          "section": "28"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A claim on a debt due for which the creditor holds security may be presented as a claim on an unsecured debt due. A creditor who presents a claim under this subsection does not waive the creditors security interest and may recover a deficiency as provided in subsection",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "of this section. If the creditor does not surrender the security, payment shall be on the basis of:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "If the creditor exhausts the security before receiving payment, unless precluded by other law, the amount allowed, less the amount realized on exhausting the security; or",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "If the creditor does not exhaust the security before receiving payment or does not have the right to exhaust the security, the amount allowed, less the value of the security determined by agreement or as the court may order.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "If the claim is presented, the claim shall describe the security generally. If the security is an encumbrance that is recorded, it is sufficient to describe the encumbrance by reference to the book and page or document number, date and place of recording or filing.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "If the claim is presented and allowed, allowance shall be in the amount of the debt remaining unpaid on the date of allowance.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "If the creditor surrenders the security, payment shall be on the basis of the amount allowed.",
+          "subsections": []
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "The personal representative may convey the secured property to the creditor in consideration of the satisfaction or partial satisfaction of the claim.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 13,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html#section-115.070",
+      "identifier": "ORS 115.070",
+      "name": "Section 115.070",
+      "text": "Claims on debts reduced to judgments. If a judgment was entered on a claim prior to the death of the decedent but was not a lien against property of the estate on the date of the decedents death, the claim shall be presented in the same manner as if no judgment had been entered, and a copy of the judgment shall be attached to the claim. A claim for which a judgment was entered prior to the death of the decedent may be disallowed only if the judgment was void or voidable, or if the judgment could have been set aside on the date of the decedents death, or if the claim is not presented within the time required by ORS 115.005. If the judgment was a lien against property of the estate on the date of the decedents death it shall be treated as a claim on a debt due for which the creditor holds security under ORS 115.065. In all other respects a claim that has been reduced to judgment shall have the same priority under ORS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 14,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html#section-115.075",
+      "identifier": "ORS 115.075",
+      "name": "Section 115.075",
+      "text": "Claims on debts not due. A claim on a debt not due, whether or not the creditor holds security therefor, may be presented as a claim on a debt due. If the claim is allowed, allowance shall be in an amount equal to the value of the debt on the date of allowance. The creditor, after allowance of the claim, may withdraw the claim without prejudice to other remedies. Payment on the basis of the amount allowed discharges the debt and the security, if any, held by the creditor therefor.",
+      "history_citation_blocks": [
+        "1969 c.591 147"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.591 147",
+          "year": 1969,
+          "chapter": "591",
+          "section": "147"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 15,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html#section-115.085",
+      "identifier": "ORS 115.085",
+      "name": "Section 115.085",
+      "text": "Claims on contingent and unliquidated debts. (1) A claim on a contingent or unliquidated debt shall be presented as any other claim. (2) If the debt becomes absolute or liquidated before distribution of the estate, the claim shall be paid in the same manner as a claim on an absolute or liquidated debt. (3) If the debt does not become absolute or liquidated before distribution of the estate, the court shall provide for payment of the claim by any of the following methods: (a) The creditor and personal representative may determine, by agreement, arbitration or compromise, the value of the debt, and upon approval thereof by the court, the claim may be allowed and paid in the same manner as a claim on an absolute or liquidated debt. (b) The court may order the personal representative to make distribution of the estate, but to retain sufficient funds to pay the claim if and when the debt becomes absolute or liquidated. The estate may not be kept open for this purpose more than two years after distribution of the remainder of the estate. If the debt does not become absolute or liquidated within that time, the funds retained, after payment therefrom of any expenses accruing during that time, shall be distributed to the distributees. (c) The court may order the personal representative to make distribution of the estate as though the claim did not exist. (d) If after distribution under paragraph (b) or (c) of this subsection the debt becomes absolute or liquidated, the distributees are liable to the creditor to the extent of the estate received by them. Payment of the debt may be arranged by creating a trust, giving a mortgage, securing a bond from a distributee or by such other method as the court may order.",
+      "history_citation_blocks": [
+        "1969 c.591 148"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.591 148",
+          "year": 1969,
+          "chapter": "591",
+          "section": "148"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A claim on a contingent or unliquidated debt shall be presented as any other claim.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "If the debt becomes absolute or liquidated before distribution of the estate, the claim shall be paid in the same manner as a claim on an absolute or liquidated debt.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "If the debt does not become absolute or liquidated before distribution of the estate, the court shall provide for payment of the claim by any of the following methods:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "The creditor and personal representative may determine, by agreement, arbitration or compromise, the value of the debt, and upon approval thereof by the court, the claim may be allowed and paid in the same manner as a claim on an absolute or liquidated debt.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "The court may order the personal representative to make distribution of the estate, but to retain sufficient funds to pay the claim if and when the debt becomes absolute or liquidated. The estate may not be kept open for this purpose more than two years after distribution of the remainder of the estate. If the debt does not become absolute or liquidated within that time, the funds retained, after payment therefrom of any expenses accruing during that time, shall be distributed to the distributees.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "The court may order the personal representative to make distribution of the estate as though the claim did not exist. of this subsection the debt becomes absolute or liquidated, the distributees are liable to the creditor to the extent of the estate received by them. Payment of the debt may be arranged by creating a trust, giving a mortgage, securing a bond from a distributee or by such other method as the court may order.",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "If after distribution under paragraph",
+              "subsections": []
+            }
+          ]
+        }
+      ],
+      "parser_warnings": [],
+      "position": 16,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html#section-115.095",
+      "identifier": "ORS 115.095",
+      "name": "Section 115.095",
+      "text": "Compromise of claims. The personal representative may compromise a claim against the estate of a decedent.",
+      "history_citation_blocks": [
+        "1969 c.591 149"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.591 149",
+          "year": 1969,
+          "chapter": "591",
+          "section": "149"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 17,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html#section-115.105",
+      "identifier": "ORS 115.105",
+      "name": "Section 115.105",
+      "text": "Claims of personal representative. A claim of a personal representative shall be filed with the clerk of the court within the time required by law for presentation of claims. Upon application by the personal representative or by any interested person the claim may be considered by the court on the hearing of the final account of the personal representative or prior to the hearing of the final account upon notice to interested persons.",
+      "history_citation_blocks": [
+        "1969 c.591 150; 1973 c.506 33; 2017 c.169 56"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.591 150",
+          "year": 1969,
+          "chapter": "591",
+          "section": "150"
+        },
+        {
+          "raw": "1973 c.506 33",
+          "year": 1973,
+          "chapter": "506",
+          "section": "33"
+        },
+        {
+          "raw": "2017 c.169 56",
+          "year": 2017,
+          "chapter": "169",
+          "section": "56"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 18,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html#section-115.110",
+      "identifier": "ORS 115.110",
+      "name": "Section 115.110",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 19,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html#section-115.115",
+      "identifier": "ORS 115.115",
+      "name": "Section 115.115",
+      "text": "Payment of claims. After the day on which all known claims are barred under ORS 115.005 (2), the personal representative, after making provision for support of spouse and children ordered by the court, for expenses of administration and for claims already presented which have not been allowed or allowance of which has been appealed, shall proceed to pay the claims allowed against the estate in the order of priority prescribed by ORS 115.125. After payment of those claims, claims presented and allowed under ORS 115.005 (3) shall be paid in the order in which they are received and to the extent of the remaining assets of the estate.",
+      "history_citation_blocks": [
+        "1969 c.591 151; 1989 c.229 6"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.591 151",
+          "year": 1969,
+          "chapter": "591",
+          "section": "151"
+        },
+        {
+          "raw": "1989 c.229 6",
+          "year": 1989,
+          "chapter": "229",
+          "section": "6"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": ", the personal representative, after making provision for support of spouse and children ordered by the court, for expenses of administration and for claims already presented which have not been allowed or allowance of which has been appealed, shall proceed to pay the claims allowed against the estate in the order of priority prescribed by ORS 115.125. After payment of those claims, claims presented and allowed under ORS 115.005",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "shall be paid in the order in which they are received and to the extent of the remaining assets of the estate.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 20,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html#section-115.120",
+      "identifier": "ORS 115.120",
+      "name": "Section 115.120",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 21,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html#section-115.125",
+      "identifier": "ORS 115.125",
+      "name": "Section 115.125",
+      "text": "Order of payment of expenses and claims. (1) If the applicable assets of the estate are insufficient to pay all expenses and claims in full, the personal representative shall make payment in the following order: (a) Support of spouse and children, subject to the limitations imposed by ORS 114.065. (b) Expenses of administration of the estate, and subject to preferences established under federal law, expenses of administration of any protective proceeding in which the decedent was the protected person authorized by the court in the protective proceeding. (c) Expenses of a plain and decent funeral. (d) Debts and taxes with preference under federal law. (e) Reasonable and necessary medical and hospital expenses of the last illness of the decedent, including compensation of persons attending the decedent to which the persons are otherwise entitled by law. (f) Taxes with preference under the laws of this state that are due and payable while possession of the estate of the decedent is retained by the personal representative. (g) Debts owed employees of the decedent for labor performed within 90 days immediately preceding the date of death of the decedent. (h) Child support arrearages. (i) The claim of the Department of Veterans Affairs under ORS 406.100, including a claim the waiver of which was retracted by the Director of Veterans Affairs under ORS 406.110. (j) The claim of the Department of Human Services or the Oregon Health Authority for the amount of the states monthly contribution to the federal government to defray the costs of outpatient prescription drug coverage provided to a person who is eligible for Medicare Part D prescription drug coverage and who receives benefits under the state medical assistance program or Title XIX of the Social Security Act. (k) The claim of the Department of Human Services or the Oregon Health Authority for the net amount of assistance properly or improperly paid to or for the decedent, in the following order: (A) Public assistance, as defined in ORS 411.010, and medical assistance, as defined in ORS 414.025, funded entirely by moneys from the General Fund; and (B) Public assistance, as defined in ORS 411.010, and medical assistance, as defined in ORS 414.025, funded by a combination of state and federal funds. (L) The claim of the Department of Human Services or the Oregon Health Authority for the care and maintenance of the decedent at a state institution, as provided in ORS 179.610 to 179.770. (m) The claim of the Department of Corrections for care and maintenance of any decedent who was at a state institution to the extent provided in ORS 179.610 to 179.770. (n) All other claims against the estate. (2) If the applicable assets of the estate are insufficient to pay in full all expenses or claims of any one class specified in subsection (1) of this section, each expense or claim of that class shall be paid only in proportion to the amount thereof.",
+      "history_citation_blocks": [
+        "1969 c.591 152; 1969 c.597 279; 1973 c.402 32; 1979 c.684 17; 2001 c.316 1; 2001 c.487 13; 2001 c.900 19a; 2005 c.754 3; 2007 c.26 1; 2009 c.595 81; 2011 c.720 60; 2013 c.190 1; 2013 c.688 19; 2016 c.42 23; 2017 c.169 30"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.591 152",
+          "year": 1969,
+          "chapter": "591",
+          "section": "152"
+        },
+        {
+          "raw": "1969 c.597 279",
+          "year": 1969,
+          "chapter": "597",
+          "section": "279"
+        },
+        {
+          "raw": "1973 c.402 32",
+          "year": 1973,
+          "chapter": "402",
+          "section": "32"
+        },
+        {
+          "raw": "1979 c.684 17",
+          "year": 1979,
+          "chapter": "684",
+          "section": "17"
+        },
+        {
+          "raw": "2001 c.316 1",
+          "year": 2001,
+          "chapter": "316",
+          "section": "1"
+        },
+        {
+          "raw": "2001 c.487 13",
+          "year": 2001,
+          "chapter": "487",
+          "section": "13"
+        },
+        {
+          "raw": "2001 c.900 19a",
+          "year": 2001,
+          "chapter": "900",
+          "section": "19a"
+        },
+        {
+          "raw": "2005 c.754 3",
+          "year": 2005,
+          "chapter": "754",
+          "section": "3"
+        },
+        {
+          "raw": "2007 c.26 1",
+          "year": 2007,
+          "chapter": "26",
+          "section": "1"
+        },
+        {
+          "raw": "2009 c.595 81",
+          "year": 2009,
+          "chapter": "595",
+          "section": "81"
+        },
+        {
+          "raw": "2011 c.720 60",
+          "year": 2011,
+          "chapter": "720",
+          "section": "60"
+        },
+        {
+          "raw": "2013 c.190 1",
+          "year": 2013,
+          "chapter": "190",
+          "section": "1"
+        },
+        {
+          "raw": "2013 c.688 19",
+          "year": 2013,
+          "chapter": "688",
+          "section": "19"
+        },
+        {
+          "raw": "2016 c.42 23",
+          "year": 2016,
+          "chapter": "42",
+          "section": "23"
+        },
+        {
+          "raw": "2017 c.169 30",
+          "year": 2017,
+          "chapter": "169",
+          "section": "30"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "If the applicable assets of the estate are insufficient to pay all expenses and claims in full, the personal representative shall make payment in the following order: of this section, each expense or claim of that class shall be paid only in proportion to the amount thereof.",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Support of spouse and children, subject to the limitations imposed by ORS 114.065.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Expenses of administration of the estate, and subject to preferences established under federal law, expenses of administration of any protective proceeding in which the decedent was the protected person authorized by the court in the protective proceeding.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Expenses of a plain and decent funeral.",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "Debts and taxes with preference under federal law.",
+              "subsections": []
+            },
+            {
+              "label": "(e)",
+              "token": "e",
+              "kind": "alpha_lower",
+              "text": "Reasonable and necessary medical and hospital expenses of the last illness of the decedent, including compensation of persons attending the decedent to which the persons are otherwise entitled by law.",
+              "subsections": []
+            },
+            {
+              "label": "(f)",
+              "token": "f",
+              "kind": "alpha_lower",
+              "text": "Taxes with preference under the laws of this state that are due and payable while possession of the estate of the decedent is retained by the personal representative.",
+              "subsections": []
+            },
+            {
+              "label": "(g)",
+              "token": "g",
+              "kind": "alpha_lower",
+              "text": "Debts owed employees of the decedent for labor performed within 90 days immediately preceding the date of death of the decedent.",
+              "subsections": []
+            },
+            {
+              "label": "(h)",
+              "token": "h",
+              "kind": "alpha_lower",
+              "text": "Child support arrearages.",
+              "subsections": []
+            },
+            {
+              "label": "(i)",
+              "token": "i",
+              "kind": "alpha_lower",
+              "text": "The claim of the Department of Veterans Affairs under ORS 406.100, including a claim the waiver of which was retracted by the Director of Veterans Affairs under ORS 406.110.",
+              "subsections": []
+            },
+            {
+              "label": "(j)",
+              "token": "j",
+              "kind": "alpha_lower",
+              "text": "The claim of the Department of Human Services or the Oregon Health Authority for the amount of the states monthly contribution to the federal government to defray the costs of outpatient prescription drug coverage provided to a person who is eligible for Medicare Part D prescription drug coverage and who receives benefits under the state medical assistance program or Title XIX of the Social Security Act.",
+              "subsections": []
+            },
+            {
+              "label": "(k)",
+              "token": "k",
+              "kind": "alpha_lower",
+              "text": "The claim of the Department of Human Services or the Oregon Health Authority for the net amount of assistance properly or improperly paid to or for the decedent, in the following order:",
+              "subsections": [
+                {
+                  "label": "(A)",
+                  "token": "A",
+                  "kind": "alpha_upper",
+                  "text": "Public assistance, as defined in ORS 411.010, and medical assistance, as defined in ORS 414.025, funded entirely by moneys from the General Fund; and",
+                  "subsections": []
+                },
+                {
+                  "label": "(B)",
+                  "token": "B",
+                  "kind": "alpha_upper",
+                  "text": "Public assistance, as defined in ORS 411.010, and medical assistance, as defined in ORS 414.025, funded by a combination of state and federal funds.",
+                  "subsections": []
+                },
+                {
+                  "label": "(L)",
+                  "token": "L",
+                  "kind": "alpha_upper",
+                  "text": "The claim of the Department of Human Services or the Oregon Health Authority for the care and maintenance of the decedent at a state institution, as provided in ORS 179.610 to 179.770.",
+                  "subsections": []
+                }
+              ]
+            },
+            {
+              "label": "(m)",
+              "token": "m",
+              "kind": "alpha_lower",
+              "text": "The claim of the Department of Corrections for care and maintenance of any decedent who was at a state institution to the extent provided in ORS 179.610 to 179.770.",
+              "subsections": []
+            },
+            {
+              "label": "(n)",
+              "token": "n",
+              "kind": "alpha_lower",
+              "text": "All other claims against the estate.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "If the applicable assets of the estate are insufficient to pay in full all expenses or claims of any one class specified in subsection",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 22,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html#section-115.130",
+      "identifier": "ORS 115.130",
+      "name": "Section 115.130",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 23,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html#section-115.135",
+      "identifier": "ORS 115.135",
+      "name": "Section 115.135",
+      "text": "Allowance and disallowance of claims; exception for estates with no known assets. (1) Except as provided in subsection (5) of this section, a claim presented to the personal representative shall be considered allowed as presented unless within 60 days after the date of presentation of the claim as provided in ORS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Except as provided in subsection",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "of this section, a claim presented to the personal representative shall be considered allowed as presented unless within 60 days after the date of presentation of the claim as provided in ORS",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 24,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html#section-115.140",
+      "identifier": "ORS 115.140",
+      "name": "Section 115.140",
+      "text": "[Amended by 1955 c.292 1; repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 25,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html#section-115.145",
+      "identifier": "ORS 115.145",
+      "name": "Section 115.145",
+      "text": "Procedure by claimant on disallowance of claim. (1) If the personal representative disallows a claim in whole or in part, the claimant, within 30 days after the date of mailing or delivery of the notice of disallowance, may either: (a) File with the court in the estate proceeding a request for summary determination of the claim by the probate court, with proof of service of a copy of the request upon the personal representative or the attorney of the personal representative; or (b) Commence a separate action against the personal representative on the claim in any court of competent jurisdiction. The action shall proceed and be tried as any other action. (2) If the claimant fails to either request a summary determination or commence a separate action as provided in subsection (1) of this section, the claim, to the extent disallowed by the personal representative, is barred. (3) In a proceeding for summary determination of a claim or in a separate action on a claim the claim shall be allowed or judgment entered on the claim in the full amount of the liability, if any, of the decedent to the claimant. However, the claim shall be paid only to the extent of the assets of the estate allocable to the payment of the claim pursuant to ORS 115.115 and 115.125.",
+      "history_citation_blocks": [
+        "1969 c.591 154; 1989 c.229 7; 2017 c.169 32"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.591 154",
+          "year": 1969,
+          "chapter": "591",
+          "section": "154"
+        },
+        {
+          "raw": "1989 c.229 7",
+          "year": 1989,
+          "chapter": "229",
+          "section": "7"
+        },
+        {
+          "raw": "2017 c.169 32",
+          "year": 2017,
+          "chapter": "169",
+          "section": "32"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "If the personal representative disallows a claim in whole or in part, the claimant, within 30 days after the date of mailing or delivery of the notice of disallowance, may either: of this section, the claim, to the extent disallowed by the personal representative, is barred.",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "File with the court in the estate proceeding a request for summary determination of the claim by the probate court, with proof of service of a copy of the request upon the personal representative or the attorney of the personal representative; or",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Commence a separate action against the personal representative on the claim in any court of competent jurisdiction. The action shall proceed and be tried as any other action.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "If the claimant fails to either request a summary determination or commence a separate action as provided in subsection",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "In a proceeding for summary determination of a claim or in a separate action on a claim the claim shall be allowed or judgment entered on the claim in the full amount of the liability, if any, of the decedent to the claimant. However, the claim shall be paid only to the extent of the assets of the estate allocable to the payment of the claim pursuant to ORS 115.115 and 115.125.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 26,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html#section-115.150",
+      "identifier": "ORS 115.150",
+      "name": "Section 115.150",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 27,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html#section-115.155",
+      "identifier": "ORS 115.155",
+      "name": "Section 115.155",
+      "text": "Separate action required by personal representative. If the claimant files a request for summary determination of the claim as provided in ORS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 28,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html#section-115.160",
+      "identifier": "ORS 115.160",
+      "name": "Section 115.160",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 29,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html#section-115.165",
+      "identifier": "ORS 115.165",
+      "name": "Section 115.165",
+      "text": "Summary determination procedure. In a proceeding for summary determination by the probate court of a claim disallowed in whole or in part by the personal representative: (1) The personal representative shall move or plead to the claim as though the claim were a complaint filed in an action. (2) The court shall hear the matter without a jury, after notice to the claimant and personal representative. Upon the hearing the court shall determine the claim in a summary manner and shall make an order allowing or disallowing the claim in whole or in part. (3) No appeal may be taken from the order of the court made upon the summary determination.",
+      "history_citation_blocks": [
+        "1969 c.591 156"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.591 156",
+          "year": 1969,
+          "chapter": "591",
+          "section": "156"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The personal representative shall move or plead to the claim as though the claim were a complaint filed in an action.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The court shall hear the matter without a jury, after notice to the claimant and personal representative. Upon the hearing the court shall determine the claim in a summary manner and shall make an order allowing or disallowing the claim in whole or in part.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "No appeal may be taken from the order of the court made upon the summary determination.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 30,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html#section-115.170",
+      "identifier": "ORS 115.170",
+      "name": "Section 115.170",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 31,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html#section-115.175",
+      "identifier": "ORS 115.175",
+      "name": "Section 115.175",
+      "text": "Interested persons heard in summary determination or separate action. Any interested person may be heard in a proceeding for summary determination by the probate court of a claim, and may intervene in a separate action against the personal representative on the claim.",
+      "history_citation_blocks": [
+        "1969 c.591 157"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.591 157",
+          "year": 1969,
+          "chapter": "591",
+          "section": "157"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 32,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html#section-115.180",
+      "identifier": "ORS 115.180",
+      "name": "Section 115.180",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 33,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html#section-115.185",
+      "identifier": "ORS 115.185",
+      "name": "Section 115.185",
+      "text": "Creditor may obtain order for payment. A creditor whose claim has been allowed or established by summary determination or separate action, and who has not received payment within six months after the date of publication of notice to interested persons, may apply to the court for an order directing the personal representative to pay the claim to the extent that funds of the estate are available for that payment. [1969 c.591 158; 2023 c.18 9] Note: See note under",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 34,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html#section-115.190",
+      "identifier": "ORS 115.190",
+      "name": "Section 115.190",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 35,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html#section-115.195",
+      "identifier": "ORS 115.195",
+      "name": "Section 115.195",
+      "text": "Proof for court allowance of disallowed claim; claims for recovery of public assistance or medical assistance. (1) A claim that has been disallowed by the personal representative may not be allowed by any court except upon some competent, satisfactory evidence other than the testimony of the claimant. (2)(a) Notwithstanding subsection (1) of this section, claims for recovery of public assistance as defined by ORS 411.010 or medical assistance as defined in ORS 414.025 may be allowed based on evidence in the form of documents from the Department of Human Services or the Oregon Health Authority that contain information relating to that public assistance or medical assistance, such as the date that services were provided to the decedent, the classification of those services, the name of the provider or the providers identification number, and the amount of the public assistance or medical assistance payment made for the services. The documents may be prints obtained from microfilm or microfiche, or printouts from computer records or other electronic storage medium. (b) A document described in paragraph (a) of this subsection is prima facie evidence of the information contained in the document and is not excluded from introduction as hearsay, and extrinsic evidence of authenticity of the document as a condition precedent to admissibility is not required, if the document bears a seal that on its face is the seal of the Director of Human Services or the designee of the director, or the Director of the Oregon Health Authority or the designee of the director, and: (A) For a print obtained from microfilm or microfiche, also bears a statement indicating that the print is a true copy of the microfilm or microfiche record, signed by a person who purports to be an officer or employee of the department or the authority; or (B) For a printout from computer records or other electronic storage medium, also bears a statement indicating that the printout accurately reflects the data retrieved, signed by a person who purports to be an officer or employee of the department or the authority.",
+      "history_citation_blocks": [
+        "1969 c.591 159; 2003 c.523 2; 2011 c.720 61; 2013 c.688 20; 2021 c.282 19"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.591 159",
+          "year": 1969,
+          "chapter": "591",
+          "section": "159"
+        },
+        {
+          "raw": "2003 c.523 2",
+          "year": 2003,
+          "chapter": "523",
+          "section": "2"
+        },
+        {
+          "raw": "2011 c.720 61",
+          "year": 2011,
+          "chapter": "720",
+          "section": "61"
+        },
+        {
+          "raw": "2013 c.688 20",
+          "year": 2013,
+          "chapter": "688",
+          "section": "20"
+        },
+        {
+          "raw": "2021 c.282 19",
+          "year": 2021,
+          "chapter": "282",
+          "section": "19"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A claim that has been disallowed by the personal representative may not be allowed by any court except upon some competent, satisfactory evidence other than the testimony of the claimant. of this section, claims for recovery of public assistance as defined by ORS 411.010 or medical assistance as defined in ORS 414.025 may be allowed based on evidence in the form of documents from the Department of Human Services or the Oregon Health Authority that contain information relating to that public assistance or medical assistance, such as the date that services were provided to the decedent, the classification of those services, the name of the provider or the providers identification number, and the amount of the public assistance or medical assistance payment made for the services. The documents may be prints obtained from microfilm or microfiche, or printouts from computer records or other electronic storage medium.",
+          "subsections": [
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "A document described in paragraph",
+              "subsections": []
+            },
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "of this subsection is prima facie evidence of the information contained in the document and is not excluded from introduction as hearsay, and extrinsic evidence of authenticity of the document as a condition precedent to admissibility is not required, if the document bears a seal that on its face is the seal of the Director of Human Services or the designee of the director, or the Director of the Oregon Health Authority or the designee of the director, and:",
+              "subsections": [
+                {
+                  "label": "(A)",
+                  "token": "A",
+                  "kind": "alpha_upper",
+                  "text": "For a print obtained from microfilm or microfiche, also bears a statement indicating that the print is a true copy of the microfilm or microfiche record, signed by a person who purports to be an officer or employee of the department or the authority; or",
+                  "subsections": []
+                },
+                {
+                  "label": "(B)",
+                  "token": "B",
+                  "kind": "alpha_upper",
+                  "text": "For a printout from computer records or other electronic storage medium, also bears a statement indicating that the printout accurately reflects the data retrieved, signed by a person who purports to be an officer or employee of the department or the authority.",
+                  "subsections": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "(a) Notwithstanding subsection",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 36,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html#section-115.200",
+      "identifier": "ORS 115.200",
+      "name": "Section 115.200",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 37,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html#section-115.205",
+      "identifier": "ORS 115.205",
+      "name": "Section 115.205",
+      "text": "Waiver of statute of limitations. A claim barred by the statute of limitations may not be allowed by the personal representative or by any court except upon the written direction or consent of those interested persons who would be adversely affected by allowance of the claim.",
+      "history_citation_blocks": [
+        "1969 c.591 160"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.591 160",
+          "year": 1969,
+          "chapter": "591",
+          "section": "160"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 38,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html#section-115.210",
+      "identifier": "ORS 115.210",
+      "name": "Section 115.210",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 39,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html#section-115.215",
+      "identifier": "ORS 115.215",
+      "name": "Section 115.215",
+      "text": "Extension of statute of limitations. If a claim is not barred by the statute of limitations on the date of death of the decedent, the claim is not barred by the statute of limitations thereafter until at least one year after the date of death.",
+      "history_citation_blocks": [
+        "1969 c.591 161"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.591 161",
+          "year": 1969,
+          "chapter": "591",
+          "section": "161"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 40,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html#section-115.220",
+      "identifier": "ORS 115.220",
+      "name": "Section 115.220",
+      "text": "[1963 c.447 1; 1965 c.514 1; repealed by 1969 c.591 305] DISCHARGE OF ENCUMBRANCES",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 41,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html#section-115.255",
+      "identifier": "ORS 115.255",
+      "name": "Section 115.255",
+      "text": "Discharge of encumbrances. (1) As used in this section: (a) Voluntary encumbrance means any mortgage, trust deed, security agreement, pledge or public improvement assessment lien, or any lien arising from labor or services performed or materials supplied or furnished, or any combination thereof, upon or in respect of property. (b) Involuntary encumbrance means any encumbrance upon property other than a voluntary encumbrance. (2) If property upon which an encumbrance exists on the date of the death of the testator is specifically devised, the devisee takes it subject to the encumbrance, and the personal representative is not required to make any payment on account of the obligation secured by the encumbrance, whether or not the testator was personally liable on the obligation secured by the encumbrance, except as provided otherwise in the will or in subsection (3) or (4) of this section. (3) Unless the will provides otherwise, the devisee of specifically devised property may require that an encumbrance thereon be fully or partially discharged out of other assets of the estate not specifically devised, if: (a) The encumbrance is an involuntary encumbrance; or (b) The encumbrance is a voluntary encumbrance and: (A) The will specifically directs full or partial discharge of the encumbrance out of other assets; or (B) The personal representative receives rents or profits, or both, from the property and the devisee requests that the personal representative apply all or part of the rents or profits, or both, in full or partial discharge of the obligation secured by the encumbrance, in which event the personal representative shall apply the rents or profits, or both, upon principal or interest, or both, owing upon the obligation, as requested; or (C) Any devisee requests, in a writing signed by the devisee and delivered to the personal representative, that the obligation secured by the encumbrance be fully or partially discharged out of property, or the proceeds of the sale thereof, which otherwise would pass to the devisee. (4) If a claim based upon an obligation secured by a voluntary encumbrance upon specifically devised property is presented and paid, or if specifically devised real property subject to a voluntary encumbrance is redeemed, and the devisee is not entitled to exoneration pursuant to subsection (3) of this section, the personal representative has a lien upon the property in the amount paid, and the lien shall be administered upon as an asset of the estate. (5) If property is specifically devised by a will executed before the effective date of this section, and if an encumbrance upon that property exists on the date of the death of the testator, the rights of the devisee of that property in respect of exoneration thereof out of other assets of the estate shall be determined in accordance with the law in effect on the date the will was executed.",
+      "history_citation_blocks": [
+        "1969 c.591 162"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.591 162",
+          "year": 1969,
+          "chapter": "591",
+          "section": "162"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "As used in this section:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Voluntary encumbrance means any mortgage, trust deed, security agreement, pledge or public improvement assessment lien, or any lien arising from labor or services performed or materials supplied or furnished, or any combination thereof, upon or in respect of property.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Involuntary encumbrance means any encumbrance upon property other than a voluntary encumbrance.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "If property upon which an encumbrance exists on the date of the death of the testator is specifically devised, the devisee takes it subject to the encumbrance, and the personal representative is not required to make any payment on account of the obligation secured by the encumbrance, whether or not the testator was personally liable on the obligation secured by the encumbrance, except as provided otherwise in the will or in subsection",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "or Unless the will provides otherwise, the devisee of specifically devised property may require that an encumbrance thereon be fully or partially discharged out of other assets of the estate not specifically devised, if: of this section, the personal representative has a lien upon the property in the amount paid, and the lien shall be administered upon as an asset of the estate.",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "The encumbrance is an involuntary encumbrance; or",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "The encumbrance is a voluntary encumbrance and:",
+              "subsections": [
+                {
+                  "label": "(A)",
+                  "token": "A",
+                  "kind": "alpha_upper",
+                  "text": "The will specifically directs full or partial discharge of the encumbrance out of other assets; or",
+                  "subsections": []
+                },
+                {
+                  "label": "(B)",
+                  "token": "B",
+                  "kind": "alpha_upper",
+                  "text": "The personal representative receives rents or profits, or both, from the property and the devisee requests that the personal representative apply all or part of the rents or profits, or both, in full or partial discharge of the obligation secured by the encumbrance, in which event the personal representative shall apply the rents or profits, or both, upon principal or interest, or both, owing upon the obligation, as requested; or",
+                  "subsections": []
+                },
+                {
+                  "label": "(C)",
+                  "token": "C",
+                  "kind": "alpha_upper",
+                  "text": "Any devisee requests, in a writing signed by the devisee and delivered to the personal representative, that the obligation secured by the encumbrance be fully or partially discharged out of property, or the proceeds of the sale thereof, which otherwise would pass to the devisee.",
+                  "subsections": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "of this section. If a claim based upon an obligation secured by a voluntary encumbrance upon specifically devised property is presented and paid, or if specifically devised real property subject to a voluntary encumbrance is redeemed, and the devisee is not entitled to exoneration pursuant to subsection",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "If property is specifically devised by a will executed before the effective date of this section, and if an encumbrance upon that property exists on the date of the death of the testator, the rights of the devisee of that property in respect of exoneration thereof out of other assets of the estate shall be determined in accordance with the law in effect on the date the will was executed.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 42,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html#section-115.265",
+      "identifier": "ORS 115.265",
+      "name": "Section 115.265",
+      "text": "Power to redeem estate property. Unless otherwise provided by the will, the personal representative may redeem property of the estate sold on foreclosure of mortgage or upon execution if it appears that the redemption would be for the benefit of the estate and would not be prejudicial to creditors.",
+      "history_citation_blocks": [
+        "1969 c.591 163"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.591 163",
+          "year": 1969,
+          "chapter": "591",
+          "section": "163"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 43,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html#section-115.275",
+      "identifier": "ORS 115.275",
+      "name": "Section 115.275",
+      "text": "Encumbered assets; powers of personal representative. When any assets of the estate are encumbered by an involuntary or voluntary encumbrance, the personal representative may discharge the encumbrance or any part thereof, renew or extend any obligation secured by the encumbrance or convey or transfer the assets to the creditor in satisfaction of the lien, in whole or in part, whether or not the holder of the encumbrance has filed a claim, if it appears to be for the best interest of the estate. Discharge of an encumbrance shall not increase the share of the distributee entitled to the encumbered assets unless the distributee is entitled to exoneration under ORS 115.255 (3). [1969 c.591 164] ACTIONS AND SUITS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": ". [1969 c.591 164] ACTIONS AND SUITS",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 44,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html#section-115.305",
+      "identifier": "ORS 115.305",
+      "name": "Section 115.305",
+      "text": "Survival of causes of action. All causes of action or suit, by one person against another, survive to the personal representative of the former and against the personal representative of the latter. [Formerly 121.020]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 45,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html#section-115.310",
+      "identifier": "ORS 115.310",
+      "name": "Section 115.310",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 46,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html#section-115.315",
+      "identifier": "ORS 115.315",
+      "name": "Section 115.315",
+      "text": "Continuation of action without claim presentation. An action against a decedent commenced before and pending on the date of death of the decedent may be continued as provided in ORCP 34 B(2) without presentation of a claim against the estate of the decedent.",
+      "history_citation_blocks": [
+        "1969 c.591 166; 1979 c.284 107"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.591 166",
+          "year": 1969,
+          "chapter": "591",
+          "section": "166"
+        },
+        {
+          "raw": "1979 c.284 107",
+          "year": 1979,
+          "chapter": "284",
+          "section": "107"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 47,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html#section-115.320",
+      "identifier": "ORS 115.320",
+      "name": "Section 115.320",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 48,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html#section-115.325",
+      "identifier": "ORS 115.325",
+      "name": "Section 115.325",
+      "text": "Action not to be commenced until claim presented and disallowed. Except as provided in ORS 115.004, 115.005 (5) and 115.065, no action against a personal representative on account of a claim shall be commenced until the claim of the plaintiff has been presented to and disallowed by the personal representative.",
+      "history_citation_blocks": [
+        "Formerly 121.090; 1989 c.229 8; 1993 c.214 2"
+      ],
+      "history_citations": [
+        {
+          "raw": "Formerly 121.090"
+        },
+        {
+          "raw": "1989 c.229 8",
+          "year": 1989,
+          "chapter": "229",
+          "section": "8"
+        },
+        {
+          "raw": "1993 c.214 2",
+          "year": 1993,
+          "chapter": "214",
+          "section": "2"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "and 115.065, no action against a personal representative on account of a claim shall be commenced until the claim of the plaintiff has been presented to and disallowed by the personal representative.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 49,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html#section-115.330",
+      "identifier": "ORS 115.330",
+      "name": "Section 115.330",
+      "text": "[Repealed by 1969 c.591 305] APPLICATION TO NONTESTAMENTARY TRUSTS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 50,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html#section-115.335",
+      "identifier": "ORS 115.335",
+      "name": "Section 115.335",
+      "text": "Chapter does not apply to certain trusts. The provisions of this chapter do not apply to claims against trusts that are subject to the provisions of ORS 130.350 to 130.450.",
+      "history_citation_blocks": [
+        "2001 c.593 17; 2005 c.348 120a"
+      ],
+      "history_citations": [
+        {
+          "raw": "2001 c.593 17",
+          "year": 2001,
+          "chapter": "593",
+          "section": "17"
+        },
+        {
+          "raw": "2005 c.348 120a",
+          "year": 2005,
+          "chapter": "348",
+          "section": "120a"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 51,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html#section-115.340",
+      "identifier": "ORS 115.340",
+      "name": "Section 115.340",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 52,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html#section-115.350",
+      "identifier": "ORS 115.350",
+      "name": "Section 115.350",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 53,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html#section-115.410",
+      "identifier": "ORS 115.410",
+      "name": "Section 115.410",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 54,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html#section-115.420",
+      "identifier": "ORS 115.420",
+      "name": "Section 115.420",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 55,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html#section-115.430",
+      "identifier": "ORS 115.430",
+      "name": "Section 115.430",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 56,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html#section-115.440",
+      "identifier": "ORS 115.440",
+      "name": "Section 115.440",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 57,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html#section-115.450",
+      "identifier": "ORS 115.450",
+      "name": "Section 115.450",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 58,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html#section-115.460",
+      "identifier": "ORS 115.460",
+      "name": "Section 115.460",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 59,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html#section-115.470",
+      "identifier": "ORS 115.470",
+      "name": "Section 115.470",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 60,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html#section-115.480",
+      "identifier": "ORS 115.480",
+      "name": "Section 115.480",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 61,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html#section-115.490",
+      "identifier": "ORS 115.490",
+      "name": "Section 115.490",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 62,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html#section-115.500",
+      "identifier": "ORS 115.500",
+      "name": "Section 115.500",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 63,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html#section-115.510",
+      "identifier": "ORS 115.510",
+      "name": "Section 115.510",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 64,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html#section-115.520",
+      "identifier": "ORS 115.520",
+      "name": "Section 115.520",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 65,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html#section-115.990",
+      "identifier": "ORS 115.990",
+      "name": "Section 115.990",
+      "text": "[Repealed by 1969 c.591 305] _______________",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 66,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors115.html"
+    }
+  ],
+  "alternateName": "Claims; Actions and Suits",
+  "legislationDate": "2023"
+}

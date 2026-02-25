@@ -1,0 +1,2383 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "orlaw": "https://www.oregonlegislature.gov/ors#"
+  },
+  "@type": "Legislation",
+  "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html",
+  "identifier": "ORS Chapter 683",
+  "name": "ORS Chapter 683 — Optometrists; Opticians",
+  "legislationType": "Statute",
+  "jurisdiction": "US-OR",
+  "isPartOf": {
+    "@type": "CreativeWork",
+    "identifier": "ORS",
+    "name": "Oregon Revised Statutes",
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors"
+  },
+  "dateModified": "2026-02-25T08:11:29.512778+00:00",
+  "source_file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors683.html",
+  "hasPart": [
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html#section-683.010",
+      "identifier": "ORS 683.010",
+      "name": "to 683.340 shall be paid to the account described under subsection (1)",
+      "text": "of this section. (3) In addition to making expenditures for the administration and enforcement of ORS 683.010 to 683.340, the Oregon Board of Optometry may make expenditures for educational purposes out of funds available.",
+      "history_citation_blocks": [
+        "Amended by 1959 c.88 2; 1963 c.77 1; 1971 c.102 10; 1973 c.427 24; 1991 c.460 8; 1997 c.630 4; 1997 c.643 33; 1999 c.1084 66; 2011 c.597 141; 2013 c.240 12"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1959 c.88 2"
+        },
+        {
+          "raw": "1963 c.77 1",
+          "year": 1963,
+          "chapter": "77",
+          "section": "1"
+        },
+        {
+          "raw": "1971 c.102 10",
+          "year": 1971,
+          "chapter": "102",
+          "section": "10"
+        },
+        {
+          "raw": "1973 c.427 24",
+          "year": 1973,
+          "chapter": "427",
+          "section": "24"
+        },
+        {
+          "raw": "1991 c.460 8",
+          "year": 1991,
+          "chapter": "460",
+          "section": "8"
+        },
+        {
+          "raw": "1997 c.630 4",
+          "year": 1997,
+          "chapter": "630",
+          "section": "4"
+        },
+        {
+          "raw": "1997 c.643 33",
+          "year": 1997,
+          "chapter": "643",
+          "section": "33"
+        },
+        {
+          "raw": "1999 c.1084 66",
+          "year": 1999,
+          "chapter": "1084",
+          "section": "66"
+        },
+        {
+          "raw": "2011 c.597 141",
+          "year": 2011,
+          "chapter": "597",
+          "section": "141"
+        },
+        {
+          "raw": "2013 c.240 12",
+          "year": 2013,
+          "chapter": "240",
+          "section": "12"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "In addition to making expenditures for the administration and enforcement of ORS 683.010 to 683.340, the Oregon Board of Optometry may make expenditures for educational purposes out of funds available.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 1,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html#section-683.020",
+      "identifier": "ORS 683.020",
+      "name": "Section 683.020",
+      "text": "License required to practice optometry; exception. Except as provided in ORS 676.347, a person may not engage in the practice of optometry or purport in any way to be an optometrist or an expert in the field of optometry without having first obtained a license from the Oregon Board of Optometry as provided for in ORS 683.010 to 683.340. In any prosecution for the violation of this section, the use of test cards, test lenses or of trial frames is prima facie evidence of the practice of optometry.",
+      "history_citation_blocks": [
+        "Amended by 1971 c.102 2; 1987 c.443 1; 2022 c.62 7"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1971 c.102 2"
+        },
+        {
+          "raw": "1987 c.443 1",
+          "year": 1987,
+          "chapter": "443",
+          "section": "1"
+        },
+        {
+          "raw": "2022 c.62 7",
+          "year": 2022,
+          "chapter": "62",
+          "section": "7"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 2,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html#section-683.030",
+      "identifier": "ORS 683.030",
+      "name": "Section 683.030",
+      "text": "Persons and practices not affected. ORS 683.010 to 683.340 may not be construed: (1) To prevent any person duly licensed to practice medicine and surgery from treating or fitting glasses to the human eye; (2) To prohibit the sale of complete ready-to-wear eye glasses as merchandise from a permanent place of business in good faith and not in evasion of ORS 683.010 to 683.340 by any person not purporting to be competent to examine and prescribe for the human eye; (3) To prohibit vision or eye care practices by persons working under the direct supervision of an optometrist authorized to practice in this state; or (4) To prohibit vision screening by: (a) Employees of a school or an education provider as defined in ORS 336.211; (b) Persons or nonprofit entities designated by the Department of Education to provide vision screening to students for the purpose of ORS 336.211; or (c) Employees of the Department of Transportation.",
+      "history_citation_blocks": [
+        "Amended by 1999 c.490 1; 2013 c.585 5; 2017 c.640 2"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1999 c.490 1"
+        },
+        {
+          "raw": "2013 c.585 5",
+          "year": 2013,
+          "chapter": "585",
+          "section": "5"
+        },
+        {
+          "raw": "2017 c.640 2",
+          "year": 2017,
+          "chapter": "640",
+          "section": "2"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "To prevent any person duly licensed to practice medicine and surgery from treating or fitting glasses to the human eye;",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "To prohibit the sale of complete ready-to-wear eye glasses as merchandise from a permanent place of business in good faith and not in evasion of ORS 683.010 to 683.340 by any person not purporting to be competent to examine and prescribe for the human eye;",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "To prohibit vision or eye care practices by persons working under the direct supervision of an optometrist authorized to practice in this state; or",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "To prohibit vision screening by:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Employees of a school or an education provider as defined in ORS 336.211;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Persons or nonprofit entities designated by the Department of Education to provide vision screening to students for the purpose of ORS 336.211; or",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Employees of the Department of Transportation.",
+              "subsections": []
+            }
+          ]
+        }
+      ],
+      "parser_warnings": [],
+      "position": 3,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html#section-683.035",
+      "identifier": "ORS 683.035",
+      "name": "Section 683.035",
+      "text": "Discrimination against optometrists prohibited. No official, board, commission or other agency of the state or of any of its political subdivisions or municipalities shall discriminate between duly licensed optometrists and any other person authorized by law to render professional services which a duly licensed optometrist may render, when such services are required. Such services shall be paid for in the same manner and under the same standards as similar professional services. [1963 c.121 1] (Licensing)",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 4,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html#section-683.040",
+      "identifier": "ORS 683.040",
+      "name": "Section 683.040",
+      "text": "Qualifications of applicants. (1) Every person desiring to commence the practice of optometry in this state must show satisfactory evidence of graduation from a school of optometry that is approved by the Oregon Board of Optometry and that maintains a standard of four school years of at least nine months each. (2) Every person desiring to commence the practice of optometry or employ the use of pharmaceutical agents shall in addition to the requirements of subsection (1) of this section: (a) Have satisfactorily completed a course in pharmacology, as it applies to optometry, by an institution accredited by a regional or professional accreditation organization that is approved by the board with particular emphasis on the application of pharmaceutical agents for the purpose of diagnosis and treatment in the human eye, approved by the board; and (b) Demonstrate to the satisfaction of the board clinical competency in the prescription of pharmaceutical agents listed on the optometric nontopical formulary.",
+      "history_citation_blocks": [
+        "Amended by 1971 c.102 3; 1975 c.175 2; 1985 c.103 3; 1991 c.967 2; 1993 c.27 1; 2001 c.632 2"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1971 c.102 3"
+        },
+        {
+          "raw": "1975 c.175 2",
+          "year": 1975,
+          "chapter": "175",
+          "section": "2"
+        },
+        {
+          "raw": "1985 c.103 3",
+          "year": 1985,
+          "chapter": "103",
+          "section": "3"
+        },
+        {
+          "raw": "1991 c.967 2",
+          "year": 1991,
+          "chapter": "967",
+          "section": "2"
+        },
+        {
+          "raw": "1993 c.27 1",
+          "year": 1993,
+          "chapter": "27",
+          "section": "1"
+        },
+        {
+          "raw": "2001 c.632 2",
+          "year": 2001,
+          "chapter": "632",
+          "section": "2"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Every person desiring to commence the practice of optometry in this state must show satisfactory evidence of graduation from a school of optometry that is approved by the Oregon Board of Optometry and that maintains a standard of four school years of at least nine months each. of this section:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Have satisfactorily completed a course in pharmacology, as it applies to optometry, by an institution accredited by a regional or professional accreditation organization that is approved by the board with particular emphasis on the application of pharmaceutical agents for the purpose of diagnosis and treatment in the human eye, approved by the board; and",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Demonstrate to the satisfaction of the board clinical competency in the prescription of pharmaceutical agents listed on the optometric nontopical formulary.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Every person desiring to commence the practice of optometry or employ the use of pharmaceutical agents shall in addition to the requirements of subsection",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 5,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html#section-683.050",
+      "identifier": "ORS 683.050",
+      "name": "Section 683.050",
+      "text": "[Repealed by 1977 c.842 39 and 1983 c.241 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 6,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html#section-683.060",
+      "identifier": "ORS 683.060",
+      "name": "Section 683.060",
+      "text": "Examination of applicants; fee. (1) Any person who has signified to the Oregon Board of Optometry a desire to be examined by it and who has filed proof that the person is qualified under ORS 683.010 to 683.340 and the rules of the board to take the examination shall pay a fee to be determined by the board. The applicant shall be examined in the anatomy of the eye, in the use of pharmaceutical agents in optometry, in normal and abnormal refractive and accommodative and muscular conditions and coordination of the eye, in subjective and objective optometry, including the fitting of glasses, the principles of lens grinding and frame adjusting, and in such other subjects as pertain to the science and practice of optometry, such subjects to be enumerated in a publication by the board. (2) The board may, in its discretion, require the certificate of successful examination of the National Board of Examiners in Optometry in one or more areas of the examination in lieu of its examination in such areas. (3) If an applicant fails to pass a second examination, the board may permit additional examinations upon compliance by the applicant with the law and the rules of the board. (4) Any person who petitions the board to prescribe and administer pharmaceutical agents who has not previously been examined by the board on such use shall pass an examination on the use and potential side effect of such agents as used in optometry and shall demonstrate to the satisfaction of the board clinical competency in the prescription of pharmaceutical agents listed on the optometric nontopical formulary and pharmaceutical agents approved by the board for topical use.",
+      "history_citation_blocks": [
+        "Amended by 1955 c.120 1; 1971 c.102 4; 1975 c.175 3; 1977 c.243 1; 1991 c.967 3; 1993 c.28 1; 1997 c.643 27; 2001 c.632 3"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1955 c.120 1"
+        },
+        {
+          "raw": "1971 c.102 4",
+          "year": 1971,
+          "chapter": "102",
+          "section": "4"
+        },
+        {
+          "raw": "1975 c.175 3",
+          "year": 1975,
+          "chapter": "175",
+          "section": "3"
+        },
+        {
+          "raw": "1977 c.243 1",
+          "year": 1977,
+          "chapter": "243",
+          "section": "1"
+        },
+        {
+          "raw": "1991 c.967 3",
+          "year": 1991,
+          "chapter": "967",
+          "section": "3"
+        },
+        {
+          "raw": "1993 c.28 1",
+          "year": 1993,
+          "chapter": "28",
+          "section": "1"
+        },
+        {
+          "raw": "1997 c.643 27",
+          "year": 1997,
+          "chapter": "643",
+          "section": "27"
+        },
+        {
+          "raw": "2001 c.632 3",
+          "year": 2001,
+          "chapter": "632",
+          "section": "3"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Any person who has signified to the Oregon Board of Optometry a desire to be examined by it and who has filed proof that the person is qualified under ORS 683.010 to 683.340 and the rules of the board to take the examination shall pay a fee to be determined by the board. The applicant shall be examined in the anatomy of the eye, in the use of pharmaceutical agents in optometry, in normal and abnormal refractive and accommodative and muscular conditions and coordination of the eye, in subjective and objective optometry, including the fitting of glasses, the principles of lens grinding and frame adjusting, and in such other subjects as pertain to the science and practice of optometry, such subjects to be enumerated in a publication by the board.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The board may, in its discretion, require the certificate of successful examination of the National Board of Examiners in Optometry in one or more areas of the examination in lieu of its examination in such areas.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "If an applicant fails to pass a second examination, the board may permit additional examinations upon compliance by the applicant with the law and the rules of the board.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Any person who petitions the board to prescribe and administer pharmaceutical agents who has not previously been examined by the board on such use shall pass an examination on the use and potential side effect of such agents as used in optometry and shall demonstrate to the satisfaction of the board clinical competency in the prescription of pharmaceutical agents listed on the optometric nontopical formulary and pharmaceutical agents approved by the board for topical use.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 7,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html#section-683.070",
+      "identifier": "ORS 683.070",
+      "name": "Section 683.070",
+      "text": "Issuance of certificates of licensure; fee. Each applicant, without discrimination, who meets the requirements for examination and licensure and who pays the fee shall be issued a certificate of licensure. The certificate of licensure shall continue in force for the period established by the Oregon Board of Optometry.",
+      "history_citation_blocks": [
+        "Amended by 1955 c.120 2; 1971 c.102 5; 1973 c.827 71; 1985 c.103 4; 1987 c.443 2; 1997 c.630 1; 1997 c.643 28a"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1955 c.120 2"
+        },
+        {
+          "raw": "1971 c.102 5",
+          "year": 1971,
+          "chapter": "102",
+          "section": "5"
+        },
+        {
+          "raw": "1973 c.827 71",
+          "year": 1973,
+          "chapter": "827",
+          "section": "71"
+        },
+        {
+          "raw": "1985 c.103 4",
+          "year": 1985,
+          "chapter": "103",
+          "section": "4"
+        },
+        {
+          "raw": "1987 c.443 2",
+          "year": 1987,
+          "chapter": "443",
+          "section": "2"
+        },
+        {
+          "raw": "1997 c.630 1",
+          "year": 1997,
+          "chapter": "630",
+          "section": "1"
+        },
+        {
+          "raw": "1997 c.643 28a",
+          "year": 1997,
+          "chapter": "643",
+          "section": "28a"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 8,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html#section-683.080",
+      "identifier": "ORS 683.080",
+      "name": "Section 683.080",
+      "text": "Validity of certificates issued under former law. Any person holding an unrevoked certificate issued under chapter 139, Oregon Laws 1905, as amended, shall be entitled to continue the practice of optometry as though it were issued under ORS 683.010 to 683.340 and such certificate shall be subject to renewal, revocation and suspension the same as though it has been issued under ORS 683.010 to 683.340.",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 9,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html#section-683.090",
+      "identifier": "ORS 683.090",
+      "name": "Section 683.090",
+      "text": "[Repealed by 1971 c.102 11]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 10,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html#section-683.100",
+      "identifier": "ORS 683.100",
+      "name": "Section 683.100",
+      "text": "Notice to board of place of practice; responsibility for advertisements; notice given by board. (1) Before engaging in the practice of optometry each optometrist shall notify the Oregon Board of Optometry in writing of the address of the place or places where the optometrist is to engage or intends to engage in the practice of optometry and the optometrist also shall notify the board of any change in place of practice. Each optometrist is responsible for any advertisement regarding services rendered at such location. (2) The board shall keep a record showing the registered address of each optometrist. (3) Any notice required to be given by the board to any optometrist may be given by mailing it to the optometrist at the last registered address of the optometrist through the United States mail postpaid. [Amended by 1987 c.443 3]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Before engaging in the practice of optometry each optometrist shall notify the Oregon Board of Optometry in writing of the address of the place or places where the optometrist is to engage or intends to engage in the practice of optometry and the optometrist also shall notify the board of any change in place of practice. Each optometrist is responsible for any advertisement regarding services rendered at such location.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The board shall keep a record showing the registered address of each optometrist.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Any notice required to be given by the board to any optometrist may be given by mailing it to the optometrist at the last registered address of the optometrist through the United States mail postpaid. [Amended by 1987 c.443 3]",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 11,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html#section-683.110",
+      "identifier": "ORS 683.110",
+      "name": "Section 683.110",
+      "text": "Optometrist to give receipt when practicing away from regular place of business. Any optometrist who temporarily practices optometry outside or away from the regular registered place of business shall deliver to each customer or person there fitted or supplied with glasses a receipt which shall contain the signature and show the permanent registered place of business and the number of the license of the optometrist, together with a specification of the lenses furnished and amount charged therefor. [Amended by 1987 c.443 4]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 12,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html#section-683.120",
+      "identifier": "ORS 683.120",
+      "name": "Section 683.120",
+      "text": "License renewal; fee; effect of failure to renew license. (1) Each optometrist who practices in this state shall on the date established by the Oregon Board of Optometry pay a license fee, as determined by the board, for a renewal of the license of the optometrist and shall have such license conspicuously posted in the office of the optometrist or place of business at all times. Each optometrist who is retired, has a disability or is a nonresident of the State of Oregon and who is not practicing optometry within this state shall on the date established by the board pay a license fee, as determined by the board, for a renewal of the license of the optometrist. (2) A person who is no more than 30 days delinquent in renewing the license may renew the license upon payment to the board of the required fee plus a delinquent fee. If a person is more than 30 days delinquent in renewing the license, the license is automatically suspended by the board upon 30-day notice given to the licensee. A certified letter addressed to the last-known address of the licensee failing to comply with the requirements is sufficient notice. (3) A person who is more than 60 days delinquent in renewing the license may be required to take an examination and pay the examination fee as required in ORS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Each optometrist who practices in this state shall on the date established by the Oregon Board of Optometry pay a license fee, as determined by the board, for a renewal of the license of the optometrist and shall have such license conspicuously posted in the office of the optometrist or place of business at all times. Each optometrist who is retired, has a disability or is a nonresident of the State of Oregon and who is not practicing optometry within this state shall on the date established by the board pay a license fee, as determined by the board, for a renewal of the license of the optometrist.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "A person who is no more than 30 days delinquent in renewing the license may renew the license upon payment to the board of the required fee plus a delinquent fee. If a person is more than 30 days delinquent in renewing the license, the license is automatically suspended by the board upon 30-day notice given to the licensee. A certified letter addressed to the last-known address of the licensee failing to comply with the requirements is sufficient notice.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "A person who is more than 60 days delinquent in renewing the license may be required to take an examination and pay the examination fee as required in ORS",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 13,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html#section-683.130",
+      "identifier": "ORS 683.130",
+      "name": "Section 683.130",
+      "text": "Clinics and instructors connected with educational institutions. Any university or college of optometry in Oregon, which is recognized and approved by the Oregon Board of Optometry, may operate a clinic in conjunction therewith. Any optometrist licensed in another state, while a professor or instructor in such a college, may sign optometric prescriptions on behalf of the clinic, but not otherwise. Any optometrist licensed in Oregon may also sign optometric prescriptions on behalf of the clinic while a professor or instructor at such college.",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 14,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html#section-683.140",
+      "identifier": "ORS 683.140",
+      "name": "Section 683.140",
+      "text": "Grounds for and nature of discipline; civil penalties. (1) The Oregon Board of Optometry may discipline as provided in this section any optometrist or person, where appropriate, for the following causes: (a) Conviction of a felony or misdemeanor where such an offense bears a demonstrable relationship to the duties of an optometrist. The record of conviction, or a certified copy thereof certified by the clerk of the court or by the judge in whose court the conviction is had, shall be conclusive evidence of such conviction. (b) Securing a license by practicing fraud or deceit upon the board. (c) Unprofessional conduct, or for gross ignorance or inefficiency in the profession. (d) Obtaining any fee by fraud or misrepresentation. (e) Employing directly or indirectly any suspended or unlicensed optometrist to perform any work covered by ORS 683.010 to 683.340. (f) Advertising optometric services or treatment or advice in which untruthful, improbable, misleading or deceitful statements are made. (g) Impairment as defined in ORS 676.303. (h) Permitting another person to use the optometrists license. (i) Using advertisements that do not indicate that a licensed optometrist is practicing at the advertised location or locations or advertising optometric services without having a licensed optometrist at the location or locations. (j) Advertising professional methods or professional superiority. (k) Failing to comply with the requirements for continuing education. (L) Violating the federal Controlled Substances Act. (m) Prescribing controlled substances without a legitimate optometric purpose, or without following accepted procedures for examination of patients or for record keeping. (n) Failing to report to the board any adverse action taken against the optometrist or person by another licensing jurisdiction, health regulatory board, peer review body, health care institution, professional optometric society or association, governmental agency, law enforcement agency or court for acts similar to conduct that would constitute grounds for disciplinary action as described in this section. (o) Having been disciplined by any health regulatory board of another state based on acts similar to acts described in this section. A certified copy of the record of disciplinary action of the health regulatory board taking the disciplinary action is considered conclusive evidence of the action. (p) Any violation of the provisions of ORS 683.010 to 683.340. (2) When disciplining an optometrist or other person as authorized by subsection (1) of this section, the Oregon Board of Optometry may do any or all of the following: (a) Deny an initial license; (b) Revoke, suspend or refuse to renew a license; (c) Place the optometrist on probation; (d) Impose limitations on the optometrist; or (e) Take other disciplinary action as the board in its discretion finds proper, including the assessment of the costs of the disciplinary proceedings as a civil penalty or assessment of a civil penalty not to exceed $10,000 for each violation, or both.",
+      "history_citation_blocks": [
+        "Amended by 1971 c.102 7; 1973 c.69 6; 1979 c.142 3; 1985 c.103 5; 1987 c.443 6; 2005 c.379 3; 2009 c.756 46"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1971 c.102 7"
+        },
+        {
+          "raw": "1973 c.69 6",
+          "year": 1973,
+          "chapter": "69",
+          "section": "6"
+        },
+        {
+          "raw": "1979 c.142 3",
+          "year": 1979,
+          "chapter": "142",
+          "section": "3"
+        },
+        {
+          "raw": "1985 c.103 5",
+          "year": 1985,
+          "chapter": "103",
+          "section": "5"
+        },
+        {
+          "raw": "1987 c.443 6",
+          "year": 1987,
+          "chapter": "443",
+          "section": "6"
+        },
+        {
+          "raw": "2005 c.379 3",
+          "year": 2005,
+          "chapter": "379",
+          "section": "3"
+        },
+        {
+          "raw": "2009 c.756 46",
+          "year": 2009,
+          "chapter": "756",
+          "section": "46"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The Oregon Board of Optometry may discipline as provided in this section any optometrist or person, where appropriate, for the following causes: of this section, the Oregon Board of Optometry may do any or all of the following:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Conviction of a felony or misdemeanor where such an offense bears a demonstrable relationship to the duties of an optometrist. The record of conviction, or a certified copy thereof certified by the clerk of the court or by the judge in whose court the conviction is had, shall be conclusive evidence of such conviction. Deny an initial license;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Securing a license by practicing fraud or deceit upon the board. Revoke, suspend or refuse to renew a license;",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Unprofessional conduct, or for gross ignorance or inefficiency in the profession. Place the optometrist on probation;",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "Obtaining any fee by fraud or misrepresentation. Impose limitations on the optometrist; or",
+              "subsections": []
+            },
+            {
+              "label": "(e)",
+              "token": "e",
+              "kind": "alpha_lower",
+              "text": "Employing directly or indirectly any suspended or unlicensed optometrist to perform any work covered by ORS 683.010 to 683.340. Take other disciplinary action as the board in its discretion finds proper, including the assessment of the costs of the disciplinary proceedings as a civil penalty or assessment of a civil penalty not to exceed $10,000 for each violation, or both.",
+              "subsections": []
+            },
+            {
+              "label": "(f)",
+              "token": "f",
+              "kind": "alpha_lower",
+              "text": "Advertising optometric services or treatment or advice in which untruthful, improbable, misleading or deceitful statements are made.",
+              "subsections": []
+            },
+            {
+              "label": "(g)",
+              "token": "g",
+              "kind": "alpha_lower",
+              "text": "Impairment as defined in ORS 676.303.",
+              "subsections": []
+            },
+            {
+              "label": "(h)",
+              "token": "h",
+              "kind": "alpha_lower",
+              "text": "Permitting another person to use the optometrists license.",
+              "subsections": []
+            },
+            {
+              "label": "(i)",
+              "token": "i",
+              "kind": "alpha_lower",
+              "text": "Using advertisements that do not indicate that a licensed optometrist is practicing at the advertised location or locations or advertising optometric services without having a licensed optometrist at the location or locations.",
+              "subsections": []
+            },
+            {
+              "label": "(j)",
+              "token": "j",
+              "kind": "alpha_lower",
+              "text": "Advertising professional methods or professional superiority.",
+              "subsections": []
+            },
+            {
+              "label": "(k)",
+              "token": "k",
+              "kind": "alpha_lower",
+              "text": "Failing to comply with the requirements for continuing education.",
+              "subsections": [
+                {
+                  "label": "(L)",
+                  "token": "L",
+                  "kind": "alpha_upper",
+                  "text": "Violating the federal Controlled Substances Act.",
+                  "subsections": []
+                }
+              ]
+            },
+            {
+              "label": "(m)",
+              "token": "m",
+              "kind": "alpha_lower",
+              "text": "Prescribing controlled substances without a legitimate optometric purpose, or without following accepted procedures for examination of patients or for record keeping.",
+              "subsections": []
+            },
+            {
+              "label": "(n)",
+              "token": "n",
+              "kind": "alpha_lower",
+              "text": "Failing to report to the board any adverse action taken against the optometrist or person by another licensing jurisdiction, health regulatory board, peer review body, health care institution, professional optometric society or association, governmental agency, law enforcement agency or court for acts similar to conduct that would constitute grounds for disciplinary action as described in this section.",
+              "subsections": []
+            },
+            {
+              "label": "(o)",
+              "token": "o",
+              "kind": "alpha_lower",
+              "text": "Having been disciplined by any health regulatory board of another state based on acts similar to acts described in this section. A certified copy of the record of disciplinary action of the health regulatory board taking the disciplinary action is considered conclusive evidence of the action.",
+              "subsections": []
+            },
+            {
+              "label": "(p)",
+              "token": "p",
+              "kind": "alpha_lower",
+              "text": "Any violation of the provisions of ORS 683.010 to 683.340.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "When disciplining an optometrist or other person as authorized by subsection",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 15,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html#section-683.150",
+      "identifier": "ORS 683.150",
+      "name": "Section 683.150",
+      "text": "[Repealed by 1971 c.734 21]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 16,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html#section-683.155",
+      "identifier": "ORS 683.155",
+      "name": "Section 683.155",
+      "text": "Hearing. (1) Where the Oregon Board of Optometry proposes to refuse to issue a license, or proposes, where written charges have been filed with the board which the board considers sufficient to warrant a hearing, to impose any disciplinary sanction or civil penalty under ORS 683.140, opportunity for hearing shall be accorded as provided in ORS chapter 183. (2) Judicial review of orders under subsection (1) of this section shall be as provided in ORS chapter 183.",
+      "history_citation_blocks": [
+        "1971 c.734 128; 1985 c.103 6"
+      ],
+      "history_citations": [
+        {
+          "raw": "1971 c.734 128",
+          "year": 1971,
+          "chapter": "734",
+          "section": "128"
+        },
+        {
+          "raw": "1985 c.103 6",
+          "year": 1985,
+          "chapter": "103",
+          "section": "6"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Where the Oregon Board of Optometry proposes to refuse to issue a license, or proposes, where written charges have been filed with the board which the board considers sufficient to warrant a hearing, to impose any disciplinary sanction or civil penalty under ORS 683.140, opportunity for hearing shall be accorded as provided in ORS chapter 183. of this section shall be as provided in ORS chapter 183.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Judicial review of orders under subsection",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 17,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html#section-683.160",
+      "identifier": "ORS 683.160",
+      "name": "Section 683.160",
+      "text": "[Repealed by 1971 c.734 21]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 18,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html#section-683.165",
+      "identifier": "ORS 683.165",
+      "name": "Section 683.165",
+      "text": "Confidential information; liability of person providing information. (1) Any information that the Oregon Board of Optometry obtains under ORS 683.140 is confidential as provided under ORS 676.175. (2) Any person who in good faith provides information to the board shall not be subject to an action for civil damages as a result thereof.",
+      "history_citation_blocks": [
+        "1989 c.438 4; 1997 c.791 34"
+      ],
+      "history_citations": [
+        {
+          "raw": "1989 c.438 4",
+          "year": 1989,
+          "chapter": "438",
+          "section": "4"
+        },
+        {
+          "raw": "1997 c.791 34",
+          "year": 1997,
+          "chapter": "791",
+          "section": "34"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Any information that the Oregon Board of Optometry obtains under ORS 683.140 is confidential as provided under ORS 676.175.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Any person who in good faith provides information to the board shall not be subject to an action for civil damages as a result thereof.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 19,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html#section-683.170",
+      "identifier": "ORS 683.170",
+      "name": "Section 683.170",
+      "text": "Sanction may be set aside by board. Any disciplinary sanction, other than civil penalty, imposed for any of the causes listed in ORS 683.140, except those specified in ORS 683.140 (1)(a) and (b), may be set aside upon application of the affected person at any time within six months from the date of such sanction upon proof being made to the satisfaction of the Oregon Board of Optometry that the cause no longer exists and that the applicant has been sufficiently punished. However, before setting aside the revocation of any license the board may, in its discretion, require the applicant to pass the regular examination given for applicants.",
+      "history_citation_blocks": [
+        "Amended by 1985 c.103 7; 1987 c.443 7; 2005 c.379 4"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1985 c.103 7"
+        },
+        {
+          "raw": "1987 c.443 7",
+          "year": 1987,
+          "chapter": "443",
+          "section": "7"
+        },
+        {
+          "raw": "2005 c.379 4",
+          "year": 2005,
+          "chapter": "379",
+          "section": "4"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "(a) and",
+          "subsections": [
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": ", may be set aside upon application of the affected person at any time within six months from the date of such sanction upon proof being made to the satisfaction of the Oregon Board of Optometry that the cause no longer exists and that the applicant has been sufficiently punished. However, before setting aside the revocation of any license the board may, in its discretion, require the applicant to pass the regular examination given for applicants.",
+              "subsections": []
+            }
+          ]
+        }
+      ],
+      "parser_warnings": [],
+      "position": 20,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html#section-683.180",
+      "identifier": "ORS 683.180",
+      "name": "Section 683.180",
+      "text": "Prohibited acts and practices. A person may not: (1) Sell or barter, or offer to sell or barter, any license issued by the Oregon Board of Optometry. (2) Purchase or procure by barter any such license with intent to use it as evidence of the holders qualification to practice optometry. (3) Alter the license with fraudulent intent in any material regard. (4) Use or attempt to use any such license which has been purchased, fraudulently issued, counterfeited or materially altered as a valid license. (5) Practice optometry under a false or assumed name. (6) Willfully make any false statement in a material regard in an application for an examination before the board or for a license. (7) Practice optometry in this state without having at the time of so doing a valid unrevoked license as an optometrist. (8) Advertise or represent, by displaying a sign or otherwise, to be an optometrist without having at the time of so doing a valid unrevoked license from the board. (9) Dispense or sell an ophthalmic contact lens without having obtained a valid, unexpired prescription from the person to whom the contact lens is dispensed or sold. As used in this subsection, ophthalmic contact lens means a contact lens with or without refractive power, including a plano lens or a cosmetic lens.",
+      "history_citation_blocks": [
+        "Amended by 1965 c.537 1; 1971 c.102 8; 1979 c.142 4; 1987 c.443 8; 2007 c.13 1; 2019 c.234 4"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1965 c.537 1"
+        },
+        {
+          "raw": "1971 c.102 8",
+          "year": 1971,
+          "chapter": "102",
+          "section": "8"
+        },
+        {
+          "raw": "1979 c.142 4",
+          "year": 1979,
+          "chapter": "142",
+          "section": "4"
+        },
+        {
+          "raw": "1987 c.443 8",
+          "year": 1987,
+          "chapter": "443",
+          "section": "8"
+        },
+        {
+          "raw": "2007 c.13 1",
+          "year": 2007,
+          "chapter": "13",
+          "section": "1"
+        },
+        {
+          "raw": "2019 c.234 4",
+          "year": 2019,
+          "chapter": "234",
+          "section": "4"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Sell or barter, or offer to sell or barter, any license issued by the Oregon Board of Optometry.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Purchase or procure by barter any such license with intent to use it as evidence of the holders qualification to practice optometry.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Alter the license with fraudulent intent in any material regard.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Use or attempt to use any such license which has been purchased, fraudulently issued, counterfeited or materially altered as a valid license.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "Practice optometry under a false or assumed name.",
+          "subsections": []
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "Willfully make any false statement in a material regard in an application for an examination before the board or for a license.",
+          "subsections": []
+        },
+        {
+          "label": "(7)",
+          "token": "7",
+          "kind": "numeric",
+          "text": "Practice optometry in this state without having at the time of so doing a valid unrevoked license as an optometrist.",
+          "subsections": []
+        },
+        {
+          "label": "(8)",
+          "token": "8",
+          "kind": "numeric",
+          "text": "Advertise or represent, by displaying a sign or otherwise, to be an optometrist without having at the time of so doing a valid unrevoked license from the board.",
+          "subsections": []
+        },
+        {
+          "label": "(9)",
+          "token": "9",
+          "kind": "numeric",
+          "text": "Dispense or sell an ophthalmic contact lens without having obtained a valid, unexpired prescription from the person to whom the contact lens is dispensed or sold. As used in this subsection, ophthalmic contact lens means a contact lens with or without refractive power, including a plano lens or a cosmetic lens.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 21,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html#section-683.190",
+      "identifier": "ORS 683.190",
+      "name": "Section 683.190",
+      "text": "Acceptance of lens for duplication by unlicensed person prohibited; exception. (1) No person other than a licensed optometrist shall accept or offer to accept for purposes of duplication any ophthalmic lens ordinarily used before the human eye for corrective purposes or for assisting vision. (2) Notwithstanding subsection (1) of this section, any manufacturing, surfacing or dispensing optician may grind any such lens in conformity with the signed prescription or instruction, followed by a written prescription, of any optometrist duly licensed to practice in this state and any dispensing optician may supply any such lens in conformity with the prescription. (3) Immediately upon completion of the necessary visual examination or examinations performed by a licensed optometrist, the optometrist shall provide the patient with the appropriate written prescription for correcting refractive errors, if any, in the eyesight of the patient.",
+      "history_citation_blocks": [
+        "Amended by 1987 c.443 9; 1989 c.530 1; 1993 c.727 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1987 c.443 9"
+        },
+        {
+          "raw": "1989 c.530 1",
+          "year": 1989,
+          "chapter": "530",
+          "section": "1"
+        },
+        {
+          "raw": "1993 c.727 1",
+          "year": 1993,
+          "chapter": "727",
+          "section": "1"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "No person other than a licensed optometrist shall accept or offer to accept for purposes of duplication any ophthalmic lens ordinarily used before the human eye for corrective purposes or for assisting vision. of this section, any manufacturing, surfacing or dispensing optician may grind any such lens in conformity with the signed prescription or instruction, followed by a written prescription, of any optometrist duly licensed to practice in this state and any dispensing optician may supply any such lens in conformity with the prescription.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Notwithstanding subsection",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Immediately upon completion of the necessary visual examination or examinations performed by a licensed optometrist, the optometrist shall provide the patient with the appropriate written prescription for correcting refractive errors, if any, in the eyesight of the patient.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 22,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html#section-683.200",
+      "identifier": "ORS 683.200",
+      "name": "Section 683.200",
+      "text": "Standards of liability; removal of foreign bodies from eye; treatment with antiglaucoma medication. (1) Optometrists utilizing pharmaceutical agents shall be held to the same standards of liability as persons licensed as physicians to practice medicine and surgery by the Oregon Medical Board under ORS chapter 677. (2) Notwithstanding ORS 683.010 (3), an optometrist may remove superficial foreign bodies from the eye and its appendages. (3)(a) An optometrist treating a patient with antiglaucoma medication shall consult with an ophthalmologist if: (A) The glaucoma progresses despite the use of two glaucoma medications; (B) More than two medications are required to control the glaucoma; or (C) A secondary glaucoma develops. (b) Glaucoma shall be considered to be progressing if, in comparison to prior examinations, there is a reproducible worsening of the patients visual field as measured by standard threshold testing or if there is a worsening of the patients optic nerve as measured by direct observation or standard imaging technology or by rising eye pressure despite the use of medication. Glaucoma shall be considered to be under control if target eye pressure, individualized for each patient, is maintained with no abnormal glaucomatous progression. (c) For purposes of this subsection, a combination medication that contains two pharmacologic agents shall be considered one medication. [2007 c.818 2] Note:",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Optometrists utilizing pharmaceutical agents shall be held to the same standards of liability as persons licensed as physicians to practice medicine and surgery by the Oregon Medical Board under ORS chapter 677.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Notwithstanding ORS 683.010",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": ", an optometrist may remove superficial foreign bodies from the eye and its appendages. (a) An optometrist treating a patient with antiglaucoma medication shall consult with an ophthalmologist if:",
+          "subsections": [
+            {
+              "label": "(A)",
+              "token": "A",
+              "kind": "alpha_upper",
+              "text": "The glaucoma progresses despite the use of two glaucoma medications;",
+              "subsections": []
+            },
+            {
+              "label": "(B)",
+              "token": "B",
+              "kind": "alpha_upper",
+              "text": "More than two medications are required to control the glaucoma; or",
+              "subsections": []
+            },
+            {
+              "label": "(C)",
+              "token": "C",
+              "kind": "alpha_upper",
+              "text": "A secondary glaucoma develops.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Glaucoma shall be considered to be progressing if, in comparison to prior examinations, there is a reproducible worsening of the patients visual field as measured by standard threshold testing or if there is a worsening of the patients optic nerve as measured by direct observation or standard imaging technology or by rising eye pressure despite the use of medication. Glaucoma shall be considered to be under control if target eye pressure, individualized for each patient, is maintained with no abnormal glaucomatous progression.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "For purposes of this subsection, a combination medication that contains two pharmacologic agents shall be considered one medication. [2007 c.818 2] Note:",
+              "subsections": []
+            }
+          ]
+        }
+      ],
+      "parser_warnings": [],
+      "position": 23,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html#section-683.210",
+      "identifier": "ORS 683.210",
+      "name": "Section 683.210",
+      "text": "Continuing education requirement; fee; rules. (1) All optometrists licensed in the State of Oregon are and shall be required to satisfactorily complete courses of study and satisfactorily continue their education by other means as determined by the Oregon Board of Optometry in subjects relating to the practice of the profession of optometry. The study and continued education shall be for the purpose of maintaining and advancing the professional skills and abilities of such licensees and for the purpose of educating such licensees in the utilization and application of new techniques, scientific and clinical advances and the achievements of research so that expansive and comprehensive care to the public will be assured. The length, details and nature of such study and continued education shall be determined by the board. (2) Attendance at any approved courses or other approved means of continuing education are to be certified to the board upon a form provided by the board and shall be submitted by each optometrist at the time designated by the board but in any case no less frequently than once every two years. In addition to other means of providing such courses and education facilities, the board is authorized to contract for the providing of educational programs to fulfill the requirements of this section and ORS 683.140. The board is further authorized to treat funds set aside for the purpose of continuing education as state funds for the purpose of accepting any funds made available under federal law on a matching basis for the promulgation and maintenance of programs of continuing education. In no instance may the board require a greater number of hours of study than it provides or approves in the State of Oregon and that are available on the same basis to all licensed optometrists. The board shall be allowed to waive the requirements of this section and ORS 683.140 in cases of illness, undue hardship or other similar appropriate reasons. (3) The board may levy an additional fee for each license renewal to carry out the provisions of this section and ORS 683.140. (4) After giving written notice to all licensees and holding a public hearing, the board shall promulgate rules and regulations necessary to carry out the provisions of this section and ORS 683.140.",
+      "history_citation_blocks": [
+        "1973 c.69 2,4,5; 1987 c.443 10; 1997 c.506 1; 1997 c.643 30"
+      ],
+      "history_citations": [
+        {
+          "raw": "1973 c.69 2,4,5"
+        },
+        {
+          "raw": "1987 c.443 10",
+          "year": 1987,
+          "chapter": "443",
+          "section": "10"
+        },
+        {
+          "raw": "1997 c.506 1",
+          "year": 1997,
+          "chapter": "506",
+          "section": "1"
+        },
+        {
+          "raw": "1997 c.643 30",
+          "year": 1997,
+          "chapter": "643",
+          "section": "30"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "All optometrists licensed in the State of Oregon are and shall be required to satisfactorily complete courses of study and satisfactorily continue their education by other means as determined by the Oregon Board of Optometry in subjects relating to the practice of the profession of optometry. The study and continued education shall be for the purpose of maintaining and advancing the professional skills and abilities of such licensees and for the purpose of educating such licensees in the utilization and application of new techniques, scientific and clinical advances and the achievements of research so that expansive and comprehensive care to the public will be assured. The length, details and nature of such study and continued education shall be determined by the board.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Attendance at any approved courses or other approved means of continuing education are to be certified to the board upon a form provided by the board and shall be submitted by each optometrist at the time designated by the board but in any case no less frequently than once every two years. In addition to other means of providing such courses and education facilities, the board is authorized to contract for the providing of educational programs to fulfill the requirements of this section and ORS 683.140. The board is further authorized to treat funds set aside for the purpose of continuing education as state funds for the purpose of accepting any funds made available under federal law on a matching basis for the promulgation and maintenance of programs of continuing education. In no instance may the board require a greater number of hours of study than it provides or approves in the State of Oregon and that are available on the same basis to all licensed optometrists. The board shall be allowed to waive the requirements of this section and ORS 683.140 in cases of illness, undue hardship or other similar appropriate reasons.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The board may levy an additional fee for each license renewal to carry out the provisions of this section and ORS 683.140.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "After giving written notice to all licensees and holding a public hearing, the board shall promulgate rules and regulations necessary to carry out the provisions of this section and ORS 683.140.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 24,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html#section-683.220",
+      "identifier": "ORS 683.220",
+      "name": "Section 683.220",
+      "text": "Licensing of applicant holding license in another state. The Oregon Board of Optometry may grant to an applicant a license by endorsement for the practice of optometry in the State of Oregon if the applicant: (1) Holds a license for the practice of optometry obtained by examination in another state of the United States. Any discipline or sanction related to the practice of optometry imposed upon the applicant by any state licensing agency must be disclosed on the application for licensure; (2) Continuously engaged in the practice of optometry for not less than two years immediately preceding the application to the board; (3) Has educational qualifications the board considers equivalent to the educational requirements necessary for licensing by the board at the time the applicant commenced the practice of optometry. The educational requirements shall include passing the National Board of Examiners in Optometry examination or its equivalent, as determined by the board; (4) Meets the requirements for Therapeutic Pharmaceutical Agent certification established by rule by the board; (5) Passes a written examination approved by the board on Oregon optometric law and administrative rules; (6) Submits documentation satisfactory to the board of continuing optometric education hours equivalent to the requirements established by ORS 683.210; and (7) Pays the application fee set by the board. [1977 c.243 3; 1985 c.103 8; 1987 c.443 11; 1991 c.67 184; 2001 c.458 1] (Telemedicine)",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Holds a license for the practice of optometry obtained by examination in another state of the United States. Any discipline or sanction related to the practice of optometry imposed upon the applicant by any state licensing agency must be disclosed on the application for licensure;",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Continuously engaged in the practice of optometry for not less than two years immediately preceding the application to the board;",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Has educational qualifications the board considers equivalent to the educational requirements necessary for licensing by the board at the time the applicant commenced the practice of optometry. The educational requirements shall include passing the National Board of Examiners in Optometry examination or its equivalent, as determined by the board;",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Meets the requirements for Therapeutic Pharmaceutical Agent certification established by rule by the board;",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "Passes a written examination approved by the board on Oregon optometric law and administrative rules;",
+          "subsections": []
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "Submits documentation satisfactory to the board of continuing optometric education hours equivalent to the requirements established by ORS 683.210; and",
+          "subsections": []
+        },
+        {
+          "label": "(7)",
+          "token": "7",
+          "kind": "numeric",
+          "text": "Pays the application fee set by the board. [1977 c.243 3; 1985 c.103 8; 1987 c.443 11; 1991 c.67 184; 2001 c.458 1] (Telemedicine)",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 25,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html#section-683.230",
+      "identifier": "ORS 683.230",
+      "name": "Section 683.230",
+      "text": "Practice of telemedicine; requirements; rules. (1) As used in this section: (a) Eye examination means an assessment of a patients ocular health and visual status, including but not limited to objective refractive data or information generated by an automated testing device, such as an autorefractor, that is used to establish a medical diagnosis or to determine a refractive error. (b) Optometric clinical health care services includes, but is not limited to, assessment, consultation, diagnosis, patient education and care management by a licensed optometrist. (c) Store and forward means the transmission of patient information between a licensed optometrist and a patient, whether or not in real time. (d)(A) Telehealth means the use of electronic and telecommunications technologies, including remote patient monitoring devices and store and forward technology, to support delivery of optometric clinical health care services. (B) Telehealth does not include electronic mail communication, facsimile transmission or audio-only telephone communication between a licensed optometrist and a patient, or the use of an automated computer program or managed website to diagnose or treat ocular or refractive conditions. (e) Telemedicine means the delivery of optometric clinical health care services to a patient by a licensed optometrist through telehealth. (2) A licensed optometrist may engage in the practice of telemedicine if: (a) The licensed optometrist provides notice to the patient that the licensed optometrist intends to practice telemedicine prior to engaging in the practice of telemedicine with the patient; (b) The patient is physically located in this state during the practice of telemedicine; (c) The technology used in the practice of telemedicine complies with the Americans with Disabilities Act of 1990 (42 U.S.C. 12101 et seq.), and the Health Insurance Portability and Availability Act privacy regulations, 45 C.F.R. parts 160 and 164; and (d) The licensed optometrist will provide the patient with an initial prescription for corrective glasses or contact lenses, and the licensed optometrist has an established patient-provider relationship with the patient that includes an in-person eye examination prior to engaging in the practice of telemedicine with the patient. (3) If the licensed optometrist is employed by or contracts with an entity that operates exclusively through an online platform to provide corrective glasses and contact lenses, the licensed optometrist may engage in the practice of telemedicine with a patient if: (a) The practice of telemedicine described in this subsection is not for an initial prescription for corrective glasses or contact lenses; and (b) The patient is at least 18 years of age. (4) The Oregon Board of Optometry may adopt rules related to the practice of telemedicine by licensed optometrists. [2019 c.234 2] Note:",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "As used in this section:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Eye examination means an assessment of a patients ocular health and visual status, including but not limited to objective refractive data or information generated by an automated testing device, such as an autorefractor, that is used to establish a medical diagnosis or to determine a refractive error.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Optometric clinical health care services includes, but is not limited to, assessment, consultation, diagnosis, patient education and care management by a licensed optometrist.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Store and forward means the transmission of patient information between a licensed optometrist and a patient, whether or not in real time.",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "(A) Telehealth means the use of electronic and telecommunications technologies, including remote patient monitoring devices and store and forward technology, to support delivery of optometric clinical health care services.",
+              "subsections": [
+                {
+                  "label": "(B)",
+                  "token": "B",
+                  "kind": "alpha_upper",
+                  "text": "Telehealth does not include electronic mail communication, facsimile transmission or audio-only telephone communication between a licensed optometrist and a patient, or the use of an automated computer program or managed website to diagnose or treat ocular or refractive conditions.",
+                  "subsections": []
+                }
+              ]
+            },
+            {
+              "label": "(e)",
+              "token": "e",
+              "kind": "alpha_lower",
+              "text": "Telemedicine means the delivery of optometric clinical health care services to a patient by a licensed optometrist through telehealth.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "A licensed optometrist may engage in the practice of telemedicine if:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "The licensed optometrist provides notice to the patient that the licensed optometrist intends to practice telemedicine prior to engaging in the practice of telemedicine with the patient;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "The patient is physically located in this state during the practice of telemedicine;",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "The technology used in the practice of telemedicine complies with the Americans with Disabilities Act of 1990 (42 U.S.C. 12101 et seq.), and the Health Insurance Portability and Availability Act privacy regulations, 45 C.F.R. parts 160 and 164; and",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "The licensed optometrist will provide the patient with an initial prescription for corrective glasses or contact lenses, and the licensed optometrist has an established patient-provider relationship with the patient that includes an in-person eye examination prior to engaging in the practice of telemedicine with the patient.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "If the licensed optometrist is employed by or contracts with an entity that operates exclusively through an online platform to provide corrective glasses and contact lenses, the licensed optometrist may engage in the practice of telemedicine with a patient if:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "The practice of telemedicine described in this subsection is not for an initial prescription for corrective glasses or contact lenses; and",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "The patient is at least 18 years of age.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "The Oregon Board of Optometry may adopt rules related to the practice of telemedicine by licensed optometrists. [2019 c.234 2] Note:",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 26,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html#section-683.240",
+      "identifier": "ORS 683.240",
+      "name": "Section 683.240",
+      "text": "Council on Optometric Nontopical Formulary; membership; duties; formulary and protocols. (1)(a) The Council on Optometric Nontopical Formulary is established and shall consist of seven members appointed as follows: (A) One member of the Oregon Board of Optometry appointed by the Oregon Board of Optometry; (B) One member who is a pharmacist licensed by the State Board of Pharmacy or a person with an advanced degree in pharmacology or pharmacognosy appointed by the State Board of Pharmacy; (C) One member of the Oregon Medical Board appointed by the Oregon Medical Board; (D) One member of the faculty of the Oregon Health and Science University School of Medicine appointed by the Oregon Medical Board; (E) One member who is a physician licensed under ORS chapter 677 appointed by the Oregon Medical Board after consideration of three qualified nominees provided by the Oregon Academy of Ophthalmology; (F) One member who is a practicing optometrist appointed by the Oregon Board of Optometry after consideration of three qualified nominees from the Oregon Optometric Physicians Association; and (G) One member with a degree in optometry or ophthalmology who is a member of the faculty at a college of optometry appointed by the Oregon Board of Optometry. (b)(A) The chair of the council shall be elected by a majority of the members. (B) The term of office of each member of the council shall be two years. A member shall serve until a successor is appointed. If a vacancy occurs, it shall be filled for the unexpired term by a person with the same qualifications as the vacating member. (C) Any member of the council who fails to attend two consecutive meetings of the council, whether regular or special, shall forfeit office unless the council member is prevented from attending by serious illness of the member or of a member of the council members family. (D) Meetings of the council shall be called at the request of the chair or at the request of two or more members of the council. (E) Members of the council shall serve without compensation. (2) After public hearings, the council shall determine the substances to be included in the optometric nontopical formulary that may be used by an optometrist under ORS 683.010 (3). The council shall review the formulary periodically. Immediately upon adoption or revision of the formulary, the council shall transmit the approved formulary to the Oregon Board of Optometry. The board shall adopt the formulary or a portion of the formulary. If the council approves protocols for the use of a nontopical pharmaceutical agent and the board adopts the portion of the formulary listing that agent, the board must also adopt those protocols. The board may not expand or add to the formulary submitted for adoption in any manner. [2001 c.632 7] Note:",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "(a) The Council on Optometric Nontopical Formulary is established and shall consist of seven members appointed as follows:",
+          "subsections": [
+            {
+              "label": "(A)",
+              "token": "A",
+              "kind": "alpha_upper",
+              "text": "One member of the Oregon Board of Optometry appointed by the Oregon Board of Optometry;",
+              "subsections": []
+            },
+            {
+              "label": "(B)",
+              "token": "B",
+              "kind": "alpha_upper",
+              "text": "One member who is a pharmacist licensed by the State Board of Pharmacy or a person with an advanced degree in pharmacology or pharmacognosy appointed by the State Board of Pharmacy;",
+              "subsections": []
+            },
+            {
+              "label": "(C)",
+              "token": "C",
+              "kind": "alpha_upper",
+              "text": "One member of the Oregon Medical Board appointed by the Oregon Medical Board;",
+              "subsections": []
+            },
+            {
+              "label": "(D)",
+              "token": "D",
+              "kind": "alpha_upper",
+              "text": "One member of the faculty of the Oregon Health and Science University School of Medicine appointed by the Oregon Medical Board;",
+              "subsections": []
+            },
+            {
+              "label": "(E)",
+              "token": "E",
+              "kind": "alpha_upper",
+              "text": "One member who is a physician licensed under ORS chapter 677 appointed by the Oregon Medical Board after consideration of three qualified nominees provided by the Oregon Academy of Ophthalmology;",
+              "subsections": []
+            },
+            {
+              "label": "(F)",
+              "token": "F",
+              "kind": "alpha_upper",
+              "text": "One member who is a practicing optometrist appointed by the Oregon Board of Optometry after consideration of three qualified nominees from the Oregon Optometric Physicians Association; and",
+              "subsections": []
+            },
+            {
+              "label": "(G)",
+              "token": "G",
+              "kind": "alpha_upper",
+              "text": "One member with a degree in optometry or ophthalmology who is a member of the faculty at a college of optometry appointed by the Oregon Board of Optometry.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "(A) The chair of the council shall be elected by a majority of the members.",
+              "subsections": [
+                {
+                  "label": "(B)",
+                  "token": "B",
+                  "kind": "alpha_upper",
+                  "text": "The term of office of each member of the council shall be two years. A member shall serve until a successor is appointed. If a vacancy occurs, it shall be filled for the unexpired term by a person with the same qualifications as the vacating member.",
+                  "subsections": []
+                },
+                {
+                  "label": "(C)",
+                  "token": "C",
+                  "kind": "alpha_upper",
+                  "text": "Any member of the council who fails to attend two consecutive meetings of the council, whether regular or special, shall forfeit office unless the council member is prevented from attending by serious illness of the member or of a member of the council members family.",
+                  "subsections": []
+                },
+                {
+                  "label": "(D)",
+                  "token": "D",
+                  "kind": "alpha_upper",
+                  "text": "Meetings of the council shall be called at the request of the chair or at the request of two or more members of the council.",
+                  "subsections": []
+                },
+                {
+                  "label": "(E)",
+                  "token": "E",
+                  "kind": "alpha_upper",
+                  "text": "Members of the council shall serve without compensation.",
+                  "subsections": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "After public hearings, the council shall determine the substances to be included in the optometric nontopical formulary that may be used by an optometrist under ORS 683.010",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": ". The council shall review the formulary periodically. Immediately upon adoption or revision of the formulary, the council shall transmit the approved formulary to the Oregon Board of Optometry. The board shall adopt the formulary or a portion of the formulary. If the council approves protocols for the use of a nontopical pharmaceutical agent and the board adopts the portion of the formulary listing that agent, the board must also adopt those protocols. The board may not expand or add to the formulary submitted for adoption in any manner. [2001 c.632 7] Note:",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 27,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html#section-683.250",
+      "identifier": "ORS 683.250",
+      "name": "Section 683.250",
+      "text": "Oregon Board of Optometry; qualification and terms of members; quorum. (1) The Oregon Board of Optometry operates as a semi-independent state agency subject to ORS 182.456 to 182.472, for the purpose of carrying out this chapter. The board consists of five members appointed by the Governor and subject to confirmation by the Senate in the manner provided in ORS 171.562 and 171.565. All members of the board must be residents of this state. Of the members of the board: (a) Four must be doctors of optometry licensed and in practice in Oregon; and (b) One member must be a member of the public who represents health consumers and who: (A) Is not otherwise eligible for appointment to the board; (B) Is not the spouse, domestic partner, child, parent or sibling of a doctor of optometry; and (C) Does not have a direct or indirect relationship to health care professionals, to the health care industry or to the ophthalmic optical industry. (2)(a) Board members required to be a doctor of optometry may be selected by the Governor from a list of three to five nominees for each vacancy, submitted by a professional organization representing doctors of optometry. (b) In selecting the members of the board, the Governor shall strive to balance the representation on the board according to: (A) Geographic areas of this state; and (B) Ethnic group. (3)(a) The term of office of each member is three years, but a member serves at the pleasure of the Governor. The terms must be staggered so that no more than two terms end each year. A member is eligible for reappointment. If a vacancy occurs in the membership of the board for any reason, the Governor shall make an appointment to become immediately effective for the unexpired term. (b) Each member of the board shall qualify by taking and subscribing the oath of office required by the Oregon Constitution, which shall be filed in the office of the Secretary of State. (c) A board member shall be removed immediately from the board if, during the members term, the member: (A) Is not a resident of this state; (B) Has been absent from three consecutive board meetings, unless at least one absence is excused; or (C) Is not a licensed doctor of optometry or a retired doctor of optometry who was a licensed doctor of optometry in good standing at the time of retirement, if the board member was appointed to serve on the board as a doctor of optometry. (4) Members of the board are entitled to compensation and expenses as provided in ORS 292.495. The board may provide by rule for compensation to board members for the performance of official duties at a rate that is greater than the rate provided in ORS 292.495. (5) A majority of the members constitutes a quorum for the transaction of business.",
+      "history_citation_blocks": [
+        "Amended by 1971 c.102 9; 1971 c.650 32; 1973 c.792 38; 1981 c.203 1; 1987 c.443 12; 1997 c.643 31; 1999 c.1084 65; 2009 c.535 18; 2009 c.756 96"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1971 c.102 9"
+        },
+        {
+          "raw": "1971 c.650 32",
+          "year": 1971,
+          "chapter": "650",
+          "section": "32"
+        },
+        {
+          "raw": "1973 c.792 38",
+          "year": 1973,
+          "chapter": "792",
+          "section": "38"
+        },
+        {
+          "raw": "1981 c.203 1",
+          "year": 1981,
+          "chapter": "203",
+          "section": "1"
+        },
+        {
+          "raw": "1987 c.443 12",
+          "year": 1987,
+          "chapter": "443",
+          "section": "12"
+        },
+        {
+          "raw": "1997 c.643 31",
+          "year": 1997,
+          "chapter": "643",
+          "section": "31"
+        },
+        {
+          "raw": "1999 c.1084 65",
+          "year": 1999,
+          "chapter": "1084",
+          "section": "65"
+        },
+        {
+          "raw": "2009 c.535 18",
+          "year": 2009,
+          "chapter": "535",
+          "section": "18"
+        },
+        {
+          "raw": "2009 c.756 96",
+          "year": 2009,
+          "chapter": "756",
+          "section": "96"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The Oregon Board of Optometry operates as a semi-independent state agency subject to ORS 182.456 to 182.472, for the purpose of carrying out this chapter. The board consists of five members appointed by the Governor and subject to confirmation by the Senate in the manner provided in ORS 171.562 and 171.565. All members of the board must be residents of this state. Of the members of the board:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Four must be doctors of optometry licensed and in practice in Oregon; and",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "One member must be a member of the public who represents health consumers and who:",
+              "subsections": [
+                {
+                  "label": "(A)",
+                  "token": "A",
+                  "kind": "alpha_upper",
+                  "text": "Is not otherwise eligible for appointment to the board;",
+                  "subsections": []
+                },
+                {
+                  "label": "(B)",
+                  "token": "B",
+                  "kind": "alpha_upper",
+                  "text": "Is not the spouse, domestic partner, child, parent or sibling of a doctor of optometry; and",
+                  "subsections": []
+                },
+                {
+                  "label": "(C)",
+                  "token": "C",
+                  "kind": "alpha_upper",
+                  "text": "Does not have a direct or indirect relationship to health care professionals, to the health care industry or to the ophthalmic optical industry.",
+                  "subsections": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "(a) Board members required to be a doctor of optometry may be selected by the Governor from a list of three to five nominees for each vacancy, submitted by a professional organization representing doctors of optometry.",
+          "subsections": [
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "In selecting the members of the board, the Governor shall strive to balance the representation on the board according to:",
+              "subsections": [
+                {
+                  "label": "(A)",
+                  "token": "A",
+                  "kind": "alpha_upper",
+                  "text": "Geographic areas of this state; and",
+                  "subsections": []
+                },
+                {
+                  "label": "(B)",
+                  "token": "B",
+                  "kind": "alpha_upper",
+                  "text": "Ethnic group.",
+                  "subsections": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "(a) The term of office of each member is three years, but a member serves at the pleasure of the Governor. The terms must be staggered so that no more than two terms end each year. A member is eligible for reappointment. If a vacancy occurs in the membership of the board for any reason, the Governor shall make an appointment to become immediately effective for the unexpired term.",
+          "subsections": [
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Each member of the board shall qualify by taking and subscribing the oath of office required by the Oregon Constitution, which shall be filed in the office of the Secretary of State.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "A board member shall be removed immediately from the board if, during the members term, the member:",
+              "subsections": [
+                {
+                  "label": "(A)",
+                  "token": "A",
+                  "kind": "alpha_upper",
+                  "text": "Is not a resident of this state;",
+                  "subsections": []
+                },
+                {
+                  "label": "(B)",
+                  "token": "B",
+                  "kind": "alpha_upper",
+                  "text": "Has been absent from three consecutive board meetings, unless at least one absence is excused; or",
+                  "subsections": []
+                },
+                {
+                  "label": "(C)",
+                  "token": "C",
+                  "kind": "alpha_upper",
+                  "text": "Is not a licensed doctor of optometry or a retired doctor of optometry who was a licensed doctor of optometry in good standing at the time of retirement, if the board member was appointed to serve on the board as a doctor of optometry.",
+                  "subsections": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Members of the board are entitled to compensation and expenses as provided in ORS 292.495. The board may provide by rule for compensation to board members for the performance of official duties at a rate that is greater than the rate provided in ORS 292.495.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "A majority of the members constitutes a quorum for the transaction of business.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 28,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html#section-683.260",
+      "identifier": "ORS 683.260",
+      "name": "Section 683.260",
+      "text": "Persons ineligible for membership on board. (1) A person may not be a member of the Oregon Board of Optometry if the person is a stockholder in, or owner of, or a member of the faculty of or of the board of trustees of any school of optometry. (2) A member of the board may not be financially interested in any purchase or contract in which the board is interested. A member of the board may not be financially interested in the sale of any property or optical supplies to any prospective candidate for examination before the board.",
+      "history_citation_blocks": [
+        "Amended by 1981 c.203 2; 1983 c.243 1; 2009 c.756 48"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1981 c.203 2"
+        },
+        {
+          "raw": "1983 c.243 1",
+          "year": 1983,
+          "chapter": "243",
+          "section": "1"
+        },
+        {
+          "raw": "2009 c.756 48",
+          "year": 2009,
+          "chapter": "756",
+          "section": "48"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A person may not be a member of the Oregon Board of Optometry if the person is a stockholder in, or owner of, or a member of the faculty of or of the board of trustees of any school of optometry.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "A member of the board may not be financially interested in any purchase or contract in which the board is interested. A member of the board may not be financially interested in the sale of any property or optical supplies to any prospective candidate for examination before the board.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 29,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html#section-683.270",
+      "identifier": "ORS 683.270",
+      "name": "Section 683.270",
+      "text": "Powers and duties of board; rules. The powers and duties of the Oregon Board of Optometry are as follows: (1) To organize and elect from its membership a president and vice president of the board, each of whom shall hold office for one year, or until the election and qualification of a successor. (2) To adopt and use a common seal. (3) To employ agents and inspectors to secure evidence of and report on all violations of this chapter and to employ other necessary assistance in the carrying out of the provisions of this chapter, and to pay the same from the funds provided in ORS 683.010 to 683.340. (4) To hold regular meetings at least once a year at which an examination of applicants for licenses shall be held at such places as the board shall from time to time designate, and special meetings upon request of a majority of the members of the board or upon the call of the president. (5) To keep an accurate record of all proceedings of the board and of all of its meetings, of all prosecutions for violations of ORS 683.010 to 683.340, and of all examinations held for applicants for licenses, with the names and addresses of all persons taking examinations and their success or failure to pass such examinations. All the records of the board shall be public and shall be kept in the office of the board. (6) To keep an accurate inventory of all property of the board and of the state in the possession of the board and to obtain a receipt therefor from its successor. (7) To keep a register of optometrists which shall contain the names and addresses of all persons to whom licenses have been issued in the State of Oregon, together with the date of the issuance of the license and the place or places of business in which each optometrist is engaged, and all renewals, revocations and suspensions thereof. (8) To grant or refuse to grant licenses as provided in ORS 683.010 to 683.340 and to impose any of the sanctions for any of the causes specified in ORS 683.140. (9) To administer oaths and take testimony upon granting and revoking or suspending any certificate of registration or any other certificate established by the board for the protection of the public. (10) To designate pharmaceutical agents for topical use in the practice of optometry with the advice and guidance of the Oregon Medical Board. (11) To adopt rules not inconsistent with the laws of this state as are necessary or proper to carry out the lawful powers and duties of the board, as may be necessary or proper to establish license fees and license terms or duration, to determine the qualifications of applicants for a license and of licensees to practice optometry in this state, and to establish educational and professional standards for such applicants, subject to the laws of this state. If an applicant fails to pass a second examination the board may adopt rules which may provide the required courses of study before further examination.",
+      "history_citation_blocks": [
+        "Amended by 1953 c.599 2; 1955 c.120 3; 1963 c.78 1; 1967 c.22 2; 1973 c.829 65; 1975 c.175 4; 1983 c.389 4; 1985 c.103 9; 1987 c.443 13; 1989 c.443 2; 1991 c.904 5; 1991 c.967 4; 1993 c.816 1; 1997 c.630 3; 2001 c.632 4; 2007 c.818 3"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1953 c.599 2"
+        },
+        {
+          "raw": "1955 c.120 3",
+          "year": 1955,
+          "chapter": "120",
+          "section": "3"
+        },
+        {
+          "raw": "1963 c.78 1",
+          "year": 1963,
+          "chapter": "78",
+          "section": "1"
+        },
+        {
+          "raw": "1967 c.22 2",
+          "year": 1967,
+          "chapter": "22",
+          "section": "2"
+        },
+        {
+          "raw": "1973 c.829 65",
+          "year": 1973,
+          "chapter": "829",
+          "section": "65"
+        },
+        {
+          "raw": "1975 c.175 4",
+          "year": 1975,
+          "chapter": "175",
+          "section": "4"
+        },
+        {
+          "raw": "1983 c.389 4",
+          "year": 1983,
+          "chapter": "389",
+          "section": "4"
+        },
+        {
+          "raw": "1985 c.103 9",
+          "year": 1985,
+          "chapter": "103",
+          "section": "9"
+        },
+        {
+          "raw": "1987 c.443 13",
+          "year": 1987,
+          "chapter": "443",
+          "section": "13"
+        },
+        {
+          "raw": "1989 c.443 2",
+          "year": 1989,
+          "chapter": "443",
+          "section": "2"
+        },
+        {
+          "raw": "1991 c.904 5",
+          "year": 1991,
+          "chapter": "904",
+          "section": "5"
+        },
+        {
+          "raw": "1991 c.967 4",
+          "year": 1991,
+          "chapter": "967",
+          "section": "4"
+        },
+        {
+          "raw": "1993 c.816 1",
+          "year": 1993,
+          "chapter": "816",
+          "section": "1"
+        },
+        {
+          "raw": "1997 c.630 3",
+          "year": 1997,
+          "chapter": "630",
+          "section": "3"
+        },
+        {
+          "raw": "2001 c.632 4",
+          "year": 2001,
+          "chapter": "632",
+          "section": "4"
+        },
+        {
+          "raw": "2007 c.818 3",
+          "year": 2007,
+          "chapter": "818",
+          "section": "3"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "To organize and elect from its membership a president and vice president of the board, each of whom shall hold office for one year, or until the election and qualification of a successor.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "To adopt and use a common seal.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "To employ agents and inspectors to secure evidence of and report on all violations of this chapter and to employ other necessary assistance in the carrying out of the provisions of this chapter, and to pay the same from the funds provided in ORS 683.010 to 683.340.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "To hold regular meetings at least once a year at which an examination of applicants for licenses shall be held at such places as the board shall from time to time designate, and special meetings upon request of a majority of the members of the board or upon the call of the president.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "To keep an accurate record of all proceedings of the board and of all of its meetings, of all prosecutions for violations of ORS 683.010 to 683.340, and of all examinations held for applicants for licenses, with the names and addresses of all persons taking examinations and their success or failure to pass such examinations. All the records of the board shall be public and shall be kept in the office of the board.",
+          "subsections": []
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "To keep an accurate inventory of all property of the board and of the state in the possession of the board and to obtain a receipt therefor from its successor.",
+          "subsections": []
+        },
+        {
+          "label": "(7)",
+          "token": "7",
+          "kind": "numeric",
+          "text": "To keep a register of optometrists which shall contain the names and addresses of all persons to whom licenses have been issued in the State of Oregon, together with the date of the issuance of the license and the place or places of business in which each optometrist is engaged, and all renewals, revocations and suspensions thereof.",
+          "subsections": []
+        },
+        {
+          "label": "(8)",
+          "token": "8",
+          "kind": "numeric",
+          "text": "To grant or refuse to grant licenses as provided in ORS 683.010 to 683.340 and to impose any of the sanctions for any of the causes specified in ORS 683.140.",
+          "subsections": []
+        },
+        {
+          "label": "(9)",
+          "token": "9",
+          "kind": "numeric",
+          "text": "To administer oaths and take testimony upon granting and revoking or suspending any certificate of registration or any other certificate established by the board for the protection of the public.",
+          "subsections": []
+        },
+        {
+          "label": "(10)",
+          "token": "10",
+          "kind": "numeric",
+          "text": "To designate pharmaceutical agents for topical use in the practice of optometry with the advice and guidance of the Oregon Medical Board.",
+          "subsections": []
+        },
+        {
+          "label": "(11)",
+          "token": "11",
+          "kind": "numeric",
+          "text": "To adopt rules not inconsistent with the laws of this state as are necessary or proper to carry out the lawful powers and duties of the board, as may be necessary or proper to establish license fees and license terms or duration, to determine the qualifications of applicants for a license and of licensees to practice optometry in this state, and to establish educational and professional standards for such applicants, subject to the laws of this state. If an applicant fails to pass a second examination the board may adopt rules which may provide the required courses of study before further examination.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 30,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html#section-683.275",
+      "identifier": "ORS 683.275",
+      "name": "Section 683.275",
+      "text": "",
+      "history_citation_blocks": [
+        "1967 c.22 4; 1969 c.314 84; 1985 c.103 10; repealed by 1997 c.643 34"
+      ],
+      "history_citations": [
+        {
+          "raw": "1967 c.22 4",
+          "year": 1967,
+          "chapter": "22",
+          "section": "4"
+        },
+        {
+          "raw": "1969 c.314 84",
+          "year": 1969,
+          "chapter": "314",
+          "section": "84"
+        },
+        {
+          "raw": "1985 c.103 10",
+          "year": 1985,
+          "chapter": "103",
+          "section": "10"
+        },
+        {
+          "raw": "repealed by 1997 c.643 34"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 31,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html#section-683.278",
+      "identifier": "ORS 683.278",
+      "name": "Section 683.278",
+      "text": "Continuing authority of board upon lapse, suspension, revocation or voluntary surrender of license. The lapse, suspension or revocation of a license by operation of law, by order of the Oregon Board of Optometry or by decision of a court of law, or the voluntary surrender of a license by a licensee, shall not deprive the board of jurisdiction to proceed with any investigation of or any action or disciplinary proceeding against the licensee, or to revise or render null and void an order suspending or revoking the license. [2001 c.456 2] Note:",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 32,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html#section-683.280",
+      "identifier": "ORS 683.280",
+      "name": "Section 683.280",
+      "text": "",
+      "history_citation_blocks": [
+        "Amended by 1973 c.829 66; 1985 c.103 11; repealed by 1997 c.643 34"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1973 c.829 66"
+        },
+        {
+          "raw": "1985 c.103 11",
+          "year": 1985,
+          "chapter": "103",
+          "section": "11"
+        },
+        {
+          "raw": "repealed by 1997 c.643 34"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 33,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html#section-683.290",
+      "identifier": "ORS 683.290",
+      "name": "Section 683.290",
+      "text": "Disposition of receipts. (1) All moneys received by the Oregon Board of Optometry under ORS 683.010 to 683.340 shall be deposited into an account established by the board as provided under ORS 182.470. Moneys deposited into the account hereby are appropriated continuously to the board and shall be used only for the administration and enforcement of ORS 182.456 to 182.472, 676.850 and 683.010 to 683.340. (2) Notwithstanding subsection (1) of this section and ORS 182.470, all civil penalties collected or received for violations of or in prosecutions under ORS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "All moneys received by the Oregon Board of Optometry under ORS 683.010 to 683.340 shall be deposited into an account established by the board as provided under ORS 182.470. Moneys deposited into the account hereby are appropriated continuously to the board and shall be used only for the administration and enforcement of ORS 182.456 to 182.472, 676.850 and 683.010 to 683.340. of this section and ORS 182.470, all civil penalties collected or received for violations of or in prosecutions under ORS",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Notwithstanding subsection",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 34,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html#section-683.300",
+      "identifier": "ORS 683.300",
+      "name": "Section 683.300",
+      "text": "[Repealed by 1971 c.743 432]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 35,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html#section-683.310",
+      "identifier": "ORS 683.310",
+      "name": "Section 683.310",
+      "text": "Professional corporation regulation not required. ORS 58.345 does not apply to professional corporations engaged in the practice of optometry. [1985 c.103 16] (Enforcement)",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 36,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html#section-683.325",
+      "identifier": "ORS 683.325",
+      "name": "Section 683.325",
+      "text": "Investigation of complaints and alleged violations; subpoenas. (1) Upon the complaint of any citizen of this state, or upon its own motion, the Oregon Board of Optometry may investigate any alleged violation of ORS 683.010 to",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Upon the complaint of any citizen of this state, or upon its own motion, the Oregon Board of Optometry may investigate any alleged violation of ORS 683.010 to",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 37,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html#section-683.330",
+      "identifier": "ORS 683.330",
+      "name": "Section 683.330",
+      "text": "Injunction for violation. The Attorney General, the prosecuting attorney of any county or the Oregon Board of Optometry, in its own name, may maintain an action for an injunction against any person violating any provision of ORS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 38,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html#section-683.335",
+      "identifier": "ORS 683.335",
+      "name": "Section 683.335",
+      "text": "Report of suspected violation; confidentiality of complaints; liability of complainant. (1) Any health care facility required to be licensed under ORS 441.015 and any licensed optometrist shall and any other person may report suspected violations of ORS 683.010 to 683.155 and 683.170 to 683.290 by optometrists. (2) Any information provided to the board pursuant to this section is confidential and shall not be subject to public disclosure. (3) Any health facility or optometrist who reports to the board as required by subsection (1) of this section in good faith shall not be subject to an action for civil damages as a result thereof.",
+      "history_citation_blocks": [
+        "1985 c.103 13; 1987 c.443 14"
+      ],
+      "history_citations": [
+        {
+          "raw": "1985 c.103 13",
+          "year": 1985,
+          "chapter": "103",
+          "section": "13"
+        },
+        {
+          "raw": "1987 c.443 14",
+          "year": 1987,
+          "chapter": "443",
+          "section": "14"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Any health care facility required to be licensed under ORS 441.015 and any licensed optometrist shall and any other person may report suspected violations of ORS 683.010 to 683.155 and 683.170 to 683.290 by optometrists. of this section in good faith shall not be subject to an action for civil damages as a result thereof.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Any information provided to the board pursuant to this section is confidential and shall not be subject to public disclosure.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Any health facility or optometrist who reports to the board as required by subsection",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 39,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html#section-683.340",
+      "identifier": "ORS 683.340",
+      "name": ".",
+      "text": "(2) In the conduct of investigations, the board may: (a) Take evidence; (b) Take the depositions of witnesses, including the person charged, in the manner provided by law in civil cases; (c) Compel the appearance of witnesses, including the person charged, before the board in person the same as in civil cases; (d) Require answers to interrogatories; and (e) Compel the production of books, papers, accounts, documents and testimony pertaining to the matter under investigation. (3) In exercising its authority under subsection (2) of this section, the board may issue subpoenas over the signature of the board chairperson and the seal of the board in the name of the State of Oregon. (4) Upon receipt of a complaint under ORS 683.010 to 683.340, the board shall conduct an investigation as described under ORS 676.165.",
+      "history_citation_blocks": [
+        "1989 c.843 6; 1997 c.791 35"
+      ],
+      "history_citations": [
+        {
+          "raw": "1989 c.843 6",
+          "year": 1989,
+          "chapter": "843",
+          "section": "6"
+        },
+        {
+          "raw": "1997 c.791 35",
+          "year": 1997,
+          "chapter": "791",
+          "section": "35"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "In the conduct of investigations, the board may: of this section, the board may issue subpoenas over the signature of the board chairperson and the seal of the board in the name of the State of Oregon.",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Take evidence;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Take the depositions of witnesses, including the person charged, in the manner provided by law in civil cases;",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Compel the appearance of witnesses, including the person charged, before the board in person the same as in civil cases;",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "Require answers to interrogatories; and",
+              "subsections": []
+            },
+            {
+              "label": "(e)",
+              "token": "e",
+              "kind": "alpha_lower",
+              "text": "Compel the production of books, papers, accounts, documents and testimony pertaining to the matter under investigation.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "In exercising its authority under subsection",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Upon receipt of a complaint under ORS 683.010 to 683.340, the board shall conduct an investigation as described under ORS 676.165.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 40,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html#section-683.510",
+      "identifier": "ORS 683.510",
+      "name": "Section 683.510",
+      "text": "Definitions for ORS 683.520 to 683.530. As used in ORS 683.520 to 683.530, dispensing optician means a person who prepares and dispenses lenses, eyeglasses and appurtenances thereto to the intended wearers thereof on written prescriptions from a physician licensed under ORS chapter 677 or an optometrist and, in accordance with such prescriptions, measures, adapts, adjusts and fabricates such lenses, eyeglasses and appurtenances for the aid or correction of visual or ocular anomalies of the human eye.",
+      "history_citation_blocks": [
+        "1991 c.904 3; 1995 c.79 344"
+      ],
+      "history_citations": [
+        {
+          "raw": "1991 c.904 3",
+          "year": 1991,
+          "chapter": "904",
+          "section": "3"
+        },
+        {
+          "raw": "1995 c.79 344",
+          "year": 1995,
+          "chapter": "79",
+          "section": "344"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 41,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html#section-683.520",
+      "identifier": "ORS 683.520",
+      "name": "Section 683.520",
+      "text": "Scope of practice of optician. Any dispensing optician may fabricate any ophthalmic lens in conformity with the signed prescription, or oral instruction followed by a written prescription, of any optometrist or person duly licensed to practice medicine in this state. Any dispensing optician may supply any ophthalmic lens in conformity with the prescription and the specified expiration date thereof.",
+      "history_citation_blocks": [
+        "1991 c.904 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "1991 c.904 1",
+          "year": 1991,
+          "chapter": "904",
+          "section": "1"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 42,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html#section-683.525",
+      "identifier": "ORS 683.525",
+      "name": "Section 683.525",
+      "text": "Acceptance of lens for duplication. Notwithstanding ORS 683.190, a dispensing optician may accept or offer to accept for purposes of duplication any ophthalmic lens, excluding any contact lens, when the optician is presented with a whole lens by the person requesting the duplicate lens.",
+      "history_citation_blocks": [
+        "1993 c.516 2"
+      ],
+      "history_citations": [
+        {
+          "raw": "1993 c.516 2",
+          "year": 1993,
+          "chapter": "516",
+          "section": "2"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 43,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html#section-683.530",
+      "identifier": "ORS 683.530",
+      "name": "Section 683.530",
+      "text": "Discrimination against opticians prohibited. No official, board, commission or other agency of this state or any political subdivision or municipality in the state shall discriminate between dispensing opticians and any other persons authorized by law to render professional services that a dispensing optician may render, when such services are required. Such services shall be paid for in the same manner and under the same standards as are similar professional services. [1991 c.904 2] PENALTIES",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 44,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html#section-683.990",
+      "identifier": "ORS 683.990",
+      "name": "Section 683.990",
+      "text": "Penalties. Violation of any of the provisions of ORS 683.010 to 683.340 is a Class A misdemeanor. [Amended by 1971 c.743 408; 2005 c.379 5] _______________",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 45,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors683.html"
+    }
+  ],
+  "alternateName": "Optometrists; Opticians",
+  "legislationDate": "2023"
+}

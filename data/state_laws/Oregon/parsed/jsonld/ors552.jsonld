@@ -1,0 +1,3188 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "orlaw": "https://www.oregonlegislature.gov/ors#"
+  },
+  "@type": "Legislation",
+  "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html",
+  "identifier": "ORS Chapter 552",
+  "name": "ORS Chapter 552 — Water Improvement Districts",
+  "legislationType": "Statute",
+  "jurisdiction": "US-OR",
+  "isPartOf": {
+    "@type": "CreativeWork",
+    "identifier": "ORS",
+    "name": "Oregon Revised Statutes",
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors"
+  },
+  "dateModified": "2026-02-25T08:11:28.345852+00:00",
+  "source_file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors552.html",
+  "hasPart": [
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.005",
+      "identifier": "ORS 552.005",
+      "name": "Section 552.005",
+      "text": "[Repealed by 1955 c.707 75]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 1,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.010",
+      "identifier": "ORS 552.010",
+      "name": "Section 552.010",
+      "text": "[Repealed by 1955 c.707 75] GENERAL PROVISIONS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 2,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.013",
+      "identifier": "ORS 552.013",
+      "name": "Section 552.013",
+      "text": "Definitions. As used in this chapter, except when the context requires otherwise: (1) County board means the county court or the board of county commissioners of a county. (2) District means a water improvement district proposed or created under this chapter. (3) District board means the board of directors of a district. (4) Engineering plan means the plans and specifications for the works to be constructed including: (a) Maps, profiles, plans and other data necessary to show the location and character of the work, and the property benefited, taken or damaged; (b) All rights of way or other property which may be required for the construction of the works; and (c) Estimates of the cost of the works and of the benefits and damages which will accrue to each tract of land upon the construction of the works. (5) Filed for record means to file a document for recording with the county clerk of each county in which the lands within a district are located. (6) Land or tract of land means real property, together with improvements thereon, within a district. (7) Landowner, owner, owner of land and owner in fee are synonymous and mean a person owning a tract of land situated within a district. The vendee named in a bona fide contract of sale of a tract of land situated within a district shall be considered a landowner to the exclusion of the vendor. When two or more persons own a tract of land as tenants in common or by the entirety, each person shall be regarded as a landowner. (8) Real market value means real market value computed in accordance with ORS 308.207. (9) Works means dams, storage reservoirs, canals, ditches, dikes, levees, revetments, and all other structures, facilities, improvements and property necessary or convenient for draining land, controlling flood or surface waters, or supplying water for irrigation, domestic supply or other purposes.",
+      "history_citation_blocks": [
+        "1969 c.606 2; 1983 c.83 100; 1991 c.459 428"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.606 2",
+          "year": 1969,
+          "chapter": "606",
+          "section": "2"
+        },
+        {
+          "raw": "1983 c.83 100",
+          "year": 1983,
+          "chapter": "83",
+          "section": "100"
+        },
+        {
+          "raw": "1991 c.459 428",
+          "year": 1991,
+          "chapter": "459",
+          "section": "428"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "County board means the county court or the board of county commissioners of a county.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "District means a water improvement district proposed or created under this chapter.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "District board means the board of directors of a district.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Engineering plan means the plans and specifications for the works to be constructed including:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Maps, profiles, plans and other data necessary to show the location and character of the work, and the property benefited, taken or damaged;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "All rights of way or other property which may be required for the construction of the works; and",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Estimates of the cost of the works and of the benefits and damages which will accrue to each tract of land upon the construction of the works.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "Filed for record means to file a document for recording with the county clerk of each county in which the lands within a district are located.",
+          "subsections": []
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "Land or tract of land means real property, together with improvements thereon, within a district.",
+          "subsections": []
+        },
+        {
+          "label": "(7)",
+          "token": "7",
+          "kind": "numeric",
+          "text": "Landowner, owner, owner of land and owner in fee are synonymous and mean a person owning a tract of land situated within a district. The vendee named in a bona fide contract of sale of a tract of land situated within a district shall be considered a landowner to the exclusion of the vendor. When two or more persons own a tract of land as tenants in common or by the entirety, each person shall be regarded as a landowner.",
+          "subsections": []
+        },
+        {
+          "label": "(8)",
+          "token": "8",
+          "kind": "numeric",
+          "text": "Real market value means real market value computed in accordance with ORS 308.207.",
+          "subsections": []
+        },
+        {
+          "label": "(9)",
+          "token": "9",
+          "kind": "numeric",
+          "text": "Works means dams, storage reservoirs, canals, ditches, dikes, levees, revetments, and all other structures, facilities, improvements and property necessary or convenient for draining land, controlling flood or surface waters, or supplying water for irrigation, domestic supply or other purposes.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 3,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.015",
+      "identifier": "ORS 552.015",
+      "name": "Section 552.015",
+      "text": "[Amended by 1955 c.707 71; renumbered 552.025]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 4,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.020",
+      "identifier": "ORS 552.020",
+      "name": "Section 552.020",
+      "text": "[Repealed by 1969 c.168 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 5,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.025",
+      "identifier": "ORS 552.025",
+      "name": "Section 552.025",
+      "text": "[Formerly",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 6,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.105",
+      "identifier": "ORS 552.105",
+      "name": "Section 552.105",
+      "text": "[Repealed by 1969 c.168 1] ORGANIZATION OF DISTRICT",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 7,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.108",
+      "identifier": "ORS 552.108",
+      "name": "Section 552.108",
+      "text": "Creation of water improvement district; purposes; limitation. (1) A water improvement district may be created as provided by this chapter for the purpose of acquiring, purchasing, constructing, improving, operating and maintaining drainage, irrigation, and flood and surface water control works in order to prevent damage and destruction of life and property by floods, to improve the agricultural and other uses of lands and waters, to improve the public health, welfare and safety, to provide domestic or municipal and industrial water supply, to provide water-related recreation and for the purpose of enhancing water pollution control, water quality, and fish and wildlife resources. (2) Nothing in this chapter grants to a district the power to generate, distribute, transmit or sell electricity or to sell water or falling water to any person to generate electricity.",
+      "history_citation_blocks": [
+        "1969 c.606 3; 1987 c.185 2"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.606 3",
+          "year": 1969,
+          "chapter": "606",
+          "section": "3"
+        },
+        {
+          "raw": "1987 c.185 2",
+          "year": 1987,
+          "chapter": "185",
+          "section": "2"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A water improvement district may be created as provided by this chapter for the purpose of acquiring, purchasing, constructing, improving, operating and maintaining drainage, irrigation, and flood and surface water control works in order to prevent damage and destruction of life and property by floods, to improve the agricultural and other uses of lands and waters, to improve the public health, welfare and safety, to provide domestic or municipal and industrial water supply, to provide water-related recreation and for the purpose of enhancing water pollution control, water quality, and fish and wildlife resources.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Nothing in this chapter grants to a district the power to generate, distribute, transmit or sell electricity or to sell water or falling water to any person to generate electricity.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 8,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.110",
+      "identifier": "ORS 552.110",
+      "name": "Section 552.110",
+      "text": "[Amended by 1955 c.707 72; repealed by 1969 c.168 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 9,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.113",
+      "identifier": "ORS 552.113",
+      "name": "Section 552.113",
+      "text": "Water rights protected; minimum acreage requirement; withdrawal procedure for city or other special districts. (1) This chapter shall not be construed to affect, amend or repeal any other law of Oregon or to affect or impair the vested rights of any person or public body as defined in ORS 174.109 to the use of water or rights in the use of water. (2) A water improvement district formed under this chapter shall include not less than 1,000 acres of land. Lands located within the boundaries of a city, domestic water supply corporation, irrigation district, drainage district or other similar special district providing water for use or water control may be included within the boundaries of a water improvement district without the consent of the city or other district. (3)(a) If any part of a city or other special district is included within the boundaries described in a petition for creation of a district or for annexation of territory to a district, within three days after the petition is filed, the petitioners shall notify the city or other district of the filing of the petition. (b) The city or other district may withdraw the territory within its boundaries from the proposed water improvement district or annexation by describing the area within the city or other district in a resolution and filing the resolution with the county board within 90 days after the filing of the petition. If a withdrawal is so filed, the area within the city or other district shall not be included within the proposal.",
+      "history_citation_blocks": [
+        "1969 c.606 16; 2003 c.802 135"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.606 16",
+          "year": 1969,
+          "chapter": "606",
+          "section": "16"
+        },
+        {
+          "raw": "2003 c.802 135",
+          "year": 2003,
+          "chapter": "802",
+          "section": "135"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "This chapter shall not be construed to affect, amend or repeal any other law of Oregon or to affect or impair the vested rights of any person or public body as defined in ORS 174.109 to the use of water or rights in the use of water.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "A water improvement district formed under this chapter shall include not less than 1,000 acres of land. Lands located within the boundaries of a city, domestic water supply corporation, irrigation district, drainage district or other similar special district providing water for use or water control may be included within the boundaries of a water improvement district without the consent of the city or other district.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "(a) If any part of a city or other special district is included within the boundaries described in a petition for creation of a district or for annexation of territory to a district, within three days after the petition is filed, the petitioners shall notify the city or other district of the filing of the petition.",
+          "subsections": [
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "The city or other district may withdraw the territory within its boundaries from the proposed water improvement district or annexation by describing the area within the city or other district in a resolution and filing the resolution with the county board within 90 days after the filing of the petition. If a withdrawal is so filed, the area within the city or other district shall not be included within the proposal.",
+              "subsections": []
+            }
+          ]
+        }
+      ],
+      "parser_warnings": [],
+      "position": 10,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.115",
+      "identifier": "ORS 552.115",
+      "name": "Section 552.115",
+      "text": "[Repealed by 1969 c.168 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 11,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.118",
+      "identifier": "ORS 552.118",
+      "name": "Section 552.118",
+      "text": "Petition contents. In addition to other matters the petition for formation of a district shall include: (1) An estimate of the acreage of land within the district and an estimate of the acreage within each county if the district is located in more than one county; and (2) The maximum rate of any ad valorem tax, if any, that may be levied by the district as permitted by ORS 552.625.",
+      "history_citation_blocks": [
+        "1969 c.606 4; 1971 c.727 164; 1991 c.459 428a"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.606 4",
+          "year": 1969,
+          "chapter": "606",
+          "section": "4"
+        },
+        {
+          "raw": "1971 c.727 164",
+          "year": 1971,
+          "chapter": "727",
+          "section": "164"
+        },
+        {
+          "raw": "1991 c.459 428a",
+          "year": 1991,
+          "chapter": "459",
+          "section": "428a"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "An estimate of the acreage of land within the district and an estimate of the acreage within each county if the district is located in more than one county; and",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The maximum rate of any ad valorem tax, if any, that may be levied by the district as permitted by ORS 552.625.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 12,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.120",
+      "identifier": "ORS 552.120",
+      "name": "Section 552.120",
+      "text": "[Amended by 1955 c.707 73; repealed by 1969 c.168 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 13,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.123",
+      "identifier": "ORS 552.123",
+      "name": "Section 552.123",
+      "text": "",
+      "history_citation_blocks": [
+        "1969 c.606 5; repealed by 1971 c.727 203"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.606 5",
+          "year": 1969,
+          "chapter": "606",
+          "section": "5"
+        },
+        {
+          "raw": "repealed by 1971 c.727 203"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 14,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.125",
+      "identifier": "ORS 552.125",
+      "name": "Section 552.125",
+      "text": "[Repealed by 1969 c.168 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 15,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.128",
+      "identifier": "ORS 552.128",
+      "name": "Section 552.128",
+      "text": "",
+      "history_citation_blocks": [
+        "1969 c.606 6; repealed by 1971 c.727 203"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.606 6",
+          "year": 1969,
+          "chapter": "606",
+          "section": "6"
+        },
+        {
+          "raw": "repealed by 1971 c.727 203"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 16,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.130",
+      "identifier": "ORS 552.130",
+      "name": "Section 552.130",
+      "text": "[Repealed by 1955 c.707 75]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 17,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.133",
+      "identifier": "ORS 552.133",
+      "name": "Section 552.133",
+      "text": "Election on formation. If an election is called on the question of formation, it shall be held on a date specified in ORS 255.345. An order creating a district shall include the maximum rate of any ad valorem tax levy for the district.",
+      "history_citation_blocks": [
+        "1969 c.606 7; 1971 c.727 165; 1983 c.350 299"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.606 7",
+          "year": 1969,
+          "chapter": "606",
+          "section": "7"
+        },
+        {
+          "raw": "1971 c.727 165",
+          "year": 1971,
+          "chapter": "727",
+          "section": "165"
+        },
+        {
+          "raw": "1983 c.350 299",
+          "year": 1983,
+          "chapter": "350",
+          "section": "299"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 18,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.135",
+      "identifier": "ORS 552.135",
+      "name": "Section 552.135",
+      "text": "[Repealed by 1969 c.168 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 19,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.138",
+      "identifier": "ORS 552.138",
+      "name": "Section 552.138",
+      "text": "Status of final order; time for protest. (1) No final order creating a district shall be set aside, or annulled upon appeal or review, on account of any defect or irregularity in the petition asking for organization of the district, or notice of hearings thereon, which does not materially affect the substantial rights of an interested party. (2) No proceeding may be maintained contesting the validity of the creation of a district unless instituted within 90 days after the entry of the final order of the county board.",
+      "history_citation_blocks": [
+        "1969 c.606 8"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.606 8",
+          "year": 1969,
+          "chapter": "606",
+          "section": "8"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "No final order creating a district shall be set aside, or annulled upon appeal or review, on account of any defect or irregularity in the petition asking for organization of the district, or notice of hearings thereon, which does not materially affect the substantial rights of an interested party.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "No proceeding may be maintained contesting the validity of the creation of a district unless instituted within 90 days after the entry of the final order of the county board.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 20,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.140",
+      "identifier": "ORS 552.140",
+      "name": "Section 552.140",
+      "text": "[Repealed by 1969 c.168 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 21,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.143",
+      "identifier": "ORS 552.143",
+      "name": "Section 552.143",
+      "text": "Proceedings to test validity of order or act of district board. (1) In addition to the proceeding a district is authorized to bring under ORS 33.710 and 33.720, any landowner or elector of a district may bring a like proceeding in the circuit court of the county where the lands within the district, or the greater portion thereof, are situated, to determine the validity of any order or the performance of any act mentioned in ORS 33.710, for which a contest is by that section provided. In such a proceeding the district board shall be made parties defendant. (2) Service of summons shall be made on the members of the board personally if within the county where the district, or any part thereof, is situated. As to any directors not within the county, service may be had by publication of summons for a like time, and in like manner, as is provided by ORS 33.720. Jurisdiction shall be complete within 10 days after the date of completing publication of notice. (3) The proceeding shall be tried and determined in the same manner as proceedings brought by the district.",
+      "history_citation_blocks": [
+        "1969 c.606 9"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.606 9",
+          "year": 1969,
+          "chapter": "606",
+          "section": "9"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "In addition to the proceeding a district is authorized to bring under ORS 33.710 and 33.720, any landowner or elector of a district may bring a like proceeding in the circuit court of the county where the lands within the district, or the greater portion thereof, are situated, to determine the validity of any order or the performance of any act mentioned in ORS 33.710, for which a contest is by that section provided. In such a proceeding the district board shall be made parties defendant.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Service of summons shall be made on the members of the board personally if within the county where the district, or any part thereof, is situated. As to any directors not within the county, service may be had by publication of summons for a like time, and in like manner, as is provided by ORS 33.720. Jurisdiction shall be complete within 10 days after the date of completing publication of notice.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The proceeding shall be tried and determined in the same manner as proceedings brought by the district.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 22,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.145",
+      "identifier": "ORS 552.145",
+      "name": "Section 552.145",
+      "text": "[Repealed by 1969 c.168 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 23,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.150",
+      "identifier": "ORS 552.150",
+      "name": "Section 552.150",
+      "text": "[Repealed by 1969 c.168 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 24,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.155",
+      "identifier": "ORS 552.155",
+      "name": "Section 552.155",
+      "text": "[Repealed by 1969 c.168 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 25,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.160",
+      "identifier": "ORS 552.160",
+      "name": "Section 552.160",
+      "text": "[Repealed by 1969 c.168 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 26,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.165",
+      "identifier": "ORS 552.165",
+      "name": "Section 552.165",
+      "text": "[Repealed by 1969 c.168 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 27,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.170",
+      "identifier": "ORS 552.170",
+      "name": "Section 552.170",
+      "text": "[Repealed by 1969 c.168 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 28,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.175",
+      "identifier": "ORS 552.175",
+      "name": "Section 552.175",
+      "text": "[Repealed by 1969 c.168 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 29,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.180",
+      "identifier": "ORS 552.180",
+      "name": "Section 552.180",
+      "text": "[Repealed by 1969 c.168 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 30,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.185",
+      "identifier": "ORS 552.185",
+      "name": "Section 552.185",
+      "text": "[Repealed by 1969 c.168 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 31,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.205",
+      "identifier": "ORS 552.205",
+      "name": "Section 552.205",
+      "text": "[Repealed by 1969 c.168 1] BOARD OF DIRECTORS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 32,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.208",
+      "identifier": "ORS 552.208",
+      "name": "Section 552.208",
+      "text": "Election of first board of directors; number; qualifications; terms; change of number of directors. (1) Electors of a district shall elect a board of directors whose number shall be fixed at five, seven or nine by the county board at the proceedings on formation. Directors shall be owners of land within the district. The directors need not reside within the district. (2) Each director shall be elected for a term of four years except the directors elected on creation of the district. The directors first elected shall determine their terms by lot as follows: (a) If there are nine directors, the terms of four shall expire June 30 next following the first regular district election and the terms of five shall expire June 30 next following the second regular district election. (b) If there are seven directors, the terms of three shall expire June 30 next following the first regular district election and the terms of four shall expire June 30 next following the second regular district election. (c) If there are five directors, the terms of two shall expire June 30 next following the first regular district election and the terms of three shall expire June 30 next following the second regular district election. (3) The board of directors shall fill any vacancy on the board as provided in ORS 198.320. (4) The board or 10 or more landowners may petition the county board to change the number of directors on the district board. If the county board acts favorably on the petition, it shall enter an order which designates the terms of office of the five, seven or nine directors in general accordance with this section so that the number remaining on the district board will be divided into two equal or approximately equal groups as to terms. The change in the number of board members shall take place on July 1 next following the order.",
+      "history_citation_blocks": [
+        "1969 c.606 17; 1971 c.23 9; 1971 c.727 166; 1973 c.796 69; 1975 c.647 45; 1983 c.350 300"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.606 17",
+          "year": 1969,
+          "chapter": "606",
+          "section": "17"
+        },
+        {
+          "raw": "1971 c.23 9",
+          "year": 1971,
+          "chapter": "23",
+          "section": "9"
+        },
+        {
+          "raw": "1971 c.727 166",
+          "year": 1971,
+          "chapter": "727",
+          "section": "166"
+        },
+        {
+          "raw": "1973 c.796 69",
+          "year": 1973,
+          "chapter": "796",
+          "section": "69"
+        },
+        {
+          "raw": "1975 c.647 45",
+          "year": 1975,
+          "chapter": "647",
+          "section": "45"
+        },
+        {
+          "raw": "1983 c.350 300",
+          "year": 1983,
+          "chapter": "350",
+          "section": "300"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Electors of a district shall elect a board of directors whose number shall be fixed at five, seven or nine by the county board at the proceedings on formation. Directors shall be owners of land within the district. The directors need not reside within the district.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Each director shall be elected for a term of four years except the directors elected on creation of the district. The directors first elected shall determine their terms by lot as follows:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "If there are nine directors, the terms of four shall expire June 30 next following the first regular district election and the terms of five shall expire June 30 next following the second regular district election.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "If there are seven directors, the terms of three shall expire June 30 next following the first regular district election and the terms of four shall expire June 30 next following the second regular district election.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "If there are five directors, the terms of two shall expire June 30 next following the first regular district election and the terms of three shall expire June 30 next following the second regular district election.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The board of directors shall fill any vacancy on the board as provided in ORS 198.320.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "The board or 10 or more landowners may petition the county board to change the number of directors on the district board. If the county board acts favorably on the petition, it shall enter an order which designates the terms of office of the five, seven or nine directors in general accordance with this section so that the number remaining on the district board will be divided into two equal or approximately equal groups as to terms. The change in the number of board members shall take place on July 1 next following the order.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 33,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.210",
+      "identifier": "ORS 552.210",
+      "name": "Section 552.210",
+      "text": "[Repealed by 1969 c.168 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 34,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.213",
+      "identifier": "ORS 552.213",
+      "name": "Section 552.213",
+      "text": "",
+      "history_citation_blocks": [
+        "1969 c.606 18; repealed by 1971 c.647 149"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.606 18",
+          "year": 1969,
+          "chapter": "606",
+          "section": "18"
+        },
+        {
+          "raw": "repealed by 1971 c.647 149"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 35,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.215",
+      "identifier": "ORS 552.215",
+      "name": "Section 552.215",
+      "text": "[Repealed by 1969 c.168 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 36,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.218",
+      "identifier": "ORS 552.218",
+      "name": "Section 552.218",
+      "text": "Organizational meeting; oath; officers; meetings. (1) As soon as possible after an election of directors, the directors shall meet for the purpose of qualifying all persons elected as directors and for the purpose of electing officers of the district. Each director shall qualify by subscribing to an oath of office. (2) The directors shall elect from their number a chairperson and vice chairperson and shall appoint a secretary-treasurer. The officers shall have the authority and duties given to them by the board. (3) The board shall hold meetings as may be necessary or convenient.",
+      "history_citation_blocks": [
+        "1969 c.606 19; 1971 c.403 11; 1987 c.185 3"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.606 19",
+          "year": 1969,
+          "chapter": "606",
+          "section": "19"
+        },
+        {
+          "raw": "1971 c.403 11",
+          "year": 1971,
+          "chapter": "403",
+          "section": "11"
+        },
+        {
+          "raw": "1987 c.185 3",
+          "year": 1987,
+          "chapter": "185",
+          "section": "3"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "As soon as possible after an election of directors, the directors shall meet for the purpose of qualifying all persons elected as directors and for the purpose of electing officers of the district. Each director shall qualify by subscribing to an oath of office.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The directors shall elect from their number a chairperson and vice chairperson and shall appoint a secretary-treasurer. The officers shall have the authority and duties given to them by the board.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The board shall hold meetings as may be necessary or convenient.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 37,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.220",
+      "identifier": "ORS 552.220",
+      "name": "Section 552.220",
+      "text": "[Repealed by 1969 c.168 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 38,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.223",
+      "identifier": "ORS 552.223",
+      "name": "Section 552.223",
+      "text": "Duties of district board. A district board shall: (1) Manage and conduct the affairs of the district. (2) Employ and appoint agents and employees, prescribe their duties and fix their compensation. (3) Establish reasonable rules and regulations for the administration of the affairs of the district. (4) Withhold deliveries of water to lands upon which there are delinquent assessments or charges. (5) Establish and maintain funds and accounts for the funds of the district and of any subdistrict. (6) Obtain an annual audit of the books of the district. (7) Fix the location of the principal office of the district at some convenient place within or without the district. (8) Keep a record of all of the proceedings of the district board. (9) Furnish a record book to the county clerk of each county in which lands within the district are located, in which shall be recorded all contracts executed under ORS 552.618 and 552.670, all orders levying assessments and creating subdistricts, and other documents required by law to be recorded.",
+      "history_citation_blocks": [
+        "1969 c.606 20; 1971 c.23 10"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.606 20",
+          "year": 1969,
+          "chapter": "606",
+          "section": "20"
+        },
+        {
+          "raw": "1971 c.23 10",
+          "year": 1971,
+          "chapter": "23",
+          "section": "10"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Manage and conduct the affairs of the district.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Employ and appoint agents and employees, prescribe their duties and fix their compensation.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Establish reasonable rules and regulations for the administration of the affairs of the district.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Withhold deliveries of water to lands upon which there are delinquent assessments or charges.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "Establish and maintain funds and accounts for the funds of the district and of any subdistrict.",
+          "subsections": []
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "Obtain an annual audit of the books of the district.",
+          "subsections": []
+        },
+        {
+          "label": "(7)",
+          "token": "7",
+          "kind": "numeric",
+          "text": "Fix the location of the principal office of the district at some convenient place within or without the district.",
+          "subsections": []
+        },
+        {
+          "label": "(8)",
+          "token": "8",
+          "kind": "numeric",
+          "text": "Keep a record of all of the proceedings of the district board.",
+          "subsections": []
+        },
+        {
+          "label": "(9)",
+          "token": "9",
+          "kind": "numeric",
+          "text": "Furnish a record book to the county clerk of each county in which lands within the district are located, in which shall be recorded all contracts executed under ORS 552.618 and 552.670, all orders levying assessments and creating subdistricts, and other documents required by law to be recorded.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 39,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.225",
+      "identifier": "ORS 552.225",
+      "name": "Section 552.225",
+      "text": "[Repealed by 1969 c.168 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 40,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.228",
+      "identifier": "ORS 552.228",
+      "name": "Section 552.228",
+      "text": "",
+      "history_citation_blocks": [
+        "1969 c.606 27; repealed by 1971 c.268 24"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.606 27",
+          "year": 1969,
+          "chapter": "606",
+          "section": "27"
+        },
+        {
+          "raw": "repealed by 1971 c.268 24"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 41,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.230",
+      "identifier": "ORS 552.230",
+      "name": "Section 552.230",
+      "text": "[Repealed by 1969 c.168 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 42,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.235",
+      "identifier": "ORS 552.235",
+      "name": "Section 552.235",
+      "text": "[Repealed by 1969 c.168 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 43,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.240",
+      "identifier": "ORS 552.240",
+      "name": "Section 552.240",
+      "text": "[Repealed by 1969 c.168 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 44,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.245",
+      "identifier": "ORS 552.245",
+      "name": "Section 552.245",
+      "text": "[Repealed by 1969 c.168 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 45,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.250",
+      "identifier": "ORS 552.250",
+      "name": "Section 552.250",
+      "text": "[Repealed by 1969 c.168 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 46,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.255",
+      "identifier": "ORS 552.255",
+      "name": "Section 552.255",
+      "text": "[Repealed by 1969 c.168 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 47,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.260",
+      "identifier": "ORS 552.260",
+      "name": "Section 552.260",
+      "text": "[Repealed by 1969 c.168 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 48,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.265",
+      "identifier": "ORS 552.265",
+      "name": "Section 552.265",
+      "text": "[Repealed by 1969 c.168 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 49,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.270",
+      "identifier": "ORS 552.270",
+      "name": "Section 552.270",
+      "text": "[Repealed by 1969 c.168 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 50,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.275",
+      "identifier": "ORS 552.275",
+      "name": "Section 552.275",
+      "text": "[Repealed by 1969 c.168 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 51,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.280",
+      "identifier": "ORS 552.280",
+      "name": "Section 552.280",
+      "text": "[Repealed by 1969 c.168 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 52,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.285",
+      "identifier": "ORS 552.285",
+      "name": "Section 552.285",
+      "text": "[Repealed by 1969 c.168 1] POWERS OF DISTRICT",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 53,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.305",
+      "identifier": "ORS 552.305",
+      "name": "Section 552.305",
+      "text": "Powers of districts generally. A water improvement district has full power to carry out the objects of its creation and to that end may: (1) Have and use a seal. (2) Have perpetual succession. (3) Sue and be sued in its own name. (4) Acquire by condemnation, purchase, devise, gift or voluntary grant real and personal property or any interest therein, located inside or outside of the boundaries of the district, and take, hold, possess and dispose of real and personal property purchased from, or donated by, the United States, or any state, territory, public body as defined in ORS 174.109 or person for the purpose of aiding in the objects of the district. (5) Enter into intergovernmental agreements under ORS chapter 190 for the construction, preservation, improvement, operation or maintenance of any works. (6) Build, construct, purchase, improve, operate and maintain, subject to other applicable provisions of law, all works necessary or desirable under any engineering plan adopted by the district. (7) Enter into contracts and employ agents, engineers and attorneys. (8) Appropriate and acquire water and water rights and sell, lease and deliver water for irrigation and other purposes both inside and outside the district. (9) Do such other acts or things as may be necessary for the proper exercise of the powers granted to make the greatest beneficial use of the waters of the district.",
+      "history_citation_blocks": [
+        "1969 c.606 14; 2003 c.802 136"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.606 14",
+          "year": 1969,
+          "chapter": "606",
+          "section": "14"
+        },
+        {
+          "raw": "2003 c.802 136",
+          "year": 2003,
+          "chapter": "802",
+          "section": "136"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Have and use a seal.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Have perpetual succession.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Sue and be sued in its own name.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Acquire by condemnation, purchase, devise, gift or voluntary grant real and personal property or any interest therein, located inside or outside of the boundaries of the district, and take, hold, possess and dispose of real and personal property purchased from, or donated by, the United States, or any state, territory, public body as defined in ORS 174.109 or person for the purpose of aiding in the objects of the district.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "Enter into intergovernmental agreements under ORS chapter 190 for the construction, preservation, improvement, operation or maintenance of any works.",
+          "subsections": []
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "Build, construct, purchase, improve, operate and maintain, subject to other applicable provisions of law, all works necessary or desirable under any engineering plan adopted by the district.",
+          "subsections": []
+        },
+        {
+          "label": "(7)",
+          "token": "7",
+          "kind": "numeric",
+          "text": "Enter into contracts and employ agents, engineers and attorneys.",
+          "subsections": []
+        },
+        {
+          "label": "(8)",
+          "token": "8",
+          "kind": "numeric",
+          "text": "Appropriate and acquire water and water rights and sell, lease and deliver water for irrigation and other purposes both inside and outside the district.",
+          "subsections": []
+        },
+        {
+          "label": "(9)",
+          "token": "9",
+          "kind": "numeric",
+          "text": "Do such other acts or things as may be necessary for the proper exercise of the powers granted to make the greatest beneficial use of the waters of the district.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 54,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.310",
+      "identifier": "ORS 552.310",
+      "name": "Section 552.310",
+      "text": "Condemnation. The right to condemn property, pursuant to ORS 552.305 (4), shall include property already devoted to public use, including city, state and county property, which is less necessary than the use for which it is required by the district. In the acquisition of property or rights by condemnation, the board shall proceed in the name of the district under the provisions of the laws of Oregon. However, the right of condemnation may not be exercised against any water right; against land or other property owned by a city supplying domestic water; a public utility as defined by ORS 757.005; against a telecommunications carrier as defined in ORS 133.721; against lands of a domestic water supply district organized under ORS chapter 264, an irrigation district organized under ORS chapter 545, a drainage district organized under ORS chapter 547, a diking district organized under ORS chapter 551 or a corporation for the use and control of water organized under ORS chapter 554; or against property of the State of Oregon for highway purposes.",
+      "history_citation_blocks": [
+        "1969 c.606 23; 1983 c.740 216; 1987 c.447 109; 1999 c.1093 18"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.606 23",
+          "year": 1969,
+          "chapter": "606",
+          "section": "23"
+        },
+        {
+          "raw": "1983 c.740 216",
+          "year": 1983,
+          "chapter": "740",
+          "section": "216"
+        },
+        {
+          "raw": "1987 c.447 109",
+          "year": 1987,
+          "chapter": "447",
+          "section": "109"
+        },
+        {
+          "raw": "1999 c.1093 18",
+          "year": 1999,
+          "chapter": "1093",
+          "section": "18"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": ", shall include property already devoted to public use, including city, state and county property, which is less necessary than the use for which it is required by the district. In the acquisition of property or rights by condemnation, the board shall proceed in the name of the district under the provisions of the laws of Oregon. However, the right of condemnation may not be exercised against any water right; against land or other property owned by a city supplying domestic water; a public utility as defined by ORS 757.005; against a telecommunications carrier as defined in ORS 133.721; against lands of a domestic water supply district organized under ORS chapter 264, an irrigation district organized under ORS chapter 545, a drainage district organized under ORS chapter 547, a diking district organized under ORS chapter 551 or a corporation for the use and control of water organized under ORS chapter 554; or against property of the State of Oregon for highway purposes.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 55,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.315",
+      "identifier": "ORS 552.315",
+      "name": "Section 552.315",
+      "text": "Right to enter and survey land. The district board, its officers, agents or employees shall have the right to enter upon any land in the manner provided by ORS 35.220 to make surveys for the purposes of the district.",
+      "history_citation_blocks": [
+        "1969 c.606 15; 2003 c.477 9"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.606 15",
+          "year": 1969,
+          "chapter": "606",
+          "section": "15"
+        },
+        {
+          "raw": "2003 c.477 9",
+          "year": 2003,
+          "chapter": "477",
+          "section": "9"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 56,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.320",
+      "identifier": "ORS 552.320",
+      "name": "Section 552.320",
+      "text": "Operation of water works and sale of water; conditions. A water improvement district may: (1) Acquire, construct, reconstruct, equip, own, maintain, operate, sell, lease and dispose of domestic, industrial and municipal water works or systems and property and all appurtenances incident thereto. (2) Furnish water for domestic, industrial and municipal uses to premises and inhabitants within the district, and in connection therewith, may supply, furnish and sell any surplus water storage or carrying capacity over and above the domestic, industrial and municipal needs of its inhabitants to persons or public bodies as defined in ORS 174.109, either within or without the district. However: (a) A district shall not sell, offer to sell, lease or deliver water within a city that is receiving water for any purpose from a public utility as defined by ORS 757.005; and (b) The power to furnish water for domestic, industrial and municipal uses under this section shall not be exercised in such a manner as to impair the service of the district in furnishing water for its inhabitants.",
+      "history_citation_blocks": [
+        "1969 c.606 21; 2003 c.802 137"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.606 21",
+          "year": 1969,
+          "chapter": "606",
+          "section": "21"
+        },
+        {
+          "raw": "2003 c.802 137",
+          "year": 2003,
+          "chapter": "802",
+          "section": "137"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Acquire, construct, reconstruct, equip, own, maintain, operate, sell, lease and dispose of domestic, industrial and municipal water works or systems and property and all appurtenances incident thereto.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Furnish water for domestic, industrial and municipal uses to premises and inhabitants within the district, and in connection therewith, may supply, furnish and sell any surplus water storage or carrying capacity over and above the domestic, industrial and municipal needs of its inhabitants to persons or public bodies as defined in ORS 174.109, either within or without the district. However:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "A district shall not sell, offer to sell, lease or deliver water within a city that is receiving water for any purpose from a public utility as defined by ORS 757.005; and",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "The power to furnish water for domestic, industrial and municipal uses under this section shall not be exercised in such a manner as to impair the service of the district in furnishing water for its inhabitants.",
+              "subsections": []
+            }
+          ]
+        }
+      ],
+      "parser_warnings": [],
+      "position": 57,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.325",
+      "identifier": "ORS 552.325",
+      "name": "Section 552.325",
+      "text": "Water charges; use of revenues; collection and enforcement. (1) The district board shall fix charges for water furnished for domestic, industrial and municipal purposes so that the water system is self-sustaining. All indebtedness incurred in the acquisition, construction, maintenance, operation and disposition of the system shall be paid from the revenue collected and from the proceeds of the disposition of the whole or any part of the water system. The district board may establish rates or charges to be paid by each person whose premises are served. The rates or charges may be fixed and classified according to the type of use and according to the amount of water used, and according to whether the property serviced lies within or without the boundaries of the district. (2) The district shall establish and maintain separate accounts covering the acquisition, construction, reconstruction, maintenance, operation and disposition of the domestic, industrial and municipal water system. (3) The district board may contract with any other district or with a city to collect water charges for the district within the other district or city and the district may pay a reasonable charge for such services. (4) Water charges may also be collected and enforced as provided by ORS 454.225.",
+      "history_citation_blocks": [
+        "1969 c.606 22; 1983 c.740 216a"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.606 22",
+          "year": 1969,
+          "chapter": "606",
+          "section": "22"
+        },
+        {
+          "raw": "1983 c.740 216a",
+          "year": 1983,
+          "chapter": "740",
+          "section": "216a"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The district board shall fix charges for water furnished for domestic, industrial and municipal purposes so that the water system is self-sustaining. All indebtedness incurred in the acquisition, construction, maintenance, operation and disposition of the system shall be paid from the revenue collected and from the proceeds of the disposition of the whole or any part of the water system. The district board may establish rates or charges to be paid by each person whose premises are served. The rates or charges may be fixed and classified according to the type of use and according to the amount of water used, and according to whether the property serviced lies within or without the boundaries of the district.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The district shall establish and maintain separate accounts covering the acquisition, construction, reconstruction, maintenance, operation and disposition of the domestic, industrial and municipal water system.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The district board may contract with any other district or with a city to collect water charges for the district within the other district or city and the district may pay a reasonable charge for such services.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Water charges may also be collected and enforced as provided by ORS 454.225.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 58,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.330",
+      "identifier": "ORS 552.330",
+      "name": "Section 552.330",
+      "text": "Water user regulations; enforcement; notice. A district may adopt and promulgate regulations concerning the use of water of the district. The district board may refuse to supply any building, place or premises with water when the user fails after five days written notice to comply with the regulations of the district. The written notice shall be by first-class mail or shall be posted in some conspicuous place on the building, place or premises to which the supply of water may be shut off. When the notice is mailed, it shall be considered given when it is deposited in the United States Post Office properly addressed with postage prepaid.",
+      "history_citation_blocks": [
+        "1969 c.606 26; 1991 c.250 2"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.606 26",
+          "year": 1969,
+          "chapter": "606",
+          "section": "26"
+        },
+        {
+          "raw": "1991 c.250 2",
+          "year": 1991,
+          "chapter": "250",
+          "section": "2"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 59,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.340",
+      "identifier": "ORS 552.340",
+      "name": "Section 552.340",
+      "text": "",
+      "history_citation_blocks": [
+        "1969 c.606 28; repealed by 1987 c.185 7"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.606 28",
+          "year": 1969,
+          "chapter": "606",
+          "section": "28"
+        },
+        {
+          "raw": "repealed by 1987 c.185 7"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 60,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.345",
+      "identifier": "ORS 552.345",
+      "name": "Section 552.345",
+      "text": "User regulations; fees for use of facilities. A district shall have power: (1) To make and enforce regulations governing the conduct of the users of the recreational facilities of the district. (2) To prohibit any person violating any regulation from thereafter using the facilities of the district for such period as the board may determine. (3) To establish and collect reasonable charges for the use of the facilities of the district and issue appropriate evidence of the payment of such charges. [1969 c.606 29(1)]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "To make and enforce regulations governing the conduct of the users of the recreational facilities of the district.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "To prohibit any person violating any regulation from thereafter using the facilities of the district for such period as the board may determine.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "To establish and collect reasonable charges for the use of the facilities of the district and issue appropriate evidence of the payment of such charges. [1969 c.606 29(1)]",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 61,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.350",
+      "identifier": "ORS 552.350",
+      "name": "Section 552.350",
+      "text": "Cooperation with the United States; water quality supervision subject to state authority. (1) A district has the power: (a) To cooperate with the United States in the manner provided by Congress for flood control, reclamation, conservation and allied purposes, such as recreation, in protecting the inhabitants, the land and other property within the district from the effects of a surplus or a deficiency of water when the cooperation of the district is beneficial to the public health, welfare, safety and utility. (b) To have general control and supervision over bodies of water which are owned or maintained, or which have been improved, by the district, insofar as the quality of water may affect the public health, welfare, safety and utility of the bodies of water. (2) In carrying out the authority granted by subsection (1)(b) of this section, the district may prevent any person including any elected or appointed officer, employee or person under the control of a city, county or district, from depositing directly or indirectly in any such bodies of water, any rubbish, filth or poisonous or deleterious substance liable to affect the health of persons, fish or livestock. However, the authority granted by this subsection shall not be exercised unless the Environmental Quality Commission, after study and determination of a specific request of the district, certifies to the district that the quality of a body of water under the jurisdiction of the district is injurious to the health of persons, fish or livestock.",
+      "history_citation_blocks": [
+        "1969 c.606 30"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.606 30",
+          "year": 1969,
+          "chapter": "606",
+          "section": "30"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A district has the power: (b) of this section, the district may prevent any person including any elected or appointed officer, employee or person under the control of a city, county or district, from depositing directly or indirectly in any such bodies of water, any rubbish, filth or poisonous or deleterious substance liable to affect the health of persons, fish or livestock. However, the authority granted by this subsection shall not be exercised unless the Environmental Quality Commission, after study and determination of a specific request of the district, certifies to the district that the quality of a body of water under the jurisdiction of the district is injurious to the health of persons, fish or livestock.",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "To cooperate with the United States in the manner provided by Congress for flood control, reclamation, conservation and allied purposes, such as recreation, in protecting the inhabitants, the land and other property within the district from the effects of a surplus or a deficiency of water when the cooperation of the district is beneficial to the public health, welfare, safety and utility.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "To have general control and supervision over bodies of water which are owned or maintained, or which have been improved, by the district, insofar as the quality of water may affect the public health, welfare, safety and utility of the bodies of water.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "In carrying out the authority granted by subsection",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 62,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.403",
+      "identifier": "ORS 552.403",
+      "name": "Section 552.403",
+      "text": "Watershed improvement plans; cooperation with Water Resources Commission. (1) A district shall, within a reasonable time after formation, prepare broad, general plans of watershed improvement. The plan may be prepared in cooperation with the Water Resources Commission and shall conform to the state water resources policy declared by ORS 536.220. (2) The plan also shall show existing and proposed works of the district and of other public and private agencies relating to water use and control. It shall demonstrate a basis for the coordination and planning of future works of the district, governmental agencies and private interests to assure the maximum beneficial use and conservation of the water resources of the district. The projects and improvement plans shall be based on the inventory of water, needs of the district related to natural resources, and plans and programs, if any, developed by the Water Resources Commission. The district may have access to all information, statistics, plans and data in the possession of or available to any state agency or public corporation which is pertinent to the preparation of the plan and may reimburse the agency or corporation for any expense incurred in cooperating with the board. (3) After approval by the district board, the plan of the district including the plan for financing any existing or proposed works may be submitted to the Water Resources Commission for recommendations. (4) The district board shall make revisions found necessary for the proper control, utilization, conservation, development and improvement of the water resources of the district, and for the protection and enhancement of the quality of such water resources.",
+      "history_citation_blocks": [
+        "1969 c.606 31"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.606 31",
+          "year": 1969,
+          "chapter": "606",
+          "section": "31"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A district shall, within a reasonable time after formation, prepare broad, general plans of watershed improvement. The plan may be prepared in cooperation with the Water Resources Commission and shall conform to the state water resources policy declared by ORS 536.220.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The plan also shall show existing and proposed works of the district and of other public and private agencies relating to water use and control. It shall demonstrate a basis for the coordination and planning of future works of the district, governmental agencies and private interests to assure the maximum beneficial use and conservation of the water resources of the district. The projects and improvement plans shall be based on the inventory of water, needs of the district related to natural resources, and plans and programs, if any, developed by the Water Resources Commission. The district may have access to all information, statistics, plans and data in the possession of or available to any state agency or public corporation which is pertinent to the preparation of the plan and may reimburse the agency or corporation for any expense incurred in cooperating with the board.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "After approval by the district board, the plan of the district including the plan for financing any existing or proposed works may be submitted to the Water Resources Commission for recommendations.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "The district board shall make revisions found necessary for the proper control, utilization, conservation, development and improvement of the water resources of the district, and for the protection and enhancement of the quality of such water resources.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 63,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.405",
+      "identifier": "ORS 552.405",
+      "name": "Section 552.405",
+      "text": "[Repealed by 1969 c.168 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 64,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.408",
+      "identifier": "ORS 552.408",
+      "name": "Section 552.408",
+      "text": "District projects; engineering plans. Construction of district works may be undertaken on motion of the district board or when landowners of the district request the district board to do so. Upon initiation of a construction project, the district board shall obtain engineering plans for the project.",
+      "history_citation_blocks": [
+        "1969 c.606 33; 1987 c.185 4; 1989 c.182 45"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.606 33",
+          "year": 1969,
+          "chapter": "606",
+          "section": "33"
+        },
+        {
+          "raw": "1987 c.185 4",
+          "year": 1987,
+          "chapter": "185",
+          "section": "4"
+        },
+        {
+          "raw": "1989 c.182 45",
+          "year": 1989,
+          "chapter": "182",
+          "section": "45"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 65,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.410",
+      "identifier": "ORS 552.410",
+      "name": "Section 552.410",
+      "text": "[Repealed by 1969 c.168 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 66,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.413",
+      "identifier": "ORS 552.413",
+      "name": "Section 552.413",
+      "text": "Engineering plans prepared by other agencies. In lieu of obtaining engineering plans as provided by ORS 552.408, the district board may adopt as an engineering plan, any plans meeting the requirements of this chapter made by an agency of the federal government or the state, or proposed as project work plans by a soil and water conservation district in which lands within the water improvement district are located.",
+      "history_citation_blocks": [
+        "1969 c.606 34; 1989 c.182 46"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.606 34",
+          "year": 1969,
+          "chapter": "606",
+          "section": "34"
+        },
+        {
+          "raw": "1989 c.182 46",
+          "year": 1989,
+          "chapter": "182",
+          "section": "46"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 67,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.415",
+      "identifier": "ORS 552.415",
+      "name": "Section 552.415",
+      "text": "[Repealed by 1969 c.168 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 68,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.418",
+      "identifier": "ORS 552.418",
+      "name": "Section 552.418",
+      "text": "Notice of engineering plan; hearing; objections of landowners; approval or disapproval of plan. (1) Upon completion or adoption of the engineering plan, the district board shall cause notice to be given to the landowners that the plan, including the general report, may be inspected at the district office. The notice may be given by mail or by publication as the board determines. (2) The notice shall fix a time and place for a hearing before the district board of all objections to the plan. The hearing shall be held not less than 20 nor more than 30 days after the date of mailing, or the date of the last publication, of the notice. At the hearing the board may make changes in the plan as necessary in the light of objections or suggestions made by persons appearing at the hearing. After the hearing the board shall approve the plan as proposed, corrected or changed, by adopting an order of approval. However, if the owners of more than 50 percent of the acreage within the district, within 30 days after the date of the order approving the plan, file written objections to the order with the secretary of the district, no further action shall be taken under the order and the plan shall be considered disapproved by the district board and rejected by the landowners. When an engineering plan is rejected by the landowners, the board may obtain a new engineering plan and present it to the landowners as provided by this section.",
+      "history_citation_blocks": [
+        "1969 c.606 35; 1989 c.182 47"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.606 35",
+          "year": 1969,
+          "chapter": "606",
+          "section": "35"
+        },
+        {
+          "raw": "1989 c.182 47",
+          "year": 1989,
+          "chapter": "182",
+          "section": "47"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Upon completion or adoption of the engineering plan, the district board shall cause notice to be given to the landowners that the plan, including the general report, may be inspected at the district office. The notice may be given by mail or by publication as the board determines.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The notice shall fix a time and place for a hearing before the district board of all objections to the plan. The hearing shall be held not less than 20 nor more than 30 days after the date of mailing, or the date of the last publication, of the notice. At the hearing the board may make changes in the plan as necessary in the light of objections or suggestions made by persons appearing at the hearing. After the hearing the board shall approve the plan as proposed, corrected or changed, by adopting an order of approval. However, if the owners of more than 50 percent of the acreage within the district, within 30 days after the date of the order approving the plan, file written objections to the order with the secretary of the district, no further action shall be taken under the order and the plan shall be considered disapproved by the district board and rejected by the landowners. When an engineering plan is rejected by the landowners, the board may obtain a new engineering plan and present it to the landowners as provided by this section.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 69,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.420",
+      "identifier": "ORS 552.420",
+      "name": "Section 552.420",
+      "text": "[Repealed by 1969 c.168 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 70,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.423",
+      "identifier": "ORS 552.423",
+      "name": "Section 552.423",
+      "text": "Advertising for bids on construction contract. After the approval of the engineering plan as provided by ORS 552.418 and before beginning the construction of any works, the district board shall give notice, by publication and otherwise, as it may consider advisable, calling for bids for the construction of such works, or any portion thereof.",
+      "history_citation_blocks": [
+        "1969 c.606 36; 1989 c.182 48"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.606 36",
+          "year": 1969,
+          "chapter": "606",
+          "section": "36"
+        },
+        {
+          "raw": "1989 c.182 48",
+          "year": 1989,
+          "chapter": "182",
+          "section": "48"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 71,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.425",
+      "identifier": "ORS 552.425",
+      "name": "Section 552.425",
+      "text": "[Repealed by 1969 c.168 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 72,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.428",
+      "identifier": "ORS 552.428",
+      "name": "Section 552.428",
+      "text": "Letting construction contract; contractors bond or letter of credit. After advertising for bids, the board shall let a contract for construction of the whole or any part of the project to the lowest responsible bidder; or the board may reject any or all bids and readvertise; or it may construct the project under its own superintendence. Good and sufficient bond, or an irrevocable letter of credit issued by an insured institution as defined in ORS 706.008 running in favor of the district, shall be required of each contractor, conditioned that the contractor will well and truly comply with all the provisions of the contract and perform all work in accordance with the terms thereof.",
+      "history_citation_blocks": [
+        "1969 c.606 37; 1991 c.331 81; 1997 c.631 491"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.606 37",
+          "year": 1969,
+          "chapter": "606",
+          "section": "37"
+        },
+        {
+          "raw": "1991 c.331 81",
+          "year": 1991,
+          "chapter": "331",
+          "section": "81"
+        },
+        {
+          "raw": "1997 c.631 491",
+          "year": 1997,
+          "chapter": "631",
+          "section": "491"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 73,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.433",
+      "identifier": "ORS 552.433",
+      "name": "Section 552.433",
+      "text": "Chief engineer of district to superintend work. If the district has a chief engineer, the chief engineer shall be superintendent of all the works and improvements and shall, whenever required, and at least once each year, make a full report to the district board of all work done and improvements. The chief engineer shall make such suggestions and recommendations to the board as the chief engineer considers proper.",
+      "history_citation_blocks": [
+        "1969 c.606 38"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.606 38",
+          "year": 1969,
+          "chapter": "606",
+          "section": "38"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 74,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.438",
+      "identifier": "ORS 552.438",
+      "name": "Section 552.438",
+      "text": "Construction on public land or right of way, or along watercourse. (1) A district may construct works across or along any street or public highway, or over any lands which are property of this state, or any subdivision thereof. A district may construct its work across and along any stream of water or watercourse. (2) Any works across or along any highway, road or street shall be constructed only with the permission of the Department of Transportation, the county board or the city governing body having jurisdiction of the highway, road or street. The district shall restore any highway, road or street to its former state as near as may be and shall not use the right of way in a manner unnecessarily to impair its usefulness.",
+      "history_citation_blocks": [
+        "1969 c.606 39"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.606 39",
+          "year": 1969,
+          "chapter": "606",
+          "section": "39"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A district may construct works across or along any street or public highway, or over any lands which are property of this state, or any subdivision thereof. A district may construct its work across and along any stream of water or watercourse.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Any works across or along any highway, road or street shall be constructed only with the permission of the Department of Transportation, the county board or the city governing body having jurisdiction of the highway, road or street. The district shall restore any highway, road or street to its former state as near as may be and shall not use the right of way in a manner unnecessarily to impair its usefulness.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 75,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.505",
+      "identifier": "ORS 552.505",
+      "name": "Section 552.505",
+      "text": "[Repealed by 1969 c.168 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 76,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.510",
+      "identifier": "ORS 552.510",
+      "name": "Section 552.510",
+      "text": "[Repealed by 1969 c.168 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 77,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.515",
+      "identifier": "ORS 552.515",
+      "name": "Section 552.515",
+      "text": "[Repealed by 1969 c.168 1] DISTRICT FINANCES",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 78,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.603",
+      "identifier": "ORS 552.603",
+      "name": "Section 552.603",
+      "text": "Financing construction, operation or maintenance of district works. The district board may, in accordance with the order approving an engineering plan adopted under ORS 552.418, finance the construction, operation or maintenance of district works by: (1) Use of the revolving fund established under ORS 552.635. (2) Assessments under ORS 552.608 and 552.613 against the benefited property in the district with or without issuance of improvement bonds or warrants. (3) Service charges and user fees collected under ORS 552.618 or 552.630 from those who are served by or use the services, works and facilities of the district. (4) Levy of ad valorem taxes under ORS 552.623 and 552.625. (5) Sale of bonds under ORS 552.645 to 552.660. (6) Any combination of the provisions of subsections (1) to (5) of this section.",
+      "history_citation_blocks": [
+        "1969 c.606 40"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.606 40",
+          "year": 1969,
+          "chapter": "606",
+          "section": "40"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Use of the revolving fund established under ORS 552.635. to",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Assessments under ORS 552.608 and 552.613 against the benefited property in the district with or without issuance of improvement bonds or warrants.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Service charges and user fees collected under ORS 552.618 or 552.630 from those who are served by or use the services, works and facilities of the district.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Levy of ad valorem taxes under ORS 552.623 and 552.625.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "Sale of bonds under ORS 552.645 to 552.660. of this section.",
+          "subsections": []
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "Any combination of the provisions of subsections",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 79,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.605",
+      "identifier": "ORS 552.605",
+      "name": "Section 552.605",
+      "text": "[Repealed by 1969 c.168 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 80,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.608",
+      "identifier": "ORS 552.608",
+      "name": "Section 552.608",
+      "text": "Assessment of cost of works against benefited land; hearing on proposed assessment. (1) All or part of the cost of building, constructing, purchasing, operating, maintaining and improving the district works described in an engineering plan adopted under ORS 552.408 or 552.413 may be assessed against the lands to be benefited by the works. The district board shall determine the portion of the cost, if any, that is to be paid from the general funds of the district and the portion that is to be paid by the lands benefited. (2) Assessments shall be apportioned by the district board in accordance with the special and peculiar benefit to be received from the district works by each lot or parcel of land. Where parcels of land, or portions thereof, in the district are undeveloped, the district board may, in its discretion, defer assessing or imposing all or any portion of such assessments on such parcels until such parcels are connected with or receiving services from the district works. (3) The district board shall afford an opportunity for hearing of any individual objections or remonstrances to assessments under this section. If remonstrances or objections are received by the district board signed by more than 50 percent of the landowners representing more than 50 percent of the acreage within the proposed assessment district, the proposed improvement shall not be made.",
+      "history_citation_blocks": [
+        "1969 c.606 41"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.606 41",
+          "year": 1969,
+          "chapter": "606",
+          "section": "41"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "All or part of the cost of building, constructing, purchasing, operating, maintaining and improving the district works described in an engineering plan adopted under ORS 552.408 or 552.413 may be assessed against the lands to be benefited by the works. The district board shall determine the portion of the cost, if any, that is to be paid from the general funds of the district and the portion that is to be paid by the lands benefited.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Assessments shall be apportioned by the district board in accordance with the special and peculiar benefit to be received from the district works by each lot or parcel of land. Where parcels of land, or portions thereof, in the district are undeveloped, the district board may, in its discretion, defer assessing or imposing all or any portion of such assessments on such parcels until such parcels are connected with or receiving services from the district works.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The district board shall afford an opportunity for hearing of any individual objections or remonstrances to assessments under this section. If remonstrances or objections are received by the district board signed by more than 50 percent of the landowners representing more than 50 percent of the acreage within the proposed assessment district, the proposed improvement shall not be made.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 81,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.610",
+      "identifier": "ORS 552.610",
+      "name": "Section 552.610",
+      "text": "[Repealed by 1969 c.168 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 82,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.613",
+      "identifier": "ORS 552.613",
+      "name": "Section 552.613",
+      "text": "Improvement bonds. If any portion of the cost of a district works is assessed against the property directly benefited, the district board may issue improvement bonds in the total amount of the valid applications it has received to pay assessments in installments as provided by ORS 223.205 and 223.210 to 223.295.",
+      "history_citation_blocks": [
+        "1969 c.606 42; 1995 c.333 19"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.606 42",
+          "year": 1969,
+          "chapter": "606",
+          "section": "42"
+        },
+        {
+          "raw": "1995 c.333 19",
+          "year": 1995,
+          "chapter": "333",
+          "section": "19"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 83,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.615",
+      "identifier": "ORS 552.615",
+      "name": "Section 552.615",
+      "text": "[Repealed by 1969 c.168 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 84,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.618",
+      "identifier": "ORS 552.618",
+      "name": "Section 552.618",
+      "text": "Effect of irrigation contract. No tract of land shall be considered to be benefited by the construction, operation, maintenance or improvement of irrigation works unless the owner of such land enters into an irrigation contract with the district. The irrigation contract shall be in such form as shall be prescribed by the district. Upon being executed the contract may be filed for record and the recording of the contract shall constitute notice that such lands are subject to assessments thereafter levied in accordance with the contract.",
+      "history_citation_blocks": [
+        "1969 c.606 24; 1991 c.459 428b"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.606 24",
+          "year": 1969,
+          "chapter": "606",
+          "section": "24"
+        },
+        {
+          "raw": "1991 c.459 428b",
+          "year": 1991,
+          "chapter": "459",
+          "section": "428b"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 85,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.620",
+      "identifier": "ORS 552.620",
+      "name": "Section 552.620",
+      "text": "[Amended by 1955 c.707 74; repealed by 1969 c.168 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 86,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.623",
+      "identifier": "ORS 552.623",
+      "name": "Section 552.623",
+      "text": "Ad valorem tax levy, collection, enforcement. (1) Subject to ORS 552.625, a district may assess, levy and collect taxes each year on the assessed value of all taxable property within the limits of the district. The proceeds of the tax shall be applied in carrying out the purposes of this chapter. (2) The district may annually also assess, levy and collect a tax without limitation upon all such property in an amount sufficient to pay the yearly interest on bonds theretofore issued by the district and then outstanding, together with any portion of the principal of the bonds maturing within the year. The tax shall be applied only in payment of interest and principal of bonds issued by the district, but the district may apply any funds it may have toward payment of principal and interest of bonds. (3) Any taxes needed shall be levied in each year and returned to the county officer, whose duty it is to extend the tax roll, by the time required by law for city taxes to be levied and returned. (4) All taxes levied by a district shall become payable at the same time and be collected by the same officer who collects county taxes, and shall be turned over to the district according to law. The county officer whose duty it is to extend the county levy shall extend the levy of the district in the same manner as city taxes are extended. (5) Property shall be subject to sale for nonpayment of taxes levied by a district in like manner and with like effect as in the case of county and state taxes.",
+      "history_citation_blocks": [
+        "1969 c.606 43; 1981 c.804 109"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.606 43",
+          "year": 1969,
+          "chapter": "606",
+          "section": "43"
+        },
+        {
+          "raw": "1981 c.804 109",
+          "year": 1981,
+          "chapter": "804",
+          "section": "109"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Subject to ORS 552.625, a district may assess, levy and collect taxes each year on the assessed value of all taxable property within the limits of the district. The proceeds of the tax shall be applied in carrying out the purposes of this chapter.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The district may annually also assess, levy and collect a tax without limitation upon all such property in an amount sufficient to pay the yearly interest on bonds theretofore issued by the district and then outstanding, together with any portion of the principal of the bonds maturing within the year. The tax shall be applied only in payment of interest and principal of bonds issued by the district, but the district may apply any funds it may have toward payment of principal and interest of bonds.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Any taxes needed shall be levied in each year and returned to the county officer, whose duty it is to extend the tax roll, by the time required by law for city taxes to be levied and returned.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "All taxes levied by a district shall become payable at the same time and be collected by the same officer who collects county taxes, and shall be turned over to the district according to law. The county officer whose duty it is to extend the county levy shall extend the levy of the district in the same manner as city taxes are extended.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "Property shall be subject to sale for nonpayment of taxes levied by a district in like manner and with like effect as in the case of county and state taxes.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 87,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.624",
+      "identifier": "ORS 552.624",
+      "name": "Section 552.624",
+      "text": "Filing boundary change with county assessor and Department of Revenue. For purposes of ad valorem taxation, a boundary change must be filed in final approved form with the county assessor and the Department of Revenue as provided in ORS 308.225.",
+      "history_citation_blocks": [
+        "2001 c.138 44"
+      ],
+      "history_citations": [
+        {
+          "raw": "2001 c.138 44",
+          "year": 2001,
+          "chapter": "138",
+          "section": "44"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 88,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.625",
+      "identifier": "ORS 552.625",
+      "name": "Section 552.625",
+      "text": "Maximum rate of tax levy; procedure to change rate. (1) Subject to subsection (2) of this section, a district shall not levy an ad valorem tax in any one year in excess of the maximum rate of levy authorized, which shall be stated in the petition for creation of the district, unless a change in the maximum rate is first approved by the electors. The rate of levy shall be stated in dollars and cents per thousand dollars of assessed value. (2) A maximum rate of levy fixed upon creation of the district may be increased or decreased by a majority of those voting on a proposed change at an election called for that purpose. An election on the question of a change shall be called by the district board upon a petition therefor signed by not less than 30 landowners. The question may be submitted to the electors on the motion of the board. (3) A maximum rate of levy fixed as provided by this section is in addition to and not in lieu of any other tax limit provided by law. However, all other tax limits are subordinate to the maximum rate fixed as provided by this section. Notwithstanding any other law, the district board shall not in any one year levy an ad valorem tax in excess of the rate, except when the tax is levied under ORS 552.623 (2) to pay principal and interest on district bonds outstanding. (4) A certified copy of the district board order declaring the results of an election approving a change in the maximum rate of levy under this section shall be filed for record.",
+      "history_citation_blocks": [
+        "1969 c.606 44"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.606 44",
+          "year": 1969,
+          "chapter": "606",
+          "section": "44"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Subject to subsection",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "of this section, a district shall not levy an ad valorem tax in any one year in excess of the maximum rate of levy authorized, which shall be stated in the petition for creation of the district, unless a change in the maximum rate is first approved by the electors. The rate of levy shall be stated in dollars and cents per thousand dollars of assessed value. A maximum rate of levy fixed upon creation of the district may be increased or decreased by a majority of those voting on a proposed change at an election called for that purpose. An election on the question of a change shall be called by the district board upon a petition therefor signed by not less than 30 landowners. The question may be submitted to the electors on the motion of the board. to pay principal and interest on district bonds outstanding.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "A maximum rate of levy fixed as provided by this section is in addition to and not in lieu of any other tax limit provided by law. However, all other tax limits are subordinate to the maximum rate fixed as provided by this section. Notwithstanding any other law, the district board shall not in any one year levy an ad valorem tax in excess of the rate, except when the tax is levied under ORS 552.623",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "A certified copy of the district board order declaring the results of an election approving a change in the maximum rate of levy under this section shall be filed for record.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 89,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.630",
+      "identifier": "ORS 552.630",
+      "name": "Section 552.630",
+      "text": "Service and user charges. (1) For the purpose of paying the costs of operation and maintenance of district works constructed under this chapter, the district board may by ordinance: (a) Impose and collect service charges on the owners or occupants of property served by the works of the district. (b) Impose and collect user charges, fees and tolls for use of works, facilities and services of the district. (2) Service or user charges shall be based on the cost of operation, maintenance and administration of the works, facilities or service.",
+      "history_citation_blocks": [
+        "1969 c.606 45; 1991 c.459 428c"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.606 45",
+          "year": 1969,
+          "chapter": "606",
+          "section": "45"
+        },
+        {
+          "raw": "1991 c.459 428c",
+          "year": 1991,
+          "chapter": "459",
+          "section": "428c"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "For the purpose of paying the costs of operation and maintenance of district works constructed under this chapter, the district board may by ordinance:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Impose and collect service charges on the owners or occupants of property served by the works of the district.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Impose and collect user charges, fees and tolls for use of works, facilities and services of the district.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Service or user charges shall be based on the cost of operation, maintenance and administration of the works, facilities or service.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 90,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.635",
+      "identifier": "ORS 552.635",
+      "name": "Section 552.635",
+      "text": "Levy to establish revolving fund; use of fund. For the purpose of establishing a revolving fund to provide money to finance the planning and construction of district works, a district board may levy an ad valorem tax of not to exceed in any one year three-twentieths of one percent (0.0015) of real market value of all taxable property within the district. The revenue derived from such taxes shall be credited to a revolving fund, and shall be disbursed by the district board and used only for the purpose for which levied.",
+      "history_citation_blocks": [
+        "1969 c.606 46; 1991 c.459 429"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.606 46",
+          "year": 1969,
+          "chapter": "606",
+          "section": "46"
+        },
+        {
+          "raw": "1991 c.459 429",
+          "year": 1991,
+          "chapter": "459",
+          "section": "429"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 91,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.645",
+      "identifier": "ORS 552.645",
+      "name": "Section 552.645",
+      "text": "General obligation bonds. (1) For the purpose of carrying into effect any of the powers granted by this chapter, a district, when authorized at any properly called election held for the purpose, has the power to borrow money, and sell and dispose of general obligation bonds. Outstanding bonds shall never exceed in the aggregate two and one-half percent of the real market value of all taxable property within the district. (2) The bonds shall be issued from time to time by the district board in behalf of the district as authorized by the electors thereof. The bonds shall mature serially within not to exceed 50 years from issue date. However, for an indebtedness to the federal government or this state, the district may issue one or more bonds of the denominations agreed upon. Bonds shall bear interest at a rate payable semiannually as the board shall determine. The bonds shall be so conditioned that the district shall promise and agree therein to pay to the bearer at a place named therein, the principal sum, with interest at the rate named therein, payable semiannually, in accordance with the tenor and terms of the interest coupons attached. (3) For the purpose of additionally securing the payment of the principal and interest on general obligation bonds issued under this section, the district shall have the power, by resolution of the district, which resolution shall constitute part of the contract with the holders of the bonds, to pledge all or any part of the net revenue of the district. The district board may adopt such a resolution without submitting the question of the pledge to the electors of the district.",
+      "history_citation_blocks": [
+        "1969 c.606 47; 1983 c.347 30; 1991 c.459 430"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.606 47",
+          "year": 1969,
+          "chapter": "606",
+          "section": "47"
+        },
+        {
+          "raw": "1983 c.347 30",
+          "year": 1983,
+          "chapter": "347",
+          "section": "30"
+        },
+        {
+          "raw": "1991 c.459 430",
+          "year": 1991,
+          "chapter": "459",
+          "section": "430"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "For the purpose of carrying into effect any of the powers granted by this chapter, a district, when authorized at any properly called election held for the purpose, has the power to borrow money, and sell and dispose of general obligation bonds. Outstanding bonds shall never exceed in the aggregate two and one-half percent of the real market value of all taxable property within the district.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The bonds shall be issued from time to time by the district board in behalf of the district as authorized by the electors thereof. The bonds shall mature serially within not to exceed 50 years from issue date. However, for an indebtedness to the federal government or this state, the district may issue one or more bonds of the denominations agreed upon. Bonds shall bear interest at a rate payable semiannually as the board shall determine. The bonds shall be so conditioned that the district shall promise and agree therein to pay to the bearer at a place named therein, the principal sum, with interest at the rate named therein, payable semiannually, in accordance with the tenor and terms of the interest coupons attached.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "For the purpose of additionally securing the payment of the principal and interest on general obligation bonds issued under this section, the district shall have the power, by resolution of the district, which resolution shall constitute part of the contract with the holders of the bonds, to pledge all or any part of the net revenue of the district. The district board may adopt such a resolution without submitting the question of the pledge to the electors of the district.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 92,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.655",
+      "identifier": "ORS 552.655",
+      "name": "Section 552.655",
+      "text": "Refunding bonds. Refunding bonds of the same character and tenor as those replaced thereby may be issued pursuant to a resolution duly adopted by the district board without submitting to the electors the question of authorizing the issuance of the bonds.",
+      "history_citation_blocks": [
+        "1969 c.606 48"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.606 48",
+          "year": 1969,
+          "chapter": "606",
+          "section": "48"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 93,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.660",
+      "identifier": "ORS 552.660",
+      "name": "Section 552.660",
+      "text": "Process for issuance of bonds. All general obligation bonds, including refunding bonds, issued under ORS 552.645 to 552.660 shall be issued as prescribed in ORS chapter 287A.",
+      "history_citation_blocks": [
+        "1969 c.606 49; 2007 c.783 219"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.606 49",
+          "year": 1969,
+          "chapter": "606",
+          "section": "49"
+        },
+        {
+          "raw": "2007 c.783 219",
+          "year": 2007,
+          "chapter": "783",
+          "section": "219"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 94,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.670",
+      "identifier": "ORS 552.670",
+      "name": "Section 552.670",
+      "text": "Loan contracts with state or federal agencies. (1) If authorized by its electors, a district may enter a loan contract with a state or federal agency. The loan contract shall be in such form and shall contain such terms as may be agreed upon by the agency and the district. The district may agree to levy assessments against each tract of land benefited, to do all acts and things necessary therefor, to assign to the lending agency the assessments as security for the loan and to perform all such acts within such period of time as may be agreed to between the district and the state or federal lending agency. (2) If a state or federal lending agency pays over money to a district pursuant to the terms of a loan contract and the district fails, refuses or neglects to levy the assessments, to obtain or prepare a benefit roll, to assign the assessments or in any other manner not to perform as it agreed to under the loan contract, the state or federal lending agency shall have the right, at its election, to apply to the circuit court for the county in which is located the largest part of the lands within the district for a writ of mandamus, or any other order or writ, to require the district, its directors, officers and agents to do such acts and things as the district agreed to do under the terms of the loan contract. All costs, charges and expenses pertaining to the issuance and execution of any such writ or order shall be charged to and collected from the lands subject to the assessments in addition to such assessments. (3) Upon the execution of a loan contract, the district shall file for record a certificate which shall state the date of the loan contract, the maximum amount of the loan, the recording data pertaining to the recorded order creating the district, the term of the loan and the rate of interest. Such certificate shall give notice that all lands within the district determined to be benefited by the construction of the works referred to in the engineering plan will be subject to assessments thereafter to be levied. [1969 c.606 25; 1991 c.459 430a] MISCELLANEOUS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "If authorized by its electors, a district may enter a loan contract with a state or federal agency. The loan contract shall be in such form and shall contain such terms as may be agreed upon by the agency and the district. The district may agree to levy assessments against each tract of land benefited, to do all acts and things necessary therefor, to assign to the lending agency the assessments as security for the loan and to perform all such acts within such period of time as may be agreed to between the district and the state or federal lending agency.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "If a state or federal lending agency pays over money to a district pursuant to the terms of a loan contract and the district fails, refuses or neglects to levy the assessments, to obtain or prepare a benefit roll, to assign the assessments or in any other manner not to perform as it agreed to under the loan contract, the state or federal lending agency shall have the right, at its election, to apply to the circuit court for the county in which is located the largest part of the lands within the district for a writ of mandamus, or any other order or writ, to require the district, its directors, officers and agents to do such acts and things as the district agreed to do under the terms of the loan contract. All costs, charges and expenses pertaining to the issuance and execution of any such writ or order shall be charged to and collected from the lands subject to the assessments in addition to such assessments.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Upon the execution of a loan contract, the district shall file for record a certificate which shall state the date of the loan contract, the maximum amount of the loan, the recording data pertaining to the recorded order creating the district, the term of the loan and the rate of interest. Such certificate shall give notice that all lands within the district determined to be benefited by the construction of the works referred to in the engineering plan will be subject to assessments thereafter to be levied. [1969 c.606 25; 1991 c.459 430a] MISCELLANEOUS",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 95,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.710",
+      "identifier": "ORS 552.710",
+      "name": "Section 552.710",
+      "text": "Subdistrict procedure; authority. (1) When a district has adopted a plan under ORS 552.403, subdistricts may be created as provided by this section. (2) Proceedings to create subdistricts, located totally or partially within or outside of a district, may be initiated by a petition of the landowners within the subdistrict. Except as otherwise provided by this section, the petition shall fulfill the same requirements concerning the subdistrict as a petition is, by ORS 552.118, required to fulfill concerning the creation of the main district. The petition shall be filed with the county board of the county where the greater portion of land within the boundaries of the subdistrict is located, and shall be accompanied by an undertaking as provided by ORS 552.118. Proceedings to create a subdistrict shall conform in all things to the provisions relating to the creation of a district. However, the owners of 50 percent or more of the total acreage within the proposed subdistrict shall be required to sign the petition for the creation of a subdistrict. (3) If the county board adopts an order creating a subdistrict, the clerk of the county board shall give notice of the order to the district board. The district board of the main district is the governing board of each subdistrict of the district. For the purpose of qualifying to be a member of a district board, under ORS 552.208 (1), ownership of land within a subdistrict, regardless of the location of the subdistrict, is considered ownership of land within the district. The territory within one subdistrict may be included within another subdistrict or subdistricts. (4) After the creation of a subdistrict, proceedings in reference to a subdistrict shall in all matters conform to the provisions of this chapter applicable to districts. In all matters affecting only a subdistrict, provisions of this chapter applicable to a district apply to the subdistrict as though it were an independent district. (5) The petition for creation of a subdistrict shall include a statement of the amount or quantity of water for which the subdistrict desires to acquire the perpetual use and the amount of money the subdistrict is willing to pay therefor. Prior to the entry of a judgment creating a subdistrict, the county board shall be furnished the verified consent of the district board to furnish such perpetual use of water for the purposes specified to the subdistrict at a price and upon the terms mentioned in the petition.",
+      "history_citation_blocks": [
+        "1969 c.606 32; 2003 c.576 519"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.606 32",
+          "year": 1969,
+          "chapter": "606",
+          "section": "32"
+        },
+        {
+          "raw": "2003 c.576 519",
+          "year": 2003,
+          "chapter": "576",
+          "section": "519"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "When a district has adopted a plan under ORS 552.403, subdistricts may be created as provided by this section. , ownership of land within a subdistrict, regardless of the location of the subdistrict, is considered ownership of land within the district. The territory within one subdistrict may be included within another subdistrict or subdistricts.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Proceedings to create subdistricts, located totally or partially within or outside of a district, may be initiated by a petition of the landowners within the subdistrict. Except as otherwise provided by this section, the petition shall fulfill the same requirements concerning the subdistrict as a petition is, by ORS 552.118, required to fulfill concerning the creation of the main district. The petition shall be filed with the county board of the county where the greater portion of land within the boundaries of the subdistrict is located, and shall be accompanied by an undertaking as provided by ORS 552.118. Proceedings to create a subdistrict shall conform in all things to the provisions relating to the creation of a district. However, the owners of 50 percent or more of the total acreage within the proposed subdistrict shall be required to sign the petition for the creation of a subdistrict.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "If the county board adopts an order creating a subdistrict, the clerk of the county board shall give notice of the order to the district board. The district board of the main district is the governing board of each subdistrict of the district. For the purpose of qualifying to be a member of a district board, under ORS 552.208",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "After the creation of a subdistrict, proceedings in reference to a subdistrict shall in all matters conform to the provisions of this chapter applicable to districts. In all matters affecting only a subdistrict, provisions of this chapter applicable to a district apply to the subdistrict as though it were an independent district.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "The petition for creation of a subdistrict shall include a statement of the amount or quantity of water for which the subdistrict desires to acquire the perpetual use and the amount of money the subdistrict is willing to pay therefor. Prior to the entry of a judgment creating a subdistrict, the county board shall be furnished the verified consent of the district board to furnish such perpetual use of water for the purposes specified to the subdistrict at a price and upon the terms mentioned in the petition.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 96,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.720",
+      "identifier": "ORS 552.720",
+      "name": "Section 552.720",
+      "text": "Dissolution of irrigation, drainage or water control district and transfer of assets and liabilities to water improvement district. (1) Any district organized or operating under ORS chapter 545, 547 or 553 may dissolve and transfer its property and other assets and liabilities to a water improvement district which will undertake to furnish service to the inhabitants of the dissolving district. (2) Except as provided by this section, dissolution, liquidation and transfer proceedings shall be conducted as provided by ORS 198.920 to 198.955. (3) When a petition is filed or a resolution is adopted initiating dissolution proceedings, the governing board of the dissolving district and the district board of the water improvement district shall meet with each other to agree on a debt distribution plan to be voted upon as a part of the proposal. The debt distribution plan may provide for any distribution of indebtedness between the water improvement district and the dissolving district. If the boards do not agree on a debt distribution plan or if the area within the dissolving district remains liable under the plan for any portion of the indebtedness outstanding at the time of the dissolution and transfer, the district board of the water improvement district shall be ex officio board of the dissolved district for the purpose of levying taxes or collecting charges in such area until the bonded and other indebtedness of the dissolved district is paid. (4) The consent of all the known holders of valid indebtedness against the dissolving district shall be obtained or provision made in the debt distribution plan for the payment of the nonassenting holders. The area within the boundaries of the dissolving district shall not by reason of the dissolution and transfer be relieved from liabilities and indebtedness previously contracted by the dissolving district. (5) If the dissolution is approved at an election in accordance with the law applicable to the dissolving district, the governing body of the dissolving district shall convey to the water improvement district all assets of the dissolving district after paying and discharging the debts and obligations to, or procuring releases from the nonassenting holders, in accordance with the debt distribution plan.",
+      "history_citation_blocks": [
+        "1969 c.606 13; 1971 c.727 167; 1991 c.459 430b"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.606 13",
+          "year": 1969,
+          "chapter": "606",
+          "section": "13"
+        },
+        {
+          "raw": "1971 c.727 167",
+          "year": 1971,
+          "chapter": "727",
+          "section": "167"
+        },
+        {
+          "raw": "1991 c.459 430b",
+          "year": 1991,
+          "chapter": "459",
+          "section": "430b"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Any district organized or operating under ORS chapter 545, 547 or 553 may dissolve and transfer its property and other assets and liabilities to a water improvement district which will undertake to furnish service to the inhabitants of the dissolving district.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Except as provided by this section, dissolution, liquidation and transfer proceedings shall be conducted as provided by ORS 198.920 to 198.955.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "When a petition is filed or a resolution is adopted initiating dissolution proceedings, the governing board of the dissolving district and the district board of the water improvement district shall meet with each other to agree on a debt distribution plan to be voted upon as a part of the proposal. The debt distribution plan may provide for any distribution of indebtedness between the water improvement district and the dissolving district. If the boards do not agree on a debt distribution plan or if the area within the dissolving district remains liable under the plan for any portion of the indebtedness outstanding at the time of the dissolution and transfer, the district board of the water improvement district shall be ex officio board of the dissolved district for the purpose of levying taxes or collecting charges in such area until the bonded and other indebtedness of the dissolved district is paid.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "The consent of all the known holders of valid indebtedness against the dissolving district shall be obtained or provision made in the debt distribution plan for the payment of the nonassenting holders. The area within the boundaries of the dissolving district shall not by reason of the dissolution and transfer be relieved from liabilities and indebtedness previously contracted by the dissolving district.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "If the dissolution is approved at an election in accordance with the law applicable to the dissolving district, the governing body of the dissolving district shall convey to the water improvement district all assets of the dissolving district after paying and discharging the debts and obligations to, or procuring releases from the nonassenting holders, in accordance with the debt distribution plan.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 97,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.730",
+      "identifier": "ORS 552.730",
+      "name": "Section 552.730",
+      "text": "",
+      "history_citation_blocks": [
+        "1969 c.606 11; repealed by 1971 c.647 149"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.606 11",
+          "year": 1969,
+          "chapter": "606",
+          "section": "11"
+        },
+        {
+          "raw": "repealed by 1971 c.647 149"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 98,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.740",
+      "identifier": "ORS 552.740",
+      "name": "Section 552.740",
+      "text": "Notice requirements. When notice is required by this chapter to be given by publication, the notice shall be published in a newspaper of general circulation in the district, or if there is no such newspaper, in a newspaper of general circulation in each county in which the district is located. Notice of a hearing to be held before the district board or the county board shall be published once each week for four consecutive weeks, making four publications, and the last publication shall be at least five days before the date set for the hearing. All other notices required to be published under this chapter shall be published once each week for two consecutive weeks, making two publications, and the last publication shall be at least five days before the date of the event for which the notice is given. This section does not apply to provision of notice for an election.",
+      "history_citation_blocks": [
+        "1969 c.606 12; 1971 c.647 119; 1983 c.350 304"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.606 12",
+          "year": 1969,
+          "chapter": "606",
+          "section": "12"
+        },
+        {
+          "raw": "1971 c.647 119",
+          "year": 1971,
+          "chapter": "647",
+          "section": "119"
+        },
+        {
+          "raw": "1983 c.350 304",
+          "year": 1983,
+          "chapter": "350",
+          "section": "304"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 99,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.750",
+      "identifier": "ORS 552.750",
+      "name": "Section 552.750",
+      "text": "Election laws applicable. (1) ORS chapter 255 governs the following: (a) The nomination and election of directors. (b) The conduct of all district elections. (2) The electors of a district may exercise the powers of the initiative and referendum regarding a district measure, in accordance with ORS 255.135 to 255.205. [1983 c.350 302] BOUNDARY CHANGES",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "ORS chapter 255 governs the following:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "The nomination and election of directors.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "The conduct of all district elections.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The electors of a district may exercise the powers of the initiative and referendum regarding a district measure, in accordance with ORS 255.135 to 255.205. [1983 c.350 302] BOUNDARY CHANGES",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 100,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.810",
+      "identifier": "ORS 552.810",
+      "name": "Section 552.810",
+      "text": "Procedure for inclusion or exclusion of land in district. A petition for inclusion or exclusion of territory in a district may be filed without the approval of the district board indorsed on the petition. However, if the county board approves the petition and determines the boundaries, the district board shall call an election in the district for the purpose of submitting the proposal to the electors of the district.",
+      "history_citation_blocks": [
+        "1969 c.606 10; 1971 c.727 168; 1983 c.83 101; 1983 c.350 305"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.606 10",
+          "year": 1969,
+          "chapter": "606",
+          "section": "10"
+        },
+        {
+          "raw": "1971 c.727 168",
+          "year": 1971,
+          "chapter": "727",
+          "section": "168"
+        },
+        {
+          "raw": "1983 c.83 101",
+          "year": 1983,
+          "chapter": "83",
+          "section": "101"
+        },
+        {
+          "raw": "1983 c.350 305",
+          "year": 1983,
+          "chapter": "350",
+          "section": "305"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 101,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.820",
+      "identifier": "ORS 552.820",
+      "name": "Section 552.820",
+      "text": "",
+      "history_citation_blocks": [
+        "1969 c.606 50; repealed by 1971 c.727 203"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.606 50",
+          "year": 1969,
+          "chapter": "606",
+          "section": "50"
+        },
+        {
+          "raw": "repealed by 1971 c.727 203"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 102,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.825",
+      "identifier": "ORS 552.825",
+      "name": "Section 552.825",
+      "text": "",
+      "history_citation_blocks": [
+        "1969 c.606 51; repealed by 1971 c.727 203"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.606 51",
+          "year": 1969,
+          "chapter": "606",
+          "section": "51"
+        },
+        {
+          "raw": "repealed by 1971 c.727 203"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 103,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.830",
+      "identifier": "ORS 552.830",
+      "name": "Section 552.830",
+      "text": "Date of election on dissolution of district. An election on dissolution may be held only on the same date as the regular district election.",
+      "history_citation_blocks": [
+        "1969 c.606 52; 1971 c.727 169; 1983 c.350 306"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.606 52",
+          "year": 1969,
+          "chapter": "606",
+          "section": "52"
+        },
+        {
+          "raw": "1971 c.727 169",
+          "year": 1971,
+          "chapter": "727",
+          "section": "169"
+        },
+        {
+          "raw": "1983 c.350 306",
+          "year": 1983,
+          "chapter": "350",
+          "section": "306"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 104,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.835",
+      "identifier": "ORS 552.835",
+      "name": "Section 552.835",
+      "text": "",
+      "history_citation_blocks": [
+        "1969 c.606 53; repealed by 1971 c.727 203"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.606 53",
+          "year": 1969,
+          "chapter": "606",
+          "section": "53"
+        },
+        {
+          "raw": "repealed by 1971 c.727 203"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 105,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.840",
+      "identifier": "ORS 552.840",
+      "name": "Section 552.840",
+      "text": "",
+      "history_citation_blocks": [
+        "1969 c.606 54; repealed by 1971 c.727 203"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.606 54",
+          "year": 1969,
+          "chapter": "606",
+          "section": "54"
+        },
+        {
+          "raw": "repealed by 1971 c.727 203"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 106,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.845",
+      "identifier": "ORS 552.845",
+      "name": "Section 552.845",
+      "text": "",
+      "history_citation_blocks": [
+        "1969 c.606 55; repealed by 1971 c.727 203"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.606 55",
+          "year": 1969,
+          "chapter": "606",
+          "section": "55"
+        },
+        {
+          "raw": "repealed by 1971 c.727 203"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 107,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.850",
+      "identifier": "ORS 552.850",
+      "name": "Section 552.850",
+      "text": "",
+      "history_citation_blocks": [
+        "1969 c.606 56; repealed by 1971 c.727 203"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.606 56",
+          "year": 1969,
+          "chapter": "606",
+          "section": "56"
+        },
+        {
+          "raw": "repealed by 1971 c.727 203"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 108,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.855",
+      "identifier": "ORS 552.855",
+      "name": "Section 552.855",
+      "text": "",
+      "history_citation_blocks": [
+        "1969 c.606 57; repealed by 1971 c.727 203"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.606 57",
+          "year": 1969,
+          "chapter": "606",
+          "section": "57"
+        },
+        {
+          "raw": "repealed by 1971 c.727 203"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 109,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.860",
+      "identifier": "ORS 552.860",
+      "name": "Section 552.860",
+      "text": "",
+      "history_citation_blocks": [
+        "1969 c.606 58; repealed by 1971 c.727 203"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.606 58",
+          "year": 1969,
+          "chapter": "606",
+          "section": "58"
+        },
+        {
+          "raw": "repealed by 1971 c.727 203"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 110,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.990",
+      "identifier": "ORS 552.990",
+      "name": "Section 552.990",
+      "text": "[Repealed by 1969 c.168 1] PENALTIES",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 111,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html#section-552.992",
+      "identifier": "ORS 552.992",
+      "name": "Section 552.992",
+      "text": "Penalties. Subject to ORS 153.022, violation of any regulation adopted under ORS 552.345 is a Class B violation. [1969 c.606 29(2); 1987 c.185 5; 1999 c.1051 198] _______________",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 112,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors552.html"
+    }
+  ],
+  "alternateName": "Water Improvement Districts",
+  "legislationDate": "2023"
+}

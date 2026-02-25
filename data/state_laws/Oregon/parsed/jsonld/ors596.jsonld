@@ -1,0 +1,2904 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "orlaw": "https://www.oregonlegislature.gov/ors#"
+  },
+  "@type": "Legislation",
+  "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html",
+  "identifier": "ORS Chapter 596",
+  "name": "ORS Chapter 596 — . Disease",
+  "legislationType": "Statute",
+  "jurisdiction": "US-OR",
+  "isPartOf": {
+    "@type": "CreativeWork",
+    "identifier": "ORS",
+    "name": "Oregon Revised Statutes",
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors"
+  },
+  "dateModified": "2026-02-25T08:11:28.618978+00:00",
+  "source_file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors596.html",
+  "hasPart": [
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.010",
+      "identifier": "ORS 596.010",
+      "name": "Section 596.010",
+      "text": "Definitions. As used in this chapter, except as provided in ORS 596.615 to 596.681: (1) Department means the State Department of Agriculture. (2) Disease means any disease of livestock which may be transmitted or communicated through direct or indirect contact from one animal to another, including those diseases transmitted by or through livestock to humans. (3) Livestock includes, but is not limited to, horses, mules, jennies, jackasses, cattle, sheep, dogs, hogs, goats, domesticated fowl, psittacines, ratites and domesticated fur-bearing animals.",
+      "history_citation_blocks": [
+        "Amended by 1955 c.557 1; 1981 c.334 8; 1997 c.282 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1955 c.557 1"
+        },
+        {
+          "raw": "1981 c.334 8",
+          "year": 1981,
+          "chapter": "334",
+          "section": "8"
+        },
+        {
+          "raw": "1997 c.282 1",
+          "year": 1997,
+          "chapter": "282",
+          "section": "1"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Department means the State Department of Agriculture.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Disease means any disease of livestock which may be transmitted or communicated through direct or indirect contact from one animal to another, including those diseases transmitted by or through livestock to humans.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Livestock includes, but is not limited to, horses, mules, jennies, jackasses, cattle, sheep, dogs, hogs, goats, domesticated fowl, psittacines, ratites and domesticated fur-bearing animals.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 1,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.020",
+      "identifier": "ORS 596.020",
+      "name": "Section 596.020",
+      "text": "Duties of the State Department of Agriculture in protection of people and livestock. (1) The State Department of Agriculture shall: (a) Exercise general sanitary and disease control supervision over the livestock of this state, and as far as possible, protect the livestock of this state from disease. (b) Take all measures necessary and proper, in its judgment, to control diseases within this state and to eradicate and prevent the spread of infectious, contagious and communicable diseases that may exist among livestock and to prevent the entry into this state of animals or materials liable to convey infectious, contagious and communicable diseases to the livestock or people of this state. (c) Prohibit and prevent the sale or use of products dangerous to the health of livestock. (2) The breeding, raising, producing in captivity and marketing of foxes, mink, chinchilla, rabbit, caracul or ratite is an agricultural pursuit. All such animals raised in captivity are domesticated fur-bearing animals or domesticated fowl within the meaning of ORS 596.010 and are subject to the provisions of this chapter. Such animals are not within the purview of the state game laws. All other animals in captivity are subject to the provisions of this chapter for purposes of disease control only. (3) The department may, to the extent of its professional ability and at the request of a governmental body, assist them in the performance of their prescribed duties.",
+      "history_citation_blocks": [
+        "Amended by 1955 c.557 2; 1965 c.217 1; 1971 c.483 1; 1975 c.399 1; 1997 c.162 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1955 c.557 2"
+        },
+        {
+          "raw": "1965 c.217 1",
+          "year": 1965,
+          "chapter": "217",
+          "section": "1"
+        },
+        {
+          "raw": "1971 c.483 1",
+          "year": 1971,
+          "chapter": "483",
+          "section": "1"
+        },
+        {
+          "raw": "1975 c.399 1",
+          "year": 1975,
+          "chapter": "399",
+          "section": "1"
+        },
+        {
+          "raw": "1997 c.162 1",
+          "year": 1997,
+          "chapter": "162",
+          "section": "1"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The State Department of Agriculture shall:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Exercise general sanitary and disease control supervision over the livestock of this state, and as far as possible, protect the livestock of this state from disease.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Take all measures necessary and proper, in its judgment, to control diseases within this state and to eradicate and prevent the spread of infectious, contagious and communicable diseases that may exist among livestock and to prevent the entry into this state of animals or materials liable to convey infectious, contagious and communicable diseases to the livestock or people of this state.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Prohibit and prevent the sale or use of products dangerous to the health of livestock.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The breeding, raising, producing in captivity and marketing of foxes, mink, chinchilla, rabbit, caracul or ratite is an agricultural pursuit. All such animals raised in captivity are domesticated fur-bearing animals or domesticated fowl within the meaning of ORS 596.010 and are subject to the provisions of this chapter. Such animals are not within the purview of the state game laws. All other animals in captivity are subject to the provisions of this chapter for purposes of disease control only.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The department may, to the extent of its professional ability and at the request of a governmental body, assist them in the performance of their prescribed duties.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 2,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.030",
+      "identifier": "ORS 596.030",
+      "name": "Section 596.030",
+      "text": "Administration of national plans relating to poultry; disposition of fees; suspension of participants. (1) The State Department of Agriculture is designated as the official agency in Oregon for cooperation with the United States Department of Agriculture and other states of the United States in the administration of the National Poultry Improvement Plan and the National Turkey Improvement Plan, relating to eradication and control of poultry and fowl diseases and the improvement of breeding and production qualities of such fowl. (2) All fees collected by the department from participants in either of such plans shall be deposited in the State Treasury and credited to the Department of Agriculture Service Fund, and such fees are continuously appropriated to the department for administration and enforcement of such plans. (3) A civil action may be maintained by the department on relation of its director for the collection of any unpaid fees charged to participants for services rendered or materials furnished by the department in connection with the administration of either plan. (4) Nonpayment of fees due the department, as required by law, or failure or refusal to comply with the provisions of the plans or rules thereunder, suspends the right of a person to participate therein and to use any of the material thereunder. The department shall forward a written notice of suspension to the last-known address of the participant, by certified mail, at least 15 days prior to the date of suspension. Prior to the effective date of the suspension, the participant may present information and data to the department showing there has been compliance with the law and the department shall grant such participant an immediate hearing in accordance with ORS chapter 183. The order of suspension shall be effective as provided in the order issued pursuant to such hearing.",
+      "history_citation_blocks": [
+        "Amended by 1965 c.217 2; 1971 c.734 90; 1979 c.499 11"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1965 c.217 2"
+        },
+        {
+          "raw": "1971 c.734 90",
+          "year": 1971,
+          "chapter": "734",
+          "section": "90"
+        },
+        {
+          "raw": "1979 c.499 11",
+          "year": 1979,
+          "chapter": "499",
+          "section": "11"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The State Department of Agriculture is designated as the official agency in Oregon for cooperation with the United States Department of Agriculture and other states of the United States in the administration of the National Poultry Improvement Plan and the National Turkey Improvement Plan, relating to eradication and control of poultry and fowl diseases and the improvement of breeding and production qualities of such fowl.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "All fees collected by the department from participants in either of such plans shall be deposited in the State Treasury and credited to the Department of Agriculture Service Fund, and such fees are continuously appropriated to the department for administration and enforcement of such plans.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "A civil action may be maintained by the department on relation of its director for the collection of any unpaid fees charged to participants for services rendered or materials furnished by the department in connection with the administration of either plan.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Nonpayment of fees due the department, as required by law, or failure or refusal to comply with the provisions of the plans or rules thereunder, suspends the right of a person to participate therein and to use any of the material thereunder. The department shall forward a written notice of suspension to the last-known address of the participant, by certified mail, at least 15 days prior to the date of suspension. Prior to the effective date of the suspension, the participant may present information and data to the department showing there has been compliance with the law and the department shall grant such participant an immediate hearing in accordance with ORS chapter 183. The order of suspension shall be effective as provided in the order issued pursuant to such hearing.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 3,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.040",
+      "identifier": "ORS 596.040",
+      "name": "Section 596.040",
+      "text": "Cooperative agreements with U.S. Department of Agriculture or other federal agency for livestock disease control; receipt and use of funds. (1) Whenever the Director of Agriculture deems it necessary, the director may enter into cooperative and reciprocal agreements with the United States Department of Agriculture or any other federal agency for the purpose of controlling and eradicating any disease that may exist among the livestock of this state, and may receive and expend funds pursuant to such agreements in furtherance of such purpose. (2) Whenever any federal department or agency, through its authorized veterinary officers, agents or employees is thus engaged, each of them shall have the full power and authority of a deputy state veterinarian, but is not entitled to pay from this state for services the veterinary officer, agent or employee performs.",
+      "history_citation_blocks": [
+        "Amended by 1955 c.557 3; 1971 c.483 2"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1955 c.557 3"
+        },
+        {
+          "raw": "1971 c.483 2",
+          "year": 1971,
+          "chapter": "483",
+          "section": "2"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Whenever the Director of Agriculture deems it necessary, the director may enter into cooperative and reciprocal agreements with the United States Department of Agriculture or any other federal agency for the purpose of controlling and eradicating any disease that may exist among the livestock of this state, and may receive and expend funds pursuant to such agreements in furtherance of such purpose.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Whenever any federal department or agency, through its authorized veterinary officers, agents or employees is thus engaged, each of them shall have the full power and authority of a deputy state veterinarian, but is not entitled to pay from this state for services the veterinary officer, agent or employee performs.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 4,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.050",
+      "identifier": "ORS 596.050",
+      "name": "Section 596.050",
+      "text": "Production of bacteriological or biological products for department; use of proceeds. The Oregon agricultural experiment station, the College of Veterinary Medicine, Oregon State University or the State Department of Agriculture may make, produce or furnish bacteriological or biological products to be used by the department for the treatment, prevention or detection of animal disease. If either the experiment station or the College of Veterinary Medicine furnishes the products, the station or the college may do so directly to the department and shall produce and furnish such products at actual or approximate cost. Such cost shall be paid by the department out of funds available for that purpose. All money obtained by the department from the sale of such biological or bacteriological products shall be used by the department to pay such costs and for making, producing or furnishing such products, and is continuously appropriated to the department for that purpose.",
+      "history_citation_blocks": [
+        "Amended by 1981 c.681 1; 2003 c.14 355"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1981 c.681 1"
+        },
+        {
+          "raw": "2003 c.14 355",
+          "year": 2003,
+          "chapter": "14",
+          "section": "355"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 5,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.060",
+      "identifier": "ORS 596.060",
+      "name": "Section 596.060",
+      "text": "Peace officers to assist the department. The State Department of Agriculture or any of its officers, employees or deputies may at any time call upon any peace officer for assistance in the discharge of duties, and such peace officer shall give the assistance requested. VACCINES AND TREATMENTS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 6,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.065",
+      "identifier": "ORS 596.065",
+      "name": "Section 596.065",
+      "text": "Vaccines and products hazardous to livestock health; rules; written permits authorizing use, purchase, sale or distribution of vaccines and products. (1)(a) The following vaccines or bacteriological or biological products are deemed to be vaccines or products that are a hazard to the livestock in this state: (A) Brucella Abortus Vaccine; (B) Hog Cholera Vaccine; and (C) Any biologic not approved for general use by the United States Department of Agriculture. (b) In addition to the vaccines or products set forth in paragraph (a) of this subsection, the State Department of Agriculture, after consultation with the Oregon Veterinary Medical Association, may from time to time enact and amend rules containing a list of additional vaccines or other bacteriological or biological products used or intended to be used for the detection, prevention, mitigation, control, treatment or curing of livestock diseases, whenever such vaccines or products are or might become a hazard to the livestock in this state. (c) The biological product Brucella Abortus Antigen may only be used by state veterinarians, federal veterinarians and deputy state veterinarians, and may only be used for programs approved by the State Veterinarian. (d) The biological product Equine Infectious Anemia Antigen may only be used by the departments animal health division laboratory personnel. (2) The department, when establishing a list under subsection (1)(b) of this section, shall consider: (a) The possibility of dissemination of disease in this state through the use of the vaccines or products. (b) The known effectiveness of the vaccines or products for the purpose for which they are sold or recommended. (c) The existence of alternative vaccines or products constituting a lesser or no hazard to livestock. (d) Whether or not the disease for which a particular vaccine or product is used or intended to be used is present in this state and to what extent it is present. (e) Any other factor which, having due regard for the properties of the vaccine or product, may constitute a hazard to the health of livestock in this state. (3) The use, purchase, sale or distribution of vaccines or products which is prohibited under subsection (1) of this section or under ORS 596.075, may be authorized by written permit of the department to: (a) Deputy state veterinarians, assistant state veterinarians, federal veterinarians, veterinarians duly licensed by the State of Oregon, veterinarians who have been issued a temporary license to practice veterinary medicine under ORS 686.065, veterinary medicine interns issued an internship permit under ORS 686.085 and veterinarians employed by a community college or university in the State of Oregon. (b) Recognized research agencies.",
+      "history_citation_blocks": [
+        "1955 c.557 5 (596.065 and 596.075 enacted in lieu of 596.070); 1975 c.399 2; 1977 c.224 1; 1983 c.101 1; 1993 c.742 58; 2003 c.180 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "1955 c.557 5 (596.065 and 596.075 enacted in lieu of 596.070)"
+        },
+        {
+          "raw": "1975 c.399 2",
+          "year": 1975,
+          "chapter": "399",
+          "section": "2"
+        },
+        {
+          "raw": "1977 c.224 1",
+          "year": 1977,
+          "chapter": "224",
+          "section": "1"
+        },
+        {
+          "raw": "1983 c.101 1",
+          "year": 1983,
+          "chapter": "101",
+          "section": "1"
+        },
+        {
+          "raw": "1993 c.742 58",
+          "year": 1993,
+          "chapter": "742",
+          "section": "58"
+        },
+        {
+          "raw": "2003 c.180 1",
+          "year": 2003,
+          "chapter": "180",
+          "section": "1"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "(a) The following vaccines or bacteriological or biological products are deemed to be vaccines or products that are a hazard to the livestock in this state: (b) of this section, shall consider: of this section or under ORS 596.075, may be authorized by written permit of the department to:",
+          "subsections": [
+            {
+              "label": "(A)",
+              "token": "A",
+              "kind": "alpha_upper",
+              "text": "Brucella Abortus Vaccine;",
+              "subsections": []
+            },
+            {
+              "label": "(B)",
+              "token": "B",
+              "kind": "alpha_upper",
+              "text": "Hog Cholera Vaccine; and",
+              "subsections": []
+            },
+            {
+              "label": "(C)",
+              "token": "C",
+              "kind": "alpha_upper",
+              "text": "Any biologic not approved for general use by the United States Department of Agriculture.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "In addition to the vaccines or products set forth in paragraph The known effectiveness of the vaccines or products for the purpose for which they are sold or recommended. Recognized research agencies.",
+              "subsections": []
+            },
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "of this subsection, the State Department of Agriculture, after consultation with the Oregon Veterinary Medical Association, may from time to time enact and amend rules containing a list of additional vaccines or other bacteriological or biological products used or intended to be used for the detection, prevention, mitigation, control, treatment or curing of livestock diseases, whenever such vaccines or products are or might become a hazard to the livestock in this state. The possibility of dissemination of disease in this state through the use of the vaccines or products. Deputy state veterinarians, assistant state veterinarians, federal veterinarians, veterinarians duly licensed by the State of Oregon, veterinarians who have been issued a temporary license to practice veterinary medicine under ORS 686.065, veterinary medicine interns issued an internship permit under ORS 686.085 and veterinarians employed by a community college or university in the State of Oregon.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "The biological product Brucella Abortus Antigen may only be used by state veterinarians, federal veterinarians and deputy state veterinarians, and may only be used for programs approved by the State Veterinarian. The existence of alternative vaccines or products constituting a lesser or no hazard to livestock.",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "The biological product Equine Infectious Anemia Antigen may only be used by the departments animal health division laboratory personnel. Whether or not the disease for which a particular vaccine or product is used or intended to be used is present in this state and to what extent it is present.",
+              "subsections": []
+            },
+            {
+              "label": "(e)",
+              "token": "e",
+              "kind": "alpha_lower",
+              "text": "Any other factor which, having due regard for the properties of the vaccine or product, may constitute a hazard to the health of livestock in this state.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The department, when establishing a list under subsection",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The use, purchase, sale or distribution of vaccines or products which is prohibited under subsection",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 7,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.070",
+      "identifier": "ORS 596.070",
+      "name": "Section 596.070",
+      "text": "[Repealed by 1955 c.557 4 (596.065 and 596.075 enacted in lieu of 596.070)]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 8,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.075",
+      "identifier": "ORS 596.075",
+      "name": "Section 596.075",
+      "text": "Prohibition against use of listed harmful vaccines; exceptions. Except as otherwise provided in ORS 596.065 (3), no person shall use, vaccinate with or inject into any livestock in this state, sell, offer for sale, dispose of or distribute any vaccine, bacteriological or biological product declared to be a hazard to livestock health under ORS 596.065. [1955 c.557 6 (596.065 and",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": ", no person shall use, vaccinate with or inject into any livestock in this state, sell, offer for sale, dispose of or distribute any vaccine, bacteriological or biological product declared to be a hazard to livestock health under ORS 596.065. [1955 c.557 6 (596.065 and",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 9,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.080",
+      "identifier": "ORS 596.080",
+      "name": "Section 596.080",
+      "text": "[Repealed by 1955 c.557 36]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 10,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.090",
+      "identifier": "ORS 596.090",
+      "name": "Section 596.090",
+      "text": "[Repealed by 1955 c.557 36]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 11,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.095",
+      "identifier": "ORS 596.095",
+      "name": ".",
+      "text": "STATE VETERINARIAN, DEPUTY STATE VETERINARIANS AND DEPUTY STATE VETERINARY TECHNICIANS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 12,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.100",
+      "identifier": "ORS 596.100",
+      "name": "Section 596.100",
+      "text": "Registration of products used for treatment of animals; fees; rules. (1) No person shall sell, offer or expose for sale, or deliver to a user, an animal remedy, veterinary biologic or pharmaceutical, in package or in bulk, which has not been registered with the State Department of Agriculture. Products regulated under the Federal Insecticide, Fungicide, and Rodenticide Act which are registered with the department under ORS chapter 634 are not required to be registered under this section. Except as otherwise provided by law, the manufacturer of each brand of animal remedy, veterinary biologic and pharmaceutical to be sold in the state, whether in package or in bulk, shall register those products with the department annually. Manufacturers who sell more than one animal remedy, veterinary biologic or pharmaceutical in the state may register all such products on one application. (2) The application for registration of an animal remedy, veterinary biologic or pharmaceutical shall be made on forms provided by the department and shall be accompanied by an annual registration fee for each product in an amount not to exceed $150 as the department, by rule, shall determine. The application for registration shall be made by July 1 of each year and shall be accompanied by a list of the animal remedies, veterinary biologics and pharmaceuticals the applicant for registration expects to market during the ensuing year. (3) The department shall deposit all fees received in the Department of Agriculture Service Fund, and such fees are continuously appropriated to the department for the purpose of administering and enforcing ORS chapters 596 and 599. [1991 c.584 3,4; 2001 c.104 233; 2015 c.532 1] Note: See note under",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "No person shall sell, offer or expose for sale, or deliver to a user, an animal remedy, veterinary biologic or pharmaceutical, in package or in bulk, which has not been registered with the State Department of Agriculture. Products regulated under the Federal Insecticide, Fungicide, and Rodenticide Act which are registered with the department under ORS chapter 634 are not required to be registered under this section. Except as otherwise provided by law, the manufacturer of each brand of animal remedy, veterinary biologic and pharmaceutical to be sold in the state, whether in package or in bulk, shall register those products with the department annually. Manufacturers who sell more than one animal remedy, veterinary biologic or pharmaceutical in the state may register all such products on one application.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The application for registration of an animal remedy, veterinary biologic or pharmaceutical shall be made on forms provided by the department and shall be accompanied by an annual registration fee for each product in an amount not to exceed $150 as the department, by rule, shall determine. The application for registration shall be made by July 1 of each year and shall be accompanied by a list of the animal remedies, veterinary biologics and pharmaceuticals the applicant for registration expects to market during the ensuing year.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The department shall deposit all fees received in the Department of Agriculture Service Fund, and such fees are continuously appropriated to the department for the purpose of administering and enforcing ORS chapters 596 and 599. [1991 c.584 3,4; 2001 c.104 233; 2015 c.532 1] Note: See note under",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 13,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.105",
+      "identifier": "ORS 596.105",
+      "name": "Section 596.105",
+      "text": "Products exempt from registration; rules. The State Department of Agriculture may adopt rules exempting certain products from the definition of animal remedy, veterinary biologic or pharmaceutical if: (1) The products are not used primarily for veterinary purposes; or (2) The products are animal remedies compounded by Oregon licensed veterinarians for use in the course of their practice. [1991 c.584 2] Note: See note under",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The products are not used primarily for veterinary purposes; or",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The products are animal remedies compounded by Oregon licensed veterinarians for use in the course of their practice. [1991 c.584 2] Note: See note under",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 14,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.210",
+      "identifier": "ORS 596.210",
+      "name": "Section 596.210",
+      "text": "Establishing office of State Veterinarian; qualifications and duties. (1) There hereby is created within the State Department of Agriculture the office of State Veterinarian of the State of Oregon. The State Veterinarian shall be appointed by the Director of Agriculture. The State Veterinarian shall be the chief livestock sanitary official of the state. The department may also employ such assistant state veterinarians as may be necessary to carry out its functions. (2) The State Veterinarian and all assistant veterinarians employed by the department shall be graduates of a school of veterinary medicine accredited or approved by the Oregon State Veterinary Medical Examining Board.",
+      "history_citation_blocks": [
+        "Amended by 1955 c.557 7; 1959 c.639 11; 1967 c.276 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1955 c.557 7"
+        },
+        {
+          "raw": "1959 c.639 11",
+          "year": 1959,
+          "chapter": "639",
+          "section": "11"
+        },
+        {
+          "raw": "1967 c.276 1",
+          "year": 1967,
+          "chapter": "276",
+          "section": "1"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "There hereby is created within the State Department of Agriculture the office of State Veterinarian of the State of Oregon. The State Veterinarian shall be appointed by the Director of Agriculture. The State Veterinarian shall be the chief livestock sanitary official of the state. The department may also employ such assistant state veterinarians as may be necessary to carry out its functions.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The State Veterinarian and all assistant veterinarians employed by the department shall be graduates of a school of veterinary medicine accredited or approved by the Oregon State Veterinary Medical Examining Board.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 15,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.220",
+      "identifier": "ORS 596.220",
+      "name": "Section 596.220",
+      "text": "Deputy state veterinarians. (1) The State Department of Agriculture may deputize certain veterinarians throughout the state to assist the State Department of Agriculture in carrying out its duties. Such veterinarians shall be known as deputy state veterinarians. They shall be in the unclassified service of the state or may furnish professional services to the department as provided by ORS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The State Department of Agriculture may deputize certain veterinarians throughout the state to assist the State Department of Agriculture in carrying out its duties. Such veterinarians shall be known as deputy state veterinarians. They shall be in the unclassified service of the state or may furnish professional services to the department as provided by ORS",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 16,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.225",
+      "identifier": "ORS 596.225",
+      "name": "Section 596.225",
+      "text": "Contracting for services of deputy state veterinarian; Veterinary Medical Fee Schedule. (1) Notwithstanding other laws to the contrary, the State Department of Agriculture is authorized to enter into a contract with a deputy state veterinarian to obtain and pay for professional services in assisting the department in administering and carrying out its laws, including but not limited to testing and vaccination of livestock. The department may agree to pay deputy state veterinarians on a fair and equitable basis, which may include the establishment of a Veterinary Medical Fee Schedule. Such schedule may include, but not be limited to: (a) Overtime fees or rates; (b) Minimum or maximum fees; (c) Amounts to be paid during certain periods of time or for certain types of service; (d) Fees based on the number of calls or the number of animals involved; or (e) Special fees for certain areas of the state or particular problems. However, as far as practical, fees shall be uniform throughout the state. (2) Notwithstanding other laws to the contrary, if a deputy state veterinarian is employed by another veterinarian, or by another firm of veterinarians, is a member of a partnership of veterinarians, or is an employee of the College of Veterinary Medicine, Oregon State University, the department may enter into a contract with the employing entity or partnership for the furnishing of professional veterinary services to the department. The department may pay the employing entity or partnership for professional services furnished in conformity with the contract. (3) Professional services furnished to the department as provided by this section shall be furnished only by a deputy state veterinarian. The deputy state veterinarian may not be an employee of the department. The self-employer, employer or partnership entity, as the case may be, shall: (a) Be responsible for and shall make all withholdings and shall pay all taxes and other deductions due governmental agencies for deputy state veterinarians. (b) Be responsible for and shall carry liability, compensation and other types of insurance covering deputy state veterinarians. (4) Deputy state veterinarians furnishing professional services as provided by this section, shall: (a) Comply with all applicable laws, rules and regulations promulgated thereunder and general instructions of the department. (b) Complete and sign all forms required by the department. (c) Be responsible to the department for the final results of their work and services. (5) The contract may be terminated by written notice to the other parties to the agreement at any time by the deputy state veterinarian, the employer or partnership, or the department.",
+      "history_citation_blocks": [
+        "1961 c.219 3; 1971 c.483 3; 1983 c.101 2; 2003 c.14 357"
+      ],
+      "history_citations": [
+        {
+          "raw": "1961 c.219 3",
+          "year": 1961,
+          "chapter": "219",
+          "section": "3"
+        },
+        {
+          "raw": "1971 c.483 3",
+          "year": 1971,
+          "chapter": "483",
+          "section": "3"
+        },
+        {
+          "raw": "1983 c.101 2",
+          "year": 1983,
+          "chapter": "101",
+          "section": "2"
+        },
+        {
+          "raw": "2003 c.14 357",
+          "year": 2003,
+          "chapter": "14",
+          "section": "357"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Notwithstanding other laws to the contrary, the State Department of Agriculture is authorized to enter into a contract with a deputy state veterinarian to obtain and pay for professional services in assisting the department in administering and carrying out its laws, including but not limited to testing and vaccination of livestock. The department may agree to pay deputy state veterinarians on a fair and equitable basis, which may include the establishment of a Veterinary Medical Fee Schedule. Such schedule may include, but not be limited to:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Overtime fees or rates;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Minimum or maximum fees;",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Amounts to be paid during certain periods of time or for certain types of service;",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "Fees based on the number of calls or the number of animals involved; or",
+              "subsections": []
+            },
+            {
+              "label": "(e)",
+              "token": "e",
+              "kind": "alpha_lower",
+              "text": "Special fees for certain areas of the state or particular problems. However, as far as practical, fees shall be uniform throughout the state.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Notwithstanding other laws to the contrary, if a deputy state veterinarian is employed by another veterinarian, or by another firm of veterinarians, is a member of a partnership of veterinarians, or is an employee of the College of Veterinary Medicine, Oregon State University, the department may enter into a contract with the employing entity or partnership for the furnishing of professional veterinary services to the department. The department may pay the employing entity or partnership for professional services furnished in conformity with the contract.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Professional services furnished to the department as provided by this section shall be furnished only by a deputy state veterinarian. The deputy state veterinarian may not be an employee of the department. The self-employer, employer or partnership entity, as the case may be, shall:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Be responsible for and shall make all withholdings and shall pay all taxes and other deductions due governmental agencies for deputy state veterinarians.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Be responsible for and shall carry liability, compensation and other types of insurance covering deputy state veterinarians.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Deputy state veterinarians furnishing professional services as provided by this section, shall:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Comply with all applicable laws, rules and regulations promulgated thereunder and general instructions of the department.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Complete and sign all forms required by the department.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Be responsible to the department for the final results of their work and services.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "The contract may be terminated by written notice to the other parties to the agreement at any time by the deputy state veterinarian, the employer or partnership, or the department.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 17,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.230",
+      "identifier": "ORS 596.230",
+      "name": "Section 596.230",
+      "text": "Duties of deputy veterinarians. (1) Deputy state veterinarians shall assist the State Department of Agriculture in carrying out the duties imposed upon it by any law of this state when requested to do so by the State Veterinarian. Within the scope of the authority delegated to them by the State Veterinarian, deputy state veterinarians shall possess the powers and authority conferred upon regularly employed state veterinarians by any law of this state. Deputy state veterinarians, when carrying out the duties assigned to them, are subject to the direction and control of the State Veterinarian. (2) Only deputy state veterinarians are eligible for approval by the department for the performance of duties requiring the services of a veterinarian by any law of this state, the administration of which is vested in the department.",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Deputy state veterinarians shall assist the State Department of Agriculture in carrying out the duties imposed upon it by any law of this state when requested to do so by the State Veterinarian. Within the scope of the authority delegated to them by the State Veterinarian, deputy state veterinarians shall possess the powers and authority conferred upon regularly employed state veterinarians by any law of this state. Deputy state veterinarians, when carrying out the duties assigned to them, are subject to the direction and control of the State Veterinarian.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Only deputy state veterinarians are eligible for approval by the department for the performance of duties requiring the services of a veterinarian by any law of this state, the administration of which is vested in the department.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 18,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.240",
+      "identifier": "ORS 596.240",
+      "name": "Section 596.240",
+      "text": "[Repealed by 1961 c.219 4]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 19,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.250",
+      "identifier": "ORS 596.250",
+      "name": "Section 596.250",
+      "text": "Revocation or suspension of appointment of deputy veterinarian. (1) The appointment of a person as a deputy state veterinarian is effective until the person submits a written resignation to the State Department of Agriculture or until the department revokes or suspends the appointment for one of the following causes: (a) The revocation or suspension of the veterinarians license to practice veterinary medicine in this state. A deputy state veterinarian whose license is suspended may apply for reinstatement of the appointment when the license is reinstated. The department may not refuse to reinstate an appointment as a deputy state veterinarian without good cause. (b) An unwarranted refusal to carry out reasonable requests by the department to perform specific duties. (c) The withdrawal by any person as surety for a deputy state veterinarian. (d) In the case of a veterinarian employed by the United States Department of Agriculture, a termination of the employment of the veterinarian by that agency or the removal of the veterinarian from the state. (e) Failure to use reasonable diligence in the execution of duties imposed upon the deputy state veterinarian by: (A) Any law of this state that the deputy state veterinarian has been directed to perform by the State Veterinarian; or (B) An appointment pursuant to the provisions of any law requiring the appointment of a veterinarian and administered by the department. (f) The fraudulent use or misuse of any health certificate, shipping certificate or other blank forms used in practice that might lead to the dissemination of disease or the transportation of diseased livestock or the sale of inedible food products of animal origin for human consumption. (g) Dilatory methods, willful neglect or misrepresentation in the inspection of meat. (h) Misrepresentation of services rendered. (i) Failure to report or the negligent handling of any disease of livestock that is required to be reported under ORS 596.321. (j) Sale or other unauthorized disposal by the veterinarian of any material, product or medicine furnished to the veterinarian by the department for use in the performance of duties as employee or officer of the department. (k) Violation of ORS 596.075. (2) The department may not revoke an appointment without a hearing as provided in ORS chapter 561, except that in case of revocation for causes specified in subsection (1)(a), (c), (d) or (k) of this section, it is sufficient to give notice in writing of the revocation of appointment.",
+      "history_citation_blocks": [
+        "Amended by 1955 c.557 8; 2001 c.27 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1955 c.557 8"
+        },
+        {
+          "raw": "2001 c.27 1",
+          "year": 2001,
+          "chapter": "27",
+          "section": "1"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The appointment of a person as a deputy state veterinarian is effective until the person submits a written resignation to the State Department of Agriculture or until the department revokes or suspends the appointment for one of the following causes: (a),",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "The revocation or suspension of the veterinarians license to practice veterinary medicine in this state. A deputy state veterinarian whose license is suspended may apply for reinstatement of the appointment when the license is reinstated. The department may not refuse to reinstate an appointment as a deputy state veterinarian without good cause.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "An unwarranted refusal to carry out reasonable requests by the department to perform specific duties.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "The withdrawal by any person as surety for a deputy state veterinarian. ,",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "In the case of a veterinarian employed by the United States Department of Agriculture, a termination of the employment of the veterinarian by that agency or the removal of the veterinarian from the state.",
+              "subsections": []
+            },
+            {
+              "label": "(e)",
+              "token": "e",
+              "kind": "alpha_lower",
+              "text": "Failure to use reasonable diligence in the execution of duties imposed upon the deputy state veterinarian by:",
+              "subsections": [
+                {
+                  "label": "(A)",
+                  "token": "A",
+                  "kind": "alpha_upper",
+                  "text": "Any law of this state that the deputy state veterinarian has been directed to perform by the State Veterinarian; or",
+                  "subsections": []
+                },
+                {
+                  "label": "(B)",
+                  "token": "B",
+                  "kind": "alpha_upper",
+                  "text": "An appointment pursuant to the provisions of any law requiring the appointment of a veterinarian and administered by the department.",
+                  "subsections": []
+                }
+              ]
+            },
+            {
+              "label": "(f)",
+              "token": "f",
+              "kind": "alpha_lower",
+              "text": "The fraudulent use or misuse of any health certificate, shipping certificate or other blank forms used in practice that might lead to the dissemination of disease or the transportation of diseased livestock or the sale of inedible food products of animal origin for human consumption.",
+              "subsections": []
+            },
+            {
+              "label": "(g)",
+              "token": "g",
+              "kind": "alpha_lower",
+              "text": "Dilatory methods, willful neglect or misrepresentation in the inspection of meat.",
+              "subsections": []
+            },
+            {
+              "label": "(h)",
+              "token": "h",
+              "kind": "alpha_lower",
+              "text": "Misrepresentation of services rendered.",
+              "subsections": []
+            },
+            {
+              "label": "(i)",
+              "token": "i",
+              "kind": "alpha_lower",
+              "text": "Failure to report or the negligent handling of any disease of livestock that is required to be reported under ORS 596.321.",
+              "subsections": []
+            },
+            {
+              "label": "(j)",
+              "token": "j",
+              "kind": "alpha_lower",
+              "text": "Sale or other unauthorized disposal by the veterinarian of any material, product or medicine furnished to the veterinarian by the department for use in the performance of duties as employee or officer of the department.",
+              "subsections": []
+            },
+            {
+              "label": "(k)",
+              "token": "k",
+              "kind": "alpha_lower",
+              "text": "Violation of ORS 596.075. of this section, it is sufficient to give notice in writing of the revocation of appointment.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The department may not revoke an appointment without a hearing as provided in ORS chapter 561, except that in case of revocation for causes specified in subsection",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 20,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.260",
+      "identifier": "ORS 596.260",
+      "name": "Section 596.260",
+      "text": "Deputy state veterinary technicians. (1) As used in this section, veterinary technician has the meaning given that term in ORS 686.010. (2) The State Department of Agriculture may deputize certain veterinary technicians throughout this state to assist the department in carrying out its duties. Such veterinary technicians shall be known as deputy state veterinary technicians. (3) A person desiring an appointment as a deputy state veterinary technician shall apply to the department on forms provided by the department. The department may require on the application all pertinent information the department deems necessary. (4) Notwithstanding other laws to the contrary, the department is authorized to enter into a contract with a deputy state veterinary technician to obtain and pay for professional services in assisting the department in administering and carrying out its duties. The department may agree to pay deputy state veterinary technicians on a fair and equitable basis, which may include the establishment of a Veterinary Technician Medical Fee Schedule. Such schedule may include, but not be limited to: (a) Overtime fees or rates; (b) Minimum or maximum fees; (c) Amounts to be paid during certain periods of time or for certain types of service; (d) Fees based on the number of calls or the number of animals involved; or (e) Special fees for certain areas of the state or particular problems. However, as far as practical, fees shall be uniform throughout the state. (5) Notwithstanding other laws to the contrary, if a deputy state veterinary technician is employed by a veterinarian, or by a firm of veterinarians, or is an employee of the College of Veterinary Medicine or Oregon State University, the department may enter into a contract with the employing entity for the furnishing of professional veterinary technician services to the department. The department may pay the employing entity for professional services furnished in conformity with the contract. (6) Deputy state veterinary technicians shall assist the department in carrying out the duties imposed upon the department by any law of this state when requested to do so by the State Veterinarian or deputy state veterinarians. Within the scope of the authority delegated to them by the State Veterinarian, deputy state veterinary technicians shall possess the powers and authority conferred upon regularly employed veterinary technicians by any law of this state. Deputy state veterinary technicians, when carrying out the duties assigned to them, are subject to the direction and control of the State Veterinarian or deputy state veterinarians. (7) The appointment of a person as a deputy state veterinary technician is effective until the person submits a written resignation to the State Department of Agriculture or until the department revokes or suspends the appointment under ORS 596.262. [2021 c.27 1] Note:",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "As used in this section, veterinary technician has the meaning given that term in ORS 686.010.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The State Department of Agriculture may deputize certain veterinary technicians throughout this state to assist the department in carrying out its duties. Such veterinary technicians shall be known as deputy state veterinary technicians.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "A person desiring an appointment as a deputy state veterinary technician shall apply to the department on forms provided by the department. The department may require on the application all pertinent information the department deems necessary.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Notwithstanding other laws to the contrary, the department is authorized to enter into a contract with a deputy state veterinary technician to obtain and pay for professional services in assisting the department in administering and carrying out its duties. The department may agree to pay deputy state veterinary technicians on a fair and equitable basis, which may include the establishment of a Veterinary Technician Medical Fee Schedule. Such schedule may include, but not be limited to:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Overtime fees or rates;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Minimum or maximum fees;",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Amounts to be paid during certain periods of time or for certain types of service;",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "Fees based on the number of calls or the number of animals involved; or",
+              "subsections": []
+            },
+            {
+              "label": "(e)",
+              "token": "e",
+              "kind": "alpha_lower",
+              "text": "Special fees for certain areas of the state or particular problems. However, as far as practical, fees shall be uniform throughout the state.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "Notwithstanding other laws to the contrary, if a deputy state veterinary technician is employed by a veterinarian, or by a firm of veterinarians, or is an employee of the College of Veterinary Medicine or Oregon State University, the department may enter into a contract with the employing entity for the furnishing of professional veterinary technician services to the department. The department may pay the employing entity for professional services furnished in conformity with the contract.",
+          "subsections": []
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "Deputy state veterinary technicians shall assist the department in carrying out the duties imposed upon the department by any law of this state when requested to do so by the State Veterinarian or deputy state veterinarians. Within the scope of the authority delegated to them by the State Veterinarian, deputy state veterinary technicians shall possess the powers and authority conferred upon regularly employed veterinary technicians by any law of this state. Deputy state veterinary technicians, when carrying out the duties assigned to them, are subject to the direction and control of the State Veterinarian or deputy state veterinarians.",
+          "subsections": []
+        },
+        {
+          "label": "(7)",
+          "token": "7",
+          "kind": "numeric",
+          "text": "The appointment of a person as a deputy state veterinary technician is effective until the person submits a written resignation to the State Department of Agriculture or until the department revokes or suspends the appointment under ORS 596.262. [2021 c.27 1] Note:",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 21,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.262",
+      "identifier": "ORS 596.262",
+      "name": "Section 596.262",
+      "text": "Resignation, revocation or suspension of appointment of deputy state veterinary technician. (1) The appointment of a person as a deputy state veterinary technician is effective until the person submits a written resignation to the State Department of Agriculture or until the department revokes or suspends the appointment for one of the following causes: (a) The revocation or suspension of the veterinary technicians license. A deputy state veterinary technician whose license is suspended may apply for reinstatement of the appointment when the license is reinstated. The department may not refuse to reinstate an appointment as a deputy state veterinary technician without good cause. (b) An unwarranted refusal to carry out reasonable requests by the department to perform specific duties. (c) In the case of a veterinary technician employed by the United States Department of Agriculture, a termination of the employment of the veterinary technician by that agency or the removal of the veterinary technician from the state. (d) Failure to use reasonable diligence in the execution of duties imposed upon the deputy state veterinary technician by: (A) Any law of this state that the deputy state veterinary technician has been directed to administer or carry out by the State Veterinarian; or (B) An appointment pursuant to the provisions of any law requiring the appointment of a veterinary technician and administered by the department. (e) The fraudulent use or misuse of any health certificate, shipping certificate or other blank forms used in practice that might lead to the dissemination of disease or the transportation of diseased livestock or the sale of inedible food products of animal origin for human consumption. (f) Dilatory methods, willful neglect or misrepresentation in the inspection of meat. (g) Misrepresentation of services rendered. (h) Failure to report or the negligent handling of any disease of livestock that is required to be reported under ORS 596.321. (i) Sale or other unauthorized disposal by the veterinary technician of any material, product or medicine furnished to the veterinary technician by the department for use in the performance of duties as employee or officer of the department. (j) Violation of ORS 596.075. (2) The department may not revoke an appointment without a hearing, except that in case of revocation for causes specified in subsection (1)(a), (c) or (j) of this section, it is sufficient to give notice in writing of the revocation of appointment. [2021 c.27 2] Note: See note under",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The appointment of a person as a deputy state veterinary technician is effective until the person submits a written resignation to the State Department of Agriculture or until the department revokes or suspends the appointment for one of the following causes: (a),",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "The revocation or suspension of the veterinary technicians license. A deputy state veterinary technician whose license is suspended may apply for reinstatement of the appointment when the license is reinstated. The department may not refuse to reinstate an appointment as a deputy state veterinary technician without good cause.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "An unwarranted refusal to carry out reasonable requests by the department to perform specific duties.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "In the case of a veterinary technician employed by the United States Department of Agriculture, a termination of the employment of the veterinary technician by that agency or the removal of the veterinary technician from the state.",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "Failure to use reasonable diligence in the execution of duties imposed upon the deputy state veterinary technician by:",
+              "subsections": [
+                {
+                  "label": "(A)",
+                  "token": "A",
+                  "kind": "alpha_upper",
+                  "text": "Any law of this state that the deputy state veterinary technician has been directed to administer or carry out by the State Veterinarian; or",
+                  "subsections": []
+                },
+                {
+                  "label": "(B)",
+                  "token": "B",
+                  "kind": "alpha_upper",
+                  "text": "An appointment pursuant to the provisions of any law requiring the appointment of a veterinary technician and administered by the department.",
+                  "subsections": []
+                }
+              ]
+            },
+            {
+              "label": "(e)",
+              "token": "e",
+              "kind": "alpha_lower",
+              "text": "The fraudulent use or misuse of any health certificate, shipping certificate or other blank forms used in practice that might lead to the dissemination of disease or the transportation of diseased livestock or the sale of inedible food products of animal origin for human consumption.",
+              "subsections": []
+            },
+            {
+              "label": "(f)",
+              "token": "f",
+              "kind": "alpha_lower",
+              "text": "Dilatory methods, willful neglect or misrepresentation in the inspection of meat.",
+              "subsections": []
+            },
+            {
+              "label": "(g)",
+              "token": "g",
+              "kind": "alpha_lower",
+              "text": "Misrepresentation of services rendered.",
+              "subsections": []
+            },
+            {
+              "label": "(h)",
+              "token": "h",
+              "kind": "alpha_lower",
+              "text": "Failure to report or the negligent handling of any disease of livestock that is required to be reported under ORS 596.321.",
+              "subsections": []
+            },
+            {
+              "label": "(i)",
+              "token": "i",
+              "kind": "alpha_lower",
+              "text": "Sale or other unauthorized disposal by the veterinary technician of any material, product or medicine furnished to the veterinary technician by the department for use in the performance of duties as employee or officer of the department.",
+              "subsections": []
+            },
+            {
+              "label": "(j)",
+              "token": "j",
+              "kind": "alpha_lower",
+              "text": "Violation of ORS 596.075. of this section, it is sufficient to give notice in writing of the revocation of appointment. [2021 c.27 2] Note: See note under",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The department may not revoke an appointment without a hearing, except that in case of revocation for causes specified in subsection",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 22,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.310",
+      "identifier": "ORS 596.310",
+      "name": "Section 596.310",
+      "text": "[Repealed by 1955 c.557 9 (596.311 enacted in lieu of 596.310)] CONTROL AND ERADICATION OF CONTAGIOUS DISEASES",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 23,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.311",
+      "identifier": "ORS 596.311",
+      "name": "Section 596.311",
+      "text": "Examination, testing or treatment of livestock at owners request before shipment; issuance of health certificates; collection and disposition of fees. (1) Deputy state veterinarians may: (a) Examine, test or treat livestock for intrastate or interstate shipment, when requested so to do by the owner or shipper for a fee payable to the veterinarian by the person requesting the examination, testing or treatment. (b) Issue official health certificates on forms and subject to the rules and regulations of the State Department of Agriculture with reference thereto. (2) If a deputy state veterinarian is not available for the purpose of subsection (1) of this section, assistant state veterinarians may examine, test or treat livestock at the request of the owner or shipper. The department shall be paid a reasonable fee to compensate it for all costs incurred in furnishing this service. (3) The department shall prepare and cause to have printed health certificate forms or blanks which shall be distributed without charge to deputy state veterinarians. (4) All moneys received by the department under this section shall be deposited in the State Treasury and credited to the Department of Agriculture Service Fund, and such funds are appropriated continuously to the department for administering and enforcing the provisions of this chapter.",
+      "history_citation_blocks": [
+        "1955 c.557 10 (enacted in lieu of 596.310); 1979 c.499 12"
+      ],
+      "history_citations": [
+        {
+          "raw": "1955 c.557 10 (enacted in lieu of 596.310)"
+        },
+        {
+          "raw": "1979 c.499 12",
+          "year": 1979,
+          "chapter": "499",
+          "section": "12"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Deputy state veterinarians may: of this section, assistant state veterinarians may examine, test or treat livestock at the request of the owner or shipper. The department shall be paid a reasonable fee to compensate it for all costs incurred in furnishing this service.",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Examine, test or treat livestock for intrastate or interstate shipment, when requested so to do by the owner or shipper for a fee payable to the veterinarian by the person requesting the examination, testing or treatment.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Issue official health certificates on forms and subject to the rules and regulations of the State Department of Agriculture with reference thereto.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "If a deputy state veterinarian is not available for the purpose of subsection",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The department shall prepare and cause to have printed health certificate forms or blanks which shall be distributed without charge to deputy state veterinarians.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "All moneys received by the department under this section shall be deposited in the State Treasury and credited to the Department of Agriculture Service Fund, and such funds are appropriated continuously to the department for administering and enforcing the provisions of this chapter.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 24,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.320",
+      "identifier": "ORS 596.320",
+      "name": "Section 596.320",
+      "text": "[Repealed by 1955 c.557 11 (596.321 enacted in lieu of 596.320)]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 25,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.321",
+      "identifier": "ORS 596.321",
+      "name": "Section 596.321",
+      "text": "Rules governing vaccinations and reporting of listed livestock diseases. (1) The State Department of Agriculture shall enact rules and regulations: (a) Containing a list of livestock diseases that must be reported to the department by any person practicing veterinary medicine in this state. (b) Concerning the time and manner of reporting livestock diseases and any other information considered reasonably necessary by the department. (c) Regarding the time and manner of vaccinating female cattle against brucellosis. (2) Any person practicing veterinary medicine in this state, having knowledge of the existence of any livestock disease listed pursuant to subsection (1) of this section, shall immediately report the disease to the department in the manner provided by rule or regulation. [1955 c.557 12 (enacted in lieu of",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The State Department of Agriculture shall enact rules and regulations: of this section, shall immediately report the disease to the department in the manner provided by rule or regulation. [1955 c.557 12 (enacted in lieu of",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Containing a list of livestock diseases that must be reported to the department by any person practicing veterinary medicine in this state.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Concerning the time and manner of reporting livestock diseases and any other information considered reasonably necessary by the department.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Regarding the time and manner of vaccinating female cattle against brucellosis.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Any person practicing veterinary medicine in this state, having knowledge of the existence of any livestock disease listed pursuant to subsection",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 26,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.330",
+      "identifier": "ORS 596.330",
+      "name": "Section 596.330",
+      "text": "[Repealed by 1955 c.557 36]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 27,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.331",
+      "identifier": "ORS 596.331",
+      "name": "Section 596.331",
+      "text": "Prohibition against disposing of diseased livestock or parts of quarantined livestock; exceptions. (1) A person may not sell, offer to sell or dispose of any livestock that the person knows to be exposed to, a carrier of or infected with any disease required to be reported under ORS 596.321, except: (a) To a slaughterer or to a rendering plant; or (b) Pursuant to, and as authorized by, a quarantine order. (2) A person may not sell, offer to sell or dispose of the meat, milk or other parts of any livestock, quarantined by the State Department of Agriculture, for food or other purposes, except as authorized by the quarantine order.",
+      "history_citation_blocks": [
+        "1955 c.557 14 (enacted in lieu of 596.340); 1983 c.79 2; 1985 c.91 1; 1987 c.909 1; 1991 c.420 2; 1999 c.102 2; 2001 c.22 2; 2003 c.14 358; 2023 c.146 2"
+      ],
+      "history_citations": [
+        {
+          "raw": "1955 c.557 14 (enacted in lieu of 596.340)"
+        },
+        {
+          "raw": "1983 c.79 2",
+          "year": 1983,
+          "chapter": "79",
+          "section": "2"
+        },
+        {
+          "raw": "1985 c.91 1",
+          "year": 1985,
+          "chapter": "91",
+          "section": "1"
+        },
+        {
+          "raw": "1987 c.909 1",
+          "year": 1987,
+          "chapter": "909",
+          "section": "1"
+        },
+        {
+          "raw": "1991 c.420 2",
+          "year": 1991,
+          "chapter": "420",
+          "section": "2"
+        },
+        {
+          "raw": "1999 c.102 2",
+          "year": 1999,
+          "chapter": "102",
+          "section": "2"
+        },
+        {
+          "raw": "2001 c.22 2",
+          "year": 2001,
+          "chapter": "22",
+          "section": "2"
+        },
+        {
+          "raw": "2003 c.14 358",
+          "year": 2003,
+          "chapter": "14",
+          "section": "358"
+        },
+        {
+          "raw": "2023 c.146 2",
+          "year": 2023,
+          "chapter": "146",
+          "section": "2"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A person may not sell, offer to sell or dispose of any livestock that the person knows to be exposed to, a carrier of or infected with any disease required to be reported under ORS 596.321, except:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "To a slaughterer or to a rendering plant; or",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Pursuant to, and as authorized by, a quarantine order.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "A person may not sell, offer to sell or dispose of the meat, milk or other parts of any livestock, quarantined by the State Department of Agriculture, for food or other purposes, except as authorized by the quarantine order.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 28,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.340",
+      "identifier": "ORS 596.340",
+      "name": "Section 596.340",
+      "text": "[Repealed by 1955 c.557 13 (596.331 enacted in lieu of 596.340)]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 29,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.341",
+      "identifier": "ORS 596.341",
+      "name": "Section 596.341",
+      "text": "Examination, testing or treatment of livestock before entry into state; permit requirements; conditions and exemptions. (1) In addition to the permit required by subsection (2) of this section, the State Department of Agriculture may cause livestock to be tested, treated or examined as a condition of entry into this state and may, as evidence of that test, treatment or examination, require the presentation of a certificate of an official of the state of origin designated by the department or of a veterinary inspector of the federal government. (2) The department shall require a written permit authorizing entry into this state of any livestock or other animals subject to the disease control law and not exempt under subsection (3) of this section. The permit shall be issued upon condition that: (a) The consignee, owner or purchaser hold the imported livestock upon the arrival of the livestock in this state subject to direction of the department pending completion of the testing, treatment or examination of the livestock; (b) The livestock be disposed of in accordance with the laws of this state and the rules of the department, if the livestock is found to be infected with, exposed to, or a carrier of, a disease; and (c) The consignee, owner or purchaser complies with the rules promulgated by the department to enforce the intent of this chapter. (3) The department may exempt the following classes of livestock or other animals subject to the disease control law from the requirements of this section: (a) Livestock that is consigned to and will be slaughtered by a licensed slaughterer within eight days after entry into this state. (b) Livestock in uninterrupted transit through the state, provided that stops may be made for feed, water and rest. (c) Livestock consigned to an Oregon auction market licensed under ORS chapter 599 where approved veterinary inspection is in force. (d) Dogs, cats or small caged birds traveling in a family vehicle as part of that social entity. (e) Any animals that the department determines do not pose a disease threat.",
+      "history_citation_blocks": [
+        "1955 c.557 16 (596.341, 596.351 and 596.361 enacted in lieu of 596.350); 1973 c.2 1; 1975 c.572 1; 1983 c.101 3; 1985 c.91 2; 1987 c.909 2; 1991 c.420 3; 1999 c.102 3,3a; 2001 c.22 3; 2023 c.146 3"
+      ],
+      "history_citations": [
+        {
+          "raw": "1955 c.557 16 (596.341, 596.351 and 596.361 enacted in lieu of 596.350)"
+        },
+        {
+          "raw": "1973 c.2 1",
+          "year": 1973,
+          "chapter": "2",
+          "section": "1"
+        },
+        {
+          "raw": "1975 c.572 1",
+          "year": 1975,
+          "chapter": "572",
+          "section": "1"
+        },
+        {
+          "raw": "1983 c.101 3",
+          "year": 1983,
+          "chapter": "101",
+          "section": "3"
+        },
+        {
+          "raw": "1985 c.91 2",
+          "year": 1985,
+          "chapter": "91",
+          "section": "2"
+        },
+        {
+          "raw": "1987 c.909 2",
+          "year": 1987,
+          "chapter": "909",
+          "section": "2"
+        },
+        {
+          "raw": "1991 c.420 3",
+          "year": 1991,
+          "chapter": "420",
+          "section": "3"
+        },
+        {
+          "raw": "1999 c.102 3,3a"
+        },
+        {
+          "raw": "2001 c.22 3",
+          "year": 2001,
+          "chapter": "22",
+          "section": "3"
+        },
+        {
+          "raw": "2023 c.146 3",
+          "year": 2023,
+          "chapter": "146",
+          "section": "3"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "In addition to the permit required by subsection",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "of this section, the State Department of Agriculture may cause livestock to be tested, treated or examined as a condition of entry into this state and may, as evidence of that test, treatment or examination, require the presentation of a certificate of an official of the state of origin designated by the department or of a veterinary inspector of the federal government. The department shall require a written permit authorizing entry into this state of any livestock or other animals subject to the disease control law and not exempt under subsection",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "of this section. The permit shall be issued upon condition that: The department may exempt the following classes of livestock or other animals subject to the disease control law from the requirements of this section:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "The consignee, owner or purchaser hold the imported livestock upon the arrival of the livestock in this state subject to direction of the department pending completion of the testing, treatment or examination of the livestock; Livestock that is consigned to and will be slaughtered by a licensed slaughterer within eight days after entry into this state.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "The livestock be disposed of in accordance with the laws of this state and the rules of the department, if the livestock is found to be infected with, exposed to, or a carrier of, a disease; and Livestock in uninterrupted transit through the state, provided that stops may be made for feed, water and rest.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "The consignee, owner or purchaser complies with the rules promulgated by the department to enforce the intent of this chapter. Livestock consigned to an Oregon auction market licensed under ORS chapter 599 where approved veterinary inspection is in force.",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "Dogs, cats or small caged birds traveling in a family vehicle as part of that social entity.",
+              "subsections": []
+            },
+            {
+              "label": "(e)",
+              "token": "e",
+              "kind": "alpha_lower",
+              "text": "Any animals that the department determines do not pose a disease threat.",
+              "subsections": []
+            }
+          ]
+        }
+      ],
+      "parser_warnings": [],
+      "position": 30,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.343",
+      "identifier": "ORS 596.343",
+      "name": "Section 596.343",
+      "text": "Testing sheep for Akabane Virus. In carrying out the provisions of this chapter, unless the State Department of Agriculture determines, upon the advice of appropriate federal animal health authorities, that no significant threat to the health of the livestock of this state exists, the department shall cause all sheep entering this state that are not exempt pursuant to ORS 596.341 (3) to be examined or tested for Akabane Virus.",
+      "history_citation_blocks": [
+        "1987 c.909 6"
+      ],
+      "history_citations": [
+        {
+          "raw": "1987 c.909 6",
+          "year": 1987,
+          "chapter": "909",
+          "section": "6"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "to be examined or tested for Akabane Virus.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 31,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.346",
+      "identifier": "ORS 596.346",
+      "name": "Section 596.346",
+      "text": "Permit requirements and application form; material to be submitted with application. Application for permits shall be made to the State Department of Agriculture on forms prescribed by the department. Should there be insufficient time to use United States mail, permits may be applied for by telegram or by telephone. No livestock shall be transported into this state without a permit having been issued by the department. At the time of application for a permit, the department may require a health certificate, or other transportation document, which shall have the permit numbers entered thereon prior to shipment of the livestock into this state.",
+      "history_citation_blocks": [
+        "1973 c.2 4"
+      ],
+      "history_citations": [
+        {
+          "raw": "1973 c.2 4",
+          "year": 1973,
+          "chapter": "2",
+          "section": "4"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 32,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.350",
+      "identifier": "ORS 596.350",
+      "name": "Section 596.350",
+      "text": "[Repealed by 1955 c.557 15 (596.341, 596.351 and 596.361 enacted in lieu of 596.350)]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 33,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.351",
+      "identifier": "ORS 596.351",
+      "name": "Section 596.351",
+      "text": "Prohibited acts relating to livestock importation. No person shall: (1) Knowingly import or cause to be imported into this state any livestock exposed to, infected with or a carrier of disease. (2) Bring any livestock into this state unless the bill of lading, health certificate or other document of shipment is accompanied by the permit required under ORS 596.341 or permit number entered thereon. (3) Fail to test, treat, examine or otherwise comply with the conditions of a permit under ORS 596.341.",
+      "history_citation_blocks": [
+        "1955 c.557 17 (596.341, 596.351 and 596.361 enacted in lieu of 596.350); 1973 c.2 2; 1985 c.91 3; 2001 c.22 4; 2023 c.146 4"
+      ],
+      "history_citations": [
+        {
+          "raw": "1955 c.557 17 (596.341, 596.351 and 596.361 enacted in lieu of 596.350)"
+        },
+        {
+          "raw": "1973 c.2 2",
+          "year": 1973,
+          "chapter": "2",
+          "section": "2"
+        },
+        {
+          "raw": "1985 c.91 3",
+          "year": 1985,
+          "chapter": "91",
+          "section": "3"
+        },
+        {
+          "raw": "2001 c.22 4",
+          "year": 2001,
+          "chapter": "22",
+          "section": "4"
+        },
+        {
+          "raw": "2023 c.146 4",
+          "year": 2023,
+          "chapter": "146",
+          "section": "4"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Knowingly import or cause to be imported into this state any livestock exposed to, infected with or a carrier of disease.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Bring any livestock into this state unless the bill of lading, health certificate or other document of shipment is accompanied by the permit required under ORS 596.341 or permit number entered thereon.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Fail to test, treat, examine or otherwise comply with the conditions of a permit under ORS 596.341.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 34,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.355",
+      "identifier": "ORS 596.355",
+      "name": "Section 596.355",
+      "text": "Prohibition against importation of livestock from quarantined area. No person shall import into this state any livestock from an area of any other state, territory or country which has been placed under quarantine by the United States Department of Agriculture or by the state, territory or country of origin in violation of the rules of the United States Department of Agriculture or of the state, territory or country of origin.",
+      "history_citation_blocks": [
+        "1955 c.557 34"
+      ],
+      "history_citations": [
+        {
+          "raw": "1955 c.557 34",
+          "year": 1955,
+          "chapter": "557",
+          "section": "34"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 35,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.360",
+      "identifier": "ORS 596.360",
+      "name": "Section 596.360",
+      "text": "[Repealed by 1955 c.557 36]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 36,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.361",
+      "identifier": "ORS 596.361",
+      "name": "Section 596.361",
+      "text": "Summary quarantine of livestock imported in violation of ORS 596.351; disposal of diseased livestock. (1) The State Department of Agriculture may summarily quarantine any livestock imported into this state in violation of ORS 596.351 or any rules of the department under that section. The department may require as a condition preceding the release of livestock from quarantine, that the livestock be tested, treated or examined in accordance with the rules of the department. (2) Imported livestock which is exposed to, infected with or a carrier of disease shall be disposed of as provided by law. [1955 c.557 18 (596.341, 596.351 and",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The State Department of Agriculture may summarily quarantine any livestock imported into this state in violation of ORS 596.351 or any rules of the department under that section. The department may require as a condition preceding the release of livestock from quarantine, that the livestock be tested, treated or examined in accordance with the rules of the department.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Imported livestock which is exposed to, infected with or a carrier of disease shall be disposed of as provided by law. [1955 c.557 18 (596.341, 596.351 and",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 37,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.370",
+      "identifier": "ORS 596.370",
+      "name": "Section 596.370",
+      "text": "[Repealed by 1955 c.557 19 (596.371 enacted in lieu of 596.370)]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 38,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.371",
+      "identifier": "ORS 596.371",
+      "name": "Section 596.371",
+      "text": "Treatment of diseased livestock by owner; notice; treatment by department; lien for treatment. (1) Whenever the owner or person having control of livestock receives notice from the State Department of Agriculture that the livestock must be treated for disease, the owner or person having control shall, within the time prescribed in the notice, cause the livestock to be treated in the manner prescribed by the department. (2) If any person fails to comply with the notice, the department may cause the livestock to be treated and, where necessary to carry out the treatment, cause its removal to a more convenient location. (3) No person shall fail to treat livestock owned or controlled by the person in the manner prescribed by rule of the department. (4) The department shall have a lien on any livestock treated under this section for the value of the labor, materials, medicines or services furnished in connection with the treatment. The lien shall be perfected and enforced as provided in ORS 87.216 to 87.346, except that: (a) The department shall file a written notice of claim of lien as provided in ORS 87.242 with the Secretary of State within 30 days from the date of furnishing the labor, materials, medicines or services. The Secretary of State shall include a notice of claim of lien that is filed with the secretary under this subsection in the index maintained by the secretary for filing financing statements pursuant to ORS chapter 79. (b) The lien created by this subsection shall have priority over all other liens upon such livestock, except tax liens. (5) The department shall not charge as an item of expense in connection with such treatment for any services rendered by an assistant state veterinarian or the State Veterinarian relative thereto, nor shall the department have a lien for such services upon any livestock as provided in this section.",
+      "history_citation_blocks": [
+        "1955 c.557 20 (enacted in lieu of 596.370); 1983 c.740 228; 2001 c.301 24"
+      ],
+      "history_citations": [
+        {
+          "raw": "1955 c.557 20 (enacted in lieu of 596.370)"
+        },
+        {
+          "raw": "1983 c.740 228",
+          "year": 1983,
+          "chapter": "740",
+          "section": "228"
+        },
+        {
+          "raw": "2001 c.301 24",
+          "year": 2001,
+          "chapter": "301",
+          "section": "24"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Whenever the owner or person having control of livestock receives notice from the State Department of Agriculture that the livestock must be treated for disease, the owner or person having control shall, within the time prescribed in the notice, cause the livestock to be treated in the manner prescribed by the department.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "If any person fails to comply with the notice, the department may cause the livestock to be treated and, where necessary to carry out the treatment, cause its removal to a more convenient location.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "No person shall fail to treat livestock owned or controlled by the person in the manner prescribed by rule of the department.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "The department shall have a lien on any livestock treated under this section for the value of the labor, materials, medicines or services furnished in connection with the treatment. The lien shall be perfected and enforced as provided in ORS 87.216 to 87.346, except that:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "The department shall file a written notice of claim of lien as provided in ORS 87.242 with the Secretary of State within 30 days from the date of furnishing the labor, materials, medicines or services. The Secretary of State shall include a notice of claim of lien that is filed with the secretary under this subsection in the index maintained by the secretary for filing financing statements pursuant to ORS chapter 79.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "The lien created by this subsection shall have priority over all other liens upon such livestock, except tax liens.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "The department shall not charge as an item of expense in connection with such treatment for any services rendered by an assistant state veterinarian or the State Veterinarian relative thereto, nor shall the department have a lien for such services upon any livestock as provided in this section.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 39,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.380",
+      "identifier": "ORS 596.380",
+      "name": "Section 596.380",
+      "text": "[Repealed by 1955 c.557 36]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 40,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.384",
+      "identifier": "ORS 596.384",
+      "name": "Section 596.384",
+      "text": "",
+      "history_citation_blocks": [
+        "1953 c.689 2; repealed by 1955 c.557 36"
+      ],
+      "history_citations": [
+        {
+          "raw": "1953 c.689 2",
+          "year": 1953,
+          "chapter": "689",
+          "section": "2"
+        },
+        {
+          "raw": "repealed by 1955 c.557 36"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 41,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.388",
+      "identifier": "ORS 596.388",
+      "name": "Section 596.388",
+      "text": "Department to investigate cases of disease; authority of agents to enter premises. The State Department of Agriculture shall, when necessary to control or eradicate disease, investigate all cases or suspected cases of disease in livestock in this state. Employees or agents of the department in carrying out their official duties may enter any place or premises, including vehicles, to make such inspections or investigation as may be reasonably necessary to eradicate and control disease in this state.",
+      "history_citation_blocks": [
+        "1953 c.689 4; 1955 c.557 21"
+      ],
+      "history_citations": [
+        {
+          "raw": "1953 c.689 4",
+          "year": 1953,
+          "chapter": "689",
+          "section": "4"
+        },
+        {
+          "raw": "1955 c.557 21",
+          "year": 1955,
+          "chapter": "557",
+          "section": "21"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 42,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.390",
+      "identifier": "ORS 596.390",
+      "name": "Section 596.390",
+      "text": "[Repealed by 1953 c.689 13]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 43,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.392",
+      "identifier": "ORS 596.392",
+      "name": "Section 596.392",
+      "text": "Authority of department relating to disease control. The State Department of Agriculture may order and compel: (1) The destruction or treatment of any livestock that may be infected with, exposed to or may be a carrier of a disease. (2) The destruction of feed, bedding and watering and feeding troughs or receptacles, feed racks, bins, sheds or any similar property which is or may have been contaminated with a disease and may be capable of causing the transmission of the disease to other livestock, if such property cannot be disinfected or otherwise treated to adequately and effectively destroy the causative disease agent. (3) The disposal of the carcasses of livestock which have been ordered destroyed by the department in a manner which will effectively prevent the further spread of a disease. (4) The summary quarantine of any livestock which may be infected with, exposed to or the carrier of a disease and may subject such livestock to any test, treatment or other action as the department orders as a condition for release from quarantine. (5) The summary quarantine of any premises or vehicles where any livestock infected with, exposed to or a carrier of a disease are or have been confined. (6) The thorough cleaning and disinfecting of all premises or property that may be contaminated with a disease and which may be capable of causing its transmission to other livestock. The department shall prescribe the method and procedures by which such cleaning and disinfecting shall be accomplished.",
+      "history_citation_blocks": [
+        "1953 c.689 5; 1955 c.557 22"
+      ],
+      "history_citations": [
+        {
+          "raw": "1953 c.689 5",
+          "year": 1953,
+          "chapter": "689",
+          "section": "5"
+        },
+        {
+          "raw": "1955 c.557 22",
+          "year": 1955,
+          "chapter": "557",
+          "section": "22"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The destruction or treatment of any livestock that may be infected with, exposed to or may be a carrier of a disease.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The destruction of feed, bedding and watering and feeding troughs or receptacles, feed racks, bins, sheds or any similar property which is or may have been contaminated with a disease and may be capable of causing the transmission of the disease to other livestock, if such property cannot be disinfected or otherwise treated to adequately and effectively destroy the causative disease agent.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The disposal of the carcasses of livestock which have been ordered destroyed by the department in a manner which will effectively prevent the further spread of a disease.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "The summary quarantine of any livestock which may be infected with, exposed to or the carrier of a disease and may subject such livestock to any test, treatment or other action as the department orders as a condition for release from quarantine.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "The summary quarantine of any premises or vehicles where any livestock infected with, exposed to or a carrier of a disease are or have been confined.",
+          "subsections": []
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "The thorough cleaning and disinfecting of all premises or property that may be contaminated with a disease and which may be capable of causing its transmission to other livestock. The department shall prescribe the method and procedures by which such cleaning and disinfecting shall be accomplished.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 44,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.393",
+      "identifier": "ORS 596.393",
+      "name": "Section 596.393",
+      "text": "Burning or burial of carcasses to control disease. (1) An authorized representative of the State Department of Agriculture may cause the burning or burial of carcasses of animals that have died or been destroyed because of an animal disease emergency. The burning or burial shall take place at the location where the death or destruction occurred or at a site approved by the State Veterinarian. The carcasses, including those that are burned, shall be disposed of as described under ORS 601.090 (7). (2) The department shall notify state health and environmental agencies of an intended action under subsection (1) of this section. (3) As used in this section, animal disease emergency means the occurrence of a disease that the department determines has potentially serious economic implications for the livestock industries of this state. [1999 c.104 1] Note:",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "An authorized representative of the State Department of Agriculture may cause the burning or burial of carcasses of animals that have died or been destroyed because of an animal disease emergency. The burning or burial shall take place at the location where the death or destruction occurred or at a site approved by the State Veterinarian. The carcasses, including those that are burned, shall be disposed of as described under ORS 601.090 of this section.",
+          "subsections": []
+        },
+        {
+          "label": "(7)",
+          "token": "7",
+          "kind": "numeric",
+          "text": ".",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The department shall notify state health and environmental agencies of an intended action under subsection",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "As used in this section, animal disease emergency means the occurrence of a disease that the department determines has potentially serious economic implications for the livestock industries of this state. [1999 c.104 1] Note:",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 45,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.394",
+      "identifier": "ORS 596.394",
+      "name": "Section 596.394",
+      "text": "Summary quarantine of livestock and contaminated property imported into state from quarantined area; release thereof. (1) The State Department of Agriculture may order summary quarantine of any livestock and any property contaminated with disease or capable of transmitting the disease to other livestock or humans which have been imported into this state from any area under quarantine by the United States Department of Agriculture or by the state or territory of origin, if such livestock or property was removed from such area in violation of the rules of the United States Department of Agriculture or of the state or territory of origin. (2) The department shall impose such conditions for release of quarantined livestock or property, not inconsistent with the rules of the United States Department of Agriculture, as are necessary to prevent the entry and spread of disease in this state. (3) The department may also release quarantined livestock and property which were imported to the custody of the United States Department of Agriculture.",
+      "history_citation_blocks": [
+        "1955 c.557 24"
+      ],
+      "history_citations": [
+        {
+          "raw": "1955 c.557 24",
+          "year": 1955,
+          "chapter": "557",
+          "section": "24"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The State Department of Agriculture may order summary quarantine of any livestock and any property contaminated with disease or capable of transmitting the disease to other livestock or humans which have been imported into this state from any area under quarantine by the United States Department of Agriculture or by the state or territory of origin, if such livestock or property was removed from such area in violation of the rules of the United States Department of Agriculture or of the state or territory of origin.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The department shall impose such conditions for release of quarantined livestock or property, not inconsistent with the rules of the United States Department of Agriculture, as are necessary to prevent the entry and spread of disease in this state.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The department may also release quarantined livestock and property which were imported to the custody of the United States Department of Agriculture.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 46,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.396",
+      "identifier": "ORS 596.396",
+      "name": "Section 596.396",
+      "text": "Length of quarantine; payment of expense of cleaning and disinfecting. (1) Any quarantine imposed by the State Department of Agriculture pursuant to ORS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Any quarantine imposed by the State Department of Agriculture pursuant to ORS",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 47,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.400",
+      "identifier": "ORS 596.400",
+      "name": "Section 596.400",
+      "text": "[Repealed by 1953 c.689 13]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 48,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.402",
+      "identifier": "ORS 596.402",
+      "name": "Section 596.402",
+      "text": "Authority to summarily quarantine areas; notice. (1) The State Department of Agriculture may also summarily quarantine any legally described area of this state and prohibit or otherwise restrict any movement of livestock, vehicles, persons or things into or out of the area as the department deems necessary for the eradication or control of a disease in the area, or for the prevention of the spread of a disease into other areas of this state. (2) No later than seven days after imposing a quarantine under this section, the department shall give notice of the quarantine by publication in a newspaper of general circulation in the quarantine area and by one or more additional methods that reasonably ensure that affected persons and other members of the public have knowledge of the quarantine. (3) The provisions of ORS 561.510 to 561.560 do not apply to quarantines imposed under this section.",
+      "history_citation_blocks": [
+        "1953 c.689 7; 1955 c.557 27; 2015 c.203 20"
+      ],
+      "history_citations": [
+        {
+          "raw": "1953 c.689 7",
+          "year": 1953,
+          "chapter": "689",
+          "section": "7"
+        },
+        {
+          "raw": "1955 c.557 27",
+          "year": 1955,
+          "chapter": "557",
+          "section": "27"
+        },
+        {
+          "raw": "2015 c.203 20",
+          "year": 2015,
+          "chapter": "203",
+          "section": "20"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The State Department of Agriculture may also summarily quarantine any legally described area of this state and prohibit or otherwise restrict any movement of livestock, vehicles, persons or things into or out of the area as the department deems necessary for the eradication or control of a disease in the area, or for the prevention of the spread of a disease into other areas of this state.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "No later than seven days after imposing a quarantine under this section, the department shall give notice of the quarantine by publication in a newspaper of general circulation in the quarantine area and by one or more additional methods that reasonably ensure that affected persons and other members of the public have knowledge of the quarantine.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The provisions of ORS 561.510 to 561.560 do not apply to quarantines imposed under this section.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 49,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.404",
+      "identifier": "ORS 596.404",
+      "name": "Section 596.404",
+      "text": "Department may seize part or product of slaughtered diseased livestock; release thereof. The State Department of Agriculture may seize meat, hides, offal or any other part or product of livestock slaughtered anywhere which is infected with, exposed to, or a carrier of, disease and impose any conditions upon release from seizure reasonably necessary to prevent the entry or spread of disease in this state.",
+      "history_citation_blocks": [
+        "1955 c.557 25"
+      ],
+      "history_citations": [
+        {
+          "raw": "1955 c.557 25",
+          "year": 1955,
+          "chapter": "557",
+          "section": "25"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 50,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.406",
+      "identifier": "ORS 596.406",
+      "name": "Section 596.406",
+      "text": "Department to prescribe methods of destruction of property; indemnity. When any real or personal property is ordered destroyed, the State Department of Agriculture shall prescribe the methods and procedures by which the destruction shall be effectuated and shall supervise any destruction so ordered. Indemnity shall be paid to the owner of such property as otherwise provided by law. However, no indemnity will be paid if the livestock that created the condition requiring the property destruction were imported into this state without a permit.",
+      "history_citation_blocks": [
+        "1953 c.689 8; 1955 c.557 28; 1973 c.2 5"
+      ],
+      "history_citations": [
+        {
+          "raw": "1953 c.689 8",
+          "year": 1953,
+          "chapter": "689",
+          "section": "8"
+        },
+        {
+          "raw": "1955 c.557 28",
+          "year": 1955,
+          "chapter": "557",
+          "section": "28"
+        },
+        {
+          "raw": "1973 c.2 5",
+          "year": 1973,
+          "chapter": "2",
+          "section": "5"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 51,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.410",
+      "identifier": "ORS 596.410",
+      "name": "Section 596.410",
+      "text": "[Repealed by 1953 c.689 13]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 52,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.412",
+      "identifier": "ORS 596.412",
+      "name": "Section 596.412",
+      "text": "Factors to be considered by department in exercise of disease control powers. When exercising the powers conferred by ORS 596.388 to 596.412, the State Department of Agriculture shall give appropriate weight and consideration to the following: (1) The previous existence of the disease in this state. (2) The action taken by the United States Government in respect to the eradication and control of such disease. (3) The economic consequences to the citizens of this state which might result from the spread of the disease. (4) The extent to which the disease is endemic or epidemic through neighboring states, the United States and this state. (5) The extent to which livestock other than those which are infected or carriers of the disease may be adversely affected by it. (6) Any other factors which may reasonably be found to affect the welfare of the livestock industry specifically or the people of the State of Oregon generally if such disease is not eradicated or controlled.",
+      "history_citation_blocks": [
+        "1953 c.689 3"
+      ],
+      "history_citations": [
+        {
+          "raw": "1953 c.689 3",
+          "year": 1953,
+          "chapter": "689",
+          "section": "3"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The previous existence of the disease in this state.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The action taken by the United States Government in respect to the eradication and control of such disease.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The economic consequences to the citizens of this state which might result from the spread of the disease.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "The extent to which the disease is endemic or epidemic through neighboring states, the United States and this state.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "The extent to which livestock other than those which are infected or carriers of the disease may be adversely affected by it.",
+          "subsections": []
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "Any other factors which may reasonably be found to affect the welfare of the livestock industry specifically or the people of the State of Oregon generally if such disease is not eradicated or controlled.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 53,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.416",
+      "identifier": "ORS 596.416",
+      "name": "Section 596.416",
+      "text": "Application to court to compel owner or person in charge of property to cooperate. (1) In the event the State Department of Agriculture or any of its employees or agents meet with any resistance or lack of cooperation by the owner or person in charge of any livestock or property in the performance of their duties, the department may apply to the circuit court of the county in which such livestock or property is located or, if livestock or property is located in two or more counties, in the circuit court of any of those counties, for an order requiring such owner or person to cease and desist such resistance or otherwise comply with the orders of the department. (2) The order of the court shall be based upon a duly verified petition filed by the department setting forth the facts relative to such resistance or lack of cooperation. A copy of the petition may be served either by registered mail or by certified mail with return receipt upon the owner or person in charge of the livestock or in the manner provided for service of summons in civil actions. Such owner or person in charge shall appear and answer the allegations of the petition within 10 days from the date the petition was served. (3) If the owner or person in charge of any livestock or property fails to appear or the court either with or without such appearance finds the allegations of the petition are true and the action by the department necessary for the eradication and control of diseases of livestock in this state, the court shall enter its order requiring the owner or person in charge to cease and desist from such resistance or to comply with the lawful orders of the department, as the case may be. However, the court may enter its order without a hearing, if it satisfactorily appears to the court that a delay in answering would jeopardize disease eradication and control. A request by the department for a summary order by the court relative to any lack of cooperation or resistance by the owner or person in charge shall be supported by an affidavit showing the necessity for summary action. (4) The sheriff of the county in which such livestock or property is located shall execute such order by serving upon the owners or person in charge of such livestock or property a copy thereof duly certified to by the clerk of the circuit court, and by enforcing the provisions thereof.",
+      "history_citation_blocks": [
+        "1953 c.689 9; 1955 c.557 29; 1991 c.249 59"
+      ],
+      "history_citations": [
+        {
+          "raw": "1953 c.689 9",
+          "year": 1953,
+          "chapter": "689",
+          "section": "9"
+        },
+        {
+          "raw": "1955 c.557 29",
+          "year": 1955,
+          "chapter": "557",
+          "section": "29"
+        },
+        {
+          "raw": "1991 c.249 59",
+          "year": 1991,
+          "chapter": "249",
+          "section": "59"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "In the event the State Department of Agriculture or any of its employees or agents meet with any resistance or lack of cooperation by the owner or person in charge of any livestock or property in the performance of their duties, the department may apply to the circuit court of the county in which such livestock or property is located or, if livestock or property is located in two or more counties, in the circuit court of any of those counties, for an order requiring such owner or person to cease and desist such resistance or otherwise comply with the orders of the department.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The order of the court shall be based upon a duly verified petition filed by the department setting forth the facts relative to such resistance or lack of cooperation. A copy of the petition may be served either by registered mail or by certified mail with return receipt upon the owner or person in charge of the livestock or in the manner provided for service of summons in civil actions. Such owner or person in charge shall appear and answer the allegations of the petition within 10 days from the date the petition was served.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "If the owner or person in charge of any livestock or property fails to appear or the court either with or without such appearance finds the allegations of the petition are true and the action by the department necessary for the eradication and control of diseases of livestock in this state, the court shall enter its order requiring the owner or person in charge to cease and desist from such resistance or to comply with the lawful orders of the department, as the case may be. However, the court may enter its order without a hearing, if it satisfactorily appears to the court that a delay in answering would jeopardize disease eradication and control. A request by the department for a summary order by the court relative to any lack of cooperation or resistance by the owner or person in charge shall be supported by an affidavit showing the necessity for summary action.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "The sheriff of the county in which such livestock or property is located shall execute such order by serving upon the owners or person in charge of such livestock or property a copy thereof duly certified to by the clerk of the circuit court, and by enforcing the provisions thereof.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 54,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.420",
+      "identifier": "ORS 596.420",
+      "name": "Section 596.420",
+      "text": "[Repealed by 1953 c.689 13]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 55,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.430",
+      "identifier": "ORS 596.430",
+      "name": "Section 596.430",
+      "text": "[Repealed by 1955 c.557 36]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 56,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.440",
+      "identifier": "ORS 596.440",
+      "name": "Section 596.440",
+      "text": "[Repealed by 1955 c.557 36]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 57,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.450",
+      "identifier": "ORS 596.450",
+      "name": "Section 596.450",
+      "text": "[Repealed by 1955 c.557 36]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 58,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.460",
+      "identifier": "ORS 596.460",
+      "name": "Section 596.460",
+      "text": "Duty to separate and confine diseased animals. A person owning, possessing or controlling any livestock affected by any disease may not fail to keep the livestock within an enclosure, or herd them in some place where they are secure from contact with other livestock not so affected or permit the affected livestock to range where they will be likely to come in contact with other livestock not so affected.",
+      "history_citation_blocks": [
+        "Amended by 1955 c.557 30; 1987 c.909 3; 1995 c.20 1; 1999 c.102 4; 2001 c.22 5; 2023 c.146 5"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1955 c.557 30"
+        },
+        {
+          "raw": "1987 c.909 3",
+          "year": 1987,
+          "chapter": "909",
+          "section": "3"
+        },
+        {
+          "raw": "1995 c.20 1",
+          "year": 1995,
+          "chapter": "20",
+          "section": "1"
+        },
+        {
+          "raw": "1999 c.102 4",
+          "year": 1999,
+          "chapter": "102",
+          "section": "4"
+        },
+        {
+          "raw": "2001 c.22 5",
+          "year": 2001,
+          "chapter": "22",
+          "section": "5"
+        },
+        {
+          "raw": "2023 c.146 5",
+          "year": 2023,
+          "chapter": "146",
+          "section": "5"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 59,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.470",
+      "identifier": "ORS 596.470",
+      "name": "Section 596.470",
+      "text": "Health certificates for disease-free animals. Whenever any official examination is made by any person authorized so to do by the State Department of Agriculture, of any livestock and such livestock is found free from contagious, infectious and communicable disease, the person making such examination shall make and deliver to the owner or person in possession of such livestock, a certificate to that effect, under such rules and regulations and in such form as the department may prescribe. Whenever an examination or test is made as to any particular disease and the livestock is found free therefrom, a certificate of that fact shall be given to the owner. [Amended by 1955 c.557 31]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 60,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.480",
+      "identifier": "ORS 596.480",
+      "name": "Section 596.480",
+      "text": "",
+      "history_citation_blocks": [
+        "1955 c.637 1; repealed by 1983 c.101 6"
+      ],
+      "history_citations": [
+        {
+          "raw": "1955 c.637 1",
+          "year": 1955,
+          "chapter": "637",
+          "section": "1"
+        },
+        {
+          "raw": "repealed by 1983 c.101 6"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 61,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.500",
+      "identifier": "ORS 596.500",
+      "name": "Section 596.500",
+      "text": "",
+      "history_citation_blocks": [
+        "1971 c.483 6,7; 1975 c.220 1; repealed by 1977 c.214 10; repealed by 1983 c.101 6"
+      ],
+      "history_citations": [
+        {
+          "raw": "1971 c.483 6,7"
+        },
+        {
+          "raw": "1975 c.220 1",
+          "year": 1975,
+          "chapter": "220",
+          "section": "1"
+        },
+        {
+          "raw": "repealed by 1977 c.214 10"
+        },
+        {
+          "raw": "repealed by 1983 c.101 6"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 62,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.610",
+      "identifier": "ORS 596.610",
+      "name": "Section 596.610",
+      "text": "[1953 c.633 1; repealed by 1955 c.557 36] INDEMNIFICATION FOR LIVESTOCK OR PROPERTY ORDERED DESTROYED",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 63,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.615",
+      "identifier": "ORS 596.615",
+      "name": "Section 596.615",
+      "text": "Livestock defined. As used in ORS 596.615 to 596.681, livestock means animals raised for the production of food for human consumption and those animals carrying diseases that threaten animals raised for the production of food for human consumption.",
+      "history_citation_blocks": [
+        "1981 c.334 7; 1987 c.909 4"
+      ],
+      "history_citations": [
+        {
+          "raw": "1981 c.334 7",
+          "year": 1981,
+          "chapter": "334",
+          "section": "7"
+        },
+        {
+          "raw": "1987 c.909 4",
+          "year": 1987,
+          "chapter": "909",
+          "section": "4"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 64,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.620",
+      "identifier": "ORS 596.620",
+      "name": "Section 596.620",
+      "text": "Indemnification of owners of livestock or property slaughtered or destroyed by order of department. The owner of any livestock or property which is slaughtered or otherwise destroyed at the order of the State Department of Agriculture in the performance of its duty to eradicate and control the contagious and communicable diseases of livestock in this state is entitled to indemnity as provided in ORS 596.640 to 596.681.",
+      "history_citation_blocks": [
+        "1953 c.633 3"
+      ],
+      "history_citations": [
+        {
+          "raw": "1953 c.633 3",
+          "year": 1953,
+          "chapter": "633",
+          "section": "3"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 65,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.625",
+      "identifier": "ORS 596.625",
+      "name": "Section 596.625",
+      "text": "Approval of indemnification required. No application, contract or agreement for the payment of indemnity under ORS 596.615 to 596.681 is enforceable unless approved and signed by the Director of Agriculture.",
+      "history_citation_blocks": [
+        "1981 c.334 6"
+      ],
+      "history_citations": [
+        {
+          "raw": "1981 c.334 6",
+          "year": 1981,
+          "chapter": "334",
+          "section": "6"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 66,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.630",
+      "identifier": "ORS 596.630",
+      "name": "Section 596.630",
+      "text": "",
+      "history_citation_blocks": [
+        "1953 c.633 2; 1955 c.557 32; repealed by 1963 c.208 4"
+      ],
+      "history_citations": [
+        {
+          "raw": "1953 c.633 2",
+          "year": 1953,
+          "chapter": "633",
+          "section": "2"
+        },
+        {
+          "raw": "1955 c.557 32",
+          "year": 1955,
+          "chapter": "557",
+          "section": "32"
+        },
+        {
+          "raw": "repealed by 1963 c.208 4"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 67,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.640",
+      "identifier": "ORS 596.640",
+      "name": "Section 596.640",
+      "text": "Livestock and property not eligible for indemnity. (1) The owner of livestock or property destroyed at the order of the State Department of Agriculture shall not be paid indemnity by the State of Oregon for: (a) Livestock or property owned by the federal government or the State of Oregon, or any governmental subdivision, agency or instrumentality of those governments. (b) Livestock or property if the owner thereof has failed to comply with any of the provisions of ORS 596.075, 596.331, 596.351, 596.355, 596.371 or 596.460 or with any rules promulgated under ORS 596.321 or has acted in contravention to department authority under ORS 596.311, 596.341, 596.361, 596.388, 596.392 to",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The owner of livestock or property destroyed at the order of the State Department of Agriculture shall not be paid indemnity by the State of Oregon for:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Livestock or property owned by the federal government or the State of Oregon, or any governmental subdivision, agency or instrumentality of those governments.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Livestock or property if the owner thereof has failed to comply with any of the provisions of ORS 596.075, 596.331, 596.351, 596.355, 596.371 or 596.460 or with any rules promulgated under ORS 596.321 or has acted in contravention to department authority under ORS 596.311, 596.341, 596.361, 596.388, 596.392 to",
+              "subsections": []
+            }
+          ]
+        }
+      ],
+      "parser_warnings": [],
+      "position": 68,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.650",
+      "identifier": "ORS 596.650",
+      "name": "Section 596.650",
+      "text": "Indemnity; appraisal of animal or property prior to destruction. (1) An owner may claim indemnity on any animal or property ordered destroyed by the State Department of Agriculture. Each animal or article of property which is eligible for indemnity shall be appraised prior to its destruction. The department shall provide forms on which claims for indemnity can be made, to the owner of livestock or property ordered destroyed at the time the order of destruction is given to the owner. The claim for indemnity, order of destruction and appraisal may be included in one form at the discretion of the department. In order to qualify for indemnity, the owner shall submit a claim to the department within seven days after receiving such claim form from the department. The appraisal shall be performed by two appraisers, one of whom shall be selected by the department and one of whom shall be selected by the owner. If they cannot agree on the appraised value, a third appraiser shall be immediately appointed by the two appraisers selected by the department and the owner and the department and owner advised of the appointment. If the owner fails to select an appraiser within 10 days after the departments request therefor, the department shall appoint two appraisers to evaluate the livestock or property. The appraisers shall view each animal or article of property to be appraised and inspect documents, premises or any other items deemed necessary to perform the appraisal. Upon completion of the appraisal, the appraisers shall record the evaluations on a form supplied by the department and shall submit the completed appraisal form to the department within 10 days after completion of the appraisal. The department shall then notify the owner of the results of the appraisal. (2) The livestock or property shall be appraised on the basis of current market value of animals or property of like kind, quality and physical condition at the time the destruction was ordered. As used in this subsection, market value means the average selling price of animals or property of like kind and quality in the locality where the animals or property are situated, during the 30 days immediately preceding the appraisal, and if no such average selling price can be determined in the locality, then the average selling price in the next nearest locality where it can be determined. (3) If the livestock condemned by the department are registered and the owner claims enhanced value by such fact, a certified copy of the certificate of registry shall accompany the appraisal report.",
+      "history_citation_blocks": [
+        "1953 c.633 4; 1965 c.217 3; 1981 c.334 2"
+      ],
+      "history_citations": [
+        {
+          "raw": "1953 c.633 4",
+          "year": 1953,
+          "chapter": "633",
+          "section": "4"
+        },
+        {
+          "raw": "1965 c.217 3",
+          "year": 1965,
+          "chapter": "217",
+          "section": "3"
+        },
+        {
+          "raw": "1981 c.334 2",
+          "year": 1981,
+          "chapter": "334",
+          "section": "2"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "An owner may claim indemnity on any animal or property ordered destroyed by the State Department of Agriculture. Each animal or article of property which is eligible for indemnity shall be appraised prior to its destruction. The department shall provide forms on which claims for indemnity can be made, to the owner of livestock or property ordered destroyed at the time the order of destruction is given to the owner. The claim for indemnity, order of destruction and appraisal may be included in one form at the discretion of the department. In order to qualify for indemnity, the owner shall submit a claim to the department within seven days after receiving such claim form from the department. The appraisal shall be performed by two appraisers, one of whom shall be selected by the department and one of whom shall be selected by the owner. If they cannot agree on the appraised value, a third appraiser shall be immediately appointed by the two appraisers selected by the department and the owner and the department and owner advised of the appointment. If the owner fails to select an appraiser within 10 days after the departments request therefor, the department shall appoint two appraisers to evaluate the livestock or property. The appraisers shall view each animal or article of property to be appraised and inspect documents, premises or any other items deemed necessary to perform the appraisal. Upon completion of the appraisal, the appraisers shall record the evaluations on a form supplied by the department and shall submit the completed appraisal form to the department within 10 days after completion of the appraisal. The department shall then notify the owner of the results of the appraisal.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The livestock or property shall be appraised on the basis of current market value of animals or property of like kind, quality and physical condition at the time the destruction was ordered. As used in this subsection, market value means the average selling price of animals or property of like kind and quality in the locality where the animals or property are situated, during the 30 days immediately preceding the appraisal, and if no such average selling price can be determined in the locality, then the average selling price in the next nearest locality where it can be determined.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "If the livestock condemned by the department are registered and the owner claims enhanced value by such fact, a certified copy of the certificate of registry shall accompany the appraisal report.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 69,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.660",
+      "identifier": "ORS 596.660",
+      "name": "Section 596.660",
+      "text": "Method of destruction; salvage. When in the opinion of the State Department of Agriculture livestock or property which is condemned can be destroyed in a manner which will permit some salvage to be realized, without prejudice to adequate disease control or eradication measures or to human health and welfare, the department may authorize such methods of destruction and prescribe the conditions upon which it may be carried out. In no case shall a method of destruction be authorized merely because it permits salvage, unless it may be accomplished within seven days from the date the destruction order is delivered.",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 70,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.670",
+      "identifier": "ORS 596.670",
+      "name": "Section 596.670",
+      "text": "",
+      "history_citation_blocks": [
+        "1953 c.633 6; repealed by 1965 c.217 4 (596.671 enacted in lieu of 596.670)"
+      ],
+      "history_citations": [
+        {
+          "raw": "1953 c.633 6",
+          "year": 1953,
+          "chapter": "633",
+          "section": "6"
+        },
+        {
+          "raw": "repealed by 1965 c.217 4 (596.671 enacted in lieu of 596.670)"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 71,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.671",
+      "identifier": "ORS 596.671",
+      "name": "Section 596.671",
+      "text": "Amount of indemnity. The indemnity shall be a sum, which added to the salvage, shall not exceed 80 percent of the appraised value of each animal or article of property.",
+      "history_citation_blocks": [
+        "1965 c.217 5 (enacted in lieu of 596.670); 1971 c.705 1; 1981 c.334 3"
+      ],
+      "history_citations": [
+        {
+          "raw": "1965 c.217 5 (enacted in lieu of 596.670)"
+        },
+        {
+          "raw": "1971 c.705 1",
+          "year": 1971,
+          "chapter": "705",
+          "section": "1"
+        },
+        {
+          "raw": "1981 c.334 3",
+          "year": 1981,
+          "chapter": "334",
+          "section": "3"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 72,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.680",
+      "identifier": "ORS 596.680",
+      "name": "); 1981 c.334 4]",
+      "text": "PENALTIES",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 73,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.681",
+      "identifier": "ORS 596.681",
+      "name": "Section 596.681",
+      "text": "Limit of state indemnity to livestock owner also receiving federal indemnity. If the owner of livestock destroyed at the order of the State Department of Agriculture is eligible for indemnity payable by the federal government, the owner may also be indemnified by the State of Oregon. However, the State of Oregon shall only pay the difference between the maximum amounts set forth in ORS 596.671 and the amount payable by the federal government. [1965 c.217 7 (enacted in lieu of",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 74,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.990",
+      "identifier": "ORS 596.990",
+      "name": "(3) was",
+      "text": "enacted into law by the Legislative Assembly but was not added to or made a part of ORS chapter 596 or any series therein by legislative action. See Preface to Oregon Revised Statutes for further explanation.",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 75,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html#section-596.995",
+      "identifier": "ORS 596.995",
+      "name": "Section 596.995",
+      "text": "Civil penalties. (1) Any manufacturer of an animal remedy, veterinary biologic or pharmaceutical who violates any provision of ORS 596.100 or 596.105 applicable to manufacturers or any rule adopted pursuant thereto or the terms or conditions of any license, registration or order issued by the State Department of Agriculture under ORS 596.100 or 596.105 shall be subject to a civil penalty not to exceed $2,500 per violation. Civil penalties under this section are in addition to any other penalty provided by law. (2) Each violation may be a separate and distinct offense, and, in the case of a continuing violation, each days continuance thereof may be deemed a separate and distinct offense. (3) The department shall adopt a schedule or schedules establishing the amount of civil penalty that may be imposed for a particular violation. (4) Civil penalties under this section shall be imposed in the manner provided in ORS 183.745. [1991 c.584 5; 1993 c.541 2; 2001 c.104 235] Note:",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Any manufacturer of an animal remedy, veterinary biologic or pharmaceutical who violates any provision of ORS 596.100 or 596.105 applicable to manufacturers or any rule adopted pursuant thereto or the terms or conditions of any license, registration or order issued by the State Department of Agriculture under ORS 596.100 or 596.105 shall be subject to a civil penalty not to exceed $2,500 per violation. Civil penalties under this section are in addition to any other penalty provided by law.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Each violation may be a separate and distinct offense, and, in the case of a continuing violation, each days continuance thereof may be deemed a separate and distinct offense.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The department shall adopt a schedule or schedules establishing the amount of civil penalty that may be imposed for a particular violation.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Civil penalties under this section shall be imposed in the manner provided in ORS 183.745. [1991 c.584 5; 1993 c.541 2; 2001 c.104 235] Note:",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 76,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors596.html"
+    }
+  ],
+  "alternateName": ". Disease",
+  "legislationDate": "2023"
+}

@@ -1,0 +1,945 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "orlaw": "https://www.oregonlegislature.gov/ors#"
+  },
+  "@type": "Legislation",
+  "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors324.html",
+  "identifier": "ORS Chapter 324",
+  "name": "ORS Chapter 324 — Oil and Gas Tax",
+  "legislationType": "Statute",
+  "jurisdiction": "US-OR",
+  "isPartOf": {
+    "@type": "CreativeWork",
+    "identifier": "ORS",
+    "name": "Oregon Revised Statutes",
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors"
+  },
+  "dateModified": "2026-02-25T08:11:22.136630+00:00",
+  "source_file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors324.html",
+  "hasPart": [
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors324.html#section-324.050",
+      "identifier": "ORS 324.050",
+      "name": "Section 324.050",
+      "text": "Definitions. As used in this chapter, unless the context requires otherwise: (1) Department means the Department of Revenue. (2) Gas means natural gas and casinghead gas. (3) Gross value or gross sales value means the actual cash price prevailing for oil or gas of the kind, character and quality of the oil or gas subject to the tax imposed under this chapter at the time such oil or gas is produced, as determined by the department. (4) Gross production means the total volume of oil or gas extracted from a well, including oil or gas extracted but not sold. Gross production does not include the extraction from a well of any oil or gas reinjected therein for storage. (5) Produced and saved means extracted and sold, extracted and used or extracted and retained for later sale or use. (6) Oil means petroleum, crude oil, mineral oil and casinghead gas. (7) Person includes partnership, corporation, association, fiduciary, trustee and any combination of individuals. (8) Quarter and quarterly mean calendar quarters. [1981 c.889 1] IMPOSITION OF TAX",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Department means the Department of Revenue.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Gas means natural gas and casinghead gas.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Gross value or gross sales value means the actual cash price prevailing for oil or gas of the kind, character and quality of the oil or gas subject to the tax imposed under this chapter at the time such oil or gas is produced, as determined by the department.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Gross production means the total volume of oil or gas extracted from a well, including oil or gas extracted but not sold. Gross production does not include the extraction from a well of any oil or gas reinjected therein for storage.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "Produced and saved means extracted and sold, extracted and used or extracted and retained for later sale or use.",
+          "subsections": []
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "Oil means petroleum, crude oil, mineral oil and casinghead gas.",
+          "subsections": []
+        },
+        {
+          "label": "(7)",
+          "token": "7",
+          "kind": "numeric",
+          "text": "Person includes partnership, corporation, association, fiduciary, trustee and any combination of individuals.",
+          "subsections": []
+        },
+        {
+          "label": "(8)",
+          "token": "8",
+          "kind": "numeric",
+          "text": "Quarter and quarterly mean calendar quarters. [1981 c.889 1] IMPOSITION OF TAX",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 1,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors324.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors324.html#section-324.070",
+      "identifier": "ORS 324.070",
+      "name": "Section 324.070",
+      "text": "Imposition of tax; rate; basis of levy. (1) A privilege tax of six percent of the gross value at the well is levied upon the production of oil and gas within the State of Oregon. The gross value at the well shall be reduced by the value of any part thereof, the ownership or right to which is exempt from taxation. (2) The tax levied shall be measured by the value of the whole production, including what is commonly known as the royalty interest.",
+      "history_citation_blocks": [
+        "1981 c.889 2; 1991 c.459 322"
+      ],
+      "history_citations": [
+        {
+          "raw": "1981 c.889 2",
+          "year": 1981,
+          "chapter": "889",
+          "section": "2"
+        },
+        {
+          "raw": "1991 c.459 322",
+          "year": 1991,
+          "chapter": "459",
+          "section": "322"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A privilege tax of six percent of the gross value at the well is levied upon the production of oil and gas within the State of Oregon. The gross value at the well shall be reduced by the value of any part thereof, the ownership or right to which is exempt from taxation.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The tax levied shall be measured by the value of the whole production, including what is commonly known as the royalty interest.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 2,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors324.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors324.html#section-324.080",
+      "identifier": "ORS 324.080",
+      "name": "Section 324.080",
+      "text": "Exemptions of gross sales value. An exemption from the tax levied on oil or gas imposed by ORS 324.070 is granted upon the first $3,000 in gross sales value of the gross production each calendar quarter from each well.",
+      "history_citation_blocks": [
+        "1981 c.889 3"
+      ],
+      "history_citations": [
+        {
+          "raw": "1981 c.889 3",
+          "year": 1981,
+          "chapter": "889",
+          "section": "3"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 3,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors324.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors324.html#section-324.090",
+      "identifier": "ORS 324.090",
+      "name": "Section 324.090",
+      "text": "State and local government interests exempt; credit of taxes imposed by state and local governments. (1) Any royalty or other interest in oil or gas owned by the state, counties, cities, towns, school districts or other municipal corporations or political subdivisions, is exempt from the gross production tax imposed by ORS 324.070. (2) There shall be allowed as a credit against taxes imposed by this chapter all ad valorem taxes imposed by the state, counties, cities, towns, school districts and other municipal corporations and political subdivisions upon any property rights attached to or inherent in the right to produce oil and gas, upon producing oil and gas leases, upon machinery, appliances and equipment used in and around any well producing oil or gas and actually used in the operation of the well, upon oil and gas produced in the state and upon any investment in any property mentioned or described in this subsection. [1981 c.889 4] COLLECTION OF TAX",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Any royalty or other interest in oil or gas owned by the state, counties, cities, towns, school districts or other municipal corporations or political subdivisions, is exempt from the gross production tax imposed by ORS 324.070.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "There shall be allowed as a credit against taxes imposed by this chapter all ad valorem taxes imposed by the state, counties, cities, towns, school districts and other municipal corporations and political subdivisions upon any property rights attached to or inherent in the right to produce oil and gas, upon producing oil and gas leases, upon machinery, appliances and equipment used in and around any well producing oil or gas and actually used in the operation of the well, upon oil and gas produced in the state and upon any investment in any property mentioned or described in this subsection. [1981 c.889 4] COLLECTION OF TAX",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 4,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors324.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors324.html#section-324.110",
+      "identifier": "ORS 324.110",
+      "name": "Section 324.110",
+      "text": "Quarterly payment of tax; computation of prevailing cash price. (1) The gross production tax on oil or gas imposed by this chapter shall be paid on a quarterly basis. The tax shall become due on the 45th day following the preceding quarterly period on all oil or gas produced in and saved during the preceding quarterly period, and, if the tax is not paid on or before the end of the 45th day, it shall become delinquent and shall be collected as provided in this chapter. The Department of Revenue, upon request and a proper showing of the necessity therefor, may grant an extension of time, not to exceed 30 days, for paying the tax and when such a request is granted the tax shall not be delinquent until the extended period has expired. (2) On oil or gas sold at the time of production, the gross production tax shall be paid by the purchaser, and the purchaser shall and is authorized to deduct in making settlements with the producer or royalty owner, the amount of tax so paid. In the event oil on which the gross production tax becomes due is not sold at the time of production but is retained or used by the producer, the tax on the oil not so sold shall be paid by the producer, including the tax due on royalty oil not sold. In settlement with the royalty owner, the producer shall have the right to deduct the amount of the tax so paid on royalty oil or to deduct royalty oil equivalent in value at the time the tax becomes due with the amount of the tax paid. (3) The amount of gas produced and used for fuel or otherwise used in the operation of any lease or premises in the drilling for or production of oil or gas, or for repressuring, shall not be considered for the purpose of this chapter as gas actually produced and saved. (4) When oil or gas is sold at a sale price that does not represent the cash price prevailing for oil or gas of like kind, character or quality in the field from which such product is produced, the department may require the tax to be paid upon the basis of the prevailing cash price then being paid at the time of production in the field for oil, or gas of like kind, quality and character.",
+      "history_citation_blocks": [
+        "1981 c.889 5"
+      ],
+      "history_citations": [
+        {
+          "raw": "1981 c.889 5",
+          "year": 1981,
+          "chapter": "889",
+          "section": "5"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The gross production tax on oil or gas imposed by this chapter shall be paid on a quarterly basis. The tax shall become due on the 45th day following the preceding quarterly period on all oil or gas produced in and saved during the preceding quarterly period, and, if the tax is not paid on or before the end of the 45th day, it shall become delinquent and shall be collected as provided in this chapter. The Department of Revenue, upon request and a proper showing of the necessity therefor, may grant an extension of time, not to exceed 30 days, for paying the tax and when such a request is granted the tax shall not be delinquent until the extended period has expired.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "On oil or gas sold at the time of production, the gross production tax shall be paid by the purchaser, and the purchaser shall and is authorized to deduct in making settlements with the producer or royalty owner, the amount of tax so paid. In the event oil on which the gross production tax becomes due is not sold at the time of production but is retained or used by the producer, the tax on the oil not so sold shall be paid by the producer, including the tax due on royalty oil not sold. In settlement with the royalty owner, the producer shall have the right to deduct the amount of the tax so paid on royalty oil or to deduct royalty oil equivalent in value at the time the tax becomes due with the amount of the tax paid.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The amount of gas produced and used for fuel or otherwise used in the operation of any lease or premises in the drilling for or production of oil or gas, or for repressuring, shall not be considered for the purpose of this chapter as gas actually produced and saved.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "When oil or gas is sold at a sale price that does not represent the cash price prevailing for oil or gas of like kind, character or quality in the field from which such product is produced, the department may require the tax to be paid upon the basis of the prevailing cash price then being paid at the time of production in the field for oil, or gas of like kind, quality and character.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 5,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors324.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors324.html#section-324.120",
+      "identifier": "ORS 324.120",
+      "name": "Section 324.120",
+      "text": "Statement by taxpayer; other required information. (1) The tax imposed by this chapter shall be paid to the Department of Revenue and the person paying the tax shall file with the department at the time the tax is required to be paid, a statement, under oath, on forms prescribed by the department, giving, with other information required, the following: (a) Full description of the property by lease name, subdivision of quarter section, section, township and range from which the oil or gas was produced; (b) The name of the producer; (c) The gross amount of the oil or gas purchased; (d) The total value of the oil or gas at the price paid, if purchased at time of production; (e) The formation from which the oil or gas is produced; and (f) The prevailing market price of oil or gas sold at time of production. (2) If a purchaser of oil or gas pays the tax, the producer of the oil or gas for which the tax is being paid shall make available to the purchaser all information required under subsection (1) of this section. In lieu of the statement, a purchaser, at time of production, may furnish a true verified copy of the regular settlement sheet in use by such purchaser, if the sheet contains all the information required.",
+      "history_citation_blocks": [
+        "1981 c.889 6"
+      ],
+      "history_citations": [
+        {
+          "raw": "1981 c.889 6",
+          "year": 1981,
+          "chapter": "889",
+          "section": "6"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The tax imposed by this chapter shall be paid to the Department of Revenue and the person paying the tax shall file with the department at the time the tax is required to be paid, a statement, under oath, on forms prescribed by the department, giving, with other information required, the following: of this section. In lieu of the statement, a purchaser, at time of production, may furnish a true verified copy of the regular settlement sheet in use by such purchaser, if the sheet contains all the information required.",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Full description of the property by lease name, subdivision of quarter section, section, township and range from which the oil or gas was produced;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "The name of the producer;",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "The gross amount of the oil or gas purchased;",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "The total value of the oil or gas at the price paid, if purchased at time of production;",
+              "subsections": []
+            },
+            {
+              "label": "(e)",
+              "token": "e",
+              "kind": "alpha_lower",
+              "text": "The formation from which the oil or gas is produced; and",
+              "subsections": []
+            },
+            {
+              "label": "(f)",
+              "token": "f",
+              "kind": "alpha_lower",
+              "text": "The prevailing market price of oil or gas sold at time of production.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "If a purchaser of oil or gas pays the tax, the producer of the oil or gas for which the tax is being paid shall make available to the purchaser all information required under subsection",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 6,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors324.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors324.html#section-324.130",
+      "identifier": "ORS 324.130",
+      "name": "Section 324.130",
+      "text": "Statement of producer; filing of statement. (1) Any person engaged in the production within this state of oil or gas shall, on or before the 45th day following the preceding quarterly period, file with the Department of Revenue a statement under oath, upon forms prescribed by the department, giving, along with other information required, the following: (a) The name of the property and the description by subdivision of quarter section, section, township and range; (b) The gross amount of oil or gas produced and saved; (c) The name of the purchaser and the price paid by the purchaser; and (d) The formation from which the oil or gas is produced. (2) Each report required by this section shall be filed on separate forms as to product and county.",
+      "history_citation_blocks": [
+        "1981 c.889 7; 2005 c.94 112"
+      ],
+      "history_citations": [
+        {
+          "raw": "1981 c.889 7",
+          "year": 1981,
+          "chapter": "889",
+          "section": "7"
+        },
+        {
+          "raw": "2005 c.94 112",
+          "year": 2005,
+          "chapter": "94",
+          "section": "112"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Any person engaged in the production within this state of oil or gas shall, on or before the 45th day following the preceding quarterly period, file with the Department of Revenue a statement under oath, upon forms prescribed by the department, giving, along with other information required, the following:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "The name of the property and the description by subdivision of quarter section, section, township and range;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "The gross amount of oil or gas produced and saved;",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "The name of the purchaser and the price paid by the purchaser; and",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "The formation from which the oil or gas is produced.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Each report required by this section shall be filed on separate forms as to product and county.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 7,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors324.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors324.html#section-324.140",
+      "identifier": "ORS 324.140",
+      "name": "Section 324.140",
+      "text": "Penalty for delinquent reports; report of claimed exempt royalties. (1) Reports required under ORS 324.120 and 324.130 from either the purchaser or producer, as the case may be, shall be delinquent after the last day fixed for filing, and every person required to file a report shall be subject to penalty of $25 per day for each property upon which the person fails or refuses to file a report. The penalties prescribed by this section shall be for failure to file reports and shall be in addition to the interest and penalty imposed for delinquent tax, and shall likewise constitute a lien against the assets of the person failing or refusing to file a report. The penalties prescribed under this section shall be collected in the same manner as gross production taxes and shall be deposited in the suspense account referred to in ORS 324.340. (2) When royalty is claimed to be exempt from taxation by law, the facts on which claims of exemption are based and other information as the Department of Revenue may require shall be furnished in the report.",
+      "history_citation_blocks": [
+        "1981 c.889 8; 1983 c.740 98"
+      ],
+      "history_citations": [
+        {
+          "raw": "1981 c.889 8",
+          "year": 1981,
+          "chapter": "889",
+          "section": "8"
+        },
+        {
+          "raw": "1983 c.740 98",
+          "year": 1983,
+          "chapter": "740",
+          "section": "98"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Reports required under ORS 324.120 and 324.130 from either the purchaser or producer, as the case may be, shall be delinquent after the last day fixed for filing, and every person required to file a report shall be subject to penalty of $25 per day for each property upon which the person fails or refuses to file a report. The penalties prescribed by this section shall be for failure to file reports and shall be in addition to the interest and penalty imposed for delinquent tax, and shall likewise constitute a lien against the assets of the person failing or refusing to file a report. The penalties prescribed under this section shall be collected in the same manner as gross production taxes and shall be deposited in the suspense account referred to in ORS 324.340.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "When royalty is claimed to be exempt from taxation by law, the facts on which claims of exemption are based and other information as the Department of Revenue may require shall be furnished in the report.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 8,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors324.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors324.html#section-324.170",
+      "identifier": "ORS 324.170",
+      "name": "Section 324.170",
+      "text": "Audit; interest on delinquent tax or deficiency. (1) The provisions of ORS chapters 305 and 314 as to the audit and examination of reports and returns, determination of deficiencies, assessments, claims for refund, conferences and appeals to the Oregon Tax Court, and the procedures relating thereto, shall apply to the determination of taxes, penalties and interest under this chapter, except where the context requires otherwise. (2) A delinquent tax or deficiency shall bear interest at the rate established under ORS 305.220 from the time the tax was due.",
+      "history_citation_blocks": [
+        "1981 c.889 10; 1982 s.s.1 c.16 24; 1995 c.650 48; 2017 c.278 20"
+      ],
+      "history_citations": [
+        {
+          "raw": "1981 c.889 10",
+          "year": 1981,
+          "chapter": "889",
+          "section": "10"
+        },
+        {
+          "raw": "1982 s.s.1 c.16 24"
+        },
+        {
+          "raw": "1995 c.650 48",
+          "year": 1995,
+          "chapter": "650",
+          "section": "48"
+        },
+        {
+          "raw": "2017 c.278 20",
+          "year": 2017,
+          "chapter": "278",
+          "section": "20"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The provisions of ORS chapters 305 and 314 as to the audit and examination of reports and returns, determination of deficiencies, assessments, claims for refund, conferences and appeals to the Oregon Tax Court, and the procedures relating thereto, shall apply to the determination of taxes, penalties and interest under this chapter, except where the context requires otherwise.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "A delinquent tax or deficiency shall bear interest at the rate established under ORS 305.220 from the time the tax was due.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 9,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors324.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors324.html#section-324.180",
+      "identifier": "ORS 324.180",
+      "name": "Section 324.180",
+      "text": "Notice to person liable for unpaid tax. If any person neglects or refuses to make a return required to be made by this chapter, the Department of Revenue is authorized to determine the tax due, based upon any information in its possession or that may come into its possession. The department shall give the person liable for the tax written notice by regular mail or other form of delivery of the tax and delinquency charges and the tax and delinquency charges shall be a lien from the time of production. If the tax and delinquency charges are not paid within 30 days from the mailing or delivery of the notice, the department shall proceed to collect the tax in the manner provided in ORS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 10,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors324.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors324.html#section-324.190",
+      "identifier": "ORS 324.190",
+      "name": "Section 324.190",
+      "text": "Collection of unpaid tax. (1) If any tax imposed by this chapter, or any portion of such tax, is not paid within 30 days after the date that the written notice and demand for payment required under ORS 305.895 is mailed, the Department of Revenue shall issue a warrant for the payment of the amount of the tax, with the added penalties, interest and cost of executing the warrant. A copy of the warrant shall be mailed or otherwise delivered to the taxpayer by the department at the taxpayers last-known address. (2) At any time after issuing a warrant under this section, the department may record the warrant in the County Clerk Lien Record of any county of this state. Recording of the warrant has the effect described in ORS 205.125. After recording a warrant, the department may direct the sheriff for the county in which the warrant is recorded to levy upon and sell the real and personal property of the taxpayer found within that county, and to levy upon any currency of the taxpayer found within that county, for the application of the proceeds or currency against the amount reflected in the warrant and the sheriffs cost of executing the warrant. The sheriff shall proceed on the warrant in the same manner prescribed by law for executions issued against property pursuant to a judgment, and is entitled to the same fees as provided for executions issued against property pursuant to a judgment. The fees of the sheriff shall be added to and collected as a part of the warrant liability. (3) In the discretion of the department, a warrant under this section may be directed to any agent authorized by the department to collect this tax. In the execution of the warrant the agent has the powers conferred by law upon sheriffs, but is entitled to no fee or compensation in excess of actual expenses paid in the performance of such duty. (4) Until a warrant under this section is satisfied in full, the department has the same remedies to enforce the claim for taxes against the taxpayer as if the state had a recorded judgment against the taxpayer for the amount of the tax.",
+      "history_citation_blocks": [
+        "1981 c.889 12; 1983 c.696 18; 1985 c.761 22; 1989 c.625 79; 2003 c.576 206; 2011 c.389 6; 2011 c.661 9; 2019 c.360 6"
+      ],
+      "history_citations": [
+        {
+          "raw": "1981 c.889 12",
+          "year": 1981,
+          "chapter": "889",
+          "section": "12"
+        },
+        {
+          "raw": "1983 c.696 18",
+          "year": 1983,
+          "chapter": "696",
+          "section": "18"
+        },
+        {
+          "raw": "1985 c.761 22",
+          "year": 1985,
+          "chapter": "761",
+          "section": "22"
+        },
+        {
+          "raw": "1989 c.625 79",
+          "year": 1989,
+          "chapter": "625",
+          "section": "79"
+        },
+        {
+          "raw": "2003 c.576 206",
+          "year": 2003,
+          "chapter": "576",
+          "section": "206"
+        },
+        {
+          "raw": "2011 c.389 6",
+          "year": 2011,
+          "chapter": "389",
+          "section": "6"
+        },
+        {
+          "raw": "2011 c.661 9",
+          "year": 2011,
+          "chapter": "661",
+          "section": "9"
+        },
+        {
+          "raw": "2019 c.360 6",
+          "year": 2019,
+          "chapter": "360",
+          "section": "6"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "If any tax imposed by this chapter, or any portion of such tax, is not paid within 30 days after the date that the written notice and demand for payment required under ORS 305.895 is mailed, the Department of Revenue shall issue a warrant for the payment of the amount of the tax, with the added penalties, interest and cost of executing the warrant. A copy of the warrant shall be mailed or otherwise delivered to the taxpayer by the department at the taxpayers last-known address.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "At any time after issuing a warrant under this section, the department may record the warrant in the County Clerk Lien Record of any county of this state. Recording of the warrant has the effect described in ORS 205.125. After recording a warrant, the department may direct the sheriff for the county in which the warrant is recorded to levy upon and sell the real and personal property of the taxpayer found within that county, and to levy upon any currency of the taxpayer found within that county, for the application of the proceeds or currency against the amount reflected in the warrant and the sheriffs cost of executing the warrant. The sheriff shall proceed on the warrant in the same manner prescribed by law for executions issued against property pursuant to a judgment, and is entitled to the same fees as provided for executions issued against property pursuant to a judgment. The fees of the sheriff shall be added to and collected as a part of the warrant liability.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "In the discretion of the department, a warrant under this section may be directed to any agent authorized by the department to collect this tax. In the execution of the warrant the agent has the powers conferred by law upon sheriffs, but is entitled to no fee or compensation in excess of actual expenses paid in the performance of such duty.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Until a warrant under this section is satisfied in full, the department has the same remedies to enforce the claim for taxes against the taxpayer as if the state had a recorded judgment against the taxpayer for the amount of the tax.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 11,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors324.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors324.html#section-324.200",
+      "identifier": "ORS 324.200",
+      "name": "Section 324.200",
+      "text": "Release of lien on real estate. (1) Any person having a lien upon or any interest in real estate against which the amount of the warrant provided for in ORS 324.190 has become a lien, notice of which has been recorded in accordance with the laws of the state prior to the filing of the warrant, may request the Department of Revenue in writing to release the real estate from the lien of the warrant. If, upon such request the department finds that a sale of the property would not result in satisfaction of the taxes due in whole or in part, the department shall execute a release of the lien as to such property and such release shall be conclusive evidence of the extinguishment of the lien as to that property. If the department fails to act upon a request for release of a lien under this subsection within 60 days from the date of the request, any person having a lien upon or interest in the property against which the warrant has become a lien may make the department a party to any proceeding brought to enforce any interest in or lien upon such real property, and the determination of the court in such proceeding shall be conclusive and binding upon the department and the State of Oregon. (2) In addition to the release of the lien provided for in subsection (1) of this section, the department may execute releases in the following cases, which releases shall be conclusive evidence of the extinguishment of the lien: (a) If the department finds that the liability for the amount of the warrant, together with all interest, penalties and costs in respect thereto has been satisfied. (b) If the department finds that the fair market value of that part of the property remaining subject to the lien is at least double the amount of the liability remaining unsatisfied in respect of such tax and the amount of all prior liens upon the property. (c) If there is furnished to the department a bond, in such form and with the security the department considers sufficient, or an irrevocable letter of credit issued by an insured institution, as defined in ORS 706.008, in either case conditioned upon the payment of the amount of the warrant, together with all interest in respect thereof, within 60 days after the issuance of the release. (d) If there is paid to the department in partial satisfaction of the amount of the warrant an amount not less than the value, as determined by the department, of the interest of the State of Oregon in the part of the property to be so discharged. In determining such value the department shall give consideration to the fair market value of the part of the property to be so discharged and to such liens thereon as have priority to the lien of the State of Oregon.",
+      "history_citation_blocks": [
+        "1981 c.889 13; 1991 c.331 55; 1997 c.631 460"
+      ],
+      "history_citations": [
+        {
+          "raw": "1981 c.889 13",
+          "year": 1981,
+          "chapter": "889",
+          "section": "13"
+        },
+        {
+          "raw": "1991 c.331 55",
+          "year": 1991,
+          "chapter": "331",
+          "section": "55"
+        },
+        {
+          "raw": "1997 c.631 460",
+          "year": 1997,
+          "chapter": "631",
+          "section": "460"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Any person having a lien upon or any interest in real estate against which the amount of the warrant provided for in ORS 324.190 has become a lien, notice of which has been recorded in accordance with the laws of the state prior to the filing of the warrant, may request the Department of Revenue in writing to release the real estate from the lien of the warrant. If, upon such request the department finds that a sale of the property would not result in satisfaction of the taxes due in whole or in part, the department shall execute a release of the lien as to such property and such release shall be conclusive evidence of the extinguishment of the lien as to that property. If the department fails to act upon a request for release of a lien under this subsection within 60 days from the date of the request, any person having a lien upon or interest in the property against which the warrant has become a lien may make the department a party to any proceeding brought to enforce any interest in or lien upon such real property, and the determination of the court in such proceeding shall be conclusive and binding upon the department and the State of Oregon. of this section, the department may execute releases in the following cases, which releases shall be conclusive evidence of the extinguishment of the lien:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "If the department finds that the liability for the amount of the warrant, together with all interest, penalties and costs in respect thereto has been satisfied.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "If the department finds that the fair market value of that part of the property remaining subject to the lien is at least double the amount of the liability remaining unsatisfied in respect of such tax and the amount of all prior liens upon the property.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "If there is furnished to the department a bond, in such form and with the security the department considers sufficient, or an irrevocable letter of credit issued by an insured institution, as defined in ORS 706.008, in either case conditioned upon the payment of the amount of the warrant, together with all interest in respect thereof, within 60 days after the issuance of the release.",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "If there is paid to the department in partial satisfaction of the amount of the warrant an amount not less than the value, as determined by the department, of the interest of the State of Oregon in the part of the property to be so discharged. In determining such value the department shall give consideration to the fair market value of the part of the property to be so discharged and to such liens thereon as have priority to the lien of the State of Oregon.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "In addition to the release of the lien provided for in subsection",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 12,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors324.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors324.html#section-324.210",
+      "identifier": "ORS 324.210",
+      "name": "Section 324.210",
+      "text": "Status of taxes, interest and penalties as debt; limitation on time of collection. All taxes, interest and penalties due and unpaid under this chapter, shall constitute a debt due the State of Oregon from the person liable for the tax and may be collected, together with interest, penalty and costs, by appropriate judicial proceeding, which remedy is in addition to all other existing remedies. However, no proceeding for the collection of taxes under this section shall be instituted after the expiration of six years from the date such taxes were due.",
+      "history_citation_blocks": [
+        "1981 c.889 14"
+      ],
+      "history_citations": [
+        {
+          "raw": "1981 c.889 14",
+          "year": 1981,
+          "chapter": "889",
+          "section": "14"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 13,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors324.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors324.html#section-324.240",
+      "identifier": "ORS 324.240",
+      "name": "Section 324.240",
+      "text": "Payment of tax when oil or gas in litigation. When oil or gas subject to gross production tax under this chapter is in litigation or dispute involving ownership of the oil or gas, and the oil or gas is sold, the usual gross production tax, as provided by law, shall be paid from the proceeds or funds in the hands of the purchaser of the oil or gas and in lieu of payment for the production, to the extent of the tax. The receipt of the Department of Revenue therefor shall be accepted in lieu of money in settlement of the purchase price of the production. If oil or gas is assigned as security for debt or otherwise, the tax shall be likewise paid by the assignee, and the tax shall constitute a lien upon the interest assigned, which shall be paramount to the indebtedness for which the assignment is made, and if the tax becomes delinquent, the usual penalty shall apply. [1981 c.889 16] ADMINISTRATION",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 14,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors324.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors324.html#section-324.310",
+      "identifier": "ORS 324.310",
+      "name": "Section 324.310",
+      "text": "Powers of department. The Department of Revenue may: (1) Require any producer of oil or gas, purchaser of oil or gas, agent or employee of any producer or purchaser or the owner of any royalty interest in oil or gas to furnish any additional information considered by the department to be necessary for the purpose of correctly computing the amount of tax imposed by this chapter; (2) Examine the books, records and files of any producer, purchaser or royalty owner; (3) Administer oaths and compel the attendance of witnesses and the production of books, records and papers of any person by subpoena; and (4) Make any investigation considered necessary to a full and complete determination as to the amount of production from any oil or gas location, or of any producer of oil or gas, and as to the correct determination of taxes due under this chapter.",
+      "history_citation_blocks": [
+        "1981 c.889 9; 1995 c.650 49"
+      ],
+      "history_citations": [
+        {
+          "raw": "1981 c.889 9",
+          "year": 1981,
+          "chapter": "889",
+          "section": "9"
+        },
+        {
+          "raw": "1995 c.650 49",
+          "year": 1995,
+          "chapter": "650",
+          "section": "49"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Require any producer of oil or gas, purchaser of oil or gas, agent or employee of any producer or purchaser or the owner of any royalty interest in oil or gas to furnish any additional information considered by the department to be necessary for the purpose of correctly computing the amount of tax imposed by this chapter;",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Examine the books, records and files of any producer, purchaser or royalty owner;",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Administer oaths and compel the attendance of witnesses and the production of books, records and papers of any person by subpoena; and",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Make any investigation considered necessary to a full and complete determination as to the amount of production from any oil or gas location, or of any producer of oil or gas, and as to the correct determination of taxes due under this chapter.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 15,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors324.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors324.html#section-324.320",
+      "identifier": "ORS 324.320",
+      "name": "Section 324.320",
+      "text": "Rulemaking authority of department. (1) The Department of Revenue is authorized to adopt all necessary rules for the purpose of making and filing all reports required under this chapter and otherwise necessary to the enforcement of this chapter. (2) The department may, at its option and discretion, require a sufficient bond from any person charged with the making and filing of reports and the payment of the taxes imposed by this chapter. The bond shall run to the State of Oregon and shall be conditioned upon the making and filing of reports as required by law, upon compliance with the rules of the department, and for the prompt payment, by the principal, of all taxes justly due the state by virtue of the provisions of this chapter. (3) When any reports required have not been filed, or may be insufficient to furnish all the information required by the department, the department shall institute, in the name of the State of Oregon, upon relation of the department, any necessary action or proceedings in the court having jurisdiction, to enjoin the person from continuing operations until the reports have been filed as required, and in all proper cases, injunction shall issue without bond from the State of Oregon. (4) Upon showing that the state is in danger of losing its claims or the property is being mismanaged, dissipated or concealed, a receiver shall be appointed at the suit of the state. [1981 c.889 18] DISPOSITION OF REVENUE",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The Department of Revenue is authorized to adopt all necessary rules for the purpose of making and filing all reports required under this chapter and otherwise necessary to the enforcement of this chapter.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The department may, at its option and discretion, require a sufficient bond from any person charged with the making and filing of reports and the payment of the taxes imposed by this chapter. The bond shall run to the State of Oregon and shall be conditioned upon the making and filing of reports as required by law, upon compliance with the rules of the department, and for the prompt payment, by the principal, of all taxes justly due the state by virtue of the provisions of this chapter.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "When any reports required have not been filed, or may be insufficient to furnish all the information required by the department, the department shall institute, in the name of the State of Oregon, upon relation of the department, any necessary action or proceedings in the court having jurisdiction, to enjoin the person from continuing operations until the reports have been filed as required, and in all proper cases, injunction shall issue without bond from the State of Oregon.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Upon showing that the state is in danger of losing its claims or the property is being mismanaged, dissipated or concealed, a receiver shall be appointed at the suit of the state. [1981 c.889 18] DISPOSITION OF REVENUE",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 16,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors324.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors324.html#section-324.340",
+      "identifier": "ORS 324.340",
+      "name": "Section 324.340",
+      "text": "Net revenue payable to Common School Fund. (1) The revenues derived from the tax imposed by this chapter including interest and penalties, shall be deposited in a suspense account created pursuant to ORS 293.445. After payment of refunds and the expenses of the Department of Revenue incurred in the administration of this chapter, the remaining revenues shall be paid into the Common School Fund and are continuously appropriated to the Department of State Lands for the purposes for which other moneys in the Common School Fund may be used. (2) The amount of moneys necessary to pay refunds and expenses of the Department of Revenue incurred in the administration of this chapter are continuously appropriated to the Department of Revenue from the suspense account referred to in subsection (1) of this section. [1981 c.889 20] CIVIL PENALTY",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The revenues derived from the tax imposed by this chapter including interest and penalties, shall be deposited in a suspense account created pursuant to ORS 293.445. After payment of refunds and the expenses of the Department of Revenue incurred in the administration of this chapter, the remaining revenues shall be paid into the Common School Fund and are continuously appropriated to the Department of State Lands for the purposes for which other moneys in the Common School Fund may be used. of this section. [1981 c.889 20] CIVIL PENALTY",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The amount of moneys necessary to pay refunds and expenses of the Department of Revenue incurred in the administration of this chapter are continuously appropriated to the Department of Revenue from the suspense account referred to in subsection",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 17,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors324.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors324.html#section-324.410",
+      "identifier": "ORS 324.410",
+      "name": "Section 324.410",
+      "text": "Prohibited conduct; civil penalty. (1) No person, or officer or employee of a corporation, or a member or employee of a partnership, shall, with intent to evade any requirement of this chapter, or any lawful requirement of the Department of Revenue pursuant to this chapter: (a) Fail to pay any tax or to make, sign or verify any return or to supply any information required; (b) Make, render, sign or verify any false or fraudulent return or statement; or (c) Supply any false or fraudulent information. (2) A person or an officer or employee of a corporation or a member or employee of a partnership who violates subsection (1) of this section is liable to a civil penalty of not more than $10,000, to be recovered by the Attorney General, in the name of the state, in any court of competent jurisdiction. The penalty provided in this subsection shall be in addition to all other penalties in this chapter. [1981 c.889 19] MISCELLANEOUS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "No person, or officer or employee of a corporation, or a member or employee of a partnership, shall, with intent to evade any requirement of this chapter, or any lawful requirement of the Department of Revenue pursuant to this chapter: of this section is liable to a civil penalty of not more than $10,000, to be recovered by the Attorney General, in the name of the state, in any court of competent jurisdiction. The penalty provided in this subsection shall be in addition to all other penalties in this chapter. [1981 c.889 19] MISCELLANEOUS",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Fail to pay any tax or to make, sign or verify any return or to supply any information required;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Make, render, sign or verify any false or fraudulent return or statement; or",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Supply any false or fraudulent information.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "A person or an officer or employee of a corporation or a member or employee of a partnership who violates subsection",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 18,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors324.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors324.html#section-324.510",
+      "identifier": "ORS 324.510",
+      "name": "Section 324.510",
+      "text": "Content of statement or settlement sheet. All statements or settlement sheets for oil or gas shall have stamped or written thereon the following words: Gross production tax deducted and paid, and payee accepts such deduction and authorizes payment to the State of Oregon.",
+      "history_citation_blocks": [
+        "1981 c.889 17"
+      ],
+      "history_citations": [
+        {
+          "raw": "1981 c.889 17",
+          "year": 1981,
+          "chapter": "889",
+          "section": "17"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 19,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors324.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors324.html#section-324.520",
+      "identifier": "ORS 324.520",
+      "name": "Section 324.520",
+      "text": "Duty to furnish information to department; penalty. (1) It shall be the duty of every person engaged in the production of oil and gas in this state to furnish to the Department of Revenue, upon forms prescribed by the department, any and all information relative to the production of oil or gas subject to gross production tax that may be required to properly enforce the provisions of this chapter. The department may require any person to install suitable measuring devices to enable the person to include in the reports the quantity of oil or gas produced in the State of Oregon. (2) It shall be the duty of every person engaged in the operation of a refinery for the processing of oil or gas in the State of Oregon to furnish quarterly to the department, upon forms prescribed by the department, any and all information relative to the amount of oil or gas subject to gross production tax that has been processed by it during the quarterly period, and oil on hand at the close of the period, that may be required to properly enforce the provisions of this chapter. (3) It shall be the duty of every person engaged in the purchase or storing of oil subject to gross production tax in the State of Oregon to furnish quarterly a report to the department, upon forms prescribed by the department, showing the amount of oil in storage, giving, along with other information required, the location, identity, character and capacity of the storage receptacle in which the oil is stored. (4) All reports required under this section, shall be filed for each quarter and shall be delinquent if not filed on or before the 45th day following the preceding quarterly period. The failure of any person to comply with the provisions of this section shall make the person liable to a penalty of $25 for each day the person fails or refuses to furnish a statement or comply with the provisions of this chapter. The penalty may be recovered at the suit of the state, on relation of the department. Any penalty so collected shall be deposited in the suspense account referred to in ORS 324.340. [1981 c.889 15] CHAPTER 325 [Reserved for expansion] _______________",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "It shall be the duty of every person engaged in the production of oil and gas in this state to furnish to the Department of Revenue, upon forms prescribed by the department, any and all information relative to the production of oil or gas subject to gross production tax that may be required to properly enforce the provisions of this chapter. The department may require any person to install suitable measuring devices to enable the person to include in the reports the quantity of oil or gas produced in the State of Oregon.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "It shall be the duty of every person engaged in the operation of a refinery for the processing of oil or gas in the State of Oregon to furnish quarterly to the department, upon forms prescribed by the department, any and all information relative to the amount of oil or gas subject to gross production tax that has been processed by it during the quarterly period, and oil on hand at the close of the period, that may be required to properly enforce the provisions of this chapter.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "It shall be the duty of every person engaged in the purchase or storing of oil subject to gross production tax in the State of Oregon to furnish quarterly a report to the department, upon forms prescribed by the department, showing the amount of oil in storage, giving, along with other information required, the location, identity, character and capacity of the storage receptacle in which the oil is stored.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "All reports required under this section, shall be filed for each quarter and shall be delinquent if not filed on or before the 45th day following the preceding quarterly period. The failure of any person to comply with the provisions of this section shall make the person liable to a penalty of $25 for each day the person fails or refuses to furnish a statement or comply with the provisions of this chapter. The penalty may be recovered at the suit of the state, on relation of the department. Any penalty so collected shall be deposited in the suspense account referred to in ORS 324.340. [1981 c.889 15] CHAPTER 325 [Reserved for expansion] _______________",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 20,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors324.html"
+    }
+  ],
+  "alternateName": "Oil and Gas Tax",
+  "legislationDate": "2023"
+}

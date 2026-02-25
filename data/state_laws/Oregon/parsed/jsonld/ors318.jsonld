@@ -1,0 +1,921 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "orlaw": "https://www.oregonlegislature.gov/ors#"
+  },
+  "@type": "Legislation",
+  "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors318.html",
+  "identifier": "ORS Chapter 318",
+  "name": "ORS Chapter 318 — Corporation Income Tax",
+  "legislationType": "Statute",
+  "jurisdiction": "US-OR",
+  "isPartOf": {
+    "@type": "CreativeWork",
+    "identifier": "ORS",
+    "name": "Oregon Revised Statutes",
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors"
+  },
+  "dateModified": "2026-02-25T08:11:22.114322+00:00",
+  "source_file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors318.html",
+  "hasPart": [
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors318.html#section-318.010",
+      "identifier": "ORS 318.010",
+      "name": "Section 318.010",
+      "text": "Short title; Department of Revenue to administer chapter. This chapter shall be known and may be cited as the Corporation Income Tax Act of 1955, and it shall be administered by the Department of Revenue.",
+      "history_citation_blocks": [
+        "1955 c.334 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "1955 c.334 1",
+          "year": 1955,
+          "chapter": "334",
+          "section": "1"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 1,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors318.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors318.html#section-318.020",
+      "identifier": "ORS 318.020",
+      "name": "Section 318.020",
+      "text": "Imposition of tax. (1) There hereby is imposed upon every corporation for each taxable year a tax at the rate provided in ORS 317.061 upon its Oregon taxable income derived from sources within this state, other than income for which the corporation is subject to the tax imposed by ORS chapter 317 according to or measured by its Oregon taxable income. (2) Income from sources within this state includes income from tangible or intangible property located or having a situs in this state and income from any activities carried on in this state, regardless of whether carried on in intrastate, interstate or foreign commerce. (3) Income that constitutes net long-term capital gain described in ORS 317.063 shall be taxed at the rate imposed under ORS 317.063.",
+      "history_citation_blocks": [
+        "1955 c.334 2; 1957 c.607 9; 1957 c.633 1; 1961 c.55 1; subsection (3) enacted as 1961 c.55 2; 1975 c.368 7; 1983 c.162 44; 1999 c.21 49; 2001 c.545 5; 2005 c.94 89"
+      ],
+      "history_citations": [
+        {
+          "raw": "1955 c.334 2",
+          "year": 1955,
+          "chapter": "334",
+          "section": "2"
+        },
+        {
+          "raw": "1957 c.607 9",
+          "year": 1957,
+          "chapter": "607",
+          "section": "9"
+        },
+        {
+          "raw": "1957 c.633 1",
+          "year": 1957,
+          "chapter": "633",
+          "section": "1"
+        },
+        {
+          "raw": "1961 c.55 1",
+          "year": 1961,
+          "chapter": "55",
+          "section": "1"
+        },
+        {
+          "raw": "subsection (3) enacted as 1961 c.55 2"
+        },
+        {
+          "raw": "1975 c.368 7",
+          "year": 1975,
+          "chapter": "368",
+          "section": "7"
+        },
+        {
+          "raw": "1983 c.162 44",
+          "year": 1983,
+          "chapter": "162",
+          "section": "44"
+        },
+        {
+          "raw": "1999 c.21 49",
+          "year": 1999,
+          "chapter": "21",
+          "section": "49"
+        },
+        {
+          "raw": "2001 c.545 5",
+          "year": 2001,
+          "chapter": "545",
+          "section": "5"
+        },
+        {
+          "raw": "2005 c.94 89",
+          "year": 2005,
+          "chapter": "94",
+          "section": "89"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "There hereby is imposed upon every corporation for each taxable year a tax at the rate provided in ORS 317.061 upon its Oregon taxable income derived from sources within this state, other than income for which the corporation is subject to the tax imposed by ORS chapter 317 according to or measured by its Oregon taxable income.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Income from sources within this state includes income from tangible or intangible property located or having a situs in this state and income from any activities carried on in this state, regardless of whether carried on in intrastate, interstate or foreign commerce.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Income that constitutes net long-term capital gain described in ORS 317.063 shall be taxed at the rate imposed under ORS 317.063.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 2,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors318.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors318.html#section-318.030",
+      "identifier": "ORS 318.030",
+      "name": "Section 318.030",
+      "text": "",
+      "history_citation_blocks": [
+        "1955 c.334 3; 1957 c.74 3; 1965 c.154 5; 1965 c.460 5; 1967 c.592 10; 1969 c.166 7; 1969 c.493 96a; 1969 c.681 7; 1971 c.283 5; 1973 c.115 6; 1973 c.753 7; 1977 c.866 6; 1979 c.414 6; 1979 c.561 7; 1979 c.578 10; repealed by 1983 c.162 45 (318.031 enacted in lieu of 318.030)"
+      ],
+      "history_citations": [
+        {
+          "raw": "1955 c.334 3",
+          "year": 1955,
+          "chapter": "334",
+          "section": "3"
+        },
+        {
+          "raw": "1957 c.74 3",
+          "year": 1957,
+          "chapter": "74",
+          "section": "3"
+        },
+        {
+          "raw": "1965 c.154 5",
+          "year": 1965,
+          "chapter": "154",
+          "section": "5"
+        },
+        {
+          "raw": "1965 c.460 5",
+          "year": 1965,
+          "chapter": "460",
+          "section": "5"
+        },
+        {
+          "raw": "1967 c.592 10",
+          "year": 1967,
+          "chapter": "592",
+          "section": "10"
+        },
+        {
+          "raw": "1969 c.166 7",
+          "year": 1969,
+          "chapter": "166",
+          "section": "7"
+        },
+        {
+          "raw": "1969 c.493 96a",
+          "year": 1969,
+          "chapter": "493",
+          "section": "96a"
+        },
+        {
+          "raw": "1969 c.681 7",
+          "year": 1969,
+          "chapter": "681",
+          "section": "7"
+        },
+        {
+          "raw": "1971 c.283 5",
+          "year": 1971,
+          "chapter": "283",
+          "section": "5"
+        },
+        {
+          "raw": "1973 c.115 6",
+          "year": 1973,
+          "chapter": "115",
+          "section": "6"
+        },
+        {
+          "raw": "1973 c.753 7",
+          "year": 1973,
+          "chapter": "753",
+          "section": "7"
+        },
+        {
+          "raw": "1977 c.866 6",
+          "year": 1977,
+          "chapter": "866",
+          "section": "6"
+        },
+        {
+          "raw": "1979 c.414 6",
+          "year": 1979,
+          "chapter": "414",
+          "section": "6"
+        },
+        {
+          "raw": "1979 c.561 7",
+          "year": 1979,
+          "chapter": "561",
+          "section": "7"
+        },
+        {
+          "raw": "1979 c.578 10",
+          "year": 1979,
+          "chapter": "578",
+          "section": "10"
+        },
+        {
+          "raw": "repealed by 1983 c.162 45 (318.031 enacted in lieu of 318.030)"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 3,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors318.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors318.html#section-318.031",
+      "identifier": "ORS 318.031",
+      "name": "Section 318.031",
+      "text": "Provisions in ORS chapters 305, 314, 315 and 317 incorporated into corporation income tax law. It being the intention of the Legislative Assembly that this chapter and ORS chapter 317 shall be administered as uniformly as possible (allowance being made for the difference in imposition of the taxes), ORS 305.140 and 305.150, ORS chapter 314 and the following sections are incorporated into and made a part of this chapter: ORS 315.104, 315.141, 315.156, 315.176, 315.204, 315.208, 315.213, 315.304, 315.326, 315.331, 315.336, 315.506, 315.507, 315.523, 315.533, 315.593 and 315.643 (all only to the extent applicable to a corporation) and ORS chapter 317.",
+      "history_citation_blocks": [
+        "1983 c.162 46 (enacted in lieu of 318.030); 1984 c.1 13; 1985 c.761 23; 1987 c.293 49; 1987 c.911 8f; 1989 c.625 24; 1989 c.911 5; 1991 c.457 15; 1991 c.652 11; 1991 c.928 5; 1993 c.730 6; 1995 c.79 171; 1997 c.835 41; 1999 c.21 50; 1999 c.358 5; 2001 c.114 43; 2001 c.292 13; 2001 c.674 12; 2001 c.932 11; 2001 c.957 19; 2005 c.80 3; 2005 c.94 90; 2007 c.739 8; 2007 c.883 4; 2009 c.33 27,28; 2011 c.83 22; 2011 c.730 20; 2011 c.732 10; 2017 c.610 22; 2018 c.108 8; 2019 c.579 16"
+      ],
+      "history_citations": [
+        {
+          "raw": "1983 c.162 46 (enacted in lieu of 318.030)"
+        },
+        {
+          "raw": "1984 c.1 13",
+          "year": 1984,
+          "chapter": "1",
+          "section": "13"
+        },
+        {
+          "raw": "1985 c.761 23",
+          "year": 1985,
+          "chapter": "761",
+          "section": "23"
+        },
+        {
+          "raw": "1987 c.293 49",
+          "year": 1987,
+          "chapter": "293",
+          "section": "49"
+        },
+        {
+          "raw": "1987 c.911 8f",
+          "year": 1987,
+          "chapter": "911",
+          "section": "8f"
+        },
+        {
+          "raw": "1989 c.625 24",
+          "year": 1989,
+          "chapter": "625",
+          "section": "24"
+        },
+        {
+          "raw": "1989 c.911 5",
+          "year": 1989,
+          "chapter": "911",
+          "section": "5"
+        },
+        {
+          "raw": "1991 c.457 15",
+          "year": 1991,
+          "chapter": "457",
+          "section": "15"
+        },
+        {
+          "raw": "1991 c.652 11",
+          "year": 1991,
+          "chapter": "652",
+          "section": "11"
+        },
+        {
+          "raw": "1991 c.928 5",
+          "year": 1991,
+          "chapter": "928",
+          "section": "5"
+        },
+        {
+          "raw": "1993 c.730 6",
+          "year": 1993,
+          "chapter": "730",
+          "section": "6"
+        },
+        {
+          "raw": "1995 c.79 171",
+          "year": 1995,
+          "chapter": "79",
+          "section": "171"
+        },
+        {
+          "raw": "1997 c.835 41",
+          "year": 1997,
+          "chapter": "835",
+          "section": "41"
+        },
+        {
+          "raw": "1999 c.21 50",
+          "year": 1999,
+          "chapter": "21",
+          "section": "50"
+        },
+        {
+          "raw": "1999 c.358 5",
+          "year": 1999,
+          "chapter": "358",
+          "section": "5"
+        },
+        {
+          "raw": "2001 c.114 43",
+          "year": 2001,
+          "chapter": "114",
+          "section": "43"
+        },
+        {
+          "raw": "2001 c.292 13",
+          "year": 2001,
+          "chapter": "292",
+          "section": "13"
+        },
+        {
+          "raw": "2001 c.674 12",
+          "year": 2001,
+          "chapter": "674",
+          "section": "12"
+        },
+        {
+          "raw": "2001 c.932 11",
+          "year": 2001,
+          "chapter": "932",
+          "section": "11"
+        },
+        {
+          "raw": "2001 c.957 19",
+          "year": 2001,
+          "chapter": "957",
+          "section": "19"
+        },
+        {
+          "raw": "2005 c.80 3",
+          "year": 2005,
+          "chapter": "80",
+          "section": "3"
+        },
+        {
+          "raw": "2005 c.94 90",
+          "year": 2005,
+          "chapter": "94",
+          "section": "90"
+        },
+        {
+          "raw": "2007 c.739 8",
+          "year": 2007,
+          "chapter": "739",
+          "section": "8"
+        },
+        {
+          "raw": "2007 c.883 4",
+          "year": 2007,
+          "chapter": "883",
+          "section": "4"
+        },
+        {
+          "raw": "2009 c.33 27,28"
+        },
+        {
+          "raw": "2011 c.83 22",
+          "year": 2011,
+          "chapter": "83",
+          "section": "22"
+        },
+        {
+          "raw": "2011 c.730 20",
+          "year": 2011,
+          "chapter": "730",
+          "section": "20"
+        },
+        {
+          "raw": "2011 c.732 10",
+          "year": 2011,
+          "chapter": "732",
+          "section": "10"
+        },
+        {
+          "raw": "2017 c.610 22",
+          "year": 2017,
+          "chapter": "610",
+          "section": "22"
+        },
+        {
+          "raw": "2018 c.108 8",
+          "year": 2018,
+          "chapter": "108",
+          "section": "8"
+        },
+        {
+          "raw": "2019 c.579 16",
+          "year": 2019,
+          "chapter": "579",
+          "section": "16"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 4,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors318.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors318.html#section-318.040",
+      "identifier": "ORS 318.040",
+      "name": "Section 318.040",
+      "text": "Exempt corporations. In addition to the corporations exempt from the provisions of this chapter by the incorporation in this chapter of ORS 317.080, there shall also be exempt those foreign corporations whose activities in this state are confined to purchases of personal property, and the storage thereof incident to shipment outside the state, unless such foreign corporation is an affiliate of another foreign or domestic corporation which is doing business in Oregon or is subject to this chapter. Whether or not corporations are affiliated shall be determined as provided in section 1504 of the Internal Revenue Code.",
+      "history_citation_blocks": [
+        "1955 c.334 4; 1977 c.866 7; 1984 c.1 14; 1985 c.802 34"
+      ],
+      "history_citations": [
+        {
+          "raw": "1955 c.334 4",
+          "year": 1955,
+          "chapter": "334",
+          "section": "4"
+        },
+        {
+          "raw": "1977 c.866 7",
+          "year": 1977,
+          "chapter": "866",
+          "section": "7"
+        },
+        {
+          "raw": "1984 c.1 14",
+          "year": 1984,
+          "chapter": "1",
+          "section": "14"
+        },
+        {
+          "raw": "1985 c.802 34",
+          "year": 1985,
+          "chapter": "802",
+          "section": "34"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 5,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors318.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors318.html#section-318.044",
+      "identifier": "ORS 318.044",
+      "name": "Section 318.044",
+      "text": "",
+      "history_citation_blocks": [
+        "1957 s.s. c.15 14,15; 1971 c.724 2; 1977 c.89 2; repealed by 1983 c.162 57"
+      ],
+      "history_citations": [
+        {
+          "raw": "1957 s.s. c.15 14,15"
+        },
+        {
+          "raw": "1971 c.724 2",
+          "year": 1971,
+          "chapter": "724",
+          "section": "2"
+        },
+        {
+          "raw": "1977 c.89 2",
+          "year": 1977,
+          "chapter": "89",
+          "section": "2"
+        },
+        {
+          "raw": "repealed by 1983 c.162 57"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 6,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors318.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors318.html#section-318.046",
+      "identifier": "ORS 318.046",
+      "name": "Section 318.046",
+      "text": "",
+      "history_citation_blocks": [
+        "1957 s.s. c.15 16,17; 1959 c.92 3; repealed by 1983 c.162 57"
+      ],
+      "history_citations": [
+        {
+          "raw": "1957 s.s. c.15 16,17"
+        },
+        {
+          "raw": "1959 c.92 3",
+          "year": 1959,
+          "chapter": "92",
+          "section": "3"
+        },
+        {
+          "raw": "repealed by 1983 c.162 57"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 7,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors318.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors318.html#section-318.048",
+      "identifier": "ORS 318.048",
+      "name": "Section 318.048",
+      "text": "",
+      "history_citation_blocks": [
+        "1965 c.178 6; repealed by 1983 c.162 57"
+      ],
+      "history_citations": [
+        {
+          "raw": "1965 c.178 6",
+          "year": 1965,
+          "chapter": "178",
+          "section": "6"
+        },
+        {
+          "raw": "repealed by 1983 c.162 57"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 8,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors318.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors318.html#section-318.050",
+      "identifier": "ORS 318.050",
+      "name": "Section 318.050",
+      "text": "",
+      "history_citation_blocks": [
+        "1955 c.334 6; repealed by 1977 c.866 9"
+      ],
+      "history_citations": [
+        {
+          "raw": "1955 c.334 6",
+          "year": 1955,
+          "chapter": "334",
+          "section": "6"
+        },
+        {
+          "raw": "repealed by 1977 c.866 9"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 9,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors318.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors318.html#section-318.060",
+      "identifier": "ORS 318.060",
+      "name": "Section 318.060",
+      "text": "Rules and regulations; personnel. The Department of Revenue is authorized to employ such personnel, and prescribe and prepare such rules, regulations, forms and tables as are necessary to place this chapter in operation.",
+      "history_citation_blocks": [
+        "1955 c.334 7; 1957 c.528 5"
+      ],
+      "history_citations": [
+        {
+          "raw": "1955 c.334 7",
+          "year": 1955,
+          "chapter": "334",
+          "section": "7"
+        },
+        {
+          "raw": "1957 c.528 5",
+          "year": 1957,
+          "chapter": "528",
+          "section": "5"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 10,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors318.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors318.html#section-318.070",
+      "identifier": "ORS 318.070",
+      "name": "Section 318.070",
+      "text": "Disposition of revenue. The net revenue from the tax imposed by this chapter shall be paid over to the State Treasurer and held in the General Fund as miscellaneous receipts available generally to meet any expense or obligation of the State of Oregon lawfully incurred. A working balance of unreceipted revenue from the tax imposed by this chapter may be retained by the Department of Revenue for the payment of refunds, but such working balance shall not at the close of any fiscal year exceed the sum of $50,000.",
+      "history_citation_blocks": [
+        "1955 c.334 5"
+      ],
+      "history_citations": [
+        {
+          "raw": "1955 c.334 5",
+          "year": 1955,
+          "chapter": "334",
+          "section": "5"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 11,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors318.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors318.html#section-318.074",
+      "identifier": "ORS 318.074",
+      "name": "Section 318.074",
+      "text": "Disposition of revenue from tax imposed at increased rate; estimate. (1) For tax years beginning on or after January 1, 2013, and before January 1, 2017, any revenue that is received as a result of a rate of tax above 7.5 percent imposed under this chapter and that is in excess of the revenue that would be received under this chapter at a rate of 7.5 percent shall be deposited into the Oregon Rainy Day Fund established by ORS 293.144. (2) For tax years beginning on or after January 1, 2017, any revenue that is received as a result of a rate of tax above 7.2 percent imposed under this chapter and that is in excess of the revenue that would be received under this chapter at a rate of 7.2 percent shall be deposited into the Oregon Rainy Day Fund established by ORS 293.144. (3) Before the end of each biennium, beginning with the biennium ending on June 30, 2015, the Department of Revenue shall estimate the revenue described in subsection (1) or (2) of this section that is received during the biennium. An amount equal to that estimate shall be transferred into the Oregon Rainy Day Fund established by ORS 293.144 on or before June 30 of each odd-numbered year.",
+      "history_citation_blocks": [
+        "2009 c.747 4; 2013 s.s. c.5 9"
+      ],
+      "history_citations": [
+        {
+          "raw": "2009 c.747 4",
+          "year": 2009,
+          "chapter": "747",
+          "section": "4"
+        },
+        {
+          "raw": "2013 s.s. c.5 9",
+          "year": 2013,
+          "session": "s.s.",
+          "chapter": "5",
+          "section": "9"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "For tax years beginning on or after January 1, 2013, and before January 1, 2017, any revenue that is received as a result of a rate of tax above 7.5 percent imposed under this chapter and that is in excess of the revenue that would be received under this chapter at a rate of 7.5 percent shall be deposited into the Oregon Rainy Day Fund established by ORS 293.144.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "For tax years beginning on or after January 1, 2017, any revenue that is received as a result of a rate of tax above 7.2 percent imposed under this chapter and that is in excess of the revenue that would be received under this chapter at a rate of 7.2 percent shall be deposited into the Oregon Rainy Day Fund established by ORS 293.144. of this section that is received during the biennium. An amount equal to that estimate shall be transferred into the Oregon Rainy Day Fund established by ORS 293.144 on or before June 30 of each odd-numbered year.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Before the end of each biennium, beginning with the biennium ending on June 30, 2015, the Department of Revenue shall estimate the revenue described in subsection",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 12,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors318.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors318.html#section-318.080",
+      "identifier": "ORS 318.080",
+      "name": "Section 318.080",
+      "text": "[1981 c.720 20; repealed by 1993 c.730 9 (315.134 enacted in lieu of 316.084, 317.133 and",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 13,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors318.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors318.html#section-318.085",
+      "identifier": "ORS 318.085",
+      "name": "Section 318.085",
+      "text": "[1991 c.859 7; repealed by 1993 c.730 27 (315.254 enacted in lieu of 316.151, 317.141 and",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 14,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors318.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors318.html#section-318.090",
+      "identifier": "ORS 318.090",
+      "name": "Section 318.090",
+      "text": "",
+      "history_citation_blocks": [
+        "1981 c.778 38; repealed by 2003 c.46 45"
+      ],
+      "history_citations": [
+        {
+          "raw": "1981 c.778 38",
+          "year": 1981,
+          "chapter": "778",
+          "section": "38"
+        },
+        {
+          "raw": "repealed by 2003 c.46 45"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 15,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors318.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors318.html#section-318.100",
+      "identifier": "ORS 318.100",
+      "name": "Section 318.100",
+      "text": "",
+      "history_citation_blocks": [
+        "1983 c.162 49; repealed by 1995 c.79 172"
+      ],
+      "history_citations": [
+        {
+          "raw": "1983 c.162 49",
+          "year": 1983,
+          "chapter": "162",
+          "section": "49"
+        },
+        {
+          "raw": "repealed by 1995 c.79 172"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 16,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors318.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors318.html#section-318.102",
+      "identifier": "ORS 318.102",
+      "name": "Section 318.102",
+      "text": "[1985 c.438 6; repealed by 1993 c.730 13 (315.148 enacted in lieu of 316.098, 317.150 and",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 17,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors318.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors318.html#section-318.104",
+      "identifier": "ORS 318.104",
+      "name": "Section 318.104",
+      "text": "[1985 c.521 5; repealed by 1993 c.730 17 (315.156 enacted in lieu of 316.091, 317.148 and",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 18,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors318.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors318.html#section-318.106",
+      "identifier": "ORS 318.106",
+      "name": "Section 318.106",
+      "text": "ORS 317.151 as part of chapter. ORS 317.151 is incorporated into and made a part of this chapter.",
+      "history_citation_blocks": [
+        "1985 c.695 4; 2009 c.33 29"
+      ],
+      "history_citations": [
+        {
+          "raw": "1985 c.695 4",
+          "year": 1985,
+          "chapter": "695",
+          "section": "4"
+        },
+        {
+          "raw": "2009 c.33 29",
+          "year": 2009,
+          "chapter": "33",
+          "section": "29"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 19,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors318.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors318.html#section-318.110",
+      "identifier": "ORS 318.110",
+      "name": "Section 318.110",
+      "text": "[1985 c.749 5; repealed by 1993 c.730 7 (315.104 enacted in lieu of 316.094, 317.102 and",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 20,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors318.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors318.html#section-318.130",
+      "identifier": "ORS 318.130",
+      "name": "Section 318.130",
+      "text": "ORS 317.329 as part of chapter. ORS 317.329 is incorporated into and made a part of this chapter by reference.",
+      "history_citation_blocks": [
+        "1985 c.802 21d; 2009 c.33 30"
+      ],
+      "history_citations": [
+        {
+          "raw": "1985 c.802 21d",
+          "year": 1985,
+          "chapter": "802",
+          "section": "21d"
+        },
+        {
+          "raw": "2009 c.33 30",
+          "year": 2009,
+          "chapter": "33",
+          "section": "30"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 21,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors318.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors318.html#section-318.160",
+      "identifier": "ORS 318.160",
+      "name": "Section 318.160",
+      "text": "[1987 c.682 9; repealed by 1993 c.730 23 (315.208 enacted in lieu of 316.132, 317.114 and",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 22,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors318.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors318.html#section-318.170",
+      "identifier": "ORS 318.170",
+      "name": "Section 318.170",
+      "text": "",
+      "history_citation_blocks": [
+        "1987 c.591 17; repealed by 1997 c.170 33"
+      ],
+      "history_citations": [
+        {
+          "raw": "1987 c.591 17",
+          "year": 1987,
+          "chapter": "591",
+          "section": "17"
+        },
+        {
+          "raw": "repealed by 1997 c.170 33"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 23,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors318.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors318.html#section-318.175",
+      "identifier": "ORS 318.175",
+      "name": "Section 318.175",
+      "text": "[1987 c.682 8; repealed by 1993 c.730 21 (315.204 enacted in lieu of 316.134, 317.135 and",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 24,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors318.html"
+    }
+  ],
+  "alternateName": "Corporation Income Tax",
+  "legislationDate": "2021"
+}

@@ -1,0 +1,1439 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "orlaw": "https://www.oregonlegislature.gov/ors#"
+  },
+  "@type": "Legislation",
+  "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors209.html",
+  "identifier": "ORS Chapter 209",
+  "name": "ORS Chapter 209 — County Surveyors",
+  "legislationType": "Statute",
+  "jurisdiction": "US-OR",
+  "isPartOf": {
+    "@type": "CreativeWork",
+    "identifier": "ORS",
+    "name": "Oregon Revised Statutes",
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors"
+  },
+  "dateModified": "2026-02-25T08:11:19.178640+00:00",
+  "source_file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors209.html",
+  "hasPart": [
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors209.html#section-209.005",
+      "identifier": "ORS 209.005",
+      "name": "Section 209.005",
+      "text": "Definitions. As used in this chapter, unless the context requires otherwise: (1) Control point means a horizontal or vertical survey position set within the stated precision of the survey. (2) County surveyor means an individual appointed or elected to the office of county surveyor and who is responsible for performing the duties of such office as described by law. (3) Deputy county surveyor means an individual appointed by the county surveyor to the office of deputy county surveyor. (4) Geodetic control means horizontal or vertical survey monuments that are primarily intended to be used as reference positions for other surveys or that serve to extend the national geodetic control network. (5) Monument means any permanent material object or collection of objects, either natural or man-made, that indicates the position on the ground of a survey station, public land survey corner or accessories, or a land boundary corner established by a qualified surveyor. (6) Public land survey corner means a section corner, one-quarter section corner, Donation Land Claim corner, meander corner, witness corner or any other corner established by the General Land Office or its successor. (7) Registered professional land surveyor has the meaning given that term in ORS 672.002.",
+      "history_citation_blocks": [
+        "1989 c.394 2; 1991 c.339 1; 2005 c.230 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "1989 c.394 2",
+          "year": 1989,
+          "chapter": "394",
+          "section": "2"
+        },
+        {
+          "raw": "1991 c.339 1",
+          "year": 1991,
+          "chapter": "339",
+          "section": "1"
+        },
+        {
+          "raw": "2005 c.230 1",
+          "year": 2005,
+          "chapter": "230",
+          "section": "1"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Control point means a horizontal or vertical survey position set within the stated precision of the survey.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "County surveyor means an individual appointed or elected to the office of county surveyor and who is responsible for performing the duties of such office as described by law.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Deputy county surveyor means an individual appointed by the county surveyor to the office of deputy county surveyor.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Geodetic control means horizontal or vertical survey monuments that are primarily intended to be used as reference positions for other surveys or that serve to extend the national geodetic control network.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "Monument means any permanent material object or collection of objects, either natural or man-made, that indicates the position on the ground of a survey station, public land survey corner or accessories, or a land boundary corner established by a qualified surveyor.",
+          "subsections": []
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "Public land survey corner means a section corner, one-quarter section corner, Donation Land Claim corner, meander corner, witness corner or any other corner established by the General Land Office or its successor.",
+          "subsections": []
+        },
+        {
+          "label": "(7)",
+          "token": "7",
+          "kind": "numeric",
+          "text": "Registered professional land surveyor has the meaning given that term in ORS 672.002.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 1,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors209.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors209.html#section-209.010",
+      "identifier": "ORS 209.010",
+      "name": "Section 209.010",
+      "text": "[Repealed by 1953 c.306 18]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 2,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors209.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors209.html#section-209.015",
+      "identifier": "ORS 209.015",
+      "name": "Section 209.015",
+      "text": "Authority to enter upon land; no unnecessary damage; notice. (1) Subject to subsection (3) of this section, the county surveyor, and employees and agents of the county surveyor, may enter upon any land for the purpose of surveying or performing any work necessary to carry out existing laws and may establish permanent survey monuments. (2) Any person exercising the right of entry granted under subsection (1) of this section shall do so with no unnecessary damage to the land entered upon. (3) A county surveyor or any employee or agent of the county surveyor shall not enter upon or establish any permanent survey monument upon any property without first providing notice to the landowner or landowners and the occupant of the property.",
+      "history_citation_blocks": [
+        "1993 c.219 2"
+      ],
+      "history_citations": [
+        {
+          "raw": "1993 c.219 2",
+          "year": 1993,
+          "chapter": "219",
+          "section": "2"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Subject to subsection of this section shall do so with no unnecessary damage to the land entered upon.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "of this section, the county surveyor, and employees and agents of the county surveyor, may enter upon any land for the purpose of surveying or performing any work necessary to carry out existing laws and may establish permanent survey monuments. A county surveyor or any employee or agent of the county surveyor shall not enter upon or establish any permanent survey monument upon any property without first providing notice to the landowner or landowners and the occupant of the property.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Any person exercising the right of entry granted under subsection",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 3,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors209.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors209.html#section-209.020",
+      "identifier": "ORS 209.020",
+      "name": "Section 209.020",
+      "text": "Surveys on court order; fees. The county surveyor shall execute all orders directed to the surveyor by any court of record or county court for surveying roads, or surveying or resurveying any tract of land the title to which is in dispute before such court, and all orders of survey for the partition of real estate. The county surveyor may charge and collect a fee that will reimburse the county for work performed under this section.",
+      "history_citation_blocks": [
+        "Amended by 1979 c.653 1; 1989 c.394 4"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1979 c.653 1"
+        },
+        {
+          "raw": "1989 c.394 4",
+          "year": 1989,
+          "chapter": "394",
+          "section": "4"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 4,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors209.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors209.html#section-209.030",
+      "identifier": "ORS 209.030",
+      "name": "Section 209.030",
+      "text": "Surveys on court order of land divided by county line; fees. When lands the title to which is in dispute before any court are divided by a county line, the court making an order of survey may direct such order to the surveyor of any county in which any part of such land is situated. The county surveyor may charge and collect a fee that will reimburse the county for work performed under this section. [Amended by 1989 c.394 5]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 5,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors209.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors209.html#section-209.040",
+      "identifier": "ORS 209.040",
+      "name": "Section 209.040",
+      "text": "Substitution when county surveyor interested in land. When it appears that the county surveyor is interested in any tract of land, the title to which is in dispute before the court, the court shall direct the survey or resurvey to be made by a registered professional land surveyor, who is in nowise interested. The substitute surveyor shall be authorized to administer oaths in the same manner as the county surveyor, return the survey or resurvey on oath or affirmation and receive for the services the same fees that the county surveyor would receive for similar services.",
+      "history_citation_blocks": [
+        "Amended by 1979 c.653 2; 1989 c.394 6"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1979 c.653 2"
+        },
+        {
+          "raw": "1989 c.394 6",
+          "year": 1989,
+          "chapter": "394",
+          "section": "6"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 6,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors209.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors209.html#section-209.050",
+      "identifier": "ORS 209.050",
+      "name": "Section 209.050",
+      "text": "[Amended by 1979 c.653 3; repealed by 1981 c.111 2]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 7,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors209.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors209.html#section-209.060",
+      "identifier": "ORS 209.060",
+      "name": "Section 209.060",
+      "text": "[Repealed by 1979 c.653 18]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 8,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors209.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors209.html#section-209.070",
+      "identifier": "ORS 209.070",
+      "name": "Section 209.070",
+      "text": "Duties. The county surveyor of each county shall: (1) Keep a fair and correct record of all surveys made by the county surveyor and deputies thereof and by the county road official, all surveys received pursuant to ORS 209.250 and all surveys under ORS 368.106 or 368.206. (2) Number progressively all surveys received and state by whom and, if provided, for whom made. (3) Provide a copy of any survey to any person or court requiring the same, on payment of the fee allowed by law. (4) Make all surveys of legal subdivisions with reference to the current United States Manual of Surveying Instructions. (5) Establish or reestablish and maintain all public land survey corners, where evidence of the corners can be found and the corners can be positively located, and keep a separate record of the corners, giving the dates and names of persons present. When so established or reestablished such corner monuments shall be recognized as the legal and permanent corners. (6) Establish or reestablish, upon order of the county court or board of county commissioners, all public land survey corners where all physical evidence is destroyed or cannot be found but where the official government notes are available, the corners to be reestablished in the manner provided in ORS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Keep a fair and correct record of all surveys made by the county surveyor and deputies thereof and by the county road official, all surveys received pursuant to ORS 209.250 and all surveys under ORS 368.106 or 368.206.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Number progressively all surveys received and state by whom and, if provided, for whom made.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Provide a copy of any survey to any person or court requiring the same, on payment of the fee allowed by law.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Make all surveys of legal subdivisions with reference to the current United States Manual of Surveying Instructions.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "Establish or reestablish and maintain all public land survey corners, where evidence of the corners can be found and the corners can be positively located, and keep a separate record of the corners, giving the dates and names of persons present. When so established or reestablished such corner monuments shall be recognized as the legal and permanent corners.",
+          "subsections": []
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "Establish or reestablish, upon order of the county court or board of county commissioners, all public land survey corners where all physical evidence is destroyed or cannot be found but where the official government notes are available, the corners to be reestablished in the manner provided in ORS",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 9,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors209.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors209.html#section-209.080",
+      "identifier": "ORS 209.080",
+      "name": "Section 209.080",
+      "text": "Compensation. The compensation for the county surveyor shall be as determined by the county court or board of county commissioners, and paid out of the county treasury upon order of the county court.",
+      "history_citation_blocks": [
+        "Amended by 1979 c.653 5; 1981 c.111 1; 1989 c.394 8"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1979 c.653 5"
+        },
+        {
+          "raw": "1981 c.111 1",
+          "year": 1981,
+          "chapter": "111",
+          "section": "1"
+        },
+        {
+          "raw": "1989 c.394 8",
+          "year": 1989,
+          "chapter": "394",
+          "section": "8"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 10,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors209.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors209.html#section-209.090",
+      "identifier": "ORS 209.090",
+      "name": "Section 209.090",
+      "text": "Procuring and filing copies of field notes and plats of Bureau of Land Management surveys; copies as evidence. (1) The county court shall procure from the Bureau of Land Management a copy of the field notes and plats of all surveys and resurveys of public lands of townships, sections, Donation Land Claims, mineral claims, homesteads, meander lines or other similar surveys lying within its county. These shall include copies of the official plats and field notes of the survey and shall be filed in the office of the county surveyor. (2) Copies, certified by the county surveyor, of copies of such field notes or plats filed in the office of the county surveyor by the county court shall be prima facie evidence.",
+      "history_citation_blocks": [
+        "Amended by 1979 c.653 6; 1989 c.394 9"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1979 c.653 6"
+        },
+        {
+          "raw": "1989 c.394 9",
+          "year": 1989,
+          "chapter": "394",
+          "section": "9"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The county court shall procure from the Bureau of Land Management a copy of the field notes and plats of all surveys and resurveys of public lands of townships, sections, Donation Land Claims, mineral claims, homesteads, meander lines or other similar surveys lying within its county. These shall include copies of the official plats and field notes of the survey and shall be filed in the office of the county surveyor.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Copies, certified by the county surveyor, of copies of such field notes or plats filed in the office of the county surveyor by the county court shall be prima facie evidence.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 11,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors209.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors209.html#section-209.100",
+      "identifier": "ORS 209.100",
+      "name": "Section 209.100",
+      "text": "Administering oaths. The county surveyor or a deputy may administer the oaths or affirmations necessary to the legal establishment of roads and other surveys, and to take the evidence of any person who may be produced to prove any point material to such survey. [Amended by 1979 c.653 7]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 12,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors209.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors209.html#section-209.110",
+      "identifier": "ORS 209.110",
+      "name": "Section 209.110",
+      "text": "[Repealed by 1979 c.653 18]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 13,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors209.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors209.html#section-209.115",
+      "identifier": "ORS 209.115",
+      "name": "Section 209.115",
+      "text": "Qualifications. An individual is not eligible to hold the office of county surveyor or deputy county surveyor unless the individual is a registered professional land surveyor.",
+      "history_citation_blocks": [
+        "1989 c.394 3"
+      ],
+      "history_citations": [
+        {
+          "raw": "1989 c.394 3",
+          "year": 1989,
+          "chapter": "394",
+          "section": "3"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 14,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors209.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors209.html#section-209.120",
+      "identifier": "ORS 209.120",
+      "name": "Section 209.120",
+      "text": "[Repealed by 1979 c.653 18]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 15,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors209.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors209.html#section-209.130",
+      "identifier": "ORS 209.130",
+      "name": "Section 209.130",
+      "text": "Establishment of corners; references; additional reference using coordinate system. (1) In the establishment or reestablishment of a public land survey corner, the county surveyor shall set a monument of durable quality. When a monument cannot be set at the exact corner position or it is not practicable to set a monument, then a witness corner monument shall be set. (2) Section corners, Donation Land Claim corners, center corners and quarter-section corners shall be witnessed by at least four references. Meander corners, angle point corners or other approved public land survey corners shall be witnessed by at least two references. References shall be of durable quality. All references shall be carefully described, and their bearings and distances noted in the report or on the survey. (3) For the purpose of providing an additional reference, the county surveyor may, when maintaining or reestablishing survey corners, establish coordinates on public land survey corners using the Oregon Coordinate System, pursuant to ORS 93.312, or another coordinate system, adopted by the appropriate public agency, that can be referenced directly to a geodetic control monument.",
+      "history_citation_blocks": [
+        "Amended by 1979 c.653 8; 1989 c.394 10; 2001 c.391 1; 2005 c.230 4; 2011 c.179 2"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1979 c.653 8"
+        },
+        {
+          "raw": "1989 c.394 10",
+          "year": 1989,
+          "chapter": "394",
+          "section": "10"
+        },
+        {
+          "raw": "2001 c.391 1",
+          "year": 2001,
+          "chapter": "391",
+          "section": "1"
+        },
+        {
+          "raw": "2005 c.230 4",
+          "year": 2005,
+          "chapter": "230",
+          "section": "4"
+        },
+        {
+          "raw": "2011 c.179 2",
+          "year": 2011,
+          "chapter": "179",
+          "section": "2"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "In the establishment or reestablishment of a public land survey corner, the county surveyor shall set a monument of durable quality. When a monument cannot be set at the exact corner position or it is not practicable to set a monument, then a witness corner monument shall be set.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Section corners, Donation Land Claim corners, center corners and quarter-section corners shall be witnessed by at least four references. Meander corners, angle point corners or other approved public land survey corners shall be witnessed by at least two references. References shall be of durable quality. All references shall be carefully described, and their bearings and distances noted in the report or on the survey.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "For the purpose of providing an additional reference, the county surveyor may, when maintaining or reestablishing survey corners, establish coordinates on public land survey corners using the Oregon Coordinate System, pursuant to ORS 93.312, or another coordinate system, adopted by the appropriate public agency, that can be referenced directly to a geodetic control monument.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 16,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors209.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors209.html#section-209.140",
+      "identifier": "ORS 209.140",
+      "name": "Section 209.140",
+      "text": "Necessary interference with corners or accessories; prior notice to county surveyor required; exception for emergency; fees. (1) Any person or public agency that finds it necessary to interfere with or pave over any established public land survey corner or accessories for any reason, shall notify the county surveyor prior to the interference, who shall lower and witness the monument, or place another monument and witness over the existing monument or reference and replace or set a witness monument, as the case may demand, and record the proceedings in the record of permanent surveys. The county surveyor may charge a fee in an amount that will reimburse the county for the work performed. (2) When an emergency exists and the county surveyor is unavailable, the person or public agency causing the interference shall cause a registered professional land surveyor to preserve the monument as required in subsection (1) of this section. The registered professional land surveyor referencing the monument shall notify the county surveyor of the references within two business days after the references or interference, whichever occurs first.",
+      "history_citation_blocks": [
+        "Amended by 1979 c.653 9; 1985 c.582 8; 1989 c.394 11"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1979 c.653 9"
+        },
+        {
+          "raw": "1985 c.582 8",
+          "year": 1985,
+          "chapter": "582",
+          "section": "8"
+        },
+        {
+          "raw": "1989 c.394 11",
+          "year": 1989,
+          "chapter": "394",
+          "section": "11"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Any person or public agency that finds it necessary to interfere with or pave over any established public land survey corner or accessories for any reason, shall notify the county surveyor prior to the interference, who shall lower and witness the monument, or place another monument and witness over the existing monument or reference and replace or set a witness monument, as the case may demand, and record the proceedings in the record of permanent surveys. The county surveyor may charge a fee in an amount that will reimburse the county for the work performed. of this section. The registered professional land surveyor referencing the monument shall notify the county surveyor of the references within two business days after the references or interference, whichever occurs first.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "When an emergency exists and the county surveyor is unavailable, the person or public agency causing the interference shall cause a registered professional land surveyor to preserve the monument as required in subsection",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 17,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors209.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors209.html#section-209.150",
+      "identifier": "ORS 209.150",
+      "name": "Section 209.150",
+      "text": "Removal or destruction of survey monument; notice to county surveyor; replacement of monument; exception. (1) Any person or public agency removing, disturbing or destroying any survey monument of record in the office of the county surveyor or county clerk shall cause a registered professional land surveyor to reference and replace the monument within 90 days of the removal, disturbance or destruction. The registered professional land surveyor referencing and replacing the monument shall do so in the same manner that is provided for public land survey corners according to ORS 209.140 and shall notify the county surveyor of that action within two business days. The costs of referencing and replacing the survey monument shall be paid by the person or public agency causing the removal, disturbance or destruction. (2) Notwithstanding subsection (1) of this section, a county surveyor may, upon written request and written notice to an affected property owner, provide written authorization to a registered professional land surveyor to remove a survey monument other than a public land survey corner as defined in ORS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Any person or public agency removing, disturbing or destroying any survey monument of record in the office of the county surveyor or county clerk shall cause a registered professional land surveyor to reference and replace the monument within 90 days of the removal, disturbance or destruction. The registered professional land surveyor referencing and replacing the monument shall do so in the same manner that is provided for public land survey corners according to ORS 209.140 and shall notify the county surveyor of that action within two business days. The costs of referencing and replacing the survey monument shall be paid by the person or public agency causing the removal, disturbance or destruction. of this section, a county surveyor may, upon written request and written notice to an affected property owner, provide written authorization to a registered professional land surveyor to remove a survey monument other than a public land survey corner as defined in ORS",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Notwithstanding subsection",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 18,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors209.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors209.html#section-209.155",
+      "identifier": "ORS 209.155",
+      "name": "Section 209.155",
+      "text": "Removal or destruction of survey monument during road construction; survey map in lieu of replacement; delineation of newly defined right of way. (1) Notwithstanding ORS 209.150, when a recorded survey monument, other than a public land survey corner, is removed, destroyed or disturbed as a result of construction or reconstruction of a public road, the survey monument does not have to be replaced if: (a) The original location of the recorded survey monument is within the new right of way; and (b) The person or public agency responsible for the construction or reconstruction causes a registered professional land surveyor to locate any survey monuments that are subject to removal, destruction or disturbance and to file a map, prior to the beginning of construction, with the county surveyor that identifies all existing recorded monuments, the existing right of way and controlling centerline and the survey control used to comply with this section. (2) The newly defined right of way may be delineated by either of the following methods: (a) All control points that define the right of way centerline are monumented or referenced with monuments. The right of way boundary is monumented at all angle points, points of curve, points of tangency and at least every 1,000 feet on long curves and tangents. A survey that identifies the survey control and the new right of way and controlling centerline shall be filed with the county surveyor within 180 days after completion of construction. (b) A permanent survey control point network is established referencing the new right of way and controlling centerline. The network shall consist of at least three control monuments and must span the length of the project. Each control monument shall be intervisible with at least two other control monuments. At least two monuments on the network must be part of the original control used to locate the monuments described in subsection (1)(b) of this section. A map identifying the control network and the new right of way and controlling centerline shall be filed with the county surveyor within 180 days after completion of construction. (3) The types of monuments shall be as described in ORS 92.060. (4) The survey maps required by this section shall comply with ORS 209.250 and any other requirement of law. (5) For the purpose of complying with subsection (1)(b) of this section, locating a survey monument may consist of establishing coordinates on the monument using the Oregon Coordinate System pursuant to ORS 93.312, Local Datum Plane coordinates that scale Oregon State Plane coordinates of the Oregon Coordinate System to a plane close to the ground elevation of a survey project or other coordinates compatible with those coordinates shown on the survey. (6) For the purpose of complying with this section, the date of completion of construction is deemed to be the date when all substantial road improvements are completed.",
+      "history_citation_blocks": [
+        "1997 c.336 2; 2011 c.179 3"
+      ],
+      "history_citations": [
+        {
+          "raw": "1997 c.336 2",
+          "year": 1997,
+          "chapter": "336",
+          "section": "2"
+        },
+        {
+          "raw": "2011 c.179 3",
+          "year": 2011,
+          "chapter": "179",
+          "section": "3"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Notwithstanding ORS 209.150, when a recorded survey monument, other than a public land survey corner, is removed, destroyed or disturbed as a result of construction or reconstruction of a public road, the survey monument does not have to be replaced if: (b) of this section. A map identifying the control network and the new right of way and controlling centerline shall be filed with the county surveyor within 180 days after completion of construction. (b) of this section, locating a survey monument may consist of establishing coordinates on the monument using the Oregon Coordinate System pursuant to ORS 93.312, Local Datum Plane coordinates that scale Oregon State Plane coordinates of the Oregon Coordinate System to a plane close to the ground elevation of a survey project or other coordinates compatible with those coordinates shown on the survey.",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "The original location of the recorded survey monument is within the new right of way; and",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "The person or public agency responsible for the construction or reconstruction causes a registered professional land surveyor to locate any survey monuments that are subject to removal, destruction or disturbance and to file a map, prior to the beginning of construction, with the county surveyor that identifies all existing recorded monuments, the existing right of way and controlling centerline and the survey control used to comply with this section.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The newly defined right of way may be delineated by either of the following methods:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "All control points that define the right of way centerline are monumented or referenced with monuments. The right of way boundary is monumented at all angle points, points of curve, points of tangency and at least every 1,000 feet on long curves and tangents. A survey that identifies the survey control and the new right of way and controlling centerline shall be filed with the county surveyor within 180 days after completion of construction.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "A permanent survey control point network is established referencing the new right of way and controlling centerline. The network shall consist of at least three control monuments and must span the length of the project. Each control monument shall be intervisible with at least two other control monuments. At least two monuments on the network must be part of the original control used to locate the monuments described in subsection",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The types of monuments shall be as described in ORS 92.060.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "The survey maps required by this section shall comply with ORS 209.250 and any other requirement of law.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "For the purpose of complying with subsection",
+          "subsections": []
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "For the purpose of complying with this section, the date of completion of construction is deemed to be the date when all substantial road improvements are completed.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 19,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors209.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors209.html#section-209.160",
+      "identifier": "ORS 209.160",
+      "name": "Section 209.160",
+      "text": "[Amended by 1979 c.653 11; repealed 1981 c.111 2]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 20,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors209.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors209.html#section-209.170",
+      "identifier": "ORS 209.170",
+      "name": "Section 209.170",
+      "text": "[Amended by 1979 c.653 12; repealed by 1981 c.111 2]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 21,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors209.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors209.html#section-209.180",
+      "identifier": "ORS 209.180",
+      "name": "Section 209.180",
+      "text": "[Repealed by 1979 c.653 18]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 22,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors209.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors209.html#section-209.190",
+      "identifier": "ORS 209.190",
+      "name": "Section 209.190",
+      "text": "[Repealed by 1981 c.111 2]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 23,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors209.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors209.html#section-209.200",
+      "identifier": "ORS 209.200",
+      "name": ". If the surveyor is unable to complete the survey and submit a",
+      "text": "permanent map within 45 days, the surveyor shall, within 45 days of establishing or reestablishing a boundary monument, provide written notice to the county surveyor containing the reasons for the delay, an estimate of the amount of time reasonably necessary to complete the survey but not exceeding 180 days, and a temporary map showing the position of monuments established or reestablished. (2) The permanent map must have a written narrative that may be on the face of the map. If the narrative is a separate document, the map and narrative must be referenced to each other. The map and narrative must be made on a suitable drafting material in the size required by the county surveyor. The lettering on the map and narrative must be of sufficient size and clarity to be reproduced clearly. The narrative must explain the purpose of the survey and how the boundary lines or other lines were established or reestablished and must state which deed records, deed elements, survey records, found survey monuments, plat records, road records or other pertinent data were controlling when establishing or reestablishing the lines. If the narrative is a separate document, the narrative must also contain the following: (a) Location of survey by one-fourth section, Township and Range. (b) The date of survey. (c) The surveyors seal and original signature. (d) The surveyors business name and address. (3) A permanent map must show the following: (a) Location of survey by one-fourth section, Township and Range. (b) The date of survey. (c) Scale of drawing and North Arrow. (d) The distance and course of all lines traced or established, giving the basis of bearing and the measured distance and course to a monumented section corner, one-quarter corner, one-sixteenth corner or Donation Land Claim corner in Township and Range, or to a monumented lot or parcel corner or boundary corner of a recorded subdivision, partition or condominium. (e) Measured bearings, angles and distances that are used as a basis for establishing or reestablishing lines or monuments separately indicated from those of record together with the recording reference. Metric measurements may be used if a conversion to feet is provided. (f) Monuments set and their relation to older monuments found. A detailed description of monuments found and set must be included and monuments set must be separately indicated from those found. (g) The surveyors seal and original signature. (h) The surveyors business name and address. (4)(a) Within 30 days of receiving a permanent map under this section, the county surveyor shall review the map to determine if it complies with subsections (1), (2) and (3) of this section and applicable local ordinances. A map must be indexed by the county surveyor within 30 days following a determination that the map is in compliance with this section. A survey prepared by the county surveyor in an official or private capacity must comply with subsections (1), (2) and (3) of this section. (b) A survey map found not to be in compliance with subsection (1), (2) or (3) of this section must be returned within 30 days of receipt for correction to the surveyor who prepared the map. The surveyor shall return the corrected survey map to the county surveyor within 30 days of receipt of the survey map from the county surveyor. (c) A map that is not corrected within the specified time period may be forwarded to the State Board of Examiners for Engineering and Land Surveying for action, as provided in subsection (11) of this section. (d) An action may not be maintained against the county surveyor for recording a survey map that does not comply with this section. (e) An action may not be maintained against the county surveyor for refusal to file a survey map that does not comply with this section. (5)(a) When a survey within this state is funded entirely or in part by public funds and the survey results in the establishment of horizontal or vertical monuments for geodetic control, the registered professional land surveyor performing the survey, within 45 days after completion of the survey, shall file a report of the survey with the county surveyors of those counties where the newly established monuments are located. (b) Notwithstanding paragraph (a) of this subsection, the governing body of a county may, by resolution or order, waive the filing of the report of the survey. (6) A report required by subsection (5)(a) of this section may include maps or diagrams. The maps or diagrams, if included, must be referenced to each other. The report must contain the following: (a) The name and number of each newly established geodetic control monument. (b) Location of newly established geodetic control monuments by Section, Township and Range. (c) Location of the horizontal component of geodetic control monuments by the Oregon Coordinate System referenced in ORS 93.312, including the scale factor, combined scale factor, convergence and geographic or geodetic coordinates, indicating datum used. (d) Location of the vertical component of geodetic control monuments by orthometric height, ellipsoidal height and geoidal separation, indicating datum used. (e) The date of survey. (f) The business name and address of the surveyor. (g) A description of all monuments set or found, including narrative or graphic information sufficient to locate the monuments. (h) A statement explaining the purpose of the survey, the equipment and procedures used, including the geoid model and reference ellipsoid used, and the names or numbers of the found record control monuments used and their source. (i) The scale of drawing and North Arrow if a map or diagram is included. (j) The seal and original signature of the surveyor. (k) For geodetic control, a statement regarding the network accuracy and local accuracy of the survey, categorized by horizontal position, ellipsoidal height and orthometric height, relative to the National Spatial Reference System. The statement shall include the accuracy classification at the 95 percent confidence level for both network and local classifications in accordance with Standards for Geodetic Control Networks, Part 2 of the federal Geospatial Positioning Accuracy Standards (FGDC 1998) for the newly established monuments. (7) The county surveyor shall file and index reports that comply with subsections (5) and (6) of this section within 30 days of determining compliance. (8) A monument set by a registered professional land surveyor to mark or reference a point on a property or land line or to mark or reference a geodetic control survey point must be durably and visibly marked or tagged with the registered business name or the letters L.S. followed by the registration number of the surveyor in charge or, if the monument is set by a public officer, the monument must be marked with the official title of the office. (9) If, in the performance of a survey, a registered professional land surveyor finds or makes changes in a public land survey corner or its accessories as described in an existing corner record or survey map in the office of the county surveyor, the surveyor shall complete and submit to the county surveyor a record of the changes found or made to a corner or accessories to the corner. The record must be submitted within 45 days of the corner visits, and must include the surveyors seal and original signature, business name and address, and be on stable base reproducible material in the form required by the county surveyor. (10) The signature and stamp of a registered professional land surveyor on a permanent survey map or plat constitutes certification that the map or plat complies with the applicable provisions of this chapter. (11) A registered professional land surveyor failing to comply with the provisions of subsections (1) to (9) of this section, ORS 92.050 to 92.080 or a county ordinance establishing standards for surveys or plats is subject to disciplinary action by the State Board of Examiners for Engineering and Land Surveying. (12) A federal or state agency, board or commission, special district or municipal corporation making a survey of lands within this state shall comply with this section.",
+      "history_citation_blocks": [
+        "Amended by 1963 c.555 1; 1965 c.542 1; 1979 c.653 16; 1981 c.113 2; 1983 c.309 11; 1989 c.394 14; 1991 c.339 3; 1993 c.219 13; 1997 c.489 11; 1999 c.710 11; 1999 c.1018 7; 2005 c.22 159; 2005 c.230 2; 2011 c.179 4; 2017 c.178 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1963 c.555 1"
+        },
+        {
+          "raw": "1965 c.542 1",
+          "year": 1965,
+          "chapter": "542",
+          "section": "1"
+        },
+        {
+          "raw": "1979 c.653 16",
+          "year": 1979,
+          "chapter": "653",
+          "section": "16"
+        },
+        {
+          "raw": "1981 c.113 2",
+          "year": 1981,
+          "chapter": "113",
+          "section": "2"
+        },
+        {
+          "raw": "1983 c.309 11",
+          "year": 1983,
+          "chapter": "309",
+          "section": "11"
+        },
+        {
+          "raw": "1989 c.394 14",
+          "year": 1989,
+          "chapter": "394",
+          "section": "14"
+        },
+        {
+          "raw": "1991 c.339 3",
+          "year": 1991,
+          "chapter": "339",
+          "section": "3"
+        },
+        {
+          "raw": "1993 c.219 13",
+          "year": 1993,
+          "chapter": "219",
+          "section": "13"
+        },
+        {
+          "raw": "1997 c.489 11",
+          "year": 1997,
+          "chapter": "489",
+          "section": "11"
+        },
+        {
+          "raw": "1999 c.710 11",
+          "year": 1999,
+          "chapter": "710",
+          "section": "11"
+        },
+        {
+          "raw": "1999 c.1018 7",
+          "year": 1999,
+          "chapter": "1018",
+          "section": "7"
+        },
+        {
+          "raw": "2005 c.22 159",
+          "year": 2005,
+          "chapter": "22",
+          "section": "159"
+        },
+        {
+          "raw": "2005 c.230 2",
+          "year": 2005,
+          "chapter": "230",
+          "section": "2"
+        },
+        {
+          "raw": "2011 c.179 4",
+          "year": 2011,
+          "chapter": "179",
+          "section": "4"
+        },
+        {
+          "raw": "2017 c.178 1",
+          "year": 2017,
+          "chapter": "178",
+          "section": "1"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The permanent map must have a written narrative that may be on the face of the map. If the narrative is a separate document, the map and narrative must be referenced to each other. The map and narrative must be made on a suitable drafting material in the size required by the county surveyor. The lettering on the map and narrative must be of sufficient size and clarity to be reproduced clearly. The narrative must explain the purpose of the survey and how the boundary lines or other lines were established or reestablished and must state which deed records, deed elements, survey records, found survey monuments, plat records, road records or other pertinent data were controlling when establishing or reestablishing the lines. If the narrative is a separate document, the narrative must also contain the following:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Location of survey by one-fourth section, Township and Range.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "The date of survey.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "The surveyors seal and original signature.",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "The surveyors business name and address.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "A permanent map must show the following: of this section and applicable local ordinances. A map must be indexed by the county surveyor within 30 days following a determination that the map is in compliance with this section. A survey prepared by the county surveyor in an official or private capacity must comply with subsections of this section. of this section must be returned within 30 days of receipt for correction to the surveyor who prepared the map. The surveyor shall return the corrected survey map to the county surveyor within 30 days of receipt of the survey map from the county surveyor.",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Location of survey by one-fourth section, Township and Range.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "The date of survey. A survey map found not to be in compliance with subsection",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Scale of drawing and North Arrow. A map that is not corrected within the specified time period may be forwarded to the State Board of Examiners for Engineering and Land Surveying for action, as provided in subsection",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "The distance and course of all lines traced or established, giving the basis of bearing and the measured distance and course to a monumented section corner, one-quarter corner, one-sixteenth corner or Donation Land Claim corner in Township and Range, or to a monumented lot or parcel corner or boundary corner of a recorded subdivision, partition or condominium.",
+              "subsections": []
+            },
+            {
+              "label": "(e)",
+              "token": "e",
+              "kind": "alpha_lower",
+              "text": "Measured bearings, angles and distances that are used as a basis for establishing or reestablishing lines or monuments separately indicated from those of record together with the recording reference. Metric measurements may be used if a conversion to feet is provided.",
+              "subsections": []
+            },
+            {
+              "label": "(f)",
+              "token": "f",
+              "kind": "alpha_lower",
+              "text": "Monuments set and their relation to older monuments found. A detailed description of monuments found and set must be included and monuments set must be separately indicated from those found.",
+              "subsections": []
+            },
+            {
+              "label": "(g)",
+              "token": "g",
+              "kind": "alpha_lower",
+              "text": "The surveyors seal and original signature.",
+              "subsections": []
+            },
+            {
+              "label": "(h)",
+              "token": "h",
+              "kind": "alpha_lower",
+              "text": "The surveyors business name and address.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "(a) Within 30 days of receiving a permanent map under this section, the county surveyor shall review the map to determine if it complies with subsections",
+          "subsections": []
+        },
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": ", to",
+          "subsections": []
+        },
+        {
+          "label": "(11)",
+          "token": "11",
+          "kind": "numeric",
+          "text": "of this section. A registered professional land surveyor failing to comply with the provisions of subsections",
+          "subsections": [
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "An action may not be maintained against the county surveyor for recording a survey map that does not comply with this section.",
+              "subsections": []
+            },
+            {
+              "label": "(e)",
+              "token": "e",
+              "kind": "alpha_lower",
+              "text": "An action may not be maintained against the county surveyor for refusal to file a survey map that does not comply with this section.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "(a) When a survey within this state is funded entirely or in part by public funds and the survey results in the establishment of horizontal or vertical monuments for geodetic control, the registered professional land surveyor performing the survey, within 45 days after completion of the survey, shall file a report of the survey with the county surveyors of those counties where the newly established monuments are located. (a) of this section may include maps or diagrams. The maps or diagrams, if included, must be referenced to each other. The report must contain the following:",
+          "subsections": [
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Notwithstanding paragraph Location of newly established geodetic control monuments by Section, Township and Range.",
+              "subsections": []
+            },
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "of this subsection, the governing body of a county may, by resolution or order, waive the filing of the report of the survey. The name and number of each newly established geodetic control monument.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Location of the horizontal component of geodetic control monuments by the Oregon Coordinate System referenced in ORS 93.312, including the scale factor, combined scale factor, convergence and geographic or geodetic coordinates, indicating datum used.",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "Location of the vertical component of geodetic control monuments by orthometric height, ellipsoidal height and geoidal separation, indicating datum used.",
+              "subsections": []
+            },
+            {
+              "label": "(e)",
+              "token": "e",
+              "kind": "alpha_lower",
+              "text": "The date of survey.",
+              "subsections": []
+            },
+            {
+              "label": "(f)",
+              "token": "f",
+              "kind": "alpha_lower",
+              "text": "The business name and address of the surveyor.",
+              "subsections": []
+            },
+            {
+              "label": "(g)",
+              "token": "g",
+              "kind": "alpha_lower",
+              "text": "A description of all monuments set or found, including narrative or graphic information sufficient to locate the monuments.",
+              "subsections": []
+            },
+            {
+              "label": "(h)",
+              "token": "h",
+              "kind": "alpha_lower",
+              "text": "A statement explaining the purpose of the survey, the equipment and procedures used, including the geoid model and reference ellipsoid used, and the names or numbers of the found record control monuments used and their source.",
+              "subsections": []
+            },
+            {
+              "label": "(i)",
+              "token": "i",
+              "kind": "alpha_lower",
+              "text": "The scale of drawing and North Arrow if a map or diagram is included.",
+              "subsections": []
+            },
+            {
+              "label": "(j)",
+              "token": "j",
+              "kind": "alpha_lower",
+              "text": "The seal and original signature of the surveyor.",
+              "subsections": []
+            },
+            {
+              "label": "(k)",
+              "token": "k",
+              "kind": "alpha_lower",
+              "text": "For geodetic control, a statement regarding the network accuracy and local accuracy of the survey, categorized by horizontal position, ellipsoidal height and orthometric height, relative to the National Spatial Reference System. The statement shall include the accuracy classification at the 95 percent confidence level for both network and local classifications in accordance with Standards for Geodetic Control Networks, Part 2 of the federal Geospatial Positioning Accuracy Standards (FGDC 1998) for the newly established monuments.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "A report required by subsection of this section within 30 days of determining compliance.",
+          "subsections": []
+        },
+        {
+          "label": "(7)",
+          "token": "7",
+          "kind": "numeric",
+          "text": "The county surveyor shall file and index reports that comply with subsections",
+          "subsections": []
+        },
+        {
+          "label": "(8)",
+          "token": "8",
+          "kind": "numeric",
+          "text": "A monument set by a registered professional land surveyor to mark or reference a point on a property or land line or to mark or reference a geodetic control survey point must be durably and visibly marked or tagged with the registered business name or the letters L.S. followed by the registration number of the surveyor in charge or, if the monument is set by a public officer, the monument must be marked with the official title of the office.",
+          "subsections": []
+        },
+        {
+          "label": "(9)",
+          "token": "9",
+          "kind": "numeric",
+          "text": "If, in the performance of a survey, a registered professional land surveyor finds or makes changes in a public land survey corner or its accessories as described in an existing corner record or survey map in the office of the county surveyor, the surveyor shall complete and submit to the county surveyor a record of the changes found or made to a corner or accessories to the corner. The record must be submitted within 45 days of the corner visits, and must include the surveyors seal and original signature, business name and address, and be on stable base reproducible material in the form required by the county surveyor. of this section, ORS 92.050 to 92.080 or a county ordinance establishing standards for surveys or plats is subject to disciplinary action by the State Board of Examiners for Engineering and Land Surveying.",
+          "subsections": []
+        },
+        {
+          "label": "(10)",
+          "token": "10",
+          "kind": "numeric",
+          "text": "The signature and stamp of a registered professional land surveyor on a permanent survey map or plat constitutes certification that the map or plat complies with the applicable provisions of this chapter.",
+          "subsections": []
+        },
+        {
+          "label": "(12)",
+          "token": "12",
+          "kind": "numeric",
+          "text": "A federal or state agency, board or commission, special district or municipal corporation making a survey of lands within this state shall comply with this section.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 24,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors209.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors209.html#section-209.210",
+      "identifier": "ORS 209.210",
+      "name": "Section 209.210",
+      "text": "[Repealed by 1979 c.653 18]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 25,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors209.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors209.html#section-209.220",
+      "identifier": "ORS 209.220",
+      "name": "Section 209.220",
+      "text": "Oath taken by employees. Each person employed by the county surveyor or a deputy shall, before commencing the duty assigned, take an oath or affirmation faithfully and impartially to execute the duties of employment. The county surveyor or a deputy shall administer the oath or affirmation of each employee. [Amended by 1979 c.653 14]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 26,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors209.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors209.html#section-209.230",
+      "identifier": "ORS 209.230",
+      "name": "Section 209.230",
+      "text": "Materials for certain purposes. The county surveyor shall procure at the expense of the county the materials and requisites for carrying into effect ORS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 27,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors209.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors209.html#section-209.240",
+      "identifier": "ORS 209.240",
+      "name": "Section 209.240",
+      "text": "[Amended by 1979 c.653 15; repealed by 1981 c.111 2]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 28,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors209.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors209.html#section-209.250",
+      "identifier": "ORS 209.250",
+      "name": "Section 209.250",
+      "text": "Survey by registered land surveyor; requirements for map, narrative or report of survey; waiver of required filing; effect of noncompliance. (1) A registered professional land surveyor making a survey of lands within this state wherein the surveyor establishes or reestablishes a boundary monument shall, within 45 days thereafter, submit for filing a permanent map of the survey to the county surveyor for review. When filed, the map is a permanent public record in the office of the county surveyor. In establishing or reestablishing a public land survey corner, the surveyor shall comply with ORS 209.070 (4), 209.130 and",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A registered professional land surveyor making a survey of lands within this state wherein the surveyor establishes or reestablishes a boundary monument shall, within 45 days thereafter, submit for filing a permanent map of the survey to the county surveyor for review. When filed, the map is a permanent public record in the office of the county surveyor. In establishing or reestablishing a public land survey corner, the surveyor shall comply with ORS 209.070",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": ", 209.130 and",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 29,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors209.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors209.html#section-209.255",
+      "identifier": "ORS 209.255",
+      "name": "Section 209.255",
+      "text": "Amendment of survey map or narrative by affidavit of correction; preparation, certification and recording of affidavit. (1) Any survey map or narrative filed and recorded under the provisions of this chapter may be amended by an affidavit of correction: (a) To show any courses or distances omitted from the map or narrative; (b) To correct an error in any courses or distances shown on the map or narrative; (c) To correct an error in the description of the real property shown on the map or narrative; or (d) To correct any other errors or omissions where the error or omission is ascertainable from the data shown on the map or narrative as recorded. (2) Nothing in this section shall be construed to permit changes in courses or distances for the purpose of redesigning parcel configurations. (3) The affidavit of correction shall be prepared by the registered professional land surveyor who filed the map or narrative. In the event of the death, disability or retirement from practice of the surveyor who filed the map or narrative, the county surveyor may prepare the affidavit of correction. The affidavit shall set forth in detail the corrections made. The seal and original signature of the registered professional land surveyor making the affidavit shall be affixed to the affidavit. (4) The county surveyor having jurisdiction of the map or narrative shall certify that the affidavit of correction has been examined and that the changes shown on the map or narrative are changes permitted under this section. (5) The surveyor who prepared the affidavit shall cause the affidavit to be recorded in the office of the county recorder of the county where the survey or narrative is recorded. The county clerk shall promptly return the recorded affidavit to the county surveyor who shall note the correction and the recorders filing information with permanent ink, upon the original survey or narrative filed in accordance with ORS 209.250. The corrections and filing information shall be marked in such a manner so as not to obliterate any portion of the survey or narrative. (6) In addition to the fees established by ORS 205.320 for recording the affidavit in the county deed records, the county clerk shall collect a fee set by the county governing body. The county clerk shall collect the fee as set by the county governing body to be paid to the county surveyor for services provided under this section.",
+      "history_citation_blocks": [
+        "1983 c.309 10; 1989 c.394 15; 1993 c.219 14; 1999 c.654 23"
+      ],
+      "history_citations": [
+        {
+          "raw": "1983 c.309 10",
+          "year": 1983,
+          "chapter": "309",
+          "section": "10"
+        },
+        {
+          "raw": "1989 c.394 15",
+          "year": 1989,
+          "chapter": "394",
+          "section": "15"
+        },
+        {
+          "raw": "1993 c.219 14",
+          "year": 1993,
+          "chapter": "219",
+          "section": "14"
+        },
+        {
+          "raw": "1999 c.654 23",
+          "year": 1999,
+          "chapter": "654",
+          "section": "23"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Any survey map or narrative filed and recorded under the provisions of this chapter may be amended by an affidavit of correction:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "To show any courses or distances omitted from the map or narrative;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "To correct an error in any courses or distances shown on the map or narrative;",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "To correct an error in the description of the real property shown on the map or narrative; or",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "To correct any other errors or omissions where the error or omission is ascertainable from the data shown on the map or narrative as recorded.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Nothing in this section shall be construed to permit changes in courses or distances for the purpose of redesigning parcel configurations.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The affidavit of correction shall be prepared by the registered professional land surveyor who filed the map or narrative. In the event of the death, disability or retirement from practice of the surveyor who filed the map or narrative, the county surveyor may prepare the affidavit of correction. The affidavit shall set forth in detail the corrections made. The seal and original signature of the registered professional land surveyor making the affidavit shall be affixed to the affidavit.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "The county surveyor having jurisdiction of the map or narrative shall certify that the affidavit of correction has been examined and that the changes shown on the map or narrative are changes permitted under this section.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "The surveyor who prepared the affidavit shall cause the affidavit to be recorded in the office of the county recorder of the county where the survey or narrative is recorded. The county clerk shall promptly return the recorded affidavit to the county surveyor who shall note the correction and the recorders filing information with permanent ink, upon the original survey or narrative filed in accordance with ORS 209.250. The corrections and filing information shall be marked in such a manner so as not to obliterate any portion of the survey or narrative.",
+          "subsections": []
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "In addition to the fees established by ORS 205.320 for recording the affidavit in the county deed records, the county clerk shall collect a fee set by the county governing body. The county clerk shall collect the fee as set by the county governing body to be paid to the county surveyor for services provided under this section.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 30,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors209.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors209.html#section-209.260",
+      "identifier": "ORS 209.260",
+      "name": "Section 209.260",
+      "text": "Fee for filing and indexing. The county governing body, by resolution or order, may establish the fee to be collected by the county surveyor for filing and indexing a map or report of a survey.",
+      "history_citation_blocks": [
+        "1981 c.429 2; 1985 c.582 9; 1991 c.339 4; 1991 c.621 2"
+      ],
+      "history_citations": [
+        {
+          "raw": "1981 c.429 2",
+          "year": 1981,
+          "chapter": "429",
+          "section": "2"
+        },
+        {
+          "raw": "1985 c.582 9",
+          "year": 1985,
+          "chapter": "582",
+          "section": "9"
+        },
+        {
+          "raw": "1991 c.339 4",
+          "year": 1991,
+          "chapter": "339",
+          "section": "4"
+        },
+        {
+          "raw": "1991 c.621 2",
+          "year": 1991,
+          "chapter": "621",
+          "section": "2"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 31,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors209.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors209.html#section-209.270",
+      "identifier": "ORS 209.270",
+      "name": "Section 209.270",
+      "text": "Records of county surveyor; location; accessibility. (1) The records of the county surveyor shall be located in county facilities designated by the county governing body. (2) The county surveyor shall be provided reasonable facilities for the proper filing, indexing, copying, public inspection and examination and protection of public records as required under ORS 192.318 and 192.324.",
+      "history_citation_blocks": [
+        "1981 c.429 3"
+      ],
+      "history_citations": [
+        {
+          "raw": "1981 c.429 3",
+          "year": 1981,
+          "chapter": "429",
+          "section": "3"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The records of the county surveyor shall be located in county facilities designated by the county governing body.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The county surveyor shall be provided reasonable facilities for the proper filing, indexing, copying, public inspection and examination and protection of public records as required under ORS 192.318 and 192.324.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 32,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors209.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors209.html#section-209.300",
+      "identifier": "ORS 209.300",
+      "name": "Section 209.300",
+      "text": "Abandonment of railroad line; notice to county surveyor; request for copies of plats. When a railroad gives notice of its intention to abandon a railroad line within this state, the Department of Transportation shall provide a copy of the notice to the county surveyor of each county in which the line to be abandoned is located. Upon written request from a county surveyor so notified, the railroad shall provide the county surveyor with a reproducible copy of the right of way plats for the line to be abandoned. The copy of the right of way plats shall be provided prior to abandonment at no cost to the county surveyor, and shall show the center line of trackage as originally constructed and currently existing, together with ties to monumented public land survey corners, as shown by the right of way plats.",
+      "history_citation_blocks": [
+        "1985 c.220 2; 1989 c.394 16; 1995 c.733 43"
+      ],
+      "history_citations": [
+        {
+          "raw": "1985 c.220 2",
+          "year": 1985,
+          "chapter": "220",
+          "section": "2"
+        },
+        {
+          "raw": "1989 c.394 16",
+          "year": 1989,
+          "chapter": "394",
+          "section": "16"
+        },
+        {
+          "raw": "1995 c.733 43",
+          "year": 1995,
+          "chapter": "733",
+          "section": "43"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 33,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors209.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors209.html#section-209.990",
+      "identifier": "ORS 209.990",
+      "name": "Section 209.990",
+      "text": "Penalties; civil remedies. (1) The costs of the reestablishment of the corner or witness monument may be recovered in a civil action together with costs and attorney fees for the prevailing party. (2) A person may obtain injunctive relief to prevent further disturbance or destruction of survey monuments. (3) Any county surveyor failing to perform the duties required of the surveyor by ORS 209.020 to 209.090 shall be fined not exceeding $100, to be recovered by an action brought by the injured party. [Amended by 1979 c.653 17; 1989 c.394 17] _______________",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The costs of the reestablishment of the corner or witness monument may be recovered in a civil action together with costs and attorney fees for the prevailing party.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "A person may obtain injunctive relief to prevent further disturbance or destruction of survey monuments.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Any county surveyor failing to perform the duties required of the surveyor by ORS 209.020 to 209.090 shall be fined not exceeding $100, to be recovered by an action brought by the injured party. [Amended by 1979 c.653 17; 1989 c.394 17] _______________",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 34,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors209.html"
+    }
+  ],
+  "alternateName": "County Surveyors",
+  "legislationDate": "2023"
+}

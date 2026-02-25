@@ -1,0 +1,4617 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "orlaw": "https://www.oregonlegislature.gov/ors#"
+  },
+  "@type": "Legislation",
+  "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html",
+  "identifier": "ORS Chapter 258",
+  "name": "ORS Chapter 258 — Election Contests; Recounts",
+  "legislationType": "Statute",
+  "jurisdiction": "US-OR",
+  "isPartOf": {
+    "@type": "CreativeWork",
+    "identifier": "ORS",
+    "name": "Oregon Revised Statutes",
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors"
+  },
+  "dateModified": "2026-02-25T08:11:19.447480+00:00",
+  "source_file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors258.html",
+  "hasPart": [
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.005",
+      "identifier": "ORS 258.005",
+      "name": "Section 258.005",
+      "text": "[1965 c.586 2; repealed by 1979 c.190 431] GENERAL PROVISIONS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 1,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.006",
+      "identifier": "ORS 258.006",
+      "name": "Section 258.006",
+      "text": "Definitions. As used in this chapter: (1) Candidate means a candidate for nomination or election to any elective office. (2) Contestant means any person who files a petition of contest under ORS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Candidate means a candidate for nomination or election to any elective office.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Contestant means any person who files a petition of contest under ORS",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 2,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.010",
+      "identifier": "ORS 258.010",
+      "name": "Section 258.010",
+      "text": "",
+      "history_citation_blocks": [
+        "1953 c.397 1; repealed by 1965 c.586 34"
+      ],
+      "history_citations": [
+        {
+          "raw": "1953 c.397 1",
+          "year": 1953,
+          "chapter": "397",
+          "section": "1"
+        },
+        {
+          "raw": "repealed by 1965 c.586 34"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 3,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.015",
+      "identifier": "ORS 258.015",
+      "name": "Section 258.015",
+      "text": "[1965 c.586 3; repealed by 1979 c.190 431] ELECTION CONTESTS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 4,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.016",
+      "identifier": "ORS 258.016",
+      "name": "Section 258.016",
+      "text": "Grounds for contest; persons authorized to contest. The nomination or election of a person, the result of a recall election or the approval or rejection of a measure may be contested by any elector entitled to vote for the person, recall or measure, by any person who was a candidate at the election for the same nomination or office, by the public officer subject to the recall, by the Secretary of State if the contest involves a state measure, the recall of a state officer or a candidate for whom the Secretary of State is the filing officer, or by the county clerk who conducted the election, only for the following causes: (1) Deliberate and material violation of any provision of the election laws in connection with the nomination, election, recall election or approval or rejection of a measure. (2) Ineligibility of the person elected to the office to hold the office at the time of the election. (3) Illegal votes. (4) Mistake or fraud in the canvass of votes. (5) Fraud in the count of votes. (6) Nondeliberate and material error in the distribution of the official ballots by a local elections official, as that term is defined in ORS 246.012, or a county clerk. (7) A challenge to the determination of the number of electors who were eligible to participate in an election on a measure conducted under section 11 (8), Article XI of the Oregon Constitution.",
+      "history_citation_blocks": [
+        "Formerly 251.025; 1983 c.170 1; 1993 c.493 48; 1997 c.541 313a; 2001 c.965 29; 2009 c.511 13"
+      ],
+      "history_citations": [
+        {
+          "raw": "Formerly 251.025"
+        },
+        {
+          "raw": "1983 c.170 1",
+          "year": 1983,
+          "chapter": "170",
+          "section": "1"
+        },
+        {
+          "raw": "1993 c.493 48",
+          "year": 1993,
+          "chapter": "493",
+          "section": "48"
+        },
+        {
+          "raw": "1997 c.541 313a",
+          "year": 1997,
+          "chapter": "541",
+          "section": "313a"
+        },
+        {
+          "raw": "2001 c.965 29",
+          "year": 2001,
+          "chapter": "965",
+          "section": "29"
+        },
+        {
+          "raw": "2009 c.511 13",
+          "year": 2009,
+          "chapter": "511",
+          "section": "13"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Deliberate and material violation of any provision of the election laws in connection with the nomination, election, recall election or approval or rejection of a measure.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Ineligibility of the person elected to the office to hold the office at the time of the election.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Illegal votes.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Mistake or fraud in the canvass of votes.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "Fraud in the count of votes.",
+          "subsections": []
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "Nondeliberate and material error in the distribution of the official ballots by a local elections official, as that term is defined in ORS 246.012, or a county clerk.",
+          "subsections": []
+        },
+        {
+          "label": "(7)",
+          "token": "7",
+          "kind": "numeric",
+          "text": "A challenge to the determination of the number of electors who were eligible to participate in an election on a measure conducted under section 11",
+          "subsections": []
+        },
+        {
+          "label": "(8)",
+          "token": "8",
+          "kind": "numeric",
+          "text": ", Article XI of the Oregon Constitution.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 5,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.020",
+      "identifier": "ORS 258.020",
+      "name": "Section 258.020",
+      "text": "",
+      "history_citation_blocks": [
+        "1953 c.397 2; repealed by 1965 c.586 34"
+      ],
+      "history_citations": [
+        {
+          "raw": "1953 c.397 2",
+          "year": 1953,
+          "chapter": "397",
+          "section": "2"
+        },
+        {
+          "raw": "repealed by 1965 c.586 34"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 6,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.025",
+      "identifier": "ORS 258.025",
+      "name": "Section 258.025",
+      "text": "",
+      "history_citation_blocks": [
+        "1965 c.586 4; 1979 c.190 24; renumbered 246.520"
+      ],
+      "history_citations": [
+        {
+          "raw": "1965 c.586 4",
+          "year": 1965,
+          "chapter": "586",
+          "section": "4"
+        },
+        {
+          "raw": "1979 c.190 24",
+          "year": 1979,
+          "chapter": "190",
+          "section": "24"
+        },
+        {
+          "raw": "renumbered 246.520"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 7,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.026",
+      "identifier": "ORS 258.026",
+      "name": "Section 258.026",
+      "text": "When election results may be set aside. (1) The nomination or election of a person may not be set aside for any cause listed in ORS 258.016 (3) to (5) unless: (a) The person nominated or elected had knowledge of or connived in the cause of the contest; or (b) The number of votes taken from the person nominated or elected by reason of the cause of the contest would reduce the legal votes of the person below the number of legal votes given to another person for the same nomination or office. (2) The nomination or election of a person may not be set aside for the cause described in ORS 258.016 (6) unless the nomination or election would have been given to one of the candidates other than the candidate nominated or elected if all votes not cast or tallied due to the error had been cast or tallied for the other candidate. (3) The approval or rejection of a measure may not be set aside unless: (a) The number of votes taken from the approval or rejection by reason of the cause of the contest would reverse the outcome of the election; or (b) The outcome of the election would have been reversed if all votes not cast or tallied due to an error under ORS 258.016 (6) had been cast or tallied in opposition to the contested outcome. (4) The result of a recall election may not be set aside unless: (a) The number of votes taken from the result of the recall election by reason of the cause of the contest would reverse the result; or (b) The result of the recall election would have been reversed if all votes not cast or tallied due to an error under ORS 258.016 (6) had been cast or tallied in opposition to the contested result.",
+      "history_citation_blocks": [
+        "Formerly 251.035; 1983 c.170 2; 2009 c.511 14"
+      ],
+      "history_citations": [
+        {
+          "raw": "Formerly 251.035"
+        },
+        {
+          "raw": "1983 c.170 2",
+          "year": 1983,
+          "chapter": "170",
+          "section": "2"
+        },
+        {
+          "raw": "2009 c.511 14",
+          "year": 2009,
+          "chapter": "511",
+          "section": "14"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The nomination or election of a person may not be set aside for any cause listed in ORS 258.016",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "to The approval or rejection of a measure may not be set aside unless:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "The number of votes taken from the approval or rejection by reason of the cause of the contest would reverse the outcome of the election; or",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "The outcome of the election would have been reversed if all votes not cast or tallied due to an error under ORS 258.016",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "unless:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "The person nominated or elected had knowledge of or connived in the cause of the contest; or",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "The number of votes taken from the person nominated or elected by reason of the cause of the contest would reduce the legal votes of the person below the number of legal votes given to another person for the same nomination or office.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The nomination or election of a person may not be set aside for the cause described in ORS 258.016",
+          "subsections": []
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "unless the nomination or election would have been given to one of the candidates other than the candidate nominated or elected if all votes not cast or tallied due to the error had been cast or tallied for the other candidate. had been cast or tallied in opposition to the contested outcome. had been cast or tallied in opposition to the contested result.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "The result of a recall election may not be set aside unless:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "The number of votes taken from the result of the recall election by reason of the cause of the contest would reverse the result; or",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "The result of the recall election would have been reversed if all votes not cast or tallied due to an error under ORS 258.016",
+              "subsections": []
+            }
+          ]
+        }
+      ],
+      "parser_warnings": [],
+      "position": 8,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.030",
+      "identifier": "ORS 258.030",
+      "name": "Section 258.030",
+      "text": "",
+      "history_citation_blocks": [
+        "1953 c.397 30; repealed by 1965 c.586 34"
+      ],
+      "history_citations": [
+        {
+          "raw": "1953 c.397 30",
+          "year": 1953,
+          "chapter": "397",
+          "section": "30"
+        },
+        {
+          "raw": "repealed by 1965 c.586 34"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 9,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.035",
+      "identifier": "ORS 258.035",
+      "name": "Section 258.035",
+      "text": "",
+      "history_citation_blocks": [
+        "1965 c.586 5; repealed by 1979 c.190 431"
+      ],
+      "history_citations": [
+        {
+          "raw": "1965 c.586 5",
+          "year": 1965,
+          "chapter": "586",
+          "section": "5"
+        },
+        {
+          "raw": "repealed by 1979 c.190 431"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 10,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.036",
+      "identifier": "ORS 258.036",
+      "name": "Section 258.036",
+      "text": "Petition of contest; location of filing; contents of petition. (1) Not later than the 40th day after the election or the seventh day after completion of a recount of votes cast in connection with the election, any person authorized to contest a result of the election may file a petition of contest. The petition shall be filed with: (a) The Circuit Court for Marion County if the petition involves a state measure, a candidate for election to the office of elector of President and Vice President of the United States or a candidate for nomination or election to the office of United States Senator, United States Representative in Congress, Governor, Secretary of State, State Treasurer, Attorney General, Commissioner of the Bureau of Labor and Industries or a position of judge on the Oregon Supreme Court, the Oregon Court of Appeals or the Oregon Tax Court. (b) The circuit court for the county where a majority of the electors in the electoral district reside if the petition involves a candidate for nomination or election to the office of state Senator, state Representative, circuit court judge or district attorney. (c) The circuit court for the county in which the filing officer is located if the petition involves a candidate for nomination or election to county, city or district office or a county, city or district measure. If a district is located in more than one county, the petition shall be filed with the circuit court for the county in which the administrative office of the district is located. (d) The circuit court for the county in which the filing officer authorized to order the recall election is located if the petition involves the recall of a public officer. (2) The petition shall be verified in the manner required for verification of complaints in civil cases and shall specify: (a) The cause of the contest; and (b) The names of all contestees.",
+      "history_citation_blocks": [
+        "Formerly 251.045; 1995 c.607 53; 2001 c.965 30; 2009 c.511 15; 2011 c.731 14"
+      ],
+      "history_citations": [
+        {
+          "raw": "Formerly 251.045"
+        },
+        {
+          "raw": "1995 c.607 53",
+          "year": 1995,
+          "chapter": "607",
+          "section": "53"
+        },
+        {
+          "raw": "2001 c.965 30",
+          "year": 2001,
+          "chapter": "965",
+          "section": "30"
+        },
+        {
+          "raw": "2009 c.511 15",
+          "year": 2009,
+          "chapter": "511",
+          "section": "15"
+        },
+        {
+          "raw": "2011 c.731 14",
+          "year": 2011,
+          "chapter": "731",
+          "section": "14"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Not later than the 40th day after the election or the seventh day after completion of a recount of votes cast in connection with the election, any person authorized to contest a result of the election may file a petition of contest. The petition shall be filed with:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "The Circuit Court for Marion County if the petition involves a state measure, a candidate for election to the office of elector of President and Vice President of the United States or a candidate for nomination or election to the office of United States Senator, United States Representative in Congress, Governor, Secretary of State, State Treasurer, Attorney General, Commissioner of the Bureau of Labor and Industries or a position of judge on the Oregon Supreme Court, the Oregon Court of Appeals or the Oregon Tax Court.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "The circuit court for the county where a majority of the electors in the electoral district reside if the petition involves a candidate for nomination or election to the office of state Senator, state Representative, circuit court judge or district attorney.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "The circuit court for the county in which the filing officer is located if the petition involves a candidate for nomination or election to county, city or district office or a county, city or district measure. If a district is located in more than one county, the petition shall be filed with the circuit court for the county in which the administrative office of the district is located.",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "The circuit court for the county in which the filing officer authorized to order the recall election is located if the petition involves the recall of a public officer.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The petition shall be verified in the manner required for verification of complaints in civil cases and shall specify:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "The cause of the contest; and",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "The names of all contestees.",
+              "subsections": []
+            }
+          ]
+        }
+      ],
+      "parser_warnings": [],
+      "position": 11,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.040",
+      "identifier": "ORS 258.040",
+      "name": "Section 258.040",
+      "text": "",
+      "history_citation_blocks": [
+        "1953 c.397 37; repealed by 1965 c.586 34"
+      ],
+      "history_citations": [
+        {
+          "raw": "1953 c.397 37",
+          "year": 1953,
+          "chapter": "397",
+          "section": "37"
+        },
+        {
+          "raw": "repealed by 1965 c.586 34"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 12,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.045",
+      "identifier": "ORS 258.045",
+      "name": "Section 258.045",
+      "text": "",
+      "history_citation_blocks": [
+        "1965 c.586 6; 1979 c.190 25; renumbered 246.530"
+      ],
+      "history_citations": [
+        {
+          "raw": "1965 c.586 6",
+          "year": 1965,
+          "chapter": "586",
+          "section": "6"
+        },
+        {
+          "raw": "1979 c.190 25",
+          "year": 1979,
+          "chapter": "190",
+          "section": "25"
+        },
+        {
+          "raw": "renumbered 246.530"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 13,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.046",
+      "identifier": "ORS 258.046",
+      "name": "Section 258.046",
+      "text": "Payment of costs, disbursements and attorney fees. (1) The prevailing party in the contest proceeding shall recover costs, disbursements and reasonable attorney fees at trial and on appeal against the losing party. However, if the cause of the contest is a mistake in the canvass of votes and the contestant prevails, the cost of any recanvass of votes shall be paid by: (a) The county for a contest of a state or county nomination, office, recall election or measure; (b) The city for a contest of a city nomination, office, recall election or measure; or (c) Any other political subdivision or public corporation for a contest of such a subdivision or corporation nomination, office, recall election or measure. (2) In a contest under ORS 258.016 (7), costs, disbursements and attorney fees may not be assessed against the county clerk unless the court makes a specific finding of fault against the county clerk.",
+      "history_citation_blocks": [
+        "Formerly 251.060; 1981 c.897 44; 1991 c.331 50; 1995 c.607 53a; 1997 c.541 313c; 2009 c.511 16"
+      ],
+      "history_citations": [
+        {
+          "raw": "Formerly 251.060"
+        },
+        {
+          "raw": "1981 c.897 44",
+          "year": 1981,
+          "chapter": "897",
+          "section": "44"
+        },
+        {
+          "raw": "1991 c.331 50",
+          "year": 1991,
+          "chapter": "331",
+          "section": "50"
+        },
+        {
+          "raw": "1995 c.607 53a",
+          "year": 1995,
+          "chapter": "607",
+          "section": "53a"
+        },
+        {
+          "raw": "1997 c.541 313c",
+          "year": 1997,
+          "chapter": "541",
+          "section": "313c"
+        },
+        {
+          "raw": "2009 c.511 16",
+          "year": 2009,
+          "chapter": "511",
+          "section": "16"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The prevailing party in the contest proceeding shall recover costs, disbursements and reasonable attorney fees at trial and on appeal against the losing party. However, if the cause of the contest is a mistake in the canvass of votes and the contestant prevails, the cost of any recanvass of votes shall be paid by:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "The county for a contest of a state or county nomination, office, recall election or measure;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "The city for a contest of a city nomination, office, recall election or measure; or",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Any other political subdivision or public corporation for a contest of such a subdivision or corporation nomination, office, recall election or measure.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "In a contest under ORS 258.016",
+          "subsections": []
+        },
+        {
+          "label": "(7)",
+          "token": "7",
+          "kind": "numeric",
+          "text": ", costs, disbursements and attorney fees may not be assessed against the county clerk unless the court makes a specific finding of fault against the county clerk.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 14,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.055",
+      "identifier": "ORS 258.055",
+      "name": "Section 258.055",
+      "text": "Publication of notice of contest; service and filing of copies of petition of contest; court hearing. (1) Except as provided in subsection (2) of this section, when a contestant files a petition of contest with the circuit court described under ORS 258.036, the contestant shall, within three business days of filing the petition, publish a notice stating that the petition has been filed and identifying the date of the deadline described in this subsection for filing a motion to intervene. The notice must be published at least once in the next available issue of a newspaper of general circulation published in the county where the proceeding is pending. Jurisdiction over the election contest shall be complete within 10 days after the notice is published as provided in this subsection. Any person interested may at any time before the expiration of the 10 days appear and contest the validity of the proceeding, or of any of the acts or things enumerated in the proceeding. (2) Subsection (1) of this section does not apply if the contest involves: (a) A state measure. (b) The election of a candidate to the office of elector of President and Vice President of the United States. (c) The nomination or election of a candidate to the office of United States Senator, United States Representative in Congress, Governor, Secretary of State, State Treasurer, Attorney General, Commissioner of the Bureau of Labor and Industries or a position of judge on the Oregon Supreme Court, the Oregon Court of Appeals or the Oregon Tax Court. (d) The recall of a person from the office of Governor, Secretary of State, State Treasurer, Attorney General, Commissioner of the Bureau of Labor and Industries or a position of judge on the Oregon Supreme Court, the Oregon Court of Appeals or the Oregon Tax Court. (3) Not later than two business days after the contestant files a petition of contest with the circuit court, the contestant shall serve a copy of the petition by certified mail on each contestee. If the Secretary of State or county clerk is not a contestee, not later than one business day after the contestant files a petition of contest with the circuit court, the contestant shall file a copy of the petition with: (a) The Secretary of State if the petition involves a candidate for state office, the recall of a person from state office or a state measure; or (b) The county clerk if the petition involves a candidate for county, city or district office, the recall of a person from county, city or district office or a county, city or district measure. As used in this paragraph, county clerk includes the county clerk of the county in which the administrative office of a city or district is located regarding a measure, a recall or a candidate for an office to be voted on in a city or district located in more than one county. (4) The circuit court shall fix a time for the hearing by the circuit court of the contest proceeding, and not later than the fifth day before the hearing shall give written notice of the hearing to each party to the proceeding. In fixing the time for the hearing, the court shall consider the dates set in any notice published under subsection (1) of this section and the dates of service on the contestees. The contest proceeding shall take precedence over all other business on the circuit court docket. (5) The circuit court shall hear and determine the proceeding without a jury and shall issue written findings of law and fact. The practice and procedure otherwise applicable to civil cases shall govern the proceeding, except that the contestant has the burden of proof by clear and convincing evidence.",
+      "history_citation_blocks": [
+        "Formerly 251.070; 1995 c.607 54; 2001 c.965 31; 2009 c.511 17; 2011 c.731 15"
+      ],
+      "history_citations": [
+        {
+          "raw": "Formerly 251.070"
+        },
+        {
+          "raw": "1995 c.607 54",
+          "year": 1995,
+          "chapter": "607",
+          "section": "54"
+        },
+        {
+          "raw": "2001 c.965 31",
+          "year": 2001,
+          "chapter": "965",
+          "section": "31"
+        },
+        {
+          "raw": "2009 c.511 17",
+          "year": 2009,
+          "chapter": "511",
+          "section": "17"
+        },
+        {
+          "raw": "2011 c.731 15",
+          "year": 2011,
+          "chapter": "731",
+          "section": "15"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Except as provided in subsection of this section does not apply if the contest involves: of this section and the dates of service on the contestees. The contest proceeding shall take precedence over all other business on the circuit court docket.",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "A state measure.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "The election of a candidate to the office of elector of President and Vice President of the United States.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "The nomination or election of a candidate to the office of United States Senator, United States Representative in Congress, Governor, Secretary of State, State Treasurer, Attorney General, Commissioner of the Bureau of Labor and Industries or a position of judge on the Oregon Supreme Court, the Oregon Court of Appeals or the Oregon Tax Court.",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "The recall of a person from the office of Governor, Secretary of State, State Treasurer, Attorney General, Commissioner of the Bureau of Labor and Industries or a position of judge on the Oregon Supreme Court, the Oregon Court of Appeals or the Oregon Tax Court.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "of this section, when a contestant files a petition of contest with the circuit court described under ORS 258.036, the contestant shall, within three business days of filing the petition, publish a notice stating that the petition has been filed and identifying the date of the deadline described in this subsection for filing a motion to intervene. The notice must be published at least once in the next available issue of a newspaper of general circulation published in the county where the proceeding is pending. Jurisdiction over the election contest shall be complete within 10 days after the notice is published as provided in this subsection. Any person interested may at any time before the expiration of the 10 days appear and contest the validity of the proceeding, or of any of the acts or things enumerated in the proceeding. Subsection",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Not later than two business days after the contestant files a petition of contest with the circuit court, the contestant shall serve a copy of the petition by certified mail on each contestee. If the Secretary of State or county clerk is not a contestee, not later than one business day after the contestant files a petition of contest with the circuit court, the contestant shall file a copy of the petition with:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "The Secretary of State if the petition involves a candidate for state office, the recall of a person from state office or a state measure; or",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "The county clerk if the petition involves a candidate for county, city or district office, the recall of a person from county, city or district office or a county, city or district measure. As used in this paragraph, county clerk includes the county clerk of the county in which the administrative office of a city or district is located regarding a measure, a recall or a candidate for an office to be voted on in a city or district located in more than one county.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "The circuit court shall fix a time for the hearing by the circuit court of the contest proceeding, and not later than the fifth day before the hearing shall give written notice of the hearing to each party to the proceeding. In fixing the time for the hearing, the court shall consider the dates set in any notice published under subsection",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "The circuit court shall hear and determine the proceeding without a jury and shall issue written findings of law and fact. The practice and procedure otherwise applicable to civil cases shall govern the proceeding, except that the contestant has the burden of proof by clear and convincing evidence.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 15,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.063",
+      "identifier": "ORS 258.063",
+      "name": "Section 258.063",
+      "text": "Effect of successful contest of recall election. (1) After the contest hearing, the circuit court shall render a judgment affirming or setting aside the results of the recall election. If the court sets aside the results of the election, a special election on the recall shall be held not later than 35 days after the date the judgment was rendered. (2) The county of the county clerk or the local elections official who committed the error in the distribution of the official ballots shall bear the cost of the special election.",
+      "history_citation_blocks": [
+        "2009 c.511 19"
+      ],
+      "history_citations": [
+        {
+          "raw": "2009 c.511 19",
+          "year": 2009,
+          "chapter": "511",
+          "section": "19"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "After the contest hearing, the circuit court shall render a judgment affirming or setting aside the results of the recall election. If the court sets aside the results of the election, a special election on the recall shall be held not later than 35 days after the date the judgment was rendered.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The county of the county clerk or the local elections official who committed the error in the distribution of the official ballots shall bear the cost of the special election.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 16,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.065",
+      "identifier": "ORS 258.065",
+      "name": "Section 258.065",
+      "text": "Effect of successful contest of nomination or election. (1) After the contest hearing, the circuit court shall render a judgment affirming or setting aside the nomination or election of the person for or to the office. (2) If the judgment sets aside the nomination of a person, it also shall declare that the nomination is vacant. (3) Except as provided in subsection (4) of this section, if the judgment sets aside the election of a person, the incumbent shall remain in office until a successor is elected. (4) If the judgment sets aside the election of a person to an office sought by an incumbent who was defeated, the office shall be declared vacant. (5) If the judgment under ORS 258.026 (2) sets aside the nomination or election of a person to a city office or as a member of the board of a district defined in ORS 255.012, the names of the candidates for the office shall be resubmitted to the electors at a special election held on the next available election date. The county of the county clerk or the local elections official who committed the error in the distribution of the official ballots shall bear the cost of the election.",
+      "history_citation_blocks": [
+        "1979 c.190 320; 1983 c.170 3"
+      ],
+      "history_citations": [
+        {
+          "raw": "1979 c.190 320",
+          "year": 1979,
+          "chapter": "190",
+          "section": "320"
+        },
+        {
+          "raw": "1983 c.170 3",
+          "year": 1983,
+          "chapter": "170",
+          "section": "3"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "After the contest hearing, the circuit court shall render a judgment affirming or setting aside the nomination or election of the person for or to the office.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "If the judgment sets aside the nomination of a person, it also shall declare that the nomination is vacant. sets aside the nomination or election of a person to a city office or as a member of the board of a district defined in ORS 255.012, the names of the candidates for the office shall be resubmitted to the electors at a special election held on the next available election date. The county of the county clerk or the local elections official who committed the error in the distribution of the official ballots shall bear the cost of the election.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Except as provided in subsection",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "of this section, if the judgment sets aside the election of a person, the incumbent shall remain in office until a successor is elected. If the judgment sets aside the election of a person to an office sought by an incumbent who was defeated, the office shall be declared vacant.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "If the judgment under ORS 258.026",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 17,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.075",
+      "identifier": "ORS 258.075",
+      "name": "Section 258.075",
+      "text": "Effect of successful contest of measure; special election dates; tax election participation contests. (1) Except as provided in subsection (4) of this section, after the contest hearing, the circuit court shall render a judgment affirming or setting aside the approval or rejection of the measure. (2) If the judgment sets aside the approval or rejection of a measure, the circuit court shall direct the measure to be resubmitted at a special election held on one of the dates specified in this subsection, as set by the court. In setting the election date, the court shall provide sufficient time for adequate notice to be given. The special election may be held on any of the following dates: (a) The second Tuesday in March; (b) The third Tuesday in May; (c) The fourth Tuesday in August; or (d) The first Tuesday after the first Monday in November. (3) The county of the county clerk or the local elections official who committed the error in the distribution of the official ballots shall bear the cost of the special election. (4) In a contest under ORS 258.016 (7), the court shall determine whether the challenge to the determination of the number of electors who were eligible on election day to participate in the election on a measure conducted under Article XI, section 11 (8), of the Oregon Constitution, is valid. In making the determination, the court shall rely on the provisions of ORS chapter 247 and shall receive testimony from the county clerk regarding the clerks administration of ORS chapter 247. If, after a contest hearing, the court determines that the challenge to the determination of the number of electors who were eligible to participate is valid and that the change in the number of electors eligible to participate is sufficient to change the outcome of the election on the measure, the court shall order the county clerk to make a new determination of the number of eligible electors and to certify the results of the election based on the new determination.",
+      "history_citation_blocks": [
+        "1979 c.190 321; 1983 c.170 4; 1985 c.808 47; 1989 c.923 18; 1991 c.71 5; 1993 c.713 54; 1995 c.712 117; 1997 c.541 313b; 2021 c.551 21"
+      ],
+      "history_citations": [
+        {
+          "raw": "1979 c.190 321",
+          "year": 1979,
+          "chapter": "190",
+          "section": "321"
+        },
+        {
+          "raw": "1983 c.170 4",
+          "year": 1983,
+          "chapter": "170",
+          "section": "4"
+        },
+        {
+          "raw": "1985 c.808 47",
+          "year": 1985,
+          "chapter": "808",
+          "section": "47"
+        },
+        {
+          "raw": "1989 c.923 18",
+          "year": 1989,
+          "chapter": "923",
+          "section": "18"
+        },
+        {
+          "raw": "1991 c.71 5",
+          "year": 1991,
+          "chapter": "71",
+          "section": "5"
+        },
+        {
+          "raw": "1993 c.713 54",
+          "year": 1993,
+          "chapter": "713",
+          "section": "54"
+        },
+        {
+          "raw": "1995 c.712 117",
+          "year": 1995,
+          "chapter": "712",
+          "section": "117"
+        },
+        {
+          "raw": "1997 c.541 313b",
+          "year": 1997,
+          "chapter": "541",
+          "section": "313b"
+        },
+        {
+          "raw": "2021 c.551 21",
+          "year": 2021,
+          "chapter": "551",
+          "section": "21"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Except as provided in subsection",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "of this section, after the contest hearing, the circuit court shall render a judgment affirming or setting aside the approval or rejection of the measure. In a contest under ORS 258.016",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "If the judgment sets aside the approval or rejection of a measure, the circuit court shall direct the measure to be resubmitted at a special election held on one of the dates specified in this subsection, as set by the court. In setting the election date, the court shall provide sufficient time for adequate notice to be given. The special election may be held on any of the following dates:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "The second Tuesday in March;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "The third Tuesday in May;",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "The fourth Tuesday in August; or",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "The first Tuesday after the first Monday in November.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The county of the county clerk or the local elections official who committed the error in the distribution of the official ballots shall bear the cost of the special election.",
+          "subsections": []
+        },
+        {
+          "label": "(7)",
+          "token": "7",
+          "kind": "numeric",
+          "text": ", the court shall determine whether the challenge to the determination of the number of electors who were eligible on election day to participate in the election on a measure conducted under Article XI, section 11",
+          "subsections": []
+        },
+        {
+          "label": "(8)",
+          "token": "8",
+          "kind": "numeric",
+          "text": ", of the Oregon Constitution, is valid. In making the determination, the court shall rely on the provisions of ORS chapter 247 and shall receive testimony from the county clerk regarding the clerks administration of ORS chapter 247. If, after a contest hearing, the court determines that the challenge to the determination of the number of electors who were eligible to participate is valid and that the change in the number of electors eligible to participate is sufficient to change the outcome of the election on the measure, the court shall order the county clerk to make a new determination of the number of eligible electors and to certify the results of the election based on the new determination.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 18,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.085",
+      "identifier": "ORS 258.085",
+      "name": "Section 258.085",
+      "text": "Appeal to Court of Appeals. Any party to the contest proceeding may appeal from the judgment rendered by the circuit court to the Court of Appeals in the same manner as appeals in civil cases are taken. The appeal shall take precedence over all other business on the docket. [Formerly 251.090]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 19,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.105",
+      "identifier": "ORS 258.105",
+      "name": "Section 258.105",
+      "text": "",
+      "history_citation_blocks": [
+        "1965 c.586 7; 1979 c.190 246; renumbered 246.540"
+      ],
+      "history_citations": [
+        {
+          "raw": "1965 c.586 7",
+          "year": 1965,
+          "chapter": "586",
+          "section": "7"
+        },
+        {
+          "raw": "1979 c.190 246",
+          "year": 1979,
+          "chapter": "190",
+          "section": "246"
+        },
+        {
+          "raw": "renumbered 246.540"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 20,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.110",
+      "identifier": "ORS 258.110",
+      "name": "Section 258.110",
+      "text": "",
+      "history_citation_blocks": [
+        "1953 c.397 31; 1957 c.608 207; repealed by 1965 c.586 34"
+      ],
+      "history_citations": [
+        {
+          "raw": "1953 c.397 31",
+          "year": 1953,
+          "chapter": "397",
+          "section": "31"
+        },
+        {
+          "raw": "1957 c.608 207",
+          "year": 1957,
+          "chapter": "608",
+          "section": "207"
+        },
+        {
+          "raw": "repealed by 1965 c.586 34"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 21,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.115",
+      "identifier": "ORS 258.115",
+      "name": "Section 258.115",
+      "text": "",
+      "history_citation_blocks": [
+        "1965 c.586 8; repealed by 1979 c.190 431"
+      ],
+      "history_citations": [
+        {
+          "raw": "1965 c.586 8",
+          "year": 1965,
+          "chapter": "586",
+          "section": "8"
+        },
+        {
+          "raw": "repealed by 1979 c.190 431"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 22,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.120",
+      "identifier": "ORS 258.120",
+      "name": "Section 258.120",
+      "text": "",
+      "history_citation_blocks": [
+        "1953 c.397 33; repealed by 1965 c.586 34"
+      ],
+      "history_citations": [
+        {
+          "raw": "1953 c.397 33",
+          "year": 1953,
+          "chapter": "397",
+          "section": "33"
+        },
+        {
+          "raw": "repealed by 1965 c.586 34"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 23,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.125",
+      "identifier": "ORS 258.125",
+      "name": "Section 258.125",
+      "text": "",
+      "history_citation_blocks": [
+        "1965 c.586 9; repealed by 1979 c.190 431"
+      ],
+      "history_citations": [
+        {
+          "raw": "1965 c.586 9",
+          "year": 1965,
+          "chapter": "586",
+          "section": "9"
+        },
+        {
+          "raw": "repealed by 1979 c.190 431"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 24,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.130",
+      "identifier": "ORS 258.130",
+      "name": "Section 258.130",
+      "text": "",
+      "history_citation_blocks": [
+        "1953 c.397 32; repealed by 1965 c.586 34"
+      ],
+      "history_citations": [
+        {
+          "raw": "1953 c.397 32",
+          "year": 1953,
+          "chapter": "397",
+          "section": "32"
+        },
+        {
+          "raw": "repealed by 1965 c.586 34"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 25,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.135",
+      "identifier": "ORS 258.135",
+      "name": "Section 258.135",
+      "text": "",
+      "history_citation_blocks": [
+        "1965 c.586 10; repealed by 1979 c.190 431"
+      ],
+      "history_citations": [
+        {
+          "raw": "1965 c.586 10",
+          "year": 1965,
+          "chapter": "586",
+          "section": "10"
+        },
+        {
+          "raw": "repealed by 1979 c.190 431"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 26,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.145",
+      "identifier": "ORS 258.145",
+      "name": "Section 258.145",
+      "text": "[1965 c.586 11; 1967 c.335 25; repealed by 1979 c.190 431] RECOUNTS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 27,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.150",
+      "identifier": "ORS 258.150",
+      "name": "Section 258.150",
+      "text": "Authority of Secretary of State over recounts; county clerk to provide notice to Secretary of State. (1) The Secretary of State shall be responsible for ensuring that the procedures to be used in conducting election recounts assure an accurate recount in the shortest time at the least expense. Whenever demands are filed for a recount of a vote for both a measure and a nomination or office, or for more than one measure, nomination or office, the Secretary of State may determine the most appropriate procedure to be used in conducting the recounts simultaneously. (2)(a) In all election recounts for the office of President and Vice President of the United States, United States Senate, United States House of Representatives, Governor, Secretary of State, State Treasurer, Attorney General, Commissioner of the Bureau of Labor and Industries, Supreme Court, Court of Appeals, Oregon Tax Court, Circuit Court, Oregon Senate, Oregon House of Representatives and statewide measures, the Secretary of State shall ensure that county elections officials conduct the recount in a manner that is consistent, transparent, accurate and in accordance with all applicable laws. (b) The county clerk in each county involved in a recount described in paragraph (a) of this subsection shall provide notice to the Secretary of State of the date, time and location of the recount and information regarding all aspects of the recount process, including: (A) The appointment of counting boards; (B) The conditions for recount observers; (C) The manner in which voter intent is determined; and (D) The counting of ballots. (c) The Secretary of State shall review the notices and actual recount processes described in paragraph (b) of this subsection to ensure consistency across counties involved in the recount to the degree reasonably practicable. The Secretary of State shall be responsible for the certification of the results of the election or nomination as reported by the county clerks in the counties involved in the recount. (d) The Secretary of State may adopt rules necessary to implement this subsection.",
+      "history_citation_blocks": [
+        "Formerly 251.625; 2022 c.84 9"
+      ],
+      "history_citations": [
+        {
+          "raw": "Formerly 251.625"
+        },
+        {
+          "raw": "2022 c.84 9",
+          "year": 2022,
+          "chapter": "84",
+          "section": "9"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The Secretary of State shall be responsible for ensuring that the procedures to be used in conducting election recounts assure an accurate recount in the shortest time at the least expense. Whenever demands are filed for a recount of a vote for both a measure and a nomination or office, or for more than one measure, nomination or office, the Secretary of State may determine the most appropriate procedure to be used in conducting the recounts simultaneously.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "(a) In all election recounts for the office of President and Vice President of the United States, United States Senate, United States House of Representatives, Governor, Secretary of State, State Treasurer, Attorney General, Commissioner of the Bureau of Labor and Industries, Supreme Court, Court of Appeals, Oregon Tax Court, Circuit Court, Oregon Senate, Oregon House of Representatives and statewide measures, the Secretary of State shall ensure that county elections officials conduct the recount in a manner that is consistent, transparent, accurate and in accordance with all applicable laws.",
+          "subsections": [
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "The county clerk in each county involved in a recount described in paragraph of this subsection to ensure consistency across counties involved in the recount to the degree reasonably practicable. The Secretary of State shall be responsible for the certification of the results of the election or nomination as reported by the county clerks in the counties involved in the recount.",
+              "subsections": []
+            },
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "of this subsection shall provide notice to the Secretary of State of the date, time and location of the recount and information regarding all aspects of the recount process, including:",
+              "subsections": [
+                {
+                  "label": "(A)",
+                  "token": "A",
+                  "kind": "alpha_upper",
+                  "text": "The appointment of counting boards;",
+                  "subsections": []
+                },
+                {
+                  "label": "(B)",
+                  "token": "B",
+                  "kind": "alpha_upper",
+                  "text": "The conditions for recount observers;",
+                  "subsections": []
+                },
+                {
+                  "label": "(C)",
+                  "token": "C",
+                  "kind": "alpha_upper",
+                  "text": "The manner in which voter intent is determined; and",
+                  "subsections": []
+                },
+                {
+                  "label": "(D)",
+                  "token": "D",
+                  "kind": "alpha_upper",
+                  "text": "The counting of ballots.",
+                  "subsections": []
+                }
+              ]
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "The Secretary of State shall review the notices and actual recount processes described in paragraph",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "The Secretary of State may adopt rules necessary to implement this subsection.",
+              "subsections": []
+            }
+          ]
+        }
+      ],
+      "parser_warnings": [],
+      "position": 28,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.155",
+      "identifier": "ORS 258.155",
+      "name": "Section 258.155",
+      "text": "",
+      "history_citation_blocks": [
+        "1965 c.586 12; 1979 c.190 28; renumbered 246.550"
+      ],
+      "history_citations": [
+        {
+          "raw": "1965 c.586 12",
+          "year": 1965,
+          "chapter": "586",
+          "section": "12"
+        },
+        {
+          "raw": "1979 c.190 28",
+          "year": 1979,
+          "chapter": "190",
+          "section": "28"
+        },
+        {
+          "raw": "renumbered 246.550"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 29,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.160",
+      "identifier": "ORS 258.160",
+      "name": "Section 258.160",
+      "text": "",
+      "history_citation_blocks": [
+        "1953 c.397 34; 1957 c.608 208; repealed by 1965 c.586 34"
+      ],
+      "history_citations": [
+        {
+          "raw": "1953 c.397 34",
+          "year": 1953,
+          "chapter": "397",
+          "section": "34"
+        },
+        {
+          "raw": "1957 c.608 208",
+          "year": 1957,
+          "chapter": "608",
+          "section": "208"
+        },
+        {
+          "raw": "repealed by 1965 c.586 34"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 30,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.161",
+      "identifier": "ORS 258.161",
+      "name": "Section 258.161",
+      "text": "Filing demand for recount with Secretary of State; partial or full recount; deposit; waiver of deposit; deadline for filing demand; recount related to presidential election. (1) A candidate or an officer of a political party on behalf of a candidate of the political party may file a demand requiring the Secretary of State to direct that a recount be made in specified precincts in which votes were cast for the nomination or office for which the candidate received a vote. (2) An elector may file a demand requiring the Secretary of State to direct that a recount be made in specified precincts in which votes were cast on any measure which appeared on the ballot. (3) A county clerk may file a demand requiring the Secretary of State to direct that a recount be made in specified precincts in which votes were cast for the nomination or office for which a candidate received a vote or on any measure that appeared on the ballot. The cash deposit requirement of subsection (5) of this section shall not apply to a demand made under this subsection. The cost of a recount conducted under this subsection shall be paid by the county of the county clerk making the demand. (4) Except as provided in subsection (9) of this section, the person making a demand for a recount may, in the first demand, specify a partial or a full recount. A person making a demand for a partial recount shall specify the precincts in which votes were cast for the nomination or office or on the measure to be recounted. If in the first demand the person requested a partial recount, the person may file a supplemental demand for a recount of all the remainder of the precincts. (5) Except as provided in subsections (3) and (6) of this section, each demand shall be accompanied by a cash deposit of $15 for each precinct to be recounted up to a maximum of $8,000 for a recount of all precincts in the state on a measure or for a nomination or office. The Secretary of State may retain the deposit for not more than 60 days after the election for which the recount was demanded, without depositing it in the General Fund. (6) Upon application from a county clerk, the Secretary of State may waive the cash deposit requirement of subsection (5) of this section if, after the first demand, it appears that due to nondeliberate and material error by a local elections official, as defined in ORS 246.012, or a county clerk, the outcome of an election on a candidate or measure will be changed. The cost of a recount conducted under this subsection shall be paid by the county of the county clerk or the county of the local elections official who committed the error. (7) Each demand shall be in the form and shall contain the information prescribed by the Secretary of State, including the names and addresses of all persons and organizations providing any part of the cash deposit and the amount provided by each. (8) Except as provided in subsection (9) of this section, the first demand shall be filed in the office of the Secretary of State not later than the 42nd day and a supplemental demand not later than the 52nd day after the date of the election in which votes were cast for the nomination, office or measure. (9) A demand for a recount made under this section on behalf of the electors of presidential and vice presidential candidates shall be for a full recount only and shall be filed no later than five business days after the Secretary of State declares the result of the election under ORS 254.555.",
+      "history_citation_blocks": [
+        "Formerly 251.520; 1981 c.142 5; 1981 c.173 37; 1995 c.607 55; 1999 c.318 40; 2001 c.965 32; 2022 c.84 5"
+      ],
+      "history_citations": [
+        {
+          "raw": "Formerly 251.520"
+        },
+        {
+          "raw": "1981 c.142 5",
+          "year": 1981,
+          "chapter": "142",
+          "section": "5"
+        },
+        {
+          "raw": "1981 c.173 37",
+          "year": 1981,
+          "chapter": "173",
+          "section": "37"
+        },
+        {
+          "raw": "1995 c.607 55",
+          "year": 1995,
+          "chapter": "607",
+          "section": "55"
+        },
+        {
+          "raw": "1999 c.318 40",
+          "year": 1999,
+          "chapter": "318",
+          "section": "40"
+        },
+        {
+          "raw": "2001 c.965 32",
+          "year": 2001,
+          "chapter": "965",
+          "section": "32"
+        },
+        {
+          "raw": "2022 c.84 5",
+          "year": 2022,
+          "chapter": "84",
+          "section": "5"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A candidate or an officer of a political party on behalf of a candidate of the political party may file a demand requiring the Secretary of State to direct that a recount be made in specified precincts in which votes were cast for the nomination or office for which the candidate received a vote.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "An elector may file a demand requiring the Secretary of State to direct that a recount be made in specified precincts in which votes were cast on any measure which appeared on the ballot.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "A county clerk may file a demand requiring the Secretary of State to direct that a recount be made in specified precincts in which votes were cast for the nomination or office for which a candidate received a vote or on any measure that appeared on the ballot. The cash deposit requirement of subsection",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "of this section shall not apply to a demand made under this subsection. The cost of a recount conducted under this subsection shall be paid by the county of the county clerk making the demand. Except as provided in subsections of this section if, after the first demand, it appears that due to nondeliberate and material error by a local elections official, as defined in ORS 246.012, or a county clerk, the outcome of an election on a candidate or measure will be changed. The cost of a recount conducted under this subsection shall be paid by the county of the county clerk or the county of the local elections official who committed the error.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Except as provided in subsection",
+          "subsections": []
+        },
+        {
+          "label": "(9)",
+          "token": "9",
+          "kind": "numeric",
+          "text": "of this section, the person making a demand for a recount may, in the first demand, specify a partial or a full recount. A person making a demand for a partial recount shall specify the precincts in which votes were cast for the nomination or office or on the measure to be recounted. If in the first demand the person requested a partial recount, the person may file a supplemental demand for a recount of all the remainder of the precincts. of this section, the first demand shall be filed in the office of the Secretary of State not later than the 42nd day and a supplemental demand not later than the 52nd day after the date of the election in which votes were cast for the nomination, office or measure. A demand for a recount made under this section on behalf of the electors of presidential and vice presidential candidates shall be for a full recount only and shall be filed no later than five business days after the Secretary of State declares the result of the election under ORS 254.555.",
+          "subsections": []
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "of this section, each demand shall be accompanied by a cash deposit of $15 for each precinct to be recounted up to a maximum of $8,000 for a recount of all precincts in the state on a measure or for a nomination or office. The Secretary of State may retain the deposit for not more than 60 days after the election for which the recount was demanded, without depositing it in the General Fund. Upon application from a county clerk, the Secretary of State may waive the cash deposit requirement of subsection",
+          "subsections": []
+        },
+        {
+          "label": "(7)",
+          "token": "7",
+          "kind": "numeric",
+          "text": "Each demand shall be in the form and shall contain the information prescribed by the Secretary of State, including the names and addresses of all persons and organizations providing any part of the cash deposit and the amount provided by each.",
+          "subsections": []
+        },
+        {
+          "label": "(8)",
+          "token": "8",
+          "kind": "numeric",
+          "text": "Except as provided in subsection",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 31,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.165",
+      "identifier": "ORS 258.165",
+      "name": "Section 258.165",
+      "text": "",
+      "history_citation_blocks": [
+        "1965 c.586 13; 1969 c.537 1; 1979 c.190 29; renumbered 246.560"
+      ],
+      "history_citations": [
+        {
+          "raw": "1965 c.586 13",
+          "year": 1965,
+          "chapter": "586",
+          "section": "13"
+        },
+        {
+          "raw": "1969 c.537 1",
+          "year": 1969,
+          "chapter": "537",
+          "section": "1"
+        },
+        {
+          "raw": "1979 c.190 29",
+          "year": 1979,
+          "chapter": "190",
+          "section": "29"
+        },
+        {
+          "raw": "renumbered 246.560"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 32,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.170",
+      "identifier": "ORS 258.170",
+      "name": "Section 258.170",
+      "text": "",
+      "history_citation_blocks": [
+        "1953 c.397 35; 1957 c.608 209; repealed by 1965 c.586 34"
+      ],
+      "history_citations": [
+        {
+          "raw": "1953 c.397 35",
+          "year": 1953,
+          "chapter": "397",
+          "section": "35"
+        },
+        {
+          "raw": "1957 c.608 209",
+          "year": 1957,
+          "chapter": "608",
+          "section": "209"
+        },
+        {
+          "raw": "repealed by 1965 c.586 34"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 33,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.171",
+      "identifier": "ORS 258.171",
+      "name": "Section 258.171",
+      "text": "Full recount required to change results; exception for recount demand made by county clerk. (1) Except as provided in subsection (2) of this section, the person making a demand for a recount shall be bound by the original official returns unless the person demands a full recount. (2) If a demand for a partial recount is made by a county clerk under ORS 258.161 (3), votes recounted in the precincts specified by the county clerk may be combined with votes in other precincts that were not recounted to determine the official returns of the election.",
+      "history_citation_blocks": [
+        "1979 c.190 325; 1999 c.318 41; 2001 c.965 33"
+      ],
+      "history_citations": [
+        {
+          "raw": "1979 c.190 325",
+          "year": 1979,
+          "chapter": "190",
+          "section": "325"
+        },
+        {
+          "raw": "1999 c.318 41",
+          "year": 1999,
+          "chapter": "318",
+          "section": "41"
+        },
+        {
+          "raw": "2001 c.965 33",
+          "year": 2001,
+          "chapter": "965",
+          "section": "33"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Except as provided in subsection",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "of this section, the person making a demand for a recount shall be bound by the original official returns unless the person demands a full recount. If a demand for a partial recount is made by a county clerk under ORS 258.161",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": ", votes recounted in the precincts specified by the county clerk may be combined with votes in other precincts that were not recounted to determine the official returns of the election.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 34,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.180",
+      "identifier": "ORS 258.180",
+      "name": "Section 258.180",
+      "text": "",
+      "history_citation_blocks": [
+        "1953 c.397 38; 1957 c.608 210; repealed by 1965 c.586 34"
+      ],
+      "history_citations": [
+        {
+          "raw": "1953 c.397 38",
+          "year": 1953,
+          "chapter": "397",
+          "section": "38"
+        },
+        {
+          "raw": "1957 c.608 210",
+          "year": 1957,
+          "chapter": "608",
+          "section": "210"
+        },
+        {
+          "raw": "repealed by 1965 c.586 34"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 35,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.181",
+      "identifier": "ORS 258.181",
+      "name": "Section 258.181",
+      "text": "One recount only; two or more recount demands. (1) Except as provided in subsection (4) of this section, only one recount shall be made for any measure, nomination or office for which a recount may be demanded. (2) If two or more demands for the recount of the same measure are filed with the Secretary of State the demand first received by the Secretary of State shall be considered the demand for a recount. (3) If two or more demands for the recount of the same nomination or office are filed with the Secretary of State the demand received from or on behalf of the losing candidate receiving the highest number of votes shall be considered the demand for a recount. (4) If the demand for a recount under subsection (2) or (3) of this section specifies a partial recount, any elector may file a supplemental demand as provided in ORS 258.161.",
+      "history_citation_blocks": [
+        "Formerly 251.540; 1985 c.808 48; 2001 c.965 34"
+      ],
+      "history_citations": [
+        {
+          "raw": "Formerly 251.540"
+        },
+        {
+          "raw": "1985 c.808 48",
+          "year": 1985,
+          "chapter": "808",
+          "section": "48"
+        },
+        {
+          "raw": "2001 c.965 34",
+          "year": 2001,
+          "chapter": "965",
+          "section": "34"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Except as provided in subsection",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "of this section, only one recount shall be made for any measure, nomination or office for which a recount may be demanded. If the demand for a recount under subsection",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "If two or more demands for the recount of the same measure are filed with the Secretary of State the demand first received by the Secretary of State shall be considered the demand for a recount.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "If two or more demands for the recount of the same nomination or office are filed with the Secretary of State the demand received from or on behalf of the losing candidate receiving the highest number of votes shall be considered the demand for a recount. of this section specifies a partial recount, any elector may file a supplemental demand as provided in ORS 258.161.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 36,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.190",
+      "identifier": "ORS 258.190",
+      "name": "Section 258.190",
+      "text": "Secretary of State ordering recount after demand; notice. (1) After a recount demand is filed, the Secretary of State shall direct the official who conducted the election or the clerk of any county containing precincts in which ballots were cast on the measure or for the nomination or office specified in the demand for a recount to conduct a recount in the precincts specified in the demand. (2) If the demand for a recount of votes cast for a nomination or office is filed, the Secretary of State, not later than the third day after the filing of the first demand, shall notify the affected candidates that a recount is to be made in the precincts specified in the demand. The notice shall be sent by electronic mail or, if an electronic mail address for the affected candidate is unavailable, by certified or registered mail. (3) The official who is to conduct the recount, within a reasonable time before the recount, shall notify the affected candidates or the individual filing the demand for recount for a measure of the date, time and place of the recount.",
+      "history_citation_blocks": [
+        "Formerly 251.550; 2022 c.84 2"
+      ],
+      "history_citations": [
+        {
+          "raw": "Formerly 251.550"
+        },
+        {
+          "raw": "2022 c.84 2",
+          "year": 2022,
+          "chapter": "84",
+          "section": "2"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "After a recount demand is filed, the Secretary of State shall direct the official who conducted the election or the clerk of any county containing precincts in which ballots were cast on the measure or for the nomination or office specified in the demand for a recount to conduct a recount in the precincts specified in the demand.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "If the demand for a recount of votes cast for a nomination or office is filed, the Secretary of State, not later than the third day after the filing of the first demand, shall notify the affected candidates that a recount is to be made in the precincts specified in the demand. The notice shall be sent by electronic mail or, if an electronic mail address for the affected candidate is unavailable, by certified or registered mail.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The official who is to conduct the recount, within a reasonable time before the recount, shall notify the affected candidates or the individual filing the demand for recount for a measure of the date, time and place of the recount.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 37,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.192",
+      "identifier": "ORS 258.192",
+      "name": "Section 258.192",
+      "text": "",
+      "history_citation_blocks": [
+        "1959 c.582 2; repealed by 1965 c.586 34"
+      ],
+      "history_citations": [
+        {
+          "raw": "1959 c.582 2",
+          "year": 1959,
+          "chapter": "582",
+          "section": "2"
+        },
+        {
+          "raw": "repealed by 1965 c.586 34"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 38,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.194",
+      "identifier": "ORS 258.194",
+      "name": "Section 258.194",
+      "text": "",
+      "history_citation_blocks": [
+        "1959 c.582 3; repealed by 1965 c.586 34"
+      ],
+      "history_citations": [
+        {
+          "raw": "1959 c.582 3",
+          "year": 1959,
+          "chapter": "582",
+          "section": "3"
+        },
+        {
+          "raw": "repealed by 1965 c.586 34"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 39,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.196",
+      "identifier": "ORS 258.196",
+      "name": "Section 258.196",
+      "text": "[1959 c.582 4,5,6; repealed by 1965 c.586 34]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 40,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.198",
+      "identifier": "ORS 258.198",
+      "name": "Section 258.198",
+      "text": "",
+      "history_citation_blocks": [
+        "1959 c.582 7; repealed by 1965 c.586 34"
+      ],
+      "history_citations": [
+        {
+          "raw": "1959 c.582 7",
+          "year": 1959,
+          "chapter": "582",
+          "section": "7"
+        },
+        {
+          "raw": "repealed by 1965 c.586 34"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 41,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.200",
+      "identifier": "ORS 258.200",
+      "name": "Section 258.200",
+      "text": "Counting boards; appointment; compensation. (1) After receiving notice from the Secretary of State that a recount is to be made, the official directed to conduct the recount shall appoint counting boards from the list of electors qualified to vote in the county in which the recount is demanded. The official shall appoint as many counting boards as may be necessary to complete the recount within the shortest practicable time after the demand is filed. No member of the counting boards shall have been a candidate for any office voted upon at the election. The members of a counting board shall not all be members of the same political party. (2) Each member of the counting board shall be compensated at a rate not less than the federal or state minimum wage, whichever is higher.",
+      "history_citation_blocks": [
+        "Formerly 251.560; 1981 c.173 38; 1993 c.493 49; 1999 c.410 66"
+      ],
+      "history_citations": [
+        {
+          "raw": "Formerly 251.560"
+        },
+        {
+          "raw": "1981 c.173 38",
+          "year": 1981,
+          "chapter": "173",
+          "section": "38"
+        },
+        {
+          "raw": "1993 c.493 49",
+          "year": 1993,
+          "chapter": "493",
+          "section": "49"
+        },
+        {
+          "raw": "1999 c.410 66",
+          "year": 1999,
+          "chapter": "410",
+          "section": "66"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "After receiving notice from the Secretary of State that a recount is to be made, the official directed to conduct the recount shall appoint counting boards from the list of electors qualified to vote in the county in which the recount is demanded. The official shall appoint as many counting boards as may be necessary to complete the recount within the shortest practicable time after the demand is filed. No member of the counting boards shall have been a candidate for any office voted upon at the election. The members of a counting board shall not all be members of the same political party.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Each member of the counting board shall be compensated at a rate not less than the federal or state minimum wage, whichever is higher.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 42,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.205",
+      "identifier": "ORS 258.205",
+      "name": "Section 258.205",
+      "text": "",
+      "history_citation_blocks": [
+        "1965 c.586 14; repealed by 1979 c.190 431"
+      ],
+      "history_citations": [
+        {
+          "raw": "1965 c.586 14",
+          "year": 1965,
+          "chapter": "586",
+          "section": "14"
+        },
+        {
+          "raw": "repealed by 1979 c.190 431"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 43,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.210",
+      "identifier": "ORS 258.210",
+      "name": "Section 258.210",
+      "text": "",
+      "history_citation_blocks": [
+        "1953 c.397 3; 1957 c.608 211; repealed by 1965 c.586 34"
+      ],
+      "history_citations": [
+        {
+          "raw": "1953 c.397 3",
+          "year": 1953,
+          "chapter": "397",
+          "section": "3"
+        },
+        {
+          "raw": "1957 c.608 211",
+          "year": 1957,
+          "chapter": "608",
+          "section": "211"
+        },
+        {
+          "raw": "repealed by 1965 c.586 34"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 44,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.211",
+      "identifier": "ORS 258.211",
+      "name": "Section 258.211",
+      "text": "Opening ballot boxes; conduct of recount by hand; persons permitted to be present. (1) The ballot boxes containing the ballots to be recounted shall be opened by the official directed to make the recount only in the presence of the counting board and the persons referred to in this section. (2) The counting board shall conduct the recount by hand and, if requested, permit: (a) In the instance of a nomination or office, an affected candidate or an elector authorized in writing by an affected candidate, and an elector authorized in writing by each major or minor political party to be present to watch the recount. (b) In the instance of a measure, one elector advocating and one elector opposing the measure to be present to watch the recount. (3) For ballots cast using a voting machine: (a) The county clerk shall deposit the paper record copy recorded by the machine into the ballot box; and (b) The paper record copies are the ballots to be recounted under this section.",
+      "history_citation_blocks": [
+        "Formerly 251.570; 2001 c.965 35; 2005 c.731 6; 2005 c.797 69"
+      ],
+      "history_citations": [
+        {
+          "raw": "Formerly 251.570"
+        },
+        {
+          "raw": "2001 c.965 35",
+          "year": 2001,
+          "chapter": "965",
+          "section": "35"
+        },
+        {
+          "raw": "2005 c.731 6",
+          "year": 2005,
+          "chapter": "731",
+          "section": "6"
+        },
+        {
+          "raw": "2005 c.797 69",
+          "year": 2005,
+          "chapter": "797",
+          "section": "69"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The ballot boxes containing the ballots to be recounted shall be opened by the official directed to make the recount only in the presence of the counting board and the persons referred to in this section.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The counting board shall conduct the recount by hand and, if requested, permit:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "In the instance of a nomination or office, an affected candidate or an elector authorized in writing by an affected candidate, and an elector authorized in writing by each major or minor political party to be present to watch the recount.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "In the instance of a measure, one elector advocating and one elector opposing the measure to be present to watch the recount.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "For ballots cast using a voting machine:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "The county clerk shall deposit the paper record copy recorded by the machine into the ballot box; and",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "The paper record copies are the ballots to be recounted under this section.",
+              "subsections": []
+            }
+          ]
+        }
+      ],
+      "parser_warnings": [],
+      "position": 45,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.215",
+      "identifier": "ORS 258.215",
+      "name": "Section 258.215",
+      "text": "",
+      "history_citation_blocks": [
+        "1965 c.586 15; 1973 c.662 2; 1975 c.212 1; 1977 c.829 18; 1979 c.317 14; repealed by 1979 c.190 431"
+      ],
+      "history_citations": [
+        {
+          "raw": "1965 c.586 15",
+          "year": 1965,
+          "chapter": "586",
+          "section": "15"
+        },
+        {
+          "raw": "1973 c.662 2",
+          "year": 1973,
+          "chapter": "662",
+          "section": "2"
+        },
+        {
+          "raw": "1975 c.212 1",
+          "year": 1975,
+          "chapter": "212",
+          "section": "1"
+        },
+        {
+          "raw": "1977 c.829 18",
+          "year": 1977,
+          "chapter": "829",
+          "section": "18"
+        },
+        {
+          "raw": "1979 c.317 14",
+          "year": 1979,
+          "chapter": "317",
+          "section": "14"
+        },
+        {
+          "raw": "repealed by 1979 c.190 431"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 46,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.220",
+      "identifier": "ORS 258.220",
+      "name": "Section 258.220",
+      "text": "",
+      "history_citation_blocks": [
+        "1953 c.397 8; 1957 c.608 212; repealed by 1965 c.586 34"
+      ],
+      "history_citations": [
+        {
+          "raw": "1953 c.397 8",
+          "year": 1953,
+          "chapter": "397",
+          "section": "8"
+        },
+        {
+          "raw": "1957 c.608 212",
+          "year": 1957,
+          "chapter": "608",
+          "section": "212"
+        },
+        {
+          "raw": "repealed by 1965 c.586 34"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 47,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.221",
+      "identifier": "ORS 258.221",
+      "name": "Section 258.221",
+      "text": "Completion of recount; certification of votes and cost; notification of person demanding recount. (1) The recount shall be completed as soon as practicable after the demand is filed. (2) In the case of a full recount, the official directed to conduct the recount, as soon as practicable after completion of the recount, shall: (a) Certify the abstract of votes recounted to the Secretary of State. (b) Certify the abstract of votes recounted to the official issuing certificates of nomination or election regarding a nomination or office, or to the official responsible for issuing a proclamation regarding a measure. The official then shall issue the appropriate certificate or proclamation. (c) Notify by mail the person who filed the demand for the recount of the result and the cost of the recount. (3) Not later than the 30th day after the completion of the recount the official directed to conduct the recount shall certify the cost of the recount to the Secretary of State.",
+      "history_citation_blocks": [
+        "Formerly 251.590; 2001 c.965 36"
+      ],
+      "history_citations": [
+        {
+          "raw": "Formerly 251.590"
+        },
+        {
+          "raw": "2001 c.965 36",
+          "year": 2001,
+          "chapter": "965",
+          "section": "36"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The recount shall be completed as soon as practicable after the demand is filed.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "In the case of a full recount, the official directed to conduct the recount, as soon as practicable after completion of the recount, shall:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Certify the abstract of votes recounted to the Secretary of State.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Certify the abstract of votes recounted to the official issuing certificates of nomination or election regarding a nomination or office, or to the official responsible for issuing a proclamation regarding a measure. The official then shall issue the appropriate certificate or proclamation.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Notify by mail the person who filed the demand for the recount of the result and the cost of the recount.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Not later than the 30th day after the completion of the recount the official directed to conduct the recount shall certify the cost of the recount to the Secretary of State.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 48,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.225",
+      "identifier": "ORS 258.225",
+      "name": "Section 258.225",
+      "text": "",
+      "history_citation_blocks": [
+        "1965 c.586 16; 1979 c.317 15; repealed by 1979 c.190 431"
+      ],
+      "history_citations": [
+        {
+          "raw": "1965 c.586 16",
+          "year": 1965,
+          "chapter": "586",
+          "section": "16"
+        },
+        {
+          "raw": "1979 c.317 15",
+          "year": 1979,
+          "chapter": "317",
+          "section": "15"
+        },
+        {
+          "raw": "repealed by 1979 c.190 431"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 49,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.230",
+      "identifier": "ORS 258.230",
+      "name": "Section 258.230",
+      "text": "",
+      "history_citation_blocks": [
+        "1953 c.397 9; 1957 c.608 213; repealed by 1965 c.586 34"
+      ],
+      "history_citations": [
+        {
+          "raw": "1953 c.397 9",
+          "year": 1953,
+          "chapter": "397",
+          "section": "9"
+        },
+        {
+          "raw": "1957 c.608 213",
+          "year": 1957,
+          "chapter": "608",
+          "section": "213"
+        },
+        {
+          "raw": "repealed by 1965 c.586 34"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 50,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.231",
+      "identifier": "ORS 258.231",
+      "name": "Section 258.231",
+      "text": "Costs to be included and excluded from recount costs. (1) The certification of costs of a recount required in ORS 258.221 (3) may include: (a) Compensation of recount boards. (b) Compensation of additional employees required to conduct the recount and overtime payment to regular employees who are eligible to receive such payments. (c) Postage and telephone charges directly related to the recount. (d) The costs for security. (2) The certification of costs of a recount required in ORS 258.221 (3) shall not include: (a) General administrative costs. (b) Allowances for meals or lodging.",
+      "history_citation_blocks": [
+        "Formerly 251.630; 2001 c.965 37"
+      ],
+      "history_citations": [
+        {
+          "raw": "Formerly 251.630"
+        },
+        {
+          "raw": "2001 c.965 37",
+          "year": 2001,
+          "chapter": "965",
+          "section": "37"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The certification of costs of a recount required in ORS 258.221",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "may include: shall not include:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Compensation of recount boards. General administrative costs.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Compensation of additional employees required to conduct the recount and overtime payment to regular employees who are eligible to receive such payments. Allowances for meals or lodging.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Postage and telephone charges directly related to the recount.",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "The costs for security.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The certification of costs of a recount required in ORS 258.221",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 51,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.235",
+      "identifier": "ORS 258.235",
+      "name": "Section 258.235",
+      "text": "",
+      "history_citation_blocks": [
+        "1965 c.586 17; 1979 c.317 16; repealed by 1979 c.190 431"
+      ],
+      "history_citations": [
+        {
+          "raw": "1965 c.586 17",
+          "year": 1965,
+          "chapter": "586",
+          "section": "17"
+        },
+        {
+          "raw": "1979 c.317 16",
+          "year": 1979,
+          "chapter": "317",
+          "section": "16"
+        },
+        {
+          "raw": "repealed by 1979 c.190 431"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 52,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.240",
+      "identifier": "ORS 258.240",
+      "name": "Section 258.240",
+      "text": "",
+      "history_citation_blocks": [
+        "1953 c.397 10; repealed by 1965 c.586 34"
+      ],
+      "history_citations": [
+        {
+          "raw": "1953 c.397 10",
+          "year": 1953,
+          "chapter": "397",
+          "section": "10"
+        },
+        {
+          "raw": "repealed by 1965 c.586 34"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 53,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.241",
+      "identifier": "ORS 258.241",
+      "name": "Section 258.241",
+      "text": "Official return of election after recount. (1) In the case of a full recount, the abstract of votes resulting from the recount shall be the official return of the election. (2) Except as provided in ORS 258.171 (2), in the case of a partial recount, the abstract of votes recounted shall not be certified and the abstract of votes resulting from the original count shall be the official return of the election.",
+      "history_citation_blocks": [
+        "Formerly 251.600; 2001 c.965 38"
+      ],
+      "history_citations": [
+        {
+          "raw": "Formerly 251.600"
+        },
+        {
+          "raw": "2001 c.965 38",
+          "year": 2001,
+          "chapter": "965",
+          "section": "38"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "In the case of a full recount, the abstract of votes resulting from the recount shall be the official return of the election.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Except as provided in ORS 258.171 , in the case of a partial recount, the abstract of votes recounted shall not be certified and the abstract of votes resulting from the original count shall be the official return of the election.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 54,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.245",
+      "identifier": "ORS 258.245",
+      "name": "Section 258.245",
+      "text": "",
+      "history_citation_blocks": [
+        "1965 c.586 18; 1979 c.190 254; renumbered 254.315"
+      ],
+      "history_citations": [
+        {
+          "raw": "1965 c.586 18",
+          "year": 1965,
+          "chapter": "586",
+          "section": "18"
+        },
+        {
+          "raw": "1979 c.190 254",
+          "year": 1979,
+          "chapter": "190",
+          "section": "254"
+        },
+        {
+          "raw": "renumbered 254.315"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 55,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.250",
+      "identifier": "ORS 258.250",
+      "name": "Section 258.250",
+      "text": "Payment of cost of recount. (1) If the abstract of votes resulting from a full recount shows that the outcome of the election on the measure was changed or that a candidate for whose benefit the recount was demanded received a plurality of the votes, the deposit required by ORS 258.161 shall be refunded by the Secretary of State to the person who filed the demand. (2) The Secretary of State shall transfer the deposit required by ORS 258.161 and any additional amount paid pursuant to subsection (5) of this section to a special account in the General Fund if: (a) A full recount was not conducted; or (b) The abstract of votes resulting from a full recount shows that: (A) The outcome of the election on the measure was not changed; or (B) A candidate for whose benefit the recount was demanded did not receive a plurality of the votes. (3) Moneys deposited in the special account under subsection (2) of this section are continuously appropriated for the purpose of reimbursing the county, city or other political subdivision or public corporation for the cost of the recount and paying any refunds required by subsection (4) of this section. (4) Upon receipt from the official directed to conduct the recount of a signed certificate itemizing the cost of the recount, the Secretary of State shall request the Oregon Department of Administrative Services to issue warrants for the amount so certified. Any portion of the deposit required by ORS 258.161 remaining after the cost of the recount has been paid shall be refunded to the person who filed the demand upon receipt of a warrant from the Oregon Department of Administrative Services showing the amount of the refund to which the person is entitled. (5) If the cost of the recount exceeds the amount of the deposit required by ORS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "If the abstract of votes resulting from a full recount shows that the outcome of the election on the measure was changed or that a candidate for whose benefit the recount was demanded received a plurality of the votes, the deposit required by ORS 258.161 shall be refunded by the Secretary of State to the person who filed the demand.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The Secretary of State shall transfer the deposit required by ORS 258.161 and any additional amount paid pursuant to subsection of this section are continuously appropriated for the purpose of reimbursing the county, city or other political subdivision or public corporation for the cost of the recount and paying any refunds required by subsection",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "of this section to a special account in the General Fund if: If the cost of the recount exceeds the amount of the deposit required by ORS",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "A full recount was not conducted; or",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "The abstract of votes resulting from a full recount shows that:",
+              "subsections": [
+                {
+                  "label": "(A)",
+                  "token": "A",
+                  "kind": "alpha_upper",
+                  "text": "The outcome of the election on the measure was not changed; or",
+                  "subsections": []
+                },
+                {
+                  "label": "(B)",
+                  "token": "B",
+                  "kind": "alpha_upper",
+                  "text": "A candidate for whose benefit the recount was demanded did not receive a plurality of the votes.",
+                  "subsections": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Moneys deposited in the special account under subsection",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "of this section. Upon receipt from the official directed to conduct the recount of a signed certificate itemizing the cost of the recount, the Secretary of State shall request the Oregon Department of Administrative Services to issue warrants for the amount so certified. Any portion of the deposit required by ORS 258.161 remaining after the cost of the recount has been paid shall be refunded to the person who filed the demand upon receipt of a warrant from the Oregon Department of Administrative Services showing the amount of the refund to which the person is entitled.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 56,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.255",
+      "identifier": "ORS 258.255",
+      "name": "Section 258.255",
+      "text": "",
+      "history_citation_blocks": [
+        "1965 c.586 19; 1979 c.317 17; repealed by 1979 c.190 431"
+      ],
+      "history_citations": [
+        {
+          "raw": "1965 c.586 19",
+          "year": 1965,
+          "chapter": "586",
+          "section": "19"
+        },
+        {
+          "raw": "1979 c.317 17",
+          "year": 1979,
+          "chapter": "317",
+          "section": "17"
+        },
+        {
+          "raw": "repealed by 1979 c.190 431"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 57,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.260",
+      "identifier": "ORS 258.260",
+      "name": "Section 258.260",
+      "text": "Costs to be collected for multicounty or statewide election recounts. If the demand for recount is made for a multicounty or statewide election, the Secretary of State also may collect those costs allowed in ORS 258.231 (1) which the secretary incurs as a result of the recount. [Formerly 251.635]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "which the secretary incurs as a result of the recount. [Formerly 251.635]",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 58,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.265",
+      "identifier": "ORS 258.265",
+      "name": "Section 258.265",
+      "text": "",
+      "history_citation_blocks": [
+        "1965 c.586 20; repealed by 1979 c.190 431"
+      ],
+      "history_citations": [
+        {
+          "raw": "1965 c.586 20",
+          "year": 1965,
+          "chapter": "586",
+          "section": "20"
+        },
+        {
+          "raw": "repealed by 1979 c.190 431"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 59,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.270",
+      "identifier": "ORS 258.270",
+      "name": "Section 258.270",
+      "text": "Payment of costs where more than one recount conducted simultaneously. If two or more recounts are conducted simultaneously, payment of the costs of the recount in counties where the same precinct or precincts are designated for recount by more than one person shall be equitably apportioned among those persons. With the advice of the official directed to conduct the recount, the Secretary of State shall determine the apportionment of costs. [Formerly 251.615]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 60,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.275",
+      "identifier": "ORS 258.275",
+      "name": "Section 258.275",
+      "text": "",
+      "history_citation_blocks": [
+        "1965 c.586 21; 1977 c.508 13; repealed by 1979 c.190 431"
+      ],
+      "history_citations": [
+        {
+          "raw": "1965 c.586 21",
+          "year": 1965,
+          "chapter": "586",
+          "section": "21"
+        },
+        {
+          "raw": "1977 c.508 13",
+          "year": 1977,
+          "chapter": "508",
+          "section": "13"
+        },
+        {
+          "raw": "repealed by 1979 c.190 431"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 61,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.280",
+      "identifier": "ORS 258.280",
+      "name": ".",
+      "text": "(1)(a) Except as provided in paragraph (b) of this subsection, the Secretary of State shall order a full recount of the votes cast for nomination or election to a public office for which the Secretary of State is the filing officer, and the county clerk who conducted the election shall order a full recount of the votes cast for nomination or election to any other public office if the canvass of votes of the election reveals that: (A) Two or more candidates for that nomination or office have an equal and the highest number of votes; or (B) The difference in the number of votes cast for a candidate apparently nominated or elected to the office and the votes cast for the closest apparently defeated opponent is not more than one-fifth of one percent of the total votes for both candidates. (b) The Secretary of State by rule shall establish when a full recount of the votes cast for nomination or election to a public office is required for an election in which ranked choice voting is conducted in the manner set forth in section 4, chapter 220, Oregon Laws 2023, and the secretary is the filing officer. Any rules adopted under this paragraph shall, to the extent practicable, comply with the requirements set forth in paragraph (a) of this subsection. (2)(a) Unless otherwise provided by a home rule charter, at an election described in ORS 249.088, the Secretary of State shall order a full recount of the votes cast for nomination or election to a nonpartisan office for which the Secretary of State is the filing officer, and the county clerk who conducted the election shall order a full recount of the votes cast for nomination or election to any other nonpartisan office, if the canvass of votes of the election reveals that the number of votes cast for a candidate differs from a majority of votes cast for the office by not more than one-fifth of one percent of the total votes cast for the office. (b) This subsection does not apply to the office of sheriff, the office of county clerk, the office of county treasurer or a candidate to fill a vacancy, as described in ORS 249.091. (3) The cost of a full recount conducted under this section shall be paid by the county for a county office, by the city for a city office, by the special district for a special district office or by the state for any other office.",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "(a) Except as provided in paragraph",
+          "subsections": [
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "of this subsection, the Secretary of State shall order a full recount of the votes cast for nomination or election to a public office for which the Secretary of State is the filing officer, and the county clerk who conducted the election shall order a full recount of the votes cast for nomination or election to any other public office if the canvass of votes of the election reveals that: The Secretary of State by rule shall establish when a full recount of the votes cast for nomination or election to a public office is required for an election in which ranked choice voting is conducted in the manner set forth in section 4, chapter 220, Oregon Laws 2023, and the secretary is the filing officer. Any rules adopted under this paragraph shall, to the extent practicable, comply with the requirements set forth in paragraph",
+              "subsections": [
+                {
+                  "label": "(A)",
+                  "token": "A",
+                  "kind": "alpha_upper",
+                  "text": "Two or more candidates for that nomination or office have an equal and the highest number of votes; or",
+                  "subsections": []
+                },
+                {
+                  "label": "(B)",
+                  "token": "B",
+                  "kind": "alpha_upper",
+                  "text": "The difference in the number of votes cast for a candidate apparently nominated or elected to the office and the votes cast for the closest apparently defeated opponent is not more than one-fifth of one percent of the total votes for both candidates.",
+                  "subsections": []
+                }
+              ]
+            },
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "of this subsection.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "(a) Unless otherwise provided by a home rule charter, at an election described in ORS 249.088, the Secretary of State shall order a full recount of the votes cast for nomination or election to a nonpartisan office for which the Secretary of State is the filing officer, and the county clerk who conducted the election shall order a full recount of the votes cast for nomination or election to any other nonpartisan office, if the canvass of votes of the election reveals that the number of votes cast for a candidate differs from a majority of votes cast for the office by not more than one-fifth of one percent of the total votes cast for the office.",
+          "subsections": [
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "This subsection does not apply to the office of sheriff, the office of county clerk, the office of county treasurer or a candidate to fill a vacancy, as described in ORS 249.091.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The cost of a full recount conducted under this section shall be paid by the county for a county office, by the city for a city office, by the special district for a special district office or by the state for any other office.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 62,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.285",
+      "identifier": "ORS 258.285",
+      "name": "Section 258.285",
+      "text": "",
+      "history_citation_blocks": [
+        "1965 c.586 22; 1979 c.317 18; repealed by 1979 c.190 431"
+      ],
+      "history_citations": [
+        {
+          "raw": "1965 c.586 22",
+          "year": 1965,
+          "chapter": "586",
+          "section": "22"
+        },
+        {
+          "raw": "1979 c.317 18",
+          "year": 1979,
+          "chapter": "317",
+          "section": "18"
+        },
+        {
+          "raw": "repealed by 1979 c.190 431"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 63,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.290",
+      "identifier": "ORS 258.290",
+      "name": "Section 258.290",
+      "text": "Automatic full recount required in certain elections on measures; costs of recount to be paid by governmental unit; exception. (1) If the official canvass of votes of an election reveals that the difference in the number of votes cast for or against any measure is not more than one-fifth of one percent of the total votes cast for and against the measure, the Secretary of State, in the case of a measure for which the Secretary of State is the filing officer, and the county clerk who conducted the election in the case of any other measure shall order a full recount of all votes cast for the measure. (2) The cost of a full recount conducted under this section shall be paid by the state, county, city or special district for which the measure was proposed. (3) This section does not apply if the election on the measure is an election at which at least 50 percent of registered voters eligible to vote in the election must cast a ballot under sections 11 and 11k, Article XI, Oregon Constitution, and less than 50 percent of registered voters eligible to vote in the election cast ballots.",
+      "history_citation_blocks": [
+        "Formerly 251.645; 1993 c.493 51; 1997 c.541 313e; 2001 c.965 41; 2010 c.9 6"
+      ],
+      "history_citations": [
+        {
+          "raw": "Formerly 251.645"
+        },
+        {
+          "raw": "1993 c.493 51",
+          "year": 1993,
+          "chapter": "493",
+          "section": "51"
+        },
+        {
+          "raw": "1997 c.541 313e",
+          "year": 1997,
+          "chapter": "541",
+          "section": "313e"
+        },
+        {
+          "raw": "2001 c.965 41",
+          "year": 2001,
+          "chapter": "965",
+          "section": "41"
+        },
+        {
+          "raw": "2010 c.9 6",
+          "year": 2010,
+          "chapter": "9",
+          "section": "6"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "If the official canvass of votes of an election reveals that the difference in the number of votes cast for or against any measure is not more than one-fifth of one percent of the total votes cast for and against the measure, the Secretary of State, in the case of a measure for which the Secretary of State is the filing officer, and the county clerk who conducted the election in the case of any other measure shall order a full recount of all votes cast for the measure.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The cost of a full recount conducted under this section shall be paid by the state, county, city or special district for which the measure was proposed.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "This section does not apply if the election on the measure is an election at which at least 50 percent of registered voters eligible to vote in the election must cast a ballot under sections 11 and 11k, Article XI, Oregon Constitution, and less than 50 percent of registered voters eligible to vote in the election cast ballots.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 64,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.295",
+      "identifier": "ORS 258.295",
+      "name": "Section 258.295",
+      "text": "",
+      "history_citation_blocks": [
+        "1965 c.586 26; 1979 c.190 256; renumbered 254.335"
+      ],
+      "history_citations": [
+        {
+          "raw": "1965 c.586 26",
+          "year": 1965,
+          "chapter": "586",
+          "section": "26"
+        },
+        {
+          "raw": "1979 c.190 256",
+          "year": 1979,
+          "chapter": "190",
+          "section": "256"
+        },
+        {
+          "raw": "renumbered 254.335"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 65,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.300",
+      "identifier": "ORS 258.300",
+      "name": "Section 258.300",
+      "text": "Elections officials to notify Secretary of State when automatic full recount required. Immediately following the completion of the official canvass of votes for any election, the elections officer who prepared the canvass shall notify the Secretary of State of any election subject to an automatic full recount under ORS 258.280 and 258.290.",
+      "history_citation_blocks": [
+        "Formerly 251.650; 2001 c.965 42"
+      ],
+      "history_citations": [
+        {
+          "raw": "Formerly 251.650"
+        },
+        {
+          "raw": "2001 c.965 42",
+          "year": 2001,
+          "chapter": "965",
+          "section": "42"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 66,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.305",
+      "identifier": "ORS 258.305",
+      "name": "Section 258.305",
+      "text": "",
+      "history_citation_blocks": [
+        "1965 c.586 27; 1979 c.190 257; renumbered 254.345"
+      ],
+      "history_citations": [
+        {
+          "raw": "1965 c.586 27",
+          "year": 1965,
+          "chapter": "586",
+          "section": "27"
+        },
+        {
+          "raw": "1979 c.190 257",
+          "year": 1979,
+          "chapter": "190",
+          "section": "257"
+        },
+        {
+          "raw": "renumbered 254.345"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 67,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.310",
+      "identifier": "ORS 258.310",
+      "name": "Section 258.310",
+      "text": "",
+      "history_citation_blocks": [
+        "1953 c.397 4; 1957 c.608 214; repealed by 1965 c.586 34"
+      ],
+      "history_citations": [
+        {
+          "raw": "1953 c.397 4",
+          "year": 1953,
+          "chapter": "397",
+          "section": "4"
+        },
+        {
+          "raw": "1957 c.608 214",
+          "year": 1957,
+          "chapter": "608",
+          "section": "214"
+        },
+        {
+          "raw": "repealed by 1965 c.586 34"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 68,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.315",
+      "identifier": "ORS 258.315",
+      "name": "Section 258.315",
+      "text": "",
+      "history_citation_blocks": [
+        "1965 c.586 28; 1979 c.317 19; 1979 c.317 19a; 1979 c.519 29; repealed by 1979 c.19 431"
+      ],
+      "history_citations": [
+        {
+          "raw": "1965 c.586 28",
+          "year": 1965,
+          "chapter": "586",
+          "section": "28"
+        },
+        {
+          "raw": "1979 c.317 19",
+          "year": 1979,
+          "chapter": "317",
+          "section": "19"
+        },
+        {
+          "raw": "1979 c.317 19a",
+          "year": 1979,
+          "chapter": "317",
+          "section": "19a"
+        },
+        {
+          "raw": "1979 c.519 29",
+          "year": 1979,
+          "chapter": "519",
+          "section": "29"
+        },
+        {
+          "raw": "repealed by 1979 c.19 431"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 69,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.320",
+      "identifier": "ORS 258.320",
+      "name": "Section 258.320",
+      "text": "",
+      "history_citation_blocks": [
+        "1953 c.397 5; 1957 c.608 215; repealed by 1965 c.586 34"
+      ],
+      "history_citations": [
+        {
+          "raw": "1953 c.397 5",
+          "year": 1953,
+          "chapter": "397",
+          "section": "5"
+        },
+        {
+          "raw": "1957 c.608 215",
+          "year": 1957,
+          "chapter": "608",
+          "section": "215"
+        },
+        {
+          "raw": "repealed by 1965 c.586 34"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 70,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.325",
+      "identifier": "ORS 258.325",
+      "name": "Section 258.325",
+      "text": "",
+      "history_citation_blocks": [
+        "1965 c.586 29; repealed by 1979 c.190 431"
+      ],
+      "history_citations": [
+        {
+          "raw": "1965 c.586 29",
+          "year": 1965,
+          "chapter": "586",
+          "section": "29"
+        },
+        {
+          "raw": "repealed by 1979 c.190 431"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 71,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.330",
+      "identifier": "ORS 258.330",
+      "name": "Section 258.330",
+      "text": "",
+      "history_citation_blocks": [
+        "1953 c.397 6; repealed by 1965 c.586 34"
+      ],
+      "history_citations": [
+        {
+          "raw": "1953 c.397 6",
+          "year": 1953,
+          "chapter": "397",
+          "section": "6"
+        },
+        {
+          "raw": "repealed by 1965 c.586 34"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 72,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.335",
+      "identifier": "ORS 258.335",
+      "name": "Section 258.335",
+      "text": "[1965 c.586 30,31; repealed by 1979 c.190 431]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 73,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.345",
+      "identifier": "ORS 258.345",
+      "name": "Section 258.345",
+      "text": "",
+      "history_citation_blocks": [
+        "1965 c.586 32; repealed by 1979 c.190 431"
+      ],
+      "history_citations": [
+        {
+          "raw": "1965 c.586 32",
+          "year": 1965,
+          "chapter": "586",
+          "section": "32"
+        },
+        {
+          "raw": "repealed by 1979 c.190 431"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 74,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.355",
+      "identifier": "ORS 258.355",
+      "name": "Section 258.355",
+      "text": "",
+      "history_citation_blocks": [
+        "1965 c.586 23; repealed by 1979 c.190 431"
+      ],
+      "history_citations": [
+        {
+          "raw": "1965 c.586 23",
+          "year": 1965,
+          "chapter": "586",
+          "section": "23"
+        },
+        {
+          "raw": "repealed by 1979 c.190 431"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 75,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.365",
+      "identifier": "ORS 258.365",
+      "name": "Section 258.365",
+      "text": "",
+      "history_citation_blocks": [
+        "1965 c.586 24; repealed by 1979 c.190 431"
+      ],
+      "history_citations": [
+        {
+          "raw": "1965 c.586 24",
+          "year": 1965,
+          "chapter": "586",
+          "section": "24"
+        },
+        {
+          "raw": "repealed by 1979 c.190 431"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 76,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.375",
+      "identifier": "ORS 258.375",
+      "name": "Section 258.375",
+      "text": "",
+      "history_citation_blocks": [
+        "1965 c.586 25; repealed by 1979 c.190 431"
+      ],
+      "history_citations": [
+        {
+          "raw": "1965 c.586 25",
+          "year": 1965,
+          "chapter": "586",
+          "section": "25"
+        },
+        {
+          "raw": "repealed by 1979 c.190 431"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 77,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.380",
+      "identifier": "ORS 258.380",
+      "name": "Section 258.380",
+      "text": "",
+      "history_citation_blocks": [
+        "1977 c.231 2; 1979 c.190 241; renumbered 254.175"
+      ],
+      "history_citations": [
+        {
+          "raw": "1977 c.231 2",
+          "year": 1977,
+          "chapter": "231",
+          "section": "2"
+        },
+        {
+          "raw": "1979 c.190 241",
+          "year": 1979,
+          "chapter": "190",
+          "section": "241"
+        },
+        {
+          "raw": "renumbered 254.175"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 78,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.405",
+      "identifier": "ORS 258.405",
+      "name": "Section 258.405",
+      "text": "",
+      "history_citation_blocks": [
+        "1965 c.139 2,4; 1967 c.384 1; 1979 c.190 30; renumbered 246.570"
+      ],
+      "history_citations": [
+        {
+          "raw": "1965 c.139 2,4"
+        },
+        {
+          "raw": "1967 c.384 1",
+          "year": 1967,
+          "chapter": "384",
+          "section": "1"
+        },
+        {
+          "raw": "1979 c.190 30",
+          "year": 1979,
+          "chapter": "190",
+          "section": "30"
+        },
+        {
+          "raw": "renumbered 246.570"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 79,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.410",
+      "identifier": "ORS 258.410",
+      "name": "Section 258.410",
+      "text": "",
+      "history_citation_blocks": [
+        "1953 c.397 7; repealed by 1965 c.586 34"
+      ],
+      "history_citations": [
+        {
+          "raw": "1953 c.397 7",
+          "year": 1953,
+          "chapter": "397",
+          "section": "7"
+        },
+        {
+          "raw": "repealed by 1965 c.586 34"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 80,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.415",
+      "identifier": "ORS 258.415",
+      "name": "Section 258.415",
+      "text": "",
+      "history_citation_blocks": [
+        "1965 c.139 3; 1967 c.384 2; 1979 c.190 31; renumbered 246.580"
+      ],
+      "history_citations": [
+        {
+          "raw": "1965 c.139 3",
+          "year": 1965,
+          "chapter": "139",
+          "section": "3"
+        },
+        {
+          "raw": "1967 c.384 2",
+          "year": 1967,
+          "chapter": "384",
+          "section": "2"
+        },
+        {
+          "raw": "1979 c.190 31",
+          "year": 1979,
+          "chapter": "190",
+          "section": "31"
+        },
+        {
+          "raw": "renumbered 246.580"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 81,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.420",
+      "identifier": "ORS 258.420",
+      "name": "Section 258.420",
+      "text": "",
+      "history_citation_blocks": [
+        "1953 c.397 11; repealed by 1965 c.586 34"
+      ],
+      "history_citations": [
+        {
+          "raw": "1953 c.397 11",
+          "year": 1953,
+          "chapter": "397",
+          "section": "11"
+        },
+        {
+          "raw": "repealed by 1965 c.586 34"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 82,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.425",
+      "identifier": "ORS 258.425",
+      "name": "Section 258.425",
+      "text": "",
+      "history_citation_blocks": [
+        "1965 c.139 5; 1967 c.335 26; 1971 c.749 85; 1979 c.190 32; renumbered 246.590"
+      ],
+      "history_citations": [
+        {
+          "raw": "1965 c.139 5",
+          "year": 1965,
+          "chapter": "139",
+          "section": "5"
+        },
+        {
+          "raw": "1967 c.335 26",
+          "year": 1967,
+          "chapter": "335",
+          "section": "26"
+        },
+        {
+          "raw": "1971 c.749 85",
+          "year": 1971,
+          "chapter": "749",
+          "section": "85"
+        },
+        {
+          "raw": "1979 c.190 32",
+          "year": 1979,
+          "chapter": "190",
+          "section": "32"
+        },
+        {
+          "raw": "renumbered 246.590"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 83,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.430",
+      "identifier": "ORS 258.430",
+      "name": "Section 258.430",
+      "text": "",
+      "history_citation_blocks": [
+        "1953 c.397 12; repealed by 1965 c.586 34"
+      ],
+      "history_citations": [
+        {
+          "raw": "1953 c.397 12",
+          "year": 1953,
+          "chapter": "397",
+          "section": "12"
+        },
+        {
+          "raw": "repealed by 1965 c.586 34"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 84,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.435",
+      "identifier": "ORS 258.435",
+      "name": "Section 258.435",
+      "text": "",
+      "history_citation_blocks": [
+        "1965 c.139 6; 1979 c.190 33; renumbered 246.600"
+      ],
+      "history_citations": [
+        {
+          "raw": "1965 c.139 6",
+          "year": 1965,
+          "chapter": "139",
+          "section": "6"
+        },
+        {
+          "raw": "1979 c.190 33",
+          "year": 1979,
+          "chapter": "190",
+          "section": "33"
+        },
+        {
+          "raw": "renumbered 246.600"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 85,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.440",
+      "identifier": "ORS 258.440",
+      "name": "Section 258.440",
+      "text": "",
+      "history_citation_blocks": [
+        "1953 c.397 13; repealed by 1965 c.586 34"
+      ],
+      "history_citations": [
+        {
+          "raw": "1953 c.397 13",
+          "year": 1953,
+          "chapter": "397",
+          "section": "13"
+        },
+        {
+          "raw": "repealed by 1965 c.586 34"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 86,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.445",
+      "identifier": "ORS 258.445",
+      "name": "Section 258.445",
+      "text": "",
+      "history_citation_blocks": [
+        "1965 c.139 7; 1979 c.190 34; renumbered 246.610"
+      ],
+      "history_citations": [
+        {
+          "raw": "1965 c.139 7",
+          "year": 1965,
+          "chapter": "139",
+          "section": "7"
+        },
+        {
+          "raw": "1979 c.190 34",
+          "year": 1979,
+          "chapter": "190",
+          "section": "34"
+        },
+        {
+          "raw": "renumbered 246.610"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 87,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.450",
+      "identifier": "ORS 258.450",
+      "name": "Section 258.450",
+      "text": "",
+      "history_citation_blocks": [
+        "1953 c.397 14; 1957 c.608 216; repealed by 1965 c.586 34"
+      ],
+      "history_citations": [
+        {
+          "raw": "1953 c.397 14",
+          "year": 1953,
+          "chapter": "397",
+          "section": "14"
+        },
+        {
+          "raw": "1957 c.608 216",
+          "year": 1957,
+          "chapter": "608",
+          "section": "216"
+        },
+        {
+          "raw": "repealed by 1965 c.586 34"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 88,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.460",
+      "identifier": "ORS 258.460",
+      "name": "Section 258.460",
+      "text": "",
+      "history_citation_blocks": [
+        "1953 c.397 15; 1957 c.608 217; repealed by 1965 c.586 34"
+      ],
+      "history_citations": [
+        {
+          "raw": "1953 c.397 15",
+          "year": 1953,
+          "chapter": "397",
+          "section": "15"
+        },
+        {
+          "raw": "1957 c.608 217",
+          "year": 1957,
+          "chapter": "608",
+          "section": "217"
+        },
+        {
+          "raw": "repealed by 1965 c.586 34"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 89,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.510",
+      "identifier": "ORS 258.510",
+      "name": "Section 258.510",
+      "text": "",
+      "history_citation_blocks": [
+        "1953 c.397 17; 1957 c.608 218; repealed by 1965 c.586 34"
+      ],
+      "history_citations": [
+        {
+          "raw": "1953 c.397 17",
+          "year": 1953,
+          "chapter": "397",
+          "section": "17"
+        },
+        {
+          "raw": "1957 c.608 218",
+          "year": 1957,
+          "chapter": "608",
+          "section": "218"
+        },
+        {
+          "raw": "repealed by 1965 c.586 34"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 90,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.520",
+      "identifier": "ORS 258.520",
+      "name": "Section 258.520",
+      "text": "",
+      "history_citation_blocks": [
+        "1953 c.397 18; repealed by 1965 c.586 34"
+      ],
+      "history_citations": [
+        {
+          "raw": "1953 c.397 18",
+          "year": 1953,
+          "chapter": "397",
+          "section": "18"
+        },
+        {
+          "raw": "repealed by 1965 c.586 34"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 91,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.530",
+      "identifier": "ORS 258.530",
+      "name": "Section 258.530",
+      "text": "",
+      "history_citation_blocks": [
+        "1953 c.397 19; repealed by 1965 c.586 34"
+      ],
+      "history_citations": [
+        {
+          "raw": "1953 c.397 19",
+          "year": 1953,
+          "chapter": "397",
+          "section": "19"
+        },
+        {
+          "raw": "repealed by 1965 c.586 34"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 92,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.540",
+      "identifier": "ORS 258.540",
+      "name": "Section 258.540",
+      "text": "",
+      "history_citation_blocks": [
+        "1953 c.397 20; repealed by 1965 c.586 34"
+      ],
+      "history_citations": [
+        {
+          "raw": "1953 c.397 20",
+          "year": 1953,
+          "chapter": "397",
+          "section": "20"
+        },
+        {
+          "raw": "repealed by 1965 c.586 34"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 93,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.550",
+      "identifier": "ORS 258.550",
+      "name": "Section 258.550",
+      "text": "",
+      "history_citation_blocks": [
+        "1953 c.397 16; 1957 c.608 219; repealed by 1965 c.586 34"
+      ],
+      "history_citations": [
+        {
+          "raw": "1953 c.397 16",
+          "year": 1953,
+          "chapter": "397",
+          "section": "16"
+        },
+        {
+          "raw": "1957 c.608 219",
+          "year": 1957,
+          "chapter": "608",
+          "section": "219"
+        },
+        {
+          "raw": "repealed by 1965 c.586 34"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 94,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.560",
+      "identifier": "ORS 258.560",
+      "name": "Section 258.560",
+      "text": "",
+      "history_citation_blocks": [
+        "1953 c.397 21; 1957 c.608 220; repealed by 1965 c.586 34"
+      ],
+      "history_citations": [
+        {
+          "raw": "1953 c.397 21",
+          "year": 1953,
+          "chapter": "397",
+          "section": "21"
+        },
+        {
+          "raw": "1957 c.608 220",
+          "year": 1957,
+          "chapter": "608",
+          "section": "220"
+        },
+        {
+          "raw": "repealed by 1965 c.586 34"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 95,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.570",
+      "identifier": "ORS 258.570",
+      "name": "Section 258.570",
+      "text": "",
+      "history_citation_blocks": [
+        "1953 c.397 36; repealed by 1965 c.586 34"
+      ],
+      "history_citations": [
+        {
+          "raw": "1953 c.397 36",
+          "year": 1953,
+          "chapter": "397",
+          "section": "36"
+        },
+        {
+          "raw": "repealed by 1965 c.586 34"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 96,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.610",
+      "identifier": "ORS 258.610",
+      "name": "Section 258.610",
+      "text": "",
+      "history_citation_blocks": [
+        "1953 c.397 22; repealed by 1965 c.586 34"
+      ],
+      "history_citations": [
+        {
+          "raw": "1953 c.397 22",
+          "year": 1953,
+          "chapter": "397",
+          "section": "22"
+        },
+        {
+          "raw": "repealed by 1965 c.586 34"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 97,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.620",
+      "identifier": "ORS 258.620",
+      "name": "Section 258.620",
+      "text": "",
+      "history_citation_blocks": [
+        "1953 c.397 23; 1957 c.608 221; repealed by 1965 c.586 34"
+      ],
+      "history_citations": [
+        {
+          "raw": "1953 c.397 23",
+          "year": 1953,
+          "chapter": "397",
+          "section": "23"
+        },
+        {
+          "raw": "1957 c.608 221",
+          "year": 1957,
+          "chapter": "608",
+          "section": "221"
+        },
+        {
+          "raw": "repealed by 1965 c.586 34"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 98,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.630",
+      "identifier": "ORS 258.630",
+      "name": "Section 258.630",
+      "text": "",
+      "history_citation_blocks": [
+        "1953 c.397 25; repealed by 1965 c.586 34"
+      ],
+      "history_citations": [
+        {
+          "raw": "1953 c.397 25",
+          "year": 1953,
+          "chapter": "397",
+          "section": "25"
+        },
+        {
+          "raw": "repealed by 1965 c.586 34"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 99,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.640",
+      "identifier": "ORS 258.640",
+      "name": "Section 258.640",
+      "text": "",
+      "history_citation_blocks": [
+        "1953 c.397 24; repealed by 1965 c.586 34"
+      ],
+      "history_citations": [
+        {
+          "raw": "1953 c.397 24",
+          "year": 1953,
+          "chapter": "397",
+          "section": "24"
+        },
+        {
+          "raw": "repealed by 1965 c.586 34"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 100,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.650",
+      "identifier": "ORS 258.650",
+      "name": "Section 258.650",
+      "text": "",
+      "history_citation_blocks": [
+        "1953 c.397 26; 1957 c.608 222; repealed by 1965 c.586 34"
+      ],
+      "history_citations": [
+        {
+          "raw": "1953 c.397 26",
+          "year": 1953,
+          "chapter": "397",
+          "section": "26"
+        },
+        {
+          "raw": "1957 c.608 222",
+          "year": 1957,
+          "chapter": "608",
+          "section": "222"
+        },
+        {
+          "raw": "repealed by 1965 c.586 34"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 101,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.660",
+      "identifier": "ORS 258.660",
+      "name": "Section 258.660",
+      "text": "",
+      "history_citation_blocks": [
+        "1953 c.397 27; 1957 c.608 223; repealed by 1965 c.586 34"
+      ],
+      "history_citations": [
+        {
+          "raw": "1953 c.397 27",
+          "year": 1953,
+          "chapter": "397",
+          "section": "27"
+        },
+        {
+          "raw": "1957 c.608 223",
+          "year": 1957,
+          "chapter": "608",
+          "section": "223"
+        },
+        {
+          "raw": "repealed by 1965 c.586 34"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 102,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.670",
+      "identifier": "ORS 258.670",
+      "name": "Section 258.670",
+      "text": "",
+      "history_citation_blocks": [
+        "1953 c.397 28; 1957 c.608 224; repealed by 1965 c.586 34"
+      ],
+      "history_citations": [
+        {
+          "raw": "1953 c.397 28",
+          "year": 1953,
+          "chapter": "397",
+          "section": "28"
+        },
+        {
+          "raw": "1957 c.608 224",
+          "year": 1957,
+          "chapter": "608",
+          "section": "224"
+        },
+        {
+          "raw": "repealed by 1965 c.586 34"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 103,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.680",
+      "identifier": "ORS 258.680",
+      "name": "Section 258.680",
+      "text": "",
+      "history_citation_blocks": [
+        "1953 c.397 29; repealed by 1965 c.586 34"
+      ],
+      "history_citations": [
+        {
+          "raw": "1953 c.397 29",
+          "year": 1953,
+          "chapter": "397",
+          "section": "29"
+        },
+        {
+          "raw": "repealed by 1965 c.586 34"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 104,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.710",
+      "identifier": "ORS 258.710",
+      "name": "Section 258.710",
+      "text": "",
+      "history_citation_blocks": [
+        "1963 c.530 1; repealed by 1965 c.586 34"
+      ],
+      "history_citations": [
+        {
+          "raw": "1963 c.530 1",
+          "year": 1963,
+          "chapter": "530",
+          "section": "1"
+        },
+        {
+          "raw": "repealed by 1965 c.586 34"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 105,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.720",
+      "identifier": "ORS 258.720",
+      "name": "Section 258.720",
+      "text": "",
+      "history_citation_blocks": [
+        "1963 c.530 2; repealed by 1965 c.586 34"
+      ],
+      "history_citations": [
+        {
+          "raw": "1963 c.530 2",
+          "year": 1963,
+          "chapter": "530",
+          "section": "2"
+        },
+        {
+          "raw": "repealed by 1965 c.586 34"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 106,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.730",
+      "identifier": "ORS 258.730",
+      "name": "Section 258.730",
+      "text": "",
+      "history_citation_blocks": [
+        "1963 c.530 3; repealed by 1965 c.586 34"
+      ],
+      "history_citations": [
+        {
+          "raw": "1963 c.530 3",
+          "year": 1963,
+          "chapter": "530",
+          "section": "3"
+        },
+        {
+          "raw": "repealed by 1965 c.586 34"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 107,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.740",
+      "identifier": "ORS 258.740",
+      "name": "Section 258.740",
+      "text": "[1963 c.530 4,8,26; repealed by 1965 c.586 34]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 108,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.750",
+      "identifier": "ORS 258.750",
+      "name": "Section 258.750",
+      "text": "",
+      "history_citation_blocks": [
+        "1963 c.530 28; repealed by 1965 c.586 34"
+      ],
+      "history_citations": [
+        {
+          "raw": "1963 c.530 28",
+          "year": 1963,
+          "chapter": "530",
+          "section": "28"
+        },
+        {
+          "raw": "repealed by 1965 c.586 34"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 109,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.760",
+      "identifier": "ORS 258.760",
+      "name": "Section 258.760",
+      "text": "",
+      "history_citation_blocks": [
+        "1963 c.530 32; repealed by 1965 c.586 34"
+      ],
+      "history_citations": [
+        {
+          "raw": "1963 c.530 32",
+          "year": 1963,
+          "chapter": "530",
+          "section": "32"
+        },
+        {
+          "raw": "repealed by 1965 c.586 34"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 110,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.770",
+      "identifier": "ORS 258.770",
+      "name": "Section 258.770",
+      "text": "",
+      "history_citation_blocks": [
+        "1963 c.530 5; repealed by 1965 c.586 34"
+      ],
+      "history_citations": [
+        {
+          "raw": "1963 c.530 5",
+          "year": 1963,
+          "chapter": "530",
+          "section": "5"
+        },
+        {
+          "raw": "repealed by 1965 c.586 34"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 111,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.780",
+      "identifier": "ORS 258.780",
+      "name": "Section 258.780",
+      "text": "",
+      "history_citation_blocks": [
+        "1963 c.530 6; repealed by 1965 c.586 34"
+      ],
+      "history_citations": [
+        {
+          "raw": "1963 c.530 6",
+          "year": 1963,
+          "chapter": "530",
+          "section": "6"
+        },
+        {
+          "raw": "repealed by 1965 c.586 34"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 112,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.790",
+      "identifier": "ORS 258.790",
+      "name": "Section 258.790",
+      "text": "[1963 c.530 7,15; repealed by 1965 c.586 34]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 113,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.800",
+      "identifier": "ORS 258.800",
+      "name": "Section 258.800",
+      "text": "",
+      "history_citation_blocks": [
+        "1963 c.530 9; repealed by 1965 c.586 34"
+      ],
+      "history_citations": [
+        {
+          "raw": "1963 c.530 9",
+          "year": 1963,
+          "chapter": "530",
+          "section": "9"
+        },
+        {
+          "raw": "repealed by 1965 c.586 34"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 114,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.820",
+      "identifier": "ORS 258.820",
+      "name": "Section 258.820",
+      "text": "",
+      "history_citation_blocks": [
+        "1963 c.530 10; repealed by 1965 c.586 34"
+      ],
+      "history_citations": [
+        {
+          "raw": "1963 c.530 10",
+          "year": 1963,
+          "chapter": "530",
+          "section": "10"
+        },
+        {
+          "raw": "repealed by 1965 c.586 34"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 115,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.830",
+      "identifier": "ORS 258.830",
+      "name": "Section 258.830",
+      "text": "",
+      "history_citation_blocks": [
+        "1963 c.530 11; repealed by 1965 c.586 34"
+      ],
+      "history_citations": [
+        {
+          "raw": "1963 c.530 11",
+          "year": 1963,
+          "chapter": "530",
+          "section": "11"
+        },
+        {
+          "raw": "repealed by 1965 c.586 34"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 116,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.840",
+      "identifier": "ORS 258.840",
+      "name": "Section 258.840",
+      "text": "[1963 c.530 12,18; repealed by 1965 c.586 34]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 117,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.850",
+      "identifier": "ORS 258.850",
+      "name": "Section 258.850",
+      "text": "",
+      "history_citation_blocks": [
+        "1963 c.530 19; repealed by 1965 c.586 34"
+      ],
+      "history_citations": [
+        {
+          "raw": "1963 c.530 19",
+          "year": 1963,
+          "chapter": "530",
+          "section": "19"
+        },
+        {
+          "raw": "repealed by 1965 c.586 34"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 118,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.860",
+      "identifier": "ORS 258.860",
+      "name": "Section 258.860",
+      "text": "",
+      "history_citation_blocks": [
+        "1963 c.530 17; repealed by 1965 c.586 34"
+      ],
+      "history_citations": [
+        {
+          "raw": "1963 c.530 17",
+          "year": 1963,
+          "chapter": "530",
+          "section": "17"
+        },
+        {
+          "raw": "repealed by 1965 c.586 34"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 119,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.870",
+      "identifier": "ORS 258.870",
+      "name": "Section 258.870",
+      "text": "",
+      "history_citation_blocks": [
+        "1963 c.530 13; repealed by 1965 c.586 34"
+      ],
+      "history_citations": [
+        {
+          "raw": "1963 c.530 13",
+          "year": 1963,
+          "chapter": "530",
+          "section": "13"
+        },
+        {
+          "raw": "repealed by 1965 c.586 34"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 120,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.880",
+      "identifier": "ORS 258.880",
+      "name": "Section 258.880",
+      "text": "",
+      "history_citation_blocks": [
+        "1963 c.530 14; repealed by 1965 c.586 34"
+      ],
+      "history_citations": [
+        {
+          "raw": "1963 c.530 14",
+          "year": 1963,
+          "chapter": "530",
+          "section": "14"
+        },
+        {
+          "raw": "repealed by 1965 c.586 34"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 121,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.890",
+      "identifier": "ORS 258.890",
+      "name": "Section 258.890",
+      "text": "",
+      "history_citation_blocks": [
+        "1963 c.530 16; repealed by 1965 c.586 34"
+      ],
+      "history_citations": [
+        {
+          "raw": "1963 c.530 16",
+          "year": 1963,
+          "chapter": "530",
+          "section": "16"
+        },
+        {
+          "raw": "repealed by 1965 c.586 34"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 122,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.910",
+      "identifier": "ORS 258.910",
+      "name": "Section 258.910",
+      "text": "[1963 c.530 20,22; repealed by 1965 c.586 34]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 123,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.920",
+      "identifier": "ORS 258.920",
+      "name": "Section 258.920",
+      "text": "",
+      "history_citation_blocks": [
+        "1963 c.530 21; repealed by 1965 c.586 34"
+      ],
+      "history_citations": [
+        {
+          "raw": "1963 c.530 21",
+          "year": 1963,
+          "chapter": "530",
+          "section": "21"
+        },
+        {
+          "raw": "repealed by 1965 c.586 34"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 124,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.930",
+      "identifier": "ORS 258.930",
+      "name": "Section 258.930",
+      "text": "",
+      "history_citation_blocks": [
+        "1963 c.530 23; repealed by 1965 c.586 34"
+      ],
+      "history_citations": [
+        {
+          "raw": "1963 c.530 23",
+          "year": 1963,
+          "chapter": "530",
+          "section": "23"
+        },
+        {
+          "raw": "repealed by 1965 c.586 34"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 125,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.940",
+      "identifier": "ORS 258.940",
+      "name": "Section 258.940",
+      "text": "",
+      "history_citation_blocks": [
+        "1963 c.530 24; repealed by 1965 c.586 34"
+      ],
+      "history_citations": [
+        {
+          "raw": "1963 c.530 24",
+          "year": 1963,
+          "chapter": "530",
+          "section": "24"
+        },
+        {
+          "raw": "repealed by 1965 c.586 34"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 126,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.950",
+      "identifier": "ORS 258.950",
+      "name": "Section 258.950",
+      "text": "",
+      "history_citation_blocks": [
+        "1963 c.530 25; repealed by 1965 c.586 34"
+      ],
+      "history_citations": [
+        {
+          "raw": "1963 c.530 25",
+          "year": 1963,
+          "chapter": "530",
+          "section": "25"
+        },
+        {
+          "raw": "repealed by 1965 c.586 34"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 127,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.960",
+      "identifier": "ORS 258.960",
+      "name": "Section 258.960",
+      "text": "",
+      "history_citation_blocks": [
+        "1963 c.530 27; repealed by 1965 c.586 34"
+      ],
+      "history_citations": [
+        {
+          "raw": "1963 c.530 27",
+          "year": 1963,
+          "chapter": "530",
+          "section": "27"
+        },
+        {
+          "raw": "repealed by 1965 c.586 34"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 128,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.970",
+      "identifier": "ORS 258.970",
+      "name": "Section 258.970",
+      "text": "[1963 c.530 29,30,31; repealed by 1965 c.586 34]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 129,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.990",
+      "identifier": "ORS 258.990",
+      "name": "Section 258.990",
+      "text": "",
+      "history_citation_blocks": [
+        "1953 c.397 39; repealed by 1965 c.586 34"
+      ],
+      "history_citations": [
+        {
+          "raw": "1953 c.397 39",
+          "year": 1953,
+          "chapter": "397",
+          "section": "39"
+        },
+        {
+          "raw": "repealed by 1965 c.586 34"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 130,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html#section-258.995",
+      "identifier": "ORS 258.995",
+      "name": "Section 258.995",
+      "text": "[1965 c.586 33; repealed by 1979 c.190 431] _______________",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 131,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors258.html"
+    }
+  ],
+  "alternateName": "Election Contests; Recounts",
+  "legislationDate": "2023"
+}

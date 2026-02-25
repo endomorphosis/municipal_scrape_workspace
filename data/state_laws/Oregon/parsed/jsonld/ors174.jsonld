@@ -1,0 +1,2198 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "orlaw": "https://www.oregonlegislature.gov/ors#"
+  },
+  "@type": "Legislation",
+  "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html",
+  "identifier": "ORS Chapter 174",
+  "name": "ORS Chapter 174 — Construction of Statutes;",
+  "legislationType": "Statute",
+  "jurisdiction": "US-OR",
+  "isPartOf": {
+    "@type": "CreativeWork",
+    "identifier": "ORS",
+    "name": "Oregon Revised Statutes",
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors"
+  },
+  "dateModified": "2026-02-25T08:11:17.629456+00:00",
+  "source_file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors174.html",
+  "hasPart": [
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html#section-174.010",
+      "identifier": "ORS 174.010",
+      "name": "Section 174.010",
+      "text": "General rule for construction of statutes. In the construction of a statute, the office of the judge is simply to ascertain and declare what is, in terms or in substance, contained therein, not to insert what has been omitted, or to omit what has been inserted; and where there are several provisions or particulars such construction is, if possible, to be adopted as will give effect to all.",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 1,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html#section-174.020",
+      "identifier": "ORS 174.020",
+      "name": "Section 174.020",
+      "text": "Legislative intent; general and particular provisions; consideration of legislative history. (1)(a) In the construction of a statute, a court shall pursue the intention of the legislature if possible. (b) To assist a court in its construction of a statute, a party may offer the legislative history of the statute. (2) When a general provision and a particular provision are inconsistent, the latter is paramount to the former so that a particular intent controls a general intent that is inconsistent with the particular intent. (3) A court may limit its consideration of legislative history to the information that the parties provide to the court. A court shall give the weight to the legislative history that the court considers to be appropriate.",
+      "history_citation_blocks": [
+        "Amended by 2001 c.438 1; 2017 c.17 16"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 2001 c.438 1"
+        },
+        {
+          "raw": "2017 c.17 16",
+          "year": 2017,
+          "chapter": "17",
+          "section": "16"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "(a) In the construction of a statute, a court shall pursue the intention of the legislature if possible.",
+          "subsections": [
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "To assist a court in its construction of a statute, a party may offer the legislative history of the statute.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "When a general provision and a particular provision are inconsistent, the latter is paramount to the former so that a particular intent controls a general intent that is inconsistent with the particular intent.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "A court may limit its consideration of legislative history to the information that the parties provide to the court. A court shall give the weight to the legislative history that the court considers to be appropriate.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 2,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html#section-174.030",
+      "identifier": "ORS 174.030",
+      "name": "Section 174.030",
+      "text": "Construction favoring natural right to prevail. Where a statute is equally susceptible of two interpretations, one in favor of natural right and the other against it, the former is to prevail.",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 3,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html#section-174.040",
+      "identifier": "ORS 174.040",
+      "name": "Section 174.040",
+      "text": "Severability. It shall be considered that it is the legislative intent, in the enactment of any statute, that if any part of the statute is held unconstitutional, the remaining parts shall remain in force unless: (1) The statute provides otherwise; (2) The remaining parts are so essentially and inseparably connected with and dependent upon the unconstitutional part that it is apparent that the remaining parts would not have been enacted without the unconstitutional part; or (3) The remaining parts, standing alone, are incomplete and incapable of being executed in accordance with the legislative intent.",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The statute provides otherwise;",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The remaining parts are so essentially and inseparably connected with and dependent upon the unconstitutional part that it is apparent that the remaining parts would not have been enacted without the unconstitutional part; or",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The remaining parts, standing alone, are incomplete and incapable of being executed in accordance with the legislative intent.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 4,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html#section-174.050",
+      "identifier": "ORS 174.050",
+      "name": "Section 174.050",
+      "text": "[Repealed by 1983 c.740 41]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 5,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html#section-174.060",
+      "identifier": "ORS 174.060",
+      "name": "Section 174.060",
+      "text": "Effect of amendment of statute adopted by reference. When one statute refers to another, either by general or by specific reference or designation, the reference shall extend to and include, in addition to the statute to which reference was made, amendments thereto and statutes enacted expressly in lieu thereof unless a contrary intent is expressed specifically or unless the amendment to, or statute enacted in lieu of, the statute referred to is substantially different in the nature of its essential provisions from what the statute to which reference was made was when the statute making the reference was enacted.",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 6,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html#section-174.070",
+      "identifier": "ORS 174.070",
+      "name": "Section 174.070",
+      "text": "Effect of repeal of validating or curative Act. The repeal of a validating or curative Act shall not affect any validation or cure theretofore accomplished.",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 7,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html#section-174.080",
+      "identifier": "ORS 174.080",
+      "name": "Section 174.080",
+      "text": "Effect of repeal of repealing Act. Whenever a statute which repealed a former statute, either expressly or by implication, is repealed, the former statute shall not thereby be revived unless it is expressly so provided.",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 8,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html#section-174.090",
+      "identifier": "ORS 174.090",
+      "name": "Section 174.090",
+      "text": "Effect of repeal of repealing constitutional provision. Whenever a constitutional provision which repeals or suspends in whole or in part a former constitutional provision, either expressly or by implication, is repealed, the former constitutional provision so repealed or suspended thereby shall not be revived unless it expressly is so provided. GENERAL DEFINITIONS (Miscellaneous)",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 9,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html#section-174.100",
+      "identifier": "ORS 174.100",
+      "name": "Section 174.100",
+      "text": "Definitions. As used in the statute laws of this state, unless the context or a specially applicable definition requires otherwise: (1) Any other state includes any state and the District of Columbia. (2) City includes any incorporated village or town. (3) County court includes board of county commissioners. (4) Gender identity means an individuals gender-related identity, appearance, expression or behavior, regardless of whether the identity, appearance, expression or behavior differs from that associated with the gender assigned to the individual at birth. (5) Husband and wife, husband or wife, husband or wife means spouses or a spouse in a marriage. (6) May not and shall not are equivalent expressions of an absolute prohibition. (7) Person includes individuals, corporations, associations, firms, partnerships, limited liability companies and joint stock companies. (8) Sexual orientation means an individuals actual or perceived heterosexuality, homosexuality or bisexuality. (9) State Treasury includes those financial assets the lawful custody of which are vested in the State Treasurer and the office of the State Treasurer relating to the custody of those financial assets. (10) To means to and including when used in a reference to a series of statute sections, subsections or paragraphs. (11) United States includes territories, outlying possessions and the District of Columbia. (12) Violate includes failure to comply.",
+      "history_citation_blocks": [
+        "Amended by 1953 c.145 2; 1957 c.360 1; 1963 c.213 1; 1965 c.518 1; 1967 c.409 1; 1983 c.327 1; 1993 c.73 1; 1995 c.93 30; 2001 c.671 1; 2007 c.100 1; 2015 c.629 33; 2021 c.367 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1953 c.145 2"
+        },
+        {
+          "raw": "1957 c.360 1",
+          "year": 1957,
+          "chapter": "360",
+          "section": "1"
+        },
+        {
+          "raw": "1963 c.213 1",
+          "year": 1963,
+          "chapter": "213",
+          "section": "1"
+        },
+        {
+          "raw": "1965 c.518 1",
+          "year": 1965,
+          "chapter": "518",
+          "section": "1"
+        },
+        {
+          "raw": "1967 c.409 1",
+          "year": 1967,
+          "chapter": "409",
+          "section": "1"
+        },
+        {
+          "raw": "1983 c.327 1",
+          "year": 1983,
+          "chapter": "327",
+          "section": "1"
+        },
+        {
+          "raw": "1993 c.73 1",
+          "year": 1993,
+          "chapter": "73",
+          "section": "1"
+        },
+        {
+          "raw": "1995 c.93 30",
+          "year": 1995,
+          "chapter": "93",
+          "section": "30"
+        },
+        {
+          "raw": "2001 c.671 1",
+          "year": 2001,
+          "chapter": "671",
+          "section": "1"
+        },
+        {
+          "raw": "2007 c.100 1",
+          "year": 2007,
+          "chapter": "100",
+          "section": "1"
+        },
+        {
+          "raw": "2015 c.629 33",
+          "year": 2015,
+          "chapter": "629",
+          "section": "33"
+        },
+        {
+          "raw": "2021 c.367 1",
+          "year": 2021,
+          "chapter": "367",
+          "section": "1"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Any other state includes any state and the District of Columbia.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "City includes any incorporated village or town.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "County court includes board of county commissioners.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Gender identity means an individuals gender-related identity, appearance, expression or behavior, regardless of whether the identity, appearance, expression or behavior differs from that associated with the gender assigned to the individual at birth.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "Husband and wife, husband or wife, husband or wife means spouses or a spouse in a marriage.",
+          "subsections": []
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "May not and shall not are equivalent expressions of an absolute prohibition.",
+          "subsections": []
+        },
+        {
+          "label": "(7)",
+          "token": "7",
+          "kind": "numeric",
+          "text": "Person includes individuals, corporations, associations, firms, partnerships, limited liability companies and joint stock companies.",
+          "subsections": []
+        },
+        {
+          "label": "(8)",
+          "token": "8",
+          "kind": "numeric",
+          "text": "Sexual orientation means an individuals actual or perceived heterosexuality, homosexuality or bisexuality.",
+          "subsections": []
+        },
+        {
+          "label": "(9)",
+          "token": "9",
+          "kind": "numeric",
+          "text": "State Treasury includes those financial assets the lawful custody of which are vested in the State Treasurer and the office of the State Treasurer relating to the custody of those financial assets.",
+          "subsections": []
+        },
+        {
+          "label": "(10)",
+          "token": "10",
+          "kind": "numeric",
+          "text": "To means to and including when used in a reference to a series of statute sections, subsections or paragraphs.",
+          "subsections": []
+        },
+        {
+          "label": "(11)",
+          "token": "11",
+          "kind": "numeric",
+          "text": "United States includes territories, outlying possessions and the District of Columbia.",
+          "subsections": []
+        },
+        {
+          "label": "(12)",
+          "token": "12",
+          "kind": "numeric",
+          "text": "Violate includes failure to comply.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 10,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html#section-174.101",
+      "identifier": "ORS 174.101",
+      "name": "Section 174.101",
+      "text": "Manufactured structure, recreational vehicle defined. (1) As used in the statutes of this state, manufactured structure has the meaning given that term in this section only if the statute using manufactured structure makes specific reference to this section and indicates that the term used has the meaning given in this section. As used in the statutes of this state, recreational vehicle has the meaning given that term in this section only if the statute using recreational vehicle makes specific reference to this section and thereby indicates that the term used has the meaning given in this section. (2) Manufactured structure means a manufactured dwelling, as defined in ORS 446.003, or a recreational vehicle, as defined in this section. (3) Recreational vehicle means a vehicle with or without motive power that is designed for use as temporary living quarters and as further defined by rule by the Director of Transportation.",
+      "history_citation_blocks": [
+        "2019 c.422 25; 2019 c.585 6a; 2022 c.54 12"
+      ],
+      "history_citations": [
+        {
+          "raw": "2019 c.422 25",
+          "year": 2019,
+          "chapter": "422",
+          "section": "25"
+        },
+        {
+          "raw": "2019 c.585 6a",
+          "year": 2019,
+          "chapter": "585",
+          "section": "6a"
+        },
+        {
+          "raw": "2022 c.54 12",
+          "year": 2022,
+          "chapter": "54",
+          "section": "12"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "As used in the statutes of this state, manufactured structure has the meaning given that term in this section only if the statute using manufactured structure makes specific reference to this section and indicates that the term used has the meaning given in this section. As used in the statutes of this state, recreational vehicle has the meaning given that term in this section only if the statute using recreational vehicle makes specific reference to this section and thereby indicates that the term used has the meaning given in this section.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Manufactured structure means a manufactured dwelling, as defined in ORS 446.003, or a recreational vehicle, as defined in this section.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Recreational vehicle means a vehicle with or without motive power that is designed for use as temporary living quarters and as further defined by rule by the Director of Transportation.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 11,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html#section-174.102",
+      "identifier": "ORS 174.102",
+      "name": "Section 174.102",
+      "text": "Agricultural commodity, agricultural product defined; harvesting or baling of straw as farming practice. As used in the statute laws of this state and in any administrative rule adopted pursuant thereto unless the context or a specifically applicable definition requires otherwise: (1) The term agricultural commodity or agricultural product includes straw. (2) The harvesting or baling of straw is a farming practice.",
+      "history_citation_blocks": [
+        "1995 c.601 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "1995 c.601 1",
+          "year": 1995,
+          "chapter": "601",
+          "section": "1"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The term agricultural commodity or agricultural product includes straw.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The harvesting or baling of straw is a farming practice.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 12,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html#section-174.103",
+      "identifier": "ORS 174.103",
+      "name": "Section 174.103",
+      "text": "",
+      "history_citation_blocks": [
+        "1987 c.162 1,2; 1989 c.264 1; 2001 c.90 1; repealed by 2003 c.242 7"
+      ],
+      "history_citations": [
+        {
+          "raw": "1987 c.162 1,2"
+        },
+        {
+          "raw": "1989 c.264 1",
+          "year": 1989,
+          "chapter": "264",
+          "section": "1"
+        },
+        {
+          "raw": "2001 c.90 1",
+          "year": 2001,
+          "chapter": "90",
+          "section": "1"
+        },
+        {
+          "raw": "repealed by 2003 c.242 7"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 13,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html#section-174.104",
+      "identifier": "ORS 174.104",
+      "name": "Section 174.104",
+      "text": "Public notice defined. As used in the statute laws of this state, unless the context or a specially applicable definition requires otherwise, public notice means any legal publication which requires an affidavit of publication as required in ORS 193.070, or is required by law to be published. [Formerly subsection (1) of 193.010]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "of 193.010]",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 14,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html#section-174.105",
+      "identifier": "ORS 174.105",
+      "name": "Section 174.105",
+      "text": "",
+      "history_citation_blocks": [
+        "1967 c.409 2; 2005 c.22 122; repealed by 2009 c.41 26"
+      ],
+      "history_citations": [
+        {
+          "raw": "1967 c.409 2",
+          "year": 1967,
+          "chapter": "409",
+          "section": "2"
+        },
+        {
+          "raw": "2005 c.22 122",
+          "year": 2005,
+          "chapter": "22",
+          "section": "122"
+        },
+        {
+          "raw": "repealed by 2009 c.41 26"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 15,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html#section-174.106",
+      "identifier": "ORS 174.106",
+      "name": "Section 174.106",
+      "text": "",
+      "history_citation_blocks": [
+        "2001 c.783 1; repealed by 2009 c.11 15"
+      ],
+      "history_citations": [
+        {
+          "raw": "2001 c.783 1",
+          "year": 2001,
+          "chapter": "783",
+          "section": "1"
+        },
+        {
+          "raw": "repealed by 2009 c.11 15"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 16,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html#section-174.107",
+      "identifier": "ORS 174.107",
+      "name": "Section 174.107",
+      "text": "Person with a disability defined. (1) As used in the statute laws of this state, person with a disability means any person who: (a) Has a physical or mental impairment which substantially limits one or more major life activities; (b) Has a record of such an impairment; or (c) Is regarded as having such an impairment. (2) Specific types of disabilities shall be considered subcategories under the definition of person with a disability. [1989 c.224 2a; 2003 c.14 70; 2007 c.70 39] (Public Bodies)",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "As used in the statute laws of this state, person with a disability means any person who:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Has a physical or mental impairment which substantially limits one or more major life activities;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Has a record of such an impairment; or",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Is regarded as having such an impairment.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Specific types of disabilities shall be considered subcategories under the definition of person with a disability. [1989 c.224 2a; 2003 c.14 70; 2007 c.70 39] (Public Bodies)",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 17,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html#section-174.108",
+      "identifier": "ORS 174.108",
+      "name": "to 174.118 and that is enacted after January 1, 2002, unless the",
+      "text": "statute makes specific reference to the provision of ORS 174.108 to 174.118 that defines the term and indicates that the term has the meaning specified in that provision. (3) None of the terms defined in ORS 174.108 to 174.118 includes the Oregon Health and Science University, the Oregon State Bar, any intergovernmental entity formed by a public body with another state or with a political subdivision of another state, or any intergovernmental entity formed by a public body with an agency of the federal government.",
+      "history_citation_blocks": [
+        "2001 c.74 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "2001 c.74 1",
+          "year": 2001,
+          "chapter": "74",
+          "section": "1"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "None of the terms defined in ORS 174.108 to 174.118 includes the Oregon Health and Science University, the Oregon State Bar, any intergovernmental entity formed by a public body with another state or with a political subdivision of another state, or any intergovernmental entity formed by a public body with an agency of the federal government.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 18,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html#section-174.109",
+      "identifier": "ORS 174.109",
+      "name": "Section 174.109",
+      "text": "Public body defined. Subject to ORS 174.108, as used in the statutes of this state public body means state government bodies, local government bodies and special government bodies.",
+      "history_citation_blocks": [
+        "2001 c.74 2"
+      ],
+      "history_citations": [
+        {
+          "raw": "2001 c.74 2",
+          "year": 2001,
+          "chapter": "74",
+          "section": "2"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 19,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html#section-174.110",
+      "identifier": "ORS 174.110",
+      "name": "Section 174.110",
+      "text": "[Renumbered",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 20,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html#section-174.111",
+      "identifier": "ORS 174.111",
+      "name": "Section 174.111",
+      "text": "State government defined. Subject to ORS 174.108, as used in the statutes of this state state government means the executive department, the judicial department and the legislative department.",
+      "history_citation_blocks": [
+        "2001 c.74 3"
+      ],
+      "history_citations": [
+        {
+          "raw": "2001 c.74 3",
+          "year": 2001,
+          "chapter": "74",
+          "section": "3"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 21,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html#section-174.112",
+      "identifier": "ORS 174.112",
+      "name": "Section 174.112",
+      "text": "Executive department defined. (1) Subject to ORS 174.108, as used in the statutes of this state executive department means all statewide elected officers other than judges, and all boards, commissions, departments, divisions and other entities, without regard to the designation given to those entities, that are within the executive branch of government as described in Article III, section 1, of the Oregon Constitution, and that are not: (a) In the judicial department or the legislative department; (b) Local governments; or (c) Special government bodies. (2) Subject to ORS 174.108, as used in the statutes of this state executive department includes: (a) An entity created by statute for the purpose of giving advice only to the executive department and that does not have members who are officers or employees of the judicial department or legislative department; (b) An entity created by the executive department for the purpose of giving advice to the executive department, if the document creating the entity indicates that the entity is a public body; and (c) Any entity created by the executive department other than an entity described in paragraph (b) of this subsection, unless the document creating the entity indicates that the entity is not a governmental entity or the entity is not subject to any substantial control by the executive department.",
+      "history_citation_blocks": [
+        "2001 c.74 4; 2013 c.1 102"
+      ],
+      "history_citations": [
+        {
+          "raw": "2001 c.74 4",
+          "year": 2001,
+          "chapter": "74",
+          "section": "4"
+        },
+        {
+          "raw": "2013 c.1 102",
+          "year": 2013,
+          "chapter": "1",
+          "section": "102"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Subject to ORS 174.108, as used in the statutes of this state executive department means all statewide elected officers other than judges, and all boards, commissions, departments, divisions and other entities, without regard to the designation given to those entities, that are within the executive branch of government as described in Article III, section 1, of the Oregon Constitution, and that are not:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "In the judicial department or the legislative department;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Local governments; or",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Special government bodies.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Subject to ORS 174.108, as used in the statutes of this state executive department includes:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "An entity created by statute for the purpose of giving advice only to the executive department and that does not have members who are officers or employees of the judicial department or legislative department;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "An entity created by the executive department for the purpose of giving advice to the executive department, if the document creating the entity indicates that the entity is a public body; and of this subsection, unless the document creating the entity indicates that the entity is not a governmental entity or the entity is not subject to any substantial control by the executive department.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Any entity created by the executive department other than an entity described in paragraph",
+              "subsections": []
+            }
+          ]
+        }
+      ],
+      "parser_warnings": [],
+      "position": 22,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html#section-174.113",
+      "identifier": "ORS 174.113",
+      "name": "Section 174.113",
+      "text": "Judicial department defined. (1) Subject to ORS 174.108, as used in the statutes of this state judicial department means the Supreme Court, the Court of Appeals, the Oregon Tax Court, the circuit courts and all administrative divisions of those courts, whether denominated as boards, commissions, committees or departments or by any other designation. (2) Subject to ORS 174.108, as used in the statutes of this state judicial department includes: (a) An entity created by statute for the purpose of giving advice only to the judicial department and that does not have members who are officers or employees of the executive department or legislative department; (b) An entity created by the judicial department for the purpose of giving advice to the judicial department, if the document creating the entity indicates that the entity is a public body; and (c) Any entity created by the judicial department other than an entity described in paragraph (b) of this subsection, unless the document creating the entity indicates that the entity is not a governmental entity or the entity is not subject to any substantial control by the judicial department.",
+      "history_citation_blocks": [
+        "2001 c.74 5"
+      ],
+      "history_citations": [
+        {
+          "raw": "2001 c.74 5",
+          "year": 2001,
+          "chapter": "74",
+          "section": "5"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Subject to ORS 174.108, as used in the statutes of this state judicial department means the Supreme Court, the Court of Appeals, the Oregon Tax Court, the circuit courts and all administrative divisions of those courts, whether denominated as boards, commissions, committees or departments or by any other designation.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Subject to ORS 174.108, as used in the statutes of this state judicial department includes:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "An entity created by statute for the purpose of giving advice only to the judicial department and that does not have members who are officers or employees of the executive department or legislative department;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "An entity created by the judicial department for the purpose of giving advice to the judicial department, if the document creating the entity indicates that the entity is a public body; and of this subsection, unless the document creating the entity indicates that the entity is not a governmental entity or the entity is not subject to any substantial control by the judicial department.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Any entity created by the judicial department other than an entity described in paragraph",
+              "subsections": []
+            }
+          ]
+        }
+      ],
+      "parser_warnings": [],
+      "position": 23,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html#section-174.114",
+      "identifier": "ORS 174.114",
+      "name": "Section 174.114",
+      "text": "Legislative department defined. (1) Subject to ORS 174.108, as used in the statutes of this state legislative department means the Legislative Assembly, the committees of the Legislative Assembly and all administrative divisions of the Legislative Assembly and its committees, whether denominated as boards, commissions or departments or by any other designation. (2) Subject to ORS 174.108, as used in the statutes of this state legislative department includes: (a) An entity created by statute for the purpose of giving advice only to the legislative department and that does not have members who are officers or employees of the executive department or judicial department; (b) An entity created by the legislative department for the purpose of giving advice to the legislative department, but that is not created by statute, if the document creating the entity indicates that the entity is a public body; and (c) Any entity created by the legislative department by a document other than a statute and that is not an entity described in paragraph (b) of this subsection, unless the document creating the entity indicates that the entity is not a governmental entity or the entity is not subject to any substantial control by the legislative department.",
+      "history_citation_blocks": [
+        "2001 c.74 6"
+      ],
+      "history_citations": [
+        {
+          "raw": "2001 c.74 6",
+          "year": 2001,
+          "chapter": "74",
+          "section": "6"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Subject to ORS 174.108, as used in the statutes of this state legislative department means the Legislative Assembly, the committees of the Legislative Assembly and all administrative divisions of the Legislative Assembly and its committees, whether denominated as boards, commissions or departments or by any other designation.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Subject to ORS 174.108, as used in the statutes of this state legislative department includes:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "An entity created by statute for the purpose of giving advice only to the legislative department and that does not have members who are officers or employees of the executive department or judicial department;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "An entity created by the legislative department for the purpose of giving advice to the legislative department, but that is not created by statute, if the document creating the entity indicates that the entity is a public body; and of this subsection, unless the document creating the entity indicates that the entity is not a governmental entity or the entity is not subject to any substantial control by the legislative department.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Any entity created by the legislative department by a document other than a statute and that is not an entity described in paragraph",
+              "subsections": []
+            }
+          ]
+        }
+      ],
+      "parser_warnings": [],
+      "position": 24,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html#section-174.115",
+      "identifier": "ORS 174.115",
+      "name": "Section 174.115",
+      "text": "",
+      "history_citation_blocks": [
+        "1979 c.391 1; renumbered 174.129 in 2001"
+      ],
+      "history_citations": [
+        {
+          "raw": "1979 c.391 1",
+          "year": 1979,
+          "chapter": "391",
+          "section": "1"
+        },
+        {
+          "raw": "renumbered 174.129 in 2001"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 25,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html#section-174.116",
+      "identifier": "ORS 174.116",
+      "name": "Section 174.116",
+      "text": "Local government and local service district defined. (1)(a) Subject to ORS 174.108, as used in the statutes of this state local government means all cities, counties and local service districts located in this state, and all administrative subdivisions of those cities, counties and local service districts. (b) Subject to ORS 174.108, as used in the statutes of this state local government includes: (A) An entity created by statute, ordinance or resolution for the purpose of giving advice only to a local government; (B) An entity created by local government for the purpose of giving advice to local government and that is not created by ordinance or resolution, if the document creating the entity indicates that the entity is a public body; and (C) Any entity created by local government other than an entity described in subparagraph (B) of this paragraph, unless the ordinance, resolution or other document creating the entity indicates that the entity is not a governmental entity or the entity is not subject to any substantial control by local government. (2) Subject to ORS 174.108, as used in the statutes of this state local service district means: (a) An economic improvement district created under ORS 223.112 to 223.132 or 223.141 to 223.161. (b) A peoples utility district organized under ORS chapter 261. (c) A domestic water supply district organized under ORS chapter 264. (d) A cemetery maintenance district organized under ORS chapter 265. (e) A park and recreation district organized under ORS chapter 266. (f) A mass transit district organized under ORS 267.010 to 267.394. (g) A transportation district organized under ORS 267.510 to 267.650. (h) A metropolitan service district organized under ORS chapter 268. (i) A translator district organized under ORS 354.605 to 354.715. (j) A library district organized under ORS 357.216 to 357.286. (k) A county road district organized under ORS 371.055 to 371.110. (L) A special road district organized under ORS 371.305 to 371.360. (m) A road assessment district organized under ORS 371.405 to 371.535. (n) A highway lighting district organized under ORS chapter 372. (o) A 9-1-1 communications district organized under ORS 403.300 to 403.380. (p) A health district organized under ORS 440.305 to 440.410. (q) A sanitary district organized under ORS 450.005 to 450.245. (r) A sanitary authority, water authority or joint water and sanitary authority organized under ORS 450.600 to 450.989. (s) A county service district organized under ORS chapter 451. (t) A vector control district organized under ORS 452.020 to 452.170. (u) A rural fire protection district organized under ORS chapter 478. (v) A geothermal heating district organized under ORS chapter 523. (w) An irrigation district organized under ORS chapter 545. (x) A drainage district organized under ORS chapter 547. (y) A diking district organized under ORS chapter 551. (z) A water improvement district organized under ORS chapter 552. (aa) A water control district organized under ORS chapter 553. (bb) A district improvement company or a district improvement corporation organized under ORS chapter 554. (cc) A weather modification district organized under ORS 558.200 to 558.440. (dd) A fair district formed under ORS chapter 565. (ee) A soil and water conservation district organized under ORS 568.210 to 568.808 and 568.900 to 568.933. (ff) A weed control district organized under ORS 569.350 to 569.445. (gg) A port organized under ORS 777.005 to 777.725 and 777.915 to 777.953. (hh) The Port of Portland created under ORS 778.010. (ii) An airport district established under ORS chapter 838. (jj) A heritage district organized under ORS 358.442 to 358.474. (kk) A radio and data district organized under ORS 403.500 to 403.542. (LL) A sand control district organized under ORS 555.500 to 555.535. (mm) The urban flood safety and water quality district created under ORS 550.150 to 550.410.",
+      "history_citation_blocks": [
+        "2001 c.74 7; 2003 c.802 1; 2007 c.562 18; 2009 c.584 19; 2015 c.560 13; 2019 c.621 27"
+      ],
+      "history_citations": [
+        {
+          "raw": "2001 c.74 7",
+          "year": 2001,
+          "chapter": "74",
+          "section": "7"
+        },
+        {
+          "raw": "2003 c.802 1",
+          "year": 2003,
+          "chapter": "802",
+          "section": "1"
+        },
+        {
+          "raw": "2007 c.562 18",
+          "year": 2007,
+          "chapter": "562",
+          "section": "18"
+        },
+        {
+          "raw": "2009 c.584 19",
+          "year": 2009,
+          "chapter": "584",
+          "section": "19"
+        },
+        {
+          "raw": "2015 c.560 13",
+          "year": 2015,
+          "chapter": "560",
+          "section": "13"
+        },
+        {
+          "raw": "2019 c.621 27",
+          "year": 2019,
+          "chapter": "621",
+          "section": "27"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "(a) Subject to ORS 174.108, as used in the statutes of this state local government means all cities, counties and local service districts located in this state, and all administrative subdivisions of those cities, counties and local service districts.",
+          "subsections": [
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Subject to ORS 174.108, as used in the statutes of this state local government includes:",
+              "subsections": [
+                {
+                  "label": "(A)",
+                  "token": "A",
+                  "kind": "alpha_upper",
+                  "text": "An entity created by statute, ordinance or resolution for the purpose of giving advice only to a local government;",
+                  "subsections": []
+                },
+                {
+                  "label": "(B)",
+                  "token": "B",
+                  "kind": "alpha_upper",
+                  "text": "An entity created by local government for the purpose of giving advice to local government and that is not created by ordinance or resolution, if the document creating the entity indicates that the entity is a public body; and of this paragraph, unless the ordinance, resolution or other document creating the entity indicates that the entity is not a governmental entity or the entity is not subject to any substantial control by local government.",
+                  "subsections": []
+                },
+                {
+                  "label": "(C)",
+                  "token": "C",
+                  "kind": "alpha_upper",
+                  "text": "Any entity created by local government other than an entity described in subparagraph",
+                  "subsections": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Subject to ORS 174.108, as used in the statutes of this state local service district means:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "An economic improvement district created under ORS 223.112 to 223.132 or 223.141 to 223.161.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "A peoples utility district organized under ORS chapter 261.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "A domestic water supply district organized under ORS chapter 264.",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "A cemetery maintenance district organized under ORS chapter 265.",
+              "subsections": []
+            },
+            {
+              "label": "(e)",
+              "token": "e",
+              "kind": "alpha_lower",
+              "text": "A park and recreation district organized under ORS chapter 266.",
+              "subsections": []
+            },
+            {
+              "label": "(f)",
+              "token": "f",
+              "kind": "alpha_lower",
+              "text": "A mass transit district organized under ORS 267.010 to 267.394.",
+              "subsections": []
+            },
+            {
+              "label": "(g)",
+              "token": "g",
+              "kind": "alpha_lower",
+              "text": "A transportation district organized under ORS 267.510 to 267.650.",
+              "subsections": []
+            },
+            {
+              "label": "(h)",
+              "token": "h",
+              "kind": "alpha_lower",
+              "text": "A metropolitan service district organized under ORS chapter 268.",
+              "subsections": []
+            },
+            {
+              "label": "(i)",
+              "token": "i",
+              "kind": "alpha_lower",
+              "text": "A translator district organized under ORS 354.605 to 354.715.",
+              "subsections": []
+            },
+            {
+              "label": "(j)",
+              "token": "j",
+              "kind": "alpha_lower",
+              "text": "A library district organized under ORS 357.216 to 357.286.",
+              "subsections": []
+            },
+            {
+              "label": "(k)",
+              "token": "k",
+              "kind": "alpha_lower",
+              "text": "A county road district organized under ORS 371.055 to 371.110.",
+              "subsections": [
+                {
+                  "label": "(L)",
+                  "token": "L",
+                  "kind": "alpha_upper",
+                  "text": "A special road district organized under ORS 371.305 to 371.360.",
+                  "subsections": []
+                }
+              ]
+            },
+            {
+              "label": "(m)",
+              "token": "m",
+              "kind": "alpha_lower",
+              "text": "A road assessment district organized under ORS 371.405 to 371.535.",
+              "subsections": []
+            },
+            {
+              "label": "(n)",
+              "token": "n",
+              "kind": "alpha_lower",
+              "text": "A highway lighting district organized under ORS chapter 372.",
+              "subsections": []
+            },
+            {
+              "label": "(o)",
+              "token": "o",
+              "kind": "alpha_lower",
+              "text": "A 9-1-1 communications district organized under ORS 403.300 to 403.380.",
+              "subsections": []
+            },
+            {
+              "label": "(p)",
+              "token": "p",
+              "kind": "alpha_lower",
+              "text": "A health district organized under ORS 440.305 to 440.410.",
+              "subsections": []
+            },
+            {
+              "label": "(q)",
+              "token": "q",
+              "kind": "alpha_lower",
+              "text": "A sanitary district organized under ORS 450.005 to 450.245.",
+              "subsections": []
+            },
+            {
+              "label": "(r)",
+              "token": "r",
+              "kind": "alpha_lower",
+              "text": "A sanitary authority, water authority or joint water and sanitary authority organized under ORS 450.600 to 450.989.",
+              "subsections": []
+            },
+            {
+              "label": "(s)",
+              "token": "s",
+              "kind": "alpha_lower",
+              "text": "A county service district organized under ORS chapter 451.",
+              "subsections": []
+            },
+            {
+              "label": "(t)",
+              "token": "t",
+              "kind": "alpha_lower",
+              "text": "A vector control district organized under ORS 452.020 to 452.170.",
+              "subsections": []
+            },
+            {
+              "label": "(u)",
+              "token": "u",
+              "kind": "alpha_lower",
+              "text": "A rural fire protection district organized under ORS chapter 478.",
+              "subsections": []
+            },
+            {
+              "label": "(v)",
+              "token": "v",
+              "kind": "alpha_lower",
+              "text": "A geothermal heating district organized under ORS chapter 523.",
+              "subsections": []
+            },
+            {
+              "label": "(w)",
+              "token": "w",
+              "kind": "alpha_lower",
+              "text": "An irrigation district organized under ORS chapter 545.",
+              "subsections": []
+            },
+            {
+              "label": "(x)",
+              "token": "x",
+              "kind": "alpha_lower",
+              "text": "A drainage district organized under ORS chapter 547.",
+              "subsections": []
+            },
+            {
+              "label": "(y)",
+              "token": "y",
+              "kind": "alpha_lower",
+              "text": "A diking district organized under ORS chapter 551.",
+              "subsections": []
+            },
+            {
+              "label": "(z)",
+              "token": "z",
+              "kind": "alpha_lower",
+              "text": "A water improvement district organized under ORS chapter 552. (aa) A water control district organized under ORS chapter 553. (bb) A district improvement company or a district improvement corporation organized under ORS chapter 554.",
+              "subsections": [
+                {
+                  "label": "(cc)",
+                  "token": "cc",
+                  "kind": "roman_lower",
+                  "text": "A weather modification district organized under ORS 558.200 to 558.440.",
+                  "subsections": []
+                },
+                {
+                  "label": "(dd)",
+                  "token": "dd",
+                  "kind": "roman_lower",
+                  "text": "A fair district formed under ORS chapter 565. (ee) A soil and water conservation district organized under ORS 568.210 to 568.808 and 568.900 to 568.933. (ff) A weed control district organized under ORS 569.350 to 569.445. (gg) A port organized under ORS 777.005 to 777.725 and 777.915 to 777.953. (hh) The Port of Portland created under ORS 778.010.",
+                  "subsections": []
+                },
+                {
+                  "label": "(ii)",
+                  "token": "ii",
+                  "kind": "roman_lower",
+                  "text": "An airport district established under ORS chapter 838. (jj) A heritage district organized under ORS 358.442 to 358.474. (kk) A radio and data district organized under ORS 403.500 to 403.542.",
+                  "subsections": [
+                    {
+                      "label": "(LL)",
+                      "token": "LL",
+                      "kind": "roman_upper",
+                      "text": "A sand control district organized under ORS 555.500 to 555.535.",
+                      "subsections": []
+                    }
+                  ]
+                },
+                {
+                  "label": "(mm)",
+                  "token": "mm",
+                  "kind": "roman_lower",
+                  "text": "The urban flood safety and water quality district created under ORS 550.150 to 550.410.",
+                  "subsections": []
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "parser_warnings": [],
+      "position": 26,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html#section-174.117",
+      "identifier": "ORS 174.117",
+      "name": "Section 174.117",
+      "text": "Special government body defined. (1) Subject to ORS 174.108, as used in the statutes of this state special government body means any of the following: (a) A public corporation created under a statute of this state and specifically designated as a public corporation. (b) A school district. (c) A public charter school established under ORS chapter 338. (d) An education service district. (e) A community college district or community college service district established under ORS chapter 341. (f) An intergovernmental body formed by two or more public bodies. (g) Any entity that is created by statute, ordinance or resolution that is not part of state government or local government. (h) Any entity that is not otherwise described in this section that is: (A) Not part of state government or local government; (B) Created pursuant to authority granted by a statute, ordinance or resolution, but not directly created by that statute, ordinance or resolution; and (C) Identified as a governmental entity by the statute, ordinance or resolution authorizing the creation of the entity, without regard to the specific terms used by the statute, ordinance or resolution. (i) A public university listed in ORS 352.002. (2) Subject to ORS 174.108, as used in the statutes of this state special government body includes: (a) An entity created by statute for the purpose of giving advice only to a special government body; (b) An entity created by a special government body for the purpose of giving advice to the special government body, if the document creating the entity indicates that the entity is a public body; and (c) Any entity created by a special government body described in subsection (1) of this section, other than an entity described in paragraph (b) of this subsection, unless the document creating the entity indicates that the entity is not a governmental entity or the entity is not subject to any substantial control by the special government body.",
+      "history_citation_blocks": [
+        "2001 c.74 8; 2013 c.768 54; 2015 c.767 50"
+      ],
+      "history_citations": [
+        {
+          "raw": "2001 c.74 8",
+          "year": 2001,
+          "chapter": "74",
+          "section": "8"
+        },
+        {
+          "raw": "2013 c.768 54",
+          "year": 2013,
+          "chapter": "768",
+          "section": "54"
+        },
+        {
+          "raw": "2015 c.767 50",
+          "year": 2015,
+          "chapter": "767",
+          "section": "50"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Subject to ORS 174.108, as used in the statutes of this state special government body means any of the following: of this section, other than an entity described in paragraph",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "A public corporation created under a statute of this state and specifically designated as a public corporation.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "A school district. of this subsection, unless the document creating the entity indicates that the entity is not a governmental entity or the entity is not subject to any substantial control by the special government body.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "A public charter school established under ORS chapter 338.",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "An education service district.",
+              "subsections": []
+            },
+            {
+              "label": "(e)",
+              "token": "e",
+              "kind": "alpha_lower",
+              "text": "A community college district or community college service district established under ORS chapter 341.",
+              "subsections": []
+            },
+            {
+              "label": "(f)",
+              "token": "f",
+              "kind": "alpha_lower",
+              "text": "An intergovernmental body formed by two or more public bodies.",
+              "subsections": []
+            },
+            {
+              "label": "(g)",
+              "token": "g",
+              "kind": "alpha_lower",
+              "text": "Any entity that is created by statute, ordinance or resolution that is not part of state government or local government.",
+              "subsections": []
+            },
+            {
+              "label": "(h)",
+              "token": "h",
+              "kind": "alpha_lower",
+              "text": "Any entity that is not otherwise described in this section that is:",
+              "subsections": [
+                {
+                  "label": "(A)",
+                  "token": "A",
+                  "kind": "alpha_upper",
+                  "text": "Not part of state government or local government;",
+                  "subsections": []
+                },
+                {
+                  "label": "(B)",
+                  "token": "B",
+                  "kind": "alpha_upper",
+                  "text": "Created pursuant to authority granted by a statute, ordinance or resolution, but not directly created by that statute, ordinance or resolution; and",
+                  "subsections": []
+                },
+                {
+                  "label": "(C)",
+                  "token": "C",
+                  "kind": "alpha_upper",
+                  "text": "Identified as a governmental entity by the statute, ordinance or resolution authorizing the creation of the entity, without regard to the specific terms used by the statute, ordinance or resolution.",
+                  "subsections": [
+                    {
+                      "label": "(i)",
+                      "token": "i",
+                      "kind": "roman_lower",
+                      "text": "A public university listed in ORS 352.002.",
+                      "subsections": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Subject to ORS 174.108, as used in the statutes of this state special government body includes:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "An entity created by statute for the purpose of giving advice only to a special government body;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "An entity created by a special government body for the purpose of giving advice to the special government body, if the document creating the entity indicates that the entity is a public body; and",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Any entity created by a special government body described in subsection",
+              "subsections": []
+            }
+          ]
+        }
+      ],
+      "parser_warnings": [],
+      "position": 27,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html#section-174.118",
+      "identifier": "ORS 174.118",
+      "name": "only if the statute using the term makes specific reference to the",
+      "text": "provision of ORS 174.108 to 174.118 that defines the term and indicates that the term has the meaning specified in that provision. (2) Nothing in ORS 174.108 to 174.118 affects the meaning of any statute that uses one or more of the terms defined in ORS 174.108 to 174.118 and that is in effect on January 1, 2002. Nothing in ORS 174.108 to 174.118 affects the meaning of any statute that uses one or more of the terms defined in ORS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Nothing in ORS 174.108 to 174.118 affects the meaning of any statute that uses one or more of the terms defined in ORS 174.108 to 174.118 and that is in effect on January 1, 2002. Nothing in ORS 174.108 to 174.118 affects the meaning of any statute that uses one or more of the terms defined in ORS",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 28,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html#section-174.120",
+      "identifier": "ORS 174.120",
+      "name": "Section 174.120",
+      "text": "Computation of time; leap year. (1) The time within which an act is to be done, as provided in the civil and criminal procedure statutes, is computed by excluding the first day and including the last day, unless the last day falls upon any legal holiday or on Saturday, in which case the last day is also excluded. (2) For the purposes of determining whether a person has complied with a statutory time limitation governing an act to be performed in a circuit court, the Oregon Tax Court, the Court of Appeals or the Supreme Court, the time prescribed by law for the performance of the act does not include the day on which the specified period begins to run. The designated period does include the last day unless the last day is: (a) A legal holiday or Saturday; (b) A day on which the court is closed for the purpose of filing pleadings and other documents; (c) A day on which the court is closed by order of the Chief Justice, to the extent provided by the order; or (d) A day on which the court is closed before the end of the normal hours during which pleadings and other documents may be filed. (3) If the last day of a designated period is excluded under the provisions of subsection (2) of this section, the act must be performed on the next day that the court is open for the purpose of filing pleadings and other documents. (4) The provisions of subsections (2) and (3) of this section apply to time limitations established by statutes of limitation and other procedural statutes governing civil and criminal proceedings. (5) If a statute of limitation or other procedural statute governing civil or criminal proceedings provides that an act be done within one or more years, the time for performing the act is computed in calendar years. If the specified period begins to run on a date other than February 29, the act must be done on or before the same date in the calendar year in which the specified period ends as the date in the calendar year in which the specified period began to run. If the specified period of time begins to run on February 29, the act must be done on or before February 28 of the calendar year in which the specified period ends.",
+      "history_citation_blocks": [
+        "Amended by 1979 c.284 118; 1985 c.282 2; 2002 s.s.1 c.10 6; 2003 c.228 1; 2013 c.1 14"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1979 c.284 118"
+        },
+        {
+          "raw": "1985 c.282 2",
+          "year": 1985,
+          "chapter": "282",
+          "section": "2"
+        },
+        {
+          "raw": "2002 s.s.1 c.10 6"
+        },
+        {
+          "raw": "2003 c.228 1",
+          "year": 2003,
+          "chapter": "228",
+          "section": "1"
+        },
+        {
+          "raw": "2013 c.1 14",
+          "year": 2013,
+          "chapter": "1",
+          "section": "14"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The time within which an act is to be done, as provided in the civil and criminal procedure statutes, is computed by excluding the first day and including the last day, unless the last day falls upon any legal holiday or on Saturday, in which case the last day is also excluded.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "For the purposes of determining whether a person has complied with a statutory time limitation governing an act to be performed in a circuit court, the Oregon Tax Court, the Court of Appeals or the Supreme Court, the time prescribed by law for the performance of the act does not include the day on which the specified period begins to run. The designated period does include the last day unless the last day is: of this section, the act must be performed on the next day that the court is open for the purpose of filing pleadings and other documents.",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "A legal holiday or Saturday;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "A day on which the court is closed for the purpose of filing pleadings and other documents;",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "A day on which the court is closed by order of the Chief Justice, to the extent provided by the order; or",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "A day on which the court is closed before the end of the normal hours during which pleadings and other documents may be filed.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "If the last day of a designated period is excluded under the provisions of subsection of this section apply to time limitations established by statutes of limitation and other procedural statutes governing civil and criminal proceedings.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "The provisions of subsections",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "If a statute of limitation or other procedural statute governing civil or criminal proceedings provides that an act be done within one or more years, the time for performing the act is computed in calendar years. If the specified period begins to run on a date other than February 29, the act must be done on or before the same date in the calendar year in which the specified period ends as the date in the calendar year in which the specified period began to run. If the specified period of time begins to run on February 29, the act must be done on or before February 28 of the calendar year in which the specified period ends.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 29,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html#section-174.125",
+      "identifier": "ORS 174.125",
+      "name": "Section 174.125",
+      "text": "Computation of time period for personal service. Notwithstanding ORCP 10 and ORS 174.120 (1), if a time period is prescribed or allowed for personal service of a document or notice on a public officer or the filing of a document or notice with a public office, other than a time period subject to ORS 174.120 (2), and if the last day falls on a day when that particular office is closed before the end of or for all of the normal work day, the last day shall be excluded in computing the period of time within which the document or notice is to be filed. If the last day is so excluded, the time period runs until the close of office hours on the next day the office is open for business. [1983 c.548 1; 2002 s.s.1 c.10 8] MISCELLANEOUS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": ", if a time period is prescribed or allowed for personal service of a document or notice on a public officer or the filing of a document or notice with a public office, other than a time period subject to ORS 174.120",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": ", and if the last day falls on a day when that particular office is closed before the end of or for all of the normal work day, the last day shall be excluded in computing the period of time within which the document or notice is to be filed. If the last day is so excluded, the time period runs until the close of office hours on the next day the office is open for business. [1983 c.548 1; 2002 s.s.1 c.10 8] MISCELLANEOUS",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 30,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html#section-174.127",
+      "identifier": "ORS 174.127",
+      "name": "Section 174.127",
+      "text": "Singular or plural number; masculine, feminine or neuter gender. As used in the statute laws of this state: (1) The singular number may include the plural and the plural number, the singular. (2) Words used in the masculine gender may include the feminine and the neuter. [Formerly",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The singular number may include the plural and the plural number, the singular.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Words used in the masculine gender may include the feminine and the neuter. [Formerly",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 31,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html#section-174.129",
+      "identifier": "ORS 174.129",
+      "name": "Section 174.129",
+      "text": "Statutes, rules and orders to use sex-neutral terms. It shall be the policy of the State of Oregon that all statutes, rules and orders enacted, adopted or amended after October 3, 1979, be written in sex-neutral terms unless it is necessary for the purpose of the statute, rule or order that it be expressed in terms of a particular gender. [Formerly 174.115]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 32,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html#section-174.130",
+      "identifier": "ORS 174.130",
+      "name": "Section 174.130",
+      "text": "Majority can exercise authority given jointly. Any authority conferred by law upon three or more persons may be exercised by a majority of them unless expressly otherwise provided by law.",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 33,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html#section-174.140",
+      "identifier": "ORS 174.140",
+      "name": "Section 174.140",
+      "text": "Construction of a surety or similar words. In any statute requiring a public official to furnish a fidelity bond or bond conditioned upon the faithful performance of the duties of the official, whenever the words a surety or a corporate insurance company or words of similar import are used in referring to execution of the bond, the bond may be executed by one or more sureties, or one or more corporate insurance companies, unless the particular statute specifically provides otherwise.",
+      "history_citation_blocks": [
+        "1955 c.289 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "1955 c.289 1",
+          "year": 1955,
+          "chapter": "289",
+          "section": "1"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 34,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html#section-174.150",
+      "identifier": "ORS 174.150",
+      "name": "Section 174.150",
+      "text": "",
+      "history_citation_blocks": [
+        "1957 c.146 1; repealed by 1969 c.292 3"
+      ],
+      "history_citations": [
+        {
+          "raw": "1957 c.146 1",
+          "year": 1957,
+          "chapter": "146",
+          "section": "1"
+        },
+        {
+          "raw": "repealed by 1969 c.292 3"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 35,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html#section-174.160",
+      "identifier": "ORS 174.160",
+      "name": "Section 174.160",
+      "text": "Mailing methods authorized in place of notice by registered or certified mail. Whenever, for the purpose of giving notice, registered or certified mail, with or without return receipt, is authorized or required by or pursuant to statute, it is sufficient to use in lieu thereof any mailing method that provides for a return receipt.",
+      "history_citation_blocks": [
+        "1969 c.292 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.292 1",
+          "year": 1969,
+          "chapter": "292",
+          "section": "1"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 36,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html#section-174.170",
+      "identifier": "ORS 174.170",
+      "name": "Section 174.170",
+      "text": "Notice by personal service equivalent to notice by mail. Whenever notice by any mailing method is authorized or required by or pursuant to statute, notice given by personal service that meets the requirements for service of a summons is equivalent thereto.",
+      "history_citation_blocks": [
+        "1969 c.292 2"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.292 2",
+          "year": 1969,
+          "chapter": "292",
+          "section": "2"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 37,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html#section-174.510",
+      "identifier": "ORS 174.510",
+      "name": "Section 174.510",
+      "text": "Statute revision of 1953 enacted as law; Oregon Revised Statutes; citation. (1) The statute laws set forth after section 8 of enrolled House Bill No. 2 of the Forty-seventh Legislative Assembly were enacted as law of the State of Oregon, effective December 31, 1953. (2) The statute laws described in subsection (1) of this section, together with sections compiled in parts bearing the certificate of the Legislative Counsel pursuant to ORS 171.285, may be cited as Oregon Revised Statutes. In citing a specific section of Oregon Revised Statutes, the designation ORS (number of section) may be used.",
+      "history_citation_blocks": [
+        "1953 c.3 1,7; 1961 c.90 2"
+      ],
+      "history_citations": [
+        {
+          "raw": "1953 c.3 1,7"
+        },
+        {
+          "raw": "1961 c.90 2",
+          "year": 1961,
+          "chapter": "90",
+          "section": "2"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The statute laws set forth after section 8 of enrolled House Bill No. 2 of the Forty-seventh Legislative Assembly were enacted as law of the State of Oregon, effective December 31, 1953. of this section, together with sections compiled in parts bearing the certificate of the Legislative Counsel pursuant to ORS 171.285, may be cited as Oregon Revised Statutes. In citing a specific section of Oregon Revised Statutes, the designation ORS (number of section) may be used.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The statute laws described in subsection",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 38,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html#section-174.515",
+      "identifier": "ORS 174.515",
+      "name": "Section 174.515",
+      "text": "Duplicate original of 1953 revision; evidentiary effect. The three volumes entitled Proposed Oregon Revised Statutes, consisting of pages 1 through 1,058 in Volume 1, pages 1 through 2,066 in Volume 2 and pages 1 through 1,915 in Volume 3, on file in the office of the Secretary of State on January 1, 1961, are considered to be a duplicate original of the statute laws described in ORS 174.510 (1). A copy of all or any part of these volumes, certified by the Secretary of State, has the same effect as a copy of the same part of the original, certified by the Secretary of State.",
+      "history_citation_blocks": [
+        "1961 c.90 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "1961 c.90 1",
+          "year": 1961,
+          "chapter": "90",
+          "section": "1"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": ". A copy of all or any part of these volumes, certified by the Secretary of State, has the same effect as a copy of the same part of the original, certified by the Secretary of State.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 39,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html#section-174.520",
+      "identifier": "ORS 174.520",
+      "name": "Section 174.520",
+      "text": "General statutes enacted prior to January 12, 1953, repealed; exceptions. (1) All statute laws of Oregon of a general, public and permanent nature enacted prior to January 12, 1953, were repealed effective December 31, 1953, except as provided in subsection (2) of this section. (2) If any provision of the statute laws described in ORS 174.510 (1), derived from an Act that amended or repealed a preexisting statute, is held unconstitutional, the provisions of subsection (1) of this section shall not prevent the preexisting statute from being law if that appears to have been the intent of the Legislative Assembly or the people.",
+      "history_citation_blocks": [
+        "1953 c.3 2,6; 1961 c.90 3"
+      ],
+      "history_citations": [
+        {
+          "raw": "1953 c.3 2,6"
+        },
+        {
+          "raw": "1961 c.90 3",
+          "year": 1961,
+          "chapter": "90",
+          "section": "3"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "All statute laws of Oregon of a general, public and permanent nature enacted prior to January 12, 1953, were repealed effective December 31, 1953, except as provided in subsection , derived from an Act that amended or repealed a preexisting statute, is held unconstitutional, the provisions of subsection of this section shall not prevent the preexisting statute from being law if that appears to have been the intent of the Legislative Assembly or the people.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "of this section. If any provision of the statute laws described in ORS 174.510",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 40,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html#section-174.530",
+      "identifier": "ORS 174.530",
+      "name": "Section 174.530",
+      "text": "Construction of statutes enacted as part of 1953 revision. The statute laws described in ORS 174.510 (1) are intended to speak for themselves. All sections of the statute laws so described are considered to speak as of the same date, except that in cases of conflict between two or more sections or of an ambiguity in a section, reference may be had to the Acts from which the sections are derived, for the purpose of applying the rules of construction relating to repeal or amendment by implication or for the purpose of resolving the ambiguity.",
+      "history_citation_blocks": [
+        "1953 c.3 3; 1961 c.90 4"
+      ],
+      "history_citations": [
+        {
+          "raw": "1953 c.3 3",
+          "year": 1953,
+          "chapter": "3",
+          "section": "3"
+        },
+        {
+          "raw": "1961 c.90 4",
+          "year": 1961,
+          "chapter": "90",
+          "section": "4"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "are intended to speak for themselves. All sections of the statute laws so described are considered to speak as of the same date, except that in cases of conflict between two or more sections or of an ambiguity in a section, reference may be had to the Acts from which the sections are derived, for the purpose of applying the rules of construction relating to repeal or amendment by implication or for the purpose of resolving the ambiguity.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 41,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html#section-174.535",
+      "identifier": "ORS 174.535",
+      "name": "Section 174.535",
+      "text": "Construction of revisers bills. It is the policy of the Legislative Assembly to revise sections from Oregon Revised Statutes and Oregon law periodically in order to maintain accuracy. However, nothing in chapter 740, Oregon Laws 1983, chapter 565, Oregon Laws 1985, chapter 158, Oregon Laws 1987, chapter 171, Oregon Laws 1989, chapters 67 and 927, Oregon Laws 1991, chapters 18 and 469, Oregon Laws 1993, chapter 79, Oregon Laws 1995, chapter 249, Oregon Laws 1997, chapter 59, Oregon Laws 1999, chapter 104, Oregon Laws 2001, chapter 14, Oregon Laws 2003, chapter 22, Oregon Laws 2005, chapter 71, Oregon Laws 2007, chapter 11, Oregon Laws 2009, chapter 9, Oregon Laws 2011, chapter 1, Oregon Laws 2013, chapter 27, Oregon Laws 2015, chapter 17, Oregon Laws 2017, chapter 13, Oregon Laws 2019, chapter 97, Oregon Laws 2021, or chapter 9, Oregon Laws 2023, is intended to alter the legislative intent or purpose of statutory sections affected by chapter 740, Oregon Laws 1983, chapter 565, Oregon Laws 1985, chapter 158, Oregon Laws 1987, chapter 171, Oregon Laws 1989, chapters 67 and 927, Oregon Laws 1991, chapters 18 and 469, Oregon Laws 1993, chapter 79, Oregon Laws 1995, chapter 249, Oregon Laws 1997, chapter 59, Oregon Laws 1999, chapter 104, Oregon Laws 2001, chapter 14, Oregon Laws 2003, chapter 22, Oregon Laws 2005, chapter 71, Oregon Laws 2007, chapter 11, Oregon Laws 2009, chapter 9, Oregon Laws 2011, chapter 1, Oregon Laws 2013, chapter 27, Oregon Laws 2015, chapter 17, Oregon Laws 2017, chapter 13, Oregon Laws 2019, chapter 97, Oregon Laws 2021, and chapter 9, Oregon Laws 2023, except insofar as the amendments thereto, or repeals thereof, specifically require.",
+      "history_citation_blocks": [
+        "Derived from 1983 c.740 1; 1985 c.565 1; 1987 c.158 1; 1989 c.171 1; 1991 c.67 1; 1991 c.927 1; 1993 c.18 1; 1993 c.469 1; 1995 c.79 1; 1997 c.249 1; 1999 c.59 1; 2001 c.104 1; 2003 c.14 1; 2005 c.22 1; 2007 c.71 1; 2009 c.11 1; 2011 c.9 1; 2013 c.1 1; 2015 c.27 1; 2017 c.17 1; 2019 c.13 1; 2021 c.97 1; 2023 c.9 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "Derived from 1983 c.740 1"
+        },
+        {
+          "raw": "1985 c.565 1",
+          "year": 1985,
+          "chapter": "565",
+          "section": "1"
+        },
+        {
+          "raw": "1987 c.158 1",
+          "year": 1987,
+          "chapter": "158",
+          "section": "1"
+        },
+        {
+          "raw": "1989 c.171 1",
+          "year": 1989,
+          "chapter": "171",
+          "section": "1"
+        },
+        {
+          "raw": "1991 c.67 1",
+          "year": 1991,
+          "chapter": "67",
+          "section": "1"
+        },
+        {
+          "raw": "1991 c.927 1",
+          "year": 1991,
+          "chapter": "927",
+          "section": "1"
+        },
+        {
+          "raw": "1993 c.18 1",
+          "year": 1993,
+          "chapter": "18",
+          "section": "1"
+        },
+        {
+          "raw": "1993 c.469 1",
+          "year": 1993,
+          "chapter": "469",
+          "section": "1"
+        },
+        {
+          "raw": "1995 c.79 1",
+          "year": 1995,
+          "chapter": "79",
+          "section": "1"
+        },
+        {
+          "raw": "1997 c.249 1",
+          "year": 1997,
+          "chapter": "249",
+          "section": "1"
+        },
+        {
+          "raw": "1999 c.59 1",
+          "year": 1999,
+          "chapter": "59",
+          "section": "1"
+        },
+        {
+          "raw": "2001 c.104 1",
+          "year": 2001,
+          "chapter": "104",
+          "section": "1"
+        },
+        {
+          "raw": "2003 c.14 1",
+          "year": 2003,
+          "chapter": "14",
+          "section": "1"
+        },
+        {
+          "raw": "2005 c.22 1",
+          "year": 2005,
+          "chapter": "22",
+          "section": "1"
+        },
+        {
+          "raw": "2007 c.71 1",
+          "year": 2007,
+          "chapter": "71",
+          "section": "1"
+        },
+        {
+          "raw": "2009 c.11 1",
+          "year": 2009,
+          "chapter": "11",
+          "section": "1"
+        },
+        {
+          "raw": "2011 c.9 1",
+          "year": 2011,
+          "chapter": "9",
+          "section": "1"
+        },
+        {
+          "raw": "2013 c.1 1",
+          "year": 2013,
+          "chapter": "1",
+          "section": "1"
+        },
+        {
+          "raw": "2015 c.27 1",
+          "year": 2015,
+          "chapter": "27",
+          "section": "1"
+        },
+        {
+          "raw": "2017 c.17 1",
+          "year": 2017,
+          "chapter": "17",
+          "section": "1"
+        },
+        {
+          "raw": "2019 c.13 1",
+          "year": 2019,
+          "chapter": "13",
+          "section": "1"
+        },
+        {
+          "raw": "2021 c.97 1",
+          "year": 2021,
+          "chapter": "97",
+          "section": "1"
+        },
+        {
+          "raw": "2023 c.9 1",
+          "year": 2023,
+          "chapter": "9",
+          "section": "1"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 42,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html#section-174.540",
+      "identifier": "ORS 174.540",
+      "name": "Section 174.540",
+      "text": "Parts of printed statute editions not part of the law. Title heads, chapter heads, division heads, section and subsection heads or titles and explanatory notes, in the statute laws described in ORS 174.510 (1) and in parts of Oregon Revised Statutes, do not constitute any part of the law.",
+      "history_citation_blocks": [
+        "1953 c.3 4; 1961 c.90 5; 2013 c.1 15"
+      ],
+      "history_citations": [
+        {
+          "raw": "1953 c.3 4",
+          "year": 1953,
+          "chapter": "3",
+          "section": "4"
+        },
+        {
+          "raw": "1961 c.90 5",
+          "year": 1961,
+          "chapter": "90",
+          "section": "5"
+        },
+        {
+          "raw": "2013 c.1 15",
+          "year": 2013,
+          "chapter": "1",
+          "section": "15"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "and in parts of Oregon Revised Statutes, do not constitute any part of the law.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 43,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html#section-174.550",
+      "identifier": "ORS 174.550",
+      "name": "Section 174.550",
+      "text": "Statute revision of 1953 substituted for statutes repealed by ORS 174.520. The provisions of the statute laws described in ORS 174.510 (1) are considered as substituted in a continuing way for the provisions of the prior statute laws repealed by ORS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "are considered as substituted in a continuing way for the provisions of the prior statute laws repealed by ORS",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 44,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html#section-174.560",
+      "identifier": "ORS 174.560",
+      "name": "Section 174.560",
+      "text": "",
+      "history_citation_blocks": [
+        "1953 c.3 8; repealed by 1961 c.90 7"
+      ],
+      "history_citations": [
+        {
+          "raw": "1953 c.3 8",
+          "year": 1953,
+          "chapter": "3",
+          "section": "8"
+        },
+        {
+          "raw": "repealed by 1961 c.90 7"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 45,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html#section-174.580",
+      "identifier": "ORS 174.580",
+      "name": "Section 174.580",
+      "text": "Oregon Rules of Civil Procedure; citation form. (1) As used in the statute laws of this state, including provisions of law deemed to be rules of court as provided in ORS 1.745, Oregon Rules of Civil Procedure means the rules adopted, amended or supplemented as provided in ORS 1.735. (2) In citing a specific rule of the Oregon Rules of Civil Procedure, the designation ORCP (number of rule) may be used. For example, Rule 7, section D, subsection (3), paragraph (a), subparagraph (iv), part (A), may be cited as ORCP 7 D(3)(a)(iv)(A).",
+      "history_citation_blocks": [
+        "1979 c.284 4; 1993 c.18 30; 2011 c.9 9"
+      ],
+      "history_citations": [
+        {
+          "raw": "1979 c.284 4",
+          "year": 1979,
+          "chapter": "284",
+          "section": "4"
+        },
+        {
+          "raw": "1993 c.18 30",
+          "year": 1993,
+          "chapter": "18",
+          "section": "30"
+        },
+        {
+          "raw": "2011 c.9 9",
+          "year": 2011,
+          "chapter": "9",
+          "section": "9"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "As used in the statute laws of this state, including provisions of law deemed to be rules of court as provided in ORS 1.745, Oregon Rules of Civil Procedure means the rules adopted, amended or supplemented as provided in ORS 1.735.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "In citing a specific rule of the Oregon Rules of Civil Procedure, the designation ORCP (number of rule) may be used. For example, Rule 7, section D, subsection",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": ", paragraph",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": ", subparagraph",
+              "subsections": [
+                {
+                  "label": "(iv)",
+                  "token": "iv",
+                  "kind": "roman_lower",
+                  "text": ", part",
+                  "subsections": []
+                },
+                {
+                  "label": "(A)",
+                  "token": "A",
+                  "kind": "alpha_upper",
+                  "text": ", may be cited as ORCP 7 D(3)(a)(iv)(A).",
+                  "subsections": []
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "parser_warnings": [],
+      "position": 46,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html#section-174.590",
+      "identifier": "ORS 174.590",
+      "name": "Section 174.590",
+      "text": "Statutory terminology not intended to preserve procedural distinctions between actions and suits. References in the statute laws of this state, including provisions of law deemed to be rules of court as provided in ORS 1.745, in effect on or after January 1, 1980, to actions, actions at law, proceedings at law, suits, suits in equity, proceedings in equity, judgments or decrees are not intended and shall not be construed to retain procedural distinctions between actions at law and suits in equity abolished by ORCP 2. [1979 c.284 5] CHAPTER 175 [Reserved for expansion] _______________",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 47,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors174.html"
+    }
+  ],
+  "alternateName": "Construction of Statutes;",
+  "legislationDate": "2023"
+}

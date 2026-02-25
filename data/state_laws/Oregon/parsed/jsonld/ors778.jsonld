@@ -1,0 +1,2077 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "orlaw": "https://www.oregonlegislature.gov/ors#"
+  },
+  "@type": "Legislation",
+  "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html",
+  "identifier": "ORS Chapter 778",
+  "name": "ORS Chapter 778 — Port of Portland",
+  "legislationType": "Statute",
+  "jurisdiction": "US-OR",
+  "isPartOf": {
+    "@type": "CreativeWork",
+    "identifier": "ORS",
+    "name": "Oregon Revised Statutes",
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors"
+  },
+  "dateModified": "2026-02-25T08:11:30.997021+00:00",
+  "source_file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors778.html",
+  "hasPart": [
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html#section-778.005",
+      "identifier": "ORS 778.005",
+      "name": "Section 778.005",
+      "text": "Definitions. As used in this chapter, unless the context requires otherwise: (1) Board means the board of commissioners of the Port of Portland. (2) Port means The Port of Portland. (3) Elector means an elector residing in the port. (4) Portland metropolitan area means the Oregon portion of a metropolitan statistical area as designated by the United States Office of Management and Budget with an Oregon population of more than 750,000.",
+      "history_citation_blocks": [
+        "Amended by 1971 c.728 103; 1973 c.178 1; 2009 c.11 98"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1971 c.728 103"
+        },
+        {
+          "raw": "1973 c.178 1",
+          "year": 1973,
+          "chapter": "178",
+          "section": "1"
+        },
+        {
+          "raw": "2009 c.11 98",
+          "year": 2009,
+          "chapter": "11",
+          "section": "98"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Board means the board of commissioners of the Port of Portland.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Port means The Port of Portland.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Elector means an elector residing in the port.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Portland metropolitan area means the Oregon portion of a metropolitan statistical area as designated by the United States Office of Management and Budget with an Oregon population of more than 750,000.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 1,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html#section-778.008",
+      "identifier": "ORS 778.008",
+      "name": "Section 778.008",
+      "text": "Port of Portland granted powers of ports formed under ORS chapter 777; exceptions; additional powers. (1) ORS 777.005 to 777.050, 777.110, 777.120, 777.132 to 777.165, 777.210, 777.220 and 777.405 to 777.435 do not apply to the Port of Portland. (2) Subject to subsection (1) of this section, the Port of Portland has all powers possessed by ports formed under ORS 285A.666 to 285A.732, 777.005 to 777.725, 777.915 to 777.953 and 777.990. (3) ORS 777.530 and 777.535 apply to the Port of Portland and the Port of Portland has all powers granted to other ports under ORS 777.530 and 777.535. (4) The Port of Portland shall do such things, perform such duties and exercise such powers as it may be authorized or empowered to do, perform or exercise by any Act of the legislature passed for that purpose, though not directly in amendment of this chapter. The powers granted by this chapter are in addition to other powers granted by law to the port. (5) In addition to such other duties, functions and powers as may be imposed upon the Port of Portland, the port may make recommendations to the Oregon Board of Maritime Pilots.",
+      "history_citation_blocks": [
+        "1971 c.728 116; 1987 c.775 7; subsection (3) enacted as 1989 c.644 5"
+      ],
+      "history_citations": [
+        {
+          "raw": "1971 c.728 116",
+          "year": 1971,
+          "chapter": "728",
+          "section": "116"
+        },
+        {
+          "raw": "1987 c.775 7",
+          "year": 1987,
+          "chapter": "775",
+          "section": "7"
+        },
+        {
+          "raw": "subsection (3) enacted as 1989 c.644 5"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "ORS 777.005 to 777.050, 777.110, 777.120, 777.132 to 777.165, 777.210, 777.220 and 777.405 to 777.435 do not apply to the Port of Portland. of this section, the Port of Portland has all powers possessed by ports formed under ORS 285A.666 to 285A.732, 777.005 to 777.725, 777.915 to 777.953 and 777.990.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Subject to subsection",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "ORS 777.530 and 777.535 apply to the Port of Portland and the Port of Portland has all powers granted to other ports under ORS 777.530 and 777.535.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "The Port of Portland shall do such things, perform such duties and exercise such powers as it may be authorized or empowered to do, perform or exercise by any Act of the legislature passed for that purpose, though not directly in amendment of this chapter. The powers granted by this chapter are in addition to other powers granted by law to the port.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "In addition to such other duties, functions and powers as may be imposed upon the Port of Portland, the port may make recommendations to the Oregon Board of Maritime Pilots.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 2,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html#section-778.010",
+      "identifier": "ORS 778.010",
+      "name": "Section 778.010",
+      "text": "District known as Port of Portland; boundaries; capacity to sue. The Portland metropolitan area is a separate district, to be known as the Port of Portland, and as such shall have perpetual succession, and by that name shall exercise and carry out all the powers and objects conferred on it by law. The port may sue and be sued, plead and be impleaded in all actions, suits or proceedings brought by or against it; provided, however, that the bonded or other indebtedness of the port that was chargeable to or a lien upon the property within the limits of the port: (1) Prior to June 30, 1963, shall not be chargeable to or a lien upon all of that property which lies east of the east boundary line of range two east of the Willamette Meridian in Multnomah County; or (2) Prior to June 30, 1973, shall not be chargeable to or a lien upon all that property lying within the boundaries of Clackamas and Washington Counties.",
+      "history_citation_blocks": [
+        "Amended by 1963 c.124 1; 1973 c.178 2; 2003 c.802 152"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1963 c.124 1"
+        },
+        {
+          "raw": "1973 c.178 2",
+          "year": 1973,
+          "chapter": "178",
+          "section": "2"
+        },
+        {
+          "raw": "2003 c.802 152",
+          "year": 2003,
+          "chapter": "802",
+          "section": "152"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Prior to June 30, 1963, shall not be chargeable to or a lien upon all of that property which lies east of the east boundary line of range two east of the Willamette Meridian in Multnomah County; or",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Prior to June 30, 1973, shall not be chargeable to or a lien upon all that property lying within the boundaries of Clackamas and Washington Counties.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 3,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html#section-778.015",
+      "identifier": "ORS 778.015",
+      "name": "Section 778.015",
+      "text": "Purposes and general powers of port. The object, purpose and occupation of the Port of Portland shall be to promote the maritime, shipping, aviation, commercial and industrial interests of the port as by law specifically authorized. Subject to ORS 778.016, the port may acquire, hold, use, dispose of and convey real and personal property, make any and all contracts the making of which is not by this chapter expressly prohibited. It may do any other acts and things which are requisite, necessary or convenient in accomplishing the purpose described or in carrying out the powers granted to it by law. The port may supply surface and air craft with fuel and other supplies at reasonable cost as may be for the best interests of the port.",
+      "history_citation_blocks": [
+        "Amended by 1959 c.362 1; 1971 c.728 104; 2013 c.689 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1959 c.362 1"
+        },
+        {
+          "raw": "1971 c.728 104",
+          "year": 1971,
+          "chapter": "728",
+          "section": "104"
+        },
+        {
+          "raw": "2013 c.689 1",
+          "year": 2013,
+          "chapter": "689",
+          "section": "1"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 4,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html#section-778.016",
+      "identifier": "ORS 778.016",
+      "name": "Section 778.016",
+      "text": "Best value standards for Port of Portland contracts and space leases. In awarding contracts and leasing spaces, the Port of Portland may establish best value standards and criteria, taking into account factors that include: (1) Experience, technical capability and past performance. (2) The qualifications, compensation and retention policies of bidding contractors and lessees with respect to the staff and subcontractors operating at the port. (3) Potential local and regional benefit within the port, the surrounding community, the region and the state.",
+      "history_citation_blocks": [
+        "2013 c.689 3"
+      ],
+      "history_citations": [
+        {
+          "raw": "2013 c.689 3",
+          "year": 2013,
+          "chapter": "689",
+          "section": "3"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Experience, technical capability and past performance.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The qualifications, compensation and retention policies of bidding contractors and lessees with respect to the staff and subcontractors operating at the port.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Potential local and regional benefit within the port, the surrounding community, the region and the state.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 5,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html#section-778.020",
+      "identifier": "ORS 778.020",
+      "name": "Section 778.020",
+      "text": "Acquisition of City of Portland property by port; assumption of bonds; election. (1) The Port of Portland may purchase or otherwise acquire all or any of the docks, wharves, elevators, terminals, dry docks and other properties of the City of Portland that are under the charge and control of the dock commission of the city. (2) If the port purchases or otherwise acquires property as provided by subsection (1) of this section, the port may in payment therefor assume the payment of all or any part of the bonds, debentures and other obligations of the City of Portland issued, sold or incurred for the purpose of acquiring funds to construct, purchase or otherwise acquire the docks, wharves, elevators, terminals, dry docks or other properties. The aggregate amount of bonds, debentures and obligations so assumed shall not exceed a sum determined by the board to be the fair value of the property so acquired by the port. The limitation provided by ORS 778.030 shall not apply to bonds, debentures or other obligations assumed under this section. (3) The authority granted by this section shall not be exercised without the prior approval of the electors residing within the port expressed at an election called and held within the port at which such question is submitted. [Amended by 1971 c.728 105]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The Port of Portland may purchase or otherwise acquire all or any of the docks, wharves, elevators, terminals, dry docks and other properties of the City of Portland that are under the charge and control of the dock commission of the city. of this section, the port may in payment therefor assume the payment of all or any part of the bonds, debentures and other obligations of the City of Portland issued, sold or incurred for the purpose of acquiring funds to construct, purchase or otherwise acquire the docks, wharves, elevators, terminals, dry docks or other properties. The aggregate amount of bonds, debentures and obligations so assumed shall not exceed a sum determined by the board to be the fair value of the property so acquired by the port. The limitation provided by ORS 778.030 shall not apply to bonds, debentures or other obligations assumed under this section.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "If the port purchases or otherwise acquires property as provided by subsection",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The authority granted by this section shall not be exercised without the prior approval of the electors residing within the port expressed at an election called and held within the port at which such question is submitted. [Amended by 1971 c.728 105]",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 6,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html#section-778.025",
+      "identifier": "ORS 778.025",
+      "name": "Section 778.025",
+      "text": "Power to engage in certain commercial activities. For the use of the Port of Portland or for public convenience and the convenience of air transport, shipping, commercial and industrial development of the port and the waterfront of its harbors, rivers and waterways, the port may: (1) Acquire by purchase, condemnation or other lawful method lands necessary for its use or to be improved for public convenience and the convenience of the air transport, shipping, commercial and industrial development of the port as well as all or any part of the waterfront of its harbors, rivers and waterways. (2) Acquire by purchase, condemnation or other lawful method lands necessary or convenient for the purpose of depositing or dumping thereon earth, sand, gravel, rock or other material dredged or excavated, in the exercise of any of its powers, from any of the rivers or other waterways or lands within the boundaries or under the control of the port. (3) Enlarge its tidal area, fill and reclaim lands, and make such disposition by use, conveyance, development or lease of lands so filled or reclaimed as it considers advisable. (4) Construct, excavate and dredge canals and channels connecting its waterways with one another, with other waterways and with the sea. (5) Purchase or otherwise acquire, construct, operate, maintain, lease, rent and dispose of airports, and their approaches, wharves, piers, docks, slips, warehouses, elevators, dry docks, terminals, buildings, and all other facilities and aids incident to the development, protection and operation of the port and of the air transport, shipping, commercial and industrial interests of the port, within the port, and collect wharfage, storage and other charges for the use of such facilities. (6) Own, acquire, construct, purchase, lease, operate and maintain within the port lines of railroad, with sidetracks, turnouts, switches and connections with other lines of railroad, and streets, roads, water mains, sewers, pipelines, and also gas and electric conduits and lines which a utility is unwilling or unable to furnish, within or to or from the boundaries of the port; and carry and transport freight and passengers thereon and thereover for hire, and perform lighterage for hire. (7) Acquire, own, lease, rent, operate, maintain and dispose of towboats, barges and other vessels for the transportation of cargo or passengers in maritime commerce on the Columbia and Snake Rivers and their tributaries, within or without the boundaries of this state. (8) Acquire, own, lease, rent, operate, maintain and dispose of unit trains and related facilities for the transportation of bulk commodities to facilities within the port from locations within or without the port.",
+      "history_citation_blocks": [
+        "Amended by 1959 c.362 2; 1967 c.548 1; 1971 c.728 106; 1973 c.178 6; 1981 c.879 4"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1959 c.362 2"
+        },
+        {
+          "raw": "1967 c.548 1",
+          "year": 1967,
+          "chapter": "548",
+          "section": "1"
+        },
+        {
+          "raw": "1971 c.728 106",
+          "year": 1971,
+          "chapter": "728",
+          "section": "106"
+        },
+        {
+          "raw": "1973 c.178 6",
+          "year": 1973,
+          "chapter": "178",
+          "section": "6"
+        },
+        {
+          "raw": "1981 c.879 4",
+          "year": 1981,
+          "chapter": "879",
+          "section": "4"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Acquire by purchase, condemnation or other lawful method lands necessary for its use or to be improved for public convenience and the convenience of the air transport, shipping, commercial and industrial development of the port as well as all or any part of the waterfront of its harbors, rivers and waterways.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Acquire by purchase, condemnation or other lawful method lands necessary or convenient for the purpose of depositing or dumping thereon earth, sand, gravel, rock or other material dredged or excavated, in the exercise of any of its powers, from any of the rivers or other waterways or lands within the boundaries or under the control of the port.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Enlarge its tidal area, fill and reclaim lands, and make such disposition by use, conveyance, development or lease of lands so filled or reclaimed as it considers advisable.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Construct, excavate and dredge canals and channels connecting its waterways with one another, with other waterways and with the sea.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "Purchase or otherwise acquire, construct, operate, maintain, lease, rent and dispose of airports, and their approaches, wharves, piers, docks, slips, warehouses, elevators, dry docks, terminals, buildings, and all other facilities and aids incident to the development, protection and operation of the port and of the air transport, shipping, commercial and industrial interests of the port, within the port, and collect wharfage, storage and other charges for the use of such facilities.",
+          "subsections": []
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "Own, acquire, construct, purchase, lease, operate and maintain within the port lines of railroad, with sidetracks, turnouts, switches and connections with other lines of railroad, and streets, roads, water mains, sewers, pipelines, and also gas and electric conduits and lines which a utility is unwilling or unable to furnish, within or to or from the boundaries of the port; and carry and transport freight and passengers thereon and thereover for hire, and perform lighterage for hire.",
+          "subsections": []
+        },
+        {
+          "label": "(7)",
+          "token": "7",
+          "kind": "numeric",
+          "text": "Acquire, own, lease, rent, operate, maintain and dispose of towboats, barges and other vessels for the transportation of cargo or passengers in maritime commerce on the Columbia and Snake Rivers and their tributaries, within or without the boundaries of this state.",
+          "subsections": []
+        },
+        {
+          "label": "(8)",
+          "token": "8",
+          "kind": "numeric",
+          "text": "Acquire, own, lease, rent, operate, maintain and dispose of unit trains and related facilities for the transportation of bulk commodities to facilities within the port from locations within or without the port.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 7,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html#section-778.030",
+      "identifier": "ORS 778.030",
+      "name": "Section 778.030",
+      "text": "Power to issue general obligation bonds; limitation; dedication of revenues; use of proceeds. (1) For the purpose of carrying into effect any of the powers granted to the Port of Portland, the port has the power to borrow money and to sell and dispose of bonds which shall constitute a general obligation of the port and be secured by the ports full faith and credit. Such bonds outstanding at one time shall never exceed in the aggregate one and three-fourths percent of the real market value of all taxable property within the limits of the port, computed in accordance with ORS 308.207. In computing the total of bonds at any time outstanding, bonds issued for the purpose of providing funds to meet obligations assumed pursuant to ORS 778.020, shall not be included. The bonds shall be secured by the taxing power of the port as provided in ORS 778.065 (1). In addition, the port may provide that the bonds shall be payable from and secured by a lien and pledge of all or any part of the revenues derived by the port from the facilities constructed from the proceeds of the bonds. (2) The port may provide for the creation of special trust funds and may authorize the appointment of a trustee to administer the same and may obligate itself to set aside and pay into a special trust fund any revenues pledged to the payment of the bonds. The port may establish and provide from available funds for the funding of debt service, operation and maintenance reserves. (3) Proceeds from the sale of the bonds may also be used to pay the costs incurred in issuing the bonds, preliminary work incident to carrying out such powers, including but not limited to planning, engineering, inspection, accounting, fiscal, legal and trustee expenses and other similar expenses, and to pay interest on the bonds for such period as the port may determine, but not to exceed six months beyond completion of the facilities financed with the bonds, and to establish reserves for debt service on the bonds.",
+      "history_citation_blocks": [
+        "Amended by 1963 c.9 39; 1971 c.702 1; 1971 c.728 107a; 1977 c.33 1; 1991 c.459 443"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1963 c.9 39"
+        },
+        {
+          "raw": "1971 c.702 1",
+          "year": 1971,
+          "chapter": "702",
+          "section": "1"
+        },
+        {
+          "raw": "1971 c.728 107a",
+          "year": 1971,
+          "chapter": "728",
+          "section": "107a"
+        },
+        {
+          "raw": "1977 c.33 1",
+          "year": 1977,
+          "chapter": "33",
+          "section": "1"
+        },
+        {
+          "raw": "1991 c.459 443",
+          "year": 1991,
+          "chapter": "459",
+          "section": "443"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "For the purpose of carrying into effect any of the powers granted to the Port of Portland, the port has the power to borrow money and to sell and dispose of bonds which shall constitute a general obligation of the port and be secured by the ports full faith and credit. Such bonds outstanding at one time shall never exceed in the aggregate one and three-fourths percent of the real market value of all taxable property within the limits of the port, computed in accordance with ORS 308.207. In computing the total of bonds at any time outstanding, bonds issued for the purpose of providing funds to meet obligations assumed pursuant to ORS 778.020, shall not be included. The bonds shall be secured by the taxing power of the port as provided in ORS 778.065 . In addition, the port may provide that the bonds shall be payable from and secured by a lien and pledge of all or any part of the revenues derived by the port from the facilities constructed from the proceeds of the bonds.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The port may provide for the creation of special trust funds and may authorize the appointment of a trustee to administer the same and may obligate itself to set aside and pay into a special trust fund any revenues pledged to the payment of the bonds. The port may establish and provide from available funds for the funding of debt service, operation and maintenance reserves.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Proceeds from the sale of the bonds may also be used to pay the costs incurred in issuing the bonds, preliminary work incident to carrying out such powers, including but not limited to planning, engineering, inspection, accounting, fiscal, legal and trustee expenses and other similar expenses, and to pay interest on the bonds for such period as the port may determine, but not to exceed six months beyond completion of the facilities financed with the bonds, and to establish reserves for debt service on the bonds.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 8,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html#section-778.035",
+      "identifier": "ORS 778.035",
+      "name": "Section 778.035",
+      "text": "[Amended by 1971 c.728 108; repealed by 1977 c.33 2 (778.036 enacted in lieu of 778.035)]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 9,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html#section-778.036",
+      "identifier": "ORS 778.036",
+      "name": "Section 778.036",
+      "text": "Issuance of bonds. Bonds authorized by ORS 778.030 shall be issued as prescribed in ORS chapter 287A.",
+      "history_citation_blocks": [
+        "1977 c.33 3 (enacted in lieu of 778.035); 1981 c.94 57; 1997 c.171 26; 2007 c.783 229"
+      ],
+      "history_citations": [
+        {
+          "raw": "1977 c.33 3 (enacted in lieu of 778.035)"
+        },
+        {
+          "raw": "1981 c.94 57",
+          "year": 1981,
+          "chapter": "94",
+          "section": "57"
+        },
+        {
+          "raw": "1997 c.171 26",
+          "year": 1997,
+          "chapter": "171",
+          "section": "26"
+        },
+        {
+          "raw": "2007 c.783 229",
+          "year": 2007,
+          "chapter": "783",
+          "section": "229"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 10,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html#section-778.040",
+      "identifier": "ORS 778.040",
+      "name": "Section 778.040",
+      "text": "General obligation bond issues to be approved by electors. (1) General obligation bonds shall not be issued by the Port of Portland to provide funds for the establishment or operation of surface ship and air lines or for the payment of bonuses to either such line or lines without the approval of the electors of the port expressed at an election called and held within the port at which such question is submitted. (2) Whenever the port issues general obligation bonds for purposes other than refunding general obligation bonds previously issued and for purposes other than providing funds to meet the obligations of the City of Portland assumed pursuant to ORS 778.020 in an aggregate amount equal to five percent of the present real market value of all the taxable property within the territorial limits of the port, no additional general obligation bonds shall be issued for purposes other than refunding general obligation bonds theretofore issued without the approval of the electors of the port expressed at an election within the port at which such question is submitted.",
+      "history_citation_blocks": [
+        "Amended by 1971 c.399 1; 1997 c.461 2"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1971 c.399 1"
+        },
+        {
+          "raw": "1997 c.461 2",
+          "year": 1997,
+          "chapter": "461",
+          "section": "2"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "General obligation bonds shall not be issued by the Port of Portland to provide funds for the establishment or operation of surface ship and air lines or for the payment of bonuses to either such line or lines without the approval of the electors of the port expressed at an election called and held within the port at which such question is submitted.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Whenever the port issues general obligation bonds for purposes other than refunding general obligation bonds previously issued and for purposes other than providing funds to meet the obligations of the City of Portland assumed pursuant to ORS 778.020 in an aggregate amount equal to five percent of the present real market value of all the taxable property within the territorial limits of the port, no additional general obligation bonds shall be issued for purposes other than refunding general obligation bonds theretofore issued without the approval of the electors of the port expressed at an election within the port at which such question is submitted.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 11,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html#section-778.045",
+      "identifier": "ORS 778.045",
+      "name": "Section 778.045",
+      "text": "Amount of general obligation bonds issued in one year limited. The total amount of general obligation bonds issued by the Port of Portland in any calendar year, except for refunding bonds or bonds issued to provide funds to meet obligations assumed pursuant to ORS 778.020, shall not exceed $3 million unless a greater amount is approved by the electors of the port at an election at which such question is submitted.",
+      "history_citation_blocks": [
+        "Amended by 1971 c.728 110; 1973 c.178 7; 1997 c.461 3"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1971 c.728 110"
+        },
+        {
+          "raw": "1973 c.178 7",
+          "year": 1973,
+          "chapter": "178",
+          "section": "7"
+        },
+        {
+          "raw": "1997 c.461 3",
+          "year": 1997,
+          "chapter": "461",
+          "section": "3"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 12,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html#section-778.050",
+      "identifier": "ORS 778.050",
+      "name": "Section 778.050",
+      "text": "[Amended by 1971 c.728 111; repealed by 1977 c.33 4]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 13,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html#section-778.055",
+      "identifier": "ORS 778.055",
+      "name": "Section 778.055",
+      "text": "[Amended by 1971 c.728 112; repealed by 1977 c.33 4]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 14,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html#section-778.060",
+      "identifier": "ORS 778.060",
+      "name": "Section 778.060",
+      "text": "Expenditure of bond sale funds for operating expenses limited. The board shall not expend, within any one calendar year, from the funds derived from the sale of bonds, in excess of $500,000 to meet the operating expenses of the Port of Portland. As used in this section operating expenses means the maintenance of plant, structures and equipment and such dredging as may be required to preserve or restore at or to its artificial depth a channel previously excavated by the port. [Amended by 1971 c.728 113]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 15,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html#section-778.065",
+      "identifier": "ORS 778.065",
+      "name": "Section 778.065",
+      "text": "Port taxing power; annual limitation. The Port of Portland may each year assess, levy and collect taxes upon all taxable real and personal property situated within its boundaries as required: (1) To pay principal and interest on bonds issued under ORS 778.030; (2) To pay bonds, debentures and other obligations of the City of Portland assumed under ORS 778.020; and (3) To pay all other expenses that may be incurred in the exercise of the powers granted to the port.",
+      "history_citation_blocks": [
+        "Amended by 1963 c.9 40; 1971 c.701 1; 1971 c.728 143"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1963 c.9 40"
+        },
+        {
+          "raw": "1971 c.701 1",
+          "year": 1971,
+          "chapter": "701",
+          "section": "1"
+        },
+        {
+          "raw": "1971 c.728 143",
+          "year": 1971,
+          "chapter": "728",
+          "section": "143"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "To pay principal and interest on bonds issued under ORS 778.030;",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "To pay bonds, debentures and other obligations of the City of Portland assumed under ORS 778.020; and",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "To pay all other expenses that may be incurred in the exercise of the powers granted to the port.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 16,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html#section-778.068",
+      "identifier": "ORS 778.068",
+      "name": "Section 778.068",
+      "text": "Filing boundary change with county assessor and Department of Revenue. For purposes of ad valorem taxation, a boundary change must be filed in final approved form with the county assessor and the Department of Revenue as provided in ORS 308.225.",
+      "history_citation_blocks": [
+        "2001 c.138 54"
+      ],
+      "history_citations": [
+        {
+          "raw": "2001 c.138 54",
+          "year": 2001,
+          "chapter": "138",
+          "section": "54"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 17,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html#section-778.070",
+      "identifier": "ORS 778.070",
+      "name": "Section 778.070",
+      "text": "Tax levy. (1) Taxes authorized by ORS 778.065 shall be levied in each year and returned to the county officers whose duty it is to extend the tax roll by the time required by law for city taxes to be levied and extended. The county officer whose duty it is to extend the county levy shall extend the levy of the Port of Portland in the same manner city taxes are extended. (2) All taxes levied by the port are payable at the same time and shall be collected by the same officers as regular county taxes. The county officers collecting the taxes shall pay them to the treasurer of the port as provided by law. [Amended by 1971 c.728 115]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Taxes authorized by ORS 778.065 shall be levied in each year and returned to the county officers whose duty it is to extend the tax roll by the time required by law for city taxes to be levied and extended. The county officer whose duty it is to extend the county levy shall extend the levy of the Port of Portland in the same manner city taxes are extended.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "All taxes levied by the port are payable at the same time and shall be collected by the same officers as regular county taxes. The county officers collecting the taxes shall pay them to the treasurer of the port as provided by law. [Amended by 1971 c.728 115]",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 18,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html#section-778.073",
+      "identifier": "ORS 778.073",
+      "name": "Section 778.073",
+      "text": "Recreational facilities; development; operation; maintenance. (1) The Port of Portland may construct, operate, equip and maintain public parks, marinas and other recreational facilities on land owned by the port when such facilities may be developed in conjunction with the exercise by the port of any of its other powers. (2) The port may convey the land and recreational facilities developed under this section to a political subdivision or municipal corporation of this state in exchange for an agreement to operate and maintain the facilities solely for public recreational use. (3) The port may enter into an agreement with a political subdivision or municipal corporation of this state for the operation and maintenance of recreational facilities.",
+      "history_citation_blocks": [
+        "1971 c.400 2"
+      ],
+      "history_citations": [
+        {
+          "raw": "1971 c.400 2",
+          "year": 1971,
+          "chapter": "400",
+          "section": "2"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The Port of Portland may construct, operate, equip and maintain public parks, marinas and other recreational facilities on land owned by the port when such facilities may be developed in conjunction with the exercise by the port of any of its other powers.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The port may convey the land and recreational facilities developed under this section to a political subdivision or municipal corporation of this state in exchange for an agreement to operate and maintain the facilities solely for public recreational use.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The port may enter into an agreement with a political subdivision or municipal corporation of this state for the operation and maintenance of recreational facilities.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 19,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html#section-778.075",
+      "identifier": "ORS 778.075",
+      "name": "Section 778.075",
+      "text": "[Repealed by 1971 c.728 138]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 20,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html#section-778.080",
+      "identifier": "ORS 778.080",
+      "name": "Section 778.080",
+      "text": "[Amended by 1963 c.145 1; repealed by 1971 c.728 138]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 21,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html#section-778.085",
+      "identifier": "ORS 778.085",
+      "name": "Section 778.085",
+      "text": "Control over port waters and wharf lines; adoption and enforcement of navigational rules; authority to establish penalties; limitation. (1) To the full extent the State of Oregon might exercise control, or grant to the Port of Portland the right to exercise control, the port has full control of the rivers, harbors and waterways within its boundaries and between its boundaries and the sea. (2) The port may make, change or abolish wharf lines of, in and for the rivers, harbors and waterways within its boundaries. (3) As it considers convenient, requisite or necessary, or in the best interests of the maritime shipping or commercial interests of the port, the board may by ordinance make, modify or abolish regulations: (a) For the use or navigation of the rivers, harbors and waterways mentioned in subsection (1) of this section; or (b) For the placing of obstructions therein, or the removal of obstructions therefrom. (4) The port may enforce the regulations by penalties or seek other appropriate remedies as the port considers necessary. Penalties are recoverable in the name of the port in any court of this state. (5) This section does not authorize the port to cause the removal of bridges or other obstructions existing under a grant by this state. This section does not authorize the port to exclude cities other than the City of Portland from free access to the channel of either the Willamette or Columbia Rivers or the Oregon and the Columbia Sloughs, or the free use of the rivers or sloughs for navigation.",
+      "history_citation_blocks": [
+        "Amended by 1963 c.145 2; 1971 c.728 117; 2011 c.597 301"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1963 c.145 2"
+        },
+        {
+          "raw": "1971 c.728 117",
+          "year": 1971,
+          "chapter": "728",
+          "section": "117"
+        },
+        {
+          "raw": "2011 c.597 301",
+          "year": 2011,
+          "chapter": "597",
+          "section": "301"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "To the full extent the State of Oregon might exercise control, or grant to the Port of Portland the right to exercise control, the port has full control of the rivers, harbors and waterways within its boundaries and between its boundaries and the sea. of this section; or",
+          "subsections": [
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "For the placing of obstructions therein, or the removal of obstructions therefrom.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The port may make, change or abolish wharf lines of, in and for the rivers, harbors and waterways within its boundaries.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "As it considers convenient, requisite or necessary, or in the best interests of the maritime shipping or commercial interests of the port, the board may by ordinance make, modify or abolish regulations:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "For the use or navigation of the rivers, harbors and waterways mentioned in subsection",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "The port may enforce the regulations by penalties or seek other appropriate remedies as the port considers necessary. Penalties are recoverable in the name of the port in any court of this state.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "This section does not authorize the port to cause the removal of bridges or other obstructions existing under a grant by this state. This section does not authorize the port to exclude cities other than the City of Portland from free access to the channel of either the Willamette or Columbia Rivers or the Oregon and the Columbia Sloughs, or the free use of the rivers or sloughs for navigation.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 22,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html#section-778.090",
+      "identifier": "ORS 778.090",
+      "name": "Section 778.090",
+      "text": "Rights of riparian owners and owners of moorage facilities. Where it is necessary to widen the general channel or improve the navigation of the rivers or sloughs by requiring the removal or destruction of moorage facilities for houseboats, boathouses or pleasure craft in the rivers or sloughs, or by establishing or reestablishing wharf lines that have the effect of destroying or impairing the riparian rights of the adjoining owners, the adjoining owners or others owning the moorage facilities shall be reasonably compensated for the removal or destruction of the moorage facilities and for the destruction or impairment of the riparian rights; and shall not be required to remove or destroy the moorage facilities in absence of reasonable compensation therefor. The Port of Portland may acquire moorage facilities, riparian rights or the real property of adjoining owners by exercise of the power of eminent domain as provided in ORS 778.095.",
+      "history_citation_blocks": [
+        "Amended by 1953 c.713 2; 1971 c.728 118; 1973 c.203 9"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1953 c.713 2"
+        },
+        {
+          "raw": "1971 c.728 118",
+          "year": 1971,
+          "chapter": "728",
+          "section": "118"
+        },
+        {
+          "raw": "1973 c.203 9",
+          "year": 1973,
+          "chapter": "203",
+          "section": "9"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 23,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html#section-778.095",
+      "identifier": "ORS 778.095",
+      "name": "Section 778.095",
+      "text": "Eminent domain power. The Port of Portland may acquire, by condemnation or otherwise, private property necessary or convenient in carrying out any power granted the port. The right to acquire property by condemnation shall be exercised as provided by ORS chapter 35. [Amended by 1971 c.728 119]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 24,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html#section-778.100",
+      "identifier": "ORS 778.100",
+      "name": "Section 778.100",
+      "text": "Reclamation of lands within port limits; assessments; lien; hearing; appeal. (1) When the Port of Portland contemplates the filling or reclamation of any low, swamp or submersible land within its territory held in private ownership, it may provide by ordinance for assessment by the board of the damages and benefits to be sustained by and to accrue to the land by reason of the filling or reclamation. In making the assessment the question of channel frontage as well as filling shall be considered in assessing benefits. The ordinance may provide for payment of damages to the owner of the land and may provide for creation of a lien upon the land in favor of the port for the amount of benefits and for payment of the amount of the lien, either in cash or in installments, with interest thereon over a term of years. (2) The ordinance shall provide for a hearing before the board to be held, upon due notice to all owners of and persons interested in the lands to be affected by the assessment, before the assessment is made. (3) Any owner or person interested in any land affected, who is aggrieved by an assessment made under this section may appeal to the Circuit Court of Multnomah County for judicial review of the assessment.",
+      "history_citation_blocks": [
+        "Amended by 1969 c.594 62; 1971 c.728 120"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1969 c.594 62"
+        },
+        {
+          "raw": "1971 c.728 120",
+          "year": 1971,
+          "chapter": "728",
+          "section": "120"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "When the Port of Portland contemplates the filling or reclamation of any low, swamp or submersible land within its territory held in private ownership, it may provide by ordinance for assessment by the board of the damages and benefits to be sustained by and to accrue to the land by reason of the filling or reclamation. In making the assessment the question of channel frontage as well as filling shall be considered in assessing benefits. The ordinance may provide for payment of damages to the owner of the land and may provide for creation of a lien upon the land in favor of the port for the amount of benefits and for payment of the amount of the lien, either in cash or in installments, with interest thereon over a term of years.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The ordinance shall provide for a hearing before the board to be held, upon due notice to all owners of and persons interested in the lands to be affected by the assessment, before the assessment is made.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Any owner or person interested in any land affected, who is aggrieved by an assessment made under this section may appeal to the Circuit Court of Multnomah County for judicial review of the assessment.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 25,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html#section-778.105",
+      "identifier": "ORS 778.105",
+      "name": "Section 778.105",
+      "text": "Port required to contract for work and materials; dry docks; bids. (1) Except in cases of emergency and except for ordinary current repair work necessary from day to day, all material purchased for and all work done in, on or for any dry dock, dredge, boat, scow or other appliance to be built, owned or operated by the Port of Portland, when the purchase is made or the work is done by construction, alteration or general overhauling, shall be purchased or done by or under contract. Such contracts shall be let to the lowest competent and responsible bidder, after due advertisement for bids, in the manner usual and customary in the letting of contracts by public bidding, and under regulations prescribed by the port. (2) Notwithstanding subsection (1) of this section or any other provision of law, the port may let a contract for the construction of a dry dock to the lowest competent and responsible bidder who submits a bid to construct the dry dock within the port, if: (a) The bid of such bidder does not exceed by more than 10 percent the lowest bid for construction of the dry dock elsewhere; and (b) In the opinion of the board, the public good will in any way be served thereby.",
+      "history_citation_blocks": [
+        "Amended by 1961 c.11 1; 1971 c.728 121; 1977 c.361 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1961 c.11 1"
+        },
+        {
+          "raw": "1971 c.728 121",
+          "year": 1971,
+          "chapter": "728",
+          "section": "121"
+        },
+        {
+          "raw": "1977 c.361 1",
+          "year": 1977,
+          "chapter": "361",
+          "section": "1"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Except in cases of emergency and except for ordinary current repair work necessary from day to day, all material purchased for and all work done in, on or for any dry dock, dredge, boat, scow or other appliance to be built, owned or operated by the Port of Portland, when the purchase is made or the work is done by construction, alteration or general overhauling, shall be purchased or done by or under contract. Such contracts shall be let to the lowest competent and responsible bidder, after due advertisement for bids, in the manner usual and customary in the letting of contracts by public bidding, and under regulations prescribed by the port. of this section or any other provision of law, the port may let a contract for the construction of a dry dock to the lowest competent and responsible bidder who submits a bid to construct the dry dock within the port, if:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "The bid of such bidder does not exceed by more than 10 percent the lowest bid for construction of the dry dock elsewhere; and",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "In the opinion of the board, the public good will in any way be served thereby.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Notwithstanding subsection",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 26,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html#section-778.110",
+      "identifier": "ORS 778.110",
+      "name": "Section 778.110",
+      "text": "Personnel; membership in retirement systems. (1) The Port of Portland may employ engineers, superintendents, mechanics, clerks and other persons as necessary or convenient in carrying on its work and fix their rates of compensation. (2) No employee of the port shall become a member of the Public Employees Retirement System if membership of the employee in the system would result in coverage of the employee by, and contributions on the employees behalf by the port to, both a private pension system and the Public Employees Retirement System.",
+      "history_citation_blocks": [
+        "Amended by 1971 c.495 1; 1971 c.728 144"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1971 c.495 1"
+        },
+        {
+          "raw": "1971 c.728 144",
+          "year": 1971,
+          "chapter": "728",
+          "section": "144"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The Port of Portland may employ engineers, superintendents, mechanics, clerks and other persons as necessary or convenient in carrying on its work and fix their rates of compensation.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "No employee of the port shall become a member of the Public Employees Retirement System if membership of the employee in the system would result in coverage of the employee by, and contributions on the employees behalf by the port to, both a private pension system and the Public Employees Retirement System.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 27,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html#section-778.115",
+      "identifier": "ORS 778.115",
+      "name": "Section 778.115",
+      "text": "Improvement contracts with federal government. The Port of Portland may contract with the United States Government to do all or part of the work of making, maintaining, or both, a depth of water in the rivers, harbors and waterways within its boundaries and between its boundaries and the sea as determined by the federal government. The port may receive therefor compensation as agreed between the federal government and the port.",
+      "history_citation_blocks": [
+        "Amended by 1963 c.145 3; 1971 c.728 123"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1963 c.145 3"
+        },
+        {
+          "raw": "1971 c.728 123",
+          "year": 1971,
+          "chapter": "728",
+          "section": "123"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 28,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html#section-778.120",
+      "identifier": "ORS 778.120",
+      "name": "Section 778.120",
+      "text": "Operation of chapter upon rights of other entities within port limits. Nothing in this chapter is intended to grant the Port of Portland authority to interfere with or detract from the general rights and powers of a city or a school or road district that is located in whole or in part within the boundaries of the port. However, the port has full power to carry out and fulfill the purpose of its creation, and to exercise its power of assessing, levying and collecting taxes. [Amended by 1971 c.728 124]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 29,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html#section-778.125",
+      "identifier": "ORS 778.125",
+      "name": "Section 778.125",
+      "text": "Port assistance to other governmental units within port boundaries. Consistent with the purposes, functions and powers granted to it by law, the Port of Portland may provide research or technical assistance for the planning, promotion or implementation of commercial, industrial or economic development projects upon request by any city, county or municipal corporation within the port. [1977 c.45 2] REVENUE BONDS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 30,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html#section-778.145",
+      "identifier": "ORS 778.145",
+      "name": "Section 778.145",
+      "text": "Issuance of revenue bonds; election; use of proceeds; status of bonds. (1) For the purpose of carrying into effect all or any of the powers granted to ports, the Port of Portland may from time to time issue and sell revenue bonds without the necessity of the electors of the port authorizing the same. Proceeds from the sale of such bonds may be used also to cover the costs incurred in issuing such bonds, and preliminary work incident to carrying out such purposes and powers, including but not limited to planning, engineering, inspection, accounting, fiscal, legal and trustee expenses, the cost of issuance of bonds, engraving, printing, advertising and other similar expenses, and to pay interest on the outstanding bonds issued for any project during the period of actual construction and for such period thereafter as the port may determine, and to establish, maintain or increase any reserves for debt service on the bonds and for working capital. Such revenue bonds shall not in any manner or to any extent be a general obligation of the port nor a charge upon any other revenues or property of the port not specifically pledged thereto. (2) In addition to the power granted by subsection (1) of this section, a port may authorize and issue revenue bonds under ORS 287A.150.",
+      "history_citation_blocks": [
+        "1971 c.546 2; 2007 c.783 230"
+      ],
+      "history_citations": [
+        {
+          "raw": "1971 c.546 2",
+          "year": 1971,
+          "chapter": "546",
+          "section": "2"
+        },
+        {
+          "raw": "2007 c.783 230",
+          "year": 2007,
+          "chapter": "783",
+          "section": "230"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "For the purpose of carrying into effect all or any of the powers granted to ports, the Port of Portland may from time to time issue and sell revenue bonds without the necessity of the electors of the port authorizing the same. Proceeds from the sale of such bonds may be used also to cover the costs incurred in issuing such bonds, and preliminary work incident to carrying out such purposes and powers, including but not limited to planning, engineering, inspection, accounting, fiscal, legal and trustee expenses, the cost of issuance of bonds, engraving, printing, advertising and other similar expenses, and to pay interest on the outstanding bonds issued for any project during the period of actual construction and for such period thereafter as the port may determine, and to establish, maintain or increase any reserves for debt service on the bonds and for working capital. Such revenue bonds shall not in any manner or to any extent be a general obligation of the port nor a charge upon any other revenues or property of the port not specifically pledged thereto. of this section, a port may authorize and issue revenue bonds under ORS 287A.150.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "In addition to the power granted by subsection",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 31,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html#section-778.150",
+      "identifier": "ORS 778.150",
+      "name": "Section 778.150",
+      "text": "Ordinance authorizing revenue bonds; content; special trust funds; trustees; enforcement. (1) Revenue bonds issued under ORS 778.145 (1) shall be authorized at a meeting by ordinance of the board. The ordinance may provide for the creation of special trust funds and may authorize the appointment of a trustee to administer the same, and may obligate the Port of Portland to set aside and pay into a special trust fund for the purpose of securing revenue bonds, all or any portion of its revenues, regardless of the source from which derived, then existing or which thereafter come into existence, not otherwise pledged or committed for other purposes. The board may, in addition thereto, pledge or mortgage for the payment of the principal of and interest on and premium, if any, of any issue of such bonds any property of the port not pledged for other purposes. Notice that action upon the bond ordinance will be taken at the designated meeting of the board, shall be given for a period of not less than two consecutive weeks, prior to such meeting, by publication thereof once each week in a newspaper of general circulation, published within the corporate boundaries of the port or, if there be no such newspaper, by posting such notice for a period of not less than two weeks in three public places in the port. (2) The money in any special trust fund created by an ordinance authorizing an issue of revenue bonds shall be used solely for the purposes provided therefor by the ordinance. (3) The ordinance may obligate the port, and the port shall have power to fix, levy and collect such rates, rentals, fees and other charges for the use and services of all or any of its facilities, which revenues may be pledged to the payment of the principal of and interest on and premium, if any, of the revenue bonds or any of them and if so pledged shall be sufficient to produce revenues, along with other lawfully available funds, adequate to pay the costs of the operation, maintenance and repair of any or all port properties; to pay or provide for the payment of the principal of and interest on, and premium, if any, of such revenue bonds or any of them, including any reserves for such payment; and to produce such additional amount of revenues therefrom as the port may covenant with the holders of such revenue bonds. (4) The ordinance may provide that in the event the money in a special trust fund is insufficient to pay the revenue bonds to be paid out of the fund, such revenue bonds shall be payable out of any part or all of other nonpledged revenues of the port. Whenever all bonds and expenses thereof have been paid so that no charge remains upon such special fund, the board may, by ordinance, transfer any balance remaining in such fund to its general fund, discharge the trustee, if any, and dissolve the special fund. Any trustee authorized to administer the fund, may, subject to approval of the board, invest and reinvest moneys in the special fund in any security or securities in which the State of Oregon may by law invest. (5) If the board fails to set aside and pay revenues into a special trust fund as required by the ordinance authorizing the issuance and sale of the bonds secured by the fund, a holder of any of such bonds may bring suit against the port to compel compliance with the provisions of the ordinance in the circuit court of the county in which the port has its principal office.",
+      "history_citation_blocks": [
+        "1971 c.546 3; 2007 c.783 230a"
+      ],
+      "history_citations": [
+        {
+          "raw": "1971 c.546 3",
+          "year": 1971,
+          "chapter": "546",
+          "section": "3"
+        },
+        {
+          "raw": "2007 c.783 230a",
+          "year": 2007,
+          "chapter": "783",
+          "section": "230a"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Revenue bonds issued under ORS 778.145 shall be authorized at a meeting by ordinance of the board. The ordinance may provide for the creation of special trust funds and may authorize the appointment of a trustee to administer the same, and may obligate the Port of Portland to set aside and pay into a special trust fund for the purpose of securing revenue bonds, all or any portion of its revenues, regardless of the source from which derived, then existing or which thereafter come into existence, not otherwise pledged or committed for other purposes. The board may, in addition thereto, pledge or mortgage for the payment of the principal of and interest on and premium, if any, of any issue of such bonds any property of the port not pledged for other purposes. Notice that action upon the bond ordinance will be taken at the designated meeting of the board, shall be given for a period of not less than two consecutive weeks, prior to such meeting, by publication thereof once each week in a newspaper of general circulation, published within the corporate boundaries of the port or, if there be no such newspaper, by posting such notice for a period of not less than two weeks in three public places in the port.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The money in any special trust fund created by an ordinance authorizing an issue of revenue bonds shall be used solely for the purposes provided therefor by the ordinance.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The ordinance may obligate the port, and the port shall have power to fix, levy and collect such rates, rentals, fees and other charges for the use and services of all or any of its facilities, which revenues may be pledged to the payment of the principal of and interest on and premium, if any, of the revenue bonds or any of them and if so pledged shall be sufficient to produce revenues, along with other lawfully available funds, adequate to pay the costs of the operation, maintenance and repair of any or all port properties; to pay or provide for the payment of the principal of and interest on, and premium, if any, of such revenue bonds or any of them, including any reserves for such payment; and to produce such additional amount of revenues therefrom as the port may covenant with the holders of such revenue bonds.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "The ordinance may provide that in the event the money in a special trust fund is insufficient to pay the revenue bonds to be paid out of the fund, such revenue bonds shall be payable out of any part or all of other nonpledged revenues of the port. Whenever all bonds and expenses thereof have been paid so that no charge remains upon such special fund, the board may, by ordinance, transfer any balance remaining in such fund to its general fund, discharge the trustee, if any, and dissolve the special fund. Any trustee authorized to administer the fund, may, subject to approval of the board, invest and reinvest moneys in the special fund in any security or securities in which the State of Oregon may by law invest.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "If the board fails to set aside and pay revenues into a special trust fund as required by the ordinance authorizing the issuance and sale of the bonds secured by the fund, a holder of any of such bonds may bring suit against the port to compel compliance with the provisions of the ordinance in the circuit court of the county in which the port has its principal office.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 32,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html#section-778.155",
+      "identifier": "ORS 778.155",
+      "name": "Section 778.155",
+      "text": "Form and content of bonds. The revenue bonds issued and sold under ORS 778.145 (1): (1) Shall be deemed to be for all purposes negotiable instruments, subject only to the provisions of the bonds for registration, and need not comply with requirements of the Uniform Commercial Code. (2) May be issued in one or more series, bear such date or dates, mature at such times and in such amounts, be in such denomination or denominations, be payable at a designated place or places within or without the State of Oregon or at the fiscal agency of the State of Oregon, be equally and ratably secured without priority or be entitled or subject to such priorities on all or any portion of the revenues of the Port of Portland, and, notwithstanding any other provision of law to the contrary, bear such rate or rates of interest either fixed or variable under a formula fixed at the time of issuance, and contain such other terms, conditions and covenants as the board may authorize. (3) Shall contain a recital that principal of and interest on and premium, if any, on the revenue bonds are payable solely out of revenues and property of the port pledged to the payment thereof by the ordinance of the board authorizing the issue of which the bonds are a part. (4) May contain covenants of the port to protect and safeguard the security and rights of holders of any such bonds and such other terms and conditions, in conformity with ORS 778.145 to 778.175, which the board in its discretion determines are necessary or desirable to protect the port or increase the marketability of the bonds. ORS 778.145 to 778.175 and any such ordinance which constitutes a contract with the holders of the bonds, and the provisions thereof shall be enforceable by any holder or any number of holders of the bonds, as the board may determine. (5) Shall be issued under ORS chapter 287A. However, the requirements of ORS 287A.150 do not apply to revenue bonds issued under this section.",
+      "history_citation_blocks": [
+        "1971 c.546 4; 1981 c.879 5; 1997 c.171 27; 2007 c.783 231"
+      ],
+      "history_citations": [
+        {
+          "raw": "1971 c.546 4",
+          "year": 1971,
+          "chapter": "546",
+          "section": "4"
+        },
+        {
+          "raw": "1981 c.879 5",
+          "year": 1981,
+          "chapter": "879",
+          "section": "5"
+        },
+        {
+          "raw": "1997 c.171 27",
+          "year": 1997,
+          "chapter": "171",
+          "section": "27"
+        },
+        {
+          "raw": "2007 c.783 231",
+          "year": 2007,
+          "chapter": "783",
+          "section": "231"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": ": Shall be deemed to be for all purposes negotiable instruments, subject only to the provisions of the bonds for registration, and need not comply with requirements of the Uniform Commercial Code.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "May be issued in one or more series, bear such date or dates, mature at such times and in such amounts, be in such denomination or denominations, be payable at a designated place or places within or without the State of Oregon or at the fiscal agency of the State of Oregon, be equally and ratably secured without priority or be entitled or subject to such priorities on all or any portion of the revenues of the Port of Portland, and, notwithstanding any other provision of law to the contrary, bear such rate or rates of interest either fixed or variable under a formula fixed at the time of issuance, and contain such other terms, conditions and covenants as the board may authorize.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Shall contain a recital that principal of and interest on and premium, if any, on the revenue bonds are payable solely out of revenues and property of the port pledged to the payment thereof by the ordinance of the board authorizing the issue of which the bonds are a part.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "May contain covenants of the port to protect and safeguard the security and rights of holders of any such bonds and such other terms and conditions, in conformity with ORS 778.145 to 778.175, which the board in its discretion determines are necessary or desirable to protect the port or increase the marketability of the bonds. ORS 778.145 to 778.175 and any such ordinance which constitutes a contract with the holders of the bonds, and the provisions thereof shall be enforceable by any holder or any number of holders of the bonds, as the board may determine.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "Shall be issued under ORS chapter 287A. However, the requirements of ORS 287A.150 do not apply to revenue bonds issued under this section.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 33,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html#section-778.160",
+      "identifier": "ORS 778.160",
+      "name": "Section 778.160",
+      "text": "Borrowing in anticipation of bond sale; bond anticipation notes; content; sale. (1) The Port of Portland shall have the power, at any time and from time to time after the issuance of bonds under ORS 778.145 to 778.175 have been authorized, to borrow money for the purposes for which such bonds are to be issued in anticipation of the receipt of the proceeds of the sale of such bonds and within the authorized maximum amount of such bond issue. (2) Bond anticipation notes shall be issued for all moneys so borrowed under the provisions of this section. Such notes may be issued for a period not exceeding one year and may be renewed from time to time for periods of not exceeding one year, but each such note, including renewals, shall mature and be paid not later than the fifth anniversary of the date the original note was issued. Such notes shall be authorized by ordinance of the board and shall be in such denomination or denominations, shall bear interest at such rate or rates approved by the board, shall be in such form and shall be executed in such manner, all as the board shall prescribe. Such notes may be sold at public or private sale in the manner and at such price or prices as the board shall determine, provided that if such notes be renewal notes, they may be exchanged for notes then outstanding on such terms as the board shall determine.",
+      "history_citation_blocks": [
+        "1971 c.546 5"
+      ],
+      "history_citations": [
+        {
+          "raw": "1971 c.546 5",
+          "year": 1971,
+          "chapter": "546",
+          "section": "5"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The Port of Portland shall have the power, at any time and from time to time after the issuance of bonds under ORS 778.145 to 778.175 have been authorized, to borrow money for the purposes for which such bonds are to be issued in anticipation of the receipt of the proceeds of the sale of such bonds and within the authorized maximum amount of such bond issue.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Bond anticipation notes shall be issued for all moneys so borrowed under the provisions of this section. Such notes may be issued for a period not exceeding one year and may be renewed from time to time for periods of not exceeding one year, but each such note, including renewals, shall mature and be paid not later than the fifth anniversary of the date the original note was issued. Such notes shall be authorized by ordinance of the board and shall be in such denomination or denominations, shall bear interest at such rate or rates approved by the board, shall be in such form and shall be executed in such manner, all as the board shall prescribe. Such notes may be sold at public or private sale in the manner and at such price or prices as the board shall determine, provided that if such notes be renewal notes, they may be exchanged for notes then outstanding on such terms as the board shall determine.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 34,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html#section-778.165",
+      "identifier": "ORS 778.165",
+      "name": "Section 778.165",
+      "text": "Sale of revenue bonds. The board may from time to time sell revenue bonds authorized to be issued and sold pursuant to ORS 778.145 to 778.175, at public or private sale, in the manner and at such price or prices as it shall determine.",
+      "history_citation_blocks": [
+        "1971 c.546 6"
+      ],
+      "history_citations": [
+        {
+          "raw": "1971 c.546 6",
+          "year": 1971,
+          "chapter": "546",
+          "section": "6"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 35,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html#section-778.170",
+      "identifier": "ORS 778.170",
+      "name": "Section 778.170",
+      "text": "Bonds as obligations of political subdivision. Revenue bonds including refunding revenue bonds issued under ORS 778.145 to 778.175 shall be considered to be bonds or obligations of a political subdivision of the State of Oregon for the purposes of all laws of the state.",
+      "history_citation_blocks": [
+        "1971 c.546 7"
+      ],
+      "history_citations": [
+        {
+          "raw": "1971 c.546 7",
+          "year": 1971,
+          "chapter": "546",
+          "section": "7"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 36,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html#section-778.175",
+      "identifier": "ORS 778.175",
+      "name": "Section 778.175",
+      "text": "Effect of ORS 778.145 to 778.175. ORS 778.145 to 778.175 is additional, alternative and supplemental authority for the Port of Portland and shall not abrogate any power, right or authority otherwise granted by law to the port. [1971 c.546 8] BOARD OF COMMISSIONERS OF THE PORT OF PORTLAND",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 37,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html#section-778.205",
+      "identifier": "ORS 778.205",
+      "name": "Section 778.205",
+      "text": "Board of commissioners; general powers. The power and authority given to the Port of Portland is vested in and shall be exercised by a board of nine commissioners. The board may exercise such powers, at regular or special meetings, as is usual and customary with similar bodies. [Amended by 1971 c.728 125]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 38,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html#section-778.210",
+      "identifier": "ORS 778.210",
+      "name": "Section 778.210",
+      "text": "Qualifications of members. (1) The board shall be composed of residents of the State of Oregon. The Governor shall make appointments to the board so as to assure that not fewer than two board members are residents of each county constituting the port district. (2) A person is eligible for appointment as a commissioner of the Port of Portland who at the time of the appointment is a citizen of the United States and of the State of Oregon, and who has for one year immediately preceding appointment resided within the State of Oregon.",
+      "history_citation_blocks": [
+        "Amended by 1961 c.469 1; 1971 c.403 17; 1971 c.728 126; 1973 c.178 3; 1987 c.179 1; 1997 c.461 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1961 c.469 1"
+        },
+        {
+          "raw": "1971 c.403 17",
+          "year": 1971,
+          "chapter": "403",
+          "section": "17"
+        },
+        {
+          "raw": "1971 c.728 126",
+          "year": 1971,
+          "chapter": "728",
+          "section": "126"
+        },
+        {
+          "raw": "1973 c.178 3",
+          "year": 1973,
+          "chapter": "178",
+          "section": "3"
+        },
+        {
+          "raw": "1987 c.179 1",
+          "year": 1987,
+          "chapter": "179",
+          "section": "1"
+        },
+        {
+          "raw": "1997 c.461 1",
+          "year": 1997,
+          "chapter": "461",
+          "section": "1"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The board shall be composed of residents of the State of Oregon. The Governor shall make appointments to the board so as to assure that not fewer than two board members are residents of each county constituting the port district.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "A person is eligible for appointment as a commissioner of the Port of Portland who at the time of the appointment is a citizen of the United States and of the State of Oregon, and who has for one year immediately preceding appointment resided within the State of Oregon.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 39,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html#section-778.215",
+      "identifier": "ORS 778.215",
+      "name": "Section 778.215",
+      "text": "Appointment; confirmation; vacancies. (1) Upon the expiration of the term of a commissioner, a successor shall be appointed by the Governor, subject to confirmation as provided by ORS 171.562 and 171.565. Except as provided in ORS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Upon the expiration of the term of a commissioner, a successor shall be appointed by the Governor, subject to confirmation as provided by ORS 171.562 and 171.565. Except as provided in ORS",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 40,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html#section-778.220",
+      "identifier": "ORS 778.220",
+      "name": "Section 778.220",
+      "text": "Removal. If the Governor is at any time satisfied that a commissioner has been guilty of malfeasance in office, the Governor may file with the Secretary of State a written statement of the acts of the commissioner constituting the malfeasance. Thereupon the Secretary of State shall transmit a copy of the statement to the commissioner named and another copy to the clerk of the Circuit Court for Multnomah County. After the expiration of 10 days following the delivery of the statement to the commissioner a hearing shall be held before the court, of which hearing the commissioner is entitled to at least five days notice. If upon the hearing the court determines that the commissioner has been guilty of malfeasance in office, written findings to that effect shall be made and filed by the court. Thereupon the commissioner shall be considered removed from office. The vacancy so created shall be filled as provided in ORS 778.215. [Amended by 1971 c.728 128]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 41,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html#section-778.225",
+      "identifier": "ORS 778.225",
+      "name": "Section 778.225",
+      "text": "Meetings; rules; quorum; executive committee. (1) The board shall hold at least one regular meeting in each month on a day to be fixed by it, and may hold special meetings as provided by the rules of the board. At all regular and special meetings a majority of the commissioners then members of the board constitutes a quorum. (2) The board may create an executive committee of which every commissioner shall be a member and of which a number less than a majority, as the board may determine, may constitute a quorum for the transaction of business. The committee may hold its meetings under such rules as the board may prescribe. However, the executive committee has no power except as a committee and only as expressly conferred upon it by the rules of the board. In no event shall the committee exercise the general powers of the board. The board has no power to appoint or delegate any part of its power or authority to any committee except the executive committee. [Amended by 1971 c.728 129]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The board shall hold at least one regular meeting in each month on a day to be fixed by it, and may hold special meetings as provided by the rules of the board. At all regular and special meetings a majority of the commissioners then members of the board constitutes a quorum.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The board may create an executive committee of which every commissioner shall be a member and of which a number less than a majority, as the board may determine, may constitute a quorum for the transaction of business. The committee may hold its meetings under such rules as the board may prescribe. However, the executive committee has no power except as a committee and only as expressly conferred upon it by the rules of the board. In no event shall the committee exercise the general powers of the board. The board has no power to appoint or delegate any part of its power or authority to any committee except the executive committee. [Amended by 1971 c.728 129]",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 42,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html#section-778.230",
+      "identifier": "ORS 778.230",
+      "name": "Section 778.230",
+      "text": "Board officers. (1) The Governor shall designate one member of the board as president of the board, who shall hold that office until removed from it by the Governor. The president of the board shall have the powers and perform the duties usual to the office of president. (2) The president of the board shall designate from the other members of the board a vice president, treasurer and secretary of the board, who shall hold those offices until removed from them by the president. Each officer shall have the powers and perform the duties usual to the respective offices.",
+      "history_citation_blocks": [
+        "Amended by 1969 c.345 19; 1971 c.728 130; 1987 c.51 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1969 c.345 19"
+        },
+        {
+          "raw": "1971 c.728 130",
+          "year": 1971,
+          "chapter": "728",
+          "section": "130"
+        },
+        {
+          "raw": "1987 c.51 1",
+          "year": 1987,
+          "chapter": "51",
+          "section": "1"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The Governor shall designate one member of the board as president of the board, who shall hold that office until removed from it by the Governor. The president of the board shall have the powers and perform the duties usual to the office of president.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The president of the board shall designate from the other members of the board a vice president, treasurer and secretary of the board, who shall hold those offices until removed from them by the president. Each officer shall have the powers and perform the duties usual to the respective offices.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 43,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html#section-778.235",
+      "identifier": "ORS 778.235",
+      "name": "Section 778.235",
+      "text": "Causes of vacancies; leaves of absence. (1) If a commissioner appointed pursuant to ORS 778.215 refuses to serve, ceases to have the qualifications required by ORS 778.210 (1) or fails to attend for the period of 60 successive days any of the regular or special meetings of the board regularly and duly called and held, the commissioners place on the board is vacant. (2) The board may grant a leave of absence not exceeding three months to a commissioner unable to attend meetings of the board by reason of illness or continued absence from the City of Portland.",
+      "history_citation_blocks": [
+        "Amended by 1961 c.469 2; 1971 c.728 131"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1961 c.469 2"
+        },
+        {
+          "raw": "1971 c.728 131",
+          "year": 1971,
+          "chapter": "728",
+          "section": "131"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "If a commissioner appointed pursuant to ORS 778.215 refuses to serve, ceases to have the qualifications required by ORS 778.210 or fails to attend for the period of 60 successive days any of the regular or special meetings of the board regularly and duly called and held, the commissioners place on the board is vacant.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The board may grant a leave of absence not exceeding three months to a commissioner unable to attend meetings of the board by reason of illness or continued absence from the City of Portland.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 44,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html#section-778.240",
+      "identifier": "ORS 778.240",
+      "name": "Section 778.240",
+      "text": "[Amended by 1971 c.728 132; repealed by 2001 c.883 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 45,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html#section-778.245",
+      "identifier": "ORS 778.245",
+      "name": "Section 778.245",
+      "text": "",
+      "history_citation_blocks": [
+        "Amended by 1961 c.673 1; 1971 c.728 133; repealed by 1975 c.771 33"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1961 c.673 1"
+        },
+        {
+          "raw": "1971 c.728 133",
+          "year": 1971,
+          "chapter": "728",
+          "section": "133"
+        },
+        {
+          "raw": "repealed by 1975 c.771 33"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 46,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html#section-778.250",
+      "identifier": "ORS 778.250",
+      "name": "Section 778.250",
+      "text": "[Repealed by 1971 c.728 138]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 47,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html#section-778.255",
+      "identifier": "ORS 778.255",
+      "name": "Section 778.255",
+      "text": "Enactment of port ordinances; effective date; passage; effect of referendum. (1) The board may legislate with respect to the internal affairs of the Port of Portland by the adoption of ordinances. Every ordinance enacted by the board shall be preceded by an enacting clause substantially as follows: Be It Enacted by The Port of Portland. (2) Except as otherwise provided by this section, in order to be effective, all ordinances require the affirmative vote of a majority of the commissioners of the port at a meeting of the board duly and regularly held. (3) Ordinances making appropriations, the annual tax levy and emergency ordinances take effect immediately upon passage. All other ordinances are subject to the referendum and shall become effective 30 days after enacted, unless a later date is fixed therein, in which event they shall take effect at a later date, subject to the referendum. Except for ordinances making appropriations and the annual tax levy, when an ordinance is enacted, a notice containing a concise summary of the ordinance and the location within the port where a copy of the complete ordinance may be obtained without charge shall, within five days after passage of the ordinance, be published at least once in a newspaper of general circulation within the port. (4) Ordinances making appropriations and the annual tax levy and emergency ordinances shall be passed by an aye and nay vote. Emergency ordinances shall contain the statement that an emergency exists and specify with distinctness the facts and reasons constituting the emergency. The unanimous vote of all the commissioners present, and of not less than seven commissioners, is required to pass an emergency ordinance. (5) In case a referendum petition is filed against an ordinance or part thereof, the operation of the ordinance or part thereof shall be suspended pending the outcome of the referendum election.",
+      "history_citation_blocks": [
+        "Amended by 1971 c.170 1; 1971 c.728 134"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1971 c.170 1"
+        },
+        {
+          "raw": "1971 c.728 134",
+          "year": 1971,
+          "chapter": "728",
+          "section": "134"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The board may legislate with respect to the internal affairs of the Port of Portland by the adoption of ordinances. Every ordinance enacted by the board shall be preceded by an enacting clause substantially as follows: Be It Enacted by The Port of Portland.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Except as otherwise provided by this section, in order to be effective, all ordinances require the affirmative vote of a majority of the commissioners of the port at a meeting of the board duly and regularly held.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Ordinances making appropriations, the annual tax levy and emergency ordinances take effect immediately upon passage. All other ordinances are subject to the referendum and shall become effective 30 days after enacted, unless a later date is fixed therein, in which event they shall take effect at a later date, subject to the referendum. Except for ordinances making appropriations and the annual tax levy, when an ordinance is enacted, a notice containing a concise summary of the ordinance and the location within the port where a copy of the complete ordinance may be obtained without charge shall, within five days after passage of the ordinance, be published at least once in a newspaper of general circulation within the port.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Ordinances making appropriations and the annual tax levy and emergency ordinances shall be passed by an aye and nay vote. Emergency ordinances shall contain the statement that an emergency exists and specify with distinctness the facts and reasons constituting the emergency. The unanimous vote of all the commissioners present, and of not less than seven commissioners, is required to pass an emergency ordinance.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "In case a referendum petition is filed against an ordinance or part thereof, the operation of the ordinance or part thereof shall be suspended pending the outcome of the referendum election.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 48,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html#section-778.260",
+      "identifier": "ORS 778.260",
+      "name": "Section 778.260",
+      "text": "Ordinances for regulating use of port properties; port peace officers; jurisdiction. (1) The board of the Port of Portland in accordance with ORS 198.510 to 198.600 may by ordinance adopt, amend or repeal regulations as convenient or necessary to provide for policing or regulating the use of properties owned, operated, maintained or controlled by the port and of facilities located at or in conjunction with these properties. (2) The port may appoint peace officers who have all the powers and authority given by statute to peace officers of this state. (3) This section does not limit the authority of a state, county or municipal peace officer to enforce state laws and city and county ordinances at properties owned, operated, maintained or controlled by the port and at facilities located at or in conjunction with these properties.",
+      "history_citation_blocks": [
+        "1955 c.425 1,2,3; 1971 c.268 22; 1971 c.728 135; 1979 c.102 1; 2009 c.299 2"
+      ],
+      "history_citations": [
+        {
+          "raw": "1955 c.425 1,2,3"
+        },
+        {
+          "raw": "1971 c.268 22",
+          "year": 1971,
+          "chapter": "268",
+          "section": "22"
+        },
+        {
+          "raw": "1971 c.728 135",
+          "year": 1971,
+          "chapter": "728",
+          "section": "135"
+        },
+        {
+          "raw": "1979 c.102 1",
+          "year": 1979,
+          "chapter": "102",
+          "section": "1"
+        },
+        {
+          "raw": "2009 c.299 2",
+          "year": 2009,
+          "chapter": "299",
+          "section": "2"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The board of the Port of Portland in accordance with ORS 198.510 to 198.600 may by ordinance adopt, amend or repeal regulations as convenient or necessary to provide for policing or regulating the use of properties owned, operated, maintained or controlled by the port and of facilities located at or in conjunction with these properties.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The port may appoint peace officers who have all the powers and authority given by statute to peace officers of this state.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "This section does not limit the authority of a state, county or municipal peace officer to enforce state laws and city and county ordinances at properties owned, operated, maintained or controlled by the port and at facilities located at or in conjunction with these properties.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 49,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html#section-778.270",
+      "identifier": "ORS 778.270",
+      "name": "Section 778.270",
+      "text": "Initiative and referendum procedures. (1) Except as provided in this section, the electors of the Port of Portland may exercise the powers of the initiative and referendum, with reference to ordinances of the board, in accordance with ORS 255.135 to 255.205. (2) A referendum petition shall be filed not more than 30 days after the date the ordinance is adopted.",
+      "history_citation_blocks": [
+        "1973 c.178 5; 1983 c.350 327"
+      ],
+      "history_citations": [
+        {
+          "raw": "1973 c.178 5",
+          "year": 1973,
+          "chapter": "178",
+          "section": "5"
+        },
+        {
+          "raw": "1983 c.350 327",
+          "year": 1983,
+          "chapter": "350",
+          "section": "327"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Except as provided in this section, the electors of the Port of Portland may exercise the powers of the initiative and referendum, with reference to ordinances of the board, in accordance with ORS 255.135 to 255.205.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "A referendum petition shall be filed not more than 30 days after the date the ordinance is adopted.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 50,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html#section-778.405",
+      "identifier": "ORS 778.405",
+      "name": "Section 778.405",
+      "text": "[Repealed by 1971 c.728 138]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 51,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html#section-778.410",
+      "identifier": "ORS 778.410",
+      "name": "Section 778.410",
+      "text": "[Repealed by 1971 c.728 138]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 52,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html#section-778.415",
+      "identifier": "ORS 778.415",
+      "name": "Section 778.415",
+      "text": "[Repealed by 1971 c.728 138]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 53,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html#section-778.420",
+      "identifier": "ORS 778.420",
+      "name": "Section 778.420",
+      "text": "[Repealed by 1971 c.728 138]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 54,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html#section-778.425",
+      "identifier": "ORS 778.425",
+      "name": "Section 778.425",
+      "text": "[Repealed by 1971 c.728 138]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 55,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html#section-778.430",
+      "identifier": "ORS 778.430",
+      "name": "Section 778.430",
+      "text": "[Repealed by 1971 c.728 138]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 56,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html#section-778.435",
+      "identifier": "ORS 778.435",
+      "name": "Section 778.435",
+      "text": "[Repealed by 1971 c.728 138]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 57,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html#section-778.440",
+      "identifier": "ORS 778.440",
+      "name": "Section 778.440",
+      "text": "[Amended by 1963 c.9 41; repealed by 1971 c.728 138]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 58,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html#section-778.445",
+      "identifier": "ORS 778.445",
+      "name": "Section 778.445",
+      "text": "[Amended by 1971 c.647 144; repealed by 1971 c.728 138]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 59,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html#section-778.450",
+      "identifier": "ORS 778.450",
+      "name": "Section 778.450",
+      "text": "[Amended by 1971 c.647 145; repealed by 1971 c.728 138]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 60,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html#section-778.455",
+      "identifier": "ORS 778.455",
+      "name": "Section 778.455",
+      "text": "[Repealed by 1971 c.728 138]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 61,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html#section-778.460",
+      "identifier": "ORS 778.460",
+      "name": "Section 778.460",
+      "text": "[Repealed by 1971 c.728 138]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 62,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html#section-778.465",
+      "identifier": "ORS 778.465",
+      "name": "Section 778.465",
+      "text": "[Amended by 1963 c.9 42; repealed by 1971 c.728 138]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 63,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html#section-778.470",
+      "identifier": "ORS 778.470",
+      "name": "Section 778.470",
+      "text": "[Repealed by 1971 c.728 138]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 64,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html#section-778.475",
+      "identifier": "ORS 778.475",
+      "name": "Section 778.475",
+      "text": "[Repealed by 1971 c.728 138]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 65,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html#section-778.480",
+      "identifier": "ORS 778.480",
+      "name": "Section 778.480",
+      "text": "[Repealed by 1971 c.728 138] PENALTIES",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 66,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html#section-778.990",
+      "identifier": "ORS 778.990",
+      "name": "Section 778.990",
+      "text": "Penalties. Any person who violates an ordinance adopted by the board of the Port of Portland under ORS 778.085 or 778.260 commits a Class A misdemeanor. [1971 c.728 136; 2011 c.597 302] CHAPTER 779 [Reserved for expansion] _______________",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 67,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors778.html"
+    }
+  ],
+  "alternateName": "Port of Portland",
+  "legislationDate": "2023"
+}

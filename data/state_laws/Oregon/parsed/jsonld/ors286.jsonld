@@ -1,0 +1,2371 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "orlaw": "https://www.oregonlegislature.gov/ors#"
+  },
+  "@type": "Legislation",
+  "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html",
+  "identifier": "ORS Chapter 286",
+  "name": "ORS Chapter 286 — (Former Provisions)",
+  "legislationType": "Statute",
+  "jurisdiction": "US-OR",
+  "isPartOf": {
+    "@type": "CreativeWork",
+    "identifier": "ORS",
+    "name": "Oregon Revised Statutes",
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors"
+  },
+  "dateModified": "2026-02-25T08:11:20.754901+00:00",
+  "source_file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors286.html",
+  "hasPart": [
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.010",
+      "identifier": "ORS 286.010",
+      "name": "Section 286.010",
+      "text": "",
+      "history_citation_blocks": [
+        "Amended by 1981 c.660 10; 1987 c.869 3; repealed by 2007 c.783 234"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1981 c.660 10"
+        },
+        {
+          "raw": "1987 c.869 3",
+          "year": 1987,
+          "chapter": "869",
+          "section": "3"
+        },
+        {
+          "raw": "repealed by 2007 c.783 234"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 1,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.020",
+      "identifier": "ORS 286.020",
+      "name": "Section 286.020",
+      "text": "",
+      "history_citation_blocks": [
+        "Amended by 1981 c.660 11; 1991 c.139 1; 1999 c.1043 4; repealed by 2007 c.783 234"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1981 c.660 11"
+        },
+        {
+          "raw": "1991 c.139 1",
+          "year": 1991,
+          "chapter": "139",
+          "section": "1"
+        },
+        {
+          "raw": "1999 c.1043 4",
+          "year": 1999,
+          "chapter": "1043",
+          "section": "4"
+        },
+        {
+          "raw": "repealed by 2007 c.783 234"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 2,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.025",
+      "identifier": "ORS 286.025",
+      "name": "Section 286.025",
+      "text": "",
+      "history_citation_blocks": [
+        "1981 c.660 14; 1983 c.44 3; 1999 c.1043 5; 2007 c.783 109a; renumbered 286A.016 in 2007"
+      ],
+      "history_citations": [
+        {
+          "raw": "1981 c.660 14",
+          "year": 1981,
+          "chapter": "660",
+          "section": "14"
+        },
+        {
+          "raw": "1983 c.44 3",
+          "year": 1983,
+          "chapter": "44",
+          "section": "3"
+        },
+        {
+          "raw": "1999 c.1043 5",
+          "year": 1999,
+          "chapter": "1043",
+          "section": "5"
+        },
+        {
+          "raw": "2007 c.783 109a",
+          "year": 2007,
+          "chapter": "783",
+          "section": "109a"
+        },
+        {
+          "raw": "renumbered 286A.016 in 2007"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 3,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.030",
+      "identifier": "ORS 286.030",
+      "name": "Section 286.030",
+      "text": "[Repealed by 1981 c.660 18]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 4,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.031",
+      "identifier": "ORS 286.031",
+      "name": "Section 286.031",
+      "text": "",
+      "history_citation_blocks": [
+        "1981 c.660 1; 1983 c.519 1; 1987 c.869 4; repealed by 2007 c.783 234"
+      ],
+      "history_citations": [
+        {
+          "raw": "1981 c.660 1",
+          "year": 1981,
+          "chapter": "660",
+          "section": "1"
+        },
+        {
+          "raw": "1983 c.519 1",
+          "year": 1983,
+          "chapter": "519",
+          "section": "1"
+        },
+        {
+          "raw": "1987 c.869 4",
+          "year": 1987,
+          "chapter": "869",
+          "section": "4"
+        },
+        {
+          "raw": "repealed by 2007 c.783 234"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 5,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.033",
+      "identifier": "ORS 286.033",
+      "name": "Section 286.033",
+      "text": "",
+      "history_citation_blocks": [
+        "1981 c.660 2; repealed by 2007 c.783 234"
+      ],
+      "history_citations": [
+        {
+          "raw": "1981 c.660 2",
+          "year": 1981,
+          "chapter": "660",
+          "section": "2"
+        },
+        {
+          "raw": "repealed by 2007 c.783 234"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 6,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.036",
+      "identifier": "ORS 286.036",
+      "name": "Section 286.036",
+      "text": "",
+      "history_citation_blocks": [
+        "1981 c.660 8; 2001 c.536 4; repealed by 2007 c.783 234"
+      ],
+      "history_citations": [
+        {
+          "raw": "1981 c.660 8",
+          "year": 1981,
+          "chapter": "660",
+          "section": "8"
+        },
+        {
+          "raw": "2001 c.536 4",
+          "year": 2001,
+          "chapter": "536",
+          "section": "4"
+        },
+        {
+          "raw": "repealed by 2007 c.783 234"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 7,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.038",
+      "identifier": "ORS 286.038",
+      "name": "Section 286.038",
+      "text": "",
+      "history_citation_blocks": [
+        "1987 c.308 2,3; 1989 c.681 8; repealed by 2007 c.783 234"
+      ],
+      "history_citations": [
+        {
+          "raw": "1987 c.308 2,3"
+        },
+        {
+          "raw": "1989 c.681 8",
+          "year": 1989,
+          "chapter": "681",
+          "section": "8"
+        },
+        {
+          "raw": "repealed by 2007 c.783 234"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 8,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.040",
+      "identifier": "ORS 286.040",
+      "name": "Section 286.040",
+      "text": "[Repealed by 1981 c.660 18]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 9,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.041",
+      "identifier": "ORS 286.041",
+      "name": "Section 286.041",
+      "text": "",
+      "history_citation_blocks": [
+        "1981 c.660 3; repealed by 2007 c.783 234"
+      ],
+      "history_citations": [
+        {
+          "raw": "1981 c.660 3",
+          "year": 1981,
+          "chapter": "660",
+          "section": "3"
+        },
+        {
+          "raw": "repealed by 2007 c.783 234"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 10,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.046",
+      "identifier": "ORS 286.046",
+      "name": "Section 286.046",
+      "text": "",
+      "history_citation_blocks": [
+        "1981 c.660 9; repealed by 1991 c.140 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "1981 c.660 9",
+          "year": 1981,
+          "chapter": "660",
+          "section": "9"
+        },
+        {
+          "raw": "repealed by 1991 c.140 1"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 11,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.050",
+      "identifier": "ORS 286.050",
+      "name": "Section 286.050",
+      "text": "",
+      "history_citation_blocks": [
+        "Amended by 1959 c.231 1; 1979 c.130 1; repealed by 1981 c.660 18"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1959 c.231 1"
+        },
+        {
+          "raw": "1979 c.130 1",
+          "year": 1979,
+          "chapter": "130",
+          "section": "1"
+        },
+        {
+          "raw": "repealed by 1981 c.660 18"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 12,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.051",
+      "identifier": "ORS 286.051",
+      "name": "Section 286.051",
+      "text": "",
+      "history_citation_blocks": [
+        "1981 c.660 4; 1987 c.869 5; 1991 c.67 71; 1991 c.575 7; 1997 c.171 8; 2003 c.201 36; repealed by 2007 c.783 234"
+      ],
+      "history_citations": [
+        {
+          "raw": "1981 c.660 4",
+          "year": 1981,
+          "chapter": "660",
+          "section": "4"
+        },
+        {
+          "raw": "1987 c.869 5",
+          "year": 1987,
+          "chapter": "869",
+          "section": "5"
+        },
+        {
+          "raw": "1991 c.67 71",
+          "year": 1991,
+          "chapter": "67",
+          "section": "71"
+        },
+        {
+          "raw": "1991 c.575 7",
+          "year": 1991,
+          "chapter": "575",
+          "section": "7"
+        },
+        {
+          "raw": "1997 c.171 8",
+          "year": 1997,
+          "chapter": "171",
+          "section": "8"
+        },
+        {
+          "raw": "2003 c.201 36",
+          "year": 2003,
+          "chapter": "201",
+          "section": "36"
+        },
+        {
+          "raw": "repealed by 2007 c.783 234"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 13,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.056",
+      "identifier": "ORS 286.056",
+      "name": "Section 286.056",
+      "text": "",
+      "history_citation_blocks": [
+        "1981 c.660 5; 1987 c.869 6; 1989 c.681 7; 1997 c.66 1; 1999 c.44 14; repealed by 2007 c.783 234"
+      ],
+      "history_citations": [
+        {
+          "raw": "1981 c.660 5",
+          "year": 1981,
+          "chapter": "660",
+          "section": "5"
+        },
+        {
+          "raw": "1987 c.869 6",
+          "year": 1987,
+          "chapter": "869",
+          "section": "6"
+        },
+        {
+          "raw": "1989 c.681 7",
+          "year": 1989,
+          "chapter": "681",
+          "section": "7"
+        },
+        {
+          "raw": "1997 c.66 1",
+          "year": 1997,
+          "chapter": "66",
+          "section": "1"
+        },
+        {
+          "raw": "1999 c.44 14",
+          "year": 1999,
+          "chapter": "44",
+          "section": "14"
+        },
+        {
+          "raw": "repealed by 2007 c.783 234"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 14,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.058",
+      "identifier": "ORS 286.058",
+      "name": "Section 286.058",
+      "text": "",
+      "history_citation_blocks": [
+        "1981 c.660 6; 1999 c.44 15; 2001 c.104 99; repealed by 2007 c.783 234"
+      ],
+      "history_citations": [
+        {
+          "raw": "1981 c.660 6",
+          "year": 1981,
+          "chapter": "660",
+          "section": "6"
+        },
+        {
+          "raw": "1999 c.44 15",
+          "year": 1999,
+          "chapter": "44",
+          "section": "15"
+        },
+        {
+          "raw": "2001 c.104 99",
+          "year": 2001,
+          "chapter": "104",
+          "section": "99"
+        },
+        {
+          "raw": "repealed by 2007 c.783 234"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 15,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.060",
+      "identifier": "ORS 286.060",
+      "name": "Section 286.060",
+      "text": "",
+      "history_citation_blocks": [
+        "1961 c.582 1; 1981 c.23 1; 1981 c.94 17; repealed by 1981 c.660 18"
+      ],
+      "history_citations": [
+        {
+          "raw": "1961 c.582 1",
+          "year": 1961,
+          "chapter": "582",
+          "section": "1"
+        },
+        {
+          "raw": "1981 c.23 1",
+          "year": 1981,
+          "chapter": "23",
+          "section": "1"
+        },
+        {
+          "raw": "1981 c.94 17",
+          "year": 1981,
+          "chapter": "94",
+          "section": "17"
+        },
+        {
+          "raw": "repealed by 1981 c.660 18"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 16,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.061",
+      "identifier": "ORS 286.061",
+      "name": "Section 286.061",
+      "text": "",
+      "history_citation_blocks": [
+        "1981 c.660 7; 1985 c.565 44; 1987 c.273 1; 1991 c.67 72; 2003 c.195 11; 2003 c.201 37; repealed by 2007 c.783 234"
+      ],
+      "history_citations": [
+        {
+          "raw": "1981 c.660 7",
+          "year": 1981,
+          "chapter": "660",
+          "section": "7"
+        },
+        {
+          "raw": "1985 c.565 44",
+          "year": 1985,
+          "chapter": "565",
+          "section": "44"
+        },
+        {
+          "raw": "1987 c.273 1",
+          "year": 1987,
+          "chapter": "273",
+          "section": "1"
+        },
+        {
+          "raw": "1991 c.67 72",
+          "year": 1991,
+          "chapter": "67",
+          "section": "72"
+        },
+        {
+          "raw": "2003 c.195 11",
+          "year": 2003,
+          "chapter": "195",
+          "section": "11"
+        },
+        {
+          "raw": "2003 c.201 37",
+          "year": 2003,
+          "chapter": "201",
+          "section": "37"
+        },
+        {
+          "raw": "repealed by 2007 c.783 234"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 17,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.063",
+      "identifier": "ORS 286.063",
+      "name": "Section 286.063",
+      "text": "",
+      "history_citation_blocks": [
+        "2001 c.602 2; 2007 c.783 109b; renumbered 286A.160 in 2007"
+      ],
+      "history_citations": [
+        {
+          "raw": "2001 c.602 2",
+          "year": 2001,
+          "chapter": "602",
+          "section": "2"
+        },
+        {
+          "raw": "2007 c.783 109b",
+          "year": 2007,
+          "chapter": "783",
+          "section": "109b"
+        },
+        {
+          "raw": "renumbered 286A.160 in 2007"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 18,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.066",
+      "identifier": "ORS 286.066",
+      "name": "Section 286.066",
+      "text": "",
+      "history_citation_blocks": [
+        "1981 c.660 15; 1995 c.247 3; 2001 c.536 5; 2003 c.794 243; repealed by 2007 c.783 234"
+      ],
+      "history_citations": [
+        {
+          "raw": "1981 c.660 15",
+          "year": 1981,
+          "chapter": "660",
+          "section": "15"
+        },
+        {
+          "raw": "1995 c.247 3",
+          "year": 1995,
+          "chapter": "247",
+          "section": "3"
+        },
+        {
+          "raw": "2001 c.536 5",
+          "year": 2001,
+          "chapter": "536",
+          "section": "5"
+        },
+        {
+          "raw": "2003 c.794 243",
+          "year": 2003,
+          "chapter": "794",
+          "section": "243"
+        },
+        {
+          "raw": "repealed by 2007 c.783 234"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 19,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.070",
+      "identifier": "ORS 286.070",
+      "name": "Section 286.070",
+      "text": "",
+      "history_citation_blocks": [
+        "1961 c.582 2; repealed by 1981 c.660 18"
+      ],
+      "history_citations": [
+        {
+          "raw": "1961 c.582 2",
+          "year": 1961,
+          "chapter": "582",
+          "section": "2"
+        },
+        {
+          "raw": "repealed by 1981 c.660 18"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 20,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.071",
+      "identifier": "ORS 286.071",
+      "name": "Section 286.071",
+      "text": "",
+      "history_citation_blocks": [
+        "1981 c.660 16; 1983 c.798 6; 2001 c.536 6; 2003 c.794 244; repealed by 2007 c.783 234"
+      ],
+      "history_citations": [
+        {
+          "raw": "1981 c.660 16",
+          "year": 1981,
+          "chapter": "660",
+          "section": "16"
+        },
+        {
+          "raw": "1983 c.798 6",
+          "year": 1983,
+          "chapter": "798",
+          "section": "6"
+        },
+        {
+          "raw": "2001 c.536 6",
+          "year": 2001,
+          "chapter": "536",
+          "section": "6"
+        },
+        {
+          "raw": "2003 c.794 244",
+          "year": 2003,
+          "chapter": "794",
+          "section": "244"
+        },
+        {
+          "raw": "repealed by 2007 c.783 234"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 21,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.076",
+      "identifier": "ORS 286.076",
+      "name": "Section 286.076",
+      "text": "",
+      "history_citation_blocks": [
+        "1981 c.660 17; 1987 c.840 6; repealed by 1989 c.681 9"
+      ],
+      "history_citations": [
+        {
+          "raw": "1981 c.660 17",
+          "year": 1981,
+          "chapter": "660",
+          "section": "17"
+        },
+        {
+          "raw": "1987 c.840 6",
+          "year": 1987,
+          "chapter": "840",
+          "section": "6"
+        },
+        {
+          "raw": "repealed by 1989 c.681 9"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 22,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.078",
+      "identifier": "ORS 286.078",
+      "name": "Section 286.078",
+      "text": "",
+      "history_citation_blocks": [
+        "1981 c.660 22; 1987 c.307 1; repealed by 2007 c.783 234"
+      ],
+      "history_citations": [
+        {
+          "raw": "1981 c.660 22",
+          "year": 1981,
+          "chapter": "660",
+          "section": "22"
+        },
+        {
+          "raw": "1987 c.307 1",
+          "year": 1987,
+          "chapter": "307",
+          "section": "1"
+        },
+        {
+          "raw": "repealed by 2007 c.783 234"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 23,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.079",
+      "identifier": "ORS 286.079",
+      "name": "Section 286.079",
+      "text": "",
+      "history_citation_blocks": [
+        "1981 c.659 1; renumbered 286.505"
+      ],
+      "history_citations": [
+        {
+          "raw": "1981 c.659 1",
+          "year": 1981,
+          "chapter": "659",
+          "section": "1"
+        },
+        {
+          "raw": "renumbered 286.505"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 24,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.080",
+      "identifier": "ORS 286.080",
+      "name": "Section 286.080",
+      "text": "",
+      "history_citation_blocks": [
+        "1979 c.130 2; renumbered 286.515"
+      ],
+      "history_citations": [
+        {
+          "raw": "1979 c.130 2",
+          "year": 1979,
+          "chapter": "130",
+          "section": "2"
+        },
+        {
+          "raw": "renumbered 286.515"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 25,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.085",
+      "identifier": "ORS 286.085",
+      "name": "Section 286.085",
+      "text": "",
+      "history_citation_blocks": [
+        "1981 c.659 2; 1983 c.112 1; 1983 c.798 7; renumbered 286.525"
+      ],
+      "history_citations": [
+        {
+          "raw": "1981 c.659 2",
+          "year": 1981,
+          "chapter": "659",
+          "section": "2"
+        },
+        {
+          "raw": "1983 c.112 1",
+          "year": 1983,
+          "chapter": "112",
+          "section": "1"
+        },
+        {
+          "raw": "1983 c.798 7",
+          "year": 1983,
+          "chapter": "798",
+          "section": "7"
+        },
+        {
+          "raw": "renumbered 286.525"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 26,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.090",
+      "identifier": "ORS 286.090",
+      "name": "Section 286.090",
+      "text": "",
+      "history_citation_blocks": [
+        "1981 c.659 4; 1983 c.798 8; renumbered 286.535"
+      ],
+      "history_citations": [
+        {
+          "raw": "1981 c.659 4",
+          "year": 1981,
+          "chapter": "659",
+          "section": "4"
+        },
+        {
+          "raw": "1983 c.798 8",
+          "year": 1983,
+          "chapter": "798",
+          "section": "8"
+        },
+        {
+          "raw": "renumbered 286.535"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 27,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.105",
+      "identifier": "ORS 286.105",
+      "name": "Section 286.105",
+      "text": "",
+      "history_citation_blocks": [
+        "1983 c.798 2; 2005 c.111 1; repealed by 2007 c.783 234"
+      ],
+      "history_citations": [
+        {
+          "raw": "1983 c.798 2",
+          "year": 1983,
+          "chapter": "798",
+          "section": "2"
+        },
+        {
+          "raw": "2005 c.111 1",
+          "year": 2005,
+          "chapter": "111",
+          "section": "1"
+        },
+        {
+          "raw": "repealed by 2007 c.783 234"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 28,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.115",
+      "identifier": "ORS 286.115",
+      "name": "Section 286.115",
+      "text": "",
+      "history_citation_blocks": [
+        "1983 c.798 3; repealed by 2007 c.783 234"
+      ],
+      "history_citations": [
+        {
+          "raw": "1983 c.798 3",
+          "year": 1983,
+          "chapter": "798",
+          "section": "3"
+        },
+        {
+          "raw": "repealed by 2007 c.783 234"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 29,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.125",
+      "identifier": "ORS 286.125",
+      "name": "Section 286.125",
+      "text": "",
+      "history_citation_blocks": [
+        "1983 c.798 5; 2005 c.111 2; repealed by 2007 c.783 234"
+      ],
+      "history_citations": [
+        {
+          "raw": "1983 c.798 5",
+          "year": 1983,
+          "chapter": "798",
+          "section": "5"
+        },
+        {
+          "raw": "2005 c.111 2",
+          "year": 2005,
+          "chapter": "111",
+          "section": "2"
+        },
+        {
+          "raw": "repealed by 2007 c.783 234"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 30,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.135",
+      "identifier": "ORS 286.135",
+      "name": "Section 286.135",
+      "text": "",
+      "history_citation_blocks": [
+        "1983 c.798 4; repealed by 2007 c.783 234"
+      ],
+      "history_citations": [
+        {
+          "raw": "1983 c.798 4",
+          "year": 1983,
+          "chapter": "798",
+          "section": "4"
+        },
+        {
+          "raw": "repealed by 2007 c.783 234"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 31,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.145",
+      "identifier": "ORS 286.145",
+      "name": "Section 286.145",
+      "text": "",
+      "history_citation_blocks": [
+        "1987 c.869 2; repealed by 2007 c.783 234"
+      ],
+      "history_citations": [
+        {
+          "raw": "1987 c.869 2",
+          "year": 1987,
+          "chapter": "869",
+          "section": "2"
+        },
+        {
+          "raw": "repealed by 2007 c.783 234"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 32,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.310",
+      "identifier": "ORS 286.310",
+      "name": "Section 286.310",
+      "text": "[Repealed by 1981 c.660 18]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 33,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.320",
+      "identifier": "ORS 286.320",
+      "name": "Section 286.320",
+      "text": "[Repealed by 1981 c.660 18]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 34,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.330",
+      "identifier": "ORS 286.330",
+      "name": "Section 286.330",
+      "text": "[Repealed by 1981 c.660 18]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 35,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.410",
+      "identifier": "ORS 286.410",
+      "name": "Section 286.410",
+      "text": "[Repealed by 1953 c.32 2]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 36,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.420",
+      "identifier": "ORS 286.420",
+      "name": "Section 286.420",
+      "text": "[Repealed by 1953 c.32 2]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 37,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.430",
+      "identifier": "ORS 286.430",
+      "name": "Section 286.430",
+      "text": "[Repealed by 1953 c.32 2]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 38,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.440",
+      "identifier": "ORS 286.440",
+      "name": "Section 286.440",
+      "text": "[Repealed by 1953 c.32 2]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 39,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.450",
+      "identifier": "ORS 286.450",
+      "name": "Section 286.450",
+      "text": "[Repealed by 1953 c.32 2]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 40,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.505",
+      "identifier": "ORS 286.505",
+      "name": "Section 286.505",
+      "text": "[Formerly",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 41,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.507",
+      "identifier": "ORS 286.507",
+      "name": "Section 286.507",
+      "text": "",
+      "history_citation_blocks": [
+        "1985 c.805 3; repealed by 2007 c.783 234"
+      ],
+      "history_citations": [
+        {
+          "raw": "1985 c.805 3",
+          "year": 1985,
+          "chapter": "805",
+          "section": "3"
+        },
+        {
+          "raw": "repealed by 2007 c.783 234"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 42,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.515",
+      "identifier": "ORS 286.515",
+      "name": "Section 286.515",
+      "text": "[Formerly",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 43,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.525",
+      "identifier": "ORS 286.525",
+      "name": "Section 286.525",
+      "text": "[Formerly",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 44,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.535",
+      "identifier": "ORS 286.535",
+      "name": "Section 286.535",
+      "text": "[Formerly",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 45,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.545",
+      "identifier": "ORS 286.545",
+      "name": "Section 286.545",
+      "text": "[1983 c.112 3,4; repealed by 2007 c.783 234]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 46,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.550",
+      "identifier": "ORS 286.550",
+      "name": "Section 286.550",
+      "text": "",
+      "history_citation_blocks": [
+        "1997 c.49 1; renumbered 286A.250 in 2007"
+      ],
+      "history_citations": [
+        {
+          "raw": "1997 c.49 1",
+          "year": 1997,
+          "chapter": "49",
+          "section": "1"
+        },
+        {
+          "raw": "renumbered 286A.250 in 2007"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 47,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.555",
+      "identifier": "ORS 286.555",
+      "name": "Section 286.555",
+      "text": "",
+      "history_citation_blocks": [
+        "1997 c.49 2; 2007 c.783 27; renumbered 286A.255 in 2007"
+      ],
+      "history_citations": [
+        {
+          "raw": "1997 c.49 2",
+          "year": 1997,
+          "chapter": "49",
+          "section": "2"
+        },
+        {
+          "raw": "2007 c.783 27",
+          "year": 2007,
+          "chapter": "783",
+          "section": "27"
+        },
+        {
+          "raw": "renumbered 286A.255 in 2007"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 48,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.560",
+      "identifier": "ORS 286.560",
+      "name": "Section 286.560",
+      "text": "",
+      "history_citation_blocks": [
+        "1999 c.44 1; 2005 c.835 30; 2007 c.783 35; renumbered 286A.560 in 2007"
+      ],
+      "history_citations": [
+        {
+          "raw": "1999 c.44 1",
+          "year": 1999,
+          "chapter": "44",
+          "section": "1"
+        },
+        {
+          "raw": "2005 c.835 30",
+          "year": 2005,
+          "chapter": "835",
+          "section": "30"
+        },
+        {
+          "raw": "2007 c.783 35",
+          "year": 2007,
+          "chapter": "783",
+          "section": "35"
+        },
+        {
+          "raw": "renumbered 286A.560 in 2007"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 49,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.563",
+      "identifier": "ORS 286.563",
+      "name": "Section 286.563",
+      "text": "",
+      "history_citation_blocks": [
+        "1999 c.44 2; 2007 c.783 36; renumbered 286A.563 in 2007"
+      ],
+      "history_citations": [
+        {
+          "raw": "1999 c.44 2",
+          "year": 1999,
+          "chapter": "44",
+          "section": "2"
+        },
+        {
+          "raw": "2007 c.783 36",
+          "year": 2007,
+          "chapter": "783",
+          "section": "36"
+        },
+        {
+          "raw": "renumbered 286A.563 in 2007"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 50,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.566",
+      "identifier": "ORS 286.566",
+      "name": "Section 286.566",
+      "text": "",
+      "history_citation_blocks": [
+        "1999 c.44 3; 2007 c.783 37; renumbered 286A.566 in 2007"
+      ],
+      "history_citations": [
+        {
+          "raw": "1999 c.44 3",
+          "year": 1999,
+          "chapter": "44",
+          "section": "3"
+        },
+        {
+          "raw": "2007 c.783 37",
+          "year": 2007,
+          "chapter": "783",
+          "section": "37"
+        },
+        {
+          "raw": "renumbered 286A.566 in 2007"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 51,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.570",
+      "identifier": "ORS 286.570",
+      "name": "Section 286.570",
+      "text": "",
+      "history_citation_blocks": [
+        "1999 c.44 4; renumbered 286A.570 in 2007"
+      ],
+      "history_citations": [
+        {
+          "raw": "1999 c.44 4",
+          "year": 1999,
+          "chapter": "44",
+          "section": "4"
+        },
+        {
+          "raw": "renumbered 286A.570 in 2007"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 52,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.573",
+      "identifier": "ORS 286.573",
+      "name": "Section 286.573",
+      "text": "",
+      "history_citation_blocks": [
+        "1999 c.44 5; renumbered 286A.573 in 2007"
+      ],
+      "history_citations": [
+        {
+          "raw": "1999 c.44 5",
+          "year": 1999,
+          "chapter": "44",
+          "section": "5"
+        },
+        {
+          "raw": "renumbered 286A.573 in 2007"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 53,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.576",
+      "identifier": "ORS 286.576",
+      "name": "Section 286.576",
+      "text": "",
+      "history_citation_blocks": [
+        "1999 c.44 6; renumbered 286A.576 in 2007"
+      ],
+      "history_citations": [
+        {
+          "raw": "1999 c.44 6",
+          "year": 1999,
+          "chapter": "44",
+          "section": "6"
+        },
+        {
+          "raw": "renumbered 286A.576 in 2007"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 54,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.578",
+      "identifier": "ORS 286.578",
+      "name": "Section 286.578",
+      "text": "[2002 s.s.1 c.8 2; renumbered 286A.578 in 2007]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 55,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.580",
+      "identifier": "ORS 286.580",
+      "name": "Section 286.580",
+      "text": "",
+      "history_citation_blocks": [
+        "1999 c.44 7; 2007 c.783 38; renumbered 286A.580 in 2007"
+      ],
+      "history_citations": [
+        {
+          "raw": "1999 c.44 7",
+          "year": 1999,
+          "chapter": "44",
+          "section": "7"
+        },
+        {
+          "raw": "2007 c.783 38",
+          "year": 2007,
+          "chapter": "783",
+          "section": "38"
+        },
+        {
+          "raw": "renumbered 286A.580 in 2007"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 56,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.585",
+      "identifier": "ORS 286.585",
+      "name": "Section 286.585",
+      "text": "",
+      "history_citation_blocks": [
+        "1999 c.908 17; 2007 c.783 39; 2007 c.804 80; renumbered 286A.585 in 2007"
+      ],
+      "history_citations": [
+        {
+          "raw": "1999 c.908 17",
+          "year": 1999,
+          "chapter": "908",
+          "section": "17"
+        },
+        {
+          "raw": "2007 c.783 39",
+          "year": 2007,
+          "chapter": "783",
+          "section": "39"
+        },
+        {
+          "raw": "2007 c.804 80",
+          "year": 2007,
+          "chapter": "804",
+          "section": "80"
+        },
+        {
+          "raw": "renumbered 286A.585 in 2007"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 57,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.605",
+      "identifier": "ORS 286.605",
+      "name": "Section 286.605",
+      "text": "",
+      "history_citation_blocks": [
+        "1985 c.806 19; 1987 c.754 1; 1995 c.79 100; 2005 c.113 1; 2007 c.783 28; renumbered 286A.605 in 2007"
+      ],
+      "history_citations": [
+        {
+          "raw": "1985 c.806 19",
+          "year": 1985,
+          "chapter": "806",
+          "section": "19"
+        },
+        {
+          "raw": "1987 c.754 1",
+          "year": 1987,
+          "chapter": "754",
+          "section": "1"
+        },
+        {
+          "raw": "1995 c.79 100",
+          "year": 1995,
+          "chapter": "79",
+          "section": "100"
+        },
+        {
+          "raw": "2005 c.113 1",
+          "year": 2005,
+          "chapter": "113",
+          "section": "1"
+        },
+        {
+          "raw": "2007 c.783 28",
+          "year": 2007,
+          "chapter": "783",
+          "section": "28"
+        },
+        {
+          "raw": "renumbered 286A.605 in 2007"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 58,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.615",
+      "identifier": "ORS 286.615",
+      "name": "Section 286.615",
+      "text": "",
+      "history_citation_blocks": [
+        "1985 c.806 21; 1987 c.754 2; 1991 c.142 1; 2001 c.680 1; 2007 c.783 29; renumbered 286A.615 in 2007"
+      ],
+      "history_citations": [
+        {
+          "raw": "1985 c.806 21",
+          "year": 1985,
+          "chapter": "806",
+          "section": "21"
+        },
+        {
+          "raw": "1987 c.754 2",
+          "year": 1987,
+          "chapter": "754",
+          "section": "2"
+        },
+        {
+          "raw": "1991 c.142 1",
+          "year": 1991,
+          "chapter": "142",
+          "section": "1"
+        },
+        {
+          "raw": "2001 c.680 1",
+          "year": 2001,
+          "chapter": "680",
+          "section": "1"
+        },
+        {
+          "raw": "2007 c.783 29",
+          "year": 2007,
+          "chapter": "783",
+          "section": "29"
+        },
+        {
+          "raw": "renumbered 286A.615 in 2007"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 59,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.625",
+      "identifier": "ORS 286.625",
+      "name": "Section 286.625",
+      "text": "",
+      "history_citation_blocks": [
+        "1985 c.806 22; repealed by 1991 c.141 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "1985 c.806 22",
+          "year": 1985,
+          "chapter": "806",
+          "section": "22"
+        },
+        {
+          "raw": "repealed by 1991 c.141 1"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 60,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.635",
+      "identifier": "ORS 286.635",
+      "name": "Section 286.635",
+      "text": "",
+      "history_citation_blocks": [
+        "1985 c.806 20; 1987 c.754 4; repealed by 2007 c.783 234"
+      ],
+      "history_citations": [
+        {
+          "raw": "1985 c.806 20",
+          "year": 1985,
+          "chapter": "806",
+          "section": "20"
+        },
+        {
+          "raw": "1987 c.754 4",
+          "year": 1987,
+          "chapter": "754",
+          "section": "4"
+        },
+        {
+          "raw": "repealed by 2007 c.783 234"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 61,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.645",
+      "identifier": "ORS 286.645",
+      "name": "Section 286.645",
+      "text": "",
+      "history_citation_blocks": [
+        "1985 c.806 23; 2007 c.783 32; renumbered 286A.625 in 2007"
+      ],
+      "history_citations": [
+        {
+          "raw": "1985 c.806 23",
+          "year": 1985,
+          "chapter": "806",
+          "section": "23"
+        },
+        {
+          "raw": "2007 c.783 32",
+          "year": 2007,
+          "chapter": "783",
+          "section": "32"
+        },
+        {
+          "raw": "renumbered 286A.625 in 2007"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 62,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.700",
+      "identifier": "ORS 286.700",
+      "name": "Section 286.700",
+      "text": "",
+      "history_citation_blocks": [
+        "1989 c.681 3; 1995 c.343 25; repealed by 2007 c.783 234"
+      ],
+      "history_citations": [
+        {
+          "raw": "1989 c.681 3",
+          "year": 1989,
+          "chapter": "681",
+          "section": "3"
+        },
+        {
+          "raw": "1995 c.343 25",
+          "year": 1995,
+          "chapter": "343",
+          "section": "25"
+        },
+        {
+          "raw": "repealed by 2007 c.783 234"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 63,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.705",
+      "identifier": "ORS 286.705",
+      "name": "Section 286.705",
+      "text": "",
+      "history_citation_blocks": [
+        "1989 c.681 4; 1995 c.343 26; repealed by 2007 c.783 234"
+      ],
+      "history_citations": [
+        {
+          "raw": "1989 c.681 4",
+          "year": 1989,
+          "chapter": "681",
+          "section": "4"
+        },
+        {
+          "raw": "1995 c.343 26",
+          "year": 1995,
+          "chapter": "343",
+          "section": "26"
+        },
+        {
+          "raw": "repealed by 2007 c.783 234"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 64,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.710",
+      "identifier": "ORS 286.710",
+      "name": "Section 286.710",
+      "text": "",
+      "history_citation_blocks": [
+        "1989 c.681 5; 1995 c.186 1; repealed by 2007 c.783 234"
+      ],
+      "history_citations": [
+        {
+          "raw": "1989 c.681 5",
+          "year": 1989,
+          "chapter": "681",
+          "section": "5"
+        },
+        {
+          "raw": "1995 c.186 1",
+          "year": 1995,
+          "chapter": "186",
+          "section": "1"
+        },
+        {
+          "raw": "repealed by 2007 c.783 234"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 65,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.715",
+      "identifier": "ORS 286.715",
+      "name": "Section 286.715",
+      "text": "",
+      "history_citation_blocks": [
+        "1989 c.681 6; repealed by 2007 c.783 234"
+      ],
+      "history_citations": [
+        {
+          "raw": "1989 c.681 6",
+          "year": 1989,
+          "chapter": "681",
+          "section": "6"
+        },
+        {
+          "raw": "repealed by 2007 c.783 234"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 66,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.720",
+      "identifier": "ORS 286.720",
+      "name": "Section 286.720",
+      "text": "",
+      "history_citation_blocks": [
+        "1989 c.681 2; repealed by 2007 c.783 234"
+      ],
+      "history_citations": [
+        {
+          "raw": "1989 c.681 2",
+          "year": 1989,
+          "chapter": "681",
+          "section": "2"
+        },
+        {
+          "raw": "repealed by 2007 c.783 234"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 67,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.730",
+      "identifier": "ORS 286.730",
+      "name": "Section 286.730",
+      "text": "",
+      "history_citation_blocks": [
+        "2003 c.746 2; renumbered 286A.730 in 2007"
+      ],
+      "history_citations": [
+        {
+          "raw": "2003 c.746 2",
+          "year": 2003,
+          "chapter": "746",
+          "section": "2"
+        },
+        {
+          "raw": "renumbered 286A.730 in 2007"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 68,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.735",
+      "identifier": "ORS 286.735",
+      "name": "Section 286.735",
+      "text": "",
+      "history_citation_blocks": [
+        "2003 c.746 3; renumbered 286A.735 in 2007"
+      ],
+      "history_citations": [
+        {
+          "raw": "2003 c.746 3",
+          "year": 2003,
+          "chapter": "746",
+          "section": "3"
+        },
+        {
+          "raw": "renumbered 286A.735 in 2007"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 69,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.740",
+      "identifier": "ORS 286.740",
+      "name": "Section 286.740",
+      "text": "",
+      "history_citation_blocks": [
+        "2003 c.746 4; renumbered 286A.740 in 2007"
+      ],
+      "history_citations": [
+        {
+          "raw": "2003 c.746 4",
+          "year": 2003,
+          "chapter": "746",
+          "section": "4"
+        },
+        {
+          "raw": "renumbered 286A.740 in 2007"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 70,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.745",
+      "identifier": "ORS 286.745",
+      "name": "Section 286.745",
+      "text": "",
+      "history_citation_blocks": [
+        "2003 c.746 5; renumbered 286A.745 in 2007"
+      ],
+      "history_citations": [
+        {
+          "raw": "2003 c.746 5",
+          "year": 2003,
+          "chapter": "746",
+          "section": "5"
+        },
+        {
+          "raw": "renumbered 286A.745 in 2007"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 71,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.750",
+      "identifier": "ORS 286.750",
+      "name": "Section 286.750",
+      "text": "",
+      "history_citation_blocks": [
+        "2003 c.746 6; 2007 c.783 110; renumbered 286A.750 in 2007"
+      ],
+      "history_citations": [
+        {
+          "raw": "2003 c.746 6",
+          "year": 2003,
+          "chapter": "746",
+          "section": "6"
+        },
+        {
+          "raw": "2007 c.783 110",
+          "year": 2007,
+          "chapter": "783",
+          "section": "110"
+        },
+        {
+          "raw": "renumbered 286A.750 in 2007"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 72,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.760",
+      "identifier": "ORS 286.760",
+      "name": "Section 286.760",
+      "text": "",
+      "history_citation_blocks": [
+        "2005 c.814 2; renumbered 286A.760 in 2007"
+      ],
+      "history_citations": [
+        {
+          "raw": "2005 c.814 2",
+          "year": 2005,
+          "chapter": "814",
+          "section": "2"
+        },
+        {
+          "raw": "renumbered 286A.760 in 2007"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 73,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.762",
+      "identifier": "ORS 286.762",
+      "name": "Section 286.762",
+      "text": "",
+      "history_citation_blocks": [
+        "2005 c.814 3; 2007 c.783 111; renumbered 286A.762 in 2007"
+      ],
+      "history_citations": [
+        {
+          "raw": "2005 c.814 3",
+          "year": 2005,
+          "chapter": "814",
+          "section": "3"
+        },
+        {
+          "raw": "2007 c.783 111",
+          "year": 2007,
+          "chapter": "783",
+          "section": "111"
+        },
+        {
+          "raw": "renumbered 286A.762 in 2007"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 74,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.764",
+      "identifier": "ORS 286.764",
+      "name": "Section 286.764",
+      "text": "",
+      "history_citation_blocks": [
+        "2005 c.814 4; renumbered 286A.764 in 2007"
+      ],
+      "history_citations": [
+        {
+          "raw": "2005 c.814 4",
+          "year": 2005,
+          "chapter": "814",
+          "section": "4"
+        },
+        {
+          "raw": "renumbered 286A.764 in 2007"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 75,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.766",
+      "identifier": "ORS 286.766",
+      "name": "Section 286.766",
+      "text": "",
+      "history_citation_blocks": [
+        "2005 c.814 5; renumbered 286A.766 in 2007"
+      ],
+      "history_citations": [
+        {
+          "raw": "2005 c.814 5",
+          "year": 2005,
+          "chapter": "814",
+          "section": "5"
+        },
+        {
+          "raw": "renumbered 286A.766 in 2007"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 76,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.768",
+      "identifier": "ORS 286.768",
+      "name": "Section 286.768",
+      "text": "",
+      "history_citation_blocks": [
+        "2005 c.814 6; 2007 c.783 111a; renumbered 286A.768 in 2007"
+      ],
+      "history_citations": [
+        {
+          "raw": "2005 c.814 6",
+          "year": 2005,
+          "chapter": "814",
+          "section": "6"
+        },
+        {
+          "raw": "2007 c.783 111a",
+          "year": 2007,
+          "chapter": "783",
+          "section": "111a"
+        },
+        {
+          "raw": "renumbered 286A.768 in 2007"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 77,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.770",
+      "identifier": "ORS 286.770",
+      "name": "Section 286.770",
+      "text": "",
+      "history_citation_blocks": [
+        "2005 c.814 7; repealed by 2007 c.783 234"
+      ],
+      "history_citations": [
+        {
+          "raw": "2005 c.814 7",
+          "year": 2005,
+          "chapter": "814",
+          "section": "7"
+        },
+        {
+          "raw": "repealed by 2007 c.783 234"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 78,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.772",
+      "identifier": "ORS 286.772",
+      "name": "Section 286.772",
+      "text": "",
+      "history_citation_blocks": [
+        "2005 c.814 8; renumbered 286A.772 in 2007"
+      ],
+      "history_citations": [
+        {
+          "raw": "2005 c.814 8",
+          "year": 2005,
+          "chapter": "814",
+          "section": "8"
+        },
+        {
+          "raw": "renumbered 286A.772 in 2007"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 79,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.780",
+      "identifier": "ORS 286.780",
+      "name": "Section 286.780",
+      "text": "",
+      "history_citation_blocks": [
+        "2005 c.815 2; renumbered 286A.780 in 2007"
+      ],
+      "history_citations": [
+        {
+          "raw": "2005 c.815 2",
+          "year": 2005,
+          "chapter": "815",
+          "section": "2"
+        },
+        {
+          "raw": "renumbered 286A.780 in 2007"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 80,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.782",
+      "identifier": "ORS 286.782",
+      "name": "Section 286.782",
+      "text": "",
+      "history_citation_blocks": [
+        "2005 c.815 3; 2007 c.783 112; renumbered 286A.782 in 2007"
+      ],
+      "history_citations": [
+        {
+          "raw": "2005 c.815 3",
+          "year": 2005,
+          "chapter": "815",
+          "section": "3"
+        },
+        {
+          "raw": "2007 c.783 112",
+          "year": 2007,
+          "chapter": "783",
+          "section": "112"
+        },
+        {
+          "raw": "renumbered 286A.782 in 2007"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 81,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.784",
+      "identifier": "ORS 286.784",
+      "name": "Section 286.784",
+      "text": "",
+      "history_citation_blocks": [
+        "2005 c.815 4; renumbered 286A.784 in 2007"
+      ],
+      "history_citations": [
+        {
+          "raw": "2005 c.815 4",
+          "year": 2005,
+          "chapter": "815",
+          "section": "4"
+        },
+        {
+          "raw": "renumbered 286A.784 in 2007"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 82,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.786",
+      "identifier": "ORS 286.786",
+      "name": "Section 286.786",
+      "text": "",
+      "history_citation_blocks": [
+        "2005 c.815 5; renumbered 286A.786 in 2007"
+      ],
+      "history_citations": [
+        {
+          "raw": "2005 c.815 5",
+          "year": 2005,
+          "chapter": "815",
+          "section": "5"
+        },
+        {
+          "raw": "renumbered 286A.786 in 2007"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 83,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.788",
+      "identifier": "ORS 286.788",
+      "name": "Section 286.788",
+      "text": "",
+      "history_citation_blocks": [
+        "2005 c.815 6; 2007 c.783 112a; renumbered 286A.788 in 2007"
+      ],
+      "history_citations": [
+        {
+          "raw": "2005 c.815 6",
+          "year": 2005,
+          "chapter": "815",
+          "section": "6"
+        },
+        {
+          "raw": "2007 c.783 112a",
+          "year": 2007,
+          "chapter": "783",
+          "section": "112a"
+        },
+        {
+          "raw": "renumbered 286A.788 in 2007"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 84,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.790",
+      "identifier": "ORS 286.790",
+      "name": "Section 286.790",
+      "text": "",
+      "history_citation_blocks": [
+        "2005 c.815 7; repealed by 2007 c.783 234"
+      ],
+      "history_citations": [
+        {
+          "raw": "2005 c.815 7",
+          "year": 2005,
+          "chapter": "815",
+          "section": "7"
+        },
+        {
+          "raw": "repealed by 2007 c.783 234"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 85,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html#section-286.792",
+      "identifier": "ORS 286.792",
+      "name": "Section 286.792",
+      "text": "[2005 c.815 8; renumbered 286A.792 in 2007] _______________",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 86,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors286.html"
+    }
+  ],
+  "alternateName": "(Former Provisions)"
+}

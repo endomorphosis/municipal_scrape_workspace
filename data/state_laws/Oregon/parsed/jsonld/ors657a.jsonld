@@ -1,0 +1,2330 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "orlaw": "https://www.oregonlegislature.gov/ors#"
+  },
+  "@type": "Legislation",
+  "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html",
+  "identifier": "ORS Chapter 657a",
+  "name": "ORS Chapter 657a — (Former Provisions)",
+  "legislationType": "Statute",
+  "jurisdiction": "US-OR",
+  "isPartOf": {
+    "@type": "CreativeWork",
+    "identifier": "ORS",
+    "name": "Oregon Revised Statutes",
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors"
+  },
+  "dateModified": "2026-02-25T08:11:28.816484+00:00",
+  "source_file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors657a.html",
+  "hasPart": [
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html#section-657a.010",
+      "identifier": "ORS 657a.010",
+      "name": "Section 657a.010",
+      "text": "",
+      "history_citation_blocks": [
+        "Formerly part of 657.601; 1995 c.37 7; 1997 c.431 6; 1997 c.753 3; 2009 c.347 2; 2012 c.37 117; 2013 c.624 38; renumbered 329A.010 in 2013"
+      ],
+      "history_citations": [
+        {
+          "raw": "Formerly part of 657.601"
+        },
+        {
+          "raw": "1995 c.37 7",
+          "year": 1995,
+          "chapter": "37",
+          "section": "7"
+        },
+        {
+          "raw": "1997 c.431 6",
+          "year": 1997,
+          "chapter": "431",
+          "section": "6"
+        },
+        {
+          "raw": "1997 c.753 3",
+          "year": 1997,
+          "chapter": "753",
+          "section": "3"
+        },
+        {
+          "raw": "2009 c.347 2",
+          "year": 2009,
+          "chapter": "347",
+          "section": "2"
+        },
+        {
+          "raw": "2012 c.37 117",
+          "year": 2012,
+          "chapter": "37",
+          "section": "117"
+        },
+        {
+          "raw": "2013 c.624 38",
+          "year": 2013,
+          "chapter": "624",
+          "section": "38"
+        },
+        {
+          "raw": "renumbered 329A.010 in 2013"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 1,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html#section-657a.020",
+      "identifier": "ORS 657a.020",
+      "name": "Section 657a.020",
+      "text": "",
+      "history_citation_blocks": [
+        "Formerly 418.361; 2013 c.624 40; renumbered 329A.020 in 2013"
+      ],
+      "history_citations": [
+        {
+          "raw": "Formerly 418.361"
+        },
+        {
+          "raw": "2013 c.624 40",
+          "year": 2013,
+          "chapter": "624",
+          "section": "40"
+        },
+        {
+          "raw": "renumbered 329A.020 in 2013"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 2,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html#section-657a.030",
+      "identifier": "ORS 657a.030",
+      "name": "Section 657a.030",
+      "text": "",
+      "history_citation_blocks": [
+        "1997 c.431 2; 1997 c.753 18; 2001 c.831 29; 2005 c.730 29; 2009 c.348 1,5; 2010 c.60 6,7; 2012 c.3 3; 2013 c.624 41; renumbered 329A.030 in 2013"
+      ],
+      "history_citations": [
+        {
+          "raw": "1997 c.431 2",
+          "year": 1997,
+          "chapter": "431",
+          "section": "2"
+        },
+        {
+          "raw": "1997 c.753 18",
+          "year": 1997,
+          "chapter": "753",
+          "section": "18"
+        },
+        {
+          "raw": "2001 c.831 29",
+          "year": 2001,
+          "chapter": "831",
+          "section": "29"
+        },
+        {
+          "raw": "2005 c.730 29",
+          "year": 2005,
+          "chapter": "730",
+          "section": "29"
+        },
+        {
+          "raw": "2009 c.348 1,5"
+        },
+        {
+          "raw": "2010 c.60 6,7"
+        },
+        {
+          "raw": "2012 c.3 3",
+          "year": 2012,
+          "chapter": "3",
+          "section": "3"
+        },
+        {
+          "raw": "2013 c.624 41",
+          "year": 2013,
+          "chapter": "624",
+          "section": "41"
+        },
+        {
+          "raw": "renumbered 329A.030 in 2013"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 3,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html#section-657a.050",
+      "identifier": "ORS 657a.050",
+      "name": "Section 657a.050",
+      "text": "",
+      "history_citation_blocks": [
+        "1993 c.733 3; 1995 c.278 1; repealed by 1997 c.431 18 and 1997 c.753 20"
+      ],
+      "history_citations": [
+        {
+          "raw": "1993 c.733 3",
+          "year": 1993,
+          "chapter": "733",
+          "section": "3"
+        },
+        {
+          "raw": "1995 c.278 1",
+          "year": 1995,
+          "chapter": "278",
+          "section": "1"
+        },
+        {
+          "raw": "repealed by 1997 c.431 18 and 1997 c.753 20"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 4,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html#section-657a.060",
+      "identifier": "ORS 657a.060",
+      "name": "Section 657a.060",
+      "text": "",
+      "history_citation_blocks": [
+        "1993 c.674 12; 1995 c.278 2; 1995 c.446 11; repealed by 1997 c.753 20"
+      ],
+      "history_citations": [
+        {
+          "raw": "1993 c.674 12",
+          "year": 1993,
+          "chapter": "674",
+          "section": "12"
+        },
+        {
+          "raw": "1995 c.278 2",
+          "year": 1995,
+          "chapter": "278",
+          "section": "2"
+        },
+        {
+          "raw": "1995 c.446 11",
+          "year": 1995,
+          "chapter": "446",
+          "section": "11"
+        },
+        {
+          "raw": "repealed by 1997 c.753 20"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 5,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html#section-657a.100",
+      "identifier": "ORS 657a.100",
+      "name": "Section 657a.100",
+      "text": "",
+      "history_citation_blocks": [
+        "Formerly 418.342; 1995 c.278 3; renumbered 329A.100 in 2013"
+      ],
+      "history_citations": [
+        {
+          "raw": "Formerly 418.342"
+        },
+        {
+          "raw": "1995 c.278 3",
+          "year": 1995,
+          "chapter": "278",
+          "section": "3"
+        },
+        {
+          "raw": "renumbered 329A.100 in 2013"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 6,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html#section-657a.110",
+      "identifier": "ORS 657a.110",
+      "name": "Section 657a.110",
+      "text": "[Formerly 418.344; renumbered 329A.110 in 2013]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 7,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html#section-657a.120",
+      "identifier": "ORS 657a.120",
+      "name": "Section 657a.120",
+      "text": "",
+      "history_citation_blocks": [
+        "Formerly 418.346; 1995 c.278 4; 2007 c.70 287; renumbered 329A.120 in 2013"
+      ],
+      "history_citations": [
+        {
+          "raw": "Formerly 418.346"
+        },
+        {
+          "raw": "1995 c.278 4",
+          "year": 1995,
+          "chapter": "278",
+          "section": "4"
+        },
+        {
+          "raw": "2007 c.70 287",
+          "year": 2007,
+          "chapter": "70",
+          "section": "287"
+        },
+        {
+          "raw": "renumbered 329A.120 in 2013"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 8,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html#section-657a.130",
+      "identifier": "ORS 657a.130",
+      "name": "Section 657a.130",
+      "text": "[Formerly 418.348; renumbered 329A.130 in 2013]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 9,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html#section-657a.140",
+      "identifier": "ORS 657a.140",
+      "name": "Section 657a.140",
+      "text": "[Formerly 418.350; renumbered 329A.140 in 2013]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 10,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html#section-657a.150",
+      "identifier": "ORS 657a.150",
+      "name": "Section 657a.150",
+      "text": "[Formerly 418.352; renumbered 329A.150 in 2013]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 11,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html#section-657a.160",
+      "identifier": "ORS 657a.160",
+      "name": "Section 657a.160",
+      "text": "[Formerly 418.354; renumbered 329A.160 in 2013]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 12,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html#section-657a.170",
+      "identifier": "ORS 657a.170",
+      "name": "Section 657a.170",
+      "text": "[Formerly 418.356; renumbered 329A.170 in 2013]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 13,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html#section-657a.180",
+      "identifier": "ORS 657a.180",
+      "name": "Section 657a.180",
+      "text": "",
+      "history_citation_blocks": [
+        "Formerly 418.358; 1995 c.278 5; 2003 c.293 7; 2012 c.37 118; 2013 c.624 42; renumbered 329A.180 in 2013"
+      ],
+      "history_citations": [
+        {
+          "raw": "Formerly 418.358"
+        },
+        {
+          "raw": "1995 c.278 5",
+          "year": 1995,
+          "chapter": "278",
+          "section": "5"
+        },
+        {
+          "raw": "2003 c.293 7",
+          "year": 2003,
+          "chapter": "293",
+          "section": "7"
+        },
+        {
+          "raw": "2012 c.37 118",
+          "year": 2012,
+          "chapter": "37",
+          "section": "118"
+        },
+        {
+          "raw": "2013 c.624 42",
+          "year": 2013,
+          "chapter": "624",
+          "section": "42"
+        },
+        {
+          "raw": "renumbered 329A.180 in 2013"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 14,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html#section-657a.190",
+      "identifier": "ORS 657a.190",
+      "name": "Section 657a.190",
+      "text": "",
+      "history_citation_blocks": [
+        "Formerly 418.363; 1995 c.278 6; 2013 c.624 43; renumbered 329A.190 in 2013"
+      ],
+      "history_citations": [
+        {
+          "raw": "Formerly 418.363"
+        },
+        {
+          "raw": "1995 c.278 6",
+          "year": 1995,
+          "chapter": "278",
+          "section": "6"
+        },
+        {
+          "raw": "2013 c.624 43",
+          "year": 2013,
+          "chapter": "624",
+          "section": "43"
+        },
+        {
+          "raw": "renumbered 329A.190 in 2013"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 15,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html#section-657a.250",
+      "identifier": "ORS 657a.250",
+      "name": "Section 657a.250",
+      "text": "",
+      "history_citation_blocks": [
+        "Formerly 418.805; 1995 c.278 8; 1997 c.431 7; 1997 c.753 4; 1999 c.743 1; 2003 c.293 8; 2003 c.366 1; 2009 c.570 1; 2009 c.633 7; 2013 c.624 44; renumbered 329A.250 in 2013"
+      ],
+      "history_citations": [
+        {
+          "raw": "Formerly 418.805"
+        },
+        {
+          "raw": "1995 c.278 8",
+          "year": 1995,
+          "chapter": "278",
+          "section": "8"
+        },
+        {
+          "raw": "1997 c.431 7",
+          "year": 1997,
+          "chapter": "431",
+          "section": "7"
+        },
+        {
+          "raw": "1997 c.753 4",
+          "year": 1997,
+          "chapter": "753",
+          "section": "4"
+        },
+        {
+          "raw": "1999 c.743 1",
+          "year": 1999,
+          "chapter": "743",
+          "section": "1"
+        },
+        {
+          "raw": "2003 c.293 8",
+          "year": 2003,
+          "chapter": "293",
+          "section": "8"
+        },
+        {
+          "raw": "2003 c.366 1",
+          "year": 2003,
+          "chapter": "366",
+          "section": "1"
+        },
+        {
+          "raw": "2009 c.570 1",
+          "year": 2009,
+          "chapter": "570",
+          "section": "1"
+        },
+        {
+          "raw": "2009 c.633 7",
+          "year": 2009,
+          "chapter": "633",
+          "section": "7"
+        },
+        {
+          "raw": "2013 c.624 44",
+          "year": 2013,
+          "chapter": "624",
+          "section": "44"
+        },
+        {
+          "raw": "renumbered 329A.250 in 2013"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 16,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html#section-657a.252",
+      "identifier": "ORS 657a.252",
+      "name": "Section 657a.252",
+      "text": "",
+      "history_citation_blocks": [
+        "2009 c.129 2; 2011 c.9 84; 2013 c.624 45; renumbered 329A.252 in 2013"
+      ],
+      "history_citations": [
+        {
+          "raw": "2009 c.129 2",
+          "year": 2009,
+          "chapter": "129",
+          "section": "2"
+        },
+        {
+          "raw": "2011 c.9 84",
+          "year": 2011,
+          "chapter": "9",
+          "section": "84"
+        },
+        {
+          "raw": "2013 c.624 45",
+          "year": 2013,
+          "chapter": "624",
+          "section": "45"
+        },
+        {
+          "raw": "renumbered 329A.252 in 2013"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 17,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html#section-657a.255",
+      "identifier": "ORS 657a.255",
+      "name": "Section 657a.255",
+      "text": "",
+      "history_citation_blocks": [
+        "2009 c.633 4; 2013 c.624 46; renumbered 329A.255 in 2013"
+      ],
+      "history_citations": [
+        {
+          "raw": "2009 c.633 4",
+          "year": 2009,
+          "chapter": "633",
+          "section": "4"
+        },
+        {
+          "raw": "2013 c.624 46",
+          "year": 2013,
+          "chapter": "624",
+          "section": "46"
+        },
+        {
+          "raw": "renumbered 329A.255 in 2013"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 18,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html#section-657a.257",
+      "identifier": "ORS 657a.257",
+      "name": "Section 657a.257",
+      "text": "",
+      "history_citation_blocks": [
+        "2009 c.570 4; 2013 c.624 47; renumbered 329A.257 in 2013"
+      ],
+      "history_citations": [
+        {
+          "raw": "2009 c.570 4",
+          "year": 2009,
+          "chapter": "570",
+          "section": "4"
+        },
+        {
+          "raw": "2013 c.624 47",
+          "year": 2013,
+          "chapter": "624",
+          "section": "47"
+        },
+        {
+          "raw": "renumbered 329A.257 in 2013"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 19,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html#section-657a.260",
+      "identifier": "ORS 657a.260",
+      "name": "Section 657a.260",
+      "text": "",
+      "history_citation_blocks": [
+        "Formerly 418.820; 1995 c.278 9; 1997 c.431 8; 1997 c.753 5; 2009 c.595 1045; 2013 c.624 48; renumbered 329A.260 in 2013"
+      ],
+      "history_citations": [
+        {
+          "raw": "Formerly 418.820"
+        },
+        {
+          "raw": "1995 c.278 9",
+          "year": 1995,
+          "chapter": "278",
+          "section": "9"
+        },
+        {
+          "raw": "1997 c.431 8",
+          "year": 1997,
+          "chapter": "431",
+          "section": "8"
+        },
+        {
+          "raw": "1997 c.753 5",
+          "year": 1997,
+          "chapter": "753",
+          "section": "5"
+        },
+        {
+          "raw": "2009 c.595 1045",
+          "year": 2009,
+          "chapter": "595",
+          "section": "1045"
+        },
+        {
+          "raw": "2013 c.624 48",
+          "year": 2013,
+          "chapter": "624",
+          "section": "48"
+        },
+        {
+          "raw": "renumbered 329A.260 in 2013"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 20,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html#section-657a.263",
+      "identifier": "ORS 657a.263",
+      "name": "Section 657a.263",
+      "text": "",
+      "history_citation_blocks": [
+        "2007 c.205 2; 2013 c.624 49; renumbered 329A.263 in 2013"
+      ],
+      "history_citations": [
+        {
+          "raw": "2007 c.205 2",
+          "year": 2007,
+          "chapter": "205",
+          "section": "2"
+        },
+        {
+          "raw": "2013 c.624 49",
+          "year": 2013,
+          "chapter": "624",
+          "section": "49"
+        },
+        {
+          "raw": "renumbered 329A.263 in 2013"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 21,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html#section-657a.270",
+      "identifier": "ORS 657a.270",
+      "name": "Section 657a.270",
+      "text": "",
+      "history_citation_blocks": [
+        "Formerly 418.835; 1995 c.278 10; 1997 c.431 9; 1997 c.753 6; 1999 c.382 6,7; 2001 c.104 252; 2005 c.730 30; 2013 c.624 50; renumbered 329A.270 in 2013"
+      ],
+      "history_citations": [
+        {
+          "raw": "Formerly 418.835"
+        },
+        {
+          "raw": "1995 c.278 10",
+          "year": 1995,
+          "chapter": "278",
+          "section": "10"
+        },
+        {
+          "raw": "1997 c.431 9",
+          "year": 1997,
+          "chapter": "431",
+          "section": "9"
+        },
+        {
+          "raw": "1997 c.753 6",
+          "year": 1997,
+          "chapter": "753",
+          "section": "6"
+        },
+        {
+          "raw": "1999 c.382 6,7"
+        },
+        {
+          "raw": "2001 c.104 252",
+          "year": 2001,
+          "chapter": "104",
+          "section": "252"
+        },
+        {
+          "raw": "2005 c.730 30",
+          "year": 2005,
+          "chapter": "730",
+          "section": "30"
+        },
+        {
+          "raw": "2013 c.624 50",
+          "year": 2013,
+          "chapter": "624",
+          "section": "50"
+        },
+        {
+          "raw": "renumbered 329A.270 in 2013"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 22,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html#section-657a.275",
+      "identifier": "ORS 657a.275",
+      "name": "Section 657a.275",
+      "text": "",
+      "history_citation_blocks": [
+        "1995 c.647 2; 1997 c.431 5; 1997 c.753 7; 1999 c.382 5; 1999 c.743 3; 2003 c.293 9; 2005 c.730 31; 2009 c.348 2; 2009 c.570 2; 2009 c.633 8; 2013 c.624 51; renumbered 329A.275 in 2013"
+      ],
+      "history_citations": [
+        {
+          "raw": "1995 c.647 2",
+          "year": 1995,
+          "chapter": "647",
+          "section": "2"
+        },
+        {
+          "raw": "1997 c.431 5",
+          "year": 1997,
+          "chapter": "431",
+          "section": "5"
+        },
+        {
+          "raw": "1997 c.753 7",
+          "year": 1997,
+          "chapter": "753",
+          "section": "7"
+        },
+        {
+          "raw": "1999 c.382 5",
+          "year": 1999,
+          "chapter": "382",
+          "section": "5"
+        },
+        {
+          "raw": "1999 c.743 3",
+          "year": 1999,
+          "chapter": "743",
+          "section": "3"
+        },
+        {
+          "raw": "2003 c.293 9",
+          "year": 2003,
+          "chapter": "293",
+          "section": "9"
+        },
+        {
+          "raw": "2005 c.730 31",
+          "year": 2005,
+          "chapter": "730",
+          "section": "31"
+        },
+        {
+          "raw": "2009 c.348 2",
+          "year": 2009,
+          "chapter": "348",
+          "section": "2"
+        },
+        {
+          "raw": "2009 c.570 2",
+          "year": 2009,
+          "chapter": "570",
+          "section": "2"
+        },
+        {
+          "raw": "2009 c.633 8",
+          "year": 2009,
+          "chapter": "633",
+          "section": "8"
+        },
+        {
+          "raw": "2013 c.624 51",
+          "year": 2013,
+          "chapter": "624",
+          "section": "51"
+        },
+        {
+          "raw": "renumbered 329A.275 in 2013"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 23,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html#section-657a.280",
+      "identifier": "ORS 657a.280",
+      "name": "Section 657a.280",
+      "text": "",
+      "history_citation_blocks": [
+        "Formerly 418.810; 1995 c.278 11; 1999 c.743 4; 2001 c.104 253; 2003 c.293 10; 2005 c.408 1; 2013 c.624 52; renumbered 329A.280 in 2013"
+      ],
+      "history_citations": [
+        {
+          "raw": "Formerly 418.810"
+        },
+        {
+          "raw": "1995 c.278 11",
+          "year": 1995,
+          "chapter": "278",
+          "section": "11"
+        },
+        {
+          "raw": "1999 c.743 4",
+          "year": 1999,
+          "chapter": "743",
+          "section": "4"
+        },
+        {
+          "raw": "2001 c.104 253",
+          "year": 2001,
+          "chapter": "104",
+          "section": "253"
+        },
+        {
+          "raw": "2003 c.293 10",
+          "year": 2003,
+          "chapter": "293",
+          "section": "10"
+        },
+        {
+          "raw": "2005 c.408 1",
+          "year": 2005,
+          "chapter": "408",
+          "section": "1"
+        },
+        {
+          "raw": "2013 c.624 52",
+          "year": 2013,
+          "chapter": "624",
+          "section": "52"
+        },
+        {
+          "raw": "renumbered 329A.280 in 2013"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 24,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html#section-657a.290",
+      "identifier": "ORS 657a.290",
+      "name": "Section 657a.290",
+      "text": "",
+      "history_citation_blocks": [
+        "Formerly 418.815; 1995 c.278 12; 1999 c.743 6; 2013 c.624 53; renumbered 329A.290 in 2013"
+      ],
+      "history_citations": [
+        {
+          "raw": "Formerly 418.815"
+        },
+        {
+          "raw": "1995 c.278 12",
+          "year": 1995,
+          "chapter": "278",
+          "section": "12"
+        },
+        {
+          "raw": "1999 c.743 6",
+          "year": 1999,
+          "chapter": "743",
+          "section": "6"
+        },
+        {
+          "raw": "2013 c.624 53",
+          "year": 2013,
+          "chapter": "624",
+          "section": "53"
+        },
+        {
+          "raw": "renumbered 329A.290 in 2013"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 25,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html#section-657a.300",
+      "identifier": "ORS 657a.300",
+      "name": "Section 657a.300",
+      "text": "",
+      "history_citation_blocks": [
+        "Formerly 418.825; 1995 c.278 13; 1997 c.431 10; 1997 c.753 8; 1999 c.743 7; 2005 c.730 32; 2013 c.624 54; renumbered 329A.300 in 2013"
+      ],
+      "history_citations": [
+        {
+          "raw": "Formerly 418.825"
+        },
+        {
+          "raw": "1995 c.278 13",
+          "year": 1995,
+          "chapter": "278",
+          "section": "13"
+        },
+        {
+          "raw": "1997 c.431 10",
+          "year": 1997,
+          "chapter": "431",
+          "section": "10"
+        },
+        {
+          "raw": "1997 c.753 8",
+          "year": 1997,
+          "chapter": "753",
+          "section": "8"
+        },
+        {
+          "raw": "1999 c.743 7",
+          "year": 1999,
+          "chapter": "743",
+          "section": "7"
+        },
+        {
+          "raw": "2005 c.730 32",
+          "year": 2005,
+          "chapter": "730",
+          "section": "32"
+        },
+        {
+          "raw": "2013 c.624 54",
+          "year": 2013,
+          "chapter": "624",
+          "section": "54"
+        },
+        {
+          "raw": "renumbered 329A.300 in 2013"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 26,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html#section-657a.310",
+      "identifier": "ORS 657a.310",
+      "name": "Section 657a.310",
+      "text": "",
+      "history_citation_blocks": [
+        "Formerly 418.830; 1995 c.647 3; 1997 c.431 11; 1997 c.753 9; 1999 c.743 8; 2012 c.37 119; 2013 c.624 55; renumbered 329A.310 in 2013"
+      ],
+      "history_citations": [
+        {
+          "raw": "Formerly 418.830"
+        },
+        {
+          "raw": "1995 c.647 3",
+          "year": 1995,
+          "chapter": "647",
+          "section": "3"
+        },
+        {
+          "raw": "1997 c.431 11",
+          "year": 1997,
+          "chapter": "431",
+          "section": "11"
+        },
+        {
+          "raw": "1997 c.753 9",
+          "year": 1997,
+          "chapter": "753",
+          "section": "9"
+        },
+        {
+          "raw": "1999 c.743 8",
+          "year": 1999,
+          "chapter": "743",
+          "section": "8"
+        },
+        {
+          "raw": "2012 c.37 119",
+          "year": 2012,
+          "chapter": "37",
+          "section": "119"
+        },
+        {
+          "raw": "2013 c.624 55",
+          "year": 2013,
+          "chapter": "624",
+          "section": "55"
+        },
+        {
+          "raw": "renumbered 329A.310 in 2013"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 27,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html#section-657a.330",
+      "identifier": "ORS 657a.330",
+      "name": "Section 657a.330",
+      "text": "",
+      "history_citation_blocks": [
+        "1993 c.733 2; 1995 c.278 14; 1995 c.647 4; 1997 c.399 1; 1999 c.382 8; 1999 c.743 9; 2001 c.104 254; 2001 c.528 1; 2003 c.293 11; 2005 c.730 33; 2009 c.347 3; 2013 c.624 56; renumbered 329A.330 in 2013"
+      ],
+      "history_citations": [
+        {
+          "raw": "1993 c.733 2",
+          "year": 1993,
+          "chapter": "733",
+          "section": "2"
+        },
+        {
+          "raw": "1995 c.278 14",
+          "year": 1995,
+          "chapter": "278",
+          "section": "14"
+        },
+        {
+          "raw": "1995 c.647 4",
+          "year": 1995,
+          "chapter": "647",
+          "section": "4"
+        },
+        {
+          "raw": "1997 c.399 1",
+          "year": 1997,
+          "chapter": "399",
+          "section": "1"
+        },
+        {
+          "raw": "1999 c.382 8",
+          "year": 1999,
+          "chapter": "382",
+          "section": "8"
+        },
+        {
+          "raw": "1999 c.743 9",
+          "year": 1999,
+          "chapter": "743",
+          "section": "9"
+        },
+        {
+          "raw": "2001 c.104 254",
+          "year": 2001,
+          "chapter": "104",
+          "section": "254"
+        },
+        {
+          "raw": "2001 c.528 1",
+          "year": 2001,
+          "chapter": "528",
+          "section": "1"
+        },
+        {
+          "raw": "2003 c.293 11",
+          "year": 2003,
+          "chapter": "293",
+          "section": "11"
+        },
+        {
+          "raw": "2005 c.730 33",
+          "year": 2005,
+          "chapter": "730",
+          "section": "33"
+        },
+        {
+          "raw": "2009 c.347 3",
+          "year": 2009,
+          "chapter": "347",
+          "section": "3"
+        },
+        {
+          "raw": "2013 c.624 56",
+          "year": 2013,
+          "chapter": "624",
+          "section": "56"
+        },
+        {
+          "raw": "renumbered 329A.330 in 2013"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 28,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html#section-657a.340",
+      "identifier": "ORS 657a.340",
+      "name": "Section 657a.340",
+      "text": "",
+      "history_citation_blocks": [
+        "2009 c.319 2; renumbered 329A.340 in 2013"
+      ],
+      "history_citations": [
+        {
+          "raw": "2009 c.319 2",
+          "year": 2009,
+          "chapter": "319",
+          "section": "2"
+        },
+        {
+          "raw": "renumbered 329A.340 in 2013"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 29,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html#section-657a.350",
+      "identifier": "ORS 657a.350",
+      "name": "Section 657a.350",
+      "text": "",
+      "history_citation_blocks": [
+        "Formerly 418.840; 1997 c.431 12; 1997 c.753 10; 1999 c.743 12; 2013 c.624 57; renumbered 329A.350 in 2013"
+      ],
+      "history_citations": [
+        {
+          "raw": "Formerly 418.840"
+        },
+        {
+          "raw": "1997 c.431 12",
+          "year": 1997,
+          "chapter": "431",
+          "section": "12"
+        },
+        {
+          "raw": "1997 c.753 10",
+          "year": 1997,
+          "chapter": "753",
+          "section": "10"
+        },
+        {
+          "raw": "1999 c.743 12",
+          "year": 1999,
+          "chapter": "743",
+          "section": "12"
+        },
+        {
+          "raw": "2013 c.624 57",
+          "year": 2013,
+          "chapter": "624",
+          "section": "57"
+        },
+        {
+          "raw": "renumbered 329A.350 in 2013"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 30,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html#section-657a.360",
+      "identifier": "ORS 657a.360",
+      "name": "Section 657a.360",
+      "text": "",
+      "history_citation_blocks": [
+        "Formerly 418.845; 1995 c.278 15; 1999 c.743 13; 2013 c.624 58; renumbered 329A.360 in 2013"
+      ],
+      "history_citations": [
+        {
+          "raw": "Formerly 418.845"
+        },
+        {
+          "raw": "1995 c.278 15",
+          "year": 1995,
+          "chapter": "278",
+          "section": "15"
+        },
+        {
+          "raw": "1999 c.743 13",
+          "year": 1999,
+          "chapter": "743",
+          "section": "13"
+        },
+        {
+          "raw": "2013 c.624 58",
+          "year": 2013,
+          "chapter": "624",
+          "section": "58"
+        },
+        {
+          "raw": "renumbered 329A.360 in 2013"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 31,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html#section-657a.370",
+      "identifier": "ORS 657a.370",
+      "name": "Section 657a.370",
+      "text": "",
+      "history_citation_blocks": [
+        "Formerly 418.870; 1995 c.278 16; 1997 c.431 13; 1997 c.753 11; 2005 c.730 34; 2013 c.624 59; renumbered 329A.370 in 2013"
+      ],
+      "history_citations": [
+        {
+          "raw": "Formerly 418.870"
+        },
+        {
+          "raw": "1995 c.278 16",
+          "year": 1995,
+          "chapter": "278",
+          "section": "16"
+        },
+        {
+          "raw": "1997 c.431 13",
+          "year": 1997,
+          "chapter": "431",
+          "section": "13"
+        },
+        {
+          "raw": "1997 c.753 11",
+          "year": 1997,
+          "chapter": "753",
+          "section": "11"
+        },
+        {
+          "raw": "2005 c.730 34",
+          "year": 2005,
+          "chapter": "730",
+          "section": "34"
+        },
+        {
+          "raw": "2013 c.624 59",
+          "year": 2013,
+          "chapter": "624",
+          "section": "59"
+        },
+        {
+          "raw": "renumbered 329A.370 in 2013"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 32,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html#section-657a.390",
+      "identifier": "ORS 657a.390",
+      "name": "Section 657a.390",
+      "text": "",
+      "history_citation_blocks": [
+        "Formerly 418.850; 1995 c.278 17; 1997 c.431 14; 1997 c.753 12; 1999 c.743 14,14a; 2005 c.730 35; 2009 c.570 5; 2009 c.633 9; 2013 c.624 60; renumbered 329A.390 in 2013"
+      ],
+      "history_citations": [
+        {
+          "raw": "Formerly 418.850"
+        },
+        {
+          "raw": "1995 c.278 17",
+          "year": 1995,
+          "chapter": "278",
+          "section": "17"
+        },
+        {
+          "raw": "1997 c.431 14",
+          "year": 1997,
+          "chapter": "431",
+          "section": "14"
+        },
+        {
+          "raw": "1997 c.753 12",
+          "year": 1997,
+          "chapter": "753",
+          "section": "12"
+        },
+        {
+          "raw": "1999 c.743 14,14a"
+        },
+        {
+          "raw": "2005 c.730 35",
+          "year": 2005,
+          "chapter": "730",
+          "section": "35"
+        },
+        {
+          "raw": "2009 c.570 5",
+          "year": 2009,
+          "chapter": "570",
+          "section": "5"
+        },
+        {
+          "raw": "2009 c.633 9",
+          "year": 2009,
+          "chapter": "633",
+          "section": "9"
+        },
+        {
+          "raw": "2013 c.624 60",
+          "year": 2013,
+          "chapter": "624",
+          "section": "60"
+        },
+        {
+          "raw": "renumbered 329A.390 in 2013"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 33,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html#section-657a.400",
+      "identifier": "ORS 657a.400",
+      "name": "Section 657a.400",
+      "text": "",
+      "history_citation_blocks": [
+        "Formerly 418.855; 1995 c.79 334; 1995 c.278 18; 1999 c.743 15; 2003 c.293 15; 2003 c.547 116; 2009 c.595 1046; 2013 c.624 61; renumbered 329A.400 in 2013"
+      ],
+      "history_citations": [
+        {
+          "raw": "Formerly 418.855"
+        },
+        {
+          "raw": "1995 c.79 334",
+          "year": 1995,
+          "chapter": "79",
+          "section": "334"
+        },
+        {
+          "raw": "1995 c.278 18",
+          "year": 1995,
+          "chapter": "278",
+          "section": "18"
+        },
+        {
+          "raw": "1999 c.743 15",
+          "year": 1999,
+          "chapter": "743",
+          "section": "15"
+        },
+        {
+          "raw": "2003 c.293 15",
+          "year": 2003,
+          "chapter": "293",
+          "section": "15"
+        },
+        {
+          "raw": "2003 c.547 116",
+          "year": 2003,
+          "chapter": "547",
+          "section": "116"
+        },
+        {
+          "raw": "2009 c.595 1046",
+          "year": 2009,
+          "chapter": "595",
+          "section": "1046"
+        },
+        {
+          "raw": "2013 c.624 61",
+          "year": 2013,
+          "chapter": "624",
+          "section": "61"
+        },
+        {
+          "raw": "renumbered 329A.400 in 2013"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 34,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html#section-657a.410",
+      "identifier": "ORS 657a.410",
+      "name": "Section 657a.410",
+      "text": "",
+      "history_citation_blocks": [
+        "Formerly 418.860; 1997 c.431 15; 1997 c.753 13; 1999 c.743 16; 2009 c.595 1047; 2013 c.624 62; renumbered 329A.410 in 2013"
+      ],
+      "history_citations": [
+        {
+          "raw": "Formerly 418.860"
+        },
+        {
+          "raw": "1997 c.431 15",
+          "year": 1997,
+          "chapter": "431",
+          "section": "15"
+        },
+        {
+          "raw": "1997 c.753 13",
+          "year": 1997,
+          "chapter": "753",
+          "section": "13"
+        },
+        {
+          "raw": "1999 c.743 16",
+          "year": 1999,
+          "chapter": "743",
+          "section": "16"
+        },
+        {
+          "raw": "2009 c.595 1047",
+          "year": 2009,
+          "chapter": "595",
+          "section": "1047"
+        },
+        {
+          "raw": "2013 c.624 62",
+          "year": 2013,
+          "chapter": "624",
+          "section": "62"
+        },
+        {
+          "raw": "renumbered 329A.410 in 2013"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 35,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html#section-657a.420",
+      "identifier": "ORS 657a.420",
+      "name": "Section 657a.420",
+      "text": "",
+      "history_citation_blocks": [
+        "Formerly 418.865; 1995 c.278 19; 1997 c.431 16; 1997 c.753 14; 2001 c.900 214; 2009 c.595 1048; 2013 c.624 63; renumbered 329A.420 in 2013"
+      ],
+      "history_citations": [
+        {
+          "raw": "Formerly 418.865"
+        },
+        {
+          "raw": "1995 c.278 19",
+          "year": 1995,
+          "chapter": "278",
+          "section": "19"
+        },
+        {
+          "raw": "1997 c.431 16",
+          "year": 1997,
+          "chapter": "431",
+          "section": "16"
+        },
+        {
+          "raw": "1997 c.753 14",
+          "year": 1997,
+          "chapter": "753",
+          "section": "14"
+        },
+        {
+          "raw": "2001 c.900 214",
+          "year": 2001,
+          "chapter": "900",
+          "section": "214"
+        },
+        {
+          "raw": "2009 c.595 1048",
+          "year": 2009,
+          "chapter": "595",
+          "section": "1048"
+        },
+        {
+          "raw": "2013 c.624 63",
+          "year": 2013,
+          "chapter": "624",
+          "section": "63"
+        },
+        {
+          "raw": "renumbered 329A.420 in 2013"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 36,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html#section-657a.430",
+      "identifier": "ORS 657a.430",
+      "name": "Section 657a.430",
+      "text": "",
+      "history_citation_blocks": [
+        "2007 c.563 2; renumbered 329A.430 in 2013"
+      ],
+      "history_citations": [
+        {
+          "raw": "2007 c.563 2",
+          "year": 2007,
+          "chapter": "563",
+          "section": "2"
+        },
+        {
+          "raw": "renumbered 329A.430 in 2013"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 37,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html#section-657a.440",
+      "identifier": "ORS 657a.440",
+      "name": "Section 657a.440",
+      "text": "",
+      "history_citation_blocks": [
+        "Formerly 418.817; 1995 c.278 20; 1999 c.743 17; 2001 c.704 6; 2003 c.293 12; 2005 c.408 2; renumbered 329A.440 in 2013"
+      ],
+      "history_citations": [
+        {
+          "raw": "Formerly 418.817"
+        },
+        {
+          "raw": "1995 c.278 20",
+          "year": 1995,
+          "chapter": "278",
+          "section": "20"
+        },
+        {
+          "raw": "1999 c.743 17",
+          "year": 1999,
+          "chapter": "743",
+          "section": "17"
+        },
+        {
+          "raw": "2001 c.704 6",
+          "year": 2001,
+          "chapter": "704",
+          "section": "6"
+        },
+        {
+          "raw": "2003 c.293 12",
+          "year": 2003,
+          "chapter": "293",
+          "section": "12"
+        },
+        {
+          "raw": "2005 c.408 2",
+          "year": 2005,
+          "chapter": "408",
+          "section": "2"
+        },
+        {
+          "raw": "renumbered 329A.440 in 2013"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 38,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html#section-657a.450",
+      "identifier": "ORS 657a.450",
+      "name": "Section 657a.450",
+      "text": "",
+      "history_citation_blocks": [
+        "Formerly 418.885; 1995 c.278 21; 2013 c.624 64; renumbered 329A.450 in 2013"
+      ],
+      "history_citations": [
+        {
+          "raw": "Formerly 418.885"
+        },
+        {
+          "raw": "1995 c.278 21",
+          "year": 1995,
+          "chapter": "278",
+          "section": "21"
+        },
+        {
+          "raw": "2013 c.624 64",
+          "year": 2013,
+          "chapter": "624",
+          "section": "64"
+        },
+        {
+          "raw": "renumbered 329A.450 in 2013"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 39,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html#section-657a.460",
+      "identifier": "ORS 657a.460",
+      "name": "Section 657a.460",
+      "text": "",
+      "history_citation_blocks": [
+        "Formerly 418.890; 1995 c.278 22; renumbered 329A.460 in 2013"
+      ],
+      "history_citations": [
+        {
+          "raw": "Formerly 418.890"
+        },
+        {
+          "raw": "1995 c.278 22",
+          "year": 1995,
+          "chapter": "278",
+          "section": "22"
+        },
+        {
+          "raw": "renumbered 329A.460 in 2013"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 40,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html#section-657a.490",
+      "identifier": "ORS 657a.490",
+      "name": "Section 657a.490",
+      "text": "",
+      "history_citation_blocks": [
+        "1999 c.992 1; 2012 c.37 67; 2013 c.623 21; 2013 c.624 65; renumbered 329A.490 in 2013"
+      ],
+      "history_citations": [
+        {
+          "raw": "1999 c.992 1",
+          "year": 1999,
+          "chapter": "992",
+          "section": "1"
+        },
+        {
+          "raw": "2012 c.37 67",
+          "year": 2012,
+          "chapter": "37",
+          "section": "67"
+        },
+        {
+          "raw": "2013 c.623 21",
+          "year": 2013,
+          "chapter": "623",
+          "section": "21"
+        },
+        {
+          "raw": "2013 c.624 65",
+          "year": 2013,
+          "chapter": "624",
+          "section": "65"
+        },
+        {
+          "raw": "renumbered 329A.490 in 2013"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 41,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html#section-657a.493",
+      "identifier": "ORS 657a.493",
+      "name": "Section 657a.493",
+      "text": "",
+      "history_citation_blocks": [
+        "1999 c.992 2; renumbered 329A.493 in 2013"
+      ],
+      "history_citations": [
+        {
+          "raw": "1999 c.992 2",
+          "year": 1999,
+          "chapter": "992",
+          "section": "2"
+        },
+        {
+          "raw": "renumbered 329A.493 in 2013"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 42,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html#section-657a.500",
+      "identifier": "ORS 657a.500",
+      "name": "Section 657a.500",
+      "text": "[Formerly 418.900; repealed by 2001 c.295 17]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 43,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html#section-657a.510",
+      "identifier": "ORS 657a.510",
+      "name": "Section 657a.510",
+      "text": "",
+      "history_citation_blocks": [
+        "Formerly 418.905; 1995 c.278 23; repealed by 2001 c.295 17"
+      ],
+      "history_citations": [
+        {
+          "raw": "Formerly 418.905"
+        },
+        {
+          "raw": "1995 c.278 23",
+          "year": 1995,
+          "chapter": "278",
+          "section": "23"
+        },
+        {
+          "raw": "repealed by 2001 c.295 17"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 44,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html#section-657a.520",
+      "identifier": "ORS 657a.520",
+      "name": "Section 657a.520",
+      "text": "",
+      "history_citation_blocks": [
+        "Formerly 418.910; 1995 c.278 24; repealed by 2001 c.295 17"
+      ],
+      "history_citations": [
+        {
+          "raw": "Formerly 418.910"
+        },
+        {
+          "raw": "1995 c.278 24",
+          "year": 1995,
+          "chapter": "278",
+          "section": "24"
+        },
+        {
+          "raw": "repealed by 2001 c.295 17"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 45,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html#section-657a.530",
+      "identifier": "ORS 657a.530",
+      "name": "Section 657a.530",
+      "text": "[Formerly 418.915; repealed by 2001 c.295 17]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 46,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html#section-657a.600",
+      "identifier": "ORS 657a.600",
+      "name": "Section 657a.600",
+      "text": "",
+      "history_citation_blocks": [
+        "1985 c.753 1; 1993 c.344 25; 1995 c.278 25; repealed by 2012 c.37 122"
+      ],
+      "history_citations": [
+        {
+          "raw": "1985 c.753 1",
+          "year": 1985,
+          "chapter": "753",
+          "section": "1"
+        },
+        {
+          "raw": "1993 c.344 25",
+          "year": 1993,
+          "chapter": "344",
+          "section": "25"
+        },
+        {
+          "raw": "1995 c.278 25",
+          "year": 1995,
+          "chapter": "278",
+          "section": "25"
+        },
+        {
+          "raw": "repealed by 2012 c.37 122"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 47,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html#section-657a.610",
+      "identifier": "ORS 657a.610",
+      "name": "Section 657a.610",
+      "text": "",
+      "history_citation_blocks": [
+        "1985 c.753 2; 1989 c.121 3; 1991 c.67 108; 1993 c.344 26; 1995 c.278 26; 1999 c.743 18; 2001 c.91 1; repealed by 2012 c.37 122"
+      ],
+      "history_citations": [
+        {
+          "raw": "1985 c.753 2",
+          "year": 1985,
+          "chapter": "753",
+          "section": "2"
+        },
+        {
+          "raw": "1989 c.121 3",
+          "year": 1989,
+          "chapter": "121",
+          "section": "3"
+        },
+        {
+          "raw": "1991 c.67 108",
+          "year": 1991,
+          "chapter": "67",
+          "section": "108"
+        },
+        {
+          "raw": "1993 c.344 26",
+          "year": 1993,
+          "chapter": "344",
+          "section": "26"
+        },
+        {
+          "raw": "1995 c.278 26",
+          "year": 1995,
+          "chapter": "278",
+          "section": "26"
+        },
+        {
+          "raw": "1999 c.743 18",
+          "year": 1999,
+          "chapter": "743",
+          "section": "18"
+        },
+        {
+          "raw": "2001 c.91 1",
+          "year": 2001,
+          "chapter": "91",
+          "section": "1"
+        },
+        {
+          "raw": "repealed by 2012 c.37 122"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 48,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html#section-657a.620",
+      "identifier": "ORS 657a.620",
+      "name": "Section 657a.620",
+      "text": "",
+      "history_citation_blocks": [
+        "1985 c.753 4; 1987 c.879 19; repealed by 2012 c.37 122"
+      ],
+      "history_citations": [
+        {
+          "raw": "1985 c.753 4",
+          "year": 1985,
+          "chapter": "753",
+          "section": "4"
+        },
+        {
+          "raw": "1987 c.879 19",
+          "year": 1987,
+          "chapter": "879",
+          "section": "19"
+        },
+        {
+          "raw": "repealed by 2012 c.37 122"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 49,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html#section-657a.630",
+      "identifier": "ORS 657a.630",
+      "name": "Section 657a.630",
+      "text": "",
+      "history_citation_blocks": [
+        "1985 c.753 3; repealed by 2012 c.37 122"
+      ],
+      "history_citations": [
+        {
+          "raw": "1985 c.753 3",
+          "year": 1985,
+          "chapter": "753",
+          "section": "3"
+        },
+        {
+          "raw": "repealed by 2012 c.37 122"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 50,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html#section-657a.640",
+      "identifier": "ORS 657a.640",
+      "name": "Section 657a.640",
+      "text": "",
+      "history_citation_blocks": [
+        "1989 c.110 4; repealed by 2012 c.37 122"
+      ],
+      "history_citations": [
+        {
+          "raw": "1989 c.110 4",
+          "year": 1989,
+          "chapter": "110",
+          "section": "4"
+        },
+        {
+          "raw": "repealed by 2012 c.37 122"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 51,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html#section-657a.700",
+      "identifier": "ORS 657a.700",
+      "name": "Section 657a.700",
+      "text": "",
+      "history_citation_blocks": [
+        "2001 c.674 3; 2003 c.473 1; 2012 c.37 120; 2013 c.624 66; renumbered 329A.700 in 2013"
+      ],
+      "history_citations": [
+        {
+          "raw": "2001 c.674 3",
+          "year": 2001,
+          "chapter": "674",
+          "section": "3"
+        },
+        {
+          "raw": "2003 c.473 1",
+          "year": 2003,
+          "chapter": "473",
+          "section": "1"
+        },
+        {
+          "raw": "2012 c.37 120",
+          "year": 2012,
+          "chapter": "37",
+          "section": "120"
+        },
+        {
+          "raw": "2013 c.624 66",
+          "year": 2013,
+          "chapter": "624",
+          "section": "66"
+        },
+        {
+          "raw": "renumbered 329A.700 in 2013"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 52,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html#section-657a.703",
+      "identifier": "ORS 657a.703",
+      "name": "Section 657a.703",
+      "text": "",
+      "history_citation_blocks": [
+        "2001 c.674 4; 2003 c.473 2; 2013 c.624 67; renumbered 329A.703 in 2013"
+      ],
+      "history_citations": [
+        {
+          "raw": "2001 c.674 4",
+          "year": 2001,
+          "chapter": "674",
+          "section": "4"
+        },
+        {
+          "raw": "2003 c.473 2",
+          "year": 2003,
+          "chapter": "473",
+          "section": "2"
+        },
+        {
+          "raw": "2013 c.624 67",
+          "year": 2013,
+          "chapter": "624",
+          "section": "67"
+        },
+        {
+          "raw": "renumbered 329A.703 in 2013"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 53,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html#section-657a.706",
+      "identifier": "ORS 657a.706",
+      "name": "Section 657a.706",
+      "text": "",
+      "history_citation_blocks": [
+        "2001 c.674 5; 2003 c.473 3; 2013 c.624 68; renumbered 329A.706 in 2013"
+      ],
+      "history_citations": [
+        {
+          "raw": "2001 c.674 5",
+          "year": 2001,
+          "chapter": "674",
+          "section": "5"
+        },
+        {
+          "raw": "2003 c.473 3",
+          "year": 2003,
+          "chapter": "473",
+          "section": "3"
+        },
+        {
+          "raw": "2013 c.624 68",
+          "year": 2013,
+          "chapter": "624",
+          "section": "68"
+        },
+        {
+          "raw": "renumbered 329A.706 in 2013"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 54,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html#section-657a.709",
+      "identifier": "ORS 657a.709",
+      "name": "Section 657a.709",
+      "text": "",
+      "history_citation_blocks": [
+        "2001 c.674 6; 2003 c.473 4; 2013 c.624 69; renumbered 329A.709 in 2013"
+      ],
+      "history_citations": [
+        {
+          "raw": "2001 c.674 6",
+          "year": 2001,
+          "chapter": "674",
+          "section": "6"
+        },
+        {
+          "raw": "2003 c.473 4",
+          "year": 2003,
+          "chapter": "473",
+          "section": "4"
+        },
+        {
+          "raw": "2013 c.624 69",
+          "year": 2013,
+          "chapter": "624",
+          "section": "69"
+        },
+        {
+          "raw": "renumbered 329A.709 in 2013"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 55,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html#section-657a.712",
+      "identifier": "ORS 657a.712",
+      "name": "Section 657a.712",
+      "text": "",
+      "history_citation_blocks": [
+        "2001 c.674 6a; 2003 c.473 5; 2013 c.624 70; renumbered 329A.712 in 2013"
+      ],
+      "history_citations": [
+        {
+          "raw": "2001 c.674 6a",
+          "year": 2001,
+          "chapter": "674",
+          "section": "6a"
+        },
+        {
+          "raw": "2003 c.473 5",
+          "year": 2003,
+          "chapter": "473",
+          "section": "5"
+        },
+        {
+          "raw": "2013 c.624 70",
+          "year": 2013,
+          "chapter": "624",
+          "section": "70"
+        },
+        {
+          "raw": "renumbered 329A.712 in 2013"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 56,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html#section-657a.715",
+      "identifier": "ORS 657a.715",
+      "name": "Section 657a.715",
+      "text": "",
+      "history_citation_blocks": [
+        "2001 c.674 7; 2003 c.473 6; 2013 c.624 71; renumbered 329A.715 in 2013"
+      ],
+      "history_citations": [
+        {
+          "raw": "2001 c.674 7",
+          "year": 2001,
+          "chapter": "674",
+          "section": "7"
+        },
+        {
+          "raw": "2003 c.473 6",
+          "year": 2003,
+          "chapter": "473",
+          "section": "6"
+        },
+        {
+          "raw": "2013 c.624 71",
+          "year": 2013,
+          "chapter": "624",
+          "section": "71"
+        },
+        {
+          "raw": "renumbered 329A.715 in 2013"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 57,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html#section-657a.718",
+      "identifier": "ORS 657a.718",
+      "name": "Section 657a.718",
+      "text": "",
+      "history_citation_blocks": [
+        "2001 c.674 8; 2003 c.473 7; 2013 c.624 72; renumbered 329A.718 in 2013"
+      ],
+      "history_citations": [
+        {
+          "raw": "2001 c.674 8",
+          "year": 2001,
+          "chapter": "674",
+          "section": "8"
+        },
+        {
+          "raw": "2003 c.473 7",
+          "year": 2003,
+          "chapter": "473",
+          "section": "7"
+        },
+        {
+          "raw": "2013 c.624 72",
+          "year": 2013,
+          "chapter": "624",
+          "section": "72"
+        },
+        {
+          "raw": "renumbered 329A.718 in 2013"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 58,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html#section-657a.990",
+      "identifier": "ORS 657a.990",
+      "name": "Section 657a.990",
+      "text": "[Formerly part of 418.990; renumbered 329A.990 in 2013]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 59,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html#section-657a.992",
+      "identifier": "ORS 657a.992",
+      "name": "Section 657a.992",
+      "text": "[2009 c.347 1; 2012 c.37 121; 2013 c.624 73; renumbered 329A.992 in 2013] _______________",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 60,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors657a.html"
+    }
+  ],
+  "alternateName": "(Former Provisions)"
+}

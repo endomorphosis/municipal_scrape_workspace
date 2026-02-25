@@ -1,0 +1,1965 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "orlaw": "https://www.oregonlegislature.gov/ors#"
+  },
+  "@type": "Legislation",
+  "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html",
+  "identifier": "ORS Chapter 440",
+  "name": "ORS Chapter 440 — Regional Health Entities",
+  "legislationType": "Statute",
+  "jurisdiction": "US-OR",
+  "isPartOf": {
+    "@type": "CreativeWork",
+    "identifier": "ORS",
+    "name": "Oregon Revised Statutes",
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors"
+  },
+  "dateModified": "2026-02-25T08:11:24.257624+00:00",
+  "source_file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors440.html",
+  "hasPart": [
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html#section-440.010",
+      "identifier": "ORS 440.010",
+      "name": "Section 440.010",
+      "text": "",
+      "history_citation_blocks": [
+        "Amended by 1963 c.607 1; 1967 c.613 1; repealed by 1981 c.45 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1963 c.607 1"
+        },
+        {
+          "raw": "1967 c.613 1",
+          "year": 1967,
+          "chapter": "613",
+          "section": "1"
+        },
+        {
+          "raw": "repealed by 1981 c.45 1"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 1,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html#section-440.020",
+      "identifier": "ORS 440.020",
+      "name": "Section 440.020",
+      "text": "[Amended by 1967 c.613 2; repealed by 1981 c.45 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 2,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html#section-440.030",
+      "identifier": "ORS 440.030",
+      "name": "Section 440.030",
+      "text": "",
+      "history_citation_blocks": [
+        "Amended by 1963 c.607 2; 1967 c.613 4; repealed by 1981 c.45 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1963 c.607 2"
+        },
+        {
+          "raw": "1967 c.613 4",
+          "year": 1967,
+          "chapter": "613",
+          "section": "4"
+        },
+        {
+          "raw": "repealed by 1981 c.45 1"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 3,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html#section-440.040",
+      "identifier": "ORS 440.040",
+      "name": "Section 440.040",
+      "text": "",
+      "history_citation_blocks": [
+        "1967 c.613 3; repealed by 1981 c.45 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "1967 c.613 3",
+          "year": 1967,
+          "chapter": "613",
+          "section": "3"
+        },
+        {
+          "raw": "repealed by 1981 c.45 1"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 4,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html#section-440.110",
+      "identifier": "ORS 440.110",
+      "name": "Section 440.110",
+      "text": "[Repealed by 1981 c.45 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 5,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html#section-440.120",
+      "identifier": "ORS 440.120",
+      "name": "Section 440.120",
+      "text": "[Repealed by 1981 c.45 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 6,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html#section-440.130",
+      "identifier": "ORS 440.130",
+      "name": "Section 440.130",
+      "text": "[Repealed by 1981 c.45 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 7,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html#section-440.140",
+      "identifier": "ORS 440.140",
+      "name": "Section 440.140",
+      "text": "[Repealed by 1981 c.45 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 8,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html#section-440.150",
+      "identifier": "ORS 440.150",
+      "name": "Section 440.150",
+      "text": "[Repealed by 1981 c.45 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 9,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html#section-440.160",
+      "identifier": "ORS 440.160",
+      "name": "Section 440.160",
+      "text": "[Repealed by 1981 c.45 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 10,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html#section-440.170",
+      "identifier": "ORS 440.170",
+      "name": "Section 440.170",
+      "text": "[Repealed by 1981 c.45 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 11,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html#section-440.180",
+      "identifier": "ORS 440.180",
+      "name": "Section 440.180",
+      "text": "[Amended by 1967 c.317 1; repealed by 1981 c.45 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 12,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html#section-440.190",
+      "identifier": "ORS 440.190",
+      "name": "Section 440.190",
+      "text": "[Repealed by 1981 c.45 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 13,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html#section-440.200",
+      "identifier": "ORS 440.200",
+      "name": "Section 440.200",
+      "text": "[Amended by 1967 c.317 2; repealed by 1981 c.45 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 14,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html#section-440.210",
+      "identifier": "ORS 440.210",
+      "name": "Section 440.210",
+      "text": "[Repealed by 1981 c.45 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 15,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html#section-440.220",
+      "identifier": "ORS 440.220",
+      "name": "Section 440.220",
+      "text": "[Amended by 1963 c.607 3; repealed by 1981 c.45 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 16,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html#section-440.230",
+      "identifier": "ORS 440.230",
+      "name": "Section 440.230",
+      "text": "[Repealed by 1981 c.45 1] HEALTH DISTRICTS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 17,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html#section-440.305",
+      "identifier": "ORS 440.305",
+      "name": "Section 440.305",
+      "text": "District created coterminous with each district existing on July 2, 1957; districts existing on July 2, 1957, abolished. (1) There hereby is created a health district territorially coterminous with each health district existing on July 2, 1957, if such existing health district was at that time a valid health district but for the fact that the electors of the district were required to have resided in the district for a period of not less than 90 days next preceding an election. In determining the boundaries of health districts created by this subsection, full effect shall be given to annexations effected by health districts prior to November 22, 1957, under ORS 441.205 to 441.410 (1957 Replacement Part). (2) Health districts created by subsection (1) of this section are subject to and shall be governed by ORS 440.315 to 440.410. (3) Health districts territorially coterminous with health districts created by subsection (1) of this section hereby are abolished. [Formerly 441.195]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "There hereby is created a health district territorially coterminous with each health district existing on July 2, 1957, if such existing health district was at that time a valid health district but for the fact that the electors of the district were required to have resided in the district for a period of not less than 90 days next preceding an election. In determining the boundaries of health districts created by this subsection, full effect shall be given to annexations effected by health districts prior to November 22, 1957, under ORS 441.205 to 441.410 (1957 Replacement Part). of this section are subject to and shall be governed by ORS 440.315 to 440.410. of this section hereby are abolished. [Formerly 441.195]",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Health districts created by subsection",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Health districts territorially coterminous with health districts created by subsection",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 18,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html#section-440.310",
+      "identifier": "ORS 440.310",
+      "name": "Section 440.310",
+      "text": "New district succeeds to and replaces abolished district. Each health district created by ORS 440.305 (1) shall in all respects be the successor of and replace the territorially coterminous health district abolished by ORS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "shall in all respects be the successor of and replace the territorially coterminous health district abolished by ORS",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 19,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html#section-440.315",
+      "identifier": "ORS 440.315",
+      "name": "Section 440.315",
+      "text": "Definitions for ORS 440.315 to 440.410. As used in ORS 440.315 to 440.410, unless the context requires otherwise: (1) County board means the county court or board of county commissioners, as the case may be, of the county in which a district, or the greater portion of the taxable assessed value thereof, is located. (2) County clerk means the county clerk of the county in which a district, or the greater portion of the taxable assessed value thereof, is located. (3) District board or board means the board of directors of a district. (4) Health district or district means any district formed pursuant to ORS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "County board means the county court or board of county commissioners, as the case may be, of the county in which a district, or the greater portion of the taxable assessed value thereof, is located.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "County clerk means the county clerk of the county in which a district, or the greater portion of the taxable assessed value thereof, is located.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "District board or board means the board of directors of a district.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Health district or district means any district formed pursuant to ORS",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 20,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html#section-440.320",
+      "identifier": "ORS 440.320",
+      "name": ".",
+      "text": "(2) A health district, each year, may also assess, levy and collect a special tax upon all such property, real and personal, in an amount sufficient to pay the yearly interest on bonds theretofore issued by the district and then outstanding, together with any portion of the principal of such bonds maturing within such year. The special tax shall be applied only in payment of interest and principal of bonds issued by the health district, but the district may apply any funds it may have toward the payment of principal and interest of any such bonds. (3) All taxes needed shall be levied and returned to the county officer whose duty it is to extend the tax roll by the time required by law for city taxes to be levied and returned. (4) All taxes levied by a health district shall become payable at the same time and be collected by the same officer who collects county taxes. The proceeds of the taxes collected under this section shall be turned over to the health district according to law. (5) The county officer whose duty it is to extend the county levy shall extend the levy of the health district in the same manner as city taxes are extended. (6) Property is subject to sale for the nonpayment of taxes levied by the health district in like manner and with like effect as in the case of county and state taxes.",
+      "history_citation_blocks": [
+        "Formerly 441.360; 1991 c.459 400; 2001 c.215 6"
+      ],
+      "history_citations": [
+        {
+          "raw": "Formerly 441.360"
+        },
+        {
+          "raw": "1991 c.459 400",
+          "year": 1991,
+          "chapter": "459",
+          "section": "400"
+        },
+        {
+          "raw": "2001 c.215 6",
+          "year": 2001,
+          "chapter": "215",
+          "section": "6"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "A health district, each year, may also assess, levy and collect a special tax upon all such property, real and personal, in an amount sufficient to pay the yearly interest on bonds theretofore issued by the district and then outstanding, together with any portion of the principal of such bonds maturing within such year. The special tax shall be applied only in payment of interest and principal of bonds issued by the health district, but the district may apply any funds it may have toward the payment of principal and interest of any such bonds.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "All taxes needed shall be levied and returned to the county officer whose duty it is to extend the tax roll by the time required by law for city taxes to be levied and returned.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "All taxes levied by a health district shall become payable at the same time and be collected by the same officer who collects county taxes. The proceeds of the taxes collected under this section shall be turned over to the health district according to law.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "The county officer whose duty it is to extend the county levy shall extend the levy of the health district in the same manner as city taxes are extended.",
+          "subsections": []
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "Property is subject to sale for the nonpayment of taxes levied by the health district in like manner and with like effect as in the case of county and state taxes.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 21,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html#section-440.325",
+      "identifier": "ORS 440.325",
+      "name": "Section 440.325",
+      "text": "Board of directors; qualifications. The power and authority given to health districts, except as otherwise provided by ORS 440.315 to 440.410, is vested in and shall be exercised by a board of directors each of whom shall be an elector of the district.",
+      "history_citation_blocks": [
+        "Formerly 441.280; 1979 c.520 1; 1983 c.83 86; 1983 c.350 255; 1983 c.699 5"
+      ],
+      "history_citations": [
+        {
+          "raw": "Formerly 441.280"
+        },
+        {
+          "raw": "1979 c.520 1",
+          "year": 1979,
+          "chapter": "520",
+          "section": "1"
+        },
+        {
+          "raw": "1983 c.83 86",
+          "year": 1983,
+          "chapter": "83",
+          "section": "86"
+        },
+        {
+          "raw": "1983 c.350 255",
+          "year": 1983,
+          "chapter": "350",
+          "section": "255"
+        },
+        {
+          "raw": "1983 c.699 5",
+          "year": 1983,
+          "chapter": "699",
+          "section": "5"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 22,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html#section-440.327",
+      "identifier": "ORS 440.327",
+      "name": "Section 440.327",
+      "text": "First board of directors; how first terms computed; oath; terms; vacancy. (1) At the election for the first board of directors, five directors shall be elected. Their terms shall commence on the 30th day after the election. The terms of the candidates for the first board of directors who receive the first and second highest number of votes expire June 30 next following the second regular district election. The terms of the candidates who receive the third, fourth and fifth highest votes expire June 30 next following the first regular district election. (2) Not later than the 10th day after the issuance of the order of formation, the directors of the first board shall take and subscribe an oath of office and then meet and organize. (3) Except as provided in subsection (1) of this section, the term of a director is four years. (4) The board of directors shall fill any vacancy on the board as provided in ORS 198.320.",
+      "history_citation_blocks": [
+        "1983 c.350 257"
+      ],
+      "history_citations": [
+        {
+          "raw": "1983 c.350 257",
+          "year": 1983,
+          "chapter": "350",
+          "section": "257"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "At the election for the first board of directors, five directors shall be elected. Their terms shall commence on the 30th day after the election. The terms of the candidates for the first board of directors who receive the first and second highest number of votes expire June 30 next following the second regular district election. The terms of the candidates who receive the third, fourth and fifth highest votes expire June 30 next following the first regular district election. of this section, the term of a director is four years.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Not later than the 10th day after the issuance of the order of formation, the directors of the first board shall take and subscribe an oath of office and then meet and organize.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Except as provided in subsection",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "The board of directors shall fill any vacancy on the board as provided in ORS 198.320.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 23,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html#section-440.330",
+      "identifier": "ORS 440.330",
+      "name": "Section 440.330",
+      "text": "Number of directors; terms; effect of absence; district employee not eligible to serve on board. (1) The board of directors of a district, by resolution offered and adopted at any regular meeting of the board, may increase the number of directors from five to no more than 15. (2) If the number of directors is increased by action of the board, the board shall not fill by appointment any newly created position on the board, but shall provide for the election at the next regular district election of a sufficient number of additional directors to fill the newly created positions on the board. (3) The term of office of each director elected under subsection (2) of this section shall begin July 1 following the next regular district election. (4) The directors who are elected under subsection (2) of this section shall determine by lot the length of term each shall hold office. The terms of not more than one-half of the directors who are appointed or elected shall expire June 30 next following the first regular district election after the appointment or election. The terms of the remainder shall expire June 30 next following the second regular district election after the appointment or election. (5) The term of a director shall expire when the director is absent from four or more consecutive regular meetings of the board and the board declares the position vacant. The vacancy shall be filled as provided by ORS 198.320 (1) and (2). (6) An individual who is an employee of a health district is not eligible to serve as a director of the health district by which the individual is employed.",
+      "history_citation_blocks": [
+        "Formerly 441.285; 1979 c.520 3; 1981 c.508 1; 1983 c.350 258; 1983 c.699 1a; 1989 c.478 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "Formerly 441.285"
+        },
+        {
+          "raw": "1979 c.520 3",
+          "year": 1979,
+          "chapter": "520",
+          "section": "3"
+        },
+        {
+          "raw": "1981 c.508 1",
+          "year": 1981,
+          "chapter": "508",
+          "section": "1"
+        },
+        {
+          "raw": "1983 c.350 258",
+          "year": 1983,
+          "chapter": "350",
+          "section": "258"
+        },
+        {
+          "raw": "1983 c.699 1a",
+          "year": 1983,
+          "chapter": "699",
+          "section": "1a"
+        },
+        {
+          "raw": "1989 c.478 1",
+          "year": 1989,
+          "chapter": "478",
+          "section": "1"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The board of directors of a district, by resolution offered and adopted at any regular meeting of the board, may increase the number of directors from five to no more than 15.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "If the number of directors is increased by action of the board, the board shall not fill by appointment any newly created position on the board, but shall provide for the election at the next regular district election of a sufficient number of additional directors to fill the newly created positions on the board. of this section shall begin July 1 following the next regular district election. of this section shall determine by lot the length of term each shall hold office. The terms of not more than one-half of the directors who are appointed or elected shall expire June 30 next following the first regular district election after the appointment or election. The terms of the remainder shall expire June 30 next following the second regular district election after the appointment or election.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The term of office of each director elected under subsection",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "The directors who are elected under subsection",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "The term of a director shall expire when the director is absent from four or more consecutive regular meetings of the board and the board declares the position vacant. The vacancy shall be filled as provided by ORS 198.320",
+          "subsections": []
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "An individual who is an employee of a health district is not eligible to serve as a director of the health district by which the individual is employed.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 24,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html#section-440.335",
+      "identifier": "ORS 440.335",
+      "name": "Section 440.335",
+      "text": "Election of officers of board of directors; duties; quorum. (1) The directors of a health district shall, at the time of their organization, choose from their number a chairperson, a secretary and a treasurer, who shall hold their offices until their successors are elected and qualified. (2) These officers shall have, respectively, the powers and shall perform the duties usual in such cases. (3) A majority shall constitute a quorum to do business and, in the absence of the chairperson, any other member may preside at any meeting.",
+      "history_citation_blocks": [
+        "Formerly 441.290; 2007 c.71 124"
+      ],
+      "history_citations": [
+        {
+          "raw": "Formerly 441.290"
+        },
+        {
+          "raw": "2007 c.71 124",
+          "year": 2007,
+          "chapter": "71",
+          "section": "124"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The directors of a health district shall, at the time of their organization, choose from their number a chairperson, a secretary and a treasurer, who shall hold their offices until their successors are elected and qualified.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "These officers shall have, respectively, the powers and shall perform the duties usual in such cases.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "A majority shall constitute a quorum to do business and, in the absence of the chairperson, any other member may preside at any meeting.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 25,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html#section-440.340",
+      "identifier": "ORS 440.340",
+      "name": "Section 440.340",
+      "text": "Directors; meetings; rules. The district board shall hold meetings at such time and place within the district as it may, from time to time, determine, but it shall hold at least one regular meeting in each month on a day to be fixed by it, and may hold special meetings under such rules as it may make. [Formerly 441.295]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 26,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html#section-440.345",
+      "identifier": "ORS 440.345",
+      "name": "Section 440.345",
+      "text": "Position numbers for election of directors. (1) Each office of director of a health district shall be designated by number as Position No. 1, Position No. 2 and so forth. (2) The secretary of a district shall assign a position number to each office on the board. The secretary shall certify the number so assigned to the director in office holding that position and shall file one copy of the certification in the records of the elections officer for the district.",
+      "history_citation_blocks": [
+        "Formerly 441.305; 1983 c.350 259"
+      ],
+      "history_citations": [
+        {
+          "raw": "Formerly 441.305"
+        },
+        {
+          "raw": "1983 c.350 259",
+          "year": 1983,
+          "chapter": "350",
+          "section": "259"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Each office of director of a health district shall be designated by number as Position No. 1, Position No. 2 and so forth.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The secretary of a district shall assign a position number to each office on the board. The secretary shall certify the number so assigned to the director in office holding that position and shall file one copy of the certification in the records of the elections officer for the district.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 27,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html#section-440.347",
+      "identifier": "ORS 440.347",
+      "name": "Section 440.347",
+      "text": "District elections. (1) ORS chapter 255 governs the following: (a) The nomination and election of directors. (b) The conduct of district elections. (2) The electors of a district may exercise the powers of the initiative and referendum regarding a district measure, in accordance with ORS 255.135 to 255.205.",
+      "history_citation_blocks": [
+        "1983 c.350 261"
+      ],
+      "history_citations": [
+        {
+          "raw": "1983 c.350 261",
+          "year": 1983,
+          "chapter": "350",
+          "section": "261"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "ORS chapter 255 governs the following:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "The nomination and election of directors.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "The conduct of district elections.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The electors of a district may exercise the powers of the initiative and referendum regarding a district measure, in accordance with ORS 255.135 to 255.205.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 28,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html#section-440.350",
+      "identifier": "ORS 440.350",
+      "name": "Section 440.350",
+      "text": "Call of special elections. The board, at any regular meeting, may call a special election of the electors of the district. [Formerly 441.305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 29,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html#section-440.355",
+      "identifier": "ORS 440.355",
+      "name": "Section 440.355",
+      "text": "[Formerly 441.315; repealed by 1979 c.190 431]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 30,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html#section-440.360",
+      "identifier": "ORS 440.360",
+      "name": "Section 440.360",
+      "text": "Powers of health districts. A health district has all powers necessary to carry out the purposes of ORS 440.315 to 440.410, including, but not limited to, the power: (1) To provide directly or indirectly any physical or mental health related service. (2) To make any contract or agreement, to purchase and lease real and personal property, to enter into business arrangements or relationships with public or private entities and to create and participate fully in the operation of any business structure, including the development of business structures and arrangements for health care delivery systems and managed care plans. (3) To participate in community sponsored health screening, prevention, wellness, improvement or other activities that address the physical or mental health needs of district residents. Such participation may include clinical, financial, administrative, volunteer or other support considered appropriate by the board. (4) To perform any other acts that in the judgment of the board are necessary or appropriate to accomplish the purposes of ORS 440.315 to 440.410.",
+      "history_citation_blocks": [
+        "Formerly 441.320; 1979 c.520 2; 1981 c.508 3; 1983 c.699 2; 1983 c.740 155; 1985 c.747 50; 1987 c.850 1; 1997 c.857 1; 1999 c.630 2; 2003 c.802 113"
+      ],
+      "history_citations": [
+        {
+          "raw": "Formerly 441.320"
+        },
+        {
+          "raw": "1979 c.520 2",
+          "year": 1979,
+          "chapter": "520",
+          "section": "2"
+        },
+        {
+          "raw": "1981 c.508 3",
+          "year": 1981,
+          "chapter": "508",
+          "section": "3"
+        },
+        {
+          "raw": "1983 c.699 2",
+          "year": 1983,
+          "chapter": "699",
+          "section": "2"
+        },
+        {
+          "raw": "1983 c.740 155",
+          "year": 1983,
+          "chapter": "740",
+          "section": "155"
+        },
+        {
+          "raw": "1985 c.747 50",
+          "year": 1985,
+          "chapter": "747",
+          "section": "50"
+        },
+        {
+          "raw": "1987 c.850 1",
+          "year": 1987,
+          "chapter": "850",
+          "section": "1"
+        },
+        {
+          "raw": "1997 c.857 1",
+          "year": 1997,
+          "chapter": "857",
+          "section": "1"
+        },
+        {
+          "raw": "1999 c.630 2",
+          "year": 1999,
+          "chapter": "630",
+          "section": "2"
+        },
+        {
+          "raw": "2003 c.802 113",
+          "year": 2003,
+          "chapter": "802",
+          "section": "113"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "To provide directly or indirectly any physical or mental health related service.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "To make any contract or agreement, to purchase and lease real and personal property, to enter into business arrangements or relationships with public or private entities and to create and participate fully in the operation of any business structure, including the development of business structures and arrangements for health care delivery systems and managed care plans.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "To participate in community sponsored health screening, prevention, wellness, improvement or other activities that address the physical or mental health needs of district residents. Such participation may include clinical, financial, administrative, volunteer or other support considered appropriate by the board.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "To perform any other acts that in the judgment of the board are necessary or appropriate to accomplish the purposes of ORS 440.315 to 440.410.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 31,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html#section-440.365",
+      "identifier": "ORS 440.365",
+      "name": "Section 440.365",
+      "text": "User charges. A health district is authorized to charge persons who use district facilities and services.",
+      "history_citation_blocks": [
+        "Formerly 441.325; 1999 c.630 3"
+      ],
+      "history_citations": [
+        {
+          "raw": "Formerly 441.325"
+        },
+        {
+          "raw": "1999 c.630 3",
+          "year": 1999,
+          "chapter": "630",
+          "section": "3"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 32,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html#section-440.370",
+      "identifier": "ORS 440.370",
+      "name": "Section 440.370",
+      "text": "Eminent domain. A health district may exercise within its boundaries the power of eminent domain and may purchase, sell, condemn and appropriate real property, water, water rights and riparian rights.",
+      "history_citation_blocks": [
+        "Formerly 441.330; 2003 c.802 114"
+      ],
+      "history_citations": [
+        {
+          "raw": "Formerly 441.330"
+        },
+        {
+          "raw": "2003 c.802 114",
+          "year": 2003,
+          "chapter": "802",
+          "section": "114"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 33,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html#section-440.375",
+      "identifier": "ORS 440.375",
+      "name": "Section 440.375",
+      "text": "Authority to issue bonds. (1) For the purpose of carrying into effect the powers granted by ORS 440.315 to 440.410, a health district, when authorized at any properly called election held for that purpose, may borrow money and sell and dispose of general obligation bonds. (2) If prior to April 1, 1983, a health district had outstanding indebtedness incurred pursuant to ORS 440.360 (1)(k) (1997 Edition), a health district may issue general obligation bonds pursuant to this section in an amount not to exceed the unpaid principal of and interest on such indebtedness plus costs incidental to the bonds to be sold. (3) The general obligation bonds outstanding at one time shall never exceed in the aggregate two and one-half percent of the real market value of all taxable property within the district, computed in accordance with ORS 308.207. (4) Notwithstanding the provisions of subsection (3) of this section, if the district has within its limits a population of 300 or over, it shall be permitted to have bonds outstanding in an amount which shall not exceed in the aggregate 10 percent of the real market value. (5) The bonds shall be issued from time to time by the district board in behalf of the health district as authorized by its electors.",
+      "history_citation_blocks": [
+        "Formerly 441.335; 1983 c.191 1; 1991 c.459 399; 1997 c.857 2; 1999 c.630 4"
+      ],
+      "history_citations": [
+        {
+          "raw": "Formerly 441.335"
+        },
+        {
+          "raw": "1983 c.191 1",
+          "year": 1983,
+          "chapter": "191",
+          "section": "1"
+        },
+        {
+          "raw": "1991 c.459 399",
+          "year": 1991,
+          "chapter": "459",
+          "section": "399"
+        },
+        {
+          "raw": "1997 c.857 2",
+          "year": 1997,
+          "chapter": "857",
+          "section": "2"
+        },
+        {
+          "raw": "1999 c.630 4",
+          "year": 1999,
+          "chapter": "630",
+          "section": "4"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "For the purpose of carrying into effect the powers granted by ORS 440.315 to 440.410, a health district, when authorized at any properly called election held for that purpose, may borrow money and sell and dispose of general obligation bonds. (k) (1997 Edition), a health district may issue general obligation bonds pursuant to this section in an amount not to exceed the unpaid principal of and interest on such indebtedness plus costs incidental to the bonds to be sold.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "If prior to April 1, 1983, a health district had outstanding indebtedness incurred pursuant to ORS 440.360",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The general obligation bonds outstanding at one time shall never exceed in the aggregate two and one-half percent of the real market value of all taxable property within the district, computed in accordance with ORS 308.207. of this section, if the district has within its limits a population of 300 or over, it shall be permitted to have bonds outstanding in an amount which shall not exceed in the aggregate 10 percent of the real market value.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Notwithstanding the provisions of subsection",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "The bonds shall be issued from time to time by the district board in behalf of the health district as authorized by its electors.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 34,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html#section-440.380",
+      "identifier": "ORS 440.380",
+      "name": "Section 440.380",
+      "text": "Bonds; maturity; interest; conditions. (1) The bonds shall mature serially within not to exceed 30 years from issue date. (2) The bonds shall bear such rate of interest as the district board shall determine. (3) The bonds shall be so conditioned that the health district agrees therein to pay to the bearer, at a place named, the principal sum of the bonds with interest at the rate named, payable semiannually in accordance with the tenor and terms of the interest coupons attached.",
+      "history_citation_blocks": [
+        "Formerly 441.345; 1977 c.188 3; 1981 c.94 36; 1983 c.347 27; 2001 c.215 5"
+      ],
+      "history_citations": [
+        {
+          "raw": "Formerly 441.345"
+        },
+        {
+          "raw": "1977 c.188 3",
+          "year": 1977,
+          "chapter": "188",
+          "section": "3"
+        },
+        {
+          "raw": "1981 c.94 36",
+          "year": 1981,
+          "chapter": "94",
+          "section": "36"
+        },
+        {
+          "raw": "1983 c.347 27",
+          "year": 1983,
+          "chapter": "347",
+          "section": "27"
+        },
+        {
+          "raw": "2001 c.215 5",
+          "year": 2001,
+          "chapter": "215",
+          "section": "5"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The bonds shall mature serially within not to exceed 30 years from issue date.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The bonds shall bear such rate of interest as the district board shall determine.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The bonds shall be so conditioned that the health district agrees therein to pay to the bearer, at a place named, the principal sum of the bonds with interest at the rate named, payable semiannually in accordance with the tenor and terms of the interest coupons attached.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 35,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html#section-440.385",
+      "identifier": "ORS 440.385",
+      "name": "Section 440.385",
+      "text": "Pledge of income and revenues to secure payment of bonds. (1) For the purpose of additionally securing the payment of the principal of and interest on general obligation bonds issued under ORS 440.375, a health district may, by resolution of the district board, which resolution shall constitute part of the contract with the holders of such general obligation bonds, pledge all or any part of the net income or revenue of its properties. (2) The district board may adopt such a resolution without submitting the question of such pledge to electors of the health district. [Formerly 441.350]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "For the purpose of additionally securing the payment of the principal of and interest on general obligation bonds issued under ORS 440.375, a health district may, by resolution of the district board, which resolution shall constitute part of the contract with the holders of such general obligation bonds, pledge all or any part of the net income or revenue of its properties.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The district board may adopt such a resolution without submitting the question of such pledge to electors of the health district. [Formerly 441.350]",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 36,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html#section-440.390",
+      "identifier": "ORS 440.390",
+      "name": "Section 440.390",
+      "text": "Issuance of bonds. All general obligation bonds issued under ORS 440.375 shall be issued as prescribed in ORS chapter 287A.",
+      "history_citation_blocks": [
+        "Formerly 441.355; 2007 c.783 185"
+      ],
+      "history_citations": [
+        {
+          "raw": "Formerly 441.355"
+        },
+        {
+          "raw": "2007 c.783 185",
+          "year": 2007,
+          "chapter": "783",
+          "section": "185"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 37,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html#section-440.395",
+      "identifier": "ORS 440.395",
+      "name": "Section 440.395",
+      "text": "Tax levies; use; extension; collection; default. (1) Any health district may assess, levy and collect taxes not to exceed one-fourth of one percent (0.0025) of the real market value of all taxable property within the district, computed in accordance with ORS 308.207. The proceeds of such taxes shall be applied by it in carrying out the objects and purposes provided in ORS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Any health district may assess, levy and collect taxes not to exceed one-fourth of one percent (0.0025) of the real market value of all taxable property within the district, computed in accordance with ORS 308.207. The proceeds of such taxes shall be applied by it in carrying out the objects and purposes provided in ORS",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 38,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html#section-440.397",
+      "identifier": "ORS 440.397",
+      "name": "Section 440.397",
+      "text": "Filing of boundary change. For purposes of ad valorem taxation, a boundary change must be filed in final approved form with the county assessor and the Department of Revenue as provided in ORS 308.225.",
+      "history_citation_blocks": [
+        "2001 c.138 28"
+      ],
+      "history_citations": [
+        {
+          "raw": "2001 c.138 28",
+          "year": 2001,
+          "chapter": "138",
+          "section": "28"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 39,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html#section-440.400",
+      "identifier": "ORS 440.400",
+      "name": "Section 440.400",
+      "text": "Expenditure and accounting of district funds. (1) Except as otherwise provided by subsections (3) and (4) of this section, all moneys of a health district shall be deposited in accordance with ORS 295.001 to 295.108, as designated by the district board. Moneys shall be withdrawn or paid out only when previously ordered by resolution or vote of the board, and upon checks signed as provided by subsection (2) of this section. Receipts or vouchers, showing clearly the nature and items covered by each check drawn, shall be kept on file. (2) Except for checks issued in accordance with subsection (3) of this section, checks of a district shall be signed: (a) By the treasurer and countersigned by the chairperson, or in the absence or inability of the chairperson to act, by the secretary; or (b) By an administrative employee of the district designated by the board of directors, and countersigned by a director of the district. (3) The district board may, by resolution: (a) Set aside specified amounts from moneys available for operating the district hospital facility; and (b) Delegate to an administrative officer of the district in charge of the hospital facility the authority to approve specified claims for expenses previously authorized by the board and to issue and sign checks in payment thereof. (4) Moneys of a health district may be invested as provided by ORS 294.035 and 294.040.",
+      "history_citation_blocks": [
+        "Formerly 441.365; 1983 c.699 3; 2001 c.215 7; 2019 c.587 40"
+      ],
+      "history_citations": [
+        {
+          "raw": "Formerly 441.365"
+        },
+        {
+          "raw": "1983 c.699 3",
+          "year": 1983,
+          "chapter": "699",
+          "section": "3"
+        },
+        {
+          "raw": "2001 c.215 7",
+          "year": 2001,
+          "chapter": "215",
+          "section": "7"
+        },
+        {
+          "raw": "2019 c.587 40",
+          "year": 2019,
+          "chapter": "587",
+          "section": "40"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Except as otherwise provided by subsections",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "and of this section, checks of a district shall be signed: The district board may, by resolution:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "By the treasurer and countersigned by the chairperson, or in the absence or inability of the chairperson to act, by the secretary; or Set aside specified amounts from moneys available for operating the district hospital facility; and",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "By an administrative employee of the district designated by the board of directors, and countersigned by a director of the district. Delegate to an administrative officer of the district in charge of the hospital facility the authority to approve specified claims for expenses previously authorized by the board and to issue and sign checks in payment thereof.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "of this section, all moneys of a health district shall be deposited in accordance with ORS 295.001 to 295.108, as designated by the district board. Moneys shall be withdrawn or paid out only when previously ordered by resolution or vote of the board, and upon checks signed as provided by subsection Moneys of a health district may be invested as provided by ORS 294.035 and 294.040.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "of this section. Receipts or vouchers, showing clearly the nature and items covered by each check drawn, shall be kept on file. Except for checks issued in accordance with subsection",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 40,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html#section-440.403",
+      "identifier": "ORS 440.403",
+      "name": "Section 440.403",
+      "text": "Adoption of health district budget. (1) A health district shall adopt an annual budget by: (a) Preparing a proposed budget for the fiscal year not later than June 1 of each year; (b) Publishing a notice of the proposed budget and of the date and place of a hearing on the proposed budget five to 30 days prior to the hearing; (c) Holding a public hearing on the proposed budget; (d) Adopting a final budget by resolution not later than June 30 of each year; and (e) Filing a written notice pursuant to ORS 310.060 not later than July 15 of each year if the district seeks to impose property taxes. (2) A health district may adopt a supplemental budget by resolution at a regular meeting of the district board. A supplemental budget may not extend beyond the end of the fiscal year during which it is submitted. (3) As used in this section: (a) Budget means a plan of financial operation embodying an estimate of expenditures for a given period or purpose and the proposed means of financing the estimated expenditures. (b) Fiscal year means the period beginning on July 1 of any year and ending on June 30 of the next year. (c) Publish means giving notice or making information or documents available to members of the general public by printing the notice, information or documents in one or more newspapers of general circulation within the jurisdictional boundaries of the health district.",
+      "history_citation_blocks": [
+        "2001 c.251 2"
+      ],
+      "history_citations": [
+        {
+          "raw": "2001 c.251 2",
+          "year": 2001,
+          "chapter": "251",
+          "section": "2"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A health district shall adopt an annual budget by:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Preparing a proposed budget for the fiscal year not later than June 1 of each year;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Publishing a notice of the proposed budget and of the date and place of a hearing on the proposed budget five to 30 days prior to the hearing;",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Holding a public hearing on the proposed budget;",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "Adopting a final budget by resolution not later than June 30 of each year; and",
+              "subsections": []
+            },
+            {
+              "label": "(e)",
+              "token": "e",
+              "kind": "alpha_lower",
+              "text": "Filing a written notice pursuant to ORS 310.060 not later than July 15 of each year if the district seeks to impose property taxes.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "A health district may adopt a supplemental budget by resolution at a regular meeting of the district board. A supplemental budget may not extend beyond the end of the fiscal year during which it is submitted.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "As used in this section:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Budget means a plan of financial operation embodying an estimate of expenditures for a given period or purpose and the proposed means of financing the estimated expenditures.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Fiscal year means the period beginning on July 1 of any year and ending on June 30 of the next year.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Publish means giving notice or making information or documents available to members of the general public by printing the notice, information or documents in one or more newspapers of general circulation within the jurisdictional boundaries of the health district.",
+              "subsections": []
+            }
+          ]
+        }
+      ],
+      "parser_warnings": [],
+      "position": 41,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html#section-440.405",
+      "identifier": "ORS 440.405",
+      "name": "Section 440.405",
+      "text": "District records open to inspection; preservation of records. (1) All the proceedings of the district board shall be entered at large in a record book. (2) All books, maps, plans, documents, correspondence, vouchers, reports and other papers and records pertaining to the business of the health district shall be carefully preserved and shall be open to inspection as public records. [Formerly 441.370]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "All the proceedings of the district board shall be entered at large in a record book.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "All books, maps, plans, documents, correspondence, vouchers, reports and other papers and records pertaining to the business of the health district shall be carefully preserved and shall be open to inspection as public records. [Formerly 441.370]",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 42,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html#section-440.410",
+      "identifier": "ORS 440.410",
+      "name": "Section 440.410",
+      "text": "Annual audit. An annual audit of the district shall be made by an auditor. A true and complete copy of the auditors report of such audit shall be filed in the office of the county clerk of the principal county, as defined by ORS 198.705, and shall remain a public record therein. [Formerly 441.375]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 43,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html#section-440.420",
+      "identifier": "ORS 440.420",
+      "name": "Section 440.420",
+      "text": "[2001 c.405 1; 2009 c.595 718; repealed by 2015 c.70 13] PORT HOSPITALS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 44,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html#section-440.505",
+      "identifier": "ORS 440.505",
+      "name": "Section 440.505",
+      "text": "Port hospitals; levy of taxes; property exempt from taxation. (1) A port may construct, maintain and operate hospitals within its boundaries, subject to the provisions and limitations upon indebtedness of the port imposed by law. However, after June 23, 1967, a port may not construct or acquire a hospital if any part of a health district organized pursuant to ORS 440.315 to 440.410 lies within the boundaries of the port. (2) Should any port district under authority of subsection (1) of this section after August 20, 1957, construct, maintain and operate a hospital or hospital facilities and levy a tax for any indebtedness or other expense incurred therefor, all taxable property in the port district and also within a health district then operating hospital facilities shall be exempt from all taxes levied by a port district for such hospital purposes. [Formerly 441.505; 2003 c.802 115] CENTRAL OREGON HEALTH COUNCIL",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A port may construct, maintain and operate hospitals within its boundaries, subject to the provisions and limitations upon indebtedness of the port imposed by law. However, after June 23, 1967, a port may not construct or acquire a hospital if any part of a health district organized pursuant to ORS 440.315 to 440.410 lies within the boundaries of the port. of this section after August 20, 1957, construct, maintain and operate a hospital or hospital facilities and levy a tax for any indebtedness or other expense incurred therefor, all taxable property in the port district and also within a health district then operating hospital facilities shall be exempt from all taxes levied by a port district for such hospital purposes. [Formerly 441.505; 2003 c.802 115] CENTRAL OREGON HEALTH COUNCIL",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Should any port district under authority of subsection",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 45,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html#section-440.600",
+      "identifier": "ORS 440.600",
+      "name": "Section 440.600",
+      "text": "Formation of Central Oregon Health Council. (1) Crook, Deschutes and Jefferson Counties may form a Central Oregon Health Council when the governing body of each of the counties adopts a resolution signifying the bodys intention to do so. (2) A county that is adjacent to Crook, Deschutes or Jefferson County may join the council if: (a) The governing body of the county seeking to join the council adopts a resolution signifying the bodys intention to include a portion of that county in the region served by the council; (b) The portion of the county to be included in the region is part of a natural health care referral pattern with the other counties on the council; and (c) The Oregon Health Authority and the council approve.",
+      "history_citation_blocks": [
+        "2011 c.418 13; 2015 c.359 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "2011 c.418 13",
+          "year": 2011,
+          "chapter": "418",
+          "section": "13"
+        },
+        {
+          "raw": "2015 c.359 1",
+          "year": 2015,
+          "chapter": "359",
+          "section": "1"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Crook, Deschutes and Jefferson Counties may form a Central Oregon Health Council when the governing body of each of the counties adopts a resolution signifying the bodys intention to do so.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "A county that is adjacent to Crook, Deschutes or Jefferson County may join the council if:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "The governing body of the county seeking to join the council adopts a resolution signifying the bodys intention to include a portion of that county in the region served by the council;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "The portion of the county to be included in the region is part of a natural health care referral pattern with the other counties on the council; and",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "The Oregon Health Authority and the council approve.",
+              "subsections": []
+            }
+          ]
+        }
+      ],
+      "parser_warnings": [],
+      "position": 46,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html#section-440.601",
+      "identifier": "ORS 440.601",
+      "name": "Section 440.601",
+      "text": "Composition of Central Oregon Health Council; term of office; authority of council; rules. (1) The Central Oregon Health Council shall consist of no more than 15 members, including: (a) One member each from the governing bodies of Crook, Deschutes and Jefferson Counties, appointed by each body; (b) The chief executive officer, or a designee of the chief executive officer, of the health care system serving the region; (c) The chief executive officer, or a designee of the chief executive officer, of each coordinated care organization serving any of the counties in the region that join the council; and (d) At least three members appointed by the council who represent: (A) Consumers of physical and behavioral health services; (B) Health care professionals; (C) School districts or educational service districts; (D) The business community; or (E) The governing body of any county that joins the council under ORS 440.600 (2). (2) The term of office of the members of the council is four years. Members may be reappointed. (3) A majority of the members of the council constitutes a quorum for the transaction of business. (4) The council shall elect a member of the council to serve as the chairperson. (5) If there is a vacancy for any cause, the appointing authority shall make an appointment to the vacated position to become effective immediately. (6) The council may incorporate under ORS chapter 65 as an Oregon nonprofit corporation and may adopt rules necessary for the operation of the council, enter into necessary contracts, apply for and receive grants, hold and dispose of property and take other actions necessary to carry out the activities, services and responsibilities assumed by the council. (7) The council may convene a single community advisory council required by ORS 414.575 for all of the coordinated care organizations serving any of the counties that join the council.",
+      "history_citation_blocks": [
+        "2011 c.418 14; 2015 c.359 2"
+      ],
+      "history_citations": [
+        {
+          "raw": "2011 c.418 14",
+          "year": 2011,
+          "chapter": "418",
+          "section": "14"
+        },
+        {
+          "raw": "2015 c.359 2",
+          "year": 2015,
+          "chapter": "359",
+          "section": "2"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The Central Oregon Health Council shall consist of no more than 15 members, including:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "One member each from the governing bodies of Crook, Deschutes and Jefferson Counties, appointed by each body;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "The chief executive officer, or a designee of the chief executive officer, of the health care system serving the region;",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "The chief executive officer, or a designee of the chief executive officer, of each coordinated care organization serving any of the counties in the region that join the council; and",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "At least three members appointed by the council who represent:",
+              "subsections": [
+                {
+                  "label": "(A)",
+                  "token": "A",
+                  "kind": "alpha_upper",
+                  "text": "Consumers of physical and behavioral health services;",
+                  "subsections": []
+                },
+                {
+                  "label": "(B)",
+                  "token": "B",
+                  "kind": "alpha_upper",
+                  "text": "Health care professionals;",
+                  "subsections": []
+                },
+                {
+                  "label": "(C)",
+                  "token": "C",
+                  "kind": "alpha_upper",
+                  "text": "School districts or educational service districts;",
+                  "subsections": []
+                },
+                {
+                  "label": "(D)",
+                  "token": "D",
+                  "kind": "alpha_upper",
+                  "text": "The business community; or",
+                  "subsections": []
+                },
+                {
+                  "label": "(E)",
+                  "token": "E",
+                  "kind": "alpha_upper",
+                  "text": "The governing body of any county that joins the council under ORS 440.600",
+                  "subsections": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": ". The term of office of the members of the council is four years. Members may be reappointed.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "A majority of the members of the council constitutes a quorum for the transaction of business.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "The council shall elect a member of the council to serve as the chairperson.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "If there is a vacancy for any cause, the appointing authority shall make an appointment to the vacated position to become effective immediately.",
+          "subsections": []
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "The council may incorporate under ORS chapter 65 as an Oregon nonprofit corporation and may adopt rules necessary for the operation of the council, enter into necessary contracts, apply for and receive grants, hold and dispose of property and take other actions necessary to carry out the activities, services and responsibilities assumed by the council.",
+          "subsections": []
+        },
+        {
+          "label": "(7)",
+          "token": "7",
+          "kind": "numeric",
+          "text": "The council may convene a single community advisory council required by ORS 414.575 for all of the coordinated care organizations serving any of the counties that join the council.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 47,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html#section-440.602",
+      "identifier": "ORS 440.602",
+      "name": "Section 440.602",
+      "text": "Advisory committee to Central Oregon Health Council. The Central Oregon Health Council may appoint an advisory committee to advise the council in the performance of the duties of the council. The members of the advisory committee may include representatives of: (1) Public health agencies serving the region; (2) Behavioral health agencies for mental health authorities serving the region represented on the council; (3) Hospital or integrated delivery systems serving the region represented on the council; (4) Medicaid contractors in each region served by the council; (5) Safety net clinics; (6) Health collaboratives; (7) The dental profession; (8) School and educational service districts; (9) The business community; (10) Primary care clinics; and (11) Independent physician associations.",
+      "history_citation_blocks": [
+        "2011 c.418 15; 2015 c.359 3"
+      ],
+      "history_citations": [
+        {
+          "raw": "2011 c.418 15",
+          "year": 2011,
+          "chapter": "418",
+          "section": "15"
+        },
+        {
+          "raw": "2015 c.359 3",
+          "year": 2015,
+          "chapter": "359",
+          "section": "3"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Public health agencies serving the region;",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Behavioral health agencies for mental health authorities serving the region represented on the council;",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Hospital or integrated delivery systems serving the region represented on the council;",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Medicaid contractors in each region served by the council;",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "Safety net clinics;",
+          "subsections": []
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "Health collaboratives;",
+          "subsections": []
+        },
+        {
+          "label": "(7)",
+          "token": "7",
+          "kind": "numeric",
+          "text": "The dental profession;",
+          "subsections": []
+        },
+        {
+          "label": "(8)",
+          "token": "8",
+          "kind": "numeric",
+          "text": "School and educational service districts;",
+          "subsections": []
+        },
+        {
+          "label": "(9)",
+          "token": "9",
+          "kind": "numeric",
+          "text": "The business community;",
+          "subsections": []
+        },
+        {
+          "label": "(10)",
+          "token": "10",
+          "kind": "numeric",
+          "text": "Primary care clinics; and",
+          "subsections": []
+        },
+        {
+          "label": "(11)",
+          "token": "11",
+          "kind": "numeric",
+          "text": "Independent physician associations.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 48,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html#section-440.603",
+      "identifier": "ORS 440.603",
+      "name": "Section 440.603",
+      "text": "Regional health improvement plan. (1) As used in this section, regional health improvement plan means a four-year comprehensive, coordinated regional plan incorporating and replacing all health and human service plans prescribed by the Oregon Health Authority, including but not limited to: (a) Plans required under ORS 430.630, 430.640 and 624.510; and (b) The community health assessment and community health improvement plan described in ORS 414.575. (2)(a) The Central Oregon Health Council shall conduct a regional health assessment and adopt a regional health improvement plan to serve as a strategic population health and health care system service plan for the region served by the council. The plan must define the scope of the activities, services and responsibilities that the council proposes to assume upon implementation of the plan. (b) The activities, services and responsibilities that the council proposes to assume under the plan may include, but are not limited to: (A) Analysis and development of public and private resources, capacities and metrics based on ongoing regional health assessment activities and population health priorities; (B) Health policy; (C) System design; (D) Outcome and quality improvement; (E) Integration of service delivery; and (F) Workforce development. (3) The council shall submit the plan adopted under subsection (2) of this section to the authority for approval. The authority may approve the plan or return it to the council for modification prior to approval. (4) The regional health improvement plan adopted under this section shall serve as a guide for entities serving medical assistance recipients, public health authorities, mental health authorities, health care systems, payer groups, provider groups and health coalitions in the counties served by the council.",
+      "history_citation_blocks": [
+        "2011 c.418 16; 2012 c.37 64; 2015 c.359 4; 2015 c.736 111"
+      ],
+      "history_citations": [
+        {
+          "raw": "2011 c.418 16",
+          "year": 2011,
+          "chapter": "418",
+          "section": "16"
+        },
+        {
+          "raw": "2012 c.37 64",
+          "year": 2012,
+          "chapter": "37",
+          "section": "64"
+        },
+        {
+          "raw": "2015 c.359 4",
+          "year": 2015,
+          "chapter": "359",
+          "section": "4"
+        },
+        {
+          "raw": "2015 c.736 111",
+          "year": 2015,
+          "chapter": "736",
+          "section": "111"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "As used in this section, regional health improvement plan means a four-year comprehensive, coordinated regional plan incorporating and replacing all health and human service plans prescribed by the Oregon Health Authority, including but not limited to:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Plans required under ORS 430.630, 430.640 and 624.510; and",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "The community health assessment and community health improvement plan described in ORS 414.575.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "(a) The Central Oregon Health Council shall conduct a regional health assessment and adopt a regional health improvement plan to serve as a strategic population health and health care system service plan for the region served by the council. The plan must define the scope of the activities, services and responsibilities that the council proposes to assume upon implementation of the plan. of this section to the authority for approval. The authority may approve the plan or return it to the council for modification prior to approval.",
+          "subsections": [
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "The activities, services and responsibilities that the council proposes to assume under the plan may include, but are not limited to:",
+              "subsections": [
+                {
+                  "label": "(A)",
+                  "token": "A",
+                  "kind": "alpha_upper",
+                  "text": "Analysis and development of public and private resources, capacities and metrics based on ongoing regional health assessment activities and population health priorities;",
+                  "subsections": []
+                },
+                {
+                  "label": "(B)",
+                  "token": "B",
+                  "kind": "alpha_upper",
+                  "text": "Health policy;",
+                  "subsections": []
+                },
+                {
+                  "label": "(C)",
+                  "token": "C",
+                  "kind": "alpha_upper",
+                  "text": "System design;",
+                  "subsections": []
+                },
+                {
+                  "label": "(D)",
+                  "token": "D",
+                  "kind": "alpha_upper",
+                  "text": "Outcome and quality improvement;",
+                  "subsections": []
+                },
+                {
+                  "label": "(E)",
+                  "token": "E",
+                  "kind": "alpha_upper",
+                  "text": "Integration of service delivery; and",
+                  "subsections": []
+                },
+                {
+                  "label": "(F)",
+                  "token": "F",
+                  "kind": "alpha_upper",
+                  "text": "Workforce development.",
+                  "subsections": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The council shall submit the plan adopted under subsection",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "The regional health improvement plan adopted under this section shall serve as a guide for entities serving medical assistance recipients, public health authorities, mental health authorities, health care systems, payer groups, provider groups and health coalitions in the counties served by the council.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 49,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html#section-440.604",
+      "identifier": "ORS 440.604",
+      "name": "Section 440.604",
+      "text": "Rules relating to regional health improvement plan. (1) By September 1, 2011, the Oregon Health Authority shall adopt by rule requirements for the regional health improvement plan adopted under ORS 440.603. (2) The Oregon Health Authority shall adopt rules: (a) Necessary to implement ORS 440.600 to 440.603; and (b) That allow for the consolidation of planning and reporting requirements of the authority under ORS 440.603. [2011 c.418 17] _______________",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "By September 1, 2011, the Oregon Health Authority shall adopt by rule requirements for the regional health improvement plan adopted under ORS 440.603.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The Oregon Health Authority shall adopt rules:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Necessary to implement ORS 440.600 to 440.603; and",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "That allow for the consolidation of planning and reporting requirements of the authority under ORS 440.603. [2011 c.418 17] _______________",
+              "subsections": []
+            }
+          ]
+        }
+      ],
+      "parser_warnings": [],
+      "position": 50,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors440.html"
+    }
+  ],
+  "alternateName": "Regional Health Entities",
+  "legislationDate": "2023"
+}

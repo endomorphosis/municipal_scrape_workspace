@@ -1,0 +1,3109 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "orlaw": "https://www.oregonlegislature.gov/ors#"
+  },
+  "@type": "Legislation",
+  "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html",
+  "identifier": "ORS Chapter 776",
+  "name": "ORS Chapter 776 — Maritime Pilots and Pilotage",
+  "legislationType": "Statute",
+  "jurisdiction": "US-OR",
+  "isPartOf": {
+    "@type": "CreativeWork",
+    "identifier": "ORS",
+    "name": "Oregon Revised Statutes",
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors"
+  },
+  "dateModified": "2026-02-25T08:11:30.950213+00:00",
+  "source_file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors776.html",
+  "hasPart": [
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.010",
+      "identifier": "ORS 776.010",
+      "name": "Section 776.010",
+      "text": "[Repealed by 1957 c.448 27] GENERAL PROVISIONS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 1,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.015",
+      "identifier": "ORS 776.015",
+      "name": "Section 776.015",
+      "text": "Definitions. As used in this chapter, unless the context requires otherwise: (1) Board means the Oregon Board of Maritime Pilots. (2) Licensee means an individual licensed under ORS 776.115. (3) Organization of pilots means any legal entity or association to which licensees belong as members, or with which licensees are associated, that is formed for cooperative performance of functions including, but not limited to, the dispatching of licensees and trainees, collection of pilotage fees, ownership and operation of pilot boats, distribution of earnings of licensees and trainees, and education and training so as to facilitate the rendition of pilotage services by individual licensees and trainees. (4) Pilotage, piloting or to pilot means the actions of a licensee or trainee in assisting the master of a vessel under ORS 776.405 while the vessel is on, approaching or departing a pilotage ground, and the associated communication with the vessel. (5) Trainee means a person the board has licensed under ORS 776.300 and who has met the requirements of ORS 776.540.",
+      "history_citation_blocks": [
+        "1957 c.448 1; 1981 c.88 2; 1983 c.330 1; 1993 c.741 110; 1993 c.796 1; 2001 c.403 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "1957 c.448 1",
+          "year": 1957,
+          "chapter": "448",
+          "section": "1"
+        },
+        {
+          "raw": "1981 c.88 2",
+          "year": 1981,
+          "chapter": "88",
+          "section": "2"
+        },
+        {
+          "raw": "1983 c.330 1",
+          "year": 1983,
+          "chapter": "330",
+          "section": "1"
+        },
+        {
+          "raw": "1993 c.741 110",
+          "year": 1993,
+          "chapter": "741",
+          "section": "110"
+        },
+        {
+          "raw": "1993 c.796 1",
+          "year": 1993,
+          "chapter": "796",
+          "section": "1"
+        },
+        {
+          "raw": "2001 c.403 1",
+          "year": 2001,
+          "chapter": "403",
+          "section": "1"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Board means the Oregon Board of Maritime Pilots.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Licensee means an individual licensed under ORS 776.115.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Organization of pilots means any legal entity or association to which licensees belong as members, or with which licensees are associated, that is formed for cooperative performance of functions including, but not limited to, the dispatching of licensees and trainees, collection of pilotage fees, ownership and operation of pilot boats, distribution of earnings of licensees and trainees, and education and training so as to facilitate the rendition of pilotage services by individual licensees and trainees.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Pilotage, piloting or to pilot means the actions of a licensee or trainee in assisting the master of a vessel under ORS 776.405 while the vessel is on, approaching or departing a pilotage ground, and the associated communication with the vessel.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "Trainee means a person the board has licensed under ORS 776.300 and who has met the requirements of ORS 776.540.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 2,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.020",
+      "identifier": "ORS 776.020",
+      "name": "Section 776.020",
+      "text": "[Repealed by 1957 c.448 27]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 3,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.025",
+      "identifier": "ORS 776.025",
+      "name": ".",
+      "text": "(4) In accordance with the applicable provisions of ORS chapter 183, establish by rule a licensing system for persons licensed to pilot, for persons licensed as trainees and for pilot organizations who train persons to pilot, including but not limited to provisions prescribing: (a) The form and content of and the times and procedures for submitting an application for license issuance and renewal. The pendency of an investigation shall not affect the renewal process. (b) The term of license of a pilot and the annual license fee, subject to the maximum annual license fee established pursuant to ORS 776.357. (c) The requirements for and the manner of testing competency of license applicants. (d) Those actions or circumstances that constitute failure to achieve or maintain competency or that otherwise constitute a danger to public health and safety and for which the board may refuse to issue or renew a license, may suspend or revoke a license or may reprimand a licensee. (e) Classes of licenses that specify the size of vessels the licensee is authorized to be trained to pilot or to pilot on those river pilotage grounds for which the trainee or pilot is licensed. (5)(a) Fix, at reasonable and just rates, pilotage fees, extra fees for vessels in distress, fees for extraordinary pilotage services, fees for a licensee or trainee being carried to sea unwillingly and reimbursement for the return to station or for the detention of a licensee or trainee, except that pilotage fees shall not be less inbound or outbound on vessels, propelled in whole or in part by their own power, than the following: (A) Between Astoria and Portland or Vancouver, $2.50 per foot draft and 2 cents per net ton; (B) Between Astoria or Knappton and the sea, $3 per foot draft and 2 cents per net ton; (C) Between Yaquina Bay and the sea, $3 per foot draft and 2 cents per ton; and (D) Between Coos Bay and the sea, $2.50 per foot draft and 2 cents per ton. (b) In fixing fees pursuant to paragraph (a) of this subsection, the board shall give due regard to the following factors: (A) The length and net tonnage of the vessels to be piloted. (B) The difficulty and inconvenience of the particular service and the skill required to render it. (C) The supply of and demand for pilotage services. (D) The public interest in maintaining efficient, economical and reliable pilotage service. (E) Other factors relevant to the determination of reasonable and just rates. (6) Conduct or authorize the holding of hearings. In so doing the board or the administrative law judge may issue subpoenas pursuant to ORS 776.123, conduct investigations pursuant to ORS 776.126, administer oaths, take depositions and fix the fees and mileage of witnesses. (7) Adopt any rule or make any order, as set forth in ORS chapter 183, for the effective administration and enforcement of this chapter. (8) Establish rates pursuant to subsection (5) of this section, for a period of not less than two years, that continue in effect until a subsequent hearing process. Rates may include automatic adjustment provisions to reflect changing economic conditions.",
+      "history_citation_blocks": [
+        "1957 c.448 4; 1981 c.88 5; 1983 c.313 5; 1987 c.158 157; 1987 c.775 3; 1991 c.234 8; 1993 c.741 112; 1993 c.796 4; 2003 c.75 110; 2003 c.619 1; 2007 c.621 1; 2009 c.280 4"
+      ],
+      "history_citations": [
+        {
+          "raw": "1957 c.448 4",
+          "year": 1957,
+          "chapter": "448",
+          "section": "4"
+        },
+        {
+          "raw": "1981 c.88 5",
+          "year": 1981,
+          "chapter": "88",
+          "section": "5"
+        },
+        {
+          "raw": "1983 c.313 5",
+          "year": 1983,
+          "chapter": "313",
+          "section": "5"
+        },
+        {
+          "raw": "1987 c.158 157",
+          "year": 1987,
+          "chapter": "158",
+          "section": "157"
+        },
+        {
+          "raw": "1987 c.775 3",
+          "year": 1987,
+          "chapter": "775",
+          "section": "3"
+        },
+        {
+          "raw": "1991 c.234 8",
+          "year": 1991,
+          "chapter": "234",
+          "section": "8"
+        },
+        {
+          "raw": "1993 c.741 112",
+          "year": 1993,
+          "chapter": "741",
+          "section": "112"
+        },
+        {
+          "raw": "1993 c.796 4",
+          "year": 1993,
+          "chapter": "796",
+          "section": "4"
+        },
+        {
+          "raw": "2003 c.75 110",
+          "year": 2003,
+          "chapter": "75",
+          "section": "110"
+        },
+        {
+          "raw": "2003 c.619 1",
+          "year": 2003,
+          "chapter": "619",
+          "section": "1"
+        },
+        {
+          "raw": "2007 c.621 1",
+          "year": 2007,
+          "chapter": "621",
+          "section": "1"
+        },
+        {
+          "raw": "2009 c.280 4",
+          "year": 2009,
+          "chapter": "280",
+          "section": "4"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "In accordance with the applicable provisions of ORS chapter 183, establish by rule a licensing system for persons licensed to pilot, for persons licensed as trainees and for pilot organizations who train persons to pilot, including but not limited to provisions prescribing:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "The form and content of and the times and procedures for submitting an application for license issuance and renewal. The pendency of an investigation shall not affect the renewal process.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "The term of license of a pilot and the annual license fee, subject to the maximum annual license fee established pursuant to ORS 776.357.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "The requirements for and the manner of testing competency of license applicants.",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "Those actions or circumstances that constitute failure to achieve or maintain competency or that otherwise constitute a danger to public health and safety and for which the board may refuse to issue or renew a license, may suspend or revoke a license or may reprimand a licensee.",
+              "subsections": []
+            },
+            {
+              "label": "(e)",
+              "token": "e",
+              "kind": "alpha_lower",
+              "text": "Classes of licenses that specify the size of vessels the licensee is authorized to be trained to pilot or to pilot on those river pilotage grounds for which the trainee or pilot is licensed.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "(a) Fix, at reasonable and just rates, pilotage fees, extra fees for vessels in distress, fees for extraordinary pilotage services, fees for a licensee or trainee being carried to sea unwillingly and reimbursement for the return to station or for the detention of a licensee or trainee, except that pilotage fees shall not be less inbound or outbound on vessels, propelled in whole or in part by their own power, than the following: of this section, for a period of not less than two years, that continue in effect until a subsequent hearing process. Rates may include automatic adjustment provisions to reflect changing economic conditions.",
+          "subsections": [
+            {
+              "label": "(A)",
+              "token": "A",
+              "kind": "alpha_upper",
+              "text": "Between Astoria and Portland or Vancouver, $2.50 per foot draft and 2 cents per net ton;",
+              "subsections": []
+            },
+            {
+              "label": "(B)",
+              "token": "B",
+              "kind": "alpha_upper",
+              "text": "Between Astoria or Knappton and the sea, $3 per foot draft and 2 cents per net ton;",
+              "subsections": []
+            },
+            {
+              "label": "(C)",
+              "token": "C",
+              "kind": "alpha_upper",
+              "text": "Between Yaquina Bay and the sea, $3 per foot draft and 2 cents per ton; and",
+              "subsections": []
+            },
+            {
+              "label": "(D)",
+              "token": "D",
+              "kind": "alpha_upper",
+              "text": "Between Coos Bay and the sea, $2.50 per foot draft and 2 cents per ton.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "In fixing fees pursuant to paragraph",
+              "subsections": []
+            },
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "of this subsection, the board shall give due regard to the following factors:",
+              "subsections": [
+                {
+                  "label": "(A)",
+                  "token": "A",
+                  "kind": "alpha_upper",
+                  "text": "The length and net tonnage of the vessels to be piloted.",
+                  "subsections": []
+                },
+                {
+                  "label": "(B)",
+                  "token": "B",
+                  "kind": "alpha_upper",
+                  "text": "The difficulty and inconvenience of the particular service and the skill required to render it.",
+                  "subsections": []
+                },
+                {
+                  "label": "(C)",
+                  "token": "C",
+                  "kind": "alpha_upper",
+                  "text": "The supply of and demand for pilotage services.",
+                  "subsections": []
+                },
+                {
+                  "label": "(D)",
+                  "token": "D",
+                  "kind": "alpha_upper",
+                  "text": "The public interest in maintaining efficient, economical and reliable pilotage service.",
+                  "subsections": []
+                },
+                {
+                  "label": "(E)",
+                  "token": "E",
+                  "kind": "alpha_upper",
+                  "text": "Other factors relevant to the determination of reasonable and just rates.",
+                  "subsections": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "Conduct or authorize the holding of hearings. In so doing the board or the administrative law judge may issue subpoenas pursuant to ORS 776.123, conduct investigations pursuant to ORS 776.126, administer oaths, take depositions and fix the fees and mileage of witnesses.",
+          "subsections": []
+        },
+        {
+          "label": "(7)",
+          "token": "7",
+          "kind": "numeric",
+          "text": "Adopt any rule or make any order, as set forth in ORS chapter 183, for the effective administration and enforcement of this chapter.",
+          "subsections": []
+        },
+        {
+          "label": "(8)",
+          "token": "8",
+          "kind": "numeric",
+          "text": "Establish rates pursuant to subsection",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 4,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.028",
+      "identifier": "ORS 776.028",
+      "name": "Section 776.028",
+      "text": "Columbia River bar precautionary zone. The Columbia River bar precautionary zone is established. The Columbia River bar precautionary zone extends seaward of the Columbia River bar pilotage ground, lying between the western boundary of the Columbia River bar pilotage ground, and the line drawn as follows: Beginning on shore at a point that is 46 26 00 north latitude, 124 03 24 west longitude; then proceeding due west to a point that is 46 26 00 north latitude, 124 20 48 west longitude; then proceeding southwesterly and then southeasterly along the United States 12 nautical mile territorial sea boundary line to a point on that boundary that is 46 04 18 north latitude, 124 14 06 west longitude; then due east to shore.",
+      "history_citation_blocks": [
+        "2011 c.157 3"
+      ],
+      "history_citations": [
+        {
+          "raw": "2011 c.157 3",
+          "year": 2011,
+          "chapter": "157",
+          "section": "3"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 5,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.030",
+      "identifier": "ORS 776.030",
+      "name": "Section 776.030",
+      "text": "[Repealed by 1957 c.448 27]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 6,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.035",
+      "identifier": "ORS 776.035",
+      "name": "Section 776.035",
+      "text": "Findings. The Legislative Assembly finds that: (1) In order to implement the policies described and inherent in ORS 196.420, 273.553, 465.205, 466.010 and 468B.015 and ORS chapter 274, it is necessary to establish precautionary measures. (2) Only individuals who have experience and can demonstrate knowledge of currents, tides, soundings, bearings and distances of the shoals, rocks, bars, points of landings, lights and fog signals should direct a large vessel on certain waters of this state.",
+      "history_citation_blocks": [
+        "1991 c.234 2; 1997 c.16 2"
+      ],
+      "history_citations": [
+        {
+          "raw": "1991 c.234 2",
+          "year": 1991,
+          "chapter": "234",
+          "section": "2"
+        },
+        {
+          "raw": "1997 c.16 2",
+          "year": 1997,
+          "chapter": "16",
+          "section": "2"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "In order to implement the policies described and inherent in ORS 196.420, 273.553, 465.205, 466.010 and 468B.015 and ORS chapter 274, it is necessary to establish precautionary measures.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Only individuals who have experience and can demonstrate knowledge of currents, tides, soundings, bearings and distances of the shoals, rocks, bars, points of landings, lights and fog signals should direct a large vessel on certain waters of this state.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 7,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.040",
+      "identifier": "ORS 776.040",
+      "name": "Section 776.040",
+      "text": "[Repealed by 1957 c.448 27]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 8,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.045",
+      "identifier": "ORS 776.045",
+      "name": "Section 776.045",
+      "text": "Deck officer requirements. (1) All vessels required by ORS 776.405 (1) to engage a licensee under this chapter shall, at all times while underway upon any of the pilotage grounds established under ORS 776.025 or 776.115, have at least two licensed deck officers on the navigation bridge of the vessel, one of whom meets the requirements of ORS 776.405 (1). (2) The only duties of the licensed deck officer required under ORS 776.405 (1) shall be to monitor and direct safe navigation of the vessel during transit on the waters of this state.",
+      "history_citation_blocks": [
+        "1991 c.234 4; 1993 c.796 2"
+      ],
+      "history_citations": [
+        {
+          "raw": "1991 c.234 4",
+          "year": 1991,
+          "chapter": "234",
+          "section": "4"
+        },
+        {
+          "raw": "1993 c.796 2",
+          "year": 1993,
+          "chapter": "796",
+          "section": "2"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "All vessels required by ORS 776.405 to engage a licensee under this chapter shall, at all times while underway upon any of the pilotage grounds established under ORS 776.025 or 776.115, have at least two licensed deck officers on the navigation bridge of the vessel, one of whom meets the requirements of ORS 776.405 shall be to monitor and direct safe navigation of the vessel during transit on the waters of this state.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The only duties of the licensed deck officer required under ORS 776.405",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 9,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.050",
+      "identifier": "ORS 776.050",
+      "name": "Section 776.050",
+      "text": "[Repealed by 1957 c.448 27]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 10,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.060",
+      "identifier": "ORS 776.060",
+      "name": "Section 776.060",
+      "text": "[Repealed by 1957 c.448 27]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 11,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.070",
+      "identifier": "ORS 776.070",
+      "name": "Section 776.070",
+      "text": "[Repealed by 1957 c.448 27]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 12,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.080",
+      "identifier": "ORS 776.080",
+      "name": "Section 776.080",
+      "text": "[Repealed by 1957 c.448 27]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 13,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.090",
+      "identifier": "ORS 776.090",
+      "name": "Section 776.090",
+      "text": "[Repealed by 1957 c.448 27]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 14,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.100",
+      "identifier": "ORS 776.100",
+      "name": "Section 776.100",
+      "text": "[Repealed by 1957 c.448 27] OREGON BOARD OF MARITIME PILOTS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 15,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.105",
+      "identifier": "ORS 776.105",
+      "name": "Section 776.105",
+      "text": "Oregon Board of Maritime Pilots; term; qualifications; appointment; quorum. (1) The Oregon Board of Maritime Pilots is established within the Public Utility Commission of Oregon, and shall consist of nine members appointed by the Governor for terms of four years. The appointments of members of the board are subject to confirmation by the Senate in the manner prescribed in ORS 171.562 and 171.565. (2) Three members of the board shall be public members, one of whom shall act as chairperson of the board. The public members of the board may not: (a) During the preceding five years or during their terms of office, have any interest in the ownership, operation or management of any tugs, cargo or passenger vessels or in the carriage of freight or passengers by vessel; (b) During the preceding five years or during their terms of office, have any interest in any association or organization represented under subsection (4) of this section or principally comprised of persons engaged in commercial pursuits in the maritime industry as described in paragraph (a) of this subsection in any capacity; or (c) Hold or have held a maritime pilot license issued by any state or federal authority. (3) Three members shall be licensees under this chapter. One member shall be a Columbia River bar licensee, one member shall be a Columbia River licensee and one member shall be a Coos Bay or Yaquina Bay licensee. A licensee member shall: (a) Have been licensed for more than three years under this chapter; (b) Be actively engaged in piloting; and (c) Be a resident of this state. (4) Except as provided in subsection (5) of this section, three members of the board shall, for at least three years immediately preceding their appointment, have been and during their terms of office be engaged in the activities of a person, as defined in ORS 174.100, that operates or represents commercial oceangoing vessels. (5) The Governor may appoint a past or present employee or commissioner of a port to serve on the board in lieu of one of the operators or representatives of a commercial oceangoing vessel under subsection (4) of this section. (6)(a) The majority of members shall constitute a quorum for the transaction of all business if at least one member of each group, as described in subsections (2), (3) and (4) of this section, is present. (b) Notwithstanding paragraph (a) of this subsection, when the board fixes pilotage fees under ORS 776.115 (5) a quorum shall consist of seven members. (c) Notwithstanding paragraph (a) of this subsection, for purposes of ORS 192.610 to 192.705 a quorum shall consist of five members. (7) The commission may appoint a member of the commission, or a designee, as a nonvoting, ex officio member of the board. (8)(a) The commission is responsible for the administrative oversight of the board. The responsibilities of the commission include, but are not limited to: (A) Budgeting; (B) Financial management; (C) Record keeping; (D) Staffing; (E) Purchasing and contracting; (F) Collecting fees; and (G) Compliance with rulemaking procedures set forth in ORS chapter 183. (b) In consultation with the board, the commission shall: (A) Fix the qualifications of and appoint an executive director and an administrative officer for the board; and (B) Subject to the State Personnel Relations Law, fix the compensation of the executive director and the administrative officer.",
+      "history_citation_blocks": [
+        "1957 c.448 3; 1963 c.580 93; 1967 c.401 8; 1969 c.314 102; 1971 c.753 41; 1981 c.88 3; 1987 c.414 89; 1987 c.775 4; 1993 c.741 111; 1993 c.796 3; 2005 c.508 1; 2007 c.768 63; 2013 c.539 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "1957 c.448 3",
+          "year": 1957,
+          "chapter": "448",
+          "section": "3"
+        },
+        {
+          "raw": "1963 c.580 93",
+          "year": 1963,
+          "chapter": "580",
+          "section": "93"
+        },
+        {
+          "raw": "1967 c.401 8",
+          "year": 1967,
+          "chapter": "401",
+          "section": "8"
+        },
+        {
+          "raw": "1969 c.314 102",
+          "year": 1969,
+          "chapter": "314",
+          "section": "102"
+        },
+        {
+          "raw": "1971 c.753 41",
+          "year": 1971,
+          "chapter": "753",
+          "section": "41"
+        },
+        {
+          "raw": "1981 c.88 3",
+          "year": 1981,
+          "chapter": "88",
+          "section": "3"
+        },
+        {
+          "raw": "1987 c.414 89",
+          "year": 1987,
+          "chapter": "414",
+          "section": "89"
+        },
+        {
+          "raw": "1987 c.775 4",
+          "year": 1987,
+          "chapter": "775",
+          "section": "4"
+        },
+        {
+          "raw": "1993 c.741 111",
+          "year": 1993,
+          "chapter": "741",
+          "section": "111"
+        },
+        {
+          "raw": "1993 c.796 3",
+          "year": 1993,
+          "chapter": "796",
+          "section": "3"
+        },
+        {
+          "raw": "2005 c.508 1",
+          "year": 2005,
+          "chapter": "508",
+          "section": "1"
+        },
+        {
+          "raw": "2007 c.768 63",
+          "year": 2007,
+          "chapter": "768",
+          "section": "63"
+        },
+        {
+          "raw": "2013 c.539 1",
+          "year": 2013,
+          "chapter": "539",
+          "section": "1"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The Oregon Board of Maritime Pilots is established within the Public Utility Commission of Oregon, and shall consist of nine members appointed by the Governor for terms of four years. The appointments of members of the board are subject to confirmation by the Senate in the manner prescribed in ORS 171.562 and 171.565.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Three members of the board shall be public members, one of whom shall act as chairperson of the board. The public members of the board may not:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "During the preceding five years or during their terms of office, have any interest in the ownership, operation or management of any tugs, cargo or passenger vessels or in the carriage of freight or passengers by vessel;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "During the preceding five years or during their terms of office, have any interest in any association or organization represented under subsection",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "of this section or principally comprised of persons engaged in commercial pursuits in the maritime industry as described in paragraph Except as provided in subsection of this section. of this section, is present.",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "of this subsection in any capacity; or of this subsection, when the board fixes pilotage fees under ORS 776.115",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Hold or have held a maritime pilot license issued by any state or federal authority.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Notwithstanding paragraph",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Three members shall be licensees under this chapter. One member shall be a Columbia River bar licensee, one member shall be a Columbia River licensee and one member shall be a Coos Bay or Yaquina Bay licensee. A licensee member shall:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Have been licensed for more than three years under this chapter;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Be actively engaged in piloting; and",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Be a resident of this state.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "of this section, three members of the board shall, for at least three years immediately preceding their appointment, have been and during their terms of office be engaged in the activities of a person, as defined in ORS 174.100, that operates or represents commercial oceangoing vessels. The Governor may appoint a past or present employee or commissioner of a port to serve on the board in lieu of one of the operators or representatives of a commercial oceangoing vessel under subsection a quorum shall consist of seven members.",
+          "subsections": [
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Notwithstanding paragraph",
+              "subsections": []
+            },
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "of this subsection, for purposes of ORS 192.610 to 192.705 a quorum shall consist of five members.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "(a) The majority of members shall constitute a quorum for the transaction of all business if at least one member of each group, as described in subsections",
+          "subsections": []
+        },
+        {
+          "label": "(7)",
+          "token": "7",
+          "kind": "numeric",
+          "text": "The commission may appoint a member of the commission, or a designee, as a nonvoting, ex officio member of the board.",
+          "subsections": []
+        },
+        {
+          "label": "(8)",
+          "token": "8",
+          "kind": "numeric",
+          "text": "(a) The commission is responsible for the administrative oversight of the board. The responsibilities of the commission include, but are not limited to:",
+          "subsections": [
+            {
+              "label": "(A)",
+              "token": "A",
+              "kind": "alpha_upper",
+              "text": "Budgeting;",
+              "subsections": []
+            },
+            {
+              "label": "(B)",
+              "token": "B",
+              "kind": "alpha_upper",
+              "text": "Financial management;",
+              "subsections": []
+            },
+            {
+              "label": "(C)",
+              "token": "C",
+              "kind": "alpha_upper",
+              "text": "Record keeping;",
+              "subsections": []
+            },
+            {
+              "label": "(D)",
+              "token": "D",
+              "kind": "alpha_upper",
+              "text": "Staffing;",
+              "subsections": []
+            },
+            {
+              "label": "(E)",
+              "token": "E",
+              "kind": "alpha_upper",
+              "text": "Purchasing and contracting;",
+              "subsections": []
+            },
+            {
+              "label": "(F)",
+              "token": "F",
+              "kind": "alpha_upper",
+              "text": "Collecting fees; and",
+              "subsections": []
+            },
+            {
+              "label": "(G)",
+              "token": "G",
+              "kind": "alpha_upper",
+              "text": "Compliance with rulemaking procedures set forth in ORS chapter 183.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "In consultation with the board, the commission shall:",
+              "subsections": [
+                {
+                  "label": "(A)",
+                  "token": "A",
+                  "kind": "alpha_upper",
+                  "text": "Fix the qualifications of and appoint an executive director and an administrative officer for the board; and",
+                  "subsections": []
+                },
+                {
+                  "label": "(B)",
+                  "token": "B",
+                  "kind": "alpha_upper",
+                  "text": "Subject to the State Personnel Relations Law, fix the compensation of the executive director and the administrative officer.",
+                  "subsections": []
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "parser_warnings": [],
+      "position": 16,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.110",
+      "identifier": "ORS 776.110",
+      "name": "Section 776.110",
+      "text": "[Repealed by 1957 c.448 27]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 17,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.115",
+      "identifier": "ORS 776.115",
+      "name": "Section 776.115",
+      "text": "Powers and duties of board; rules; fees. The Oregon Board of Maritime Pilots shall: (1) Fix the manner of calling and fixing the places of meetings and hold at least one meeting each calendar year. (2) Provide for efficient and competent pilotage service on all pilotage grounds, and regulate and limit the number of licensees and trainees under this chapter, such number of licensees and trainees to be regulated and limited to the number found by the board to be required to render efficient and competent pilotage service. The primary consideration of the board is public safety. If a proposed rule would result in the significant limitation of competition among licensees or pilot organizations that exist in this state on January 1, 1991, the board shall first make a determination that the proposed rule is essential to protect the safety of the public. (3) Establish and fix the boundaries of pilotage grounds not described in ORS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Fix the manner of calling and fixing the places of meetings and hold at least one meeting each calendar year.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Provide for efficient and competent pilotage service on all pilotage grounds, and regulate and limit the number of licensees and trainees under this chapter, such number of licensees and trainees to be regulated and limited to the number found by the board to be required to render efficient and competent pilotage service. The primary consideration of the board is public safety. If a proposed rule would result in the significant limitation of competition among licensees or pilot organizations that exist in this state on January 1, 1991, the board shall first make a determination that the proposed rule is essential to protect the safety of the public.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Establish and fix the boundaries of pilotage grounds not described in ORS",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 18,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.118",
+      "identifier": "ORS 776.118",
+      "name": "Section 776.118",
+      "text": "Additional authority of board. In addition to its authority under ORS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 19,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.120",
+      "identifier": "ORS 776.120",
+      "name": "Section 776.120",
+      "text": "[Repealed by 1957 c.448 27]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 20,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.123",
+      "identifier": "ORS 776.123",
+      "name": "Section 776.123",
+      "text": "Subpoenas. (1) The Oregon Board of Maritime Pilots may issue subpoenas to compel the attendance of witnesses and the production of records, documents, books, papers, memoranda or other information necessary to conduct an investigation under ORS 776.115, 776.375 or 776.405. (2) If a person fails to comply with a subpoena issued under this section, a judge of the circuit court, on the application of the board, shall compel obedience by instituting proceedings for contempt in the same manner that the court would institute proceedings for contempt when a person fails to comply with a subpoena in a civil action.",
+      "history_citation_blocks": [
+        "2009 c.280 2"
+      ],
+      "history_citations": [
+        {
+          "raw": "2009 c.280 2",
+          "year": 2009,
+          "chapter": "280",
+          "section": "2"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The Oregon Board of Maritime Pilots may issue subpoenas to compel the attendance of witnesses and the production of records, documents, books, papers, memoranda or other information necessary to conduct an investigation under ORS 776.115, 776.375 or 776.405.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "If a person fails to comply with a subpoena issued under this section, a judge of the circuit court, on the application of the board, shall compel obedience by instituting proceedings for contempt in the same manner that the court would institute proceedings for contempt when a person fails to comply with a subpoena in a civil action.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 21,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.125",
+      "identifier": "ORS 776.125",
+      "name": "Section 776.125",
+      "text": "",
+      "history_citation_blocks": [
+        "1957 c.448 5; repealed by 1993 c.796 23"
+      ],
+      "history_citations": [
+        {
+          "raw": "1957 c.448 5",
+          "year": 1957,
+          "chapter": "448",
+          "section": "5"
+        },
+        {
+          "raw": "repealed by 1993 c.796 23"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 22,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.126",
+      "identifier": "ORS 776.126",
+      "name": "Section 776.126",
+      "text": "Inspection of premises, ship or facility. (1) When conducting an investigation under ORS 776.115, 776.375 or 776.405, the Oregon Board of Maritime Pilots or its authorized representative may enter and investigate a premises, ship or facility. (2) When conducting an investigation under subsection (1) of this section, the board or its authorized representative may: (a) Examine the records, documents, books, papers, memoranda or other information kept at the premises, ship or facility. (b) Examine under oath an officer, agent or employee of the premises, ship or facility. (3) If the board or its authorized representative is inspecting a premises, ship or facility that is not open to the public, the board or the representative shall present credentials to the owner or occupant of the premises, ship or facility and obtain the consent of the owner or occupant before conducting the inspection. If the owner or occupant denies entry to the premises, ship or facility, the board or the representative must obtain a warrant to conduct the inspection. (4) The board or its authorized representative may use information obtained during an investigation only to fulfill the boards duties under ORS 776.115, 776.375 or 776.405.",
+      "history_citation_blocks": [
+        "2009 c.280 3"
+      ],
+      "history_citations": [
+        {
+          "raw": "2009 c.280 3",
+          "year": 2009,
+          "chapter": "280",
+          "section": "3"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "When conducting an investigation under ORS 776.115, 776.375 or 776.405, the Oregon Board of Maritime Pilots or its authorized representative may enter and investigate a premises, ship or facility. of this section, the board or its authorized representative may:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Examine the records, documents, books, papers, memoranda or other information kept at the premises, ship or facility.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Examine under oath an officer, agent or employee of the premises, ship or facility.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "When conducting an investigation under subsection",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "If the board or its authorized representative is inspecting a premises, ship or facility that is not open to the public, the board or the representative shall present credentials to the owner or occupant of the premises, ship or facility and obtain the consent of the owner or occupant before conducting the inspection. If the owner or occupant denies entry to the premises, ship or facility, the board or the representative must obtain a warrant to conduct the inspection.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "The board or its authorized representative may use information obtained during an investigation only to fulfill the boards duties under ORS 776.115, 776.375 or 776.405.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 23,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.129",
+      "identifier": "ORS 776.129",
+      "name": "Section 776.129",
+      "text": "Administrative law judge for rate hearings; recommendations from other agencies; assessing costs and expenses of hearing. (1) When the Oregon Board of Maritime Pilots establishes rates described in ORS 776.115 (5), the board shall contract with and compensate the Public Utility Commission of Oregon for the use of administrative law judges assigned by the commission to conduct the rate proceeding. Notwithstanding ORS 183.413 to 183.470, an administrative law judge shall conduct the proceeding in compliance with procedures adopted by the board by rule. The administrative law judge and the board may receive and consider recommendations made by the Oregon Business Development Department and the Port of Portland. (2) The board may defray the costs and expenses of the hearing by assessing, in its final order, all or a portion of the costs and expenses of the hearing to a party to the hearing.",
+      "history_citation_blocks": [
+        "1987 c.775 2; 1989 c.171 85; 1989 c.293 1; 1993 c.741 112a; 1993 c.796 6; 1999 c.849 178,179; 2003 c.75 63; 2003 c.619 2; 2007 c.288 17"
+      ],
+      "history_citations": [
+        {
+          "raw": "1987 c.775 2",
+          "year": 1987,
+          "chapter": "775",
+          "section": "2"
+        },
+        {
+          "raw": "1989 c.171 85",
+          "year": 1989,
+          "chapter": "171",
+          "section": "85"
+        },
+        {
+          "raw": "1989 c.293 1",
+          "year": 1989,
+          "chapter": "293",
+          "section": "1"
+        },
+        {
+          "raw": "1993 c.741 112a",
+          "year": 1993,
+          "chapter": "741",
+          "section": "112a"
+        },
+        {
+          "raw": "1993 c.796 6",
+          "year": 1993,
+          "chapter": "796",
+          "section": "6"
+        },
+        {
+          "raw": "1999 c.849 178,179"
+        },
+        {
+          "raw": "2003 c.75 63",
+          "year": 2003,
+          "chapter": "75",
+          "section": "63"
+        },
+        {
+          "raw": "2003 c.619 2",
+          "year": 2003,
+          "chapter": "619",
+          "section": "2"
+        },
+        {
+          "raw": "2007 c.288 17",
+          "year": 2007,
+          "chapter": "288",
+          "section": "17"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "When the Oregon Board of Maritime Pilots establishes rates described in ORS 776.115",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": ", the board shall contract with and compensate the Public Utility Commission of Oregon for the use of administrative law judges assigned by the commission to conduct the rate proceeding. Notwithstanding ORS 183.413 to 183.470, an administrative law judge shall conduct the proceeding in compliance with procedures adopted by the board by rule. The administrative law judge and the board may receive and consider recommendations made by the Oregon Business Development Department and the Port of Portland.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The board may defray the costs and expenses of the hearing by assessing, in its final order, all or a portion of the costs and expenses of the hearing to a party to the hearing.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 24,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.130",
+      "identifier": "ORS 776.130",
+      "name": "Section 776.130",
+      "text": "[Repealed by 1957 c.448 27]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 25,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.135",
+      "identifier": "ORS 776.135",
+      "name": "Section 776.135",
+      "text": "",
+      "history_citation_blocks": [
+        "Subsection (1) enacted as part of 1957 c.448 5; subsection (2) enacted as 1957 c.448 24; 1971 c.734 184; 1983 c.313 1; repealed by 1993 c.796 23"
+      ],
+      "history_citations": [
+        {
+          "raw": "Subsection (1) enacted as part of 1957 c.448 5"
+        },
+        {
+          "raw": "subsection (2) enacted as 1957 c.448 24"
+        },
+        {
+          "raw": "1971 c.734 184",
+          "year": 1971,
+          "chapter": "734",
+          "section": "184"
+        },
+        {
+          "raw": "1983 c.313 1",
+          "year": 1983,
+          "chapter": "313",
+          "section": "1"
+        },
+        {
+          "raw": "repealed by 1993 c.796 23"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 26,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.140",
+      "identifier": "ORS 776.140",
+      "name": "Section 776.140",
+      "text": "[Repealed by 1957 c.448 27]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 27,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.145",
+      "identifier": "ORS 776.145",
+      "name": "Section 776.145",
+      "text": "",
+      "history_citation_blocks": [
+        "1957 c.448 6; repealed by 1971 c.734 21"
+      ],
+      "history_citations": [
+        {
+          "raw": "1957 c.448 6",
+          "year": 1957,
+          "chapter": "448",
+          "section": "6"
+        },
+        {
+          "raw": "repealed by 1971 c.734 21"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 28,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.150",
+      "identifier": "ORS 776.150",
+      "name": "Section 776.150",
+      "text": "[Repealed by 1957 c.448 27]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 29,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.155",
+      "identifier": "ORS 776.155",
+      "name": "Section 776.155",
+      "text": "",
+      "history_citation_blocks": [
+        "1957 c.448 7; repealed by 1971 c.734 21"
+      ],
+      "history_citations": [
+        {
+          "raw": "1957 c.448 7",
+          "year": 1957,
+          "chapter": "448",
+          "section": "7"
+        },
+        {
+          "raw": "repealed by 1971 c.734 21"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 30,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.160",
+      "identifier": "ORS 776.160",
+      "name": "Section 776.160",
+      "text": "[Repealed by 1957 c.448 27]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 31,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.165",
+      "identifier": "ORS 776.165",
+      "name": "Section 776.165",
+      "text": "",
+      "history_citation_blocks": [
+        "1957 c.448 8; repealed by 1971 c.734 21"
+      ],
+      "history_citations": [
+        {
+          "raw": "1957 c.448 8",
+          "year": 1957,
+          "chapter": "448",
+          "section": "8"
+        },
+        {
+          "raw": "repealed by 1971 c.734 21"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 32,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.170",
+      "identifier": "ORS 776.170",
+      "name": "Section 776.170",
+      "text": "[Repealed by 1957 c.448 27]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 33,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.175",
+      "identifier": "ORS 776.175",
+      "name": "Section 776.175",
+      "text": "",
+      "history_citation_blocks": [
+        "1957 c.448 9; repealed by 1971 c.734 21"
+      ],
+      "history_citations": [
+        {
+          "raw": "1957 c.448 9",
+          "year": 1957,
+          "chapter": "448",
+          "section": "9"
+        },
+        {
+          "raw": "repealed by 1971 c.734 21"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 34,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.185",
+      "identifier": "ORS 776.185",
+      "name": "Section 776.185",
+      "text": "",
+      "history_citation_blocks": [
+        "1957 c.448 10; repealed by 1971 c.734 21"
+      ],
+      "history_citations": [
+        {
+          "raw": "1957 c.448 10",
+          "year": 1957,
+          "chapter": "448",
+          "section": "10"
+        },
+        {
+          "raw": "repealed by 1971 c.734 21"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 35,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.195",
+      "identifier": "ORS 776.195",
+      "name": "Section 776.195",
+      "text": "",
+      "history_citation_blocks": [
+        "1957 c.448 11; repealed by 1971 c.734 21"
+      ],
+      "history_citations": [
+        {
+          "raw": "1957 c.448 11",
+          "year": 1957,
+          "chapter": "448",
+          "section": "11"
+        },
+        {
+          "raw": "repealed by 1971 c.734 21"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 36,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.205",
+      "identifier": "ORS 776.205",
+      "name": "Section 776.205",
+      "text": "[1957 c.448 12; repealed by 1971 c.734 21] LICENSING; COMPENSATION; LIABILITY",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 37,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.300",
+      "identifier": "ORS 776.300",
+      "name": "Section 776.300",
+      "text": "Trainee license; qualifications; assignment for training; rules. (1) No person shall be licensed as a trainee under this chapter unless the person meets the experience and educational requirements established by the Oregon Board of Maritime Pilots by rule including provisions pursuant to a program to carry out ORS 243.305 and 776.115 (2). (2) The board shall assign trainees to organizations of pilots licensed under ORS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "No person shall be licensed as a trainee under this chapter unless the person meets the experience and educational requirements established by the Oregon Board of Maritime Pilots by rule including provisions pursuant to a program to carry out ORS 243.305 and 776.115",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": ". The board shall assign trainees to organizations of pilots licensed under ORS",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 38,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.305",
+      "identifier": "ORS 776.305",
+      "name": "Section 776.305",
+      "text": "",
+      "history_citation_blocks": [
+        "1957 c.448 13; 1985 c.34 1; repealed by 1993 c.796 23"
+      ],
+      "history_citations": [
+        {
+          "raw": "1957 c.448 13",
+          "year": 1957,
+          "chapter": "448",
+          "section": "13"
+        },
+        {
+          "raw": "1985 c.34 1",
+          "year": 1985,
+          "chapter": "34",
+          "section": "1"
+        },
+        {
+          "raw": "repealed by 1993 c.796 23"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 39,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.310",
+      "identifier": "ORS 776.310",
+      "name": "Section 776.310",
+      "text": "[Repealed by 1957 c.448 27]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 40,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.311",
+      "identifier": "ORS 776.311",
+      "name": "Section 776.311",
+      "text": "Organizations licensed to train pilots. (1) No organization of pilots shall be licensed to train persons to be pilots under this chapter unless the organization: (a) Has members who are licensed to pilot under ORS 776.325; and (b) Meets other requirements established by the Oregon Board of Maritime Pilots. (2) The board shall license at least one pilot organization on each pilotage ground. (3) Organizations of pilots shall train only persons who are licensed as trainees and have been assigned for training by the board under ORS 776.300.",
+      "history_citation_blocks": [
+        "1993 c.796 8b"
+      ],
+      "history_citations": [
+        {
+          "raw": "1993 c.796 8b",
+          "year": 1993,
+          "chapter": "796",
+          "section": "8b"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "No organization of pilots shall be licensed to train persons to be pilots under this chapter unless the organization:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Has members who are licensed to pilot under ORS 776.325; and",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Meets other requirements established by the Oregon Board of Maritime Pilots.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The board shall license at least one pilot organization on each pilotage ground.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Organizations of pilots shall train only persons who are licensed as trainees and have been assigned for training by the board under ORS 776.300.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 41,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.315",
+      "identifier": "ORS 776.315",
+      "name": "Section 776.315",
+      "text": "",
+      "history_citation_blocks": [
+        "1957 c.448 14; 1985 c.32 1; repealed by 1993 c.796 23"
+      ],
+      "history_citations": [
+        {
+          "raw": "1957 c.448 14",
+          "year": 1957,
+          "chapter": "448",
+          "section": "14"
+        },
+        {
+          "raw": "1985 c.32 1",
+          "year": 1985,
+          "chapter": "32",
+          "section": "1"
+        },
+        {
+          "raw": "repealed by 1993 c.796 23"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 42,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.320",
+      "identifier": "ORS 776.320",
+      "name": "Section 776.320",
+      "text": "[Amended by 1953 c.140 2; repealed by 1957 c.448 27]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 43,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.325",
+      "identifier": "ORS 776.325",
+      "name": "Section 776.325",
+      "text": "Qualifications of licensees. (1) No person shall be licensed to pilot under this chapter unless the person: (a) Was licensed as a trainee or licensee prior to submitting an application to be licensed to pilot and has met the training requirements established by the Oregon Board of Maritime Pilots; and (b) Possesses the requisite skill and the experience as a navigator and pilot, as demonstrated by satisfactory performance on such written examinations as the board may prescribe, together with practical knowledge of the currents, tides, soundings, bearings and distances of the several shoals, rocks, bars, points of landings, lights and fog signals of or pertaining to the navigation of the pilotage ground for which application is made for a license to pilot. (2) An applicant for a license over any river pilotage ground must have at least six months continuous experience, as determined by the board, as a trainee on vessels subject to ORS 776.405 piloting oceangoing vessels over the pilotage ground for which application is made, prior to making application for a license, and must have had the necessary experience in handling oceangoing vessels through the bridges, under varying conditions with and without towboats. (3) An applicant for a license on bar pilotage grounds shall satisfy the board that the applicant has means available for boarding and leaving vessels which the applicant may be called upon to pilot.",
+      "history_citation_blocks": [
+        "1957 c.448 15; 1973 c.827 82; 1981 c.88 8; 1983 c.313 2; 1985 c.32 2; 1993 c.796 8"
+      ],
+      "history_citations": [
+        {
+          "raw": "1957 c.448 15",
+          "year": 1957,
+          "chapter": "448",
+          "section": "15"
+        },
+        {
+          "raw": "1973 c.827 82",
+          "year": 1973,
+          "chapter": "827",
+          "section": "82"
+        },
+        {
+          "raw": "1981 c.88 8",
+          "year": 1981,
+          "chapter": "88",
+          "section": "8"
+        },
+        {
+          "raw": "1983 c.313 2",
+          "year": 1983,
+          "chapter": "313",
+          "section": "2"
+        },
+        {
+          "raw": "1985 c.32 2",
+          "year": 1985,
+          "chapter": "32",
+          "section": "2"
+        },
+        {
+          "raw": "1993 c.796 8",
+          "year": 1993,
+          "chapter": "796",
+          "section": "8"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "No person shall be licensed to pilot under this chapter unless the person:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Was licensed as a trainee or licensee prior to submitting an application to be licensed to pilot and has met the training requirements established by the Oregon Board of Maritime Pilots; and",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Possesses the requisite skill and the experience as a navigator and pilot, as demonstrated by satisfactory performance on such written examinations as the board may prescribe, together with practical knowledge of the currents, tides, soundings, bearings and distances of the several shoals, rocks, bars, points of landings, lights and fog signals of or pertaining to the navigation of the pilotage ground for which application is made for a license to pilot.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "An applicant for a license over any river pilotage ground must have at least six months continuous experience, as determined by the board, as a trainee on vessels subject to ORS 776.405 piloting oceangoing vessels over the pilotage ground for which application is made, prior to making application for a license, and must have had the necessary experience in handling oceangoing vessels through the bridges, under varying conditions with and without towboats.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "An applicant for a license on bar pilotage grounds shall satisfy the board that the applicant has means available for boarding and leaving vessels which the applicant may be called upon to pilot.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 44,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.330",
+      "identifier": "ORS 776.330",
+      "name": "Section 776.330",
+      "text": "[Repealed by 1957 c.448 27]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 45,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.335",
+      "identifier": "ORS 776.335",
+      "name": "Section 776.335",
+      "text": "",
+      "history_citation_blocks": [
+        "1957 c.448 16; repealed by 1993 c.796 23"
+      ],
+      "history_citations": [
+        {
+          "raw": "1957 c.448 16",
+          "year": 1957,
+          "chapter": "448",
+          "section": "16"
+        },
+        {
+          "raw": "repealed by 1993 c.796 23"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 46,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.340",
+      "identifier": "ORS 776.340",
+      "name": "Section 776.340",
+      "text": "[Repealed by 1953 c.297 2]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 47,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.345",
+      "identifier": "ORS 776.345",
+      "name": "Section 776.345",
+      "text": "",
+      "history_citation_blocks": [
+        "1957 c.448 17; 1981 c.88 13; 1983 c.313 3; 1985 c.34 2; repealed by 1993 c.796 23"
+      ],
+      "history_citations": [
+        {
+          "raw": "1957 c.448 17",
+          "year": 1957,
+          "chapter": "448",
+          "section": "17"
+        },
+        {
+          "raw": "1981 c.88 13",
+          "year": 1981,
+          "chapter": "88",
+          "section": "13"
+        },
+        {
+          "raw": "1983 c.313 3",
+          "year": 1983,
+          "chapter": "313",
+          "section": "3"
+        },
+        {
+          "raw": "1985 c.34 2",
+          "year": 1985,
+          "chapter": "34",
+          "section": "2"
+        },
+        {
+          "raw": "repealed by 1993 c.796 23"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 48,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.350",
+      "identifier": "ORS 776.350",
+      "name": "Section 776.350",
+      "text": "[Repealed by 1957 c.448 27]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 49,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.355",
+      "identifier": "ORS 776.355",
+      "name": "Section 776.355",
+      "text": "License fees; rules. (1) Except as provided in subsection (2) of this section, each licensee under this chapter shall pay an annual license fee to the Oregon Board of Maritime Pilots not to exceed the amount established under ORS 776.115. Subject to prior approval of the Oregon Department of Administrative Services, the amount of the fee shall be adjusted by the Oregon Board of Maritime Pilots to finance costs as defined by the legislatively approved budget, as it may be modified by the Emergency Board. (2) The Oregon Board of Maritime Pilots by rule may establish reduced license fees for those individuals who engage in pilotage activities on less than a full-time basis. However, in no event shall the fee be less than $50.",
+      "history_citation_blocks": [
+        "1957 c.448 22; 1963 c.105 2; 1973 c.832 68; 1977 c.40 2; 1979 c.11 2; 1981 c.88 9; 1983 c.313 4; 1985 c.271 2; 1989 c.293 2; 1991 c.466 1; 1991 c.703 41; 1993 c.796 9; 2023 c.602 31"
+      ],
+      "history_citations": [
+        {
+          "raw": "1957 c.448 22",
+          "year": 1957,
+          "chapter": "448",
+          "section": "22"
+        },
+        {
+          "raw": "1963 c.105 2",
+          "year": 1963,
+          "chapter": "105",
+          "section": "2"
+        },
+        {
+          "raw": "1973 c.832 68",
+          "year": 1973,
+          "chapter": "832",
+          "section": "68"
+        },
+        {
+          "raw": "1977 c.40 2",
+          "year": 1977,
+          "chapter": "40",
+          "section": "2"
+        },
+        {
+          "raw": "1979 c.11 2",
+          "year": 1979,
+          "chapter": "11",
+          "section": "2"
+        },
+        {
+          "raw": "1981 c.88 9",
+          "year": 1981,
+          "chapter": "88",
+          "section": "9"
+        },
+        {
+          "raw": "1983 c.313 4",
+          "year": 1983,
+          "chapter": "313",
+          "section": "4"
+        },
+        {
+          "raw": "1985 c.271 2",
+          "year": 1985,
+          "chapter": "271",
+          "section": "2"
+        },
+        {
+          "raw": "1989 c.293 2",
+          "year": 1989,
+          "chapter": "293",
+          "section": "2"
+        },
+        {
+          "raw": "1991 c.466 1",
+          "year": 1991,
+          "chapter": "466",
+          "section": "1"
+        },
+        {
+          "raw": "1991 c.703 41",
+          "year": 1991,
+          "chapter": "703",
+          "section": "41"
+        },
+        {
+          "raw": "1993 c.796 9",
+          "year": 1993,
+          "chapter": "796",
+          "section": "9"
+        },
+        {
+          "raw": "2023 c.602 31",
+          "year": 2023,
+          "chapter": "602",
+          "section": "31"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Except as provided in subsection",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "of this section, each licensee under this chapter shall pay an annual license fee to the Oregon Board of Maritime Pilots not to exceed the amount established under ORS 776.115. Subject to prior approval of the Oregon Department of Administrative Services, the amount of the fee shall be adjusted by the Oregon Board of Maritime Pilots to finance costs as defined by the legislatively approved budget, as it may be modified by the Emergency Board. The Oregon Board of Maritime Pilots by rule may establish reduced license fees for those individuals who engage in pilotage activities on less than a full-time basis. However, in no event shall the fee be less than $50.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 50,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.357",
+      "identifier": "ORS 776.357",
+      "name": "Section 776.357",
+      "text": "Maximum maritime pilot license fee. (1) The maximum annual license fee for a maritime pilot is $2,500 for the biennium beginning July 1, 2007. (2) The Oregon Board of Maritime Pilots shall adjust the amount of the maximum annual license fee for a maritime pilot for each subsequent biennium by a proportional amount equal to the percentage change in the 24-month period prior to the beginning of the biennium in the Consumer Price Index for All Urban Consumers, West Region (All Items), as published by the Bureau of Labor Statistics of the United States Department of Labor. [2007 c.621 2; 2019 c.57 34] Note:",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The maximum annual license fee for a maritime pilot is $2,500 for the biennium beginning July 1, 2007.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The Oregon Board of Maritime Pilots shall adjust the amount of the maximum annual license fee for a maritime pilot for each subsequent biennium by a proportional amount equal to the percentage change in the 24-month period prior to the beginning of the biennium in the Consumer Price Index for All Urban Consumers, West Region (All Items), as published by the Bureau of Labor Statistics of the United States Department of Labor. [2007 c.621 2; 2019 c.57 34] Note:",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 51,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.360",
+      "identifier": "ORS 776.360",
+      "name": "Section 776.360",
+      "text": "[Repealed by 1957 c.448 27]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 52,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.365",
+      "identifier": "ORS 776.365",
+      "name": "Section 776.365",
+      "text": "Pilot Account; uses. The Pilot Account is established in the State Treasury, separate and distinct from the General Fund. All moneys received by the Oregon Board of Maritime Pilots under this chapter shall be deposited in the account. All moneys in the account are continuously appropriated to the board and the board may use the moneys only to carry out the duties, functions and powers of the board, for the administration and enforcement of this chapter and for expenses incurred by the Public Utility Commission in its oversight of the board.",
+      "history_citation_blocks": [
+        "1957 c.448 23; 1983 c.740 256; 2007 c.768 68; 2013 c.539 5"
+      ],
+      "history_citations": [
+        {
+          "raw": "1957 c.448 23",
+          "year": 1957,
+          "chapter": "448",
+          "section": "23"
+        },
+        {
+          "raw": "1983 c.740 256",
+          "year": 1983,
+          "chapter": "740",
+          "section": "256"
+        },
+        {
+          "raw": "2007 c.768 68",
+          "year": 2007,
+          "chapter": "768",
+          "section": "68"
+        },
+        {
+          "raw": "2013 c.539 5",
+          "year": 2013,
+          "chapter": "539",
+          "section": "5"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 53,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.370",
+      "identifier": "ORS 776.370",
+      "name": "Section 776.370",
+      "text": "[Repealed by 1957 c.448 27]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 54,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.375",
+      "identifier": "ORS 776.375",
+      "name": "Section 776.375",
+      "text": "Disciplinary proceedings; administrative procedures; judicial review. (1) Where the Oregon Board of Maritime Pilots proposes to refuse to issue or renew a license to pilot, or proposes to revoke or suspend a license or proposes to issue a written reprimand, opportunity for hearing shall be accorded as provided in ORS chapter 183. (2) Adoption of rules, conduct of hearings, issuance of orders and judicial review of rules and orders shall be as provided in ORS chapter 183. Contested case hearings shall be conducted by an administrative law judge assigned from the Office of Administrative Hearings established under ORS 183.605.",
+      "history_citation_blocks": [
+        "1971 c.734 186; 1981 c.88 14; 1993 c.796 10; 1999 c.849 181,182; 2003 c.75 64"
+      ],
+      "history_citations": [
+        {
+          "raw": "1971 c.734 186",
+          "year": 1971,
+          "chapter": "734",
+          "section": "186"
+        },
+        {
+          "raw": "1981 c.88 14",
+          "year": 1981,
+          "chapter": "88",
+          "section": "14"
+        },
+        {
+          "raw": "1993 c.796 10",
+          "year": 1993,
+          "chapter": "796",
+          "section": "10"
+        },
+        {
+          "raw": "1999 c.849 181,182"
+        },
+        {
+          "raw": "2003 c.75 64",
+          "year": 2003,
+          "chapter": "75",
+          "section": "64"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Where the Oregon Board of Maritime Pilots proposes to refuse to issue or renew a license to pilot, or proposes to revoke or suspend a license or proposes to issue a written reprimand, opportunity for hearing shall be accorded as provided in ORS chapter 183.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Adoption of rules, conduct of hearings, issuance of orders and judicial review of rules and orders shall be as provided in ORS chapter 183. Contested case hearings shall be conducted by an administrative law judge assigned from the Office of Administrative Hearings established under ORS 183.605.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 55,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.380",
+      "identifier": "ORS 776.380",
+      "name": "Section 776.380",
+      "text": "[Repealed by 1957 c.448 27]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 56,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.390",
+      "identifier": "ORS 776.390",
+      "name": "Section 776.390",
+      "text": "[Repealed by 1957 c.448 27]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 57,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.400",
+      "identifier": "ORS 776.400",
+      "name": "Section 776.400",
+      "text": "[Repealed by 1957 c.448 27]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 58,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.405",
+      "identifier": "ORS 776.405",
+      "name": "Section 776.405",
+      "text": "License required; exemptions. (1)(a) Except as set forth in paragraph (c) of this subsection, a person may not pilot any vessel upon any of the pilotage grounds established under ORS 776.025 or 776.115 without being a licensee under this chapter or a trainee under the onboard supervision of a licensee under this chapter. (b) Except as set forth in paragraph (c) of this subsection, a person may not pilot any vessel in the Columbia River bar precautionary zone, either to enter or depart the Columbia River bar pilotage ground, except pursuant to instructions from a licensee under this chapter for the Columbia River bar pilotage ground, provided however that the master of a vessel transiting the Columbia River bar precautionary zone remains at all times in full command of the vessel and is responsible to take all reasonable steps to safely navigate the Columbia River bar precautionary zone. (c) Paragraphs (a) and (b) of this subsection do not apply to: (A) The master of a vessel under fishery, recreational or coastwise endorsement provided under 46 U.S.C. chapter 121; (B) A vessel registered with the State Marine Board or a similar licensing agency of another state; (C) The master of a foreign registered fishing or recreational vessel, exempted by the Oregon Board of Maritime Pilots, of not more than 100 feet in length or 250 gross tons international; or (D) United States flag towing vessels under 200 gross tons domestic and their towed barges of 10,000 gross tons domestic or less, excluding tank vessels as defined by ORS 468B.300, that are engaged in the foreign trade between British Columbia and the Coos Bay bar pilotage ground established by ORS 776.025 (3), provided that the towing vessel is under the navigational control of a person holding the federal mariner license required for the towing vessel when operating under a coastwise endorsement. (2) A licensee under this chapter is at all times the servant of the vessel being piloted and its owners and operators.",
+      "history_citation_blocks": [
+        "1957 c.448 25(1); 1973 c.650 1; 1983 c.330 3; 1985 c.34 3; 1991 c.234 3; 1993 c.796 11; 2001 c.104 296; 2011 c.157 4; 2017 c.292 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "1957 c.448 25(1)"
+        },
+        {
+          "raw": "1973 c.650 1",
+          "year": 1973,
+          "chapter": "650",
+          "section": "1"
+        },
+        {
+          "raw": "1983 c.330 3",
+          "year": 1983,
+          "chapter": "330",
+          "section": "3"
+        },
+        {
+          "raw": "1985 c.34 3",
+          "year": 1985,
+          "chapter": "34",
+          "section": "3"
+        },
+        {
+          "raw": "1991 c.234 3",
+          "year": 1991,
+          "chapter": "234",
+          "section": "3"
+        },
+        {
+          "raw": "1993 c.796 11",
+          "year": 1993,
+          "chapter": "796",
+          "section": "11"
+        },
+        {
+          "raw": "2001 c.104 296",
+          "year": 2001,
+          "chapter": "104",
+          "section": "296"
+        },
+        {
+          "raw": "2011 c.157 4",
+          "year": 2011,
+          "chapter": "157",
+          "section": "4"
+        },
+        {
+          "raw": "2017 c.292 1",
+          "year": 2017,
+          "chapter": "292",
+          "section": "1"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "(a) Except as set forth in paragraph",
+          "subsections": [
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "of this subsection, a person may not pilot any vessel upon any of the pilotage grounds established under ORS 776.025 or 776.115 without being a licensee under this chapter or a trainee under the onboard supervision of a licensee under this chapter. of this subsection, a person may not pilot any vessel in the Columbia River bar precautionary zone, either to enter or depart the Columbia River bar pilotage ground, except pursuant to instructions from a licensee under this chapter for the Columbia River bar pilotage ground, provided however that the master of a vessel transiting the Columbia River bar precautionary zone remains at all times in full command of the vessel and is responsible to take all reasonable steps to safely navigate the Columbia River bar precautionary zone. Paragraphs",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Except as set forth in paragraph of this subsection do not apply to:",
+              "subsections": [
+                {
+                  "label": "(A)",
+                  "token": "A",
+                  "kind": "alpha_upper",
+                  "text": "The master of a vessel under fishery, recreational or coastwise endorsement provided under 46 U.S.C. chapter 121;",
+                  "subsections": []
+                },
+                {
+                  "label": "(B)",
+                  "token": "B",
+                  "kind": "alpha_upper",
+                  "text": "A vessel registered with the State Marine Board or a similar licensing agency of another state;",
+                  "subsections": []
+                },
+                {
+                  "label": "(C)",
+                  "token": "C",
+                  "kind": "alpha_upper",
+                  "text": "The master of a foreign registered fishing or recreational vessel, exempted by the Oregon Board of Maritime Pilots, of not more than 100 feet in length or 250 gross tons international; or",
+                  "subsections": []
+                },
+                {
+                  "label": "(D)",
+                  "token": "D",
+                  "kind": "alpha_upper",
+                  "text": "United States flag towing vessels under 200 gross tons domestic and their towed barges of 10,000 gross tons domestic or less, excluding tank vessels as defined by ORS 468B.300, that are engaged in the foreign trade between British Columbia and the Coos Bay bar pilotage ground established by ORS 776.025",
+                  "subsections": []
+                }
+              ]
+            },
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "and",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": ", provided that the towing vessel is under the navigational control of a person holding the federal mariner license required for the towing vessel when operating under a coastwise endorsement.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "A licensee under this chapter is at all times the servant of the vessel being piloted and its owners and operators.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 59,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.410",
+      "identifier": "ORS 776.410",
+      "name": "Section 776.410",
+      "text": "[Amended by 1955 c.558 1; repealed by 1957 c.448 27]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 60,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.415",
+      "identifier": "ORS 776.415",
+      "name": "Section 776.415",
+      "text": "Compensation of licensees determined by law. No licensee shall demand or receive any greater, lesser or different compensation for piloting a vessel upon any of the pilotage grounds than is allowed by law.",
+      "history_citation_blocks": [
+        "1957 c.448 25(2); 1993 c.796 12"
+      ],
+      "history_citations": [
+        {
+          "raw": "1957 c.448 25(2)"
+        },
+        {
+          "raw": "1993 c.796 12",
+          "year": 1993,
+          "chapter": "796",
+          "section": "12"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 61,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.420",
+      "identifier": "ORS 776.420",
+      "name": "Section 776.420",
+      "text": "",
+      "history_citation_blocks": [
+        "Amended by 1953 c.141 2; 1953 c.142 2; 1955 c.698 1; repealed by 1957 c.448 27"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1953 c.141 2"
+        },
+        {
+          "raw": "1953 c.142 2",
+          "year": 1953,
+          "chapter": "142",
+          "section": "2"
+        },
+        {
+          "raw": "1955 c.698 1",
+          "year": 1955,
+          "chapter": "698",
+          "section": "1"
+        },
+        {
+          "raw": "repealed by 1957 c.448 27"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 62,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.425",
+      "identifier": "ORS 776.425",
+      "name": "Section 776.425",
+      "text": "Authority of licensees generally; compensation. Within the scope of the license, a licensee may pilot any vessel and demand and receive therefor the compensation allowed by law.",
+      "history_citation_blocks": [
+        "1957 c.448 20(1); 1973 c.650 2; 1985 c.32 3; 1993 c.796 13"
+      ],
+      "history_citations": [
+        {
+          "raw": "1957 c.448 20(1)"
+        },
+        {
+          "raw": "1973 c.650 2",
+          "year": 1973,
+          "chapter": "650",
+          "section": "2"
+        },
+        {
+          "raw": "1985 c.32 3",
+          "year": 1985,
+          "chapter": "32",
+          "section": "3"
+        },
+        {
+          "raw": "1993 c.796 13",
+          "year": 1993,
+          "chapter": "796",
+          "section": "13"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 63,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.430",
+      "identifier": "ORS 776.430",
+      "name": "Section 776.430",
+      "text": "[Repealed by 1957 c.448 27]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 64,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.435",
+      "identifier": "ORS 776.435",
+      "name": "Section 776.435",
+      "text": "Refusing services of licensee; liability for pilotage fee. The master or person in charge of any vessel may refuse to accept the services of any particular licensee and shall call for another licensee, in which case the vessel and the owners, operators and agents of the vessel are liable only for the services of the licensee employed.",
+      "history_citation_blocks": [
+        "1957 c.448 20(2); 1983 c.330 2; 1991 c.234 5; 1993 c.796 14"
+      ],
+      "history_citations": [
+        {
+          "raw": "1957 c.448 20(2)"
+        },
+        {
+          "raw": "1983 c.330 2",
+          "year": 1983,
+          "chapter": "330",
+          "section": "2"
+        },
+        {
+          "raw": "1991 c.234 5",
+          "year": 1991,
+          "chapter": "234",
+          "section": "5"
+        },
+        {
+          "raw": "1993 c.796 14",
+          "year": 1993,
+          "chapter": "796",
+          "section": "14"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 65,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.440",
+      "identifier": "ORS 776.440",
+      "name": "Section 776.440",
+      "text": "[Repealed by 1957 c.448 27]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 66,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.445",
+      "identifier": "ORS 776.445",
+      "name": "Section 776.445",
+      "text": "Liability of certain persons for licensees compensation. In addition to the lien of the licensee upon the vessel for any sum due for piloting, the master, owner and consignee or agent are jointly and severally liable to the licensee therefor.",
+      "history_citation_blocks": [
+        "1957 c.448 21; 1993 c.796 15"
+      ],
+      "history_citations": [
+        {
+          "raw": "1957 c.448 21",
+          "year": 1957,
+          "chapter": "448",
+          "section": "21"
+        },
+        {
+          "raw": "1993 c.796 15",
+          "year": 1993,
+          "chapter": "796",
+          "section": "15"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 67,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.450",
+      "identifier": "ORS 776.450",
+      "name": "Section 776.450",
+      "text": "[Repealed by 1957 c.448 27]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 68,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.455",
+      "identifier": "ORS 776.455",
+      "name": "Section 776.455",
+      "text": "Exhibition of license on boarding vessel. On boarding a vessel and if required by the master thereof, a licensee shall exhibit the license before the licensee is authorized to perform a piloting assignment.",
+      "history_citation_blocks": [
+        "1957 c.448 19; 1993 c.796 16"
+      ],
+      "history_citations": [
+        {
+          "raw": "1957 c.448 19",
+          "year": 1957,
+          "chapter": "448",
+          "section": "19"
+        },
+        {
+          "raw": "1993 c.796 16",
+          "year": 1993,
+          "chapter": "796",
+          "section": "16"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 69,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.460",
+      "identifier": "ORS 776.460",
+      "name": "Section 776.460",
+      "text": "[Repealed by 1957 c.448 27]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 70,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.465",
+      "identifier": "ORS 776.465",
+      "name": "Section 776.465",
+      "text": "",
+      "history_citation_blocks": [
+        "1957 c.448 18; repealed by 1993 c.796 23"
+      ],
+      "history_citations": [
+        {
+          "raw": "1957 c.448 18",
+          "year": 1957,
+          "chapter": "448",
+          "section": "18"
+        },
+        {
+          "raw": "repealed by 1993 c.796 23"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 71,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.470",
+      "identifier": "ORS 776.470",
+      "name": "Section 776.470",
+      "text": "[Repealed by 1957 c.448 27]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 72,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.480",
+      "identifier": "ORS 776.480",
+      "name": "Section 776.480",
+      "text": "[Repealed by 1957 c.448 27]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 73,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.490",
+      "identifier": "ORS 776.490",
+      "name": "Section 776.490",
+      "text": "[Repealed by 1957 c.448 27]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 74,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.500",
+      "identifier": "ORS 776.500",
+      "name": "Section 776.500",
+      "text": "[Repealed by 1957 c.448 27]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 75,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.510",
+      "identifier": "ORS 776.510",
+      "name": "Section 776.510",
+      "text": "Declaration of legislative intent relating to liability of licensees, trainees and organizations. (1) The stimulation and preservation of maritime commerce on the bar and river pilotage grounds of this state are declared to be affected with the public interest and the limitation and regulation of liability of licensees, trainees and organizations of pilots are necessary to such stimulation and preservation of maritime commerce and are deemed to be in the public interest. (2) To accomplish the stimulation and preservation of maritime commerce it is necessary to establish an optional rate system whereby vessels and persons engaging the services of a licensee have the option of: (a) Agreeing not to assert any personal liability against any licensee, trainee and organization of pilots to which the licensee or trainee belongs, and to defend, indemnify and save harmless the licensee, trainee and organization of pilots against all claims and demands arising from acts or omissions of the licensee, trainee or organization of pilots which relate, directly or indirectly, to pilotage of the vessel; or (b) Directing licensees in writing and in sufficient time for insurance to be procured by them, on a trip basis, insuring such licensees, trainees and organizations of pilots to which they belong against all claims or demands arising from or relating to, directly or indirectly, pilotage of the vessel, the premium or cost of such insurance to be included in the charges for pilotage services and paid on demand by the vessel. (3) The Legislative Assembly hereby declares that to effect the ends and purposes listed in this section, and to maintain pilotage fees at reasonable levels on the bar and river pilotage grounds of this state, ORS 776.520, 776.530 and",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The stimulation and preservation of maritime commerce on the bar and river pilotage grounds of this state are declared to be affected with the public interest and the limitation and regulation of liability of licensees, trainees and organizations of pilots are necessary to such stimulation and preservation of maritime commerce and are deemed to be in the public interest.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "To accomplish the stimulation and preservation of maritime commerce it is necessary to establish an optional rate system whereby vessels and persons engaging the services of a licensee have the option of:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Agreeing not to assert any personal liability against any licensee, trainee and organization of pilots to which the licensee or trainee belongs, and to defend, indemnify and save harmless the licensee, trainee and organization of pilots against all claims and demands arising from acts or omissions of the licensee, trainee or organization of pilots which relate, directly or indirectly, to pilotage of the vessel; or",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Directing licensees in writing and in sufficient time for insurance to be procured by them, on a trip basis, insuring such licensees, trainees and organizations of pilots to which they belong against all claims or demands arising from or relating to, directly or indirectly, pilotage of the vessel, the premium or cost of such insurance to be included in the charges for pilotage services and paid on demand by the vessel.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The Legislative Assembly hereby declares that to effect the ends and purposes listed in this section, and to maintain pilotage fees at reasonable levels on the bar and river pilotage grounds of this state, ORS 776.520, 776.530 and",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 76,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.520",
+      "identifier": "ORS 776.520",
+      "name": "Section 776.520",
+      "text": "Tariffs limiting liability of licensees, trainees or organizations. Licensees and trainees are authorized to limit their liability and the liability of any organization of pilots to which they belong by tariffs approved by the Oregon Board of Maritime Pilots containing substantially the terms and provisions of the following form: ______________________________________________________________________________ The provisions of ORS 776.510 and 776.540 hereby are incorporated into and made a part of this tariff. By reason of the option granted by ORS 776.510, the rates and charges named in this tariff do not include the cost of marine insurance insuring the licensee, trainee and any organization of pilots to which the licensee or trainee belongs, the vessel, its owners, agents or operators from the consequences of negligence or errors in judgment of the licensees, trainees or organizations of pilots. However, upon reasonable notice to the licensees in writing from the vessel, its master, owners, agents or operators, the licensees parties hereto will procure such insurance on a trip basis in an amount equal to the value of the vessel and its cargo, or such other amount as may be agreed upon between the licensees and the vessel, its master, owners, agents or operators, insuring the licensees and the organizations of pilots to which they belong against all claims or demands arising from or based upon, directly or indirectly, pilotage of the vessel. The premium for such insurance shall be assessed in addition to the rates and charges specified herein. The election of the vessel, its master, owners, agents or operators not to request licensees parties hereto to procure such insurance and thereby to elect to have the licensees parties hereto perform services on the rates and charges specified herein shall constitute a binding and irrevocable agreement on the part of the vessel, its master, owners, agents or operators to the terms and conditions of the following: It is understood and agreed, and is the essence of the contract under which services of the licensee are tendered to and accepted by the vessel, its master, operators and owners, that: (1) The services rendered hereunder are rendered by a licensee; (2) The services of any individual licensee have been voluntarily accepted and are voluntarily rendered pursuant to the election authorized by ORS 776.510; (3) Such services are advisory in nature only, the master of the vessel remaining at all times in full command of the vessel and empowered to relieve the licensee of duties; (4) The services of the licensee and, if applicable, trainee are accepted on the express understanding that when the licensee and trainee go aboard the vessel the licensee and trainee become the servants of the vessel and its owners and operators. Except as to such personal liability and rights over as may arise by reason of the willful misconduct or gross negligence of the licensee or trainee, the master, owners and operators of the vessel expressly covenant and agree: (a) Not to assert directly or indirectly, any personal liability against the licensee, trainee, any organization of pilots to which the licensee or trainee belongs, and any members of such organization; (b) Not to respond in damage (including any rights over) arising out of or connected with, directly or indirectly, any damage, loss or expense sustained by the vessel, its master, owners, operators and crew, and any third parties (including cargo), even though resulting from acts or omissions of any organization of pilots to which the licensee or trainee belongs, from acts or omissions of its members, or any acts or omissions of the licensee or trainee; and (c) To defend, indemnify and hold harmless the licensee, trainee, any organization of pilots to which the licensee or trainee belongs, and any members of such organization, from any claims whatsoever for damages, loss or expense arising out of, or connected with any acts or omissions of the licensee, trainee or organization of pilots which relate, directly or indirectly, to pilotage of the vessel; (5) The master, owners and operators of the vessel shall not be liable to indemnify and hold harmless the licensee, trainee and any organization of pilots to an extent greater than the amount to which the liability of the vessel, its owners and operators, is limited by reason of contract, bill of lading or statute, including but not limited to, the Limitation of Liability Act (46 U.S.C. 181-189), the Harter Act (46 U.S.C. 190-195), the Carriage of Goods by Sea Act (46 U.S.C. 1300-1315), and the Federal Water Pollution Control Act (33 U.S.C. 1321); and (6) The fees charged for the services rendered by the licensee and trainee have been computed and are assessed in accordance with and based upon the above stipulations. ______________________________________________________________________________",
+      "history_citation_blocks": [
+        "1959 c.404 3; 1973 c.650 3; 1983 c.330 5; 1993 c.796 18"
+      ],
+      "history_citations": [
+        {
+          "raw": "1959 c.404 3",
+          "year": 1959,
+          "chapter": "404",
+          "section": "3"
+        },
+        {
+          "raw": "1973 c.650 3",
+          "year": 1973,
+          "chapter": "650",
+          "section": "3"
+        },
+        {
+          "raw": "1983 c.330 5",
+          "year": 1983,
+          "chapter": "330",
+          "section": "5"
+        },
+        {
+          "raw": "1993 c.796 18",
+          "year": 1993,
+          "chapter": "796",
+          "section": "18"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The services rendered hereunder are rendered by a licensee;",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The services of any individual licensee have been voluntarily accepted and are voluntarily rendered pursuant to the election authorized by ORS 776.510;",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Such services are advisory in nature only, the master of the vessel remaining at all times in full command of the vessel and empowered to relieve the licensee of duties;",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "The services of the licensee and, if applicable, trainee are accepted on the express understanding that when the licensee and trainee go aboard the vessel the licensee and trainee become the servants of the vessel and its owners and operators. Except as to such personal liability and rights over as may arise by reason of the willful misconduct or gross negligence of the licensee or trainee, the master, owners and operators of the vessel expressly covenant and agree:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Not to assert directly or indirectly, any personal liability against the licensee, trainee, any organization of pilots to which the licensee or trainee belongs, and any members of such organization;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Not to respond in damage (including any rights over) arising out of or connected with, directly or indirectly, any damage, loss or expense sustained by the vessel, its master, owners, operators and crew, and any third parties (including cargo), even though resulting from acts or omissions of any organization of pilots to which the licensee or trainee belongs, from acts or omissions of its members, or any acts or omissions of the licensee or trainee; and",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "To defend, indemnify and hold harmless the licensee, trainee, any organization of pilots to which the licensee or trainee belongs, and any members of such organization, from any claims whatsoever for damages, loss or expense arising out of, or connected with any acts or omissions of the licensee, trainee or organization of pilots which relate, directly or indirectly, to pilotage of the vessel;",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "The master, owners and operators of the vessel shall not be liable to indemnify and hold harmless the licensee, trainee and any organization of pilots to an extent greater than the amount to which the liability of the vessel, its owners and operators, is limited by reason of contract, bill of lading or statute, including but not limited to, the Limitation of Liability Act (46 U.S.C. 181-189), the Harter Act (46 U.S.C. 190-195), the Carriage of Goods by Sea Act (46 U.S.C. 1300-1315), and the Federal Water Pollution Control Act (33 U.S.C. 1321); and",
+          "subsections": []
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "The fees charged for the services rendered by the licensee and trainee have been computed and are assessed in accordance with and based upon the above stipulations. ______________________________________________________________________________",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 77,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.530",
+      "identifier": "ORS 776.530",
+      "name": "Section 776.530",
+      "text": "Licensees, trainees and organizations not liable for certain acts or omissions. An organization of pilots shall not be liable for any claims arising from acts or omissions of a licensee, trainee or organization of pilots which relate, directly or indirectly, to pilotage of a vessel. A licensee or trainee shall not be liable either directly or as a member or associate of an organization of pilots for any claims arising from acts or omissions of any other licensee, trainee or any organization of pilots which relate, directly or indirectly, to pilotage of a vessel. This section does not apply to acts or omissions relating to the ownership and operation of pilot boats or the transportation of licensees and trainees to and from the vessel being piloted.",
+      "history_citation_blocks": [
+        "1983 c.330 8; 1993 c.796 19"
+      ],
+      "history_citations": [
+        {
+          "raw": "1983 c.330 8",
+          "year": 1983,
+          "chapter": "330",
+          "section": "8"
+        },
+        {
+          "raw": "1993 c.796 19",
+          "year": 1993,
+          "chapter": "796",
+          "section": "19"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 78,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.540",
+      "identifier": "ORS 776.540",
+      "name": "Section 776.540",
+      "text": "Security required of licensees and trainees; conditions of bond; limitation of liability. (1) Each licensee and trainee shall procure and furnish to the Oregon Board of Maritime Pilots a security in the sum of $250 as a surety bond or an irrevocable letter of credit, in a form approved by the board and underwritten by a surety company authorized to engage in business in the State of Oregon or issued by an insured institution, as defined in ORS 706.008, or as a cash deposit in a form approved by the board. The cash deposit, letter of credit or bond shall be conditioned so as to pay the sum to any person, firm, corporation or other legal entity who or which shall suffer any loss or damage by reason of any negligent act or omission of the licensee or trainee which relates, directly or indirectly, to pilotage of the vessel. No licensee or trainee shall be liable for any such act or omission beyond the amount of the security. However, this limitation of liability shall not apply: (a) To willful misconduct on the part of the licensee or trainee; (b) To the extent to which insurance is procured pursuant to the option granted by ORS 776.510 and 776.520; or (c) To acts or omissions relating to the ownership and operation of pilot boats or the transportation of licensees and trainees to and from the vessel being piloted. (2) When any suit or action is brought in any court against a licensee or trainee for any such act or omission in respect of which liability is limited as provided by this section and other claims are made or anticipated in respect of the same act or omission, upon payment by the licensee or trainee of the amount of the security into the court in which such suit or action is brought, the court shall distribute that amount rateably among the several claimants and shall dismiss the proceedings as to the licensee or trainee.",
+      "history_citation_blocks": [
+        "1983 c.330 7; 1985 c.29 1; 1991 c.331 138; 1993 c.796 20; 1997 c.631 553"
+      ],
+      "history_citations": [
+        {
+          "raw": "1983 c.330 7",
+          "year": 1983,
+          "chapter": "330",
+          "section": "7"
+        },
+        {
+          "raw": "1985 c.29 1",
+          "year": 1985,
+          "chapter": "29",
+          "section": "1"
+        },
+        {
+          "raw": "1991 c.331 138",
+          "year": 1991,
+          "chapter": "331",
+          "section": "138"
+        },
+        {
+          "raw": "1993 c.796 20",
+          "year": 1993,
+          "chapter": "796",
+          "section": "20"
+        },
+        {
+          "raw": "1997 c.631 553",
+          "year": 1997,
+          "chapter": "631",
+          "section": "553"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Each licensee and trainee shall procure and furnish to the Oregon Board of Maritime Pilots a security in the sum of $250 as a surety bond or an irrevocable letter of credit, in a form approved by the board and underwritten by a surety company authorized to engage in business in the State of Oregon or issued by an insured institution, as defined in ORS 706.008, or as a cash deposit in a form approved by the board. The cash deposit, letter of credit or bond shall be conditioned so as to pay the sum to any person, firm, corporation or other legal entity who or which shall suffer any loss or damage by reason of any negligent act or omission of the licensee or trainee which relates, directly or indirectly, to pilotage of the vessel. No licensee or trainee shall be liable for any such act or omission beyond the amount of the security. However, this limitation of liability shall not apply:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "To willful misconduct on the part of the licensee or trainee;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "To the extent to which insurance is procured pursuant to the option granted by ORS 776.510 and 776.520; or",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "To acts or omissions relating to the ownership and operation of pilot boats or the transportation of licensees and trainees to and from the vessel being piloted.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "When any suit or action is brought in any court against a licensee or trainee for any such act or omission in respect of which liability is limited as provided by this section and other claims are made or anticipated in respect of the same act or omission, upon payment by the licensee or trainee of the amount of the security into the court in which such suit or action is brought, the court shall distribute that amount rateably among the several claimants and shall dismiss the proceedings as to the licensee or trainee.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 79,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.600",
+      "identifier": "ORS 776.600",
+      "name": "Section 776.600",
+      "text": "Restrictions on licensees or trainees financial interest in boat or equipment assisting vessel piloted by licensee or trainee. (1)(a) Except as provided in paragraph (b) of this subsection, a licensee or trainee may not pilot a vessel on the Coos Bay bar pilotage ground or the Yaquina Bay bar pilotage ground if the licensee or trainee, or an immediate family member of the licensee or trainee, has any financial interest in a boat or equipment assisting the vessel in entering or exiting the bay. (b) The Oregon Board of Maritime Pilots shall adopt rules allowing a licensee or trainee who is prohibited from piloting a vessel under paragraph (a) of this subsection to pilot the vessel in an emergency, and fixing rates for pilotage under this paragraph. (2) This section does not prohibit a licensee or trainee from piloting a vessel if the licensee or trainee, or an immediate family member of the licensee or trainee, owns stock in a corporation registered on a national securities exchange that owns boats or equipment assisting ships on the Coos Bay bar pilotage ground or the Yaquina Bay bar pilotage ground. [2012 c.55 5] BOARD OPERATIONS FEE",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "(a) Except as provided in paragraph",
+          "subsections": [
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "of this subsection, a licensee or trainee may not pilot a vessel on the Coos Bay bar pilotage ground or the Yaquina Bay bar pilotage ground if the licensee or trainee, or an immediate family member of the licensee or trainee, has any financial interest in a boat or equipment assisting the vessel in entering or exiting the bay. The Oregon Board of Maritime Pilots shall adopt rules allowing a licensee or trainee who is prohibited from piloting a vessel under paragraph",
+              "subsections": []
+            },
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "of this subsection to pilot the vessel in an emergency, and fixing rates for pilotage under this paragraph.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "This section does not prohibit a licensee or trainee from piloting a vessel if the licensee or trainee, or an immediate family member of the licensee or trainee, owns stock in a corporation registered on a national securities exchange that owns boats or equipment assisting ships on the Coos Bay bar pilotage ground or the Yaquina Bay bar pilotage ground. [2012 c.55 5] BOARD OPERATIONS FEE",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 80,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.800",
+      "identifier": "ORS 776.800",
+      "name": "Section 776.800",
+      "text": "Collection of fee; remittance. (1) Except as provided in subsection (2) of this section, each licensee under this chapter shall collect a board operations fee from each vessel using the services of a licensee. The purpose of the fee is to allow the Oregon Board of Maritime Pilots to carry out its duties, functions and powers under this chapter. The fee may not exceed the amount described in ORS 776.810. (2) The fee described in subsection (1) of this section shall be collected in the following manner: (a) For vessels entering or leaving the Columbia River, licensees for the Columbia River bar pilotage ground shall collect the fee from inbound vessels and licensees for the Columbia and Willamette River pilotage ground shall collect the fee from outbound vessels. (b) For vessels entering or leaving Coos Bay or Yaquina Bay, licensees for the Coos Bay or Yaquina Bay pilotage ground shall collect the fee from inbound and outbound vessels. (3) The board shall prescribe the procedures for collecting and remitting the fee imposed under this section. (4) Each quarter the board shall review the amount of the fee. If the board determines that the fee should be adjusted, then the board may adjust the fee subject to prior approval of the Oregon Department of Administrative Services.",
+      "history_citation_blocks": [
+        "2013 c.539 3; 2023 c.602 32"
+      ],
+      "history_citations": [
+        {
+          "raw": "2013 c.539 3",
+          "year": 2013,
+          "chapter": "539",
+          "section": "3"
+        },
+        {
+          "raw": "2023 c.602 32",
+          "year": 2023,
+          "chapter": "602",
+          "section": "32"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Except as provided in subsection of this section shall be collected in the following manner:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "For vessels entering or leaving the Columbia River, licensees for the Columbia River bar pilotage ground shall collect the fee from inbound vessels and licensees for the Columbia and Willamette River pilotage ground shall collect the fee from outbound vessels.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "For vessels entering or leaving Coos Bay or Yaquina Bay, licensees for the Coos Bay or Yaquina Bay pilotage ground shall collect the fee from inbound and outbound vessels.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "of this section, each licensee under this chapter shall collect a board operations fee from each vessel using the services of a licensee. The purpose of the fee is to allow the Oregon Board of Maritime Pilots to carry out its duties, functions and powers under this chapter. The fee may not exceed the amount described in ORS 776.810. The fee described in subsection",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The board shall prescribe the procedures for collecting and remitting the fee imposed under this section.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Each quarter the board shall review the amount of the fee. If the board determines that the fee should be adjusted, then the board may adjust the fee subject to prior approval of the Oregon Department of Administrative Services.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 81,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.810",
+      "identifier": "ORS 776.810",
+      "name": "Section 776.810",
+      "text": "Maximum amount of fee; adjustment of fee. (1) Subject to subsection (2) of this section, the maximum board operations fee for a vessel is $100. (2) The Oregon Board of Maritime Pilots shall adjust the amount of the maximum board operations fee for a vessel each biennium beginning July 1, 2015, by a proportional amount equal to the percentage change in the 24-month period prior to the beginning of the biennium in the Consumer Price Index for All Urban Consumers, West Region (All Items), as published by the Bureau of Labor Statistics of the United States Department of Labor. [2013 c.539 4; 2019 c.57 35] PENALTIES",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Subject to subsection",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "of this section, the maximum board operations fee for a vessel is $100. The Oregon Board of Maritime Pilots shall adjust the amount of the maximum board operations fee for a vessel each biennium beginning July 1, 2015, by a proportional amount equal to the percentage change in the 24-month period prior to the beginning of the biennium in the Consumer Price Index for All Urban Consumers, West Region (All Items), as published by the Bureau of Labor Statistics of the United States Department of Labor. [2013 c.539 4; 2019 c.57 35] PENALTIES",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 82,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.880",
+      "identifier": "ORS 776.880",
+      "name": "Section 776.880",
+      "text": "Civil penalties. (1) In addition to any other penalty provided by law, any licensee or trainee who commits any act for which the Oregon Board of Maritime Pilots could revoke, suspend or refuse to issue or renew a license is subject to a civil penalty in an amount determined by the board of not more than $250 for each offense. (2) Any person who violates the provisions of ORS 776.405 (1)(a) is subject to a civil penalty in an amount as determined by the board of not less than $5,000 and not more than $50,000. (3) Any person who violates the provisions of ORS 776.405 (1)(b) is subject to a civil penalty in an amount as determined by the board of not more than $5,000 for each offense. (4) Civil penalties under this section shall be imposed as provided in ORS 183.745. (5) All amounts recovered under this section are subject to ORS 776.365.",
+      "history_citation_blocks": [
+        "1981 c.88 11; 1991 c.234 6; 1991 c.734 102; 1993 c.796 21; 2011 c.157 5"
+      ],
+      "history_citations": [
+        {
+          "raw": "1981 c.88 11",
+          "year": 1981,
+          "chapter": "88",
+          "section": "11"
+        },
+        {
+          "raw": "1991 c.234 6",
+          "year": 1991,
+          "chapter": "234",
+          "section": "6"
+        },
+        {
+          "raw": "1991 c.734 102",
+          "year": 1991,
+          "chapter": "734",
+          "section": "102"
+        },
+        {
+          "raw": "1993 c.796 21",
+          "year": 1993,
+          "chapter": "796",
+          "section": "21"
+        },
+        {
+          "raw": "2011 c.157 5",
+          "year": 2011,
+          "chapter": "157",
+          "section": "5"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "In addition to any other penalty provided by law, any licensee or trainee who commits any act for which the Oregon Board of Maritime Pilots could revoke, suspend or refuse to issue or renew a license is subject to a civil penalty in an amount determined by the board of not more than $250 for each offense. (a) is subject to a civil penalty in an amount as determined by the board of not less than $5,000 and not more than $50,000. (b) is subject to a civil penalty in an amount as determined by the board of not more than $5,000 for each offense.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Any person who violates the provisions of ORS 776.405",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Any person who violates the provisions of ORS 776.405",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Civil penalties under this section shall be imposed as provided in ORS 183.745.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "All amounts recovered under this section are subject to ORS 776.365.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 83,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.990",
+      "identifier": "ORS 776.990",
+      "name": "Section 776.990",
+      "text": "[Repealed by 1957 c.448 27]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 84,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html#section-776.991",
+      "identifier": "ORS 776.991",
+      "name": "Section 776.991",
+      "text": "Criminal penalties. Violation of any of the provisions of this chapter is a Class B misdemeanor. Notwithstanding ORS 137.286 and 161.635, the minimum fine for a violation of ORS 776.405 (1)(a) is $5,000 and the maximum fine is $50,000. [1957 c.448 26; 1991 c.234 7; 2011 c.597 300] _______________",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "(a) is $5,000 and the maximum fine is $50,000. [1957 c.448 26; 1991 c.234 7; 2011 c.597 300] _______________",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 85,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors776.html"
+    }
+  ],
+  "alternateName": "Maritime Pilots and Pilotage",
+  "legislationDate": "2023"
+}

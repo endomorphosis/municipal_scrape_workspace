@@ -1,0 +1,546 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "orlaw": "https://www.oregonlegislature.gov/ors#"
+  },
+  "@type": "Legislation",
+  "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors075.html",
+  "identifier": "ORS Chapter 75",
+  "name": "ORS Chapter 75 — Letters of Credit",
+  "legislationType": "Statute",
+  "jurisdiction": "US-OR",
+  "isPartOf": {
+    "@type": "CreativeWork",
+    "identifier": "ORS",
+    "name": "Oregon Revised Statutes",
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors"
+  },
+  "dateModified": "2026-02-25T08:11:14.770754+00:00",
+  "source_file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors075.html",
+  "hasPart": [
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors075.html#section-75.010",
+      "identifier": "ORS 75.010",
+      "name": ", 75.020,",
+      "text": "",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 1,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors075.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors075.html#section-75.030",
+      "identifier": "ORS 75.030",
+      "name": ", 75.040, 75.050, 75.060, 75.070, 75.080, 75.090, 75.100, 75.110, 75.120,",
+      "text": "",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 2,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors075.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors075.html#section-75.130",
+      "identifier": "ORS 75.130",
+      "name": ", 75.140, 75.150, 75,160, 75.170, 75.180, 75.190, 75.200, 75.210, 75.220,",
+      "text": "",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 3,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors075.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors075.html#section-75.230",
+      "identifier": "ORS 75.230",
+      "name": ", 75.240, 75.250, 75.260, 75.270, 75.280, 75.290, 75.300, 75.310, 75.320,",
+      "text": "",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 4,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors075.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors075.html#section-75.330",
+      "identifier": "ORS 75.330",
+      "name": ", 75.340, 75.350, 75.360, 75.370, 75.380, 75.390, 75.400, 75.410, 75.420,",
+      "text": "",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 5,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors075.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors075.html#section-75.430",
+      "identifier": "ORS 75.430",
+      "name": ", 75.440, 75.450, 75.460, 75.470, 75.480, 75.490, 75.500, 75.510, 75.520,",
+      "text": "",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 6,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors075.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors075.html#section-75.530",
+      "identifier": "ORS 75.530",
+      "name": ", 75.540, 75.550, 75.560, 75.570, 75.580, 75.590, 75.600, 75.610, 75.620,",
+      "text": "",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 7,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors075.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors075.html#section-75.630",
+      "identifier": "ORS 75.630",
+      "name": ", 75.640, 75.650, 75.660, 75.670, 75.680, 75.690, 75.700, 75.710, 75.720,",
+      "text": "",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 8,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors075.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors075.html#section-75.730",
+      "identifier": "ORS 75.730",
+      "name": ", 75.740, 75.750, 75.760, 75.770, 75.780",
+      "text": "[Repealed by 1961 c.726 427] 75.1010 Short title. This chapter may be cited as Uniform Commercial CodeLetters of Credit. [1961 c.726 75.1010] 75.1020 Definitions. (1) As used in this chapter: (a) Adviser means a person who, at the request of the issuer, a confirmer or another adviser, notifies or requests another adviser to notify the beneficiary that a letter of credit has been issued, confirmed or amended. (b) Applicant means a person at whose request or for whose account a letter of credit is issued. Applicant includes a person who requests that an issuer issue a letter of credit on behalf of another if the person making the request undertakes an obligation to reimburse the issuer. (c) Beneficiary means a person who under the terms of a letter of credit is entitled to have its complying presentation honored. Beneficiary includes a person to whom drawing rights have been transferred under a transferable letter of credit. (d) Confirmer means a nominated person who undertakes, at the request or with the consent of the issuer, to honor a presentation under a letter of credit issued by another. (e) Dishonor of a letter of credit means failure timely to honor or to take an interim action, such as acceptance of a draft, that may be required by the letter of credit. (f) Document means a draft or other demand, document of title, investment security, certificate, invoice or other record, statement or representation of fact, law, right or opinion: (A) That is presented in a written or other medium permitted by the letter of credit or, unless prohibited by the letter of credit, by the standard practice referred to in ORS 75.1080 (5); and (B) That is capable of being examined for compliance with the terms and conditions of the letter of credit. A document may not be oral. (g) Good faith means honesty in fact in the conduct of the transaction concerned. (h) Honor of a letter of credit means performance of the issuers undertaking in the letter of credit to pay or deliver an item of value. Unless the letter of credit otherwise provides, honor occurs: (A) Upon payment; (B) If the letter of credit provides for acceptance, upon acceptance of a draft and, at maturity, its payment; or (C) If the letter of credit provides for incurring a deferred obligation, upon incurring the obligation and, at maturity, its performance. (i) Issuer means a bank or other person that issues a letter of credit, but does not include an individual who makes an engagement for personal, family or household purposes. (j) Letter of credit means a definite undertaking that satisfies the requirements of ORS 75.1040 by an issuer to a beneficiary at the request or for the account of an applicant or, in the case of a financial institution, to itself or for its own account, to honor a documentary presentation by payment or delivery of an item of value. (k) Nominated person means a person whom the issuer: (A) Designates or authorizes to pay, accept, negotiate or otherwise give value under a letter of credit; and (B) Undertakes by agreement or custom and practice to reimburse. (L) Presentation means delivery of a document to an issuer or nominated person for honor or giving of value under a letter of credit. (m) Presenter means a person making a presentation as or on behalf of a beneficiary or nominated person. (n) Record means information that is inscribed on a tangible medium or that is stored in an electronic or other medium and is retrievable in perceivable form. (o) Successor of a beneficiary means a person who succeeds to substantially all of the rights of a beneficiary by operation of law, including a corporation with or into which the beneficiary has been merged or consolidated, an administrator, executor, personal representative, trustee in bankruptcy, debtor in possession, liquidator and receiver. (2) Other definitions applying to this chapter and the sections in which they appear are: Acceptance ORS 73.0409 Value ORS 73.0303, ORS 74.2110 (3) ORS chapter 71 contains certain additional general definitions and principles of construction and interpretation applicable throughout this chapter. [1961 c.726 75.1020; 1997 c.150 5] 75.1030 Application of chapter. (1) This chapter applies to letters of credit and to certain rights and obligations arising out of transactions involving letters of credit. (2) The statement of a rule in this chapter does not by itself require, imply or negate application of the same or different rule to a situation not provided for, or to a person not specified in this chapter. (3) With the exception of this subsection, subsections (1) and (4) of this section and ORS 75.1020 (1)(i) and (j), 75.1060 (4) and 75.1140 (4), and except to the extent prohibited in ORS 71.3020 and 75.1170 (4), the effect of this chapter may be varied by agreement or by a provision stated or incorporated by reference in an undertaking. A term in an agreement or undertaking generally excusing liability or generally limiting remedies for failure to perform obligations is not sufficient to vary obligations prescribed by this chapter. (4) Rights and obligations of an issuer to a beneficiary or a nominated person under a letter of credit are independent of the existence, performance or nonperformance of a contract or arrangement out of which the letter of credit arises or which underlies it, including contracts or arrangements between the issuer and the applicant and between the applicant and the beneficiary. [1961 c.726 75.1030; 1993 c.545 119; 1997 c.150 6; 2009 c.181 49] 75.1040 Formal requirements. A letter of credit, confirmation, advice, transfer, amendment or cancellation may be issued in any form that is a record and is authenticated: (1) By a signature; or (2) In accordance with the agreement of the parties to the standard practice referred to in ORS 75.1080 (5). [1961 c.726 75.1040; 1997 c.150 7] 75.1050 Consideration. Consideration is not required to issue, amend, transfer or cancel a letter of credit, advice or confirmation. [1961 c.726 75.1050; 1997 c.150 8] 75.1060 Issuance, amendment, cancellation and duration. (1) A letter of credit is issued and becomes enforceable according to its terms against the issuer when the issuer sends or otherwise transmits it to the person requested to advise or to the beneficiary. A letter of credit is revocable only if it so provides. (2) After a letter of credit is issued, rights and obligations of a beneficiary, applicant, confirmer and issuer are not affected by an amendment or cancellation to which that person has not consented except to the extent the letter of credit provides that it is revocable or that the issuer may amend or cancel the letter of credit without that consent. (3) If there is no stated expiration date or other provision that determines its duration, a letter of credit expires one year after its stated date of issuance or, if none is stated, one year after the date on which it is issued. (4) A letter of credit that states that it is perpetual expires five years after its stated date of issuance, or if none is stated, five years after the date on which it is issued. [1961 c.726 75.1060; 1997 c.150 9] 75.1070 Confirmer, nominated person and adviser. (1) A confirmer is directly obligated on a letter of credit and has the rights and obligations of an issuer to the extent of its confirmation. The confirmer also has rights against and obligations to the issuer as if the issuer were an applicant and the confirmer had issued the letter of credit at the request and for the account of the issuer. (2) A nominated person who is not a confirmer is not obligated to honor or otherwise give value for a presentation. (3) A person requested to advise may decline to act as an adviser. An adviser that is not a confirmer is not obligated to honor or give value for a presentation. An adviser undertakes to the issuer and to the beneficiary to advise them accurately concerning the terms of the letter of credit, confirmation, amendment or advice received by that person and undertakes to the beneficiary to check the apparent authenticity of the request to advise. Even if the advice is inaccurate, the letter of credit, confirmation or amendment is enforceable as issued. (4) A person who notifies a transferee beneficiary of the terms of a letter of credit, confirmation, amendment or advice has the rights and obligations of an adviser under subsection (3) of this section. The terms in the notice to the transferee beneficiary may differ from the terms in any notice to the transferor beneficiary to the extent permitted by the letter of credit, confirmation, amendment or advice received by the person who so notifies. [1961 c.726 75.1070; 1997 c.150 10] 75.1080 Issuers rights and obligations. (1) Except as provided in ORS 75.1090, an issuer shall honor a presentation that, as determined by the standard practice referred to in subsection (5) of this section, appears on its face strictly to comply with the terms and conditions of the letter of credit. Except as provided in ORS 75.1130 and unless otherwise agreed with the applicant, an issuer shall dishonor a presentation that does not appear to comply with the terms and conditions of the letter of credit. (2) An issuer has a reasonable time after presentation, but not later than the seventh business day after the issuer receives the documents: (a) To honor; (b) If the letter of credit provides for honor to be completed more than seven business days after presentation, to accept a draft or incur a deferred obligation; or (c) To give notice to the presenter of discrepancies in the presentation. (3) Except as otherwise provided in subsection (4) of this section, an issuer is precluded from asserting as a basis for dishonor: (a) Any discrepancy if timely notice is not given; or (b) Any discrepancy not stated in the notice if timely notice is given. (4) Failure to give the notice specified in subsection (2) of this section or to mention fraud, forgery or expiration in the notice does not preclude the issuer from asserting, as a basis for dishonor, fraud or forgery as described in ORS 75.1090 (1) or expiration of the letter of credit before presentation. (5) An issuer shall observe standard practice of financial institutions that regularly issue letters of credit. Determination of the issuers observance of the standard practice is a matter of interpretation for the court. The court shall offer the parties a reasonable opportunity to present evidence of the standard practice. (6) An issuer is not responsible for: (a) The performance or nonperformance of the underlying contract, arrangement, or transaction; (b) An act or omission of another person; or (c) Observance or knowledge of the usage of a particular trade other than the standard practice referred to in subsection (5) of this section. (7) If an undertaking constituting a letter of credit under ORS 75.1020 (1)(j) contains nondocumentary conditions, an issuer shall disregard the nondocumentary conditions and treat them as if they were not stated. (8) An issuer that has dishonored a presentation shall return the documents or hold them at the disposal of, and send advice to that effect to, the presenter. (9) An issuer that has honored a presentation as permitted or required by this chapter: (a) Is entitled to be reimbursed by the applicant in immediately available funds not later than the date of its payment of funds; (b) Takes the documents free of claims of the beneficiary or presenter; (c) Is precluded from asserting a right of recourse on a draft under ORS 73.0414 and 73.0415; (d) Except as provided in ORS 75.1100 and 75.1170, is precluded from restitution of money paid or other value given by mistake to the extent the mistake concerns discrepancies in the documents or tender that are apparent on the face of the presentation; and (e) Is discharged to the extent of its performance under the letter of credit unless the issuer honored a presentation in which a required signature of a beneficiary was forged. [1961 c.726 75.1080; 1997 c.150 11] 75.1090 Fraud and forgery. (1) If a presentation is made that appears on its face strictly to comply with the terms and conditions of the letter of credit, but a required document is forged or materially fraudulent, or honor of the presentation would facilitate a material fraud by the beneficiary on the issuer or applicant: (a) The issuer shall honor the presentation, if honor is demanded by: (A) A nominated person who has given value in good faith and without notice of forgery or material fraud; (B) A confirmer who has honored its confirmation in good faith; (C) A holder in due course of a draft drawn under the letter of credit that was taken after acceptance by the issuer or nominated person; or (D) An assignee of the issuers or nominated persons deferred obligation that was taken for value and without notice of forgery or material fraud after the obligation was incurred by the issuer or nominated person; and (b) The issuer, acting in good faith, may honor or dishonor the presentation in any other case. (2) If an applicant claims that a required document is forged or materially fraudulent or that honor of the presentation would facilitate a material fraud by the beneficiary on the issuer or applicant, a court of competent jurisdiction may temporarily or permanently enjoin the issuer from honoring a presentation or grant similar relief against the issuer or other persons only if the court finds that: (a) The relief is not prohibited under the law applicable to an accepted draft or deferred obligation incurred by the issuer; (b) A beneficiary, issuer or nominated person who may be adversely affected is adequately protected against loss that it may suffer because the relief is granted; (c) All of the conditions to entitle a person to the relief under the law of this state have been met; and (d) On the basis of the information submitted to the court, the applicant is more likely than not to succeed under its claim of forgery or material fraud and the person demanding honor does not qualify for protection under subsection (1)(a) of this section. [1961 c.726 75.1090; 1997 c.150 12] 75.1100 Warranties. (1) If its presentation is honored, the beneficiary warrants: (a) To the issuer, any other person to whom presentation is made and to the applicant that there is no fraud or forgery of the kind described in ORS 75.1090 (1); and (b) To the applicant that the drawing does not violate any agreement between the applicant and beneficiary or any other agreement intended by them to be augmented by the letter of credit. (2) The warranties in subsection (1) of this section are in addition to warranties arising under ORS chapters 73, 74, 77 and 78 because of the presentation or transfer of documents covered by ORS chapters 73, 74, 77 and 78. [1961 c.726 75.1100; 1997 c.150 13] 75.1110 Remedies. (1) If an issuer wrongfully dishonors or repudiates its obligation to pay money under a letter of credit before presentation, the beneficiary, successor or nominated person presenting on its own behalf may recover from the issuer the amount that is the subject of the dishonor or repudiation. If the issuers obligation under the letter of credit is not for the payment of money, the claimant may obtain specific performance or, at the claimants election, recover an amount equal to the value of performance from the issuer. In either case, the claimant may also recover incidental but not consequential damages. The claimant is not obligated to take action to avoid damages that might be due from the issuer under this subsection. If, although not obligated to do so, the claimant avoids damages, the claimants recovery from the issuer must be reduced by the amount of damages avoided. The issuer has the burden of proving the amount of damages avoided. In the case of repudiation, the claimant need not present any document. (2) If an issuer wrongfully dishonors a draft or demand presented under a letter of credit or honors a draft or demand in breach of its obligation to the applicant, the applicant may recover damages resulting from the breach, including incidental but not consequential damages, less any amount saved as a result of the breach. (3) If an adviser or nominated person other than a confirmer breaches an obligation under this section or an issuer breaches an obligation not covered in subsection (1) or (2) of this section, a person to whom the obligation is owed may recover damages resulting from the breach, including incidental but not consequential damages, less any amount saved as a result of the breach. To the extent of the confirmation, a confirmer has the liability of an issuer specified in this subsection and subsections (1) and (2) of this section. (4) An issuer, nominated person or adviser who is found liable under subsection (1), (2) or (3) of this section shall pay interest on the amount owed thereunder from the date of wrongful dishonor or other appropriate date. (5) Reasonable attorney fees and other expenses of litigation shall be awarded to the prevailing party in an action in which a remedy is sought under this section. (6) Damages that would otherwise be payable by a party for breach of an obligation under this section may be liquidated by agreement or undertaking, but only in an amount or by a formula that is reasonable in light of the harm anticipated. [1961 c.726 75.1110; 1997 c.150 14] 75.1120 Transfer of letter of credit. (1) Except as provided in ORS 75.1130, unless a letter of credit provides that it is transferable, the right of a beneficiary to draw or otherwise demand performance under a letter of credit may not be transferred. (2) Even if a letter of credit provides that it is transferable, the issuer may refuse to recognize or carry out a transfer if: (a) The transfer would violate applicable law; or (b) The transferor or transferee has failed to comply with any requirement stated in the letter of credit or any other requirement relating to transfer imposed by the issuer that is within the standard practice referred to in ORS 75.1080 (5) or is otherwise reasonable under the circumstances. [1961 c.726 75.1120; 1997 c.150 15] 75.1130 Successor of beneficiary. (1) A successor of a beneficiary may consent to amendments, sign and present documents and receive payment or other items of value in the name of the beneficiary without disclosing its status as a successor. (2) A successor of a beneficiary may consent to amendments, sign and present documents and receive payment or other items of value in its own name as the disclosed successor of the beneficiary. Except as provided in subsection (5) of this section, an issuer shall recognize a disclosed successor of a beneficiary as beneficiary in full substitution for its predecessor upon compliance with the requirements for recognition by the issuer of a transfer of drawing rights by operation of law under the standard practice referred to in ORS 75.1080 (5) or, in the absence of such a practice, compliance with other reasonable procedures sufficient to protect the issuer. (3) An issuer is not obliged to determine whether a purported successor is a successor of a beneficiary or whether the signature of a purported successor is genuine or authorized. (4) Honor of a purported successors apparently complying presentation under subsection (1) or (2) of this section has the consequences specified in ORS 75.1080 (9) even if the purported successor is not the successor of a beneficiary. Documents signed in the name of the beneficiary or of a disclosed successor by a person who is neither the beneficiary nor the successor of the beneficiary are forged documents for the purposes of ORS 75.1090. (5) An issuer whose rights of reimbursement are not covered by subsection (4) of this section or substantially similar law and any confirmer or nominated person may decline to recognize a presentation under subsection (2) of this section. (6) A beneficiary whose name is changed after the issuance of a letter of credit has the same rights and obligations as a successor of a beneficiary under this section. [1961 c.726 75.1130; 1997 c.150 16] 75.1140 Assignment of proceeds. (1) As used in this section, proceeds of a letter of credit means the cash, check, accepted draft or other item of value paid or delivered upon honor or giving of value by the issuer or any nominated person under the letter of credit. Proceeds of a letter of credit does not include a beneficiarys drawing rights or documents presented by the beneficiary. (2) A beneficiary may assign its right to part or all of the proceeds of a letter of credit. The beneficiary may do so before presentation as a present assignment of its right to receive proceeds contingent upon its compliance with the terms and conditions of the letter of credit. (3) An issuer or nominated person need not recognize an assignment of proceeds of a letter of credit until it consents to the assignment. (4) An issuer or nominated person has no obligation to give or withhold its consent to an assignment of proceeds of a letter of credit, but consent may not be unreasonably withheld if the assignee possesses and exhibits the letter of credit and presentation of the letter of credit is a condition to honor. (5) Rights of a transferee beneficiary or nominated person are independent of the beneficiarys assignment of the proceeds of a letter of credit and are superior to the assignees right to the proceeds. (6) Neither the rights recognized by this section between an assignee and an issuer, transferee beneficiary or nominated person nor the issuers or nominated persons payment of proceeds of a letter of credit to an assignee or a third person affect the rights between the assignee and any person other than the issuer, transferee beneficiary or nominated person. The mode of creating and perfecting a security interest in or granting an assignment of a beneficiarys rights to proceeds is governed by ORS chapter 79 or other law. Against persons other than the issuer, transferee beneficiary or nominated person, the rights and obligations arising upon the creation of a security interest or other assignment of a beneficiarys right to proceeds and its perfection are governed by ORS chapter 79 or other law. [1961 c.726 75.1140; 1985 c.676 75.1140; 1993 c.545 120; 1995 c.328 68; 1997 c.150 17] 75.1150 Statute of limitations. An action to enforce a right or obligation arising under this chapter must be commenced within one year after the expiration date of the relevant letter of credit or one year after the cause of action accrues, whichever occurs later. A cause of action accrues when the breach occurs, regardless of the aggrieved partys lack of knowledge of the breach. [1961 c.726 75.1150; 1997 c.150 18] 75.1160 Choice of law and forum. (1) The liability of an issuer, nominated person or adviser for action or omission is governed by the law of the jurisdiction chosen by an agreement in the form of a record signed or otherwise authenticated by the affected parties in the manner provided in ORS 75.1040 or by a provision in the persons letter of credit, confirmation or other undertaking. The jurisdiction whose law is chosen need not bear any relation to the transaction. (2) Unless subsection (1) of this section applies, the liability of an issuer, nominated person or adviser for action or omission is governed by the law of the jurisdiction in which the person is located. The person is considered to be located at the address indicated in the persons undertaking. If more than one address is indicated, the person is considered to be located at the address from which the persons undertaking was issued. For the purpose of jurisdiction, choice of law and recognition of interbranch letters of credit, but not enforcement of a judgment, all branches of a bank are considered separate juridical entities and a bank is considered to be located at the place where its relevant branch is considered to be located under this subsection. (3)(a) Except as provided in this subsection, the liability of an issuer, nominated person or adviser is governed by any rules of custom or practice, such as the Uniform Customs and Practice for Documentary Credits, to which the letter of credit, confirmation or other undertaking is expressly made subject. (b) Except to the extent of any conflict with the nonvariable provisions specified in ORS 75.1030 (3), rules of custom or practice govern if: (A) This chapter would govern the liability of an issuer, nominated person or adviser under subsection (1) or (2) of this section; (B) The relevant undertaking incorporates rules of custom or practice; and (C) There is conflict between this chapter and those rules as applied to that undertaking. (4) If there is conflict between this chapter and ORS chapters 73, 74, 74A or 79, this chapter governs. (5) The forum for settling disputes arising out of an undertaking under this chapter may be chosen in the manner and with the binding effect that governing law may be chosen in accordance with subsection (1) of this section. [1961 c.726 75.1160; 1973 c.504 4; 1997 c.150 19] 75.1170 Subrogation of issuer, applicant and nominated person. (1) An issuer that honors a beneficiarys presentation is subrogated to the rights of the beneficiary to the same extent as if the issuer were a secondary obligor of the underlying obligation owed to the beneficiary and of the applicant to the same extent as if the issuer were the secondary obligor of the underlying obligation owed to the applicant. (2) An applicant that reimburses an issuer is subrogated to the rights of the issuer against any beneficiary, presenter or nominated person to the same extent as if the applicant were the secondary obligor of the obligations owed to the issuer and has the rights of subrogation of the issuer to the rights of the beneficiary stated in subsection (1) of this section. (3) A nominated person who pays or gives value against a draft or demand presented under a letter of credit is subrogated to the rights of: (a) The issuer against the applicant to the same extent as if the nominated person were secondary obligor of the obligation owed to the issuer by the applicant; (b) The beneficiary to the same extent as if the nominated person were a secondary obligor of the underlying obligation owed to the beneficiary; and (c) The applicant to same extent as if the nominated person were a secondary obligor of the underlying obligation owed to the applicant. (4) Notwithstanding any agreement or term to the contrary, the rights of subrogation stated in subsections (1) and (2) of this section do not arise until the issuer honors the letter of credit or otherwise pays. The rights in subsection (3) of this section do not arise until the nominated person pays or otherwise gives value. Until the rights in subsections (1), (2) or (3) of this section arise, the issuer, nominated person and the applicant do not derive under this section present or prospective rights forming the basis of a claim, defense or excuse. [1961 c.726 75.1170; 1997 c.150 20] 75.1180 Security interest of issuer or nominated person. (1) An issuer or nominated person has a security interest in a document presented under a letter of credit to the extent that the issuer or nominated person honors or gives value for the presentation. (2) As long as and to the extent that an issuer or nominated person has not been reimbursed or has not otherwise recovered the value given with respect to a security interest in a document under subsection (1) of this section, the security interest continues and is subject to ORS chapter 79, but: (a) A security agreement is not necessary to make the security interest enforceable under ORS 79.0203 (2)(c); (b) If the document is presented in a medium other than a written or other tangible medium, the security interest is perfected; and (c) If the document is presented in a written or other tangible medium and is not a certificated security, chattel paper, a document of title, an instrument, or a letter of credit, the security interest is perfected and has priority over a conflicting security interest in the document as long as the debtor does not have possession of the document. [2001 c.445 148] _______________",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "As used in this chapter: This chapter applies to letters of credit and to certain rights and obligations arising out of transactions involving letters of credit. (i) and By a signature; or A letter of credit is issued and becomes enforceable according to its terms against the issuer when the issuer sends or otherwise transmits it to the person requested to advise or to the beneficiary. A letter of credit is revocable only if it so provides. A confirmer is directly obligated on a letter of credit and has the rights and obligations of an issuer to the extent of its confirmation. The confirmer also has rights against and obligations to the issuer as if the issuer were an applicant and the confirmer had issued the letter of credit at the request and for the account of the issuer. Except as provided in ORS 75.1090, an issuer shall honor a presentation that, as determined by the standard practice referred to in subsection or expiration of the letter of credit before presentation. (j) contains nondocumentary conditions, an issuer shall disregard the nondocumentary conditions and treat them as if they were not stated. If a presentation is made that appears on its face strictly to comply with the terms and conditions of the letter of credit, but a required document is forged or materially fraudulent, or honor of the presentation would facilitate a material fraud by the beneficiary on the issuer or applicant: (a) of this section. [1961 c.726 75.1090; 1997 c.150 12] 75.1100 Warranties. If its presentation is honored, the beneficiary warrants: ; and of this section are in addition to warranties arising under ORS chapters 73, 74, 77 and 78 because of the presentation or transfer of documents covered by ORS chapters 73, 74, 77 and 78. [1961 c.726 75.1100; 1997 c.150 13] 75.1110 Remedies. If an issuer wrongfully dishonors or repudiates its obligation to pay money under a letter of credit before presentation, the beneficiary, successor or nominated person presenting on its own behalf may recover from the issuer the amount that is the subject of the dishonor or repudiation. If the issuers obligation under the letter of credit is not for the payment of money, the claimant may obtain specific performance or, at the claimants election, recover an amount equal to the value of performance from the issuer. In either case, the claimant may also recover incidental but not consequential damages. The claimant is not obligated to take action to avoid damages that might be due from the issuer under this subsection. If, although not obligated to do so, the claimant avoids damages, the claimants recovery from the issuer must be reduced by the amount of damages avoided. The issuer has the burden of proving the amount of damages avoided. In the case of repudiation, the claimant need not present any document. Except as provided in ORS 75.1130, unless a letter of credit provides that it is transferable, the right of a beneficiary to draw or otherwise demand performance under a letter of credit may not be transferred. A successor of a beneficiary may consent to amendments, sign and present documents and receive payment or other items of value in the name of the beneficiary without disclosing its status as a successor. As used in this section, proceeds of a letter of credit means the cash, check, accepted draft or other item of value paid or delivered upon honor or giving of value by the issuer or any nominated person under the letter of credit. Proceeds of a letter of credit does not include a beneficiarys drawing rights or documents presented by the beneficiary. The liability of an issuer, nominated person or adviser for action or omission is governed by the law of the jurisdiction chosen by an agreement in the form of a record signed or otherwise authenticated by the affected parties in the manner provided in ORS 75.1040 or by a provision in the persons letter of credit, confirmation or other undertaking. The jurisdiction whose law is chosen need not bear any relation to the transaction. of this section applies, the liability of an issuer, nominated person or adviser for action or omission is governed by the law of the jurisdiction in which the person is located. The person is considered to be located at the address indicated in the persons undertaking. If more than one address is indicated, the person is considered to be located at the address from which the persons undertaking was issued. For the purpose of jurisdiction, choice of law and recognition of interbranch letters of credit, but not enforcement of a judgment, all branches of a bank are considered separate juridical entities and a bank is considered to be located at the place where its relevant branch is considered to be located under this subsection. of this section. [1961 c.726 75.1160; 1973 c.504 4; 1997 c.150 19] 75.1170 Subrogation of issuer, applicant and nominated person. An issuer that honors a beneficiarys presentation is subrogated to the rights of the beneficiary to the same extent as if the issuer were a secondary obligor of the underlying obligation owed to the beneficiary and of the applicant to the same extent as if the issuer were the secondary obligor of the underlying obligation owed to the applicant. An issuer or nominated person has a security interest in a document presented under a letter of credit to the extent that the issuer or nominated person honors or gives value for the presentation. of this section, the security interest continues and is subject to ORS chapter 79, but:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Adviser means a person who, at the request of the issuer, a confirmer or another adviser, notifies or requests another adviser to notify the beneficiary that a letter of credit has been issued, confirmed or amended. The issuer shall honor the presentation, if honor is demanded by: To the issuer, any other person to whom presentation is made and to the applicant that there is no fraud or forgery of the kind described in ORS 75.1090 A security agreement is not necessary to make the security interest enforceable under ORS 79.0203",
+              "subsections": [
+                {
+                  "label": "(A)",
+                  "token": "A",
+                  "kind": "alpha_upper",
+                  "text": "A nominated person who has given value in good faith and without notice of forgery or material fraud;",
+                  "subsections": []
+                },
+                {
+                  "label": "(B)",
+                  "token": "B",
+                  "kind": "alpha_upper",
+                  "text": "A confirmer who has honored its confirmation in good faith;",
+                  "subsections": []
+                },
+                {
+                  "label": "(C)",
+                  "token": "C",
+                  "kind": "alpha_upper",
+                  "text": "A holder in due course of a draft drawn under the letter of credit that was taken after acceptance by the issuer or nominated person; or",
+                  "subsections": []
+                },
+                {
+                  "label": "(D)",
+                  "token": "D",
+                  "kind": "alpha_upper",
+                  "text": "An assignee of the issuers or nominated persons deferred obligation that was taken for value and without notice of forgery or material fraud after the obligation was incurred by the issuer or nominated person; and",
+                  "subsections": []
+                }
+              ]
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Applicant means a person at whose request or for whose account a letter of credit is issued. Applicant includes a person who requests that an issuer issue a letter of credit on behalf of another if the person making the request undertakes an obligation to reimburse the issuer. The issuer, acting in good faith, may honor or dishonor the presentation in any other case. To the applicant that the drawing does not violate any agreement between the applicant and beneficiary or any other agreement intended by them to be augmented by the letter of credit.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Beneficiary means a person who under the terms of a letter of credit is entitled to have its complying presentation honored. Beneficiary includes a person to whom drawing rights have been transferred under a transferable letter of credit.",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "Confirmer means a nominated person who undertakes, at the request or with the consent of the issuer, to honor a presentation under a letter of credit issued by another.",
+              "subsections": []
+            },
+            {
+              "label": "(e)",
+              "token": "e",
+              "kind": "alpha_lower",
+              "text": "Dishonor of a letter of credit means failure timely to honor or to take an interim action, such as acceptance of a draft, that may be required by the letter of credit.",
+              "subsections": []
+            },
+            {
+              "label": "(f)",
+              "token": "f",
+              "kind": "alpha_lower",
+              "text": "Document means a draft or other demand, document of title, investment security, certificate, invoice or other record, statement or representation of fact, law, right or opinion:",
+              "subsections": [
+                {
+                  "label": "(A)",
+                  "token": "A",
+                  "kind": "alpha_upper",
+                  "text": "That is presented in a written or other medium permitted by the letter of credit or, unless prohibited by the letter of credit, by the standard practice referred to in ORS 75.1080",
+                  "subsections": []
+                }
+              ]
+            },
+            {
+              "label": "(j)",
+              "token": "j",
+              "kind": "alpha_lower",
+              "text": ", 75.1060",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "; and . [1961 c.726 75.1040; 1997 c.150 7] 75.1050 Consideration. Consideration is not required to issue, amend, transfer or cancel a letter of credit, advice or confirmation. [1961 c.726 75.1050; 1997 c.150 8] 75.1060 Issuance, amendment, cancellation and duration. of this section, appears on its face strictly to comply with the terms and conditions of the letter of credit. Except as provided in ORS 75.1130 and unless otherwise agreed with the applicant, an issuer shall dishonor a presentation that does not appear to comply with the terms and conditions of the letter of credit. An issuer shall observe standard practice of financial institutions that regularly issue letters of credit. Determination of the issuers observance of the standard practice is a matter of interpretation for the court. The court shall offer the parties a reasonable opportunity to present evidence of the standard practice. of this section. Reasonable attorney fees and other expenses of litigation shall be awarded to the prevailing party in an action in which a remedy is sought under this section. or is otherwise reasonable under the circumstances. [1961 c.726 75.1120; 1997 c.150 15] 75.1130 Successor of beneficiary. of this section, an issuer shall recognize a disclosed successor of a beneficiary as beneficiary in full substitution for its predecessor upon compliance with the requirements for recognition by the issuer of a transfer of drawing rights by operation of law under the standard practice referred to in ORS 75.1080 or, in the absence of such a practice, compliance with other reasonable procedures sufficient to protect the issuer. An issuer whose rights of reimbursement are not covered by subsection Rights of a transferee beneficiary or nominated person are independent of the beneficiarys assignment of the proceeds of a letter of credit and are superior to the assignees right to the proceeds. The forum for settling disputes arising out of an undertaking under this chapter may be chosen in the manner and with the binding effect that governing law may be chosen in accordance with subsection",
+          "subsections": [
+            {
+              "label": "(B)",
+              "token": "B",
+              "kind": "alpha_upper",
+              "text": "That is capable of being examined for compliance with the terms and conditions of the letter of credit. A document may not be oral.",
+              "subsections": []
+            },
+            {
+              "label": "(g)",
+              "token": "g",
+              "kind": "alpha_lower",
+              "text": "Good faith means honesty in fact in the conduct of the transaction concerned.",
+              "subsections": []
+            },
+            {
+              "label": "(h)",
+              "token": "h",
+              "kind": "alpha_lower",
+              "text": "Honor of a letter of credit means performance of the issuers undertaking in the letter of credit to pay or deliver an item of value. Unless the letter of credit otherwise provides, honor occurs:",
+              "subsections": [
+                {
+                  "label": "(A)",
+                  "token": "A",
+                  "kind": "alpha_upper",
+                  "text": "Upon payment;",
+                  "subsections": []
+                },
+                {
+                  "label": "(B)",
+                  "token": "B",
+                  "kind": "alpha_upper",
+                  "text": "If the letter of credit provides for acceptance, upon acceptance of a draft and, at maturity, its payment; or",
+                  "subsections": []
+                },
+                {
+                  "label": "(C)",
+                  "token": "C",
+                  "kind": "alpha_upper",
+                  "text": "If the letter of credit provides for incurring a deferred obligation, upon incurring the obligation and, at maturity, its performance.",
+                  "subsections": [
+                    {
+                      "label": "(i)",
+                      "token": "i",
+                      "kind": "roman_lower",
+                      "text": "Issuer means a bank or other person that issues a letter of credit, but does not include an individual who makes an engagement for personal, family or household purposes.",
+                      "subsections": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "label": "(j)",
+              "token": "j",
+              "kind": "alpha_lower",
+              "text": "Letter of credit means a definite undertaking that satisfies the requirements of ORS 75.1040 by an issuer to a beneficiary at the request or for the account of an applicant or, in the case of a financial institution, to itself or for its own account, to honor a documentary presentation by payment or delivery of an item of value.",
+              "subsections": []
+            },
+            {
+              "label": "(k)",
+              "token": "k",
+              "kind": "alpha_lower",
+              "text": "Nominated person means a person whom the issuer:",
+              "subsections": [
+                {
+                  "label": "(A)",
+                  "token": "A",
+                  "kind": "alpha_upper",
+                  "text": "Designates or authorizes to pay, accept, negotiate or otherwise give value under a letter of credit; and",
+                  "subsections": []
+                },
+                {
+                  "label": "(B)",
+                  "token": "B",
+                  "kind": "alpha_upper",
+                  "text": "Undertakes by agreement or custom and practice to reimburse.",
+                  "subsections": []
+                },
+                {
+                  "label": "(L)",
+                  "token": "L",
+                  "kind": "alpha_upper",
+                  "text": "Presentation means delivery of a document to an issuer or nominated person for honor or giving of value under a letter of credit.",
+                  "subsections": []
+                }
+              ]
+            },
+            {
+              "label": "(m)",
+              "token": "m",
+              "kind": "alpha_lower",
+              "text": "Presenter means a person making a presentation as or on behalf of a beneficiary or nominated person.",
+              "subsections": []
+            },
+            {
+              "label": "(n)",
+              "token": "n",
+              "kind": "alpha_lower",
+              "text": "Record means information that is inscribed on a tangible medium or that is stored in an electronic or other medium and is retrievable in perceivable form.",
+              "subsections": []
+            },
+            {
+              "label": "(o)",
+              "token": "o",
+              "kind": "alpha_lower",
+              "text": "Successor of a beneficiary means a person who succeeds to substantially all of the rights of a beneficiary by operation of law, including a corporation with or into which the beneficiary has been merged or consolidated, an administrator, executor, personal representative, trustee in bankruptcy, debtor in possession, liquidator and receiver.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Other definitions applying to this chapter and the sections in which they appear are: Acceptance ORS 73.0409 Value ORS 73.0303, ORS 74.2110 The statement of a rule in this chapter does not by itself require, imply or negate application of the same or different rule to a situation not provided for, or to a person not specified in this chapter. In accordance with the agreement of the parties to the standard practice referred to in ORS 75.1080 After a letter of credit is issued, rights and obligations of a beneficiary, applicant, confirmer and issuer are not affected by an amendment or cancellation to which that person has not consented except to the extent the letter of credit provides that it is revocable or that the issuer may amend or cancel the letter of credit without that consent. A nominated person who is not a confirmer is not obligated to honor or otherwise give value for a presentation. An issuer has a reasonable time after presentation, but not later than the seventh business day after the issuer receives the documents: of this section or to mention fraud, forgery or expiration in the notice does not preclude the issuer from asserting, as a basis for dishonor, fraud or forgery as described in ORS 75.1090 If an applicant claims that a required document is forged or materially fraudulent or that honor of the presentation would facilitate a material fraud by the beneficiary on the issuer or applicant, a court of competent jurisdiction may temporarily or permanently enjoin the issuer from honoring a presentation or grant similar relief against the issuer or other persons only if the court finds that: The warranties in subsection If an issuer wrongfully dishonors a draft or demand presented under a letter of credit or honors a draft or demand in breach of its obligation to the applicant, the applicant may recover damages resulting from the breach, including incidental but not consequential damages, less any amount saved as a result of the breach. of this section, a person to whom the obligation is owed may recover damages resulting from the breach, including incidental but not consequential damages, less any amount saved as a result of the breach. To the extent of the confirmation, a confirmer has the liability of an issuer specified in this subsection and subsections of this section. Even if a letter of credit provides that it is transferable, the issuer may refuse to recognize or carry out a transfer if: A successor of a beneficiary may consent to amendments, sign and present documents and receive payment or other items of value in its own name as the disclosed successor of the beneficiary. Except as provided in subsection of this section has the consequences specified in ORS 75.1080 A beneficiary may assign its right to part or all of the proceeds of a letter of credit. The beneficiary may do so before presentation as a present assignment of its right to receive proceeds contingent upon its compliance with the terms and conditions of the letter of credit. Unless subsection of this section; An applicant that reimburses an issuer is subrogated to the rights of the issuer against any beneficiary, presenter or nominated person to the same extent as if the applicant were the secondary obligor of the obligations owed to the issuer and has the rights of subrogation of the issuer to the rights of the beneficiary stated in subsection of this section do not arise until the issuer honors the letter of credit or otherwise pays. The rights in subsection As long as and to the extent that an issuer or nominated person has not been reimbursed or has not otherwise recovered the value given with respect to a security interest in a document under subsection (c);",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "To honor; The relief is not prohibited under the law applicable to an accepted draft or deferred obligation incurred by the issuer; The transfer would violate applicable law; or",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "If the letter of credit provides for honor to be completed more than seven business days after presentation, to accept a draft or incur a deferred obligation; or A beneficiary, issuer or nominated person who may be adversely affected is adequately protected against loss that it may suffer because the relief is granted; The transferor or transferee has failed to comply with any requirement stated in the letter of credit or any other requirement relating to transfer imposed by the issuer that is within the standard practice referred to in ORS 75.1080 If the document is presented in a medium other than a written or other tangible medium, the security interest is perfected; and",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "To give notice to the presenter of discrepancies in the presentation. All of the conditions to entitle a person to the relief under the law of this state have been met; and If the document is presented in a written or other tangible medium and is not a certificated security, chattel paper, a document of title, an instrument, or a letter of credit, the security interest is perfected and has priority over a conflicting security interest in the document as long as the debtor does not have possession of the document. [2001 c.445 148] _______________",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "On the basis of the information submitted to the court, the applicant is more likely than not to succeed under its claim of forgery or material fraud and the person demanding honor does not qualify for protection under subsection",
+              "subsections": []
+            },
+            {
+              "label": "(B)",
+              "token": "B",
+              "kind": "alpha_upper",
+              "text": "The relevant undertaking incorporates rules of custom or practice; and",
+              "subsections": []
+            },
+            {
+              "label": "(C)",
+              "token": "C",
+              "kind": "alpha_upper",
+              "text": "There is conflict between this chapter and those rules as applied to that undertaking.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "ORS chapter 71 contains certain additional general definitions and principles of construction and interpretation applicable throughout this chapter. [1961 c.726 75.1020; 1997 c.150 5] 75.1030 Application of chapter. With the exception of this subsection, subsections If there is no stated expiration date or other provision that determines its duration, a letter of credit expires one year after its stated date of issuance or, if none is stated, one year after the date on which it is issued. A person requested to advise may decline to act as an adviser. An adviser that is not a confirmer is not obligated to honor or give value for a presentation. An adviser undertakes to the issuer and to the beneficiary to advise them accurately concerning the terms of the letter of credit, confirmation, amendment or advice received by that person and undertakes to the beneficiary to check the apparent authenticity of the request to advise. Even if the advice is inaccurate, the letter of credit, confirmation or amendment is enforceable as issued. of this section. The terms in the notice to the transferee beneficiary may differ from the terms in any notice to the transferor beneficiary to the extent permitted by the letter of credit, confirmation, amendment or advice received by the person who so notifies. [1961 c.726 75.1070; 1997 c.150 10] 75.1080 Issuers rights and obligations. Except as otherwise provided in subsection If an adviser or nominated person other than a confirmer breaches an obligation under this section or an issuer breaches an obligation not covered in subsection of this section shall pay interest on the amount owed thereunder from the date of wrongful dishonor or other appropriate date. An issuer is not obliged to determine whether a purported successor is a successor of a beneficiary or whether the signature of a purported successor is genuine or authorized. An issuer or nominated person need not recognize an assignment of proceeds of a letter of credit until it consents to the assignment. (a) Except as provided in this subsection, the liability of an issuer, nominated person or adviser is governed by any rules of custom or practice, such as the Uniform Customs and Practice for Documentary Credits, to which the letter of credit, confirmation or other undertaking is expressly made subject. , rules of custom or practice govern if: A nominated person who pays or gives value against a draft or demand presented under a letter of credit is subrogated to the rights of: of this section do not arise until the nominated person pays or otherwise gives value. Until the rights in subsections of this section arise, the issuer, nominated person and the applicant do not derive under this section present or prospective rights forming the basis of a claim, defense or excuse. [1961 c.726 75.1170; 1997 c.150 20] 75.1180 Security interest of issuer or nominated person.",
+          "subsections": [
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Except to the extent of any conflict with the nonvariable provisions specified in ORS 75.1030 The beneficiary to the same extent as if the nominated person were a secondary obligor of the underlying obligation owed to the beneficiary; and",
+              "subsections": []
+            },
+            {
+              "label": "(A)",
+              "token": "A",
+              "kind": "alpha_upper",
+              "text": "This chapter would govern the liability of an issuer, nominated person or adviser under subsection",
+              "subsections": []
+            },
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "The issuer against the applicant to the same extent as if the nominated person were secondary obligor of the obligation owed to the issuer by the applicant;",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "The applicant to same extent as if the nominated person were a secondary obligor of the underlying obligation owed to the applicant.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "of this section and ORS 75.1020 and 75.1140 , and except to the extent prohibited in ORS 71.3020 and 75.1170 , the effect of this chapter may be varied by agreement or by a provision stated or incorporated by reference in an undertaking. A term in an agreement or undertaking generally excusing liability or generally limiting remedies for failure to perform obligations is not sufficient to vary obligations prescribed by this chapter. Rights and obligations of an issuer to a beneficiary or a nominated person under a letter of credit are independent of the existence, performance or nonperformance of a contract or arrangement out of which the letter of credit arises or which underlies it, including contracts or arrangements between the issuer and the applicant and between the applicant and the beneficiary. [1961 c.726 75.1030; 1993 c.545 119; 1997 c.150 6; 2009 c.181 49] 75.1040 Formal requirements. A letter of credit, confirmation, advice, transfer, amendment or cancellation may be issued in any form that is a record and is authenticated: A letter of credit that states that it is perpetual expires five years after its stated date of issuance, or if none is stated, five years after the date on which it is issued. [1961 c.726 75.1060; 1997 c.150 9] 75.1070 Confirmer, nominated person and adviser. A person who notifies a transferee beneficiary of the terms of a letter of credit, confirmation, amendment or advice has the rights and obligations of an adviser under subsection of this section, an issuer is precluded from asserting as a basis for dishonor: Failure to give the notice specified in subsection An issuer, nominated person or adviser who is found liable under subsection Honor of a purported successors apparently complying presentation under subsection of this section or substantially similar law and any confirmer or nominated person may decline to recognize a presentation under subsection An issuer or nominated person has no obligation to give or withhold its consent to an assignment of proceeds of a letter of credit, but consent may not be unreasonably withheld if the assignee possesses and exhibits the letter of credit and presentation of the letter of credit is a condition to honor. If there is conflict between this chapter and ORS chapters 73, 74, 74A or 79, this chapter governs. Notwithstanding any agreement or term to the contrary, the rights of subrogation stated in subsections",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Any discrepancy if timely notice is not given; or",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Any discrepancy not stated in the notice if timely notice is given.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "An issuer is not responsible for: Damages that would otherwise be payable by a party for breach of an obligation under this section may be liquidated by agreement or undertaking, but only in an amount or by a formula that is reasonable in light of the harm anticipated. [1961 c.726 75.1110; 1997 c.150 14] 75.1120 Transfer of letter of credit. A beneficiary whose name is changed after the issuance of a letter of credit has the same rights and obligations as a successor of a beneficiary under this section. [1961 c.726 75.1130; 1997 c.150 16] 75.1140 Assignment of proceeds. Neither the rights recognized by this section between an assignee and an issuer, transferee beneficiary or nominated person nor the issuers or nominated persons payment of proceeds of a letter of credit to an assignee or a third person affect the rights between the assignee and any person other than the issuer, transferee beneficiary or nominated person. The mode of creating and perfecting a security interest in or granting an assignment of a beneficiarys rights to proceeds is governed by ORS chapter 79 or other law. Against persons other than the issuer, transferee beneficiary or nominated person, the rights and obligations arising upon the creation of a security interest or other assignment of a beneficiarys right to proceeds and its perfection are governed by ORS chapter 79 or other law. [1961 c.726 75.1140; 1985 c.676 75.1140; 1993 c.545 120; 1995 c.328 68; 1997 c.150 17] 75.1150 Statute of limitations. An action to enforce a right or obligation arising under this chapter must be commenced within one year after the expiration date of the relevant letter of credit or one year after the cause of action accrues, whichever occurs later. A cause of action accrues when the breach occurs, regardless of the aggrieved partys lack of knowledge of the breach. [1961 c.726 75.1150; 1997 c.150 18] 75.1160 Choice of law and forum.",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "The performance or nonperformance of the underlying contract, arrangement, or transaction;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "An act or omission of another person; or",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Observance or knowledge of the usage of a particular trade other than the standard practice referred to in subsection",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(7)",
+          "token": "7",
+          "kind": "numeric",
+          "text": "If an undertaking constituting a letter of credit under ORS 75.1020",
+          "subsections": []
+        },
+        {
+          "label": "(8)",
+          "token": "8",
+          "kind": "numeric",
+          "text": "An issuer that has dishonored a presentation shall return the documents or hold them at the disposal of, and send advice to that effect to, the presenter.",
+          "subsections": []
+        },
+        {
+          "label": "(9)",
+          "token": "9",
+          "kind": "numeric",
+          "text": "An issuer that has honored a presentation as permitted or required by this chapter: even if the purported successor is not the successor of a beneficiary. Documents signed in the name of the beneficiary or of a disclosed successor by a person who is neither the beneficiary nor the successor of the beneficiary are forged documents for the purposes of ORS 75.1090.",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Is entitled to be reimbursed by the applicant in immediately available funds not later than the date of its payment of funds;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Takes the documents free of claims of the beneficiary or presenter;",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Is precluded from asserting a right of recourse on a draft under ORS 73.0414 and 73.0415;",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "Except as provided in ORS 75.1100 and 75.1170, is precluded from restitution of money paid or other value given by mistake to the extent the mistake concerns discrepancies in the documents or tender that are apparent on the face of the presentation; and",
+              "subsections": []
+            },
+            {
+              "label": "(e)",
+              "token": "e",
+              "kind": "alpha_lower",
+              "text": "Is discharged to the extent of its performance under the letter of credit unless the issuer honored a presentation in which a required signature of a beneficiary was forged. [1961 c.726 75.1080; 1997 c.150 11] 75.1090 Fraud and forgery.",
+              "subsections": []
+            }
+          ]
+        }
+      ],
+      "parser_warnings": [],
+      "position": 9,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors075.html"
+    }
+  ],
+  "alternateName": "Letters of Credit",
+  "legislationDate": "2023"
+}

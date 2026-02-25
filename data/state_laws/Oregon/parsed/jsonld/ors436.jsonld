@@ -1,0 +1,1381 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "orlaw": "https://www.oregonlegislature.gov/ors#"
+  },
+  "@type": "Legislation",
+  "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html",
+  "identifier": "ORS Chapter 436",
+  "name": "ORS Chapter 436 — Sterilization",
+  "legislationType": "Statute",
+  "jurisdiction": "US-OR",
+  "isPartOf": {
+    "@type": "CreativeWork",
+    "identifier": "ORS",
+    "name": "Oregon Revised Statutes",
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors"
+  },
+  "dateModified": "2026-02-25T08:11:24.211356+00:00",
+  "source_file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors436.html",
+  "hasPart": [
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html#section-436.010",
+      "identifier": "ORS 436.010",
+      "name": "Section 436.010",
+      "text": "[Amended by 1967 c.441 1; repealed by 1983 c.460 2]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 1,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html#section-436.020",
+      "identifier": "ORS 436.020",
+      "name": "Section 436.020",
+      "text": "",
+      "history_citation_blocks": [
+        "Amended by 1955 c.556 1; 1955 c.660 29; 1967 c.441 4; 1969 c.314 43; 1971 c.650 16; repealed by 1983 c.460 2"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1955 c.556 1"
+        },
+        {
+          "raw": "1955 c.660 29",
+          "year": 1955,
+          "chapter": "660",
+          "section": "29"
+        },
+        {
+          "raw": "1967 c.441 4",
+          "year": 1967,
+          "chapter": "441",
+          "section": "4"
+        },
+        {
+          "raw": "1969 c.314 43",
+          "year": 1969,
+          "chapter": "314",
+          "section": "43"
+        },
+        {
+          "raw": "1971 c.650 16",
+          "year": 1971,
+          "chapter": "650",
+          "section": "16"
+        },
+        {
+          "raw": "repealed by 1983 c.460 2"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 2,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html#section-436.025",
+      "identifier": "ORS 436.025",
+      "name": "Section 436.025",
+      "text": "[1967 c.441 3 (1); repealed by 1983 c.460 2]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "; repealed by 1983 c.460 2]",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 3,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html#section-436.030",
+      "identifier": "ORS 436.030",
+      "name": "Section 436.030",
+      "text": "",
+      "history_citation_blocks": [
+        "Amended by 1955 c.651 11; 1955 c.660 30; 1961 c.173 1; repealed by 1965 c.264 12"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1955 c.651 11"
+        },
+        {
+          "raw": "1955 c.660 30",
+          "year": 1955,
+          "chapter": "660",
+          "section": "30"
+        },
+        {
+          "raw": "1961 c.173 1",
+          "year": 1961,
+          "chapter": "173",
+          "section": "1"
+        },
+        {
+          "raw": "repealed by 1965 c.264 12"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 4,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html#section-436.035",
+      "identifier": "ORS 436.035",
+      "name": "Section 436.035",
+      "text": "[1967 c.441 3 (2); repealed by 1983 c.460 2]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "; repealed by 1983 c.460 2]",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 5,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html#section-436.040",
+      "identifier": "ORS 436.040",
+      "name": "Section 436.040",
+      "text": "[Repealed by 1965 c.264 1 (436.041 enacted in lieu of 436.040)]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 6,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html#section-436.041",
+      "identifier": "ORS 436.041",
+      "name": "Section 436.041",
+      "text": "",
+      "history_citation_blocks": [
+        "1965 c.264 2 (enacted in lieu of 436.040); 1967 c.441 5; 1971 c.734 50; repealed by 1983 c.460 2"
+      ],
+      "history_citations": [
+        {
+          "raw": "1965 c.264 2 (enacted in lieu of 436.040)"
+        },
+        {
+          "raw": "1967 c.441 5",
+          "year": 1967,
+          "chapter": "441",
+          "section": "5"
+        },
+        {
+          "raw": "1971 c.734 50",
+          "year": 1971,
+          "chapter": "734",
+          "section": "50"
+        },
+        {
+          "raw": "repealed by 1983 c.460 2"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 7,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html#section-436.050",
+      "identifier": "ORS 436.050",
+      "name": "Section 436.050",
+      "text": "",
+      "history_citation_blocks": [
+        "Amended by 1961 c.173 2; 1965 c.264 3; part renumbered 436.055; 1967 c.441 6; repealed by 1983 c.460 2"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1961 c.173 2"
+        },
+        {
+          "raw": "1965 c.264 3",
+          "year": 1965,
+          "chapter": "264",
+          "section": "3"
+        },
+        {
+          "raw": "part renumbered 436.055"
+        },
+        {
+          "raw": "1967 c.441 6",
+          "year": 1967,
+          "chapter": "441",
+          "section": "6"
+        },
+        {
+          "raw": "repealed by 1983 c.460 2"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 8,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html#section-436.055",
+      "identifier": "ORS 436.055",
+      "name": "Section 436.055",
+      "text": "[Formerly part of",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 9,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html#section-436.056",
+      "identifier": "ORS 436.056",
+      "name": "Section 436.056",
+      "text": "[1967 c.441 8 (enacted in lieu of 436.055); repealed by 1983 c.460 2]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 10,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html#section-436.060",
+      "identifier": "ORS 436.060",
+      "name": "Section 436.060",
+      "text": "[Repealed by 1965 c.264 4 (436.061 enacted in lieu of 436.060)]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 11,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html#section-436.061",
+      "identifier": "ORS 436.061",
+      "name": "Section 436.061",
+      "text": "",
+      "history_citation_blocks": [
+        "1965 c.264 5 (enacted in lieu of 436.060); 1967 c.441 9; repealed by 1983 c.460 2"
+      ],
+      "history_citations": [
+        {
+          "raw": "1965 c.264 5 (enacted in lieu of 436.060)"
+        },
+        {
+          "raw": "1967 c.441 9",
+          "year": 1967,
+          "chapter": "441",
+          "section": "9"
+        },
+        {
+          "raw": "repealed by 1983 c.460 2"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 12,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html#section-436.070",
+      "identifier": "ORS 436.070",
+      "name": "Section 436.070",
+      "text": "",
+      "history_citation_blocks": [
+        "Amended by 1965 c.264 6; 1967 c.441 10; repealed by 1983 c.460 2"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1965 c.264 6"
+        },
+        {
+          "raw": "1967 c.441 10",
+          "year": 1967,
+          "chapter": "441",
+          "section": "10"
+        },
+        {
+          "raw": "repealed by 1983 c.460 2"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 13,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html#section-436.080",
+      "identifier": "ORS 436.080",
+      "name": "Section 436.080",
+      "text": "[Repealed by 1983 c.460 2]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 14,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html#section-436.090",
+      "identifier": "ORS 436.090",
+      "name": "Section 436.090",
+      "text": "",
+      "history_citation_blocks": [
+        "Amended by 1965 c.264 7; 1967 c.441 11; 1973 c.823 138; repealed by 1983 c.460 2"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1965 c.264 7"
+        },
+        {
+          "raw": "1967 c.441 11",
+          "year": 1967,
+          "chapter": "441",
+          "section": "11"
+        },
+        {
+          "raw": "1973 c.823 138",
+          "year": 1973,
+          "chapter": "823",
+          "section": "138"
+        },
+        {
+          "raw": "repealed by 1983 c.460 2"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 15,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html#section-436.100",
+      "identifier": "ORS 436.100",
+      "name": "Section 436.100",
+      "text": "",
+      "history_citation_blocks": [
+        "Amended by 1965 c.264 8; 1967 c.441 12; 1969 c.391 12; 1973 c.823 139; 1973 c.829 51; repealed by 1983 c.460 2"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1965 c.264 8"
+        },
+        {
+          "raw": "1967 c.441 12",
+          "year": 1967,
+          "chapter": "441",
+          "section": "12"
+        },
+        {
+          "raw": "1969 c.391 12",
+          "year": 1969,
+          "chapter": "391",
+          "section": "12"
+        },
+        {
+          "raw": "1973 c.823 139",
+          "year": 1973,
+          "chapter": "823",
+          "section": "139"
+        },
+        {
+          "raw": "1973 c.829 51",
+          "year": 1973,
+          "chapter": "829",
+          "section": "51"
+        },
+        {
+          "raw": "repealed by 1983 c.460 2"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 16,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html#section-436.110",
+      "identifier": "ORS 436.110",
+      "name": "Section 436.110",
+      "text": "",
+      "history_citation_blocks": [
+        "Amended by 1965 c.264 9; 1967 c.441 13; 1971 c.734 51; repealed by 1983 c.460 2"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1965 c.264 9"
+        },
+        {
+          "raw": "1967 c.441 13",
+          "year": 1967,
+          "chapter": "441",
+          "section": "13"
+        },
+        {
+          "raw": "1971 c.734 51",
+          "year": 1971,
+          "chapter": "734",
+          "section": "51"
+        },
+        {
+          "raw": "repealed by 1983 c.460 2"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 17,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html#section-436.115",
+      "identifier": "ORS 436.115",
+      "name": "Section 436.115",
+      "text": "",
+      "history_citation_blocks": [
+        "1971 c.734 53; repealed by 1983 c.460 2"
+      ],
+      "history_citations": [
+        {
+          "raw": "1971 c.734 53",
+          "year": 1971,
+          "chapter": "734",
+          "section": "53"
+        },
+        {
+          "raw": "repealed by 1983 c.460 2"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 18,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html#section-436.120",
+      "identifier": "ORS 436.120",
+      "name": "Section 436.120",
+      "text": "",
+      "history_citation_blocks": [
+        "Amended by 1965 c.264 10; 1967 c.441 14; repealed by 1971 c.734 21"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1965 c.264 10"
+        },
+        {
+          "raw": "1967 c.441 14",
+          "year": 1967,
+          "chapter": "441",
+          "section": "14"
+        },
+        {
+          "raw": "repealed by 1971 c.734 21"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 19,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html#section-436.125",
+      "identifier": "ORS 436.125",
+      "name": "Section 436.125",
+      "text": "",
+      "history_citation_blocks": [
+        "1971 c.734 54; repealed by 1983 c.460 2"
+      ],
+      "history_citations": [
+        {
+          "raw": "1971 c.734 54",
+          "year": 1971,
+          "chapter": "734",
+          "section": "54"
+        },
+        {
+          "raw": "repealed by 1983 c.460 2"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 20,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html#section-436.130",
+      "identifier": "ORS 436.130",
+      "name": "Section 436.130",
+      "text": "[Amended by 1965 c.264 11; repealed by 1971 c.734 21]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 21,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html#section-436.140",
+      "identifier": "ORS 436.140",
+      "name": "Section 436.140",
+      "text": "[Repealed by 1983 c.460 2]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 22,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html#section-436.150",
+      "identifier": "ORS 436.150",
+      "name": "Section 436.150",
+      "text": "[Amended by 1973 c.829 52; repealed by 1983 c.460 2]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 23,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html#section-436.205",
+      "identifier": "ORS 436.205",
+      "name": "Section 436.205",
+      "text": "Definitions. As used in this chapter unless the context requires otherwise: (1) Best interest means that: (a) The individual is physically capable of procreating; (b) The individual is likely to engage in sexual activity at the present or in the near future under circumstances likely to result in pregnancy; (c) All less drastic alternative contraceptive methods, including supervision, education and training, have proved unworkable or inapplicable, or are medically contraindicated; (d) The proposed method of sterilization conforms with standard medical practice, is the least intrusive method available and appropriate, and can be carried out without unreasonable risk to the life and health of the individual; and (e) The nature and extent of the individuals disability, as determined by empirical evidence and not solely on the basis of standardized tests, renders the individual permanently incapable of caring for and raising a child, even with reasonable assistance. (2) Informed consent means consent given by an individual 15 years of age or older for sterilization that is: (a) Based upon a full understanding of the nature and consequences of sterilization pursuant to information requirements set forth in ORS 436.225 (1); (b) Given by an individual competent to make such a decision; and (c) Wholly voluntary and free from coercion, express or implied. (3) Respondent is the individual for whom sterilization is sought and is the subject of a petition pursuant to this chapter. (4) Sterilization means any medical procedure, treatment or operation for the purpose of rendering an individual permanently incapable of procreating.",
+      "history_citation_blocks": [
+        "1983 c.460 3; 1991 c.67 116"
+      ],
+      "history_citations": [
+        {
+          "raw": "1983 c.460 3",
+          "year": 1983,
+          "chapter": "460",
+          "section": "3"
+        },
+        {
+          "raw": "1991 c.67 116",
+          "year": 1991,
+          "chapter": "67",
+          "section": "116"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Best interest means that: ;",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "The individual is physically capable of procreating;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "The individual is likely to engage in sexual activity at the present or in the near future under circumstances likely to result in pregnancy; Given by an individual competent to make such a decision; and",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "All less drastic alternative contraceptive methods, including supervision, education and training, have proved unworkable or inapplicable, or are medically contraindicated; Wholly voluntary and free from coercion, express or implied.",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "The proposed method of sterilization conforms with standard medical practice, is the least intrusive method available and appropriate, and can be carried out without unreasonable risk to the life and health of the individual; and",
+              "subsections": []
+            },
+            {
+              "label": "(e)",
+              "token": "e",
+              "kind": "alpha_lower",
+              "text": "The nature and extent of the individuals disability, as determined by empirical evidence and not solely on the basis of standardized tests, renders the individual permanently incapable of caring for and raising a child, even with reasonable assistance.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Informed consent means consent given by an individual 15 years of age or older for sterilization that is:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Based upon a full understanding of the nature and consequences of sterilization pursuant to information requirements set forth in ORS 436.225",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Respondent is the individual for whom sterilization is sought and is the subject of a petition pursuant to this chapter.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Sterilization means any medical procedure, treatment or operation for the purpose of rendering an individual permanently incapable of procreating.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 24,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html#section-436.215",
+      "identifier": "ORS 436.215",
+      "name": "Section 436.215",
+      "text": "Legislative finding. The Legislative Assembly finds and declares that sterilization procedures are highly intrusive, generally irreversible and represent potentially permanent and highly significant consequences for individuals incapable of giving informed consent. The Legislative Assembly recognizes that certain legal safeguards are required to prevent indiscriminate and unnecessary sterilization of such individuals, and to assure equal access to desired medical procedures for these Oregon citizens.",
+      "history_citation_blocks": [
+        "1983 c.460 4"
+      ],
+      "history_citations": [
+        {
+          "raw": "1983 c.460 4",
+          "year": 1983,
+          "chapter": "460",
+          "section": "4"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 25,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html#section-436.225",
+      "identifier": "ORS 436.225",
+      "name": "Section 436.225",
+      "text": "Obtaining informed consent. (1) In obtaining informed consent for sterilization a physician, physician assistant or nurse practitioner must offer to answer any questions the individual to be sterilized may have concerning the proposed procedure, and must provide orally all of the following information or advice to the individual to be sterilized: (a) Advice that the individual is free to withhold or withdraw consent to the procedure at any time before the sterilization without affecting the right to future care or treatment; (b) A description of available alternative methods of family planning and birth control; (c) Advice that the sterilization procedure is considered to be irreversible; (d) A thorough explanation of the specific sterilization procedure to be performed; (e) A full description of the discomforts and risks that may accompany or follow the performing of the procedure, including an explanation of the type and possible effects of any anesthetic to be used; and (f) A full description of the benefits or advantages that may be expected as a result of the sterilization. (2) A natural parent, or a legal guardian or conservator of a minor child or protected person appointed under ORS chapter 125, may not give substitute consent for sterilization. (3) Whenever any physician, physician assistant or nurse practitioner has reason to believe an individual 15 years of age or older is unable to give informed consent, no sterilization shall be performed until it is determined by a circuit court that the individual involved is able to and has given informed consent. Whenever the court determines, under the provisions of this chapter, that a person lacks the ability to give informed consent, the court shall permit sterilization only if the person is 18 years of age or older and only upon showing that such operation, treatment or procedure is in the best interest of the individual. (4) Notwithstanding ORS 435.210, informed consent may not be obtained while the individual to be sterilized is: (a) In labor or childbirth; (b) Seeking to obtain or obtaining an abortion; or (c) Under the influence of alcohol or other substances that affect the individuals state of awareness.",
+      "history_citation_blocks": [
+        "1983 c.460 5; 1995 c.664 98; 2014 c.45 58; 2023 c.228 11"
+      ],
+      "history_citations": [
+        {
+          "raw": "1983 c.460 5",
+          "year": 1983,
+          "chapter": "460",
+          "section": "5"
+        },
+        {
+          "raw": "1995 c.664 98",
+          "year": 1995,
+          "chapter": "664",
+          "section": "98"
+        },
+        {
+          "raw": "2014 c.45 58",
+          "year": 2014,
+          "chapter": "45",
+          "section": "58"
+        },
+        {
+          "raw": "2023 c.228 11",
+          "year": 2023,
+          "chapter": "228",
+          "section": "11"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "In obtaining informed consent for sterilization a physician, physician assistant or nurse practitioner must offer to answer any questions the individual to be sterilized may have concerning the proposed procedure, and must provide orally all of the following information or advice to the individual to be sterilized:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Advice that the individual is free to withhold or withdraw consent to the procedure at any time before the sterilization without affecting the right to future care or treatment;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "A description of available alternative methods of family planning and birth control;",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Advice that the sterilization procedure is considered to be irreversible;",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "A thorough explanation of the specific sterilization procedure to be performed;",
+              "subsections": []
+            },
+            {
+              "label": "(e)",
+              "token": "e",
+              "kind": "alpha_lower",
+              "text": "A full description of the discomforts and risks that may accompany or follow the performing of the procedure, including an explanation of the type and possible effects of any anesthetic to be used; and",
+              "subsections": []
+            },
+            {
+              "label": "(f)",
+              "token": "f",
+              "kind": "alpha_lower",
+              "text": "A full description of the benefits or advantages that may be expected as a result of the sterilization.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "A natural parent, or a legal guardian or conservator of a minor child or protected person appointed under ORS chapter 125, may not give substitute consent for sterilization.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Whenever any physician, physician assistant or nurse practitioner has reason to believe an individual 15 years of age or older is unable to give informed consent, no sterilization shall be performed until it is determined by a circuit court that the individual involved is able to and has given informed consent. Whenever the court determines, under the provisions of this chapter, that a person lacks the ability to give informed consent, the court shall permit sterilization only if the person is 18 years of age or older and only upon showing that such operation, treatment or procedure is in the best interest of the individual.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Notwithstanding ORS 435.210, informed consent may not be obtained while the individual to be sterilized is:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "In labor or childbirth;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Seeking to obtain or obtaining an abortion; or",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Under the influence of alcohol or other substances that affect the individuals state of awareness.",
+              "subsections": []
+            }
+          ]
+        }
+      ],
+      "parser_warnings": [],
+      "position": 26,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html#section-436.235",
+      "identifier": "ORS 436.235",
+      "name": "Section 436.235",
+      "text": "Petition to determine ability to give informed consent. A petition for a determination of a persons ability to give informed consent to a sterilization procedure may be filed by the person seeking sterilization, the attending physician, physician assistant or nurse practitioner of the person seeking sterilization, or by an interested person concerned with the respondents health and well-being. Such a petition shall be filed in the circuit court in the county in which the respondent resides or has domicile.",
+      "history_citation_blocks": [
+        "1983 c.460 6; 2014 c.45 59"
+      ],
+      "history_citations": [
+        {
+          "raw": "1983 c.460 6",
+          "year": 1983,
+          "chapter": "460",
+          "section": "6"
+        },
+        {
+          "raw": "2014 c.45 59",
+          "year": 2014,
+          "chapter": "45",
+          "section": "59"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 27,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html#section-436.245",
+      "identifier": "ORS 436.245",
+      "name": "Section 436.245",
+      "text": "Petition content. The petition for determination of ability to give informed consent for sterilization shall be executed under oath and shall set forth: (1) The name, age and residence of the respondent. (2) The names and residences of any parents, spouse, legal guardian or conservator of the respondent. (3) A statement of the facts describing the respondents alleged inability to give informed consent for sterilization. (4) A statement of facts indicating the likelihood or unlikelihood that the respondent will have the ability to make an informed decision about sterilization in the foreseeable future. (5) A statement of the reasons for which sterilization is sought. (6) The name, position and statement of interest of the person initiating the petition or any person assisting the respondent with a self-initiated petition.",
+      "history_citation_blocks": [
+        "1983 c.460 7"
+      ],
+      "history_citations": [
+        {
+          "raw": "1983 c.460 7",
+          "year": 1983,
+          "chapter": "460",
+          "section": "7"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The name, age and residence of the respondent.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The names and residences of any parents, spouse, legal guardian or conservator of the respondent.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "A statement of the facts describing the respondents alleged inability to give informed consent for sterilization.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "A statement of facts indicating the likelihood or unlikelihood that the respondent will have the ability to make an informed decision about sterilization in the foreseeable future.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "A statement of the reasons for which sterilization is sought.",
+          "subsections": []
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "The name, position and statement of interest of the person initiating the petition or any person assisting the respondent with a self-initiated petition.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 28,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html#section-436.255",
+      "identifier": "ORS 436.255",
+      "name": "Section 436.255",
+      "text": "Court hearing on petition; notice. (1) Upon such a petition for determination of ability to give informed consent, the court shall assign a time, not later than 30 days thereafter, and a place for hearing the petition. (2) The court may, at its discretion, hold a hearing on the petition at a place other than the courtroom if it would facilitate the presence of the respondent. The court shall cause a copy of the petition and notice of the hearing to be served on the respondent and the respondents parent, legal guardian or conservator, if any, at least 14 days prior to the hearing date. Notice is also required to the following: (a) The spouse of the respondent, if any; (b) The sibling of the respondent if there are no living parents; (c) The system described in ORS 192.517 (1); and (d) Such other persons as the court may determine have an interest in the respondent. (3) If the parent or legal guardian of the respondent is not a resident of this state, notice may be served by registered mail or by certified mail with return receipt. If the residence of the respondents parent or legal guardian is unknown, an affidavit so stating shall be filed in lieu of service.",
+      "history_citation_blocks": [
+        "1983 c.460 8; 1991 c.249 36; 2003 c.14 247; 2005 c.498 10"
+      ],
+      "history_citations": [
+        {
+          "raw": "1983 c.460 8",
+          "year": 1983,
+          "chapter": "460",
+          "section": "8"
+        },
+        {
+          "raw": "1991 c.249 36",
+          "year": 1991,
+          "chapter": "249",
+          "section": "36"
+        },
+        {
+          "raw": "2003 c.14 247",
+          "year": 2003,
+          "chapter": "14",
+          "section": "247"
+        },
+        {
+          "raw": "2005 c.498 10",
+          "year": 2005,
+          "chapter": "498",
+          "section": "10"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Upon such a petition for determination of ability to give informed consent, the court shall assign a time, not later than 30 days thereafter, and a place for hearing the petition. ; and",
+          "subsections": [
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "Such other persons as the court may determine have an interest in the respondent.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The court may, at its discretion, hold a hearing on the petition at a place other than the courtroom if it would facilitate the presence of the respondent. The court shall cause a copy of the petition and notice of the hearing to be served on the respondent and the respondents parent, legal guardian or conservator, if any, at least 14 days prior to the hearing date. Notice is also required to the following:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "The spouse of the respondent, if any;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "The sibling of the respondent if there are no living parents;",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "The system described in ORS 192.517",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "If the parent or legal guardian of the respondent is not a resident of this state, notice may be served by registered mail or by certified mail with return receipt. If the residence of the respondents parent or legal guardian is unknown, an affidavit so stating shall be filed in lieu of service.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 29,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html#section-436.265",
+      "identifier": "ORS 436.265",
+      "name": "Section 436.265",
+      "text": "Appointment of counsel; payment of expenses. (1) If the respondent requests counsel but is determined to be financially eligible for appointed counsel at state expense, the court shall appoint suitable counsel to represent the respondent at state expense. (2) If the respondent is not represented by counsel and appears to be unable to request counsel, the court shall appoint suitable counsel to represent the respondent. (3) Counsel appointed by the court shall be paid compensation, as provided in ORS 135.055. When the court appoints counsel and the respondent is without sufficient financial means to employ counsel, the compensation for counsel and reasonable expenses of investigation, preparation and presentation paid or incurred shall be determined and paid as provided in ORS 135.055.",
+      "history_citation_blocks": [
+        "1983 c.460 9; 2001 c.962 75"
+      ],
+      "history_citations": [
+        {
+          "raw": "1983 c.460 9",
+          "year": 1983,
+          "chapter": "460",
+          "section": "9"
+        },
+        {
+          "raw": "2001 c.962 75",
+          "year": 2001,
+          "chapter": "962",
+          "section": "75"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "If the respondent requests counsel but is determined to be financially eligible for appointed counsel at state expense, the court shall appoint suitable counsel to represent the respondent at state expense.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "If the respondent is not represented by counsel and appears to be unable to request counsel, the court shall appoint suitable counsel to represent the respondent.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Counsel appointed by the court shall be paid compensation, as provided in ORS 135.055. When the court appoints counsel and the respondent is without sufficient financial means to employ counsel, the compensation for counsel and reasonable expenses of investigation, preparation and presentation paid or incurred shall be determined and paid as provided in ORS 135.055.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 30,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html#section-436.275",
+      "identifier": "ORS 436.275",
+      "name": "Section 436.275",
+      "text": "Admissible evidence; subpoenas. (1) At any hearing upon such petition, the court shall receive evidence concerning the respondents ability to give informed consent. Such evidence shall include, but shall not be limited to: (a) Testimony from the respondent regarding the respondents receipt and understanding of the information set forth in ORS 436.225 (1); and (b) Reports from an interdisciplinary team of at least three professionals who have experience working with disabilities similar to those affecting the respondent. The reports shall: (A) Contain specific information regarding the respondents ability to give informed consent; (B) Indicate the specific aspects, if any, of informed consent that the respondent lacks; and (C) Contain a statement by each professional explaining the reason for the professionals opinion. (2) For purposes of subsection (1)(a) of this section, testimony means: (a) Sworn testimony given in person by the respondent to the court at any hearing on the respondents ability to give informed consent to sterilization; or (b) A sworn affidavit, if the respondents presence has been waived pursuant to ORS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "At any hearing upon such petition, the court shall receive evidence concerning the respondents ability to give informed consent. Such evidence shall include, but shall not be limited to: ; and (a) of this section, testimony means:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Testimony from the respondent regarding the respondents receipt and understanding of the information set forth in ORS 436.225 Sworn testimony given in person by the respondent to the court at any hearing on the respondents ability to give informed consent to sterilization; or",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Reports from an interdisciplinary team of at least three professionals who have experience working with disabilities similar to those affecting the respondent. The reports shall: A sworn affidavit, if the respondents presence has been waived pursuant to ORS",
+              "subsections": [
+                {
+                  "label": "(A)",
+                  "token": "A",
+                  "kind": "alpha_upper",
+                  "text": "Contain specific information regarding the respondents ability to give informed consent;",
+                  "subsections": []
+                },
+                {
+                  "label": "(B)",
+                  "token": "B",
+                  "kind": "alpha_upper",
+                  "text": "Indicate the specific aspects, if any, of informed consent that the respondent lacks; and",
+                  "subsections": []
+                },
+                {
+                  "label": "(C)",
+                  "token": "C",
+                  "kind": "alpha_upper",
+                  "text": "Contain a statement by each professional explaining the reason for the professionals opinion.",
+                  "subsections": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "For purposes of subsection",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 31,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html#section-436.285",
+      "identifier": "ORS 436.285",
+      "name": ".",
+      "text": "(3) The respondent or the respondents counsel shall have the right to present evidence and to cross-examine witnesses who testify at the hearing. (4) Witnesses or other persons necessary for the conduct of the hearing may be subpoenaed. The person filing the petition or the respondent may have compulsory attendance of witnesses on behalf of the requesting party in the same manner as provided in ORS 136.567 to 136.603. The form of the subpoena shall be substantially as provided in ORS 136.575 (4) or (6), but shall describe the action as a probate sterilization proceeding and the appearance as on behalf of the petitioner, or the respondent.",
+      "history_citation_blocks": [
+        "1983 c.460 10; 2001 c.255 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "1983 c.460 10",
+          "year": 1983,
+          "chapter": "460",
+          "section": "10"
+        },
+        {
+          "raw": "2001 c.255 1",
+          "year": 2001,
+          "chapter": "255",
+          "section": "1"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The respondent or the respondents counsel shall have the right to present evidence and to cross-examine witnesses who testify at the hearing.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Witnesses or other persons necessary for the conduct of the hearing may be subpoenaed. The person filing the petition or the respondent may have compulsory attendance of witnesses on behalf of the requesting party in the same manner as provided in ORS 136.567 to 136.603. The form of the subpoena shall be substantially as provided in ORS 136.575",
+          "subsections": []
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": ", but shall describe the action as a probate sterilization proceeding and the appearance as on behalf of the petitioner, or the respondent.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 32,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html#section-436.295",
+      "identifier": "ORS 436.295",
+      "name": "Section 436.295",
+      "text": "Court determination of ability to consent. (1) If the court does not determine by clear and convincing evidence that the respondent lacks the ability to give informed consent for sterilization: (a) If the court determines that the respondent has the ability to give informed consent to sterilization, the court shall issue an order so stating and permitting the sterilization to be performed. Prior to the performance of the sterilization, the physician, physician assistant or nurse practitioner and hospital involved shall obtain the written informed consent of the person for sterilization. (b) If the respondent refuses to consent to sterilization, the court shall issue an order so stating and forbidding sterilization of the respondent, unless the respondent later makes a different choice and only after a rehearing under this section. (2) If the court determines by clear and convincing evidence that the respondent lacks the ability to give informed consent for sterilization, the court shall retain its jurisdiction and continue the hearing to determine whether sterilization is in the best interests of the respondent.",
+      "history_citation_blocks": [
+        "1983 c.460 12; 2001 c.255 2; 2014 c.45 60"
+      ],
+      "history_citations": [
+        {
+          "raw": "1983 c.460 12",
+          "year": 1983,
+          "chapter": "460",
+          "section": "12"
+        },
+        {
+          "raw": "2001 c.255 2",
+          "year": 2001,
+          "chapter": "255",
+          "section": "2"
+        },
+        {
+          "raw": "2014 c.45 60",
+          "year": 2014,
+          "chapter": "45",
+          "section": "60"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "If the court does not determine by clear and convincing evidence that the respondent lacks the ability to give informed consent for sterilization:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "If the court determines that the respondent has the ability to give informed consent to sterilization, the court shall issue an order so stating and permitting the sterilization to be performed. Prior to the performance of the sterilization, the physician, physician assistant or nurse practitioner and hospital involved shall obtain the written informed consent of the person for sterilization.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "If the respondent refuses to consent to sterilization, the court shall issue an order so stating and forbidding sterilization of the respondent, unless the respondent later makes a different choice and only after a rehearing under this section.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "If the court determines by clear and convincing evidence that the respondent lacks the ability to give informed consent for sterilization, the court shall retain its jurisdiction and continue the hearing to determine whether sterilization is in the best interests of the respondent.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 33,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html#section-436.305",
+      "identifier": "ORS 436.305",
+      "name": "Section 436.305",
+      "text": "Evidence on best interests of respondent. (1) In determining whether sterilization is in the best interest of the respondent, the court shall hear evidence including, but not limited to, medical, psychological and social evidence as to whether such sterilization is in the best interest of the individual as defined in ORS 436.205 (1). (2) The respondent or counsel shall have the right to present evidence and to cross-examine witnesses who testify at the hearing. Witnesses or other persons necessary for the conduct of the hearing may be subpoenaed. (3) The court shall give its consent to sterilization only if it finds by clear and convincing evidence that sterilization is in the best interest of the respondent. The court shall furnish findings to support its conclusion.",
+      "history_citation_blocks": [
+        "1983 c.460 13"
+      ],
+      "history_citations": [
+        {
+          "raw": "1983 c.460 13",
+          "year": 1983,
+          "chapter": "460",
+          "section": "13"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "In determining whether sterilization is in the best interest of the respondent, the court shall hear evidence including, but not limited to, medical, psychological and social evidence as to whether such sterilization is in the best interest of the individual as defined in ORS 436.205",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The respondent or counsel shall have the right to present evidence and to cross-examine witnesses who testify at the hearing. Witnesses or other persons necessary for the conduct of the hearing may be subpoenaed.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The court shall give its consent to sterilization only if it finds by clear and convincing evidence that sterilization is in the best interest of the respondent. The court shall furnish findings to support its conclusion.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 34,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html#section-436.315",
+      "identifier": "ORS 436.315",
+      "name": "Section 436.315",
+      "text": "Appointment of appeal counsel; payment of expenses. If the respondent is determined to be financially eligible for appointed counsel at state expense, the court, upon the request of the person or upon its own motion, shall appoint suitable counsel to represent the respondent on appeal. Counsel appointed by the court shall be paid compensation, as provided in ORS 138.500. Compensation for counsel and costs and expenses necessary shall be determined and paid as provided in ORS 138.500.",
+      "history_citation_blocks": [
+        "1983 c.460 16; 1985 c.502 27; 2001 c.962 76"
+      ],
+      "history_citations": [
+        {
+          "raw": "1983 c.460 16",
+          "year": 1983,
+          "chapter": "460",
+          "section": "16"
+        },
+        {
+          "raw": "1985 c.502 27",
+          "year": 1985,
+          "chapter": "502",
+          "section": "27"
+        },
+        {
+          "raw": "2001 c.962 76",
+          "year": 2001,
+          "chapter": "962",
+          "section": "76"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 35,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html#section-436.325",
+      "identifier": "ORS 436.325",
+      "name": "Section 436.325",
+      "text": "Effect on surgical procedures. Nothing in this chapter limits surgical procedures which are medically indicated and which may result in sterilization. However, a hysterectomy shall not be performed solely for the purpose of sterilization or for the purpose of hygiene and sanitary care of a females menses.",
+      "history_citation_blocks": [
+        "1983 c.460 14"
+      ],
+      "history_citations": [
+        {
+          "raw": "1983 c.460 14",
+          "year": 1983,
+          "chapter": "460",
+          "section": "14"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 36,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html#section-436.335",
+      "identifier": "ORS 436.335",
+      "name": "Section 436.335",
+      "text": "Report on disposition; biennial review; report to Legislative Assembly. (1) The disposition of all cases under this chapter shall be reported to the State Court Administrator. The State Court Administrator shall forward any reported information to the system described in ORS 192.517 (1). (2) The system described in ORS 192.517 (1) shall review biennially all cases pertaining to sterilization under this chapter and shall report to the Legislative Assembly its assessment of the need for any changes in the procedures or standards set forth in this chapter. [1983 c.460 15; 1985 c.309 1; 1987 c.158 83; 2003 c.14 248; 2005 c.498 11] _______________",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The disposition of all cases under this chapter shall be reported to the State Court Administrator. The State Court Administrator shall forward any reported information to the system described in ORS 192.517 shall review biennially all cases pertaining to sterilization under this chapter and shall report to the Legislative Assembly its assessment of the need for any changes in the procedures or standards set forth in this chapter. [1983 c.460 15; 1985 c.309 1; 1987 c.158 83; 2003 c.14 248; 2005 c.498 11] _______________",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The system described in ORS 192.517",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 37,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors436.html"
+    }
+  ],
+  "alternateName": "Sterilization",
+  "legislationDate": "2023"
+}

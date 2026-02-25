@@ -1,0 +1,3936 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "orlaw": "https://www.oregonlegislature.gov/ors#"
+  },
+  "@type": "Legislation",
+  "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html",
+  "identifier": "ORS Chapter 447",
+  "name": "ORS Chapter 447 — Plumbing; Architectural",
+  "legislationType": "Statute",
+  "jurisdiction": "US-OR",
+  "isPartOf": {
+    "@type": "CreativeWork",
+    "identifier": "ORS",
+    "name": "Oregon Revised Statutes",
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors"
+  },
+  "dateModified": "2026-02-25T08:11:24.677136+00:00",
+  "source_file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors447.html",
+  "hasPart": [
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.010",
+      "identifier": "ORS 447.010",
+      "name": "to 447.156 and 447.992, unless the context requires otherwise:",
+      "text": "(1) Board means the State Plumbing Board established under ORS 693.115. (2) Department means the Department of Consumer and Business Services. (3) Director means the Director of the Department of Consumer and Business Services. (4) Journeyman plumber has the meaning given that term in ORS 693.010. (5) Ordinary minor repairs means the repair, replacement or maintenance of existing plumbing fixtures, appliances, appurtenances and related water supply and drain attachments for the purpose of restoring a plumbing installation to a safe and sanitary operating condition. (6) Plumbing is the art of installing, altering or repairing in or adjacent to or serving buildings: (a) Pipes, fixtures and other apparatus for bringing in the water supply and removing liquid and water-carried waste, including the water supply distributing pipes. (b) Fixtures and fixture traps. (c) Soil, waste and vent pipes. (d) House drain and house sewer to the sewer service lateral at the curb, or in the street, or alley, or other disposal terminal holding human or domestic sewage. (e) Storm water drainage, with their devices, appurtenances and connections. (f) Pipes, fixtures and other apparatus for medical gas, anesthetic waste gas and vacuum systems. (g) Solar heating and cooling systems.",
+      "history_citation_blocks": [
+        "Subsection (3) enacted as 1955 c.548 2; 1957 c.300 1; 1961 c.401 1; 1973 c.734 1; 1973 c.835 221; 1981 c.438 28; 1987 c.414 26; 1993 c.520 1; 1993 c.744 65; 1999 c.723 1; 2001 c.683 25"
+      ],
+      "history_citations": [
+        {
+          "raw": "Subsection (3) enacted as 1955 c.548 2"
+        },
+        {
+          "raw": "1957 c.300 1",
+          "year": 1957,
+          "chapter": "300",
+          "section": "1"
+        },
+        {
+          "raw": "1961 c.401 1",
+          "year": 1961,
+          "chapter": "401",
+          "section": "1"
+        },
+        {
+          "raw": "1973 c.734 1",
+          "year": 1973,
+          "chapter": "734",
+          "section": "1"
+        },
+        {
+          "raw": "1973 c.835 221",
+          "year": 1973,
+          "chapter": "835",
+          "section": "221"
+        },
+        {
+          "raw": "1981 c.438 28",
+          "year": 1981,
+          "chapter": "438",
+          "section": "28"
+        },
+        {
+          "raw": "1987 c.414 26",
+          "year": 1987,
+          "chapter": "414",
+          "section": "26"
+        },
+        {
+          "raw": "1993 c.520 1",
+          "year": 1993,
+          "chapter": "520",
+          "section": "1"
+        },
+        {
+          "raw": "1993 c.744 65",
+          "year": 1993,
+          "chapter": "744",
+          "section": "65"
+        },
+        {
+          "raw": "1999 c.723 1",
+          "year": 1999,
+          "chapter": "723",
+          "section": "1"
+        },
+        {
+          "raw": "2001 c.683 25",
+          "year": 2001,
+          "chapter": "683",
+          "section": "25"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Board means the State Plumbing Board established under ORS 693.115.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Department means the Department of Consumer and Business Services.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Director means the Director of the Department of Consumer and Business Services.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Journeyman plumber has the meaning given that term in ORS 693.010.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "Ordinary minor repairs means the repair, replacement or maintenance of existing plumbing fixtures, appliances, appurtenances and related water supply and drain attachments for the purpose of restoring a plumbing installation to a safe and sanitary operating condition.",
+          "subsections": []
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "Plumbing is the art of installing, altering or repairing in or adjacent to or serving buildings:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Pipes, fixtures and other apparatus for bringing in the water supply and removing liquid and water-carried waste, including the water supply distributing pipes.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Fixtures and fixture traps.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Soil, waste and vent pipes.",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "House drain and house sewer to the sewer service lateral at the curb, or in the street, or alley, or other disposal terminal holding human or domestic sewage.",
+              "subsections": []
+            },
+            {
+              "label": "(e)",
+              "token": "e",
+              "kind": "alpha_lower",
+              "text": "Storm water drainage, with their devices, appurtenances and connections.",
+              "subsections": []
+            },
+            {
+              "label": "(f)",
+              "token": "f",
+              "kind": "alpha_lower",
+              "text": "Pipes, fixtures and other apparatus for medical gas, anesthetic waste gas and vacuum systems.",
+              "subsections": []
+            },
+            {
+              "label": "(g)",
+              "token": "g",
+              "kind": "alpha_lower",
+              "text": "Solar heating and cooling systems.",
+              "subsections": []
+            }
+          ]
+        }
+      ],
+      "parser_warnings": [],
+      "position": 1,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.020",
+      "identifier": "ORS 447.020",
+      "name": "Section 447.020",
+      "text": "Plumbing to conform to state building code; rules; enforcement. (1) All installations of plumbing and drainage in buildings and structures in this state and all potable water supply, drainage, and waste installations, within or serving buildings or structures, except in temporary construction camps, and except as otherwise provided in ORS 447.010 to 447.156 and 447.992, shall be made in accordance with the requirements of ORS 447.010 to 447.156 and 447.992 and ORS chapter 455. (2) The Director of the Department of Consumer and Business Services with the approval of the State Plumbing Board shall make rules pursuant to ORS chapter 183 for the purpose of setting standards for plumbing and defining compliance with the provisions of ORS 447.010 to 447.156 and 447.992 particularly pertaining to installation of piping, protection and adequacy of the water supply, workmanship and materials, traps and cleanouts, domestic hot water storage tanks and devices, drinking fountains, solar heating and cooling systems, approval of devices, equipment and fixtures, hangers and supports, drainage and venting, house drains and house sewers, storm water drains, special wastes, light and ventilation of water closets and bathrooms, and excavation and grading. (3) The director shall appoint an adequate staff experienced and trained to serve as plumbing inspectors to enforce rules adopted under this section.",
+      "history_citation_blocks": [
+        "Amended by 1957 c.300 2; 1971 c.753 48; 1973 c.734 2; 1973 c.835 222; 1981 c.438 29; 1993 c.744 66; 2001 c.683 26"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1957 c.300 2"
+        },
+        {
+          "raw": "1971 c.753 48",
+          "year": 1971,
+          "chapter": "753",
+          "section": "48"
+        },
+        {
+          "raw": "1973 c.734 2",
+          "year": 1973,
+          "chapter": "734",
+          "section": "2"
+        },
+        {
+          "raw": "1973 c.835 222",
+          "year": 1973,
+          "chapter": "835",
+          "section": "222"
+        },
+        {
+          "raw": "1981 c.438 29",
+          "year": 1981,
+          "chapter": "438",
+          "section": "29"
+        },
+        {
+          "raw": "1993 c.744 66",
+          "year": 1993,
+          "chapter": "744",
+          "section": "66"
+        },
+        {
+          "raw": "2001 c.683 26",
+          "year": 2001,
+          "chapter": "683",
+          "section": "26"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "All installations of plumbing and drainage in buildings and structures in this state and all potable water supply, drainage, and waste installations, within or serving buildings or structures, except in temporary construction camps, and except as otherwise provided in ORS 447.010 to 447.156 and 447.992, shall be made in accordance with the requirements of ORS 447.010 to 447.156 and 447.992 and ORS chapter 455.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The Director of the Department of Consumer and Business Services with the approval of the State Plumbing Board shall make rules pursuant to ORS chapter 183 for the purpose of setting standards for plumbing and defining compliance with the provisions of ORS 447.010 to 447.156 and 447.992 particularly pertaining to installation of piping, protection and adequacy of the water supply, workmanship and materials, traps and cleanouts, domestic hot water storage tanks and devices, drinking fountains, solar heating and cooling systems, approval of devices, equipment and fixtures, hangers and supports, drainage and venting, house drains and house sewers, storm water drains, special wastes, light and ventilation of water closets and bathrooms, and excavation and grading.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The director shall appoint an adequate staff experienced and trained to serve as plumbing inspectors to enforce rules adopted under this section.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 2,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.023",
+      "identifier": "ORS 447.023",
+      "name": "Section 447.023",
+      "text": "Small restaurant requirements. Rules adopted under ORS 447.020 shall allow restaurants with an occupancy capacity of no more than 15 persons, including employees and patrons, to have only one toilet fixture and adjacent lavatory on the premises.",
+      "history_citation_blocks": [
+        "1979 c.390 4; 1981 c.438 30"
+      ],
+      "history_citations": [
+        {
+          "raw": "1979 c.390 4",
+          "year": 1979,
+          "chapter": "390",
+          "section": "4"
+        },
+        {
+          "raw": "1981 c.438 30",
+          "year": 1981,
+          "chapter": "438",
+          "section": "30"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 3,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.026",
+      "identifier": "ORS 447.026",
+      "name": "Section 447.026",
+      "text": "Identification on potable water pipe required. (1) All water pipe used to carry potable water sold in this state shall be clearly marked the entire length of pipe, at intervals of length set by the Director of the Department of Consumer and Business Services with the approval of the State Plumbing Board, with: (a) Identification of the manufacturer and the plant of origin; and (b) The manufacturing standard under which the pipe was made. (2) A label, shield or coding system may be used to identify the manufacturer, origin and manufacturing standard under which the pipe was made if the manufacturer has on file with the Department of Consumer and Business Services a notice describing the identification system used.",
+      "history_citation_blocks": [
+        "1979 c.535 3; 1981 c.438 31; 1991 c.19 1; 1993 c.744 67"
+      ],
+      "history_citations": [
+        {
+          "raw": "1979 c.535 3",
+          "year": 1979,
+          "chapter": "535",
+          "section": "3"
+        },
+        {
+          "raw": "1981 c.438 31",
+          "year": 1981,
+          "chapter": "438",
+          "section": "31"
+        },
+        {
+          "raw": "1991 c.19 1",
+          "year": 1991,
+          "chapter": "19",
+          "section": "1"
+        },
+        {
+          "raw": "1993 c.744 67",
+          "year": 1993,
+          "chapter": "744",
+          "section": "67"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "All water pipe used to carry potable water sold in this state shall be clearly marked the entire length of pipe, at intervals of length set by the Director of the Department of Consumer and Business Services with the approval of the State Plumbing Board, with:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Identification of the manufacturer and the plant of origin; and",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "The manufacturing standard under which the pipe was made.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "A label, shield or coding system may be used to identify the manufacturer, origin and manufacturing standard under which the pipe was made if the manufacturer has on file with the Department of Consumer and Business Services a notice describing the identification system used.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 4,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.030",
+      "identifier": "ORS 447.030",
+      "name": "Section 447.030",
+      "text": "",
+      "history_citation_blocks": [
+        "Amended by 1969 c.540 1; 1973 c.734 3; 1973 c.835 223; 1975 c.429 3; 1981 c.438 32; repealed by 2005 c.758 56"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1969 c.540 1"
+        },
+        {
+          "raw": "1973 c.734 3",
+          "year": 1973,
+          "chapter": "734",
+          "section": "3"
+        },
+        {
+          "raw": "1973 c.835 223",
+          "year": 1973,
+          "chapter": "835",
+          "section": "223"
+        },
+        {
+          "raw": "1975 c.429 3",
+          "year": 1975,
+          "chapter": "429",
+          "section": "3"
+        },
+        {
+          "raw": "1981 c.438 32",
+          "year": 1981,
+          "chapter": "438",
+          "section": "32"
+        },
+        {
+          "raw": "repealed by 2005 c.758 56"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 5,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.033",
+      "identifier": "ORS 447.033",
+      "name": "Section 447.033",
+      "text": "",
+      "history_citation_blocks": [
+        "1955 c.548 3,4; 1969 c.540 2; repealed by 1973 c.835 234"
+      ],
+      "history_citations": [
+        {
+          "raw": "1955 c.548 3,4"
+        },
+        {
+          "raw": "1969 c.540 2",
+          "year": 1969,
+          "chapter": "540",
+          "section": "2"
+        },
+        {
+          "raw": "repealed by 1973 c.835 234"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 6,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.034",
+      "identifier": "ORS 447.034",
+      "name": "Section 447.034",
+      "text": "",
+      "history_citation_blocks": [
+        "1973 c.427 2; repealed by 1981 c.438 46"
+      ],
+      "history_citations": [
+        {
+          "raw": "1973 c.427 2",
+          "year": 1973,
+          "chapter": "427",
+          "section": "2"
+        },
+        {
+          "raw": "repealed by 1981 c.438 46"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 7,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.035",
+      "identifier": "ORS 447.035",
+      "name": "Section 447.035",
+      "text": "",
+      "history_citation_blocks": [
+        "1955 c.548 5; repealed by 1973 c.835 234"
+      ],
+      "history_citations": [
+        {
+          "raw": "1955 c.548 5",
+          "year": 1955,
+          "chapter": "548",
+          "section": "5"
+        },
+        {
+          "raw": "repealed by 1973 c.835 234"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 8,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.040",
+      "identifier": "ORS 447.040",
+      "name": "Section 447.040",
+      "text": "Plumbing contractor license. (1) A person may not work as a plumbing contractor, or advertise or purport to be a plumbing contractor, and a member or employee of a firm, partnership or corporation may not engage in the layout or superintending of plumbing installations, without having obtained the plumbing contractor license required under ORS 447.010 to 447.156 as provided by State Plumbing Board rules adopted under ORS 455.117. (2) A plumbing contractor license does not authorize the contractor to work as a journeyman plumber.",
+      "history_citation_blocks": [
+        "Amended by 1955 c.548 6; 1973 c.835 224; 2005 c.758 11"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1955 c.548 6"
+        },
+        {
+          "raw": "1973 c.835 224",
+          "year": 1973,
+          "chapter": "835",
+          "section": "224"
+        },
+        {
+          "raw": "2005 c.758 11",
+          "year": 2005,
+          "chapter": "758",
+          "section": "11"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A person may not work as a plumbing contractor, or advertise or purport to be a plumbing contractor, and a member or employee of a firm, partnership or corporation may not engage in the layout or superintending of plumbing installations, without having obtained the plumbing contractor license required under ORS 447.010 to 447.156 as provided by State Plumbing Board rules adopted under ORS 455.117.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "A plumbing contractor license does not authorize the contractor to work as a journeyman plumber.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 9,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.050",
+      "identifier": "ORS 447.050",
+      "name": "Section 447.050",
+      "text": "",
+      "history_citation_blocks": [
+        "Amended by 1973 c.835 225; 1981 c.438 33; repealed by 2005 c.758 56"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1973 c.835 225"
+        },
+        {
+          "raw": "1981 c.438 33",
+          "year": 1981,
+          "chapter": "438",
+          "section": "33"
+        },
+        {
+          "raw": "repealed by 2005 c.758 56"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 10,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.060",
+      "identifier": "ORS 447.060",
+      "name": "Section 447.060",
+      "text": "Engaging in certain plumbing work not affected. (1) ORS 447.010 to 447.156 do not apply to a person: (a) Engaging in plumbing work when not so engaged for hire. (b) Using the services of regular employees in performing plumbing work for the benefit of property owned, leased or operated by the person. For purposes of this paragraph, regular employee means a person who is subject to the provisions of ORS 316.162 to 316.221 and who has completed a withholding statement or an exemption certificate required by ORS 316.162 to 316.221. (c) Using the services of an employee or contractor of a utility company, energy service provider or water supplier to install an approved low-flow showerhead or faucet aerator in existing plumbing fixtures. The devices installed under this paragraph are exempt from the certification, permit and inspection requirements of ORS 447.010 to 447.156 and ORS chapter 693. (d) Engaging in plumbing work on a recreational vehicle as defined by the State Plumbing Board by rule. (2) A landscape contracting business licensed under ORS 671.560 is not required to be licensed under ORS 447.010 to 447.156 to install, repair or maintain backflow assemblies for irrigation systems and ornamental water features if the work is performed by an individual who is licensed as required by ORS 671.615 and is an owner or employee of the landscape contracting business. The repair and maintenance of the backflow assembly must be performed by a tester certified under ORS 448.279. The licensing exemption established under this subsection does not exempt the landscape contracting business from the inspection and permit requirements of ORS 447.010 to 447.156. (3) This section applies to any person, including but not limited to, individuals, corporations, associations, firms, partnerships, joint stock companies, public and municipal corporations, political subdivisions, this state, the federal government and state or federal agencies.",
+      "history_citation_blocks": [
+        "Amended by 1955 c.548 7; 1973 c.835 226; 1981 c.438 34; 1987 c.561 3; 1987 c.604 15; 1993 c.293 2; 2001 c.181 1; 2003 c.14 267; 2005 c.609 8; 2005 c.758 12a; 2007 c.541 3; 2017 c.364 9; 2019 c.134 11"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1955 c.548 7"
+        },
+        {
+          "raw": "1973 c.835 226",
+          "year": 1973,
+          "chapter": "835",
+          "section": "226"
+        },
+        {
+          "raw": "1981 c.438 34",
+          "year": 1981,
+          "chapter": "438",
+          "section": "34"
+        },
+        {
+          "raw": "1987 c.561 3",
+          "year": 1987,
+          "chapter": "561",
+          "section": "3"
+        },
+        {
+          "raw": "1987 c.604 15",
+          "year": 1987,
+          "chapter": "604",
+          "section": "15"
+        },
+        {
+          "raw": "1993 c.293 2",
+          "year": 1993,
+          "chapter": "293",
+          "section": "2"
+        },
+        {
+          "raw": "2001 c.181 1",
+          "year": 2001,
+          "chapter": "181",
+          "section": "1"
+        },
+        {
+          "raw": "2003 c.14 267",
+          "year": 2003,
+          "chapter": "14",
+          "section": "267"
+        },
+        {
+          "raw": "2005 c.609 8",
+          "year": 2005,
+          "chapter": "609",
+          "section": "8"
+        },
+        {
+          "raw": "2005 c.758 12a",
+          "year": 2005,
+          "chapter": "758",
+          "section": "12a"
+        },
+        {
+          "raw": "2007 c.541 3",
+          "year": 2007,
+          "chapter": "541",
+          "section": "3"
+        },
+        {
+          "raw": "2017 c.364 9",
+          "year": 2017,
+          "chapter": "364",
+          "section": "9"
+        },
+        {
+          "raw": "2019 c.134 11",
+          "year": 2019,
+          "chapter": "134",
+          "section": "11"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "ORS 447.010 to 447.156 do not apply to a person:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Engaging in plumbing work when not so engaged for hire.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Using the services of regular employees in performing plumbing work for the benefit of property owned, leased or operated by the person. For purposes of this paragraph, regular employee means a person who is subject to the provisions of ORS 316.162 to 316.221 and who has completed a withholding statement or an exemption certificate required by ORS 316.162 to 316.221.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Using the services of an employee or contractor of a utility company, energy service provider or water supplier to install an approved low-flow showerhead or faucet aerator in existing plumbing fixtures. The devices installed under this paragraph are exempt from the certification, permit and inspection requirements of ORS 447.010 to 447.156 and ORS chapter 693.",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "Engaging in plumbing work on a recreational vehicle as defined by the State Plumbing Board by rule.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "A landscape contracting business licensed under ORS 671.560 is not required to be licensed under ORS 447.010 to 447.156 to install, repair or maintain backflow assemblies for irrigation systems and ornamental water features if the work is performed by an individual who is licensed as required by ORS 671.615 and is an owner or employee of the landscape contracting business. The repair and maintenance of the backflow assembly must be performed by a tester certified under ORS 448.279. The licensing exemption established under this subsection does not exempt the landscape contracting business from the inspection and permit requirements of ORS 447.010 to 447.156.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "This section applies to any person, including but not limited to, individuals, corporations, associations, firms, partnerships, joint stock companies, public and municipal corporations, political subdivisions, this state, the federal government and state or federal agencies.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 11,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.065",
+      "identifier": "ORS 447.065",
+      "name": "Section 447.065",
+      "text": "Solar heating and cooling systems. (1) Notwithstanding ORS 447.020, a person may not engage in the trade of installing solar heating and cooling systems unless the person possesses either a license as a journeyman plumber issued under ORS chapter 693 or a solar heating and cooling system installer license issued by the State Plumbing Board under ORS 693.111. (2) A license issued under ORS 693.111 does not authorize a person to connect a solar heating and cooling system to a potable water source. The connection of a solar heating and cooling system to a potable water source must be made only by a journeyman plumber licensed under ORS chapter 693. [2001 c.683 22; 2005 c.758 13] Note:",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Notwithstanding ORS 447.020, a person may not engage in the trade of installing solar heating and cooling systems unless the person possesses either a license as a journeyman plumber issued under ORS chapter 693 or a solar heating and cooling system installer license issued by the State Plumbing Board under ORS 693.111.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "A license issued under ORS 693.111 does not authorize a person to connect a solar heating and cooling system to a potable water source. The connection of a solar heating and cooling system to a potable water source must be made only by a journeyman plumber licensed under ORS chapter 693. [2001 c.683 22; 2005 c.758 13] Note:",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 12,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.070",
+      "identifier": "ORS 447.070",
+      "name": "Section 447.070",
+      "text": "Plumbing contractor license prerequisite to maintenance of legal action. A person carrying on, conducting or transacting a plumbing business may not maintain any suit or action in any of the courts of this state to recover for the performance of plumbing work without alleging and proving that the person was duly licensed as a plumbing contractor at the time of the work.",
+      "history_citation_blocks": [
+        "Amended by 1955 c.548 8; 1973 c.835 227; 2005 c.758 14"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1955 c.548 8"
+        },
+        {
+          "raw": "1973 c.835 227",
+          "year": 1973,
+          "chapter": "835",
+          "section": "227"
+        },
+        {
+          "raw": "2005 c.758 14",
+          "year": 2005,
+          "chapter": "758",
+          "section": "14"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 13,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.072",
+      "identifier": "ORS 447.072",
+      "name": "Section 447.072",
+      "text": "Plumbing permit and inspection exemptions; rules. Notwithstanding ORS 455.610, the Department of Consumer and Business Services, with the approval of the State Plumbing Board, shall adopt rules to create an exemption from permit and inspection requirements for ordinary minor repairs in low-rise residential dwellings and commercial structures when the board finds that the plumbing does not involve any changes or alterations of the existing plumbing system. The exemption from the permit: (1) May not include new construction or replacement of water heaters or underground plumbing; and (2) Shall be available only to licensed plumbing contractors or persons described under ORS 693.020.",
+      "history_citation_blocks": [
+        "1993 c.520 3; 1995 c.228 1; 2003 c.14 268; 2003 c.675 8; 2005 c.758 15"
+      ],
+      "history_citations": [
+        {
+          "raw": "1993 c.520 3",
+          "year": 1993,
+          "chapter": "520",
+          "section": "3"
+        },
+        {
+          "raw": "1995 c.228 1",
+          "year": 1995,
+          "chapter": "228",
+          "section": "1"
+        },
+        {
+          "raw": "2003 c.14 268",
+          "year": 2003,
+          "chapter": "14",
+          "section": "268"
+        },
+        {
+          "raw": "2003 c.675 8",
+          "year": 2003,
+          "chapter": "675",
+          "section": "8"
+        },
+        {
+          "raw": "2005 c.758 15",
+          "year": 2005,
+          "chapter": "758",
+          "section": "15"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "May not include new construction or replacement of water heaters or underground plumbing; and",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Shall be available only to licensed plumbing contractors or persons described under ORS 693.020.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 14,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.076",
+      "identifier": "ORS 447.076",
+      "name": "Section 447.076",
+      "text": "Inspection of minor plumbing installations; rules. Notwithstanding ORS 455.610, the Department of Consumer and Business Services, with the approval of the State Plumbing Board, shall adopt rules to create a mandatory inspection program for minor plumbing installations made by licensed plumbing contractors in low-rise residential dwellings. The rules adopted by the department shall: (1) Define the term minor plumbing installations in a manner that does not include new construction; (2) Designate which minor plumbing installations are under the inspection program; and (3) Provide for random inspection of minor plumbing installations.",
+      "history_citation_blocks": [
+        "1993 c.520 4; 1995 c.553 2b; 2003 c.675 9; 2005 c.758 16"
+      ],
+      "history_citations": [
+        {
+          "raw": "1993 c.520 4",
+          "year": 1993,
+          "chapter": "520",
+          "section": "4"
+        },
+        {
+          "raw": "1995 c.553 2b",
+          "year": 1995,
+          "chapter": "553",
+          "section": "2b"
+        },
+        {
+          "raw": "2003 c.675 9",
+          "year": 2003,
+          "chapter": "675",
+          "section": "9"
+        },
+        {
+          "raw": "2005 c.758 16",
+          "year": 2005,
+          "chapter": "758",
+          "section": "16"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Define the term minor plumbing installations in a manner that does not include new construction;",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Designate which minor plumbing installations are under the inspection program; and",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Provide for random inspection of minor plumbing installations.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 15,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.080",
+      "identifier": "ORS 447.080",
+      "name": "Section 447.080",
+      "text": "City and county plumbing regulations. No city or county shall enact or enforce any ordinances or building codes providing different requirements than those imposed by the state building code for the regulation of the business of master plumbing or the installation of drainage work unless authorized by the Director of the Department of Consumer and Business Services under ORS 455.040.",
+      "history_citation_blocks": [
+        "Amended by 1955 c.548 9; 1963 c.47 1; 1973 c.834 31; 1973 c.835 228; 1985 c.590 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1955 c.548 9"
+        },
+        {
+          "raw": "1963 c.47 1",
+          "year": 1963,
+          "chapter": "47",
+          "section": "1"
+        },
+        {
+          "raw": "1973 c.834 31",
+          "year": 1973,
+          "chapter": "834",
+          "section": "31"
+        },
+        {
+          "raw": "1973 c.835 228",
+          "year": 1973,
+          "chapter": "835",
+          "section": "228"
+        },
+        {
+          "raw": "1985 c.590 1",
+          "year": 1985,
+          "chapter": "590",
+          "section": "1"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 16,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.085",
+      "identifier": "ORS 447.085",
+      "name": "Section 447.085",
+      "text": "",
+      "history_citation_blocks": [
+        "1973 c.734 7; 1977 c.748 1; repealed by 1981 c.438 46"
+      ],
+      "history_citations": [
+        {
+          "raw": "1973 c.734 7",
+          "year": 1973,
+          "chapter": "734",
+          "section": "7"
+        },
+        {
+          "raw": "1977 c.748 1",
+          "year": 1977,
+          "chapter": "748",
+          "section": "1"
+        },
+        {
+          "raw": "repealed by 1981 c.438 46"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 17,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.090",
+      "identifier": "ORS 447.090",
+      "name": "Section 447.090",
+      "text": "[Repealed by 1971 c.753 74]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 18,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.091",
+      "identifier": "ORS 447.091",
+      "name": "Section 447.091",
+      "text": "Contracts with sanitary districts and authorities and service districts for inspection of building sewers. The Department of Consumer and Business Services or local government administering the plumbing specialty code adopted under ORS 447.020 (2) may, upon request of any sanitary district formed pursuant to ORS 450.005 to 450.245, sanitary authority established under ORS 450.600 to 450.989, or county service district established under ORS 451.410 to 451.610, contract for the inspection of building sewers constructed to connect a district sewage system if inspectors employed by such district are certified for sewer inspections under ORS 455.715 to 455.740.",
+      "history_citation_blocks": [
+        "1977 c.828 4"
+      ],
+      "history_citations": [
+        {
+          "raw": "1977 c.828 4",
+          "year": 1977,
+          "chapter": "828",
+          "section": "4"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "may, upon request of any sanitary district formed pursuant to ORS 450.005 to 450.245, sanitary authority established under ORS 450.600 to 450.989, or county service district established under ORS 451.410 to 451.610, contract for the inspection of building sewers constructed to connect a district sewage system if inspectors employed by such district are certified for sewer inspections under ORS 455.715 to 455.740.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 19,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.095",
+      "identifier": "ORS 447.095",
+      "name": "Section 447.095",
+      "text": "Fee schedule; inspection agreements with governmental units. (1) Rules adopted under ORS 447.020 shall provide a plumbing inspection fee schedule. The schedule shall establish inspection fees for inspections made by the Department of Consumer and Business Services under ORS 447.010 to 447.156, 447.992 and 455.610 to 455.630 based on the cost of making inspections as measured by the time required of the inspector. (2) Plumbing inspections may be made for other governmental units, upon request, pursuant to agreements entered into under ORS 190.003 to 190.620.",
+      "history_citation_blocks": [
+        "1973 c.734 8; 1981 c.438 35; 1993 c.397 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "1973 c.734 8",
+          "year": 1973,
+          "chapter": "734",
+          "section": "8"
+        },
+        {
+          "raw": "1981 c.438 35",
+          "year": 1981,
+          "chapter": "438",
+          "section": "35"
+        },
+        {
+          "raw": "1993 c.397 1",
+          "year": 1993,
+          "chapter": "397",
+          "section": "1"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Rules adopted under ORS 447.020 shall provide a plumbing inspection fee schedule. The schedule shall establish inspection fees for inspections made by the Department of Consumer and Business Services under ORS 447.010 to 447.156, 447.992 and 455.610 to 455.630 based on the cost of making inspections as measured by the time required of the inspector.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Plumbing inspections may be made for other governmental units, upon request, pursuant to agreements entered into under ORS 190.003 to 190.620.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 20,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.097",
+      "identifier": "ORS 447.097",
+      "name": "Section 447.097",
+      "text": "Disposition of moneys received under ORS 447.010 to 447.156 and 447.992. All moneys received by the Department of Consumer and Business Services under ORS 447.010 to 447.156 and 447.992 shall be disposed of in accordance with ORS 693.165. [1981 c.438 42] (Fixture Installation Regulations)",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 21,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.100",
+      "identifier": "ORS 447.100",
+      "name": "Section 447.100",
+      "text": "Restriction on tank-type water closets in certain buildings. (1) No new hotel, motel, apartment house, dwelling, office building or other structure shall be constructed which employs a tank-type water closet that is not approved by the Director of the Department of Consumer and Business Services, with the approval of the State Plumbing Board, as meeting adequate standards of safety and sanitation. (2) The director, with the approval of the board, shall cause to have adopted and published, pursuant to ORS chapter 183, a list of approved types of tank-type water closets meeting the requirements of this section.",
+      "history_citation_blocks": [
+        "1977 c.171 2; 1981 c.438 36; 1985 c.590 2; 1993 c.744 70"
+      ],
+      "history_citations": [
+        {
+          "raw": "1977 c.171 2",
+          "year": 1977,
+          "chapter": "171",
+          "section": "2"
+        },
+        {
+          "raw": "1981 c.438 36",
+          "year": 1981,
+          "chapter": "438",
+          "section": "36"
+        },
+        {
+          "raw": "1985 c.590 2",
+          "year": 1985,
+          "chapter": "590",
+          "section": "2"
+        },
+        {
+          "raw": "1993 c.744 70",
+          "year": 1993,
+          "chapter": "744",
+          "section": "70"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "No new hotel, motel, apartment house, dwelling, office building or other structure shall be constructed which employs a tank-type water closet that is not approved by the Director of the Department of Consumer and Business Services, with the approval of the State Plumbing Board, as meeting adequate standards of safety and sanitation.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The director, with the approval of the board, shall cause to have adopted and published, pursuant to ORS chapter 183, a list of approved types of tank-type water closets meeting the requirements of this section.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 22,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.105",
+      "identifier": "ORS 447.105",
+      "name": "Section 447.105",
+      "text": "",
+      "history_citation_blocks": [
+        "1977 c.171 3; 1981 c.438 37; repealed by 1987 c.453 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "1977 c.171 3",
+          "year": 1977,
+          "chapter": "171",
+          "section": "3"
+        },
+        {
+          "raw": "1981 c.438 37",
+          "year": 1981,
+          "chapter": "438",
+          "section": "37"
+        },
+        {
+          "raw": "repealed by 1987 c.453 1"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 23,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.110",
+      "identifier": "ORS 447.110",
+      "name": "Section 447.110",
+      "text": "",
+      "history_citation_blocks": [
+        "Amended by 1963 c.194 1; 1969 c.443 1; 1973 c.835 229; repealed by 1973 c.834 46"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1963 c.194 1"
+        },
+        {
+          "raw": "1969 c.443 1",
+          "year": 1969,
+          "chapter": "443",
+          "section": "1"
+        },
+        {
+          "raw": "1973 c.835 229",
+          "year": 1973,
+          "chapter": "835",
+          "section": "229"
+        },
+        {
+          "raw": "repealed by 1973 c.834 46"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 24,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.115",
+      "identifier": "ORS 447.115",
+      "name": "Section 447.115",
+      "text": "Compost toilet defined. As used in ORS 447.118 and 447.124, compost toilet means a permanent, sealed, water-impervious toilet receptacle screened from insects, used to receive and store only human wastes, urine and feces, toilet paper and biodegradable garbage, and ventilated to utilize aerobic composting for waste treatment.",
+      "history_citation_blocks": [
+        "1977 c.523 2"
+      ],
+      "history_citations": [
+        {
+          "raw": "1977 c.523 2",
+          "year": 1977,
+          "chapter": "523",
+          "section": "2"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 25,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.118",
+      "identifier": "ORS 447.118",
+      "name": "Section 447.118",
+      "text": "Standards for compost toilets; rules; security required of certain installers. (1) Nothing in ORS 447.010 to 447.156 and 447.992 shall prohibit the installation of a compost toilet for a dwelling by the occupant of the dwelling if the compost toilet complies with the minimum requirements established under this section. (2) Rules adopted under ORS 447.020 shall provide minimum requirements for the design, construction, installation and maintenance of compost toilets. (3) The Director of the Department of Consumer and Business Services with the approval of the State Plumbing Board may require by rule that, in addition to any other requirements provided by law, any manufacturer or distributor of a compost toilet and any person other than the owner of the dwelling in which the compost toilet is to be installed who proposes to install a compost toilet file with the Department of Consumer and Business Services a satisfactory bond, irrevocable letter of credit issued by an insured institution as defined in ORS 706.008 or other security in an amount to be fixed by the department with approval of the board but not to exceed $5,000, conditioned that such bond, letter of credit or security shall be forfeited in whole or in part to the department for the purpose of carrying out the provisions of ORS 447.124 by failure of such manufacturer, distributor or person to comply with the rules adopted under this section.",
+      "history_citation_blocks": [
+        "1977 c.523 3; 1981 c.438 38; 1991 c.331 62; 1993 c.744 71; 1997 c.631 472"
+      ],
+      "history_citations": [
+        {
+          "raw": "1977 c.523 3",
+          "year": 1977,
+          "chapter": "523",
+          "section": "3"
+        },
+        {
+          "raw": "1981 c.438 38",
+          "year": 1981,
+          "chapter": "438",
+          "section": "38"
+        },
+        {
+          "raw": "1991 c.331 62",
+          "year": 1991,
+          "chapter": "331",
+          "section": "62"
+        },
+        {
+          "raw": "1993 c.744 71",
+          "year": 1993,
+          "chapter": "744",
+          "section": "71"
+        },
+        {
+          "raw": "1997 c.631 472",
+          "year": 1997,
+          "chapter": "631",
+          "section": "472"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Nothing in ORS 447.010 to 447.156 and 447.992 shall prohibit the installation of a compost toilet for a dwelling by the occupant of the dwelling if the compost toilet complies with the minimum requirements established under this section.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Rules adopted under ORS 447.020 shall provide minimum requirements for the design, construction, installation and maintenance of compost toilets.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The Director of the Department of Consumer and Business Services with the approval of the State Plumbing Board may require by rule that, in addition to any other requirements provided by law, any manufacturer or distributor of a compost toilet and any person other than the owner of the dwelling in which the compost toilet is to be installed who proposes to install a compost toilet file with the Department of Consumer and Business Services a satisfactory bond, irrevocable letter of credit issued by an insured institution as defined in ORS 706.008 or other security in an amount to be fixed by the department with approval of the board but not to exceed $5,000, conditioned that such bond, letter of credit or security shall be forfeited in whole or in part to the department for the purpose of carrying out the provisions of ORS 447.124 by failure of such manufacturer, distributor or person to comply with the rules adopted under this section.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 26,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.120",
+      "identifier": "ORS 447.120",
+      "name": "Section 447.120",
+      "text": "",
+      "history_citation_blocks": [
+        "Amended by 1963 c.194 2; 1969 c.443 2; 1973 c.835 230; repealed by 1973 c.834 46"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1963 c.194 2"
+        },
+        {
+          "raw": "1969 c.443 2",
+          "year": 1969,
+          "chapter": "443",
+          "section": "2"
+        },
+        {
+          "raw": "1973 c.835 230",
+          "year": 1973,
+          "chapter": "835",
+          "section": "230"
+        },
+        {
+          "raw": "repealed by 1973 c.834 46"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 27,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.124",
+      "identifier": "ORS 447.124",
+      "name": "Section 447.124",
+      "text": "Inspection of compost toilets; orders to remedy violations; action against security bond; review of orders; costs as lien against dwelling. For the purpose of enforcing ORS 447.118 and the rules adopted thereunder, the Department of Consumer and Business Services, with the assistance of the Oregon Health Authority: (1) May conduct periodic inspections of any compost toilet; (2) Upon making a finding that a compost toilet is in violation of the rules adopted pursuant to ORS 447.118 (2), may issue an order requiring the owner of the dwelling served by the compost toilet to take action necessary to correct the violation; and (3) Upon making a finding that a compost toilet presents or threatens to present a public health hazard creating an emergency requiring immediate action to protect the public health, safety or welfare, may issue an order requiring the owner of the dwelling served by the compost toilet to take any action necessary to remove such hazard or threat thereof. If such owner fails to take the actions required by such order, the department shall take such action, itself or by contract with outside parties, as necessary to remove the hazard or threat thereof. The department shall keep a record of all necessary expenses incurred by the department in carrying out such action, including a reasonable charge for costs incurred and equipment and materials utilized by the state. Any owner who fails to take action required by an order issued under this subsection shall be responsible for such necessary expenses incurred by the state. Based on the record compiled by the department, an owner responsible for expenses due to the failure of a manufacturer, distributor or person to comply with the rules adopted under ORS 447.118 (2) shall have a setoff against the bond or other security forfeited under ORS 447.118 (3) to the extent that such expenses are due to such failure of the manufacturer, distributor or person. The department shall make a finding and enter an order against the owner for the necessary expenses. Orders issued under this section may be appealed pursuant to ORS chapter 183 but not as a contested case. Any amount due the department under this subsection and not paid in full within 30 days after the order is entered, or, if the order is appealed, within 30 days after there is no further right to appeal, shall become a lien upon the dwelling of the owner. The department shall file a notice of the lien with the recording officer of the county in which the dwelling is located and the recording officer shall record the notice in a manner designed to appear in the mortgage records of the county. (4) The department may contract with any state or local agency for the purpose of carrying out the provisions of this section.",
+      "history_citation_blocks": [
+        "1977 c.523 4; 1983 c.740 167; 2009 c.595 826"
+      ],
+      "history_citations": [
+        {
+          "raw": "1977 c.523 4",
+          "year": 1977,
+          "chapter": "523",
+          "section": "4"
+        },
+        {
+          "raw": "1983 c.740 167",
+          "year": 1983,
+          "chapter": "740",
+          "section": "167"
+        },
+        {
+          "raw": "2009 c.595 826",
+          "year": 2009,
+          "chapter": "595",
+          "section": "826"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "May conduct periodic inspections of any compost toilet;",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Upon making a finding that a compost toilet is in violation of the rules adopted pursuant to ORS 447.118 , may issue an order requiring the owner of the dwelling served by the compost toilet to take action necessary to correct the violation; and shall have a setoff against the bond or other security forfeited under ORS 447.118",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Upon making a finding that a compost toilet presents or threatens to present a public health hazard creating an emergency requiring immediate action to protect the public health, safety or welfare, may issue an order requiring the owner of the dwelling served by the compost toilet to take any action necessary to remove such hazard or threat thereof. If such owner fails to take the actions required by such order, the department shall take such action, itself or by contract with outside parties, as necessary to remove the hazard or threat thereof. The department shall keep a record of all necessary expenses incurred by the department in carrying out such action, including a reasonable charge for costs incurred and equipment and materials utilized by the state. Any owner who fails to take action required by an order issued under this subsection shall be responsible for such necessary expenses incurred by the state. Based on the record compiled by the department, an owner responsible for expenses due to the failure of a manufacturer, distributor or person to comply with the rules adopted under ORS 447.118 to the extent that such expenses are due to such failure of the manufacturer, distributor or person. The department shall make a finding and enter an order against the owner for the necessary expenses. Orders issued under this section may be appealed pursuant to ORS chapter 183 but not as a contested case. Any amount due the department under this subsection and not paid in full within 30 days after the order is entered, or, if the order is appealed, within 30 days after there is no further right to appeal, shall become a lien upon the dwelling of the owner. The department shall file a notice of the lien with the recording officer of the county in which the dwelling is located and the recording officer shall record the notice in a manner designed to appear in the mortgage records of the county.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "The department may contract with any state or local agency for the purpose of carrying out the provisions of this section.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 28,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.130",
+      "identifier": "ORS 447.130",
+      "name": "Section 447.130",
+      "text": "[Repealed by 1973 c.834 46]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 29,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.135",
+      "identifier": "ORS 447.135",
+      "name": "Section 447.135",
+      "text": "",
+      "history_citation_blocks": [
+        "1967 c.308 2,3,4; 1983 c.676 29; renumbered 480.557"
+      ],
+      "history_citations": [
+        {
+          "raw": "1967 c.308 2,3,4"
+        },
+        {
+          "raw": "1983 c.676 29",
+          "year": 1983,
+          "chapter": "676",
+          "section": "29"
+        },
+        {
+          "raw": "renumbered 480.557"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 30,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.140",
+      "identifier": "ORS 447.140",
+      "name": "Section 447.140",
+      "text": "Waste water and sewage from plumbing fixtures; requirements; prohibitions. (1) All waste water and sewage from plumbing fixtures shall be discharged into a sewer system or alternate sewage disposal system approved by the Environmental Quality Commission or Department of Environmental Quality under ORS chapters 468, 468A and 468B. (2) No plumbing fixture, device or equipment shall be installed, maintained or offered for sale which will provide a cross-connection between the distributing system of water for drinking and domestic purposes and any other water supply, or a drainage system, soil or waste pipe so as to permit or make possible the backflow of contaminated water, sewage or waste into the water supply system. (3) No flush valve, vacuum breaker or syphon preventer shall be offered for sale or installed that has not been approved by the Department of Consumer and Business Services with the approval of the State Plumbing Board. (4) The use or installation of water-operated sump pumps or sewage ejectors, if connected to the potable water supply, is prohibited. (5) No pan, plunger, offset washout, washout, long hopper, frost proof or other water closets having invisible seals or unventilated spaces, or walls not thoroughly washed at each flushing, shall be installed or sold for use in any building. (6) No plumbing fixture, appurtenance or device, the installation of which would be in violation of the state plumbing specialty code and the rules of the department approved by the board shall be sold, offered for sale or installed.",
+      "history_citation_blocks": [
+        "Amended by 1955 c.548 10; 1961 c.545 1; 1973 c.835 231; 1981 c.438 39; 1993 c.744 72"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1955 c.548 10"
+        },
+        {
+          "raw": "1961 c.545 1",
+          "year": 1961,
+          "chapter": "545",
+          "section": "1"
+        },
+        {
+          "raw": "1973 c.835 231",
+          "year": 1973,
+          "chapter": "835",
+          "section": "231"
+        },
+        {
+          "raw": "1981 c.438 39",
+          "year": 1981,
+          "chapter": "438",
+          "section": "39"
+        },
+        {
+          "raw": "1993 c.744 72",
+          "year": 1993,
+          "chapter": "744",
+          "section": "72"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "All waste water and sewage from plumbing fixtures shall be discharged into a sewer system or alternate sewage disposal system approved by the Environmental Quality Commission or Department of Environmental Quality under ORS chapters 468, 468A and 468B.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "No plumbing fixture, device or equipment shall be installed, maintained or offered for sale which will provide a cross-connection between the distributing system of water for drinking and domestic purposes and any other water supply, or a drainage system, soil or waste pipe so as to permit or make possible the backflow of contaminated water, sewage or waste into the water supply system.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "No flush valve, vacuum breaker or syphon preventer shall be offered for sale or installed that has not been approved by the Department of Consumer and Business Services with the approval of the State Plumbing Board.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "The use or installation of water-operated sump pumps or sewage ejectors, if connected to the potable water supply, is prohibited.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "No pan, plunger, offset washout, washout, long hopper, frost proof or other water closets having invisible seals or unventilated spaces, or walls not thoroughly washed at each flushing, shall be installed or sold for use in any building.",
+          "subsections": []
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "No plumbing fixture, appurtenance or device, the installation of which would be in violation of the state plumbing specialty code and the rules of the department approved by the board shall be sold, offered for sale or installed.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 31,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.145",
+      "identifier": "ORS 447.145",
+      "name": "Section 447.145",
+      "text": "Standards for fixtures; exemptions; rules. (1) All new fixtures approved for installation during construction, reconstruction, alteration and repair of buildings and other structures under ORS 447.020 shall comply with rules adopted by the Director of the Department of Consumer and Business Services. The rules shall be consistent with performance requirements and test procedures established by the American National Standards Institute, or other equivalent recognized North American standards and procedures. Except for used fixtures allowed under subsection (4) of this section, the average amount of water used by new or replacement fixtures under the applicable test procedures shall not exceed: (a) 1.6 gallons or 6.06 liters per flush for toilets; (b) 1.0 gallons or 3.785 liters per flush for urinals; (c) 2.5 gallons or 9.46 liters per minute for shower heads; and (d) 2.5 gallons or 9.46 liters per minute for interior faucets. (2) Notwithstanding subsection (1) of this section, the director by rule shall provide for exemptions to the requirements under subsection (1) of this section if: (a) The reconstruction, alteration or repair of a building does not include the installation of new or replacement toilets or urinals, shower heads or faucets within the building; (b) Due to the capacity, design or installation of the plumbing or sewage system within an existing building, toilets or urinals required by subsection (1) of this section would, if installed in the building, be unable to meet the performance requirements of the American National Standards Institute or other equivalent recognized North American standards as adopted by rule; (c) The fixtures and fittings necessary to perform a specialized function, including but not limited to emergency showers and aspirator faucets, cannot meet the requirements; (d) The installation of fixtures that do not comply with subsection (1) of this section is necessary to maintain the historic character of a structure listed under ORS 358.480 to 358.545; or (e) The fixtures and fittings to be installed are specifically designed to withstand unusual abuse or installation in a penal institution or are located in an area with special needs, such as a laboratory, hospital, nursing home or other health care facility. (3) No person shall sell or offer for sale any new toilet, urinal, shower head or faucet that has not been approved under ORS 447.020. (4) On or after December 31, 1995, no person shall sell or offer for sale any used toilet, urinal, shower head or interior faucet that does not meet the conservation standards established in subsection (1) of this section. (5) The director shall adopt rules and regulations for marking, labeling or otherwise identifying fixtures that meet the standards of this section.",
+      "history_citation_blocks": [
+        "1991 c.945 2,3,4,5; 1993 c.207 1; 2001 c.104 185; 2001 c.540 23"
+      ],
+      "history_citations": [
+        {
+          "raw": "1991 c.945 2,3,4,5"
+        },
+        {
+          "raw": "1993 c.207 1",
+          "year": 1993,
+          "chapter": "207",
+          "section": "1"
+        },
+        {
+          "raw": "2001 c.104 185",
+          "year": 2001,
+          "chapter": "104",
+          "section": "185"
+        },
+        {
+          "raw": "2001 c.540 23",
+          "year": 2001,
+          "chapter": "540",
+          "section": "23"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "All new fixtures approved for installation during construction, reconstruction, alteration and repair of buildings and other structures under ORS 447.020 shall comply with rules adopted by the Director of the Department of Consumer and Business Services. The rules shall be consistent with performance requirements and test procedures established by the American National Standards Institute, or other equivalent recognized North American standards and procedures. Except for used fixtures allowed under subsection of this section, the director by rule shall provide for exemptions to the requirements under subsection of this section if: of this section would, if installed in the building, be unable to meet the performance requirements of the American National Standards Institute or other equivalent recognized North American standards as adopted by rule; of this section is necessary to maintain the historic character of a structure listed under ORS 358.480 to 358.545; or of this section.",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "The reconstruction, alteration or repair of a building does not include the installation of new or replacement toilets or urinals, shower heads or faucets within the building;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Due to the capacity, design or installation of the plumbing or sewage system within an existing building, toilets or urinals required by subsection",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "The fixtures and fittings necessary to perform a specialized function, including but not limited to emergency showers and aspirator faucets, cannot meet the requirements;",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "The installation of fixtures that do not comply with subsection",
+              "subsections": []
+            },
+            {
+              "label": "(e)",
+              "token": "e",
+              "kind": "alpha_lower",
+              "text": "The fixtures and fittings to be installed are specifically designed to withstand unusual abuse or installation in a penal institution or are located in an area with special needs, such as a laboratory, hospital, nursing home or other health care facility.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "of this section, the average amount of water used by new or replacement fixtures under the applicable test procedures shall not exceed: On or after December 31, 1995, no person shall sell or offer for sale any used toilet, urinal, shower head or interior faucet that does not meet the conservation standards established in subsection",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "1.6 gallons or 6.06 liters per flush for toilets;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "1.0 gallons or 3.785 liters per flush for urinals;",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "2.5 gallons or 9.46 liters per minute for shower heads; and",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "2.5 gallons or 9.46 liters per minute for interior faucets.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Notwithstanding subsection",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "No person shall sell or offer for sale any new toilet, urinal, shower head or faucet that has not been approved under ORS 447.020.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "The director shall adopt rules and regulations for marking, labeling or otherwise identifying fixtures that meet the standards of this section.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 32,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.150",
+      "identifier": "ORS 447.150",
+      "name": "Section 447.150",
+      "text": "[1969 c.452 1; repealed by 1979 c.57 3] (Plumbing Products Regulations)",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 33,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.152",
+      "identifier": "ORS 447.152",
+      "name": "Section 447.152",
+      "text": "Plumbing products rules; standards; certification. In compliance with ORS chapter 183, the Director of the Department of Consumer and Business Services, with the approval of the State Plumbing Board, shall adopt rules, including but not limited to: (1) Governing minimum safety standards for design and construction of plumbing products to be sold or disposed of in this state. (2) Establishing procedures for certification of plumbing products. (3) Establishing criteria for approval of plumbing product testing laboratories and listing agencies, including but not limited to: (a) Independence from manufacturers, vendors and when applicable, testing laboratories; (b) Ethical testing and business standards; (c) Test quality control; (d) Continuity of monitoring continuing product safety; (e) Certification and listing procedures; and (f) Record keeping. (4) Providing for certified or listed product identification. (5) Establishing criteria for approval of a plumbing product by a special deputy similar to those rules established for testing laboratories. (6) Governing the internal organization and procedure for administering and enforcing ORS 447.152, 447.154 and 447.156 (1) and (2).",
+      "history_citation_blocks": [
+        "1993 c.396 3"
+      ],
+      "history_citations": [
+        {
+          "raw": "1993 c.396 3",
+          "year": 1993,
+          "chapter": "396",
+          "section": "3"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Governing minimum safety standards for design and construction of plumbing products to be sold or disposed of in this state.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Establishing procedures for certification of plumbing products.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Establishing criteria for approval of plumbing product testing laboratories and listing agencies, including but not limited to:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Independence from manufacturers, vendors and when applicable, testing laboratories;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Ethical testing and business standards;",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Test quality control;",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "Continuity of monitoring continuing product safety;",
+              "subsections": []
+            },
+            {
+              "label": "(e)",
+              "token": "e",
+              "kind": "alpha_lower",
+              "text": "Certification and listing procedures; and",
+              "subsections": []
+            },
+            {
+              "label": "(f)",
+              "token": "f",
+              "kind": "alpha_lower",
+              "text": "Record keeping.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Providing for certified or listed product identification.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "Establishing criteria for approval of a plumbing product by a special deputy similar to those rules established for testing laboratories.",
+          "subsections": []
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "Governing the internal organization and procedure for administering and enforcing ORS 447.152, 447.154 and 447.156",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 34,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.154",
+      "identifier": "ORS 447.154",
+      "name": "Section 447.154",
+      "text": "Plumbing product exemption; rules; installation. (1) The State Plumbing Board may, by rule, grant partial or complete exemptions from any of the provisions of ORS 447.010 to 447.156 and 455.010 to 455.740 to any plumbing product if it is determined that the plumbing product does not present a danger to the health and safety of the people of this state. (2) If the board grants an exemption pursuant to subsection (1) of this section the board may determine that the product may be installed by a person not licensed under ORS 693.010 to 693.105.",
+      "history_citation_blocks": [
+        "1993 c.396 4; 2005 c.758 17"
+      ],
+      "history_citations": [
+        {
+          "raw": "1993 c.396 4",
+          "year": 1993,
+          "chapter": "396",
+          "section": "4"
+        },
+        {
+          "raw": "2005 c.758 17",
+          "year": 2005,
+          "chapter": "758",
+          "section": "17"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The State Plumbing Board may, by rule, grant partial or complete exemptions from any of the provisions of ORS 447.010 to 447.156 and 455.010 to 455.740 to any plumbing product if it is determined that the plumbing product does not present a danger to the health and safety of the people of this state. of this section the board may determine that the product may be installed by a person not licensed under ORS 693.010 to 693.105.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "If the board grants an exemption pursuant to subsection",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 35,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.156",
+      "identifier": "ORS 447.156",
+      "name": "Section 447.156",
+      "text": "Sale of uncertified plumbing products prohibited; rules; remedy of purchaser. (1) Except as provided under ORS 447.154 and subsection (3) of this section, no person shall offer to sell, sell or dispose of, by gift or otherwise, in connection with the persons business an uncertified plumbing product. (2) The provisions of ORS 447.152, 447.154 and 447.156 do not apply to products determined by rule not to be plumbing products. (3) In addition to any other remedy provided by law, any person who purchases a plumbing product sold or disposed of in violation of ORS 447.152 may recover from a person violating subsections (1) and (2) of this section an amount equal to the purchase price of the plumbing product if the purchaser returns the plumbing product within 90 days from the date of purchase. [1993 c.396 2,5]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Except as provided under ORS 447.154 and subsection",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "of this section, no person shall offer to sell, sell or dispose of, by gift or otherwise, in connection with the persons business an uncertified plumbing product. In addition to any other remedy provided by law, any person who purchases a plumbing product sold or disposed of in violation of ORS 447.152 may recover from a person violating subsections",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The provisions of ORS 447.152, 447.154 and 447.156 do not apply to products determined by rule not to be plumbing products. of this section an amount equal to the purchase price of the plumbing product if the purchaser returns the plumbing product within 90 days from the date of purchase. [1993 c.396 2,5]",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 36,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.160",
+      "identifier": "ORS 447.160",
+      "name": "Section 447.160",
+      "text": "[1981 c.438 44; 1999 c.846 1; repealed by 2001 c.411 31] STANDARDS AND SPECIFICATIONS FOR ACCESS BY PERSONS WITH DISABILITIES",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 37,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.210",
+      "identifier": "ORS 447.210",
+      "name": "Section 447.210",
+      "text": "Definitions for ORS 447.210 to 447.280. As used in ORS 447.210 to 447.280, unless the context requires otherwise: (1) Affected buildings includes any place of public accommodations and commercial facilities designed, constructed and altered in compliance with the accessibility standards established by the Americans with Disabilities Act. Affected buildings also includes any government building that is subject to Title II of the Americans with Disabilities Act. Affected buildings also includes private entities, private membership clubs and churches that have more than one floor level and more than 4,000 square feet in ground area or that are more than 20 feet in height, measured from the top surface of the lowest flooring to the highest interior overhead finish of the building. (2) Americans with Disabilities Act means the Americans with Disabilities Act of 1990 found at 42 U.S.C. section 12101 et seq. (3) Architectural barriers are physical design features that restrict the full use of affected buildings and their related facilities by persons with disabilities. (4) Commercial facilities includes nonresidential facilities, such as office buildings, factories and warehouses, whose operations affect commerce. (5) Covered multifamily dwellings means buildings consisting of four or more dwelling units if such buildings have one or more elevators, and ground floor dwelling units in other buildings consisting of four or more dwelling units. Dwelling units within a single structure separated by firewalls do not constitute separate buildings. (6) Department means the Department of Consumer and Business Services. (7) Director means the Director of the Department of Consumer and Business Services. (8) Fair Housing Act means the Fair Housing Act of 1968, as amended in 1988, found at 42 U.S.C. section 3604 et seq. (9) Municipality means a city, county or other unit of local government otherwise authorized by law to enact building codes. (10) Private entities means privately owned entities offering examinations or courses related to applications, licensing, certification or credentials for secondary or post-secondary education, professional or trade purposes. (11) Public accommodations means a facility whose operations affect commerce and fall within at least one of the following categories: (a) Places of lodging not including owner-occupied establishments renting fewer than six rooms; (b) Establishments serving food or drink; (c) Places of exhibition or entertainment; (d) Places of public gathering; (e) Sales or rental establishments; (f) Service establishments; (g) Public transportation terminals, depots or stations; (h) Places of public display or collection; (i) Places of recreation; (j) Places of education; (k) Social service center establishments; and (L) Places of exercise or recreation. (12) Related facilities means building site improvements including, but not limited to, parking lots, passageways, roads, clustered mailboxes located either on the site or in an adjacent public right of way or any other real or personal property located on the site. (13) Structural code means the specialty code defined in ORS 455.010.",
+      "history_citation_blocks": [
+        "1971 c.230 2; 1973 c.539 1; 1975 c.675 35; 1979 c.133 1; 1987 c.414 27; 1987 c.604 12; 1989 c.224 109; 1991 c.67 122; 1993 c.503 1; 1993 c.744 74; 1995 c.307 1; 2011 c.488 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "1971 c.230 2",
+          "year": 1971,
+          "chapter": "230",
+          "section": "2"
+        },
+        {
+          "raw": "1973 c.539 1",
+          "year": 1973,
+          "chapter": "539",
+          "section": "1"
+        },
+        {
+          "raw": "1975 c.675 35",
+          "year": 1975,
+          "chapter": "675",
+          "section": "35"
+        },
+        {
+          "raw": "1979 c.133 1",
+          "year": 1979,
+          "chapter": "133",
+          "section": "1"
+        },
+        {
+          "raw": "1987 c.414 27",
+          "year": 1987,
+          "chapter": "414",
+          "section": "27"
+        },
+        {
+          "raw": "1987 c.604 12",
+          "year": 1987,
+          "chapter": "604",
+          "section": "12"
+        },
+        {
+          "raw": "1989 c.224 109",
+          "year": 1989,
+          "chapter": "224",
+          "section": "109"
+        },
+        {
+          "raw": "1991 c.67 122",
+          "year": 1991,
+          "chapter": "67",
+          "section": "122"
+        },
+        {
+          "raw": "1993 c.503 1",
+          "year": 1993,
+          "chapter": "503",
+          "section": "1"
+        },
+        {
+          "raw": "1993 c.744 74",
+          "year": 1993,
+          "chapter": "744",
+          "section": "74"
+        },
+        {
+          "raw": "1995 c.307 1",
+          "year": 1995,
+          "chapter": "307",
+          "section": "1"
+        },
+        {
+          "raw": "2011 c.488 1",
+          "year": 2011,
+          "chapter": "488",
+          "section": "1"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Affected buildings includes any place of public accommodations and commercial facilities designed, constructed and altered in compliance with the accessibility standards established by the Americans with Disabilities Act. Affected buildings also includes any government building that is subject to Title II of the Americans with Disabilities Act. Affected buildings also includes private entities, private membership clubs and churches that have more than one floor level and more than 4,000 square feet in ground area or that are more than 20 feet in height, measured from the top surface of the lowest flooring to the highest interior overhead finish of the building.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Americans with Disabilities Act means the Americans with Disabilities Act of 1990 found at 42 U.S.C. section 12101 et seq.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Architectural barriers are physical design features that restrict the full use of affected buildings and their related facilities by persons with disabilities.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Commercial facilities includes nonresidential facilities, such as office buildings, factories and warehouses, whose operations affect commerce.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "Covered multifamily dwellings means buildings consisting of four or more dwelling units if such buildings have one or more elevators, and ground floor dwelling units in other buildings consisting of four or more dwelling units. Dwelling units within a single structure separated by firewalls do not constitute separate buildings.",
+          "subsections": []
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "Department means the Department of Consumer and Business Services.",
+          "subsections": []
+        },
+        {
+          "label": "(7)",
+          "token": "7",
+          "kind": "numeric",
+          "text": "Director means the Director of the Department of Consumer and Business Services.",
+          "subsections": []
+        },
+        {
+          "label": "(8)",
+          "token": "8",
+          "kind": "numeric",
+          "text": "Fair Housing Act means the Fair Housing Act of 1968, as amended in 1988, found at 42 U.S.C. section 3604 et seq.",
+          "subsections": []
+        },
+        {
+          "label": "(9)",
+          "token": "9",
+          "kind": "numeric",
+          "text": "Municipality means a city, county or other unit of local government otherwise authorized by law to enact building codes.",
+          "subsections": []
+        },
+        {
+          "label": "(10)",
+          "token": "10",
+          "kind": "numeric",
+          "text": "Private entities means privately owned entities offering examinations or courses related to applications, licensing, certification or credentials for secondary or post-secondary education, professional or trade purposes.",
+          "subsections": []
+        },
+        {
+          "label": "(11)",
+          "token": "11",
+          "kind": "numeric",
+          "text": "Public accommodations means a facility whose operations affect commerce and fall within at least one of the following categories:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Places of lodging not including owner-occupied establishments renting fewer than six rooms;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Establishments serving food or drink;",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Places of exhibition or entertainment;",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "Places of public gathering;",
+              "subsections": []
+            },
+            {
+              "label": "(e)",
+              "token": "e",
+              "kind": "alpha_lower",
+              "text": "Sales or rental establishments;",
+              "subsections": []
+            },
+            {
+              "label": "(f)",
+              "token": "f",
+              "kind": "alpha_lower",
+              "text": "Service establishments;",
+              "subsections": []
+            },
+            {
+              "label": "(g)",
+              "token": "g",
+              "kind": "alpha_lower",
+              "text": "Public transportation terminals, depots or stations;",
+              "subsections": []
+            },
+            {
+              "label": "(h)",
+              "token": "h",
+              "kind": "alpha_lower",
+              "text": "Places of public display or collection;",
+              "subsections": []
+            },
+            {
+              "label": "(i)",
+              "token": "i",
+              "kind": "alpha_lower",
+              "text": "Places of recreation;",
+              "subsections": []
+            },
+            {
+              "label": "(j)",
+              "token": "j",
+              "kind": "alpha_lower",
+              "text": "Places of education;",
+              "subsections": []
+            },
+            {
+              "label": "(k)",
+              "token": "k",
+              "kind": "alpha_lower",
+              "text": "Social service center establishments; and",
+              "subsections": [
+                {
+                  "label": "(L)",
+                  "token": "L",
+                  "kind": "alpha_upper",
+                  "text": "Places of exercise or recreation.",
+                  "subsections": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "(12)",
+          "token": "12",
+          "kind": "numeric",
+          "text": "Related facilities means building site improvements including, but not limited to, parking lots, passageways, roads, clustered mailboxes located either on the site or in an adjacent public right of way or any other real or personal property located on the site.",
+          "subsections": []
+        },
+        {
+          "label": "(13)",
+          "token": "13",
+          "kind": "numeric",
+          "text": "Structural code means the specialty code defined in ORS 455.010.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 38,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.220",
+      "identifier": "ORS 447.220",
+      "name": "Section 447.220",
+      "text": "Purpose. It is the purpose of ORS 447.210 to 447.280 to make affected buildings, including but not limited to commercial facilities, public accommodations, private entities, private membership clubs and churches, in the state accessible to and usable by persons with disabilities, as provided in the Americans with Disabilities Act, and to make covered multifamily dwellings in the state accessible to and usable by all persons with disabilities, as provided in the Fair Housing Act. In requiring that buildings and facilities be usable by persons with disabilities, it is not the intention of the Legislative Assembly to require that items of personal convenience such as rest rooms, telephones and drinking fountains be provided for members of the public who have disabilities if they are not otherwise provided for members of the public who do not have disabilities. However, pursuant to the Americans with Disabilities Act, the Director of the Department of Consumer and Business Services may provide greater protection to individuals with disabilities by adopting more stringent standards than prescribed by the Americans with Disabilities Act.",
+      "history_citation_blocks": [
+        "1971 c.320 1; 1973 c.539 2; 1979 c.133 2; 1989 c.224 110; 1993 c.503 2"
+      ],
+      "history_citations": [
+        {
+          "raw": "1971 c.320 1",
+          "year": 1971,
+          "chapter": "320",
+          "section": "1"
+        },
+        {
+          "raw": "1973 c.539 2",
+          "year": 1973,
+          "chapter": "539",
+          "section": "2"
+        },
+        {
+          "raw": "1979 c.133 2",
+          "year": 1979,
+          "chapter": "133",
+          "section": "2"
+        },
+        {
+          "raw": "1989 c.224 110",
+          "year": 1989,
+          "chapter": "224",
+          "section": "110"
+        },
+        {
+          "raw": "1993 c.503 2",
+          "year": 1993,
+          "chapter": "503",
+          "section": "2"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 39,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.230",
+      "identifier": "ORS 447.230",
+      "name": "Section 447.230",
+      "text": "Standards and specifications to eliminate architectural barriers. (1) The Director of the Department of Consumer and Business Services shall, pursuant to ORS 455.030 and ORS chapter 183, establish standards and specifications in the structural code necessary to eliminate architectural barriers to entry to and use of affected buildings and their related facilities by persons who have disabilities. (2) The director shall, to assist in the identification of architectural barriers and in the development of the standards and specifications referred to in subsection (1) of this section, be assisted by the Oregon Disabilities Commission or its designee.",
+      "history_citation_blocks": [
+        "1971 c.320 3; 1973 c.539 3; 1979 c.133 3; 1983 c.740 169; 1987 c.414 27b; 1987 c.672 1; 1989 c.224 111; 1989 c.703 1; 1993 c.503 3; 1993 c.744 75a"
+      ],
+      "history_citations": [
+        {
+          "raw": "1971 c.320 3",
+          "year": 1971,
+          "chapter": "320",
+          "section": "3"
+        },
+        {
+          "raw": "1973 c.539 3",
+          "year": 1973,
+          "chapter": "539",
+          "section": "3"
+        },
+        {
+          "raw": "1979 c.133 3",
+          "year": 1979,
+          "chapter": "133",
+          "section": "3"
+        },
+        {
+          "raw": "1983 c.740 169",
+          "year": 1983,
+          "chapter": "740",
+          "section": "169"
+        },
+        {
+          "raw": "1987 c.414 27b",
+          "year": 1987,
+          "chapter": "414",
+          "section": "27b"
+        },
+        {
+          "raw": "1987 c.672 1",
+          "year": 1987,
+          "chapter": "672",
+          "section": "1"
+        },
+        {
+          "raw": "1989 c.224 111",
+          "year": 1989,
+          "chapter": "224",
+          "section": "111"
+        },
+        {
+          "raw": "1989 c.703 1",
+          "year": 1989,
+          "chapter": "703",
+          "section": "1"
+        },
+        {
+          "raw": "1993 c.503 3",
+          "year": 1993,
+          "chapter": "503",
+          "section": "3"
+        },
+        {
+          "raw": "1993 c.744 75a",
+          "year": 1993,
+          "chapter": "744",
+          "section": "75a"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The Director of the Department of Consumer and Business Services shall, pursuant to ORS 455.030 and ORS chapter 183, establish standards and specifications in the structural code necessary to eliminate architectural barriers to entry to and use of affected buildings and their related facilities by persons who have disabilities. of this section, be assisted by the Oregon Disabilities Commission or its designee.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The director shall, to assist in the identification of architectural barriers and in the development of the standards and specifications referred to in subsection",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 40,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.231",
+      "identifier": "ORS 447.231",
+      "name": "Section 447.231",
+      "text": "Rules to eliminate architectural barriers. Notwithstanding any other provision of law and the authority of any board within the Department of Consumer and Business Services, the Director of the Department of Consumer and Business Services shall adopt rules to conform the state building code to the Americans with Disabilities Act and the Fair Housing Act and the regulations adopted thereunder. In addition, the director shall adopt rules to conform the state building code to the provisions of ORS 447.210 to 447.280, to the extent to which any statute is stricter than the Americans with Disabilities Act or the Fair Housing Act.",
+      "history_citation_blocks": [
+        "1991 c.691 2; 1993 c.503 4; 2003 c.14 269"
+      ],
+      "history_citations": [
+        {
+          "raw": "1991 c.691 2",
+          "year": 1991,
+          "chapter": "691",
+          "section": "2"
+        },
+        {
+          "raw": "1993 c.503 4",
+          "year": 1993,
+          "chapter": "503",
+          "section": "4"
+        },
+        {
+          "raw": "2003 c.14 269",
+          "year": 2003,
+          "chapter": "14",
+          "section": "269"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 41,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.233",
+      "identifier": "ORS 447.233",
+      "name": "Section 447.233",
+      "text": "Accessible parking space requirements; inspection of spaces; violation. (1) The Director of the Department of Consumer and Business Services shall include in the state building code, as defined in ORS 455.010, a requirement that the number of accessible parking spaces specified in subsection (2) of this section be provided for affected buildings subject to the state building code and that the spaces be signed as required by subsection (2) of this section. Spaces may also be marked in a manner specified in the state building code. (2)(a) The number of accessible parking spaces shall be: ______________________________________________________________________________ Required Required Required Minimum Number Minimum Number of Total Parking Minimum Number of of Van Wheelchair User In Lot Accessible Spaces Accessible Spaces Only Spaces 1 to 25 1 1 - 26 to 50 2 1 - 51 to 75 3 1 - 76 to 100 4 1 - 101 to 150 5 - 1 151 to 200 6 - 1 201 to 300 7 - 1 301 to 400 8 - 1 401 to 500 9 - 2 501 to 1,000 2% of total - 1 in every 8 accessible spaces or portion thereof 1,001 and over 20 plus 1 for each - 1 in every 8 100 over 1,000 accessible spaces or portion thereof ______________________________________________________________________________ (b) In addition, one in every eight accessible spaces, but not less than one, shall be van accessible. Where five or more parking spaces are designated accessible, any space that is designated as van accessible shall be reserved for wheelchair users. A van accessible parking space shall be at least nine feet wide and shall have an adjacent access aisle that is at least eight feet wide. (c) Accessible parking spaces shall be at least nine feet wide and shall have an adjacent access aisle that is at least six feet wide. (d) The access aisle shall be located on the passenger side of the parking space except that two adjacent accessible parking spaces may share a common access aisle. (e) A sign shall be posted for each accessible parking space. The sign shall be clearly visible to a person parking in the space, shall be marked with the International Symbol of Access and shall indicate that the spaces are reserved for persons with disabled person parking permits. A van accessible parking space shall have an additional sign marked Van Accessible mounted below the sign. A van accessible parking space reserved for wheelchair users shall have a sign that includes the words Wheelchair User Only. (f) Accessible parking spaces and signs shall be designed in compliance with the standards set forth by the Oregon Transportation Commission in consultation with the Oregon Disabilities Commission. (3) No ramp or obstacle may extend into the parking space or the aisle, and curb cuts and ramps may not be situated in such a way that they could be blocked by a legally parked vehicle. (4) Parking spaces required by this section shall be maintained so as to meet the requirements of this section at all times and to meet the standards established by the state building code. (5) The director is authorized to inspect parking spaces and facilities and buildings subject to the provisions of this section, and to do whatever is necessary to enforce the requirements, including the maintenance requirements, of this section. Municipalities and counties may administer and enforce the requirements of this section in the manner provided under ORS 455.148 or 455.150 for administration and enforcement of specialty codes. All plans for parking spaces subject to the provisions of this section must be approved by the director prior to the creation of the spaces. (6) Requirements adopted under this section do not apply to long-term parking facilities at the Portland International Airport. (7) Any reported violation of this section shall be investigated by the administrative authority. The administrative authority shall make a final decision and order correction, if necessary, within 30 days of notification. Any aggrieved person may appeal within 30 days of the decision by the administrative authority to the appropriate municipal appeals board or, at the option of the local jurisdiction, directly to the Building Codes Structures Board established under ORS 455.132. The appeal shall be acted upon within 60 days of filing. The decision of the municipal appeals board may be appealed to the board. The board shall act on the appeal within 60 days of filing. All appeals to the board shall be filed in accordance with ORS 455.690.",
+      "history_citation_blocks": [
+        "1979 c.809 2; 1981 c.275 1; 1983 c.338 930; 1987 c.187 1; 1989 c.243 15; 1991 c.741 6; 1993 c.503 8; 1993 c.744 77; 2001 c.573 5; 2007 c.468 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "1979 c.809 2",
+          "year": 1979,
+          "chapter": "809",
+          "section": "2"
+        },
+        {
+          "raw": "1981 c.275 1",
+          "year": 1981,
+          "chapter": "275",
+          "section": "1"
+        },
+        {
+          "raw": "1983 c.338 930",
+          "year": 1983,
+          "chapter": "338",
+          "section": "930"
+        },
+        {
+          "raw": "1987 c.187 1",
+          "year": 1987,
+          "chapter": "187",
+          "section": "1"
+        },
+        {
+          "raw": "1989 c.243 15",
+          "year": 1989,
+          "chapter": "243",
+          "section": "15"
+        },
+        {
+          "raw": "1991 c.741 6",
+          "year": 1991,
+          "chapter": "741",
+          "section": "6"
+        },
+        {
+          "raw": "1993 c.503 8",
+          "year": 1993,
+          "chapter": "503",
+          "section": "8"
+        },
+        {
+          "raw": "1993 c.744 77",
+          "year": 1993,
+          "chapter": "744",
+          "section": "77"
+        },
+        {
+          "raw": "2001 c.573 5",
+          "year": 2001,
+          "chapter": "573",
+          "section": "5"
+        },
+        {
+          "raw": "2007 c.468 1",
+          "year": 2007,
+          "chapter": "468",
+          "section": "1"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The Director of the Department of Consumer and Business Services shall include in the state building code, as defined in ORS 455.010, a requirement that the number of accessible parking spaces specified in subsection",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "of this section be provided for affected buildings subject to the state building code and that the spaces be signed as required by subsection of this section. Spaces may also be marked in a manner specified in the state building code. (a) The number of accessible parking spaces shall be: ______________________________________________________________________________ Required Required Required Minimum Number Minimum Number of Total Parking Minimum Number of of Van Wheelchair User In Lot Accessible Spaces Accessible Spaces Only Spaces 1 to 25 1 1 - 26 to 50 2 1 - 51 to 75 3 1 - 76 to 100 4 1 - 101 to 150 5 - 1 151 to 200 6 - 1 201 to 300 7 - 1 301 to 400 8 - 1 401 to 500 9 - 2 501 to 1,000 2% of total - 1 in every 8 accessible spaces or portion thereof 1,001 and over 20 plus 1 for each - 1 in every 8 100 over 1,000 accessible spaces or portion thereof ______________________________________________________________________________",
+          "subsections": [
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "In addition, one in every eight accessible spaces, but not less than one, shall be van accessible. Where five or more parking spaces are designated accessible, any space that is designated as van accessible shall be reserved for wheelchair users. A van accessible parking space shall be at least nine feet wide and shall have an adjacent access aisle that is at least eight feet wide.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Accessible parking spaces shall be at least nine feet wide and shall have an adjacent access aisle that is at least six feet wide.",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "The access aisle shall be located on the passenger side of the parking space except that two adjacent accessible parking spaces may share a common access aisle.",
+              "subsections": []
+            },
+            {
+              "label": "(e)",
+              "token": "e",
+              "kind": "alpha_lower",
+              "text": "A sign shall be posted for each accessible parking space. The sign shall be clearly visible to a person parking in the space, shall be marked with the International Symbol of Access and shall indicate that the spaces are reserved for persons with disabled person parking permits. A van accessible parking space shall have an additional sign marked Van Accessible mounted below the sign. A van accessible parking space reserved for wheelchair users shall have a sign that includes the words Wheelchair User Only.",
+              "subsections": []
+            },
+            {
+              "label": "(f)",
+              "token": "f",
+              "kind": "alpha_lower",
+              "text": "Accessible parking spaces and signs shall be designed in compliance with the standards set forth by the Oregon Transportation Commission in consultation with the Oregon Disabilities Commission.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "No ramp or obstacle may extend into the parking space or the aisle, and curb cuts and ramps may not be situated in such a way that they could be blocked by a legally parked vehicle.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Parking spaces required by this section shall be maintained so as to meet the requirements of this section at all times and to meet the standards established by the state building code.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "The director is authorized to inspect parking spaces and facilities and buildings subject to the provisions of this section, and to do whatever is necessary to enforce the requirements, including the maintenance requirements, of this section. Municipalities and counties may administer and enforce the requirements of this section in the manner provided under ORS 455.148 or 455.150 for administration and enforcement of specialty codes. All plans for parking spaces subject to the provisions of this section must be approved by the director prior to the creation of the spaces.",
+          "subsections": []
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "Requirements adopted under this section do not apply to long-term parking facilities at the Portland International Airport.",
+          "subsections": []
+        },
+        {
+          "label": "(7)",
+          "token": "7",
+          "kind": "numeric",
+          "text": "Any reported violation of this section shall be investigated by the administrative authority. The administrative authority shall make a final decision and order correction, if necessary, within 30 days of notification. Any aggrieved person may appeal within 30 days of the decision by the administrative authority to the appropriate municipal appeals board or, at the option of the local jurisdiction, directly to the Building Codes Structures Board established under ORS 455.132. The appeal shall be acted upon within 60 days of filing. The decision of the municipal appeals board may be appealed to the board. The board shall act on the appeal within 60 days of filing. All appeals to the board shall be filed in accordance with ORS 455.690.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 42,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.235",
+      "identifier": "ORS 447.235",
+      "name": "Section 447.235",
+      "text": "",
+      "history_citation_blocks": [
+        "1973 c.539 11; 1989 c.224 112; repealed by 1993 c.503 14"
+      ],
+      "history_citations": [
+        {
+          "raw": "1973 c.539 11",
+          "year": 1973,
+          "chapter": "539",
+          "section": "11"
+        },
+        {
+          "raw": "1989 c.224 112",
+          "year": 1989,
+          "chapter": "224",
+          "section": "112"
+        },
+        {
+          "raw": "repealed by 1993 c.503 14"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 43,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.240",
+      "identifier": "ORS 447.240",
+      "name": "Section 447.240",
+      "text": "",
+      "history_citation_blocks": [
+        "1971 c.320 4; 1973 c.539 4; 1973 c.540 1; 1974 c.36 14; 1989 c.224 113; repealed by 1993 c.503 14"
+      ],
+      "history_citations": [
+        {
+          "raw": "1971 c.320 4",
+          "year": 1971,
+          "chapter": "320",
+          "section": "4"
+        },
+        {
+          "raw": "1973 c.539 4",
+          "year": 1973,
+          "chapter": "539",
+          "section": "4"
+        },
+        {
+          "raw": "1973 c.540 1",
+          "year": 1973,
+          "chapter": "540",
+          "section": "1"
+        },
+        {
+          "raw": "1974 c.36 14",
+          "year": 1974,
+          "chapter": "36",
+          "section": "14"
+        },
+        {
+          "raw": "1989 c.224 113",
+          "year": 1989,
+          "chapter": "224",
+          "section": "113"
+        },
+        {
+          "raw": "repealed by 1993 c.503 14"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 44,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.241",
+      "identifier": "ORS 447.241",
+      "name": "Section 447.241",
+      "text": "Standards for renovating, altering or modifying certain buildings; barrier removal improvement plan. (1) Every project for renovation, alteration or modification to affected buildings and related facilities that affects or could affect the usability of or access to an area containing a primary function shall be made to insure that, to the maximum extent feasible, the paths of travel to the altered area and the rest rooms, telephones and drinking fountains serving the altered area are readily accessible to and usable by individuals with disabilities, unless such alterations are disproportionate to the overall alterations in terms of cost and scope. (2) Alterations made to the path of travel to an altered area may be deemed disproportionate to the overall alteration when the cost exceeds 25 percent of the alteration to the primary function area. (3) If the cost of alterations to make the paths of travel to the altered area fully accessible is disproportionate to the cost of the overall alteration, the paths of travel shall be made accessible to the extent that it can be made accessible without incurring disproportionate costs. (4) In choosing which accessible elements to provide under this section, priority shall be given to those elements that will provide the greatest access. Elements shall be provided in the following order: (a) Parking; (b) An accessible entrance; (c) An accessible route to the altered area; (d) At least one accessible rest room for each sex or a single unisex rest room; (e) Accessible telephones; (f) Accessible drinking fountains; and (g) When possible, additional accessible elements such as storage and alarms. (5) A series of small alterations to an area served by a single path of travel does not satisfy the obligation to provide an accessible path of travel created under subsection (1) of this section. (6) If an area containing a primary function has been altered without providing an accessible path of travel to the area and subsequent alterations affecting the same path of travel are undertaken within three years of the original alteration, the total cost of the alterations to the primary function area on the path of travel during the preceding three-year period shall be considered in determining whether the cost of making the path of travel accessible is disproportionate. (7)(a) A barrier removal improvement plan may satisfy the requirements of subsection (1) of this section. The plan shall require an equivalent or greater level of barrier removal than required by subsection (1) of this section. (b) The barrier removal improvement plan shall include: (A) A letter of participation from the building owner; (B) A building survey that identifies existing architectural barriers; (C) An improvement plan and time schedule for removal of architectural barriers; and (D) An implementation agreement. (c) The barrier removal improvement plan may be reviewed and accepted through the waiver process under ORS 447.250. The plan shall be reviewed upon completion or every three years for compliance with the requirements of this section. (8) For purposes of this section, primary function is a major activity for which the facility is intended.",
+      "history_citation_blocks": [
+        "1993 c.503 7"
+      ],
+      "history_citations": [
+        {
+          "raw": "1993 c.503 7",
+          "year": 1993,
+          "chapter": "503",
+          "section": "7"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Every project for renovation, alteration or modification to affected buildings and related facilities that affects or could affect the usability of or access to an area containing a primary function shall be made to insure that, to the maximum extent feasible, the paths of travel to the altered area and the rest rooms, telephones and drinking fountains serving the altered area are readily accessible to and usable by individuals with disabilities, unless such alterations are disproportionate to the overall alterations in terms of cost and scope. of this section. of this section. The plan shall require an equivalent or greater level of barrier removal than required by subsection",
+          "subsections": [
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "The barrier removal improvement plan shall include:",
+              "subsections": [
+                {
+                  "label": "(A)",
+                  "token": "A",
+                  "kind": "alpha_upper",
+                  "text": "A letter of participation from the building owner;",
+                  "subsections": []
+                },
+                {
+                  "label": "(B)",
+                  "token": "B",
+                  "kind": "alpha_upper",
+                  "text": "A building survey that identifies existing architectural barriers;",
+                  "subsections": []
+                },
+                {
+                  "label": "(C)",
+                  "token": "C",
+                  "kind": "alpha_upper",
+                  "text": "An improvement plan and time schedule for removal of architectural barriers; and",
+                  "subsections": []
+                },
+                {
+                  "label": "(D)",
+                  "token": "D",
+                  "kind": "alpha_upper",
+                  "text": "An implementation agreement.",
+                  "subsections": []
+                }
+              ]
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "The barrier removal improvement plan may be reviewed and accepted through the waiver process under ORS 447.250. The plan shall be reviewed upon completion or every three years for compliance with the requirements of this section.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Alterations made to the path of travel to an altered area may be deemed disproportionate to the overall alteration when the cost exceeds 25 percent of the alteration to the primary function area.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "If the cost of alterations to make the paths of travel to the altered area fully accessible is disproportionate to the cost of the overall alteration, the paths of travel shall be made accessible to the extent that it can be made accessible without incurring disproportionate costs.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "In choosing which accessible elements to provide under this section, priority shall be given to those elements that will provide the greatest access. Elements shall be provided in the following order:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Parking;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "An accessible entrance;",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "An accessible route to the altered area;",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "At least one accessible rest room for each sex or a single unisex rest room;",
+              "subsections": []
+            },
+            {
+              "label": "(e)",
+              "token": "e",
+              "kind": "alpha_lower",
+              "text": "Accessible telephones;",
+              "subsections": []
+            },
+            {
+              "label": "(f)",
+              "token": "f",
+              "kind": "alpha_lower",
+              "text": "Accessible drinking fountains; and",
+              "subsections": []
+            },
+            {
+              "label": "(g)",
+              "token": "g",
+              "kind": "alpha_lower",
+              "text": "When possible, additional accessible elements such as storage and alarms.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "A series of small alterations to an area served by a single path of travel does not satisfy the obligation to provide an accessible path of travel created under subsection",
+          "subsections": []
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "If an area containing a primary function has been altered without providing an accessible path of travel to the area and subsequent alterations affecting the same path of travel are undertaken within three years of the original alteration, the total cost of the alterations to the primary function area on the path of travel during the preceding three-year period shall be considered in determining whether the cost of making the path of travel accessible is disproportionate.",
+          "subsections": []
+        },
+        {
+          "label": "(7)",
+          "token": "7",
+          "kind": "numeric",
+          "text": "(a) A barrier removal improvement plan may satisfy the requirements of subsection",
+          "subsections": []
+        },
+        {
+          "label": "(8)",
+          "token": "8",
+          "kind": "numeric",
+          "text": "For purposes of this section, primary function is a major activity for which the facility is intended.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 45,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.243",
+      "identifier": "ORS 447.243",
+      "name": "Section 447.243",
+      "text": "",
+      "history_citation_blocks": [
+        "1973 c.539 6; 1989 c.224 114; repealed by 1993 c.503 14"
+      ],
+      "history_citations": [
+        {
+          "raw": "1973 c.539 6",
+          "year": 1973,
+          "chapter": "539",
+          "section": "6"
+        },
+        {
+          "raw": "1989 c.224 114",
+          "year": 1989,
+          "chapter": "224",
+          "section": "114"
+        },
+        {
+          "raw": "repealed by 1993 c.503 14"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 46,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.245",
+      "identifier": "ORS 447.245",
+      "name": "Section 447.245",
+      "text": "",
+      "history_citation_blocks": [
+        "1973 c.539 17; 1973 c.540 3; repealed by 1993 c.503 14"
+      ],
+      "history_citations": [
+        {
+          "raw": "1973 c.539 17",
+          "year": 1973,
+          "chapter": "539",
+          "section": "17"
+        },
+        {
+          "raw": "1973 c.540 3",
+          "year": 1973,
+          "chapter": "540",
+          "section": "3"
+        },
+        {
+          "raw": "repealed by 1993 c.503 14"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 47,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.247",
+      "identifier": "ORS 447.247",
+      "name": "Section 447.247",
+      "text": "Elevators required; criteria; rules. (1) Elevators are required: (a) In all shopping centers, shopping malls, professional offices of health care providers and government buildings that are covered by Title II of the Americans with Disabilities Act; (b) In all other commercial facilities, private entities and places of public accommodation covered by Title III of the Americans with Disabilities Act that have more than one floor level and more than 3,000 square feet in ground area or that are more than 20 feet in height, measured from the top surface of the lowest flooring to the highest interior overhead finish of the building; and (c) In all private membership clubs and churches that have more than one floor level and more than 4,000 square feet in ground area or that are more than 20 feet in height, measured from the top surface of the lowest flooring to the highest interior overhead finish of the building. (2) The Department of Consumer and Business Services may by rule create exceptions to the requirements of this section if this section would require an elevator in a building that would not be required to have an elevator under the provisions of the Americans with Disabilities Act or the Fair Housing Act.",
+      "history_citation_blocks": [
+        "1993 c.503 6; 1995 c.307 2"
+      ],
+      "history_citations": [
+        {
+          "raw": "1993 c.503 6",
+          "year": 1993,
+          "chapter": "503",
+          "section": "6"
+        },
+        {
+          "raw": "1995 c.307 2",
+          "year": 1995,
+          "chapter": "307",
+          "section": "2"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Elevators are required:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "In all shopping centers, shopping malls, professional offices of health care providers and government buildings that are covered by Title II of the Americans with Disabilities Act;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "In all other commercial facilities, private entities and places of public accommodation covered by Title III of the Americans with Disabilities Act that have more than one floor level and more than 3,000 square feet in ground area or that are more than 20 feet in height, measured from the top surface of the lowest flooring to the highest interior overhead finish of the building; and",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "In all private membership clubs and churches that have more than one floor level and more than 4,000 square feet in ground area or that are more than 20 feet in height, measured from the top surface of the lowest flooring to the highest interior overhead finish of the building.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The Department of Consumer and Business Services may by rule create exceptions to the requirements of this section if this section would require an elevator in a building that would not be required to have an elevator under the provisions of the Americans with Disabilities Act or the Fair Housing Act.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 48,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.250",
+      "identifier": "ORS 447.250",
+      "name": "Section 447.250",
+      "text": "Waiver or modification of standards and specifications; appeals board; procedures; fees. (1) When a person or governmental entity undertaking the construction, renovation, alteration or modification of an affected building or its related facilities determines that a particular standard or specification exceeds the standards or specifications imposed by the Americans with Disabilities Act and the Fair Housing Act, and that full compliance with the standard or specification is impractical in that it would defeat the purpose of the project proposed or in process, it may apply to the appeals board having jurisdiction over the project for a waiver or modification of such standard or specification, setting forth the reasons for its determination and a proposal for the work complying with the particular standard or specification to the maximum extent that it considers practical. (2)(a) For projects involving a state correctional facility as defined in ORS 421.005 (2), or a local correctional facility, as defined in ORS 169.005, the appeals board referred to in subsection (1) of this section is the Building Codes Structures Board established under ORS 455.132. (b) For all other projects, the appeals board referred to in subsection (1) of this section is the appeals board established under ORS 455.020 (4) by the municipality having jurisdiction over the project. (3) The appeals board shall thereupon investigate the application. The board in its investigation shall be required to seek the advice of the Oregon Disabilities Commission or its designee in dealing with architectural barrier waivers. If the appeals board finds that the proposal submitted with the application would constitute a substantial compliance with, or an acceptable alternative to, the particular standard or specification in view of the objectives of ORS 447.210 to 447.280, the waiver shall be granted. If the board finds otherwise, the application shall be promptly denied with notice to the requesting person or governmental entity of the denial. (4) The findings of the appeals board shall include the estimated building costs and the additional cost of construction to conform to the requirements of ORS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "When a person or governmental entity undertaking the construction, renovation, alteration or modification of an affected building or its related facilities determines that a particular standard or specification exceeds the standards or specifications imposed by the Americans with Disabilities Act and the Fair Housing Act, and that full compliance with the standard or specification is impractical in that it would defeat the purpose of the project proposed or in process, it may apply to the appeals board having jurisdiction over the project for a waiver or modification of such standard or specification, setting forth the reasons for its determination and a proposal for the work complying with the particular standard or specification to the maximum extent that it considers practical. of this section is the Building Codes Structures Board established under ORS 455.132. of this section is the appeals board established under ORS 455.020",
+          "subsections": [
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "For all other projects, the appeals board referred to in subsection",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "(a) For projects involving a state correctional facility as defined in ORS 421.005 , or a local correctional facility, as defined in ORS 169.005, the appeals board referred to in subsection",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "by the municipality having jurisdiction over the project. The findings of the appeals board shall include the estimated building costs and the additional cost of construction to conform to the requirements of ORS",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The appeals board shall thereupon investigate the application. The board in its investigation shall be required to seek the advice of the Oregon Disabilities Commission or its designee in dealing with architectural barrier waivers. If the appeals board finds that the proposal submitted with the application would constitute a substantial compliance with, or an acceptable alternative to, the particular standard or specification in view of the objectives of ORS 447.210 to 447.280, the waiver shall be granted. If the board finds otherwise, the application shall be promptly denied with notice to the requesting person or governmental entity of the denial.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 49,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.255",
+      "identifier": "ORS 447.255",
+      "name": "Section 447.255",
+      "text": "Access to lottery-funded facilities by persons with disabilities. (1) It is the intent of the Legislative Assembly that any affected buildings, the construction costs of which are paid for in whole or in part by lottery funds, shall be accessible to and usable by persons with disabilities in the manner prescribed in ORS 447.210 to 447.280. (2) Promotional and marketing programs described by this section shall promote and identify lottery-funded facilities as accessible to and usable by persons with disabilities whenever appropriate.",
+      "history_citation_blocks": [
+        "1989 c.909 49; formerly 461.730; 1993 c.503 9; 2005 c.835 29"
+      ],
+      "history_citations": [
+        {
+          "raw": "1989 c.909 49",
+          "year": 1989,
+          "chapter": "909",
+          "section": "49"
+        },
+        {
+          "raw": "formerly 461.730"
+        },
+        {
+          "raw": "1993 c.503 9",
+          "year": 1993,
+          "chapter": "503",
+          "section": "9"
+        },
+        {
+          "raw": "2005 c.835 29",
+          "year": 2005,
+          "chapter": "835",
+          "section": "29"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "It is the intent of the Legislative Assembly that any affected buildings, the construction costs of which are paid for in whole or in part by lottery funds, shall be accessible to and usable by persons with disabilities in the manner prescribed in ORS 447.210 to 447.280.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Promotional and marketing programs described by this section shall promote and identify lottery-funded facilities as accessible to and usable by persons with disabilities whenever appropriate.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 50,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.260",
+      "identifier": "ORS 447.260",
+      "name": "Section 447.260",
+      "text": "Rules. (1) The Director of the Department of Consumer and Business Services may promulgate rules reasonably necessary to implement and enforce ORS 447.210 to",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The Director of the Department of Consumer and Business Services may promulgate rules reasonably necessary to implement and enforce ORS 447.210 to",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 51,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.270",
+      "identifier": "ORS 447.270",
+      "name": "Section 447.270",
+      "text": "Cooperation with public officials and agencies required. The Director of the Department of Consumer and Business Services or the designated representative of the director shall cooperate with and receive the assistance of all persons, all appropriate elective or appointive public officials and all state or governmental agencies in carrying out the responsibilities of the director under ORS 447.210 to 447.280.",
+      "history_citation_blocks": [
+        "1971 c.320 7; 1973 c.539 9"
+      ],
+      "history_citations": [
+        {
+          "raw": "1971 c.320 7",
+          "year": 1971,
+          "chapter": "320",
+          "section": "7"
+        },
+        {
+          "raw": "1973 c.539 9",
+          "year": 1973,
+          "chapter": "539",
+          "section": "9"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 52,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.275",
+      "identifier": "ORS 447.275",
+      "name": "Section 447.275",
+      "text": "Nonliability for emergency exit deficiencies. Architects, engineers or other persons designing buildings; contractors and other persons erecting buildings; building officials, plans examiners, inspectors, the Director of the Department of Consumer and Business Services, the State Fire Marshal, State Fire Marshal deputies, municipal fire marshals or municipal deputies inspecting buildings; or a municipal appeals board shall be relieved of any personal or financial liability from persons suffering injury or death or those persons heirs as the result of exiting deficiencies during emergencies resulting from access for persons with disabilities required by ORS 447.210 to 447.280 or standards adopted under them.",
+      "history_citation_blocks": [
+        "1979 c.133 8; 1989 c.224 116; 1991 c.67 123"
+      ],
+      "history_citations": [
+        {
+          "raw": "1979 c.133 8",
+          "year": 1979,
+          "chapter": "133",
+          "section": "8"
+        },
+        {
+          "raw": "1989 c.224 116",
+          "year": 1989,
+          "chapter": "224",
+          "section": "116"
+        },
+        {
+          "raw": "1991 c.67 123",
+          "year": 1991,
+          "chapter": "67",
+          "section": "123"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 53,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.280",
+      "identifier": "ORS 447.280",
+      "name": "as part of the structural code including, but not limited to, rules",
+      "text": "authorizing the director to waive or modify any standards and specifications with respect to work on affected buildings and their related facilities where the director determines, with respect to emergency or temporary construction, that compliance with such standards or specifications would not be necessary to fulfill the objectives of ORS 447.210 to 447.280 or would be impractical. (2) The Director of the Department of Consumer and Business Services shall by rule establish criteria for determining the lowest flooring of a building for the purposes of the definition of affected buildings provided by ORS 447.210 and for the purposes of ORS 447.247.",
+      "history_citation_blocks": [
+        "1971 c.320 6; 1973 c.539 8; 1979 c.133 5; 1993 c.503 10; 1993 c.744 76; 1995 c.307 4"
+      ],
+      "history_citations": [
+        {
+          "raw": "1971 c.320 6",
+          "year": 1971,
+          "chapter": "320",
+          "section": "6"
+        },
+        {
+          "raw": "1973 c.539 8",
+          "year": 1973,
+          "chapter": "539",
+          "section": "8"
+        },
+        {
+          "raw": "1979 c.133 5",
+          "year": 1979,
+          "chapter": "133",
+          "section": "5"
+        },
+        {
+          "raw": "1993 c.503 10",
+          "year": 1993,
+          "chapter": "503",
+          "section": "10"
+        },
+        {
+          "raw": "1993 c.744 76",
+          "year": 1993,
+          "chapter": "744",
+          "section": "76"
+        },
+        {
+          "raw": "1995 c.307 4",
+          "year": 1995,
+          "chapter": "307",
+          "section": "4"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The Director of the Department of Consumer and Business Services shall by rule establish criteria for determining the lowest flooring of a building for the purposes of the definition of affected buildings provided by ORS 447.210 and for the purposes of ORS 447.247.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 54,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.310",
+      "identifier": "ORS 447.310",
+      "name": "Section 447.310",
+      "text": "Standards for curbing. (1) The standard for construction of curbs on each side of any city street, county road or state highway, or any connecting street, road or highway for which curbs and sidewalks have been prescribed by the governing body of the city or county or Department of Transportation having jurisdiction thereover, shall require not less than two curb cuts or ramps per lineal block to be located on or near the crosswalks at intersections. Each curb cut or ramp shall be at least 48 inches wide, where possible, and a minimum of 36 inches wide where a 48-inch width will not fit, at a slope not to exceed one-inch rise per 12-inch run. If a slope of 1:12 will not fit, a slope between 1:10 and 1:12 is allowed for a maximum rise of six inches and a slope between 1:8 and 1:10 is allowed for a maximum rise of three inches. In no case shall the slope exceed 1:8. (2) Standards set for curb cuts and ramps under subsection (1) of this section shall apply whenever a curb or sidewalk is constructed or replaced at any point in a block which gives reasonable access to a crosswalk.",
+      "history_citation_blocks": [
+        "1973 c.176 1; 1975 c.468 1; 1989 c.224 117; 1993 c.503 13"
+      ],
+      "history_citations": [
+        {
+          "raw": "1973 c.176 1",
+          "year": 1973,
+          "chapter": "176",
+          "section": "1"
+        },
+        {
+          "raw": "1975 c.468 1",
+          "year": 1975,
+          "chapter": "468",
+          "section": "1"
+        },
+        {
+          "raw": "1989 c.224 117",
+          "year": 1989,
+          "chapter": "224",
+          "section": "117"
+        },
+        {
+          "raw": "1993 c.503 13",
+          "year": 1993,
+          "chapter": "503",
+          "section": "13"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The standard for construction of curbs on each side of any city street, county road or state highway, or any connecting street, road or highway for which curbs and sidewalks have been prescribed by the governing body of the city or county or Department of Transportation having jurisdiction thereover, shall require not less than two curb cuts or ramps per lineal block to be located on or near the crosswalks at intersections. Each curb cut or ramp shall be at least 48 inches wide, where possible, and a minimum of 36 inches wide where a 48-inch width will not fit, at a slope not to exceed one-inch rise per 12-inch run. If a slope of 1:12 will not fit, a slope between 1:10 and 1:12 is allowed for a maximum rise of six inches and a slope between 1:8 and 1:10 is allowed for a maximum rise of three inches. In no case shall the slope exceed 1:8. of this section shall apply whenever a curb or sidewalk is constructed or replaced at any point in a block which gives reasonable access to a crosswalk.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Standards set for curb cuts and ramps under subsection",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 55,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.610",
+      "identifier": "ORS 447.610",
+      "name": "Section 447.610",
+      "text": "",
+      "history_citation_blocks": [
+        "1957 c.278 1; repealed by 1979 c.57 3"
+      ],
+      "history_citations": [
+        {
+          "raw": "1957 c.278 1",
+          "year": 1957,
+          "chapter": "278",
+          "section": "1"
+        },
+        {
+          "raw": "repealed by 1979 c.57 3"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 56,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.620",
+      "identifier": "ORS 447.620",
+      "name": "Section 447.620",
+      "text": "[1957 c.278 2,13,22; repealed by 1979 c.57 3]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 57,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.630",
+      "identifier": "ORS 447.630",
+      "name": "Section 447.630",
+      "text": "",
+      "history_citation_blocks": [
+        "1957 c.278 3; repealed by 1979 c.57 3"
+      ],
+      "history_citations": [
+        {
+          "raw": "1957 c.278 3",
+          "year": 1957,
+          "chapter": "278",
+          "section": "3"
+        },
+        {
+          "raw": "repealed by 1979 c.57 3"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 58,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.640",
+      "identifier": "ORS 447.640",
+      "name": "Section 447.640",
+      "text": "",
+      "history_citation_blocks": [
+        "1957 c.278 4; repealed by 1979 c.57 3"
+      ],
+      "history_citations": [
+        {
+          "raw": "1957 c.278 4",
+          "year": 1957,
+          "chapter": "278",
+          "section": "4"
+        },
+        {
+          "raw": "repealed by 1979 c.57 3"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 59,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.650",
+      "identifier": "ORS 447.650",
+      "name": "Section 447.650",
+      "text": "",
+      "history_citation_blocks": [
+        "1957 c.278 6; repealed by 1979 c.57 3"
+      ],
+      "history_citations": [
+        {
+          "raw": "1957 c.278 6",
+          "year": 1957,
+          "chapter": "278",
+          "section": "6"
+        },
+        {
+          "raw": "repealed by 1979 c.57 3"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 60,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.660",
+      "identifier": "ORS 447.660",
+      "name": "Section 447.660",
+      "text": "[1957 c.278 5,7,9,10; repealed by 1979 c.57 3]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 61,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.670",
+      "identifier": "ORS 447.670",
+      "name": "Section 447.670",
+      "text": "",
+      "history_citation_blocks": [
+        "1957 c.278 8; repealed by 1979 c.57 3"
+      ],
+      "history_citations": [
+        {
+          "raw": "1957 c.278 8",
+          "year": 1957,
+          "chapter": "278",
+          "section": "8"
+        },
+        {
+          "raw": "repealed by 1979 c.57 3"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 62,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.680",
+      "identifier": "ORS 447.680",
+      "name": "Section 447.680",
+      "text": "[1957 c.278 11,12; repealed by 1979 c.57 3]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 63,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.690",
+      "identifier": "ORS 447.690",
+      "name": "Section 447.690",
+      "text": "[1957 c.278 14,15,16; repealed by 1979 c.57 3]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 64,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.700",
+      "identifier": "ORS 447.700",
+      "name": "Section 447.700",
+      "text": "[1957 c.278 17,18; repealed by 1979 c.57 3]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 65,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.710",
+      "identifier": "ORS 447.710",
+      "name": "Section 447.710",
+      "text": "",
+      "history_citation_blocks": [
+        "1957 c.278 19; repealed by 1979 c.57 3"
+      ],
+      "history_citations": [
+        {
+          "raw": "1957 c.278 19",
+          "year": 1957,
+          "chapter": "278",
+          "section": "19"
+        },
+        {
+          "raw": "repealed by 1979 c.57 3"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 66,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.720",
+      "identifier": "ORS 447.720",
+      "name": "Section 447.720",
+      "text": "",
+      "history_citation_blocks": [
+        "1957 c.278 17; repealed by 1979 c.57 3"
+      ],
+      "history_citations": [
+        {
+          "raw": "1957 c.278 17",
+          "year": 1957,
+          "chapter": "278",
+          "section": "17"
+        },
+        {
+          "raw": "repealed by 1979 c.57 3"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 67,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.730",
+      "identifier": "ORS 447.730",
+      "name": "Section 447.730",
+      "text": "",
+      "history_citation_blocks": [
+        "1957 c.278 20; repealed by 1979 c.57 3"
+      ],
+      "history_citations": [
+        {
+          "raw": "1957 c.278 20",
+          "year": 1957,
+          "chapter": "278",
+          "section": "20"
+        },
+        {
+          "raw": "repealed by 1979 c.57 3"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 68,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.800",
+      "identifier": "ORS 447.800",
+      "name": "Section 447.800",
+      "text": "",
+      "history_citation_blocks": [
+        "1975 c.677 1; 1977 c.58 1; 1981 s.s. c.10 1; 1983 c.42 1; renumbered 284.800 in 1987"
+      ],
+      "history_citations": [
+        {
+          "raw": "1975 c.677 1",
+          "year": 1975,
+          "chapter": "677",
+          "section": "1"
+        },
+        {
+          "raw": "1977 c.58 1",
+          "year": 1977,
+          "chapter": "58",
+          "section": "1"
+        },
+        {
+          "raw": "1981 s.s. c.10 1",
+          "year": 1981,
+          "session": "s.s.",
+          "chapter": "10",
+          "section": "1"
+        },
+        {
+          "raw": "1983 c.42 1",
+          "year": 1983,
+          "chapter": "42",
+          "section": "1"
+        },
+        {
+          "raw": "renumbered 284.800 in 1987"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 69,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.805",
+      "identifier": "ORS 447.805",
+      "name": "Section 447.805",
+      "text": "",
+      "history_citation_blocks": [
+        "1975 c.677 2; 1981 c.754 1; renumbered 284.805 in 1987"
+      ],
+      "history_citations": [
+        {
+          "raw": "1975 c.677 2",
+          "year": 1975,
+          "chapter": "677",
+          "section": "2"
+        },
+        {
+          "raw": "1981 c.754 1",
+          "year": 1981,
+          "chapter": "754",
+          "section": "1"
+        },
+        {
+          "raw": "renumbered 284.805 in 1987"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 70,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.810",
+      "identifier": "ORS 447.810",
+      "name": "Section 447.810",
+      "text": "",
+      "history_citation_blocks": [
+        "1975 c.677 2a; renumbered 284.810 in 1987"
+      ],
+      "history_citations": [
+        {
+          "raw": "1975 c.677 2a",
+          "year": 1975,
+          "chapter": "677",
+          "section": "2a"
+        },
+        {
+          "raw": "renumbered 284.810 in 1987"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 71,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.815",
+      "identifier": "ORS 447.815",
+      "name": "Section 447.815",
+      "text": "",
+      "history_citation_blocks": [
+        "1975 c.677 2b; 1981 c.754 2; renumbered 284.815 in 1987"
+      ],
+      "history_citations": [
+        {
+          "raw": "1975 c.677 2b",
+          "year": 1975,
+          "chapter": "677",
+          "section": "2b"
+        },
+        {
+          "raw": "1981 c.754 2",
+          "year": 1981,
+          "chapter": "754",
+          "section": "2"
+        },
+        {
+          "raw": "renumbered 284.815 in 1987"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 72,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.820",
+      "identifier": "ORS 447.820",
+      "name": "Section 447.820",
+      "text": "",
+      "history_citation_blocks": [
+        "1975 c.677 3; 1983 c.573 1; renumbered 284.820 in 1987"
+      ],
+      "history_citations": [
+        {
+          "raw": "1975 c.677 3",
+          "year": 1975,
+          "chapter": "677",
+          "section": "3"
+        },
+        {
+          "raw": "1983 c.573 1",
+          "year": 1983,
+          "chapter": "573",
+          "section": "1"
+        },
+        {
+          "raw": "renumbered 284.820 in 1987"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 73,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.825",
+      "identifier": "ORS 447.825",
+      "name": "Section 447.825",
+      "text": "",
+      "history_citation_blocks": [
+        "1975 c.677 4; 1977 c.58 2; renumbered 284.825 in 1987"
+      ],
+      "history_citations": [
+        {
+          "raw": "1975 c.677 4",
+          "year": 1975,
+          "chapter": "677",
+          "section": "4"
+        },
+        {
+          "raw": "1977 c.58 2",
+          "year": 1977,
+          "chapter": "58",
+          "section": "2"
+        },
+        {
+          "raw": "renumbered 284.825 in 1987"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 74,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.830",
+      "identifier": "ORS 447.830",
+      "name": "Section 447.830",
+      "text": "",
+      "history_citation_blocks": [
+        "1975 c.677 5; repealed by 1977 c.58 3; (447.831 and 447.834 enacted in lieu of 447.830)"
+      ],
+      "history_citations": [
+        {
+          "raw": "1975 c.677 5",
+          "year": 1975,
+          "chapter": "677",
+          "section": "5"
+        },
+        {
+          "raw": "repealed by 1977 c.58 3"
+        },
+        {
+          "raw": "(447.831 and 447.834 enacted in lieu of 447.830)"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 75,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.831",
+      "identifier": "ORS 447.831",
+      "name": "Section 447.831",
+      "text": "[1977 c.58 4 (enacted in lieu of 447.830); renumbered 284.831 in 1987]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 76,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.834",
+      "identifier": "ORS 447.834",
+      "name": "Section 447.834",
+      "text": "[1977 c.58 5 (enacted in lieu of 447.830); renumbered 284.834 in 1987]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 77,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.835",
+      "identifier": "ORS 447.835",
+      "name": "Section 447.835",
+      "text": "",
+      "history_citation_blocks": [
+        "1975 c.677 6; 1977 c.58 6; renumbered 284.835 in 1987"
+      ],
+      "history_citations": [
+        {
+          "raw": "1975 c.677 6",
+          "year": 1975,
+          "chapter": "677",
+          "section": "6"
+        },
+        {
+          "raw": "1977 c.58 6",
+          "year": 1977,
+          "chapter": "58",
+          "section": "6"
+        },
+        {
+          "raw": "renumbered 284.835 in 1987"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 78,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.840",
+      "identifier": "ORS 447.840",
+      "name": "Section 447.840",
+      "text": "",
+      "history_citation_blocks": [
+        "1975 c.677 7; 1977 c.58 7; renumbered 284.840 in 1987"
+      ],
+      "history_citations": [
+        {
+          "raw": "1975 c.677 7",
+          "year": 1975,
+          "chapter": "677",
+          "section": "7"
+        },
+        {
+          "raw": "1977 c.58 7",
+          "year": 1977,
+          "chapter": "58",
+          "section": "7"
+        },
+        {
+          "raw": "renumbered 284.840 in 1987"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 79,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.845",
+      "identifier": "ORS 447.845",
+      "name": "Section 447.845",
+      "text": "",
+      "history_citation_blocks": [
+        "1975 c.677 8; 1981 c.754 3; renumbered 284.845 in 1987"
+      ],
+      "history_citations": [
+        {
+          "raw": "1975 c.677 8",
+          "year": 1975,
+          "chapter": "677",
+          "section": "8"
+        },
+        {
+          "raw": "1981 c.754 3",
+          "year": 1981,
+          "chapter": "754",
+          "section": "3"
+        },
+        {
+          "raw": "renumbered 284.845 in 1987"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 80,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.850",
+      "identifier": "ORS 447.850",
+      "name": "Section 447.850",
+      "text": "",
+      "history_citation_blocks": [
+        "1975 c.677 9; 1977 c.58 8; renumbered 284.850 in 1987"
+      ],
+      "history_citations": [
+        {
+          "raw": "1975 c.677 9",
+          "year": 1975,
+          "chapter": "677",
+          "section": "9"
+        },
+        {
+          "raw": "1977 c.58 8",
+          "year": 1977,
+          "chapter": "58",
+          "section": "8"
+        },
+        {
+          "raw": "renumbered 284.850 in 1987"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 81,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.855",
+      "identifier": "ORS 447.855",
+      "name": "Section 447.855",
+      "text": "",
+      "history_citation_blocks": [
+        "1975 c.677 9a; renumbered 284.855 in 1987"
+      ],
+      "history_citations": [
+        {
+          "raw": "1975 c.677 9a",
+          "year": 1975,
+          "chapter": "677",
+          "section": "9a"
+        },
+        {
+          "raw": "renumbered 284.855 in 1987"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 82,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.860",
+      "identifier": "ORS 447.860",
+      "name": "Section 447.860",
+      "text": "",
+      "history_citation_blocks": [
+        "1975 c.677 10; renumbered 284.860 in 1987"
+      ],
+      "history_citations": [
+        {
+          "raw": "1975 c.677 10",
+          "year": 1975,
+          "chapter": "677",
+          "section": "10"
+        },
+        {
+          "raw": "renumbered 284.860 in 1987"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 83,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.865",
+      "identifier": "ORS 447.865",
+      "name": "Section 447.865",
+      "text": "",
+      "history_citation_blocks": [
+        "1975 c.677 11; 1977 c.58 9; renumbered 284.865 in 1987"
+      ],
+      "history_citations": [
+        {
+          "raw": "1975 c.677 11",
+          "year": 1975,
+          "chapter": "677",
+          "section": "11"
+        },
+        {
+          "raw": "1977 c.58 9",
+          "year": 1977,
+          "chapter": "58",
+          "section": "9"
+        },
+        {
+          "raw": "renumbered 284.865 in 1987"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 84,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.875",
+      "identifier": "ORS 447.875",
+      "name": "Section 447.875",
+      "text": "",
+      "history_citation_blocks": [
+        "1977 c.319 1; renumbered 284.875 in 1987"
+      ],
+      "history_citations": [
+        {
+          "raw": "1977 c.319 1",
+          "year": 1977,
+          "chapter": "319",
+          "section": "1"
+        },
+        {
+          "raw": "renumbered 284.875 in 1987"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 85,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.880",
+      "identifier": "ORS 447.880",
+      "name": "Section 447.880",
+      "text": "",
+      "history_citation_blocks": [
+        "1977 c.319 2; renumbered 284.880 in 1987"
+      ],
+      "history_citations": [
+        {
+          "raw": "1977 c.319 2",
+          "year": 1977,
+          "chapter": "319",
+          "section": "2"
+        },
+        {
+          "raw": "renumbered 284.880 in 1987"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 86,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.990",
+      "identifier": "ORS 447.990",
+      "name": "Section 447.990",
+      "text": "[Subsection (2) enacted as 1957 c.278 21; 1973 c.734 4; 1973 c.835 232; 1979 c.57 2; repealed by 1981 c.438 46] PENALTIES",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "enacted as 1957 c.278 21; 1973 c.734 4; 1973 c.835 232; 1979 c.57 2; repealed by 1981 c.438 46] PENALTIES",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 87,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html#section-447.992",
+      "identifier": "ORS 447.992",
+      "name": "Section 447.992",
+      "text": "Civil penalties. The State Plumbing Board may impose a civil penalty for a violation of ORS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 88,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors447.html"
+    }
+  ],
+  "alternateName": "Plumbing; Architectural",
+  "legislationDate": "2023"
+}

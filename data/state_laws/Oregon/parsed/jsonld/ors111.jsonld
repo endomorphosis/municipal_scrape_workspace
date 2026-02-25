@@ -1,0 +1,2225 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "orlaw": "https://www.oregonlegislature.gov/ors#"
+  },
+  "@type": "Legislation",
+  "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html",
+  "identifier": "ORS Chapter 111",
+  "name": "ORS Chapter 111 — General Provisions",
+  "legislationType": "Statute",
+  "jurisdiction": "US-OR",
+  "isPartOf": {
+    "@type": "CreativeWork",
+    "identifier": "ORS",
+    "name": "Oregon Revised Statutes",
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors"
+  },
+  "dateModified": "2026-02-25T08:11:15.937668+00:00",
+  "source_file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors111.html",
+  "hasPart": [
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html#section-111.005",
+      "identifier": "ORS 111.005",
+      "name": "Section 111.005",
+      "text": "Definitions for probate law. As used in ORS chapters 111, 112, 113, 114, 115, 116 and 117, unless the context requires otherwise: (1) Abate means to reduce a devise on account of the insufficiency of the estate to pay all claims, expenses and devises in full. (2) Action includes suits and legal proceedings. (3) Administration means any proceeding relating to the estate of a decedent, whether the decedent died testate, intestate or partially intestate. (4) Advancement means a gift by a decedent to an heir or devisee with the intent that the gift satisfy in whole or in part the heirs share of an intestate estate or the devisees share of a testate estate. (5) Assets includes real, personal and intangible property. (6) Claim includes liabilities of a decedent, whether arising in contract, in tort or otherwise. (7) Court or probate court means the court in which jurisdiction of probate matters, causes and proceedings is vested as provided in ORS 111.075. (8) Decedent means a person who has died. (9)(a) Descendant means a person who is descended from a specific ancestor and includes an adopted child and the adopted childs descendants. (b) When used to refer to persons who take by intestate succession, descendant does not include a person who is the descendant of a living descendant. (10) Devise, when used as a noun, means property disposed of by a will. (11) Devise, when used as a verb, means to dispose of property by a will. (12) Devisee means a person designated in a will to receive a devise. (13) Distributee means a person entitled to any property of a decedent under the will of the decedent or under intestate succession. (14) Domicile means the place of abode of a person, where the person intends to remain and to which, if absent, the person intends to return. (15)(a) Estate means the real and personal property of a decedent, as from time to time changed in form by sale, reinvestment, substitutions or otherwise, augmented by any accretions or additions or diminished by any decreases or distributions. (b) Estate includes tangible and intangible personal property of a decedent domiciled in Oregon, wherever the property is situated. (16) Funeral includes the burial or other disposition of the remains of a decedent, any plot or tomb and other necessary incidents to the disposition of the remains, any memorial ceremony or other observance and related expenses. (17) General devise means a devise chargeable generally on the estate of a testator so that the devise is not distinguishable from other parts of the estate and does not constitute a specific devise. (18) Heir means any person who is or would be entitled under intestate succession to property of a person upon that persons death. (19)(a) Interested person means any person having a property right in or claim against the estate of a decedent that may be affected by the proceeding. (b) Interested person includes a decedents heir, devisee, child, spouse or creditor if the heir, devisee, child, spouse or creditor has a property right in or claim against the decedents estate. (c) Interested person also includes a fiduciary representing a person described in paragraph (a) or (b) of this subsection. (20) Intestate means one who dies without leaving a valid will, or the circumstance of dying without leaving a valid will, effectively disposing of all the estate. (21) Intestate succession means succession to property of a decedent who dies intestate or partially intestate. (22) Issue means a descendant or descendants. (23) Net estate means the real and personal property of a decedent, except property used for the support of the surviving spouse and children and for the payment of expenses of administration, funeral expenses, claims and taxes. (24) Net intestate estate means any part of the net estate of a decedent not effectively disposed of by the will. (25) Personal property includes all property other than real property. (26) Personal representative includes executor, administrator, administrator with will annexed and administrator de bonis non, but does not include special administrator. (27) Property includes both real and personal property. (28) Real property includes all legal and equitable interests in land, in fee and for life. (29) Settlement includes, as to the estate of a decedent, the full process of administration, distribution and closing. (30) Specific devise means a devise of a specific thing or specified part of the estate of a testator that is so described as to be capable of identification. A specific devise is a gift of a part of the estate identified and differentiated from all other parts. (31) Will includes codicil and also includes a testamentary instrument that merely appoints a personal representative or that merely revokes or revives another will.",
+      "history_citation_blocks": [
+        "1969 c.591 1; 2015 c.387 31; 2016 c.42 1; 2017 c.169 1; 2021 c.282 4"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.591 1",
+          "year": 1969,
+          "chapter": "591",
+          "section": "1"
+        },
+        {
+          "raw": "2015 c.387 31",
+          "year": 2015,
+          "chapter": "387",
+          "section": "31"
+        },
+        {
+          "raw": "2016 c.42 1",
+          "year": 2016,
+          "chapter": "42",
+          "section": "1"
+        },
+        {
+          "raw": "2017 c.169 1",
+          "year": 2017,
+          "chapter": "169",
+          "section": "1"
+        },
+        {
+          "raw": "2021 c.282 4",
+          "year": 2021,
+          "chapter": "282",
+          "section": "4"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Abate means to reduce a devise on account of the insufficiency of the estate to pay all claims, expenses and devises in full.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Action includes suits and legal proceedings.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Administration means any proceeding relating to the estate of a decedent, whether the decedent died testate, intestate or partially intestate.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Advancement means a gift by a decedent to an heir or devisee with the intent that the gift satisfy in whole or in part the heirs share of an intestate estate or the devisees share of a testate estate.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "Assets includes real, personal and intangible property.",
+          "subsections": []
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "Claim includes liabilities of a decedent, whether arising in contract, in tort or otherwise.",
+          "subsections": []
+        },
+        {
+          "label": "(7)",
+          "token": "7",
+          "kind": "numeric",
+          "text": "Court or probate court means the court in which jurisdiction of probate matters, causes and proceedings is vested as provided in ORS 111.075.",
+          "subsections": []
+        },
+        {
+          "label": "(8)",
+          "token": "8",
+          "kind": "numeric",
+          "text": "Decedent means a person who has died.",
+          "subsections": []
+        },
+        {
+          "label": "(9)",
+          "token": "9",
+          "kind": "numeric",
+          "text": "(a) Descendant means a person who is descended from a specific ancestor and includes an adopted child and the adopted childs descendants.",
+          "subsections": [
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "When used to refer to persons who take by intestate succession, descendant does not include a person who is the descendant of a living descendant.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(10)",
+          "token": "10",
+          "kind": "numeric",
+          "text": "Devise, when used as a noun, means property disposed of by a will.",
+          "subsections": []
+        },
+        {
+          "label": "(11)",
+          "token": "11",
+          "kind": "numeric",
+          "text": "Devise, when used as a verb, means to dispose of property by a will.",
+          "subsections": []
+        },
+        {
+          "label": "(12)",
+          "token": "12",
+          "kind": "numeric",
+          "text": "Devisee means a person designated in a will to receive a devise.",
+          "subsections": []
+        },
+        {
+          "label": "(13)",
+          "token": "13",
+          "kind": "numeric",
+          "text": "Distributee means a person entitled to any property of a decedent under the will of the decedent or under intestate succession.",
+          "subsections": []
+        },
+        {
+          "label": "(14)",
+          "token": "14",
+          "kind": "numeric",
+          "text": "Domicile means the place of abode of a person, where the person intends to remain and to which, if absent, the person intends to return.",
+          "subsections": []
+        },
+        {
+          "label": "(15)",
+          "token": "15",
+          "kind": "numeric",
+          "text": "(a) Estate means the real and personal property of a decedent, as from time to time changed in form by sale, reinvestment, substitutions or otherwise, augmented by any accretions or additions or diminished by any decreases or distributions.",
+          "subsections": [
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Estate includes tangible and intangible personal property of a decedent domiciled in Oregon, wherever the property is situated.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(16)",
+          "token": "16",
+          "kind": "numeric",
+          "text": "Funeral includes the burial or other disposition of the remains of a decedent, any plot or tomb and other necessary incidents to the disposition of the remains, any memorial ceremony or other observance and related expenses.",
+          "subsections": []
+        },
+        {
+          "label": "(17)",
+          "token": "17",
+          "kind": "numeric",
+          "text": "General devise means a devise chargeable generally on the estate of a testator so that the devise is not distinguishable from other parts of the estate and does not constitute a specific devise.",
+          "subsections": []
+        },
+        {
+          "label": "(18)",
+          "token": "18",
+          "kind": "numeric",
+          "text": "Heir means any person who is or would be entitled under intestate succession to property of a person upon that persons death.",
+          "subsections": []
+        },
+        {
+          "label": "(19)",
+          "token": "19",
+          "kind": "numeric",
+          "text": "(a) Interested person means any person having a property right in or claim against the estate of a decedent that may be affected by the proceeding.",
+          "subsections": [
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Interested person includes a decedents heir, devisee, child, spouse or creditor if the heir, devisee, child, spouse or creditor has a property right in or claim against the decedents estate. of this subsection.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Interested person also includes a fiduciary representing a person described in paragraph",
+              "subsections": []
+            },
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "or",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(20)",
+          "token": "20",
+          "kind": "numeric",
+          "text": "Intestate means one who dies without leaving a valid will, or the circumstance of dying without leaving a valid will, effectively disposing of all the estate.",
+          "subsections": []
+        },
+        {
+          "label": "(21)",
+          "token": "21",
+          "kind": "numeric",
+          "text": "Intestate succession means succession to property of a decedent who dies intestate or partially intestate.",
+          "subsections": []
+        },
+        {
+          "label": "(22)",
+          "token": "22",
+          "kind": "numeric",
+          "text": "Issue means a descendant or descendants.",
+          "subsections": []
+        },
+        {
+          "label": "(23)",
+          "token": "23",
+          "kind": "numeric",
+          "text": "Net estate means the real and personal property of a decedent, except property used for the support of the surviving spouse and children and for the payment of expenses of administration, funeral expenses, claims and taxes.",
+          "subsections": []
+        },
+        {
+          "label": "(24)",
+          "token": "24",
+          "kind": "numeric",
+          "text": "Net intestate estate means any part of the net estate of a decedent not effectively disposed of by the will.",
+          "subsections": []
+        },
+        {
+          "label": "(25)",
+          "token": "25",
+          "kind": "numeric",
+          "text": "Personal property includes all property other than real property.",
+          "subsections": []
+        },
+        {
+          "label": "(26)",
+          "token": "26",
+          "kind": "numeric",
+          "text": "Personal representative includes executor, administrator, administrator with will annexed and administrator de bonis non, but does not include special administrator.",
+          "subsections": []
+        },
+        {
+          "label": "(27)",
+          "token": "27",
+          "kind": "numeric",
+          "text": "Property includes both real and personal property.",
+          "subsections": []
+        },
+        {
+          "label": "(28)",
+          "token": "28",
+          "kind": "numeric",
+          "text": "Real property includes all legal and equitable interests in land, in fee and for life.",
+          "subsections": []
+        },
+        {
+          "label": "(29)",
+          "token": "29",
+          "kind": "numeric",
+          "text": "Settlement includes, as to the estate of a decedent, the full process of administration, distribution and closing.",
+          "subsections": []
+        },
+        {
+          "label": "(30)",
+          "token": "30",
+          "kind": "numeric",
+          "text": "Specific devise means a devise of a specific thing or specified part of the estate of a testator that is so described as to be capable of identification. A specific devise is a gift of a part of the estate identified and differentiated from all other parts.",
+          "subsections": []
+        },
+        {
+          "label": "(31)",
+          "token": "31",
+          "kind": "numeric",
+          "text": "Will includes codicil and also includes a testamentary instrument that merely appoints a personal representative or that merely revokes or revives another will.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 1,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html#section-111.010",
+      "identifier": "ORS 111.010",
+      "name": "Section 111.010",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 2,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html#section-111.015",
+      "identifier": "ORS 111.015",
+      "name": "Section 111.015",
+      "text": "Application of chapter 591, Oregon Laws 1969. Except as specifically provided otherwise in chapter 591, Oregon Laws 1969, on July 1, 1970, chapter 591, Oregon Laws 1969, applies to wills of decedents dying thereafter, and a will executed before July 1, 1970, shall be considered lawfully executed if the application of ORS 112.255 would make it so, but the construction of a will executed before July 1, 1970, shall be governed by the law in effect on the date of execution unless a contrary intent is established by the will.",
+      "history_citation_blocks": [
+        "1969 c.591 303; 2016 c.42 12"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.591 303",
+          "year": 1969,
+          "chapter": "591",
+          "section": "303"
+        },
+        {
+          "raw": "2016 c.42 12",
+          "year": 2016,
+          "chapter": "42",
+          "section": "12"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 3,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html#section-111.020",
+      "identifier": "ORS 111.020",
+      "name": "Section 111.020",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 4,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html#section-111.025",
+      "identifier": "ORS 111.025",
+      "name": "Section 111.025",
+      "text": "Oregon Tax Court jurisdiction. For purposes of ORS chapters 111 to 116, the Oregon Tax Court is not a court having probate jurisdiction and is limited to the trial of appeals on estate tax matters.",
+      "history_citation_blocks": [
+        "1971 c.567 3; 1997 c.99 25; 2011 c.526 17; 2017 c.169 44"
+      ],
+      "history_citations": [
+        {
+          "raw": "1971 c.567 3",
+          "year": 1971,
+          "chapter": "567",
+          "section": "3"
+        },
+        {
+          "raw": "1997 c.99 25",
+          "year": 1997,
+          "chapter": "99",
+          "section": "25"
+        },
+        {
+          "raw": "2011 c.526 17",
+          "year": 2011,
+          "chapter": "526",
+          "section": "17"
+        },
+        {
+          "raw": "2017 c.169 44",
+          "year": 2017,
+          "chapter": "169",
+          "section": "44"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 5,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html#section-111.030",
+      "identifier": "ORS 111.030",
+      "name": "Section 111.030",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 6,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html#section-111.040",
+      "identifier": "ORS 111.040",
+      "name": "Section 111.040",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 7,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html#section-111.050",
+      "identifier": "ORS 111.050",
+      "name": "Section 111.050",
+      "text": "[Repealed by 1969 c.591 305] PROBATE COURTS AND COMMISSIONERS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 8,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html#section-111.055",
+      "identifier": "ORS 111.055",
+      "name": "Section 111.055",
+      "text": "Transfer of probate jurisdiction. (1) All probate jurisdiction, authority, powers, functions and duties of the county courts and the judges thereof are transferred to the circuit courts and the judges thereof in all counties except Gilliam, Grant, Harney, Malheur, Sherman and Wheeler Counties. (2) All probate jurisdiction, authority, powers, functions and duties of the circuit courts and the judges thereof are transferred to the county courts and the judges thereof in Gilliam, Grant, Harney, Malheur, Sherman and Wheeler Counties.",
+      "history_citation_blocks": [
+        "1969 c.591 2; 1995 c.658 71"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.591 2",
+          "year": 1969,
+          "chapter": "591",
+          "section": "2"
+        },
+        {
+          "raw": "1995 c.658 71",
+          "year": 1995,
+          "chapter": "658",
+          "section": "71"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "All probate jurisdiction, authority, powers, functions and duties of the county courts and the judges thereof are transferred to the circuit courts and the judges thereof in all counties except Gilliam, Grant, Harney, Malheur, Sherman and Wheeler Counties.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "All probate jurisdiction, authority, powers, functions and duties of the circuit courts and the judges thereof are transferred to the county courts and the judges thereof in Gilliam, Grant, Harney, Malheur, Sherman and Wheeler Counties.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 9,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html#section-111.060",
+      "identifier": "ORS 111.060",
+      "name": "Section 111.060",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 10,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html#section-111.065",
+      "identifier": "ORS 111.065",
+      "name": "Section 111.065",
+      "text": "",
+      "history_citation_blocks": [
+        "1969 c.591 3; 1979 c.683 34; repealed by 1983 c.740 12"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.591 3",
+          "year": 1969,
+          "chapter": "591",
+          "section": "3"
+        },
+        {
+          "raw": "1979 c.683 34",
+          "year": 1979,
+          "chapter": "683",
+          "section": "34"
+        },
+        {
+          "raw": "repealed by 1983 c.740 12"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 11,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html#section-111.070",
+      "identifier": "ORS 111.070",
+      "name": "Section 111.070",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 12,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html#section-111.075",
+      "identifier": "ORS 111.075",
+      "name": "Section 111.075",
+      "text": "Probate jurisdiction vested. Jurisdiction of all probate matters, causes and proceedings is vested in the county courts of Gilliam, Grant, Harney, Malheur, Sherman and Wheeler Counties and in the circuit court for each other county and as provided in ORS 111.115.",
+      "history_citation_blocks": [
+        "1969 c.591 4"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.591 4",
+          "year": 1969,
+          "chapter": "591",
+          "section": "4"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 13,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html#section-111.085",
+      "identifier": "ORS 111.085",
+      "name": "Section 111.085",
+      "text": "Probate jurisdiction described. (1) The jurisdiction of the probate court includes, but is not limited to: (a) Appointment and qualification of personal representatives. (b) Probate and contest of wills. (c) Determination of heirship. (d) Determination of title to, rights in and possession of property claimed by or against personal representatives, guardians and conservators. (e) Administration, settlement and distribution of estates of decedents. (f) Construction of wills, whether incident to the administration or distribution of an estate or as a separate proceeding. (g) Guardianships and conservatorships, including the appointment and qualification of guardians and conservators and the administration, settlement and closing of guardianships and conservatorships. (h) Supervision and disciplining of personal representatives, guardians and conservators. (i) If a testamentary trustee vacancy occurs during a probate proceeding and the will does not name a trustee or successor trustee who is able to serve, appointment of a testamentary trustee or successor testamentary trustee. (2) The distributees of an estate administered in Oregon are subject to the jurisdiction of the courts of Oregon regarding any matter involving the distributees interests in the estate. By accepting a distribution from an estate, the distributee submits personally to the jurisdiction of the courts of this state regarding any matter involving the estate. (3) This section does not preclude other methods of obtaining jurisdiction over a person to whom assets are distributed from an estate.",
+      "history_citation_blocks": [
+        "1969 c.591 5; 1973 c.177 1; 2017 c.169 2; 2021 c.282 5"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.591 5",
+          "year": 1969,
+          "chapter": "591",
+          "section": "5"
+        },
+        {
+          "raw": "1973 c.177 1",
+          "year": 1973,
+          "chapter": "177",
+          "section": "1"
+        },
+        {
+          "raw": "2017 c.169 2",
+          "year": 2017,
+          "chapter": "169",
+          "section": "2"
+        },
+        {
+          "raw": "2021 c.282 5",
+          "year": 2021,
+          "chapter": "282",
+          "section": "5"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The jurisdiction of the probate court includes, but is not limited to:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Appointment and qualification of personal representatives.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Probate and contest of wills.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Determination of heirship.",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "Determination of title to, rights in and possession of property claimed by or against personal representatives, guardians and conservators.",
+              "subsections": []
+            },
+            {
+              "label": "(e)",
+              "token": "e",
+              "kind": "alpha_lower",
+              "text": "Administration, settlement and distribution of estates of decedents.",
+              "subsections": []
+            },
+            {
+              "label": "(f)",
+              "token": "f",
+              "kind": "alpha_lower",
+              "text": "Construction of wills, whether incident to the administration or distribution of an estate or as a separate proceeding.",
+              "subsections": []
+            },
+            {
+              "label": "(g)",
+              "token": "g",
+              "kind": "alpha_lower",
+              "text": "Guardianships and conservatorships, including the appointment and qualification of guardians and conservators and the administration, settlement and closing of guardianships and conservatorships.",
+              "subsections": []
+            },
+            {
+              "label": "(h)",
+              "token": "h",
+              "kind": "alpha_lower",
+              "text": "Supervision and disciplining of personal representatives, guardians and conservators.",
+              "subsections": []
+            },
+            {
+              "label": "(i)",
+              "token": "i",
+              "kind": "alpha_lower",
+              "text": "If a testamentary trustee vacancy occurs during a probate proceeding and the will does not name a trustee or successor trustee who is able to serve, appointment of a testamentary trustee or successor testamentary trustee.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The distributees of an estate administered in Oregon are subject to the jurisdiction of the courts of Oregon regarding any matter involving the distributees interests in the estate. By accepting a distribution from an estate, the distributee submits personally to the jurisdiction of the courts of this state regarding any matter involving the estate.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "This section does not preclude other methods of obtaining jurisdiction over a person to whom assets are distributed from an estate.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 14,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html#section-111.095",
+      "identifier": "ORS 111.095",
+      "name": "Section 111.095",
+      "text": "Powers of probate court. (1) A probate court has the general legal and equitable powers of a circuit court. (2) The determinations, orders and judgments of a probate court have the same validity, finality and presumption of regularity as those of a circuit court. (3) A probate court has full, legal and equitable powers to make declaratory judgments, as provided in ORS 28.010 to 28.160, in all matters involved in the administration of an estate, including matters pertaining to the title of real property and ownership of personal property, the determination of heirship and the distribution of the estate. (4) A court having jurisdiction over a probate proceeding may: (a) Compel the attendance of, or require the response to inquiries by and production of documents subject to discovery under ORCP 36 from, any person, including a beneficiary, creditor, fiduciary or any other person who may have knowledge about the decedents taxes, financial affairs or property. (b) Exercise jurisdiction over any transaction entered into by a fiduciary to determine if a conflict of interest existed and enter an appropriate order or judgment with respect to the transaction. (c) Surcharge a fiduciary and any surety for any loss caused by failure of a fiduciary to perform a fiduciary duty or any other duty imposed by ORS chapter 111, 112, 113, 114, 115, 116 or 117. (d) Determine ownership of title for real or personal property. (e) Subject to ORS chapter 90, require delivery of possession of property of the decedent, including records, accounts and documents relating to that property. (f) Require the fiduciary to produce any and all records that might provide information about the condition of the estates property. (g) Remove a fiduciary whenever that removal is in the best interests of the interested persons of an estate. (h) Appoint a successor fiduciary when a fiduciary has died, resigned or been removed. (i) Impose any conditions and limitations upon the fiduciary that the court considers appropriate, including limitations on the duration of the appointment. (j) Without hearing or upon such hearing as the court may prescribe, rule on any matter concerning the administration, settlement or distribution of the estate, including the fiduciarys authority, the courts approval of the fiduciarys actions or the courts instructions to the fiduciary.",
+      "history_citation_blocks": [
+        "1969 c.591 6; 1979 c.284 102; 2016 c.42 13; 2021 c.282 6"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.591 6",
+          "year": 1969,
+          "chapter": "591",
+          "section": "6"
+        },
+        {
+          "raw": "1979 c.284 102",
+          "year": 1979,
+          "chapter": "284",
+          "section": "102"
+        },
+        {
+          "raw": "2016 c.42 13",
+          "year": 2016,
+          "chapter": "42",
+          "section": "13"
+        },
+        {
+          "raw": "2021 c.282 6",
+          "year": 2021,
+          "chapter": "282",
+          "section": "6"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A probate court has the general legal and equitable powers of a circuit court.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The determinations, orders and judgments of a probate court have the same validity, finality and presumption of regularity as those of a circuit court.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "A probate court has full, legal and equitable powers to make declaratory judgments, as provided in ORS 28.010 to 28.160, in all matters involved in the administration of an estate, including matters pertaining to the title of real property and ownership of personal property, the determination of heirship and the distribution of the estate.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "A court having jurisdiction over a probate proceeding may:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Compel the attendance of, or require the response to inquiries by and production of documents subject to discovery under ORCP 36 from, any person, including a beneficiary, creditor, fiduciary or any other person who may have knowledge about the decedents taxes, financial affairs or property.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Exercise jurisdiction over any transaction entered into by a fiduciary to determine if a conflict of interest existed and enter an appropriate order or judgment with respect to the transaction.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Surcharge a fiduciary and any surety for any loss caused by failure of a fiduciary to perform a fiduciary duty or any other duty imposed by ORS chapter 111, 112, 113, 114, 115, 116 or 117.",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "Determine ownership of title for real or personal property.",
+              "subsections": []
+            },
+            {
+              "label": "(e)",
+              "token": "e",
+              "kind": "alpha_lower",
+              "text": "Subject to ORS chapter 90, require delivery of possession of property of the decedent, including records, accounts and documents relating to that property.",
+              "subsections": []
+            },
+            {
+              "label": "(f)",
+              "token": "f",
+              "kind": "alpha_lower",
+              "text": "Require the fiduciary to produce any and all records that might provide information about the condition of the estates property.",
+              "subsections": []
+            },
+            {
+              "label": "(g)",
+              "token": "g",
+              "kind": "alpha_lower",
+              "text": "Remove a fiduciary whenever that removal is in the best interests of the interested persons of an estate.",
+              "subsections": []
+            },
+            {
+              "label": "(h)",
+              "token": "h",
+              "kind": "alpha_lower",
+              "text": "Appoint a successor fiduciary when a fiduciary has died, resigned or been removed.",
+              "subsections": []
+            },
+            {
+              "label": "(i)",
+              "token": "i",
+              "kind": "alpha_lower",
+              "text": "Impose any conditions and limitations upon the fiduciary that the court considers appropriate, including limitations on the duration of the appointment.",
+              "subsections": []
+            },
+            {
+              "label": "(j)",
+              "token": "j",
+              "kind": "alpha_lower",
+              "text": "Without hearing or upon such hearing as the court may prescribe, rule on any matter concerning the administration, settlement or distribution of the estate, including the fiduciarys authority, the courts approval of the fiduciarys actions or the courts instructions to the fiduciary.",
+              "subsections": []
+            }
+          ]
+        }
+      ],
+      "parser_warnings": [],
+      "position": 15,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html#section-111.105",
+      "identifier": "ORS 111.105",
+      "name": "Section 111.105",
+      "text": "Appeals from probate court; reexamination of issues. (1) Except as otherwise provided in this section, no issue determined in a probate court exercising probate jurisdiction shall be tried again on appeal or otherwise reexamined in a manner other than those appropriate to issues determined by a court of record with general jurisdiction. (2) Appeals from a circuit court exercising probate jurisdiction shall be taken to the Court of Appeals in the manner provided by law for appeals from the circuit court. (3) Appeals from a county court exercising probate jurisdiction shall be taken to the circuit court and Court of Appeals in the manner provided by ORS 5.120.",
+      "history_citation_blocks": [
+        "1969 c.591 7; 1979 c.284 103; 2021 c.282 7"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.591 7",
+          "year": 1969,
+          "chapter": "591",
+          "section": "7"
+        },
+        {
+          "raw": "1979 c.284 103",
+          "year": 1979,
+          "chapter": "284",
+          "section": "103"
+        },
+        {
+          "raw": "2021 c.282 7",
+          "year": 2021,
+          "chapter": "282",
+          "section": "7"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Except as otherwise provided in this section, no issue determined in a probate court exercising probate jurisdiction shall be tried again on appeal or otherwise reexamined in a manner other than those appropriate to issues determined by a court of record with general jurisdiction.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Appeals from a circuit court exercising probate jurisdiction shall be taken to the Court of Appeals in the manner provided by law for appeals from the circuit court.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Appeals from a county court exercising probate jurisdiction shall be taken to the circuit court and Court of Appeals in the manner provided by ORS 5.120.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 16,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html#section-111.110",
+      "identifier": "ORS 111.110",
+      "name": "Section 111.110",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 17,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html#section-111.115",
+      "identifier": "ORS 111.115",
+      "name": "Section 111.115",
+      "text": "Transfer of estate proceeding from county court to circuit court. (1) An estate proceeding may be transferred at any time from a county court to the circuit court for the county by order of the county court. (2) An estate proceeding commenced in a county court and in which the county judge is a party or directly interested must be transferred from the county court to the circuit court for the county by order of the county court. (3) Upon transfer of an estate proceeding from a county court to the circuit court for the county under this section: (a) The county clerk shall certify and cause to be filed in the records of the circuit court all original papers, records and proceedings pertaining to the estate proceeding; and (b) Jurisdiction over the estate proceeding vests in the circuit court as if the jurisdiction had been originally and exclusively vested in the circuit court.",
+      "history_citation_blocks": [
+        "1969 c.591 8; 2016 c.42 14; 2021 c.282 8"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.591 8",
+          "year": 1969,
+          "chapter": "591",
+          "section": "8"
+        },
+        {
+          "raw": "2016 c.42 14",
+          "year": 2016,
+          "chapter": "42",
+          "section": "14"
+        },
+        {
+          "raw": "2021 c.282 8",
+          "year": 2021,
+          "chapter": "282",
+          "section": "8"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "An estate proceeding may be transferred at any time from a county court to the circuit court for the county by order of the county court.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "An estate proceeding commenced in a county court and in which the county judge is a party or directly interested must be transferred from the county court to the circuit court for the county by order of the county court.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Upon transfer of an estate proceeding from a county court to the circuit court for the county under this section:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "The county clerk shall certify and cause to be filed in the records of the circuit court all original papers, records and proceedings pertaining to the estate proceeding; and",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Jurisdiction over the estate proceeding vests in the circuit court as if the jurisdiction had been originally and exclusively vested in the circuit court.",
+              "subsections": []
+            }
+          ]
+        }
+      ],
+      "parser_warnings": [],
+      "position": 18,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html#section-111.120",
+      "identifier": "ORS 111.120",
+      "name": "Section 111.120",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 19,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html#section-111.130",
+      "identifier": "ORS 111.130",
+      "name": "Section 111.130",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 20,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html#section-111.140",
+      "identifier": "ORS 111.140",
+      "name": "Section 111.140",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 21,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html#section-111.150",
+      "identifier": "ORS 111.150",
+      "name": "Section 111.150",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 22,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html#section-111.160",
+      "identifier": "ORS 111.160",
+      "name": "Section 111.160",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 23,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html#section-111.165",
+      "identifier": "ORS 111.165",
+      "name": "Section 111.165",
+      "text": "",
+      "history_citation_blocks": [
+        "1969 c.591 9; repealed by 1995 c.658 127"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.591 9",
+          "year": 1969,
+          "chapter": "591",
+          "section": "9"
+        },
+        {
+          "raw": "repealed by 1995 c.658 127"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 24,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html#section-111.170",
+      "identifier": "ORS 111.170",
+      "name": "Section 111.170",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 25,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html#section-111.175",
+      "identifier": "ORS 111.175",
+      "name": "Section 111.175",
+      "text": "Appointment of probate commissioner and deputy probate commissioners. The presiding judge of a circuit court or the county judge of a county court may appoint a probate commissioner and one or more deputy probate commissioners and, if such appointments are made, shall prescribe, by rule or order, the duties and responsibilities of the probate commissioner and deputy probate commissioners, subject to ORS 111.185.",
+      "history_citation_blocks": [
+        "1969 c.591 10; 2016 c.42 15"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.591 10",
+          "year": 1969,
+          "chapter": "591",
+          "section": "10"
+        },
+        {
+          "raw": "2016 c.42 15",
+          "year": 2016,
+          "chapter": "42",
+          "section": "15"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 26,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html#section-111.185",
+      "identifier": "ORS 111.185",
+      "name": "Section 111.185",
+      "text": "Powers of probate commissioner and deputy probate commissioners and deputy probate commissioners. (1) To the extent prescribed or otherwise authorized by rule or order made under ORS 111.175, a probate commissioner or deputy probate commissioner may: (a) Act upon uncontested petitions for appointment of special administrators, for probate of wills and for appointment of personal representatives, guardians and conservators; (b) Make and enter orders and judgments admitting wills to probate and appointing and setting the amount of the bonds of special administrators, personal representatives, guardians and conservators; and (c) Appoint court visitors. (2) Any matter presented to the probate commissioner or deputy probate commissioner may be referred to the judge of the court. (3) Any order or judgment made by a probate commissioner or deputy probate commissioner is subject to being set aside or modified by the judge of the court within 30 days after the date of the order or judgment. (4) Any interested person may object to an order or judgment of a probate commissioner or deputy probate commissioner within 30 days after the date of the order or judgment, and the judge of the court may set aside or modify the order or judgment. (5) Unless set aside or modified by the judge of the court, the orders and judgments of the probate commissioner or deputy probate commissioner have the same effect as if made by the judge of the court. [1969 c.591 11; 2016 c.42 16] PROBATE PROCEDURE GENERALLY",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "To the extent prescribed or otherwise authorized by rule or order made under ORS 111.175, a probate commissioner or deputy probate commissioner may:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Act upon uncontested petitions for appointment of special administrators, for probate of wills and for appointment of personal representatives, guardians and conservators;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Make and enter orders and judgments admitting wills to probate and appointing and setting the amount of the bonds of special administrators, personal representatives, guardians and conservators; and",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Appoint court visitors.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Any matter presented to the probate commissioner or deputy probate commissioner may be referred to the judge of the court.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Any order or judgment made by a probate commissioner or deputy probate commissioner is subject to being set aside or modified by the judge of the court within 30 days after the date of the order or judgment.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Any interested person may object to an order or judgment of a probate commissioner or deputy probate commissioner within 30 days after the date of the order or judgment, and the judge of the court may set aside or modify the order or judgment.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "Unless set aside or modified by the judge of the court, the orders and judgments of the probate commissioner or deputy probate commissioner have the same effect as if made by the judge of the court. [1969 c.591 11; 2016 c.42 16] PROBATE PROCEDURE GENERALLY",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 27,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html#section-111.200",
+      "identifier": "ORS 111.200",
+      "name": "Section 111.200",
+      "text": "Applicability of Oregon Rules of Civil Procedure and Oregon Evidence Code; contested issues in probate proceedings. (1) As used in this section: (a) Probate proceeding means a proceeding under ORS chapter 111, 112, 113, 114, 115, 116 or 117 for the administration of a decedents estate. (b) Probate proceeding does not include: (A) A proceeding for summary determination of a claim under ORS 115.145 (1)(b); or (B) A declaratory judgment action under ORS chapter 28. (2) Except as otherwise provided in ORS 111.205, 111.218, 112.588, 113.005, 113.105, 114.720, 115.315, 116.083 or 116.253, the Oregon Rules of Civil Procedure and the Oregon Evidence Code do not apply to probate proceedings. (3) Notwithstanding subsection (2) of this section: (a) ORCP 12 applies to any probate proceeding. (b) ORCP 9, 10 A, 16 B, 16 D, 17, 18, 19, 21, 22, 23, 25, 27, 29, 30, 31, 33, 34 A to F, 36 to 43, 44 A, B, D and E, 46, 47, 53, 55, 62, 64 A and C to G, 65, 67, 68, 71, 72 and 78 apply to a contested issue in a probate proceeding. (c) The Oregon Evidence Code applies to a contested issue in a probate proceeding. (4) For the purposes of applying the Oregon Rules of Civil Procedure to a contested issue in a probate proceeding: (a) Plaintiff means any party asserting a claim for relief, whether by way of petition or motion; and (b) Defendant means: (A) Any party against whom the claim is asserted; (B) Any party objecting to the petition or motion; or (C) If the court issues a show cause order, the party subject to the order. (5)(a) For the purposes of this section, an issue in a probate proceeding is contested if it is or arises from: (A) A petition or motion for declaratory judgment, including a will contest; (B) A petition to remove a court-appointed fiduciary; (C) A petition or motion for affirmative relief of any sort against a person; (D) A petition or motion to apportion the proceeds of a wrongful death settlement; (E) If filed by a person other than the personal representative: (i) A motion to increase the amount of the bond of the personal representative, or to require a new bond; (ii) A petition to restrict the powers of the personal representative; (iii) A petition to determine heirship; (iv) A petition for instructions; or (v) A petition to appoint a fiduciary other than the fiduciary nominated in the will admitted to probate; (F) Any other petition or motion to which another person has filed an objection; or (G) Any other petition, motion or show cause order determined by the court to be a contested issue in a probate proceeding. (b) Notwithstanding paragraph (a) of this subsection, unless otherwise determined by the court, the following are not contested issues in probate proceedings: (A) A petition for summary review of administration of a simple estate under ORS 114.550; (B) A petition or motion for summary determination of a claim as provided in ORS 114.542 or 115.145 (1)(a); or (C) An application for an order directing payment of a claim under ORS 115.185. (6) Nothing in this section is intended to affect the burden of proof or standard of proof that is applied in probate proceedings.",
+      "history_citation_blocks": [
+        "2021 c.282 2; 2023 c.17 7"
+      ],
+      "history_citations": [
+        {
+          "raw": "2021 c.282 2",
+          "year": 2021,
+          "chapter": "282",
+          "section": "2"
+        },
+        {
+          "raw": "2023 c.17 7",
+          "year": 2023,
+          "chapter": "17",
+          "section": "7"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "As used in this section: (b); or (a); or",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Probate proceeding means a proceeding under ORS chapter 111, 112, 113, 114, 115, 116 or 117 for the administration of a decedents estate.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Probate proceeding does not include:",
+              "subsections": [
+                {
+                  "label": "(A)",
+                  "token": "A",
+                  "kind": "alpha_upper",
+                  "text": "A proceeding for summary determination of a claim under ORS 115.145",
+                  "subsections": []
+                }
+              ]
+            },
+            {
+              "label": "(B)",
+              "token": "B",
+              "kind": "alpha_upper",
+              "text": "A declaratory judgment action under ORS chapter 28.",
+              "subsections": []
+            },
+            {
+              "label": "(C)",
+              "token": "C",
+              "kind": "alpha_upper",
+              "text": "An application for an order directing payment of a claim under ORS 115.185.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Except as otherwise provided in ORS 111.205, 111.218, 112.588, 113.005, 113.105, 114.720, 115.315, 116.083 or 116.253, the Oregon Rules of Civil Procedure and the Oregon Evidence Code do not apply to probate proceedings. of this section:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "ORCP 12 applies to any probate proceeding.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "ORCP 9, 10 A, 16 B, 16 D, 17, 18, 19, 21, 22, 23, 25, 27, 29, 30, 31, 33, 34 A to F, 36 to 43, 44 A, B, D and E, 46, 47, 53, 55, 62, 64 A and C to G, 65, 67, 68, 71, 72 and 78 apply to a contested issue in a probate proceeding.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "The Oregon Evidence Code applies to a contested issue in a probate proceeding.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Notwithstanding subsection",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "For the purposes of applying the Oregon Rules of Civil Procedure to a contested issue in a probate proceeding:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Plaintiff means any party asserting a claim for relief, whether by way of petition or motion; and",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Defendant means:",
+              "subsections": [
+                {
+                  "label": "(A)",
+                  "token": "A",
+                  "kind": "alpha_upper",
+                  "text": "Any party against whom the claim is asserted;",
+                  "subsections": []
+                },
+                {
+                  "label": "(B)",
+                  "token": "B",
+                  "kind": "alpha_upper",
+                  "text": "Any party objecting to the petition or motion; or",
+                  "subsections": []
+                },
+                {
+                  "label": "(C)",
+                  "token": "C",
+                  "kind": "alpha_upper",
+                  "text": "If the court issues a show cause order, the party subject to the order.",
+                  "subsections": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "(a) For the purposes of this section, an issue in a probate proceeding is contested if it is or arises from:",
+          "subsections": [
+            {
+              "label": "(A)",
+              "token": "A",
+              "kind": "alpha_upper",
+              "text": "A petition or motion for declaratory judgment, including a will contest;",
+              "subsections": []
+            },
+            {
+              "label": "(B)",
+              "token": "B",
+              "kind": "alpha_upper",
+              "text": "A petition to remove a court-appointed fiduciary;",
+              "subsections": []
+            },
+            {
+              "label": "(C)",
+              "token": "C",
+              "kind": "alpha_upper",
+              "text": "A petition or motion for affirmative relief of any sort against a person;",
+              "subsections": []
+            },
+            {
+              "label": "(D)",
+              "token": "D",
+              "kind": "alpha_upper",
+              "text": "A petition or motion to apportion the proceeds of a wrongful death settlement;",
+              "subsections": []
+            },
+            {
+              "label": "(E)",
+              "token": "E",
+              "kind": "alpha_upper",
+              "text": "If filed by a person other than the personal representative:",
+              "subsections": [
+                {
+                  "label": "(i)",
+                  "token": "i",
+                  "kind": "roman_lower",
+                  "text": "A motion to increase the amount of the bond of the personal representative, or to require a new bond;",
+                  "subsections": []
+                },
+                {
+                  "label": "(ii)",
+                  "token": "ii",
+                  "kind": "roman_lower",
+                  "text": "A petition to restrict the powers of the personal representative;",
+                  "subsections": []
+                },
+                {
+                  "label": "(iii)",
+                  "token": "iii",
+                  "kind": "roman_lower",
+                  "text": "A petition to determine heirship;",
+                  "subsections": []
+                },
+                {
+                  "label": "(iv)",
+                  "token": "iv",
+                  "kind": "roman_lower",
+                  "text": "A petition for instructions; or",
+                  "subsections": []
+                },
+                {
+                  "label": "(v)",
+                  "token": "v",
+                  "kind": "roman_lower",
+                  "text": "A petition to appoint a fiduciary other than the fiduciary nominated in the will admitted to probate;",
+                  "subsections": []
+                }
+              ]
+            },
+            {
+              "label": "(F)",
+              "token": "F",
+              "kind": "alpha_upper",
+              "text": "Any other petition or motion to which another person has filed an objection; or",
+              "subsections": []
+            },
+            {
+              "label": "(G)",
+              "token": "G",
+              "kind": "alpha_upper",
+              "text": "Any other petition, motion or show cause order determined by the court to be a contested issue in a probate proceeding.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Notwithstanding paragraph",
+              "subsections": []
+            },
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "of this subsection, unless otherwise determined by the court, the following are not contested issues in probate proceedings:",
+              "subsections": [
+                {
+                  "label": "(A)",
+                  "token": "A",
+                  "kind": "alpha_upper",
+                  "text": "A petition for summary review of administration of a simple estate under ORS 114.550;",
+                  "subsections": []
+                },
+                {
+                  "label": "(B)",
+                  "token": "B",
+                  "kind": "alpha_upper",
+                  "text": "A petition or motion for summary determination of a claim as provided in ORS 114.542 or 115.145",
+                  "subsections": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "Nothing in this section is intended to affect the burden of proof or standard of proof that is applied in probate proceedings.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 28,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html#section-111.205",
+      "identifier": "ORS 111.205",
+      "name": "Section 111.205",
+      "text": "Commencement of probate proceeding; pleadings and mode of procedure; jury trial. (1) A probate proceeding is commenced by the filing of a petition in a court with jurisdiction over probate proceedings. Petitions to commence probate proceedings are authorized in ORS chapters 113 and 117. (2) No particular pleadings or forms of pleadings are required in the exercise of jurisdiction of probate courts. All petitions, inventories, reports and accountings in a probate proceeding must be in writing and include a declaration under penalty of perjury in the form required by ORCP 1 E. The declaration must be made by at least one of the persons making the pleading or by the attorney for the person, or in the case of a business entity by an authorized agent. A declarant who is physically outside the boundaries of the United States must make an unsworn declaration under ORS 194.800 to 194.835. (3) Actions in a probate proceeding are not triable by a jury except as otherwise provided by law.",
+      "history_citation_blocks": [
+        "1969 c.591 12; 1979 c.284 104; 2007 c.284 1; 2013 c.218 13; 2017 c.169 45; 2021 c.282 9"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.591 12",
+          "year": 1969,
+          "chapter": "591",
+          "section": "12"
+        },
+        {
+          "raw": "1979 c.284 104",
+          "year": 1979,
+          "chapter": "284",
+          "section": "104"
+        },
+        {
+          "raw": "2007 c.284 1",
+          "year": 2007,
+          "chapter": "284",
+          "section": "1"
+        },
+        {
+          "raw": "2013 c.218 13",
+          "year": 2013,
+          "chapter": "218",
+          "section": "13"
+        },
+        {
+          "raw": "2017 c.169 45",
+          "year": 2017,
+          "chapter": "169",
+          "section": "45"
+        },
+        {
+          "raw": "2021 c.282 9",
+          "year": 2021,
+          "chapter": "282",
+          "section": "9"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A probate proceeding is commenced by the filing of a petition in a court with jurisdiction over probate proceedings. Petitions to commence probate proceedings are authorized in ORS chapters 113 and 117.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "No particular pleadings or forms of pleadings are required in the exercise of jurisdiction of probate courts. All petitions, inventories, reports and accountings in a probate proceeding must be in writing and include a declaration under penalty of perjury in the form required by ORCP 1 E. The declaration must be made by at least one of the persons making the pleading or by the attorney for the person, or in the case of a business entity by an authorized agent. A declarant who is physically outside the boundaries of the United States must make an unsworn declaration under ORS 194.800 to 194.835.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Actions in a probate proceeding are not triable by a jury except as otherwise provided by law.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 29,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html#section-111.210",
+      "identifier": "ORS 111.210",
+      "name": "Section 111.210",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 30,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html#section-111.212",
+      "identifier": "ORS 111.212",
+      "name": "Section 111.212",
+      "text": "",
+      "history_citation_blocks": [
+        "1953 c.650 2; repealed by 1969 c.591 305"
+      ],
+      "history_citations": [
+        {
+          "raw": "1953 c.650 2",
+          "year": 1953,
+          "chapter": "650",
+          "section": "2"
+        },
+        {
+          "raw": "repealed by 1969 c.591 305"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 31,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html#section-111.215",
+      "identifier": "ORS 111.215",
+      "name": "Section 111.215",
+      "text": "Notice; method and time of giving; computation of time. (1)(a) A notice required under ORS chapter 111, 112, 113, 114, 115, 116 or 117 must contain the following: (A) The name, address and telephone number of the person giving the notice and the nature of that persons interest in the estate; (B) A statement where objections may be filed and the deadline for filing those objections, if any; and (C) A statement that the objection must include a plain and concise statement of the basis for the objection. (b) The notice must be accompanied by copies of any relevant documents filed or to be filed with the court. (2)(a) Except as otherwise specifically provided in ORS chapter 111, 112, 113, 114, 115, 116 or 117, whenever notice is required in ORS chapter 111, 112, 113, 114, 115, 116 or 117, the petitioner or other person filing the document shall cause notice to be given to the personal representative, to each interested person whose interests may be affected by the substance of the document or the grant or denial of the requested action or relief. (b) If the person giving notice under this section knows that a person who is entitled to notice under paragraph (a) of this subsection is represented by a fiduciary, the notice must also be given to the persons fiduciary. (c) If a person who is entitled to notice under paragraph (a) of this subsection is a minor, as that term is defined in ORS 125.005, the notice must be given to the minors parents and, if the minor is 14 years of age or older, to the minor. (d) As used in this subsection, parent means a parent as defined in ORS 419A.004 whose rights have not been terminated or whose rights were terminated but reinstated under ORS 419B.532. (3) Except as otherwise specifically provided in ORS chapter 111, 112, 113, 114, 115, 116 or 117, a notice described in subsection (1) or (2) of this section must be given in one or more of the following ways: (a) By first class mail to the persons place of residence or business. (b) By personal delivery at the persons place of residence or business. (c) If the person consents in writing to electronic notice, or if the notice is being given to the Department of Human Services or the Oregon Health Authority and the department or authority has adopted rules allowing for the department or authority to accept electronic notice, by properly directed electronic mail. (d) If the person has appeared by attorney or has requested that notice be sent to the persons attorney, by mailing or delivery to the persons attorney. If notice is given to a persons attorney consistent with this paragraph, the person giving notice is not required to also send notice to the person. (e) If the place of residence or business of any person is not known or cannot be ascertained with reasonable diligence, by publishing a copy of the notice once in each of three consecutive weeks in a newspaper of general circulation in the county where the probate court sits. (f) Upon good cause shown any other method determined by the court to be reasonably suitable under the circumstances and likely to result in receipt of the notice, including notice by electronic mail irrespective of whether the person has consented to electronic service. (4)(a) Except as otherwise ordered by the court or specifically provided in ORS chapter 111, 112, 113, 114, 115, 116 or 117, the notice described in subsection (1) of this section must be given no later than 15 days before the earlier of the date for filing objections to the petition or other pleading or the date set for the hearing. (b) If a notice of time for filing objections or of the date set for a hearing is published as provided in subsection (3)(e) of this section, the last date of publication of the notice shall be at least 15 days before the earlier of the date for the filing of objections to the petition or motion or the date set for the hearing. (5) Proof of the giving of notice described in subsection (1) of this section must be made at or before the hearing, if any, and filed in the proceeding. (6) The time within which an act is to be done under ORS chapter 111, 112, 113, 114, 115, 116 or 117 is determined under ORS 174.120 and 174.125.",
+      "history_citation_blocks": [
+        "1969 c.591 13; 2007 c.284 8; 2017 c.169 3; 2021 c.282 10"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.591 13",
+          "year": 1969,
+          "chapter": "591",
+          "section": "13"
+        },
+        {
+          "raw": "2007 c.284 8",
+          "year": 2007,
+          "chapter": "284",
+          "section": "8"
+        },
+        {
+          "raw": "2017 c.169 3",
+          "year": 2017,
+          "chapter": "169",
+          "section": "3"
+        },
+        {
+          "raw": "2021 c.282 10",
+          "year": 2021,
+          "chapter": "282",
+          "section": "10"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "(a) A notice required under ORS chapter 111, 112, 113, 114, 115, 116 or 117 must contain the following: of this section must be given no later than 15 days before the earlier of the date for filing objections to the petition or other pleading or the date set for the hearing. of this section must be made at or before the hearing, if any, and filed in the proceeding.",
+          "subsections": [
+            {
+              "label": "(A)",
+              "token": "A",
+              "kind": "alpha_upper",
+              "text": "The name, address and telephone number of the person giving the notice and the nature of that persons interest in the estate;",
+              "subsections": []
+            },
+            {
+              "label": "(B)",
+              "token": "B",
+              "kind": "alpha_upper",
+              "text": "A statement where objections may be filed and the deadline for filing those objections, if any; and",
+              "subsections": []
+            },
+            {
+              "label": "(C)",
+              "token": "C",
+              "kind": "alpha_upper",
+              "text": "A statement that the objection must include a plain and concise statement of the basis for the objection.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "The notice must be accompanied by copies of any relevant documents filed or to be filed with the court. If a notice of time for filing objections or of the date set for a hearing is published as provided in subsection",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "(a) Except as otherwise specifically provided in ORS chapter 111, 112, 113, 114, 115, 116 or 117, whenever notice is required in ORS chapter 111, 112, 113, 114, 115, 116 or 117, the petitioner or other person filing the document shall cause notice to be given to the personal representative, to each interested person whose interests may be affected by the substance of the document or the grant or denial of the requested action or relief. of this section must be given in one or more of the following ways:",
+          "subsections": [
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "If the person giving notice under this section knows that a person who is entitled to notice under paragraph By personal delivery at the persons place of residence or business.",
+              "subsections": []
+            },
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "of this subsection is represented by a fiduciary, the notice must also be given to the persons fiduciary. of this subsection is a minor, as that term is defined in ORS 125.005, the notice must be given to the minors parents and, if the minor is 14 years of age or older, to the minor. By first class mail to the persons place of residence or business.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "If a person who is entitled to notice under paragraph If the person consents in writing to electronic notice, or if the notice is being given to the Department of Human Services or the Oregon Health Authority and the department or authority has adopted rules allowing for the department or authority to accept electronic notice, by properly directed electronic mail.",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "As used in this subsection, parent means a parent as defined in ORS 419A.004 whose rights have not been terminated or whose rights were terminated but reinstated under ORS 419B.532. If the person has appeared by attorney or has requested that notice be sent to the persons attorney, by mailing or delivery to the persons attorney. If notice is given to a persons attorney consistent with this paragraph, the person giving notice is not required to also send notice to the person.",
+              "subsections": []
+            },
+            {
+              "label": "(e)",
+              "token": "e",
+              "kind": "alpha_lower",
+              "text": "If the place of residence or business of any person is not known or cannot be ascertained with reasonable diligence, by publishing a copy of the notice once in each of three consecutive weeks in a newspaper of general circulation in the county where the probate court sits.",
+              "subsections": []
+            },
+            {
+              "label": "(f)",
+              "token": "f",
+              "kind": "alpha_lower",
+              "text": "Upon good cause shown any other method determined by the court to be reasonably suitable under the circumstances and likely to result in receipt of the notice, including notice by electronic mail irrespective of whether the person has consented to electronic service.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Except as otherwise specifically provided in ORS chapter 111, 112, 113, 114, 115, 116 or 117, a notice described in subsection (e) of this section, the last date of publication of the notice shall be at least 15 days before the earlier of the date for the filing of objections to the petition or motion or the date set for the hearing.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "(a) Except as otherwise ordered by the court or specifically provided in ORS chapter 111, 112, 113, 114, 115, 116 or 117, the notice described in subsection",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "Proof of the giving of notice described in subsection",
+          "subsections": []
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "The time within which an act is to be done under ORS chapter 111, 112, 113, 114, 115, 116 or 117 is determined under ORS 174.120 and 174.125.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 32,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html#section-111.218",
+      "identifier": "ORS 111.218",
+      "name": "Section 111.218",
+      "text": "Proof of service; proof of publication. (1) Proof of service must be made for all documents for which statutes require giving notice. If notice of a document is not required, no proof of service is required. (2) Proof of service of a document may be on the document filed in the form of a certificate of service that specifies the date of mailing or other service or may be by a separate filing. (3) Proof of publication required to be filed in probate court must be made in the form required by ORCP 7 F.",
+      "history_citation_blocks": [
+        "2007 c.284 7; 2021 c.282 11"
+      ],
+      "history_citations": [
+        {
+          "raw": "2007 c.284 7",
+          "year": 2007,
+          "chapter": "284",
+          "section": "7"
+        },
+        {
+          "raw": "2021 c.282 11",
+          "year": 2021,
+          "chapter": "282",
+          "section": "11"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Proof of service must be made for all documents for which statutes require giving notice. If notice of a document is not required, no proof of service is required.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Proof of service of a document may be on the document filed in the form of a certificate of service that specifies the date of mailing or other service or may be by a separate filing.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Proof of publication required to be filed in probate court must be made in the form required by ORCP 7 F.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 33,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html#section-111.220",
+      "identifier": "ORS 111.220",
+      "name": "Section 111.220",
+      "text": "[Repealed by 1957 c.411 7]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 34,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html#section-111.225",
+      "identifier": "ORS 111.225",
+      "name": "Section 111.225",
+      "text": "Waiver of notice. When any notice or information is required to be given under ORS chapters 111, 112, 113, 114, 115, 116 and 117, a guardian, a guardian ad litem, a conservator or a person who is neither incompetent nor a minor may waive notice by a writing signed by the guardian, guardian at litem, conservator or person or the attorney of the guardian, guardian ad litem, conservator or person and filed in the proceeding, or by the appearance of the guardian, guardian ad litem, conservator or person at the hearing.",
+      "history_citation_blocks": [
+        "1969 c.591 14; 1973 c.506 5"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.591 14",
+          "year": 1969,
+          "chapter": "591",
+          "section": "14"
+        },
+        {
+          "raw": "1973 c.506 5",
+          "year": 1973,
+          "chapter": "506",
+          "section": "5"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 35,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html#section-111.230",
+      "identifier": "ORS 111.230",
+      "name": "Section 111.230",
+      "text": "[Repealed by 1957 c.411 7]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 36,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html#section-111.231",
+      "identifier": "ORS 111.231",
+      "name": "Section 111.231",
+      "text": "",
+      "history_citation_blocks": [
+        "1957 c.411 3; repealed by 1969 c.591 305"
+      ],
+      "history_citations": [
+        {
+          "raw": "1957 c.411 3",
+          "year": 1957,
+          "chapter": "411",
+          "section": "3"
+        },
+        {
+          "raw": "repealed by 1969 c.591 305"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 37,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html#section-111.235",
+      "identifier": "ORS 111.235",
+      "name": "Section 111.235",
+      "text": "Filing objections to petition or motion. (1) Any interested person or the personal representative may file a written objection to a petition or motion previously filed. (2) An objection filed under this section must: (a) Include a plain and concise statement of the basis for the objection; (b) Be served on the persons described in ORS 111.215 (2); and (c) Be filed on or before the final date for the filing of objections to the petition or motion. (3) If no objections are filed before the final date for the filing of objections to the petition or motion, or if all filed objections are withdrawn, the court may sign the proposed order or judgment without further notice.",
+      "history_citation_blocks": [
+        "1969 c.591 15; 2021 c.282 12"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.591 15",
+          "year": 1969,
+          "chapter": "591",
+          "section": "15"
+        },
+        {
+          "raw": "2021 c.282 12",
+          "year": 2021,
+          "chapter": "282",
+          "section": "12"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Any interested person or the personal representative may file a written objection to a petition or motion previously filed.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "An objection filed under this section must: ; and",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Include a plain and concise statement of the basis for the objection;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Be served on the persons described in ORS 111.215",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Be filed on or before the final date for the filing of objections to the petition or motion.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "If no objections are filed before the final date for the filing of objections to the petition or motion, or if all filed objections are withdrawn, the court may sign the proposed order or judgment without further notice.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 38,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html#section-111.240",
+      "identifier": "ORS 111.240",
+      "name": "Section 111.240",
+      "text": "[Repealed by 1957 c.411 7]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 39,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html#section-111.241",
+      "identifier": "ORS 111.241",
+      "name": "Section 111.241",
+      "text": "Hearing. (1) The court may require that a hearing be held on any petition or motion in a probate proceeding. (2) A hearing must be held on a petition or a motion in a probate proceeding if an objection to the petition or motion is filed and the objection is not withdrawn before the hearing.",
+      "history_citation_blocks": [
+        "2021 c.282 3"
+      ],
+      "history_citations": [
+        {
+          "raw": "2021 c.282 3",
+          "year": 2021,
+          "chapter": "282",
+          "section": "3"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The court may require that a hearing be held on any petition or motion in a probate proceeding.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "A hearing must be held on a petition or a motion in a probate proceeding if an objection to the petition or motion is filed and the objection is not withdrawn before the hearing.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 40,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html#section-111.245",
+      "identifier": "ORS 111.245",
+      "name": "Section 111.245",
+      "text": "Proof of documents; certification. (1) Proof of documents pursuant to ORS chapter 111, 112, 113, 114, 115, 116 or 117 may be made as follows: (a) Of a will, by a certified copy of the will. (b) That a will has been probated or established in a foreign jurisdiction, by a certified copy of the document entered in the foreign jurisdiction admitting the will to probate or recognizing the validity of the will. (c) Of letters testamentary or letters of administration, by a certified copy of the letters. The certification may include a statement that the letters have not been revoked. (2) A document filed or entered in a foreign jurisdiction may be proved by a copy of the document, certified by a clerk of the court in which the document was filed or entered or by any other official having legal custody of the original document.",
+      "history_citation_blocks": [
+        "1969 c.591 16; 2017 c.169 46; 2021 c.282 13"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.591 16",
+          "year": 1969,
+          "chapter": "591",
+          "section": "16"
+        },
+        {
+          "raw": "2017 c.169 46",
+          "year": 2017,
+          "chapter": "169",
+          "section": "46"
+        },
+        {
+          "raw": "2021 c.282 13",
+          "year": 2021,
+          "chapter": "282",
+          "section": "13"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Proof of documents pursuant to ORS chapter 111, 112, 113, 114, 115, 116 or 117 may be made as follows:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Of a will, by a certified copy of the will.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "That a will has been probated or established in a foreign jurisdiction, by a certified copy of the document entered in the foreign jurisdiction admitting the will to probate or recognizing the validity of the will.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Of letters testamentary or letters of administration, by a certified copy of the letters. The certification may include a statement that the letters have not been revoked.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "A document filed or entered in a foreign jurisdiction may be proved by a copy of the document, certified by a clerk of the court in which the document was filed or entered or by any other official having legal custody of the original document.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 41,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html#section-111.255",
+      "identifier": "ORS 111.255",
+      "name": "Section 111.255",
+      "text": "Translation of documents. If all or part of a document is not in the English language, a translation certified by the translator to be accurate may be attached to the document. If no objection is made to the certified translation, any person who relies in good faith on the accuracy of the translation may not be prejudiced because of its inaccuracy.",
+      "history_citation_blocks": [
+        "1969 c.591 17; 2017 c.169 47; 2021 c.282 14"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.591 17",
+          "year": 1969,
+          "chapter": "591",
+          "section": "17"
+        },
+        {
+          "raw": "2017 c.169 47",
+          "year": 2017,
+          "chapter": "169",
+          "section": "47"
+        },
+        {
+          "raw": "2021 c.282 14",
+          "year": 2021,
+          "chapter": "282",
+          "section": "14"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 42,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html#section-111.265",
+      "identifier": "ORS 111.265",
+      "name": "Section 111.265",
+      "text": "",
+      "history_citation_blocks": [
+        "1969 c.591 18; repealed by 2021 c.282 23"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.591 18",
+          "year": 1969,
+          "chapter": "591",
+          "section": "18"
+        },
+        {
+          "raw": "repealed by 2021 c.282 23"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 43,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html#section-111.275",
+      "identifier": "ORS 111.275",
+      "name": "Section 111.275",
+      "text": "Limited judgments. (1) The court in a probate proceeding may enter a limited judgment only for the following decisions of the court: (a) A decision on a petition for appointment or removal of a personal representative, including a successor personal representative. (b) A decision in a will contest filed in the probate proceeding. (c) A decision to require delivery of possession of property of the decedent, including records, accounts or documents relating to the property. (d) A decision to determine ownership of title for real or personal property. (e) A decision on a petition or motion for support or elective share. (f) A decision on an objection to a final accounting. (g) A decision on a request made in the proceeding for a declaratory judgment under ORS 111.095. (h) A decision on a request for an award of expenses under ORS 116.183. (i) A decision on surcharge of a fiduciary or a surety. (j) Such decisions of the court as may be specified by rules or orders of the Chief Justice of the Supreme Court under ORS 18.028. (k) Any other decision that is a final determination of the rights of one or more persons. (2) A court may enter a limited judgment under this section only if the court determines that there is no just reason for delay. The judgment document need not reflect the courts determination that there is no just reason for delay. [2005 c.568 33; 2009 c.50 1; 2016 c.42 18; 2021 c.282 15] _______________",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The court in a probate proceeding may enter a limited judgment only for the following decisions of the court:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "A decision on a petition for appointment or removal of a personal representative, including a successor personal representative.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "A decision in a will contest filed in the probate proceeding.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "A decision to require delivery of possession of property of the decedent, including records, accounts or documents relating to the property.",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "A decision to determine ownership of title for real or personal property.",
+              "subsections": []
+            },
+            {
+              "label": "(e)",
+              "token": "e",
+              "kind": "alpha_lower",
+              "text": "A decision on a petition or motion for support or elective share.",
+              "subsections": []
+            },
+            {
+              "label": "(f)",
+              "token": "f",
+              "kind": "alpha_lower",
+              "text": "A decision on an objection to a final accounting.",
+              "subsections": []
+            },
+            {
+              "label": "(g)",
+              "token": "g",
+              "kind": "alpha_lower",
+              "text": "A decision on a request made in the proceeding for a declaratory judgment under ORS 111.095.",
+              "subsections": []
+            },
+            {
+              "label": "(h)",
+              "token": "h",
+              "kind": "alpha_lower",
+              "text": "A decision on a request for an award of expenses under ORS 116.183.",
+              "subsections": []
+            },
+            {
+              "label": "(i)",
+              "token": "i",
+              "kind": "alpha_lower",
+              "text": "A decision on surcharge of a fiduciary or a surety.",
+              "subsections": []
+            },
+            {
+              "label": "(j)",
+              "token": "j",
+              "kind": "alpha_lower",
+              "text": "Such decisions of the court as may be specified by rules or orders of the Chief Justice of the Supreme Court under ORS 18.028.",
+              "subsections": []
+            },
+            {
+              "label": "(k)",
+              "token": "k",
+              "kind": "alpha_lower",
+              "text": "Any other decision that is a final determination of the rights of one or more persons.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "A court may enter a limited judgment under this section only if the court determines that there is no just reason for delay. The judgment document need not reflect the courts determination that there is no just reason for delay. [2005 c.568 33; 2009 c.50 1; 2016 c.42 18; 2021 c.282 15] _______________",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 44,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors111.html"
+    }
+  ],
+  "alternateName": "General Provisions",
+  "legislationDate": "2023"
+}

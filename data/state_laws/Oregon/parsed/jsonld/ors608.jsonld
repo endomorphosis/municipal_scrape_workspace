@@ -1,0 +1,573 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "orlaw": "https://www.oregonlegislature.gov/ors#"
+  },
+  "@type": "Legislation",
+  "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors608.html",
+  "identifier": "ORS Chapter 608",
+  "name": "ORS Chapter 608 — Fences to Prevent Damage by",
+  "legislationType": "Statute",
+  "jurisdiction": "US-OR",
+  "isPartOf": {
+    "@type": "CreativeWork",
+    "identifier": "ORS",
+    "name": "Oregon Revised Statutes",
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors"
+  },
+  "dateModified": "2026-02-25T08:11:28.636955+00:00",
+  "source_file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors608.html",
+  "hasPart": [
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors608.html#section-608.010",
+      "identifier": "ORS 608.010",
+      "name": "Section 608.010",
+      "text": "[Repealed by 1957 c.476 4] CIVIL LIABILITY",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 1,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors608.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors608.html#section-608.015",
+      "identifier": "ORS 608.015",
+      "name": "Section 608.015",
+      "text": "Civil liability for animals trespassing on adequately fenced land situated on open range. (1) As used in this section, open range means an area wherein livestock may lawfully be permitted to run at large. (2) A person who permits a horse, mule, ass, sheep, goat or animal of the bovine species to trespass on land enclosed by an adequate fence and situated on open range shall be liable to the owner or lawful possessor of the enclosed land for damage done by the animal. The person seeking to recover the damages shall plead and prove that the fence of the person consisted of structures, masonry, hedges, ditches, rails, poles, planks, rivers, streams, ponds, lakes, wire fences, natural or artificial barriers of any kind or any combination thereof. The adequacy of the fence shall be determined by reference to the customs and practices of good husbandry in the particular area with reference to fences. The question of the existence of the fence and the adequacy thereof are questions of fact. (3) Nothing contained in subsection (2) of this section is intended to modify the provisions of ORS 608.310 to 608.400.",
+      "history_citation_blocks": [
+        "1957 c.476 1,2; 2013 c.1 78"
+      ],
+      "history_citations": [
+        {
+          "raw": "1957 c.476 1,2"
+        },
+        {
+          "raw": "2013 c.1 78",
+          "year": 2013,
+          "chapter": "1",
+          "section": "78"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "As used in this section, open range means an area wherein livestock may lawfully be permitted to run at large.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "A person who permits a horse, mule, ass, sheep, goat or animal of the bovine species to trespass on land enclosed by an adequate fence and situated on open range shall be liable to the owner or lawful possessor of the enclosed land for damage done by the animal. The person seeking to recover the damages shall plead and prove that the fence of the person consisted of structures, masonry, hedges, ditches, rails, poles, planks, rivers, streams, ponds, lakes, wire fences, natural or artificial barriers of any kind or any combination thereof. The adequacy of the fence shall be determined by reference to the customs and practices of good husbandry in the particular area with reference to fences. The question of the existence of the fence and the adequacy thereof are questions of fact. of this section is intended to modify the provisions of ORS 608.310 to 608.400.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Nothing contained in subsection",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 2,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors608.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors608.html#section-608.020",
+      "identifier": "ORS 608.020",
+      "name": "Section 608.020",
+      "text": "[Repealed by 1957 c.476 4]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 3,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors608.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors608.html#section-608.030",
+      "identifier": "ORS 608.030",
+      "name": "Section 608.030",
+      "text": "[Repealed by 1957 c.476 4]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 4,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors608.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors608.html#section-608.040",
+      "identifier": "ORS 608.040",
+      "name": "Section 608.040",
+      "text": "[Repealed by 1957 c.476 4]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 5,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors608.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors608.html#section-608.050",
+      "identifier": "ORS 608.050",
+      "name": "Section 608.050",
+      "text": "[Repealed by 1957 c.476 4]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 6,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors608.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors608.html#section-608.060",
+      "identifier": "ORS 608.060",
+      "name": "Section 608.060",
+      "text": "[Repealed by 1957 c.476 4]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 7,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors608.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors608.html#section-608.070",
+      "identifier": "ORS 608.070",
+      "name": "Section 608.070",
+      "text": "[Repealed by 1957 c.476 4]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 8,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors608.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors608.html#section-608.080",
+      "identifier": "ORS 608.080",
+      "name": "Section 608.080",
+      "text": "[Repealed by 1957 c.476 4]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 9,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors608.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors608.html#section-608.210",
+      "identifier": "ORS 608.210",
+      "name": "Section 608.210",
+      "text": "[Repealed by 1957 c.476 4]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 10,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors608.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors608.html#section-608.220",
+      "identifier": "ORS 608.220",
+      "name": "Section 608.220",
+      "text": "[Repealed by 1957 c.476 4]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 11,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors608.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors608.html#section-608.230",
+      "identifier": "ORS 608.230",
+      "name": "Section 608.230",
+      "text": "[Repealed by 1957 c.476 4]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 12,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors608.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors608.html#section-608.240",
+      "identifier": "ORS 608.240",
+      "name": "Section 608.240",
+      "text": "[Repealed by 1957 c.476 4]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 13,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors608.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors608.html#section-608.250",
+      "identifier": "ORS 608.250",
+      "name": "Section 608.250",
+      "text": "[Repealed by 1957 c.476 4]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 14,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors608.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors608.html#section-608.260",
+      "identifier": "ORS 608.260",
+      "name": "Section 608.260",
+      "text": "[Repealed by 1957 c.476 4]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 15,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors608.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors608.html#section-608.270",
+      "identifier": "ORS 608.270",
+      "name": "Section 608.270",
+      "text": "[Repealed by 1957 c.476 4] FENCES AND CROSSINGS ON RAILROAD RIGHT OF WAY; RAILROAD LIABILITY",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 16,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors608.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors608.html#section-608.310",
+      "identifier": "ORS 608.310",
+      "name": "Section 608.310",
+      "text": "Erecting and maintaining fences, crossings, gates and cattle guards; rules. (1) Every person, or the lessee or agent of the person, owning or operating any railroad, shall erect and maintain good and sufficient lawful fences on both sides of the railroad line, except at the crossings of and upon public roads and highways, within such portions of cities as are or may be laid out and platted in lots and blocks and at railroad station grounds. Such person shall also at the same time erect and maintain necessary farm crossings and gates and sufficient cattle guards at all public crossings. (2) Railroad lines shall be so fenced and farm crossings, gates and cattle guards installed, within three months from the time such lines are put in operation. However, the Department of Transportation may prescribe by rule the number, location and character of farm crossings which may be necessary and the manner in which they shall be constructed so that they are reasonably adequate, safe, sufficient and convenient, but not so as to impair the terms of any contract between the landowner and the railroad or judgment in condemnation relative to such crossings. (3) The Department of Transportation may, by rule, determine and prescribe any other description of fence than that designated as a lawful fence, which shall be constructed and maintained by any such railroad company between the points which are designated in such rule, and may provide for the apportionment of the costs of reconstruction necessitated thereby as between the parties interested. (4) The Department of Transportation by rule may suspend the operation of this section as to any particular portion of any line of railroad.",
+      "history_citation_blocks": [
+        "Amended by 1971 c.655 248; 1995 c.733 46; 1997 c.249 186; 2003 c.576 524"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1971 c.655 248"
+        },
+        {
+          "raw": "1995 c.733 46",
+          "year": 1995,
+          "chapter": "733",
+          "section": "46"
+        },
+        {
+          "raw": "1997 c.249 186",
+          "year": 1997,
+          "chapter": "249",
+          "section": "186"
+        },
+        {
+          "raw": "2003 c.576 524",
+          "year": 2003,
+          "chapter": "576",
+          "section": "524"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Every person, or the lessee or agent of the person, owning or operating any railroad, shall erect and maintain good and sufficient lawful fences on both sides of the railroad line, except at the crossings of and upon public roads and highways, within such portions of cities as are or may be laid out and platted in lots and blocks and at railroad station grounds. Such person shall also at the same time erect and maintain necessary farm crossings and gates and sufficient cattle guards at all public crossings.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Railroad lines shall be so fenced and farm crossings, gates and cattle guards installed, within three months from the time such lines are put in operation. However, the Department of Transportation may prescribe by rule the number, location and character of farm crossings which may be necessary and the manner in which they shall be constructed so that they are reasonably adequate, safe, sufficient and convenient, but not so as to impair the terms of any contract between the landowner and the railroad or judgment in condemnation relative to such crossings.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The Department of Transportation may, by rule, determine and prescribe any other description of fence than that designated as a lawful fence, which shall be constructed and maintained by any such railroad company between the points which are designated in such rule, and may provide for the apportionment of the costs of reconstruction necessitated thereby as between the parties interested.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "The Department of Transportation by rule may suspend the operation of this section as to any particular portion of any line of railroad.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 17,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors608.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors608.html#section-608.320",
+      "identifier": "ORS 608.320",
+      "name": "Section 608.320",
+      "text": "Penalty for railroad refusing or failing to maintain fences, gates and guards. (1) Any person shall forfeit and pay into the State Treasury the sum of $100 for each mile of fence on either side of a railroad, or for each farm crossing, gate or cattle guard which the person fails, neglects or refuses to erect and maintain in violation of ORS 608.310. This shall be recovered as other penalties are recovered and paid into the State Treasury. (2) If a person neglects or refuses to comply with ORS 608.310 to 608.330, the Attorney General or prosecuting attorney of the proper county may, by mandamus, compel compliance with such sections. (3) The provisions of ORS 608.310 to 608.330 are cumulative to existing remedies. [Amended by 1995 c.733 47]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Any person shall forfeit and pay into the State Treasury the sum of $100 for each mile of fence on either side of a railroad, or for each farm crossing, gate or cattle guard which the person fails, neglects or refuses to erect and maintain in violation of ORS 608.310. This shall be recovered as other penalties are recovered and paid into the State Treasury.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "If a person neglects or refuses to comply with ORS 608.310 to 608.330, the Attorney General or prosecuting attorney of the proper county may, by mandamus, compel compliance with such sections.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The provisions of ORS 608.310 to 608.330 are cumulative to existing remedies. [Amended by 1995 c.733 47]",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 18,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors608.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors608.html#section-608.330",
+      "identifier": "ORS 608.330",
+      "name": "Section 608.330",
+      "text": "Leaving gate open. (1) No person shall intentionally or negligently leave open or unfastened any farm crossing gate, or let down and leave down any bars of any railroad fence. (2) Justices of the peace have original jurisdiction for violations of this section.",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "No person shall intentionally or negligently leave open or unfastened any farm crossing gate, or let down and leave down any bars of any railroad fence.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Justices of the peace have original jurisdiction for violations of this section.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 19,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors608.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors608.html#section-608.340",
+      "identifier": "ORS 608.340",
+      "name": "is killed or injured by a moving train or engine upon the unfenced",
+      "text": "railroad track of any railroad in this state, the owner, operator, lessee or agent of the railroad shall immediately notify or cause notice to be given to the sheriff of the county where the accident occurred, and within a reasonable time shall deliver to the sheriff a written description of the livestock so killed or injured, including brands, earmarks and any marks of ownership, and a statement of the condition of or extent and nature of injuries to the livestock.",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 20,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors608.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors608.html#section-608.350",
+      "identifier": "ORS 608.350",
+      "name": "Section 608.350",
+      "text": "Fences sufficient to relieve railroad of liability. No railroad track shall be deemed to be fenced within the meaning of ORS 608.340 unless it is guarded by such fence against the entrance thereon of any livestock on either side of the track, and not more than 100 feet from the track. Whatever is a lawful fence in the county where the killing or injury occurs, and no other, shall be deemed a lawful fence under ORS 608.340. However, complete natural defenses against the entrance of stock upon the track, such as natural walls or deep ditches, shall be deemed to be a fence under such section, when it, in connection with other and ordinary lawful fences, forms a continuous guard and defense against the entrance of such livestock upon the track.",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 21,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors608.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors608.html#section-608.360",
+      "identifier": "ORS 608.360",
+      "name": "Section 608.360",
+      "text": "When railroads negligence is presumed; contributory negligence and willful intent as defense. In every action for the recovery of the value of any livestock killed, or for damages for injury to any livestock, under ORS 608.340, proof of such killing or injury shall of itself be deemed conclusive evidence in any court of this state of negligence upon the part of the person, or the lessees or agents of the person, owning or operating such railroad. Contributory negligence on the part of the plaintiff in such action may be set up as a defense, but allowing stock to run at large upon common unfenced range or upon enclosed land owned or in possession of the owner of such stock shall not be deemed contributory negligence. In any such action, proof of willful intent on the part of the plaintiff to procure the killing or injury of such stock shall defeat the recovery of any damages for such killing or injury.",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 22,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors608.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors608.html#section-608.370",
+      "identifier": "ORS 608.370",
+      "name": "Section 608.370",
+      "text": "Service of process on agent. In any action authorized by ORS 608.340, service of summons or any other necessary process may be made upon any person, or the lessees or agents of the person, owning or operating any railroad, by personal service upon any authorized agent thereof, residing or stationed in the county where such action is brought.",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 23,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors608.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors608.html#section-608.380",
+      "identifier": "ORS 608.380",
+      "name": ", the brand inspector or sheriff shall go to the scene of the accident,",
+      "text": "examine any identifying marks and, if the ownership of the livestock is determined, notify the owner. If the owner remains unknown, the sheriff shall cause publication in a county newspaper of a description of the livestock and the facts of the accident. FENCING AGAINST HOGS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 24,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors608.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors608.html#section-608.390",
+      "identifier": "ORS 608.390",
+      "name": "Section 608.390",
+      "text": "Notifying brand inspector. Upon receipt of the information mentioned in ORS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 25,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors608.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors608.html#section-608.400",
+      "identifier": "ORS 608.400",
+      "name": "Section 608.400",
+      "text": "Inspection of injured livestock and notice to owner. When notified of the killing or injury of livestock under the circumstances described in ORS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 26,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors608.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors608.html#section-608.510",
+      "identifier": "ORS 608.510",
+      "name": "Section 608.510",
+      "text": "Fencing against hogs. The owner or occupant of premises is not required to fence against hogs. No owner or person entitled to the possession of a hog shall permit it to run at large or upon the property of another person.",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 27,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors608.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors608.html#section-608.520",
+      "identifier": "ORS 608.520",
+      "name": "Section 608.520",
+      "text": "[Repealed by 1957 c.476 4]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 28,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors608.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors608.html#section-608.530",
+      "identifier": "ORS 608.530",
+      "name": "Section 608.530",
+      "text": "[Repealed by 1957 c.476 4]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 29,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors608.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors608.html#section-608.540",
+      "identifier": "ORS 608.540",
+      "name": "Section 608.540",
+      "text": "[Repealed by 1957 c.476 4] PENALTIES",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 30,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors608.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors608.html#section-608.990",
+      "identifier": "ORS 608.990",
+      "name": "Section 608.990",
+      "text": "Penalties. (1) Violation of ORS 608.330 is a Class C misdemeanor. (2) Violation of ORS 608.380 is a Class A violation. (3) Violation of ORS 608.510 is a Class D violation. [Amended by 1957 c.476 3; 1999 c.1051 207; 2011 c.597 247] _______________",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Violation of ORS 608.330 is a Class C misdemeanor.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Violation of ORS 608.380 is a Class A violation.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Violation of ORS 608.510 is a Class D violation. [Amended by 1957 c.476 3; 1999 c.1051 207; 2011 c.597 247] _______________",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 31,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors608.html"
+    }
+  ],
+  "alternateName": "Fences to Prevent Damage by",
+  "legislationDate": "2023"
+}

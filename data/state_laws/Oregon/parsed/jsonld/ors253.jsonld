@@ -1,0 +1,2846 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "orlaw": "https://www.oregonlegislature.gov/ors#"
+  },
+  "@type": "Legislation",
+  "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html",
+  "identifier": "ORS Chapter 253",
+  "name": "ORS Chapter 253 — Absent Electors",
+  "legislationType": "Statute",
+  "jurisdiction": "US-OR",
+  "isPartOf": {
+    "@type": "CreativeWork",
+    "identifier": "ORS",
+    "name": "Oregon Revised Statutes",
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors"
+  },
+  "dateModified": "2026-02-25T08:11:19.386959+00:00",
+  "source_file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors253.html",
+  "hasPart": [
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html#section-253.005",
+      "identifier": "ORS 253.005",
+      "name": "Section 253.005",
+      "text": "Definitions. As used in this chapter: (1) Clerk means the county clerk. (2) County clerk means the county clerk or the county official in charge of elections. (3) Elector means an individual qualified to vote under section 2, Article II, Oregon Constitution. (4) Absent elector means a person to whom the county clerk has issued a ballot prior to the date that ballots are mailed to electors as provided in ORS 254.470 (2)(a) or (b).",
+      "history_citation_blocks": [
+        "1979 c.190 201; 1979 c.317 10a; 1999 c.410 27; 2007 c.154 14"
+      ],
+      "history_citations": [
+        {
+          "raw": "1979 c.190 201",
+          "year": 1979,
+          "chapter": "190",
+          "section": "201"
+        },
+        {
+          "raw": "1979 c.317 10a",
+          "year": 1979,
+          "chapter": "317",
+          "section": "10a"
+        },
+        {
+          "raw": "1999 c.410 27",
+          "year": 1999,
+          "chapter": "410",
+          "section": "27"
+        },
+        {
+          "raw": "2007 c.154 14",
+          "year": 2007,
+          "chapter": "154",
+          "section": "14"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Clerk means the county clerk.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "County clerk means the county clerk or the county official in charge of elections. (a) or",
+          "subsections": [
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": ".",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Elector means an individual qualified to vote under section 2, Article II, Oregon Constitution.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Absent elector means a person to whom the county clerk has issued a ballot prior to the date that ballots are mailed to electors as provided in ORS 254.470",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 1,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html#section-253.007",
+      "identifier": "ORS 253.007",
+      "name": "Section 253.007",
+      "text": "",
+      "history_citation_blocks": [
+        "1999 c.410 32; repealed by 2007 c.154 67"
+      ],
+      "history_citations": [
+        {
+          "raw": "1999 c.410 32",
+          "year": 1999,
+          "chapter": "410",
+          "section": "32"
+        },
+        {
+          "raw": "repealed by 2007 c.154 67"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 2,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html#section-253.010",
+      "identifier": "ORS 253.010",
+      "name": "Section 253.010",
+      "text": "",
+      "history_citation_blocks": [
+        "Amended by 1957 c.641 1; 1959 c.458 1; 1969 c.676 1; 1975 c.675 28; 1977 c.352 5; 1979 c.317 10; repealed by 1979 c.190 431"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1957 c.641 1"
+        },
+        {
+          "raw": "1959 c.458 1",
+          "year": 1959,
+          "chapter": "458",
+          "section": "1"
+        },
+        {
+          "raw": "1969 c.676 1",
+          "year": 1969,
+          "chapter": "676",
+          "section": "1"
+        },
+        {
+          "raw": "1975 c.675 28",
+          "year": 1975,
+          "chapter": "675",
+          "section": "28"
+        },
+        {
+          "raw": "1977 c.352 5",
+          "year": 1977,
+          "chapter": "352",
+          "section": "5"
+        },
+        {
+          "raw": "1979 c.317 10",
+          "year": 1979,
+          "chapter": "317",
+          "section": "10"
+        },
+        {
+          "raw": "repealed by 1979 c.190 431"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 3,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html#section-253.015",
+      "identifier": "ORS 253.015",
+      "name": "Section 253.015",
+      "text": "",
+      "history_citation_blocks": [
+        "1979 c.190 202; repealed by 2013 c.520 23"
+      ],
+      "history_citations": [
+        {
+          "raw": "1979 c.190 202",
+          "year": 1979,
+          "chapter": "190",
+          "section": "202"
+        },
+        {
+          "raw": "repealed by 2013 c.520 23"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 4,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html#section-253.020",
+      "identifier": "ORS 253.020",
+      "name": "Section 253.020",
+      "text": "[Amended by 1957 c.641 2; repealed by 1979 c.190 431]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 5,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html#section-253.030",
+      "identifier": "ORS 253.030",
+      "name": "Section 253.030",
+      "text": "",
+      "history_citation_blocks": [
+        "Amended by 1957 c.641 3; 1959 c.458 2; 1969 c.676 2; 1975 c.675 29; 1977 c.179 3; 1979 c.190 203; 1985 c.471 8; 1987 c.719 6; 1989 c.503 36; 1991 c.107 4; 1991 c.168 1; 1993 c.493 24; 1995 c.607 78; 1995 c.712 48; 1999 c.999 42; 2007 c.155 9; 2007 c.881 9; repealed by 2013 c.520 23"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1957 c.641 3"
+        },
+        {
+          "raw": "1959 c.458 2",
+          "year": 1959,
+          "chapter": "458",
+          "section": "2"
+        },
+        {
+          "raw": "1969 c.676 2",
+          "year": 1969,
+          "chapter": "676",
+          "section": "2"
+        },
+        {
+          "raw": "1975 c.675 29",
+          "year": 1975,
+          "chapter": "675",
+          "section": "29"
+        },
+        {
+          "raw": "1977 c.179 3",
+          "year": 1977,
+          "chapter": "179",
+          "section": "3"
+        },
+        {
+          "raw": "1979 c.190 203",
+          "year": 1979,
+          "chapter": "190",
+          "section": "203"
+        },
+        {
+          "raw": "1985 c.471 8",
+          "year": 1985,
+          "chapter": "471",
+          "section": "8"
+        },
+        {
+          "raw": "1987 c.719 6",
+          "year": 1987,
+          "chapter": "719",
+          "section": "6"
+        },
+        {
+          "raw": "1989 c.503 36",
+          "year": 1989,
+          "chapter": "503",
+          "section": "36"
+        },
+        {
+          "raw": "1991 c.107 4",
+          "year": 1991,
+          "chapter": "107",
+          "section": "4"
+        },
+        {
+          "raw": "1991 c.168 1",
+          "year": 1991,
+          "chapter": "168",
+          "section": "1"
+        },
+        {
+          "raw": "1993 c.493 24",
+          "year": 1993,
+          "chapter": "493",
+          "section": "24"
+        },
+        {
+          "raw": "1995 c.607 78",
+          "year": 1995,
+          "chapter": "607",
+          "section": "78"
+        },
+        {
+          "raw": "1995 c.712 48",
+          "year": 1995,
+          "chapter": "712",
+          "section": "48"
+        },
+        {
+          "raw": "1999 c.999 42",
+          "year": 1999,
+          "chapter": "999",
+          "section": "42"
+        },
+        {
+          "raw": "2007 c.155 9",
+          "year": 2007,
+          "chapter": "155",
+          "section": "9"
+        },
+        {
+          "raw": "2007 c.881 9",
+          "year": 2007,
+          "chapter": "881",
+          "section": "9"
+        },
+        {
+          "raw": "repealed by 2013 c.520 23"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 6,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html#section-253.035",
+      "identifier": "ORS 253.035",
+      "name": "Section 253.035",
+      "text": "",
+      "history_citation_blocks": [
+        "1969 c.676 5; 1977 c.352 6; repealed by 1979 c.190 431"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.676 5",
+          "year": 1969,
+          "chapter": "676",
+          "section": "5"
+        },
+        {
+          "raw": "1977 c.352 6",
+          "year": 1977,
+          "chapter": "352",
+          "section": "6"
+        },
+        {
+          "raw": "repealed by 1979 c.190 431"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 7,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html#section-253.040",
+      "identifier": "ORS 253.040",
+      "name": "Section 253.040",
+      "text": "",
+      "history_citation_blocks": [
+        "Amended by 1957 c.641 4; 1959 c.458 3; 1975 c.675 30; 1977 c.508 10; 1979 c.190 204; 1991 c.107 6; repealed by 1999 c.410 67"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1957 c.641 4"
+        },
+        {
+          "raw": "1959 c.458 3",
+          "year": 1959,
+          "chapter": "458",
+          "section": "3"
+        },
+        {
+          "raw": "1975 c.675 30",
+          "year": 1975,
+          "chapter": "675",
+          "section": "30"
+        },
+        {
+          "raw": "1977 c.508 10",
+          "year": 1977,
+          "chapter": "508",
+          "section": "10"
+        },
+        {
+          "raw": "1979 c.190 204",
+          "year": 1979,
+          "chapter": "190",
+          "section": "204"
+        },
+        {
+          "raw": "1991 c.107 6",
+          "year": 1991,
+          "chapter": "107",
+          "section": "6"
+        },
+        {
+          "raw": "repealed by 1999 c.410 67"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 8,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html#section-253.045",
+      "identifier": "ORS 253.045",
+      "name": "Section 253.045",
+      "text": "",
+      "history_citation_blocks": [
+        "1979 c.190 205; 1981 c.173 30; 1989 c.923 1; 1991 c.71 7; 1991 c.107 7; 1993 c.713 56; 1999 c.410 28; 2007 c.154 15; repealed by 2013 c.520 23"
+      ],
+      "history_citations": [
+        {
+          "raw": "1979 c.190 205",
+          "year": 1979,
+          "chapter": "190",
+          "section": "205"
+        },
+        {
+          "raw": "1981 c.173 30",
+          "year": 1981,
+          "chapter": "173",
+          "section": "30"
+        },
+        {
+          "raw": "1989 c.923 1",
+          "year": 1989,
+          "chapter": "923",
+          "section": "1"
+        },
+        {
+          "raw": "1991 c.71 7",
+          "year": 1991,
+          "chapter": "71",
+          "section": "7"
+        },
+        {
+          "raw": "1991 c.107 7",
+          "year": 1991,
+          "chapter": "107",
+          "section": "7"
+        },
+        {
+          "raw": "1993 c.713 56",
+          "year": 1993,
+          "chapter": "713",
+          "section": "56"
+        },
+        {
+          "raw": "1999 c.410 28",
+          "year": 1999,
+          "chapter": "410",
+          "section": "28"
+        },
+        {
+          "raw": "2007 c.154 15",
+          "year": 2007,
+          "chapter": "154",
+          "section": "15"
+        },
+        {
+          "raw": "repealed by 2013 c.520 23"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 9,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html#section-253.050",
+      "identifier": "ORS 253.050",
+      "name": "Section 253.050",
+      "text": "[Repealed by 1957 c.641 23]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 10,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html#section-253.055",
+      "identifier": "ORS 253.055",
+      "name": "Section 253.055",
+      "text": "",
+      "history_citation_blocks": [
+        "1979 c.190 206; 1991 c.107 8; 2007 c.154 16; repealed by 2013 c.520 23"
+      ],
+      "history_citations": [
+        {
+          "raw": "1979 c.190 206",
+          "year": 1979,
+          "chapter": "190",
+          "section": "206"
+        },
+        {
+          "raw": "1991 c.107 8",
+          "year": 1991,
+          "chapter": "107",
+          "section": "8"
+        },
+        {
+          "raw": "2007 c.154 16",
+          "year": 2007,
+          "chapter": "154",
+          "section": "16"
+        },
+        {
+          "raw": "repealed by 2013 c.520 23"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 11,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html#section-253.060",
+      "identifier": "ORS 253.060",
+      "name": "Section 253.060",
+      "text": "[Repealed by 1957 c.641 23]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 12,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html#section-253.065",
+      "identifier": "ORS 253.065",
+      "name": "Section 253.065",
+      "text": "Delivery of out-of-state ballots; replacement ballots; attestation that mailed ballot was timely deposited; rules. (1) For electors with mailing addresses outside this state, the county clerk shall deliver a ballot: (a) Not later than the 45th day before the election to each military or overseas elector; and (b) Not sooner than the 29th day before the election to each absent elector with a mailing address outside this state who is not a military or overseas elector. (2) The clerk shall deliver with the ballot instructions for marking and returning the ballot, a return identification envelope and, if used, a secrecy envelope. Except as provided in subsection (3) of this section, the return identification envelope must contain: (a) Space for the elector to sign the envelope. (b) A notice designed by rule by the Secretary of State, in consultation with the county clerks, explaining that by signing the ballot the elector is attesting under penalty of perjury that the ballot was mailed no later than the date of the election. (c) A summary of the applicable penalties for knowingly making a false statement, oath or affidavit under the election laws. (3) For a military or overseas elector as defined in ORS 253.501, the return identification envelope provided under subsection (2) of this section must contain: (a) Any information that a military or overseas elector is required to sign under the federal Help America Vote Act of 2002 (P.L. 107-252) or other federal law; (b) Space for the elector to sign; and (c) To the extent not required under paragraph (a) of this subsection, a notice designed by rule by the Secretary of State that ensures that any military or overseas elector who returns a ballot by mail makes a legally binding assertion that the ballot was mailed no later than the date of the election. (4) An absent elector may obtain a replacement ballot if the ballot delivered under this section is destroyed, spoiled, lost or not received by the elector. The county clerk shall keep a record of each replacement ballot provided under this subsection. (5) A replacement ballot provided under subsection (4) of this section may be mailed or shall be made available in the office of the county clerk. (6) If the county clerk determines that an absent elector to whom a replacement ballot has been issued at the request of the elector has voted more than once, the county clerk shall count only the first ballot received by the clerk and provide the electors name to the Secretary of State for further review. If the county clerk is required to reissue ballots due to a change on the ballot for any reason, that ballot shall be counted in lieu of any previous ballot issued unless: (a) Only the original ballot was voted and returned; or (b) The county clerk issued a supplemental ballot that is not a complete replacement of the original ballot.",
+      "history_citation_blocks": [
+        "1979 c.190 207; 1981 c.485 1; 1989 c.923 22; 1991 c.719 50; 1995 c.607 34; 1999 c.318 33; 1999 c.1002 7; 2011 c.607 4; 2013 c.520 1; 2021 c.473 12; 2021 c.551 2"
+      ],
+      "history_citations": [
+        {
+          "raw": "1979 c.190 207",
+          "year": 1979,
+          "chapter": "190",
+          "section": "207"
+        },
+        {
+          "raw": "1981 c.485 1",
+          "year": 1981,
+          "chapter": "485",
+          "section": "1"
+        },
+        {
+          "raw": "1989 c.923 22",
+          "year": 1989,
+          "chapter": "923",
+          "section": "22"
+        },
+        {
+          "raw": "1991 c.719 50",
+          "year": 1991,
+          "chapter": "719",
+          "section": "50"
+        },
+        {
+          "raw": "1995 c.607 34",
+          "year": 1995,
+          "chapter": "607",
+          "section": "34"
+        },
+        {
+          "raw": "1999 c.318 33",
+          "year": 1999,
+          "chapter": "318",
+          "section": "33"
+        },
+        {
+          "raw": "1999 c.1002 7",
+          "year": 1999,
+          "chapter": "1002",
+          "section": "7"
+        },
+        {
+          "raw": "2011 c.607 4",
+          "year": 2011,
+          "chapter": "607",
+          "section": "4"
+        },
+        {
+          "raw": "2013 c.520 1",
+          "year": 2013,
+          "chapter": "520",
+          "section": "1"
+        },
+        {
+          "raw": "2021 c.473 12",
+          "year": 2021,
+          "chapter": "473",
+          "section": "12"
+        },
+        {
+          "raw": "2021 c.551 2",
+          "year": 2021,
+          "chapter": "551",
+          "section": "2"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "For electors with mailing addresses outside this state, the county clerk shall deliver a ballot:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Not later than the 45th day before the election to each military or overseas elector; and",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Not sooner than the 29th day before the election to each absent elector with a mailing address outside this state who is not a military or overseas elector.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The clerk shall deliver with the ballot instructions for marking and returning the ballot, a return identification envelope and, if used, a secrecy envelope. Except as provided in subsection of this section must contain:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Any information that a military or overseas elector is required to sign under the federal Help America Vote Act of 2002 (P.L. 107-252) or other federal law; of this subsection, a notice designed by rule by the Secretary of State that ensures that any military or overseas elector who returns a ballot by mail makes a legally binding assertion that the ballot was mailed no later than the date of the election.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Space for the elector to sign; and",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "To the extent not required under paragraph",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "of this section, the return identification envelope must contain: For a military or overseas elector as defined in ORS 253.501, the return identification envelope provided under subsection",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Space for the elector to sign the envelope.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "A notice designed by rule by the Secretary of State, in consultation with the county clerks, explaining that by signing the ballot the elector is attesting under penalty of perjury that the ballot was mailed no later than the date of the election.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "A summary of the applicable penalties for knowingly making a false statement, oath or affidavit under the election laws.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "An absent elector may obtain a replacement ballot if the ballot delivered under this section is destroyed, spoiled, lost or not received by the elector. The county clerk shall keep a record of each replacement ballot provided under this subsection. of this section may be mailed or shall be made available in the office of the county clerk.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "A replacement ballot provided under subsection",
+          "subsections": []
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "If the county clerk determines that an absent elector to whom a replacement ballot has been issued at the request of the elector has voted more than once, the county clerk shall count only the first ballot received by the clerk and provide the electors name to the Secretary of State for further review. If the county clerk is required to reissue ballots due to a change on the ballot for any reason, that ballot shall be counted in lieu of any previous ballot issued unless:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Only the original ballot was voted and returned; or",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "The county clerk issued a supplemental ballot that is not a complete replacement of the original ballot.",
+              "subsections": []
+            }
+          ]
+        }
+      ],
+      "parser_warnings": [],
+      "position": 13,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html#section-253.070",
+      "identifier": "ORS 253.070",
+      "name": "Section 253.070",
+      "text": "Return of ballot from absent elector. (1) Upon receipt of a ballot the absent elector shall mark it and comply with the instructions provided with the ballot. The absent elector may return the marked ballot to the office of the clerk, by any appropriate means. (2) If the absent elector returns the marked ballot by any means other than by mail, the ballot must be received by a county clerk not later than 8 p.m. of the day of the election. (3) If the absent elector returns the marked ballot by mail: (a) The ballot must be received by a county clerk not later than 8 p.m. on the day of the election; or (b) The ballot must: (A) Have a postal indicator showing that the ballot was mailed not later than the date of the election; and (B) Be received at the office of the county clerk not later than seven calendar days after the date of the election. (4) If the elector returns the ballot by mail, and a postal indicator is not present or legible, the ballot shall be considered to be mailed on the date of the election and may be counted if the ballot is received no later than seven calendar days after the election. (5) If a county clerk receives a marked ballot for an elector who does not reside in the clerks county, the ballot shall be forwarded to the county clerk of the county in which the elector resides not later than the eighth day after the election. (6) As used in this section, postal indicator has the meaning given that term in ORS 254.470.",
+      "history_citation_blocks": [
+        "Amended by 1957 c.641 5; 1969 c.676 3; 1979 c.190 208; 1995 c.742 13; 2013 c.520 2; 2021 c.551 3"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1957 c.641 5"
+        },
+        {
+          "raw": "1969 c.676 3",
+          "year": 1969,
+          "chapter": "676",
+          "section": "3"
+        },
+        {
+          "raw": "1979 c.190 208",
+          "year": 1979,
+          "chapter": "190",
+          "section": "208"
+        },
+        {
+          "raw": "1995 c.742 13",
+          "year": 1995,
+          "chapter": "742",
+          "section": "13"
+        },
+        {
+          "raw": "2013 c.520 2",
+          "year": 2013,
+          "chapter": "520",
+          "section": "2"
+        },
+        {
+          "raw": "2021 c.551 3",
+          "year": 2021,
+          "chapter": "551",
+          "section": "3"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Upon receipt of a ballot the absent elector shall mark it and comply with the instructions provided with the ballot. The absent elector may return the marked ballot to the office of the clerk, by any appropriate means.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "If the absent elector returns the marked ballot by any means other than by mail, the ballot must be received by a county clerk not later than 8 p.m. of the day of the election.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "If the absent elector returns the marked ballot by mail:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "The ballot must be received by a county clerk not later than 8 p.m. on the day of the election; or",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "The ballot must:",
+              "subsections": [
+                {
+                  "label": "(A)",
+                  "token": "A",
+                  "kind": "alpha_upper",
+                  "text": "Have a postal indicator showing that the ballot was mailed not later than the date of the election; and",
+                  "subsections": []
+                },
+                {
+                  "label": "(B)",
+                  "token": "B",
+                  "kind": "alpha_upper",
+                  "text": "Be received at the office of the county clerk not later than seven calendar days after the date of the election.",
+                  "subsections": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "If the elector returns the ballot by mail, and a postal indicator is not present or legible, the ballot shall be considered to be mailed on the date of the election and may be counted if the ballot is received no later than seven calendar days after the election.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "If a county clerk receives a marked ballot for an elector who does not reside in the clerks county, the ballot shall be forwarded to the county clerk of the county in which the elector resides not later than the eighth day after the election.",
+          "subsections": []
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "As used in this section, postal indicator has the meaning given that term in ORS 254.470.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 14,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html#section-253.080",
+      "identifier": "ORS 253.080",
+      "name": "Section 253.080",
+      "text": "Duties of clerk on receipt of ballot; manner of counting ballots. (1) Upon receipt of an envelope containing a marked ballot from an absent elector, the clerk shall keep it safely in the office and, before delivering the ballot for counting, shall compare the signature of the absent elector that appears on the ballot envelope with that upon the electors registration record. (2) Except as otherwise provided in this chapter, ballots for absent electors shall be counted and returns shall be made, as nearly as possible, in the same manner as for other ballots cast at the election.",
+      "history_citation_blocks": [
+        "Amended by 1957 c.641 6; 1961 c.92 1; 1979 c.190 209; 1991 c.107 9; 1999 c.410 30; 2013 c.520 3; 2015 c.169 1; 2021 c.551 23"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1957 c.641 6"
+        },
+        {
+          "raw": "1961 c.92 1",
+          "year": 1961,
+          "chapter": "92",
+          "section": "1"
+        },
+        {
+          "raw": "1979 c.190 209",
+          "year": 1979,
+          "chapter": "190",
+          "section": "209"
+        },
+        {
+          "raw": "1991 c.107 9",
+          "year": 1991,
+          "chapter": "107",
+          "section": "9"
+        },
+        {
+          "raw": "1999 c.410 30",
+          "year": 1999,
+          "chapter": "410",
+          "section": "30"
+        },
+        {
+          "raw": "2013 c.520 3",
+          "year": 2013,
+          "chapter": "520",
+          "section": "3"
+        },
+        {
+          "raw": "2015 c.169 1",
+          "year": 2015,
+          "chapter": "169",
+          "section": "1"
+        },
+        {
+          "raw": "2021 c.551 23",
+          "year": 2021,
+          "chapter": "551",
+          "section": "23"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Upon receipt of an envelope containing a marked ballot from an absent elector, the clerk shall keep it safely in the office and, before delivering the ballot for counting, shall compare the signature of the absent elector that appears on the ballot envelope with that upon the electors registration record.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Except as otherwise provided in this chapter, ballots for absent electors shall be counted and returns shall be made, as nearly as possible, in the same manner as for other ballots cast at the election.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 15,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html#section-253.082",
+      "identifier": "ORS 253.082",
+      "name": "Section 253.082",
+      "text": "",
+      "history_citation_blocks": [
+        "1999 c.410 33; repealed by 2007 c.154 67"
+      ],
+      "history_citations": [
+        {
+          "raw": "1999 c.410 33",
+          "year": 1999,
+          "chapter": "410",
+          "section": "33"
+        },
+        {
+          "raw": "repealed by 2007 c.154 67"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 16,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html#section-253.085",
+      "identifier": "ORS 253.085",
+      "name": "Section 253.085",
+      "text": "",
+      "history_citation_blocks": [
+        "Amended by 1957 c.641 8; 1961 c.163 1; 1979 c.190 210; 1999 c.410 34; repealed by 2007 c.154 67"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1957 c.641 8"
+        },
+        {
+          "raw": "1961 c.163 1",
+          "year": 1961,
+          "chapter": "163",
+          "section": "1"
+        },
+        {
+          "raw": "1979 c.190 210",
+          "year": 1979,
+          "chapter": "190",
+          "section": "210"
+        },
+        {
+          "raw": "1999 c.410 34",
+          "year": 1999,
+          "chapter": "410",
+          "section": "34"
+        },
+        {
+          "raw": "repealed by 2007 c.154 67"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 17,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html#section-253.090",
+      "identifier": "ORS 253.090",
+      "name": "Section 253.090",
+      "text": "",
+      "history_citation_blocks": [
+        "Amended by 1957 c.641 9; 1961 c.92 2; 1979 c.190 211; 1993 c.493 25; repealed by 2007 c.154 67"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1957 c.641 9"
+        },
+        {
+          "raw": "1961 c.92 2",
+          "year": 1961,
+          "chapter": "92",
+          "section": "2"
+        },
+        {
+          "raw": "1979 c.190 211",
+          "year": 1979,
+          "chapter": "190",
+          "section": "211"
+        },
+        {
+          "raw": "1993 c.493 25",
+          "year": 1993,
+          "chapter": "493",
+          "section": "25"
+        },
+        {
+          "raw": "repealed by 2007 c.154 67"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 18,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html#section-253.095",
+      "identifier": "ORS 253.095",
+      "name": "Section 253.095",
+      "text": "",
+      "history_citation_blocks": [
+        "1979 c.190 212; repealed by 2007 c.154 67"
+      ],
+      "history_citations": [
+        {
+          "raw": "1979 c.190 212",
+          "year": 1979,
+          "chapter": "190",
+          "section": "212"
+        },
+        {
+          "raw": "repealed by 2007 c.154 67"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 19,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html#section-253.100",
+      "identifier": "ORS 253.100",
+      "name": "Section 253.100",
+      "text": "",
+      "history_citation_blocks": [
+        "Amended by 1957 c.641 10; 1979 c.190 213; repealed by 2007 c.154 67"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1957 c.641 10"
+        },
+        {
+          "raw": "1979 c.190 213",
+          "year": 1979,
+          "chapter": "190",
+          "section": "213"
+        },
+        {
+          "raw": "repealed by 2007 c.154 67"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 20,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html#section-253.110",
+      "identifier": "ORS 253.110",
+      "name": "Section 253.110",
+      "text": "[Amended by 1957 c.641 11; repealed by 1979 c.190 431]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 21,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html#section-253.120",
+      "identifier": "ORS 253.120",
+      "name": "Section 253.120",
+      "text": "",
+      "history_citation_blocks": [
+        "Amended by 1957 c.641 12; 1979 c.190 214; 1991 c.107 10; repealed by 2007 c.154 67"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1957 c.641 12"
+        },
+        {
+          "raw": "1979 c.190 214",
+          "year": 1979,
+          "chapter": "190",
+          "section": "214"
+        },
+        {
+          "raw": "1991 c.107 10",
+          "year": 1991,
+          "chapter": "107",
+          "section": "10"
+        },
+        {
+          "raw": "repealed by 2007 c.154 67"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 22,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html#section-253.130",
+      "identifier": "ORS 253.130",
+      "name": "Section 253.130",
+      "text": "[Repealed by 1955 c.332 20]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 23,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html#section-253.135",
+      "identifier": "ORS 253.135",
+      "name": "Section 253.135",
+      "text": "",
+      "history_citation_blocks": [
+        "1979 c.190 215; 1993 c.713 30; 1995 c.742 14; 1999 c.410 35; 2007 c.154 17; repealed by 2013 c.520 23"
+      ],
+      "history_citations": [
+        {
+          "raw": "1979 c.190 215",
+          "year": 1979,
+          "chapter": "190",
+          "section": "215"
+        },
+        {
+          "raw": "1993 c.713 30",
+          "year": 1993,
+          "chapter": "713",
+          "section": "30"
+        },
+        {
+          "raw": "1995 c.742 14",
+          "year": 1995,
+          "chapter": "742",
+          "section": "14"
+        },
+        {
+          "raw": "1999 c.410 35",
+          "year": 1999,
+          "chapter": "410",
+          "section": "35"
+        },
+        {
+          "raw": "2007 c.154 17",
+          "year": 2007,
+          "chapter": "154",
+          "section": "17"
+        },
+        {
+          "raw": "repealed by 2013 c.520 23"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 24,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html#section-253.140",
+      "identifier": "ORS 253.140",
+      "name": "Section 253.140",
+      "text": "[Repealed by 1979 c.190 431]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 25,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html#section-253.150",
+      "identifier": "ORS 253.150",
+      "name": "Section 253.150",
+      "text": "[Repealed by 1979 c.190 431]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 26,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html#section-253.160",
+      "identifier": "ORS 253.160",
+      "name": "Section 253.160",
+      "text": "",
+      "history_citation_blocks": [
+        "1969 c.261 3; 1979 c.519 25; repealed by 1979 c.190 431"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.261 3",
+          "year": 1969,
+          "chapter": "261",
+          "section": "3"
+        },
+        {
+          "raw": "1979 c.519 25",
+          "year": 1979,
+          "chapter": "519",
+          "section": "25"
+        },
+        {
+          "raw": "repealed by 1979 c.190 431"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 27,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html#section-253.210",
+      "identifier": "ORS 253.210",
+      "name": "Section 253.210",
+      "text": "",
+      "history_citation_blocks": [
+        "Amended by 1957 c.641 13; 1961 c.114 14; repealed by 1979 c.190 431"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1957 c.641 13"
+        },
+        {
+          "raw": "1961 c.114 14",
+          "year": 1961,
+          "chapter": "114",
+          "section": "14"
+        },
+        {
+          "raw": "repealed by 1979 c.190 431"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 28,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html#section-253.300",
+      "identifier": "ORS 253.300",
+      "name": "Section 253.300",
+      "text": "",
+      "history_citation_blocks": [
+        "1971 c.27 2; 1979 c.190 56; renumbered 247.435"
+      ],
+      "history_citations": [
+        {
+          "raw": "1971 c.27 2",
+          "year": 1971,
+          "chapter": "27",
+          "section": "2"
+        },
+        {
+          "raw": "1979 c.190 56",
+          "year": 1979,
+          "chapter": "190",
+          "section": "56"
+        },
+        {
+          "raw": "renumbered 247.435"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 29,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html#section-253.310",
+      "identifier": "ORS 253.310",
+      "name": "Section 253.310",
+      "text": "",
+      "history_citation_blocks": [
+        "1971 c.27 3; repealed by 1979 c.190 431"
+      ],
+      "history_citations": [
+        {
+          "raw": "1971 c.27 3",
+          "year": 1971,
+          "chapter": "27",
+          "section": "3"
+        },
+        {
+          "raw": "repealed by 1979 c.190 431"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 30,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html#section-253.320",
+      "identifier": "ORS 253.320",
+      "name": "Section 253.320",
+      "text": "",
+      "history_citation_blocks": [
+        "1971 c.27 4; repealed by 1979 c.190 431"
+      ],
+      "history_citations": [
+        {
+          "raw": "1971 c.27 4",
+          "year": 1971,
+          "chapter": "27",
+          "section": "4"
+        },
+        {
+          "raw": "repealed by 1979 c.190 431"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 31,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html#section-253.330",
+      "identifier": "ORS 253.330",
+      "name": "Section 253.330",
+      "text": "[1971 c.27 5; repealed by 1979 c.190 431] MILITARY OR OVERSEAS ELECTORS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 32,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html#section-253.500",
+      "identifier": "ORS 253.500",
+      "name": "Section 253.500",
+      "text": "Construction of military or overseas elector law. ORS 253.500 to",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 33,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html#section-253.510",
+      "identifier": "ORS 253.510",
+      "name": "Section 253.510",
+      "text": "Definitions for ORS 253.500 to 253.640. As used in ORS 253.500 to 253.640, military or overseas elector means a resident of this state absent from the place of residence and: (1) Serving in the Armed Forces of the United States or who has been discharged from the Armed Forces of the United States for not more than 30 days; (2) Serving in the Merchant Marine of the United States or who has been discharged from the Merchant Marine of the United States for not more than 30 days; or (3) Temporarily living outside the territorial limits of the United States and the District of Columbia.",
+      "history_citation_blocks": [
+        "1955 c.332 1; 1957 c.641 14; 1969 c.261 1; 1979 c.190 217; 1993 c.493 26; 2013 c.520 5"
+      ],
+      "history_citations": [
+        {
+          "raw": "1955 c.332 1",
+          "year": 1955,
+          "chapter": "332",
+          "section": "1"
+        },
+        {
+          "raw": "1957 c.641 14",
+          "year": 1957,
+          "chapter": "641",
+          "section": "14"
+        },
+        {
+          "raw": "1969 c.261 1",
+          "year": 1969,
+          "chapter": "261",
+          "section": "1"
+        },
+        {
+          "raw": "1979 c.190 217",
+          "year": 1979,
+          "chapter": "190",
+          "section": "217"
+        },
+        {
+          "raw": "1993 c.493 26",
+          "year": 1993,
+          "chapter": "493",
+          "section": "26"
+        },
+        {
+          "raw": "2013 c.520 5",
+          "year": 2013,
+          "chapter": "520",
+          "section": "5"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Serving in the Armed Forces of the United States or who has been discharged from the Armed Forces of the United States for not more than 30 days;",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Serving in the Merchant Marine of the United States or who has been discharged from the Merchant Marine of the United States for not more than 30 days; or",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Temporarily living outside the territorial limits of the United States and the District of Columbia.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 34,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html#section-253.515",
+      "identifier": "ORS 253.515",
+      "name": "Section 253.515",
+      "text": "Military or overseas elector procedures to conform to procedures for absent elector ballots. Except as otherwise provided in ORS 253.500 to 253.640, procedures relating to military or overseas electors ballots shall be as nearly as possible the same as procedures for other absent electors ballots.",
+      "history_citation_blocks": [
+        "1979 c.190 218; 1985 c.720 4; 2013 c.520 6"
+      ],
+      "history_citations": [
+        {
+          "raw": "1979 c.190 218",
+          "year": 1979,
+          "chapter": "190",
+          "section": "218"
+        },
+        {
+          "raw": "1985 c.720 4",
+          "year": 1985,
+          "chapter": "720",
+          "section": "4"
+        },
+        {
+          "raw": "2013 c.520 6",
+          "year": 2013,
+          "chapter": "520",
+          "section": "6"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 35,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html#section-253.520",
+      "identifier": "ORS 253.520",
+      "name": "Section 253.520",
+      "text": "",
+      "history_citation_blocks": [
+        "1955 c.332 3; 1969 c.261 4; repealed by 1979 c.190 431"
+      ],
+      "history_citations": [
+        {
+          "raw": "1955 c.332 3",
+          "year": 1955,
+          "chapter": "332",
+          "section": "3"
+        },
+        {
+          "raw": "1969 c.261 4",
+          "year": 1969,
+          "chapter": "261",
+          "section": "4"
+        },
+        {
+          "raw": "repealed by 1979 c.190 431"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 36,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html#section-253.530",
+      "identifier": "ORS 253.530",
+      "name": "Section 253.530",
+      "text": "Voting by spouse and dependents of military or overseas elector. (1) A spouse or dependent of a military or overseas elector, temporarily living outside the county or city in which is situated the last home residence in this state of the spouse or dependent, may vote in the same manner as a military or overseas elector. (2) A spouse or dependent of a military or overseas elector, not previously a resident of this state who intends to reside in this state, shall be considered a resident of this state for voting purposes, and may vote in the same manner as a military or overseas elector. The spouse or dependent shall be considered to have resided for more than 30 days at the last residence of the military or overseas elector in this state.",
+      "history_citation_blocks": [
+        "1955 c.332 16; 1957 c.641 15; 1965 c.153 1; 1977 c.508 11; 1979 c.190 219; 2013 c.520 7"
+      ],
+      "history_citations": [
+        {
+          "raw": "1955 c.332 16",
+          "year": 1955,
+          "chapter": "332",
+          "section": "16"
+        },
+        {
+          "raw": "1957 c.641 15",
+          "year": 1957,
+          "chapter": "641",
+          "section": "15"
+        },
+        {
+          "raw": "1965 c.153 1",
+          "year": 1965,
+          "chapter": "153",
+          "section": "1"
+        },
+        {
+          "raw": "1977 c.508 11",
+          "year": 1977,
+          "chapter": "508",
+          "section": "11"
+        },
+        {
+          "raw": "1979 c.190 219",
+          "year": 1979,
+          "chapter": "190",
+          "section": "219"
+        },
+        {
+          "raw": "2013 c.520 7",
+          "year": 2013,
+          "chapter": "520",
+          "section": "7"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A spouse or dependent of a military or overseas elector, temporarily living outside the county or city in which is situated the last home residence in this state of the spouse or dependent, may vote in the same manner as a military or overseas elector.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "A spouse or dependent of a military or overseas elector, not previously a resident of this state who intends to reside in this state, shall be considered a resident of this state for voting purposes, and may vote in the same manner as a military or overseas elector. The spouse or dependent shall be considered to have resided for more than 30 days at the last residence of the military or overseas elector in this state.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 37,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html#section-253.540",
+      "identifier": "ORS 253.540",
+      "name": "Section 253.540",
+      "text": "Application for ballot by military or overseas elector. (1) Any military or overseas elector may secure a ballot by submitting an application as specified in subsection (2) of this section to the clerk of the county of the military or overseas electors residence, or to the Secretary of State. If the application is addressed to the Secretary of State, the secretary shall forward it to the appropriate county clerk. (2) An application for a ballot by a military or overseas elector shall be made in the form of a written request and may be submitted by mail, electronic mail, a facsimile machine or other means identified by the Secretary of State by rule. The application shall be valid for every subsequent election until the elector otherwise notifies the clerk or is no longer an elector of the county. The application shall be signed by the applicant and contain: (a) The name and current mailing address of the applicant; (b) A statement that the applicant is a citizen of the United States; (c) A statement that the applicant will be 18 years of age or older on the date of the election; (d) A statement that for more than 20 days preceding the election the applicants home residence has been in this state, and giving the address of the last home residence; (e) A statement of the facts that qualify the applicant as a military or overseas elector or as the spouse or a dependent of a military or overseas elector; (f) A statement that the applicant is not requesting a ballot from any other state and is not voting in any other manner in the election except by the requested ballot; and (g) If the applicant desires to vote in a primary election, a designation of the applicants political party affiliation or a statement that the applicant is not affiliated with any political party. An applicant not affiliated with any political party may request a ballot for a major political party. The applicant shall be sent the ballot for the political party that the applicant requested if that political party has provided under ORS 254.365 for a primary election that admits electors not affiliated with any political party.",
+      "history_citation_blocks": [
+        "1955 c.332 7,8; 1957 c.641 16; 1973 c.827 25; 1975 c.675 31; 1979 c.190 220; 1979 c.519 26; 1987 c.719 7; 1991 c.168 2; 1995 c.712 49; 1999 c.999 43; 2013 c.520 8; 2019 c.675 2"
+      ],
+      "history_citations": [
+        {
+          "raw": "1955 c.332 7,8"
+        },
+        {
+          "raw": "1957 c.641 16",
+          "year": 1957,
+          "chapter": "641",
+          "section": "16"
+        },
+        {
+          "raw": "1973 c.827 25",
+          "year": 1973,
+          "chapter": "827",
+          "section": "25"
+        },
+        {
+          "raw": "1975 c.675 31",
+          "year": 1975,
+          "chapter": "675",
+          "section": "31"
+        },
+        {
+          "raw": "1979 c.190 220",
+          "year": 1979,
+          "chapter": "190",
+          "section": "220"
+        },
+        {
+          "raw": "1979 c.519 26",
+          "year": 1979,
+          "chapter": "519",
+          "section": "26"
+        },
+        {
+          "raw": "1987 c.719 7",
+          "year": 1987,
+          "chapter": "719",
+          "section": "7"
+        },
+        {
+          "raw": "1991 c.168 2",
+          "year": 1991,
+          "chapter": "168",
+          "section": "2"
+        },
+        {
+          "raw": "1995 c.712 49",
+          "year": 1995,
+          "chapter": "712",
+          "section": "49"
+        },
+        {
+          "raw": "1999 c.999 43",
+          "year": 1999,
+          "chapter": "999",
+          "section": "43"
+        },
+        {
+          "raw": "2013 c.520 8",
+          "year": 2013,
+          "chapter": "520",
+          "section": "8"
+        },
+        {
+          "raw": "2019 c.675 2",
+          "year": 2019,
+          "chapter": "675",
+          "section": "2"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Any military or overseas elector may secure a ballot by submitting an application as specified in subsection",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "of this section to the clerk of the county of the military or overseas electors residence, or to the Secretary of State. If the application is addressed to the Secretary of State, the secretary shall forward it to the appropriate county clerk. An application for a ballot by a military or overseas elector shall be made in the form of a written request and may be submitted by mail, electronic mail, a facsimile machine or other means identified by the Secretary of State by rule. The application shall be valid for every subsequent election until the elector otherwise notifies the clerk or is no longer an elector of the county. The application shall be signed by the applicant and contain:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "The name and current mailing address of the applicant;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "A statement that the applicant is a citizen of the United States;",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "A statement that the applicant will be 18 years of age or older on the date of the election;",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "A statement that for more than 20 days preceding the election the applicants home residence has been in this state, and giving the address of the last home residence;",
+              "subsections": []
+            },
+            {
+              "label": "(e)",
+              "token": "e",
+              "kind": "alpha_lower",
+              "text": "A statement of the facts that qualify the applicant as a military or overseas elector or as the spouse or a dependent of a military or overseas elector;",
+              "subsections": []
+            },
+            {
+              "label": "(f)",
+              "token": "f",
+              "kind": "alpha_lower",
+              "text": "A statement that the applicant is not requesting a ballot from any other state and is not voting in any other manner in the election except by the requested ballot; and",
+              "subsections": []
+            },
+            {
+              "label": "(g)",
+              "token": "g",
+              "kind": "alpha_lower",
+              "text": "If the applicant desires to vote in a primary election, a designation of the applicants political party affiliation or a statement that the applicant is not affiliated with any political party. An applicant not affiliated with any political party may request a ballot for a major political party. The applicant shall be sent the ballot for the political party that the applicant requested if that political party has provided under ORS 254.365 for a primary election that admits electors not affiliated with any political party.",
+              "subsections": []
+            }
+          ]
+        }
+      ],
+      "parser_warnings": [],
+      "position": 38,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html#section-253.545",
+      "identifier": "ORS 253.545",
+      "name": "Section 253.545",
+      "text": "County clerk duties upon receipt of application; application as registration. (1) Upon receipt of an application made under ORS 253.540, the county clerk, without regard to whether the applicant is an elector of the county, shall mail the materials prescribed in ORS 253.065 to the applicant. (2) Notwithstanding any provision of ORS chapter 247, the completed and signed application submitted under ORS 253.540 shall constitute a valid registration for the applicant. (3) Notwithstanding subsection (1) of this section, if the county clerk receives an application from a military or overseas elector after the fifth day before an election, the county clerk need not mail the ballot for that election but may deliver the ballot by making it available in the office of the clerk.",
+      "history_citation_blocks": [
+        "1979 c.190 221; 1981 c.485 2; 1993 c.493 27; 2013 c.520 9"
+      ],
+      "history_citations": [
+        {
+          "raw": "1979 c.190 221",
+          "year": 1979,
+          "chapter": "190",
+          "section": "221"
+        },
+        {
+          "raw": "1981 c.485 2",
+          "year": 1981,
+          "chapter": "485",
+          "section": "2"
+        },
+        {
+          "raw": "1993 c.493 27",
+          "year": 1993,
+          "chapter": "493",
+          "section": "27"
+        },
+        {
+          "raw": "2013 c.520 9",
+          "year": 2013,
+          "chapter": "520",
+          "section": "9"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Upon receipt of an application made under ORS 253.540, the county clerk, without regard to whether the applicant is an elector of the county, shall mail the materials prescribed in ORS 253.065 to the applicant. of this section, if the county clerk receives an application from a military or overseas elector after the fifth day before an election, the county clerk need not mail the ballot for that election but may deliver the ballot by making it available in the office of the clerk.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Notwithstanding any provision of ORS chapter 247, the completed and signed application submitted under ORS 253.540 shall constitute a valid registration for the applicant.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Notwithstanding subsection",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 39,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html#section-253.550",
+      "identifier": "ORS 253.550",
+      "name": "Section 253.550",
+      "text": "Applications made under federal statutes. Whenever provision is made for absentee voting by a statute of the United States, including the Uniformed and Overseas Citizens Absentee Voting Act, 42 U.S.C. 1973ff (Public Law 99-410), an application for a ballot made under that law may be given the same effect as an application for a ballot made under ORS 253.500 to 253.640.",
+      "history_citation_blocks": [
+        "1955 c.332 2; 1979 c.190 222; 1991 c.71 12; 2013 c.520 10"
+      ],
+      "history_citations": [
+        {
+          "raw": "1955 c.332 2",
+          "year": 1955,
+          "chapter": "332",
+          "section": "2"
+        },
+        {
+          "raw": "1979 c.190 222",
+          "year": 1979,
+          "chapter": "190",
+          "section": "222"
+        },
+        {
+          "raw": "1991 c.71 12",
+          "year": 1991,
+          "chapter": "71",
+          "section": "12"
+        },
+        {
+          "raw": "2013 c.520 10",
+          "year": 2013,
+          "chapter": "520",
+          "section": "10"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 40,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html#section-253.560",
+      "identifier": "ORS 253.560",
+      "name": "Section 253.560",
+      "text": "",
+      "history_citation_blocks": [
+        "1955 c.332 9; 1957 c.641 17; repealed by 1979 c.190 431"
+      ],
+      "history_citations": [
+        {
+          "raw": "1955 c.332 9",
+          "year": 1955,
+          "chapter": "332",
+          "section": "9"
+        },
+        {
+          "raw": "1957 c.641 17",
+          "year": 1957,
+          "chapter": "641",
+          "section": "17"
+        },
+        {
+          "raw": "repealed by 1979 c.190 431"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 41,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html#section-253.565",
+      "identifier": "ORS 253.565",
+      "name": "Section 253.565",
+      "text": "Application for special ballot by military or overseas elector. (1) Any military or overseas elector may secure a special ballot for a primary election or general election by making an application under this section if the elector believes that: (a) The elector will be residing, stationed or working outside the territorial limits of the United States and the District of Columbia; and (b) The elector will be unable to vote and return a regular ballot by normal mail delivery within the period provided for regular absent electors. (2) A military or overseas elector shall make the application for a special ballot in the form of a written request, which may be submitted by mail, electronic mail, a facsimile machine or other means identified by the Secretary of State by rule. The elector shall submit the application before the date of the applicable election to the clerk of the county of the military or overseas electors residence or to the Secretary of State. If the application is addressed to the Secretary of State, the secretary shall forward it to the appropriate county clerk. The application shall be signed by the applicant and contain: (a) The name and current mailing address of the applicant; (b) A designation of the election for which the applicant requests a special ballot; (c) A statement that the applicant is a citizen of the United States; (d) A statement that the applicant will be 18 years of age or older on the date of the election; (e) A statement that for more than 20 days preceding the election the applicants home residence has been in this state, and giving the address of the last home residence; (f) A statement of the facts that qualify the applicant as a military or overseas elector or as the spouse or a dependent of a military or overseas elector; (g) A statement of the facts that qualify the applicant to vote by means of a special ballot; (h) A statement that the applicant is not requesting a ballot from any other state and is not voting in any other manner in the election except by the requested special ballot; and (i) If the applicant requests a ballot for a primary election, a designation of the applicants political party affiliation or a statement that the applicant is not affiliated with any political party. An applicant not affiliated with any political party may request a ballot for a major political party. The applicant shall be sent the ballot for the political party that the applicant requested if that political party has provided under ORS 254.365 for a primary election that admits electors not affiliated with any political party. (3) An application for a special ballot shall be valid only for the election specified in the application. (4) The county clerk shall list on the special ballot the offices and measures scheduled to appear on the regular ballot, if known when the ballot is prepared, and provide space in which the elector may write in the electors preference. (5) The elector may write in the name of any eligible candidate for each office to be filled or for which nominations will be made at the election, and may vote on any measure submitted at the election.",
+      "history_citation_blocks": [
+        "1985 c.720 2; 1987 c.719 8,25; 1989 c.503 38,39; 1995 c.712 50; 1999 c.999 44; 2013 c.520 11; 2019 c.675 3"
+      ],
+      "history_citations": [
+        {
+          "raw": "1985 c.720 2",
+          "year": 1985,
+          "chapter": "720",
+          "section": "2"
+        },
+        {
+          "raw": "1987 c.719 8,25"
+        },
+        {
+          "raw": "1989 c.503 38,39"
+        },
+        {
+          "raw": "1995 c.712 50",
+          "year": 1995,
+          "chapter": "712",
+          "section": "50"
+        },
+        {
+          "raw": "1999 c.999 44",
+          "year": 1999,
+          "chapter": "999",
+          "section": "44"
+        },
+        {
+          "raw": "2013 c.520 11",
+          "year": 2013,
+          "chapter": "520",
+          "section": "11"
+        },
+        {
+          "raw": "2019 c.675 3",
+          "year": 2019,
+          "chapter": "675",
+          "section": "3"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Any military or overseas elector may secure a special ballot for a primary election or general election by making an application under this section if the elector believes that:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "The elector will be residing, stationed or working outside the territorial limits of the United States and the District of Columbia; and",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "The elector will be unable to vote and return a regular ballot by normal mail delivery within the period provided for regular absent electors.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "A military or overseas elector shall make the application for a special ballot in the form of a written request, which may be submitted by mail, electronic mail, a facsimile machine or other means identified by the Secretary of State by rule. The elector shall submit the application before the date of the applicable election to the clerk of the county of the military or overseas electors residence or to the Secretary of State. If the application is addressed to the Secretary of State, the secretary shall forward it to the appropriate county clerk. The application shall be signed by the applicant and contain:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "The name and current mailing address of the applicant;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "A designation of the election for which the applicant requests a special ballot;",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "A statement that the applicant is a citizen of the United States;",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "A statement that the applicant will be 18 years of age or older on the date of the election;",
+              "subsections": []
+            },
+            {
+              "label": "(e)",
+              "token": "e",
+              "kind": "alpha_lower",
+              "text": "A statement that for more than 20 days preceding the election the applicants home residence has been in this state, and giving the address of the last home residence;",
+              "subsections": []
+            },
+            {
+              "label": "(f)",
+              "token": "f",
+              "kind": "alpha_lower",
+              "text": "A statement of the facts that qualify the applicant as a military or overseas elector or as the spouse or a dependent of a military or overseas elector;",
+              "subsections": []
+            },
+            {
+              "label": "(g)",
+              "token": "g",
+              "kind": "alpha_lower",
+              "text": "A statement of the facts that qualify the applicant to vote by means of a special ballot;",
+              "subsections": []
+            },
+            {
+              "label": "(h)",
+              "token": "h",
+              "kind": "alpha_lower",
+              "text": "A statement that the applicant is not requesting a ballot from any other state and is not voting in any other manner in the election except by the requested special ballot; and",
+              "subsections": []
+            },
+            {
+              "label": "(i)",
+              "token": "i",
+              "kind": "alpha_lower",
+              "text": "If the applicant requests a ballot for a primary election, a designation of the applicants political party affiliation or a statement that the applicant is not affiliated with any political party. An applicant not affiliated with any political party may request a ballot for a major political party. The applicant shall be sent the ballot for the political party that the applicant requested if that political party has provided under ORS 254.365 for a primary election that admits electors not affiliated with any political party.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "An application for a special ballot shall be valid only for the election specified in the application.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "The county clerk shall list on the special ballot the offices and measures scheduled to appear on the regular ballot, if known when the ballot is prepared, and provide space in which the elector may write in the electors preference.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "The elector may write in the name of any eligible candidate for each office to be filled or for which nominations will be made at the election, and may vote on any measure submitted at the election.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 42,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html#section-253.570",
+      "identifier": "ORS 253.570",
+      "name": "Section 253.570",
+      "text": "",
+      "history_citation_blocks": [
+        "1955 c.332 11; 1957 c.641 18; repealed by 1979 c.190 431"
+      ],
+      "history_citations": [
+        {
+          "raw": "1955 c.332 11",
+          "year": 1955,
+          "chapter": "332",
+          "section": "11"
+        },
+        {
+          "raw": "1957 c.641 18",
+          "year": 1957,
+          "chapter": "641",
+          "section": "18"
+        },
+        {
+          "raw": "repealed by 1979 c.190 431"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 43,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html#section-253.575",
+      "identifier": "ORS 253.575",
+      "name": "Section 253.575",
+      "text": "County clerk duties upon receipt of application for special ballot; application as valid voter registration; replacement ballots. (1) Upon receipt of an application made under ORS 253.565, if the applicants residence is in the county, the county clerk, without regard to whether the applicant is an elector of the county, shall mail to the applicant a special ballot, instructions for filling in and returning the ballot and an envelope to use for the return. The office address of the clerk shall appear on the front of the envelope. On the back shall appear a statement to be signed by the absent elector, stating that the elector: (a) Is qualified to vote; and (b) Unless prevented by physical disability, has personally marked the ballot. (2) The completed and signed application submitted under ORS 253.565 shall constitute a valid registration for the elector. (3) If the county clerk receives an application for a special ballot on or after the 45th day before the election specified in the application, the county clerk shall treat the application as an application made under ORS 253.540. (4) A military or overseas elector may obtain a replacement ballot if the ballot is destroyed, spoiled, lost or not received by the elector. The county clerk shall keep a record of each replacement ballot provided under this subsection. (5) Notwithstanding subsection (3) of this section, a replacement ballot may be mailed or shall be made available in the office of the county clerk. (6) If the county clerk determines that a military or overseas elector to whom a replacement ballot has been issued at the request of the elector has voted more than once, the county clerk shall not count any ballot cast by the elector. If the county clerk is required to reissue ballots due to a change on the ballot for any reason, that ballot shall be counted in lieu of any previous ballot issued unless: (a) Only the original ballot was voted and returned; or (b) The county clerk issued a supplemental ballot that is not a complete replacement of the original ballot.",
+      "history_citation_blocks": [
+        "1985 c.720 3; 1989 c.923 2; 1991 c.719 51; 1993 c.713 61; 1995 c.607 37; 1999 c.318 34; 1999 c.410 36; 2013 c.520 12; 2017 c.749 53"
+      ],
+      "history_citations": [
+        {
+          "raw": "1985 c.720 3",
+          "year": 1985,
+          "chapter": "720",
+          "section": "3"
+        },
+        {
+          "raw": "1989 c.923 2",
+          "year": 1989,
+          "chapter": "923",
+          "section": "2"
+        },
+        {
+          "raw": "1991 c.719 51",
+          "year": 1991,
+          "chapter": "719",
+          "section": "51"
+        },
+        {
+          "raw": "1993 c.713 61",
+          "year": 1993,
+          "chapter": "713",
+          "section": "61"
+        },
+        {
+          "raw": "1995 c.607 37",
+          "year": 1995,
+          "chapter": "607",
+          "section": "37"
+        },
+        {
+          "raw": "1999 c.318 34",
+          "year": 1999,
+          "chapter": "318",
+          "section": "34"
+        },
+        {
+          "raw": "1999 c.410 36",
+          "year": 1999,
+          "chapter": "410",
+          "section": "36"
+        },
+        {
+          "raw": "2013 c.520 12",
+          "year": 2013,
+          "chapter": "520",
+          "section": "12"
+        },
+        {
+          "raw": "2017 c.749 53",
+          "year": 2017,
+          "chapter": "749",
+          "section": "53"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Upon receipt of an application made under ORS 253.565, if the applicants residence is in the county, the county clerk, without regard to whether the applicant is an elector of the county, shall mail to the applicant a special ballot, instructions for filling in and returning the ballot and an envelope to use for the return. The office address of the clerk shall appear on the front of the envelope. On the back shall appear a statement to be signed by the absent elector, stating that the elector:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Is qualified to vote; and",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Unless prevented by physical disability, has personally marked the ballot.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The completed and signed application submitted under ORS 253.565 shall constitute a valid registration for the elector.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "If the county clerk receives an application for a special ballot on or after the 45th day before the election specified in the application, the county clerk shall treat the application as an application made under ORS 253.540. of this section, a replacement ballot may be mailed or shall be made available in the office of the county clerk.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "A military or overseas elector may obtain a replacement ballot if the ballot is destroyed, spoiled, lost or not received by the elector. The county clerk shall keep a record of each replacement ballot provided under this subsection.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "Notwithstanding subsection",
+          "subsections": []
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "If the county clerk determines that a military or overseas elector to whom a replacement ballot has been issued at the request of the elector has voted more than once, the county clerk shall not count any ballot cast by the elector. If the county clerk is required to reissue ballots due to a change on the ballot for any reason, that ballot shall be counted in lieu of any previous ballot issued unless:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Only the original ballot was voted and returned; or",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "The county clerk issued a supplemental ballot that is not a complete replacement of the original ballot.",
+              "subsections": []
+            }
+          ]
+        }
+      ],
+      "parser_warnings": [],
+      "position": 44,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html#section-253.580",
+      "identifier": "ORS 253.580",
+      "name": "Section 253.580",
+      "text": "",
+      "history_citation_blocks": [
+        "1955 c.332 14; 1957 c.641 19; repealed by 1979 c.190 431"
+      ],
+      "history_citations": [
+        {
+          "raw": "1955 c.332 14",
+          "year": 1955,
+          "chapter": "332",
+          "section": "14"
+        },
+        {
+          "raw": "1957 c.641 19",
+          "year": 1957,
+          "chapter": "641",
+          "section": "19"
+        },
+        {
+          "raw": "repealed by 1979 c.190 431"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 45,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html#section-253.585",
+      "identifier": "ORS 253.585",
+      "name": "Section 253.585",
+      "text": "Receipt of military or overseas elector ballots by Secretary of State. (1) The Secretary of State may receive ballots from military or overseas electors. (2) If the Secretary of State receives a ballot cast by a military or overseas elector, the Secretary of State shall deliver the ballot to the county clerk or elections officer of the county in which the elector who cast the ballot is registered. (3) A ballot received by the Secretary of State under this section shall be considered to have been received by the county clerk as described in ORS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The Secretary of State may receive ballots from military or overseas electors.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "If the Secretary of State receives a ballot cast by a military or overseas elector, the Secretary of State shall deliver the ballot to the county clerk or elections officer of the county in which the elector who cast the ballot is registered.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "A ballot received by the Secretary of State under this section shall be considered to have been received by the county clerk as described in ORS",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 46,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html#section-253.590",
+      "identifier": "ORS 253.590",
+      "name": "Section 253.590",
+      "text": "",
+      "history_citation_blocks": [
+        "1955 c.332 12; repealed by 1979 c.190 431"
+      ],
+      "history_citations": [
+        {
+          "raw": "1955 c.332 12",
+          "year": 1955,
+          "chapter": "332",
+          "section": "12"
+        },
+        {
+          "raw": "repealed by 1979 c.190 431"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 47,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html#section-253.600",
+      "identifier": "ORS 253.600",
+      "name": "Section 253.600",
+      "text": "",
+      "history_citation_blocks": [
+        "1955 c.332 13; repealed by 1979 c.190 431"
+      ],
+      "history_citations": [
+        {
+          "raw": "1955 c.332 13",
+          "year": 1955,
+          "chapter": "332",
+          "section": "13"
+        },
+        {
+          "raw": "repealed by 1979 c.190 431"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 48,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html#section-253.610",
+      "identifier": "ORS 253.610",
+      "name": "Section 253.610",
+      "text": "",
+      "history_citation_blocks": [
+        "1955 c.332 6; 1957 c.641 20; repealed by 1979 c.190 431"
+      ],
+      "history_citations": [
+        {
+          "raw": "1955 c.332 6",
+          "year": 1955,
+          "chapter": "332",
+          "section": "6"
+        },
+        {
+          "raw": "1957 c.641 20",
+          "year": 1957,
+          "chapter": "641",
+          "section": "20"
+        },
+        {
+          "raw": "repealed by 1979 c.190 431"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 49,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html#section-253.620",
+      "identifier": "ORS 253.620",
+      "name": "Section 253.620",
+      "text": "",
+      "history_citation_blocks": [
+        "1955 c.332 15; 1957 c.641 21; repealed by 1979 c.190 431"
+      ],
+      "history_citations": [
+        {
+          "raw": "1955 c.332 15",
+          "year": 1955,
+          "chapter": "332",
+          "section": "15"
+        },
+        {
+          "raw": "1957 c.641 21",
+          "year": 1957,
+          "chapter": "641",
+          "section": "21"
+        },
+        {
+          "raw": "repealed by 1979 c.190 431"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 50,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html#section-253.630",
+      "identifier": "ORS 253.630",
+      "name": "Section 253.630",
+      "text": "",
+      "history_citation_blocks": [
+        "1955 c.332 10; repealed by 1957 c.641 23"
+      ],
+      "history_citations": [
+        {
+          "raw": "1955 c.332 10",
+          "year": 1955,
+          "chapter": "332",
+          "section": "10"
+        },
+        {
+          "raw": "repealed by 1957 c.641 23"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 51,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html#section-253.640",
+      "identifier": "ORS 253.640",
+      "name": "Section 253.640",
+      "text": "Coordination with federal authorities. All public officers having duties under ORS 253.500 to 253.640 shall coordinate their efforts with any federal authority to facilitate voting by military or overseas electors, so that these electors may cast their ballots with the least possible interference with the performance of their duties.",
+      "history_citation_blocks": [
+        "1955 c.332 4; 1979 c.190 223; 2013 c.520 14"
+      ],
+      "history_citations": [
+        {
+          "raw": "1955 c.332 4",
+          "year": 1955,
+          "chapter": "332",
+          "section": "4"
+        },
+        {
+          "raw": "1979 c.190 223",
+          "year": 1979,
+          "chapter": "190",
+          "section": "223"
+        },
+        {
+          "raw": "2013 c.520 14",
+          "year": 2013,
+          "chapter": "520",
+          "section": "14"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 52,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html#section-253.645",
+      "identifier": "ORS 253.645",
+      "name": "Section 253.645",
+      "text": "Electors called to active military duty. In the event of a national emergency, the Secretary of State shall assure that any elector called to active military duty is not unnecessarily denied the opportunity to vote simply because of military duty.",
+      "history_citation_blocks": [
+        "1991 c.71 14"
+      ],
+      "history_citations": [
+        {
+          "raw": "1991 c.71 14",
+          "year": 1991,
+          "chapter": "71",
+          "section": "14"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 53,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html#section-253.650",
+      "identifier": "ORS 253.650",
+      "name": "Section 253.650",
+      "text": "",
+      "history_citation_blocks": [
+        "1955 c.332 17; 1957 c.641 22; repealed by 1979 c.190 431"
+      ],
+      "history_citations": [
+        {
+          "raw": "1955 c.332 17",
+          "year": 1955,
+          "chapter": "332",
+          "section": "17"
+        },
+        {
+          "raw": "1957 c.641 22",
+          "year": 1957,
+          "chapter": "641",
+          "section": "22"
+        },
+        {
+          "raw": "repealed by 1979 c.190 431"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 54,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html#section-253.660",
+      "identifier": "ORS 253.660",
+      "name": "Section 253.660",
+      "text": "",
+      "history_citation_blocks": [
+        "1955 c.332 5; repealed by 1957 c.641 23"
+      ],
+      "history_citations": [
+        {
+          "raw": "1955 c.332 5",
+          "year": 1955,
+          "chapter": "332",
+          "section": "5"
+        },
+        {
+          "raw": "repealed by 1957 c.641 23"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 55,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html#section-253.670",
+      "identifier": "ORS 253.670",
+      "name": "; 2013 c.520 4]",
+      "text": "",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 56,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html#section-253.690",
+      "identifier": "ORS 253.690",
+      "name": "Section 253.690",
+      "text": "Casting ballot using facsimile machine or by electronic mail; waiver; rules. (1) A military or overseas elector described in ORS 253.510 may cast a ballot using a facsimile machine or by electronic mail as provided in this section. Notwithstanding ORS 254.470 (10), a ballot cast under this section shall be counted only if the ballot: (a) Is received in the office of the county clerk not later than 8 p.m. on the day of the election; (b) Is accompanied by a return identification envelope containing the signature of the elector and a signed waiver described in subsection (2) of this section; and (c) The signature is verified as provided in subsection (4) of this section. (2) Each elector who casts a ballot under this section shall complete and submit a waiver described in this subsection. The elector shall attest to the information supplied on the waiver by signing the completed waiver. The Secretary of State by rule shall design the form of the waiver, which shall include all of the following: (a) Space for the elector to provide the electors full name, residence or mailing address, an electronic mail address, phone or facsimile number where the elector may be contacted and any other necessary information. (b) A waiver in substantially the following form: ______________________________________________________________________________ I, _____________, acknowledge that by casting my voted ballot using a facsimile machine or by electronic mail I have waived my right to a secret ballot. ______________________________________________________________________________ (c) A statement to notify the elector that the electors ballot will not be counted unless the elector has complied with the provisions of this section. (d) Space for the elector to provide the electors signature to attest to the information supplied. (3)(a) If a ballot is cast under this section using a facsimile machine, the return identification envelope and waiver shall also be submitted using a facsimile machine. (b) If a ballot is cast under this section by electronic mail, the return identification envelope and waiver shall also be submitted by electronic mail. (4) The county clerk shall verify the signature of each elector on the return identification envelope transmitted by facsimile machine or electronic mail under this section with the signature on the electors registration record, according to the procedure provided by rules adopted by the Secretary of State. Rules adopted by the secretary under this subsection must limit personnel authorized to verify signatures to the personnel authorized to count ballots under ORS 254.476. (5) The Secretary of State shall adopt rules to administer this section and to ensure the secrecy of ballots cast using a facsimile machine or by electronic mail to the greatest extent possible.",
+      "history_citation_blocks": [
+        "2009 c.619 2; 2010 c.9 5; 2011 c.294 1; 2013 c.520 15; 2015 c.169 2; 2021 c.551 11; 2023 c.266 3"
+      ],
+      "history_citations": [
+        {
+          "raw": "2009 c.619 2",
+          "year": 2009,
+          "chapter": "619",
+          "section": "2"
+        },
+        {
+          "raw": "2010 c.9 5",
+          "year": 2010,
+          "chapter": "9",
+          "section": "5"
+        },
+        {
+          "raw": "2011 c.294 1",
+          "year": 2011,
+          "chapter": "294",
+          "section": "1"
+        },
+        {
+          "raw": "2013 c.520 15",
+          "year": 2013,
+          "chapter": "520",
+          "section": "15"
+        },
+        {
+          "raw": "2015 c.169 2",
+          "year": 2015,
+          "chapter": "169",
+          "section": "2"
+        },
+        {
+          "raw": "2021 c.551 11",
+          "year": 2021,
+          "chapter": "551",
+          "section": "11"
+        },
+        {
+          "raw": "2023 c.266 3",
+          "year": 2023,
+          "chapter": "266",
+          "section": "3"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A military or overseas elector described in ORS 253.510 may cast a ballot using a facsimile machine or by electronic mail as provided in this section. Notwithstanding ORS 254.470",
+          "subsections": []
+        },
+        {
+          "label": "(10)",
+          "token": "10",
+          "kind": "numeric",
+          "text": ", a ballot cast under this section shall be counted only if the ballot:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Is received in the office of the county clerk not later than 8 p.m. on the day of the election;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Is accompanied by a return identification envelope containing the signature of the elector and a signed waiver described in subsection",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "of this section; and Each elector who casts a ballot under this section shall complete and submit a waiver described in this subsection. The elector shall attest to the information supplied on the waiver by signing the completed waiver. The Secretary of State by rule shall design the form of the waiver, which shall include all of the following:",
+          "subsections": [
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "The signature is verified as provided in subsection A statement to notify the elector that the electors ballot will not be counted unless the elector has complied with the provisions of this section.",
+              "subsections": []
+            },
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Space for the elector to provide the electors full name, residence or mailing address, an electronic mail address, phone or facsimile number where the elector may be contacted and any other necessary information.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "A waiver in substantially the following form: ______________________________________________________________________________ I, _____________, acknowledge that by casting my voted ballot using a facsimile machine or by electronic mail I have waived my right to a secret ballot. ______________________________________________________________________________",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "Space for the elector to provide the electors signature to attest to the information supplied.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "of this section. The county clerk shall verify the signature of each elector on the return identification envelope transmitted by facsimile machine or electronic mail under this section with the signature on the electors registration record, according to the procedure provided by rules adopted by the Secretary of State. Rules adopted by the secretary under this subsection must limit personnel authorized to verify signatures to the personnel authorized to count ballots under ORS 254.476.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "(a) If a ballot is cast under this section using a facsimile machine, the return identification envelope and waiver shall also be submitted using a facsimile machine.",
+          "subsections": [
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "If a ballot is cast under this section by electronic mail, the return identification envelope and waiver shall also be submitted by electronic mail.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "The Secretary of State shall adopt rules to administer this section and to ensure the secrecy of ballots cast using a facsimile machine or by electronic mail to the greatest extent possible.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 57,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html#section-253.700",
+      "identifier": "ORS 253.700",
+      "name": "Section 253.700",
+      "text": "Duty to challenge ballot; procedures. (1) The county clerk, an elections official or any elector shall challenge the ballot of any person offering to vote as an absent elector whom the clerk, official or elector knows or suspects not to be qualified as an elector. The persons ballot may be challenged at any time before the ballot is removed from its return envelope for processing. (2) A challenge to a ballot of a person offering to vote shall be made under oath or affirmation before the clerk and shall be in writing on a numbered challenge form. The statement shall contain the name and residence address of the challenger, the name of the person challenged and a statement of the facts upon which the challenge is based. Any elections official may administer the oath or affirmation required under this subsection.",
+      "history_citation_blocks": [
+        "1985 c.808 32; 1999 c.410 37; 2007 c.154 18; 2013 c.520 16"
+      ],
+      "history_citations": [
+        {
+          "raw": "1985 c.808 32",
+          "year": 1985,
+          "chapter": "808",
+          "section": "32"
+        },
+        {
+          "raw": "1999 c.410 37",
+          "year": 1999,
+          "chapter": "410",
+          "section": "37"
+        },
+        {
+          "raw": "2007 c.154 18",
+          "year": 2007,
+          "chapter": "154",
+          "section": "18"
+        },
+        {
+          "raw": "2013 c.520 16",
+          "year": 2013,
+          "chapter": "520",
+          "section": "16"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The county clerk, an elections official or any elector shall challenge the ballot of any person offering to vote as an absent elector whom the clerk, official or elector knows or suspects not to be qualified as an elector. The persons ballot may be challenged at any time before the ballot is removed from its return envelope for processing.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "A challenge to a ballot of a person offering to vote shall be made under oath or affirmation before the clerk and shall be in writing on a numbered challenge form. The statement shall contain the name and residence address of the challenger, the name of the person challenged and a statement of the facts upon which the challenge is based. Any elections official may administer the oath or affirmation required under this subsection.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 58,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html#section-253.710",
+      "identifier": "ORS 253.710",
+      "name": "Section 253.710",
+      "text": "Alteration of application prohibited; exceptions. A person may not alter any information supplied on an application for a ballot for an absent elector except: (1) An elections officer in the performance of official duties. (2) The applicant.",
+      "history_citation_blocks": [
+        "1985 c.808 33; 2013 c.520 17"
+      ],
+      "history_citations": [
+        {
+          "raw": "1985 c.808 33",
+          "year": 1985,
+          "chapter": "808",
+          "section": "33"
+        },
+        {
+          "raw": "2013 c.520 17",
+          "year": 2013,
+          "chapter": "520",
+          "section": "17"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "An elections officer in the performance of official duties.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The applicant.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 59,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html#section-253.990",
+      "identifier": "ORS 253.990",
+      "name": "Section 253.990",
+      "text": "[Subsection (2) enacted as 1955 c.332 18; repealed by 1979 c.190 431]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "enacted as 1955 c.332 18; repealed by 1979 c.190 431]",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 60,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html#section-253.995",
+      "identifier": "ORS 253.995",
+      "name": "Section 253.995",
+      "text": "[1985 c.808 34; repealed by 1999 c.318 55] _______________",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 61,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors253.html"
+    }
+  ],
+  "alternateName": "Absent Electors",
+  "legislationDate": "2023"
+}

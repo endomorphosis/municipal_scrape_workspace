@@ -1,0 +1,1352 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "orlaw": "https://www.oregonlegislature.gov/ors#"
+  },
+  "@type": "Legislation",
+  "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html",
+  "identifier": "ORS Chapter 187",
+  "name": "ORS Chapter 187 — Holidays; Standard of Time;",
+  "legislationType": "Statute",
+  "jurisdiction": "US-OR",
+  "isPartOf": {
+    "@type": "CreativeWork",
+    "identifier": "ORS",
+    "name": "Oregon Revised Statutes",
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors"
+  },
+  "dateModified": "2026-02-25T08:11:17.658479+00:00",
+  "source_file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors187.html",
+  "hasPart": [
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html#section-187.010",
+      "identifier": "ORS 187.010",
+      "name": "Section 187.010",
+      "text": "Legal holidays; acts deferred to next business day; effect on labor agreements. (1) The following days are legal holidays in this state: (a) Each Sunday. (b) New Years Day on January 1. (c) Martin Luther King, Jr.s Birthday on the third Monday in January. (d) Presidents Day, for the purpose of commemorating Presidents Washington and Lincoln, on the third Monday in February. (e) Memorial Day on the last Monday in May. (f) Juneteenth on June 19. (g) Independence Day on July 4. (h) Labor Day on the first Monday in September. (i) Veterans Day on November 11. (j) Thanksgiving Day on the fourth Thursday in November. (k) Christmas Day on December 25. (2) Each time a holiday, other than Sunday, listed in subsection (1) of this section falls on Sunday, the succeeding Monday shall be a legal holiday. Each time a holiday listed in subsection (1) of this section falls on Saturday, the preceding Friday shall be a legal holiday. (3) Any act authorized, required or permitted to be performed on a holiday as designated in this section may be performed on the next succeeding business day; and no liability or loss of rights of any kind shall result from such delay. (4) In enumerating legal holidays in subsection (1) of this section, the Legislative Assembly does not intend to limit or otherwise affect public or private collective bargaining or collective bargaining agreements.",
+      "history_citation_blocks": [
+        "Amended by 1955 c.4 1; 1969 c.455 1; 1973 c.51 1; 1975 c.633 1; 1977 c.135 1; 1977 c.321 1; 1985 c.518 1; 2021 c.201 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1955 c.4 1"
+        },
+        {
+          "raw": "1969 c.455 1",
+          "year": 1969,
+          "chapter": "455",
+          "section": "1"
+        },
+        {
+          "raw": "1973 c.51 1",
+          "year": 1973,
+          "chapter": "51",
+          "section": "1"
+        },
+        {
+          "raw": "1975 c.633 1",
+          "year": 1975,
+          "chapter": "633",
+          "section": "1"
+        },
+        {
+          "raw": "1977 c.135 1",
+          "year": 1977,
+          "chapter": "135",
+          "section": "1"
+        },
+        {
+          "raw": "1977 c.321 1",
+          "year": 1977,
+          "chapter": "321",
+          "section": "1"
+        },
+        {
+          "raw": "1985 c.518 1",
+          "year": 1985,
+          "chapter": "518",
+          "section": "1"
+        },
+        {
+          "raw": "2021 c.201 1",
+          "year": 2021,
+          "chapter": "201",
+          "section": "1"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The following days are legal holidays in this state: of this section falls on Sunday, the succeeding Monday shall be a legal holiday. Each time a holiday listed in subsection of this section falls on Saturday, the preceding Friday shall be a legal holiday. of this section, the Legislative Assembly does not intend to limit or otherwise affect public or private collective bargaining or collective bargaining agreements.",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Each Sunday.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "New Years Day on January 1.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Martin Luther King, Jr.s Birthday on the third Monday in January.",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "Presidents Day, for the purpose of commemorating Presidents Washington and Lincoln, on the third Monday in February.",
+              "subsections": []
+            },
+            {
+              "label": "(e)",
+              "token": "e",
+              "kind": "alpha_lower",
+              "text": "Memorial Day on the last Monday in May.",
+              "subsections": []
+            },
+            {
+              "label": "(f)",
+              "token": "f",
+              "kind": "alpha_lower",
+              "text": "Juneteenth on June 19.",
+              "subsections": []
+            },
+            {
+              "label": "(g)",
+              "token": "g",
+              "kind": "alpha_lower",
+              "text": "Independence Day on July 4.",
+              "subsections": []
+            },
+            {
+              "label": "(h)",
+              "token": "h",
+              "kind": "alpha_lower",
+              "text": "Labor Day on the first Monday in September.",
+              "subsections": []
+            },
+            {
+              "label": "(i)",
+              "token": "i",
+              "kind": "alpha_lower",
+              "text": "Veterans Day on November 11.",
+              "subsections": []
+            },
+            {
+              "label": "(j)",
+              "token": "j",
+              "kind": "alpha_lower",
+              "text": "Thanksgiving Day on the fourth Thursday in November.",
+              "subsections": []
+            },
+            {
+              "label": "(k)",
+              "token": "k",
+              "kind": "alpha_lower",
+              "text": "Christmas Day on December 25.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Each time a holiday, other than Sunday, listed in subsection",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Any act authorized, required or permitted to be performed on a holiday as designated in this section may be performed on the next succeeding business day; and no liability or loss of rights of any kind shall result from such delay.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "In enumerating legal holidays in subsection",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 1,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html#section-187.020",
+      "identifier": "ORS 187.020",
+      "name": "Section 187.020",
+      "text": "Additional legal holidays. In addition to those specified in ORS 187.010, the following days are legal holidays in this state: (1) Every day appointed by the Governor as a holiday. (2) Every day appointed by the President of the United States as a day of mourning, rejoicing or other special observance only when the Governor also appoints that day as a holiday.",
+      "history_citation_blocks": [
+        "Amended by 1969 c.455 2; 1975 c.633 2; 1977 c.135 2; 1977 c.321 2; 1985 c.518 2"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1969 c.455 2"
+        },
+        {
+          "raw": "1975 c.633 2",
+          "year": 1975,
+          "chapter": "633",
+          "section": "2"
+        },
+        {
+          "raw": "1977 c.135 2",
+          "year": 1977,
+          "chapter": "135",
+          "section": "2"
+        },
+        {
+          "raw": "1977 c.321 2",
+          "year": 1977,
+          "chapter": "321",
+          "section": "2"
+        },
+        {
+          "raw": "1985 c.518 2",
+          "year": 1985,
+          "chapter": "518",
+          "section": "2"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Every day appointed by the Governor as a holiday.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Every day appointed by the President of the United States as a day of mourning, rejoicing or other special observance only when the Governor also appoints that day as a holiday.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 2,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html#section-187.025",
+      "identifier": "ORS 187.025",
+      "name": "Section 187.025",
+      "text": "",
+      "history_citation_blocks": [
+        "1953 c.260 2; 1981 c.450 1; repealed by 1985 c.518 4"
+      ],
+      "history_citations": [
+        {
+          "raw": "1953 c.260 2",
+          "year": 1953,
+          "chapter": "260",
+          "section": "2"
+        },
+        {
+          "raw": "1981 c.450 1",
+          "year": 1981,
+          "chapter": "450",
+          "section": "1"
+        },
+        {
+          "raw": "repealed by 1985 c.518 4"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 3,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html#section-187.030",
+      "identifier": "ORS 187.030",
+      "name": "Section 187.030",
+      "text": "[Repealed by 1985 c.627 4] STANDARD OF TIME",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 4,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html#section-187.110",
+      "identifier": "ORS 187.110",
+      "name": ".",
+      "text": "(1) The standard of time for the State of Oregon shall be one hour in advance of the United States standard of time as established by the Congress of the United States for any particular area of the state under 15 U.S.C. 261, except that: (a) The standard of time for that portion of the State of Oregon that is in the Mountain Time Zone shall be the United States standard of time as established by the Congress of the United States for that area under 15 U.S.C. 261; and (b) From 2 a.m. on the second Sunday in March until 2 a.m. on the first Sunday in November the standard of time for that portion of the State of Oregon that is in the Mountain Time Zone shall be one hour in advance of the standard established for that area by the Congress of the United States under 15 U.S.C. 261. (2) No department of the state government and no county, city or other political subdivision shall employ any other time or adopt any statute, ordinance or order providing for the use of any other standard of time. Note 2: Sections 2 and 3, chapter 421, Oregon Laws 2019, provide: Sec. 2. The amendments to ORS 187.110 by section 1 of this 2019 Act become operative at 2 a.m. on the first Sunday of the first November in which the standard of time in the States of California and Washington is one hour in advance of the United States standard of time for California and Washington. [2019 c.421 2] Sec. 3. If the amendments to ORS 187.110 by section 1 of this 2019 Act have not become operative by December 1, 2029, section 2 of this 2019 Act is repealed on December 1, 2029. [2019 c.421 3] Note 3: The amendments to 187.110 by section 4, chapter 421, Oregon Laws 2019, become operative December 1, 2029, only if section 2, chapter 421, Oregon Laws 2019, is repealed by section 3, chapter 421, Oregon Laws 2019 (see Note 2). 187.110, as amended by sections 1 and 4, chapter 421, Oregon Laws 2019, is set forth for the users convenience.",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The standard of time for the State of Oregon shall be one hour in advance of the United States standard of time as established by the Congress of the United States for any particular area of the state under 15 U.S.C. 261, except that:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "The standard of time for that portion of the State of Oregon that is in the Mountain Time Zone shall be the United States standard of time as established by the Congress of the United States for that area under 15 U.S.C. 261; and",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "From 2 a.m. on the second Sunday in March until 2 a.m. on the first Sunday in November the standard of time for that portion of the State of Oregon that is in the Mountain Time Zone shall be one hour in advance of the standard established for that area by the Congress of the United States under 15 U.S.C. 261.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "No department of the state government and no county, city or other political subdivision shall employ any other time or adopt any statute, ordinance or order providing for the use of any other standard of time. Note 2: Sections 2 and 3, chapter 421, Oregon Laws 2019, provide: Sec. 2. The amendments to ORS 187.110 by section 1 of this 2019 Act become operative at 2 a.m. on the first Sunday of the first November in which the standard of time in the States of California and Washington is one hour in advance of the United States standard of time for California and Washington. [2019 c.421 2] Sec. 3. If the amendments to ORS 187.110 by section 1 of this 2019 Act have not become operative by December 1, 2029, section 2 of this 2019 Act is repealed on December 1, 2029. [2019 c.421 3] Note 3: The amendments to 187.110 by section 4, chapter 421, Oregon Laws 2019, become operative December 1, 2029, only if section 2, chapter 421, Oregon Laws 2019, is repealed by section 3, chapter 421, Oregon Laws 2019 (see Note 2). 187.110, as amended by sections 1 and 4, chapter 421, Oregon Laws 2019, is set forth for the users convenience.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 5,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html#section-187.200",
+      "identifier": "ORS 187.200",
+      "name": "Section 187.200",
+      "text": "Garden Week. The first full week in June, beginning with the first Sunday, shall be known as Garden Week.",
+      "history_citation_blocks": [
+        "1987 c.208 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "1987 c.208 1",
+          "year": 1987,
+          "chapter": "208",
+          "section": "1"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 6,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html#section-187.203",
+      "identifier": "ORS 187.203",
+      "name": "Section 187.203",
+      "text": "Cystic Fibrosis Awareness Month. May of each year is designated as Cystic Fibrosis Awareness Month.",
+      "history_citation_blocks": [
+        "2016 c.57 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "2016 c.57 1",
+          "year": 2016,
+          "chapter": "57",
+          "section": "1"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 7,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html#section-187.206",
+      "identifier": "ORS 187.206",
+      "name": "Section 187.206",
+      "text": "Minoru Yasui Day. March 28 of each year is designated as Minoru Yasui Day.",
+      "history_citation_blocks": [
+        "2016 c.64 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "2016 c.64 1",
+          "year": 2016,
+          "chapter": "64",
+          "section": "1"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 8,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html#section-187.210",
+      "identifier": "ORS 187.210",
+      "name": "Section 187.210",
+      "text": "Asian American Heritage Month. (1)(a) May of each year shall be known as Asian American Heritage Month. (b) As used in this section, Asian American has the meaning given that term in ORS 185.620. (2) The Governor shall issue a proclamation calling upon the people of this state to use the month of May to celebrate the contributions to the state by Asian Americans in the arts, sciences, commerce and education. (3)(a) The State Board of Education is encouraged to develop and adopt a curriculum to promote awareness of the contributions to the state by Asian Americans in the arts, sciences, commerce and education. (b) During school hours throughout Asian American Heritage Month, school districts may designate time for instruction and appropriate activities in commemoration of the lives, history and achievements of Asian Americans in Oregon history.",
+      "history_citation_blocks": [
+        "1999 c.690 1; 2003 c.244 2"
+      ],
+      "history_citations": [
+        {
+          "raw": "1999 c.690 1",
+          "year": 1999,
+          "chapter": "690",
+          "section": "1"
+        },
+        {
+          "raw": "2003 c.244 2",
+          "year": 2003,
+          "chapter": "244",
+          "section": "2"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "(a) May of each year shall be known as Asian American Heritage Month.",
+          "subsections": [
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "As used in this section, Asian American has the meaning given that term in ORS 185.620.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The Governor shall issue a proclamation calling upon the people of this state to use the month of May to celebrate the contributions to the state by Asian Americans in the arts, sciences, commerce and education.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "(a) The State Board of Education is encouraged to develop and adopt a curriculum to promote awareness of the contributions to the state by Asian Americans in the arts, sciences, commerce and education.",
+          "subsections": [
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "During school hours throughout Asian American Heritage Month, school districts may designate time for instruction and appropriate activities in commemoration of the lives, history and achievements of Asian Americans in Oregon history.",
+              "subsections": []
+            }
+          ]
+        }
+      ],
+      "parser_warnings": [],
+      "position": 9,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html#section-187.212",
+      "identifier": "ORS 187.212",
+      "name": "Section 187.212",
+      "text": "Cherry Blossom Day. The Legislative Assembly designates the third Saturday in March of each year as Cherry Blossom Day in Salem and encourages all residents and visitors to join in this observance.",
+      "history_citation_blocks": [
+        "2017 c.4 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "2017 c.4 1",
+          "year": 2017,
+          "chapter": "4",
+          "section": "1"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 10,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html#section-187.215",
+      "identifier": "ORS 187.215",
+      "name": "Section 187.215",
+      "text": "Korean American Day. January 13 of each year shall be known as Korean American Day. The Governor shall issue a proclamation each year calling upon the people of this state to celebrate on January 13 the contributions to the state by Korean Americans in the arts, sciences, commerce and education.",
+      "history_citation_blocks": [
+        "2007 c.68 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "2007 c.68 1",
+          "year": 2007,
+          "chapter": "68",
+          "section": "1"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 11,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html#section-187.218",
+      "identifier": "ORS 187.218",
+      "name": "Section 187.218",
+      "text": "Oregon Outdoor Recreation Day. The first Saturday in June of each year is designated as Oregon Outdoor Recreation Day to encourage Oregonians and visitors to enjoy the many spectacular opportunities for outdoor recreation that this state offers.",
+      "history_citation_blocks": [
+        "2017 c.117 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "2017 c.117 1",
+          "year": 2017,
+          "chapter": "117",
+          "section": "1"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 12,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html#section-187.220",
+      "identifier": "ORS 187.220",
+      "name": "Section 187.220",
+      "text": "POW/MIA flag. (1) A public body shall display the National League of Families POW/MIA flag with the United States flag and the Oregon State flag upon or near the principal building of the public body on the following days: (a) Armed Forces Day on the third Saturday in May. (b) Memorial Day on the last Monday in May. (c) Flag Day on June 14. (d) Independence Day on July 4. (e) National POW/MIA Recognition Day and Oregon POW/MIA Recognition Day. (f) Veterans Day on November 11. (2) The Oregon Department of Administrative Services shall provide a National League of Families POW/MIA flag to a public body for display under subsection (1) of this section. (3) As used in this section, public body means the state, a county and a city.",
+      "history_citation_blocks": [
+        "1999 c.613 1; 2017 c.260 2"
+      ],
+      "history_citations": [
+        {
+          "raw": "1999 c.613 1",
+          "year": 1999,
+          "chapter": "613",
+          "section": "1"
+        },
+        {
+          "raw": "2017 c.260 2",
+          "year": 2017,
+          "chapter": "260",
+          "section": "2"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A public body shall display the National League of Families POW/MIA flag with the United States flag and the Oregon State flag upon or near the principal building of the public body on the following days: of this section.",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Armed Forces Day on the third Saturday in May.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Memorial Day on the last Monday in May.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Flag Day on June 14.",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "Independence Day on July 4.",
+              "subsections": []
+            },
+            {
+              "label": "(e)",
+              "token": "e",
+              "kind": "alpha_lower",
+              "text": "National POW/MIA Recognition Day and Oregon POW/MIA Recognition Day.",
+              "subsections": []
+            },
+            {
+              "label": "(f)",
+              "token": "f",
+              "kind": "alpha_lower",
+              "text": "Veterans Day on November 11.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The Oregon Department of Administrative Services shall provide a National League of Families POW/MIA flag to a public body for display under subsection",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "As used in this section, public body means the state, a county and a city.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 13,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html#section-187.222",
+      "identifier": "ORS 187.222",
+      "name": "Section 187.222",
+      "text": "Oregon POW/MIA Recognition Day. The third Friday in September of every year is designated as Oregon POW/MIA Recognition Day.",
+      "history_citation_blocks": [
+        "2017 c.260 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "2017 c.260 1",
+          "year": 2017,
+          "chapter": "260",
+          "section": "1"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 14,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html#section-187.225",
+      "identifier": "ORS 187.225",
+      "name": "Section 187.225",
+      "text": "Thomas Paine Day. January 29 of every year is designated as Thomas Paine Day to commemorate Thomas Paine and his accomplishments.",
+      "history_citation_blocks": [
+        "2009 c.190 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "2009 c.190 1",
+          "year": 2009,
+          "chapter": "190",
+          "section": "1"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 15,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html#section-187.228",
+      "identifier": "ORS 187.228",
+      "name": "Section 187.228",
+      "text": "Williams Syndrome Awareness Month. The month of May of each year is designated as Williams Syndrome Awareness Month.",
+      "history_citation_blocks": [
+        "2017 c.266 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "2017 c.266 1",
+          "year": 2017,
+          "chapter": "266",
+          "section": "1"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 16,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html#section-187.230",
+      "identifier": "ORS 187.230",
+      "name": "Section 187.230",
+      "text": "Ewing Young Day. February 9 of each year shall be known as Ewing Young Day, to commemorate Ewing Youngs contribution to the formation of Oregons provisional government and aid to the settlers of the Willamette Valley.",
+      "history_citation_blocks": [
+        "2009 c.192 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "2009 c.192 1",
+          "year": 2009,
+          "chapter": "192",
+          "section": "1"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 17,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html#section-187.233",
+      "identifier": "ORS 187.233",
+      "name": "Section 187.233",
+      "text": "Maternal Mental Health Awareness Month. (1) May of each year is designated as Maternal Mental Health Awareness Month. (2) The purpose of the designation is to: (a) Encourage the Early Childhood Council to address perinatal mental health as a public health priority; and (b) Encourage health care providers, parents, expecting parents and other stakeholders to collaborate in the development of a statewide care network for perinatal mental health and to increase awareness and understanding of the mental health needs of pregnant and postpartum women and their families.",
+      "history_citation_blocks": [
+        "2010 c.12 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "2010 c.12 1",
+          "year": 2010,
+          "chapter": "12",
+          "section": "1"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "May of each year is designated as Maternal Mental Health Awareness Month.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The purpose of the designation is to:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Encourage the Early Childhood Council to address perinatal mental health as a public health priority; and",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Encourage health care providers, parents, expecting parents and other stakeholders to collaborate in the development of a statewide care network for perinatal mental health and to increase awareness and understanding of the mental health needs of pregnant and postpartum women and their families.",
+              "subsections": []
+            }
+          ]
+        }
+      ],
+      "parser_warnings": [],
+      "position": 18,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html#section-187.236",
+      "identifier": "ORS 187.236",
+      "name": "Section 187.236",
+      "text": "Welcome Home Vietnam Veterans Day. March 30 of every year is designated as Welcome Home Vietnam Veterans Day to honor veterans of the Vietnam War.",
+      "history_citation_blocks": [
+        "2011 c.13 2"
+      ],
+      "history_citations": [
+        {
+          "raw": "2011 c.13 2",
+          "year": 2011,
+          "chapter": "13",
+          "section": "2"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 19,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html#section-187.239",
+      "identifier": "ORS 187.239",
+      "name": "Section 187.239",
+      "text": "Lupus Awareness Month. May of each year shall be known as Lupus Awareness Month.",
+      "history_citation_blocks": [
+        "2011 c.23 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "2011 c.23 1",
+          "year": 2011,
+          "chapter": "23",
+          "section": "1"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 20,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html#section-187.240",
+      "identifier": "ORS 187.240",
+      "name": "Section 187.240",
+      "text": "Holodomor Remembrance Day. The fourth Saturday of November of each year is designated as Holodomor Remembrance Day.",
+      "history_citation_blocks": [
+        "2023 c.19 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "2023 c.19 1",
+          "year": 2023,
+          "chapter": "19",
+          "section": "1"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 21,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html#section-187.242",
+      "identifier": "ORS 187.242",
+      "name": "Section 187.242",
+      "text": "Korean War Veterans Honor Day. June 25 of every year is designated as Korean War Veterans Honor Day.",
+      "history_citation_blocks": [
+        "2011 c.67 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "2011 c.67 1",
+          "year": 2011,
+          "chapter": "67",
+          "section": "1"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 22,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html#section-187.244",
+      "identifier": "ORS 187.244",
+      "name": "Section 187.244",
+      "text": "Pause in honor and remembrance of fallen military. Oregonians shall be encouraged and allowed to pause for 21 seconds duration at noon on the 21st day of each month in honor and remembrance of all those who have given their lives in military service in war.",
+      "history_citation_blocks": [
+        "2017 c.343 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "2017 c.343 1",
+          "year": 2017,
+          "chapter": "343",
+          "section": "1"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 23,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html#section-187.245",
+      "identifier": "ORS 187.245",
+      "name": "Section 187.245",
+      "text": "Edward Dickinson Baker Day. The Legislative Assembly designates February 24th of each year as Edward Dickinson Baker Day in Oregon to commemorate the life service and sacrifice of this hero of Oregon and the United States of America.",
+      "history_citation_blocks": [
+        "2011 c.91 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "2011 c.91 1",
+          "year": 2011,
+          "chapter": "91",
+          "section": "1"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 24,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html#section-187.247",
+      "identifier": "ORS 187.247",
+      "name": "Section 187.247",
+      "text": "Oregon Purple Heart Recognition Day. August 7 of each year is designated as Oregon Purple Heart Recognition Day.",
+      "history_citation_blocks": [
+        "2017 c.366 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "2017 c.366 1",
+          "year": 2017,
+          "chapter": "366",
+          "section": "1"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 25,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html#section-187.248",
+      "identifier": "ORS 187.248",
+      "name": "Section 187.248",
+      "text": "First Responder Appreciation Day. The Legislative Assembly declares September 27 of each year as First Responder Appreciation Day. [2013 c.20 1(2)]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 26,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html#section-187.251",
+      "identifier": "ORS 187.251",
+      "name": "Section 187.251",
+      "text": "Boring and Dull Day. August 9 of each year is designated as Boring and Dull Day to commemorate the pairing of Boring, Oregon, and Dull, Scotland, as a Pair for the Ages.",
+      "history_citation_blocks": [
+        "2013 c.38 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "2013 c.38 1",
+          "year": 2013,
+          "chapter": "38",
+          "section": "1"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 27,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html#section-187.254",
+      "identifier": "ORS 187.254",
+      "name": "Section 187.254",
+      "text": "Chronic Obstructive Pulmonary Disease Awareness Month. November of each year shall be known as Chronic Obstructive Pulmonary Disease Awareness Month.",
+      "history_citation_blocks": [
+        "2013 c.70 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "2013 c.70 1",
+          "year": 2013,
+          "chapter": "70",
+          "section": "1"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 28,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html#section-187.257",
+      "identifier": "ORS 187.257",
+      "name": "Section 187.257",
+      "text": "Multiple System Atrophy Awareness Month. March of each year is designated as Multiple System Atrophy Awareness Month to increase public awareness of this progressive neurodegenerative disorder that affects the autonomic functions of the body.",
+      "history_citation_blocks": [
+        "2013 c.215 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "2013 c.215 1",
+          "year": 2013,
+          "chapter": "215",
+          "section": "1"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 29,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html#section-187.260",
+      "identifier": "ORS 187.260",
+      "name": "Section 187.260",
+      "text": "Spirit of 45 Day. The second Sunday in August of each year is designated as Spirit of 45 Day to commemorate the service and sacrifice of the World War II generation.",
+      "history_citation_blocks": [
+        "2013 c.232 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "2013 c.232 1",
+          "year": 2013,
+          "chapter": "232",
+          "section": "1"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 30,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html#section-187.263",
+      "identifier": "ORS 187.263",
+      "name": "Section 187.263",
+      "text": "Tom McCall Day. March 22 of each year shall be known as Tom McCall Day to commemorate Governor Tom McCall as one of the State of Oregons greatest leaders and to encourage school districts around this state to make use of the Tom McCall: A Better Oregon curriculum hosted by the Oregon Historical Society so that Governor McCalls legacy can be carried forward into the future.",
+      "history_citation_blocks": [
+        "2015 c.19 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "2015 c.19 1",
+          "year": 2015,
+          "chapter": "19",
+          "section": "1"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 31,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html#section-187.266",
+      "identifier": "ORS 187.266",
+      "name": "Section 187.266",
+      "text": "Honorary Artists of Oregon Day. April 14 of each year is designated as Honorary Artists of Oregon Day to celebrate art and artists, to promote art education in this state and to encourage engagement in artistic endeavors.",
+      "history_citation_blocks": [
+        "2015 c.163 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "2015 c.163 1",
+          "year": 2015,
+          "chapter": "163",
+          "section": "1"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 32,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html#section-187.267",
+      "identifier": "ORS 187.267",
+      "name": "Section 187.267",
+      "text": "Bracero Program Day. August 4 of each year is designated as Bracero Program Day.",
+      "history_citation_blocks": [
+        "2023 c.329 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "2023 c.329 1",
+          "year": 2023,
+          "chapter": "329",
+          "section": "1"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 33,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html#section-187.269",
+      "identifier": "ORS 187.269",
+      "name": "Section 187.269",
+      "text": "Independent Media Week. The third week in April of each year is designated as Independent Media Week to encourage all Oregonians to seek out and explore the rich diversity of independent media available to and within their communities.",
+      "history_citation_blocks": [
+        "2015 c.166 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "2015 c.166 1",
+          "year": 2015,
+          "chapter": "166",
+          "section": "1"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 34,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html#section-187.272",
+      "identifier": "ORS 187.272",
+      "name": "Section 187.272",
+      "text": "Mighty Oregon Day. March 10 of each year shall be known as Mighty Oregon Day to celebrate University of Oregon school spirit and the renowned anthem that serves as the universitys fight song.",
+      "history_citation_blocks": [
+        "2015 c.569 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "2015 c.569 1",
+          "year": 2015,
+          "chapter": "569",
+          "section": "1"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 35,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html#section-187.275",
+      "identifier": "ORS 187.275",
+      "name": "Section 187.275",
+      "text": "Oregon Oyster Week. The fourth week in April of each year is designated as Oregon Oyster Week, beginning on Sunday and ending the following Saturday, and all Oregonians are encouraged to join in observing the week by enjoying fine Oregon oysters.",
+      "history_citation_blocks": [
+        "2015 c.573 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "2015 c.573 1",
+          "year": 2015,
+          "chapter": "573",
+          "section": "1"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 36,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html#section-187.278",
+      "identifier": "ORS 187.278",
+      "name": "Section 187.278",
+      "text": "Oregon Statehood Day. February 14 of each year is designated as Oregon Statehood Day to commemorate the date on which Oregon became the 33rd state in the United States of America.",
+      "history_citation_blocks": [
+        "2015 c.578 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "2015 c.578 1",
+          "year": 2015,
+          "chapter": "578",
+          "section": "1"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 37,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html#section-187.281",
+      "identifier": "ORS 187.281",
+      "name": "Section 187.281",
+      "text": "Organ, Eye and Tissue Donor Appreciation Week. The second week of April of each year is designated as Organ, Eye and Tissue Donor Appreciation Week.",
+      "history_citation_blocks": [
+        "2018 c.13 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "2018 c.13 1",
+          "year": 2018,
+          "chapter": "13",
+          "section": "1"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 38,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html#section-187.284",
+      "identifier": "ORS 187.284",
+      "name": "Section 187.284",
+      "text": "Oregon Post-Traumatic Stress Injury Awareness Day and Month; education efforts. (1) The Legislative Assembly designates: (a) June 27 of each year as Oregon Post-Traumatic Stress Injury Awareness Day; and (b) The month of June as Post-Traumatic Stress Injury Awareness Month. (2) The Legislative Assembly respectfully urges the Oregon Health Authority, the Department of Veterans Affairs and the Oregon Military Department to continue working to educate victims of interpersonal violence, combat, life-threatening accidents and natural disasters and their families, as well as the general public, about the causes, symptoms and treatment of post-traumatic stress injury.",
+      "history_citation_blocks": [
+        "2018 c.42 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "2018 c.42 1",
+          "year": 2018,
+          "chapter": "42",
+          "section": "1"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The Legislative Assembly designates:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "June 27 of each year as Oregon Post-Traumatic Stress Injury Awareness Day; and",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "The month of June as Post-Traumatic Stress Injury Awareness Month.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The Legislative Assembly respectfully urges the Oregon Health Authority, the Department of Veterans Affairs and the Oregon Military Department to continue working to educate victims of interpersonal violence, combat, life-threatening accidents and natural disasters and their families, as well as the general public, about the causes, symptoms and treatment of post-traumatic stress injury.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 39,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html#section-187.287",
+      "identifier": "ORS 187.287",
+      "name": "Section 187.287",
+      "text": "ALS Awareness Month. May of each year is designated as ALS Awareness Month.",
+      "history_citation_blocks": [
+        "2019 c.4 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "2019 c.4 1",
+          "year": 2019,
+          "chapter": "4",
+          "section": "1"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 40,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html#section-187.290",
+      "identifier": "ORS 187.290",
+      "name": "Section 187.290",
+      "text": "PANDAS/PANS Awareness Day. October 9 of each year is designated as PANDAS/PANS Awareness Day.",
+      "history_citation_blocks": [
+        "2019 c.51 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "2019 c.51 1",
+          "year": 2019,
+          "chapter": "51",
+          "section": "1"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 41,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html#section-187.293",
+      "identifier": "ORS 187.293",
+      "name": "Section 187.293",
+      "text": "Crater Lake National Park Day. May 22 of each year is designated as Crater Lake National Park Day.",
+      "history_citation_blocks": [
+        "2021 c.46 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "2021 c.46 1",
+          "year": 2021,
+          "chapter": "46",
+          "section": "1"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 42,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html#section-187.296",
+      "identifier": "ORS 187.296",
+      "name": "Section 187.296",
+      "text": "Indigenous Peoples Day. The second Monday in October of each year is designated as Indigenous Peoples Day.",
+      "history_citation_blocks": [
+        "2021 c.118 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "2021 c.118 1",
+          "year": 2021,
+          "chapter": "118",
+          "section": "1"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 43,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html#section-187.299",
+      "identifier": "ORS 187.299",
+      "name": "Section 187.299",
+      "text": "Arab-American Heritage Month. April of each year is designated as Arab-American Heritage Month. [2021 c.538 1] _______________",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 44,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors187.html"
+    }
+  ],
+  "alternateName": "Holidays; Standard of Time;",
+  "legislationDate": "2023"
+}

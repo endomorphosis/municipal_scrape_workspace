@@ -1,0 +1,825 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "orlaw": "https://www.oregonlegislature.gov/ors#"
+  },
+  "@type": "Legislation",
+  "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html",
+  "identifier": "ORS Chapter 437",
+  "name": "ORS Chapter 437 — (Former Provisions)",
+  "legislationType": "Statute",
+  "jurisdiction": "US-OR",
+  "isPartOf": {
+    "@type": "CreativeWork",
+    "identifier": "ORS",
+    "name": "Oregon Revised Statutes",
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors"
+  },
+  "dateModified": "2026-02-25T08:11:24.223701+00:00",
+  "source_file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors437.html",
+  "hasPart": [
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html#section-437.005",
+      "identifier": "ORS 437.005",
+      "name": "Section 437.005",
+      "text": "",
+      "history_citation_blocks": [
+        "1973 c.829 15a; repealed by 2001 c.104 167"
+      ],
+      "history_citations": [
+        {
+          "raw": "1973 c.829 15a",
+          "year": 1973,
+          "chapter": "829",
+          "section": "15a"
+        },
+        {
+          "raw": "repealed by 2001 c.104 167"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 1,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html#section-437.010",
+      "identifier": "ORS 437.010",
+      "name": "Section 437.010",
+      "text": "",
+      "history_citation_blocks": [
+        "Amended by 1989 c.224 90; 2009 c.595 696; renumbered 433.329 in 2011"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1989 c.224 90"
+        },
+        {
+          "raw": "2009 c.595 696",
+          "year": 2009,
+          "chapter": "595",
+          "section": "696"
+        },
+        {
+          "raw": "renumbered 433.329 in 2011"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 2,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html#section-437.020",
+      "identifier": "ORS 437.020",
+      "name": "Section 437.020",
+      "text": "[Repealed by 1973 c.829 71]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 3,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html#section-437.030",
+      "identifier": "ORS 437.030",
+      "name": "Section 437.030",
+      "text": "",
+      "history_citation_blocks": [
+        "Amended by 1989 c.224 91; 2007 c.70 239; 2009 c.595 697; renumbered 433.332 in 2011"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1989 c.224 91"
+        },
+        {
+          "raw": "2007 c.70 239",
+          "year": 2007,
+          "chapter": "70",
+          "section": "239"
+        },
+        {
+          "raw": "2009 c.595 697",
+          "year": 2009,
+          "chapter": "595",
+          "section": "697"
+        },
+        {
+          "raw": "renumbered 433.332 in 2011"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 4,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html#section-437.040",
+      "identifier": "ORS 437.040",
+      "name": "Section 437.040",
+      "text": "[Repealed by 1973 c.829 71]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 5,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html#section-437.110",
+      "identifier": "ORS 437.110",
+      "name": "Section 437.110",
+      "text": "",
+      "history_citation_blocks": [
+        "Amended by 1959 c.588 20; 1963 c.632 1; repealed by 1967 c.346 12"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1959 c.588 20"
+        },
+        {
+          "raw": "1963 c.632 1",
+          "year": 1963,
+          "chapter": "632",
+          "section": "1"
+        },
+        {
+          "raw": "repealed by 1967 c.346 12"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 6,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html#section-437.120",
+      "identifier": "ORS 437.120",
+      "name": "Section 437.120",
+      "text": "[Repealed by 1959 c.588 27]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 7,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html#section-437.130",
+      "identifier": "ORS 437.130",
+      "name": "Section 437.130",
+      "text": "[Repealed by 1959 c.97 3]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 8,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html#section-437.135",
+      "identifier": "ORS 437.135",
+      "name": "Section 437.135",
+      "text": "[1957 c.695 1,2,3,4; repealed by 1959 c.51 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 9,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html#section-437.140",
+      "identifier": "ORS 437.140",
+      "name": "Section 437.140",
+      "text": "",
+      "history_citation_blocks": [
+        "Amended by 1959 c.588 21; 1963 c.632 2; 1965 c.14 43; 1967 c.346 4; repealed by 1983 c.740 153"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1959 c.588 21"
+        },
+        {
+          "raw": "1963 c.632 2",
+          "year": 1963,
+          "chapter": "632",
+          "section": "2"
+        },
+        {
+          "raw": "1965 c.14 43",
+          "year": 1965,
+          "chapter": "14",
+          "section": "43"
+        },
+        {
+          "raw": "1967 c.346 4",
+          "year": 1967,
+          "chapter": "346",
+          "section": "4"
+        },
+        {
+          "raw": "repealed by 1983 c.740 153"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 10,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html#section-437.150",
+      "identifier": "ORS 437.150",
+      "name": "Section 437.150",
+      "text": "",
+      "history_citation_blocks": [
+        "Amended by 1959 c.588 22; 1963 c.632 3; 1967 c.346 5; repealed by 1995 c.162 94"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1959 c.588 22"
+        },
+        {
+          "raw": "1963 c.632 3",
+          "year": 1963,
+          "chapter": "632",
+          "section": "3"
+        },
+        {
+          "raw": "1967 c.346 5",
+          "year": 1967,
+          "chapter": "346",
+          "section": "5"
+        },
+        {
+          "raw": "repealed by 1995 c.162 94"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 11,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html#section-437.160",
+      "identifier": "ORS 437.160",
+      "name": "Section 437.160",
+      "text": "",
+      "history_citation_blocks": [
+        "Amended by 1959 c.588 23; 1967 c.346 6; 1971 c.154 1; 1989 c.224 92; repealed by 1995 c.162 94"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1959 c.588 23"
+        },
+        {
+          "raw": "1967 c.346 6",
+          "year": 1967,
+          "chapter": "346",
+          "section": "6"
+        },
+        {
+          "raw": "1971 c.154 1",
+          "year": 1971,
+          "chapter": "154",
+          "section": "1"
+        },
+        {
+          "raw": "1989 c.224 92",
+          "year": 1989,
+          "chapter": "224",
+          "section": "92"
+        },
+        {
+          "raw": "repealed by 1995 c.162 94"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 12,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html#section-437.170",
+      "identifier": "ORS 437.170",
+      "name": "Section 437.170",
+      "text": "",
+      "history_citation_blocks": [
+        "Amended by 1959 c.588 24; 1963 c.632 4; 1967 c.346 7; 1991 c.67 118; repealed by 1995 c.162 94"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1959 c.588 24"
+        },
+        {
+          "raw": "1963 c.632 4",
+          "year": 1963,
+          "chapter": "632",
+          "section": "4"
+        },
+        {
+          "raw": "1967 c.346 7",
+          "year": 1967,
+          "chapter": "346",
+          "section": "7"
+        },
+        {
+          "raw": "1991 c.67 118",
+          "year": 1991,
+          "chapter": "67",
+          "section": "118"
+        },
+        {
+          "raw": "repealed by 1995 c.162 94"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 13,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html#section-437.180",
+      "identifier": "ORS 437.180",
+      "name": "Section 437.180",
+      "text": "",
+      "history_citation_blocks": [
+        "1967 c.346 10; repealed by 1995 c.162 94"
+      ],
+      "history_citations": [
+        {
+          "raw": "1967 c.346 10",
+          "year": 1967,
+          "chapter": "346",
+          "section": "10"
+        },
+        {
+          "raw": "repealed by 1995 c.162 94"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 14,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html#section-437.210",
+      "identifier": "ORS 437.210",
+      "name": "Section 437.210",
+      "text": "",
+      "history_citation_blocks": [
+        "Amended by 1959 c.588 25; 1967 c.346 8; repealed by 1995 c.162 94"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1959 c.588 25"
+        },
+        {
+          "raw": "1967 c.346 8",
+          "year": 1967,
+          "chapter": "346",
+          "section": "8"
+        },
+        {
+          "raw": "repealed by 1995 c.162 94"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 15,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html#section-437.220",
+      "identifier": "ORS 437.220",
+      "name": "Section 437.220",
+      "text": "[Repealed by 1959 c.652 24]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 16,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html#section-437.230",
+      "identifier": "ORS 437.230",
+      "name": "Section 437.230",
+      "text": "[Repealed by 1959 c.652 24]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 17,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html#section-437.240",
+      "identifier": "ORS 437.240",
+      "name": "Section 437.240",
+      "text": "[Repealed by 1959 c.652 24]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 18,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html#section-437.250",
+      "identifier": "ORS 437.250",
+      "name": "Section 437.250",
+      "text": "[Repealed by 1959 c.652 24]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 19,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html#section-437.260",
+      "identifier": "ORS 437.260",
+      "name": "Section 437.260",
+      "text": "[Repealed by 1959 c.652 24]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 20,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html#section-437.270",
+      "identifier": "ORS 437.270",
+      "name": "Section 437.270",
+      "text": "[Repealed by 1959 c.652 24]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 21,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html#section-437.280",
+      "identifier": "ORS 437.280",
+      "name": "Section 437.280",
+      "text": "[Repealed by 1959 c.652 24]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 22,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html#section-437.290",
+      "identifier": "ORS 437.290",
+      "name": "Section 437.290",
+      "text": "[Amended by 1955 c.702 1; repealed by 1959 c.652 24]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 23,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html#section-437.300",
+      "identifier": "ORS 437.300",
+      "name": "Section 437.300",
+      "text": "[Amended by 1955 c.702 2; repealed by 1959 c.652 24]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 24,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html#section-437.310",
+      "identifier": "ORS 437.310",
+      "name": "Section 437.310",
+      "text": "[Repealed by 1959 c.652 24]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 25,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html#section-437.320",
+      "identifier": "ORS 437.320",
+      "name": "Section 437.320",
+      "text": "[Amended by 1955 c.702 3; repealed by 1959 c.652 24]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 26,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html#section-437.330",
+      "identifier": "ORS 437.330",
+      "name": "Section 437.330",
+      "text": "[Repealed by 1959 c.652 24]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 27,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html#section-437.340",
+      "identifier": "ORS 437.340",
+      "name": "Section 437.340",
+      "text": "[Repealed by 1959 c.652 24]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 28,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html#section-437.350",
+      "identifier": "ORS 437.350",
+      "name": "Section 437.350",
+      "text": "[Repealed by 1959 c.652 24]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 29,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html#section-437.360",
+      "identifier": "ORS 437.360",
+      "name": "Section 437.360",
+      "text": "",
+      "history_citation_blocks": [
+        "1953 c.371 1; repealed by 1959 c.588 27"
+      ],
+      "history_citations": [
+        {
+          "raw": "1953 c.371 1",
+          "year": 1953,
+          "chapter": "371",
+          "section": "1"
+        },
+        {
+          "raw": "repealed by 1959 c.588 27"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 30,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html#section-437.410",
+      "identifier": "ORS 437.410",
+      "name": "Section 437.410",
+      "text": "[Repealed by 1973 c.829 71]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 31,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html#section-437.420",
+      "identifier": "ORS 437.420",
+      "name": "Section 437.420",
+      "text": "[Repealed by 1973 c.829 71]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 32,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html#section-437.430",
+      "identifier": "ORS 437.430",
+      "name": "Section 437.430",
+      "text": "[Repealed by 1973 c.829 71]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 33,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html#section-437.440",
+      "identifier": "ORS 437.440",
+      "name": "Section 437.440",
+      "text": "[Repealed by 1973 c.829 71]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 34,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html#section-437.450",
+      "identifier": "ORS 437.450",
+      "name": "Section 437.450",
+      "text": "[Repealed by 1973 c.829 71]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 35,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html#section-437.460",
+      "identifier": "ORS 437.460",
+      "name": "Section 437.460",
+      "text": "[Repealed by 1973 c.829 71]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 36,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html#section-437.470",
+      "identifier": "ORS 437.470",
+      "name": "Section 437.470",
+      "text": "[Repealed by 1973 c.829 71]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 37,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html#section-437.480",
+      "identifier": "ORS 437.480",
+      "name": "Section 437.480",
+      "text": "[Repealed by 1973 c.829 71]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 38,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html#section-437.490",
+      "identifier": "ORS 437.490",
+      "name": "Section 437.490",
+      "text": "[Amended by 1969 c.14 3; repealed by 1973 c.829 71]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 39,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html#section-437.500",
+      "identifier": "ORS 437.500",
+      "name": "Section 437.500",
+      "text": "[Amended by 1969 c.14 4; repealed by 1973 c.829 71]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 40,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html#section-437.510",
+      "identifier": "ORS 437.510",
+      "name": "Section 437.510",
+      "text": "[Repealed by 1969 c.14 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 41,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html#section-437.520",
+      "identifier": "ORS 437.520",
+      "name": "Section 437.520",
+      "text": "[Repealed by 1969 c.14 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 42,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html#section-437.530",
+      "identifier": "ORS 437.530",
+      "name": "Section 437.530",
+      "text": "[Repealed by 1969 c.14 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 43,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html#section-437.540",
+      "identifier": "ORS 437.540",
+      "name": "Section 437.540",
+      "text": "[Repealed by 1969 c.14 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 44,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html#section-437.550",
+      "identifier": "ORS 437.550",
+      "name": "Section 437.550",
+      "text": "[Repealed by 1969 c.14 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 45,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html#section-437.990",
+      "identifier": "ORS 437.990",
+      "name": "Section 437.990",
+      "text": "[Amended by 1969 c.14 5; 1973 c.829 53; 1983 c.740 153a; renumbered 433.992 in 2011] _______________",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 46,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors437.html"
+    }
+  ],
+  "alternateName": "(Former Provisions)"
+}

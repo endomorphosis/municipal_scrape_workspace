@@ -1,0 +1,1936 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "orlaw": "https://www.oregonlegislature.gov/ors#"
+  },
+  "@type": "Legislation",
+  "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html",
+  "identifier": "ORS Chapter 12",
+  "name": "ORS Chapter 12 — Limitations of Actions and",
+  "legislationType": "Statute",
+  "jurisdiction": "US-OR",
+  "isPartOf": {
+    "@type": "CreativeWork",
+    "identifier": "ORS",
+    "name": "Oregon Revised Statutes",
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors"
+  },
+  "dateModified": "2026-02-25T08:11:13.374064+00:00",
+  "source_file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors012.html",
+  "hasPart": [
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html#section-12.010",
+      "identifier": "ORS 12.010",
+      "name": "Section 12.010",
+      "text": "Time of commencing actions. Actions shall only be commenced within the periods prescribed in this chapter, after the cause of action shall have accrued, except where a different limitation is prescribed by statute. [Amended by 1979 c.284 43]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 1,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html#section-12.020",
+      "identifier": "ORS 12.020",
+      "name": "Section 12.020",
+      "text": "When action deemed begun. (1) Except as provided in subsection (2) of this section, for the purpose of determining whether an action has been commenced within the time limited, an action shall be deemed commenced as to each defendant, when the complaint is filed, and the summons served on the defendant, or on a codefendant who is a joint contractor, or otherwise united in interest with the defendant. (2) If the first publication of summons or other service of summons in an action occurs before the expiration of 60 days after the date on which the complaint in the action was filed, the action against each person of whom the court by such service has acquired jurisdiction shall be deemed to have been commenced upon the date on which the complaint in the action was filed. [Amended by 1973 c.731 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Except as provided in subsection",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "of this section, for the purpose of determining whether an action has been commenced within the time limited, an action shall be deemed commenced as to each defendant, when the complaint is filed, and the summons served on the defendant, or on a codefendant who is a joint contractor, or otherwise united in interest with the defendant. If the first publication of summons or other service of summons in an action occurs before the expiration of 60 days after the date on which the complaint in the action was filed, the action against each person of whom the court by such service has acquired jurisdiction shall be deemed to have been commenced upon the date on which the complaint in the action was filed. [Amended by 1973 c.731 1]",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 2,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html#section-12.030",
+      "identifier": "ORS 12.030",
+      "name": "Section 12.030",
+      "text": "[Repealed by 1973 c.731 2]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 3,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html#section-12.040",
+      "identifier": "ORS 12.040",
+      "name": "Section 12.040",
+      "text": "Limitations of suits generally; land patent suits; defense of possession by equitable title; suit on new promise, fraud or mistake. (1) A suit shall only be commenced within the time limited to commence an action as provided in this chapter; and a suit for the determination of any right or claim to or interest in real property shall be deemed within the limitations provided for actions for the recovery of the possession of real property. (2) No suit shall be maintained to set aside, cancel, annul or otherwise affect a patent to lands issued by the United States or this state, or to compel any person claiming or holding under such patent to convey the lands described therein, or any portion of them, to the plaintiff in such suit, or to hold the same in trust for, or to the use and benefit of such plaintiff, or on account of any matter, thing or transaction which was had, done, suffered or transpired prior to the date of such patent, unless such suit is commenced within 10 years from the date of such patent. (3) This section shall not bar an equitable owner in possession of real property from defending possession by means of the equitable title; and in any action for the recovery of any real property, or the possession thereof, by any person or persons claiming or holding the legal title to the same under such patent against any person or persons in possession of such real property under any equitable title, or having in equity the right to the possession thereof as against the plaintiff in such action, such equitable right of possession may be pleaded by answer in such action, or set up by bill in equity to enjoin such action or execution upon any judgment rendered therein; and the right of such equitable owner to defend possession in such action, or by bill for injunction, shall not be barred by lapse of time while an action for the possession of such real property is not barred. (4) In a suit upon a new promise, fraud or mistake, the limitation shall only be deemed to commence from the making of the new promise or the discovery of the fraud or mistake.",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A suit shall only be commenced within the time limited to commence an action as provided in this chapter; and a suit for the determination of any right or claim to or interest in real property shall be deemed within the limitations provided for actions for the recovery of the possession of real property.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "No suit shall be maintained to set aside, cancel, annul or otherwise affect a patent to lands issued by the United States or this state, or to compel any person claiming or holding under such patent to convey the lands described therein, or any portion of them, to the plaintiff in such suit, or to hold the same in trust for, or to the use and benefit of such plaintiff, or on account of any matter, thing or transaction which was had, done, suffered or transpired prior to the date of such patent, unless such suit is commenced within 10 years from the date of such patent.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "This section shall not bar an equitable owner in possession of real property from defending possession by means of the equitable title; and in any action for the recovery of any real property, or the possession thereof, by any person or persons claiming or holding the legal title to the same under such patent against any person or persons in possession of such real property under any equitable title, or having in equity the right to the possession thereof as against the plaintiff in such action, such equitable right of possession may be pleaded by answer in such action, or set up by bill in equity to enjoin such action or execution upon any judgment rendered therein; and the right of such equitable owner to defend possession in such action, or by bill for injunction, shall not be barred by lapse of time while an action for the possession of such real property is not barred.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "In a suit upon a new promise, fraud or mistake, the limitation shall only be deemed to commence from the making of the new promise or the discovery of the fraud or mistake.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 4,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html#section-12.050",
+      "identifier": "ORS 12.050",
+      "name": "Section 12.050",
+      "text": "Action to recover real property. An action for the recovery of real property, or for the recovery of the possession thereof, shall be commenced within 10 years. No action shall be maintained for such recovery unless it appear that the plaintiff, an ancestor, predecessor, or grantor was seized or possessed of the premises in question within 10 years before the commencement of the action.",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 5,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html#section-12.060",
+      "identifier": "ORS 12.060",
+      "name": "Section 12.060",
+      "text": "Suit or action on land contracts; time when they cease to affect the property. (1) Unless suit or action to enforce a contract for the sale of real property is instituted in the county in which the real property is situated within five years from the date of maturity of the final payment provided for in the contract, or from the date to which the final payment shall have been extended by agreement of record, the contract shall not thereafter be a lien, encumbrance, or cloud on the title of the property. (2) When the purchase price fixed in the contract is payable in installments, the contract shall be deemed to mature on the date upon which the final payment would be payable if the minimum amount of the principal due on each installment had been paid as provided in the terms of the contract.",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Unless suit or action to enforce a contract for the sale of real property is instituted in the county in which the real property is situated within five years from the date of maturity of the final payment provided for in the contract, or from the date to which the final payment shall have been extended by agreement of record, the contract shall not thereafter be a lien, encumbrance, or cloud on the title of the property.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "When the purchase price fixed in the contract is payable in installments, the contract shall be deemed to mature on the date upon which the final payment would be payable if the minimum amount of the principal due on each installment had been paid as provided in the terms of the contract.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 6,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html#section-12.070",
+      "identifier": "ORS 12.070",
+      "name": "Section 12.070",
+      "text": "Action on judgment, decree or sealed instrument. (1) An action upon a judgment or decree of any court of the United States, or of any state or territory within the United States; or (2) An action upon a sealed instrument entered into before August 13, 1965, shall be commenced within 10 years. [Amended by 1965 c.502 3]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "An action upon a judgment or decree of any court of the United States, or of any state or territory within the United States; or",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "An action upon a sealed instrument entered into before August 13, 1965, shall be commenced within 10 years. [Amended by 1965 c.502 3]",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 7,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html#section-12.080",
+      "identifier": "ORS 12.080",
+      "name": "Section 12.080",
+      "text": "Action on certain contracts or liabilities. (1) An action upon a contract or liability, express or implied, excepting those mentioned in ORS 12.070, 12.110 and 12.135 and except as otherwise provided in ORS 72.7250; (2) An action upon a liability created by statute, other than a penalty or forfeiture, excepting those mentioned in ORS 12.110; (3) An action for waste or trespass upon or for interference with or injury to any interest of another in real property, excepting those mentioned in ORS 12.050,",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "An action upon a contract or liability, express or implied, excepting those mentioned in ORS 12.070, 12.110 and 12.135 and except as otherwise provided in ORS 72.7250;",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "An action upon a liability created by statute, other than a penalty or forfeiture, excepting those mentioned in ORS 12.110;",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "An action for waste or trespass upon or for interference with or injury to any interest of another in real property, excepting those mentioned in ORS 12.050,",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 8,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html#section-12.085",
+      "identifier": "ORS 12.085",
+      "name": "Section 12.085",
+      "text": "Action against garnishee. (1) Except as provided in subsection (2) of this section, proceedings against a garnishee under ORS 18.775 to 18.782 must be commenced within one year after the delivery of the writ of garnishment. (2) If the writ of garnishment is delivered to a person in the persons capacity as a personal representative of an estate, proceedings against the garnishee under ORS 18.775 to 18.782 must be commenced within one year after the entry of a judgment of final distribution for the estate.",
+      "history_citation_blocks": [
+        "1977 c.786 3; 1981 c.883 29; 2001 c.249 66; 2003 c.85 1; 2003 c.576 279a"
+      ],
+      "history_citations": [
+        {
+          "raw": "1977 c.786 3",
+          "year": 1977,
+          "chapter": "786",
+          "section": "3"
+        },
+        {
+          "raw": "1981 c.883 29",
+          "year": 1981,
+          "chapter": "883",
+          "section": "29"
+        },
+        {
+          "raw": "2001 c.249 66",
+          "year": 2001,
+          "chapter": "249",
+          "section": "66"
+        },
+        {
+          "raw": "2003 c.85 1",
+          "year": 2003,
+          "chapter": "85",
+          "section": "1"
+        },
+        {
+          "raw": "2003 c.576 279a",
+          "year": 2003,
+          "chapter": "576",
+          "section": "279a"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Except as provided in subsection",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "of this section, proceedings against a garnishee under ORS 18.775 to 18.782 must be commenced within one year after the delivery of the writ of garnishment. If the writ of garnishment is delivered to a person in the persons capacity as a personal representative of an estate, proceedings against the garnishee under ORS 18.775 to 18.782 must be commenced within one year after the entry of a judgment of final distribution for the estate.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 9,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html#section-12.090",
+      "identifier": "ORS 12.090",
+      "name": "Section 12.090",
+      "text": "Accounts; accrual of cause of action. In an action to recover a balance due upon an account, the cause of action shall be deemed to have accrued from the time of the last charge or payment proved in the account. Interest, financing and carrying charges shall not be deemed such a charge. [Amended by 1973 c.204 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 10,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html#section-12.100",
+      "identifier": "ORS 12.100",
+      "name": "Section 12.100",
+      "text": "Action on official act or penalty. (1) An action against a sheriff or constable upon a liability incurred by the doing of an act in an official capacity and in virtue of the office of the sheriff or constable; or by the omission of an official duty, including the nonpayment of money collected upon an execution, but not including an action for an escape, shall be commenced within three years. (2) An action upon a statute for penalty or forfeiture, where the action is given to the party aggrieved, or to such party and the state, excepting those actions mentioned in ORS 12.110, shall be commenced within three years.",
+      "history_citation_blocks": [
+        "Amended by 1957 c.374 4; 1965 c.221 10"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1957 c.374 4"
+        },
+        {
+          "raw": "1965 c.221 10",
+          "year": 1965,
+          "chapter": "221",
+          "section": "10"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "An action against a sheriff or constable upon a liability incurred by the doing of an act in an official capacity and in virtue of the office of the sheriff or constable; or by the omission of an official duty, including the nonpayment of money collected upon an execution, but not including an action for an escape, shall be commenced within three years.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "An action upon a statute for penalty or forfeiture, where the action is given to the party aggrieved, or to such party and the state, excepting those actions mentioned in ORS 12.110, shall be commenced within three years.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 11,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html#section-12.110",
+      "identifier": "ORS 12.110",
+      "name": "Section 12.110",
+      "text": "Actions for certain injuries to person not arising on contract; action for overtime or premium pay; action for professional malpractice; effect of fraud or deceit; action for injuries to person arising from nuclear incident. (1) An action for assault, battery, false imprisonment, or for any injury to the person or rights of another, not arising on contract, and not especially enumerated in this chapter, shall be commenced within two years; provided, that in an action at law based upon fraud or deceit, the limitation shall be deemed to commence only from the discovery of the fraud or deceit. (2) An action upon a statute for a forfeiture or penalty to the state or county shall be commenced within two years. (3) An action for overtime or premium pay or for penalties or liquidated damages for failure to pay overtime or premium pay shall be commenced within two years. (4) An action to recover damages for injuries to the person arising from any medical, surgical or dental treatment, omission or operation shall be commenced within two years from the date when the injury is first discovered or in the exercise of reasonable care should have been discovered. However, notwithstanding the provisions of ORS 12.160, every such action shall be commenced within five years from the date of the treatment, omission or operation upon which the action is based or, if there has been no action commenced within five years because of fraud, deceit or misleading representation, then within two years from the date such fraud, deceit or misleading representation is discovered or in the exercise of reasonable care should have been discovered. (5) An action, arising from a nuclear incident, as defined in 42 U.S.C. 2014(q), that involves the release of radioactive material, excluding releases from acts of war, that causes bodily injury, sickness or death, shall be commenced: (a) Within two years from the time an injured person discovers or reasonably could have discovered the injury and the causal connection between the injury and the nuclear incident; or (b) Within two years from any substantial change in the degree of injury to the person arising out of a nuclear incident.",
+      "history_citation_blocks": [
+        "Amended by 1957 c.374 1; 1967 c.406 1; 1969 c.642 1; 1971 c.473 1; 1975 c.796 10a; 1981 c.149 1; 1987 c.705 4"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1957 c.374 1"
+        },
+        {
+          "raw": "1967 c.406 1",
+          "year": 1967,
+          "chapter": "406",
+          "section": "1"
+        },
+        {
+          "raw": "1969 c.642 1",
+          "year": 1969,
+          "chapter": "642",
+          "section": "1"
+        },
+        {
+          "raw": "1971 c.473 1",
+          "year": 1971,
+          "chapter": "473",
+          "section": "1"
+        },
+        {
+          "raw": "1975 c.796 10a",
+          "year": 1975,
+          "chapter": "796",
+          "section": "10a"
+        },
+        {
+          "raw": "1981 c.149 1",
+          "year": 1981,
+          "chapter": "149",
+          "section": "1"
+        },
+        {
+          "raw": "1987 c.705 4",
+          "year": 1987,
+          "chapter": "705",
+          "section": "4"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "An action for assault, battery, false imprisonment, or for any injury to the person or rights of another, not arising on contract, and not especially enumerated in this chapter, shall be commenced within two years; provided, that in an action at law based upon fraud or deceit, the limitation shall be deemed to commence only from the discovery of the fraud or deceit.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "An action upon a statute for a forfeiture or penalty to the state or county shall be commenced within two years.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "An action for overtime or premium pay or for penalties or liquidated damages for failure to pay overtime or premium pay shall be commenced within two years.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "An action to recover damages for injuries to the person arising from any medical, surgical or dental treatment, omission or operation shall be commenced within two years from the date when the injury is first discovered or in the exercise of reasonable care should have been discovered. However, notwithstanding the provisions of ORS 12.160, every such action shall be commenced within five years from the date of the treatment, omission or operation upon which the action is based or, if there has been no action commenced within five years because of fraud, deceit or misleading representation, then within two years from the date such fraud, deceit or misleading representation is discovered or in the exercise of reasonable care should have been discovered.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "An action, arising from a nuclear incident, as defined in 42 U.S.C. 2014(q), that involves the release of radioactive material, excluding releases from acts of war, that causes bodily injury, sickness or death, shall be commenced:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Within two years from the time an injured person discovers or reasonably could have discovered the injury and the causal connection between the injury and the nuclear incident; or",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Within two years from any substantial change in the degree of injury to the person arising out of a nuclear incident.",
+              "subsections": []
+            }
+          ]
+        }
+      ],
+      "parser_warnings": [],
+      "position": 12,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html#section-12.115",
+      "identifier": "ORS 12.115",
+      "name": ", 30.020 and 30.075.",
+      "text": "(4) An action for death, injury or damage against a person that supplied component parts or raw materials to manufacturers of breast implants containing silicone, silica or silicon as a component remains subject to the limitations imposed by ORS 12.110 (1), 12.115, 30.020 and 30.075 if: (a) The person did not manufacture breast implants containing silicone, silica or silicon as a component at any time; and (b) The person was not owned by and did not own a business that manufactured breast implants containing silicone, silica or silicon as a component at any time. (5) For the purposes of subsection (1) of this section, an action for wrongful death must be commenced not later than two years after the earliest date that the discoveries required by subsection (1) of this section are made by any of the following persons: (a) The decedent; (b) The personal representative for the decedent; or (c) Any person for whose benefit the action could be brought.",
+      "history_citation_blocks": [
+        "1993 c.259 2; 2009 c.485 4; 2011 c.9 2"
+      ],
+      "history_citations": [
+        {
+          "raw": "1993 c.259 2",
+          "year": 1993,
+          "chapter": "259",
+          "section": "2"
+        },
+        {
+          "raw": "2009 c.485 4",
+          "year": 2009,
+          "chapter": "485",
+          "section": "4"
+        },
+        {
+          "raw": "2011 c.9 2",
+          "year": 2011,
+          "chapter": "9",
+          "section": "2"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "An action for death, injury or damage against a person that supplied component parts or raw materials to manufacturers of breast implants containing silicone, silica or silicon as a component remains subject to the limitations imposed by ORS 12.110",
+          "subsections": []
+        },
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": ", 12.115, 30.020 and 30.075 if: of this section, an action for wrongful death must be commenced not later than two years after the earliest date that the discoveries required by subsection of this section are made by any of the following persons:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "The person did not manufacture breast implants containing silicone, silica or silicon as a component at any time; and The decedent;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "The person was not owned by and did not own a business that manufactured breast implants containing silicone, silica or silicon as a component at any time. The personal representative for the decedent; or",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Any person for whose benefit the action could be brought.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "For the purposes of subsection",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 13,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html#section-12.117",
+      "identifier": "ORS 12.117",
+      "name": "Section 12.117",
+      "text": "Actions based on child abuse. (1) Notwithstanding ORS 12.110, 12.115 or",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Notwithstanding ORS 12.110, 12.115 or",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 14,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html#section-12.118",
+      "identifier": "ORS 12.118",
+      "name": "Section 12.118",
+      "text": "Action based on conduct that constitutes sexual assault of adult or conduct knowingly allowing, permitting or encouraging sexual assault of adult. (1) Notwithstanding ORS 12.110, 12.115 or 12.160, an action based on conduct that constitutes sexual assault or conduct knowingly allowing, permitting or encouraging sexual assault that occurs when a person is 18 years of age or older must be commenced within five years from the date the person discovers, or in the exercise of reasonable care should have discovered, the causal connection between the sexual assault and the injury. (2) As used in this section, sexual assault includes, but is not limited to, any of the following: (a) Rape, which includes but is not limited to rape, sodomy, unlawful sexual penetration and incest, as those acts are defined in ORS chapter 163; (b) Sexual abuse, as that act is defined in ORS chapter 163; or (c) Sexual exploitation, which includes but is not limited to trafficking in persons and subjecting another person to involuntary servitude, as those acts are defined in ORS chapter 163. (3) Nothing in this section creates a new cause of action or enlarges any existing cause of action. [2019 c.448 2] Note:",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Notwithstanding ORS 12.110, 12.115 or 12.160, an action based on conduct that constitutes sexual assault or conduct knowingly allowing, permitting or encouraging sexual assault that occurs when a person is 18 years of age or older must be commenced within five years from the date the person discovers, or in the exercise of reasonable care should have discovered, the causal connection between the sexual assault and the injury.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "As used in this section, sexual assault includes, but is not limited to, any of the following:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Rape, which includes but is not limited to rape, sodomy, unlawful sexual penetration and incest, as those acts are defined in ORS chapter 163;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Sexual abuse, as that act is defined in ORS chapter 163; or",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Sexual exploitation, which includes but is not limited to trafficking in persons and subjecting another person to involuntary servitude, as those acts are defined in ORS chapter 163.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Nothing in this section creates a new cause of action or enlarges any existing cause of action. [2019 c.448 2] Note:",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 15,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html#section-12.120",
+      "identifier": "ORS 12.120",
+      "name": "Section 12.120",
+      "text": "Action on escape; action for defamation. (1) An action against a sheriff or other officer for the escape of a prisoner arrested or imprisoned on civil process; or (2) An action for libel or slander shall be commenced within one year. [Amended by 1957 c.374 2]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "An action against a sheriff or other officer for the escape of a prisoner arrested or imprisoned on civil process; or",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "An action for libel or slander shall be commenced within one year. [Amended by 1957 c.374 2]",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 16,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html#section-12.125",
+      "identifier": "ORS 12.125",
+      "name": "Section 12.125",
+      "text": "Action arising under rental agreement. An action arising under a rental agreement or ORS chapter 90 shall be commenced within one year.",
+      "history_citation_blocks": [
+        "1973 c.559 39"
+      ],
+      "history_citations": [
+        {
+          "raw": "1973 c.559 39",
+          "year": 1973,
+          "chapter": "559",
+          "section": "39"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 17,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html#section-12.130",
+      "identifier": "ORS 12.130",
+      "name": "Section 12.130",
+      "text": "Action for penalty. An action upon a statute for a penalty given in whole or in part to the person who will prosecute for the same, shall be commenced within one year after the commission of the offense; and if the action is not commenced within one year by a private party, it may be commenced within two years thereafter, in behalf of the state, by the district attorney of the county where the offense was committed or is triable.",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 18,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html#section-12.132",
+      "identifier": "ORS 12.132",
+      "name": "Section 12.132",
+      "text": "Action arising out of real estate appraisal activity or appraisal review. (1) Except as provided in subsection (2) of this section, an action arising out of real estate appraisal activity, as defined in ORS 674.010, or appraisal review, as defined in ORS 674.200, must be commenced before the earlier of: (a) Two years after the date on which the person commencing the action knew or should have known the facts on which the action is based; or (b) Five years after the date on which the real estate appraisal activity or appraisal review on which the action is based was completed or should have been completed. (2) Subsection (1)(b) of this section does not apply to an action arising out of real estate appraisal activity or appraisal review based on fraud or misrepresentation. [2017 c.143 1; 2019 c.114 2] Note:",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Except as provided in subsection (b) of this section does not apply to an action arising out of real estate appraisal activity or appraisal review based on fraud or misrepresentation. [2017 c.143 1; 2019 c.114 2] Note:",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "of this section, an action arising out of real estate appraisal activity, as defined in ORS 674.010, or appraisal review, as defined in ORS 674.200, must be commenced before the earlier of: Subsection",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Two years after the date on which the person commencing the action knew or should have known the facts on which the action is based; or",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Five years after the date on which the real estate appraisal activity or appraisal review on which the action is based was completed or should have been completed.",
+              "subsections": []
+            }
+          ]
+        }
+      ],
+      "parser_warnings": [],
+      "position": 19,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html#section-12.133",
+      "identifier": "ORS 12.133",
+      "name": "Section 12.133",
+      "text": "",
+      "history_citation_blocks": [
+        "1983 c.589 2; repealed by 1999 c.130 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "1983 c.589 2",
+          "year": 1983,
+          "chapter": "589",
+          "section": "2"
+        },
+        {
+          "raw": "repealed by 1999 c.130 1"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 20,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html#section-12.135",
+      "identifier": "ORS 12.135",
+      "name": "Section 12.135",
+      "text": "Action for damages from construction, alteration or repair of improvement to real property; substantial completion defined; application. (1) An action against a person by a plaintiff who is not a public body, whether in contract, tort or otherwise, arising from the person having performed the construction, alteration or repair of any improvement to real property or the supervision or inspection thereof, or from the person having furnished design, planning, surveying, architectural or engineering services for the improvement, must be commenced before the earliest of: (a) The applicable period of limitation otherwise established by law; (b) Ten years after substantial completion or abandonment of the construction, alteration or repair of a small commercial structure, as defined in ORS 701.005, a residential structure, as defined in ORS 701.005, or a large commercial structure, as defined in ORS 701.005, that is owned or maintained by a homeowners association, as defined in ORS 94.550, or that is owned or maintained by an association of unit owners, as defined in ORS 100.005; or (c) Six years after substantial completion or abandonment of the construction, alteration or repair of a large commercial structure, as defined in ORS 701.005, other than a large commercial structure described in paragraph (b) of this subsection. (2) An action against a person by a public body, whether in contract, tort or otherwise, arising from the person having performed the construction, alteration or repair of any improvement to real property or the supervision or inspection thereof, or from the person having furnished design, planning, surveying, architectural or engineering services for the improvement, must be commenced not more than 10 years after substantial completion or abandonment of such construction, alteration or repair of the improvement to real property. (3)(a) Notwithstanding subsections (1) and (2) of this section, an action against a person registered to practice architecture under ORS 671.010 to 671.220, a person registered to practice landscape architecture under ORS 671.310 to 671.459 or a person registered to practice engineering under ORS 672.002 to 672.325 to recover damages for injury to a person, property or to any interest in property, including damages for delay or economic loss, regardless of legal theory, arising out of the construction, alteration or repair of any improvement to real property must be commenced before the earliest of: (A) Two years after the date the injury or damage is first discovered or in the exercise of reasonable care should have been discovered; (B) Ten years after substantial completion or abandonment of the construction, alteration or repair of a small commercial structure, as defined in ORS 701.005, a residential structure, as defined in ORS 701.005, or a large commercial structure, as defined in ORS 701.005, that is owned or maintained by a homeowners association, as defined in ORS 94.550, or that is owned or maintained by an association of unit owners, as defined in ORS 100.005; or (C) Six years after substantial completion or abandonment of the construction, alteration or repair of a large commercial structure, as defined in ORS 701.005, other than a large commercial structure described in subparagraph (B) of this paragraph. (b) This subsection applies to actions brought by any person or public body. (4) For purposes of this section: (a) Public body has the meaning given that term in ORS 174.109; and (b) Substantial completion means the earliest of: (A) The date when the contractee accepts in writing the construction, alteration or repair of the improvement to real property or any designated portion thereof as having reached that state of completion when it may be used or occupied for its intended purpose or, if there is no such written acceptance, the date of acceptance of the completed construction, alteration or repair of such improvement by the contractee; (B) The date when a public body issues a certificate of occupancy for the improvement; or (C) The date when the owner uses or occupies the improvement for its intended purpose. (5) For purposes of this section, an improvement to real property is considered abandoned on the same date that the improvement is considered abandoned under ORS 87.045. (6) This section: (a) Applies to an action against a manufacturer, distributor, seller or lessor of a manufactured dwelling, as defined in ORS 446.003, or of a prefabricated structure, as defined in ORS 455.010; and (b) Does not apply to actions against any person in actual possession and control of the improvement, as owner, tenant or otherwise, at the time such cause of action accrues.",
+      "history_citation_blocks": [
+        "1971 c.664 2,3,4; 1983 c.437 1; 1991 c.968 1; 2009 c.485 3; 2009 c.715 1; 2013 c.469 1; 2019 c.327 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "1971 c.664 2,3,4"
+        },
+        {
+          "raw": "1983 c.437 1",
+          "year": 1983,
+          "chapter": "437",
+          "section": "1"
+        },
+        {
+          "raw": "1991 c.968 1",
+          "year": 1991,
+          "chapter": "968",
+          "section": "1"
+        },
+        {
+          "raw": "2009 c.485 3",
+          "year": 2009,
+          "chapter": "485",
+          "section": "3"
+        },
+        {
+          "raw": "2009 c.715 1",
+          "year": 2009,
+          "chapter": "715",
+          "section": "1"
+        },
+        {
+          "raw": "2013 c.469 1",
+          "year": 2013,
+          "chapter": "469",
+          "section": "1"
+        },
+        {
+          "raw": "2019 c.327 1",
+          "year": 2019,
+          "chapter": "327",
+          "section": "1"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "An action against a person by a plaintiff who is not a public body, whether in contract, tort or otherwise, arising from the person having performed the construction, alteration or repair of any improvement to real property or the supervision or inspection thereof, or from the person having furnished design, planning, surveying, architectural or engineering services for the improvement, must be commenced before the earliest of: and",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "The applicable period of limitation otherwise established by law;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Ten years after substantial completion or abandonment of the construction, alteration or repair of a small commercial structure, as defined in ORS 701.005, a residential structure, as defined in ORS 701.005, or a large commercial structure, as defined in ORS 701.005, that is owned or maintained by a homeowners association, as defined in ORS 94.550, or that is owned or maintained by an association of unit owners, as defined in ORS 100.005; or of this subsection.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Six years after substantial completion or abandonment of the construction, alteration or repair of a large commercial structure, as defined in ORS 701.005, other than a large commercial structure described in paragraph",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "An action against a person by a public body, whether in contract, tort or otherwise, arising from the person having performed the construction, alteration or repair of any improvement to real property or the supervision or inspection thereof, or from the person having furnished design, planning, surveying, architectural or engineering services for the improvement, must be commenced not more than 10 years after substantial completion or abandonment of such construction, alteration or repair of the improvement to real property. of this section, an action against a person registered to practice architecture under ORS 671.010 to 671.220, a person registered to practice landscape architecture under ORS 671.310 to 671.459 or a person registered to practice engineering under ORS 672.002 to 672.325 to recover damages for injury to a person, property or to any interest in property, including damages for delay or economic loss, regardless of legal theory, arising out of the construction, alteration or repair of any improvement to real property must be commenced before the earliest of:",
+          "subsections": [
+            {
+              "label": "(A)",
+              "token": "A",
+              "kind": "alpha_upper",
+              "text": "Two years after the date the injury or damage is first discovered or in the exercise of reasonable care should have been discovered;",
+              "subsections": []
+            },
+            {
+              "label": "(B)",
+              "token": "B",
+              "kind": "alpha_upper",
+              "text": "Ten years after substantial completion or abandonment of the construction, alteration or repair of a small commercial structure, as defined in ORS 701.005, a residential structure, as defined in ORS 701.005, or a large commercial structure, as defined in ORS 701.005, that is owned or maintained by a homeowners association, as defined in ORS 94.550, or that is owned or maintained by an association of unit owners, as defined in ORS 100.005; or of this paragraph.",
+              "subsections": []
+            },
+            {
+              "label": "(C)",
+              "token": "C",
+              "kind": "alpha_upper",
+              "text": "Six years after substantial completion or abandonment of the construction, alteration or repair of a large commercial structure, as defined in ORS 701.005, other than a large commercial structure described in subparagraph",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "This subsection applies to actions brought by any person or public body.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "(a) Notwithstanding subsections",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "For purposes of this section:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Public body has the meaning given that term in ORS 174.109; and",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Substantial completion means the earliest of:",
+              "subsections": [
+                {
+                  "label": "(A)",
+                  "token": "A",
+                  "kind": "alpha_upper",
+                  "text": "The date when the contractee accepts in writing the construction, alteration or repair of the improvement to real property or any designated portion thereof as having reached that state of completion when it may be used or occupied for its intended purpose or, if there is no such written acceptance, the date of acceptance of the completed construction, alteration or repair of such improvement by the contractee;",
+                  "subsections": []
+                },
+                {
+                  "label": "(B)",
+                  "token": "B",
+                  "kind": "alpha_upper",
+                  "text": "The date when a public body issues a certificate of occupancy for the improvement; or",
+                  "subsections": []
+                },
+                {
+                  "label": "(C)",
+                  "token": "C",
+                  "kind": "alpha_upper",
+                  "text": "The date when the owner uses or occupies the improvement for its intended purpose.",
+                  "subsections": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "For purposes of this section, an improvement to real property is considered abandoned on the same date that the improvement is considered abandoned under ORS 87.045.",
+          "subsections": []
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "This section:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Applies to an action against a manufacturer, distributor, seller or lessor of a manufactured dwelling, as defined in ORS 446.003, or of a prefabricated structure, as defined in ORS 455.010; and",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Does not apply to actions against any person in actual possession and control of the improvement, as owner, tenant or otherwise, at the time such cause of action accrues.",
+              "subsections": []
+            }
+          ]
+        }
+      ],
+      "parser_warnings": [],
+      "position": 21,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html#section-12.137",
+      "identifier": "ORS 12.137",
+      "name": "Section 12.137",
+      "text": "Action for loss of or damage to property arising from nuclear incident. (1) An action, arising from a nuclear incident that involves the release of radioactive material, excluding releases from acts of war, that causes loss of or damage to property, or loss of use of property shall be commenced: (a) Within two years from the time an injured person discovers or reasonably could have discovered the injury to property and the causal connection between the injury and the nuclear incident; or (b) Within two years from any substantial change in the degree of injury to the property arising out of a nuclear incident. (2) As used in this section, nuclear incident has the meaning given that term in 42 U.S.C. 2014(q). (3) In no event shall any action under subsection (1) of this section or ORS 12.110 (5) be commenced more than 30 years from the date of the nuclear incident. [1987 c.705 1,2] Note:",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "An action, arising from a nuclear incident that involves the release of radioactive material, excluding releases from acts of war, that causes loss of or damage to property, or loss of use of property shall be commenced: of this section or ORS 12.110",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Within two years from the time an injured person discovers or reasonably could have discovered the injury to property and the causal connection between the injury and the nuclear incident; or",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Within two years from any substantial change in the degree of injury to the property arising out of a nuclear incident.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "As used in this section, nuclear incident has the meaning given that term in 42 U.S.C. 2014(q).",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "In no event shall any action under subsection",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "be commenced more than 30 years from the date of the nuclear incident. [1987 c.705 1,2] Note:",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 22,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html#section-12.140",
+      "identifier": "ORS 12.140",
+      "name": "Section 12.140",
+      "text": "Actions not otherwise provided for. An action for any cause not otherwise provided for shall be commenced within 10 years.",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 23,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html#section-12.150",
+      "identifier": "ORS 12.150",
+      "name": "Section 12.150",
+      "text": "Suspension of running of statute by absence or concealment. If, when a cause of action accrues against any person, the person is out of the state and service cannot be made within the state or the person is concealed therein, such action may be commenced within the applicable period of limitation in this chapter after the return of the person into the state, or after the termination of the concealment of the person; and if, after a cause of action has accrued against a person, the person shall depart from and reside out of this state, or if the person is concealed therein, the time of the absence or concealment of the person shall not be deemed or taken as any part of the time limited for the commencement of such action.",
+      "history_citation_blocks": [
+        "Amended by 1973 c.206 1; 1987 c.158 4"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1973 c.206 1"
+        },
+        {
+          "raw": "1987 c.158 4",
+          "year": 1987,
+          "chapter": "158",
+          "section": "4"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 24,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html#section-12.155",
+      "identifier": "ORS 12.155",
+      "name": "Section 12.155",
+      "text": "Effect of notice of advance payment on running of period of limitation. (1) If the person who makes an advance payment referred to in ORS 31.560 or 31.565 gives to each person entitled to recover damages for the death, injury or destruction, not later than 30 days after the date the first of such advance payments was made, written notice of the date of expiration of the period of limitation for the commencement of an action for damages set by the applicable statute of limitations, then the making of any such advance payment does not suspend the running of such period of limitation. The notice required by this subsection shall be in such form as the Director of the Department of Consumer and Business Services prescribes. (2) If the notice required by subsection (1) of this section is not given, the time between the date the first advance payment was made and the date a notice is actually given of the date of expiration of the period of limitation for the commencement of an action for damages set by the applicable statute of limitations is not part of the period limited for commencement of the action by the statute of limitations.",
+      "history_citation_blocks": [
+        "1971 c.331 5; 1981 c.892 85b"
+      ],
+      "history_citations": [
+        {
+          "raw": "1971 c.331 5",
+          "year": 1971,
+          "chapter": "331",
+          "section": "5"
+        },
+        {
+          "raw": "1981 c.892 85b",
+          "year": 1981,
+          "chapter": "892",
+          "section": "85b"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "If the person who makes an advance payment referred to in ORS 31.560 or 31.565 gives to each person entitled to recover damages for the death, injury or destruction, not later than 30 days after the date the first of such advance payments was made, written notice of the date of expiration of the period of limitation for the commencement of an action for damages set by the applicable statute of limitations, then the making of any such advance payment does not suspend the running of such period of limitation. The notice required by this subsection shall be in such form as the Director of the Department of Consumer and Business Services prescribes. of this section is not given, the time between the date the first advance payment was made and the date a notice is actually given of the date of expiration of the period of limitation for the commencement of an action for damages set by the applicable statute of limitations is not part of the period limited for commencement of the action by the statute of limitations.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "If the notice required by subsection",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 25,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html#section-12.160",
+      "identifier": "ORS 12.160",
+      "name": "Section 12.160",
+      "text": "Suspension for minors and persons who have disabling mental condition. (1) Subject to subsection (2) of this section, if a person is entitled to bring an action mentioned in ORS 12.010 to 12.050, 12.070 to 12.250 or 12.276, and at the time the cause of action accrues the person is a child who is younger than 18 years of age, the statute of limitation for commencing the action is tolled for so long as the person is younger than 18 years of age. (2) The time for commencing an action may not be extended under subsection (1) of this section for more than five years, or for more than one year after the person attains 18 years of age, whichever occurs first. (3) Subject to subsection (4) of this section, if a person is entitled to bring an action mentioned in ORS 12.010 to 12.050, 12.070 to 12.250 or 12.276, and at the time the cause of action accrues the person has a disabling mental condition that bars the person from comprehending rights that the person is otherwise bound to know, the statute of limitation for commencing the action is tolled for so long as the person has a disabling mental condition that bars the person from comprehending rights that the person is otherwise bound to know. (4) The time for commencing an action may not be extended under subsection (3) of this section for more than five years, or for more than one year after the person no longer has a disabling mental condition that bars the person from comprehending rights that the person is otherwise bound to know, whichever occurs first. (5) If a childs cause of action is tolled under subsection (1) of this section, a cause of action for recovery of damages for medical expenses incurred by a parent, guardian or conservator of the child is tolled for the same period of time as the childs cause of action if the medical expenses resulted from the same wrongful conduct that is the basis of the childs cause of action.",
+      "history_citation_blocks": [
+        "Amended by 1973 c.827 4; 1979 c.246 1; 1983 c.762 9; 1997 c.339 1; 2007 c.285 1; 2015 c.510 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1973 c.827 4"
+        },
+        {
+          "raw": "1979 c.246 1",
+          "year": 1979,
+          "chapter": "246",
+          "section": "1"
+        },
+        {
+          "raw": "1983 c.762 9",
+          "year": 1983,
+          "chapter": "762",
+          "section": "9"
+        },
+        {
+          "raw": "1997 c.339 1",
+          "year": 1997,
+          "chapter": "339",
+          "section": "1"
+        },
+        {
+          "raw": "2007 c.285 1",
+          "year": 2007,
+          "chapter": "285",
+          "section": "1"
+        },
+        {
+          "raw": "2015 c.510 1",
+          "year": 2015,
+          "chapter": "510",
+          "section": "1"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Subject to subsection of this section for more than five years, or for more than one year after the person attains 18 years of age, whichever occurs first. of this section, a cause of action for recovery of damages for medical expenses incurred by a parent, guardian or conservator of the child is tolled for the same period of time as the childs cause of action if the medical expenses resulted from the same wrongful conduct that is the basis of the childs cause of action.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "of this section, if a person is entitled to bring an action mentioned in ORS 12.010 to 12.050, 12.070 to 12.250 or 12.276, and at the time the cause of action accrues the person is a child who is younger than 18 years of age, the statute of limitation for commencing the action is tolled for so long as the person is younger than 18 years of age. The time for commencing an action may not be extended under subsection",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Subject to subsection of this section for more than five years, or for more than one year after the person no longer has a disabling mental condition that bars the person from comprehending rights that the person is otherwise bound to know, whichever occurs first.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "of this section, if a person is entitled to bring an action mentioned in ORS 12.010 to 12.050, 12.070 to 12.250 or 12.276, and at the time the cause of action accrues the person has a disabling mental condition that bars the person from comprehending rights that the person is otherwise bound to know, the statute of limitation for commencing the action is tolled for so long as the person has a disabling mental condition that bars the person from comprehending rights that the person is otherwise bound to know. The time for commencing an action may not be extended under subsection",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "If a childs cause of action is tolled under subsection",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 26,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html#section-12.170",
+      "identifier": "ORS 12.170",
+      "name": "Section 12.170",
+      "text": "Disability must exist when right of action accrues. No person shall make use of a disability unless it existed when the right of action of the person accrued.",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 27,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html#section-12.180",
+      "identifier": "ORS 12.180",
+      "name": "Section 12.180",
+      "text": "Coexisting disabilities must all be removed. When two or more disabilities coexist at the time the right of action accrues, the limitation shall not attach until all are removed.",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 28,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html#section-12.190",
+      "identifier": "ORS 12.190",
+      "name": "Section 12.190",
+      "text": "Effect of death on limitations. (1) If a person entitled to bring an action dies before the expiration of the time limited for its commencement, an action may be commenced by the personal representative of the person after the expiration of that time, and within one year after the death of the person. (2)(a) If a person against whom an action may be brought dies before the expiration of the time limited for its commencement, an action may be commenced against the personal representative of the person after the expiration of that time, and within one year after the death of the person. (b) Notwithstanding paragraph (a) of this subsection, if an action is commenced against a defendant who dies before the expiration of the time limited for commencement of the action or within 60 days after the action is commenced, a party may amend the complaint within 90 days after the action is commenced to substitute the personal representative of the defendants estate for the deceased defendant. An amendment under this paragraph relates back to the date the complaint was filed.",
+      "history_citation_blocks": [
+        "Amended by 1969 c.591 268; 2021 c.282 24"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1969 c.591 268"
+        },
+        {
+          "raw": "2021 c.282 24",
+          "year": 2021,
+          "chapter": "282",
+          "section": "24"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "If a person entitled to bring an action dies before the expiration of the time limited for its commencement, an action may be commenced by the personal representative of the person after the expiration of that time, and within one year after the death of the person.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "(a) If a person against whom an action may be brought dies before the expiration of the time limited for its commencement, an action may be commenced against the personal representative of the person after the expiration of that time, and within one year after the death of the person.",
+          "subsections": [
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Notwithstanding paragraph",
+              "subsections": []
+            },
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "of this subsection, if an action is commenced against a defendant who dies before the expiration of the time limited for commencement of the action or within 60 days after the action is commenced, a party may amend the complaint within 90 days after the action is commenced to substitute the personal representative of the defendants estate for the deceased defendant. An amendment under this paragraph relates back to the date the complaint was filed.",
+              "subsections": []
+            }
+          ]
+        }
+      ],
+      "parser_warnings": [],
+      "position": 29,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html#section-12.195",
+      "identifier": "ORS 12.195",
+      "name": "Section 12.195",
+      "text": "Effect of attorney death on limitations. Notwithstanding the time established by statute for the commencement of an action, a person must commence the action within 180 days after the death of an attorney for the person, or within the time established by statute for the commencement of the action, whichever is later, if: (1) The attorney has agreed to represent the person in the action; (2) The attorney-client relationship between the person and the attorney is confirmed in a writing prepared by the attorney or at the direction of the attorney; and (3) The attorney dies before the expiration of the time allowed by statute for commencement of the action. [2005 c.457 2] Note:",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The attorney has agreed to represent the person in the action;",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The attorney-client relationship between the person and the attorney is confirmed in a writing prepared by the attorney or at the direction of the attorney; and",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The attorney dies before the expiration of the time allowed by statute for commencement of the action. [2005 c.457 2] Note:",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 30,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html#section-12.200",
+      "identifier": "ORS 12.200",
+      "name": "Section 12.200",
+      "text": "Suspension by war as to noncitizen. When a person is a noncitizen and a subject or citizen of a country at war with the United States, the time of the continuance of the war shall not be a part of the period limited for the commencement of the action. [Amended by 2022 c.97 3]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 31,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html#section-12.210",
+      "identifier": "ORS 12.210",
+      "name": "Section 12.210",
+      "text": "Suspension by injunction or prohibition of statute. When the commencement of an action is stayed by injunction or a statutory prohibition, the time of the continuance of the injunction or prohibition shall not be a part of the time limited for the commencement of the action.",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 32,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html#section-12.220",
+      "identifier": "ORS 12.220",
+      "name": "Section 12.220",
+      "text": "Commencement of new action after involuntary dismissal. (1) Notwithstanding ORS 12.020, if an action is filed with a court within the time allowed by statute, and the action is involuntarily dismissed without prejudice on any ground not adjudicating the merits of the action, or is involuntarily dismissed with prejudice on the ground that the plaintiff failed to properly effect service of summons within the time allowed by ORS 12.020 and the statute of limitations for the action expired, the plaintiff may commence a new action based on the same claim or claims against a defendant in the original action if the defendant had actual notice of the filing of the original action not later than 60 days after the action was filed. (2) If, pursuant to subsection (1) of this section, a new action is commenced in the manner provided by ORS 12.020 not later than 180 days after the judgment dismissing the original action is entered in the register of the court, the new action is not subject to dismissal by reason of not having been commenced within the time allowed by statute. (3) A new action may be commenced only once under this section for the same claim or claims. (4) All defenses that would have been available if the original action had been commenced within the time otherwise allowed by statute shall be available in a new action commenced under this section.",
+      "history_citation_blocks": [
+        "Amended by 1961 c.726 397; 2003 c.296 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1961 c.726 397"
+        },
+        {
+          "raw": "2003 c.296 1",
+          "year": 2003,
+          "chapter": "296",
+          "section": "1"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Notwithstanding ORS 12.020, if an action is filed with a court within the time allowed by statute, and the action is involuntarily dismissed without prejudice on any ground not adjudicating the merits of the action, or is involuntarily dismissed with prejudice on the ground that the plaintiff failed to properly effect service of summons within the time allowed by ORS 12.020 and the statute of limitations for the action expired, the plaintiff may commence a new action based on the same claim or claims against a defendant in the original action if the defendant had actual notice of the filing of the original action not later than 60 days after the action was filed. of this section, a new action is commenced in the manner provided by ORS 12.020 not later than 180 days after the judgment dismissing the original action is entered in the register of the court, the new action is not subject to dismissal by reason of not having been commenced within the time allowed by statute.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "If, pursuant to subsection",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "A new action may be commenced only once under this section for the same claim or claims.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "All defenses that would have been available if the original action had been commenced within the time otherwise allowed by statute shall be available in a new action commenced under this section.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 33,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html#section-12.230",
+      "identifier": "ORS 12.230",
+      "name": "Section 12.230",
+      "text": "Acknowledgment or promise taking contract case out of statute; effect of payment. No acknowledgment or promise shall be sufficient evidence of a new or continuing contract, whereby to take the case out of the operation of this chapter, unless the same is contained in some writing, signed by the party to be charged thereby; but this section shall not alter the effect of any payment of principal or interest.",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 34,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html#section-12.240",
+      "identifier": "ORS 12.240",
+      "name": "Section 12.240",
+      "text": "Effect of payment after obligation becomes due. Whenever any payment of principal or interest is made after it has become due, upon an existing contract, whether it is a bill of exchange, promissory note, bond, or other evidence of indebtedness, the limitation shall commence from the time the last payment was made.",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 35,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html#section-12.250",
+      "identifier": "ORS 12.250",
+      "name": "Section 12.250",
+      "text": "Actions by state, county or public corporations. Unless otherwise made applicable thereto, the limitations prescribed in this chapter shall not apply to actions brought in the name of the state, or any county, or other public corporation therein, or for its benefit.",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 36,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html#section-12.260",
+      "identifier": "ORS 12.260",
+      "name": "Section 12.260",
+      "text": "[Repealed by 1987 c.536 9]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 37,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html#section-12.270",
+      "identifier": "ORS 12.270",
+      "name": "Section 12.270",
+      "text": "Conclusive presumption of validity of governmental subdivision boundary proceedings one year after effective date. On September 13, 1975, any proceeding that establishes or alters the boundaries of a governmental subdivision previously or hereafter initiated and purported to be effected in accordance with applicable legal requirements shall be conclusively presumed valid for all purposes one year after the purported effective date of the action. No direct or collateral attack on the action may thereafter be commenced. This statute of limitations includes but is not limited to the following proceedings: (1) Formations and change of organizations under ORS 198.705 to 198.955. (2) Boundary changes under ORS 199.410 to 199.519. (3) Consolidations under ORS 199.705 to 199.795. (4) Incorporations under ORS 221.010 to 221.090. (5) Annexations under ORS 222.111 to 222.180, 222.750 and 222.840 to 222.915. (6) Consolidations under ORS 222.210 to 222.310. (7) Withdrawals and transfers of territory under ORS 222.510 to 222.580. (8) Mergers under ORS 222.610 to 222.710. (9) Formations and changes under ORS chapter 261. (10) Alterations, changes, mergers and consolidations under ORS 330.080 to 330.123, 330.505 to 330.780 (1989 Edition) and 335.490 to 335.505. (11) Alterations, changes, mergers and consolidations under ORS chapter 333 commenced before July 1, 2003. (12) Formations and boundary changes under ORS 341.025 to 341.125 and 341.565 to 341.575. (13) Organizations and boundary changes under ORS 545.002 and 545.025 to 545.043, 545.051 to 545.105, 545.109, 545.123, 545.126 and 545.131. (14) Formations and boundary alterations under ORS 547.005 to 547.060 and 547.250 to 547.260. (15) Formations and organizations under ORS chapter 551. [1975 c.326 2; 1991 c.167 1; 1999 c.452 29; 2003 c.226 20; 2005 c.209 1] Note:",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Formations and change of organizations under ORS 198.705 to 198.955.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Boundary changes under ORS 199.410 to 199.519.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Consolidations under ORS 199.705 to 199.795.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Incorporations under ORS 221.010 to 221.090.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "Annexations under ORS 222.111 to 222.180, 222.750 and 222.840 to 222.915.",
+          "subsections": []
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "Consolidations under ORS 222.210 to 222.310.",
+          "subsections": []
+        },
+        {
+          "label": "(7)",
+          "token": "7",
+          "kind": "numeric",
+          "text": "Withdrawals and transfers of territory under ORS 222.510 to 222.580.",
+          "subsections": []
+        },
+        {
+          "label": "(8)",
+          "token": "8",
+          "kind": "numeric",
+          "text": "Mergers under ORS 222.610 to 222.710.",
+          "subsections": []
+        },
+        {
+          "label": "(9)",
+          "token": "9",
+          "kind": "numeric",
+          "text": "Formations and changes under ORS chapter 261.",
+          "subsections": []
+        },
+        {
+          "label": "(10)",
+          "token": "10",
+          "kind": "numeric",
+          "text": "Alterations, changes, mergers and consolidations under ORS 330.080 to 330.123, 330.505 to 330.780 (1989 Edition) and 335.490 to 335.505.",
+          "subsections": []
+        },
+        {
+          "label": "(11)",
+          "token": "11",
+          "kind": "numeric",
+          "text": "Alterations, changes, mergers and consolidations under ORS chapter 333 commenced before July 1, 2003.",
+          "subsections": []
+        },
+        {
+          "label": "(12)",
+          "token": "12",
+          "kind": "numeric",
+          "text": "Formations and boundary changes under ORS 341.025 to 341.125 and 341.565 to 341.575.",
+          "subsections": []
+        },
+        {
+          "label": "(13)",
+          "token": "13",
+          "kind": "numeric",
+          "text": "Organizations and boundary changes under ORS 545.002 and 545.025 to 545.043, 545.051 to 545.105, 545.109, 545.123, 545.126 and 545.131.",
+          "subsections": []
+        },
+        {
+          "label": "(14)",
+          "token": "14",
+          "kind": "numeric",
+          "text": "Formations and boundary alterations under ORS 547.005 to 547.060 and 547.250 to 547.260.",
+          "subsections": []
+        },
+        {
+          "label": "(15)",
+          "token": "15",
+          "kind": "numeric",
+          "text": "Formations and organizations under ORS chapter 551. [1975 c.326 2; 1991 c.167 1; 1999 c.452 29; 2003 c.226 20; 2005 c.209 1] Note:",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 38,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html#section-12.272",
+      "identifier": "ORS 12.272",
+      "name": "Section 12.272",
+      "text": "Action based on pesticide application. (1) Notwithstanding any other provision of this chapter, no action against a landowner, person for whom the pesticide was applied or pesticide operator arising out of the use or application of any pesticide shall be commenced unless the person commencing the action, within the time specified by ORS 634.172, files the report required by ORS 634.172 and mails or personally delivers true copies of that report to: (a) The landowner or pesticide operator who is allegedly responsible for the loss; and (b) The person for whom the pesticide was applied if that person is not the person commencing the action. (2) For the purposes of this section: (a) Landowner includes any person, firm, corporation, the state, any county within the state, or municipality, shown by records of the county to be the owner of land or having such land under contract for purchase. (b) Pesticide operator has the meaning given in ORS 634.006.",
+      "history_citation_blocks": [
+        "1991 c.351 3; 1995 c.96 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "1991 c.351 3",
+          "year": 1991,
+          "chapter": "351",
+          "section": "3"
+        },
+        {
+          "raw": "1995 c.96 1",
+          "year": 1995,
+          "chapter": "96",
+          "section": "1"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Notwithstanding any other provision of this chapter, no action against a landowner, person for whom the pesticide was applied or pesticide operator arising out of the use or application of any pesticide shall be commenced unless the person commencing the action, within the time specified by ORS 634.172, files the report required by ORS 634.172 and mails or personally delivers true copies of that report to:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "The landowner or pesticide operator who is allegedly responsible for the loss; and",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "The person for whom the pesticide was applied if that person is not the person commencing the action.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "For the purposes of this section:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Landowner includes any person, firm, corporation, the state, any county within the state, or municipality, shown by records of the county to be the owner of land or having such land under contract for purchase.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Pesticide operator has the meaning given in ORS 634.006.",
+              "subsections": []
+            }
+          ]
+        }
+      ],
+      "parser_warnings": [],
+      "position": 39,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html#section-12.274",
+      "identifier": "ORS 12.274",
+      "name": "Section 12.274",
+      "text": "Action against trustee of express trust. Notwithstanding any other provision of this chapter, an action against the trustee of an express trust, whether in contract, tort or otherwise, arising from any act or omission of the trustee constituting a breach of duty shall be commenced within six years from the date the act or omission is discovered or in the exercise of reasonable diligence should have been discovered. However, no such action shall be commenced more than 10 years from the date of the act or omission complained of, or two years from the termination of any fiduciary account established under the trust, whichever date is later.",
+      "history_citation_blocks": [
+        "1991 c.968 4"
+      ],
+      "history_citations": [
+        {
+          "raw": "1991 c.968 4",
+          "year": 1991,
+          "chapter": "968",
+          "section": "4"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 40,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html#section-12.276",
+      "identifier": "ORS 12.276",
+      "name": "Section 12.276",
+      "text": "Action for death, injury or damage resulting from breast implants. (1) Notwithstanding ORS 12.110 (1) or 30.020, an action for death, injury or damage resulting from breast implants containing silicone, silica or silicon as a component must be commenced not later than two years after the date on which the plaintiff first discovered, or in the exercise of reasonable care should have discovered: (a) The death or specific injury, disease or damage for which the plaintiff seeks recovery; (b) The tortious nature of the act or omission of the defendant that gives rise to a claim for relief against the defendant; and (c) All other elements required to establish plaintiffs claim for relief. (2) Except as provided in subsections (3) and (4) of this section, an action for death, injury or damage resulting from breast implants containing silicone, silica or silicon as a component is not subject to ORS 12.110 (1) or 12.115 or any other statute of limitation or statute of ultimate repose in Oregon Revised Statutes. (3) An action for death, injury or damage against a physician licensed pursuant to ORS chapter 677, or against a health care facility licensed under ORS chapter 441, resulting from breast implants containing silicone, silica or silicon as a component, remains subject to the limitations imposed by ORS 12.110 (4),",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Notwithstanding ORS 12.110 or 30.020, an action for death, injury or damage resulting from breast implants containing silicone, silica or silicon as a component must be commenced not later than two years after the date on which the plaintiff first discovered, or in the exercise of reasonable care should have discovered: or 12.115 or any other statute of limitation or statute of ultimate repose in Oregon Revised Statutes.",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "The death or specific injury, disease or damage for which the plaintiff seeks recovery;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "The tortious nature of the act or omission of the defendant that gives rise to a claim for relief against the defendant; and",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "All other elements required to establish plaintiffs claim for relief.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Except as provided in subsections",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "and An action for death, injury or damage against a physician licensed pursuant to ORS chapter 677, or against a health care facility licensed under ORS chapter 441, resulting from breast implants containing silicone, silica or silicon as a component, remains subject to the limitations imposed by ORS 12.110",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "of this section, an action for death, injury or damage resulting from breast implants containing silicone, silica or silicon as a component is not subject to ORS 12.110",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 41,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html#section-12.278",
+      "identifier": "ORS 12.278",
+      "name": "Section 12.278",
+      "text": "Action against manufacturer of certain pickup trucks. (1) A civil action against a manufacturer of pickup trucks for injury or damage resulting from a fire caused by rupture of a sidesaddle gas tank in a vehicle collision, including any product liability action under ORS 30.900 to 30.920 and any action based on negligence, must be commenced not later than two years after the injury or damage occurs. A civil action against a manufacturer of pickup trucks for death resulting from a fire caused by rupture of a sidesaddle gas tank in a vehicle collision, including any product liability action under ORS 30.900 to 30.920 and any action based on negligence, must be commenced not later than three years after the death. (2) A civil action against a manufacturer of pickup trucks for death, injury or damage resulting from a fire caused by rupture of a sidesaddle gas tank in a vehicle collision is not subject to ORS 12.115, 30.020, 30.905 or any other statute of limitation or statute of ultimate repose in Oregon Revised Statutes. (3) For the purposes of this section, sidesaddle gas tank means a gas tank mounted outside of the side rails of the frame of a pickup truck.",
+      "history_citation_blocks": [
+        "1995 c.55 2; 2009 c.485 5"
+      ],
+      "history_citations": [
+        {
+          "raw": "1995 c.55 2",
+          "year": 1995,
+          "chapter": "55",
+          "section": "2"
+        },
+        {
+          "raw": "2009 c.485 5",
+          "year": 2009,
+          "chapter": "485",
+          "section": "5"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A civil action against a manufacturer of pickup trucks for injury or damage resulting from a fire caused by rupture of a sidesaddle gas tank in a vehicle collision, including any product liability action under ORS 30.900 to 30.920 and any action based on negligence, must be commenced not later than two years after the injury or damage occurs. A civil action against a manufacturer of pickup trucks for death resulting from a fire caused by rupture of a sidesaddle gas tank in a vehicle collision, including any product liability action under ORS 30.900 to 30.920 and any action based on negligence, must be commenced not later than three years after the death.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "A civil action against a manufacturer of pickup trucks for death, injury or damage resulting from a fire caused by rupture of a sidesaddle gas tank in a vehicle collision is not subject to ORS 12.115, 30.020, 30.905 or any other statute of limitation or statute of ultimate repose in Oregon Revised Statutes.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "For the purposes of this section, sidesaddle gas tank means a gas tank mounted outside of the side rails of the frame of a pickup truck.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 42,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html#section-12.280",
+      "identifier": "ORS 12.280",
+      "name": "Section 12.280",
+      "text": "Action based on practice of land surveying. Notwithstanding ORS 12.135 or any other statute of limitation, an action against a person for the practice of land surveying, as defined in ORS 672.005, to recover damages for injury to a person, property or to any interest in property, including damages for delay or economic loss, regardless of legal theory, arising out of the survey of real property must be commenced within two years after the date the injury or damage is first discovered or in the exercise of reasonable care should have been discovered. In no event may an action arising out of a survey be commenced more than 10 years after the date on which any map prepared by the land surveyor is filed under the provisions of ORS 209.250, or, if no map is filed, more than 10 years after the completion of work on the survey.",
+      "history_citation_blocks": [
+        "1995 c.310 2; 2009 c.715 2"
+      ],
+      "history_citations": [
+        {
+          "raw": "1995 c.310 2",
+          "year": 1995,
+          "chapter": "310",
+          "section": "2"
+        },
+        {
+          "raw": "2009 c.715 2",
+          "year": 2009,
+          "chapter": "715",
+          "section": "2"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 43,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html#section-12.282",
+      "identifier": "ORS 12.282",
+      "name": "was",
+      "text": "enacted into law by the Legislative Assembly but was not added to or made a part of ORS chapter 12 or any series therein by legislative action. See Preface to Oregon Revised Statutes for further explanation. Note: Sections 6 and 7, chapter 599, Oregon Laws 2021, provide: Sec. 6. Section 7 of this 2021 Act is added to and made a part of ORS chapter 12. [2021 c.599 6] Sec. 7. Action challenging validity of certain building permits. An action to challenge the validity of a building permit that a contract building official, as defined in section 2 of this 2021 Act [455.202], issued before the effective date of this 2021 Act [January 1, 2022] on the basis that the contract building official lacked the authority to issue the building permit or to make a discretionary decision, as defined in section 2 of this 2021 Act, must be commenced on or before December 31, 2024. [2021 c.599 7] UNIFORM CONFLICT OF LAWS-LIMITATIONS ACT",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 44,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html#section-12.410",
+      "identifier": "ORS 12.410",
+      "name": "Section 12.410",
+      "text": "Definitions for ORS 12.410 to 12.480. As used in ORS 12.410 to 12.480: (1) Claim means a right of action that may be asserted in a civil action or proceeding and includes a right of action created by statute. (2) State means a state, commonwealth, territory or possession of the United States, the District of Columbia, the Commonwealth of Puerto Rico, a foreign country or a political subdivision of any of them. [1987 c.536 1] Note:",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Claim means a right of action that may be asserted in a civil action or proceeding and includes a right of action created by statute.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "State means a state, commonwealth, territory or possession of the United States, the District of Columbia, the Commonwealth of Puerto Rico, a foreign country or a political subdivision of any of them. [1987 c.536 1] Note:",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 45,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html#section-12.420",
+      "identifier": "ORS 12.420",
+      "name": "Section 12.420",
+      "text": "Purpose. ORS 12.410 to 12.480 shall be applied and construed to effectuate its general purpose to make uniform the law with respect to the subject of ORS 12.410 to",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 46,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html#section-12.430",
+      "identifier": "ORS 12.430",
+      "name": "Section 12.430",
+      "text": "Claims based on law of other states; limitation period. (1) Except as provided by ORS 12.450, if a claim is substantively based: (a) Upon the law of one other state, the limitation period of that state applies; or (b) Upon the law of more than one state, the limitation period of one of those states, chosen by the law of conflict of laws of this state, applies. (2) The limitation period of this state applies to all other claims. [1987 c.536 2] Note: See note under",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Except as provided by ORS 12.450, if a claim is substantively based:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Upon the law of one other state, the limitation period of that state applies; or",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Upon the law of more than one state, the limitation period of one of those states, chosen by the law of conflict of laws of this state, applies.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The limitation period of this state applies to all other claims. [1987 c.536 2] Note: See note under",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 47,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html#section-12.440",
+      "identifier": "ORS 12.440",
+      "name": "Section 12.440",
+      "text": "Application of statutes and rules governing conflict of laws. If the statute of limitations of another state applies to the assertion of a claim in this state, the other states relevant statutes and other rules of law governing tolling and accrual apply in computing the limitation period, but its statutes and other rules of law governing conflict of laws do not apply. [1987 c.536 3] Note: See note under",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 48,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html#section-12.450",
+      "identifier": "ORS 12.450",
+      "name": "Section 12.450",
+      "text": "When limitation period of another state not applicable. If the court determines that the limitation period of another state applicable under ORS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 49,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html#section-12.460",
+      "identifier": "ORS 12.460",
+      "name": "Section 12.460",
+      "text": "Claims to which statutes apply. ORS 12.410 to 12.480 apply to claims: (1) Accruing after January 1, 1988; or (2) Asserted in a civil action or proceeding more than one year after January 1, 1988, but it does not revive a claim barred before January 1, 1988. [1987 c.536 5] Note: See note under",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Accruing after January 1, 1988; or",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Asserted in a civil action or proceeding more than one year after January 1, 1988, but it does not revive a claim barred before January 1, 1988. [1987 c.536 5] Note: See note under",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 50,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html#section-12.470",
+      "identifier": "ORS 12.470",
+      "name": "Section 12.470",
+      "text": "Severability. If any provision of ORS 12.410 to 12.480 or the application thereof to any person or circumstance is held invalid, the invalidity does not affect other provisions or applications of ORS 12.410 to 12.480 which can be given effect without the invalid provision or application, and to this end the provisions of ORS 12.410 to 12.480 are severable. [1987 c.536 8] Note: See note under",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 51,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html#section-12.480",
+      "identifier": "ORS 12.480",
+      "name": "Section 12.480",
+      "text": "Short title. ORS 12.410 to 12.480 may be cited as the Uniform Conflict of Laws-Limitations Act. [1987 c.536 7] Note: See note under",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 52,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors012.html"
+    }
+  ],
+  "alternateName": "Limitations of Actions and",
+  "legislationDate": "2023"
+}

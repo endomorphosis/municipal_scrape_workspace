@@ -1,0 +1,1085 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "orlaw": "https://www.oregonlegislature.gov/ors#"
+  },
+  "@type": "Legislation",
+  "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors645.html",
+  "identifier": "ORS Chapter 645",
+  "name": "ORS Chapter 645 — Commodity Transactions",
+  "legislationType": "Statute",
+  "jurisdiction": "US-OR",
+  "isPartOf": {
+    "@type": "CreativeWork",
+    "identifier": "ORS",
+    "name": "Oregon Revised Statutes",
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors"
+  },
+  "dateModified": "2026-02-25T08:11:28.800061+00:00",
+  "source_file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors645.html",
+  "hasPart": [
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors645.html#section-645.005",
+      "identifier": "ORS 645.005",
+      "name": "Section 645.005",
+      "text": "Definitions. As used in this chapter: (1) Board of trade means any person or persons engaged in buying or selling any commodity or receiving the same for sale on consignment, whether such person or persons are characterized as a board of trade, exchange or other form of marketplace. (2) Commodity means, except as otherwise specified by the director by rule, all goods, articles, products, foreign currency or items of any kind. Commodity does not include real property or any timber, agricultural or livestock product grown or raised on real property and offered or sold by the owner or lessee of such real property. (3) Commodity contract: (a) Means any account, agreement or contract for the purchase or sale of one or more commodities, however characterized, which is primarily for speculation or investment purposes and not for use or consumption by the offeree or purchaser or between persons engaged in producing, processing, using commercially or handling as merchants the commodity or any by-product thereof. Any contract for one or more commodities offered or sold shall, in the absence of evidence to the contrary, be presumed to be offered or sold for speculation or investment purposes; and (b) Does not include any contract or agreement which requires, and under which the purchaser receives within 28 days of payment of any portion of the purchase price, physical delivery of the total amount of each commodity to be purchased under the contract or agreement. (4) Commodity merchant means any person, other than a futures association, required to register with the Commodity Futures Trading Commission. (5) Commodity option: (a) Means any account, agreement or contract giving a party thereto the right but not the obligation to purchase or sell one or more commodities or one or more commodity contracts, whether characterized as an option, privilege, indemnity, bid, offer, put, call, advance guaranty, decline guaranty or otherwise; and (b) Does not include an option traded on a national securities exchange registered with the federal Securities and Exchange Commission. (6) Director means the Director of the Department of Consumer and Business Services or an agent or employee authorized to act on the directors behalf. (7) Financial institution means an insured institution or trust company as those terms are defined in ORS 706.008. (8) Fraud, deceit and defraud are not limited to common-law deceit. (9) Offer includes every offer to sell, offer to purchase or offer to enter into a commodity contract or commodity option. (10) Person includes an individual, a joint venture, a partnership, a cooperative, an association, a joint stock company, a corporation, a trust, an unincorporated organization, a government or a political subdivision of a government. (11) Sale or sell includes every sale, contract of sale, contract to sell or disposition for value.",
+      "history_citation_blocks": [
+        "1987 c.148 3; 1993 c.744 15; 1997 c.631 506"
+      ],
+      "history_citations": [
+        {
+          "raw": "1987 c.148 3",
+          "year": 1987,
+          "chapter": "148",
+          "section": "3"
+        },
+        {
+          "raw": "1993 c.744 15",
+          "year": 1993,
+          "chapter": "744",
+          "section": "15"
+        },
+        {
+          "raw": "1997 c.631 506",
+          "year": 1997,
+          "chapter": "631",
+          "section": "506"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Board of trade means any person or persons engaged in buying or selling any commodity or receiving the same for sale on consignment, whether such person or persons are characterized as a board of trade, exchange or other form of marketplace.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Commodity means, except as otherwise specified by the director by rule, all goods, articles, products, foreign currency or items of any kind. Commodity does not include real property or any timber, agricultural or livestock product grown or raised on real property and offered or sold by the owner or lessee of such real property.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Commodity contract:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Means any account, agreement or contract for the purchase or sale of one or more commodities, however characterized, which is primarily for speculation or investment purposes and not for use or consumption by the offeree or purchaser or between persons engaged in producing, processing, using commercially or handling as merchants the commodity or any by-product thereof. Any contract for one or more commodities offered or sold shall, in the absence of evidence to the contrary, be presumed to be offered or sold for speculation or investment purposes; and",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Does not include any contract or agreement which requires, and under which the purchaser receives within 28 days of payment of any portion of the purchase price, physical delivery of the total amount of each commodity to be purchased under the contract or agreement.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Commodity merchant means any person, other than a futures association, required to register with the Commodity Futures Trading Commission.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "Commodity option:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Means any account, agreement or contract giving a party thereto the right but not the obligation to purchase or sell one or more commodities or one or more commodity contracts, whether characterized as an option, privilege, indemnity, bid, offer, put, call, advance guaranty, decline guaranty or otherwise; and",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Does not include an option traded on a national securities exchange registered with the federal Securities and Exchange Commission.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "Director means the Director of the Department of Consumer and Business Services or an agent or employee authorized to act on the directors behalf.",
+          "subsections": []
+        },
+        {
+          "label": "(7)",
+          "token": "7",
+          "kind": "numeric",
+          "text": "Financial institution means an insured institution or trust company as those terms are defined in ORS 706.008.",
+          "subsections": []
+        },
+        {
+          "label": "(8)",
+          "token": "8",
+          "kind": "numeric",
+          "text": "Fraud, deceit and defraud are not limited to common-law deceit.",
+          "subsections": []
+        },
+        {
+          "label": "(9)",
+          "token": "9",
+          "kind": "numeric",
+          "text": "Offer includes every offer to sell, offer to purchase or offer to enter into a commodity contract or commodity option.",
+          "subsections": []
+        },
+        {
+          "label": "(10)",
+          "token": "10",
+          "kind": "numeric",
+          "text": "Person includes an individual, a joint venture, a partnership, a cooperative, an association, a joint stock company, a corporation, a trust, an unincorporated organization, a government or a political subdivision of a government.",
+          "subsections": []
+        },
+        {
+          "label": "(11)",
+          "token": "11",
+          "kind": "numeric",
+          "text": "Sale or sell includes every sale, contract of sale, contract to sell or disposition for value.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 1,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors645.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors645.html#section-645.010",
+      "identifier": "ORS 645.010",
+      "name": "Section 645.010",
+      "text": "Commodity contract or option transactions prohibited; exception. Except as otherwise provided in ORS 645.015 or 645.020: (1) No person shall sell or purchase or offer to sell or purchase any commodity under any commodity contract or under any commodity option or offer to enter into or enter into as seller or purchaser any commodity contract or any commodity option. (2) No person shall participate or materially aid another person to commit an act or otherwise engage in a transaction prohibited by subsection (1) of this section.",
+      "history_citation_blocks": [
+        "1987 c.148 4; 1989 c.179 2"
+      ],
+      "history_citations": [
+        {
+          "raw": "1987 c.148 4",
+          "year": 1987,
+          "chapter": "148",
+          "section": "4"
+        },
+        {
+          "raw": "1989 c.179 2",
+          "year": 1989,
+          "chapter": "179",
+          "section": "2"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "No person shall sell or purchase or offer to sell or purchase any commodity under any commodity contract or under any commodity option or offer to enter into or enter into as seller or purchaser any commodity contract or any commodity option. of this section.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "No person shall participate or materially aid another person to commit an act or otherwise engage in a transaction prohibited by subsection",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 2,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors645.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors645.html#section-645.015",
+      "identifier": "ORS 645.015",
+      "name": "Section 645.015",
+      "text": "Persons exempt from prohibition; effect of federal law. (1) The prohibitions in ORS 645.010 shall not apply to any transaction by: (a) A person registered with the federal Commodity Futures Trading Commission as a futures commission merchant or as a leverage transaction merchant whose activities require registration; (b) A person affiliated with, and whose obligations and liabilities under the transaction are guaranteed by, a person referred to in paragraph (a) of this subsection; (c) A person who is a member of a contract market designated by the federal Commodity Futures Trading Commission or any clearinghouse thereof; (d) A financial institution; (e) A person registered under the Oregon Securities Law, as cited in ORS 59.005, as a broker-dealer; or (f) A contract market designated by the federal Commodity Futures Trading Commission or any clearinghouse thereof or a securities exchange registered with the federal Securities and Exchange Commission. (2) The exemption provided by this section shall not apply to any transaction or activity which is prohibited by the federal Commodity Exchange Act or rules adopted by the federal Commodity Futures Trading Commission.",
+      "history_citation_blocks": [
+        "1987 c.148 5"
+      ],
+      "history_citations": [
+        {
+          "raw": "1987 c.148 5",
+          "year": 1987,
+          "chapter": "148",
+          "section": "5"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The prohibitions in ORS 645.010 shall not apply to any transaction by:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "A person registered with the federal Commodity Futures Trading Commission as a futures commission merchant or as a leverage transaction merchant whose activities require registration; of this subsection;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "A person affiliated with, and whose obligations and liabilities under the transaction are guaranteed by, a person referred to in paragraph",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "A person who is a member of a contract market designated by the federal Commodity Futures Trading Commission or any clearinghouse thereof;",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "A financial institution;",
+              "subsections": []
+            },
+            {
+              "label": "(e)",
+              "token": "e",
+              "kind": "alpha_lower",
+              "text": "A person registered under the Oregon Securities Law, as cited in ORS 59.005, as a broker-dealer; or",
+              "subsections": []
+            },
+            {
+              "label": "(f)",
+              "token": "f",
+              "kind": "alpha_lower",
+              "text": "A contract market designated by the federal Commodity Futures Trading Commission or any clearinghouse thereof or a securities exchange registered with the federal Securities and Exchange Commission.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The exemption provided by this section shall not apply to any transaction or activity which is prohibited by the federal Commodity Exchange Act or rules adopted by the federal Commodity Futures Trading Commission.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 3,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors645.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors645.html#section-645.020",
+      "identifier": "ORS 645.020",
+      "name": "Section 645.020",
+      "text": "Transactions exempt from prohibition. The prohibitions in ORS 645.010 shall not apply to the following: (1) An account, agreement or transaction within the exclusive jurisdiction of the federal Commodity Futures Trading Commission; (2) A commodity contract for silver, gold, platinum, palladium, copper or other precious metal as defined by rule of the director whether in coin, bullion or other form if within seven days from the payment of any portion of the purchase price: (a) The precious metals purchased are delivered to and held on the purchasers behalf at a depository not affiliated with the seller which is: (A) A financial institution; (B) A depository the warehouse receipts of which are recognized for delivery purposes for any commodity on a contract market designated by the federal Commodity Futures Trading Commission; (C) A storage facility licensed or regulated by the United States or any agency thereof; or (D) A depository designated by rule of the director; and (b) Unless otherwise provided by rule of the director, the depository issues and the purchaser receives an instrument evidencing that such quantity of precious metals has been delivered to the depository on the purchasers behalf; and (3) A commodity contract under which the offeree or the purchaser is a person referred to in ORS 645.015, an insurance company or an investment company as defined in the federal Investment Company Act of 1940, as amended.",
+      "history_citation_blocks": [
+        "1987 c.148 6; 1989 c.179 3; 1997 c.249 195"
+      ],
+      "history_citations": [
+        {
+          "raw": "1987 c.148 6",
+          "year": 1987,
+          "chapter": "148",
+          "section": "6"
+        },
+        {
+          "raw": "1989 c.179 3",
+          "year": 1989,
+          "chapter": "179",
+          "section": "3"
+        },
+        {
+          "raw": "1997 c.249 195",
+          "year": 1997,
+          "chapter": "249",
+          "section": "195"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "An account, agreement or transaction within the exclusive jurisdiction of the federal Commodity Futures Trading Commission;",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "A commodity contract for silver, gold, platinum, palladium, copper or other precious metal as defined by rule of the director whether in coin, bullion or other form if within seven days from the payment of any portion of the purchase price:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "The precious metals purchased are delivered to and held on the purchasers behalf at a depository not affiliated with the seller which is:",
+              "subsections": [
+                {
+                  "label": "(A)",
+                  "token": "A",
+                  "kind": "alpha_upper",
+                  "text": "A financial institution;",
+                  "subsections": []
+                },
+                {
+                  "label": "(B)",
+                  "token": "B",
+                  "kind": "alpha_upper",
+                  "text": "A depository the warehouse receipts of which are recognized for delivery purposes for any commodity on a contract market designated by the federal Commodity Futures Trading Commission;",
+                  "subsections": []
+                },
+                {
+                  "label": "(C)",
+                  "token": "C",
+                  "kind": "alpha_upper",
+                  "text": "A storage facility licensed or regulated by the United States or any agency thereof; or",
+                  "subsections": []
+                },
+                {
+                  "label": "(D)",
+                  "token": "D",
+                  "kind": "alpha_upper",
+                  "text": "A depository designated by rule of the director; and",
+                  "subsections": []
+                }
+              ]
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Unless otherwise provided by rule of the director, the depository issues and the purchaser receives an instrument evidencing that such quantity of precious metals has been delivered to the depository on the purchasers behalf; and",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "A commodity contract under which the offeree or the purchaser is a person referred to in ORS 645.015, an insurance company or an investment company as defined in the federal Investment Company Act of 1940, as amended.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 4,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors645.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors645.html#section-645.025",
+      "identifier": "ORS 645.025",
+      "name": "Section 645.025",
+      "text": "Applicability of ORS 645.010, 645.035 and 645.040. (1) ORS 645.010,",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "ORS 645.010,",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 5,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors645.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors645.html#section-645.030",
+      "identifier": "ORS 645.030",
+      "name": "Section 645.030",
+      "text": "When transactions are considered to occur in this state. (1) For the purpose of ORS 645.025, an offer to sell or to buy is made in this state, whether or not either party is then present in this state, when the offer: (a) Originates from this state; or (b) Is directed by the offeror to this state and received at the place to which it is directed or at any post office in this state in the case of a mailed offer. (2)(a) For the purpose of ORS 645.025, an offer to buy or sell is accepted in this state when acceptance: (A) Is communicated to the offeror in this state; and (B) Has not previously been communicated to the offeror, orally or in writing, outside this state. (b) Acceptance is communicated to the offeror in this state, whether or not either party is then present in this state when the offeree directs it to the offeror in this state reasonably believing the offeror to be in this state and it is received at the place to which it is directed or at any post office in this state in the case of a mailed acceptance.",
+      "history_citation_blocks": [
+        "1987 c.148 20"
+      ],
+      "history_citations": [
+        {
+          "raw": "1987 c.148 20",
+          "year": 1987,
+          "chapter": "148",
+          "section": "20"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "For the purpose of ORS 645.025, an offer to sell or to buy is made in this state, whether or not either party is then present in this state, when the offer:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Originates from this state; or",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Is directed by the offeror to this state and received at the place to which it is directed or at any post office in this state in the case of a mailed offer.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "(a) For the purpose of ORS 645.025, an offer to buy or sell is accepted in this state when acceptance:",
+          "subsections": [
+            {
+              "label": "(A)",
+              "token": "A",
+              "kind": "alpha_upper",
+              "text": "Is communicated to the offeror in this state; and",
+              "subsections": []
+            },
+            {
+              "label": "(B)",
+              "token": "B",
+              "kind": "alpha_upper",
+              "text": "Has not previously been communicated to the offeror, orally or in writing, outside this state.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Acceptance is communicated to the offeror in this state, whether or not either party is then present in this state when the offeree directs it to the offeror in this state reasonably believing the offeror to be in this state and it is received at the place to which it is directed or at any post office in this state in the case of a mailed acceptance.",
+              "subsections": []
+            }
+          ]
+        }
+      ],
+      "parser_warnings": [],
+      "position": 6,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors645.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors645.html#section-645.035",
+      "identifier": "ORS 645.035",
+      "name": "Section 645.035",
+      "text": "Commodity merchant required to comply with federal law. (1) No person shall engage in a trade or business or otherwise act as a commodity merchant unless such person: (a) Is registered or temporarily licensed with the federal Commodity Futures Trading Commission for each activity constituting such person as a commodity merchant; or (b) Is exempt from such registration by virtue of the federal Commodity Exchange Act or rules adopted by the federal Commodity Futures Trading Commission. (2) No board of trade shall trade, or provide a place for the trading of, any commodity contract or commodity option required to be traded on or subject to the rules of a contract market designated by the federal Commodity Futures Trading Commission unless such board of trade is so designated for such commodity contract or commodity option.",
+      "history_citation_blocks": [
+        "1987 c.148 7"
+      ],
+      "history_citations": [
+        {
+          "raw": "1987 c.148 7",
+          "year": 1987,
+          "chapter": "148",
+          "section": "7"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "No person shall engage in a trade or business or otherwise act as a commodity merchant unless such person:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Is registered or temporarily licensed with the federal Commodity Futures Trading Commission for each activity constituting such person as a commodity merchant; or",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Is exempt from such registration by virtue of the federal Commodity Exchange Act or rules adopted by the federal Commodity Futures Trading Commission.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "No board of trade shall trade, or provide a place for the trading of, any commodity contract or commodity option required to be traded on or subject to the rules of a contract market designated by the federal Commodity Futures Trading Commission unless such board of trade is so designated for such commodity contract or commodity option.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 7,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors645.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors645.html#section-645.040",
+      "identifier": "ORS 645.040",
+      "name": "Section 645.040",
+      "text": "False, fraudulent or deceptive trading practices prohibited; business liable for acts or omissions of agents or employees; effect of federal law. (1) It is unlawful for any person, directly or indirectly, in connection with a commodity contract or commodity option: (a) To employ any device, scheme or artifice to defraud; (b) To make any false report, enter any false record or make any untrue statement of a material fact or omit to state a material fact necessary in order to make the statements made, in the light of the circumstances under which they were made, not misleading; (c) To engage in any transaction, act, practice or course of business which operates or would operate as a fraud or deceit upon any person; or (d) To misappropriate or convert the funds, security or property of any other person. (2) The act, omission or failure of any person acting for any individual, association, partnership, corporation or trust within the scope of the persons employment or office shall be deemed the act, omission or failure of the individual, association, partnership, corporation or trust, as well as of the person. (3) This section shall not apply to transactions subject to the exclusive jurisdiction of the Commodity Futures Trading Commission. [1987 c.148 8] ADMINISTRATION",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "It is unlawful for any person, directly or indirectly, in connection with a commodity contract or commodity option:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "To employ any device, scheme or artifice to defraud;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "To make any false report, enter any false record or make any untrue statement of a material fact or omit to state a material fact necessary in order to make the statements made, in the light of the circumstances under which they were made, not misleading;",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "To engage in any transaction, act, practice or course of business which operates or would operate as a fraud or deceit upon any person; or",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "To misappropriate or convert the funds, security or property of any other person.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The act, omission or failure of any person acting for any individual, association, partnership, corporation or trust within the scope of the persons employment or office shall be deemed the act, omission or failure of the individual, association, partnership, corporation or trust, as well as of the person.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "This section shall not apply to transactions subject to the exclusive jurisdiction of the Commodity Futures Trading Commission. [1987 c.148 8] ADMINISTRATION",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 8,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors645.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors645.html#section-645.200",
+      "identifier": "ORS 645.200",
+      "name": "Section 645.200",
+      "text": "General authority to administer chapter. The director: (1) May make such public or private investigations within or outside this state as the director deems necessary to determine whether a person has violated or is about to violate any provision of this chapter or any rule or order of the director, or to aid in the enforcement of this chapter or in the adoption of rules thereunder; (2) May require or permit a person to file a statement in writing, under oath or otherwise as the director determines, as to all the facts and circumstances concerning the matter to be investigated; (3) May publish information concerning any violation of this chapter or any rule or order of the director; and (4) If the director has reason to believe that any person has been engaged or is engaging in any violation of this chapter, may issue an order, subject to ORS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "May make such public or private investigations within or outside this state as the director deems necessary to determine whether a person has violated or is about to violate any provision of this chapter or any rule or order of the director, or to aid in the enforcement of this chapter or in the adoption of rules thereunder;",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "May require or permit a person to file a statement in writing, under oath or otherwise as the director determines, as to all the facts and circumstances concerning the matter to be investigated;",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "May publish information concerning any violation of this chapter or any rule or order of the director; and",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "If the director has reason to believe that any person has been engaged or is engaging in any violation of this chapter, may issue an order, subject to ORS",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 9,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors645.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors645.html#section-645.205",
+      "identifier": "ORS 645.205",
+      "name": "Section 645.205",
+      "text": "Rules. (1) In accordance with ORS chapter 183, the director may adopt such rules as are necessary to carry out the provisions of this chapter. (2) The director may: (a) Adopt rules or issue orders prescribing the terms and conditions of all transactions and contracts covered by the provisions of this chapter which are not within the exclusive jurisdiction of the federal Commodity Futures Trading Commission; and (b) Exempt any person or transaction from any provision of this chapter conditionally or unconditionally. (3) No rule may be adopted unless the director finds that the action is necessary or appropriate for the public interest or for the protection of investors or speculators and consistent with the purposes fairly intended by the provisions of this chapter.",
+      "history_citation_blocks": [
+        "1987 c.148 10"
+      ],
+      "history_citations": [
+        {
+          "raw": "1987 c.148 10",
+          "year": 1987,
+          "chapter": "148",
+          "section": "10"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "In accordance with ORS chapter 183, the director may adopt such rules as are necessary to carry out the provisions of this chapter.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The director may:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Adopt rules or issue orders prescribing the terms and conditions of all transactions and contracts covered by the provisions of this chapter which are not within the exclusive jurisdiction of the federal Commodity Futures Trading Commission; and",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Exempt any person or transaction from any provision of this chapter conditionally or unconditionally.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "No rule may be adopted unless the director finds that the action is necessary or appropriate for the public interest or for the protection of investors or speculators and consistent with the purposes fairly intended by the provisions of this chapter.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 10,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors645.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors645.html#section-645.210",
+      "identifier": "ORS 645.210",
+      "name": "Section 645.210",
+      "text": "Investigatory power; compliance with subpoenas. (1) For the purpose of an investigation or proceeding under this chapter, the director may administer oaths and affirmations, subpoena witnesses, compel their attendance, take evidence and require the production of books, papers, correspondence, memoranda, agreements or other documents or records which the director deems relevant or material to the inquiry. Each witness who appears before the director under a subpoena shall receive the fees and mileage provided for witnesses in ORS 44.415 (2). (2) If a person fails to comply with a subpoena so issued or a party or witness refuses to testify on any matters, the judge of the circuit court of any county, on the application of the director, shall compel obedience by proceedings for contempt as in the case of disobedience of the requirements of a subpoena issued from such court or a refusal to testify therein.",
+      "history_citation_blocks": [
+        "1987 c.148 12; 1989 c.980 15a"
+      ],
+      "history_citations": [
+        {
+          "raw": "1987 c.148 12",
+          "year": 1987,
+          "chapter": "148",
+          "section": "12"
+        },
+        {
+          "raw": "1989 c.980 15a",
+          "year": 1989,
+          "chapter": "980",
+          "section": "15a"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "For the purpose of an investigation or proceeding under this chapter, the director may administer oaths and affirmations, subpoena witnesses, compel their attendance, take evidence and require the production of books, papers, correspondence, memoranda, agreements or other documents or records which the director deems relevant or material to the inquiry. Each witness who appears before the director under a subpoena shall receive the fees and mileage provided for witnesses in ORS 44.415",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": ". If a person fails to comply with a subpoena so issued or a party or witness refuses to testify on any matters, the judge of the circuit court of any county, on the application of the director, shall compel obedience by proceedings for contempt as in the case of disobedience of the requirements of a subpoena issued from such court or a refusal to testify therein.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 11,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors645.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors645.html#section-645.215",
+      "identifier": "ORS 645.215",
+      "name": "Section 645.215",
+      "text": "Notice of orders; hearing. (1) Except as provided in ORS 183.745, upon the entry of an order under this chapter, the director shall promptly give to all interested persons notice of the order and notice that a hearing will be held on the order if a written demand for a hearing is filed with the director within 20 days after the date of service of the order. (2) If timely demand for a hearing is filed, the director shall hold a hearing on the order as provided by ORS chapter 183. In the absence of a timely demand for a hearing, no person shall be entitled to judicial review of the order. (3) After the hearing, the director shall enter a final order vacating, modifying or affirming the order.",
+      "history_citation_blocks": [
+        "1987 c.148 13; 1991 c.734 57a"
+      ],
+      "history_citations": [
+        {
+          "raw": "1987 c.148 13",
+          "year": 1987,
+          "chapter": "148",
+          "section": "13"
+        },
+        {
+          "raw": "1991 c.734 57a",
+          "year": 1991,
+          "chapter": "734",
+          "section": "57a"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Except as provided in ORS 183.745, upon the entry of an order under this chapter, the director shall promptly give to all interested persons notice of the order and notice that a hearing will be held on the order if a written demand for a hearing is filed with the director within 20 days after the date of service of the order.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "If timely demand for a hearing is filed, the director shall hold a hearing on the order as provided by ORS chapter 183. In the absence of a timely demand for a hearing, no person shall be entitled to judicial review of the order.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "After the hearing, the director shall enter a final order vacating, modifying or affirming the order.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 12,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors645.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors645.html#section-645.220",
+      "identifier": "ORS 645.220",
+      "name": "Section 645.220",
+      "text": "Appeal of order; modification of order. (1) A person aggrieved by an order of the director which has been the subject of a timely application for hearing before the director shall be entitled to judicial review of the order under ORS chapter 183. (2) No judgment of a reviewing court under ORS chapter 183 shall bar the director from thereafter vacating or modifying an order involved in the proceeding for review, or entering any new order, for a proper cause which was not decided by the reviewing court.",
+      "history_citation_blocks": [
+        "1987 c.148 14; 2003 c.576 527"
+      ],
+      "history_citations": [
+        {
+          "raw": "1987 c.148 14",
+          "year": 1987,
+          "chapter": "148",
+          "section": "14"
+        },
+        {
+          "raw": "2003 c.576 527",
+          "year": 2003,
+          "chapter": "576",
+          "section": "527"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A person aggrieved by an order of the director which has been the subject of a timely application for hearing before the director shall be entitled to judicial review of the order under ORS chapter 183.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "No judgment of a reviewing court under ORS chapter 183 shall bar the director from thereafter vacating or modifying an order involved in the proceeding for review, or entering any new order, for a proper cause which was not decided by the reviewing court.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 13,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors645.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors645.html#section-645.225",
+      "identifier": "ORS 645.225",
+      "name": "Section 645.225",
+      "text": "Action to compel compliance with rule or order; attorney fees; claim; disposition of recovery. (1) Whenever it appears to the director that a person has engaged in an act or practice constituting a violation of any provision of this chapter or any rule or order of the director, the director may bring an action in the name and on behalf of the State of Oregon in any circuit court of this state to enjoin the acts or practices and to enforce compliance with this chapter or such rule or order. Upon a proper showing, a permanent or temporary injunction, restraining order or writ of mandamus shall be granted. If the court finds that the defendant has violated any provision of this chapter or any such rule or order, the court may appoint a receiver, who may be the director, for the defendant or the defendants assets. The court may not require the director to post a bond. The court may award reasonable attorney fees to the director if the director prevails in an action under this section. The court may award reasonable attorney fees to a defendant who prevails in an action under this section if the court determines that the director had no objectively reasonable basis for asserting the claim or no reasonable basis for appealing an adverse decision of the trial court. (2) The director may include in any action authorized by subsection (1) of this section: (a) A claim for restitution on behalf of persons injured by the act or practice constituting the subject matter of the action; and (b) A claim for disgorgement of illegal gains or profits derived. (3) Any recovery under subsection (2) of this section shall be turned over to the General Fund of the State Treasury unless the court requires other disposition.",
+      "history_citation_blocks": [
+        "1987 c.148 15; 1995 c.696 32"
+      ],
+      "history_citations": [
+        {
+          "raw": "1987 c.148 15",
+          "year": 1987,
+          "chapter": "148",
+          "section": "15"
+        },
+        {
+          "raw": "1995 c.696 32",
+          "year": 1995,
+          "chapter": "696",
+          "section": "32"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Whenever it appears to the director that a person has engaged in an act or practice constituting a violation of any provision of this chapter or any rule or order of the director, the director may bring an action in the name and on behalf of the State of Oregon in any circuit court of this state to enjoin the acts or practices and to enforce compliance with this chapter or such rule or order. Upon a proper showing, a permanent or temporary injunction, restraining order or writ of mandamus shall be granted. If the court finds that the defendant has violated any provision of this chapter or any such rule or order, the court may appoint a receiver, who may be the director, for the defendant or the defendants assets. The court may not require the director to post a bond. The court may award reasonable attorney fees to the director if the director prevails in an action under this section. The court may award reasonable attorney fees to a defendant who prevails in an action under this section if the court determines that the director had no objectively reasonable basis for asserting the claim or no reasonable basis for appealing an adverse decision of the trial court. of this section:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "A claim for restitution on behalf of persons injured by the act or practice constituting the subject matter of the action; and",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "A claim for disgorgement of illegal gains or profits derived.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The director may include in any action authorized by subsection of this section shall be turned over to the General Fund of the State Treasury unless the court requires other disposition.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Any recovery under subsection",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 14,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors645.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors645.html#section-645.230",
+      "identifier": "ORS 645.230",
+      "name": "Section 645.230",
+      "text": "Allegations of complaint; burden of proof. It is not necessary to negate any of the exemptions or classifications provided in this chapter in a complaint, action, information, indictment or other writ or proceeding laid or brought under this chapter; and the burden of proof of an exemption or classification shall be upon the party claiming the benefit of such exemption or classification. [1987 c.148 16] MISCELLANEOUS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 15,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors645.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors645.html#section-645.300",
+      "identifier": "ORS 645.300",
+      "name": "Section 645.300",
+      "text": "Good faith actions not subject to liability. No provision of this chapter imposing civil or criminal liability shall apply to an act done or omitted in good faith in conformity with a rule or order of the director, notwithstanding that the rule or order may later be amended or rescinded or be determined by judicial or other authority to be invalid for any reason.",
+      "history_citation_blocks": [
+        "1987 c.148 17"
+      ],
+      "history_citations": [
+        {
+          "raw": "1987 c.148 17",
+          "year": 1987,
+          "chapter": "148",
+          "section": "17"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 16,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors645.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors645.html#section-645.305",
+      "identifier": "ORS 645.305",
+      "name": "Section 645.305",
+      "text": "Jurisdiction of courts. The courts of this state shall have jurisdiction over any person, including a nonresident of this state, who engages in any act or practice constituting a violation of any provision of this chapter or any rule or order of the director.",
+      "history_citation_blocks": [
+        "1987 c.148 18"
+      ],
+      "history_citations": [
+        {
+          "raw": "1987 c.148 18",
+          "year": 1987,
+          "chapter": "148",
+          "section": "18"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 17,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors645.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors645.html#section-645.310",
+      "identifier": "ORS 645.310",
+      "name": "Section 645.310",
+      "text": "Construction of chapter; purpose. This chapter may be construed and implemented to effectuate its general purpose to protect investors and speculators, to prevent and prosecute illegal and fraudulent schemes involving commodity contracts and to maximize coordination with federal and other states law and the administration and enforcement thereof.",
+      "history_citation_blocks": [
+        "1987 c.148 2"
+      ],
+      "history_citations": [
+        {
+          "raw": "1987 c.148 2",
+          "year": 1987,
+          "chapter": "148",
+          "section": "2"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 18,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors645.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors645.html#section-645.315",
+      "identifier": "ORS 645.315",
+      "name": "Section 645.315",
+      "text": "Short title. This chapter shall be known as the Oregon Commodity Code.",
+      "history_citation_blocks": [
+        "1987 c.148 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "1987 c.148 1",
+          "year": 1987,
+          "chapter": "148",
+          "section": "1"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 19,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors645.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors645.html#section-645.320",
+      "identifier": "ORS 645.320",
+      "name": "Section 645.320",
+      "text": "Effect of chapter on Oregon Securities Law. Nothing in this chapter shall impair, derogate or otherwise affect the authority or powers of the director under the Oregon Securities Law or the application of any provision thereof to any person or transaction. [1987 c.148 9] PENALTIES",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 20,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors645.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors645.html#section-645.950",
+      "identifier": "ORS 645.950",
+      "name": "Section 645.950",
+      "text": "Civil penalty. (1) In addition to all other penalties and enforcement provisions provided by law, the director or a court may assess a penalty of not more than $5,000 for every violation, which shall be paid to the General Fund of the State Treasury, against any person who violates, or who participates or materially aids another person in a violation, or who procures, aids or abets the violation of this chapter or any rule or order of the director. (2) Every violation is a separate offense and, in the case of a continuing violation, each days continuance is a separate violation, but the maximum penalty for any continuing violation shall not exceed $20,000. (3) Civil penalties under this section shall be imposed as provided in ORS 183.745.",
+      "history_citation_blocks": [
+        "1987 c.148 22; 1989 c.179 4; 1991 c.734 58"
+      ],
+      "history_citations": [
+        {
+          "raw": "1987 c.148 22",
+          "year": 1987,
+          "chapter": "148",
+          "section": "22"
+        },
+        {
+          "raw": "1989 c.179 4",
+          "year": 1989,
+          "chapter": "179",
+          "section": "4"
+        },
+        {
+          "raw": "1991 c.734 58",
+          "year": 1991,
+          "chapter": "734",
+          "section": "58"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "In addition to all other penalties and enforcement provisions provided by law, the director or a court may assess a penalty of not more than $5,000 for every violation, which shall be paid to the General Fund of the State Treasury, against any person who violates, or who participates or materially aids another person in a violation, or who procures, aids or abets the violation of this chapter or any rule or order of the director.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Every violation is a separate offense and, in the case of a continuing violation, each days continuance is a separate violation, but the maximum penalty for any continuing violation shall not exceed $20,000.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Civil penalties under this section shall be imposed as provided in ORS 183.745.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 21,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors645.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors645.html#section-645.990",
+      "identifier": "ORS 645.990",
+      "name": "Section 645.990",
+      "text": "Criminal penalty. Violation of any provision of this chapter or any rule adopted by the director under this chapter is a Class B felony. [1987 c.148 21] _______________",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 22,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors645.html"
+    }
+  ],
+  "alternateName": "Commodity Transactions",
+  "legislationDate": "2023"
+}

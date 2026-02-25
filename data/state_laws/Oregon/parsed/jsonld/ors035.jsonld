@@ -1,0 +1,2346 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "orlaw": "https://www.oregonlegislature.gov/ors#"
+  },
+  "@type": "Legislation",
+  "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html",
+  "identifier": "ORS Chapter 35",
+  "name": "ORS Chapter 35 — Eminent Domain; Public",
+  "legislationType": "Statute",
+  "jurisdiction": "US-OR",
+  "isPartOf": {
+    "@type": "CreativeWork",
+    "identifier": "ORS",
+    "name": "Oregon Revised Statutes",
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors"
+  },
+  "dateModified": "2026-02-25T08:11:13.466918+00:00",
+  "source_file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors035.html",
+  "hasPart": [
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html#section-35.010",
+      "identifier": "ORS 35.010",
+      "name": "Section 35.010",
+      "text": "[Repealed by 1971 c.741 38] LIMITATION OF CONDEMNATION POWER",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 1,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html#section-35.015",
+      "identifier": "ORS 35.015",
+      "name": "Section 35.015",
+      "text": "Prohibition on condemnation of certain properties with intent to convey property to private party; exceptions. (1) Except as otherwise provided in this section, a public body as defined in ORS 174.109 may not condemn private real property used as a residence, business establishment, farm or forest operation if at the time of the condemnation the public body intends to convey fee title to all or a portion of the real property, or a lesser interest than fee title, to another private party. (2) Subsection (1) of this section does not apply to condemnation of: (a) Improved or unimproved real property that constitutes a danger to the health or safety of the community by reason of contamination, dilapidated structures, improper or insufficient water or sanitary facilities, or any combination of these factors; (b) Any timber, crops, topsoil, gravel or fixtures to be removed from the real property being condemned; or (c) Real property condemned for maintenance, improvement, or construction of transportation facilities, transportation systems, utility facilities or utility transmission systems. (3) Subsection (1) of this section does not prohibit a public body from leasing a portion of a public facility to a privately owned business for the provision of retail services designed primarily to serve the patrons of the public facility. (4) A public body as defined in ORS 174.109 may at any time publish notice that the public body intends to consider condemnation of a lot or parcel. If the public body publishes notice under this subsection, subsection (1) of this section does not apply for such time necessary to provide the public body reasonable opportunity to condemn the property, if the lot or parcel is conveyed by the owner of the lot or parcel to another private party after the notice is published, but prior to the time the property is condemned. (5) Subsection (1) of this section does not affect the ability of a public body as defined in ORS 174.109 to make a conveyance of a nonpossessory interest in condemned property for the purpose of financing acquisition of the property. (6) A court shall independently determine whether a taking of property complies with the requirements of this section, without deference to any determination made by the public body. If a court determines that a taking of property does not comply with the requirements of this section, the owner of the lot or parcel that is the subject of the condemnation proceeding shall be entitled to reasonable attorney fees, expenses, costs and other disbursements reasonably incurred to defend against the proposed condemnation.",
+      "history_citation_blocks": [
+        "2007 c.1 2; 2009 c.11 6"
+      ],
+      "history_citations": [
+        {
+          "raw": "2007 c.1 2",
+          "year": 2007,
+          "chapter": "1",
+          "section": "2"
+        },
+        {
+          "raw": "2009 c.11 6",
+          "year": 2009,
+          "chapter": "11",
+          "section": "6"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Except as otherwise provided in this section, a public body as defined in ORS 174.109 may not condemn private real property used as a residence, business establishment, farm or forest operation if at the time of the condemnation the public body intends to convey fee title to all or a portion of the real property, or a lesser interest than fee title, to another private party. of this section does not apply to condemnation of: of this section does not prohibit a public body from leasing a portion of a public facility to a privately owned business for the provision of retail services designed primarily to serve the patrons of the public facility. of this section does not apply for such time necessary to provide the public body reasonable opportunity to condemn the property, if the lot or parcel is conveyed by the owner of the lot or parcel to another private party after the notice is published, but prior to the time the property is condemned. of this section does not affect the ability of a public body as defined in ORS 174.109 to make a conveyance of a nonpossessory interest in condemned property for the purpose of financing acquisition of the property.",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Improved or unimproved real property that constitutes a danger to the health or safety of the community by reason of contamination, dilapidated structures, improper or insufficient water or sanitary facilities, or any combination of these factors;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Any timber, crops, topsoil, gravel or fixtures to be removed from the real property being condemned; or",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Real property condemned for maintenance, improvement, or construction of transportation facilities, transportation systems, utility facilities or utility transmission systems.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Subsection",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Subsection",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "A public body as defined in ORS 174.109 may at any time publish notice that the public body intends to consider condemnation of a lot or parcel. If the public body publishes notice under this subsection, subsection",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "Subsection",
+          "subsections": []
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "A court shall independently determine whether a taking of property complies with the requirements of this section, without deference to any determination made by the public body. If a court determines that a taking of property does not comply with the requirements of this section, the owner of the lot or parcel that is the subject of the condemnation proceeding shall be entitled to reasonable attorney fees, expenses, costs and other disbursements reasonably incurred to defend against the proposed condemnation.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 2,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html#section-35.018",
+      "identifier": "ORS 35.018",
+      "name": "was",
+      "text": "enacted into law but was not added to or made a part of ORS chapter 35 or any series therein by law. See Preface to Oregon Revised Statutes for further explanation. Note: Legislative Counsel has substituted chapter 1, Oregon Laws 2007, for the words this 2006 Act in section 3, chapter 1, Oregon Laws 2007, compiled as 35.018. Specific ORS references have not been substituted, pursuant to 173.160. The sections for which substitution otherwise would be made may be determined by referring to the 2007 Comparative Section Table located in Volume 22 of ORS.",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 3,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html#section-35.020",
+      "identifier": "ORS 35.020",
+      "name": "Section 35.020",
+      "text": "[Repealed by 1971 c.741 38]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 4,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html#section-35.030",
+      "identifier": "ORS 35.030",
+      "name": "Section 35.030",
+      "text": "[Repealed by 1971 c.741 38]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 5,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html#section-35.040",
+      "identifier": "ORS 35.040",
+      "name": "Section 35.040",
+      "text": "[Amended by 1967 c.479 1; repealed by 1971 c.741 38]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 6,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html#section-35.050",
+      "identifier": "ORS 35.050",
+      "name": "Section 35.050",
+      "text": "[Repealed by 1971 c.741 38]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 7,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html#section-35.060",
+      "identifier": "ORS 35.060",
+      "name": "Section 35.060",
+      "text": "[Repealed by 1971 c.741 38]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 8,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html#section-35.070",
+      "identifier": "ORS 35.070",
+      "name": "Section 35.070",
+      "text": "[Amended by 1967 c.479 2; repealed by 1971 c.741 38]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 9,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html#section-35.080",
+      "identifier": "ORS 35.080",
+      "name": "Section 35.080",
+      "text": "[Repealed by 1971 c.741 38]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 10,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html#section-35.085",
+      "identifier": "ORS 35.085",
+      "name": "Section 35.085",
+      "text": "[1967 c.479 4,5; repealed by 1971 c.741 38]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 11,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html#section-35.090",
+      "identifier": "ORS 35.090",
+      "name": "Section 35.090",
+      "text": "[Repealed by 1971 c.741 38]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 12,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html#section-35.100",
+      "identifier": "ORS 35.100",
+      "name": "Section 35.100",
+      "text": "[Repealed by 1971 c.741 38]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 13,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html#section-35.105",
+      "identifier": "ORS 35.105",
+      "name": "Section 35.105",
+      "text": "",
+      "history_citation_blocks": [
+        "1967 c.479 6; repealed by 1971 c.741 38"
+      ],
+      "history_citations": [
+        {
+          "raw": "1967 c.479 6",
+          "year": 1967,
+          "chapter": "479",
+          "section": "6"
+        },
+        {
+          "raw": "repealed by 1971 c.741 38"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 14,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html#section-35.110",
+      "identifier": "ORS 35.110",
+      "name": "Section 35.110",
+      "text": "[Repealed by 1971 c.741 38]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 15,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html#section-35.120",
+      "identifier": "ORS 35.120",
+      "name": "Section 35.120",
+      "text": "[Repealed by 1971 c.741 38]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 16,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html#section-35.130",
+      "identifier": "ORS 35.130",
+      "name": "Section 35.130",
+      "text": "[Repealed by 1971 c.741 38]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 17,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html#section-35.140",
+      "identifier": "ORS 35.140",
+      "name": "Section 35.140",
+      "text": "[Repealed by 1971 c.741 38] PROCEDURE",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 18,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html#section-35.205",
+      "identifier": "ORS 35.205",
+      "name": "Section 35.205",
+      "text": "Short title. This chapter may be cited as the General Condemnation Procedure Act.",
+      "history_citation_blocks": [
+        "1971 c.741 2"
+      ],
+      "history_citations": [
+        {
+          "raw": "1971 c.741 2",
+          "year": 1971,
+          "chapter": "741",
+          "section": "2"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 19,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html#section-35.215",
+      "identifier": "ORS 35.215",
+      "name": "Section 35.215",
+      "text": "Definitions for chapter. As used in this chapter, unless the context otherwise requires: (1) Condemner means the state, any city, county, school district, municipal or public corporation, political subdivision or any instrumentality or any agency thereof or a private corporation that has the power to exercise the right of eminent domain. (2) Owner or owner of the property means the owner of property. (3) Person means person as defined by ORS 174.100 and also includes the state, any city, county, school district, municipal or public corporation, political subdivision or any instrumentality or any agency thereof. (4) Private condemner means a private corporation that has the power to exercise the right of eminent domain. (5) Property means real or personal property or any interest therein of any kind or nature that is subject to condemnation. (6) Public condemner means condemner other than private condemner.",
+      "history_citation_blocks": [
+        "1971 c.741 4; 1983 c.327 10; 2003 c.14 18"
+      ],
+      "history_citations": [
+        {
+          "raw": "1971 c.741 4",
+          "year": 1971,
+          "chapter": "741",
+          "section": "4"
+        },
+        {
+          "raw": "1983 c.327 10",
+          "year": 1983,
+          "chapter": "327",
+          "section": "10"
+        },
+        {
+          "raw": "2003 c.14 18",
+          "year": 2003,
+          "chapter": "14",
+          "section": "18"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Condemner means the state, any city, county, school district, municipal or public corporation, political subdivision or any instrumentality or any agency thereof or a private corporation that has the power to exercise the right of eminent domain.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Owner or owner of the property means the owner of property.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Person means person as defined by ORS 174.100 and also includes the state, any city, county, school district, municipal or public corporation, political subdivision or any instrumentality or any agency thereof.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Private condemner means a private corporation that has the power to exercise the right of eminent domain.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "Property means real or personal property or any interest therein of any kind or nature that is subject to condemnation.",
+          "subsections": []
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "Public condemner means condemner other than private condemner.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 20,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html#section-35.220",
+      "identifier": "ORS 35.220",
+      "name": "Section 35.220",
+      "text": "Precondemnation entry on real property. (1) Subject to the requirements of this section, a condemner may enter upon, examine, survey, conduct tests upon and take samples from any real property that is subject to condemnation by the condemner. A condemner may not enter upon any land under the provisions of this section without first attempting to provide actual notice to the owner or occupant of the property. If the condemner has not provided actual notice, written notice must be posted in a conspicuous place where the notice is most likely to be seen. The posted notice must give the condemners name, address and telephone number and the purpose of the entry. A condemner may conduct tests upon or take samples from real property only with the consent of the owner or pursuant to an order entered under subsection (2) of this section. All testing and sampling must be done in conformity with applicable laws and regulations. Testing and sampling results shall be provided to the owner upon request. (2) If the owner of property objects to examination or survey of the property under this section, or does not consent to the terms and conditions for testing or sampling of the property, the condemner may file a petition with the court seeking an order providing for entry upon the property and allowing such examination, survey, testing or sampling as may be requested by the condemner. The court may enter an order establishing reasonable terms and conditions for entry and for any examination, survey, testing or sampling of the property requested by the condemner. Reasonable compensation for damage or interference under subsection (3) of this section may be established in the proceeding either before or after entry is made upon the property by the condemner. (3) An owner is entitled to reasonable compensation for: (a) Any physical damage caused to the property by the entry upon or examination, survey, testing or sampling of the property, including any damage attributable to the diffusion of hazardous substances found on the property; and (b) Any substantial interference with the propertys possession or use caused by the entry upon or examination, survey, testing or sampling of the property. (4) If a condemner is required to pay compensation to an owner in a proceeding under subsection (2) of this section, and the condemner thereafter seeks condemnation of the same property, the owner is not entitled to any payment of compensation in the condemnation action that would result in the owner receiving a second recovery for the same damage or interference. (5) Nothing in this section affects any liability under any other provision of law that a condemner may have to an owner or occupant of property by reason of entry upon or examination, survey, testing or sampling of property.",
+      "history_citation_blocks": [
+        "2003 c.477 2"
+      ],
+      "history_citations": [
+        {
+          "raw": "2003 c.477 2",
+          "year": 2003,
+          "chapter": "477",
+          "section": "2"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Subject to the requirements of this section, a condemner may enter upon, examine, survey, conduct tests upon and take samples from any real property that is subject to condemnation by the condemner. A condemner may not enter upon any land under the provisions of this section without first attempting to provide actual notice to the owner or occupant of the property. If the condemner has not provided actual notice, written notice must be posted in a conspicuous place where the notice is most likely to be seen. The posted notice must give the condemners name, address and telephone number and the purpose of the entry. A condemner may conduct tests upon or take samples from real property only with the consent of the owner or pursuant to an order entered under subsection",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "of this section. All testing and sampling must be done in conformity with applicable laws and regulations. Testing and sampling results shall be provided to the owner upon request. If the owner of property objects to examination or survey of the property under this section, or does not consent to the terms and conditions for testing or sampling of the property, the condemner may file a petition with the court seeking an order providing for entry upon the property and allowing such examination, survey, testing or sampling as may be requested by the condemner. The court may enter an order establishing reasonable terms and conditions for entry and for any examination, survey, testing or sampling of the property requested by the condemner. Reasonable compensation for damage or interference under subsection of this section, and the condemner thereafter seeks condemnation of the same property, the owner is not entitled to any payment of compensation in the condemnation action that would result in the owner receiving a second recovery for the same damage or interference.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "of this section may be established in the proceeding either before or after entry is made upon the property by the condemner. An owner is entitled to reasonable compensation for:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Any physical damage caused to the property by the entry upon or examination, survey, testing or sampling of the property, including any damage attributable to the diffusion of hazardous substances found on the property; and",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Any substantial interference with the propertys possession or use caused by the entry upon or examination, survey, testing or sampling of the property.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "If a condemner is required to pay compensation to an owner in a proceeding under subsection",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "Nothing in this section affects any liability under any other provision of law that a condemner may have to an owner or occupant of property by reason of entry upon or examination, survey, testing or sampling of property.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 21,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html#section-35.225",
+      "identifier": "ORS 35.225",
+      "name": "Section 35.225",
+      "text": "",
+      "history_citation_blocks": [
+        "1971 c.741 5; repealed by 1979 c.284 199"
+      ],
+      "history_citations": [
+        {
+          "raw": "1971 c.741 5",
+          "year": 1971,
+          "chapter": "741",
+          "section": "5"
+        },
+        {
+          "raw": "repealed by 1979 c.284 199"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 22,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html#section-35.235",
+      "identifier": "ORS 35.235",
+      "name": "Section 35.235",
+      "text": "Agreement for compensation; status of resolution or ordinance of public condemner; status of action of private condemner; agreement effort not prerequisite. (1) Subject to ORS 758.015 and 836.050, whenever in the judgment of the condemner it is necessary to acquire property for a purpose for which the condemner is authorized by law to acquire property, the condemner shall, after first declaring by resolution or ordinance such necessity and the purpose for which it is required, attempt to agree with the owner with respect to the compensation to be paid therefor, and the damages, if any, for the taking thereof. (2) The resolution or ordinance of a public condemner is presumptive evidence of the public necessity of the proposed use, that the property is necessary therefor and that the proposed use, improvement or project is planned or located in a manner which will be most compatible with the greatest public good and the least private injury. (3) The commencement of an action to condemn property by a private condemner creates a disputable presumption of the necessity of the proposed use, that the property is necessary therefor and that the proposed use, improvement or project is planned or located in a manner which will be most compatible with the greatest public good and the least private injury. (4) The question of the validity of the disputable presumptions created in subsection (3) of this section, if raised, shall be determined by the court in a summary proceeding prior to trial. (5) It is not a prerequisite to the exercise of the right of eminent domain by the condemner to attempt first to agree with an owner or to allege or prove any effort to agree with such owner as to reasonable value, when such owner is at the time concealed within the state or, after reasonable effort by condemner, cannot be found within the state.",
+      "history_citation_blocks": [
+        "1971 c.741 6; 1973 c.579 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "1971 c.741 6",
+          "year": 1971,
+          "chapter": "741",
+          "section": "6"
+        },
+        {
+          "raw": "1973 c.579 1",
+          "year": 1973,
+          "chapter": "579",
+          "section": "1"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Subject to ORS 758.015 and 836.050, whenever in the judgment of the condemner it is necessary to acquire property for a purpose for which the condemner is authorized by law to acquire property, the condemner shall, after first declaring by resolution or ordinance such necessity and the purpose for which it is required, attempt to agree with the owner with respect to the compensation to be paid therefor, and the damages, if any, for the taking thereof.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The resolution or ordinance of a public condemner is presumptive evidence of the public necessity of the proposed use, that the property is necessary therefor and that the proposed use, improvement or project is planned or located in a manner which will be most compatible with the greatest public good and the least private injury.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The commencement of an action to condemn property by a private condemner creates a disputable presumption of the necessity of the proposed use, that the property is necessary therefor and that the proposed use, improvement or project is planned or located in a manner which will be most compatible with the greatest public good and the least private injury. of this section, if raised, shall be determined by the court in a summary proceeding prior to trial.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "The question of the validity of the disputable presumptions created in subsection",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "It is not a prerequisite to the exercise of the right of eminent domain by the condemner to attempt first to agree with an owner or to allege or prove any effort to agree with such owner as to reasonable value, when such owner is at the time concealed within the state or, after reasonable effort by condemner, cannot be found within the state.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 23,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html#section-35.245",
+      "identifier": "ORS 35.245",
+      "name": ", the condemner and the owner shall:",
+      "text": "(a) Specify in such agreement for the real property a reasonable period within which the real property must be used by the condemner for a public purpose or specify a 10-year period for such use and provide that the right of repurchase of the real property or any portion thereof may be exercised as provided in ORS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(a)",
+          "token": "a",
+          "kind": "alpha_lower",
+          "text": "Specify in such agreement for the real property a reasonable period within which the real property must be used by the condemner for a public purpose or specify a 10-year period for such use and provide that the right of repurchase of the real property or any portion thereof may be exercised as provided in ORS",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 24,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html#section-35.255",
+      "identifier": "ORS 35.255",
+      "name": "Section 35.255",
+      "text": "Content of complaint. The complaint shall describe the property sought to be condemned and shall allege the true value of the property sought and the damage, if any, resulting from the appropriation thereof.",
+      "history_citation_blocks": [
+        "1971 c.741 8; 1979 c.284 75"
+      ],
+      "history_citations": [
+        {
+          "raw": "1971 c.741 8",
+          "year": 1971,
+          "chapter": "741",
+          "section": "8"
+        },
+        {
+          "raw": "1979 c.284 75",
+          "year": 1979,
+          "chapter": "284",
+          "section": "75"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 25,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html#section-35.265",
+      "identifier": "ORS 35.265",
+      "name": "Section 35.265",
+      "text": "Advance deposit by public condemner requiring immediate possession; effect on interest otherwise allowable. (1) When a public condemner commences an action for the condemnation of property and immediate possession of the property is considered necessary by the public condemner, a fund shall be created in the amount estimated to be the just compensation for the property and placed in the hands of the treasurer of the public condemner for deposit with the clerk of the court wherein the action was commenced, for the use of the defendants in the action. (2) When the public condemner is a state agency and immediate possession of property is considered necessary by the agency, the agency shall certify to such facts and authorize an advancement out of funds available to the agency of the amount estimated by the agency to be just compensation for the property. Upon such certification and authorization, a warrant shall be drawn in favor of the clerk of the court in the amount authorized. (3) Upon the deposit in court by the public condemner of the estimated amount of just compensation as provided by subsections (1) and (2) of this section, no interest shall be allowed thereon in the judgment.",
+      "history_citation_blocks": [
+        "1971 c.741 10; 2003 c.576 236"
+      ],
+      "history_citations": [
+        {
+          "raw": "1971 c.741 10",
+          "year": 1971,
+          "chapter": "741",
+          "section": "10"
+        },
+        {
+          "raw": "2003 c.576 236",
+          "year": 2003,
+          "chapter": "576",
+          "section": "236"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "When a public condemner commences an action for the condemnation of property and immediate possession of the property is considered necessary by the public condemner, a fund shall be created in the amount estimated to be the just compensation for the property and placed in the hands of the treasurer of the public condemner for deposit with the clerk of the court wherein the action was commenced, for the use of the defendants in the action.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "When the public condemner is a state agency and immediate possession of property is considered necessary by the agency, the agency shall certify to such facts and authorize an advancement out of funds available to the agency of the amount estimated by the agency to be just compensation for the property. Upon such certification and authorization, a warrant shall be drawn in favor of the clerk of the court in the amount authorized. of this section, no interest shall be allowed thereon in the judgment.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Upon the deposit in court by the public condemner of the estimated amount of just compensation as provided by subsections",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 26,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html#section-35.275",
+      "identifier": "ORS 35.275",
+      "name": "Section 35.275",
+      "text": "Advance occupancy by private condemner; hearing; deposit or bond; effect of size of bond or deposit on amount of just compensation. (1) At any time after an action is commenced to acquire any property, a private condemner may apply to the court for an order to occupy the property to be condemned and to make use of the property for the purposes for which it is being appropriated. (2) At the hearing on the motion, the court shall determine the reasons for requiring a speedy occupation. The court shall grant the motion if, giving consideration to the public interest involved, it finds that the interests of the owners will be adequately protected. The court may make such provisions or orders as necessary, so that the advance taking or an advance payment, as provided by subsection (3) of this section, will not be prejudicial to either party. (3)(a) If an order to occupy the property is granted, it may also require the private condemner to deposit with the court either such sum as the court finds reasonable on account of just compensation to be awarded or to deposit a surety bond in an amount and with such surety as the court may approve. The surety bond shall be conditioned to the effect that the private condemner shall pay to the owners of the property just compensation for the property taken or restitution, if any, and costs, disbursements and reasonable attorney fees as finally determined. (b) After an order to occupy is entered, if it appears necessary in order to protect the interests of the owners of the property, the court at any time may require the private condemner to deposit with the court an additional bond or sum on account of just compensation to be awarded. (c) Evidence as to the finding of the court regarding the amount of such bond or deposit shall not be admissible at the trial of just compensation.",
+      "history_citation_blocks": [
+        "1971 c.741 11"
+      ],
+      "history_citations": [
+        {
+          "raw": "1971 c.741 11",
+          "year": 1971,
+          "chapter": "741",
+          "section": "11"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "At any time after an action is commenced to acquire any property, a private condemner may apply to the court for an order to occupy the property to be condemned and to make use of the property for the purposes for which it is being appropriated.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "At the hearing on the motion, the court shall determine the reasons for requiring a speedy occupation. The court shall grant the motion if, giving consideration to the public interest involved, it finds that the interests of the owners will be adequately protected. The court may make such provisions or orders as necessary, so that the advance taking or an advance payment, as provided by subsection",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "of this section, will not be prejudicial to either party. (a) If an order to occupy the property is granted, it may also require the private condemner to deposit with the court either such sum as the court finds reasonable on account of just compensation to be awarded or to deposit a surety bond in an amount and with such surety as the court may approve. The surety bond shall be conditioned to the effect that the private condemner shall pay to the owners of the property just compensation for the property taken or restitution, if any, and costs, disbursements and reasonable attorney fees as finally determined.",
+          "subsections": [
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "After an order to occupy is entered, if it appears necessary in order to protect the interests of the owners of the property, the court at any time may require the private condemner to deposit with the court an additional bond or sum on account of just compensation to be awarded.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Evidence as to the finding of the court regarding the amount of such bond or deposit shall not be admissible at the trial of just compensation.",
+              "subsections": []
+            }
+          ]
+        }
+      ],
+      "parser_warnings": [],
+      "position": 27,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html#section-35.285",
+      "identifier": "ORS 35.285",
+      "name": "Section 35.285",
+      "text": "Distribution of deposits; effect of withdrawal on appeal. (1) The court may distribute all or any part of the funds deposited by a condemner to the persons entitled thereto for or on account of the just compensation to be awarded in the action, upon such terms and conditions as may appear just and reasonable. (2) Any persons entitled to withdraw any or all of the deposit, as provided by subsection (1) of this section, may do so at any time without waiving rights of appeal provided by ORS 35.355.",
+      "history_citation_blocks": [
+        "1971 c.741 12"
+      ],
+      "history_citations": [
+        {
+          "raw": "1971 c.741 12",
+          "year": 1971,
+          "chapter": "741",
+          "section": "12"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The court may distribute all or any part of the funds deposited by a condemner to the persons entitled thereto for or on account of the just compensation to be awarded in the action, upon such terms and conditions as may appear just and reasonable. of this section, may do so at any time without waiving rights of appeal provided by ORS 35.355.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Any persons entitled to withdraw any or all of the deposit, as provided by subsection",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 28,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html#section-35.295",
+      "identifier": "ORS 35.295",
+      "name": "Section 35.295",
+      "text": "Defendants answer. The defendant in answer may set forth any legal defense the defendant may have to the condemnation. The defendant shall also allege the true value of the property and the damage, if any, resulting from the appropriation thereof.",
+      "history_citation_blocks": [
+        "1971 c.741 13"
+      ],
+      "history_citations": [
+        {
+          "raw": "1971 c.741 13",
+          "year": 1971,
+          "chapter": "741",
+          "section": "13"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 29,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html#section-35.300",
+      "identifier": "ORS 35.300",
+      "name": "Section 35.300",
+      "text": "Offer of compromise. (1) After the filing of a condemnation action, a condemner may serve an offer of compromise on the defendant in the action. An offer of compromise must be served on the defendant not later than 10 days before the trial of the action. The offer of compromise must identify the amount offered as just compensation for the property and as compensable damages to remaining property of the defendant. The offer of compromise must also indicate whether the offer includes any amount for costs and disbursements, attorney fees and expenses and, if so, the amounts included for costs and disbursements, attorney fees and expenses. If the defendant accepts the amount offered as just compensation for the property and as compensable damages to remaining property of the defendant, the defendant shall file with the court an acceptance signed by the defendant or the defendants attorney. The acceptance must be filed not more than three days after the time the offer was served on the defendant. A copy of the offer must be attached to the acceptance. (2) If an offer of compromise under this section does not specifically include amounts for costs and disbursements, attorney fees and expenses, upon acceptance of the offer the court shall give judgment to the defendant for the amount offered as just compensation for the property and as compensable damages to remaining property of the defendant and, in addition, for costs and disbursements, attorney fees and expenses that are determined by the court to have been incurred before service of the offer on the defendant. (3) If an offer of compromise under this section specifically includes amounts for costs and disbursements, attorney fees and expenses, the defendant may accept all amounts offered, or may accept only that portion of the offer identified as just compensation for the property and as compensable damages to remaining property of the defendant. If the defendant accepts only that portion of the offer identified as just compensation for the property and as compensable damages to remaining property of the defendant, the defendant is entitled to an award for costs and disbursements, attorney fees and expenses incurred by the defendant before service of the offer on the defendant. The court shall determine the amount of costs and disbursements, attorney fees and expenses to be awarded to the defendant after acceptance of the offer is filed under subsection (1) of this section. (4) If an offer of compromise is not accepted within the time allowed under subsection (1) of this section, the offer is withdrawn and may not be given in evidence at trial. If the defendant fails to obtain a judgment more favorable than the offer: (a) The defendant may not recover prevailing party fees or costs and disbursements, attorney fees and expenses that were incurred on and after service of the offer; (b) Unless the parties agree otherwise, the court shall give judgment to the defendant for costs and disbursements, attorney fees and expenses that were incurred by the defendant before service of the offer; and (c) The court shall give judgment to the condemner for the condemners costs and disbursements, other than prevailing party fees, incurred by the condemner on and after service of the offer. (5) For the purpose of determining whether the defendant has failed to obtain a judgment more favorable than an offer of compromise that specifically includes amounts for costs and disbursements, attorney fees and expenses, the court shall first determine the amount of costs and disbursements, attorney fees and expenses incurred by the defendant before service of the offer on the defendant. The court shall add that amount to the amounts awarded under the judgment as just compensation for the property and as compensable damages to remaining property of the defendant. If the sum of those amounts is equal to or less than the total amount specified in the offer of compromise, the defendant has not obtained a judgment more favorable than the offer of compromise. (6) For the purposes of this section, expenses has the meaning given that term in ORS 35.335.",
+      "history_citation_blocks": [
+        "2009 c.530 5"
+      ],
+      "history_citations": [
+        {
+          "raw": "2009 c.530 5",
+          "year": 2009,
+          "chapter": "530",
+          "section": "5"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "After the filing of a condemnation action, a condemner may serve an offer of compromise on the defendant in the action. An offer of compromise must be served on the defendant not later than 10 days before the trial of the action. The offer of compromise must identify the amount offered as just compensation for the property and as compensable damages to remaining property of the defendant. The offer of compromise must also indicate whether the offer includes any amount for costs and disbursements, attorney fees and expenses and, if so, the amounts included for costs and disbursements, attorney fees and expenses. If the defendant accepts the amount offered as just compensation for the property and as compensable damages to remaining property of the defendant, the defendant shall file with the court an acceptance signed by the defendant or the defendants attorney. The acceptance must be filed not more than three days after the time the offer was served on the defendant. A copy of the offer must be attached to the acceptance. of this section. of this section, the offer is withdrawn and may not be given in evidence at trial. If the defendant fails to obtain a judgment more favorable than the offer:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "The defendant may not recover prevailing party fees or costs and disbursements, attorney fees and expenses that were incurred on and after service of the offer;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Unless the parties agree otherwise, the court shall give judgment to the defendant for costs and disbursements, attorney fees and expenses that were incurred by the defendant before service of the offer; and",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "The court shall give judgment to the condemner for the condemners costs and disbursements, other than prevailing party fees, incurred by the condemner on and after service of the offer.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "If an offer of compromise under this section does not specifically include amounts for costs and disbursements, attorney fees and expenses, upon acceptance of the offer the court shall give judgment to the defendant for the amount offered as just compensation for the property and as compensable damages to remaining property of the defendant and, in addition, for costs and disbursements, attorney fees and expenses that are determined by the court to have been incurred before service of the offer on the defendant.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "If an offer of compromise under this section specifically includes amounts for costs and disbursements, attorney fees and expenses, the defendant may accept all amounts offered, or may accept only that portion of the offer identified as just compensation for the property and as compensable damages to remaining property of the defendant. If the defendant accepts only that portion of the offer identified as just compensation for the property and as compensable damages to remaining property of the defendant, the defendant is entitled to an award for costs and disbursements, attorney fees and expenses incurred by the defendant before service of the offer on the defendant. The court shall determine the amount of costs and disbursements, attorney fees and expenses to be awarded to the defendant after acceptance of the offer is filed under subsection",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "If an offer of compromise is not accepted within the time allowed under subsection",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "For the purpose of determining whether the defendant has failed to obtain a judgment more favorable than an offer of compromise that specifically includes amounts for costs and disbursements, attorney fees and expenses, the court shall first determine the amount of costs and disbursements, attorney fees and expenses incurred by the defendant before service of the offer on the defendant. The court shall add that amount to the amounts awarded under the judgment as just compensation for the property and as compensable damages to remaining property of the defendant. If the sum of those amounts is equal to or less than the total amount specified in the offer of compromise, the defendant has not obtained a judgment more favorable than the offer of compromise.",
+          "subsections": []
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "For the purposes of this section, expenses has the meaning given that term in ORS 35.335.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 30,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html#section-35.305",
+      "identifier": "ORS 35.305",
+      "name": "Section 35.305",
+      "text": "Conduct of trial; defendants option; jury argument; neither side has burden of proof of just compensation. (1) Evidence shall be received and the trial conducted in the order and manner prescribed for a civil action in the circuit court, except that the defendant shall have the option of proceeding first or last in the presentation of evidence, if notice of such election is filed with the court and served on the condemner at least seven days prior to the date set for trial. If no notice of election is filed, the condemner shall proceed first in the presentation of evidence. Unless the case is submitted by both sides to the jury without argument, the party who presents evidence first shall also open and close the argument to the jury. (2) Condemner and defendant may offer evidence of just compensation, but neither party shall have the burden of proof of just compensation.",
+      "history_citation_blocks": [
+        "1971 c.741 14; 1979 c.284 76"
+      ],
+      "history_citations": [
+        {
+          "raw": "1971 c.741 14",
+          "year": 1971,
+          "chapter": "741",
+          "section": "14"
+        },
+        {
+          "raw": "1979 c.284 76",
+          "year": 1979,
+          "chapter": "284",
+          "section": "76"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Evidence shall be received and the trial conducted in the order and manner prescribed for a civil action in the circuit court, except that the defendant shall have the option of proceeding first or last in the presentation of evidence, if notice of such election is filed with the court and served on the condemner at least seven days prior to the date set for trial. If no notice of election is filed, the condemner shall proceed first in the presentation of evidence. Unless the case is submitted by both sides to the jury without argument, the party who presents evidence first shall also open and close the argument to the jury.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Condemner and defendant may offer evidence of just compensation, but neither party shall have the burden of proof of just compensation.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 31,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html#section-35.315",
+      "identifier": "ORS 35.315",
+      "name": "Section 35.315",
+      "text": "View of property by order of court. If motion is made by either party before the formation of the jury, the court shall order a view of the property in question. Upon the return of the jury, the evidence of the parties may be heard and the verdict of the jury given.",
+      "history_citation_blocks": [
+        "1971 c.741 15; 2007 c.71 11"
+      ],
+      "history_citations": [
+        {
+          "raw": "1971 c.741 15",
+          "year": 1971,
+          "chapter": "741",
+          "section": "15"
+        },
+        {
+          "raw": "2007 c.71 11",
+          "year": 2007,
+          "chapter": "71",
+          "section": "11"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 32,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html#section-35.325",
+      "identifier": "ORS 35.325",
+      "name": "Section 35.325",
+      "text": "Effect of judgment; effect of payment under judgment. Upon the assessment of the compensation by the jury, the court shall give judgment appropriating the property in question to the condemner, conditioned upon the condemners paying into court the compensation assessed by the jury; and, after the making of such payment, the judgment shall become effective to convey the property, and the right of possession thereof to the condemner if not previously acquired.",
+      "history_citation_blocks": [
+        "1971 c.741 16"
+      ],
+      "history_citations": [
+        {
+          "raw": "1971 c.741 16",
+          "year": 1971,
+          "chapter": "741",
+          "section": "16"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 33,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html#section-35.335",
+      "identifier": "ORS 35.335",
+      "name": "Section 35.335",
+      "text": "Effect of condemners abandonment of action. (1) If an action is abandoned by the condemner, the court shall enter judgment in favor of the defendant for costs and disbursements in the action and for reasonable attorney fees and reasonable expenses as determined by the court. (2) Expenses mean costs of appraisals and fees for experts incurred in preparing and conducting the defense to the action. (3) An action is considered abandoned if, at any time after filing a complaint, the case is dismissed or terminated or the condemner files an election not to take the property. If an election is not filed within 60 days after the verdict, the condemner is considered to have elected to take the property.",
+      "history_citation_blocks": [
+        "1971 c.741 17"
+      ],
+      "history_citations": [
+        {
+          "raw": "1971 c.741 17",
+          "year": 1971,
+          "chapter": "741",
+          "section": "17"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "If an action is abandoned by the condemner, the court shall enter judgment in favor of the defendant for costs and disbursements in the action and for reasonable attorney fees and reasonable expenses as determined by the court.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Expenses mean costs of appraisals and fees for experts incurred in preparing and conducting the defense to the action.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "An action is considered abandoned if, at any time after filing a complaint, the case is dismissed or terminated or the condemner files an election not to take the property. If an election is not filed within 60 days after the verdict, the condemner is considered to have elected to take the property.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 34,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html#section-35.345",
+      "identifier": "ORS 35.345",
+      "name": "Section 35.345",
+      "text": "",
+      "history_citation_blocks": [
+        "1971 c.741 18; repealed by 1973 c.617 1 (35.346 enacted in lieu of 35.345)"
+      ],
+      "history_citations": [
+        {
+          "raw": "1971 c.741 18",
+          "year": 1971,
+          "chapter": "741",
+          "section": "18"
+        },
+        {
+          "raw": "repealed by 1973 c.617 1 (35.346 enacted in lieu of 35.345)"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 35,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html#section-35.346",
+      "identifier": "ORS 35.346",
+      "name": "Section 35.346",
+      "text": "Offer to purchase required before filing action for condemnation; appraisal; arbitration; when costs and disbursements allowed. (1) At least 40 days before the filing of any action for condemnation of property or any interest in property, the condemner shall make a written offer to the owner or party having an interest to purchase the property or interest, and to pay just compensation therefor and for any compensable damages to remaining property. (2) The offer shall be accompanied by any written appraisal upon which the condemner relied in establishing the amount of compensation offered. If the condemner determines that the amount of just compensation due is less than $20,000, the condemner, in lieu of a written appraisal, may provide to the owner or other person having an interest in the property a written explanation of the bases and method by which the condemner arrived at the specific valuation of the property. The amount of just compensation offered shall not be reduced by amendment or otherwise before or during trial except on order of the court entered not less than 60 days prior to trial. An order for reduction of just compensation offered, pleaded by the condemner in the complaint or deposited with the court for the use and benefit of the owner pending outcome of the condemnation action, may be entered only upon motion of the condemner and a finding by clear and convincing evidence that the appraisal upon which the original offer is based was the result of a mistake of material fact that was not known and could not reasonably have been known at the time of the original appraisal or was based on a mistake of law. (3) Unless otherwise agreed to by the condemner and the owner, prior to appraising the property the condemner shall provide not less than 15 days written notice to the owner of the planned appraisal inspection. The property owner and designated representative, if any, shall be invited to accompany the condemners appraiser on any inspection of the property for appraisal purposes. (4) The owner has not less than 40 days from the date the owner receives the written offer required by subsection (1) of this section, accompanied by the appraisal or written explanation required by subsection (2) of this section, to accept or reject the offer. If the owner rejects the condemners offer and obtains a separate appraisal, the owner shall provide the condemner with a copy of the owners appraisal not less than 60 days prior to trial or arbitration. (5)(a) Failure to provide the opposing party with a copy of the appropriate appraisal as provided in subsections (2) and (4) of this section shall prohibit the use of the appraisal in arbitration or at trial. (b) In the event the owner and condemner are unable to reach agreement and proceed to trial or arbitration as provided in subsection (6) of this section, each party to the proceeding shall provide to every other party a copy of every appraisal obtained by the party as part of the condemnation action. (6)(a) If an action based on the condemnation is filed, the owner may elect to have compensation determined by binding arbitration if the total amount of compensation claimed by any party does not exceed $20,000. Notice of an election of binding arbitration must be given to the condemner at least 90 days prior to the date on which an arbitration hearing is scheduled under ORS 36.420. (b) Notwithstanding the amount established under ORS 36.400, if the owner elects to proceed with binding arbitration, the arbitration shall be conducted according to the mandatory arbitration program established under ORS 36.400 to 36.425. Notwithstanding ORS 36.425, no party may request a trial de novo after the filing of the decision and award of the arbitrator. Within 20 days after the filing of the decision and award of the arbitrator under ORS 36.425, any party may file a motion with the court for the vacation, modification or correction of the award. The court may vacate an award only if there is a basis to vacate the award described in ORS 36.705 (1)(a) to (d). The court may modify or correct an award only for the grounds given in ORS 36.710. Except as provided in this subsection, no party may appeal from the decision and award of an arbitrator if the owner elects binding arbitration in lieu of trial. (c) If the total amount of compensation claimed exceeds $20,000 but is less than $50,000, the owner may elect to have compensation determined by nonbinding arbitration under the applicable provisions of ORS 36.400 to 36.425. (7) If a trial is held or arbitration conducted for the fixing of the amount of compensation to be awarded to the defendant owner or party having an interest in the property being condemned, the court or arbitrator shall award the defendant costs and disbursements including reasonable attorney fees and reasonable expenses as defined in ORS 35.335 (2) in the following cases, and no other: (a) If the amount of just compensation assessed by the verdict in the trial exceeds the highest written offer in settlement submitted by condemner before the filing of the action to those defendants appearing in the action pursuant to subsection (1) of this section; or (b) If the court finds that the first written offer made by condemner to defendant in settlement before the filing of the action did not constitute a good faith offer of an amount reasonably believed by condemner to be just compensation. (8) If any appraisal provided to a party under this section relies on a written report, opinion or estimate of a person who is not an appraiser, a copy of the written report, opinion or estimate must be provided with the appraisal. If any appraisal provided under this section relies on an unwritten report, opinion or estimate of a person who is not an appraiser, the party providing the appraisal must also provide the name and address of the person who provided the unwritten report, opinion or estimate. (9) Costs and disbursements other than reasonable attorney fees and expenses as defined in ORS 35.335 (2) shall be awarded to condemner in all cases other than those in which defendant is entitled to costs and disbursements under subsection (7) of this section.",
+      "history_citation_blocks": [
+        "1973 c.617 2 (enacted in lieu of 35.345); 1997 c.797 1; 2003 c.476 1; 2003 c.598 33; 2005 c.274 5; 2005 c.433 1; 2007 c.1 4; 2009 c.530 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "1973 c.617 2 (enacted in lieu of 35.345)"
+        },
+        {
+          "raw": "1997 c.797 1",
+          "year": 1997,
+          "chapter": "797",
+          "section": "1"
+        },
+        {
+          "raw": "2003 c.476 1",
+          "year": 2003,
+          "chapter": "476",
+          "section": "1"
+        },
+        {
+          "raw": "2003 c.598 33",
+          "year": 2003,
+          "chapter": "598",
+          "section": "33"
+        },
+        {
+          "raw": "2005 c.274 5",
+          "year": 2005,
+          "chapter": "274",
+          "section": "5"
+        },
+        {
+          "raw": "2005 c.433 1",
+          "year": 2005,
+          "chapter": "433",
+          "section": "1"
+        },
+        {
+          "raw": "2007 c.1 4",
+          "year": 2007,
+          "chapter": "1",
+          "section": "4"
+        },
+        {
+          "raw": "2009 c.530 1",
+          "year": 2009,
+          "chapter": "530",
+          "section": "1"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "At least 40 days before the filing of any action for condemnation of property or any interest in property, the condemner shall make a written offer to the owner or party having an interest to purchase the property or interest, and to pay just compensation therefor and for any compensable damages to remaining property. of this section, accompanied by the appraisal or written explanation required by subsection (a) to of this section; or",
+          "subsections": [
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": ". The court may modify or correct an award only for the grounds given in ORS 36.710. Except as provided in this subsection, no party may appeal from the decision and award of an arbitrator if the owner elects binding arbitration in lieu of trial.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "If the total amount of compensation claimed exceeds $20,000 but is less than $50,000, the owner may elect to have compensation determined by nonbinding arbitration under the applicable provisions of ORS 36.400 to 36.425.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "If the court finds that the first written offer made by condemner to defendant in settlement before the filing of the action did not constitute a good faith offer of an amount reasonably believed by condemner to be just compensation.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The offer shall be accompanied by any written appraisal upon which the condemner relied in establishing the amount of compensation offered. If the condemner determines that the amount of just compensation due is less than $20,000, the condemner, in lieu of a written appraisal, may provide to the owner or other person having an interest in the property a written explanation of the bases and method by which the condemner arrived at the specific valuation of the property. The amount of just compensation offered shall not be reduced by amendment or otherwise before or during trial except on order of the court entered not less than 60 days prior to trial. An order for reduction of just compensation offered, pleaded by the condemner in the complaint or deposited with the court for the use and benefit of the owner pending outcome of the condemnation action, may be entered only upon motion of the condemner and a finding by clear and convincing evidence that the appraisal upon which the original offer is based was the result of a mistake of material fact that was not known and could not reasonably have been known at the time of the original appraisal or was based on a mistake of law. of this section, to accept or reject the offer. If the owner rejects the condemners offer and obtains a separate appraisal, the owner shall provide the condemner with a copy of the owners appraisal not less than 60 days prior to trial or arbitration. in the following cases, and no other: shall be awarded to condemner in all cases other than those in which defendant is entitled to costs and disbursements under subsection",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "If the amount of just compensation assessed by the verdict in the trial exceeds the highest written offer in settlement submitted by condemner before the filing of the action to those defendants appearing in the action pursuant to subsection",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Unless otherwise agreed to by the condemner and the owner, prior to appraising the property the condemner shall provide not less than 15 days written notice to the owner of the planned appraisal inspection. The property owner and designated representative, if any, shall be invited to accompany the condemners appraiser on any inspection of the property for appraisal purposes.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "The owner has not less than 40 days from the date the owner receives the written offer required by subsection of this section shall prohibit the use of the appraisal in arbitration or at trial.",
+          "subsections": [
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "In the event the owner and condemner are unable to reach agreement and proceed to trial or arbitration as provided in subsection",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "(a) Failure to provide the opposing party with a copy of the appropriate appraisal as provided in subsections",
+          "subsections": []
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "of this section, each party to the proceeding shall provide to every other party a copy of every appraisal obtained by the party as part of the condemnation action. (a) If an action based on the condemnation is filed, the owner may elect to have compensation determined by binding arbitration if the total amount of compensation claimed by any party does not exceed $20,000. Notice of an election of binding arbitration must be given to the condemner at least 90 days prior to the date on which an arbitration hearing is scheduled under ORS 36.420.",
+          "subsections": [
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Notwithstanding the amount established under ORS 36.400, if the owner elects to proceed with binding arbitration, the arbitration shall be conducted according to the mandatory arbitration program established under ORS 36.400 to 36.425. Notwithstanding ORS 36.425, no party may request a trial de novo after the filing of the decision and award of the arbitrator. Within 20 days after the filing of the decision and award of the arbitrator under ORS 36.425, any party may file a motion with the court for the vacation, modification or correction of the award. The court may vacate an award only if there is a basis to vacate the award described in ORS 36.705",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(7)",
+          "token": "7",
+          "kind": "numeric",
+          "text": "If a trial is held or arbitration conducted for the fixing of the amount of compensation to be awarded to the defendant owner or party having an interest in the property being condemned, the court or arbitrator shall award the defendant costs and disbursements including reasonable attorney fees and reasonable expenses as defined in ORS 35.335 of this section.",
+          "subsections": []
+        },
+        {
+          "label": "(8)",
+          "token": "8",
+          "kind": "numeric",
+          "text": "If any appraisal provided to a party under this section relies on a written report, opinion or estimate of a person who is not an appraiser, a copy of the written report, opinion or estimate must be provided with the appraisal. If any appraisal provided under this section relies on an unwritten report, opinion or estimate of a person who is not an appraiser, the party providing the appraisal must also provide the name and address of the person who provided the unwritten report, opinion or estimate.",
+          "subsections": []
+        },
+        {
+          "label": "(9)",
+          "token": "9",
+          "kind": "numeric",
+          "text": "Costs and disbursements other than reasonable attorney fees and expenses as defined in ORS 35.335",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 36,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html#section-35.348",
+      "identifier": "ORS 35.348",
+      "name": "Section 35.348",
+      "text": "Immediate possession of property. Notwithstanding ORS 35.346, if a condemner determines that an emergency that poses a threat to persons or property exists and that immediate possession of the property is necessary, the condemner may immediately file a condemnation action after making the written offer required under ORS 35.346 (1) accompanied by the appraisal or explanation required by ORS 35.346 (2).",
+      "history_citation_blocks": [
+        "1997 c.797 3; 2003 c.476 3; 2009 c.530 2"
+      ],
+      "history_citations": [
+        {
+          "raw": "1997 c.797 3",
+          "year": 1997,
+          "chapter": "797",
+          "section": "3"
+        },
+        {
+          "raw": "2003 c.476 3",
+          "year": 2003,
+          "chapter": "476",
+          "section": "3"
+        },
+        {
+          "raw": "2009 c.530 2",
+          "year": 2009,
+          "chapter": "530",
+          "section": "2"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "accompanied by the appraisal or explanation required by ORS 35.346",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": ".",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 37,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html#section-35.350",
+      "identifier": "ORS 35.350",
+      "name": "Section 35.350",
+      "text": "Immediate possession of property by public body. This chapter does not affect the ability of a public body, as defined in ORS 174.109, to take immediate possession of property in an emergency that poses a threat to persons or property.",
+      "history_citation_blocks": [
+        "2005 c.565 2"
+      ],
+      "history_citations": [
+        {
+          "raw": "2005 c.565 2",
+          "year": 2005,
+          "chapter": "565",
+          "section": "2"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 38,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html#section-35.352",
+      "identifier": "ORS 35.352",
+      "name": "Section 35.352",
+      "text": "Notice of immediate possession of property by public condemner; objection. (1) At any time after a condemnation action is commenced, a public condemner may serve notice that the public condemner will take immediate possession of the property that is the subject of the action. The notice must be served in the manner provided by ORCP 9 on all defendants in the action. (2) If notice is served under this section, a defendant in a condemnation action may object to immediate possession of property by a public condemner by filing a written objection with the court within 10 days after notice is served on the defendant under this section and serving a copy of the objection on the public condemner in the manner provided by ORCP 9. The objection must request that the court schedule a hearing on the objection at the earliest possible time. The only issues that a court may consider upon objection are: (a) Whether the condemnation is legal; and (b) Subject to the presumption established by ORS 35.235 (2), whether the public condemner has acted in bad faith, engaged in fraud or engaged in an abuse of discretion under a delegation of authority. (3) If notice is served under this section and an objection is not filed with the court within the time allowed under subsection (2) of this section, the public condemner may at any time thereafter file with the court a form of order confirming the public condemners possession of the property as of the date specified in the notice. The form of order must be accompanied by an affidavit attesting to service of the notice as required by subsection (1) of this section, and a statement that an objection was not filed within 10 days after notice was served on the defendants in the action. Upon filing of the affidavit, the clerk of the court shall affix the seal of the court to the form of order. The order may thereafter be enforced in the same manner as any other order of the court. (4) A notice under this section must be in substantially the following form: ______________________________________________________________________________ CIRCUIT COURT FOR THE COUNTY OF ______ ) ______ ) Plaintiff, ) NOTICE OF ) IMMEDIATE ) POSSESSION ) vs. ) Case No. _____ ) ______ ) Defendant. ) TO THE DEFENDANTS: By service of this notice, you are advised that the plaintiff will take possession of the property described in the complaint on: (1) _________, 2___, if the deposit required by ORS 35.265 has been made by that date; or (2) The date on which the deposit required by ORS 35.265 is made if that date is later than the date specified above. You may file an objection with the court within 10 days after this notice is served on you. An objection may be made only to determine: (1) Whether the condemnation is legal; and (2) Subject to the presumption established by ORS 35.235 (2), whether the public condemner has acted in bad faith, engaged in fraud or engaged in an abuse of discretion under a delegation of authority. _____________________ Attorney for Plaintiff _____________________ Address _____________________ Telephone Number ______________________________________________________________________________ (5) The court shall expeditiously consider any objection filed under this section to prevent prejudice to the public condemners need for immediate possession. (6) The ability of the defendant in a condemnation action to assert legal defenses in the answer of the defendant under ORS 35.295 is not affected solely by reason of the filing of an objection to a notice served under this section, or by reason of the failure to file an objection. (7) This section does not impose a requirement that a public condemner use the procedure described in this section, and the procedure described in this section is not the exclusive method by which a public condemner may obtain possession of property.",
+      "history_citation_blocks": [
+        "2005 c.565 3"
+      ],
+      "history_citations": [
+        {
+          "raw": "2005 c.565 3",
+          "year": 2005,
+          "chapter": "565",
+          "section": "3"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "At any time after a condemnation action is commenced, a public condemner may serve notice that the public condemner will take immediate possession of the property that is the subject of the action. The notice must be served in the manner provided by ORCP 9 on all defendants in the action. of this section, and a statement that an objection was not filed within 10 days after notice was served on the defendants in the action. Upon filing of the affidavit, the clerk of the court shall affix the seal of the court to the form of order. The order may thereafter be enforced in the same manner as any other order of the court. _________, 2___, if the deposit required by ORS 35.265 has been made by that date; or Whether the condemnation is legal; and",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "If notice is served under this section, a defendant in a condemnation action may object to immediate possession of property by a public condemner by filing a written objection with the court within 10 days after notice is served on the defendant under this section and serving a copy of the objection on the public condemner in the manner provided by ORCP 9. The objection must request that the court schedule a hearing on the objection at the earliest possible time. The only issues that a court may consider upon objection are: , whether the public condemner has acted in bad faith, engaged in fraud or engaged in an abuse of discretion under a delegation of authority. of this section, the public condemner may at any time thereafter file with the court a form of order confirming the public condemners possession of the property as of the date specified in the notice. The form of order must be accompanied by an affidavit attesting to service of the notice as required by subsection The date on which the deposit required by ORS 35.265 is made if that date is later than the date specified above. You may file an objection with the court within 10 days after this notice is served on you. An objection may be made only to determine: Subject to the presumption established by ORS 35.235 , whether the public condemner has acted in bad faith, engaged in fraud or engaged in an abuse of discretion under a delegation of authority. _____________________ Attorney for Plaintiff _____________________ Address _____________________ Telephone Number ______________________________________________________________________________",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Whether the condemnation is legal; and",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Subject to the presumption established by ORS 35.235",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "If notice is served under this section and an objection is not filed with the court within the time allowed under subsection",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "A notice under this section must be in substantially the following form: ______________________________________________________________________________ CIRCUIT COURT FOR THE COUNTY OF ______ ) ______ ) Plaintiff, ) NOTICE OF ) IMMEDIATE ) POSSESSION ) vs. ) Case No. _____ ) ______ ) Defendant. ) TO THE DEFENDANTS: By service of this notice, you are advised that the plaintiff will take possession of the property described in the complaint on:",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "The court shall expeditiously consider any objection filed under this section to prevent prejudice to the public condemners need for immediate possession.",
+          "subsections": []
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "The ability of the defendant in a condemnation action to assert legal defenses in the answer of the defendant under ORS 35.295 is not affected solely by reason of the filing of an objection to a notice served under this section, or by reason of the failure to file an objection.",
+          "subsections": []
+        },
+        {
+          "label": "(7)",
+          "token": "7",
+          "kind": "numeric",
+          "text": "This section does not impose a requirement that a public condemner use the procedure described in this section, and the procedure described in this section is not the exclusive method by which a public condemner may obtain possession of property.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 39,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html#section-35.355",
+      "identifier": "ORS 35.355",
+      "name": "Section 35.355",
+      "text": "Appeal. Either party to the action may appeal from the judgment in like manner and with like effect as in ordinary cases, but the appeal shall not stay the proceedings so as to prevent the condemner from taking possession of the property and using it for the purposes for which it is being appropriated. In the event the defendant prevails on an appeal, the costs and disbursements of the defendant, including a reasonable attorney fee to be fixed by the court, shall be taxed by the clerk and recovered from the condemner.",
+      "history_citation_blocks": [
+        "1971 c.741 19"
+      ],
+      "history_citations": [
+        {
+          "raw": "1971 c.741 19",
+          "year": 1971,
+          "chapter": "741",
+          "section": "19"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 40,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html#section-35.365",
+      "identifier": "ORS 35.365",
+      "name": "Section 35.365",
+      "text": "Effect of withdrawal of award; disposition of award. If the defendant withdraws the compensation awarded by the court or jury, the defendant waives the right of appeal; and, if the defendant does not, such sum shall remain in the control of the court, to abide the event of the appeal. If an unknown owner of the property or other defendant does not appear and claim the sum, it shall be invested for the benefit of whom it may concern, as in case of unclaimed moneys in the sale and partition of lands.",
+      "history_citation_blocks": [
+        "1971 c.741 20"
+      ],
+      "history_citations": [
+        {
+          "raw": "1971 c.741 20",
+          "year": 1971,
+          "chapter": "741",
+          "section": "20"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 41,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html#section-35.375",
+      "identifier": "ORS 35.375",
+      "name": "Section 35.375",
+      "text": "Chapter as exclusive condemnation proceeding; exception. Except for procedures provided in ORS chapter 368, any action for the condemnation of property under the power of eminent domain shall be conducted according to this chapter.",
+      "history_citation_blocks": [
+        "1971 c.741 3; 1979 c.873 3; 1981 c.153 52"
+      ],
+      "history_citations": [
+        {
+          "raw": "1971 c.741 3",
+          "year": 1971,
+          "chapter": "741",
+          "section": "3"
+        },
+        {
+          "raw": "1979 c.873 3",
+          "year": 1979,
+          "chapter": "873",
+          "section": "3"
+        },
+        {
+          "raw": "1981 c.153 52",
+          "year": 1981,
+          "chapter": "153",
+          "section": "52"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 42,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html#section-35.385",
+      "identifier": "ORS 35.385",
+      "name": "to 35.415; or",
+      "text": "(b) Specify that the right of repurchase of the real property has been waived by the owner and, in such case, not specify a period within which the real property must be used by the condemner for a public purpose. (2) If real property is acquired by a condemner under this chapter by judgment given in a condemnation action under ORS 35.325, the court shall: (a) Specify in the judgment a reasonable period within which the real property must be used by the condemner for a public purpose or specify a 10-year period, and provide that the right of repurchase may be exercised with respect to the real property as provided in ORS 35.385 to 35.415; or (b) Specify that the right of repurchase of the real property has been waived by the owner and, in such case, not specify a period within which the real property must be used by the condemner for a public purpose. (3) For the purposes of subsection (2)(a) of this section, the resolution or ordinance of the condemner is presumptive evidence that the period of time that is proposed by the condemner is a reasonable period in which the real property must be used by the condemner for a public purpose; provided, however, that if the resolution or ordinance specifies a 10-year period or less, neither the owner nor a designated beneficiary of the owner can contest the reasonableness of the period specified. (4) If real property is acquired by a condemner by agreement with the owner as described in subsection (1) of this section, and the agreement does not contain one of the provisions required by subsection (1)(a) or (b) of this section, the owner may repurchase the property, or any portion of the property, in the manner provided by ORS 35.385 to 35.415 if: (a) Ten years have expired since the date of the transfer of the property; and (b) The condemner has not used the property for a public purpose. (5) Subsection (4) of this section does not apply to real property acquired by a condemner for the purpose of constructing, improving or maintaining a transportation facility or system.",
+      "history_citation_blocks": [
+        "1973 c.720 2; 2011 c.426 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "1973 c.720 2",
+          "year": 1973,
+          "chapter": "720",
+          "section": "2"
+        },
+        {
+          "raw": "2011 c.426 1",
+          "year": 2011,
+          "chapter": "426",
+          "section": "1"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(b)",
+          "token": "b",
+          "kind": "alpha_lower",
+          "text": "Specify that the right of repurchase of the real property has been waived by the owner and, in such case, not specify a period within which the real property must be used by the condemner for a public purpose.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "If real property is acquired by a condemner under this chapter by judgment given in a condemnation action under ORS 35.325, the court shall: (a) of this section, the resolution or ordinance of the condemner is presumptive evidence that the period of time that is proposed by the condemner is a reasonable period in which the real property must be used by the condemner for a public purpose; provided, however, that if the resolution or ordinance specifies a 10-year period or less, neither the owner nor a designated beneficiary of the owner can contest the reasonableness of the period specified.",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Specify in the judgment a reasonable period within which the real property must be used by the condemner for a public purpose or specify a 10-year period, and provide that the right of repurchase may be exercised with respect to the real property as provided in ORS 35.385 to 35.415; or",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Specify that the right of repurchase of the real property has been waived by the owner and, in such case, not specify a period within which the real property must be used by the condemner for a public purpose.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "For the purposes of subsection",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "If real property is acquired by a condemner by agreement with the owner as described in subsection of this section does not apply to real property acquired by a condemner for the purpose of constructing, improving or maintaining a transportation facility or system.",
+          "subsections": []
+        },
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "of this section, and the agreement does not contain one of the provisions required by subsection (a) or",
+          "subsections": [
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "of this section, the owner may repurchase the property, or any portion of the property, in the manner provided by ORS 35.385 to 35.415 if: The condemner has not used the property for a public purpose.",
+              "subsections": []
+            },
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Ten years have expired since the date of the transfer of the property; and",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "Subsection",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 43,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html#section-35.390",
+      "identifier": "ORS 35.390",
+      "name": "Section 35.390",
+      "text": "Effect of failure of condemner to use property as required; price of repurchase; form of offer of repurchase. (1) If a condemner fails to use the real property or any portion thereof acquired under this chapter within the time specified in an agreement entered into under ORS 35.385 (1) or with the terms of a judgment given under ORS 35.325 and 35.385 (2), whichever applies, and the prior owner of the real property has not waived the right to repurchase the real property, the condemner shall offer such property or any portion thereof, that has not been used for a public purpose within the specified period, to the prior owner or the beneficiary of the prior owner designated as provided in ORS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "If a condemner fails to use the real property or any portion thereof acquired under this chapter within the time specified in an agreement entered into under ORS 35.385 or with the terms of a judgment given under ORS 35.325 and 35.385",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": ", whichever applies, and the prior owner of the real property has not waived the right to repurchase the real property, the condemner shall offer such property or any portion thereof, that has not been used for a public purpose within the specified period, to the prior owner or the beneficiary of the prior owner designated as provided in ORS",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 44,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html#section-35.395",
+      "identifier": "ORS 35.395",
+      "name": "Section 35.395",
+      "text": "Change in period of use; notice; effect of failure to agree on change; review by court. (1) The period specified in an agreement or judgment as provided in ORS 35.385 may be changed as provided in this section, if the prior owner of the real property has not waived the right of repurchase and the condemner finds that it will be unable to use all or a portion of the real property for such purpose within the specified period and requires a reasonable extension of such period for the completion of its project on the real property. (2) Upon a finding under subsection (1) of this section, a condemner shall notify the prior owner or designated beneficiary of the requested change in period. The condemner shall negotiate with the prior owner or beneficiary on the requested change. (a) Notification under this subsection shall consist of mailing a letter by certified mail to the last address of the prior owner or the designated beneficiary of the owner as shown in the agreement or judgment whereby the real property was acquired or the address subsequently supplied by such owner or beneficiary. If no response has been received by the condemner within 60 days after receipt of notice by the owner or designated beneficiary, all the rights of the owner or designated beneficiary under ORS 35.385 to 35.415 shall be considered waived. (b) If the condemner cannot locate the prior owner or the designated beneficiary of the owner at the last-known address of the owner or the designated beneficiary, notice may be effected by publication. The publication shall be made in a newspaper published in the county where the property is located, or if no newspaper is published in the county, then in a newspaper designated as being most likely to give notice to the prior owner or the beneficiary of the prior owner. The newspaper utilized shall meet the requirements of ORS 193.020. The notice shall contain the name of the public project, a general description of the location of the property, the change in purpose or extension of time desired by the condemner and a time within which the owner or the beneficiary of the owner must respond to the notice. The notice shall be published not less than once each week for four weeks. The publication of notice may be directed to one or more owners or beneficiaries affected by the same project. If no response is received by the condemner within 10 days after the date of the last publication of notice, all rights of the prior owner or designated beneficiary shall be considered waived. (3) If, after negotiation, the prior owner or beneficiary and the condemner agree on the proposed change in period, the period as changed shall, for the purposes of ORS 35.385 to 35.415, be considered the period as specified in the agreement or judgment under ORS 35.385. In the case of real property acquired by a condemner by judgment under ORS 35.325, the condemner shall notify the court by which the judgment was given of the agreed upon change in period and the court shall modify such judgment accordingly. (4) If the prior owner or beneficiary and the condemner cannot, after negotiation, agree on the proposed change in period, the condemner may: (a) In the case of real property acquired by an agreement under ORS 35.235 (1), petition the circuit court for the county within which such real property is situated for a hearing to determine whether the proposed change in period is reasonable and necessary in the public interest; or (b) In the case of real property acquired by a judgment given under ORS 35.325, petition the court by which such judgment was given for a hearing to determine whether it is reasonable and necessary in the public interest to modify such judgment to permit the proposed change in period. The condemner in its petition may include as parties and serve all or any owners and designated beneficiaries whose property is affected by the same project. (5) If, after a hearing under subsection (4) of this section, the court finds that the proposed change in period is reasonable and necessary in the public interest, the court shall grant such change. For the purposes of ORS 35.385 to",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The period specified in an agreement or judgment as provided in ORS 35.385 may be changed as provided in this section, if the prior owner of the real property has not waived the right of repurchase and the condemner finds that it will be unable to use all or a portion of the real property for such purpose within the specified period and requires a reasonable extension of such period for the completion of its project on the real property. of this section, a condemner shall notify the prior owner or designated beneficiary of the requested change in period. The condemner shall negotiate with the prior owner or beneficiary on the requested change. , petition the circuit court for the county within which such real property is situated for a hearing to determine whether the proposed change in period is reasonable and necessary in the public interest; or",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Notification under this subsection shall consist of mailing a letter by certified mail to the last address of the prior owner or the designated beneficiary of the owner as shown in the agreement or judgment whereby the real property was acquired or the address subsequently supplied by such owner or beneficiary. If no response has been received by the condemner within 60 days after receipt of notice by the owner or designated beneficiary, all the rights of the owner or designated beneficiary under ORS 35.385 to 35.415 shall be considered waived.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "If the condemner cannot locate the prior owner or the designated beneficiary of the owner at the last-known address of the owner or the designated beneficiary, notice may be effected by publication. The publication shall be made in a newspaper published in the county where the property is located, or if no newspaper is published in the county, then in a newspaper designated as being most likely to give notice to the prior owner or the beneficiary of the prior owner. The newspaper utilized shall meet the requirements of ORS 193.020. The notice shall contain the name of the public project, a general description of the location of the property, the change in purpose or extension of time desired by the condemner and a time within which the owner or the beneficiary of the owner must respond to the notice. The notice shall be published not less than once each week for four weeks. The publication of notice may be directed to one or more owners or beneficiaries affected by the same project. If no response is received by the condemner within 10 days after the date of the last publication of notice, all rights of the prior owner or designated beneficiary shall be considered waived. In the case of real property acquired by a judgment given under ORS 35.325, petition the court by which such judgment was given for a hearing to determine whether it is reasonable and necessary in the public interest to modify such judgment to permit the proposed change in period. The condemner in its petition may include as parties and serve all or any owners and designated beneficiaries whose property is affected by the same project.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Upon a finding under subsection",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "If, after negotiation, the prior owner or beneficiary and the condemner agree on the proposed change in period, the period as changed shall, for the purposes of ORS 35.385 to 35.415, be considered the period as specified in the agreement or judgment under ORS 35.385. In the case of real property acquired by a condemner by judgment under ORS 35.325, the condemner shall notify the court by which the judgment was given of the agreed upon change in period and the court shall modify such judgment accordingly.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "If the prior owner or beneficiary and the condemner cannot, after negotiation, agree on the proposed change in period, the condemner may: of this section, the court finds that the proposed change in period is reasonable and necessary in the public interest, the court shall grant such change. For the purposes of ORS 35.385 to",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "In the case of real property acquired by an agreement under ORS 35.235",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "If, after a hearing under subsection",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 45,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html#section-35.400",
+      "identifier": "ORS 35.400",
+      "name": "Section 35.400",
+      "text": "Designation of person to exercise right of repurchase; effect of failure to designate; offer to repurchase; acceptance; notice; determination of price. (1) At the time of entering into an agreement pursuant to ORS 35.385 (1) for the acquisition of real property by a condemner or prior to the time of giving judgment for the acquisition of real property by a condemner under ORS 35.325, the owner of the real property to be acquired may, if such owner has not waived the right of repurchase under ORS 35.385 to 35.415, designate a person to exercise such right of repurchase. Such designation shall constitute an assignment of the right of the owner of such property to exercise the right of repurchase otherwise available under ORS 35.385 to 35.415. The name and address of the person so designated shall be included in such agreement or judgment. Such owners and designated beneficiaries shall also notify the condemner in writing of any change of address so that their respective current addresses shall be of record with the condemner. The person so designated may not assign or transfer the right of repurchase. (2) If an owner of real property to be acquired by a condemner does not designate a person to exercise the right of repurchase under ORS 35.385 to 35.415 and such owner has not waived such right of repurchase, only the owner may exercise the right of repurchase under ORS 35.385 to 35.415. If such owner dies while real property is still subject to a right of repurchase by the owner, the personal representative of such owners estate may act as the owner to exercise the right of repurchase with respect to such property on behalf of the estate of the owner at any time prior to the discharge of the personal representative under ORS 116.213. (3) Upon receipt from a condemner of an offer to repurchase any real property or portion thereof in accordance with ORS 35.385 to 35.415: (a) In the case of an offer to repurchase the entire parcel of real property to which ORS 35.385 applies, if the owner or beneficiary of such right of repurchase does not accept such offer within 30 days, the right of repurchase is terminated and the condemner may use and dispose of such property or portion as otherwise provided by law. (b) In the case of an offer to repurchase only a portion of a parcel of real property to which ORS 35.385 applies, the owner or beneficiary of such right of repurchase may: (A) Accept such offer within 30 days; or (B) Notify the condemner within 30 days of the desire of the owner or beneficiary to exercise such right, but refuse to accept the price established by the condemner in the offer to repurchase made pursuant to ORS 35.390 (4). (c) If the owner or beneficiary of the right of repurchase fails to timely notify the condemner pursuant to either paragraph (b)(A) or (B) of this subsection, the right of repurchase is terminated and the condemner may use or dispose of such portion of property as otherwise provided by law. (d) If timely notice of intent to exercise the right of repurchase is given by the owner or beneficiary as provided by paragraph (b)(B) of this subsection, the owner or beneficiary must within 60 days thereafter commence an action, in the court in which the original action by the condemner to acquire such real property was commenced, to determine the sole issue of the price to be paid upon such repurchase, pursuant to the provisions of ORS 35.390 (3). Failure to commence such an action within such 60-day period shall void such notice of intention to exercise repurchase for the purposes of paragraph (c) of this subsection. (A) Upon the determination of the price for repurchase by the court or jury, the court shall give judgment vesting title to the property in the owner or the beneficiary, conditioned upon payment into court of the assessed price by the owner or beneficiary within 90 days after the date of the judgment; and upon the making of such payment, the judgment shall become effective to convey the property and the right of possession thereof to the owner or beneficiary. Failure to make such payment into court within 90 days of the date of the judgment shall void the notice of intent to exercise the right of repurchase for the purposes of paragraph (c) of this subsection, and the judgment shall be withdrawn by the court. (B) If the price determined pursuant to the provisions of this paragraph is less than the price established by the condemner in its written offer to repurchase, the costs and disbursements of the owner or beneficiary, as specified in ORS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "At the time of entering into an agreement pursuant to ORS 35.385 for the acquisition of real property by a condemner or prior to the time of giving judgment for the acquisition of real property by a condemner under ORS 35.325, the owner of the real property to be acquired may, if such owner has not waived the right of repurchase under ORS 35.385 to 35.415, designate a person to exercise such right of repurchase. Such designation shall constitute an assignment of the right of the owner of such property to exercise the right of repurchase otherwise available under ORS 35.385 to 35.415. The name and address of the person so designated shall be included in such agreement or judgment. Such owners and designated beneficiaries shall also notify the condemner in writing of any change of address so that their respective current addresses shall be of record with the condemner. The person so designated may not assign or transfer the right of repurchase.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "If an owner of real property to be acquired by a condemner does not designate a person to exercise the right of repurchase under ORS 35.385 to 35.415 and such owner has not waived such right of repurchase, only the owner may exercise the right of repurchase under ORS 35.385 to 35.415. If such owner dies while real property is still subject to a right of repurchase by the owner, the personal representative of such owners estate may act as the owner to exercise the right of repurchase with respect to such property on behalf of the estate of the owner at any time prior to the discharge of the personal representative under ORS 116.213.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Upon receipt from a condemner of an offer to repurchase any real property or portion thereof in accordance with ORS 35.385 to 35.415: . Failure to commence such an action within such 60-day period shall void such notice of intention to exercise repurchase for the purposes of paragraph",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "In the case of an offer to repurchase the entire parcel of real property to which ORS 35.385 applies, if the owner or beneficiary of such right of repurchase does not accept such offer within 30 days, the right of repurchase is terminated and the condemner may use and dispose of such property or portion as otherwise provided by law.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "In the case of an offer to repurchase only a portion of a parcel of real property to which ORS 35.385 applies, the owner or beneficiary of such right of repurchase may:",
+              "subsections": [
+                {
+                  "label": "(A)",
+                  "token": "A",
+                  "kind": "alpha_upper",
+                  "text": "Accept such offer within 30 days; or",
+                  "subsections": []
+                },
+                {
+                  "label": "(B)",
+                  "token": "B",
+                  "kind": "alpha_upper",
+                  "text": "Notify the condemner within 30 days of the desire of the owner or beneficiary to exercise such right, but refuse to accept the price established by the condemner in the offer to repurchase made pursuant to ORS 35.390",
+                  "subsections": []
+                }
+              ]
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "of this subsection. of this subsection, and the judgment shall be withdrawn by the court.",
+              "subsections": [
+                {
+                  "label": "(A)",
+                  "token": "A",
+                  "kind": "alpha_upper",
+                  "text": "Upon the determination of the price for repurchase by the court or jury, the court shall give judgment vesting title to the property in the owner or the beneficiary, conditioned upon payment into court of the assessed price by the owner or beneficiary within 90 days after the date of the judgment; and upon the making of such payment, the judgment shall become effective to convey the property and the right of possession thereof to the owner or beneficiary. Failure to make such payment into court within 90 days of the date of the judgment shall void the notice of intent to exercise the right of repurchase for the purposes of paragraph",
+                  "subsections": []
+                },
+                {
+                  "label": "(B)",
+                  "token": "B",
+                  "kind": "alpha_upper",
+                  "text": "If the price determined pursuant to the provisions of this paragraph is less than the price established by the condemner in its written offer to repurchase, the costs and disbursements of the owner or beneficiary, as specified in ORS",
+                  "subsections": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": ".",
+          "subsections": [
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "If the owner or beneficiary of the right of repurchase fails to timely notify the condemner pursuant to either paragraph",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "(A) or (B) of this subsection, the owner or beneficiary must within 60 days thereafter commence an action, in the court in which the original action by the condemner to acquire such real property was commenced, to determine the sole issue of the price to be paid upon such repurchase, pursuant to the provisions of ORS 35.390",
+              "subsections": [
+                {
+                  "label": "(B)",
+                  "token": "B",
+                  "kind": "alpha_upper",
+                  "text": "of this subsection, the right of repurchase is terminated and the condemner may use or dispose of such portion of property as otherwise provided by law.",
+                  "subsections": []
+                }
+              ]
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "If timely notice of intent to exercise the right of repurchase is given by the owner or beneficiary as provided by paragraph",
+              "subsections": []
+            }
+          ]
+        }
+      ],
+      "parser_warnings": [],
+      "position": 46,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html#section-35.405",
+      "identifier": "ORS 35.405",
+      "name": "Section 35.405",
+      "text": "Designation of person to exercise right of repurchase by multiple owners. Notwithstanding any other provision of ORS 35.385 to 35.415, in any instance in which ORS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 47,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html#section-35.410",
+      "identifier": "ORS 35.410",
+      "name": "Section 35.410",
+      "text": "Right to contest change in public purpose use; notice of proposed change. A prior owner of real property acquired pursuant to an agreement entered into under ORS 35.385 (1) or a judgment given under ORS 35.235 and 35.385 (2), whichever applies, or the designated beneficiary of such owner, may contest any proposed change by the condemner in the public purpose for which such real property was acquired in the manner provided for contesting a change in the period specified for the use of such real property by the condemner under ORS 35.395 (4). The resolution or ordinance of the condemner is presumptive evidence that a proposed change of use proposed by the condemner is reasonable and necessary in the public interest. Each condemner proposing any such change in public purpose shall notify each such owner or designated beneficiary of such proposed change and the reasons therefor in the manner provided in ORS 35.395 (2) for notification of a proposed change in the period specified for use of such real property by the condemner. Each such notice shall be mailed to the most recent address of the owner or designated beneficiary of record with the condemner.",
+      "history_citation_blocks": [
+        "1973 c.720 7"
+      ],
+      "history_citations": [
+        {
+          "raw": "1973 c.720 7",
+          "year": 1973,
+          "chapter": "720",
+          "section": "7"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "or a judgment given under ORS 35.235 and 35.385",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": ", whichever applies, or the designated beneficiary of such owner, may contest any proposed change by the condemner in the public purpose for which such real property was acquired in the manner provided for contesting a change in the period specified for the use of such real property by the condemner under ORS 35.395 for notification of a proposed change in the period specified for use of such real property by the condemner. Each such notice shall be mailed to the most recent address of the owner or designated beneficiary of record with the condemner.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": ". The resolution or ordinance of the condemner is presumptive evidence that a proposed change of use proposed by the condemner is reasonable and necessary in the public interest. Each condemner proposing any such change in public purpose shall notify each such owner or designated beneficiary of such proposed change and the reasons therefor in the manner provided in ORS 35.395",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 48,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html#section-35.415",
+      "identifier": "ORS 35.415",
+      "name": ", a period as changed by the court shall be considered the period",
+      "text": "specified in the agreement or judgment described in ORS 35.385. For the purposes of this subsection, the resolution or ordinance of the condemner is presumptive evidence that the change in period proposed by the condemner is reasonable and necessary in the public interest. (6) If, after a hearing under subsection (4) of this section, the court finds that the proposed change in period is unreasonable or not necessary in the public interest, the court shall deny the requested change. In such case, the terms of the original agreement or judgment shall control for the purpose of the exercise of the right of repurchase under ORS 35.385 to 35.415.",
+      "history_citation_blocks": [
+        "1973 c.720 4"
+      ],
+      "history_citations": [
+        {
+          "raw": "1973 c.720 4",
+          "year": 1973,
+          "chapter": "720",
+          "section": "4"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "If, after a hearing under subsection",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "of this section, the court finds that the proposed change in period is unreasonable or not necessary in the public interest, the court shall deny the requested change. In such case, the terms of the original agreement or judgment shall control for the purpose of the exercise of the right of repurchase under ORS 35.385 to 35.415.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 49,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html#section-35.500",
+      "identifier": "ORS 35.500",
+      "name": "Section 35.500",
+      "text": "Definitions for ORS 35.500 to 35.530. As used in ORS 35.500 to 35.530: (1) Displaced person means any person who moves, or is required to move the persons residence and personal property incident thereto, or the persons business or farm operation as a result of: (a) Acquisition of the real property, in whole or in part, by a public entity; or (b) Receipt of a written order by such person from a public entity to vacate the property for public use. (2) Federal Act means the Uniform Relocation Assistance and Real Property Acquisition Policies Act of 1970 (P.L. 91-646, 42 U.S.C. 4601 et seq.) as in effect on January 1, 2003. (3) Public entity includes the state, a county, a city, a consolidated city-county as defined in ORS 199.705 (1), a district, public authority, public agency and any other political subdivision or public corporation in the state when acquiring real property or any interest therein for public use. Public entity also includes a private corporation that has the power to exercise the right of eminent domain. (4) Public use means a use for which real property may be acquired by a public entity as provided by law. (5) Real property or any interest therein includes tenements and hereditaments, and includes every interest, freehold and chattel, legal and equitable, present and future, vested and contingent, in such tenements and hereditaments. [Formerly 281.045]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Displaced person means any person who moves, or is required to move the persons residence and personal property incident thereto, or the persons business or farm operation as a result of: , a district, public authority, public agency and any other political subdivision or public corporation in the state when acquiring real property or any interest therein for public use. Public entity also includes a private corporation that has the power to exercise the right of eminent domain.",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Acquisition of the real property, in whole or in part, by a public entity; or",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Receipt of a written order by such person from a public entity to vacate the property for public use.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Federal Act means the Uniform Relocation Assistance and Real Property Acquisition Policies Act of 1970 (P.L. 91-646, 42 U.S.C. 4601 et seq.) as in effect on January 1, 2003.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Public entity includes the state, a county, a city, a consolidated city-county as defined in ORS 199.705",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Public use means a use for which real property may be acquired by a public entity as provided by law.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "Real property or any interest therein includes tenements and hereditaments, and includes every interest, freehold and chattel, legal and equitable, present and future, vested and contingent, in such tenements and hereditaments. [Formerly 281.045]",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 50,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html#section-35.505",
+      "identifier": "ORS 35.505",
+      "name": "Section 35.505",
+      "text": "Relocation within neighborhood; notice prior to move; costs and allowances. (1) A public entity undertaking urban renewal or neighborhood development shall make all reasonable efforts to insure that all displaced persons shall have the option to relocate within their urban renewal or development neighborhood or area and shall not be displaced, except temporarily as required by emergency, until appropriate residential units shall become available to them within their neighborhood or area and within their financial means. (2) Except as required by emergency, no displaced person shall be required to move from any real property without first having written notice from the public entity at least 90 days prior to the date by which the move is required. In no case shall any displaced person be required to move until the public entity notifies the person in writing of all costs and allowances to which such person may become entitled under federal, state or local law. [Formerly 281.055]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A public entity undertaking urban renewal or neighborhood development shall make all reasonable efforts to insure that all displaced persons shall have the option to relocate within their urban renewal or development neighborhood or area and shall not be displaced, except temporarily as required by emergency, until appropriate residential units shall become available to them within their neighborhood or area and within their financial means.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Except as required by emergency, no displaced person shall be required to move from any real property without first having written notice from the public entity at least 90 days prior to the date by which the move is required. In no case shall any displaced person be required to move until the public entity notifies the person in writing of all costs and allowances to which such person may become entitled under federal, state or local law. [Formerly 281.055]",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 51,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html#section-35.510",
+      "identifier": "ORS 35.510",
+      "name": "Section 35.510",
+      "text": "Duties of public entities acquiring real property. Whenever any program or project is undertaken by a public entity which program or project will result in the acquisition of real property, notwithstanding any other statute, charter, ordinance, or rule or regulation, the public entity shall: (1) Provide fair and reasonable relocation payments and assistance to or for displaced persons as provided under sections 202, 203, 204 and 206 of the Federal Act; (2) Provide relocation assistance programs offering to displaced persons and others occupying property immediately adjacent to the real property acquired the services described in section 205 of the Federal Act on the conditions prescribed therein; (3) In acquiring the real property, be guided by the land acquisition policies in sections 301 and 302 of the Federal Act; (4) Pay or reimburse property owners for necessary expenses as specified in sections 303 and 304 of the Federal Act; (5) Share costs of providing payments and assistance with the federal government in the manner and to the extent required by sections 211 (a) and (b) of the Federal Act; and (6) Appoint such officers, enter into such contracts, utilize federal funds for planning and providing comparable replacement housing and take such other actions as may be necessary to comply with the conditions and requirements of the Federal Act. [Formerly 281.060]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Provide fair and reasonable relocation payments and assistance to or for displaced persons as provided under sections 202, 203, 204 and 206 of the Federal Act;",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Provide relocation assistance programs offering to displaced persons and others occupying property immediately adjacent to the real property acquired the services described in section 205 of the Federal Act on the conditions prescribed therein;",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "In acquiring the real property, be guided by the land acquisition policies in sections 301 and 302 of the Federal Act;",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Pay or reimburse property owners for necessary expenses as specified in sections 303 and 304 of the Federal Act;",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "Share costs of providing payments and assistance with the federal government in the manner and to the extent required by sections 211",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "and",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "of the Federal Act; and",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "Appoint such officers, enter into such contracts, utilize federal funds for planning and providing comparable replacement housing and take such other actions as may be necessary to comply with the conditions and requirements of the Federal Act. [Formerly 281.060]",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 52,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html#section-35.515",
+      "identifier": "ORS 35.515",
+      "name": "Section 35.515",
+      "text": "Required disclosures for business and farm operations. To be eligible for the payment authorized by ORS 35.510, a business or farm operation must make its state income tax returns and its financial statements and accounting records available for audit for confidential use to determine the payment authorized. [Formerly 281.070]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 53,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html#section-35.520",
+      "identifier": "ORS 35.520",
+      "name": "Section 35.520",
+      "text": "Decision on benefits; hearing; review. Any person who applies for relocation benefits or assistance under ORS 35.510 shall receive the public entitys written decision on the application, which shall include the statement of any amount awarded, the statutory basis for the award and the statement of any finding of fact that the public entity made in arriving at its decision. A person aggrieved by the decision shall be entitled to a hearing substantially of the character required by ORS 183.413 to 183.470, unless federal, state or local law provides otherwise. Notice required by ORS 183.415 must be served within 180 days of the receipt of the written decision by the aggrieved party. The decision of the public entity shall be reviewable pursuant to ORS 183.480.",
+      "history_citation_blocks": [
+        "Formerly 281.085; 2007 c.288 5"
+      ],
+      "history_citations": [
+        {
+          "raw": "Formerly 281.085"
+        },
+        {
+          "raw": "2007 c.288 5",
+          "year": 2007,
+          "chapter": "288",
+          "section": "5"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 54,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html#section-35.525",
+      "identifier": "ORS 35.525",
+      "name": "Section 35.525",
+      "text": "Construction. Nothing in ORS 35.510, 35.515 or 35.520 shall be construed as creating in any condemnation proceedings brought under the power of eminent domain, any element of value or of damage not in existence immediately prior to May 7, 1971. [Formerly 281.090]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 55,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html#section-35.530",
+      "identifier": "ORS 35.530",
+      "name": "Section 35.530",
+      "text": "Federal law controls. If a public entity is receiving federal financial assistance and is thereby required to comply with applicable federal laws and regulations relating to relocation assistance, such federal laws and regulations shall control should there be any conflict with ORS 35.500 to 35.530. [Formerly 281.105] CONDEMNATION BY STATE",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 56,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html#section-35.550",
+      "identifier": "ORS 35.550",
+      "name": "Section 35.550",
+      "text": "Definitions for ORS 35.550 to 35.575. As used in ORS 35.550 to 35.575: (1) Property means real property, water, watercourses, and water and riparian rights, or any right or interest therein. (2) Board means: (a) The state board of commissioners, trustees, or other state board, having direction of the state department or institution for which the property is desired; or (b) The Department of State Lands, if there is no other state board for the department or institution for which the property is sought to be acquired. [Formerly 281.210]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Property means real property, water, watercourses, and water and riparian rights, or any right or interest therein.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Board means:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "The state board of commissioners, trustees, or other state board, having direction of the state department or institution for which the property is desired; or",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "The Department of State Lands, if there is no other state board for the department or institution for which the property is sought to be acquired. [Formerly 281.210]",
+              "subsections": []
+            }
+          ]
+        }
+      ],
+      "parser_warnings": [],
+      "position": 57,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html#section-35.555",
+      "identifier": "ORS 35.555",
+      "name": "Section 35.555",
+      "text": "Determination of necessity; suit by Attorney General. Whenever the state requires property for any public use, the necessity for the acquisition to be decided and declared in the first instance by the board, if the board and the owner of such property cannot agree upon the price to be paid for the amount of or interest in the property required for such public use, and the damages for the taking thereof, the board may request the Attorney General to, and the Attorney General shall when so requested, commence and prosecute in any court of competent jurisdiction in the name of the State of Oregon any necessary or appropriate suit, action or proceeding for the condemnation of the amount of or interest in the property required for such purposes and for the assessment of the damages for the taking thereof. [Formerly 281.220]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 58,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html#section-35.560",
+      "identifier": "ORS 35.560",
+      "name": "Section 35.560",
+      "text": "Action by district attorney. The district attorney of the judicial district in which the property to be condemned lies shall: (1) Commence and prosecute the suit, action or proceeding in the circuit court of such district, when requested by the board; or (2) Aid the Attorney General in so doing in any manner requested by the Attorney General. [Formerly 281.230]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Commence and prosecute the suit, action or proceeding in the circuit court of such district, when requested by the board; or",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Aid the Attorney General in so doing in any manner requested by the Attorney General. [Formerly 281.230]",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 59,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html#section-35.565",
+      "identifier": "ORS 35.565",
+      "name": "Section 35.565",
+      "text": "Procedure for condemnation. The procedure in the suit, action or proceeding referred to in ORS 35.555 or 35.560 shall be, as far as applicable, the procedure prescribed by law for the condemnation of lands or rights of way by public corporations or quasi-public corporations for public use or for corporate purposes. [Formerly 281.240]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 60,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html#section-35.570",
+      "identifier": "ORS 35.570",
+      "name": "Section 35.570",
+      "text": "Payment of expenses of proceeding, value and damages. The expenses of the condemnation proceeding, the value of the property, and the damages for the taking thereof, shall be paid out of the funds provided for the department or institution for which the property is acquired in the same manner as other expenses for like purposes of such department or institution are paid. If no funds have been provided out of which the same can be paid, payment shall be made out of any funds in the treasury not otherwise appropriated, and the Oregon Department of Administrative Services is authorized to draw a warrant on the treasurer therefor. [Formerly 281.250]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 61,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html#section-35.575",
+      "identifier": "ORS 35.575",
+      "name": "Section 35.575",
+      "text": "Precondemnation compensation not required. ORS 35.550 to 35.575 do not require the state to make or tender compensation prior to condemning and taking possession of the lands or property. [Formerly 281.260] CONDEMNATION OF PROPERTY ADJOINING PROPOSED ROADWAYS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 62,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html#section-35.600",
+      "identifier": "ORS 35.600",
+      "name": "Section 35.600",
+      "text": "Application. ORS 35.600 to 35.625 apply to all condemners other than the state. [Formerly 281.505]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 63,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html#section-35.605",
+      "identifier": "ORS 35.605",
+      "name": "Section 35.605",
+      "text": "Authorization to acquire adjoining property for roadways. (1) Every condemner having the right to purchase, acquire, enter upon and appropriate land and property for establishing, laying out, widening, enlarging or extending roads, streets or highways, may purchase, acquire, enter upon and appropriate, in or in connection with establishing, laying out, widening, enlarging or extending roads, streets or highways, land and property immediately adjoining the proposed boundaries of such roads, streets or highways. (2) The authority conferred by subsection (1) of this section does not extend to the purchase, acquisition, entering upon or appropriation of any adjoining land or property situate more than 100 feet distant from or beyond the proposed boundaries of any such road, street or highway, or of any such adjoining land or property that constitutes the whole or any part of a platted lot or tract of rectangular shape and having an area of 5,000 square feet or more and its shorter dimension not less than 50 feet in length, or that constitutes the whole or any part of any tract of land in common ownership of like shape and having like minimum area and dimensions. [Formerly 281.510]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Every condemner having the right to purchase, acquire, enter upon and appropriate land and property for establishing, laying out, widening, enlarging or extending roads, streets or highways, may purchase, acquire, enter upon and appropriate, in or in connection with establishing, laying out, widening, enlarging or extending roads, streets or highways, land and property immediately adjoining the proposed boundaries of such roads, streets or highways. of this section does not extend to the purchase, acquisition, entering upon or appropriation of any adjoining land or property situate more than 100 feet distant from or beyond the proposed boundaries of any such road, street or highway, or of any such adjoining land or property that constitutes the whole or any part of a platted lot or tract of rectangular shape and having an area of 5,000 square feet or more and its shorter dimension not less than 50 feet in length, or that constitutes the whole or any part of any tract of land in common ownership of like shape and having like minimum area and dimensions. [Formerly 281.510]",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The authority conferred by subsection",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 64,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html#section-35.610",
+      "identifier": "ORS 35.610",
+      "name": "Section 35.610",
+      "text": "Ordinance or resolution required. Before the right to purchase, acquire, enter upon and appropriate any adjoining land or property under ORS 35.605 is exercised by any condemner, the governing body shall by appropriate ordinance or resolution describe the land to be purchased, acquired, entered upon or appropriated, and shall further determine that the appropriation of such land is reasonably necessary to protect the full use and enjoyment by the public of the road, street or highway. [Formerly 281.520]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 65,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html#section-35.615",
+      "identifier": "ORS 35.615",
+      "name": "Section 35.615",
+      "text": "Restrictions on future use of property acquired adjacent to roadway. After an appropriation of land and property authorized by ORS 35.605 has been made, the land and property so appropriated adjoining the boundaries of any road, street or highway and not actually occupied by the road, street or highway, may, by appropriate ordinance or resolution, be declared subject to and burdened with the restrictions upon the future use and occupation thereof that are considered necessary for protecting the full use and enjoyment by the public of the road, street or highway. Such land and property may thereafter be sold by the condemner subject to the declared restrictions and the proceeds of the sale applied and accounted for as may be provided by the charter, charter ordinances or ordinances of, or law governing the condemner. The deed or other conveyance of such land and property shall contain the restrictions and all such land and property shall be sold, burdened with and subject to the restrictions. [Formerly 281.530]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 66,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html#section-35.620",
+      "identifier": "ORS 35.620",
+      "name": "Section 35.620",
+      "text": "Acquisition of land adjoining road boundaries declared necessary. The purchase, acquisition, entering upon and appropriation of lands and property immediately adjoining the boundaries of roads, streets or highways, as defined and limited in, and to the extent authorized by, ORS 35.600 to 35.625 is declared to be necessary for the development and welfare of the state and its inhabitants and to be a public use. [Formerly 281.540]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 67,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html#section-35.625",
+      "identifier": "ORS 35.625",
+      "name": "Section 35.625",
+      "text": "Procedure to ascertain compensation and damages. If private property is appropriated for the public use as authorized by ORS 35.605, and the compensation and damages arising from the appropriation cannot be agreed upon, the appropriation shall be made and the compensation and damages shall be considered, ascertained, determined, awarded and paid in the manner provided by this chapter. [Formerly 281.550] _______________",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 68,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors035.html"
+    }
+  ],
+  "alternateName": "Eminent Domain; Public",
+  "legislationDate": "2023"
+}

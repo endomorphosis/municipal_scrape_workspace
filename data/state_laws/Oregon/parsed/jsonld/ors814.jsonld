@@ -1,0 +1,3787 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "orlaw": "https://www.oregonlegislature.gov/ors#"
+  },
+  "@type": "Legislation",
+  "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html",
+  "identifier": "ORS Chapter 814",
+  "name": "ORS Chapter 814 — Pedestrians; Passengers;",
+  "legislationType": "Statute",
+  "jurisdiction": "US-OR",
+  "isPartOf": {
+    "@type": "CreativeWork",
+    "identifier": "ORS",
+    "name": "Oregon Revised Statutes",
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors"
+  },
+  "dateModified": "2026-02-25T08:11:31.210239+00:00",
+  "source_file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors814.html",
+  "hasPart": [
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html#section-814.010",
+      "identifier": "ORS 814.010",
+      "name": "Section 814.010",
+      "text": "Appropriate responses to traffic control devices. This section establishes appropriate pedestrian responses to specific traffic control devices for purposes of ORS 814.020. Authority to place traffic control devices is established under ORS 810.210. Except when acting under the direction of a police officer, a pedestrian is in violation of ORS 814.020 if the pedestrian makes a response to a traffic control device that is not permitted under the following: (1) A pedestrian facing a traffic control device with a green light may proceed across the roadway within any marked or unmarked crosswalk unless prohibited from doing so by other traffic control devices. (2) A pedestrian facing a traffic control device with a green arrow signal light may proceed across the roadway within any marked or unmarked crosswalk unless prohibited from doing so by other traffic control devices. (3) A pedestrian facing a traffic control device with a steady yellow light shall not enter the roadway unless otherwise directed by a pedestrian control signal. (4) A pedestrian facing a traffic control device with a steady red light shall not enter the roadway unless otherwise directed by a pedestrian control signal. (5) If a traffic control device is erected and maintained at a place other than an intersection, the provisions of this section are applicable. (6) When a pedestrian control signal showing the words Walk and Wait or Dont Walk or any other pedestrian symbol approved by the Oregon Transportation Commission under ORS 810.200 and 810.210 for the purpose of controlling pedestrian crossing is in place, the signal indicates and applies as follows: (a) If a pedestrian is facing a Walk signal or other symbol approved under ORS 810.200 and 810.210 indicating that the pedestrian may proceed, the pedestrian may proceed across the roadway in the direction of the signal. (b) A pedestrian shall not start to cross the roadway in the direction of a signal showing a Wait or Dont Walk or any other symbol approved under ORS 810.200 and 810.210 indicating that the pedestrian may not proceed. A pedestrian who has started crossing a roadway on a signal showing Walk or any other approved symbol to proceed shall proceed with dispatch to a sidewalk or safety island while a signal is showing Wait or Dont Walk or any other approved symbol indicating not to proceed.",
+      "history_citation_blocks": [
+        "1983 c.338 553; 1985 c.16 282"
+      ],
+      "history_citations": [
+        {
+          "raw": "1983 c.338 553",
+          "year": 1983,
+          "chapter": "338",
+          "section": "553"
+        },
+        {
+          "raw": "1985 c.16 282",
+          "year": 1985,
+          "chapter": "16",
+          "section": "282"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A pedestrian facing a traffic control device with a green light may proceed across the roadway within any marked or unmarked crosswalk unless prohibited from doing so by other traffic control devices.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "A pedestrian facing a traffic control device with a green arrow signal light may proceed across the roadway within any marked or unmarked crosswalk unless prohibited from doing so by other traffic control devices.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "A pedestrian facing a traffic control device with a steady yellow light shall not enter the roadway unless otherwise directed by a pedestrian control signal.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "A pedestrian facing a traffic control device with a steady red light shall not enter the roadway unless otherwise directed by a pedestrian control signal.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "If a traffic control device is erected and maintained at a place other than an intersection, the provisions of this section are applicable.",
+          "subsections": []
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "When a pedestrian control signal showing the words Walk and Wait or Dont Walk or any other pedestrian symbol approved by the Oregon Transportation Commission under ORS 810.200 and 810.210 for the purpose of controlling pedestrian crossing is in place, the signal indicates and applies as follows:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "If a pedestrian is facing a Walk signal or other symbol approved under ORS 810.200 and 810.210 indicating that the pedestrian may proceed, the pedestrian may proceed across the roadway in the direction of the signal.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "A pedestrian shall not start to cross the roadway in the direction of a signal showing a Wait or Dont Walk or any other symbol approved under ORS 810.200 and 810.210 indicating that the pedestrian may not proceed. A pedestrian who has started crossing a roadway on a signal showing Walk or any other approved symbol to proceed shall proceed with dispatch to a sidewalk or safety island while a signal is showing Wait or Dont Walk or any other approved symbol indicating not to proceed.",
+              "subsections": []
+            }
+          ]
+        }
+      ],
+      "parser_warnings": [],
+      "position": 1,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html#section-814.020",
+      "identifier": "ORS 814.020",
+      "name": "Section 814.020",
+      "text": "Failure to obey traffic control device; penalty. (1) A pedestrian commits the offense of pedestrian failure to obey traffic control devices if the pedestrian does any of the following: (a) Fails to obey any traffic control device specifically applicable to the pedestrian. (b) Fails to obey any specific traffic control device described in ORS 814.010 in the manner required by that section. (2) A pedestrian is not subject to the requirements of this section if the pedestrian complies with directions of a police officer. (3) The offense described in this section, pedestrian failure to obey traffic control devices, is a Class D traffic violation.",
+      "history_citation_blocks": [
+        "1983 c.338 552; 1995 c.383 82"
+      ],
+      "history_citations": [
+        {
+          "raw": "1983 c.338 552",
+          "year": 1983,
+          "chapter": "338",
+          "section": "552"
+        },
+        {
+          "raw": "1995 c.383 82",
+          "year": 1995,
+          "chapter": "383",
+          "section": "82"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A pedestrian commits the offense of pedestrian failure to obey traffic control devices if the pedestrian does any of the following:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Fails to obey any traffic control device specifically applicable to the pedestrian.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Fails to obey any specific traffic control device described in ORS 814.010 in the manner required by that section.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "A pedestrian is not subject to the requirements of this section if the pedestrian complies with directions of a police officer.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The offense described in this section, pedestrian failure to obey traffic control devices, is a Class D traffic violation.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 2,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html#section-814.030",
+      "identifier": "ORS 814.030",
+      "name": "Section 814.030",
+      "text": "Failure to obey bridge or railroad signal; penalty. (1) A pedestrian commits the offense of pedestrian failure to obey bridge or railroad signal if the pedestrian does any of the following: (a) Enters or remains upon a bridge or approach to a bridge beyond the bridge signal, gate or barricade after a bridge operation signal has been given. (b) Passes through, around, over or under any crossing gate or barrier at a bridge or railroad grade crossing while the gate or barrier is closed or being opened or closed. (2) The offense described in this section, pedestrian failure to obey bridge or railroad signal, is a Class D traffic violation. [1983 c.338 554; 1995 c.383 83] (Pedestrian Yield)",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A pedestrian commits the offense of pedestrian failure to obey bridge or railroad signal if the pedestrian does any of the following:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Enters or remains upon a bridge or approach to a bridge beyond the bridge signal, gate or barricade after a bridge operation signal has been given.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Passes through, around, over or under any crossing gate or barrier at a bridge or railroad grade crossing while the gate or barrier is closed or being opened or closed.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The offense described in this section, pedestrian failure to obey bridge or railroad signal, is a Class D traffic violation. [1983 c.338 554; 1995 c.383 83] (Pedestrian Yield)",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 3,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html#section-814.040",
+      "identifier": "ORS 814.040",
+      "name": "Section 814.040",
+      "text": "Failure to yield to vehicle; penalty. (1) A pedestrian commits the offense of pedestrian failure to yield to a vehicle if the pedestrian does any of the following: (a) Suddenly leaves a curb or other place of safety and moves into the path of a vehicle that is so close as to constitute an immediate hazard. (b) Fails to yield the right of way to a vehicle upon a roadway when the pedestrian is crossing the roadway at any point other than within a marked crosswalk or an unmarked crosswalk at an intersection. (c) Except as otherwise provided under the vehicle code, fails to yield the right of way to all vehicles upon the roadway. (2) The offense described in this section, pedestrian failure to yield to a vehicle, is a Class D traffic violation.",
+      "history_citation_blocks": [
+        "1983 c.338 555; 1995 c.383 84"
+      ],
+      "history_citations": [
+        {
+          "raw": "1983 c.338 555",
+          "year": 1983,
+          "chapter": "338",
+          "section": "555"
+        },
+        {
+          "raw": "1995 c.383 84",
+          "year": 1995,
+          "chapter": "383",
+          "section": "84"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A pedestrian commits the offense of pedestrian failure to yield to a vehicle if the pedestrian does any of the following:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Suddenly leaves a curb or other place of safety and moves into the path of a vehicle that is so close as to constitute an immediate hazard.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Fails to yield the right of way to a vehicle upon a roadway when the pedestrian is crossing the roadway at any point other than within a marked crosswalk or an unmarked crosswalk at an intersection.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Except as otherwise provided under the vehicle code, fails to yield the right of way to all vehicles upon the roadway.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The offense described in this section, pedestrian failure to yield to a vehicle, is a Class D traffic violation.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 4,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html#section-814.050",
+      "identifier": "ORS 814.050",
+      "name": "Section 814.050",
+      "text": "Failure to yield to ambulance or emergency vehicle; penalty. (1) A pedestrian commits the offense of pedestrian failure to yield to an ambulance or emergency vehicle if the pedestrian does not yield the right of way to: (a) An ambulance used in an emergency situation; or (b) An emergency vehicle or an ambulance upon the approach of the vehicle using a visual signal or audible signal or both according to requirements under ORS 820.300 or 820.320. (2) This section does not relieve the driver of an ambulance or emergency vehicle from the duty to: (a) Drive with due regard for the safety of all persons using the highway; and (b) Exercise due care to avoid colliding with any pedestrian. (3) The offense described in this section, pedestrian failure to yield to an ambulance or emergency vehicle, is a Class D traffic violation. [1983 c.338 556; 1995 c.209 4; 1995 c.383 85] (Roadway Use)",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A pedestrian commits the offense of pedestrian failure to yield to an ambulance or emergency vehicle if the pedestrian does not yield the right of way to:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "An ambulance used in an emergency situation; or",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "An emergency vehicle or an ambulance upon the approach of the vehicle using a visual signal or audible signal or both according to requirements under ORS 820.300 or 820.320.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "This section does not relieve the driver of an ambulance or emergency vehicle from the duty to:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Drive with due regard for the safety of all persons using the highway; and",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Exercise due care to avoid colliding with any pedestrian.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The offense described in this section, pedestrian failure to yield to an ambulance or emergency vehicle, is a Class D traffic violation. [1983 c.338 556; 1995 c.209 4; 1995 c.383 85] (Roadway Use)",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 5,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html#section-814.060",
+      "identifier": "ORS 814.060",
+      "name": "Section 814.060",
+      "text": "Failure to use pedestrian tunnel or overhead crossing; penalty. (1) A pedestrian commits the offense of failure to use pedestrian tunnel or overhead crossing if the pedestrian crosses a roadway other than by means of a pedestrian tunnel or overhead pedestrian crossing when a tunnel or overhead crossing serves the place where the pedestrian is crossing the roadway. (2) The offense described in this section, failure to use pedestrian tunnel or overhead crossing, is a Class D traffic violation.",
+      "history_citation_blocks": [
+        "1983 c.338 557"
+      ],
+      "history_citations": [
+        {
+          "raw": "1983 c.338 557",
+          "year": 1983,
+          "chapter": "338",
+          "section": "557"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A pedestrian commits the offense of failure to use pedestrian tunnel or overhead crossing if the pedestrian crosses a roadway other than by means of a pedestrian tunnel or overhead pedestrian crossing when a tunnel or overhead crossing serves the place where the pedestrian is crossing the roadway.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The offense described in this section, failure to use pedestrian tunnel or overhead crossing, is a Class D traffic violation.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 6,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html#section-814.070",
+      "identifier": "ORS 814.070",
+      "name": "Section 814.070",
+      "text": "Improper position upon or improperly proceeding along highway; exceptions; penalty. (1) A pedestrian commits the offense of pedestrian with improper position upon or improperly proceeding along a highway if the pedestrian does any of the following: (a) Takes a position upon or proceeds along and upon the roadway where there is an adjacent usable sidewalk or shoulder. (b) Does not take a position upon or proceed along and upon the shoulder, as far as practicable from the roadway edge, on a highway that has an adjacent shoulder area on one or both sides. (c) Except in the case of the divided highway, does not take a position upon or proceed along and upon the left shoulder and as far as practicable from the roadway edge on a two-way highway that has no sidewalk and that does have an adjacent shoulder area. This paragraph does not apply to: (A) A hitchhiker who takes a position upon or proceeds along and upon the right shoulder so long as the hitchhiker does so facing the vehicles using the adjacent lane of the roadway; or (B) A member of a group that has adopted that section of highway under the provisions of ORS 366.158 who is obeying the rules of the Department of Transportation for picking up litter or removing noxious weeds on either side of the roadway. (d) Does not take a position upon or proceed along and upon the right highway shoulder, as far as practicable from the roadway edge, on a divided highway that has no sidewalk and does have a shoulder area. This paragraph does not apply to a member of a group that has adopted that section of highway under the provisions of ORS 366.158 who is obeying the rules of the Department of Transportation for picking up litter or removing noxious weeds on either side of the roadway. (e) Fails to take a position upon or proceed along and upon a highway that has neither sidewalk nor shoulder available, as near as practicable to an outside edge of the roadway, and, if the roadway is a two-way roadway, only on the left side of it. (2) This section is subject to the provisions of ORS 814.100. (3) A pedestrian does not commit the offense of pedestrian with improper position upon or improperly proceeding along a highway if the pedestrian: (a) Does not impede traffic or create a traffic hazard; (b) Posts advance warning signs in compliance with standards adopted by the Oregon Transportation Commission under ORS 810.200; (c) Wears high-visibility safety apparel in compliance with standards adopted by the Oregon Transportation Commission under ORS 810.200; and (d) Has a permit or belongs to a group that has a permit issued under ORS 814.072. (4) A pedestrian does not commit the offense of pedestrian with improper position upon or improperly proceeding along a highway when the pedestrian is on a narrow residential roadway if: (a) The pedestrian does not create a traffic hazard; and (b) Signs are posted giving notice that pedestrians may be present upon or along the narrow residential roadway. Signs posted under this paragraph shall be posted at each end of the portion of the narrow residential roadway where pedestrians may be present. (5) The offense described in this section, pedestrian with improper position upon or improperly proceeding along a highway, is a Class D traffic violation.",
+      "history_citation_blocks": [
+        "1983 c.338 558; 1991 c.486 4; 1995 c.383 86; 2008 c.47 1,2; 2009 c.547 2,3; 2011 c.507 3; 2013 c.474 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "1983 c.338 558",
+          "year": 1983,
+          "chapter": "338",
+          "section": "558"
+        },
+        {
+          "raw": "1991 c.486 4",
+          "year": 1991,
+          "chapter": "486",
+          "section": "4"
+        },
+        {
+          "raw": "1995 c.383 86",
+          "year": 1995,
+          "chapter": "383",
+          "section": "86"
+        },
+        {
+          "raw": "2008 c.47 1,2"
+        },
+        {
+          "raw": "2009 c.547 2,3"
+        },
+        {
+          "raw": "2011 c.507 3",
+          "year": 2011,
+          "chapter": "507",
+          "section": "3"
+        },
+        {
+          "raw": "2013 c.474 1",
+          "year": 2013,
+          "chapter": "474",
+          "section": "1"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A pedestrian commits the offense of pedestrian with improper position upon or improperly proceeding along a highway if the pedestrian does any of the following:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Takes a position upon or proceeds along and upon the roadway where there is an adjacent usable sidewalk or shoulder.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Does not take a position upon or proceed along and upon the shoulder, as far as practicable from the roadway edge, on a highway that has an adjacent shoulder area on one or both sides.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Except in the case of the divided highway, does not take a position upon or proceed along and upon the left shoulder and as far as practicable from the roadway edge on a two-way highway that has no sidewalk and that does have an adjacent shoulder area. This paragraph does not apply to:",
+              "subsections": [
+                {
+                  "label": "(A)",
+                  "token": "A",
+                  "kind": "alpha_upper",
+                  "text": "A hitchhiker who takes a position upon or proceeds along and upon the right shoulder so long as the hitchhiker does so facing the vehicles using the adjacent lane of the roadway; or",
+                  "subsections": []
+                },
+                {
+                  "label": "(B)",
+                  "token": "B",
+                  "kind": "alpha_upper",
+                  "text": "A member of a group that has adopted that section of highway under the provisions of ORS 366.158 who is obeying the rules of the Department of Transportation for picking up litter or removing noxious weeds on either side of the roadway.",
+                  "subsections": []
+                }
+              ]
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "Does not take a position upon or proceed along and upon the right highway shoulder, as far as practicable from the roadway edge, on a divided highway that has no sidewalk and does have a shoulder area. This paragraph does not apply to a member of a group that has adopted that section of highway under the provisions of ORS 366.158 who is obeying the rules of the Department of Transportation for picking up litter or removing noxious weeds on either side of the roadway.",
+              "subsections": []
+            },
+            {
+              "label": "(e)",
+              "token": "e",
+              "kind": "alpha_lower",
+              "text": "Fails to take a position upon or proceed along and upon a highway that has neither sidewalk nor shoulder available, as near as practicable to an outside edge of the roadway, and, if the roadway is a two-way roadway, only on the left side of it.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "This section is subject to the provisions of ORS 814.100.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "A pedestrian does not commit the offense of pedestrian with improper position upon or improperly proceeding along a highway if the pedestrian:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Does not impede traffic or create a traffic hazard;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Posts advance warning signs in compliance with standards adopted by the Oregon Transportation Commission under ORS 810.200;",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Wears high-visibility safety apparel in compliance with standards adopted by the Oregon Transportation Commission under ORS 810.200; and",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "Has a permit or belongs to a group that has a permit issued under ORS 814.072.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "A pedestrian does not commit the offense of pedestrian with improper position upon or improperly proceeding along a highway when the pedestrian is on a narrow residential roadway if:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "The pedestrian does not create a traffic hazard; and",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Signs are posted giving notice that pedestrians may be present upon or along the narrow residential roadway. Signs posted under this paragraph shall be posted at each end of the portion of the narrow residential roadway where pedestrians may be present.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "The offense described in this section, pedestrian with improper position upon or improperly proceeding along a highway, is a Class D traffic violation.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 7,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html#section-814.072",
+      "identifier": "ORS 814.072",
+      "name": "Section 814.072",
+      "text": "Issuance of permit to be upon or to proceed along highway. (1) A road authority may issue a permit that authorizes a pedestrian or a group to be positioned upon or to proceed along a highway if the pedestrian or group shows to the satisfaction of the road authority: (a) Proof of liability insurance in an amount of not less than $1 million; and (b) That the pedestrian or group will meet the public safety requirements adopted by the Department of Transportation by rule. (2) Upon issuance of a permit, the permit holder shall provide a copy of the permit to any applicable local jurisdiction. [2008 c.47 5] Note:",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A road authority may issue a permit that authorizes a pedestrian or a group to be positioned upon or to proceed along a highway if the pedestrian or group shows to the satisfaction of the road authority:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Proof of liability insurance in an amount of not less than $1 million; and",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "That the pedestrian or group will meet the public safety requirements adopted by the Department of Transportation by rule.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Upon issuance of a permit, the permit holder shall provide a copy of the permit to any applicable local jurisdiction. [2008 c.47 5] Note:",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 8,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html#section-814.080",
+      "identifier": "ORS 814.080",
+      "name": "Section 814.080",
+      "text": "Unlawful hitchhiking; penalty. (1) A person commits the offense of unlawful hitchhiking if the person is on a roadway for the purpose of soliciting a ride. (2) The offense described in this section, unlawful hitchhiking, is a Class D traffic violation.",
+      "history_citation_blocks": [
+        "1983 c.338 559; 1995 c.383 87"
+      ],
+      "history_citations": [
+        {
+          "raw": "1983 c.338 559",
+          "year": 1983,
+          "chapter": "338",
+          "section": "559"
+        },
+        {
+          "raw": "1995 c.383 87",
+          "year": 1995,
+          "chapter": "383",
+          "section": "87"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A person commits the offense of unlawful hitchhiking if the person is on a roadway for the purpose of soliciting a ride.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The offense described in this section, unlawful hitchhiking, is a Class D traffic violation.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 9,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html#section-814.090",
+      "identifier": "ORS 814.090",
+      "name": "Section 814.090",
+      "text": "",
+      "history_citation_blocks": [
+        "1983 c.338 560; 1995 c.383 88; 1999 c.932 1; repealed by 2005 c.63 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "1983 c.338 560",
+          "year": 1983,
+          "chapter": "338",
+          "section": "560"
+        },
+        {
+          "raw": "1995 c.383 88",
+          "year": 1995,
+          "chapter": "383",
+          "section": "88"
+        },
+        {
+          "raw": "1999 c.932 1",
+          "year": 1999,
+          "chapter": "932",
+          "section": "1"
+        },
+        {
+          "raw": "repealed by 2005 c.63 1"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 10,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html#section-814.092",
+      "identifier": "ORS 814.092",
+      "name": "Section 814.092",
+      "text": "[1999 c.932 2; repealed by 2005 c.63 1] (Miscellaneous Rights)",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 11,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html#section-814.100",
+      "identifier": "ORS 814.100",
+      "name": "Section 814.100",
+      "text": "Rights of driver and passengers of disabled vehicle on freeway. On a freeway on which pedestrian traffic is prohibited, the driver and passengers of a disabled vehicle stopped on the freeway may walk to the nearest exit, in either direction, on that side of the freeway upon which the vehicle is disabled, from which telephone or motor vehicle repair services are available.",
+      "history_citation_blocks": [
+        "1983 c.338 561"
+      ],
+      "history_citations": [
+        {
+          "raw": "1983 c.338 561",
+          "year": 1983,
+          "chapter": "338",
+          "section": "561"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 12,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html#section-814.110",
+      "identifier": "ORS 814.110",
+      "name": "Section 814.110",
+      "text": "Rights for persons who are blind, who are deaf-blind or who have limited vision. (1) The following definitions apply to this section and to ORS 811.035 and",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The following definitions apply to this section and to ORS 811.035 and",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 13,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html#section-814.120",
+      "identifier": "ORS 814.120",
+      "name": ":",
+      "text": "(a) Blind means visual acuity that does not exceed 20/200 in the better eye with corrective lenses, or having a visual field of 20 degrees or less. (b) Dog guide means a dog that is wearing a dog guide harness and is trained to lead or guide a person who is blind. (c) Limited vision means visual acuity that does not exceed 20/70 and is no worse than 20/200 in the better eye with corrective lenses. (d) White cane means a cane or walking stick that is white in color or white with a red tip. (2) This section and ORS 811.035 and 814.120 grant and enforce the following rights for pedestrians who are blind or deaf-blind: (a) A person who has limited vision and a person who is blind or deaf-blind may carry and use a white cane on the highways and other public places of this state for the purposes of identification and mobility. (b) A person who has limited vision and a person who is deaf-blind may use a white cane marked by a six-inch-wide chartreuse-colored strip at the tip end. (3) A pedestrian who has limited vision and a pedestrian who is blind or deaf-blind and who is not carrying a white cane or not accompanied by a dog guide has all the rights and privileges granted by law to all pedestrians.",
+      "history_citation_blocks": [
+        "1985 c.16 284; 2007 c.70 344; 2017 c.175 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "1985 c.16 284",
+          "year": 1985,
+          "chapter": "16",
+          "section": "284"
+        },
+        {
+          "raw": "2007 c.70 344",
+          "year": 2007,
+          "chapter": "70",
+          "section": "344"
+        },
+        {
+          "raw": "2017 c.175 1",
+          "year": 2017,
+          "chapter": "175",
+          "section": "1"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(a)",
+          "token": "a",
+          "kind": "alpha_lower",
+          "text": "Blind means visual acuity that does not exceed 20/200 in the better eye with corrective lenses, or having a visual field of 20 degrees or less.",
+          "subsections": []
+        },
+        {
+          "label": "(b)",
+          "token": "b",
+          "kind": "alpha_lower",
+          "text": "Dog guide means a dog that is wearing a dog guide harness and is trained to lead or guide a person who is blind.",
+          "subsections": []
+        },
+        {
+          "label": "(c)",
+          "token": "c",
+          "kind": "alpha_lower",
+          "text": "Limited vision means visual acuity that does not exceed 20/70 and is no worse than 20/200 in the better eye with corrective lenses.",
+          "subsections": []
+        },
+        {
+          "label": "(d)",
+          "token": "d",
+          "kind": "alpha_lower",
+          "text": "White cane means a cane or walking stick that is white in color or white with a red tip.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "This section and ORS 811.035 and 814.120 grant and enforce the following rights for pedestrians who are blind or deaf-blind:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "A person who has limited vision and a person who is blind or deaf-blind may carry and use a white cane on the highways and other public places of this state for the purposes of identification and mobility.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "A person who has limited vision and a person who is deaf-blind may use a white cane marked by a six-inch-wide chartreuse-colored strip at the tip end.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "A pedestrian who has limited vision and a pedestrian who is blind or deaf-blind and who is not carrying a white cane or not accompanied by a dog guide has all the rights and privileges granted by law to all pedestrians.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 14,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html#section-814.130",
+      "identifier": "ORS 814.130",
+      "name": "Section 814.130",
+      "text": "Passenger obstruction of driver; penalty. (1) A person commits the offense of passenger obstruction of a driver if the person is a passenger in a vehicle and the person rides in a position that interferes with all of the operators views to the rear, through one or more mirrors and otherwise, or that interferes with the operators view to the front or sides or the operators control of the driving mechanism. (2) The offense described in this section, passenger obstruction of driver, is a Class C traffic violation. [1983 c.338 605] LIVESTOCK",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A person commits the offense of passenger obstruction of a driver if the person is a passenger in a vehicle and the person rides in a position that interferes with all of the operators views to the rear, through one or more mirrors and otherwise, or that interferes with the operators view to the front or sides or the operators control of the driving mechanism.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The offense described in this section, passenger obstruction of driver, is a Class C traffic violation. [1983 c.338 605] LIVESTOCK",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 15,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html#section-814.140",
+      "identifier": "ORS 814.140",
+      "name": "Section 814.140",
+      "text": "Application of vehicle laws to animal on roadway. Every person riding an animal upon a roadway and every person driving or leading any animal is subject to the provisions of the vehicle code concerning vehicle equipment and operation of vehicles except those provisions which by their very nature can have no application.",
+      "history_citation_blocks": [
+        "1983 c.338 665"
+      ],
+      "history_citations": [
+        {
+          "raw": "1983 c.338 665",
+          "year": 1983,
+          "chapter": "338",
+          "section": "665"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 16,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html#section-814.150",
+      "identifier": "ORS 814.150",
+      "name": "Section 814.150",
+      "text": "Failure to perform duties of person in charge of livestock on highway; penalty. (1) A person commits the offense of failure to perform the duties of a person in charge of livestock on a highway if the person fails to do any of the following: (a) When riding or leading a horse or other livestock on the highway, a person must keep a lookout for vehicles and use caution to keep the animal under control. (b) A person in charge of driving a herd of livestock on or across a highway shall position a person at the front of the herd to warn drivers that the herd is approaching. (c) A person in charge of livestock being driven on a highway shall use reasonable care and diligence to open the roadway for vehicular traffic. (d) If a horse or other livestock becomes frightened on a highway, the person riding or leading the livestock shall give a distress signal to an approaching driver by raising the persons hand. (2) This section is only applicable if the livestock is an animal of the species of horses, mules, donkeys, cattle, swine, sheep or goats. (3) The offense described in this section, failure to perform duties of a person in charge of livestock on a highway, is a Class B traffic violation. [1983 c.338 667] MOPEDS AND MOTORCYCLES",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A person commits the offense of failure to perform the duties of a person in charge of livestock on a highway if the person fails to do any of the following:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "When riding or leading a horse or other livestock on the highway, a person must keep a lookout for vehicles and use caution to keep the animal under control.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "A person in charge of driving a herd of livestock on or across a highway shall position a person at the front of the herd to warn drivers that the herd is approaching.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "A person in charge of livestock being driven on a highway shall use reasonable care and diligence to open the roadway for vehicular traffic.",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "If a horse or other livestock becomes frightened on a highway, the person riding or leading the livestock shall give a distress signal to an approaching driver by raising the persons hand.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "This section is only applicable if the livestock is an animal of the species of horses, mules, donkeys, cattle, swine, sheep or goats.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The offense described in this section, failure to perform duties of a person in charge of livestock on a highway, is a Class B traffic violation. [1983 c.338 667] MOPEDS AND MOTORCYCLES",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 17,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html#section-814.200",
+      "identifier": "ORS 814.200",
+      "name": "Section 814.200",
+      "text": "Unlawful operation of motorcycle or moped; penalty. (1) A person operating a moped or motorcycle commits the offense of unlawful moped or motorcycle operation if the person: (a) Fails to sit astride, or to stand astride, the moped or motorcycle seat while facing forward; or (b) Carries a package, bundle or other article that prevents the person from keeping both hands on the handlebars. (2) The offense described in this section, unlawful moped or motorcycle operation, is a Class B traffic violation.",
+      "history_citation_blocks": [
+        "1983 c.338 686; 1987 c.138 6; 2015 c.502 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "1983 c.338 686",
+          "year": 1983,
+          "chapter": "338",
+          "section": "686"
+        },
+        {
+          "raw": "1987 c.138 6",
+          "year": 1987,
+          "chapter": "138",
+          "section": "6"
+        },
+        {
+          "raw": "2015 c.502 1",
+          "year": 2015,
+          "chapter": "502",
+          "section": "1"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A person operating a moped or motorcycle commits the offense of unlawful moped or motorcycle operation if the person:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Fails to sit astride, or to stand astride, the moped or motorcycle seat while facing forward; or",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Carries a package, bundle or other article that prevents the person from keeping both hands on the handlebars.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The offense described in this section, unlawful moped or motorcycle operation, is a Class B traffic violation.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 18,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html#section-814.210",
+      "identifier": "ORS 814.210",
+      "name": "Section 814.210",
+      "text": "Operation of moped on sidewalk or bicycle trail; penalty. (1) A person commits the offense of operation of a moped on a sidewalk or bicycle trail if the person operates a moped upon a sidewalk, a bicycle path or a bicycle lane. (2) Exemptions to this section are provided under ORS 811.440. (3) The offense described in this section, operation of a moped on a sidewalk or bicycle trail, is a Class D traffic violation.",
+      "history_citation_blocks": [
+        "1983 c.338 644"
+      ],
+      "history_citations": [
+        {
+          "raw": "1983 c.338 644",
+          "year": 1983,
+          "chapter": "338",
+          "section": "644"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A person commits the offense of operation of a moped on a sidewalk or bicycle trail if the person operates a moped upon a sidewalk, a bicycle path or a bicycle lane.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Exemptions to this section are provided under ORS 811.440.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The offense described in this section, operation of a moped on a sidewalk or bicycle trail, is a Class D traffic violation.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 19,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html#section-814.220",
+      "identifier": "ORS 814.220",
+      "name": "Section 814.220",
+      "text": "Motorcyclist clinging to another vehicle; penalty. (1) A person commits the offense of motorcyclist clinging to another vehicle if the person is riding upon a motorcycle that is not disabled and being towed and the person attaches a part of the persons self or the motorcycle to any other vehicle on a roadway. (2) The offense described in this section, motorcyclist clinging to another vehicle, is a Class B traffic violation.",
+      "history_citation_blocks": [
+        "1983 c.338 687; 1985 c.16 330; 1995 c.383 90"
+      ],
+      "history_citations": [
+        {
+          "raw": "1983 c.338 687",
+          "year": 1983,
+          "chapter": "338",
+          "section": "687"
+        },
+        {
+          "raw": "1985 c.16 330",
+          "year": 1985,
+          "chapter": "16",
+          "section": "330"
+        },
+        {
+          "raw": "1995 c.383 90",
+          "year": 1995,
+          "chapter": "383",
+          "section": "90"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A person commits the offense of motorcyclist clinging to another vehicle if the person is riding upon a motorcycle that is not disabled and being towed and the person attaches a part of the persons self or the motorcycle to any other vehicle on a roadway.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The offense described in this section, motorcyclist clinging to another vehicle, is a Class B traffic violation.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 20,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html#section-814.230",
+      "identifier": "ORS 814.230",
+      "name": "Section 814.230",
+      "text": "Moped operator or rider clinging to other vehicle; penalty. (1) A person commits the offense of moped operator or rider clinging to another vehicle if the person is riding upon or operating a moped and the person clings to another vehicle upon a roadway or attaches the moped to any other vehicle upon a roadway. (2) The offense described in this section, moped operator or rider clinging to another vehicle, is a Class D traffic violation.",
+      "history_citation_blocks": [
+        "1983 c.338 688"
+      ],
+      "history_citations": [
+        {
+          "raw": "1983 c.338 688",
+          "year": 1983,
+          "chapter": "338",
+          "section": "688"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A person commits the offense of moped operator or rider clinging to another vehicle if the person is riding upon or operating a moped and the person clings to another vehicle upon a roadway or attaches the moped to any other vehicle upon a roadway.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The offense described in this section, moped operator or rider clinging to another vehicle, is a Class D traffic violation.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 21,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html#section-814.240",
+      "identifier": "ORS 814.240",
+      "name": "Section 814.240",
+      "text": "Motorcycle or moped unlawful passing; penalty. (1) A motorcycle operator or moped operator commits the offense of motorcycle or moped unlawful passing in a lane with a vehicle if the operator does any of the following: (a) Overtakes and passes in the same lane occupied by the vehicle the operator is overtaking, unless the vehicle being passed is a motorcycle or a moped. (b) Operates a moped or motorcycle between lanes of traffic or between adjacent lines or rows of vehicles. (2) This section does not apply to a police officer in the performance of official duties. (3) The offense described in this section, motorcycle or moped unlawful passing in a lane with a vehicle, is a Class B traffic violation.",
+      "history_citation_blocks": [
+        "1983 c.338 689"
+      ],
+      "history_citations": [
+        {
+          "raw": "1983 c.338 689",
+          "year": 1983,
+          "chapter": "338",
+          "section": "689"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A motorcycle operator or moped operator commits the offense of motorcycle or moped unlawful passing in a lane with a vehicle if the operator does any of the following:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Overtakes and passes in the same lane occupied by the vehicle the operator is overtaking, unless the vehicle being passed is a motorcycle or a moped.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Operates a moped or motorcycle between lanes of traffic or between adjacent lines or rows of vehicles.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "This section does not apply to a police officer in the performance of official duties.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The offense described in this section, motorcycle or moped unlawful passing in a lane with a vehicle, is a Class B traffic violation.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 22,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html#section-814.250",
+      "identifier": "ORS 814.250",
+      "name": "Section 814.250",
+      "text": "Moped or motorcycle operating more than two abreast; penalty. (1) A person commits the offense of operating a moped or motorcycle more than two abreast if the person is operating a moped or motorcycle on a roadway laned for traffic and the person is riding abreast of more than one other motorcycle or moped in the same lane for traffic. (2) For purposes of this section, a motorcycle does not include an autocycle. (3) The offense described in this section, moped or motorcycle operating more than two abreast, is a Class B traffic violation.",
+      "history_citation_blocks": [
+        "1983 c.338 690; 2017 c.296 3"
+      ],
+      "history_citations": [
+        {
+          "raw": "1983 c.338 690",
+          "year": 1983,
+          "chapter": "338",
+          "section": "690"
+        },
+        {
+          "raw": "2017 c.296 3",
+          "year": 2017,
+          "chapter": "296",
+          "section": "3"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A person commits the offense of operating a moped or motorcycle more than two abreast if the person is operating a moped or motorcycle on a roadway laned for traffic and the person is riding abreast of more than one other motorcycle or moped in the same lane for traffic.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "For purposes of this section, a motorcycle does not include an autocycle.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The offense described in this section, moped or motorcycle operating more than two abreast, is a Class B traffic violation.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 23,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html#section-814.260",
+      "identifier": "ORS 814.260",
+      "name": "Section 814.260",
+      "text": "Failure of moped operator to wear motorcycle helmet; penalty. (1) A person commits the offense of failure of a moped rider to wear a motorcycle helmet if the person: (a) Operates or rides on a moped; and (b) Is not wearing a motorcycle helmet. (2) Exemptions from this section are established under ORS 814.290. (3) This section does not permit passengers on mopeds in violation of ORS 814.330 or 814.340. (4) The offense described in this section, failure of a moped rider to wear a motorcycle helmet, is a Class D traffic violation.",
+      "history_citation_blocks": [
+        "1983 c.338 691; 1985 c.16 331; 1987 c.910 4; 1995 c.492 3"
+      ],
+      "history_citations": [
+        {
+          "raw": "1983 c.338 691",
+          "year": 1983,
+          "chapter": "338",
+          "section": "691"
+        },
+        {
+          "raw": "1985 c.16 331",
+          "year": 1985,
+          "chapter": "16",
+          "section": "331"
+        },
+        {
+          "raw": "1987 c.910 4",
+          "year": 1987,
+          "chapter": "910",
+          "section": "4"
+        },
+        {
+          "raw": "1995 c.492 3",
+          "year": 1995,
+          "chapter": "492",
+          "section": "3"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A person commits the offense of failure of a moped rider to wear a motorcycle helmet if the person:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Operates or rides on a moped; and",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Is not wearing a motorcycle helmet.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Exemptions from this section are established under ORS 814.290.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "This section does not permit passengers on mopeds in violation of ORS 814.330 or 814.340.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "The offense described in this section, failure of a moped rider to wear a motorcycle helmet, is a Class D traffic violation.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 24,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html#section-814.269",
+      "identifier": "ORS 814.269",
+      "name": "Section 814.269",
+      "text": "Failure of motorcycle operator to wear motorcycle helmet; penalty. (1) A person commits the offense of failure of a motorcycle operator to wear a motorcycle helmet if the person operates a motorcycle and is not wearing a motorcycle helmet. (2) Exemptions from this section are established in ORS 814.290. (3) The offense described in this section, failure of a motorcycle operator to wear a motorcycle helmet, is a Class D traffic violation.",
+      "history_citation_blocks": [
+        "1987 c.910 2; 1995 c.492 4"
+      ],
+      "history_citations": [
+        {
+          "raw": "1987 c.910 2",
+          "year": 1987,
+          "chapter": "910",
+          "section": "2"
+        },
+        {
+          "raw": "1995 c.492 4",
+          "year": 1995,
+          "chapter": "492",
+          "section": "4"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A person commits the offense of failure of a motorcycle operator to wear a motorcycle helmet if the person operates a motorcycle and is not wearing a motorcycle helmet.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Exemptions from this section are established in ORS 814.290.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The offense described in this section, failure of a motorcycle operator to wear a motorcycle helmet, is a Class D traffic violation.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 25,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html#section-814.270",
+      "identifier": "ORS 814.270",
+      "name": "Section 814.270",
+      "text": "",
+      "history_citation_blocks": [
+        "1983 c.338 696; 1985 c.16 333; repealed by 1987 c.910 7"
+      ],
+      "history_citations": [
+        {
+          "raw": "1983 c.338 696",
+          "year": 1983,
+          "chapter": "338",
+          "section": "696"
+        },
+        {
+          "raw": "1985 c.16 333",
+          "year": 1985,
+          "chapter": "16",
+          "section": "333"
+        },
+        {
+          "raw": "repealed by 1987 c.910 7"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 26,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html#section-814.275",
+      "identifier": "ORS 814.275",
+      "name": "Section 814.275",
+      "text": "Failure of motorcycle passenger to wear motorcycle helmet; penalty. (1) A person commits the offense of failure of a motorcycle passenger to wear a motorcycle helmet if the person rides as a passenger on a motorcycle and is not wearing a motorcycle helmet. (2) Exemptions from this section are established in ORS 814.290. (3) The offense described in this section, failure of a motorcycle passenger to wear a motorcycle helmet, is a Class D traffic violation.",
+      "history_citation_blocks": [
+        "1987 c.910 3; 1989 c.283 1; 1995 c.492 5"
+      ],
+      "history_citations": [
+        {
+          "raw": "1987 c.910 3",
+          "year": 1987,
+          "chapter": "910",
+          "section": "3"
+        },
+        {
+          "raw": "1989 c.283 1",
+          "year": 1989,
+          "chapter": "283",
+          "section": "1"
+        },
+        {
+          "raw": "1995 c.492 5",
+          "year": 1995,
+          "chapter": "492",
+          "section": "5"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A person commits the offense of failure of a motorcycle passenger to wear a motorcycle helmet if the person rides as a passenger on a motorcycle and is not wearing a motorcycle helmet.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Exemptions from this section are established in ORS 814.290.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The offense described in this section, failure of a motorcycle passenger to wear a motorcycle helmet, is a Class D traffic violation.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 27,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html#section-814.280",
+      "identifier": "ORS 814.280",
+      "name": "Section 814.280",
+      "text": "Endangering motorcycle passenger; penalty. (1) A person commits the offense of endangering a motorcycle passenger if the person is operating a motorcycle and the person carries another person on the motorcycle who is not wearing a motorcycle helmet. (2) Exemptions from this section are established under ORS 814.290. (3) The offense described in this section, endangering a motorcycle passenger, is a Class D traffic violation.",
+      "history_citation_blocks": [
+        "1983 c.338 692; 1987 c.910 5; 1995 c.492 6"
+      ],
+      "history_citations": [
+        {
+          "raw": "1983 c.338 692",
+          "year": 1983,
+          "chapter": "338",
+          "section": "692"
+        },
+        {
+          "raw": "1987 c.910 5",
+          "year": 1987,
+          "chapter": "910",
+          "section": "5"
+        },
+        {
+          "raw": "1995 c.492 6",
+          "year": 1995,
+          "chapter": "492",
+          "section": "6"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A person commits the offense of endangering a motorcycle passenger if the person is operating a motorcycle and the person carries another person on the motorcycle who is not wearing a motorcycle helmet.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Exemptions from this section are established under ORS 814.290.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The offense described in this section, endangering a motorcycle passenger, is a Class D traffic violation.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 28,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html#section-814.290",
+      "identifier": "ORS 814.290",
+      "name": "Section 814.290",
+      "text": "Exemptions from motorcycle helmet requirements. This section establishes exemptions from the requirements and penalties relating to the use of motorcycle helmets under ORS 814.260 to 814.280. A person is not in violation of ORS 814.260, 814.269, 814.275 or 814.280 if the person is any of the following: (1) Within an enclosed cab. (2) Operating or riding a vehicle designed to travel with three wheels in contact with the ground at speeds of less than 15 miles per hour.",
+      "history_citation_blocks": [
+        "1983 c.338 693; 1987 c.910 6; 1995 c.492 7"
+      ],
+      "history_citations": [
+        {
+          "raw": "1983 c.338 693",
+          "year": 1983,
+          "chapter": "338",
+          "section": "693"
+        },
+        {
+          "raw": "1987 c.910 6",
+          "year": 1987,
+          "chapter": "910",
+          "section": "6"
+        },
+        {
+          "raw": "1995 c.492 7",
+          "year": 1995,
+          "chapter": "492",
+          "section": "7"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Within an enclosed cab.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Operating or riding a vehicle designed to travel with three wheels in contact with the ground at speeds of less than 15 miles per hour.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 29,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html#section-814.300",
+      "identifier": "ORS 814.300",
+      "name": "Section 814.300",
+      "text": "",
+      "history_citation_blocks": [
+        "1983 c.338 694; repealed by 1999 c.179 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "1983 c.338 694",
+          "year": 1983,
+          "chapter": "338",
+          "section": "694"
+        },
+        {
+          "raw": "repealed by 1999 c.179 1"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 30,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html#section-814.310",
+      "identifier": "ORS 814.310",
+      "name": "Section 814.310",
+      "text": "Illegal alteration of moped; penalty. (1) A person commits the offense of illegal alteration of a moped if the person alters or modifies in any manner a vehicle registered in this state so that: (a) The displacement of the engine is increased beyond that allowable for a moped under ORS 801.345; or (b) The vehicle is capable of moving, unassisted, at a speed of more than 30 miles per hour on a level road surface. (2) The offense described in this section, illegal alteration of a moped, is a Class C traffic violation.",
+      "history_citation_blocks": [
+        "1983 c.338 285; 1985 c.16 117; 1985 c.401 13"
+      ],
+      "history_citations": [
+        {
+          "raw": "1983 c.338 285",
+          "year": 1983,
+          "chapter": "338",
+          "section": "285"
+        },
+        {
+          "raw": "1985 c.16 117",
+          "year": 1985,
+          "chapter": "16",
+          "section": "117"
+        },
+        {
+          "raw": "1985 c.401 13",
+          "year": 1985,
+          "chapter": "401",
+          "section": "13"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A person commits the offense of illegal alteration of a moped if the person alters or modifies in any manner a vehicle registered in this state so that:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "The displacement of the engine is increased beyond that allowable for a moped under ORS 801.345; or",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "The vehicle is capable of moving, unassisted, at a speed of more than 30 miles per hour on a level road surface.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The offense described in this section, illegal alteration of a moped, is a Class C traffic violation.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 31,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html#section-814.320",
+      "identifier": "ORS 814.320",
+      "name": "Section 814.320",
+      "text": "Failure to display lighted headlights; exceptions; penalty. (1) A person commits the offense of failure to display lighted headlights on a moped or motorcycle at all times, if the person operates a moped or motorcycle and does not display lights and illuminated devices specified under ORS 816.320 and 816.330 at all times the motorcycle or moped is upon a highway. (2) A person may use modulating headlights described under ORS 816.050 during daylight without violating this section, but a person who uses such modulating headlights during limited visibility conditions is in violation of this section. (3) This section does not apply when specific exceptions with respect to parked vehicles are made under ORS 811.525. (4) A court may dismiss, without penalty, any charge for violation of this section if the court determines that: (a) The violation was caused by a malfunction of equipment; and (b) The equipment that malfunctioned and caused the violation has been repaired or replaced. (5) The offense described in this section, failure to display lighted headlights on a moped or motorcycle at all times, is a Class B traffic violation.",
+      "history_citation_blocks": [
+        "1983 c.338 695; 1985 c.16 332"
+      ],
+      "history_citations": [
+        {
+          "raw": "1983 c.338 695",
+          "year": 1983,
+          "chapter": "338",
+          "section": "695"
+        },
+        {
+          "raw": "1985 c.16 332",
+          "year": 1985,
+          "chapter": "16",
+          "section": "332"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A person commits the offense of failure to display lighted headlights on a moped or motorcycle at all times, if the person operates a moped or motorcycle and does not display lights and illuminated devices specified under ORS 816.320 and 816.330 at all times the motorcycle or moped is upon a highway.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "A person may use modulating headlights described under ORS 816.050 during daylight without violating this section, but a person who uses such modulating headlights during limited visibility conditions is in violation of this section.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "This section does not apply when specific exceptions with respect to parked vehicles are made under ORS 811.525.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "A court may dismiss, without penalty, any charge for violation of this section if the court determines that:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "The violation was caused by a malfunction of equipment; and",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "The equipment that malfunctioned and caused the violation has been repaired or replaced.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "The offense described in this section, failure to display lighted headlights on a moped or motorcycle at all times, is a Class B traffic violation.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 32,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html#section-814.325",
+      "identifier": "ORS 814.325",
+      "name": "Section 814.325",
+      "text": "Carrying passenger on motorcycle; penalty. (1) A person commits the offense of unlawfully carrying a passenger on a motorcycle if the person does any of the following: (a) Carries on a motorcycle a person who is not seated on a permanent and regular seat, if the motorcycle is designed to carry more than one person, or upon another seat attached to the motorcycle at the rear or side of the operators seat. (b) Carries a person in a position that interferes with the operation or control of the motorcycle or the operators view. (c) Carries a person, other than in a sidecar or enclosed cab, on a motorcycle with no footrests for that person. (2) The offense described in this section, unlawfully carrying a passenger on a motorcycle, is a Class B traffic violation.",
+      "history_citation_blocks": [
+        "1987 c.138 8"
+      ],
+      "history_citations": [
+        {
+          "raw": "1987 c.138 8",
+          "year": 1987,
+          "chapter": "138",
+          "section": "8"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A person commits the offense of unlawfully carrying a passenger on a motorcycle if the person does any of the following:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Carries on a motorcycle a person who is not seated on a permanent and regular seat, if the motorcycle is designed to carry more than one person, or upon another seat attached to the motorcycle at the rear or side of the operators seat.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Carries a person in a position that interferes with the operation or control of the motorcycle or the operators view.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Carries a person, other than in a sidecar or enclosed cab, on a motorcycle with no footrests for that person.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The offense described in this section, unlawfully carrying a passenger on a motorcycle, is a Class B traffic violation.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 33,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html#section-814.330",
+      "identifier": "ORS 814.330",
+      "name": "Section 814.330",
+      "text": "Carrying passenger on moped; penalty. (1) A person commits the offense of unlawfully carrying a passenger on a moped if the person operates a moped on any highway of this state with a passenger on the moped. (2) The offense described in this section, unlawfully carrying a passenger on a moped, is a Class D traffic violation. [Formerly 487.743]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A person commits the offense of unlawfully carrying a passenger on a moped if the person operates a moped on any highway of this state with a passenger on the moped.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The offense described in this section, unlawfully carrying a passenger on a moped, is a Class D traffic violation. [Formerly 487.743]",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 34,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html#section-814.340",
+      "identifier": "ORS 814.340",
+      "name": "Section 814.340",
+      "text": "Riding as passenger on moped; penalty. (1) A person commits the offense of unlawfully riding as a passenger on a moped if the person rides any moped as a passenger on a highway of this state. (2) The offense described in this section, unlawfully riding as a passenger on a moped, is a Class D traffic violation. [Formerly 487.746] BICYCLES",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A person commits the offense of unlawfully riding as a passenger on a moped if the person rides any moped as a passenger on a highway of this state.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The offense described in this section, unlawfully riding as a passenger on a moped, is a Class D traffic violation. [Formerly 487.746] BICYCLES",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 35,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html#section-814.400",
+      "identifier": "ORS 814.400",
+      "name": "Section 814.400",
+      "text": "Application of vehicle laws to bicycles. (1) Every person riding a bicycle upon a public way is subject to the provisions applicable to and has the same rights and duties as the driver of any other vehicle concerning operating on highways, vehicle equipment and abandoned vehicles, except: (a) Those provisions which by their very nature can have no application. (b) When otherwise specifically provided under the vehicle code. (2) Subject to the provisions of subsection (1) of this section: (a) A bicycle is a vehicle for purposes of the vehicle code; and (b) When the term vehicle is used the term shall be deemed to be applicable to bicycles. (3) The provisions of the vehicle code relating to the operation of bicycles do not relieve a bicyclist or motorist from the duty to exercise due care.",
+      "history_citation_blocks": [
+        "1983 c.338 697; 1985 c.16 335"
+      ],
+      "history_citations": [
+        {
+          "raw": "1983 c.338 697",
+          "year": 1983,
+          "chapter": "338",
+          "section": "697"
+        },
+        {
+          "raw": "1985 c.16 335",
+          "year": 1985,
+          "chapter": "16",
+          "section": "335"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Every person riding a bicycle upon a public way is subject to the provisions applicable to and has the same rights and duties as the driver of any other vehicle concerning operating on highways, vehicle equipment and abandoned vehicles, except: of this section:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Those provisions which by their very nature can have no application. A bicycle is a vehicle for purposes of the vehicle code; and",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "When otherwise specifically provided under the vehicle code. When the term vehicle is used the term shall be deemed to be applicable to bicycles.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Subject to the provisions of subsection",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The provisions of the vehicle code relating to the operation of bicycles do not relieve a bicyclist or motorist from the duty to exercise due care.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 36,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html#section-814.405",
+      "identifier": "ORS 814.405",
+      "name": "Section 814.405",
+      "text": "Status of electric assisted bicycle. An electric assisted bicycle shall be considered a bicycle, rather than a motor vehicle, for purposes of the Oregon Vehicle Code, except when otherwise specifically provided by statute.",
+      "history_citation_blocks": [
+        "1997 c.400 4"
+      ],
+      "history_citations": [
+        {
+          "raw": "1997 c.400 4",
+          "year": 1997,
+          "chapter": "400",
+          "section": "4"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 37,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html#section-814.410",
+      "identifier": "ORS 814.410",
+      "name": "Section 814.410",
+      "text": "Unsafe operation of bicycle on sidewalk; penalty. (1) A person commits the offense of unsafe operation of a bicycle on a sidewalk if the person does any of the following: (a) Operates the bicycle so as to suddenly leave a curb or other place of safety and move into the path of a vehicle that is so close as to constitute an immediate hazard. (b) Operates a bicycle upon a sidewalk and does not give an audible warning before overtaking and passing a pedestrian and does not yield the right of way to all pedestrians on the sidewalk. (c) Operates a bicycle on a sidewalk in a careless manner that endangers or would be likely to endanger any person or property. (d) Operates the bicycle at a speed greater than an ordinary walk when approaching or entering a crosswalk, approaching or crossing a driveway or crossing a curb cut or pedestrian ramp and a motor vehicle is approaching the crosswalk, driveway, curb cut or pedestrian ramp. This paragraph does not require reduced speeds for bicycles at places on sidewalks or other pedestrian ways other than places where the path for pedestrians or bicycle traffic approaches or crosses that for motor vehicle traffic. (e) Operates an electric assisted bicycle on a sidewalk. (2) Except as otherwise specifically provided by law, a bicyclist on a sidewalk or in a crosswalk has the same rights and duties as a pedestrian on a sidewalk or in a crosswalk. (3) The offense described in this section, unsafe operation of a bicycle on a sidewalk, is a Class D traffic violation.",
+      "history_citation_blocks": [
+        "1983 c.338 699; 1985 c.16 337; 1997 c.400 7; 2005 c.316 2"
+      ],
+      "history_citations": [
+        {
+          "raw": "1983 c.338 699",
+          "year": 1983,
+          "chapter": "338",
+          "section": "699"
+        },
+        {
+          "raw": "1985 c.16 337",
+          "year": 1985,
+          "chapter": "16",
+          "section": "337"
+        },
+        {
+          "raw": "1997 c.400 7",
+          "year": 1997,
+          "chapter": "400",
+          "section": "7"
+        },
+        {
+          "raw": "2005 c.316 2",
+          "year": 2005,
+          "chapter": "316",
+          "section": "2"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A person commits the offense of unsafe operation of a bicycle on a sidewalk if the person does any of the following:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Operates the bicycle so as to suddenly leave a curb or other place of safety and move into the path of a vehicle that is so close as to constitute an immediate hazard.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Operates a bicycle upon a sidewalk and does not give an audible warning before overtaking and passing a pedestrian and does not yield the right of way to all pedestrians on the sidewalk.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Operates a bicycle on a sidewalk in a careless manner that endangers or would be likely to endanger any person or property.",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "Operates the bicycle at a speed greater than an ordinary walk when approaching or entering a crosswalk, approaching or crossing a driveway or crossing a curb cut or pedestrian ramp and a motor vehicle is approaching the crosswalk, driveway, curb cut or pedestrian ramp. This paragraph does not require reduced speeds for bicycles at places on sidewalks or other pedestrian ways other than places where the path for pedestrians or bicycle traffic approaches or crosses that for motor vehicle traffic.",
+              "subsections": []
+            },
+            {
+              "label": "(e)",
+              "token": "e",
+              "kind": "alpha_lower",
+              "text": "Operates an electric assisted bicycle on a sidewalk.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Except as otherwise specifically provided by law, a bicyclist on a sidewalk or in a crosswalk has the same rights and duties as a pedestrian on a sidewalk or in a crosswalk.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The offense described in this section, unsafe operation of a bicycle on a sidewalk, is a Class D traffic violation.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 38,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html#section-814.414",
+      "identifier": "ORS 814.414",
+      "name": "Section 814.414",
+      "text": "Improper entry into intersection controlled by stop sign; penalty. (1) A person operating a bicycle who is approaching an intersection where traffic is controlled by a stop sign may, without violating ORS 811.265, do any of the following without stopping if the person slows the bicycle to a safe speed: (a) Proceed through the intersection. (b) Make a right or left turn into a two-way street. (c) Make a right or left turn into a one-way street in the direction of traffic upon the one-way street. (2) A person commits the offense of improper entry into an intersection where traffic is controlled by a stop sign if the person does any of the following while proceeding as described in subsection (1) of this section: (a) Fails to yield the right of way to traffic lawfully within the intersection or approaching so close as to constitute an immediate hazard; (b) Disobeys the directions of a police officer or flagger, as defined in ORS 811.230; (c) Fails to exercise care to avoid an accident; or (d) Fails to yield the right of way to a pedestrian in an intersection or crosswalk under ORS 811.028. (3) The offense described in this section, improper entry into an intersection where traffic is controlled by a stop sign, is a Class D traffic violation.",
+      "history_citation_blocks": [
+        "2019 c.683 2"
+      ],
+      "history_citations": [
+        {
+          "raw": "2019 c.683 2",
+          "year": 2019,
+          "chapter": "683",
+          "section": "2"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A person operating a bicycle who is approaching an intersection where traffic is controlled by a stop sign may, without violating ORS 811.265, do any of the following without stopping if the person slows the bicycle to a safe speed: of this section:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Proceed through the intersection. Fails to yield the right of way to traffic lawfully within the intersection or approaching so close as to constitute an immediate hazard;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Make a right or left turn into a two-way street. Disobeys the directions of a police officer or flagger, as defined in ORS 811.230;",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Make a right or left turn into a one-way street in the direction of traffic upon the one-way street. Fails to exercise care to avoid an accident; or",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "Fails to yield the right of way to a pedestrian in an intersection or crosswalk under ORS 811.028.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "A person commits the offense of improper entry into an intersection where traffic is controlled by a stop sign if the person does any of the following while proceeding as described in subsection",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The offense described in this section, improper entry into an intersection where traffic is controlled by a stop sign, is a Class D traffic violation.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 39,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html#section-814.416",
+      "identifier": "ORS 814.416",
+      "name": "Section 814.416",
+      "text": "Improper entry into intersection controlled by flashing red signal; penalty. (1) A person operating a bicycle who is approaching an intersection where traffic is controlled by a flashing red signal may, without violating ORS 811.265, do any of the following without stopping if the person slows the bicycle to a safe speed: (a) Proceed through the intersection. (b) Make a right or left turn into a two-way street. (c) Make a right or left turn into a one-way street in the direction of traffic upon the one-way street. (2) A person commits the offense of improper entry into an intersection where traffic is controlled by a flashing red signal if the person does any of the following while proceeding as described in subsection (1) of this section: (a) Fails to yield the right of way to traffic lawfully within the intersection or approaching so close as to constitute an immediate hazard; (b) Disobeys the directions of a police officer; (c) Fails to exercise care to avoid an accident; or (d) Fails to yield the right of way to a pedestrian in an intersection or crosswalk under ORS 811.028. (3) The offense described in this section, improper entry into an intersection where traffic is controlled by a flashing red signal, is a Class D traffic violation.",
+      "history_citation_blocks": [
+        "2019 c.683 3"
+      ],
+      "history_citations": [
+        {
+          "raw": "2019 c.683 3",
+          "year": 2019,
+          "chapter": "683",
+          "section": "3"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A person operating a bicycle who is approaching an intersection where traffic is controlled by a flashing red signal may, without violating ORS 811.265, do any of the following without stopping if the person slows the bicycle to a safe speed: of this section:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Proceed through the intersection. Fails to yield the right of way to traffic lawfully within the intersection or approaching so close as to constitute an immediate hazard;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Make a right or left turn into a two-way street. Disobeys the directions of a police officer;",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Make a right or left turn into a one-way street in the direction of traffic upon the one-way street. Fails to exercise care to avoid an accident; or",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "Fails to yield the right of way to a pedestrian in an intersection or crosswalk under ORS 811.028.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "A person commits the offense of improper entry into an intersection where traffic is controlled by a flashing red signal if the person does any of the following while proceeding as described in subsection",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The offense described in this section, improper entry into an intersection where traffic is controlled by a flashing red signal, is a Class D traffic violation.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 40,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html#section-814.420",
+      "identifier": "ORS 814.420",
+      "name": "Section 814.420",
+      "text": "Failure to use bicycle lane or path; exceptions; penalty. (1) Except as provided in subsections (2) and (3) of this section, a person commits the offense of failure to use a bicycle lane or path if the person operates a bicycle on any portion of a roadway that is not a bicycle lane or bicycle path when a bicycle lane or bicycle path is adjacent to or near the roadway. (2) A person is not required to comply with this section unless the state or local authority with jurisdiction over the roadway finds, after public hearing, that the bicycle lane or bicycle path is suitable for safe bicycle use at reasonable rates of speed. (3) A person is not in violation of the offense under this section if the person is able to safely move out of the bicycle lane or path for the purpose of: (a) Overtaking and passing another bicycle, a vehicle or a pedestrian that is in the bicycle lane or path and passage cannot safely be made in the lane or path. (b) Preparing to execute a left turn at an intersection or into a private road or driveway. (c) Avoiding debris or other hazardous conditions. (d) Preparing to execute a right turn where a right turn is authorized. (e) Continuing straight at an intersection where the bicycle lane or path is to the right of a lane from which a motor vehicle must turn right. (4) The offense described in this section, failure to use a bicycle lane or path, is a Class D traffic violation.",
+      "history_citation_blocks": [
+        "1983 c.338 700; 1985 c.16 338; 2005 c.316 3"
+      ],
+      "history_citations": [
+        {
+          "raw": "1983 c.338 700",
+          "year": 1983,
+          "chapter": "338",
+          "section": "700"
+        },
+        {
+          "raw": "1985 c.16 338",
+          "year": 1985,
+          "chapter": "16",
+          "section": "338"
+        },
+        {
+          "raw": "2005 c.316 3",
+          "year": 2005,
+          "chapter": "316",
+          "section": "3"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Except as provided in subsections",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "and A person is not required to comply with this section unless the state or local authority with jurisdiction over the roadway finds, after public hearing, that the bicycle lane or bicycle path is suitable for safe bicycle use at reasonable rates of speed.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "of this section, a person commits the offense of failure to use a bicycle lane or path if the person operates a bicycle on any portion of a roadway that is not a bicycle lane or bicycle path when a bicycle lane or bicycle path is adjacent to or near the roadway. A person is not in violation of the offense under this section if the person is able to safely move out of the bicycle lane or path for the purpose of:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Overtaking and passing another bicycle, a vehicle or a pedestrian that is in the bicycle lane or path and passage cannot safely be made in the lane or path.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Preparing to execute a left turn at an intersection or into a private road or driveway.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Avoiding debris or other hazardous conditions.",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "Preparing to execute a right turn where a right turn is authorized.",
+              "subsections": []
+            },
+            {
+              "label": "(e)",
+              "token": "e",
+              "kind": "alpha_lower",
+              "text": "Continuing straight at an intersection where the bicycle lane or path is to the right of a lane from which a motor vehicle must turn right.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "The offense described in this section, failure to use a bicycle lane or path, is a Class D traffic violation.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 41,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html#section-814.430",
+      "identifier": "ORS 814.430",
+      "name": "Section 814.430",
+      "text": "Improper use of lanes; exceptions; penalty. (1) A person commits the offense of improper use of lanes by a bicycle if the person is operating a bicycle on a roadway at less than the normal speed of traffic using the roadway at that time and place under the existing conditions and the person does not ride as close as practicable to the right curb or edge of the roadway. (2) A person is not in violation of the offense under this section if the person is not operating a bicycle as close as practicable to the right curb or edge of the roadway under any of the following circumstances: (a) When overtaking and passing another bicycle or vehicle that is proceeding in the same direction. (b) When preparing to execute a left turn. (c) When reasonably necessary to avoid hazardous conditions including, but not limited to, fixed or moving objects, parked or moving vehicles, bicycles, pedestrians, animals, surface hazards or other conditions that make continued operation along the right curb or edge unsafe or to avoid unsafe operation in a lane on the roadway that is too narrow for a bicycle and vehicle to travel safely side by side. Nothing in this paragraph excuses the operator of a bicycle from the requirements under ORS 811.425 or from the penalties for failure to comply with those requirements. (d) When operating within a city as near as practicable to the left curb or edge of a roadway that is designated to allow traffic to move in only one direction along the roadway. A bicycle that is operated under this paragraph is subject to the same requirements and exceptions when operating along the left curb or edge as are applicable when a bicycle is operating along the right curb or edge of the roadway. (e) When operating a bicycle alongside not more than one other bicycle as long as the bicycles are both being operated within a single lane and in a manner that does not impede the normal and reasonable movement of traffic. (f) When operating on a bicycle lane or bicycle path. (3) The offense described in this section, improper use of lanes by a bicycle, is a Class D traffic violation.",
+      "history_citation_blocks": [
+        "1983 c.338 701; 1985 c.16 339"
+      ],
+      "history_citations": [
+        {
+          "raw": "1983 c.338 701",
+          "year": 1983,
+          "chapter": "338",
+          "section": "701"
+        },
+        {
+          "raw": "1985 c.16 339",
+          "year": 1985,
+          "chapter": "16",
+          "section": "339"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A person commits the offense of improper use of lanes by a bicycle if the person is operating a bicycle on a roadway at less than the normal speed of traffic using the roadway at that time and place under the existing conditions and the person does not ride as close as practicable to the right curb or edge of the roadway.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "A person is not in violation of the offense under this section if the person is not operating a bicycle as close as practicable to the right curb or edge of the roadway under any of the following circumstances:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "When overtaking and passing another bicycle or vehicle that is proceeding in the same direction.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "When preparing to execute a left turn.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "When reasonably necessary to avoid hazardous conditions including, but not limited to, fixed or moving objects, parked or moving vehicles, bicycles, pedestrians, animals, surface hazards or other conditions that make continued operation along the right curb or edge unsafe or to avoid unsafe operation in a lane on the roadway that is too narrow for a bicycle and vehicle to travel safely side by side. Nothing in this paragraph excuses the operator of a bicycle from the requirements under ORS 811.425 or from the penalties for failure to comply with those requirements.",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "When operating within a city as near as practicable to the left curb or edge of a roadway that is designated to allow traffic to move in only one direction along the roadway. A bicycle that is operated under this paragraph is subject to the same requirements and exceptions when operating along the left curb or edge as are applicable when a bicycle is operating along the right curb or edge of the roadway.",
+              "subsections": []
+            },
+            {
+              "label": "(e)",
+              "token": "e",
+              "kind": "alpha_lower",
+              "text": "When operating a bicycle alongside not more than one other bicycle as long as the bicycles are both being operated within a single lane and in a manner that does not impede the normal and reasonable movement of traffic.",
+              "subsections": []
+            },
+            {
+              "label": "(f)",
+              "token": "f",
+              "kind": "alpha_lower",
+              "text": "When operating on a bicycle lane or bicycle path.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The offense described in this section, improper use of lanes by a bicycle, is a Class D traffic violation.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 42,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html#section-814.440",
+      "identifier": "ORS 814.440",
+      "name": "Section 814.440",
+      "text": "Failure to signal turn; exceptions; penalty. (1) A person commits the offense of failure to signal for a bicycle turn if the person does any of the following: (a) Stops a bicycle the person is operating without giving the appropriate hand and arm signal continuously for at least 100 feet before executing the stop. (b) Executes a turn on a bicycle the person is operating without giving the appropriate hand and arm signal for the turn for at least 100 feet before executing the turn. (c) Executes a turn on a bicycle the person is operating after having been stopped without giving, while stopped, the appropriate hand and arm signal for the turn. (2) A person is not in violation of the offense under this section if the person is operating a bicycle and does not give the appropriate signal continuously for a stop or turn because circumstances require that both hands be used to safely control or operate the bicycle. (3) The appropriate hand and arm signals for indicating turns and stops under this section are those provided for other vehicles under ORS 811.395 and 811.400. (4) The offense described under this section, failure to signal for a bicycle turn, is a Class D traffic violation.",
+      "history_citation_blocks": [
+        "1983 c.338 703; 1985 c.16 341"
+      ],
+      "history_citations": [
+        {
+          "raw": "1983 c.338 703",
+          "year": 1983,
+          "chapter": "338",
+          "section": "703"
+        },
+        {
+          "raw": "1985 c.16 341",
+          "year": 1985,
+          "chapter": "16",
+          "section": "341"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A person commits the offense of failure to signal for a bicycle turn if the person does any of the following:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Stops a bicycle the person is operating without giving the appropriate hand and arm signal continuously for at least 100 feet before executing the stop.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Executes a turn on a bicycle the person is operating without giving the appropriate hand and arm signal for the turn for at least 100 feet before executing the turn.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Executes a turn on a bicycle the person is operating after having been stopped without giving, while stopped, the appropriate hand and arm signal for the turn.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "A person is not in violation of the offense under this section if the person is operating a bicycle and does not give the appropriate signal continuously for a stop or turn because circumstances require that both hands be used to safely control or operate the bicycle.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The appropriate hand and arm signals for indicating turns and stops under this section are those provided for other vehicles under ORS 811.395 and 811.400.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "The offense described under this section, failure to signal for a bicycle turn, is a Class D traffic violation.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 43,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html#section-814.450",
+      "identifier": "ORS 814.450",
+      "name": "Section 814.450",
+      "text": "Unlawful load on bicycle; penalty. (1) A person commits the offense of having an unlawful load on a bicycle if the person is operating a bicycle and the person carries a package, bundle or article which prevents the person from keeping at least one hand upon the handlebar and having full control at all times. (2) The offense described in this section, unlawful load on a bicycle, is a Class D traffic violation.",
+      "history_citation_blocks": [
+        "1983 c.338 704"
+      ],
+      "history_citations": [
+        {
+          "raw": "1983 c.338 704",
+          "year": 1983,
+          "chapter": "338",
+          "section": "704"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A person commits the offense of having an unlawful load on a bicycle if the person is operating a bicycle and the person carries a package, bundle or article which prevents the person from keeping at least one hand upon the handlebar and having full control at all times.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The offense described in this section, unlawful load on a bicycle, is a Class D traffic violation.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 44,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html#section-814.460",
+      "identifier": "ORS 814.460",
+      "name": "Section 814.460",
+      "text": "Unlawful passengers on bicycle; penalty. (1) A person commits the offense of unlawful passengers on a bicycle if the person operates a bicycle and carries more persons on the bicycle than the number for which it is designed or safely equipped. (2) The offense described in this section, unlawful passengers on a bicycle, is a Class D traffic violation.",
+      "history_citation_blocks": [
+        "1983 c.338 705"
+      ],
+      "history_citations": [
+        {
+          "raw": "1983 c.338 705",
+          "year": 1983,
+          "chapter": "338",
+          "section": "705"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A person commits the offense of unlawful passengers on a bicycle if the person operates a bicycle and carries more persons on the bicycle than the number for which it is designed or safely equipped.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The offense described in this section, unlawful passengers on a bicycle, is a Class D traffic violation.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 45,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html#section-814.470",
+      "identifier": "ORS 814.470",
+      "name": "Section 814.470",
+      "text": "Failure to use bicycle seat; penalty. (1) A person commits the offense of failure to use a bicycle seat if the person is operating a bicycle and the person rides other than upon or astride a permanent and regular seat attached to the bicycle. (2) The offense described in this section, failure to use a bicycle seat, is a Class D traffic violation.",
+      "history_citation_blocks": [
+        "1983 c.338 706; 2003 c.341 13; 2015 c.138 26"
+      ],
+      "history_citations": [
+        {
+          "raw": "1983 c.338 706",
+          "year": 1983,
+          "chapter": "338",
+          "section": "706"
+        },
+        {
+          "raw": "2003 c.341 13",
+          "year": 2003,
+          "chapter": "341",
+          "section": "13"
+        },
+        {
+          "raw": "2015 c.138 26",
+          "year": 2015,
+          "chapter": "138",
+          "section": "26"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A person commits the offense of failure to use a bicycle seat if the person is operating a bicycle and the person rides other than upon or astride a permanent and regular seat attached to the bicycle.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The offense described in this section, failure to use a bicycle seat, is a Class D traffic violation.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 46,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html#section-814.480",
+      "identifier": "ORS 814.480",
+      "name": "Section 814.480",
+      "text": "Nonmotorized vehicle clinging to another vehicle; penalty. (1) A person commits the offense of nonmotorized vehicle clinging to another vehicle if the person is riding upon or operating a bicycle, coaster, roller skates, sled or toy vehicle and the person clings to another vehicle upon a roadway or attaches that which the person is riding or operating to any other vehicle upon a roadway. (2) The offense described in this section, nonmotorized vehicle clinging to another vehicle, is a Class D traffic violation.",
+      "history_citation_blocks": [
+        "1983 c.338 707"
+      ],
+      "history_citations": [
+        {
+          "raw": "1983 c.338 707",
+          "year": 1983,
+          "chapter": "338",
+          "section": "707"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A person commits the offense of nonmotorized vehicle clinging to another vehicle if the person is riding upon or operating a bicycle, coaster, roller skates, sled or toy vehicle and the person clings to another vehicle upon a roadway or attaches that which the person is riding or operating to any other vehicle upon a roadway.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The offense described in this section, nonmotorized vehicle clinging to another vehicle, is a Class D traffic violation.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 47,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html#section-814.484",
+      "identifier": "ORS 814.484",
+      "name": "Section 814.484",
+      "text": "Meaning of bicycle and operating or riding on a highway. (1) For purposes of ORS 814.485, 814.486, 815.052 and 815.281, bicycle has the meaning given in ORS 801.150 except that: (a) It also includes vehicles that meet the criteria specified in ORS 801.150 (1) to (4) but that have wheels that are 14 inches or less in diameter. (b) It does not include tricycles designed to be ridden by children. (2) For purposes of the offenses defined in ORS 814.485, 814.486 and 815.281 (2), a person shall not be considered to be operating or riding on a bicycle on a highway or on premises open to the public if the person is operating or riding on a three-wheeled nonmotorized vehicle on a beach while it is closed to motor vehicle traffic.",
+      "history_citation_blocks": [
+        "1993 c.408 3a,3b; 2015 c.138 28"
+      ],
+      "history_citations": [
+        {
+          "raw": "1993 c.408 3a,3b"
+        },
+        {
+          "raw": "2015 c.138 28",
+          "year": 2015,
+          "chapter": "138",
+          "section": "28"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "For purposes of ORS 814.485, 814.486, 815.052 and 815.281, bicycle has the meaning given in ORS 801.150 except that: to",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "It also includes vehicles that meet the criteria specified in ORS 801.150",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "but that have wheels that are 14 inches or less in diameter.",
+          "subsections": [
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "It does not include tricycles designed to be ridden by children.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "For purposes of the offenses defined in ORS 814.485, 814.486 and 815.281 , a person shall not be considered to be operating or riding on a bicycle on a highway or on premises open to the public if the person is operating or riding on a three-wheeled nonmotorized vehicle on a beach while it is closed to motor vehicle traffic.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 48,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html#section-814.485",
+      "identifier": "ORS 814.485",
+      "name": "Section 814.485",
+      "text": "Failure to wear protective headgear; penalty. (1) A person commits the offense of failure of a bicycle operator or rider to wear protective headgear if the person is under 16 years of age, operates or rides on a bicycle on a highway or on premises open to the public and is not wearing protective headgear of a type approved under ORS 815.052. (2) Exemptions from this section are as provided in ORS 814.487. (3) The offense described in this section, failure of a bicycle operator or rider to wear protective headgear, is a specific fine traffic violation. The presumptive fine for failure of a bicycle operator or rider to wear protective headgear is $25.",
+      "history_citation_blocks": [
+        "1993 c.408 2; 1995 c.581 1; 2011 c.597 103"
+      ],
+      "history_citations": [
+        {
+          "raw": "1993 c.408 2",
+          "year": 1993,
+          "chapter": "408",
+          "section": "2"
+        },
+        {
+          "raw": "1995 c.581 1",
+          "year": 1995,
+          "chapter": "581",
+          "section": "1"
+        },
+        {
+          "raw": "2011 c.597 103",
+          "year": 2011,
+          "chapter": "597",
+          "section": "103"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A person commits the offense of failure of a bicycle operator or rider to wear protective headgear if the person is under 16 years of age, operates or rides on a bicycle on a highway or on premises open to the public and is not wearing protective headgear of a type approved under ORS 815.052.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Exemptions from this section are as provided in ORS 814.487.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The offense described in this section, failure of a bicycle operator or rider to wear protective headgear, is a specific fine traffic violation. The presumptive fine for failure of a bicycle operator or rider to wear protective headgear is $25.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 49,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html#section-814.486",
+      "identifier": "ORS 814.486",
+      "name": "Section 814.486",
+      "text": "Endangering bicycle operator or passenger; penalty. (1) A person commits the offense of endangering a bicycle operator or passenger if: (a) The person is operating a bicycle on a highway or on premises open to the public and the person carries another person on the bicycle who is under 16 years of age and is not wearing protective headgear of a type approved under ORS 815.052; or (b) The person is the parent, legal guardian or person with legal responsibility for the safety and welfare of a child under 16 years of age and the child operates or rides on a bicycle on a highway or on premises open to the public without wearing protective headgear of a type approved under ORS 815.052. (2) Exemptions from this section are as provided in ORS 814.487. (3) The offense described in this section, endangering a bicycle operator or passenger, is a specific fine traffic violation. The presumptive fine for endangering a bicycle operator or passenger is $25.",
+      "history_citation_blocks": [
+        "1993 c.408 3; 1995 c.581 2; 2011 c.597 104"
+      ],
+      "history_citations": [
+        {
+          "raw": "1993 c.408 3",
+          "year": 1993,
+          "chapter": "408",
+          "section": "3"
+        },
+        {
+          "raw": "1995 c.581 2",
+          "year": 1995,
+          "chapter": "581",
+          "section": "2"
+        },
+        {
+          "raw": "2011 c.597 104",
+          "year": 2011,
+          "chapter": "597",
+          "section": "104"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A person commits the offense of endangering a bicycle operator or passenger if:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "The person is operating a bicycle on a highway or on premises open to the public and the person carries another person on the bicycle who is under 16 years of age and is not wearing protective headgear of a type approved under ORS 815.052; or",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "The person is the parent, legal guardian or person with legal responsibility for the safety and welfare of a child under 16 years of age and the child operates or rides on a bicycle on a highway or on premises open to the public without wearing protective headgear of a type approved under ORS 815.052.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Exemptions from this section are as provided in ORS 814.487.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The offense described in this section, endangering a bicycle operator or passenger, is a specific fine traffic violation. The presumptive fine for endangering a bicycle operator or passenger is $25.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 50,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html#section-814.487",
+      "identifier": "ORS 814.487",
+      "name": "Section 814.487",
+      "text": "Exemptions from protective headgear requirements. A person is exempt from the requirements under ORS 814.485 and 814.486 to wear protective headgear, if wearing the headgear would violate a religious belief or practice of the person.",
+      "history_citation_blocks": [
+        "1995 c.581 4"
+      ],
+      "history_citations": [
+        {
+          "raw": "1995 c.581 4",
+          "year": 1995,
+          "chapter": "581",
+          "section": "4"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 51,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html#section-814.488",
+      "identifier": "ORS 814.488",
+      "name": "Section 814.488",
+      "text": "Citations; exemption from requirement to pay fine. (1) If a child in violation of ORS 814.485 is 11 years of age or younger, any citation issued shall be issued to the parent, legal guardian or person with legal responsibility for the safety and welfare of the child for violation of ORS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "If a child in violation of ORS 814.485 is 11 years of age or younger, any citation issued shall be issued to the parent, legal guardian or person with legal responsibility for the safety and welfare of the child for violation of ORS",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 52,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html#section-814.489",
+      "identifier": "ORS 814.489",
+      "name": "Section 814.489",
+      "text": "Use of evidence of lack of protective headgear on bicyclist. Evidence of violation of ORS 814.485 or 814.486 and evidence of lack of protective headgear shall not be admissible, applicable or effective to reduce the amount of damages or to constitute a defense to an action for damages brought by or on behalf of an injured bicyclist or bicycle passenger or the survivors of a deceased bicyclist or passenger if the bicyclist or passenger was injured or killed as a result in whole or in part of the fault of another. [1993 c.408 8] MOTORIZED WHEELCHAIRS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 53,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html#section-814.500",
+      "identifier": "ORS 814.500",
+      "name": "Section 814.500",
+      "text": "Rights and duties of person riding motorized wheelchair on bicycle lane or path. Every person riding a motorized wheelchair on a bicycle lane or path is subject to the provisions applicable to and has the same rights and duties as the driver of a bicycle when operating on a bicycle lane or path, except: (1) When those provisions which by their very nature can have no application. (2) When otherwise specifically provided under the vehicle code. [1991 c.417 3] MOTOR ASSISTED SCOOTERS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "When those provisions which by their very nature can have no application.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "When otherwise specifically provided under the vehicle code. [1991 c.417 3] MOTOR ASSISTED SCOOTERS",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 54,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html#section-814.510",
+      "identifier": "ORS 814.510",
+      "name": "Section 814.510",
+      "text": "Application of vehicle laws to motor assisted scooters. An operator of a motor assisted scooter upon a public way is subject to the provisions applicable to, and has the same rights and duties as the operator of, any other vehicle operating on highways except: (1) Those provisions that by their very nature can have no application. (2) When otherwise specifically provided under the vehicle code.",
+      "history_citation_blocks": [
+        "2001 c.749 4"
+      ],
+      "history_citations": [
+        {
+          "raw": "2001 c.749 4",
+          "year": 2001,
+          "chapter": "749",
+          "section": "4"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Those provisions that by their very nature can have no application.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "When otherwise specifically provided under the vehicle code.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 55,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html#section-814.512",
+      "identifier": "ORS 814.512",
+      "name": "Section 814.512",
+      "text": "Unlawful operation of motor assisted scooter; penalty. (1) A person operating a motor assisted scooter commits the offense of unlawful operation of a motor assisted scooter if: (a) The person is under 16 years of age; or (b) The person operates a motor assisted scooter at a rate of speed exceeding 15 miles per hour. (2) The offense described in this section, unlawful operation of a motor assisted scooter, is a Class D traffic violation.",
+      "history_citation_blocks": [
+        "2001 c.749 5"
+      ],
+      "history_citations": [
+        {
+          "raw": "2001 c.749 5",
+          "year": 2001,
+          "chapter": "749",
+          "section": "5"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A person operating a motor assisted scooter commits the offense of unlawful operation of a motor assisted scooter if:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "The person is under 16 years of age; or",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "The person operates a motor assisted scooter at a rate of speed exceeding 15 miles per hour.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The offense described in this section, unlawful operation of a motor assisted scooter, is a Class D traffic violation.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 56,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html#section-814.514",
+      "identifier": "ORS 814.514",
+      "name": "Section 814.514",
+      "text": "Failure of operator of motor assisted scooter to use bicycle lane or path; exception; penalty. (1) Except as provided in subsection (2) of this section, a person commits the offense of failure of a motor assisted scooter operator to use a bicycle lane or bicycle path if the person operates a motor assisted scooter on any portion of a roadway that is not a bicycle lane or bicycle path when a bicycle lane or bicycle path is adjacent to or near the roadway. (2) A person is not subject to this section if the operation of a motor assisted scooter on a bicycle lane or bicycle path is prohibited by local ordinance. (3) The offense described in this section, failure of a motor assisted scooter operator to use a bicycle lane or bicycle path, is a Class D traffic violation.",
+      "history_citation_blocks": [
+        "2001 c.749 6"
+      ],
+      "history_citations": [
+        {
+          "raw": "2001 c.749 6",
+          "year": 2001,
+          "chapter": "749",
+          "section": "6"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Except as provided in subsection",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "of this section, a person commits the offense of failure of a motor assisted scooter operator to use a bicycle lane or bicycle path if the person operates a motor assisted scooter on any portion of a roadway that is not a bicycle lane or bicycle path when a bicycle lane or bicycle path is adjacent to or near the roadway. A person is not subject to this section if the operation of a motor assisted scooter on a bicycle lane or bicycle path is prohibited by local ordinance.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The offense described in this section, failure of a motor assisted scooter operator to use a bicycle lane or bicycle path, is a Class D traffic violation.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 57,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html#section-814.516",
+      "identifier": "ORS 814.516",
+      "name": "Section 814.516",
+      "text": "Prohibition on operation of motor assisted scooters in state parks. The State Parks and Recreation Department may restrict or prohibit the operation of a motor assisted scooter on a bicycle lane or bicycle path in a state park except that the department may not restrict or prohibit the operation of a motor assisted scooter on a bicycle lane or bicycle path in a state park if the operator of the motor assisted scooter is disabled.",
+      "history_citation_blocks": [
+        "2001 c.749 7"
+      ],
+      "history_citations": [
+        {
+          "raw": "2001 c.749 7",
+          "year": 2001,
+          "chapter": "749",
+          "section": "7"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 58,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html#section-814.518",
+      "identifier": "ORS 814.518",
+      "name": "Section 814.518",
+      "text": "Improper operation of motor assisted scooter on highway; exceptions; penalty. (1) A person commits the offense of improper operation of a motor assisted scooter on a highway if the person is operating a motor assisted scooter on a highway with a designated speed limit greater than 25 miles per hour. (2) This section does not apply if: (a) The person is operating a motor assisted scooter on a highway with a designated speed limit greater than 25 miles per hour and the person is operating the motor assisted scooter on a bicycle lane; or (b) The person is operating a motor assisted scooter while crossing a highway with a designated speed limit greater than 25 miles per hour. (3) The offense described in this section, improper operation of a motor assisted scooter on a highway, is a Class D traffic violation.",
+      "history_citation_blocks": [
+        "2001 c.749 8"
+      ],
+      "history_citations": [
+        {
+          "raw": "2001 c.749 8",
+          "year": 2001,
+          "chapter": "749",
+          "section": "8"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A person commits the offense of improper operation of a motor assisted scooter on a highway if the person is operating a motor assisted scooter on a highway with a designated speed limit greater than 25 miles per hour.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "This section does not apply if:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "The person is operating a motor assisted scooter on a highway with a designated speed limit greater than 25 miles per hour and the person is operating the motor assisted scooter on a bicycle lane; or",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "The person is operating a motor assisted scooter while crossing a highway with a designated speed limit greater than 25 miles per hour.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The offense described in this section, improper operation of a motor assisted scooter on a highway, is a Class D traffic violation.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 59,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html#section-814.520",
+      "identifier": "ORS 814.520",
+      "name": "Section 814.520",
+      "text": "Improper operation of motor assisted scooter in lane; exceptions; penalty. (1) A person commits the offense of improper operation of a motor assisted scooter in a lane if the person is operating a motor assisted scooter on a roadway at less than the normal speed of traffic using the roadway at that time and place under the existing conditions and the person does not ride as close as practicable to the right curb or edge of the roadway. (2) A person is not in violation of this section if the person is not operating a motor assisted scooter as close as practicable to the right curb or edge of the roadway under any of the following circumstances: (a) When overtaking and passing another motor assisted scooter or vehicle that is proceeding in the same direction. (b) When preparing to execute a left turn. (c) When reasonably necessary to avoid hazardous conditions including, but not limited to, fixed or moving objects, parked or moving vehicles, pedestrians, animals, surface hazards or other conditions that make continued operation along the right curb or edge unsafe or to avoid unsafe operation in a lane on the roadway that is too narrow for a motor assisted scooter and vehicle to travel safely side by side. Nothing in this paragraph excuses the operator of a motor assisted scooter from the requirements under ORS 811.425 or from the penalties for failure to comply with those requirements. (d) When operating within a city as near as practicable to the left curb or edge of a roadway that is designated to allow traffic to move in only one direction along the roadway. A motor assisted scooter that is operated under this paragraph is subject to the same requirements and exceptions when operating along the left curb or edge as are applicable when a motor assisted scooter is operating along the right curb or edge of the roadway. (e) When operating a motor assisted scooter alongside not more than one other motor assisted scooter as long as the motor assisted scooters are both being operated within a single lane and in a manner that does not impede the normal and reasonable movement of traffic. (f) When operating on a bicycle lane or bicycle path. (3) The offense described in this section, improper operation of a motor assisted scooter in a lane, is a Class D traffic violation.",
+      "history_citation_blocks": [
+        "2001 c.749 9"
+      ],
+      "history_citations": [
+        {
+          "raw": "2001 c.749 9",
+          "year": 2001,
+          "chapter": "749",
+          "section": "9"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A person commits the offense of improper operation of a motor assisted scooter in a lane if the person is operating a motor assisted scooter on a roadway at less than the normal speed of traffic using the roadway at that time and place under the existing conditions and the person does not ride as close as practicable to the right curb or edge of the roadway.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "A person is not in violation of this section if the person is not operating a motor assisted scooter as close as practicable to the right curb or edge of the roadway under any of the following circumstances:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "When overtaking and passing another motor assisted scooter or vehicle that is proceeding in the same direction.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "When preparing to execute a left turn.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "When reasonably necessary to avoid hazardous conditions including, but not limited to, fixed or moving objects, parked or moving vehicles, pedestrians, animals, surface hazards or other conditions that make continued operation along the right curb or edge unsafe or to avoid unsafe operation in a lane on the roadway that is too narrow for a motor assisted scooter and vehicle to travel safely side by side. Nothing in this paragraph excuses the operator of a motor assisted scooter from the requirements under ORS 811.425 or from the penalties for failure to comply with those requirements.",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "When operating within a city as near as practicable to the left curb or edge of a roadway that is designated to allow traffic to move in only one direction along the roadway. A motor assisted scooter that is operated under this paragraph is subject to the same requirements and exceptions when operating along the left curb or edge as are applicable when a motor assisted scooter is operating along the right curb or edge of the roadway.",
+              "subsections": []
+            },
+            {
+              "label": "(e)",
+              "token": "e",
+              "kind": "alpha_lower",
+              "text": "When operating a motor assisted scooter alongside not more than one other motor assisted scooter as long as the motor assisted scooters are both being operated within a single lane and in a manner that does not impede the normal and reasonable movement of traffic.",
+              "subsections": []
+            },
+            {
+              "label": "(f)",
+              "token": "f",
+              "kind": "alpha_lower",
+              "text": "When operating on a bicycle lane or bicycle path.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The offense described in this section, improper operation of a motor assisted scooter in a lane, is a Class D traffic violation.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 60,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html#section-814.522",
+      "identifier": "ORS 814.522",
+      "name": "Section 814.522",
+      "text": "Failure to signal; exception; penalty. (1) A person commits the offense of failure to signal for a motor assisted scooter maneuver if the person is operating a motor assisted scooter and: (a) Stops the motor assisted scooter without giving the appropriate hand and arm signal continuously for at least 100 feet before executing the stop. (b) Executes a turn or lane change on the motor assisted scooter without giving the appropriate hand and arm signal for the turn at least 100 feet before executing the turn. (c) Executes a turn on the motor assisted scooter after having been stopped without giving, while stopped, the appropriate hand and arm signal for the turn. (2) A person is not in violation of this section if the person is operating a motor assisted scooter and does not give the appropriate hand and arm signal continuously for a stop, turn or lane change because circumstances require that both hands be used to safely control or operate the motor assisted scooter. (3) The appropriate hand and arm signals for indicating stops, turns and lane changes under this section are those provided for other vehicles under ORS 811.395 and 811.400. (4) The offense described in this section, failure to signal for a motor assisted scooter maneuver, is a Class D traffic violation.",
+      "history_citation_blocks": [
+        "2001 c.749 10"
+      ],
+      "history_citations": [
+        {
+          "raw": "2001 c.749 10",
+          "year": 2001,
+          "chapter": "749",
+          "section": "10"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A person commits the offense of failure to signal for a motor assisted scooter maneuver if the person is operating a motor assisted scooter and:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Stops the motor assisted scooter without giving the appropriate hand and arm signal continuously for at least 100 feet before executing the stop.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Executes a turn or lane change on the motor assisted scooter without giving the appropriate hand and arm signal for the turn at least 100 feet before executing the turn.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Executes a turn on the motor assisted scooter after having been stopped without giving, while stopped, the appropriate hand and arm signal for the turn.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "A person is not in violation of this section if the person is operating a motor assisted scooter and does not give the appropriate hand and arm signal continuously for a stop, turn or lane change because circumstances require that both hands be used to safely control or operate the motor assisted scooter.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The appropriate hand and arm signals for indicating stops, turns and lane changes under this section are those provided for other vehicles under ORS 811.395 and 811.400.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "The offense described in this section, failure to signal for a motor assisted scooter maneuver, is a Class D traffic violation.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 61,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html#section-814.524",
+      "identifier": "ORS 814.524",
+      "name": "Section 814.524",
+      "text": "Unsafe operation of motor assisted scooter on sidewalk; penalty. (1) A person commits the offense of unsafe operation of a motor assisted scooter on a sidewalk if the person operates a motor assisted scooter on a sidewalk, except to enter or leave adjacent property, or the person operates a motor assisted scooter on a sidewalk to enter or leave adjacent property and the person: (a) Operates the motor assisted scooter so as to suddenly leave a curb or other place of safety and move into the path of a vehicle that is so close as to constitute an immediate hazard. (b) Does not give an audible warning before overtaking and passing a pedestrian or does not yield the right of way to all pedestrians on the sidewalk. (c) Operates the motor assisted scooter in a careless manner that endangers or would be likely to endanger any person or property. (d) Operates the motor assisted scooter at a speed greater than an ordinary walk when approaching a crosswalk, approaching or entering a driveway or crossing a curb cut or pedestrian ramp and a motor vehicle is approaching the crosswalk, driveway, curb cut or pedestrian ramp. (2) The offense described in this section, unsafe operation of a motor assisted scooter on a sidewalk, is a Class D traffic violation.",
+      "history_citation_blocks": [
+        "2001 c.749 11"
+      ],
+      "history_citations": [
+        {
+          "raw": "2001 c.749 11",
+          "year": 2001,
+          "chapter": "749",
+          "section": "11"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A person commits the offense of unsafe operation of a motor assisted scooter on a sidewalk if the person operates a motor assisted scooter on a sidewalk, except to enter or leave adjacent property, or the person operates a motor assisted scooter on a sidewalk to enter or leave adjacent property and the person:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Operates the motor assisted scooter so as to suddenly leave a curb or other place of safety and move into the path of a vehicle that is so close as to constitute an immediate hazard.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Does not give an audible warning before overtaking and passing a pedestrian or does not yield the right of way to all pedestrians on the sidewalk.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Operates the motor assisted scooter in a careless manner that endangers or would be likely to endanger any person or property.",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "Operates the motor assisted scooter at a speed greater than an ordinary walk when approaching a crosswalk, approaching or entering a driveway or crossing a curb cut or pedestrian ramp and a motor vehicle is approaching the crosswalk, driveway, curb cut or pedestrian ramp.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The offense described in this section, unsafe operation of a motor assisted scooter on a sidewalk, is a Class D traffic violation.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 62,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html#section-814.526",
+      "identifier": "ORS 814.526",
+      "name": "Section 814.526",
+      "text": "Unsafe operation of motor assisted scooter on bicycle path or lane; penalty. (1) A person commits the offense of unsafe operation of a motor assisted scooter on a bicycle path or bicycle lane if the person operates a motor assisted scooter on a bicycle path or bicycle lane and does not give an audible warning before overtaking and passing a pedestrian or does not yield the right of way to all pedestrians on the bicycle path or bicycle lane. (2) The offense described in this section, unsafe operation of a motor assisted scooter on a bicycle path or bicycle lane, is a Class D traffic violation.",
+      "history_citation_blocks": [
+        "2001 c.749 12"
+      ],
+      "history_citations": [
+        {
+          "raw": "2001 c.749 12",
+          "year": 2001,
+          "chapter": "749",
+          "section": "12"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A person commits the offense of unsafe operation of a motor assisted scooter on a bicycle path or bicycle lane if the person operates a motor assisted scooter on a bicycle path or bicycle lane and does not give an audible warning before overtaking and passing a pedestrian or does not yield the right of way to all pedestrians on the bicycle path or bicycle lane.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The offense described in this section, unsafe operation of a motor assisted scooter on a bicycle path or bicycle lane, is a Class D traffic violation.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 63,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html#section-814.528",
+      "identifier": "ORS 814.528",
+      "name": "Section 814.528",
+      "text": "Operation of motor assisted scooter in crosswalk; exception; penalty. (1) A person commits the offense of operation of a motor assisted scooter in a crosswalk if the person fails to walk the motor assisted scooter in a crosswalk. (2) This section does not apply to a person with a disability operating a motor assisted scooter in a crosswalk. (3) The offense described in this section, operation of a motor assisted scooter in a crosswalk, is a Class D traffic violation.",
+      "history_citation_blocks": [
+        "2001 c.749 13; 2007 c.70 346"
+      ],
+      "history_citations": [
+        {
+          "raw": "2001 c.749 13",
+          "year": 2001,
+          "chapter": "749",
+          "section": "13"
+        },
+        {
+          "raw": "2007 c.70 346",
+          "year": 2007,
+          "chapter": "70",
+          "section": "346"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A person commits the offense of operation of a motor assisted scooter in a crosswalk if the person fails to walk the motor assisted scooter in a crosswalk.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "This section does not apply to a person with a disability operating a motor assisted scooter in a crosswalk.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The offense described in this section, operation of a motor assisted scooter in a crosswalk, is a Class D traffic violation.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 64,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html#section-814.530",
+      "identifier": "ORS 814.530",
+      "name": "Section 814.530",
+      "text": "Carrying passenger on motor assisted scooter; penalty. (1) A person commits the offense of carrying a passenger on a motor assisted scooter if the person operates a motor assisted scooter and carries another person on the motor assisted scooter. (2) The offense described in this section, carrying a passenger on a motor assisted scooter, is a Class D traffic violation.",
+      "history_citation_blocks": [
+        "2001 c.749 14"
+      ],
+      "history_citations": [
+        {
+          "raw": "2001 c.749 14",
+          "year": 2001,
+          "chapter": "749",
+          "section": "14"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A person commits the offense of carrying a passenger on a motor assisted scooter if the person operates a motor assisted scooter and carries another person on the motor assisted scooter.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The offense described in this section, carrying a passenger on a motor assisted scooter, is a Class D traffic violation.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 65,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html#section-814.532",
+      "identifier": "ORS 814.532",
+      "name": "Section 814.532",
+      "text": "Operating motor assisted scooter with unlawful load; penalty. (1) A person commits the offense of operating a motor assisted scooter with an unlawful load if the person is operating a motor assisted scooter and the person carries a package, bundle or article that prevents the person from having full control of the vehicle at all times. (2) The offense described in this section, operating a motor assisted scooter with an unlawful load, is a Class D traffic violation.",
+      "history_citation_blocks": [
+        "2001 c.749 15; 2018 c.3 2"
+      ],
+      "history_citations": [
+        {
+          "raw": "2001 c.749 15",
+          "year": 2001,
+          "chapter": "749",
+          "section": "15"
+        },
+        {
+          "raw": "2018 c.3 2",
+          "year": 2018,
+          "chapter": "3",
+          "section": "2"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A person commits the offense of operating a motor assisted scooter with an unlawful load if the person is operating a motor assisted scooter and the person carries a package, bundle or article that prevents the person from having full control of the vehicle at all times.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The offense described in this section, operating a motor assisted scooter with an unlawful load, is a Class D traffic violation.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 66,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html#section-814.534",
+      "identifier": "ORS 814.534",
+      "name": "Section 814.534",
+      "text": "Failure of motor assisted scooter operator to wear protective headgear; exception; penalty. (1) A person commits the offense of failure of a motor assisted scooter operator to wear protective headgear if the person operates a motor assisted scooter on a highway or on premises open to the public and is not wearing protective headgear of a type approved under ORS 815.052. (2) A person is exempt from the protective headgear requirement of subsection (1) of this section if wearing the headgear would violate a religious belief or practice of the person. (3) The first time a person is convicted of an offense under this section, the person may not be required to pay a fine if the person proves to the satisfaction of the court that the person has protective headgear of a type approved under ORS 815.052. (4) The offense described in this section, failure of a motor assisted scooter operator to wear protective headgear, is a specific fine traffic violation. The presumptive fine for failure of a motor assisted scooter operator to wear protective headgear is $25.",
+      "history_citation_blocks": [
+        "2001 c.749 16; 2011 c.597 105"
+      ],
+      "history_citations": [
+        {
+          "raw": "2001 c.749 16",
+          "year": 2001,
+          "chapter": "749",
+          "section": "16"
+        },
+        {
+          "raw": "2011 c.597 105",
+          "year": 2011,
+          "chapter": "597",
+          "section": "105"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A person commits the offense of failure of a motor assisted scooter operator to wear protective headgear if the person operates a motor assisted scooter on a highway or on premises open to the public and is not wearing protective headgear of a type approved under ORS 815.052. of this section if wearing the headgear would violate a religious belief or practice of the person.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "A person is exempt from the protective headgear requirement of subsection",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The first time a person is convicted of an offense under this section, the person may not be required to pay a fine if the person proves to the satisfaction of the court that the person has protective headgear of a type approved under ORS 815.052.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "The offense described in this section, failure of a motor assisted scooter operator to wear protective headgear, is a specific fine traffic violation. The presumptive fine for failure of a motor assisted scooter operator to wear protective headgear is $25.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 67,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html#section-814.536",
+      "identifier": "ORS 814.536",
+      "name": "Section 814.536",
+      "text": "Endangering motor assisted scooter operator; penalty. (1) A person commits the offense of endangering a motor assisted scooter operator if the person is the parent, legal guardian or person with legal responsibility for the safety and welfare of a child under 16 years of age and authorizes or knowingly permits the child to operate a motor assisted scooter in violation of ORS 814.512 (1)(a). (2) The offense described in this section, endangering a motor assisted scooter operator, is a specific fine traffic violation. The presumptive fine for endangering a motor assisted scooter operator is $25. [2001 c.749 17; 2011 c.597 106] ELECTRIC PERSONAL ASSISTIVE MOBILITY DEVICES",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A person commits the offense of endangering a motor assisted scooter operator if the person is the parent, legal guardian or person with legal responsibility for the safety and welfare of a child under 16 years of age and authorizes or knowingly permits the child to operate a motor assisted scooter in violation of ORS 814.512 (a).",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The offense described in this section, endangering a motor assisted scooter operator, is a specific fine traffic violation. The presumptive fine for endangering a motor assisted scooter operator is $25. [2001 c.749 17; 2011 c.597 106] ELECTRIC PERSONAL ASSISTIVE MOBILITY DEVICES",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 68,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html#section-814.550",
+      "identifier": "ORS 814.550",
+      "name": "Section 814.550",
+      "text": "Application of vehicle laws to electric personal assistive mobility device. (1) An electric personal assistive mobility device is not a motor vehicle for purposes of the Oregon Vehicle Code, except when specifically provided by statute. (2) A person operating an electric personal assistive mobility device on a bicycle lane, bicycle path or any part of a highway is subject to any provisions applicable to and has the same rights and duties as the driver of a bicycle when operating on a bicycle lane, bicycle path or any part of a highway, except when otherwise specifically provided by statute. (3) A person operating an electric personal assistive mobility device on a sidewalk is subject to any provisions applicable to and has the same rights and duties as a pedestrian on a sidewalk, except when otherwise specifically provided by statute. (4) Subject to the provisions of subsections (1) to (3) of this section, for purposes of the vehicle code: (a) An electric personal assistive mobility device is a vehicle; and (b) When the term vehicle is used the term shall be deemed to be applicable to electric personal assistive mobility devices, except those provisions that by their very nature can have no application to the devices. (5) The provisions of the vehicle code relating to the operation of an electric personal assistive mobility device do not relieve an operator or motorist from the duty to exercise due care.",
+      "history_citation_blocks": [
+        "2003 c.341 11"
+      ],
+      "history_citations": [
+        {
+          "raw": "2003 c.341 11",
+          "year": 2003,
+          "chapter": "341",
+          "section": "11"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "An electric personal assistive mobility device is not a motor vehicle for purposes of the Oregon Vehicle Code, except when specifically provided by statute.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "A person operating an electric personal assistive mobility device on a bicycle lane, bicycle path or any part of a highway is subject to any provisions applicable to and has the same rights and duties as the driver of a bicycle when operating on a bicycle lane, bicycle path or any part of a highway, except when otherwise specifically provided by statute.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "A person operating an electric personal assistive mobility device on a sidewalk is subject to any provisions applicable to and has the same rights and duties as a pedestrian on a sidewalk, except when otherwise specifically provided by statute. of this section, for purposes of the vehicle code:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "An electric personal assistive mobility device is a vehicle; and",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "When the term vehicle is used the term shall be deemed to be applicable to electric personal assistive mobility devices, except those provisions that by their very nature can have no application to the devices.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Subject to the provisions of subsections",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "The provisions of the vehicle code relating to the operation of an electric personal assistive mobility device do not relieve an operator or motorist from the duty to exercise due care.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 69,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html#section-814.552",
+      "identifier": "ORS 814.552",
+      "name": "Section 814.552",
+      "text": "Unsafe operation of electric personal assistive mobility device; penalty. (1) A person commits the offense of unsafe operation of an electric personal assistive mobility device if: (a) The person is operating an electric personal assistive mobility device on a highway that has a designated or posted speed limit greater than 35 miles per hour or that has no designated or posted speed limit, and the person is not in a bicycle lane or crossing the highway; (b) The person is operating an electric personal assistive mobility device on a bicycle lane, bicycle path or any part of a highway at a speed greater than 15 miles per hour; (c) The person is operating an electric personal assistive mobility device on a sidewalk in a careless manner that endangers or would be likely to endanger any person or property; (d) The person is operating an electric personal assistive mobility device on a bicycle lane, bicycle path, sidewalk or other premises open to the public and the person carries another person on the electric personal assistive mobility device; (e) The person is operating an electric personal assistive mobility device at a speed greater than an ordinary walk when approaching a crosswalk, approaching or entering a driveway or crossing a curb cut or pedestrian ramp and a motor vehicle is approaching the crosswalk, driveway, curb cut or pedestrian ramp; or (f) The person is operating an electric personal assistive mobility device on a sidewalk and does not give an audible warning before overtaking and passing a pedestrian and does not yield the right of way to all pedestrians on the sidewalk. (2) The offense described in this section, unsafe operation of an electric personal assistive mobility device, is a Class D traffic violation.",
+      "history_citation_blocks": [
+        "2003 c.341 12"
+      ],
+      "history_citations": [
+        {
+          "raw": "2003 c.341 12",
+          "year": 2003,
+          "chapter": "341",
+          "section": "12"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A person commits the offense of unsafe operation of an electric personal assistive mobility device if:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "The person is operating an electric personal assistive mobility device on a highway that has a designated or posted speed limit greater than 35 miles per hour or that has no designated or posted speed limit, and the person is not in a bicycle lane or crossing the highway;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "The person is operating an electric personal assistive mobility device on a bicycle lane, bicycle path or any part of a highway at a speed greater than 15 miles per hour;",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "The person is operating an electric personal assistive mobility device on a sidewalk in a careless manner that endangers or would be likely to endanger any person or property;",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "The person is operating an electric personal assistive mobility device on a bicycle lane, bicycle path, sidewalk or other premises open to the public and the person carries another person on the electric personal assistive mobility device;",
+              "subsections": []
+            },
+            {
+              "label": "(e)",
+              "token": "e",
+              "kind": "alpha_lower",
+              "text": "The person is operating an electric personal assistive mobility device at a speed greater than an ordinary walk when approaching a crosswalk, approaching or entering a driveway or crossing a curb cut or pedestrian ramp and a motor vehicle is approaching the crosswalk, driveway, curb cut or pedestrian ramp; or",
+              "subsections": []
+            },
+            {
+              "label": "(f)",
+              "token": "f",
+              "kind": "alpha_lower",
+              "text": "The person is operating an electric personal assistive mobility device on a sidewalk and does not give an audible warning before overtaking and passing a pedestrian and does not yield the right of way to all pedestrians on the sidewalk.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The offense described in this section, unsafe operation of an electric personal assistive mobility device, is a Class D traffic violation.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 70,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html#section-814.554",
+      "identifier": "ORS 814.554",
+      "name": "Section 814.554",
+      "text": "Local government and state agency regulation of operation of electric personal assistive mobility devices. Local governments and state agencies having jurisdiction over public highways, sidewalks, alleys, bridges, trails, recreational roads and other ways of public passage may regulate by ordinance or rule and by traffic control device the time, place and manner of operation of electric personal assistive mobility devices, including prohibiting their use entirely. [2003 c.341 20] NONMOTORIZED VEHICLES OTHER THAN BICYCLES",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 71,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html#section-814.600",
+      "identifier": "ORS 814.600",
+      "name": "Section 814.600",
+      "text": "Failure of skateboarder, scooter rider or in-line skater to wear protective headgear; penalty. (1) A person commits the offense of failure of a skateboarder, scooter rider or in-line skater to wear protective headgear if the person is under 16 years of age, rides on a skateboard or scooter or uses in-line skates on a highway or on premises open to the public and is not wearing protective headgear of a type approved under ORS 815.052. (2) The offense described in this section, failure of a skateboarder, scooter rider or in-line skater to wear protective headgear, is a specific fine traffic violation punishable by a maximum fine of $25. The presumptive fine for failure of a skateboarder, scooter rider or in-line skater to wear protective headgear is $25. [2003 c.106 1; 2011 c.597 107] Note:",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A person commits the offense of failure of a skateboarder, scooter rider or in-line skater to wear protective headgear if the person is under 16 years of age, rides on a skateboard or scooter or uses in-line skates on a highway or on premises open to the public and is not wearing protective headgear of a type approved under ORS 815.052.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The offense described in this section, failure of a skateboarder, scooter rider or in-line skater to wear protective headgear, is a specific fine traffic violation punishable by a maximum fine of $25. The presumptive fine for failure of a skateboarder, scooter rider or in-line skater to wear protective headgear is $25. [2003 c.106 1; 2011 c.597 107] Note:",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 72,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors814.html"
+    }
+  ],
+  "alternateName": "Pedestrians; Passengers;",
+  "legislationDate": "2023"
+}

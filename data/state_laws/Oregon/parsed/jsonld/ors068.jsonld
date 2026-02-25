@@ -1,0 +1,1330 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "orlaw": "https://www.oregonlegislature.gov/ors#"
+  },
+  "@type": "Legislation",
+  "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html",
+  "identifier": "ORS Chapter 68",
+  "name": "ORS Chapter 68 — (Former Provisions)",
+  "legislationType": "Statute",
+  "jurisdiction": "US-OR",
+  "isPartOf": {
+    "@type": "CreativeWork",
+    "identifier": "ORS",
+    "name": "Oregon Revised Statutes",
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors"
+  },
+  "dateModified": "2026-02-25T08:11:14.327782+00:00",
+  "source_file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors068.html",
+  "hasPart": [
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html#section-68.010",
+      "identifier": "ORS 68.010",
+      "name": "Section 68.010",
+      "text": "[Repealed by 1997 c.775 100]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 1,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html#section-68.020",
+      "identifier": "ORS 68.020",
+      "name": "Section 68.020",
+      "text": "",
+      "history_citation_blocks": [
+        "Amended by 1987 c.821 4; 1993 c.226 1; 1995 c.93 29; 1995 c.689 1; 1997 c.775 92; repealed by 1997 c.775 100"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1987 c.821 4"
+        },
+        {
+          "raw": "1993 c.226 1",
+          "year": 1993,
+          "chapter": "226",
+          "section": "1"
+        },
+        {
+          "raw": "1995 c.93 29",
+          "year": 1995,
+          "chapter": "93",
+          "section": "29"
+        },
+        {
+          "raw": "1995 c.689 1",
+          "year": 1995,
+          "chapter": "689",
+          "section": "1"
+        },
+        {
+          "raw": "1997 c.775 92",
+          "year": 1997,
+          "chapter": "775",
+          "section": "92"
+        },
+        {
+          "raw": "repealed by 1997 c.775 100"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 2,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html#section-68.030",
+      "identifier": "ORS 68.030",
+      "name": "Section 68.030",
+      "text": "[Repealed by 1997 c.775 100]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 3,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html#section-68.040",
+      "identifier": "ORS 68.040",
+      "name": "Section 68.040",
+      "text": "[Repealed by 1997 c.775 100]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 4,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html#section-68.050",
+      "identifier": "ORS 68.050",
+      "name": "Section 68.050",
+      "text": "[Repealed by 1997 c.775 100]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 5,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html#section-68.110",
+      "identifier": "ORS 68.110",
+      "name": "Section 68.110",
+      "text": "",
+      "history_citation_blocks": [
+        "Amended by 1987 c.158 14; 1995 c.689 2; 1997 c.775 93; repealed by 1997 c.775 100"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1987 c.158 14"
+        },
+        {
+          "raw": "1995 c.689 2",
+          "year": 1995,
+          "chapter": "689",
+          "section": "2"
+        },
+        {
+          "raw": "1997 c.775 93",
+          "year": 1997,
+          "chapter": "775",
+          "section": "93"
+        },
+        {
+          "raw": "repealed by 1997 c.775 100"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 6,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html#section-68.120",
+      "identifier": "ORS 68.120",
+      "name": "Section 68.120",
+      "text": "[Amended by 1995 c.79 19; repealed by 1997 c.775 100]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 7,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html#section-68.130",
+      "identifier": "ORS 68.130",
+      "name": "Section 68.130",
+      "text": "[Repealed by 1997 c.775 100]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 8,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html#section-68.210",
+      "identifier": "ORS 68.210",
+      "name": "Section 68.210",
+      "text": "[Repealed by 1997 c.775 100]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 9,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html#section-68.220",
+      "identifier": "ORS 68.220",
+      "name": "Section 68.220",
+      "text": "[Repealed by 1997 c.775 100]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 10,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html#section-68.230",
+      "identifier": "ORS 68.230",
+      "name": "Section 68.230",
+      "text": "[Repealed by 1997 c.775 100]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 11,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html#section-68.240",
+      "identifier": "ORS 68.240",
+      "name": "Section 68.240",
+      "text": "[Repealed by 1997 c.775 100]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 12,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html#section-68.250",
+      "identifier": "ORS 68.250",
+      "name": "Section 68.250",
+      "text": "[Repealed by 1997 c.775 100]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 13,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html#section-68.260",
+      "identifier": "ORS 68.260",
+      "name": "Section 68.260",
+      "text": "[Repealed by 1997 c.775 100]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 14,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html#section-68.270",
+      "identifier": "ORS 68.270",
+      "name": "Section 68.270",
+      "text": "",
+      "history_citation_blocks": [
+        "Amended by 1995 c.689 3; 1997 c.775 94; repealed by 1997 c.775 100"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1995 c.689 3"
+        },
+        {
+          "raw": "1997 c.775 94",
+          "year": 1997,
+          "chapter": "775",
+          "section": "94"
+        },
+        {
+          "raw": "repealed by 1997 c.775 100"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 15,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html#section-68.280",
+      "identifier": "ORS 68.280",
+      "name": "Section 68.280",
+      "text": "[Repealed by 1997 c.775 100]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 16,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html#section-68.290",
+      "identifier": "ORS 68.290",
+      "name": "Section 68.290",
+      "text": "[Repealed by 1997 c.775 100]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 17,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html#section-68.310",
+      "identifier": "ORS 68.310",
+      "name": "Section 68.310",
+      "text": "",
+      "history_citation_blocks": [
+        "Amended by 1995 c.689 4; 1997 c.775 95; repealed by 1997 c.775 100"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1995 c.689 4"
+        },
+        {
+          "raw": "1997 c.775 95",
+          "year": 1997,
+          "chapter": "775",
+          "section": "95"
+        },
+        {
+          "raw": "repealed by 1997 c.775 100"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 18,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html#section-68.320",
+      "identifier": "ORS 68.320",
+      "name": "Section 68.320",
+      "text": "[Repealed by 1977 c.775 100]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 19,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html#section-68.330",
+      "identifier": "ORS 68.330",
+      "name": "Section 68.330",
+      "text": "[Repealed by 1997 c.775 100]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 20,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html#section-68.340",
+      "identifier": "ORS 68.340",
+      "name": "Section 68.340",
+      "text": "[Repealed by 1997 c.775 100]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 21,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html#section-68.350",
+      "identifier": "ORS 68.350",
+      "name": "Section 68.350",
+      "text": "[Repealed by 1997 c.775 100]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 22,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html#section-68.360",
+      "identifier": "ORS 68.360",
+      "name": "Section 68.360",
+      "text": "[Repealed by 1997 c.775 100]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 23,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html#section-68.410",
+      "identifier": "ORS 68.410",
+      "name": "Section 68.410",
+      "text": "[Repealed by 1997 c.775 100]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 24,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html#section-68.420",
+      "identifier": "ORS 68.420",
+      "name": "Section 68.420",
+      "text": "[Repealed by 1997 c.775 100]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 25,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html#section-68.430",
+      "identifier": "ORS 68.430",
+      "name": "Section 68.430",
+      "text": "[Repealed by 1997 c.775 100]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 26,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html#section-68.440",
+      "identifier": "ORS 68.440",
+      "name": "Section 68.440",
+      "text": "[Repealed by 1997 c.775 100]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 27,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html#section-68.450",
+      "identifier": "ORS 68.450",
+      "name": "Section 68.450",
+      "text": "[Repealed by 1997 c.775 100]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 28,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html#section-68.510",
+      "identifier": "ORS 68.510",
+      "name": "Section 68.510",
+      "text": "[Repealed by 1997 c.775 100]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 29,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html#section-68.520",
+      "identifier": "ORS 68.520",
+      "name": "Section 68.520",
+      "text": "[Repealed by 1997 c.775 100]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 30,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html#section-68.530",
+      "identifier": "ORS 68.530",
+      "name": "Section 68.530",
+      "text": "[Repealed by 1997 c.775 100]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 31,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html#section-68.540",
+      "identifier": "ORS 68.540",
+      "name": "Section 68.540",
+      "text": "[Amended by 1987 c.94 167; repealed by 1997 c.775 100]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 32,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html#section-68.550",
+      "identifier": "ORS 68.550",
+      "name": "Section 68.550",
+      "text": "[Repealed by 1997 c.775 100]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 33,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html#section-68.560",
+      "identifier": "ORS 68.560",
+      "name": "Section 68.560",
+      "text": "",
+      "history_citation_blocks": [
+        "Amended by 1995 c.689 5; 1997 c.775 96; repealed by 1997 c.775 100"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1995 c.689 5"
+        },
+        {
+          "raw": "1997 c.775 96",
+          "year": 1997,
+          "chapter": "775",
+          "section": "96"
+        },
+        {
+          "raw": "repealed by 1997 c.775 100"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 34,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html#section-68.570",
+      "identifier": "ORS 68.570",
+      "name": "Section 68.570",
+      "text": "[Repealed by 1997 c.775 100]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 35,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html#section-68.580",
+      "identifier": "ORS 68.580",
+      "name": "Section 68.580",
+      "text": "",
+      "history_citation_blocks": [
+        "Amended by 1995 c.689 6; 1997 c.775 97; repealed by 1997 c.775 100"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1995 c.689 6"
+        },
+        {
+          "raw": "1997 c.775 97",
+          "year": 1997,
+          "chapter": "775",
+          "section": "97"
+        },
+        {
+          "raw": "repealed by 1997 c.775 100"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 36,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html#section-68.590",
+      "identifier": "ORS 68.590",
+      "name": "Section 68.590",
+      "text": "[Repealed by 1997 c.775 100]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 37,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html#section-68.600",
+      "identifier": "ORS 68.600",
+      "name": "Section 68.600",
+      "text": "[Repealed by 1997 c.775 100]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 38,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html#section-68.610",
+      "identifier": "ORS 68.610",
+      "name": "Section 68.610",
+      "text": "[Repealed by 1997 c.775 100]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 39,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html#section-68.620",
+      "identifier": "ORS 68.620",
+      "name": "Section 68.620",
+      "text": "",
+      "history_citation_blocks": [
+        "Amended by 1995 c.689 7; 1997 c.249 28; 1997 c.775 98; repealed by 1997 c.775 100"
+      ],
+      "history_citations": [
+        {
+          "raw": "Amended by 1995 c.689 7"
+        },
+        {
+          "raw": "1997 c.249 28",
+          "year": 1997,
+          "chapter": "249",
+          "section": "28"
+        },
+        {
+          "raw": "1997 c.775 98",
+          "year": 1997,
+          "chapter": "775",
+          "section": "98"
+        },
+        {
+          "raw": "repealed by 1997 c.775 100"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 40,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html#section-68.630",
+      "identifier": "ORS 68.630",
+      "name": "Section 68.630",
+      "text": "[Repealed by 1997 c.775 100]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 41,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html#section-68.640",
+      "identifier": "ORS 68.640",
+      "name": "Section 68.640",
+      "text": "[Repealed by 1997 c.775 100]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 42,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html#section-68.650",
+      "identifier": "ORS 68.650",
+      "name": "Section 68.650",
+      "text": "[Repealed by 1997 c.775 100]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 43,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html#section-68.670",
+      "identifier": "ORS 68.670",
+      "name": "Section 68.670",
+      "text": "",
+      "history_citation_blocks": [
+        "1995 c.689 26; repealed by 1997 c.775 99"
+      ],
+      "history_citations": [
+        {
+          "raw": "1995 c.689 26",
+          "year": 1995,
+          "chapter": "689",
+          "section": "26"
+        },
+        {
+          "raw": "repealed by 1997 c.775 99"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 44,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html#section-68.675",
+      "identifier": "ORS 68.675",
+      "name": "Section 68.675",
+      "text": "",
+      "history_citation_blocks": [
+        "1995 c.689 25; repealed by 1997 c.775 99"
+      ],
+      "history_citations": [
+        {
+          "raw": "1995 c.689 25",
+          "year": 1995,
+          "chapter": "689",
+          "section": "25"
+        },
+        {
+          "raw": "repealed by 1997 c.775 99"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 45,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html#section-68.680",
+      "identifier": "ORS 68.680",
+      "name": "Section 68.680",
+      "text": "",
+      "history_citation_blocks": [
+        "1995 c.689 27; repealed by 1997 c.775 99"
+      ],
+      "history_citations": [
+        {
+          "raw": "1995 c.689 27",
+          "year": 1995,
+          "chapter": "689",
+          "section": "27"
+        },
+        {
+          "raw": "repealed by 1997 c.775 99"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 46,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html#section-68.685",
+      "identifier": "ORS 68.685",
+      "name": "Section 68.685",
+      "text": "",
+      "history_citation_blocks": [
+        "1995 c.689 28; repealed by 1997 c.775 99"
+      ],
+      "history_citations": [
+        {
+          "raw": "1995 c.689 28",
+          "year": 1995,
+          "chapter": "689",
+          "section": "28"
+        },
+        {
+          "raw": "repealed by 1997 c.775 99"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 47,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html#section-68.690",
+      "identifier": "ORS 68.690",
+      "name": "Section 68.690",
+      "text": "",
+      "history_citation_blocks": [
+        "1995 c.689 29; repealed by 1997 c.775 99"
+      ],
+      "history_citations": [
+        {
+          "raw": "1995 c.689 29",
+          "year": 1995,
+          "chapter": "689",
+          "section": "29"
+        },
+        {
+          "raw": "repealed by 1997 c.775 99"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 48,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html#section-68.695",
+      "identifier": "ORS 68.695",
+      "name": "Section 68.695",
+      "text": "",
+      "history_citation_blocks": [
+        "1995 c.689 30; repealed by 1997 c.775 99"
+      ],
+      "history_citations": [
+        {
+          "raw": "1995 c.689 30",
+          "year": 1995,
+          "chapter": "689",
+          "section": "30"
+        },
+        {
+          "raw": "repealed by 1997 c.775 99"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 49,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html#section-68.700",
+      "identifier": "ORS 68.700",
+      "name": "Section 68.700",
+      "text": "",
+      "history_citation_blocks": [
+        "1995 c.689 31; repealed by 1997 c.775 99"
+      ],
+      "history_citations": [
+        {
+          "raw": "1995 c.689 31",
+          "year": 1995,
+          "chapter": "689",
+          "section": "31"
+        },
+        {
+          "raw": "repealed by 1997 c.775 99"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 50,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html#section-68.705",
+      "identifier": "ORS 68.705",
+      "name": "Section 68.705",
+      "text": "",
+      "history_citation_blocks": [
+        "1995 c.689 32; repealed by 1997 c.775 99"
+      ],
+      "history_citations": [
+        {
+          "raw": "1995 c.689 32",
+          "year": 1995,
+          "chapter": "689",
+          "section": "32"
+        },
+        {
+          "raw": "repealed by 1997 c.775 99"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 51,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html#section-68.710",
+      "identifier": "ORS 68.710",
+      "name": "Section 68.710",
+      "text": "",
+      "history_citation_blocks": [
+        "1995 c.689 9; repealed by 1997 c.775 99"
+      ],
+      "history_citations": [
+        {
+          "raw": "1995 c.689 9",
+          "year": 1995,
+          "chapter": "689",
+          "section": "9"
+        },
+        {
+          "raw": "repealed by 1997 c.775 99"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 52,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html#section-68.715",
+      "identifier": "ORS 68.715",
+      "name": "Section 68.715",
+      "text": "",
+      "history_citation_blocks": [
+        "1995 c.689 12; repealed by 1997 c.775 99"
+      ],
+      "history_citations": [
+        {
+          "raw": "1995 c.689 12",
+          "year": 1995,
+          "chapter": "689",
+          "section": "12"
+        },
+        {
+          "raw": "repealed by 1997 c.775 99"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 53,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html#section-68.720",
+      "identifier": "ORS 68.720",
+      "name": "Section 68.720",
+      "text": "",
+      "history_citation_blocks": [
+        "1995 c.689 11; repealed by 1997 c.775 99"
+      ],
+      "history_citations": [
+        {
+          "raw": "1995 c.689 11",
+          "year": 1995,
+          "chapter": "689",
+          "section": "11"
+        },
+        {
+          "raw": "repealed by 1997 c.775 99"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 54,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html#section-68.725",
+      "identifier": "ORS 68.725",
+      "name": "Section 68.725",
+      "text": "",
+      "history_citation_blocks": [
+        "1995 c.689 13; repealed by 1997 c.775 99"
+      ],
+      "history_citations": [
+        {
+          "raw": "1995 c.689 13",
+          "year": 1995,
+          "chapter": "689",
+          "section": "13"
+        },
+        {
+          "raw": "repealed by 1997 c.775 99"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 55,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html#section-68.730",
+      "identifier": "ORS 68.730",
+      "name": "Section 68.730",
+      "text": "",
+      "history_citation_blocks": [
+        "1995 c.689 14; repealed by 1997 c.775 99"
+      ],
+      "history_citations": [
+        {
+          "raw": "1995 c.689 14",
+          "year": 1995,
+          "chapter": "689",
+          "section": "14"
+        },
+        {
+          "raw": "repealed by 1997 c.775 99"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 56,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html#section-68.735",
+      "identifier": "ORS 68.735",
+      "name": "Section 68.735",
+      "text": "",
+      "history_citation_blocks": [
+        "1995 c.689 10; repealed by 1997 c.775 99"
+      ],
+      "history_citations": [
+        {
+          "raw": "1995 c.689 10",
+          "year": 1995,
+          "chapter": "689",
+          "section": "10"
+        },
+        {
+          "raw": "repealed by 1997 c.775 99"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 57,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html#section-68.740",
+      "identifier": "ORS 68.740",
+      "name": "Section 68.740",
+      "text": "",
+      "history_citation_blocks": [
+        "1995 c.689 15; repealed by 1997 c.775 99"
+      ],
+      "history_citations": [
+        {
+          "raw": "1995 c.689 15",
+          "year": 1995,
+          "chapter": "689",
+          "section": "15"
+        },
+        {
+          "raw": "repealed by 1997 c.775 99"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 58,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html#section-68.745",
+      "identifier": "ORS 68.745",
+      "name": "Section 68.745",
+      "text": "",
+      "history_citation_blocks": [
+        "1995 c.689 16; repealed by 1997 c.775 99"
+      ],
+      "history_citations": [
+        {
+          "raw": "1995 c.689 16",
+          "year": 1995,
+          "chapter": "689",
+          "section": "16"
+        },
+        {
+          "raw": "repealed by 1997 c.775 99"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 59,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html#section-68.750",
+      "identifier": "ORS 68.750",
+      "name": "Section 68.750",
+      "text": "",
+      "history_citation_blocks": [
+        "1995 c.689 17; repealed by 1997 c.775 99"
+      ],
+      "history_citations": [
+        {
+          "raw": "1995 c.689 17",
+          "year": 1995,
+          "chapter": "689",
+          "section": "17"
+        },
+        {
+          "raw": "repealed by 1997 c.775 99"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 60,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html#section-68.755",
+      "identifier": "ORS 68.755",
+      "name": "Section 68.755",
+      "text": "",
+      "history_citation_blocks": [
+        "1995 c.689 18; repealed by 1997 c.775 99"
+      ],
+      "history_citations": [
+        {
+          "raw": "1995 c.689 18",
+          "year": 1995,
+          "chapter": "689",
+          "section": "18"
+        },
+        {
+          "raw": "repealed by 1997 c.775 99"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 61,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html#section-68.760",
+      "identifier": "ORS 68.760",
+      "name": "Section 68.760",
+      "text": "",
+      "history_citation_blocks": [
+        "1995 c.689 19; repealed by 1997 c.775 99"
+      ],
+      "history_citations": [
+        {
+          "raw": "1995 c.689 19",
+          "year": 1995,
+          "chapter": "689",
+          "section": "19"
+        },
+        {
+          "raw": "repealed by 1997 c.775 99"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 62,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html#section-68.765",
+      "identifier": "ORS 68.765",
+      "name": "Section 68.765",
+      "text": "",
+      "history_citation_blocks": [
+        "1995 c.689 20; repealed by 1997 c.775 99"
+      ],
+      "history_citations": [
+        {
+          "raw": "1995 c.689 20",
+          "year": 1995,
+          "chapter": "689",
+          "section": "20"
+        },
+        {
+          "raw": "repealed by 1997 c.775 99"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 63,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html#section-68.770",
+      "identifier": "ORS 68.770",
+      "name": "Section 68.770",
+      "text": "",
+      "history_citation_blocks": [
+        "1995 c.689 21; repealed by 1997 c.775 99"
+      ],
+      "history_citations": [
+        {
+          "raw": "1995 c.689 21",
+          "year": 1995,
+          "chapter": "689",
+          "section": "21"
+        },
+        {
+          "raw": "repealed by 1997 c.775 99"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 64,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html#section-68.775",
+      "identifier": "ORS 68.775",
+      "name": "Section 68.775",
+      "text": "",
+      "history_citation_blocks": [
+        "1995 c.689 22; repealed by 1997 c.775 99"
+      ],
+      "history_citations": [
+        {
+          "raw": "1995 c.689 22",
+          "year": 1995,
+          "chapter": "689",
+          "section": "22"
+        },
+        {
+          "raw": "repealed by 1997 c.775 99"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 65,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html#section-68.780",
+      "identifier": "ORS 68.780",
+      "name": "Section 68.780",
+      "text": "",
+      "history_citation_blocks": [
+        "1995 c.689 23; repealed by 1997 c.775 99"
+      ],
+      "history_citations": [
+        {
+          "raw": "1995 c.689 23",
+          "year": 1995,
+          "chapter": "689",
+          "section": "23"
+        },
+        {
+          "raw": "repealed by 1997 c.775 99"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 66,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html#section-68.785",
+      "identifier": "ORS 68.785",
+      "name": "Section 68.785",
+      "text": "",
+      "history_citation_blocks": [
+        "1995 c.689 33; repealed by 1997 c.775 99"
+      ],
+      "history_citations": [
+        {
+          "raw": "1995 c.689 33",
+          "year": 1995,
+          "chapter": "689",
+          "section": "33"
+        },
+        {
+          "raw": "repealed by 1997 c.775 99"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 67,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html#section-68.790",
+      "identifier": "ORS 68.790",
+      "name": "Section 68.790",
+      "text": "[1995 c.689 24; repealed by 1997 c.775 99] _______________",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 68,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors068.html"
+    }
+  ],
+  "alternateName": "(Former Provisions)"
+}

@@ -1,0 +1,3111 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "orlaw": "https://www.oregonlegislature.gov/ors#"
+  },
+  "@type": "Legislation",
+  "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html",
+  "identifier": "ORS Chapter 725a",
+  "name": "ORS Chapter 725a — Short-Term Loans and",
+  "legislationType": "Statute",
+  "jurisdiction": "US-OR",
+  "isPartOf": {
+    "@type": "CreativeWork",
+    "identifier": "ORS",
+    "name": "Oregon Revised Statutes",
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors"
+  },
+  "dateModified": "2026-02-25T08:11:30.211459+00:00",
+  "source_file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors725a.html",
+  "hasPart": [
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html#section-725a.010",
+      "identifier": "ORS 725a.010",
+      "name": "Section 725a.010",
+      "text": "Definitions. As used in ORS 725A.010 to 725A.092 and 725A.990: (1)(a) Broker or facilitator means a person that conducts a business in which, for a fee or consideration, the person: (A) Processes, receives or accepts for delivery to a lender an application for a loan, individually or in conjunction or cooperation with another person; (B) Accepts and delivers to a lender all or most of the proceeds of a payment made in connection with a loan; or (C) Assists in making a loan in a material capacity other than as a lender. (b) Broker or facilitator does not include a mortgage broker, as defined in ORS 86A.100, a mortgage loan originator, as defined in ORS 86A.200, or an employee of a licensee. (2) Earnings means salary, wages or other compensation for service. (3)(a) Lender means an individual, corporation, association, firm, partnership, limited liability company or joint stock company that is engaged in the business of making loans. (b) Lender does not include a financial institution or a trust company, as those terms are defined in ORS 706.008. (4) Licensee means a person licensed under ORS 725A.024. (5) Nationwide Multistate Licensing System means a system that the Conference of State Bank Supervisors and the American Association of Residential Mortgage Regulators, or assignees of the Conference of State Bank Supervisors or the American Association of Residential Mortgage Regulators, develop and maintain for participating state agencies to use in licensing and registering mortgage loan originators, as defined in ORS 86A.200, and other persons that provide nondepository financial services. (6)(a) Payday loan means a loan of not more than $50,000, other than a purchase money loan, in which: (A) The primary purpose is personal, family or household use; (B) The loan agreement specifies a term of not more than 60 days or specifies that a payday loan lender may demand repayment within 60 days; and (C) The evidence of the loan is usually a check or electronic repayment agreement provided by or on behalf of the borrower. (b) Payday loan does not include a loan with a term longer than 60 days in which a lender may accelerate repayment if the borrower defaults. (7) Payday loan lender means a lender that is engaged in the business of making loans, at least 10 percent of which are payday loans. (8) Title loan means: (a) A loan of not more than $50,000, other than a purchase money loan, in which: (A) The title to a motor vehicle, recreational vehicle, boat or mobile home is security for the loan; (B) The loan agreement specifies a term of not more than 60 days and requires the borrower to repay the entire amount in a single payment; and (C) The lender is a title loan lender; (b) A loan of a type substantially equivalent to a loan described in paragraph (a) of this subsection that the Director of the Department of Consumer and Business Services designates by rule or order as a title loan; or (c) A sale-leaseback arrangement between a consumer and a purchaser for a motor vehicle, recreational vehicle, boat or mobile home in an amount that does not exceed $50,000 if: (A) The title and all rights to the motor vehicle, recreational vehicle, boat or mobile home do not transfer from the consumer to the purchaser in a bona fide sale of the motor vehicle, recreational vehicle, boat or mobile home or the consumer retains equity in the motor vehicle, recreational vehicle, boat or mobile home after the consumers sale to the purchaser; (B) The purchaser and the consumer agree within 60 days of the date on which the consumer sells the motor vehicle, recreational vehicle, boat or mobile home to the purchaser that the consumer has an option to or will repurchase the motor vehicle, recreational vehicle, boat or mobile home from the purchaser for a nominal price or a price other than the market value, determined at the time the lease expires, of the motor vehicle, recreational vehicle, boat or mobile home; (C) During the term in which the consumer leases the motor vehicle, recreational vehicle, boat or mobile home, the purchaser or an agent of the purchaser holds a check, electronic repayment agreement or other evidence of the consumers agreement to repurchase the motor vehicle, recreational vehicle, boat or mobile home that was provided by or on behalf of the consumer; or (D) The director by rule or order designates the sale-leaseback arrangement as a title loan. (9) Title loan lender means a lender that is engaged in the business of making loans, at least 10 percent of which are title loans.",
+      "history_citation_blocks": [
+        "2010 c.23 1; 2019 c.106 7"
+      ],
+      "history_citations": [
+        {
+          "raw": "2010 c.23 1",
+          "year": 2010,
+          "chapter": "23",
+          "section": "1"
+        },
+        {
+          "raw": "2019 c.106 7",
+          "year": 2019,
+          "chapter": "106",
+          "section": "7"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "(a) Broker or facilitator means a person that conducts a business in which, for a fee or consideration, the person:",
+          "subsections": [
+            {
+              "label": "(A)",
+              "token": "A",
+              "kind": "alpha_upper",
+              "text": "Processes, receives or accepts for delivery to a lender an application for a loan, individually or in conjunction or cooperation with another person;",
+              "subsections": []
+            },
+            {
+              "label": "(B)",
+              "token": "B",
+              "kind": "alpha_upper",
+              "text": "Accepts and delivers to a lender all or most of the proceeds of a payment made in connection with a loan; or",
+              "subsections": []
+            },
+            {
+              "label": "(C)",
+              "token": "C",
+              "kind": "alpha_upper",
+              "text": "Assists in making a loan in a material capacity other than as a lender.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Broker or facilitator does not include a mortgage broker, as defined in ORS 86A.100, a mortgage loan originator, as defined in ORS 86A.200, or an employee of a licensee.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Earnings means salary, wages or other compensation for service.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "(a) Lender means an individual, corporation, association, firm, partnership, limited liability company or joint stock company that is engaged in the business of making loans.",
+          "subsections": [
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Lender does not include a financial institution or a trust company, as those terms are defined in ORS 706.008.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Licensee means a person licensed under ORS 725A.024.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "Nationwide Multistate Licensing System means a system that the Conference of State Bank Supervisors and the American Association of Residential Mortgage Regulators, or assignees of the Conference of State Bank Supervisors or the American Association of Residential Mortgage Regulators, develop and maintain for participating state agencies to use in licensing and registering mortgage loan originators, as defined in ORS 86A.200, and other persons that provide nondepository financial services.",
+          "subsections": []
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "(a) Payday loan means a loan of not more than $50,000, other than a purchase money loan, in which:",
+          "subsections": [
+            {
+              "label": "(A)",
+              "token": "A",
+              "kind": "alpha_upper",
+              "text": "The primary purpose is personal, family or household use;",
+              "subsections": []
+            },
+            {
+              "label": "(B)",
+              "token": "B",
+              "kind": "alpha_upper",
+              "text": "The loan agreement specifies a term of not more than 60 days or specifies that a payday loan lender may demand repayment within 60 days; and",
+              "subsections": []
+            },
+            {
+              "label": "(C)",
+              "token": "C",
+              "kind": "alpha_upper",
+              "text": "The evidence of the loan is usually a check or electronic repayment agreement provided by or on behalf of the borrower.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Payday loan does not include a loan with a term longer than 60 days in which a lender may accelerate repayment if the borrower defaults.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(7)",
+          "token": "7",
+          "kind": "numeric",
+          "text": "Payday loan lender means a lender that is engaged in the business of making loans, at least 10 percent of which are payday loans.",
+          "subsections": []
+        },
+        {
+          "label": "(8)",
+          "token": "8",
+          "kind": "numeric",
+          "text": "Title loan means:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "A loan of not more than $50,000, other than a purchase money loan, in which: of this subsection that the Director of the Department of Consumer and Business Services designates by rule or order as a title loan; or",
+              "subsections": [
+                {
+                  "label": "(A)",
+                  "token": "A",
+                  "kind": "alpha_upper",
+                  "text": "The title to a motor vehicle, recreational vehicle, boat or mobile home is security for the loan;",
+                  "subsections": []
+                },
+                {
+                  "label": "(B)",
+                  "token": "B",
+                  "kind": "alpha_upper",
+                  "text": "The loan agreement specifies a term of not more than 60 days and requires the borrower to repay the entire amount in a single payment; and",
+                  "subsections": []
+                },
+                {
+                  "label": "(C)",
+                  "token": "C",
+                  "kind": "alpha_upper",
+                  "text": "The lender is a title loan lender;",
+                  "subsections": []
+                }
+              ]
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "A loan of a type substantially equivalent to a loan described in paragraph",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "A sale-leaseback arrangement between a consumer and a purchaser for a motor vehicle, recreational vehicle, boat or mobile home in an amount that does not exceed $50,000 if:",
+              "subsections": [
+                {
+                  "label": "(A)",
+                  "token": "A",
+                  "kind": "alpha_upper",
+                  "text": "The title and all rights to the motor vehicle, recreational vehicle, boat or mobile home do not transfer from the consumer to the purchaser in a bona fide sale of the motor vehicle, recreational vehicle, boat or mobile home or the consumer retains equity in the motor vehicle, recreational vehicle, boat or mobile home after the consumers sale to the purchaser;",
+                  "subsections": []
+                },
+                {
+                  "label": "(B)",
+                  "token": "B",
+                  "kind": "alpha_upper",
+                  "text": "The purchaser and the consumer agree within 60 days of the date on which the consumer sells the motor vehicle, recreational vehicle, boat or mobile home to the purchaser that the consumer has an option to or will repurchase the motor vehicle, recreational vehicle, boat or mobile home from the purchaser for a nominal price or a price other than the market value, determined at the time the lease expires, of the motor vehicle, recreational vehicle, boat or mobile home;",
+                  "subsections": []
+                },
+                {
+                  "label": "(C)",
+                  "token": "C",
+                  "kind": "alpha_upper",
+                  "text": "During the term in which the consumer leases the motor vehicle, recreational vehicle, boat or mobile home, the purchaser or an agent of the purchaser holds a check, electronic repayment agreement or other evidence of the consumers agreement to repurchase the motor vehicle, recreational vehicle, boat or mobile home that was provided by or on behalf of the consumer; or",
+                  "subsections": []
+                },
+                {
+                  "label": "(D)",
+                  "token": "D",
+                  "kind": "alpha_upper",
+                  "text": "The director by rule or order designates the sale-leaseback arrangement as a title loan.",
+                  "subsections": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "(9)",
+          "token": "9",
+          "kind": "numeric",
+          "text": "Title loan lender means a lender that is engaged in the business of making loans, at least 10 percent of which are title loans.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 1,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html#section-725a.012",
+      "identifier": "ORS 725a.012",
+      "name": "Section 725a.012",
+      "text": "Application. (1) ORS 725A.010 to 725A.092 and 725A.990 do not limit a persons rights, powers or privileges under a law of this state or of the United States that regulates the persons lending money or extending credit, provided that the person complies with the provisions of the law. (2) Except as otherwise provided in subsection (3) of this section, ORS 725A.010 to",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "ORS 725A.010 to 725A.092 and 725A.990 do not limit a persons rights, powers or privileges under a law of this state or of the United States that regulates the persons lending money or extending credit, provided that the person complies with the provisions of the law.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Except as otherwise provided in subsection",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "of this section, ORS 725A.010 to",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 2,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html#section-725a.020",
+      "identifier": "ORS 725a.020",
+      "name": "Section 725a.020",
+      "text": "Licensing requirement. (1)(a) Except as provided in ORS 82.010, 82.020 and 82.025 and subject to subsection (2) of this section, a person may not conduct business as a payday loan lender or a title loan lender unless the person obtains a license under ORS 725A.024. (b) A person may not act as an agent, broker or facilitator for making a payday loan or title loan unless the person obtains a license under ORS 725A.024, regardless of whether the principal that makes the payday loan or title loan must obtain a license under paragraph (a) of this subsection. (2) If at the time a person made a payday loan or title loan the person did not have a license from the Director of the Department of Consumer and Business Services under ORS 725A.024, the payday loan or title loan is void, and the person, or a successor, assignee or affiliate of the person, may not deposit a borrowers or consumers check, withdraw moneys from a borrowers or consumers account or otherwise collect, receive or retain principal, interest, a fee or a charge related to or in connection with the payday loan or title loan. (3) Subsection (1) of this section does not apply to a person that does not collect a fee or consideration in connection with a payday loan or title loan or an application for a payday loan or title loan and: (a) Does not interact directly with a borrower or consumer; (b) Acts solely as an intermediary between the borrower or consumer and a lender or a person that conducts business as a broker or facilitator for a payday loan or title loan; (c) Transmits information, electronically or otherwise, concerning the borrower or consumer to a lender or a person that conducts business as a broker or facilitator for a payday loan or title loan; or (d) Prepares, issues or delivers a negotiable instrument to a lender or a person that conducts business as a broker or facilitator for a payday loan or title loan, for subsequent delivery to a borrower or consumer. (4) The director by order may determine whether and how a person may collect principal, interest, a fee or a charge related to or in connection with a payday loan or title loan if the director determines that a license the director issued under ORS 725A.024 lapsed inadvertently or by mistake.",
+      "history_citation_blocks": [
+        "2010 c.23 3; 2015 c.490 2"
+      ],
+      "history_citations": [
+        {
+          "raw": "2010 c.23 3",
+          "year": 2010,
+          "chapter": "23",
+          "section": "3"
+        },
+        {
+          "raw": "2015 c.490 2",
+          "year": 2015,
+          "chapter": "490",
+          "section": "2"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "(a) Except as provided in ORS 82.010, 82.020 and 82.025 and subject to subsection of this section does not apply to a person that does not collect a fee or consideration in connection with a payday loan or title loan or an application for a payday loan or title loan and:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Does not interact directly with a borrower or consumer;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Acts solely as an intermediary between the borrower or consumer and a lender or a person that conducts business as a broker or facilitator for a payday loan or title loan;",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Transmits information, electronically or otherwise, concerning the borrower or consumer to a lender or a person that conducts business as a broker or facilitator for a payday loan or title loan; or",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "Prepares, issues or delivers a negotiable instrument to a lender or a person that conducts business as a broker or facilitator for a payday loan or title loan, for subsequent delivery to a borrower or consumer.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "of this section, a person may not conduct business as a payday loan lender or a title loan lender unless the person obtains a license under ORS 725A.024. If at the time a person made a payday loan or title loan the person did not have a license from the Director of the Department of Consumer and Business Services under ORS 725A.024, the payday loan or title loan is void, and the person, or a successor, assignee or affiliate of the person, may not deposit a borrowers or consumers check, withdraw moneys from a borrowers or consumers account or otherwise collect, receive or retain principal, interest, a fee or a charge related to or in connection with the payday loan or title loan.",
+          "subsections": [
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "A person may not act as an agent, broker or facilitator for making a payday loan or title loan unless the person obtains a license under ORS 725A.024, regardless of whether the principal that makes the payday loan or title loan must obtain a license under paragraph",
+              "subsections": []
+            },
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "of this subsection.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Subsection",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "The director by order may determine whether and how a person may collect principal, interest, a fee or a charge related to or in connection with a payday loan or title loan if the director determines that a license the director issued under ORS 725A.024 lapsed inadvertently or by mistake.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 3,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html#section-725a.022",
+      "identifier": "ORS 725a.022",
+      "name": "Section 725a.022",
+      "text": "License application; contents; fee; rules. (1) An applicant for a license as a payday loan lender or a title loan lender shall apply to the Director of the Department of Consumer and Business Services in writing on a form and in a manner that the director prescribes by rule. An application for a license as a payday loan lender or a title loan lender must: (a) List the applicants name, residence address and business address; (b) Name and list the residence address and business address for the applicants officers and directors, if the applicant is a corporation, or for the applicants members, if the applicant is a partnership, limited liability company or other association; (c) Identify the county and city in which, and the street address, if any, at which the applicant will conduct business; and (d) Provide other information the director requires. (2)(a) At the time the applicant submits an application under this section, the applicant shall pay to the director a license fee in an amount the director sets under ORS 725A.028. Except as provided in paragraph (b) of this subsection, the license fee is not refundable. (b) If the director for cause does not issue a license or if the applicant withdraws the application after the director has investigated the applicant, the director shall refund the license fee, less an amount the director retains to pay the administrative and investigative costs the director incurred in connection with the application.",
+      "history_citation_blocks": [
+        "2010 c.23 4"
+      ],
+      "history_citations": [
+        {
+          "raw": "2010 c.23 4",
+          "year": 2010,
+          "chapter": "23",
+          "section": "4"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "An applicant for a license as a payday loan lender or a title loan lender shall apply to the Director of the Department of Consumer and Business Services in writing on a form and in a manner that the director prescribes by rule. An application for a license as a payday loan lender or a title loan lender must:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "List the applicants name, residence address and business address;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Name and list the residence address and business address for the applicants officers and directors, if the applicant is a corporation, or for the applicants members, if the applicant is a partnership, limited liability company or other association;",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Identify the county and city in which, and the street address, if any, at which the applicant will conduct business; and",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "Provide other information the director requires.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "(a) At the time the applicant submits an application under this section, the applicant shall pay to the director a license fee in an amount the director sets under ORS 725A.028. Except as provided in paragraph",
+          "subsections": [
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "of this subsection, the license fee is not refundable. If the director for cause does not issue a license or if the applicant withdraws the application after the director has investigated the applicant, the director shall refund the license fee, less an amount the director retains to pay the administrative and investigative costs the director incurred in connection with the application.",
+              "subsections": []
+            }
+          ]
+        }
+      ],
+      "parser_warnings": [],
+      "position": 4,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html#section-725a.024",
+      "identifier": "ORS 725a.024",
+      "name": "Section 725a.024",
+      "text": "License application approval; license issuance; applicant qualifications; license denial; term of license; rules. (1)(a) Within 90 days after receiving an application under ORS 725A.022, the Director of the Department of Consumer and Business Services shall issue and deliver to the applicant a license to conduct business in accordance with ORS 725A.010 to 725A.092 at the location identified in the application if the director finds that: (A) The applicant and the applicants members, if the applicant is a partnership, limited liability company or other association, or the applicants officers and directors, if the applicant is a corporation, have the financial responsibility, experience, character and general fitness necessary to command the confidence of the community and to warrant the belief that the applicant will operate the business honestly, fairly and efficiently and in compliance with the provisions of ORS 725A.010 to 725A.092. (B) The applicant has paid the fee required under ORS 725A.022. (C) Grounds do not exist under ORS 725A.026 to disapprove the application. (D) Other reasons or conditions that would warrant the directors refusal to issue a license do not exist. (b) The director, consistent with the requirements of ORS 725A.010 to 725A.092, may issue a license under this section by means of an agreement with the Nationwide Multistate Licensing System and may, by rule, conform the practices, procedures and information that the Department of Consumer and Business Services uses to issue a license to the requirements of the Nationwide Multistate Licensing System. (2) An applicant may not become a licensee under this section unless the applicant is legally qualified to conduct business in this state. (3)(a) The director shall disapprove an application and deny the applicant a license if the director finds that the applicant does not meet the standard set forth in subsection (1)(a)(A) of this section or has not paid the required application fee or that grounds, reasons or conditions described in subsection (1)(a)(B), (C) or (D) of this section exist and warrant the directors disapproval and denial. (b) If the director disapproves an application or denies the applicant a license under paragraph (a) of this subsection, the director shall notify the applicant immediately and shall state the directors reasons for the disapproval or denial. (4)(a) The director by rule shall prescribe the form of the license the director issues under this section. At a minimum, the director shall require the license to display the licensees full name and the address at which the licensee conducts business. (b) A license the director issues under this section: (A) Is not transferable or assignable; and (B) Remains in full force and effect until: (i) The director revokes or suspends the license in accordance with ORS 725A.034; or (ii) The licensee surrenders the license in accordance with ORS 725A.038. (5) The director may issue more than one license to the same licensee if the director finds that for each additional license the licensee meets the qualifications set forth in this section. Each license the director issues must be for a separate and distinct place in which the licensee conducts business in accordance with ORS 725A.010 to 725A.092.",
+      "history_citation_blocks": [
+        "2010 c.23 5; 2019 c.106 8"
+      ],
+      "history_citations": [
+        {
+          "raw": "2010 c.23 5",
+          "year": 2010,
+          "chapter": "23",
+          "section": "5"
+        },
+        {
+          "raw": "2019 c.106 8",
+          "year": 2019,
+          "chapter": "106",
+          "section": "8"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "(a) Within 90 days after receiving an application under ORS 725A.022, the Director of the Department of Consumer and Business Services shall issue and deliver to the applicant a license to conduct business in accordance with ORS 725A.010 to 725A.092 at the location identified in the application if the director finds that: (a)(A) of this section or has not paid the required application fee or that grounds, reasons or conditions described in subsection (a)(B),",
+          "subsections": [
+            {
+              "label": "(A)",
+              "token": "A",
+              "kind": "alpha_upper",
+              "text": "The applicant and the applicants members, if the applicant is a partnership, limited liability company or other association, or the applicants officers and directors, if the applicant is a corporation, have the financial responsibility, experience, character and general fitness necessary to command the confidence of the community and to warrant the belief that the applicant will operate the business honestly, fairly and efficiently and in compliance with the provisions of ORS 725A.010 to 725A.092.",
+              "subsections": []
+            },
+            {
+              "label": "(B)",
+              "token": "B",
+              "kind": "alpha_upper",
+              "text": "The applicant has paid the fee required under ORS 725A.022.",
+              "subsections": []
+            },
+            {
+              "label": "(C)",
+              "token": "C",
+              "kind": "alpha_upper",
+              "text": "Grounds do not exist under ORS 725A.026 to disapprove the application. or",
+              "subsections": []
+            },
+            {
+              "label": "(D)",
+              "token": "D",
+              "kind": "alpha_upper",
+              "text": "Other reasons or conditions that would warrant the directors refusal to issue a license do not exist. of this section exist and warrant the directors disapproval and denial.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "The director, consistent with the requirements of ORS 725A.010 to 725A.092, may issue a license under this section by means of an agreement with the Nationwide Multistate Licensing System and may, by rule, conform the practices, procedures and information that the Department of Consumer and Business Services uses to issue a license to the requirements of the Nationwide Multistate Licensing System. If the director disapproves an application or denies the applicant a license under paragraph",
+              "subsections": []
+            },
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "of this subsection, the director shall notify the applicant immediately and shall state the directors reasons for the disapproval or denial.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "An applicant may not become a licensee under this section unless the applicant is legally qualified to conduct business in this state.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "(a) The director shall disapprove an application and deny the applicant a license if the director finds that the applicant does not meet the standard set forth in subsection",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "(a) The director by rule shall prescribe the form of the license the director issues under this section. At a minimum, the director shall require the license to display the licensees full name and the address at which the licensee conducts business.",
+          "subsections": [
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "A license the director issues under this section:",
+              "subsections": [
+                {
+                  "label": "(A)",
+                  "token": "A",
+                  "kind": "alpha_upper",
+                  "text": "Is not transferable or assignable; and",
+                  "subsections": []
+                },
+                {
+                  "label": "(B)",
+                  "token": "B",
+                  "kind": "alpha_upper",
+                  "text": "Remains in full force and effect until:",
+                  "subsections": [
+                    {
+                      "label": "(i)",
+                      "token": "i",
+                      "kind": "roman_lower",
+                      "text": "The director revokes or suspends the license in accordance with ORS 725A.034; or",
+                      "subsections": []
+                    },
+                    {
+                      "label": "(ii)",
+                      "token": "ii",
+                      "kind": "roman_lower",
+                      "text": "The licensee surrenders the license in accordance with ORS 725A.038.",
+                      "subsections": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "The director may issue more than one license to the same licensee if the director finds that for each additional license the licensee meets the qualifications set forth in this section. Each license the director issues must be for a separate and distinct place in which the licensee conducts business in accordance with ORS 725A.010 to 725A.092.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 5,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html#section-725a.026",
+      "identifier": "ORS 725a.026",
+      "name": "Section 725a.026",
+      "text": "Grounds for disapproving license application. (1) The Director of the Department of Consumer and Business Services may disapprove an application submitted under ORS 725A.022 and deny a license to the applicant if a person named in the application: (a) Cannot meet financial obligations as the obligations mature, has liabilities that exceed assets or is in a financial condition that prevents the person from conducting business with safety to consumers; (b) Engaged in dishonest, fraudulent or illegal practices or conduct in a business or profession; (c) Failed to comply with or knowingly or repeatedly violated a provision of or a rule adopted under the Bank Act, ORS chapter 723, 725 or 726 or ORS 725A.010 to",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The Director of the Department of Consumer and Business Services may disapprove an application submitted under ORS 725A.022 and deny a license to the applicant if a person named in the application:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Cannot meet financial obligations as the obligations mature, has liabilities that exceed assets or is in a financial condition that prevents the person from conducting business with safety to consumers;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Engaged in dishonest, fraudulent or illegal practices or conduct in a business or profession;",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Failed to comply with or knowingly or repeatedly violated a provision of or a rule adopted under the Bank Act, ORS chapter 723, 725 or 726 or ORS 725A.010 to",
+              "subsections": []
+            }
+          ]
+        }
+      ],
+      "parser_warnings": [],
+      "position": 6,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html#section-725a.028",
+      "identifier": "ORS 725a.028",
+      "name": "Section 725a.028",
+      "text": "License fee; other fees; rules. (1) A licensee each year shall pay to the Director of the Department of Consumer and Business Services a license fee in an amount the director specifies by rule. The licensee shall pay the fee not later than the date the director sets in the rule. (2) The director shall specify the amount of the fee described in subsection (1) of this section after considering: (a) The amount of other moneys available for the director to use in performing the directors duties; (b) The costs the director will incur in performing the directors duties in the year in which the director will collect the fee; and (c) The amount the director needs to establish and maintain a reasonable emergency fund. (3) In addition to any license fee the director collects under subsection (1) of this section, whenever the director devotes extra attention to a licensees affairs, either when the licensee requests the attention or the director determines that the extra attention is necessary, the director shall charge as a fee for the extra attention the actual cost the director incurs.",
+      "history_citation_blocks": [
+        "2010 c.23 7"
+      ],
+      "history_citations": [
+        {
+          "raw": "2010 c.23 7",
+          "year": 2010,
+          "chapter": "23",
+          "section": "7"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A licensee each year shall pay to the Director of the Department of Consumer and Business Services a license fee in an amount the director specifies by rule. The licensee shall pay the fee not later than the date the director sets in the rule. of this section after considering: of this section, whenever the director devotes extra attention to a licensees affairs, either when the licensee requests the attention or the director determines that the extra attention is necessary, the director shall charge as a fee for the extra attention the actual cost the director incurs.",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "The amount of other moneys available for the director to use in performing the directors duties;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "The costs the director will incur in performing the directors duties in the year in which the director will collect the fee; and",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "The amount the director needs to establish and maintain a reasonable emergency fund.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The director shall specify the amount of the fee described in subsection",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "In addition to any license fee the director collects under subsection",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 7,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html#section-725a.030",
+      "identifier": "ORS 725a.030",
+      "name": "Section 725a.030",
+      "text": "Annual report; contents; penalty; rules. (1) On or before February 15 of each year, or on a date the Director of the Department of Consumer and Business Services establishes by rule, a licensee shall file a report with the director in a form and with the content the director prescribes by rule. The report must contain information the director requires concerning the licensees business and the operations at each place of business in which the licensee conducts business in this state during the preceding calendar year under the terms of a license issued under ORS 725A.024. (2) The director may assess against a licensee a penalty of $10 for each day after February 15, or after the date the director specifies in subsection (1) of this section, during which the licensee fails to file a report required under this section.",
+      "history_citation_blocks": [
+        "2010 c.23 8"
+      ],
+      "history_citations": [
+        {
+          "raw": "2010 c.23 8",
+          "year": 2010,
+          "chapter": "23",
+          "section": "8"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "On or before February 15 of each year, or on a date the Director of the Department of Consumer and Business Services establishes by rule, a licensee shall file a report with the director in a form and with the content the director prescribes by rule. The report must contain information the director requires concerning the licensees business and the operations at each place of business in which the licensee conducts business in this state during the preceding calendar year under the terms of a license issued under ORS 725A.024. of this section, during which the licensee fails to file a report required under this section.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The director may assess against a licensee a penalty of $10 for each day after February 15, or after the date the director specifies in subsection",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 8,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html#section-725a.032",
+      "identifier": "ORS 725a.032",
+      "name": "Section 725a.032",
+      "text": "Business name and location. (1) A licensee may not conduct a business that is subject to ORS 725A.010 to 725A.092 and 725A.990 except under the name and at the place of business named in the license. The licensee at all times shall display the license conspicuously in the licensees place of business. (2) A licensee that changes the location at which the licensee conducts business as a payday loan lender or title loan lender shall notify the Director of the Department of Consumer and Business Services in writing and return the licensees license. The director shall amend the license to reflect the new location and return the amended license to the licensee. (3) The director may allow the licensee to change the location in which the licensee conducts business as a payday loan lender or title loan lender to a location outside the city named in the original license only if the director determines that the new location will serve substantially the same community that the location named in the original license served. (4) If the director disapproves the proposed new location, the director shall immediately notify the licensee of the disapproval and return the license unchanged to the licensee.",
+      "history_citation_blocks": [
+        "2010 c.23 9"
+      ],
+      "history_citations": [
+        {
+          "raw": "2010 c.23 9",
+          "year": 2010,
+          "chapter": "23",
+          "section": "9"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A licensee may not conduct a business that is subject to ORS 725A.010 to 725A.092 and 725A.990 except under the name and at the place of business named in the license. The licensee at all times shall display the license conspicuously in the licensees place of business.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "A licensee that changes the location at which the licensee conducts business as a payday loan lender or title loan lender shall notify the Director of the Department of Consumer and Business Services in writing and return the licensees license. The director shall amend the license to reflect the new location and return the amended license to the licensee.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The director may allow the licensee to change the location in which the licensee conducts business as a payday loan lender or title loan lender to a location outside the city named in the original license only if the director determines that the new location will serve substantially the same community that the location named in the original license served.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "If the director disapproves the proposed new location, the director shall immediately notify the licensee of the disapproval and return the license unchanged to the licensee.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 9,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html#section-725a.034",
+      "identifier": "ORS 725a.034",
+      "name": "Section 725a.034",
+      "text": "License revocation and suspension. (1) The Director of the Department of Consumer and Business Services may revoke a license issued under ORS 725A.024 if the director: (a) Gives the licensee 10 days written notice in which the director specifies the action the director will take and the general grounds for the action; (b) Provides the licensee with reasonable opportunity for a hearing under ORS chapter 183 in connection with the action; and (c) Finds that: (A) The licensee failed to pay the annual license fee; (B) The licensee failed to comply with a demand, ruling or requirement the director made under ORS 725A.010 to 725A.092 and 725A.990; (C) The licensee, if the licensee is a corporation, failed to keep the corporation in good standing under applicable provisions of law; (D) The licensee violated a provision of ORS 725A.010 to 725A.092 and 725A.990 or a rule the director adopted under ORS 725A.010 to 725A.092 and 725A.990; or (E) A fact or condition exists that clearly would have warranted the directors refusing to issue the license had the fact or condition existed at the time the licensee submitted an application under ORS 725A.022. (2) The director, without notice or hearing, may suspend a license for a period not exceeding 30 days, pending investigation. The director shall provide the licensee with a reasonable opportunity for a hearing under ORS chapter 183 if the director proposes to suspend a license for a period longer than 30 days. (3) The director may revoke or suspend only the particular license with respect to which grounds for revocation or suspension exist. If the director finds that grounds for revoking or suspending a license exist with respect to more than one of the locations in which a licensee operates, the director may revoke or suspend the license issued to the licensee for each location with respect to which grounds for revocation or suspension exist.",
+      "history_citation_blocks": [
+        "2010 c.23 10"
+      ],
+      "history_citations": [
+        {
+          "raw": "2010 c.23 10",
+          "year": 2010,
+          "chapter": "23",
+          "section": "10"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The Director of the Department of Consumer and Business Services may revoke a license issued under ORS 725A.024 if the director:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Gives the licensee 10 days written notice in which the director specifies the action the director will take and the general grounds for the action;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Provides the licensee with reasonable opportunity for a hearing under ORS chapter 183 in connection with the action; and",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Finds that:",
+              "subsections": [
+                {
+                  "label": "(A)",
+                  "token": "A",
+                  "kind": "alpha_upper",
+                  "text": "The licensee failed to pay the annual license fee;",
+                  "subsections": []
+                },
+                {
+                  "label": "(B)",
+                  "token": "B",
+                  "kind": "alpha_upper",
+                  "text": "The licensee failed to comply with a demand, ruling or requirement the director made under ORS 725A.010 to 725A.092 and 725A.990;",
+                  "subsections": []
+                },
+                {
+                  "label": "(C)",
+                  "token": "C",
+                  "kind": "alpha_upper",
+                  "text": "The licensee, if the licensee is a corporation, failed to keep the corporation in good standing under applicable provisions of law;",
+                  "subsections": []
+                },
+                {
+                  "label": "(D)",
+                  "token": "D",
+                  "kind": "alpha_upper",
+                  "text": "The licensee violated a provision of ORS 725A.010 to 725A.092 and 725A.990 or a rule the director adopted under ORS 725A.010 to 725A.092 and 725A.990; or",
+                  "subsections": []
+                },
+                {
+                  "label": "(E)",
+                  "token": "E",
+                  "kind": "alpha_upper",
+                  "text": "A fact or condition exists that clearly would have warranted the directors refusing to issue the license had the fact or condition existed at the time the licensee submitted an application under ORS 725A.022.",
+                  "subsections": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The director, without notice or hearing, may suspend a license for a period not exceeding 30 days, pending investigation. The director shall provide the licensee with a reasonable opportunity for a hearing under ORS chapter 183 if the director proposes to suspend a license for a period longer than 30 days.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The director may revoke or suspend only the particular license with respect to which grounds for revocation or suspension exist. If the director finds that grounds for revoking or suspending a license exist with respect to more than one of the locations in which a licensee operates, the director may revoke or suspend the license issued to the licensee for each location with respect to which grounds for revocation or suspension exist.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 10,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html#section-725a.036",
+      "identifier": "ORS 725a.036",
+      "name": "Section 725a.036",
+      "text": "License reinstatement; fee. The Director of the Department of Consumer and Business Services may reinstate a license the director revoked if the licensee: (1) Complies with applicable provisions of law; (2) Complies with a demand, ruling or requirement the director issues or imposes; and (3) Pays a fee of $25.",
+      "history_citation_blocks": [
+        "2010 c.23 11"
+      ],
+      "history_citations": [
+        {
+          "raw": "2010 c.23 11",
+          "year": 2010,
+          "chapter": "23",
+          "section": "11"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Complies with applicable provisions of law;",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Complies with a demand, ruling or requirement the director issues or imposes; and",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Pays a fee of $25.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 11,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html#section-725a.038",
+      "identifier": "ORS 725a.038",
+      "name": "Section 725a.038",
+      "text": "License surrender. (1) A licensee may deliver a written notice to the Director of the Department of Consumer and Business Services to surrender a license the director issued to the licensee under ORS 725A.024. (2)(a) A licensee shall surrender a license under which no material loan activity has occurred for a period of 12 consecutive months. (b) For purposes of this subsection, material loan activity includes a new loan, a loan that refinances an existing loan or a formal extension of existing loan repayment provisions for more than 30 days. (3) A licensees surrendering a license under subsection (1) or (2) of this section does not affect the licensees civil or criminal liability for acts the licensee committed before surrendering the license.",
+      "history_citation_blocks": [
+        "2010 c.23 12"
+      ],
+      "history_citations": [
+        {
+          "raw": "2010 c.23 12",
+          "year": 2010,
+          "chapter": "23",
+          "section": "12"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A licensee may deliver a written notice to the Director of the Department of Consumer and Business Services to surrender a license the director issued to the licensee under ORS 725A.024.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "(a) A licensee shall surrender a license under which no material loan activity has occurred for a period of 12 consecutive months. of this section does not affect the licensees civil or criminal liability for acts the licensee committed before surrendering the license.",
+          "subsections": [
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "For purposes of this subsection, material loan activity includes a new loan, a loan that refinances an existing loan or a formal extension of existing loan repayment provisions for more than 30 days.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "A licensees surrendering a license under subsection",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 12,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html#section-725a.040",
+      "identifier": "ORS 725a.040",
+      "name": "Section 725a.040",
+      "text": "Effect of license revocation, suspension or surrender. Revocation, suspension or surrender of a license issued under ORS 725A.024 does not impair or affect the rights or obligations specified in a lawful contract between the licensee and a borrower that existed before the revocation, suspension or surrender. [2010 c.23 13] (Regulation)",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 13,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html#section-725a.050",
+      "identifier": "ORS 725a.050",
+      "name": "Section 725a.050",
+      "text": "Directors power to examine or investigate; costs. (1) The Director of the Department of Consumer and Business Services, to secure information the director requires and to ensure compliance with ORS 725A.010 to 725A.092 and",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The Director of the Department of Consumer and Business Services, to secure information the director requires and to ensure compliance with ORS 725A.010 to 725A.092 and",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 14,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html#section-725a.052",
+      "identifier": "ORS 725a.052",
+      "name": "Section 725a.052",
+      "text": "Record keeping requirements. The Director of the Department of Consumer and Business Services may specify the form and content of the books and records the licensee must keep in accordance with the provisions of ORS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 15,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html#section-725a.054",
+      "identifier": "ORS 725a.054",
+      "name": "Section 725a.054",
+      "text": "Duty to report defalcation; audit. (1) A director or officer of a licensee who has reason to believe that a defalcation has occurred at an office of the licensee shall report the defalcation to the local, state or federal law enforcement officer with jurisdiction. (2) A licensee, within five days after the discovery of a defalcation that occurs at an office of the licensee, shall notify the Director of the Department of Consumer and Business Services. If the director instructs the licensee to do so, the licensee shall cause an audit to be made of the business of the licensed office where the defalcation occurred, in accordance with the directors instructions. (3) The Director of the Department of Consumer and Business Services may report a defalcation to a federal, state or local law enforcement agency with jurisdiction if the licensee has not reported the defalcation in accordance with subsection (1) of this section.",
+      "history_citation_blocks": [
+        "2010 c.23 16"
+      ],
+      "history_citations": [
+        {
+          "raw": "2010 c.23 16",
+          "year": 2010,
+          "chapter": "23",
+          "section": "16"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A director or officer of a licensee who has reason to believe that a defalcation has occurred at an office of the licensee shall report the defalcation to the local, state or federal law enforcement officer with jurisdiction. of this section.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "A licensee, within five days after the discovery of a defalcation that occurs at an office of the licensee, shall notify the Director of the Department of Consumer and Business Services. If the director instructs the licensee to do so, the licensee shall cause an audit to be made of the business of the licensed office where the defalcation occurred, in accordance with the directors instructions.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The Director of the Department of Consumer and Business Services may report a defalcation to a federal, state or local law enforcement agency with jurisdiction if the licensee has not reported the defalcation in accordance with subsection",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 16,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html#section-725a.056",
+      "identifier": "ORS 725a.056",
+      "name": "Section 725a.056",
+      "text": "Loan disclosure requirements; receipt; procedure after full loan repayment. A licensee shall: (1) Deliver to the borrower at the time the licensee makes a loan a statement in the English language that shows in clear and distinct terms: (a) The borrowers and the licensees names and addresses. (b) The amount of the loan, the date on which the licensee made the loan and the maturity of or payment terms for the loan. (c) The interest rate to which the licensee and borrower agreed and the consideration the licensee will charge for the loan. (d) The nature of the security for the loan, if the licensee has taken a lien on personal property by chattel mortgage, bill of sale, collateral agreement or otherwise. (2) Make available to the borrower upon request a plain and complete receipt for all payments the borrower made on a loan at the time the licensee receives the payments. The receipt must: (a) Specify the amount, if any, that the licensee applied toward interest; (b) Identify the date to which the interest is paid; (c) Specify the amount, if any, the licensee applied toward principal; and (d) State the unpaid principal balance for the loan, if a principal balance remains. (3) Permit a borrower at any time to pay any amount in advance on any loan. (4) Mark the word Paid or Renewed indelibly on the note, or on other evidence of the debt or obligation that bears the borrowers signature, whenever the borrower pays the loan in full or renews the loan. If the borrower repays the loan in full, the licensee shall also: (a) Release a mortgage or security agreement that no longer secures the loan and restore any security or collateral, to the extent and in the manner required by law. (b) Release a Uniform Commercial Code filing that no longer secures the loan, to the extent and in the manner required under ORS 79.0513. (c) Return any assignment the borrower gave. (d) Return to the borrower the canceled note or other evidence of the loan or, alternatively, acknowledge to the borrower in writing that the borrower has repaid the loan.",
+      "history_citation_blocks": [
+        "2010 c.23 17"
+      ],
+      "history_citations": [
+        {
+          "raw": "2010 c.23 17",
+          "year": 2010,
+          "chapter": "23",
+          "section": "17"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Deliver to the borrower at the time the licensee makes a loan a statement in the English language that shows in clear and distinct terms:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "The borrowers and the licensees names and addresses.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "The amount of the loan, the date on which the licensee made the loan and the maturity of or payment terms for the loan.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "The interest rate to which the licensee and borrower agreed and the consideration the licensee will charge for the loan.",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "The nature of the security for the loan, if the licensee has taken a lien on personal property by chattel mortgage, bill of sale, collateral agreement or otherwise.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Make available to the borrower upon request a plain and complete receipt for all payments the borrower made on a loan at the time the licensee receives the payments. The receipt must:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Specify the amount, if any, that the licensee applied toward interest;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Identify the date to which the interest is paid;",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Specify the amount, if any, the licensee applied toward principal; and",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "State the unpaid principal balance for the loan, if a principal balance remains.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Permit a borrower at any time to pay any amount in advance on any loan.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Mark the word Paid or Renewed indelibly on the note, or on other evidence of the debt or obligation that bears the borrowers signature, whenever the borrower pays the loan in full or renews the loan. If the borrower repays the loan in full, the licensee shall also:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Release a mortgage or security agreement that no longer secures the loan and restore any security or collateral, to the extent and in the manner required by law.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Release a Uniform Commercial Code filing that no longer secures the loan, to the extent and in the manner required under ORS 79.0513.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Return any assignment the borrower gave.",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "Return to the borrower the canceled note or other evidence of the loan or, alternatively, acknowledge to the borrower in writing that the borrower has repaid the loan.",
+              "subsections": []
+            }
+          ]
+        }
+      ],
+      "parser_warnings": [],
+      "position": 17,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html#section-725a.058",
+      "identifier": "ORS 725a.058",
+      "name": "Section 725a.058",
+      "text": "Dissemination of false, misleading or deceptive statement. A licensee or other person may not advertise, print, display, publish, distribute or broadcast or cause or permit to be advertised, printed, displayed, published, distributed or broadcast in any manner whatsoever a statement or representation that is false, misleading or deceptive with respect to a rate, term or condition for a payday loan or title loan.",
+      "history_citation_blocks": [
+        "2010 c.23 18"
+      ],
+      "history_citations": [
+        {
+          "raw": "2010 c.23 18",
+          "year": 2010,
+          "chapter": "23",
+          "section": "18"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 18,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html#section-725a.060",
+      "identifier": "ORS 725a.060",
+      "name": "Section 725a.060",
+      "text": "Prohibited conduct generally. (1) A licensee or a person required under ORS 725A.020 to obtain a license may not: (a) Take from a consumer: (A) A power of attorney, except a power of attorney to transfer ownership of a motor vehicle at the time the licensee or the person makes a loan secured by a motor vehicle. (B) A note or promise to pay that does not accurately disclose the actual amount or the term of the loan, the rate of interest charged and the schedule of payments for the loan. (C) An instrument in which blank spaces remain to be filled in after execution. (D) An assignment of earnings as payment or as security for a loan. An assignment that violates this subparagraph is unenforceable by the assignee and revocable by the assignor. For purposes of this subparagraph, if the licensee or the person pays money to or on behalf of a consumer in return for a right or claim to all or a portion of the consumers unpaid earnings, the licensee or the person has made a loan to the consumer that is secured by an assignment of earnings. This subparagraph does not preclude an employee from authorizing deductions from the employees earnings if the authorization is revocable. (b) Conduct business where liquor or lottery tickets are sold or where gambling devices are located. (c) Charge a consumer: (A) More than the actual amount that the vendor or service provider charges the licensee or the person for access to or use of the system described in ORS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A licensee or a person required under ORS 725A.020 to obtain a license may not:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Take from a consumer:",
+              "subsections": [
+                {
+                  "label": "(A)",
+                  "token": "A",
+                  "kind": "alpha_upper",
+                  "text": "A power of attorney, except a power of attorney to transfer ownership of a motor vehicle at the time the licensee or the person makes a loan secured by a motor vehicle.",
+                  "subsections": []
+                },
+                {
+                  "label": "(B)",
+                  "token": "B",
+                  "kind": "alpha_upper",
+                  "text": "A note or promise to pay that does not accurately disclose the actual amount or the term of the loan, the rate of interest charged and the schedule of payments for the loan.",
+                  "subsections": []
+                },
+                {
+                  "label": "(C)",
+                  "token": "C",
+                  "kind": "alpha_upper",
+                  "text": "An instrument in which blank spaces remain to be filled in after execution.",
+                  "subsections": []
+                },
+                {
+                  "label": "(D)",
+                  "token": "D",
+                  "kind": "alpha_upper",
+                  "text": "An assignment of earnings as payment or as security for a loan. An assignment that violates this subparagraph is unenforceable by the assignee and revocable by the assignor. For purposes of this subparagraph, if the licensee or the person pays money to or on behalf of a consumer in return for a right or claim to all or a portion of the consumers unpaid earnings, the licensee or the person has made a loan to the consumer that is secured by an assignment of earnings. This subparagraph does not preclude an employee from authorizing deductions from the employees earnings if the authorization is revocable.",
+                  "subsections": []
+                }
+              ]
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Conduct business where liquor or lottery tickets are sold or where gambling devices are located.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Charge a consumer:",
+              "subsections": [
+                {
+                  "label": "(A)",
+                  "token": "A",
+                  "kind": "alpha_upper",
+                  "text": "More than the actual amount that the vendor or service provider charges the licensee or the person for access to or use of the system described in ORS",
+                  "subsections": []
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "parser_warnings": [],
+      "position": 19,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html#section-725a.062",
+      "identifier": "ORS 725a.062",
+      "name": "Section 725a.062",
+      "text": "Prohibited conduct for title loan lender. A title loan lender may not: (1) Make or renew a title loan at a rate of interest that exceeds 36 percent per annum, excluding a one-time origination fee that the title loan lender may charge for the loan. (2) Charge during the term of a title loan, including all renewals of the loan, more than one origination fee of $10 per $100 of the loan amount or $30, whichever is less. (3) Make or renew a title loan for a term of less than 31 days. (4) Make or renew a title loan to a consumer without forming a good faith belief that the consumer has the ability to repay the title loan. In forming a good faith belief, the title loan lender shall consider factors that the Director of the Department of Consumer and Business Services specifies by rule. A title loan lender complies with this subsection if the title loan lender meets the conditions the director specifies. (5) Charge a consumer a fee or interest other than a fee or interest described in subsection (1) or (2) of this section or in ORS 725A.060 (1)(c) or (d). (6) Include in a title loan contract: (a) A hold-harmless clause; (b) A confession of judgment or other waiver of the right to notice and the opportunity to be heard in an action; (c) A provision in which the consumer agrees not to assert against the lender or a holder in due course a claim or defense arising out of the contract; (d) An executory waiver or a limitation of exemption from attachment, execution or other process on real or personal property the consumer holds, owns or is due, unless the waiver or limitation applies only to property that is subject to a security interest executed in connection with the loan; or (e) A clause that permits interest to continue after the consumers motor vehicle, recreational vehicle, boat or mobile home has been repossessed. (7) Require or accept from a consumer a set of keys to the motor vehicle, recreational vehicle, boat or mobile home the title to which secures the title loan. (8) Make more than one outstanding title loan that is secured by one title. (9) Renew an existing title loan that is secured by one title more than two times after the loan is first made. (10) Make a new title loan to a consumer within seven days after the date on which the consumer fully repays a previous title loan.",
+      "history_citation_blocks": [
+        "2010 c.23 20; 2019 c.188 2"
+      ],
+      "history_citations": [
+        {
+          "raw": "2010 c.23 20",
+          "year": 2010,
+          "chapter": "23",
+          "section": "20"
+        },
+        {
+          "raw": "2019 c.188 2",
+          "year": 2019,
+          "chapter": "188",
+          "section": "2"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Make or renew a title loan at a rate of interest that exceeds 36 percent per annum, excluding a one-time origination fee that the title loan lender may charge for the loan. (c) or",
+          "subsections": [
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": ".",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Charge during the term of a title loan, including all renewals of the loan, more than one origination fee of $10 per $100 of the loan amount or $30, whichever is less. of this section or in ORS 725A.060",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Make or renew a title loan for a term of less than 31 days.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Make or renew a title loan to a consumer without forming a good faith belief that the consumer has the ability to repay the title loan. In forming a good faith belief, the title loan lender shall consider factors that the Director of the Department of Consumer and Business Services specifies by rule. A title loan lender complies with this subsection if the title loan lender meets the conditions the director specifies.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "Charge a consumer a fee or interest other than a fee or interest described in subsection",
+          "subsections": []
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "Include in a title loan contract:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "A hold-harmless clause;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "A confession of judgment or other waiver of the right to notice and the opportunity to be heard in an action;",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "A provision in which the consumer agrees not to assert against the lender or a holder in due course a claim or defense arising out of the contract;",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "An executory waiver or a limitation of exemption from attachment, execution or other process on real or personal property the consumer holds, owns or is due, unless the waiver or limitation applies only to property that is subject to a security interest executed in connection with the loan; or",
+              "subsections": []
+            },
+            {
+              "label": "(e)",
+              "token": "e",
+              "kind": "alpha_lower",
+              "text": "A clause that permits interest to continue after the consumers motor vehicle, recreational vehicle, boat or mobile home has been repossessed.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(7)",
+          "token": "7",
+          "kind": "numeric",
+          "text": "Require or accept from a consumer a set of keys to the motor vehicle, recreational vehicle, boat or mobile home the title to which secures the title loan.",
+          "subsections": []
+        },
+        {
+          "label": "(8)",
+          "token": "8",
+          "kind": "numeric",
+          "text": "Make more than one outstanding title loan that is secured by one title.",
+          "subsections": []
+        },
+        {
+          "label": "(9)",
+          "token": "9",
+          "kind": "numeric",
+          "text": "Renew an existing title loan that is secured by one title more than two times after the loan is first made.",
+          "subsections": []
+        },
+        {
+          "label": "(10)",
+          "token": "10",
+          "kind": "numeric",
+          "text": "Make a new title loan to a consumer within seven days after the date on which the consumer fully repays a previous title loan.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 20,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html#section-725a.064",
+      "identifier": "ORS 725a.064",
+      "name": "Section 725a.064",
+      "text": "Prohibited conduct for payday loan lender. A payday loan lender may not: (1) Make or renew a payday loan at a rate of interest that exceeds 36 percent per annum, excluding a one-time origination fee that the payday loan lender may charge for the loan. (2) Charge during the term of a payday loan, including all renewals of the loan, more than one origination fee of $10 per $100 of the loan amount or $30, whichever is less. (3) Make or renew a payday loan for a term of less than 31 days. (4) Charge a consumer a fee or interest other than a fee or interest described in subsection (1) or (2) of this section or in ORS 725A.060 (1)(c) or (d). (5) Include in a payday loan contract: (a) A hold-harmless clause; (b) A confession of judgment or other waiver of the right to notice and the opportunity to be heard in an action; (c) A provision in which the consumer agrees not to assert against the lender or a holder in due course a claim or defense arising out of the contract; or (d) An executory waiver or a limitation of exemption from attachment, execution or other process on real or personal property the consumer holds, owns or is due, unless the waiver or limitation applies only to property that is subject to a security interest executed in connection with the loan. (6) Renew an existing payday loan more than two times. (7) Make a new payday loan to a consumer within seven days after the date on which the consumer fully repays a previous payday loan. [2010 c.23 21; 2019 c.188 3] (Enforcement)",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Make or renew a payday loan at a rate of interest that exceeds 36 percent per annum, excluding a one-time origination fee that the payday loan lender may charge for the loan. (c) or",
+          "subsections": [
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": ".",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Charge during the term of a payday loan, including all renewals of the loan, more than one origination fee of $10 per $100 of the loan amount or $30, whichever is less. of this section or in ORS 725A.060",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Make or renew a payday loan for a term of less than 31 days.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Charge a consumer a fee or interest other than a fee or interest described in subsection",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "Include in a payday loan contract:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "A hold-harmless clause;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "A confession of judgment or other waiver of the right to notice and the opportunity to be heard in an action;",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "A provision in which the consumer agrees not to assert against the lender or a holder in due course a claim or defense arising out of the contract; or",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "An executory waiver or a limitation of exemption from attachment, execution or other process on real or personal property the consumer holds, owns or is due, unless the waiver or limitation applies only to property that is subject to a security interest executed in connection with the loan.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "Renew an existing payday loan more than two times.",
+          "subsections": []
+        },
+        {
+          "label": "(7)",
+          "token": "7",
+          "kind": "numeric",
+          "text": "Make a new payday loan to a consumer within seven days after the date on which the consumer fully repays a previous payday loan. [2010 c.23 21; 2019 c.188 3] (Enforcement)",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 21,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html#section-725a.080",
+      "identifier": "ORS 725a.080",
+      "name": "Section 725a.080",
+      "text": "Complaint and administrative remedy. (1) A person who claims to be aggrieved by a practice that violates a provision of ORS 725A.020, 725A.060, 725A.062 or",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A person who claims to be aggrieved by a practice that violates a provision of ORS 725A.020, 725A.060, 725A.062 or",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 22,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html#section-725a.082",
+      "identifier": "ORS 725a.082",
+      "name": "Section 725a.082",
+      "text": "Cease and desist order. (1) If the Director of the Department of Consumer and Business Services has reasonable cause to believe that a person violated, is violating or is about to violate a provision of ORS 725A.010 to 725A.092 and",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "If the Director of the Department of Consumer and Business Services has reasonable cause to believe that a person violated, is violating or is about to violate a provision of ORS 725A.010 to 725A.092 and",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 23,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html#section-725a.084",
+      "identifier": "ORS 725a.084",
+      "name": "Section 725a.084",
+      "text": "Suspension or removal of officer or director of licensee. (1) If the Director of the Department of Consumer and Business Services finds that an officer or director of a licensee is dishonest, reckless or incompetent or refuses to comply with the law, with a rule the Department of Consumer and Business Services adopted or with a written requirement or instruction the department imposed or issued, the Director of the Department of Consumer and Business Services may order the licensee to suspend the licensees officer or director from the officer or directors office or position. (2) The Director of the Department of Consumer and Business Services, for any of the reasons set forth in ORS 725A.026, may order a licensee to remove an officer or director of the licensee from office.",
+      "history_citation_blocks": [
+        "2010 c.23 24"
+      ],
+      "history_citations": [
+        {
+          "raw": "2010 c.23 24",
+          "year": 2010,
+          "chapter": "23",
+          "section": "24"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "If the Director of the Department of Consumer and Business Services finds that an officer or director of a licensee is dishonest, reckless or incompetent or refuses to comply with the law, with a rule the Department of Consumer and Business Services adopted or with a written requirement or instruction the department imposed or issued, the Director of the Department of Consumer and Business Services may order the licensee to suspend the licensees officer or director from the officer or directors office or position.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The Director of the Department of Consumer and Business Services, for any of the reasons set forth in ORS 725A.026, may order a licensee to remove an officer or director of the licensee from office.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 24,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html#section-725a.086",
+      "identifier": "ORS 725a.086",
+      "name": "Section 725a.086",
+      "text": "Limitation of personal liability. A person is not personally liable for an act the person does or fails to do in good faith and in compliance with a rule or order the Director of the Department of Consumer and Business Services adopted or issued under ORS 725A.010 to 725A.092 and 725A.990, even if the director amends or rescinds the rule or order or a judicial or other authority determines that the rule or order is invalid. [2010 c.23 25] (Miscellaneous)",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 25,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html#section-725a.090",
+      "identifier": "ORS 725a.090",
+      "name": "; or",
+      "text": "(B) More than one fee per loan transaction for dishonored checks or insufficient funds, regardless of how many checks or debit agreements the licensee or the person obtains from the consumer for the transaction. The fee may not exceed $20. (d) Collect a fee for a dishonored check under ORS 30.701 or seek or recover statutory damages or attorney fees from a consumer for a dishonored check under ORS 30.701. The licensee or the person may recover from the consumer a fee that an unaffiliated financial institution charges to the licensee or the person for each dishonored check. For a dishonored check or insufficient funds, the fees described in this subsection are the only remedy the licensee or the person may pursue and the only fees the licensee or the person may charge. (e) Make a loan to a consumer who has not fully repaid an outstanding payday loan or title loan. This paragraph does not prohibit a licensee or person from renewing an existing payday loan or title loan as provided in ORS 725A.010 to",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(B)",
+          "token": "B",
+          "kind": "alpha_upper",
+          "text": "More than one fee per loan transaction for dishonored checks or insufficient funds, regardless of how many checks or debit agreements the licensee or the person obtains from the consumer for the transaction. The fee may not exceed $20.",
+          "subsections": []
+        },
+        {
+          "label": "(d)",
+          "token": "d",
+          "kind": "alpha_lower",
+          "text": "Collect a fee for a dishonored check under ORS 30.701 or seek or recover statutory damages or attorney fees from a consumer for a dishonored check under ORS 30.701. The licensee or the person may recover from the consumer a fee that an unaffiliated financial institution charges to the licensee or the person for each dishonored check. For a dishonored check or insufficient funds, the fees described in this subsection are the only remedy the licensee or the person may pursue and the only fees the licensee or the person may charge.",
+          "subsections": []
+        },
+        {
+          "label": "(e)",
+          "token": "e",
+          "kind": "alpha_lower",
+          "text": "Make a loan to a consumer who has not fully repaid an outstanding payday loan or title loan. This paragraph does not prohibit a licensee or person from renewing an existing payday loan or title loan as provided in ORS 725A.010 to",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 26,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html#section-725a.092",
+      "identifier": "ORS 725a.092",
+      "name": "and 725A.990;",
+      "text": "(d) Was convicted of a crime, an essential element of which is fraud; (e) Is permanently or temporarily enjoined by a court of competent jurisdiction from engaging in or continuing a practice or conduct in connection with making payday loans, title loans or consumer loans; or (f) Is subject to an order in which: (A) The director imposed a fine or other civil penalty on the person under the Bank Act, ORS chapter 723, 725 or 726 or ORS 725A.010 to 725A.092 and 725A.990; (B) The director removed the person from an office in an entity regulated under the Bank Act, ORS chapter 723 or 725 or ORS 725A.010 to 725A.092 and 725A.990; or (C) A state or federal agency with authority over banking institutions, savings associations, credit unions or consumer finance companies, within a five-year period before the applicant submitted an application under ORS 725A.022: (i) Imposed a fine or other civil penalty on the person; or (ii) Removed the person from an office in a state banking institution, a national bank, a state or federal savings association, a state or federal credit union or a consumer finance company. (2) If the director denies a license to an applicant under this section, the director shall provide the applicant with a reasonable opportunity for a hearing under ORS chapter 183.",
+      "history_citation_blocks": [
+        "2010 c.23 6"
+      ],
+      "history_citations": [
+        {
+          "raw": "2010 c.23 6",
+          "year": 2010,
+          "chapter": "23",
+          "section": "6"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(d)",
+          "token": "d",
+          "kind": "alpha_lower",
+          "text": "Was convicted of a crime, an essential element of which is fraud;",
+          "subsections": []
+        },
+        {
+          "label": "(e)",
+          "token": "e",
+          "kind": "alpha_lower",
+          "text": "Is permanently or temporarily enjoined by a court of competent jurisdiction from engaging in or continuing a practice or conduct in connection with making payday loans, title loans or consumer loans; or",
+          "subsections": []
+        },
+        {
+          "label": "(f)",
+          "token": "f",
+          "kind": "alpha_lower",
+          "text": "Is subject to an order in which:",
+          "subsections": [
+            {
+              "label": "(A)",
+              "token": "A",
+              "kind": "alpha_upper",
+              "text": "The director imposed a fine or other civil penalty on the person under the Bank Act, ORS chapter 723, 725 or 726 or ORS 725A.010 to 725A.092 and 725A.990;",
+              "subsections": []
+            },
+            {
+              "label": "(B)",
+              "token": "B",
+              "kind": "alpha_upper",
+              "text": "The director removed the person from an office in an entity regulated under the Bank Act, ORS chapter 723 or 725 or ORS 725A.010 to 725A.092 and 725A.990; or",
+              "subsections": []
+            },
+            {
+              "label": "(C)",
+              "token": "C",
+              "kind": "alpha_upper",
+              "text": "A state or federal agency with authority over banking institutions, savings associations, credit unions or consumer finance companies, within a five-year period before the applicant submitted an application under ORS 725A.022:",
+              "subsections": [
+                {
+                  "label": "(i)",
+                  "token": "i",
+                  "kind": "roman_lower",
+                  "text": "Imposed a fine or other civil penalty on the person; or",
+                  "subsections": []
+                },
+                {
+                  "label": "(ii)",
+                  "token": "ii",
+                  "kind": "roman_lower",
+                  "text": "Removed the person from an office in a state banking institution, a national bank, a state or federal savings association, a state or federal credit union or a consumer finance company.",
+                  "subsections": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "If the director denies a license to an applicant under this section, the director shall provide the applicant with a reasonable opportunity for a hearing under ORS chapter 183.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 27,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html#section-725a.500",
+      "identifier": "ORS 725a.500",
+      "name": "Section 725a.500",
+      "text": "Definitions. As used in ORS 725A.500 to 725A.530: (1) Affiliate means a person that controls, is controlled by or is under common control with another person. (2) Applicant means a person that applies for a license to engage in business as a student loan servicer in this state. (3) Borrower means a resident of this state who has received or agreed to pay a student loan or another person who shares responsibility with the resident for repaying a student loan. (4) Branch office means a location at which a business entity services a student loan other than the business entitys headquarters or principal place of business. (5) Business entity means a corporation, limited liability company, partnership, limited partnership, business trust, joint venture or other form of business organization the constituent parts of which share a common economic interest. (6) Controller means: (a) A director, officer or general partner of a business entity; (b) A managing member of a limited liability company; (c) A person that has a direct or indirect right to vote 10 percent or more of the securities of a business entity that have voting rights or the power to sell or cause the sale of 10 percent or more of any class of a business entitys securities; (d) A person that has contributed 10 percent or more to a partnerships capital or has the right to receive a distribution of 10 percent or more of a partnerships capital or assets upon dissolution; or (e) A person that, under the terms of a contract or because the person has an ownership interest in another person, has the power to manage or set policies for the other person or otherwise direct the other persons operations or affairs. (7) Licensee means a person that has applied for and obtained or renewed a license from the Director of the Department of Consumer and Business Services to engage in business as a student loan servicer in this state. (8) Manager means an individual who has supervisory authority over employees and operations at a business entitys branch office or other business location. (9) Person means an individual or a business entity. (10) Service a student loan means to: (a) Receive a scheduled periodic payment from a borrower under the terms of a student loan; (b) Apply payments of principal and interest and other payments from a borrower in accordance with the terms of a student loan; or (c) Perform other administrative services with respect to a student loan including, but not limited to, performing any of the following actions during periods in which a payment on a student loan is not due: (A) Maintaining account records for the student loan; (B) Communicating with the borrower about the student loan on behalf of the lender; or (C) Interacting with a borrower to prevent a default on a student loan or to enable the activities described in paragraphs (a) and (b) of this subsection. (11) Student loan means a loan the proceeds of which a borrower uses primarily for personal use to pay education expenses or other school-related expenses.",
+      "history_citation_blocks": [
+        "2021 c.651 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "2021 c.651 1",
+          "year": 2021,
+          "chapter": "651",
+          "section": "1"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Affiliate means a person that controls, is controlled by or is under common control with another person.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Applicant means a person that applies for a license to engage in business as a student loan servicer in this state.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Borrower means a resident of this state who has received or agreed to pay a student loan or another person who shares responsibility with the resident for repaying a student loan.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Branch office means a location at which a business entity services a student loan other than the business entitys headquarters or principal place of business.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "Business entity means a corporation, limited liability company, partnership, limited partnership, business trust, joint venture or other form of business organization the constituent parts of which share a common economic interest.",
+          "subsections": []
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "Controller means:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "A director, officer or general partner of a business entity;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "A managing member of a limited liability company;",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "A person that has a direct or indirect right to vote 10 percent or more of the securities of a business entity that have voting rights or the power to sell or cause the sale of 10 percent or more of any class of a business entitys securities;",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "A person that has contributed 10 percent or more to a partnerships capital or has the right to receive a distribution of 10 percent or more of a partnerships capital or assets upon dissolution; or",
+              "subsections": []
+            },
+            {
+              "label": "(e)",
+              "token": "e",
+              "kind": "alpha_lower",
+              "text": "A person that, under the terms of a contract or because the person has an ownership interest in another person, has the power to manage or set policies for the other person or otherwise direct the other persons operations or affairs.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(7)",
+          "token": "7",
+          "kind": "numeric",
+          "text": "Licensee means a person that has applied for and obtained or renewed a license from the Director of the Department of Consumer and Business Services to engage in business as a student loan servicer in this state.",
+          "subsections": []
+        },
+        {
+          "label": "(8)",
+          "token": "8",
+          "kind": "numeric",
+          "text": "Manager means an individual who has supervisory authority over employees and operations at a business entitys branch office or other business location.",
+          "subsections": []
+        },
+        {
+          "label": "(9)",
+          "token": "9",
+          "kind": "numeric",
+          "text": "Person means an individual or a business entity.",
+          "subsections": []
+        },
+        {
+          "label": "(10)",
+          "token": "10",
+          "kind": "numeric",
+          "text": "Service a student loan means to:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Receive a scheduled periodic payment from a borrower under the terms of a student loan; and",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Apply payments of principal and interest and other payments from a borrower in accordance with the terms of a student loan; or of this subsection.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Perform other administrative services with respect to a student loan including, but not limited to, performing any of the following actions during periods in which a payment on a student loan is not due:",
+              "subsections": [
+                {
+                  "label": "(A)",
+                  "token": "A",
+                  "kind": "alpha_upper",
+                  "text": "Maintaining account records for the student loan;",
+                  "subsections": []
+                },
+                {
+                  "label": "(B)",
+                  "token": "B",
+                  "kind": "alpha_upper",
+                  "text": "Communicating with the borrower about the student loan on behalf of the lender; or",
+                  "subsections": []
+                },
+                {
+                  "label": "(C)",
+                  "token": "C",
+                  "kind": "alpha_upper",
+                  "text": "Interacting with a borrower to prevent a default on a student loan or to enable the activities described in paragraphs",
+                  "subsections": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "(11)",
+          "token": "11",
+          "kind": "numeric",
+          "text": "Student loan means a loan the proceeds of which a borrower uses primarily for personal use to pay education expenses or other school-related expenses.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 28,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html#section-725a.503",
+      "identifier": "ORS 725a.503",
+      "name": "Section 725a.503",
+      "text": "Prohibition on servicing student loan without license; exceptions; powers of Director of Department of Consumer and Business Services; rules. (1) A person may not directly or indirectly service a student loan in this state unless the person obtains or renews a license under ORS 725A.506. (2) Subsection (1) of this section does not apply to: (a) A financial institution, as defined in ORS 706.008. (b) A financial holding company or bank holding company, both as defined in ORS 706.008, if the financial holding company or bank holding company does no more than control an affiliate or subsidiary, as defined in 12 U.S.C. 1841(d), and does not engage in business as a student loan servicer. (c) An attorney who is licensed or otherwise authorized to practice law in this state if the attorney services a student loan only incidentally in the course of practicing law. (d) A public body, as defined in ORS 174.109. (e) A public university listed in ORS 352.002. (f) A community college, as defined in ORS 341.005. (g) The Oregon Health and Science University. (h) A nonprofit, private, post-secondary institution that the Higher Education Coordinating Commission has authorized to confer academic degrees under ORS 348.594 to 348.615. (i) A state agency or a private nonprofit institution or organization that has an agreement with the United States Secretary of Education under section 428(b) of the Higher Education Act of 1965 (20 U.S.C. 1078(b)), solely to the extent of the agencys, institutions or organizations actions as a guarantor that engages in averting defaults. The exemption set forth in this paragraph does not extend to the agencys, institutions or organizations actions in servicing a student loan. (j) A person that the Director of the Department of Consumer and Business Services designates by rule or order as exempt. (3) Notwithstanding subsection (2) of this section, the director may require any person to obtain a license under ORS 725A.506 before the person services a student loan in this state if the director determines that the person has violated state or federal law or has engaged in a course of dealing that is fraudulent, deceptive or dishonest. (4)(a) If the director reasonably believes that a person is subject to ORS 725A.500 to",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A person may not directly or indirectly service a student loan in this state unless the person obtains or renews a license under ORS 725A.506. of this section does not apply to:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "A financial institution, as defined in ORS 706.008.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "A financial holding company or bank holding company, both as defined in ORS 706.008, if the financial holding company or bank holding company does no more than control an affiliate or subsidiary, as defined in 12 U.S.C. 1841(d), and does not engage in business as a student loan servicer.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "An attorney who is licensed or otherwise authorized to practice law in this state if the attorney services a student loan only incidentally in the course of practicing law.",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "A public body, as defined in ORS 174.109.",
+              "subsections": []
+            },
+            {
+              "label": "(e)",
+              "token": "e",
+              "kind": "alpha_lower",
+              "text": "A public university listed in ORS 352.002.",
+              "subsections": []
+            },
+            {
+              "label": "(f)",
+              "token": "f",
+              "kind": "alpha_lower",
+              "text": "A community college, as defined in ORS 341.005.",
+              "subsections": []
+            },
+            {
+              "label": "(g)",
+              "token": "g",
+              "kind": "alpha_lower",
+              "text": "The Oregon Health and Science University.",
+              "subsections": []
+            },
+            {
+              "label": "(h)",
+              "token": "h",
+              "kind": "alpha_lower",
+              "text": "A nonprofit, private, post-secondary institution that the Higher Education Coordinating Commission has authorized to confer academic degrees under ORS 348.594 to 348.615.",
+              "subsections": []
+            },
+            {
+              "label": "(i)",
+              "token": "i",
+              "kind": "alpha_lower",
+              "text": "A state agency or a private nonprofit institution or organization that has an agreement with the United States Secretary of Education under section 428(b) of the Higher Education Act of 1965 (20 U.S.C. 1078(b)), solely to the extent of the agencys, institutions or organizations actions as a guarantor that engages in averting defaults. The exemption set forth in this paragraph does not extend to the agencys, institutions or organizations actions in servicing a student loan.",
+              "subsections": []
+            },
+            {
+              "label": "(j)",
+              "token": "j",
+              "kind": "alpha_lower",
+              "text": "A person that the Director of the Department of Consumer and Business Services designates by rule or order as exempt.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Subsection of this section, the director may require any person to obtain a license under ORS 725A.506 before the person services a student loan in this state if the director determines that the person has violated state or federal law or has engaged in a course of dealing that is fraudulent, deceptive or dishonest.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Notwithstanding subsection",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "(a) If the director reasonably believes that a person is subject to ORS 725A.500 to",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 29,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html#section-725a.506",
+      "identifier": "ORS 725a.506",
+      "name": "Section 725a.506",
+      "text": "Application for licensing; required contents; fee; bonding; power of director to issue, deny, revoke or refuse to renew license; date of expiration; rules. (1)(a) A person that is subject to the requirement to obtain or renew a license under ORS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "(a) A person that is subject to the requirement to obtain or renew a license under ORS",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 30,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html#section-725a.509",
+      "identifier": "ORS 725a.509",
+      "name": "Section 725a.509",
+      "text": "Duties of licensee; assumed business name. (1) A licensee shall designate and maintain a principal place of business at or from which the licensee services student loans in this state and shall designate a registered agent in this state. (2)(a) If a licensee does not maintain a principal place of business in this state, the licensee shall nevertheless designate a registered agent in this state. The registered agent must be available to receive on the licensees behalf any notice, demand or service of process permitted by law to be given, made or delivered to, or served upon, the licensee. (b) If the licensee does not designate a registered agent in this state, or if the licensees registered agent cannot with reasonable diligence be located, the Director of the Department of Consumer and Business Services is the licensees registered agent. (3) A licensee may not use or operate under an assumed business name unless the licensee first registers the assumed business name under ORS chapter 648 and lists the name on an application under ORS 725A.506 or in a notice to the director under ORS 725A.515.",
+      "history_citation_blocks": [
+        "2021 c.651 4"
+      ],
+      "history_citations": [
+        {
+          "raw": "2021 c.651 4",
+          "year": 2021,
+          "chapter": "651",
+          "section": "4"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A licensee shall designate and maintain a principal place of business at or from which the licensee services student loans in this state and shall designate a registered agent in this state.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "(a) If a licensee does not maintain a principal place of business in this state, the licensee shall nevertheless designate a registered agent in this state. The registered agent must be available to receive on the licensees behalf any notice, demand or service of process permitted by law to be given, made or delivered to, or served upon, the licensee.",
+          "subsections": [
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "If the licensee does not designate a registered agent in this state, or if the licensees registered agent cannot with reasonable diligence be located, the Director of the Department of Consumer and Business Services is the licensees registered agent.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "A licensee may not use or operate under an assumed business name unless the licensee first registers the assumed business name under ORS chapter 648 and lists the name on an application under ORS 725A.506 or in a notice to the director under ORS 725A.515.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 31,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html#section-725a.512",
+      "identifier": "ORS 725a.512",
+      "name": "Section 725a.512",
+      "text": "Requirement to maintain liquidity, operating reserves and tangible net worth; taking possession of licensees property for failure to meet requirement; appointment of receiver. (1) A licensee shall maintain in accordance with generally accepted accounting principles sufficient liquidity, operating reserves and tangible net worth to permit the licensee to adequately meet all costs, expenses and other financial requirements related to servicing student loans in this state. The Director of the Department of Consumer and Business Services may specify by rule the standards a licensee must meet to comply with the requirements set forth in this subsection. (2)(a) If a licensee fails to meet the applicable standards for liquidity, operating reserves and tangible net worth set forth in subsection (1) of this section, the director may take and retain possession of the licensees property, business and assets located in this state until the licensee returns, under the directors supervision or oversight, to compliance with the applicable standards. (b) In taking and retaining possession of the licensees property, business and assets under paragraph (a) of this subsection, the director shall conduct an inventory appropriate for establishing a receivership for the licensee and file a copy of the inventory with: (A) The Department of Consumer and Business Services; and (B) Each of the licensees controllers, at the last address for each controller that the director has in the directors records. (3) If a licensee refuses to permit the director to take and retain possession of the licensees property, business and assets under subsection (2) of this section or if the director can show that the interests of the licensees borrowers or creditors require the appointment of a receiver, the director may apply to the circuit court in the county in which the licensees principal place of business in this state is located for an order to appoint a receiver to take and retain possession of, operate or liquidate the licensees property, business and assets. The court may appoint the director as the receiver. (4) If, 60 days after the date on which the director took possession of a licensees property, business and assets under subsection (2) of this section, the licensee has not returned to compliance with the applicable standards described in subsection (1) of this section, the director shall liquidate the licensees property, business and assets and revoke the licensees license to service student loans in this state. If the director is not the receiver for the licensees property, business and assets, the director shall apply to the circuit court in the county in which the licensees principal place of business in this state is located for an order to appoint the director or another person as receiver.",
+      "history_citation_blocks": [
+        "2021 c.651 5"
+      ],
+      "history_citations": [
+        {
+          "raw": "2021 c.651 5",
+          "year": 2021,
+          "chapter": "651",
+          "section": "5"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A licensee shall maintain in accordance with generally accepted accounting principles sufficient liquidity, operating reserves and tangible net worth to permit the licensee to adequately meet all costs, expenses and other financial requirements related to servicing student loans in this state. The Director of the Department of Consumer and Business Services may specify by rule the standards a licensee must meet to comply with the requirements set forth in this subsection. of this section, the director may take and retain possession of the licensees property, business and assets located in this state until the licensee returns, under the directors supervision or oversight, to compliance with the applicable standards. of this section, the director shall liquidate the licensees property, business and assets and revoke the licensees license to service student loans in this state. If the director is not the receiver for the licensees property, business and assets, the director shall apply to the circuit court in the county in which the licensees principal place of business in this state is located for an order to appoint the director or another person as receiver.",
+          "subsections": [
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "In taking and retaining possession of the licensees property, business and assets under paragraph",
+              "subsections": []
+            },
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "of this subsection, the director shall conduct an inventory appropriate for establishing a receivership for the licensee and file a copy of the inventory with:",
+              "subsections": [
+                {
+                  "label": "(A)",
+                  "token": "A",
+                  "kind": "alpha_upper",
+                  "text": "The Department of Consumer and Business Services; and",
+                  "subsections": []
+                },
+                {
+                  "label": "(B)",
+                  "token": "B",
+                  "kind": "alpha_upper",
+                  "text": "Each of the licensees controllers, at the last address for each controller that the director has in the directors records.",
+                  "subsections": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "(a) If a licensee fails to meet the applicable standards for liquidity, operating reserves and tangible net worth set forth in subsection of this section or if the director can show that the interests of the licensees borrowers or creditors require the appointment of a receiver, the director may apply to the circuit court in the county in which the licensees principal place of business in this state is located for an order to appoint a receiver to take and retain possession of, operate or liquidate the licensees property, business and assets. The court may appoint the director as the receiver. of this section, the licensee has not returned to compliance with the applicable standards described in subsection",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "If a licensee refuses to permit the director to take and retain possession of the licensees property, business and assets under subsection",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "If, 60 days after the date on which the director took possession of a licensees property, business and assets under subsection",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 32,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html#section-725a.515",
+      "identifier": "ORS 725a.515",
+      "name": "Section 725a.515",
+      "text": "Required notifications from licensee to director. (1)(a) A licensee shall notify the Director of the Department of Consumer and Business Services in writing at least 30 days before the licensee: (A) Relocates or closes the licensees principal place of business or a branch office in this state; or (B) Opens a branch office that the licensee did not list in an application under ORS 725A.506. (b) In a notice under paragraph (a) of this subsection, the licensee shall list, as applicable: (A) The new address to which the licensee relocates the licensees principal place of business or any branch office; and (B) The address for any new branch office the licensee opens. (2)(a) A licensee shall notify the director in writing not later than 30 days after: (A) Any appointment, resignation or other change occurs in the licensees controllers, registered agents or managers; or (B) Any material change occurs in the information that the licensee submitted in an application under ORS 725A.506. (b) The licensee shall provide in a notice under paragraph (a)(A) of this subsection the name, address and title of any new controller, registered agent or manager the licensee appoints. (3)(a) A licensee shall notify the director in writing not later than 10 days after: (A) Filing for bankruptcy or reorganization; (B) A controller, registered agent or manager of the licensee becomes subject to an indictment that is related in any manner to the licensees activities; (C) The licensee receives notice of a final order issued in this or another state that: (i) Demands that the licensee cease and desist from any act; (ii) Suspends or revokes a license or registration; or (iii) Constitutes any other formal or informal regulatory action against the licensee; (D) The licensee registers or changes and uses or operates under an assumed business name; (E) The licensee ceases doing business or ceases servicing student loans; or (F) Any other change in the licensees operations or governance occurs in a manner or with an effect that the director determines by rule is significant enough to warrant the licensee notifying the director. (b) A licensee shall specify in a notice under paragraph (a)(C) of this subsection the reasons any final order sets forth for taking a regulatory action against the licensee. (c) A licensee shall identify in a notice under paragraph (a)(E) of this subsection the location in which the licensee stores records related to student loan servicing in this state and shall provide the name and contact information for an individual with authority to provide access to the records. (4) A licensee shall notify the director immediately if the licensee changes registered agents or if the name or address of the licensees registered agent in this state changes. In the notice, the licensee shall update the name and address of the registered agent.",
+      "history_citation_blocks": [
+        "2021 c.651 6"
+      ],
+      "history_citations": [
+        {
+          "raw": "2021 c.651 6",
+          "year": 2021,
+          "chapter": "651",
+          "section": "6"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "(a) A licensee shall notify the Director of the Department of Consumer and Business Services in writing at least 30 days before the licensee:",
+          "subsections": [
+            {
+              "label": "(A)",
+              "token": "A",
+              "kind": "alpha_upper",
+              "text": "Relocates or closes the licensees principal place of business or a branch office in this state; or",
+              "subsections": []
+            },
+            {
+              "label": "(B)",
+              "token": "B",
+              "kind": "alpha_upper",
+              "text": "Opens a branch office that the licensee did not list in an application under ORS 725A.506.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "In a notice under paragraph",
+              "subsections": []
+            },
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "of this subsection, the licensee shall list, as applicable:",
+              "subsections": [
+                {
+                  "label": "(A)",
+                  "token": "A",
+                  "kind": "alpha_upper",
+                  "text": "The new address to which the licensee relocates the licensees principal place of business or any branch office; and",
+                  "subsections": []
+                },
+                {
+                  "label": "(B)",
+                  "token": "B",
+                  "kind": "alpha_upper",
+                  "text": "The address for any new branch office the licensee opens.",
+                  "subsections": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "(a) A licensee shall notify the director in writing not later than 30 days after:",
+          "subsections": [
+            {
+              "label": "(A)",
+              "token": "A",
+              "kind": "alpha_upper",
+              "text": "Any appointment, resignation or other change occurs in the licensees controllers, registered agents or managers; or",
+              "subsections": []
+            },
+            {
+              "label": "(B)",
+              "token": "B",
+              "kind": "alpha_upper",
+              "text": "Any material change occurs in the information that the licensee submitted in an application under ORS 725A.506.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "The licensee shall provide in a notice under paragraph",
+              "subsections": []
+            },
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "(A) of this subsection the name, address and title of any new controller, registered agent or manager the licensee appoints.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "(a) A licensee shall notify the director in writing not later than 10 days after:",
+          "subsections": [
+            {
+              "label": "(A)",
+              "token": "A",
+              "kind": "alpha_upper",
+              "text": "Filing for bankruptcy or reorganization;",
+              "subsections": []
+            },
+            {
+              "label": "(B)",
+              "token": "B",
+              "kind": "alpha_upper",
+              "text": "A controller, registered agent or manager of the licensee becomes subject to an indictment that is related in any manner to the licensees activities;",
+              "subsections": []
+            },
+            {
+              "label": "(C)",
+              "token": "C",
+              "kind": "alpha_upper",
+              "text": "The licensee receives notice of a final order issued in this or another state that:",
+              "subsections": [
+                {
+                  "label": "(i)",
+                  "token": "i",
+                  "kind": "roman_lower",
+                  "text": "Demands that the licensee cease and desist from any act;",
+                  "subsections": []
+                },
+                {
+                  "label": "(ii)",
+                  "token": "ii",
+                  "kind": "roman_lower",
+                  "text": "Suspends or revokes a license or registration; or",
+                  "subsections": []
+                },
+                {
+                  "label": "(iii)",
+                  "token": "iii",
+                  "kind": "roman_lower",
+                  "text": "Constitutes any other formal or informal regulatory action against the licensee;",
+                  "subsections": []
+                }
+              ]
+            },
+            {
+              "label": "(D)",
+              "token": "D",
+              "kind": "alpha_upper",
+              "text": "The licensee registers or changes and uses or operates under an assumed business name;",
+              "subsections": []
+            },
+            {
+              "label": "(E)",
+              "token": "E",
+              "kind": "alpha_upper",
+              "text": "The licensee ceases doing business or ceases servicing student loans; or",
+              "subsections": []
+            },
+            {
+              "label": "(F)",
+              "token": "F",
+              "kind": "alpha_upper",
+              "text": "Any other change in the licensees operations or governance occurs in a manner or with an effect that the director determines by rule is significant enough to warrant the licensee notifying the director.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "A licensee shall specify in a notice under paragraph",
+              "subsections": []
+            },
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "(C) of this subsection the reasons any final order sets forth for taking a regulatory action against the licensee. (E) of this subsection the location in which the licensee stores records related to student loan servicing in this state and shall provide the name and contact information for an individual with authority to provide access to the records.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "A licensee shall identify in a notice under paragraph",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "A licensee shall notify the director immediately if the licensee changes registered agents or if the name or address of the licensees registered agent in this state changes. In the notice, the licensee shall update the name and address of the registered agent.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 33,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html#section-725a.518",
+      "identifier": "ORS 725a.518",
+      "name": "Section 725a.518",
+      "text": "Supervisory powers of director; examination of licensee; charge for costs of examination; multistate cooperation; rules. (1) The Director of the Department of Consumer and Business Services has general supervisory authority over: (a) Each licensee in this state; (b) Any person that services a student loan in this state, if the person is subject to ORS 725A.500 to 725A.530 or if the director required the person to obtain a license under ORS 725A.503 (3); and (c) Any person that had a license that the director withdrew, canceled, suspended, conditioned or revoked, if the person continues to service a student loan. (2)(a) The authority described in subsection (1) of this section includes the authority to examine a licensee or a person described in subsection (1) of this section at any time. (b) The director may charge and collect from a licensee or a person the director examines under this section the costs the director incurs in conducting the examination. (3) In order to conduct an examination under this section, the director may: (a) Retain attorneys, accountants or other professionals and specialists as examiners, auditors or investigators. (b) Enter into agreements or relationships with other government officials or regulatory associations to share resources, to use and create standardized methods, procedures, documents, databases, records, information or evidence, to reduce the directors regulatory burden or to improve efficiency. (c) Participate in multistate examinations that the Conference of State Bank Supervisors or the federal Consumer Financial Protection Bureau schedules and conducts. In conducting an examination under this paragraph, the director shall follow the protocol that the conference or bureau establishes for the examination. (d) Accept and rely on examination or investigation reports from other government officials in this or another state. (4) Books, accounts, papers, records, files, correspondence, contracts and agreements, disclosures, documentation and other information, material or evidence the director obtains in an examination under this section is confidential and subject to the provisions of ORS 705.137, except that a borrower may request to inspect material related to the borrowers student loan that the director by rule specifies is available for inspection. The director shall authenticate the borrowers identity before disclosing any material to the borrower. (5) The director may adopt rules for the purpose of implementing ORS 725A.500 to",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The Director of the Department of Consumer and Business Services has general supervisory authority over: of this section includes the authority to examine a licensee or a person described in subsection of this section at any time.",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Each licensee in this state;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Any person that services a student loan in this state, if the person is subject to ORS 725A.500 to 725A.530 or if the director required the person to obtain a license under ORS 725A.503 The director may charge and collect from a licensee or a person the director examines under this section the costs the director incurs in conducting the examination.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "; and In order to conduct an examination under this section, the director may:",
+          "subsections": [
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Any person that had a license that the director withdrew, canceled, suspended, conditioned or revoked, if the person continues to service a student loan. Participate in multistate examinations that the Conference of State Bank Supervisors or the federal Consumer Financial Protection Bureau schedules and conducts. In conducting an examination under this paragraph, the director shall follow the protocol that the conference or bureau establishes for the examination.",
+              "subsections": []
+            },
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Retain attorneys, accountants or other professionals and specialists as examiners, auditors or investigators.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Enter into agreements or relationships with other government officials or regulatory associations to share resources, to use and create standardized methods, procedures, documents, databases, records, information or evidence, to reduce the directors regulatory burden or to improve efficiency.",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "Accept and rely on examination or investigation reports from other government officials in this or another state.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "(a) The authority described in subsection",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Books, accounts, papers, records, files, correspondence, contracts and agreements, disclosures, documentation and other information, material or evidence the director obtains in an examination under this section is confidential and subject to the provisions of ORS 705.137, except that a borrower may request to inspect material related to the borrowers student loan that the director by rule specifies is available for inspection. The director shall authenticate the borrowers identity before disclosing any material to the borrower.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "The director may adopt rules for the purpose of implementing ORS 725A.500 to",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 34,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html#section-725a.521",
+      "identifier": "ORS 725a.521",
+      "name": "Section 725a.521",
+      "text": "Required practices under federal student loan agreement; prohibitions; exemptions. (1) Except as otherwise required under federal law, in a federal student loan agreement or in a contract between the federal government and a person that services a student loan, a person that services a student loan shall: (a) Assess any fee that the person may assess against a borrower within 45 days after the borrower incurs the fee. (b) Accept and credit, or treat as credited, to the borrowers account all amounts the person receives at the address to which the borrower has been instructed to send payments or notifications of payment on the borrowers student loan. The person must credit the payment, or treat the payment as credited, within one business day after receiving the payment or notification of payment if the borrower has provided sufficient information to credit the account. If the person uses the scheduled method of accounting and the person receives a regularly scheduled payment before the scheduled due date, the person shall credit the payment to the borrowers account not later than the scheduled due date. (c) Correct promptly any errors the person makes and refund promptly any fees the person assesses against the borrower in error. (d) Maintain adequate records of each student loan transaction for not less than two years, or a period otherwise specified by law, after a final payment on a student loan or after the person assigns the student loan, whichever occurs first. At the request of the Director of the Department of Consumer and Business Services and within five days after the request or the within the time the director specifies in the request, the person shall make the records available to the director or send the records to the director in the manner the director specifies by rule. (2) A person that services a student loan may not, directly or indirectly: (a) Employ any device, scheme or artifice to defraud another person; (b) Knowingly make an untrue statement of a material fact or omit a material fact that is necessary to make the persons statement true in light of the circumstances in which the person makes the statement, or misrepresent the amount, nature or terms of any fee or payment due or claimed to be due on a student loan or the terms and conditions of a loan agreement or the borrowers obligations under the loan agreement; (c) Obtain property by fraud or misrepresentation; (d) Knowingly misapply or recklessly apply payments to the outstanding balance of a student loan; (e) Engage in an act, practice or course of business that operates or that the person intends to operate as a fraud or deceit upon another person; (f) Make or file with the Department of Consumer and Business Services, or cause to be made or filed with the department, a statement, report or document that the person knows is false in any material respect or manner; or (g) Fail to respond to a consumer complaint, or to communication from the ombudsman appointed or designated under ORS 725A.530, within 30 calendar days or within a reasonable time that the student loan ombudsman specifies in the communication. The person may request in writing that the student loan ombudsman allow not more than 30 additional calendar days within which to respond if in the request the person explains why the additional time is reasonable and necessary. (3) Subsections (1) and (2) of this section do not apply to: (a) A financial institution, as defined in ORS 706.008. (b) A financial holding company or bank holding company, both as defined in ORS 706.008, if the financial holding company or bank holding company does no more than control an affiliate or subsidiary, as defined in 12 U.S.C. 1841(d), and does not engage in business as a student loan servicer. (c) An attorney who is licensed or otherwise authorized to practice law in this state if the attorney services a student loan only incidentally in the course of practicing law. (d) A public body, as defined in ORS 174.109. (e) A public university listed in ORS 352.002. (f) A community college, as defined in ORS 341.005. (g) The Oregon Health and Science University. (h) A nonprofit, private, post-secondary institution that the Higher Education Coordinating Commission has authorized to confer academic degrees under ORS 348.594 to 348.615.",
+      "history_citation_blocks": [
+        "2021 c.651 8"
+      ],
+      "history_citations": [
+        {
+          "raw": "2021 c.651 8",
+          "year": 2021,
+          "chapter": "651",
+          "section": "8"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Except as otherwise required under federal law, in a federal student loan agreement or in a contract between the federal government and a person that services a student loan, a person that services a student loan shall:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Assess any fee that the person may assess against a borrower within 45 days after the borrower incurs the fee.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Accept and credit, or treat as credited, to the borrowers account all amounts the person receives at the address to which the borrower has been instructed to send payments or notifications of payment on the borrowers student loan. The person must credit the payment, or treat the payment as credited, within one business day after receiving the payment or notification of payment if the borrower has provided sufficient information to credit the account. If the person uses the scheduled method of accounting and the person receives a regularly scheduled payment before the scheduled due date, the person shall credit the payment to the borrowers account not later than the scheduled due date.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Correct promptly any errors the person makes and refund promptly any fees the person assesses against the borrower in error.",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "Maintain adequate records of each student loan transaction for not less than two years, or a period otherwise specified by law, after a final payment on a student loan or after the person assigns the student loan, whichever occurs first. At the request of the Director of the Department of Consumer and Business Services and within five days after the request or the within the time the director specifies in the request, the person shall make the records available to the director or send the records to the director in the manner the director specifies by rule.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "A person that services a student loan may not, directly or indirectly: of this section do not apply to:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Employ any device, scheme or artifice to defraud another person; A financial institution, as defined in ORS 706.008.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Knowingly make an untrue statement of a material fact or omit a material fact that is necessary to make the persons statement true in light of the circumstances in which the person makes the statement, or misrepresent the amount, nature or terms of any fee or payment due or claimed to be due on a student loan or the terms and conditions of a loan agreement or the borrowers obligations under the loan agreement; A financial holding company or bank holding company, both as defined in ORS 706.008, if the financial holding company or bank holding company does no more than control an affiliate or subsidiary, as defined in 12 U.S.C. 1841(d), and does not engage in business as a student loan servicer.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Obtain property by fraud or misrepresentation; An attorney who is licensed or otherwise authorized to practice law in this state if the attorney services a student loan only incidentally in the course of practicing law.",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "Knowingly misapply or recklessly apply payments to the outstanding balance of a student loan; A public body, as defined in ORS 174.109.",
+              "subsections": []
+            },
+            {
+              "label": "(e)",
+              "token": "e",
+              "kind": "alpha_lower",
+              "text": "Engage in an act, practice or course of business that operates or that the person intends to operate as a fraud or deceit upon another person; A public university listed in ORS 352.002.",
+              "subsections": []
+            },
+            {
+              "label": "(f)",
+              "token": "f",
+              "kind": "alpha_lower",
+              "text": "Make or file with the Department of Consumer and Business Services, or cause to be made or filed with the department, a statement, report or document that the person knows is false in any material respect or manner; or A community college, as defined in ORS 341.005.",
+              "subsections": []
+            },
+            {
+              "label": "(g)",
+              "token": "g",
+              "kind": "alpha_lower",
+              "text": "Fail to respond to a consumer complaint, or to communication from the ombudsman appointed or designated under ORS 725A.530, within 30 calendar days or within a reasonable time that the student loan ombudsman specifies in the communication. The person may request in writing that the student loan ombudsman allow not more than 30 additional calendar days within which to respond if in the request the person explains why the additional time is reasonable and necessary. The Oregon Health and Science University.",
+              "subsections": []
+            },
+            {
+              "label": "(h)",
+              "token": "h",
+              "kind": "alpha_lower",
+              "text": "A nonprofit, private, post-secondary institution that the Higher Education Coordinating Commission has authorized to confer academic degrees under ORS 348.594 to 348.615.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Subsections",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 35,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html#section-725a.524",
+      "identifier": "ORS 725a.524",
+      "name": "Section 725a.524",
+      "text": "Investigation of complaints; confidentiality of materials obtained in investigation; exceptions; charge for costs of investigation. (1) If the Director of the Department of Consumer and Business Services receives a complaint concerning a person that services a student loan, the director: (a) Shall notify the person of the complaint, provide a copy of the complaint in the notice and require the person to respond to the complaint and to the director within 30 days after the date of the notice; (b) May investigate the complaint and require the person to provide books, accounts, papers, records, files, correspondence, contracts and agreements, disclosures, documentation and other information, material or evidence necessary for the directors investigation; and (c) May investigate the person and the persons policies and practices with respect to servicing a student loan and require the person to provide books, accounts, papers, records, files, documentation and other information, material or evidence necessary for the directors investigation. (2)(a) Except as provided in paragraph (b) of this subsection, books, accounts, papers, records, files, correspondence, contracts and agreements, disclosures, documentation and other information, material or evidence the director receives or possesses as a consequence of an investigation under subsection (1) of this section are confidential unless state or federal law or a court order permits or requires disclosure. (b) The director may share any item listed in paragraph (a) of this subsection with any state or federal agency. (3) The director may charge and collect from a person the director investigates under this section the costs the director incurs in conducting the investigation. (4) This section does not apply to: (a) A financial institution, as defined in ORS 706.008. (b) A financial holding company or bank holding company, both as defined in ORS 706.008, if the financial holding company or bank holding company does no more than control an affiliate or subsidiary, as defined in 12 U.S.C. 1841(d), and does not engage in business as a student loan servicer.",
+      "history_citation_blocks": [
+        "2021 c.651 9"
+      ],
+      "history_citations": [
+        {
+          "raw": "2021 c.651 9",
+          "year": 2021,
+          "chapter": "651",
+          "section": "9"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "If the Director of the Department of Consumer and Business Services receives a complaint concerning a person that services a student loan, the director: of this section are confidential unless state or federal law or a court order permits or requires disclosure.",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Shall notify the person of the complaint, provide a copy of the complaint in the notice and require the person to respond to the complaint and to the director within 30 days after the date of the notice; of this subsection with any state or federal agency.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "May investigate the complaint and require the person to provide books, accounts, papers, records, files, correspondence, contracts and agreements, disclosures, documentation and other information, material or evidence necessary for the directors investigation; and The director may share any item listed in paragraph",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "May investigate the person and the persons policies and practices with respect to servicing a student loan and require the person to provide books, accounts, papers, records, files, documentation and other information, material or evidence necessary for the directors investigation.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "(a) Except as provided in paragraph",
+          "subsections": [
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "of this subsection, books, accounts, papers, records, files, correspondence, contracts and agreements, disclosures, documentation and other information, material or evidence the director receives or possesses as a consequence of an investigation under subsection",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The director may charge and collect from a person the director investigates under this section the costs the director incurs in conducting the investigation.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "This section does not apply to:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "A financial institution, as defined in ORS 706.008.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "A financial holding company or bank holding company, both as defined in ORS 706.008, if the financial holding company or bank holding company does no more than control an affiliate or subsidiary, as defined in 12 U.S.C. 1841(d), and does not engage in business as a student loan servicer.",
+              "subsections": []
+            }
+          ]
+        }
+      ],
+      "parser_warnings": [],
+      "position": 36,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html#section-725a.527",
+      "identifier": "ORS 725a.527",
+      "name": "Section 725a.527",
+      "text": "Violations; orders of director; remedies; civil penalties; charge for costs of proceeding. (1) If, after conducting an investigation, the Director of the Department of Consumer and Business Services determines that a person that services a student loan has violated ORS 725A.500 to 725A.530, violated a rule the director adopted or an order the director issued under ORS 725A.500 to 725A.530 or violated another applicable law, the director may order the person to: (a) Cease and desist from any act that constitutes a violation of ORS 725A.500 to",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "If, after conducting an investigation, the Director of the Department of Consumer and Business Services determines that a person that services a student loan has violated ORS 725A.500 to 725A.530, violated a rule the director adopted or an order the director issued under ORS 725A.500 to 725A.530 or violated another applicable law, the director may order the person to:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Cease and desist from any act that constitutes a violation of ORS 725A.500 to",
+              "subsections": []
+            }
+          ]
+        }
+      ],
+      "parser_warnings": [],
+      "position": 37,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html#section-725a.530",
+      "identifier": "ORS 725a.530",
+      "name": ".",
+      "text": "(b) Submit to the director a corporate surety bond or irrevocable letter of credit issued by an insured institution, as defined in ORS 706.008, that runs to the State of Oregon in an amount the director specifies by rule. If the applicant seeks to renew a license and previously submitted a corporate surety bond or irrevocable letter of credit, the applicant shall show that the corporate surety bond or irrevocable letter of credit remains effective in the amount the director specifies. (4)(a) Except as provided in paragraph (c) of this subsection, the director may not issue or renew a license under this section unless the director finds that: (A) The applicant submitted a complete application that does not contain a material misstatement; (B) The application identifies a registered agent in this state; (C) The application names a manager for each of the applicants branch offices in this state; (D) The applicant and the applicants controllers, registered agents and managers have not pleaded guilty or no contest in, or been convicted by, a state, federal, foreign or military court: (i) In the seven years before the date of the application, if the plea or conviction was for a felony, or for a misdemeanor an essential element of which involved a false statement or dishonesty; or (ii) At any time before the date of the application if the plea or conviction was for a felony an element of which was fraud, dishonesty, a breach of trust or laundering a monetary instrument; (E) The applicant and the applicants controllers, registered agents and managers have demonstrated adequate financial responsibility, character and general fitness to command the confidence of the community and warrant a determination that the applicant will operate honestly, fairly and efficiently under the provisions of ORS 725A.500 to 725A.530; (F) The applicant has paid the fee and submitted the corporate surety bond or irrevocable letter of credit required under subsection (3) of this section; and (G) The applicant has passed the directors background checks and has satisfied any other criteria for evaluating the applicants financial responsibility and fitness that the director specifies by rule. (b) An applicant need not report a conviction on an application under this section if the conviction was later pardoned or expunged. (c)(A) The director shall: (i) Find that an applicant that services a student loan under a contract with the United States Secretary of Education under 20 U.S.C. 1087f meets the criteria set forth in paragraph (a) of this subsection without the need to comply with the procedures set forth in subsections (2) and (3) of this section, except that the applicant must pay the fee required under subsection (3) of this section and identify a registered agent in this state or appoint the director as the applicants registered agent; and (ii) Issue and renew a license for an applicant that is described in and complies with the provisions of sub-subparagraph (i) of this subparagraph. (B) Except as otherwise provided in this paragraph, a licensee that obtains a license under this paragraph is subject to all of the requirements and conditions set forth in ORS 725A.500 to 725A.530. (d) A licensee that obtained a license under paragraph (c) of this subsection shall notify the director in writing within seven days after the date on which the contract described in paragraph (c)(A) of this subsection expires or terminates. At the expiration or termination of the contract, the licensee becomes subject to the criteria set forth in this subsection and subsections (2) and (3) of this section and, to continue to service a student loan in this state, must meet the criteria within 30 days after the date on which the contract expires or terminates. The director shall suspend the license of a licensee described in this paragraph that fails to meet the criteria. (5)(a) Except as provided in paragraph (c) of this subsection, the director may deny, revoke or decline to renew a license if an applicant, a licensee or a person that services a student loan: (A) Does not meet the criteria set forth in subsection (4) of this section that the director has not waived or modified under subsection (2)(b) of this section; (B) Engages in a course of conduct that violates state or federal law or that constitutes fraudulent, deceptive or dishonest dealing; (C) Has had a license to service a student loan denied or revoked in another jurisdiction; (D) Fails or refuses to comply with the directors written request under ORS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(b)",
+          "token": "b",
+          "kind": "alpha_lower",
+          "text": "Submit to the director a corporate surety bond or irrevocable letter of credit issued by an insured institution, as defined in ORS 706.008, that runs to the State of Oregon in an amount the director specifies by rule. If the applicant seeks to renew a license and previously submitted a corporate surety bond or irrevocable letter of credit, the applicant shall show that the corporate surety bond or irrevocable letter of credit remains effective in the amount the director specifies.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "(a) Except as provided in paragraph of this section that the director has not waived or modified under subsection",
+          "subsections": [
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "of this subsection, the director may not issue or renew a license under this section unless the director finds that:",
+              "subsections": [
+                {
+                  "label": "(A)",
+                  "token": "A",
+                  "kind": "alpha_upper",
+                  "text": "The applicant submitted a complete application that does not contain a material misstatement;",
+                  "subsections": []
+                },
+                {
+                  "label": "(B)",
+                  "token": "B",
+                  "kind": "alpha_upper",
+                  "text": "The application identifies a registered agent in this state;",
+                  "subsections": []
+                },
+                {
+                  "label": "(C)",
+                  "token": "C",
+                  "kind": "alpha_upper",
+                  "text": "The application names a manager for each of the applicants branch offices in this state;",
+                  "subsections": []
+                },
+                {
+                  "label": "(D)",
+                  "token": "D",
+                  "kind": "alpha_upper",
+                  "text": "The applicant and the applicants controllers, registered agents and managers have not pleaded guilty or no contest in, or been convicted by, a state, federal, foreign or military court:",
+                  "subsections": [
+                    {
+                      "label": "(i)",
+                      "token": "i",
+                      "kind": "roman_lower",
+                      "text": "In the seven years before the date of the application, if the plea or conviction was for a felony, or for a misdemeanor an essential element of which involved a false statement or dishonesty; or",
+                      "subsections": []
+                    },
+                    {
+                      "label": "(ii)",
+                      "token": "ii",
+                      "kind": "roman_lower",
+                      "text": "At any time before the date of the application if the plea or conviction was for a felony an element of which was fraud, dishonesty, a breach of trust or laundering a monetary instrument;",
+                      "subsections": []
+                    }
+                  ]
+                },
+                {
+                  "label": "(E)",
+                  "token": "E",
+                  "kind": "alpha_upper",
+                  "text": "The applicant and the applicants controllers, registered agents and managers have demonstrated adequate financial responsibility, character and general fitness to command the confidence of the community and warrant a determination that the applicant will operate honestly, fairly and efficiently under the provisions of ORS 725A.500 to 725A.530;",
+                  "subsections": []
+                },
+                {
+                  "label": "(F)",
+                  "token": "F",
+                  "kind": "alpha_upper",
+                  "text": "The applicant has paid the fee and submitted the corporate surety bond or irrevocable letter of credit required under subsection",
+                  "subsections": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "of this section; and of this section, except that the applicant must pay the fee required under subsection of this section and identify a registered agent in this state or appoint the director as the applicants registered agent; and of this section and, to continue to service a student loan in this state, must meet the criteria within 30 days after the date on which the contract expires or terminates. The director shall suspend the license of a licensee described in this paragraph that fails to meet the criteria.",
+          "subsections": [
+            {
+              "label": "(G)",
+              "token": "G",
+              "kind": "alpha_upper",
+              "text": "The applicant has passed the directors background checks and has satisfied any other criteria for evaluating the applicants financial responsibility and fitness that the director specifies by rule.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "An applicant need not report a conviction on an application under this section if the conviction was later pardoned or expunged.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "(A) The director shall: of this subsection shall notify the director in writing within seven days after the date on which the contract described in paragraph (A) of this subsection expires or terminates. At the expiration or termination of the contract, the licensee becomes subject to the criteria set forth in this subsection and subsections",
+              "subsections": []
+            },
+            {
+              "label": "(i)",
+              "token": "i",
+              "kind": "alpha_lower",
+              "text": "Find that an applicant that services a student loan under a contract with the United States Secretary of Education under 20 U.S.C. 1087f meets the criteria set forth in paragraph of this subparagraph.",
+              "subsections": []
+            },
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "of this subsection without the need to comply with the procedures set forth in subsections",
+              "subsections": []
+            },
+            {
+              "label": "(ii)",
+              "token": "ii",
+              "kind": "roman_lower",
+              "text": "Issue and renew a license for an applicant that is described in and complies with the provisions of sub-subparagraph",
+              "subsections": []
+            },
+            {
+              "label": "(B)",
+              "token": "B",
+              "kind": "alpha_upper",
+              "text": "Except as otherwise provided in this paragraph, a licensee that obtains a license under this paragraph is subject to all of the requirements and conditions set forth in ORS 725A.500 to 725A.530.",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "A licensee that obtained a license under paragraph",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "and (b) of this section;",
+          "subsections": [
+            {
+              "label": "(B)",
+              "token": "B",
+              "kind": "alpha_upper",
+              "text": "Engages in a course of conduct that violates state or federal law or that constitutes fraudulent, deceptive or dishonest dealing;",
+              "subsections": []
+            },
+            {
+              "label": "(C)",
+              "token": "C",
+              "kind": "alpha_upper",
+              "text": "Has had a license to service a student loan denied or revoked in another jurisdiction;",
+              "subsections": []
+            },
+            {
+              "label": "(D)",
+              "token": "D",
+              "kind": "alpha_upper",
+              "text": "Fails or refuses to comply with the directors written request under ORS",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "(a) Except as provided in paragraph",
+          "subsections": [
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "of this subsection, the director may deny, revoke or decline to renew a license if an applicant, a licensee or a person that services a student loan:",
+              "subsections": [
+                {
+                  "label": "(A)",
+                  "token": "A",
+                  "kind": "alpha_upper",
+                  "text": "Does not meet the criteria set forth in subsection",
+                  "subsections": []
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "parser_warnings": [],
+      "position": 38,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html#section-725a.990",
+      "identifier": "ORS 725a.990",
+      "name": ":",
+      "text": "(a) May at any time investigate a licensee or a person required under ORS 725A.020 to obtain a license. (b) Shall examine a licensee not less than once every two years and may inspect and examine the licensee at other times that the director determines are necessary. (2) For purposes of subsection (1) of this section: (a) A licensee or a person required to obtain a license as a payday loan lender or title loan lender is subject to inspection and shall give the director free access to the licensees or persons place of business, books, accounts, records, files, safes and vaults. (b) The director may: (A) Conduct an investigation or examination without prior notice to the person the director investigates or examines. (B) Compel the attendance of a witness or other person from whom the director requires testimony necessary to conduct an investigation or examination and examine the witness or person under oath. (C) Require a licensee or a person required to obtain a license as a payday loan lender or title loan lender to produce books, accounts, records, files or other documents. (c) A person may not knowingly give or cause to be given to the director a document or an oral or written statement or report that is false in any material respect. (3) If the director investigates or examines under this section a licensee or a person required to obtain a license as a payday loan lender or title loan lender, the licensee or person shall pay the director for the actual cost of the investigation or examination. The director may maintain an action to recover the cost in a court of competent jurisdiction.",
+      "history_citation_blocks": [
+        "2010 c.23 14"
+      ],
+      "history_citations": [
+        {
+          "raw": "2010 c.23 14",
+          "year": 2010,
+          "chapter": "23",
+          "section": "14"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(a)",
+          "token": "a",
+          "kind": "alpha_lower",
+          "text": "May at any time investigate a licensee or a person required under ORS 725A.020 to obtain a license.",
+          "subsections": []
+        },
+        {
+          "label": "(b)",
+          "token": "b",
+          "kind": "alpha_lower",
+          "text": "Shall examine a licensee not less than once every two years and may inspect and examine the licensee at other times that the director determines are necessary.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "For purposes of subsection",
+          "subsections": []
+        },
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "of this section:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "A licensee or a person required to obtain a license as a payday loan lender or title loan lender is subject to inspection and shall give the director free access to the licensees or persons place of business, books, accounts, records, files, safes and vaults.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "The director may:",
+              "subsections": [
+                {
+                  "label": "(A)",
+                  "token": "A",
+                  "kind": "alpha_upper",
+                  "text": "Conduct an investigation or examination without prior notice to the person the director investigates or examines.",
+                  "subsections": []
+                },
+                {
+                  "label": "(B)",
+                  "token": "B",
+                  "kind": "alpha_upper",
+                  "text": "Compel the attendance of a witness or other person from whom the director requires testimony necessary to conduct an investigation or examination and examine the witness or person under oath.",
+                  "subsections": []
+                },
+                {
+                  "label": "(C)",
+                  "token": "C",
+                  "kind": "alpha_upper",
+                  "text": "Require a licensee or a person required to obtain a license as a payday loan lender or title loan lender to produce books, accounts, records, files or other documents.",
+                  "subsections": []
+                }
+              ]
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "A person may not knowingly give or cause to be given to the director a document or an oral or written statement or report that is false in any material respect.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "If the director investigates or examines under this section a licensee or a person required to obtain a license as a payday loan lender or title loan lender, the licensee or person shall pay the director for the actual cost of the investigation or examination. The director may maintain an action to recover the cost in a court of competent jurisdiction.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 39,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors725a.html"
+    }
+  ],
+  "alternateName": "Short-Term Loans and",
+  "legislationDate": "2023"
+}

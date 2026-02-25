@@ -1,0 +1,3846 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "orlaw": "https://www.oregonlegislature.gov/ors#"
+  },
+  "@type": "Legislation",
+  "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html",
+  "identifier": "ORS Chapter 116",
+  "name": "ORS Chapter 116 — Accounting, Distribution and",
+  "legislationType": "Statute",
+  "jurisdiction": "US-OR",
+  "isPartOf": {
+    "@type": "CreativeWork",
+    "identifier": "ORS",
+    "name": "Oregon Revised Statutes",
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors"
+  },
+  "dateModified": "2026-02-25T08:11:16.200212+00:00",
+  "source_file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors116.html",
+  "hasPart": [
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.003",
+      "identifier": "ORS 116.003",
+      "name": "Section 116.003",
+      "text": "[1969 c.591 168; 1973 c.506 36; repealed by 1975 c.717 14 (116.007 enacted in lieu of",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 1,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.005",
+      "identifier": "ORS 116.005",
+      "name": "Section 116.005",
+      "text": "[Repealed by 1969 c.591 305] ALLOCATION OF INCOME",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 2,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.007",
+      "identifier": "ORS 116.007",
+      "name": "Section 116.007",
+      "text": "Allocation of income. (1) Unless the will otherwise provides and subject to subsection (2) of this section, all expenses incurred in connection with the settlement of a decedents estate, including debts, funeral expenses, estate taxes, interest and penalties concerning taxes, family allowances, fees of attorneys and personal representatives and court costs, shall be charged against the principal of the estate. (2) Unless the will otherwise provides, income from the assets of a decedents estate after the death of the testator and before distribution, including income from property used to discharge liabilities, shall be determined in accordance with the rules applicable to a trustee under ORS chapter 129 and this section and distributed as follows: (a) To specific legatees and devisees, the income from the property bequeathed or devised to them respectively, less taxes, ordinary repairs, and other expenses of management and operation of the property, and an appropriate portion of interest accrued since the death of the testator and of taxes imposed on income, excluding taxes on capital gains, that accrue during the period of administration. (b) To all other legatees and devisees, except legatees of pecuniary bequests that are not in trust and that do not qualify for the marital deduction provided for in section 2056 of the Internal Revenue Code (26 U.S.C. 2056), the balance of the income, less the balance of taxes, ordinary repairs, and other expenses of management and operation of all property from which the estate is entitled to income, interest accrued since the death of the testator, and taxes imposed on income, excluding taxes on capital gains, that accrue during the period of administration, in proportion to their respective interests in the undistributed assets of the estate computed at times of distribution on the basis of inventory value. (3) Income received by a trustee under subsection (2) of this section shall be treated as income of the trust.",
+      "history_citation_blocks": [
+        "1975 c.717 15 (enacted in lieu of 116.003); 2003 c.279 33; 2005 c.22 94; 2007 c.71 29"
+      ],
+      "history_citations": [
+        {
+          "raw": "1975 c.717 15 (enacted in lieu of 116.003)"
+        },
+        {
+          "raw": "2003 c.279 33",
+          "year": 2003,
+          "chapter": "279",
+          "section": "33"
+        },
+        {
+          "raw": "2005 c.22 94",
+          "year": 2005,
+          "chapter": "22",
+          "section": "94"
+        },
+        {
+          "raw": "2007 c.71 29",
+          "year": 2007,
+          "chapter": "71",
+          "section": "29"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Unless the will otherwise provides and subject to subsection",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "of this section, all expenses incurred in connection with the settlement of a decedents estate, including debts, funeral expenses, estate taxes, interest and penalties concerning taxes, family allowances, fees of attorneys and personal representatives and court costs, shall be charged against the principal of the estate. Unless the will otherwise provides, income from the assets of a decedents estate after the death of the testator and before distribution, including income from property used to discharge liabilities, shall be determined in accordance with the rules applicable to a trustee under ORS chapter 129 and this section and distributed as follows: of this section shall be treated as income of the trust.",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "To specific legatees and devisees, the income from the property bequeathed or devised to them respectively, less taxes, ordinary repairs, and other expenses of management and operation of the property, and an appropriate portion of interest accrued since the death of the testator and of taxes imposed on income, excluding taxes on capital gains, that accrue during the period of administration.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "To all other legatees and devisees, except legatees of pecuniary bequests that are not in trust and that do not qualify for the marital deduction provided for in section 2056 of the Internal Revenue Code (26 U.S.C. 2056), the balance of the income, less the balance of taxes, ordinary repairs, and other expenses of management and operation of all property from which the estate is entitled to income, interest accrued since the death of the testator, and taxes imposed on income, excluding taxes on capital gains, that accrue during the period of administration, in proportion to their respective interests in the undistributed assets of the estate computed at times of distribution on the basis of inventory value.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Income received by a trustee under subsection",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 3,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.010",
+      "identifier": "ORS 116.010",
+      "name": "Section 116.010",
+      "text": "[Repealed by 1969 c.591 305] PARTIAL DISTRIBUTION",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 4,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.013",
+      "identifier": "ORS 116.013",
+      "name": "Section 116.013",
+      "text": "Petition and order for partial distribution. Upon petition by the personal representative or other interested person, and after such notice and hearing as the court may prescribe, the court may order the personal representative to distribute, prior to final settlement and distribution, property of the estate to the person or persons who would be entitled to the property under the will or under intestate succession on final distribution, if the court finds that: (1) After the distribution sufficient assets will remain to pay support of spouse and children, expenses of administration, unpaid claims and all known unpaid creditors of the decedent or of the estate; and (2) The distribution may be made without loss to creditors or injury to the estate or to any interested person.",
+      "history_citation_blocks": [
+        "1969 c.591 169; 1987 c.646 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.591 169",
+          "year": 1969,
+          "chapter": "591",
+          "section": "169"
+        },
+        {
+          "raw": "1987 c.646 1",
+          "year": 1987,
+          "chapter": "646",
+          "section": "1"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "After the distribution sufficient assets will remain to pay support of spouse and children, expenses of administration, unpaid claims and all known unpaid creditors of the decedent or of the estate; and",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The distribution may be made without loss to creditors or injury to the estate or to any interested person.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 5,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.015",
+      "identifier": "ORS 116.015",
+      "name": "Section 116.015",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 6,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.020",
+      "identifier": "ORS 116.020",
+      "name": "Section 116.020",
+      "text": "[Amended by 1957 c.352 1; repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 7,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.023",
+      "identifier": "ORS 116.023",
+      "name": "Section 116.023",
+      "text": "Bond or other security. The court may require a bond or other security of any distributee for the protection of creditors and other interested persons who might suffer loss or injury because of the distribution of property under ORS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 8,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.025",
+      "identifier": "ORS 116.025",
+      "name": "Section 116.025",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 9,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.033",
+      "identifier": "ORS 116.033",
+      "name": "Section 116.033",
+      "text": "Discharge of personal representative. The distribution of property in accordance with the order of the court under ORS 116.013 is a full discharge of the personal representative in respect to all property embraced in the order, except as otherwise provided in ORS chapters 111, 112, 113, 114, 115, 116 and 117.",
+      "history_citation_blocks": [
+        "1969 c.591 171"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.591 171",
+          "year": 1969,
+          "chapter": "591",
+          "section": "171"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 10,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.043",
+      "identifier": "ORS 116.043",
+      "name": "Section 116.043",
+      "text": "Petition and order for refund by distributee. If, after the distribution of property under ORS 116.013, it appears that all or any part of the property distributed is required for the payment of claims and expenses of administration, including determined and undetermined state and federal tax liability, the personal representative shall petition the court to order the return of the property. Notice of the hearing on the petition shall be given as provided in ORS 111.215. Upon the hearing the court may order the distributee to return all or part of the property distributed, or to pay the value of the property as of the time of distribution, and may specify the time within which the return or payment must be made. If the property is not returned or the payment is not made within the time ordered, the person failing to return the property or pay its value may be adjudged in contempt of court and judgment may be entered against the person and the sureties of the person, if any. [1969 c.591 172; 2017 c.169 57] ACCOUNTING AND DISTRIBUTION",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 11,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.063",
+      "identifier": "ORS 116.063",
+      "name": "Section 116.063",
+      "text": "Liability of personal representative. A personal representative may be liable for and is chargeable in the accounts of the personal representative with: (1) All of the estate of the decedent that comes into the possession of the personal representative at any time, including the income therefrom. (2) All property not a part of the estate if: (a) The personal representative has commingled the property with the assets of the estate; or (b) The property was received under a duty imposed on the personal representative by law in the capacity of personal representative. (3) Any loss to the estate arising from: (a) Neglect or unreasonable delay in collecting the assets of the estate. (b) Neglect in paying over money or delivering property of the estate. (c) Failure to pay taxes as required by law or to close the estate within a reasonable time. (d) Embezzlement or commingling of the assets of the estate with other property. (e) Unauthorized self-dealing. (f) Wrongful acts or omissions of copersonal representatives that the personal representative could have prevented by the exercise of ordinary care. (g) Any other negligent or willful act or nonfeasance in the administration of the estate by which loss to the estate arises.",
+      "history_citation_blocks": [
+        "1969 c.591 173"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.591 173",
+          "year": 1969,
+          "chapter": "591",
+          "section": "173"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "All of the estate of the decedent that comes into the possession of the personal representative at any time, including the income therefrom.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "All property not a part of the estate if:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "The personal representative has commingled the property with the assets of the estate; or",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "The property was received under a duty imposed on the personal representative by law in the capacity of personal representative.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Any loss to the estate arising from:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Neglect or unreasonable delay in collecting the assets of the estate.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Neglect in paying over money or delivering property of the estate.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Failure to pay taxes as required by law or to close the estate within a reasonable time.",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "Embezzlement or commingling of the assets of the estate with other property.",
+              "subsections": []
+            },
+            {
+              "label": "(e)",
+              "token": "e",
+              "kind": "alpha_lower",
+              "text": "Unauthorized self-dealing.",
+              "subsections": []
+            },
+            {
+              "label": "(f)",
+              "token": "f",
+              "kind": "alpha_lower",
+              "text": "Wrongful acts or omissions of copersonal representatives that the personal representative could have prevented by the exercise of ordinary care.",
+              "subsections": []
+            },
+            {
+              "label": "(g)",
+              "token": "g",
+              "kind": "alpha_lower",
+              "text": "Any other negligent or willful act or nonfeasance in the administration of the estate by which loss to the estate arises.",
+              "subsections": []
+            }
+          ]
+        }
+      ],
+      "parser_warnings": [],
+      "position": 12,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.073",
+      "identifier": "ORS 116.073",
+      "name": "Section 116.073",
+      "text": "Nonliability of personal representative. A personal representative is not liable for or chargeable in the accounts of the personal representative with: (1) Debts due the decedent or other assets of the estate that remain uncollected without the fault of the personal representative. (2) Loss by the decrease in value or destruction of property of the estate if the loss is caused without the fault of the personal representative.",
+      "history_citation_blocks": [
+        "1969 c.591 174"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.591 174",
+          "year": 1969,
+          "chapter": "591",
+          "section": "174"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Debts due the decedent or other assets of the estate that remain uncollected without the fault of the personal representative.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Loss by the decrease in value or destruction of property of the estate if the loss is caused without the fault of the personal representative.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 13,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.083",
+      "identifier": "ORS 116.083",
+      "name": "Section 116.083",
+      "text": "Accounting by personal representative; statement in lieu of account; rules. (1) A personal representative shall make and file in the estate proceeding an account of the personal representatives administration: (a) Unless the court orders otherwise, annually within 60 days after the anniversary date of the personal representatives appointment. (b) Within 30 days after the date of the personal representatives resignation. (c) Within 30 days after the date of the personal representatives removal or the revocation of the personal representatives letters. (d) When the estate is ready for final settlement and distribution. (e) At such other times as the court may order. (2) Each account must include the following information: (a) The period of time covered by the account. (b) The total value of the property with which the personal representative is chargeable according to the inventory, or, if there was a prior account, the amount of the balance of the prior account. (c) All money and property received during the period covered by the account. (d) All disbursements made during the period covered by the account. Evidence of disbursements must accompany the account, unless otherwise provided by order or rule of the court, or unless the personal representative is a trust company that has complied with ORS 709.030, but that personal representative shall: (A) Maintain the evidence of disbursement for a period of not less than one year following the date on which the order approving the final account is entered; (B) Permit interested persons to inspect the evidence of disbursement and receive copies of the evidence at their own expense at the place of business of the personal representative during the personal representatives normal business hours at any time prior to the end of the one-year period following the date on which the order approving the final account is entered; and (C) Include in each annual account and in the final account a statement that the evidence of disbursement is not filed with the account but is maintained by the personal representative and may be inspected and copied as provided in subparagraph (B) of this paragraph. (e) The money and property of the estate on hand. (f) Any other information that the personal representative considers necessary to show the condition of the affairs of the estate or as the court may require. (g) A declaration under penalty of perjury in the form required by ORCP 1 E, or an unsworn declaration under ORS 194.800 to 194.835, if the declarant is physically outside the boundaries of the United States. (3)(a) Unless otherwise provided by order of the court, the personal representative may file a statement under this subsection in lieu of the account required under subsection (1)(a) or (b) of this section if the distributees consent in writing. (b) A statement under this subsection must include: (A) The period of time covered by the statement; (B) A description and statement of the value of the money and property on hand at the beginning and ending of the period of time covered by the statement; (C) A copy of the most recent statement received before the accounting for each financial account owned by the estate; (D) A list of the unpaid claims that are allowed or disputed, including the name of the creditor, a description of the claim, the amount of the claim, the priority of the claim under ORS 115.125 and the reason the claim has not been paid; (E) A statement describing why the estate is not ready for final settlement and distribution; and (F) A declaration under penalty of perjury in the form required by ORCP 1 E, or an unsworn declaration under ORS 194.800 to 194.835, if the declarant is physically outside the boundaries of the United States. (c) Upon filing a statement under this subsection, the personal representative shall mail a copy of the statement to each creditor of the estate whose claim has not been paid in full and is allowed or disputed. Within 30 days after the date of the mailing of the statement, a creditor entitled to receive the statement under this paragraph may, by written notice to the personal representative, require the personal representative to make and file an account of the personal representatives administration under subsection (1) of this section within 30 days of the date of the creditors notice. (4) When the estate is ready for final settlement and distribution, the account must also include: (a) A statement that any required estate tax return has been filed. (b) A statement that all Oregon income taxes, estate taxes and personal property taxes that are due, if any, have been paid, or if not paid, that payment of those taxes has been secured by bond, deposit or otherwise, and that all tax returns currently due have been filed. (c) Any request to retain a reserve for the determination and payment of any additional taxes, interest and penalties, and of all related reasonable expenses. (d) A statement describing the determination of the compensation of the personal representative under the will or under ORS 113.038 or 116.173 (3) and (4). (e) A petition for a judgment authorizing the personal representative to distribute the estate to the persons and in the portions specified in the judgment. (5)(a) The personal representative may file a statement under this subsection in lieu of the final account otherwise required by subsection (4) of this section if: (A) The distributees, other than distributees whose only distribution is a cash or specific bequest that will be paid or satisfied in full, consent in writing; and (B) All creditors of the estate, other than creditors owed administrative expenses that require court approval, have been paid in full. (b) A statement under this subsection must include: (A) The period of time covered by the statement. (B) A statement that all creditors of the estate, other than creditors owed administrative expenses that require court approval, have been paid in full. (C) The statement and petition and any request for a reserve under subsection (4) of this section. (D) A declaration under penalty of perjury in the form required by ORCP 1 E, or an unsworn declaration under ORS 194.800 to 194.835, if the declarant is physically outside the boundaries of the United States. (6) Notice of time for filing objections to the statement described in subsection (5) of this section is not required. (7) The Chief Justice of the Supreme Court may by rule specify the form and contents of accounts that must be filed by a personal representative.",
+      "history_citation_blocks": [
+        "1969 c.591 175; 1973 c.506 37; 1985 c.304 1; 1995 c.453 2; 1997 c.631 405; 1999 c.592 2; 2003 c.576 375; 2005 c.22 95; 2005 c.123 1; 2007 c.284 2; 2011 c.526 19; 2013 c.218 14; 2017 c.169 33; 2019 c.414 10"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.591 175",
+          "year": 1969,
+          "chapter": "591",
+          "section": "175"
+        },
+        {
+          "raw": "1973 c.506 37",
+          "year": 1973,
+          "chapter": "506",
+          "section": "37"
+        },
+        {
+          "raw": "1985 c.304 1",
+          "year": 1985,
+          "chapter": "304",
+          "section": "1"
+        },
+        {
+          "raw": "1995 c.453 2",
+          "year": 1995,
+          "chapter": "453",
+          "section": "2"
+        },
+        {
+          "raw": "1997 c.631 405",
+          "year": 1997,
+          "chapter": "631",
+          "section": "405"
+        },
+        {
+          "raw": "1999 c.592 2",
+          "year": 1999,
+          "chapter": "592",
+          "section": "2"
+        },
+        {
+          "raw": "2003 c.576 375",
+          "year": 2003,
+          "chapter": "576",
+          "section": "375"
+        },
+        {
+          "raw": "2005 c.22 95",
+          "year": 2005,
+          "chapter": "22",
+          "section": "95"
+        },
+        {
+          "raw": "2005 c.123 1",
+          "year": 2005,
+          "chapter": "123",
+          "section": "1"
+        },
+        {
+          "raw": "2007 c.284 2",
+          "year": 2007,
+          "chapter": "284",
+          "section": "2"
+        },
+        {
+          "raw": "2011 c.526 19",
+          "year": 2011,
+          "chapter": "526",
+          "section": "19"
+        },
+        {
+          "raw": "2013 c.218 14",
+          "year": 2013,
+          "chapter": "218",
+          "section": "14"
+        },
+        {
+          "raw": "2017 c.169 33",
+          "year": 2017,
+          "chapter": "169",
+          "section": "33"
+        },
+        {
+          "raw": "2019 c.414 10",
+          "year": 2019,
+          "chapter": "414",
+          "section": "10"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A personal representative shall make and file in the estate proceeding an account of the personal representatives administration: (a) or of this section within 30 days of the date of the creditors notice.",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Unless the court orders otherwise, annually within 60 days after the anniversary date of the personal representatives appointment.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Within 30 days after the date of the personal representatives resignation. of this section if the distributees consent in writing. A statement under this subsection must include:",
+              "subsections": [
+                {
+                  "label": "(A)",
+                  "token": "A",
+                  "kind": "alpha_upper",
+                  "text": "The period of time covered by the statement;",
+                  "subsections": []
+                },
+                {
+                  "label": "(B)",
+                  "token": "B",
+                  "kind": "alpha_upper",
+                  "text": "A description and statement of the value of the money and property on hand at the beginning and ending of the period of time covered by the statement;",
+                  "subsections": []
+                },
+                {
+                  "label": "(C)",
+                  "token": "C",
+                  "kind": "alpha_upper",
+                  "text": "A copy of the most recent statement received before the accounting for each financial account owned by the estate;",
+                  "subsections": []
+                },
+                {
+                  "label": "(D)",
+                  "token": "D",
+                  "kind": "alpha_upper",
+                  "text": "A list of the unpaid claims that are allowed or disputed, including the name of the creditor, a description of the claim, the amount of the claim, the priority of the claim under ORS 115.125 and the reason the claim has not been paid;",
+                  "subsections": []
+                },
+                {
+                  "label": "(E)",
+                  "token": "E",
+                  "kind": "alpha_upper",
+                  "text": "A statement describing why the estate is not ready for final settlement and distribution; and",
+                  "subsections": []
+                },
+                {
+                  "label": "(F)",
+                  "token": "F",
+                  "kind": "alpha_upper",
+                  "text": "A declaration under penalty of perjury in the form required by ORCP 1 E, or an unsworn declaration under ORS 194.800 to 194.835, if the declarant is physically outside the boundaries of the United States.",
+                  "subsections": []
+                }
+              ]
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Within 30 days after the date of the personal representatives removal or the revocation of the personal representatives letters. Upon filing a statement under this subsection, the personal representative shall mail a copy of the statement to each creditor of the estate whose claim has not been paid in full and is allowed or disputed. Within 30 days after the date of the mailing of the statement, a creditor entitled to receive the statement under this paragraph may, by written notice to the personal representative, require the personal representative to make and file an account of the personal representatives administration under subsection",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "When the estate is ready for final settlement and distribution.",
+              "subsections": []
+            },
+            {
+              "label": "(e)",
+              "token": "e",
+              "kind": "alpha_lower",
+              "text": "At such other times as the court may order.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Each account must include the following information:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "The period of time covered by the account.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "The total value of the property with which the personal representative is chargeable according to the inventory, or, if there was a prior account, the amount of the balance of the prior account.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "All money and property received during the period covered by the account.",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "All disbursements made during the period covered by the account. Evidence of disbursements must accompany the account, unless otherwise provided by order or rule of the court, or unless the personal representative is a trust company that has complied with ORS 709.030, but that personal representative shall:",
+              "subsections": [
+                {
+                  "label": "(A)",
+                  "token": "A",
+                  "kind": "alpha_upper",
+                  "text": "Maintain the evidence of disbursement for a period of not less than one year following the date on which the order approving the final account is entered;",
+                  "subsections": []
+                },
+                {
+                  "label": "(B)",
+                  "token": "B",
+                  "kind": "alpha_upper",
+                  "text": "Permit interested persons to inspect the evidence of disbursement and receive copies of the evidence at their own expense at the place of business of the personal representative during the personal representatives normal business hours at any time prior to the end of the one-year period following the date on which the order approving the final account is entered; and of this paragraph.",
+                  "subsections": []
+                },
+                {
+                  "label": "(C)",
+                  "token": "C",
+                  "kind": "alpha_upper",
+                  "text": "Include in each annual account and in the final account a statement that the evidence of disbursement is not filed with the account but is maintained by the personal representative and may be inspected and copied as provided in subparagraph",
+                  "subsections": []
+                }
+              ]
+            },
+            {
+              "label": "(e)",
+              "token": "e",
+              "kind": "alpha_lower",
+              "text": "The money and property of the estate on hand.",
+              "subsections": []
+            },
+            {
+              "label": "(f)",
+              "token": "f",
+              "kind": "alpha_lower",
+              "text": "Any other information that the personal representative considers necessary to show the condition of the affairs of the estate or as the court may require.",
+              "subsections": []
+            },
+            {
+              "label": "(g)",
+              "token": "g",
+              "kind": "alpha_lower",
+              "text": "A declaration under penalty of perjury in the form required by ORCP 1 E, or an unsworn declaration under ORS 194.800 to 194.835, if the declarant is physically outside the boundaries of the United States.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "(a) Unless otherwise provided by order of the court, the personal representative may file a statement under this subsection in lieu of the account required under subsection and",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "When the estate is ready for final settlement and distribution, the account must also include: . of this section if: of this section.",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "A statement that any required estate tax return has been filed.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "A statement that all Oregon income taxes, estate taxes and personal property taxes that are due, if any, have been paid, or if not paid, that payment of those taxes has been secured by bond, deposit or otherwise, and that all tax returns currently due have been filed. A statement under this subsection must include:",
+              "subsections": [
+                {
+                  "label": "(A)",
+                  "token": "A",
+                  "kind": "alpha_upper",
+                  "text": "The period of time covered by the statement.",
+                  "subsections": []
+                },
+                {
+                  "label": "(B)",
+                  "token": "B",
+                  "kind": "alpha_upper",
+                  "text": "A statement that all creditors of the estate, other than creditors owed administrative expenses that require court approval, have been paid in full.",
+                  "subsections": []
+                },
+                {
+                  "label": "(C)",
+                  "token": "C",
+                  "kind": "alpha_upper",
+                  "text": "The statement and petition and any request for a reserve under subsection",
+                  "subsections": []
+                }
+              ]
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Any request to retain a reserve for the determination and payment of any additional taxes, interest and penalties, and of all related reasonable expenses.",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "A statement describing the determination of the compensation of the personal representative under the will or under ORS 113.038 or 116.173",
+              "subsections": []
+            },
+            {
+              "label": "(e)",
+              "token": "e",
+              "kind": "alpha_lower",
+              "text": "A petition for a judgment authorizing the personal representative to distribute the estate to the persons and in the portions specified in the judgment.",
+              "subsections": []
+            },
+            {
+              "label": "(A)",
+              "token": "A",
+              "kind": "alpha_upper",
+              "text": "The distributees, other than distributees whose only distribution is a cash or specific bequest that will be paid or satisfied in full, consent in writing; and",
+              "subsections": []
+            },
+            {
+              "label": "(B)",
+              "token": "B",
+              "kind": "alpha_upper",
+              "text": "All creditors of the estate, other than creditors owed administrative expenses that require court approval, have been paid in full.",
+              "subsections": []
+            },
+            {
+              "label": "(D)",
+              "token": "D",
+              "kind": "alpha_upper",
+              "text": "A declaration under penalty of perjury in the form required by ORCP 1 E, or an unsworn declaration under ORS 194.800 to 194.835, if the declarant is physically outside the boundaries of the United States.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "(a) The personal representative may file a statement under this subsection in lieu of the final account otherwise required by subsection of this section is not required.",
+          "subsections": []
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "Notice of time for filing objections to the statement described in subsection",
+          "subsections": []
+        },
+        {
+          "label": "(7)",
+          "token": "7",
+          "kind": "numeric",
+          "text": "The Chief Justice of the Supreme Court may by rule specify the form and contents of accounts that must be filed by a personal representative.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 14,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.093",
+      "identifier": "ORS 116.093",
+      "name": "Section 116.093",
+      "text": "Notice for filing objections to final account and petition for distribution; rules. (1) Upon filing the final account and petition for a judgment of distribution, the personal representative shall set a time for filing objections to the account and petition. Not less than 20 days before the time set, the personal representative shall mail a copy of the final account and petition for judgment and notice of the time set for objections to: (a) Each distributee at the last-known address of the distributee. (b) Each creditor who has not received payment in full and whose claim has not otherwise been barred. (2) If a charitable trust as described in ORS 130.170, a public benefit corporation as defined in ORS 65.001 or a religious organization is a residuary beneficiary of the estate, or if a charitable trust, a public benefit corporation or a religious organization will receive less under the judgment than the amount of a specific devise to the trust, corporation or organization, the personal representative shall mail the notice under subsection (1) of this section to the Attorney General. (3) The notice need not be mailed to the personal representative. (4) Proof of the mailing to those persons entitled to notice shall be filed in the estate proceeding at or before approval of the final account. (5) If the Department of Human Services has presented a claim under ORS chapter 411 or ORS 416.310 to 416.340, 416.350 or 417.010 to 417.080, or the Oregon Health Authority has presented a claim under ORS chapter 414 or ORS 416.310 to 416.340, 416.350 or 416.510 to 416.990, or the Department of Corrections has presented a claim under ORS 179.620 (3), and the claim has not been settled or paid in full, the personal representative shall mail to the appropriate agency a copy of the final account at the same time, and shall make proof of the mailing in the same manner, as the notice provided for in this section. (6) The Oregon Health Authority may adopt rules designating the Department of Human Services as the appropriate department to receive the final account for claims presented by the authority under subsection (5) of this section.",
+      "history_citation_blocks": [
+        "1969 c.591 176; 1969 c.597 280; 1989 c.348 14; 2001 c.487 14; 2001 c.900 20a; 2003 c.576 376; 2005 c.381 21; 2007 c.284 13; 2009 c.595 82; 2011 c.720 62; 2017 c.169 34"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.591 176",
+          "year": 1969,
+          "chapter": "591",
+          "section": "176"
+        },
+        {
+          "raw": "1969 c.597 280",
+          "year": 1969,
+          "chapter": "597",
+          "section": "280"
+        },
+        {
+          "raw": "1989 c.348 14",
+          "year": 1989,
+          "chapter": "348",
+          "section": "14"
+        },
+        {
+          "raw": "2001 c.487 14",
+          "year": 2001,
+          "chapter": "487",
+          "section": "14"
+        },
+        {
+          "raw": "2001 c.900 20a",
+          "year": 2001,
+          "chapter": "900",
+          "section": "20a"
+        },
+        {
+          "raw": "2003 c.576 376",
+          "year": 2003,
+          "chapter": "576",
+          "section": "376"
+        },
+        {
+          "raw": "2005 c.381 21",
+          "year": 2005,
+          "chapter": "381",
+          "section": "21"
+        },
+        {
+          "raw": "2007 c.284 13",
+          "year": 2007,
+          "chapter": "284",
+          "section": "13"
+        },
+        {
+          "raw": "2009 c.595 82",
+          "year": 2009,
+          "chapter": "595",
+          "section": "82"
+        },
+        {
+          "raw": "2011 c.720 62",
+          "year": 2011,
+          "chapter": "720",
+          "section": "62"
+        },
+        {
+          "raw": "2017 c.169 34",
+          "year": 2017,
+          "chapter": "169",
+          "section": "34"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Upon filing the final account and petition for a judgment of distribution, the personal representative shall set a time for filing objections to the account and petition. Not less than 20 days before the time set, the personal representative shall mail a copy of the final account and petition for judgment and notice of the time set for objections to: of this section to the Attorney General.",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Each distributee at the last-known address of the distributee.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Each creditor who has not received payment in full and whose claim has not otherwise been barred.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "If a charitable trust as described in ORS 130.170, a public benefit corporation as defined in ORS 65.001 or a religious organization is a residuary beneficiary of the estate, or if a charitable trust, a public benefit corporation or a religious organization will receive less under the judgment than the amount of a specific devise to the trust, corporation or organization, the personal representative shall mail the notice under subsection",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The notice need not be mailed to the personal representative. , and the claim has not been settled or paid in full, the personal representative shall mail to the appropriate agency a copy of the final account at the same time, and shall make proof of the mailing in the same manner, as the notice provided for in this section.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Proof of the mailing to those persons entitled to notice shall be filed in the estate proceeding at or before approval of the final account.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "If the Department of Human Services has presented a claim under ORS chapter 411 or ORS 416.310 to 416.340, 416.350 or 417.010 to 417.080, or the Oregon Health Authority has presented a claim under ORS chapter 414 or ORS 416.310 to 416.340, 416.350 or 416.510 to 416.990, or the Department of Corrections has presented a claim under ORS 179.620 of this section.",
+          "subsections": []
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "The Oregon Health Authority may adopt rules designating the Department of Human Services as the appropriate department to receive the final account for claims presented by the authority under subsection",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 15,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.103",
+      "identifier": "ORS 116.103",
+      "name": "Section 116.103",
+      "text": "Objections to final account and petition. Any person entitled to notice under ORS 116.093 may, within the time fixed for the filing, file in the estate proceeding objections to the final account and petition for distribution, specifying the particulars of the objections. Upon the filing of objections the court shall fix the time for hearing thereon.",
+      "history_citation_blocks": [
+        "1969 c.591 177"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.591 177",
+          "year": 1969,
+          "chapter": "591",
+          "section": "177"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 16,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.105",
+      "identifier": "ORS 116.105",
+      "name": "Section 116.105",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 17,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.110",
+      "identifier": "ORS 116.110",
+      "name": "Section 116.110",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 18,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.113",
+      "identifier": "ORS 116.113",
+      "name": "Section 116.113",
+      "text": "Judgment of final distribution. (1) If no objections to the final account and petition for distribution are filed, or if objections are filed, upon the hearing or upon the filing of a statement in lieu of the final account under ORS 116.083 (5), the court shall enter a general judgment of final distribution. In the judgment the court shall designate the persons in whom title to the estate available for distribution is vested and the portion of the estate or property to which each is entitled under the will, by agreement approved by the court or pursuant to intestate succession. The judgment shall also contain any findings of the court in respect to: (a) Advancements. (b) Election against will by the surviving spouse. (c) Renunciation. (d) Lapse. (e) Adjudicated controversies. (f) Partial distribution, which shall be confirmed or modified. (g) Retainer. (h) Claims for which a special fund is set aside, and the amount set aside. (i) Contingent claims that have been allowed and are still unpaid. (j) Any reserve requested under ORS 116.083. (k) Attorney fees. (L) Approval of the final account or the statement filed in lieu of the final account under ORS 116.083 (5) in whole or in part. (2) If, by agreement approved by the court, property is distributed to persons in whom title is vested by the judgment of final distribution otherwise than as provided by the will or pursuant to intestate succession, the judgment operates as a transfer of the property between those persons. (3) The judgment of final distribution is a conclusive determination of the persons who are the successors in interest to the estate and of the extent and character of their interest, subject only to the right of appeal and the power of the court to vacate the judgment.",
+      "history_citation_blocks": [
+        "1969 c.591 178; 1987 c.646 2; 1989 c.921 1; 1995 c.453 3; 1999 c.59 26; 2003 c.576 377; 2005 c.568 34; 2017 c.169 35; 2019 c.414 11"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.591 178",
+          "year": 1969,
+          "chapter": "591",
+          "section": "178"
+        },
+        {
+          "raw": "1987 c.646 2",
+          "year": 1987,
+          "chapter": "646",
+          "section": "2"
+        },
+        {
+          "raw": "1989 c.921 1",
+          "year": 1989,
+          "chapter": "921",
+          "section": "1"
+        },
+        {
+          "raw": "1995 c.453 3",
+          "year": 1995,
+          "chapter": "453",
+          "section": "3"
+        },
+        {
+          "raw": "1999 c.59 26",
+          "year": 1999,
+          "chapter": "59",
+          "section": "26"
+        },
+        {
+          "raw": "2003 c.576 377",
+          "year": 2003,
+          "chapter": "576",
+          "section": "377"
+        },
+        {
+          "raw": "2005 c.568 34",
+          "year": 2005,
+          "chapter": "568",
+          "section": "34"
+        },
+        {
+          "raw": "2017 c.169 35",
+          "year": 2017,
+          "chapter": "169",
+          "section": "35"
+        },
+        {
+          "raw": "2019 c.414 11",
+          "year": 2019,
+          "chapter": "414",
+          "section": "11"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "If no objections to the final account and petition for distribution are filed, or if objections are filed, upon the hearing or upon the filing of a statement in lieu of the final account under ORS 116.083",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": ", the court shall enter a general judgment of final distribution. In the judgment the court shall designate the persons in whom title to the estate available for distribution is vested and the portion of the estate or property to which each is entitled under the will, by agreement approved by the court or pursuant to intestate succession. The judgment shall also contain any findings of the court in respect to: in whole or in part.",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Advancements.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Election against will by the surviving spouse.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "Renunciation.",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "Lapse.",
+              "subsections": []
+            },
+            {
+              "label": "(e)",
+              "token": "e",
+              "kind": "alpha_lower",
+              "text": "Adjudicated controversies.",
+              "subsections": []
+            },
+            {
+              "label": "(f)",
+              "token": "f",
+              "kind": "alpha_lower",
+              "text": "Partial distribution, which shall be confirmed or modified.",
+              "subsections": []
+            },
+            {
+              "label": "(g)",
+              "token": "g",
+              "kind": "alpha_lower",
+              "text": "Retainer.",
+              "subsections": []
+            },
+            {
+              "label": "(h)",
+              "token": "h",
+              "kind": "alpha_lower",
+              "text": "Claims for which a special fund is set aside, and the amount set aside.",
+              "subsections": []
+            },
+            {
+              "label": "(i)",
+              "token": "i",
+              "kind": "alpha_lower",
+              "text": "Contingent claims that have been allowed and are still unpaid.",
+              "subsections": []
+            },
+            {
+              "label": "(j)",
+              "token": "j",
+              "kind": "alpha_lower",
+              "text": "Any reserve requested under ORS 116.083.",
+              "subsections": []
+            },
+            {
+              "label": "(k)",
+              "token": "k",
+              "kind": "alpha_lower",
+              "text": "Attorney fees.",
+              "subsections": [
+                {
+                  "label": "(L)",
+                  "token": "L",
+                  "kind": "alpha_upper",
+                  "text": "Approval of the final account or the statement filed in lieu of the final account under ORS 116.083",
+                  "subsections": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "If, by agreement approved by the court, property is distributed to persons in whom title is vested by the judgment of final distribution otherwise than as provided by the will or pursuant to intestate succession, the judgment operates as a transfer of the property between those persons.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The judgment of final distribution is a conclusive determination of the persons who are the successors in interest to the estate and of the extent and character of their interest, subject only to the right of appeal and the power of the court to vacate the judgment.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 19,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.115",
+      "identifier": "ORS 116.115",
+      "name": "Section 116.115",
+      "text": "",
+      "history_citation_blocks": [
+        "1961 c.674 4; 1969 c.175 11; renumbered 97.295"
+      ],
+      "history_citations": [
+        {
+          "raw": "1961 c.674 4",
+          "year": 1961,
+          "chapter": "674",
+          "section": "4"
+        },
+        {
+          "raw": "1969 c.175 11",
+          "year": 1969,
+          "chapter": "175",
+          "section": "11"
+        },
+        {
+          "raw": "renumbered 97.295"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 20,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.120",
+      "identifier": "ORS 116.120",
+      "name": "Section 116.120",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 21,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.123",
+      "identifier": "ORS 116.123",
+      "name": "Section 116.123",
+      "text": "Effect of approval of final account. To the extent that the final account is approved, the personal representative and the surety of the personal representative, subject to the right of appeal, to the power of the court to vacate its final orders and to the provisions of ORS 116.213, are relieved from liability for the administration of the trust. The court may disapprove the account in whole or in part, surcharge the personal representative for any loss caused by any breach of duty and deny in whole or in part the right of the personal representative to receive compensation.",
+      "history_citation_blocks": [
+        "1969 c.591 179"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.591 179",
+          "year": 1969,
+          "chapter": "591",
+          "section": "179"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 22,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.125",
+      "identifier": "ORS 116.125",
+      "name": "Section 116.125",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 23,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.130",
+      "identifier": "ORS 116.130",
+      "name": "Section 116.130",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 24,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.133",
+      "identifier": "ORS 116.133",
+      "name": "Section 116.133",
+      "text": "Distribution; order in which assets appropriated; abatement. (1) If the will expresses an order of abatement, or the testamentary plan or the express or implied purpose of the devise would be defeated by the order of abatement stated in subsection (2) of this section, the shares of the distributees abate as may be found necessary to give effect to the intention of the testator. (2) Except as provided in ORS 112.405 as to the shares of pretermitted children, and in ORS 114.600 to 114.725 relating to the elective share of the surviving spouse, shares of distributees abate without any preference or priority as between real and personal property in the following order: (a) Property not disposed of by the will. (b) Residuary devises. (c) General devises. (d) Specific devises. (3) A general devise charged on any specific property or fund is considered, for purposes of abatement, property specifically devised to the extent of the value of the thing on which it is charged. Upon the failure or insufficiency of the thing on which it is charged, it is considered a general devise to the extent of the failure or insufficiency. (4) Abatement within each classification is in proportion to the amounts of property each of the distributees would have received had full distribution of the property been made in accordance with the terms of the will. (5) Persons to whom the will gives tangible personal property not used in trade, agriculture or other business are not required to contribute from that property unless the particular devise forms a substantial amount of the total estate and the court specifically orders contribution because of the devise. (6) When the subject matter of a preferred devise is sold or used incident to administration, abatement shall be achieved by appropriate adjustments in, or contribution from, other interests in the remaining assets.",
+      "history_citation_blocks": [
+        "1969 c.591 180; 2009 c.574 22"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.591 180",
+          "year": 1969,
+          "chapter": "591",
+          "section": "180"
+        },
+        {
+          "raw": "2009 c.574 22",
+          "year": 2009,
+          "chapter": "574",
+          "section": "22"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "If the will expresses an order of abatement, or the testamentary plan or the express or implied purpose of the devise would be defeated by the order of abatement stated in subsection",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "of this section, the shares of the distributees abate as may be found necessary to give effect to the intention of the testator. Except as provided in ORS 112.405 as to the shares of pretermitted children, and in ORS 114.600 to 114.725 relating to the elective share of the surviving spouse, shares of distributees abate without any preference or priority as between real and personal property in the following order:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Property not disposed of by the will.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Residuary devises.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "General devises.",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "Specific devises.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "A general devise charged on any specific property or fund is considered, for purposes of abatement, property specifically devised to the extent of the value of the thing on which it is charged. Upon the failure or insufficiency of the thing on which it is charged, it is considered a general devise to the extent of the failure or insufficiency.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Abatement within each classification is in proportion to the amounts of property each of the distributees would have received had full distribution of the property been made in accordance with the terms of the will.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "Persons to whom the will gives tangible personal property not used in trade, agriculture or other business are not required to contribute from that property unless the particular devise forms a substantial amount of the total estate and the court specifically orders contribution because of the devise.",
+          "subsections": []
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "When the subject matter of a preferred devise is sold or used incident to administration, abatement shall be achieved by appropriate adjustments in, or contribution from, other interests in the remaining assets.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 25,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.135",
+      "identifier": "ORS 116.135",
+      "name": "Section 116.135",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 26,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.140",
+      "identifier": "ORS 116.140",
+      "name": "Section 116.140",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 27,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.143",
+      "identifier": "ORS 116.143",
+      "name": "Section 116.143",
+      "text": "Interest on pecuniary devises. (1) As used in this section, discount rate means the auction average rate on 91-day United States Treasury bills, as established by the most recent auction of these Treasury bills and as reported by the United States Department of the Treasury, Bureau of the Public Debt. The discount rate shall be determined, with reference to the most recent auction date, before May 15 and before November 15 of each year. (2) General pecuniary devises not entitled to a share of income under ORS 116.007 (2) bear interest payable from the residuary estate at the discount rate for a period beginning one year after the first appointment of a personal representative until payment, unless a contrary intent is evidenced in the will or unless otherwise ordered by the court.",
+      "history_citation_blocks": [
+        "1969 c.591 181; 2005 c.125 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.591 181",
+          "year": 1969,
+          "chapter": "591",
+          "section": "181"
+        },
+        {
+          "raw": "2005 c.125 1",
+          "year": 2005,
+          "chapter": "125",
+          "section": "1"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "As used in this section, discount rate means the auction average rate on 91-day United States Treasury bills, as established by the most recent auction of these Treasury bills and as reported by the United States Department of the Treasury, Bureau of the Public Debt. The discount rate shall be determined, with reference to the most recent auction date, before May 15 and before November 15 of each year.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "General pecuniary devises not entitled to a share of income under ORS 116.007 bear interest payable from the residuary estate at the discount rate for a period beginning one year after the first appointment of a personal representative until payment, unless a contrary intent is evidenced in the will or unless otherwise ordered by the court.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 28,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.145",
+      "identifier": "ORS 116.145",
+      "name": "Section 116.145",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 29,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.150",
+      "identifier": "ORS 116.150",
+      "name": "Section 116.150",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 30,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.153",
+      "identifier": "ORS 116.153",
+      "name": "Section 116.153",
+      "text": "Right of offset and retainer. The amount of the indebtedness of a distributee to the estate if due, or its present worth if not due, shall be offset against the interest of the distributee in the estate; but the distributee has the benefit of any defense that would be available to the distributee in a direct proceeding for recovery of the debt. The right of offset and retainer is prior and superior to the rights of judgment creditors, heirs or assignees of the distributee.",
+      "history_citation_blocks": [
+        "1969 c.591 182"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.591 182",
+          "year": 1969,
+          "chapter": "591",
+          "section": "182"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 31,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.155",
+      "identifier": "ORS 116.155",
+      "name": "Section 116.155",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 32,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.160",
+      "identifier": "ORS 116.160",
+      "name": "Section 116.160",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 33,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.163",
+      "identifier": "ORS 116.163",
+      "name": "Section 116.163",
+      "text": "Distribution to foreign personal representative. When administration of an estate in this state has been completed and the estate is in a condition to be distributed, the court, upon application by the personal representative, may authorize the delivery to the personal representative of an estate of a decedent pending in a foreign jurisdiction of such property as the court finds appropriate for the payment of debts, taxes or other charges or for distribution to the distributees of the estate in the foreign jurisdiction.",
+      "history_citation_blocks": [
+        "1969 c.591 183"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.591 183",
+          "year": 1969,
+          "chapter": "591",
+          "section": "183"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 34,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.165",
+      "identifier": "ORS 116.165",
+      "name": "Section 116.165",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 35,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.170",
+      "identifier": "ORS 116.170",
+      "name": "Section 116.170",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 36,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.173",
+      "identifier": "ORS 116.173",
+      "name": "Section 116.173",
+      "text": "Compensation of personal representative. (1) As used in this section, property subject to the jurisdiction of the court means: (a) All property owned by the decedent at the time of death that is subject to administration, including but not limited to amounts recovered on a personal injury claim, as defined in ORS 114.441; (b) All income received during the course of the administration of the estate; (c) All gains realized on the sale or disposition of assets during the course of the administration of the estate, to the extent that the gain realized on each asset sold or disposed of exceeds the value of the asset as provided in subsection (2) of this section; (d) All unrealized gains on assets acquired during the course of administration of the estate; and (e) Proceeds recovered in a wrongful death claim, as defined in ORS 114.441, by judgment or settlement. (2)(a) For purposes of this section, each asset shall be valued at its highest value as shown in the inventory, any amended or supplemental inventory, any interim account or the final account or statement in lieu of the final account filed under ORS 116.083, which may be based upon revaluation of the asset to reflect its then current fair market value. (b) If the highest value of an asset as shown in the inventory, any amended or supplemental inventory, any interim account or the final account or statement in lieu of the final account filed under ORS 116.083 was materially misstated at the time of filing of the document, the value of the asset is the highest correctly stated value of the asset as shown in the inventory, any amended or supplemental inventory, any interim account or the final account or statement in lieu of the final account filed under ORS 116.083. (3) Unless the court has granted a request for a different determination of the compensation of the personal representative under ORS 113.038, upon application to the court a personal representative is entitled to receive compensation for services as provided in this section. If there is more than one personal representative acting concurrently or consecutively, the compensation may not be increased, but may be divided among the personal representatives as they agree or as the court may order. The compensation is a commission upon the whole estate, as follows: (a) Upon the property subject to the jurisdiction of the court: (A) Seven percent of any sum not exceeding $1,000. (B) Four percent of all above $1,000 and not exceeding $10,000. (C) Three percent of all above $10,000 and not exceeding $50,000. (D) Two percent of all above $50,000. (b) One percent of the property, exclusive of life insurance proceeds, not subject to the jurisdiction of the court but reportable for Oregon estate tax or federal estate tax purposes. (4) In all cases, further compensation as is just and reasonable may be allowed by the court for any extraordinary and unusual services, including services not ordinarily required of a personal representative in the performance of duties as a personal representative. (5) When a decedent by will has made special provision for the compensation of a personal representative: (a) The personal representative is not entitled to any other compensation for services unless prior to appointment the personal representative signs and files with the clerk of the court a written renunciation of the compensation provided by the will. (b) If the assets of the estate are insufficient to pay in full all expenses or claims of the estate, the compensation of the personal representative may not exceed the compensation provided by subsections (3) and (4) of this section.",
+      "history_citation_blocks": [
+        "Formerly 117.680; 2005 c.126 1; 2011 c.526 20; 2017 c.169 36; 2019 c.166 10"
+      ],
+      "history_citations": [
+        {
+          "raw": "Formerly 117.680"
+        },
+        {
+          "raw": "2005 c.126 1",
+          "year": 2005,
+          "chapter": "126",
+          "section": "1"
+        },
+        {
+          "raw": "2011 c.526 20",
+          "year": 2011,
+          "chapter": "526",
+          "section": "20"
+        },
+        {
+          "raw": "2017 c.169 36",
+          "year": 2017,
+          "chapter": "169",
+          "section": "36"
+        },
+        {
+          "raw": "2019 c.166 10",
+          "year": 2019,
+          "chapter": "166",
+          "section": "10"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "As used in this section, property subject to the jurisdiction of the court means:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "All property owned by the decedent at the time of death that is subject to administration, including but not limited to amounts recovered on a personal injury claim, as defined in ORS 114.441;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "All income received during the course of the administration of the estate;",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "All gains realized on the sale or disposition of assets during the course of the administration of the estate, to the extent that the gain realized on each asset sold or disposed of exceeds the value of the asset as provided in subsection",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "of this section; (a) For purposes of this section, each asset shall be valued at its highest value as shown in the inventory, any amended or supplemental inventory, any interim account or the final account or statement in lieu of the final account filed under ORS 116.083, which may be based upon revaluation of the asset to reflect its then current fair market value.",
+          "subsections": [
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "All unrealized gains on assets acquired during the course of administration of the estate; and",
+              "subsections": []
+            },
+            {
+              "label": "(e)",
+              "token": "e",
+              "kind": "alpha_lower",
+              "text": "Proceeds recovered in a wrongful death claim, as defined in ORS 114.441, by judgment or settlement.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "If the highest value of an asset as shown in the inventory, any amended or supplemental inventory, any interim account or the final account or statement in lieu of the final account filed under ORS 116.083 was materially misstated at the time of filing of the document, the value of the asset is the highest correctly stated value of the asset as shown in the inventory, any amended or supplemental inventory, any interim account or the final account or statement in lieu of the final account filed under ORS 116.083.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Unless the court has granted a request for a different determination of the compensation of the personal representative under ORS 113.038, upon application to the court a personal representative is entitled to receive compensation for services as provided in this section. If there is more than one personal representative acting concurrently or consecutively, the compensation may not be increased, but may be divided among the personal representatives as they agree or as the court may order. The compensation is a commission upon the whole estate, as follows: and",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Upon the property subject to the jurisdiction of the court:",
+              "subsections": [
+                {
+                  "label": "(A)",
+                  "token": "A",
+                  "kind": "alpha_upper",
+                  "text": "Seven percent of any sum not exceeding $1,000.",
+                  "subsections": []
+                },
+                {
+                  "label": "(B)",
+                  "token": "B",
+                  "kind": "alpha_upper",
+                  "text": "Four percent of all above $1,000 and not exceeding $10,000.",
+                  "subsections": []
+                },
+                {
+                  "label": "(C)",
+                  "token": "C",
+                  "kind": "alpha_upper",
+                  "text": "Three percent of all above $10,000 and not exceeding $50,000.",
+                  "subsections": []
+                },
+                {
+                  "label": "(D)",
+                  "token": "D",
+                  "kind": "alpha_upper",
+                  "text": "Two percent of all above $50,000.",
+                  "subsections": []
+                }
+              ]
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "One percent of the property, exclusive of life insurance proceeds, not subject to the jurisdiction of the court but reportable for Oregon estate tax or federal estate tax purposes.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "In all cases, further compensation as is just and reasonable may be allowed by the court for any extraordinary and unusual services, including services not ordinarily required of a personal representative in the performance of duties as a personal representative. of this section.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "When a decedent by will has made special provision for the compensation of a personal representative:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "The personal representative is not entitled to any other compensation for services unless prior to appointment the personal representative signs and files with the clerk of the court a written renunciation of the compensation provided by the will.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "If the assets of the estate are insufficient to pay in full all expenses or claims of the estate, the compensation of the personal representative may not exceed the compensation provided by subsections",
+              "subsections": []
+            }
+          ]
+        }
+      ],
+      "parser_warnings": [],
+      "position": 37,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.175",
+      "identifier": "ORS 116.175",
+      "name": "Section 116.175",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 38,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.180",
+      "identifier": "ORS 116.180",
+      "name": "Section 116.180",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 39,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.183",
+      "identifier": "ORS 116.183",
+      "name": "Section 116.183",
+      "text": "Expenses of personal representative; determination of attorney fees. (1) A personal representative shall be allowed in the settlement of the final account all necessary expenses incurred in the care, management and settlement of the estate, including reasonable fees of appraisers, attorneys and other qualified persons employed by the personal representative. A partial award of such expenses, including fees, may be allowed prior to settlement of the final account upon petition, showing that the final account reasonably cannot be filed at that time, and upon notice as directed by the court. (2)(a) An award of reasonable attorney fees under this section shall be made after consideration of the customary fees in the community for similar services, the time spent by counsel, counsels experience in such matters, the skill displayed by counsel, the result obtained, any agreement as to fees between the personal representative and the counsel of the personal representative, the amount of responsibility assumed by counsel considering the total value of the estate, and other factors as may be relevant. No single factor is controlling. (b) Before the court awards attorney fees in an amount less than the amount requested by the personal representative, the court must allow the attorney an opportunity to submit additional materials supporting the requested amount. (3) A personal representative who defends or prosecutes any proceeding in good faith and with just cause, whether successful or not, is entitled to receive from the estate necessary expenses and disbursements, including reasonable attorney fees, in the proceeding.",
+      "history_citation_blocks": [
+        "1969 c.591 185; 1977 c.733 1; 1987 c.518 1; 2017 c.169 37; 2021 c.282 20"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.591 185",
+          "year": 1969,
+          "chapter": "591",
+          "section": "185"
+        },
+        {
+          "raw": "1977 c.733 1",
+          "year": 1977,
+          "chapter": "733",
+          "section": "1"
+        },
+        {
+          "raw": "1987 c.518 1",
+          "year": 1987,
+          "chapter": "518",
+          "section": "1"
+        },
+        {
+          "raw": "2017 c.169 37",
+          "year": 2017,
+          "chapter": "169",
+          "section": "37"
+        },
+        {
+          "raw": "2021 c.282 20",
+          "year": 2021,
+          "chapter": "282",
+          "section": "20"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "A personal representative shall be allowed in the settlement of the final account all necessary expenses incurred in the care, management and settlement of the estate, including reasonable fees of appraisers, attorneys and other qualified persons employed by the personal representative. A partial award of such expenses, including fees, may be allowed prior to settlement of the final account upon petition, showing that the final account reasonably cannot be filed at that time, and upon notice as directed by the court.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "(a) An award of reasonable attorney fees under this section shall be made after consideration of the customary fees in the community for similar services, the time spent by counsel, counsels experience in such matters, the skill displayed by counsel, the result obtained, any agreement as to fees between the personal representative and the counsel of the personal representative, the amount of responsibility assumed by counsel considering the total value of the estate, and other factors as may be relevant. No single factor is controlling.",
+          "subsections": [
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "Before the court awards attorney fees in an amount less than the amount requested by the personal representative, the court must allow the attorney an opportunity to submit additional materials supporting the requested amount.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "A personal representative who defends or prosecutes any proceeding in good faith and with just cause, whether successful or not, is entitled to receive from the estate necessary expenses and disbursements, including reasonable attorney fees, in the proceeding.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 40,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.185",
+      "identifier": "ORS 116.185",
+      "name": "Section 116.185",
+      "text": "[Repealed by 1961 c.417 2]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 41,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.186",
+      "identifier": "ORS 116.186",
+      "name": "Section 116.186",
+      "text": "",
+      "history_citation_blocks": [
+        "1961 c.417 1; repealed by 1969 c.591 305"
+      ],
+      "history_citations": [
+        {
+          "raw": "1961 c.417 1",
+          "year": 1961,
+          "chapter": "417",
+          "section": "1"
+        },
+        {
+          "raw": "repealed by 1969 c.591 305"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 42,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.190",
+      "identifier": "ORS 116.190",
+      "name": "Section 116.190",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 43,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.193",
+      "identifier": "ORS 116.193",
+      "name": "Section 116.193",
+      "text": "Order of escheat. If it appears to the court, at any time after the expiration of four months after the date of publication of notice to interested persons, that there is no known person to take by descent the net intestate estate, the court shall order that the estate escheat to the State of Oregon and that the whole of the estate, after payment of claims, taxes and expenses of administration, be distributed to the State Treasurer for deposit into the Unclaimed Property and Estates Fund. There shall be no further proceeding in the administration of the estate, and the estate shall summarily be closed. [1969 c.591 186; 2019 c.678 43; 2021 c.424 15; 2023 c.18 10] Note: Section 11, chapter 18, Oregon Laws 2023, provides: Sec. 11. The amendments to statutes by sections 1 to 10 of this 2023 Act apply to probate proceedings commenced on or after the effective date of this 2023 Act [January 1, 2024].",
+      "history_citation_blocks": [
+        "2023 c.18 11"
+      ],
+      "history_citations": [
+        {
+          "raw": "2023 c.18 11",
+          "year": 2023,
+          "chapter": "18",
+          "section": "11"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 44,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.195",
+      "identifier": "ORS 116.195",
+      "name": "Section 116.195",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 45,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.203",
+      "identifier": "ORS 116.203",
+      "name": "Section 116.203",
+      "text": "Disposition of unclaimed assets. If a report filed in the estate proceeding by the personal representative not less than 30 days after the date of entry of the judgment of distribution shows that payment or delivery of property in the possession of the personal representative or under the control of the personal representative cannot be made to a distributee entitled thereto, either because the distributee refuses to accept the property or because the distributee cannot be found, the court may direct the personal representative to pay or deliver the property to the State Treasurer, to be placed in the escheat funds of the state. The personal representative shall take the receipt of the State Treasurer stating from whom the property was received, a description of the property and the name of the person entitled to the property. The person entitled thereto may apply for and recover the property in the manner provided for recovery of escheat funds.",
+      "history_citation_blocks": [
+        "1969 c.591 187; 2003 c.576 378; 2019 c.678 44"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.591 187",
+          "year": 1969,
+          "chapter": "591",
+          "section": "187"
+        },
+        {
+          "raw": "2003 c.576 378",
+          "year": 2003,
+          "chapter": "576",
+          "section": "378"
+        },
+        {
+          "raw": "2019 c.678 44",
+          "year": 2019,
+          "chapter": "678",
+          "section": "44"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 46,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.208",
+      "identifier": "ORS 116.208",
+      "name": "Section 116.208",
+      "text": "Motion to close estate with no known assets; judgment; discharge of personal representative. (1) If the petition for appointment of the personal representative states that no assets of the estate are known to the petitioner and no assets of the estate have come into the possession or knowledge of the personal representative, the personal representative may move to close the estate no earlier than four months after the latest date of delivery or mailing of the information described in ORS 113.145. (2) The motion must state that no assets of the estate have come into the possession or knowledge of the personal representative and that the purpose for filing the petition under ORS 113.035 has been accomplished. (3) The personal representative shall set a time for filing objections to the motion to close the estate. Not less than 20 days before the time set, the personal representative shall mail a copy of the motion to close the estate to the persons who would be entitled to receive a copy of the final account under ORS 116.093. (4) If the court grants the motion, the court shall enter a general judgment closing the estate and discharging the personal representative. The discharge so entered operates as a release of the personal representative from further duties and as a bar to any action against the personal representative. The court may, in its discretion and upon such terms as may be just, within one year after entry of the judgment of discharge, permit an action to be brought against the personal representative if the judgment of discharge was taken through fraud or misrepresentation of the personal representative or through the mistake, inadvertence, surprise or excusable neglect of the claimant.",
+      "history_citation_blocks": [
+        "2019 c.414 9"
+      ],
+      "history_citations": [
+        {
+          "raw": "2019 c.414 9",
+          "year": 2019,
+          "chapter": "414",
+          "section": "9"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "If the petition for appointment of the personal representative states that no assets of the estate are known to the petitioner and no assets of the estate have come into the possession or knowledge of the personal representative, the personal representative may move to close the estate no earlier than four months after the latest date of delivery or mailing of the information described in ORS 113.145.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The motion must state that no assets of the estate have come into the possession or knowledge of the personal representative and that the purpose for filing the petition under ORS 113.035 has been accomplished.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "The personal representative shall set a time for filing objections to the motion to close the estate. Not less than 20 days before the time set, the personal representative shall mail a copy of the motion to close the estate to the persons who would be entitled to receive a copy of the final account under ORS 116.093.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "If the court grants the motion, the court shall enter a general judgment closing the estate and discharging the personal representative. The discharge so entered operates as a release of the personal representative from further duties and as a bar to any action against the personal representative. The court may, in its discretion and upon such terms as may be just, within one year after entry of the judgment of discharge, permit an action to be brought against the personal representative if the judgment of discharge was taken through fraud or misrepresentation of the personal representative or through the mistake, inadvertence, surprise or excusable neglect of the claimant.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 47,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.213",
+      "identifier": "ORS 116.213",
+      "name": "Section 116.213",
+      "text": "Discharge of personal representative. Upon the filing of receipts or other evidence satisfactory to the court that distribution has been made as ordered in the general judgment, the court shall enter a supplemental judgment of discharge. Except as provided in ORS 115.004, the discharge so entered operates as a release of the personal representative from further duties and as a bar to any action against the personal representative and the surety of the personal representative. The court may, in its discretion and upon such terms as may be just, within one year after entry of the supplemental judgment of discharge, permit an action to be brought against the personal representative and the surety of the personal representative if the supplemental judgment of discharge was taken through fraud or misrepresentation of the personal representative or the surety of the personal representative or through the mistake, inadvertence, surprise or excusable neglect of the claimant.",
+      "history_citation_blocks": [
+        "1969 c.591 188; 1989 c.229 9; 2003 c.576 379"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.591 188",
+          "year": 1969,
+          "chapter": "591",
+          "section": "188"
+        },
+        {
+          "raw": "1989 c.229 9",
+          "year": 1989,
+          "chapter": "229",
+          "section": "9"
+        },
+        {
+          "raw": "2003 c.576 379",
+          "year": 2003,
+          "chapter": "576",
+          "section": "379"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 48,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.223",
+      "identifier": "ORS 116.223",
+      "name": "Section 116.223",
+      "text": "Recording of deed from personal representative. The personal representative shall cause to be recorded in the deed records of any county in which real property belonging to the estate is situated, a deed from the personal representative executed in the manner required by ORS chapter 93. The execution of the bargain and sale deed does not place the personal representative in the chain of title to the property conveyed unless the personal representative is also an heir, devisee or claiming successor to the property conveyed.",
+      "history_citation_blocks": [
+        "1969 c.591 189; 1991 c.191 1; 2017 c.169 38; 2019 c.165 30"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.591 189",
+          "year": 1969,
+          "chapter": "591",
+          "section": "189"
+        },
+        {
+          "raw": "1991 c.191 1",
+          "year": 1991,
+          "chapter": "191",
+          "section": "1"
+        },
+        {
+          "raw": "2017 c.169 38",
+          "year": 2017,
+          "chapter": "169",
+          "section": "38"
+        },
+        {
+          "raw": "2019 c.165 30",
+          "year": 2019,
+          "chapter": "165",
+          "section": "30"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 49,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.233",
+      "identifier": "ORS 116.233",
+      "name": "Section 116.233",
+      "text": "Reopening estate of decedent. Upon the petition of any interested person, the court, with such notice as it may prescribe, may order the estate of a decedent reopened if other property is discovered, if any necessary act remains unperformed or for any other proper cause appearing to the court. The court may reappoint the former personal representative, or appoint another personal representative, to administer any additional property or to perform such other acts as are considered necessary. The provisions of law as to original administration apply, in so far as applicable, to accomplish the purpose for which the estate is reopened, but a claim that already is adjudicated or barred may not be asserted in the reopened administration.",
+      "history_citation_blocks": [
+        "1969 c.591 190"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.591 190",
+          "year": 1969,
+          "chapter": "591",
+          "section": "190"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 50,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.243",
+      "identifier": "ORS 116.243",
+      "name": "Section 116.243",
+      "text": "Reports by court clerks, county clerks or court administrators to State Treasurer. A court clerk of any county in which the county court has judicial functions, the clerk of any county court that has jurisdiction over probate matters under ORS 111.075 or a court administrator, upon request, shall furnish to the State Treasurer the titles of estates of decedents that have remained open for more than three years and in which no heirs, or only persons whose right to inherit the proceeds thereof is being contested, have appeared to claim the estate.",
+      "history_citation_blocks": [
+        "1969 c.591 191; 1991 c.230 24; 1991 c.790 9a; 2003 c.395 17; 2017 c.169 58; 2019 c.678 45"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.591 191",
+          "year": 1969,
+          "chapter": "591",
+          "section": "191"
+        },
+        {
+          "raw": "1991 c.230 24",
+          "year": 1991,
+          "chapter": "230",
+          "section": "24"
+        },
+        {
+          "raw": "1991 c.790 9a",
+          "year": 1991,
+          "chapter": "790",
+          "section": "9a"
+        },
+        {
+          "raw": "2003 c.395 17",
+          "year": 2003,
+          "chapter": "395",
+          "section": "17"
+        },
+        {
+          "raw": "2017 c.169 58",
+          "year": 2017,
+          "chapter": "169",
+          "section": "58"
+        },
+        {
+          "raw": "2019 c.678 45",
+          "year": 2019,
+          "chapter": "678",
+          "section": "45"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 51,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.253",
+      "identifier": "ORS 116.253",
+      "name": "Section 116.253",
+      "text": "Recovery of escheated property. (1) Within 10 years after the death of a decedent whose estate escheated in whole or in part to the state, or within eight years after the entry of a judgment or order escheating property of an estate to the state, a claim may be made for the property escheated, or the proceeds thereof, by or on behalf of a person not having actual knowledge of the escheat or by or on behalf of a person who at the time of the escheat was unable to prove entitlement to the escheated property. (2) The claim shall be made by a petition filed with the State Treasurer. The petition must include: (a) A declaration by the petitioner under penalty of perjury in the form required by ORCP 1 E or an unsworn declaration under ORS 194.800 to 194.835 if the declarant is physically outside the boundaries of the United States; (b) The age and place of residence of the claimant by whom or on whose behalf the petition is filed; (c) A brief description of the property or source of funds believed to have been escheated to the state; (d) That the claimant lawfully is entitled to the property or proceeds; (e) That at the time the property escheated to the state the claimant had no knowledge or notice thereof or was unable to prove entitlement to the escheated property and has subsequently acquired new evidence of that entitlement; (f) That the claimant claims the property or proceeds as an heir or devisee or as the personal representative of the estate of an heir or devisee, setting forth any relationship between the claimant and the decedent who at the time of death owned the escheated property; (g) That 10 years have not elapsed since the death of the decedent or that eight years have not elapsed since the entry of the judgment or order escheating the property to the state; and (h) If the petition is not filed by the claimant, the status of the petitioner. (3) If the State Treasurer determines that the claimant is entitled to escheated estate property, the State Treasurer shall: (a) Pay from the Unclaimed Property and Estates Fund the proportional share of the proceeds or value of the property without interest and subject to the proportional share of the costs of administering the estate, including attorney fees and personal representative fees paid by the estate; or (b) If personal or real property is in the Unclaimed Property and Estates Fund, transfer the property without interest and subject to a claim of the Unclaimed Property and Estates Fund of a proportional share of the costs of administering the estate, including attorney fees and personal representative fees paid by the estate, and any property taxes or other costs of managing or improving the property, whether incurred before or after the close of the estate. (4) If the person whose property escheated or reverted to the state was at any time a patient of a state institution in Oregon for persons with mental illness or of the Eastern Oregon Training Center, the reasonable unpaid cost of the care and maintenance of the person while a ward of the institution, regardless of when the cost was incurred, may be deducted from, or, if necessary, be offset in full against, the amount of the escheated property. The reasonable unpaid cost of care and maintenance shall be determined in accordance with ORS 179.701. (5) For the purposes of this section, the death of the decedent is presumed to have occurred on the date shown in the decedents certified copy of the death record or in any other similar document issued by the jurisdiction in which the death occurred or issued by an agency of the federal government. (6) A person aggrieved by a determination of the State Treasurer under this section may seek a contested case hearing under ORS 183.413 to 183.470.",
+      "history_citation_blocks": [
+        "Formerly 120.130; 2003 c.395 18; 2003 c.576 380a; 2007 c.70 23; 2007 c.284 3; 2009 c.595 83; 2013 c.36 34; 2013 c.218 15; 2013 c.366 61; 2019 c.678 46; 2021 c.424 16"
+      ],
+      "history_citations": [
+        {
+          "raw": "Formerly 120.130"
+        },
+        {
+          "raw": "2003 c.395 18",
+          "year": 2003,
+          "chapter": "395",
+          "section": "18"
+        },
+        {
+          "raw": "2003 c.576 380a",
+          "year": 2003,
+          "chapter": "576",
+          "section": "380a"
+        },
+        {
+          "raw": "2007 c.70 23",
+          "year": 2007,
+          "chapter": "70",
+          "section": "23"
+        },
+        {
+          "raw": "2007 c.284 3",
+          "year": 2007,
+          "chapter": "284",
+          "section": "3"
+        },
+        {
+          "raw": "2009 c.595 83",
+          "year": 2009,
+          "chapter": "595",
+          "section": "83"
+        },
+        {
+          "raw": "2013 c.36 34",
+          "year": 2013,
+          "chapter": "36",
+          "section": "34"
+        },
+        {
+          "raw": "2013 c.218 15",
+          "year": 2013,
+          "chapter": "218",
+          "section": "15"
+        },
+        {
+          "raw": "2013 c.366 61",
+          "year": 2013,
+          "chapter": "366",
+          "section": "61"
+        },
+        {
+          "raw": "2019 c.678 46",
+          "year": 2019,
+          "chapter": "678",
+          "section": "46"
+        },
+        {
+          "raw": "2021 c.424 16",
+          "year": 2021,
+          "chapter": "424",
+          "section": "16"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Within 10 years after the death of a decedent whose estate escheated in whole or in part to the state, or within eight years after the entry of a judgment or order escheating property of an estate to the state, a claim may be made for the property escheated, or the proceeds thereof, by or on behalf of a person not having actual knowledge of the escheat or by or on behalf of a person who at the time of the escheat was unable to prove entitlement to the escheated property.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The claim shall be made by a petition filed with the State Treasurer. The petition must include:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "A declaration by the petitioner under penalty of perjury in the form required by ORCP 1 E or an unsworn declaration under ORS 194.800 to 194.835 if the declarant is physically outside the boundaries of the United States;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "The age and place of residence of the claimant by whom or on whose behalf the petition is filed;",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "A brief description of the property or source of funds believed to have been escheated to the state;",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "That the claimant lawfully is entitled to the property or proceeds;",
+              "subsections": []
+            },
+            {
+              "label": "(e)",
+              "token": "e",
+              "kind": "alpha_lower",
+              "text": "That at the time the property escheated to the state the claimant had no knowledge or notice thereof or was unable to prove entitlement to the escheated property and has subsequently acquired new evidence of that entitlement;",
+              "subsections": []
+            },
+            {
+              "label": "(f)",
+              "token": "f",
+              "kind": "alpha_lower",
+              "text": "That the claimant claims the property or proceeds as an heir or devisee or as the personal representative of the estate of an heir or devisee, setting forth any relationship between the claimant and the decedent who at the time of death owned the escheated property;",
+              "subsections": []
+            },
+            {
+              "label": "(g)",
+              "token": "g",
+              "kind": "alpha_lower",
+              "text": "That 10 years have not elapsed since the death of the decedent or that eight years have not elapsed since the entry of the judgment or order escheating the property to the state; and",
+              "subsections": []
+            },
+            {
+              "label": "(h)",
+              "token": "h",
+              "kind": "alpha_lower",
+              "text": "If the petition is not filed by the claimant, the status of the petitioner.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "If the State Treasurer determines that the claimant is entitled to escheated estate property, the State Treasurer shall:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "Pay from the Unclaimed Property and Estates Fund the proportional share of the proceeds or value of the property without interest and subject to the proportional share of the costs of administering the estate, including attorney fees and personal representative fees paid by the estate; or",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "If personal or real property is in the Unclaimed Property and Estates Fund, transfer the property without interest and subject to a claim of the Unclaimed Property and Estates Fund of a proportional share of the costs of administering the estate, including attorney fees and personal representative fees paid by the estate, and any property taxes or other costs of managing or improving the property, whether incurred before or after the close of the estate.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "If the person whose property escheated or reverted to the state was at any time a patient of a state institution in Oregon for persons with mental illness or of the Eastern Oregon Training Center, the reasonable unpaid cost of the care and maintenance of the person while a ward of the institution, regardless of when the cost was incurred, may be deducted from, or, if necessary, be offset in full against, the amount of the escheated property. The reasonable unpaid cost of care and maintenance shall be determined in accordance with ORS 179.701.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "For the purposes of this section, the death of the decedent is presumed to have occurred on the date shown in the decedents certified copy of the death record or in any other similar document issued by the jurisdiction in which the death occurred or issued by an agency of the federal government.",
+          "subsections": []
+        },
+        {
+          "label": "(6)",
+          "token": "6",
+          "kind": "numeric",
+          "text": "A person aggrieved by a determination of the State Treasurer under this section may seek a contested case hearing under ORS 183.413 to 183.470.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 52,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.263",
+      "identifier": "ORS 116.263",
+      "name": "Section 116.263",
+      "text": "Payment of debt and delivery of property to foreign personal representative without local administration. (1) Three months or more after the death of a nonresident decedent, any person indebted to the estate of the nonresident decedent or having possession of personal property or an instrument evidencing a debt, obligation, stock or right to sue belonging to the estate of the nonresident decedent may make payment of the indebtedness, in whole or in part, or deliver the personal property or the instrument evidencing the debt, obligation, stock or right to sue to the foreign personal representative of the nonresident decedent, upon an affidavit made by or on behalf of the foreign personal representative, accompanied by proof of the foreign personal representatives authority, stating: (a) The date of the death of the nonresident decedent; (b) That no local administration or application therefor is pending in this state; and (c) That the foreign personal representative is entitled to payment or delivery. (2) Payment or delivery made in good faith on the basis of the affidavit is a discharge of the debtor or person having possession of the personal property. (3) Payment or delivery may not be made under this section if a resident creditor of the nonresident decedent has notified the debtor of the nonresident decedent or the person having possession of the personal property belonging to the nonresident decedent that the debt should not be paid nor the property delivered to the foreign personal representative. [1969 c.591 193; 1987 c.646 3; 2017 c.169 39] APPORTIONMENT OF ESTATE TAXES",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Three months or more after the death of a nonresident decedent, any person indebted to the estate of the nonresident decedent or having possession of personal property or an instrument evidencing a debt, obligation, stock or right to sue belonging to the estate of the nonresident decedent may make payment of the indebtedness, in whole or in part, or deliver the personal property or the instrument evidencing the debt, obligation, stock or right to sue to the foreign personal representative of the nonresident decedent, upon an affidavit made by or on behalf of the foreign personal representative, accompanied by proof of the foreign personal representatives authority, stating:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "The date of the death of the nonresident decedent;",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "That no local administration or application therefor is pending in this state; and",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "That the foreign personal representative is entitled to payment or delivery.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Payment or delivery made in good faith on the basis of the affidavit is a discharge of the debtor or person having possession of the personal property.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Payment or delivery may not be made under this section if a resident creditor of the nonresident decedent has notified the debtor of the nonresident decedent or the person having possession of the personal property belonging to the nonresident decedent that the debt should not be paid nor the property delivered to the foreign personal representative. [1969 c.591 193; 1987 c.646 3; 2017 c.169 39] APPORTIONMENT OF ESTATE TAXES",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 53,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.303",
+      "identifier": "ORS 116.303",
+      "name": "Section 116.303",
+      "text": "Definitions for ORS 116.303 to 116.383. As used in ORS 116.303 to 116.383: (1) Estate means the gross estate of a decedent as determined for the purpose of federal estate tax and the estate tax payable to this state under ORS 118.005 to 118.540. (2) Person means any individual, partnership, association, joint stock company, corporation, government, political subdivision, governmental agency or local governmental agency. (3) Person interested in the estate means any person entitled to receive, or who has received, from a decedent or by reason of the death of a decedent any property or interest therein included in the decedents estate. It includes a personal representative, guardian, conservator or trustee. (4) State means any state, territory or possession of the United States, the District of Columbia or the Commonwealth of Puerto Rico. (5) Tax means the federal estate tax and the estate tax payable to this state under ORS 118.005 to 118.540, and interest and penalties imposed in addition to the tax.",
+      "history_citation_blocks": [
+        "1969 c.591 194; 1977 c.666 32; 2011 c.526 21"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.591 194",
+          "year": 1969,
+          "chapter": "591",
+          "section": "194"
+        },
+        {
+          "raw": "1977 c.666 32",
+          "year": 1977,
+          "chapter": "666",
+          "section": "32"
+        },
+        {
+          "raw": "2011 c.526 21",
+          "year": 2011,
+          "chapter": "526",
+          "section": "21"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Estate means the gross estate of a decedent as determined for the purpose of federal estate tax and the estate tax payable to this state under ORS 118.005 to 118.540.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Person means any individual, partnership, association, joint stock company, corporation, government, political subdivision, governmental agency or local governmental agency.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Person interested in the estate means any person entitled to receive, or who has received, from a decedent or by reason of the death of a decedent any property or interest therein included in the decedents estate. It includes a personal representative, guardian, conservator or trustee.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "State means any state, territory or possession of the United States, the District of Columbia or the Commonwealth of Puerto Rico.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "Tax means the federal estate tax and the estate tax payable to this state under ORS 118.005 to 118.540, and interest and penalties imposed in addition to the tax.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 54,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.305",
+      "identifier": "ORS 116.305",
+      "name": "Section 116.305",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 55,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.310",
+      "identifier": "ORS 116.310",
+      "name": "Section 116.310",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 56,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.313",
+      "identifier": "ORS 116.313",
+      "name": "Section 116.313",
+      "text": "Apportionment among interested persons; valuations; apportionment directed by will or trust. Unless the will, or a revocable trust of which the decedent is settlor, otherwise provides, the tax shall be apportioned among all persons interested in the estate. The apportionment shall be made in the proportion that the value of the interest of each person interested in the estate bears to the total value of the interests of all persons interested in the estate. The values used in determining the tax shall be used for that purpose. In the event the decedents will or revocable trust directs a method of apportionment of tax different from the method described in ORS 116.303 to 116.383, the method described in the will or revocable trust shall control. A mere testamentary direction to pay debts, charges, taxes or expenses of administration shall not be considered a direction against apportionment of estate taxes.",
+      "history_citation_blocks": [
+        "1969 c.591 195; 1973 c.506 38; 2015 c.387 32"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.591 195",
+          "year": 1969,
+          "chapter": "591",
+          "section": "195"
+        },
+        {
+          "raw": "1973 c.506 38",
+          "year": 1973,
+          "chapter": "506",
+          "section": "38"
+        },
+        {
+          "raw": "2015 c.387 32",
+          "year": 2015,
+          "chapter": "387",
+          "section": "32"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 57,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.315",
+      "identifier": "ORS 116.315",
+      "name": "Section 116.315",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 58,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.320",
+      "identifier": "ORS 116.320",
+      "name": "Section 116.320",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 59,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.323",
+      "identifier": "ORS 116.323",
+      "name": "Section 116.323",
+      "text": "Apportionment proceedings; equitable apportionment; penalties and interest; court determination. (1) The court in which the administration of the estate is proceeding may on petition for the purpose determine the apportionment of the tax. (2) If the court finds that it is inequitable to apportion interest and penalties in the manner provided in ORS 116.313 because of special circumstances, it may direct apportionment thereof in the manner it finds equitable. (3) If the court finds that the assessment of penalties and interest assessed in relation to the tax is due to delay caused by the negligence of the personal representative, the court may charge the personal representative with the amount of the assessed penalties and interest. (4) In any suit or judicial proceeding to recover from any person interested in the estate the amount of the tax apportioned to the person in accordance with ORS",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The court in which the administration of the estate is proceeding may on petition for the purpose determine the apportionment of the tax.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "If the court finds that it is inequitable to apportion interest and penalties in the manner provided in ORS 116.313 because of special circumstances, it may direct apportionment thereof in the manner it finds equitable.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "If the court finds that the assessment of penalties and interest assessed in relation to the tax is due to delay caused by the negligence of the personal representative, the court may charge the personal representative with the amount of the assessed penalties and interest.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "In any suit or judicial proceeding to recover from any person interested in the estate the amount of the tax apportioned to the person in accordance with ORS",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 60,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.325",
+      "identifier": "ORS 116.325",
+      "name": "Section 116.325",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 61,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.330",
+      "identifier": "ORS 116.330",
+      "name": "Section 116.330",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 62,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.333",
+      "identifier": "ORS 116.333",
+      "name": "Section 116.333",
+      "text": "Withholding of tax; recovery from distributee; bond of distributee. (1) The personal representative or other person who is in possession of the property of the decedent and who is required to pay the tax may withhold from any property distributable to any person interested in the estate, upon its distribution to the person, the amount of tax attributable to the interest of the person. If the property in possession of the personal representative or other person required to pay the tax and distributable to any person interested in the estate is insufficient to satisfy the proportionate amount of the tax determined to be due from the person, the personal representative or other person required to pay the tax may recover the deficiency from the person interested in the estate. If the property is not in the possession of the personal representative or the other person required to pay the tax, the personal representative or the other person required to pay the tax may recover from any person interested in the estate the amount of the tax apportioned to the person in accordance with ORS 116.303 to 116.383. (2) If property held by the personal representative is distributed prior to final apportionment of the tax, the distributee shall provide a bond or other security for the apportionment liability in the form and amount prescribed by the personal representative.",
+      "history_citation_blocks": [
+        "1969 c.591 197"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.591 197",
+          "year": 1969,
+          "chapter": "591",
+          "section": "197"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "The personal representative or other person who is in possession of the property of the decedent and who is required to pay the tax may withhold from any property distributable to any person interested in the estate, upon its distribution to the person, the amount of tax attributable to the interest of the person. If the property in possession of the personal representative or other person required to pay the tax and distributable to any person interested in the estate is insufficient to satisfy the proportionate amount of the tax determined to be due from the person, the personal representative or other person required to pay the tax may recover the deficiency from the person interested in the estate. If the property is not in the possession of the personal representative or the other person required to pay the tax, the personal representative or the other person required to pay the tax may recover from any person interested in the estate the amount of the tax apportioned to the person in accordance with ORS 116.303 to 116.383.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "If property held by the personal representative is distributed prior to final apportionment of the tax, the distributee shall provide a bond or other security for the apportionment liability in the form and amount prescribed by the personal representative.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 63,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.335",
+      "identifier": "ORS 116.335",
+      "name": "Section 116.335",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 64,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.340",
+      "identifier": "ORS 116.340",
+      "name": "Section 116.340",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 65,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.343",
+      "identifier": "ORS 116.343",
+      "name": "Section 116.343",
+      "text": "Allowances for exemptions, deductions and credits. (1) In making an apportionment, allowances shall be made for any exemptions granted, any classification made of persons interested in the estate and any deductions and credits allowed by the law imposing the tax. (2) Any exemption or deduction allowed by reason of the relationship of any person to the decedent or by reason of the purpose of the gift inures to the benefit of the person bearing that relationship or receiving the gift, except that when an interest is subject to a prior present interest that is not allowable as a deduction, the tax apportionable against the present interest shall be paid from principal. (3) Any deduction for property previously taxed and any credit for gift taxes or estate taxes of a foreign country paid by the decedent or the estate of the decedent inures to the proportionate benefit of all persons liable to apportionment. (4) Any credit for estate taxes in respect to property or interests includable in the estate inures to the benefit of the persons or interests chargeable with the payment of the tax to the extent that, or in proportion as, the credit reduces the tax. (5) To the extent that property passing to or in trust for a surviving spouse or any charitable, public or similar gift or bequest does not constitute an allowable deduction for purposes of the tax solely by reason of an estate tax or other death tax imposed upon and deductible from the property, the property shall not be included in the computation provided for in ORS 116.313, and to that extent no apportionment shall be made against the property. This subsection does not apply to any case in which the result will be to deprive the estate of a deduction otherwise allowable under section 2053(d) of the Internal Revenue Code (26 U.S.C. 2053(d)) relating to deduction for state estate taxes on transfers for public, charitable or religious uses.",
+      "history_citation_blocks": [
+        "1969 c.591 198; 2005 c.22 96; 2011 c.526 22; 2017 c.169 40"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.591 198",
+          "year": 1969,
+          "chapter": "591",
+          "section": "198"
+        },
+        {
+          "raw": "2005 c.22 96",
+          "year": 2005,
+          "chapter": "22",
+          "section": "96"
+        },
+        {
+          "raw": "2011 c.526 22",
+          "year": 2011,
+          "chapter": "526",
+          "section": "22"
+        },
+        {
+          "raw": "2017 c.169 40",
+          "year": 2017,
+          "chapter": "169",
+          "section": "40"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "In making an apportionment, allowances shall be made for any exemptions granted, any classification made of persons interested in the estate and any deductions and credits allowed by the law imposing the tax.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Any exemption or deduction allowed by reason of the relationship of any person to the decedent or by reason of the purpose of the gift inures to the benefit of the person bearing that relationship or receiving the gift, except that when an interest is subject to a prior present interest that is not allowable as a deduction, the tax apportionable against the present interest shall be paid from principal.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Any deduction for property previously taxed and any credit for gift taxes or estate taxes of a foreign country paid by the decedent or the estate of the decedent inures to the proportionate benefit of all persons liable to apportionment.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Any credit for estate taxes in respect to property or interests includable in the estate inures to the benefit of the persons or interests chargeable with the payment of the tax to the extent that, or in proportion as, the credit reduces the tax.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "To the extent that property passing to or in trust for a surviving spouse or any charitable, public or similar gift or bequest does not constitute an allowable deduction for purposes of the tax solely by reason of an estate tax or other death tax imposed upon and deductible from the property, the property shall not be included in the computation provided for in ORS 116.313, and to that extent no apportionment shall be made against the property. This subsection does not apply to any case in which the result will be to deprive the estate of a deduction otherwise allowable under section 2053(d) of the Internal Revenue Code (26 U.S.C. 2053(d)) relating to deduction for state estate taxes on transfers for public, charitable or religious uses.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 66,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.353",
+      "identifier": "ORS 116.353",
+      "name": "Section 116.353",
+      "text": "Income interests; life or temporary interests; charging corpus. No interest in income and no estate for years or for life or other temporary interest in any property or fund is subject to apportionment as between the temporary interest and the remainder. The tax on the temporary interest and the tax, if any, on the remainder is chargeable against the corpus of the property or funds subject to the temporary interest and remainder.",
+      "history_citation_blocks": [
+        "1969 c.591 199"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.591 199",
+          "year": 1969,
+          "chapter": "591",
+          "section": "199"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 67,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.363",
+      "identifier": "ORS 116.363",
+      "name": "Section 116.363",
+      "text": "Proceedings for recovery of tax; liability of personal representative; apportionment of amount not recovered. Neither the personal representative nor other person required to pay the tax is under any duty to institute any suit or proceeding to recover from any person interested in the estate the amount of the tax apportioned to that person until the expiration of three months next following final determination of the tax. A personal representative or other person required to pay the tax who institutes the suit or proceeding within a reasonable time after the three-month period is not subject to any liability or surcharge because any portion of the tax apportioned to any person interested in the estate was collectible at a time following the death of the decedent but thereafter became uncollectible. If the personal representative or other person required to pay the tax cannot collect from any person interested in the estate the amount of the tax apportioned to the person, the amount not recoverable shall be equitably apportioned among the other persons interested in the estate who are subject to apportionment.",
+      "history_citation_blocks": [
+        "1969 c.591 200"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.591 200",
+          "year": 1969,
+          "chapter": "591",
+          "section": "200"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 68,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.373",
+      "identifier": "ORS 116.373",
+      "name": "Section 116.373",
+      "text": "Foreign personal representatives and estates. A personal representative acting in another state or a person required to pay the tax who is domiciled in another state may institute an action in the courts of this state and may recover a proportionate amount of the federal estate tax, of an estate tax payable to another state or of a death duty due by a decedents estate to another state, from a person interested in the estate who is either domiciled in this state or who owns property in this state subject to attachment or execution. For the purposes of the action the determination of apportionment by the court having jurisdiction of the administration of the decedents estate in the other state is prima facie correct.",
+      "history_citation_blocks": [
+        "1969 c.591 201"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.591 201",
+          "year": 1969,
+          "chapter": "591",
+          "section": "201"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 69,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.383",
+      "identifier": "ORS 116.383",
+      "name": "Section 116.383",
+      "text": "Construction. ORS 116.303 to 116.383 embody the Uniform Estate Tax Apportionment Act and shall be construed to effectuate its general purpose to make uniform the law of those states which enact it.",
+      "history_citation_blocks": [
+        "1969 c.591 202"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.591 202",
+          "year": 1969,
+          "chapter": "591",
+          "section": "202"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 70,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.405",
+      "identifier": "ORS 116.405",
+      "name": "Section 116.405",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 71,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.410",
+      "identifier": "ORS 116.410",
+      "name": "Section 116.410",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 72,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.415",
+      "identifier": "ORS 116.415",
+      "name": "Section 116.415",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 73,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.420",
+      "identifier": "ORS 116.420",
+      "name": "Section 116.420",
+      "text": "[Amended by 1957 c.364 1; repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 74,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.425",
+      "identifier": "ORS 116.425",
+      "name": "Section 116.425",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 75,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.430",
+      "identifier": "ORS 116.430",
+      "name": "Section 116.430",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 76,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.435",
+      "identifier": "ORS 116.435",
+      "name": "Section 116.435",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 77,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.440",
+      "identifier": "ORS 116.440",
+      "name": "Section 116.440",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 78,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.445",
+      "identifier": "ORS 116.445",
+      "name": "Section 116.445",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 79,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.450",
+      "identifier": "ORS 116.450",
+      "name": "Section 116.450",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 80,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.455",
+      "identifier": "ORS 116.455",
+      "name": "Section 116.455",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 81,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.460",
+      "identifier": "ORS 116.460",
+      "name": "Section 116.460",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 82,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.465",
+      "identifier": "ORS 116.465",
+      "name": "Section 116.465",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 83,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.505",
+      "identifier": "ORS 116.505",
+      "name": "Section 116.505",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 84,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.510",
+      "identifier": "ORS 116.510",
+      "name": "Section 116.510",
+      "text": "[Amended by 1957 c.410 1; repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 85,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.515",
+      "identifier": "ORS 116.515",
+      "name": "Section 116.515",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 86,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.520",
+      "identifier": "ORS 116.520",
+      "name": "Section 116.520",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 87,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.525",
+      "identifier": "ORS 116.525",
+      "name": "Section 116.525",
+      "text": "[Amended by 1957 c.410 2; repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 88,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.530",
+      "identifier": "ORS 116.530",
+      "name": "Section 116.530",
+      "text": "[Amended by 1957 c.410 3; repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 89,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.535",
+      "identifier": "ORS 116.535",
+      "name": "Section 116.535",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 90,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.540",
+      "identifier": "ORS 116.540",
+      "name": "Section 116.540",
+      "text": "[Amended by 1957 c.410 4; repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 91,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.545",
+      "identifier": "ORS 116.545",
+      "name": "Section 116.545",
+      "text": "[Amended by 1957 c.410 5; repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 92,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.550",
+      "identifier": "ORS 116.550",
+      "name": "Section 116.550",
+      "text": "[Amended by 1969 c.198 57; repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 93,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.555",
+      "identifier": "ORS 116.555",
+      "name": "Section 116.555",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 94,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.560",
+      "identifier": "ORS 116.560",
+      "name": "Section 116.560",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 95,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.565",
+      "identifier": "ORS 116.565",
+      "name": "Section 116.565",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 96,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.570",
+      "identifier": "ORS 116.570",
+      "name": "Section 116.570",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 97,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.575",
+      "identifier": "ORS 116.575",
+      "name": "Section 116.575",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 98,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.580",
+      "identifier": "ORS 116.580",
+      "name": "Section 116.580",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 99,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.585",
+      "identifier": "ORS 116.585",
+      "name": "Section 116.585",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 100,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.590",
+      "identifier": "ORS 116.590",
+      "name": "Section 116.590",
+      "text": "[Amended by 1955 c.444 1; repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 101,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.595",
+      "identifier": "ORS 116.595",
+      "name": "Section 116.595",
+      "text": "[Amended by 1955 c.444 2; repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 102,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.705",
+      "identifier": "ORS 116.705",
+      "name": "Section 116.705",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 103,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.710",
+      "identifier": "ORS 116.710",
+      "name": "Section 116.710",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 104,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.715",
+      "identifier": "ORS 116.715",
+      "name": "Section 116.715",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 105,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.720",
+      "identifier": "ORS 116.720",
+      "name": "Section 116.720",
+      "text": "[Amended by 1955 c.149 1; repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 106,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.725",
+      "identifier": "ORS 116.725",
+      "name": "Section 116.725",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 107,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.730",
+      "identifier": "ORS 116.730",
+      "name": "Section 116.730",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 108,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.735",
+      "identifier": "ORS 116.735",
+      "name": "Section 116.735",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 109,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.740",
+      "identifier": "ORS 116.740",
+      "name": "Section 116.740",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 110,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.745",
+      "identifier": "ORS 116.745",
+      "name": "Section 116.745",
+      "text": "[Amended by 1963 c.417 6; repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 111,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.750",
+      "identifier": "ORS 116.750",
+      "name": "Section 116.750",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 112,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.755",
+      "identifier": "ORS 116.755",
+      "name": "Section 116.755",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 113,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.760",
+      "identifier": "ORS 116.760",
+      "name": "Section 116.760",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 114,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.765",
+      "identifier": "ORS 116.765",
+      "name": "Section 116.765",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 115,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.770",
+      "identifier": "ORS 116.770",
+      "name": "Section 116.770",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 116,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.775",
+      "identifier": "ORS 116.775",
+      "name": "Section 116.775",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 117,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.780",
+      "identifier": "ORS 116.780",
+      "name": "Section 116.780",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 118,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.785",
+      "identifier": "ORS 116.785",
+      "name": "Section 116.785",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 119,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.790",
+      "identifier": "ORS 116.790",
+      "name": "Section 116.790",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 120,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.795",
+      "identifier": "ORS 116.795",
+      "name": "Section 116.795",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 121,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.800",
+      "identifier": "ORS 116.800",
+      "name": "Section 116.800",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 122,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.805",
+      "identifier": "ORS 116.805",
+      "name": "Section 116.805",
+      "text": "[Amended by 1965 c.504 1; repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 123,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.810",
+      "identifier": "ORS 116.810",
+      "name": "Section 116.810",
+      "text": "[Repealed by 1965 c.399 1 (116.811 enacted in lieu of 116.810)]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 124,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.811",
+      "identifier": "ORS 116.811",
+      "name": "Section 116.811",
+      "text": "[1965 c.399 2 (enacted in lieu of 116.810); repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 125,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.815",
+      "identifier": "ORS 116.815",
+      "name": "Section 116.815",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 126,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.820",
+      "identifier": "ORS 116.820",
+      "name": "Section 116.820",
+      "text": "[Amended by 1953 c.350 2; repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 127,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.825",
+      "identifier": "ORS 116.825",
+      "name": "Section 116.825",
+      "text": "[Amended by 1963 c.417 11; repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 128,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.830",
+      "identifier": "ORS 116.830",
+      "name": "Section 116.830",
+      "text": "[Repealed by 1969 c.591 305]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 129,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.835",
+      "identifier": "ORS 116.835",
+      "name": "Section 116.835",
+      "text": "",
+      "history_citation_blocks": [
+        "Subsection (1) enacted as 1903 p.133 2; subsection (2) enacted as 1907 c.175; subsection (3) enacted as 1917 c.114 2; subsection (4) enacted as 1943 c.26; 1969 c.591 133; renumbered 114.365"
+      ],
+      "history_citations": [
+        {
+          "raw": "Subsection (1) enacted as 1903 p.133 2"
+        },
+        {
+          "raw": "subsection (2) enacted as 1907 c.175"
+        },
+        {
+          "raw": "subsection (3) enacted as 1917 c.114 2"
+        },
+        {
+          "raw": "subsection (4) enacted as 1943 c.26"
+        },
+        {
+          "raw": "1969 c.591 133",
+          "year": 1969,
+          "chapter": "591",
+          "section": "133"
+        },
+        {
+          "raw": "renumbered 114.365"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 130,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.840",
+      "identifier": "ORS 116.840",
+      "name": "Section 116.840",
+      "text": "",
+      "history_citation_blocks": [
+        "1963 c.417 3; repealed by 1969 c.591 305"
+      ],
+      "history_citations": [
+        {
+          "raw": "1963 c.417 3",
+          "year": 1963,
+          "chapter": "417",
+          "section": "3"
+        },
+        {
+          "raw": "repealed by 1969 c.591 305"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 131,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.850",
+      "identifier": "ORS 116.850",
+      "name": "Section 116.850",
+      "text": "",
+      "history_citation_blocks": [
+        "1963 c.417 4; repealed by 1969 c.591 305"
+      ],
+      "history_citations": [
+        {
+          "raw": "1963 c.417 4",
+          "year": 1963,
+          "chapter": "417",
+          "section": "4"
+        },
+        {
+          "raw": "repealed by 1969 c.591 305"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 132,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.860",
+      "identifier": "ORS 116.860",
+      "name": "Section 116.860",
+      "text": "",
+      "history_citation_blocks": [
+        "1963 c.417 5; repealed by 1969 c.591 305"
+      ],
+      "history_citations": [
+        {
+          "raw": "1963 c.417 5",
+          "year": 1963,
+          "chapter": "417",
+          "section": "5"
+        },
+        {
+          "raw": "repealed by 1969 c.591 305"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 133,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.870",
+      "identifier": "ORS 116.870",
+      "name": "Section 116.870",
+      "text": "",
+      "history_citation_blocks": [
+        "1963 c.417 7; repealed by 1969 c.591 305"
+      ],
+      "history_citations": [
+        {
+          "raw": "1963 c.417 7",
+          "year": 1963,
+          "chapter": "417",
+          "section": "7"
+        },
+        {
+          "raw": "repealed by 1969 c.591 305"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 134,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.880",
+      "identifier": "ORS 116.880",
+      "name": "Section 116.880",
+      "text": "",
+      "history_citation_blocks": [
+        "1963 c.417 8; repealed by 1969 c.591 305"
+      ],
+      "history_citations": [
+        {
+          "raw": "1963 c.417 8",
+          "year": 1963,
+          "chapter": "417",
+          "section": "8"
+        },
+        {
+          "raw": "repealed by 1969 c.591 305"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 135,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.890",
+      "identifier": "ORS 116.890",
+      "name": "Section 116.890",
+      "text": "",
+      "history_citation_blocks": [
+        "1963 c.417 9; repealed by 1969 c.591 305"
+      ],
+      "history_citations": [
+        {
+          "raw": "1963 c.417 9",
+          "year": 1963,
+          "chapter": "417",
+          "section": "9"
+        },
+        {
+          "raw": "repealed by 1969 c.591 305"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 136,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.900",
+      "identifier": "ORS 116.900",
+      "name": "Section 116.900",
+      "text": "",
+      "history_citation_blocks": [
+        "1963 c.417 10; repealed by 1969 c.591 305"
+      ],
+      "history_citations": [
+        {
+          "raw": "1963 c.417 10",
+          "year": 1963,
+          "chapter": "417",
+          "section": "10"
+        },
+        {
+          "raw": "repealed by 1969 c.591 305"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 137,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html#section-116.990",
+      "identifier": "ORS 116.990",
+      "name": "Section 116.990",
+      "text": "[Repealed by 1969 c.591 305] _______________",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 138,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors116.html"
+    }
+  ],
+  "alternateName": "Accounting, Distribution and",
+  "legislationDate": "2023"
+}

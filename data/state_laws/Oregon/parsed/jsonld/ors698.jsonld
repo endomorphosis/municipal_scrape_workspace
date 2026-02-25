@@ -1,0 +1,1508 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "orlaw": "https://www.oregonlegislature.gov/ors#"
+  },
+  "@type": "Legislation",
+  "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html",
+  "identifier": "ORS Chapter 698",
+  "name": "ORS Chapter 698 — Auctions",
+  "legislationType": "Statute",
+  "jurisdiction": "US-OR",
+  "isPartOf": {
+    "@type": "CreativeWork",
+    "identifier": "ORS",
+    "name": "Oregon Revised Statutes",
+    "url": "https://www.oregonlegislature.gov/bills_laws/ors"
+  },
+  "dateModified": "2026-02-25T08:11:29.816014+00:00",
+  "source_file": "/home/barberb/municipal_scrape_workspace/data/state_laws/Oregon/raw_html/ors698.html",
+  "hasPart": [
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html#section-698.010",
+      "identifier": "ORS 698.010",
+      "name": "Section 698.010",
+      "text": "[Repealed by 1967 c.344 10]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 1,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html#section-698.020",
+      "identifier": "ORS 698.020",
+      "name": "Section 698.020",
+      "text": "[Repealed by 1967 c.344 10]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 2,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html#section-698.030",
+      "identifier": "ORS 698.030",
+      "name": "Section 698.030",
+      "text": "[Repealed by 1967 c.344 10]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 3,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html#section-698.040",
+      "identifier": "ORS 698.040",
+      "name": "Section 698.040",
+      "text": "[Repealed by 1967 c.344 10]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 4,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html#section-698.050",
+      "identifier": "ORS 698.050",
+      "name": "Section 698.050",
+      "text": "[Repealed by 1967 c.344 10]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 5,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html#section-698.060",
+      "identifier": "ORS 698.060",
+      "name": "Section 698.060",
+      "text": "[Repealed by 1967 c.344 10]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 6,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html#section-698.070",
+      "identifier": "ORS 698.070",
+      "name": "Section 698.070",
+      "text": "[Repealed by 1967 c.344 10]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 7,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html#section-698.080",
+      "identifier": "ORS 698.080",
+      "name": "Section 698.080",
+      "text": "[Repealed by 1967 c.344 10]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 8,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html#section-698.090",
+      "identifier": "ORS 698.090",
+      "name": "Section 698.090",
+      "text": "[Repealed by 1967 c.344 10]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 9,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html#section-698.210",
+      "identifier": "ORS 698.210",
+      "name": "Section 698.210",
+      "text": "[Amended by 1975 c.452 1; repealed by 1975 c.453 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 10,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html#section-698.220",
+      "identifier": "ORS 698.220",
+      "name": "Section 698.220",
+      "text": "[Repealed by 1975 c.453 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 11,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html#section-698.230",
+      "identifier": "ORS 698.230",
+      "name": "Section 698.230",
+      "text": "[Repealed by 1975 c.453 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 12,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html#section-698.240",
+      "identifier": "ORS 698.240",
+      "name": "Section 698.240",
+      "text": "[Repealed by 1975 c.453 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 13,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html#section-698.250",
+      "identifier": "ORS 698.250",
+      "name": "Section 698.250",
+      "text": "[Repealed by 1975 c.453 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 14,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html#section-698.260",
+      "identifier": "ORS 698.260",
+      "name": "Section 698.260",
+      "text": "[Repealed by 1975 c.453 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 15,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html#section-698.270",
+      "identifier": "ORS 698.270",
+      "name": "Section 698.270",
+      "text": "[Repealed by 1975 c.453 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 16,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html#section-698.280",
+      "identifier": "ORS 698.280",
+      "name": "Section 698.280",
+      "text": "[Repealed by 1975 c.453 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 17,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html#section-698.290",
+      "identifier": "ORS 698.290",
+      "name": "Section 698.290",
+      "text": "[Amended by 1975 c.452 2; repealed by 1975 c.453 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 18,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html#section-698.300",
+      "identifier": "ORS 698.300",
+      "name": "Section 698.300",
+      "text": "[Repealed by 1975 c.453 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 19,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html#section-698.310",
+      "identifier": "ORS 698.310",
+      "name": "Section 698.310",
+      "text": "[Amended by 1975 c.452 3; repealed by 1975 c.453 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 20,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html#section-698.320",
+      "identifier": "ORS 698.320",
+      "name": "Section 698.320",
+      "text": "[Amended by 1975 c.452 4; repealed by 1975 c.453 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 21,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html#section-698.330",
+      "identifier": "ORS 698.330",
+      "name": "Section 698.330",
+      "text": "[Repealed by 1975 c.453 1]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 22,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html#section-698.410",
+      "identifier": "ORS 698.410",
+      "name": "Section 698.410",
+      "text": "",
+      "history_citation_blocks": [
+        "1955 c.659 1; repealed by 1967 c.344 10"
+      ],
+      "history_citations": [
+        {
+          "raw": "1955 c.659 1",
+          "year": 1955,
+          "chapter": "659",
+          "section": "1"
+        },
+        {
+          "raw": "repealed by 1967 c.344 10"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 23,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html#section-698.420",
+      "identifier": "ORS 698.420",
+      "name": "Section 698.420",
+      "text": "",
+      "history_citation_blocks": [
+        "1955 c.659 2; 1965 c.340 1; repealed by 1967 c.344 10"
+      ],
+      "history_citations": [
+        {
+          "raw": "1955 c.659 2",
+          "year": 1955,
+          "chapter": "659",
+          "section": "2"
+        },
+        {
+          "raw": "1965 c.340 1",
+          "year": 1965,
+          "chapter": "340",
+          "section": "1"
+        },
+        {
+          "raw": "repealed by 1967 c.344 10"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 24,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html#section-698.430",
+      "identifier": "ORS 698.430",
+      "name": "Section 698.430",
+      "text": "",
+      "history_citation_blocks": [
+        "1955 c.659 3; repealed by 1967 c.344 10"
+      ],
+      "history_citations": [
+        {
+          "raw": "1955 c.659 3",
+          "year": 1955,
+          "chapter": "659",
+          "section": "3"
+        },
+        {
+          "raw": "repealed by 1967 c.344 10"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 25,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html#section-698.440",
+      "identifier": "ORS 698.440",
+      "name": "Section 698.440",
+      "text": "[1955 c.659 4,5; repealed by 1967 c.344 10]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 26,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html#section-698.450",
+      "identifier": "ORS 698.450",
+      "name": "Section 698.450",
+      "text": "",
+      "history_citation_blocks": [
+        "1955 c.659 6; repealed by 1967 c.344 10"
+      ],
+      "history_citations": [
+        {
+          "raw": "1955 c.659 6",
+          "year": 1955,
+          "chapter": "659",
+          "section": "6"
+        },
+        {
+          "raw": "repealed by 1967 c.344 10"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 27,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html#section-698.460",
+      "identifier": "ORS 698.460",
+      "name": "Section 698.460",
+      "text": "",
+      "history_citation_blocks": [
+        "1955 c.659 7; repealed by 1967 c.344 10"
+      ],
+      "history_citations": [
+        {
+          "raw": "1955 c.659 7",
+          "year": 1955,
+          "chapter": "659",
+          "section": "7"
+        },
+        {
+          "raw": "repealed by 1967 c.344 10"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 28,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html#section-698.510",
+      "identifier": "ORS 698.510",
+      "name": "Section 698.510",
+      "text": "",
+      "history_citation_blocks": [
+        "1957 c.722 1; 1959 c.308 1; repealed by 1977 c.842 5"
+      ],
+      "history_citations": [
+        {
+          "raw": "1957 c.722 1",
+          "year": 1957,
+          "chapter": "722",
+          "section": "1"
+        },
+        {
+          "raw": "1959 c.308 1",
+          "year": 1959,
+          "chapter": "308",
+          "section": "1"
+        },
+        {
+          "raw": "repealed by 1977 c.842 5"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 29,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html#section-698.520",
+      "identifier": "ORS 698.520",
+      "name": "Section 698.520",
+      "text": "",
+      "history_citation_blocks": [
+        "1957 c.722 3; 1959 c.308 2; 1965 c.313 5; repealed by 1977 c.842 5"
+      ],
+      "history_citations": [
+        {
+          "raw": "1957 c.722 3",
+          "year": 1957,
+          "chapter": "722",
+          "section": "3"
+        },
+        {
+          "raw": "1959 c.308 2",
+          "year": 1959,
+          "chapter": "308",
+          "section": "2"
+        },
+        {
+          "raw": "1965 c.313 5",
+          "year": 1965,
+          "chapter": "313",
+          "section": "5"
+        },
+        {
+          "raw": "repealed by 1977 c.842 5"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 30,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html#section-698.525",
+      "identifier": "ORS 698.525",
+      "name": "Section 698.525",
+      "text": "",
+      "history_citation_blocks": [
+        "1969 c.510 2; repealed by 1977 c.842 5"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.510 2",
+          "year": 1969,
+          "chapter": "510",
+          "section": "2"
+        },
+        {
+          "raw": "repealed by 1977 c.842 5"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 31,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html#section-698.530",
+      "identifier": "ORS 698.530",
+      "name": "Section 698.530",
+      "text": "",
+      "history_citation_blocks": [
+        "1957 c.722 2; 1969 c.510 4; 1971 c.578 19; 1975 c.453 2; repealed by 1977 c.842 5"
+      ],
+      "history_citations": [
+        {
+          "raw": "1957 c.722 2",
+          "year": 1957,
+          "chapter": "722",
+          "section": "2"
+        },
+        {
+          "raw": "1969 c.510 4",
+          "year": 1969,
+          "chapter": "510",
+          "section": "4"
+        },
+        {
+          "raw": "1971 c.578 19",
+          "year": 1971,
+          "chapter": "578",
+          "section": "19"
+        },
+        {
+          "raw": "1975 c.453 2",
+          "year": 1975,
+          "chapter": "453",
+          "section": "2"
+        },
+        {
+          "raw": "repealed by 1977 c.842 5"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 32,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html#section-698.535",
+      "identifier": "ORS 698.535",
+      "name": "Section 698.535",
+      "text": "",
+      "history_citation_blocks": [
+        "1969 c.510 3; repealed by 1977 c.842 5"
+      ],
+      "history_citations": [
+        {
+          "raw": "1969 c.510 3",
+          "year": 1969,
+          "chapter": "510",
+          "section": "3"
+        },
+        {
+          "raw": "repealed by 1977 c.842 5"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 33,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html#section-698.540",
+      "identifier": "ORS 698.540",
+      "name": "Section 698.540",
+      "text": "",
+      "history_citation_blocks": [
+        "1957 c.722 4; 1959 c.308 3; 1965 c.313 6; 1969 c.510 5; repealed by 1977 c.842 5"
+      ],
+      "history_citations": [
+        {
+          "raw": "1957 c.722 4",
+          "year": 1957,
+          "chapter": "722",
+          "section": "4"
+        },
+        {
+          "raw": "1959 c.308 3",
+          "year": 1959,
+          "chapter": "308",
+          "section": "3"
+        },
+        {
+          "raw": "1965 c.313 6",
+          "year": 1965,
+          "chapter": "313",
+          "section": "6"
+        },
+        {
+          "raw": "1969 c.510 5",
+          "year": 1969,
+          "chapter": "510",
+          "section": "5"
+        },
+        {
+          "raw": "repealed by 1977 c.842 5"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 34,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html#section-698.550",
+      "identifier": "ORS 698.550",
+      "name": "Section 698.550",
+      "text": "",
+      "history_citation_blocks": [
+        "1957 c.722 5; 1959 c.308 4; 1965 c.313 7; 1975 c.429 17; 1977 c.873 23; repealed by 1977 c.842 5"
+      ],
+      "history_citations": [
+        {
+          "raw": "1957 c.722 5",
+          "year": 1957,
+          "chapter": "722",
+          "section": "5"
+        },
+        {
+          "raw": "1959 c.308 4",
+          "year": 1959,
+          "chapter": "308",
+          "section": "4"
+        },
+        {
+          "raw": "1965 c.313 7",
+          "year": 1965,
+          "chapter": "313",
+          "section": "7"
+        },
+        {
+          "raw": "1975 c.429 17",
+          "year": 1975,
+          "chapter": "429",
+          "section": "17"
+        },
+        {
+          "raw": "1977 c.873 23",
+          "year": 1977,
+          "chapter": "873",
+          "section": "23"
+        },
+        {
+          "raw": "repealed by 1977 c.842 5"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 35,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html#section-698.560",
+      "identifier": "ORS 698.560",
+      "name": "Section 698.560",
+      "text": "",
+      "history_citation_blocks": [
+        "1957 c.722 6; repealed by 1977 c.842 5"
+      ],
+      "history_citations": [
+        {
+          "raw": "1957 c.722 6",
+          "year": 1957,
+          "chapter": "722",
+          "section": "6"
+        },
+        {
+          "raw": "repealed by 1977 c.842 5"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 36,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html#section-698.570",
+      "identifier": "ORS 698.570",
+      "name": "Section 698.570",
+      "text": "",
+      "history_citation_blocks": [
+        "1957 c.722 7; 1969 c.510 6; 1971 c.734 164; repealed by 1977 c.842 5"
+      ],
+      "history_citations": [
+        {
+          "raw": "1957 c.722 7",
+          "year": 1957,
+          "chapter": "722",
+          "section": "7"
+        },
+        {
+          "raw": "1969 c.510 6",
+          "year": 1969,
+          "chapter": "510",
+          "section": "6"
+        },
+        {
+          "raw": "1971 c.734 164",
+          "year": 1971,
+          "chapter": "734",
+          "section": "164"
+        },
+        {
+          "raw": "repealed by 1977 c.842 5"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 37,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html#section-698.580",
+      "identifier": "ORS 698.580",
+      "name": "Section 698.580",
+      "text": "",
+      "history_citation_blocks": [
+        "1957 c.722 8; repealed by 1971 c.734 21"
+      ],
+      "history_citations": [
+        {
+          "raw": "1957 c.722 8",
+          "year": 1957,
+          "chapter": "722",
+          "section": "8"
+        },
+        {
+          "raw": "repealed by 1971 c.734 21"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 38,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html#section-698.585",
+      "identifier": "ORS 698.585",
+      "name": "Section 698.585",
+      "text": "",
+      "history_citation_blocks": [
+        "1971 c.734 166; repealed by 1977 c.842 5"
+      ],
+      "history_citations": [
+        {
+          "raw": "1971 c.734 166",
+          "year": 1971,
+          "chapter": "734",
+          "section": "166"
+        },
+        {
+          "raw": "repealed by 1977 c.842 5"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 39,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html#section-698.590",
+      "identifier": "ORS 698.590",
+      "name": "Section 698.590",
+      "text": "",
+      "history_citation_blocks": [
+        "1957 c.722 9; 1959 c.308 9; 1963 c.439 1; 1965 c.313 8; repealed by 1977 c.842 5"
+      ],
+      "history_citations": [
+        {
+          "raw": "1957 c.722 9",
+          "year": 1957,
+          "chapter": "722",
+          "section": "9"
+        },
+        {
+          "raw": "1959 c.308 9",
+          "year": 1959,
+          "chapter": "308",
+          "section": "9"
+        },
+        {
+          "raw": "1963 c.439 1",
+          "year": 1963,
+          "chapter": "439",
+          "section": "1"
+        },
+        {
+          "raw": "1965 c.313 8",
+          "year": 1965,
+          "chapter": "313",
+          "section": "8"
+        },
+        {
+          "raw": "repealed by 1977 c.842 5"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 40,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html#section-698.600",
+      "identifier": "ORS 698.600",
+      "name": "Section 698.600",
+      "text": "",
+      "history_citation_blocks": [
+        "1957 c.722 10; repealed by 1977 c.842 5"
+      ],
+      "history_citations": [
+        {
+          "raw": "1957 c.722 10",
+          "year": 1957,
+          "chapter": "722",
+          "section": "10"
+        },
+        {
+          "raw": "repealed by 1977 c.842 5"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 41,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html#section-698.610",
+      "identifier": "ORS 698.610",
+      "name": "Section 698.610",
+      "text": "",
+      "history_citation_blocks": [
+        "1957 c.722 11; repealed by 1977 c.842 5"
+      ],
+      "history_citations": [
+        {
+          "raw": "1957 c.722 11",
+          "year": 1957,
+          "chapter": "722",
+          "section": "11"
+        },
+        {
+          "raw": "repealed by 1977 c.842 5"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 42,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html#section-698.620",
+      "identifier": "ORS 698.620",
+      "name": "Section 698.620",
+      "text": "",
+      "history_citation_blocks": [
+        "1957 c.722 12; 1959 c.308 5; 1959 c.406 33; 1963 c.461 28; repealed by 1977 c.842 5 and by 1979 c.828 14"
+      ],
+      "history_citations": [
+        {
+          "raw": "1957 c.722 12",
+          "year": 1957,
+          "chapter": "722",
+          "section": "12"
+        },
+        {
+          "raw": "1959 c.308 5",
+          "year": 1959,
+          "chapter": "308",
+          "section": "5"
+        },
+        {
+          "raw": "1959 c.406 33",
+          "year": 1959,
+          "chapter": "406",
+          "section": "33"
+        },
+        {
+          "raw": "1963 c.461 28",
+          "year": 1963,
+          "chapter": "461",
+          "section": "28"
+        },
+        {
+          "raw": "repealed by 1977 c.842 5 and by 1979 c.828 14"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 43,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html#section-698.630",
+      "identifier": "ORS 698.630",
+      "name": "Section 698.630",
+      "text": "[1965 c.313 2,3; repealed by 1977 c.842 5]",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 44,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html#section-698.635",
+      "identifier": "ORS 698.635",
+      "name": "Section 698.635",
+      "text": "Definitions for ORS 698.640 and 698.650. As used in ORS 698.640 and 698.650: (1) Auction or auction sale means a sale of or an offer to sell real or personal property to the highest bidder. (2) Auctioneer means a person who sells or offers to sell property at auction, either on the persons own behalf or for another person. (3) Auction mart means a fixed or established place designed, intended or used to conduct auction sales where more than one sale has occurred during a calendar year. (4) Consignee means a person to whom another person offers, gives or entrusts personal property with the expectation that the person will sell the personal property in a manner other than at an auction sale and compensate the other person from the proceeds of the sale. (5) Consignment sale means a sale of personal property, or a display of personal property for the purpose of selling the personal property, that a consignee conducts in public or with members of the public other than at a public auction.",
+      "history_citation_blocks": [
+        "1983 c.404 1; 2013 c.493 1"
+      ],
+      "history_citations": [
+        {
+          "raw": "1983 c.404 1",
+          "year": 1983,
+          "chapter": "404",
+          "section": "1"
+        },
+        {
+          "raw": "2013 c.493 1",
+          "year": 2013,
+          "chapter": "493",
+          "section": "1"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Auction or auction sale means a sale of or an offer to sell real or personal property to the highest bidder.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "Auctioneer means a person who sells or offers to sell property at auction, either on the persons own behalf or for another person.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "Auction mart means a fixed or established place designed, intended or used to conduct auction sales where more than one sale has occurred during a calendar year.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "Consignee means a person to whom another person offers, gives or entrusts personal property with the expectation that the person will sell the personal property in a manner other than at an auction sale and compensate the other person from the proceeds of the sale.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "Consignment sale means a sale of personal property, or a display of personal property for the purpose of selling the personal property, that a consignee conducts in public or with members of the public other than at a public auction.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 45,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html#section-698.640",
+      "identifier": "ORS 698.640",
+      "name": "Section 698.640",
+      "text": "Requirements for auction sales, consignment sales, auctioneers, consignees and auction marts; violation as unlawful trade practice; payments; penalty. (1) Except as provided in ORS 698.650: (a) This section establishes requirements for auction sales, consignment sales, auctioneers, consignees and auction marts. (b) A person who violates a requirement under this section commits an unlawful practice as described in ORS 646.608 (1)(v) that is subject to enforcement and penalty as provided under ORS 336.184 and 646.605 to 646.652. (c) The requirements of this section are in addition to the provisions of ORS 72.3280 that relate to auctions and in addition to other provisions of law that govern consignment sales. (2) The following requirements apply to auction sales, consignment sales, auctioneers, consignees and auction marts as described: (a) An advertisement of an auction sale or consignment sale must include the name of the auctioneer who will conduct the auction sale or the person responsible for conducting the auction sale or consignment sale. (b) An auctioneer, auction mart operator or consignee may not use any method of bidding at an auction or selling at a consignment sale that will allow the auctioneer, auction mart operator or consignee to purchase property in an undisclosed manner on the auctioneers, auction mart operators or consignees own behalf. (c) An auctioneer, auction mart operator or consignee may not use a method of bidding at an auction or selling at a consignment sale that allows the auctioneer, auction mart operator or consignee to avoid selling property offered for sale at auction or at a consignment sale. (d) An auctioneer, auction mart operator or consignee may not employ or use another person to act as a bidder or buyer at the auction or consignment sale on behalf of the auctioneer, auction mart operator or consignee. (e) If an auctioneer, auction mart operator or consignee does not immediately pay moneys that the auctioneer, auction mart operator or consignee owes to a person after selling real or personal property that the person offered, gave or entrusted to the auctioneer, auction mart operator or consignee to sell on the persons behalf at auction or at a consignment sale, the auctioneer, auction mart operator or consignee shall: (A) Maintain the moneys in trust for the person in a trust account that is separate from any account that the auctioneer, auction mart operator or consignee uses for personal reasons or other business reasons, and identify and account for the moneys so that the moneys may be distinguished from moneys that are subject to the auctioneers, auction mart operators or consignees other debts; (B) Account to the person for all moneys the auctioneer, auction mart operator or consignee receives in payment for the persons real or personal property; (C) Pay the moneys the auctioneer, auction mart operator or consignee owes to the person within 21 calendar days after the date of the auction or the consignment sale at which the auctioneer, auction mart operator or consignee sold the persons real or personal property, unless the person and the auctioneer, auction mart operator or consignee have mutually agreed in writing to payment on a different date; and (D) Return the persons unsold property within 21 calendar days after the auction or consignment sale unless the parties have mutually agreed in writing to another date.",
+      "history_citation_blocks": [
+        "1965 c.313 4; 1983 c.404 2; 1985 c.822 1; 2013 c.493 2"
+      ],
+      "history_citations": [
+        {
+          "raw": "1965 c.313 4",
+          "year": 1965,
+          "chapter": "313",
+          "section": "4"
+        },
+        {
+          "raw": "1983 c.404 2",
+          "year": 1983,
+          "chapter": "404",
+          "section": "2"
+        },
+        {
+          "raw": "1985 c.822 1",
+          "year": 1985,
+          "chapter": "822",
+          "section": "1"
+        },
+        {
+          "raw": "2013 c.493 2",
+          "year": 2013,
+          "chapter": "493",
+          "section": "2"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "Except as provided in ORS 698.650: (v) that is subject to enforcement and penalty as provided under ORS 336.184 and 646.605 to 646.652.",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "This section establishes requirements for auction sales, consignment sales, auctioneers, consignees and auction marts.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "A person who violates a requirement under this section commits an unlawful practice as described in ORS 646.608",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "The requirements of this section are in addition to the provisions of ORS 72.3280 that relate to auctions and in addition to other provisions of law that govern consignment sales.",
+              "subsections": []
+            }
+          ]
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The following requirements apply to auction sales, consignment sales, auctioneers, consignees and auction marts as described:",
+          "subsections": [
+            {
+              "label": "(a)",
+              "token": "a",
+              "kind": "alpha_lower",
+              "text": "An advertisement of an auction sale or consignment sale must include the name of the auctioneer who will conduct the auction sale or the person responsible for conducting the auction sale or consignment sale.",
+              "subsections": []
+            },
+            {
+              "label": "(b)",
+              "token": "b",
+              "kind": "alpha_lower",
+              "text": "An auctioneer, auction mart operator or consignee may not use any method of bidding at an auction or selling at a consignment sale that will allow the auctioneer, auction mart operator or consignee to purchase property in an undisclosed manner on the auctioneers, auction mart operators or consignees own behalf.",
+              "subsections": []
+            },
+            {
+              "label": "(c)",
+              "token": "c",
+              "kind": "alpha_lower",
+              "text": "An auctioneer, auction mart operator or consignee may not use a method of bidding at an auction or selling at a consignment sale that allows the auctioneer, auction mart operator or consignee to avoid selling property offered for sale at auction or at a consignment sale.",
+              "subsections": []
+            },
+            {
+              "label": "(d)",
+              "token": "d",
+              "kind": "alpha_lower",
+              "text": "An auctioneer, auction mart operator or consignee may not employ or use another person to act as a bidder or buyer at the auction or consignment sale on behalf of the auctioneer, auction mart operator or consignee.",
+              "subsections": []
+            },
+            {
+              "label": "(e)",
+              "token": "e",
+              "kind": "alpha_lower",
+              "text": "If an auctioneer, auction mart operator or consignee does not immediately pay moneys that the auctioneer, auction mart operator or consignee owes to a person after selling real or personal property that the person offered, gave or entrusted to the auctioneer, auction mart operator or consignee to sell on the persons behalf at auction or at a consignment sale, the auctioneer, auction mart operator or consignee shall:",
+              "subsections": [
+                {
+                  "label": "(A)",
+                  "token": "A",
+                  "kind": "alpha_upper",
+                  "text": "Maintain the moneys in trust for the person in a trust account that is separate from any account that the auctioneer, auction mart operator or consignee uses for personal reasons or other business reasons, and identify and account for the moneys so that the moneys may be distinguished from moneys that are subject to the auctioneers, auction mart operators or consignees other debts;",
+                  "subsections": []
+                },
+                {
+                  "label": "(B)",
+                  "token": "B",
+                  "kind": "alpha_upper",
+                  "text": "Account to the person for all moneys the auctioneer, auction mart operator or consignee receives in payment for the persons real or personal property;",
+                  "subsections": []
+                },
+                {
+                  "label": "(C)",
+                  "token": "C",
+                  "kind": "alpha_upper",
+                  "text": "Pay the moneys the auctioneer, auction mart operator or consignee owes to the person within 21 calendar days after the date of the auction or the consignment sale at which the auctioneer, auction mart operator or consignee sold the persons real or personal property, unless the person and the auctioneer, auction mart operator or consignee have mutually agreed in writing to payment on a different date; and",
+                  "subsections": []
+                },
+                {
+                  "label": "(D)",
+                  "token": "D",
+                  "kind": "alpha_upper",
+                  "text": "Return the persons unsold property within 21 calendar days after the auction or consignment sale unless the parties have mutually agreed in writing to another date.",
+                  "subsections": []
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "parser_warnings": [],
+      "position": 46,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html#section-698.650",
+      "identifier": "ORS 698.650",
+      "name": "Section 698.650",
+      "text": "Exemptions. ORS 698.640 does not apply to: (1) An auction, auctioneer or auction mart regulated under ORS chapter 599. (2) The sale of timber at an auction or auction mart or by an auctioneer. In addition, the sale of timber at auction is with reserve unless the timber is in explicit terms put up without reserve. (3) A transaction that is described or regulated under ORS 359.200 to 359.255, 446.751, 622.160, 650.120 to 650.170 or 822.060. (4) An estate sale conducted under the authority of a court, or in accordance with procedures specified in ORS chapter 113, if the provisions of ORS 698.640 conflict with orders of the court or procedures set forth in ORS chapter 113. (5) A going out of business sale regulated under ORS 646A.100 to 646A.110.",
+      "history_citation_blocks": [
+        "1983 c.404 3; 2013 c.493 3"
+      ],
+      "history_citations": [
+        {
+          "raw": "1983 c.404 3",
+          "year": 1983,
+          "chapter": "404",
+          "section": "3"
+        },
+        {
+          "raw": "2013 c.493 3",
+          "year": 2013,
+          "chapter": "493",
+          "section": "3"
+        }
+      ],
+      "subsections": [
+        {
+          "label": "(1)",
+          "token": "1",
+          "kind": "numeric",
+          "text": "An auction, auctioneer or auction mart regulated under ORS chapter 599.",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "The sale of timber at an auction or auction mart or by an auctioneer. In addition, the sale of timber at auction is with reserve unless the timber is in explicit terms put up without reserve.",
+          "subsections": []
+        },
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "A transaction that is described or regulated under ORS 359.200 to 359.255, 446.751, 622.160, 650.120 to 650.170 or 822.060.",
+          "subsections": []
+        },
+        {
+          "label": "(4)",
+          "token": "4",
+          "kind": "numeric",
+          "text": "An estate sale conducted under the authority of a court, or in accordance with procedures specified in ORS chapter 113, if the provisions of ORS 698.640 conflict with orders of the court or procedures set forth in ORS chapter 113.",
+          "subsections": []
+        },
+        {
+          "label": "(5)",
+          "token": "5",
+          "kind": "numeric",
+          "text": "A going out of business sale regulated under ORS 646A.100 to 646A.110.",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 47,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html#section-698.710",
+      "identifier": "ORS 698.710",
+      "name": "Section 698.710",
+      "text": "",
+      "history_citation_blocks": [
+        "1957 c.722 13; 1963 c.580 65; 1967 c.401 7; 1969 c.314 99; 1969 c.510 7; 1971 c.753 40; repealed by 1977 c.842 5"
+      ],
+      "history_citations": [
+        {
+          "raw": "1957 c.722 13",
+          "year": 1957,
+          "chapter": "722",
+          "section": "13"
+        },
+        {
+          "raw": "1963 c.580 65",
+          "year": 1963,
+          "chapter": "580",
+          "section": "65"
+        },
+        {
+          "raw": "1967 c.401 7",
+          "year": 1967,
+          "chapter": "401",
+          "section": "7"
+        },
+        {
+          "raw": "1969 c.314 99",
+          "year": 1969,
+          "chapter": "314",
+          "section": "99"
+        },
+        {
+          "raw": "1969 c.510 7",
+          "year": 1969,
+          "chapter": "510",
+          "section": "7"
+        },
+        {
+          "raw": "1971 c.753 40",
+          "year": 1971,
+          "chapter": "753",
+          "section": "40"
+        },
+        {
+          "raw": "repealed by 1977 c.842 5"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 48,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html#section-698.720",
+      "identifier": "ORS 698.720",
+      "name": "Section 698.720",
+      "text": "",
+      "history_citation_blocks": [
+        "1957 c.722 14; repealed by 1971 c.753 74"
+      ],
+      "history_citations": [
+        {
+          "raw": "1957 c.722 14",
+          "year": 1957,
+          "chapter": "722",
+          "section": "14"
+        },
+        {
+          "raw": "repealed by 1971 c.753 74"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 49,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html#section-698.730",
+      "identifier": "ORS 698.730",
+      "name": "Section 698.730",
+      "text": "",
+      "history_citation_blocks": [
+        "1957 c.722 18; 1959 c.308 6; repealed by 1977 c.842 5"
+      ],
+      "history_citations": [
+        {
+          "raw": "1957 c.722 18",
+          "year": 1957,
+          "chapter": "722",
+          "section": "18"
+        },
+        {
+          "raw": "1959 c.308 6",
+          "year": 1959,
+          "chapter": "308",
+          "section": "6"
+        },
+        {
+          "raw": "repealed by 1977 c.842 5"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 50,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html#section-698.740",
+      "identifier": "ORS 698.740",
+      "name": "Section 698.740",
+      "text": "",
+      "history_citation_blocks": [
+        "1957 c.722 15; repealed by 1971 c.753 74"
+      ],
+      "history_citations": [
+        {
+          "raw": "1957 c.722 15",
+          "year": 1957,
+          "chapter": "722",
+          "section": "15"
+        },
+        {
+          "raw": "repealed by 1971 c.753 74"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 51,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html#section-698.750",
+      "identifier": "ORS 698.750",
+      "name": "Section 698.750",
+      "text": "",
+      "history_citation_blocks": [
+        "1957 c.722 16; 1967 c.637 36; repealed by 1971 c.753 74"
+      ],
+      "history_citations": [
+        {
+          "raw": "1957 c.722 16",
+          "year": 1957,
+          "chapter": "722",
+          "section": "16"
+        },
+        {
+          "raw": "1967 c.637 36",
+          "year": 1967,
+          "chapter": "637",
+          "section": "36"
+        },
+        {
+          "raw": "repealed by 1971 c.753 74"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 52,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html#section-698.755",
+      "identifier": "ORS 698.755",
+      "name": "Section 698.755",
+      "text": "",
+      "history_citation_blocks": [
+        "1959 c.308 8; repealed by 1977 c.842 5"
+      ],
+      "history_citations": [
+        {
+          "raw": "1959 c.308 8",
+          "year": 1959,
+          "chapter": "308",
+          "section": "8"
+        },
+        {
+          "raw": "repealed by 1977 c.842 5"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 53,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html#section-698.760",
+      "identifier": "ORS 698.760",
+      "name": "Section 698.760",
+      "text": "",
+      "history_citation_blocks": [
+        "1957 c.722 17; repealed by 1971 c.753 74"
+      ],
+      "history_citations": [
+        {
+          "raw": "1957 c.722 17",
+          "year": 1957,
+          "chapter": "722",
+          "section": "17"
+        },
+        {
+          "raw": "repealed by 1971 c.753 74"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 54,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html#section-698.770",
+      "identifier": "ORS 698.770",
+      "name": "Section 698.770",
+      "text": "",
+      "history_citation_blocks": [
+        "1957 c.722 19; repealed by 1977 c.842 5"
+      ],
+      "history_citations": [
+        {
+          "raw": "1957 c.722 19",
+          "year": 1957,
+          "chapter": "722",
+          "section": "19"
+        },
+        {
+          "raw": "repealed by 1977 c.842 5"
+        }
+      ],
+      "subsections": [],
+      "parser_warnings": [],
+      "position": 55,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html"
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html#section-698.990",
+      "identifier": "ORS 698.990",
+      "name": "Section 698.990",
+      "text": "[Subsection (3) of 1965 Replacement Part enacted as 1955 c.659 8; subsection (2) enacted as part of 1957 c.722 19; 1967 c.344 9; 1975 c.453 3; repealed by 1977 c.842 5] _______________",
+      "history_citation_blocks": [],
+      "history_citations": [],
+      "subsections": [
+        {
+          "label": "(3)",
+          "token": "3",
+          "kind": "numeric",
+          "text": "of 1965 Replacement Part enacted as 1955 c.659 8; subsection",
+          "subsections": []
+        },
+        {
+          "label": "(2)",
+          "token": "2",
+          "kind": "numeric",
+          "text": "enacted as part of 1957 c.722 19; 1967 c.344 9; 1975 c.453 3; repealed by 1977 c.842 5] _______________",
+          "subsections": []
+        }
+      ],
+      "parser_warnings": [],
+      "position": 56,
+      "isPartOf": "https://www.oregonlegislature.gov/bills_laws/ors/ors698.html"
+    }
+  ],
+  "alternateName": "Auctions",
+  "legislationDate": "2021"
+}
