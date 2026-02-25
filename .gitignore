@@ -23,6 +23,7 @@ ccindex_subset*
 *test*.duckdb
 
 **/raw_html*
+**/quarantine*
 
 # Run/output directories
 out_*/
