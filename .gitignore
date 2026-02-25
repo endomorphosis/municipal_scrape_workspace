@@ -45,3 +45,8 @@ out_*/
 
 # Process ID files
 *.pid
+
+
+archive/warc_ranges_or/
+
+data/state_laws/Oregon/manifests/
