@@ -1,0 +1,1786 @@
+[
+  {
+    "url": "http://ptl.az.gov/app/dre",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/app_dre__dc0e8846d133.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00058.warc.gz",
+    "warc_offset": 3091332,
+    "warc_length": 621
+  },
+  {
+    "url": "https://ptl.az.gov/app/dre",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/app_dre__616f9c4564cf.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00249.warc.gz",
+    "warc_offset": 14964604,
+    "warc_length": 1043
+  },
+  {
+    "url": "http://ptl.az.gov/dre/",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/dre__9f7bc69f960f.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00391.warc.gz",
+    "warc_offset": 2948515,
+    "warc_length": 621
+  },
+  {
+    "url": "https://ptl.az.gov/dre",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/dre__d6852a9e9a75.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00439.warc.gz",
+    "warc_offset": 15250659,
+    "warc_length": 1073
+  },
+  {
+    "url": "https://ptl.az.gov/robots.txt",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/robots.txt__8d69cc7d77fd.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/robotstxt/CC-MAIN-20210115134101-20210115164101-00555.warc.gz",
+    "warc_offset": 2225321,
+    "warc_length": 1047
+  },
+  {
+    "url": "http://services.azgs.az.gov/robots.txt",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/robots.txt__73d75b319287.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/robotstxt/CC-MAIN-20210115134101-20210115164101-00599.warc.gz",
+    "warc_offset": 554124,
+    "warc_length": 1123
+  },
+  {
+    "url": "http://ptl.az.gov/robots.txt",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/robots.txt__7dbcb2df5524.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/robotstxt/CC-MAIN-20210115134101-20210115164101-00618.warc.gz",
+    "warc_offset": 587644,
+    "warc_length": 626
+  },
+  {
+    "url": "https://des.az.gov/robots.txt",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/robots.txt__26081b594904.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/robotstxt/CC-MAIN-20210115134101-20210115164101-00645.warc.gz",
+    "warc_offset": 1509055,
+    "warc_length": 1750
+  },
+  {
+    "url": "https://personnel.az.gov/robots.txt",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/robots.txt__16291b8c81f2.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/robotstxt/CC-MAIN-20210115134101-20210115164101-00659.warc.gz",
+    "warc_offset": 2408758,
+    "warc_length": 1759
+  },
+  {
+    "url": "https://azgovernor.gov/robots.txt",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/robots.txt__29281c8969f8.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/robotstxt/CC-MAIN-20210115134101-20210115164101-00667.warc.gz",
+    "warc_offset": 2072966,
+    "warc_length": 1754
+  },
+  {
+    "url": "https://azsdwis.azdeq.gov/robots.txt",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/robots.txt__1e06290b425a.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/robotstxt/CC-MAIN-20210115134101-20210115164101-00682.warc.gz",
+    "warc_offset": 1311577,
+    "warc_length": 1212
+  },
+  {
+    "url": "https://ot.az.gov/robots.txt",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/robots.txt__c7a87f61f4d6.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/robotstxt/CC-MAIN-20210115134101-20210115164101-00712.warc.gz",
+    "warc_offset": 1822839,
+    "warc_length": 1746
+  },
+  {
+    "url": "https://azsdwis.azdeq.gov/dww_ext/jsp/watersystemfacility.jsp?tinwsys_is_number=2264&tinwsys_st_code=az&tinwsf_is_number=22748&tinwsf_st_code=az",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/dww_ext_jsp_watersystemfacility.jsp__dbcf1f23f892.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00000.warc.gz",
+    "warc_offset": 254239082,
+    "warc_length": 4732
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=176&amp%3btitle=&amp%3border=field_dl_effective_date&amp%3bsort=asc&title=&cshs_field_dl_category_tid_policies=&combine=&qt-content-tab=3&order=title&sort=desc&page=0%2c4",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__8ca73903162b.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00001.warc.gz",
+    "warc_offset": 333029635,
+    "warc_length": 26013
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=144&amp%3bqt-content-tab=0&amp%3bpage=0%2c3&title=&cshs_field_dl_category_tid_policies=&combine=&order=field_dl_form_number&sort=asc&qt-content-tab=1",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__08057ef40e33.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00001.warc.gz",
+    "warc_offset": 333002606,
+    "warc_length": 25966
+  },
+  {
+    "url": "https://azsdwis.azdeq.gov/dww_ext/jsp/tcrfieldresults.jsp?tinwsys_is_number=1060&tinwsys_st_code=az&tsasampl_is_number=1879633&tsasampl_st_code=az",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/dww_ext_jsp_tcrfieldresults.jsp__10a3a2e34705.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00007.warc.gz",
+    "warc_offset": 261277662,
+    "warc_length": 3682
+  },
+  {
+    "url": "https://des.az.gov/documents-center?amp%3bcshs_field_dl_category_tid_forms=195&amp%3bamp%3bcshs_field_dl_category_tid_flyers=&amp%3bamp%3btitle=&amp%3bamp%3bcshs_field_dl_category_tid_policies=&amp%3bamp%3border=title&amp%3bamp%3bsort=desc&amp%3bamp%3bpage=0%2c2&amp%3bqt-content-tab=4&cshs_field_dl_category_tid_flyers=&title=&cshs_field_dl_category_tid_policies=&qt-content-tab=2&page=0%2c1&cshs_field_dl_category_tid_forms&combine=&order=field_dl_effective_date&sort=desc",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__5ec5c5772db3.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00010.warc.gz",
+    "warc_offset": 355787865,
+    "warc_length": 22502
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=144&amp%3bqt-content-tab=0&title=&cshs_field_dl_category_tid_policies=&qt-content-tab=3&page=0%2c2&cshs_field_dl_category_tid_reports&combine=&order=field_dl_effective_date&sort=desc",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__6643f09c733a.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00010.warc.gz",
+    "warc_offset": 355811467,
+    "warc_length": 24347
+  },
+  {
+    "url": "https://azgovernor.gov/governor/video/live-governor-ducey-dr-christ-maj-gen-mcguire-provide-arizona-covid-19-briefing-0",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/governor_video_live-governor-ducey-dr-christ-maj-gen-mcguire-provide-arizona-covid-19-briefing-0__0866ed7d461f.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00011.warc.gz",
+    "warc_offset": 272599153,
+    "warc_length": 20349
+  },
+  {
+    "url": "https://azsdwis.azdeq.gov/dww_ext/jsp/tcrfieldresults.jsp?tinwsys_is_number=531&tinwsys_st_code=az&tsasampl_is_number=1927248&tsasampl_st_code=az",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/dww_ext_jsp_tcrfieldresults.jsp__2ce831642327.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00017.warc.gz",
+    "warc_offset": 263476945,
+    "warc_length": 3668
+  },
+  {
+    "url": "https://azsdwis.azdeq.gov/dww_ext/jsp/tcrfieldresults.jsp?tinwsys_is_number=2297&tinwsys_st_code=az&tsasampl_is_number=1982789&tsasampl_st_code=az",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/dww_ext_jsp_tcrfieldresults.jsp__478a33b4c5ab.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00021.warc.gz",
+    "warc_offset": 262372009,
+    "warc_length": 3685
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=176&amp%3btitle=&amp%3border=field_dl_effective_date&amp%3bsort=asc&title=&cshs_field_dl_category_tid_flyers=&combine=&cshs_field_dl_category_tid_policies=&order=field_dl_form_number&sort=asc&qt-content-tab=2&page=0%2c4",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__9f83b39ce93a.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00023.warc.gz",
+    "warc_offset": 328025442,
+    "warc_length": 26120
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=176&amp%3bpage=0%2c51&title=&cshs_field_dl_category_tid_flyers=&qt-content-tab=2&page=0%2c12&combine=&cshs_field_dl_category_tid_reports&order=field_dl_form_number&sort=asc",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__7355d4e3a971.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00026.warc.gz",
+    "warc_offset": 335072160,
+    "warc_length": 24459
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=144&amp%3bcshs_field_dl_category_tid_policies=&amp%3btitle=&amp%3bcshs_field_dl_category_tid_reports=&amp%3border=field_dl_effective_date&amp%3bsort=desc&cshs_field_dl_category_tid_flyers=&title=&qt-content-tab=4&combine=&page=0%2c3&order=field_dl_form_number&sort=asc",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__275d484d411b.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00026.warc.gz",
+    "warc_offset": 335019147,
+    "warc_length": 26373
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=176&amp%3bpage=0%2c3&qt-content-tab=3&cshs_field_dl_category_tid_policies=&title=&combine=&page=0%2c4&cshs_field_dl_category_tid_reports&order=title&sort=desc",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__a431fcf90564.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00026.warc.gz",
+    "warc_offset": 335046605,
+    "warc_length": 24499
+  },
+  {
+    "url": "https://azsdwis.azdeq.gov/dww_ext/jsp/tcrfieldresults.jsp?tinwsys_is_number=3347&tinwsys_st_code=az&tsasampl_is_number=1902661&tsasampl_st_code=az",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/dww_ext_jsp_tcrfieldresults.jsp__c507533725d8.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00027.warc.gz",
+    "warc_offset": 254616784,
+    "warc_length": 3674
+  },
+  {
+    "url": "https://azsdwis.azdeq.gov/dww_ext/jsp/tcrfieldresults.jsp?tinwsys_is_number=3347&tinwsys_st_code=az&tsasampl_is_number=1945188&tsasampl_st_code=az",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/dww_ext_jsp_tcrfieldresults.jsp__429179263752.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00028.warc.gz",
+    "warc_offset": 260765591,
+    "warc_length": 3676
+  },
+  {
+    "url": "https://azsdwis.azdeq.gov/dww_ext/jsp/tcrfieldresults.jsp?tinwsys_is_number=3140&tinwsys_st_code=az&tsasampl_is_number=1870520&tsasampl_st_code=az",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/dww_ext_jsp_tcrfieldresults.jsp__4685d81921d9.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00030.warc.gz",
+    "warc_offset": 262308000,
+    "warc_length": 3678
+  },
+  {
+    "url": "https://ot.az.gov/sitemap/c?mini=2017-11&amp%3border=title&amp%3bsort=desc&order=title&sort=desc",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/sitemap_c__e7c40c820936.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00032.warc.gz",
+    "warc_offset": 564055943,
+    "warc_length": 13392
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=144&amp%3bqt-content-tab=0&amp%3bpage=0%2c1&title=&cshs_field_dl_category_tid_policies=&combine=&order=field_dl_form_number&sort=asc&qt-content-tab=3",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__e8de2421f0dd.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00033.warc.gz",
+    "warc_offset": 328006491,
+    "warc_length": 25803
+  },
+  {
+    "url": "https://azsdwis.azdeq.gov/dww_ext/jsp/tcrfieldresults.jsp?tinwsys_is_number=3140&tinwsys_st_code=az&tsasampl_is_number=1945694&tsasampl_st_code=az",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/dww_ext_jsp_tcrfieldresults.jsp__2b7b3860ae17.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00035.warc.gz",
+    "warc_offset": 263240142,
+    "warc_length": 3679
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=144&amp%3bqt-content-tab=0&amp%3bcshs_field_dl_category_tid_flyers=&amp%3btitle=&amp%3border=field_dl_effective_date&amp%3bsort=asc&title=&cshs_field_dl_category_tid_flyers=&cshs_field_dl_category_tid_policies=&combine=&qt-content-tab=1&page=0%2c0&cshs_field_dl_category_tid_reports&order=title&sort=desc",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__4a5962514569.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00038.warc.gz",
+    "warc_offset": 337841415,
+    "warc_length": 24966
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=144&amp%3bcshs_field_dl_category_tid_policies=&amp%3btitle=&amp%3border=field_dl_form_number&amp%3bsort=asc&amp%3bpage=0%2c4&title=&cshs_field_dl_category_tid_flyers=&cshs_field_dl_category_tid_policies=&combine=&qt-content-tab=5&order=title&sort=asc&page=0%2c58",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__f30e65d109aa.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00038.warc.gz",
+    "warc_offset": 337814715,
+    "warc_length": 25590
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=144&amp%3bqt-content-tab=0&amp%3bcshs_field_dl_category_tid_flyers=&amp%3btitle=&amp%3border=title&amp%3bsort=desc&cshs_field_dl_category_tid_flyers=&title=&qt-content-tab=4&combine=&order=field_dl_form_number&sort=asc&page=0%2c4",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__c5e07408eb03.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00039.warc.gz",
+    "warc_offset": 335063481,
+    "warc_length": 26133
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=176&amp%3bpage=0%2c3&cshs_field_dl_category_tid_policies=&title=&combine=&order=field_dl_effective_date&sort=desc&qt-content-tab=2",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__709e3c170d54.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00039.warc.gz",
+    "warc_offset": 335090675,
+    "warc_length": 26062
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=176&cshs_field_dl_category_tid_flyers=&title=&combine=&order=field_dl_effective_date&sort=asc&qt-content-tab=1",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__a3540e1b097f.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00040.warc.gz",
+    "warc_offset": 338530585,
+    "warc_length": 26964
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=176&amp%3bcshs_field_dl_category_tid_reports=&amp%3btitle=&amp%3border=field_dl_form_number&amp%3bsort=asc&cshs_field_dl_category_tid_flyers=&title=&cshs_field_dl_category_tid_policies=&qt-content-tab=2&combine=&order=field_dl_effective_date&sort=asc&page=0%2c13",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__cdf96676ea81.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00040.warc.gz",
+    "warc_offset": 338476115,
+    "warc_length": 26225
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=176&amp%3bqt-content-tab=0&title=&cshs_field_dl_category_tid_flyers=&cshs_field_dl_category_tid_policies=&qt-content-tab=5&combine=&order=field_dl_form_number&sort=asc",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__0bc57f1a7ea5.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00040.warc.gz",
+    "warc_offset": 338503418,
+    "warc_length": 26138
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=176&amp%3bqt-content-tab=0&title=&cshs_field_dl_category_tid_policies=&combine=&qt-content-tab=5&order=field_dl_effective_date&sort=desc&page=0%2c58",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__d3cb7489b0de.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00042.warc.gz",
+    "warc_offset": 338392738,
+    "warc_length": 25321
+  },
+  {
+    "url": "https://azgovernor.gov/governor/news/2019/04/governor-ducey-signs-ice-cream-freedom-bill",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/governor_news_2019_04_governor-ducey-signs-ice-cream-freedom-bill__84b9d4ca5032.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00043.warc.gz",
+    "warc_offset": 265814214,
+    "warc_length": 21245
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=176&cshs_field_dl_category_tid_flyers=&title=&combine=&order=field_dl_effective_date&sort=asc&qt-content-tab=5",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__ec3b297b1584.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00044.warc.gz",
+    "warc_offset": 333296690,
+    "warc_length": 26964
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=144&amp%3bqt-content-tab=0&amp%3btitle=&amp%3border=field_dl_effective_date&amp%3bsort=asc&title=&cshs_field_dl_category_tid_flyers=&combine=&cshs_field_dl_category_tid_policies=&qt-content-tab=0&cshs_field_dl_category_tid_reports&order=title&sort=desc",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__9df374c32d03.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00044.warc.gz",
+    "warc_offset": 333271110,
+    "warc_length": 24527
+  },
+  {
+    "url": "https://des.az.gov/documents-center?amp%3bpage=0%2c5&amp%3bcshs_field_dl_category_tid_flyers=&amp%3btitle=&amp%3border=field_dl_effective_date&amp%3bsort=asc&cshs_field_dl_category_tid_policies=&title=&order=title&sort=desc&qt-content-tab=5&page=0%2c1",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__87dc0cf44c6f.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00049.warc.gz",
+    "warc_offset": 343775293,
+    "warc_length": 26073
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=144&amp%3bqt-content-tab=0&amp%3bpage=0%2c3&cshs_field_dl_category_tid_flyers=&title=&qt-content-tab=3&page=0%2c1&cshs_field_dl_category_tid_policies=&combine=&cshs_field_dl_category_tid_reports&order=field_dl_form_number&sort=asc",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__5cf0be64b1f0.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00049.warc.gz",
+    "warc_offset": 343802447,
+    "warc_length": 24706
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=176&amp%3btitle=&amp%3border=field_dl_effective_date&amp%3bsort=asc&cshs_field_dl_category_tid_flyers=&title=&combine=&qt-content-tab=2&cshs_field_dl_category_tid_policies=&order=field_dl_form_number&sort=asc&page=0%2c0",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__4b161f33123f.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00049.warc.gz",
+    "warc_offset": 343828245,
+    "warc_length": 26244
+  },
+  {
+    "url": "https://ot.az.gov/sitemap/i?amp%3bsort=desc&order=changed&sort=asc",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/sitemap_i__608a7da14474.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00054.warc.gz",
+    "warc_offset": 570922500,
+    "warc_length": 9625
+  },
+  {
+    "url": "https://azgovernor.gov/governor/files/watch-governor-duceys-2020-state-state-address-arizona-way",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/governor_files_watch-governor-duceys-2020-state-state-address-arizona-way__2fbaa147c516.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00056.warc.gz",
+    "warc_offset": 254210478,
+    "warc_length": 17787
+  },
+  {
+    "url": "https://personnel.az.gov/board-meeting-18",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/board-meeting-18__cecc2b9d7c23.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00056.warc.gz",
+    "warc_offset": 549512978,
+    "warc_length": 11324
+  },
+  {
+    "url": "https://azsdwis.azdeq.gov/dww_ext/jsp/tcrfieldresults.jsp?tinwsys_is_number=1060&tinwsys_st_code=az&tsasampl_is_number=1934954&tsasampl_st_code=az",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/dww_ext_jsp_tcrfieldresults.jsp__10d9bd40176b.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00057.warc.gz",
+    "warc_offset": 272189637,
+    "warc_length": 3683
+  },
+  {
+    "url": "https://personnel.az.gov/sitemap/w?order=title&sort=desc",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/sitemap_w__a348ab46c6b2.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00057.warc.gz",
+    "warc_offset": 582600963,
+    "warc_length": 11685
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=144&amp%3bqt-content-tab=0&amp%3bcshs_field_dl_category_tid_reports=&amp%3btitle=&amp%3border=field_dl_effective_date&amp%3bsort=asc&cshs_field_dl_category_tid_flyers=&title=&cshs_field_dl_category_tid_policies=&qt-content-tab=4&page=0%2c3&combine=&cshs_field_dl_category_tid_reports&order=field_dl_form_number&sort=desc",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__e601852841a6.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00058.warc.gz",
+    "warc_offset": 341532280,
+    "warc_length": 24896
+  },
+  {
+    "url": "https://des.az.gov/documents-center?amp%3bpage=0%2c79&cshs_field_dl_category_tid_flyers=&title=&cshs_field_dl_category_tid_policies=&combine=&qt-content-tab=0&page=0%2c6&cshs_field_dl_category_tid_forms&order=title&sort=desc",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__ef730bb59d74.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00058.warc.gz",
+    "warc_offset": 341483546,
+    "warc_length": 22270
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=176&amp%3bqt-content-tab=0&title=&cshs_field_dl_category_tid_flyers=&combine=&qt-content-tab=1&cshs_field_dl_category_tid_policies=&cshs_field_dl_category_tid_reports&order=field_dl_form_number&sort=desc",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__b0a4966aab1e.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00058.warc.gz",
+    "warc_offset": 341558276,
+    "warc_length": 24438
+  },
+  {
+    "url": "https://ot.az.gov/sitemap/q",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/sitemap_q__0dfcad4cf053.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00058.warc.gz",
+    "warc_offset": 568046546,
+    "warc_length": 12857
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=110&amp%3bpage=0%2c50&cshs_field_dl_category_tid_flyers=&title=&combine=&qt-content-tab=2&page=0%2c2&cshs_field_dl_category_tid_reports&order=field_dl_effective_date&sort=desc",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__3d619c083e7e.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00058.warc.gz",
+    "warc_offset": 341506870,
+    "warc_length": 24304
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=176&amp%3bpage=0%2c28&title=&cshs_field_dl_category_tid_flyers=&qt-content-tab=4&combine=&page=0%2c13&order=field_dl_effective_date&sort=desc",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__8b80e8ede67d.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00061.warc.gz",
+    "warc_offset": 325940565,
+    "warc_length": 26217
+  },
+  {
+    "url": "https://ot.az.gov/sitemap/l?order=changed&sort=asc",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/sitemap_l__e17b56c0db8a.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00061.warc.gz",
+    "warc_offset": 547571090,
+    "warc_length": 12967
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=176&amp%3bqt-content-tab=1&cshs_field_dl_category_tid_flyers=&combine=&cshs_field_dl_category_tid_policies=&order=field_dl_effective_date&sort=desc&qt-content-tab=3&page=0%2c1",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__ef2bedc399d2.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00063.warc.gz",
+    "warc_offset": 336295186,
+    "warc_length": 25873
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=176&amp%3bqt-content-tab=0&title=&qt-content-tab=2&cshs_field_dl_category_tid_flyers=&combine=&page=0%2c0&cshs_field_dl_category_tid_policies=&order=title&sort=desc",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__39b0c9d5d9c2.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00063.warc.gz",
+    "warc_offset": 336268048,
+    "warc_length": 26083
+  },
+  {
+    "url": "https://azgovernor.gov/governor/news/2019/03/governor-duceys-statement-passing-don-diamond",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/governor_news_2019_03_governor-duceys-statement-passing-don-diamond__1a5eed8d7c42.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00065.warc.gz",
+    "warc_offset": 259621462,
+    "warc_length": 20912
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=176&amp%3bqt-content-tab=1&cshs_field_dl_category_tid_flyers=&combine=&cshs_field_dl_category_tid_policies=&order=field_dl_effective_date&sort=desc&qt-content-tab=3&page=0%2c4",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__7cf4134f2b82.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00066.warc.gz",
+    "warc_offset": 319035111,
+    "warc_length": 26081
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=195&amp%3btitle=&amp%3border=field_dl_effective_date&amp%3bsort=asc&amp%3bqt-content-tab=0&title=&cshs_field_dl_category_tid_policies=&combine=&qt-content-tab=3&order=field_dl_effective_date&sort=desc&page=0%2c0",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__049675cffbde.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00066.warc.gz",
+    "warc_offset": 319062264,
+    "warc_length": 26088
+  },
+  {
+    "url": "https://azsdwis.azdeq.gov/dww_ext/jsp/tcrfieldresults.jsp?tinwsys_is_number=2297&tinwsys_st_code=az&tsasampl_is_number=1934972&tsasampl_st_code=az",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/dww_ext_jsp_tcrfieldresults.jsp__75d018b73d72.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00074.warc.gz",
+    "warc_offset": 264937014,
+    "warc_length": 3684
+  },
+  {
+    "url": "https://azsdwis.azdeq.gov/dww_ext/jsp/tcrfieldresults.jsp?tinwsys_is_number=1032&tinwsys_st_code=az&tsasampl_is_number=1953157&tsasampl_st_code=az",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/dww_ext_jsp_tcrfieldresults.jsp__9ab1dd676aa7.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00076.warc.gz",
+    "warc_offset": 254650276,
+    "warc_length": 3682
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=144&amp%3bqt-content-tab=0&amp%3btitle=&amp%3border=field_dl_effective_date&amp%3bsort=asc&title=&cshs_field_dl_category_tid_flyers=&combine=&cshs_field_dl_category_tid_policies=&qt-content-tab=0&order=title&sort=desc",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__625fca4f1a97.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00080.warc.gz",
+    "warc_offset": 332338467,
+    "warc_length": 26187
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=144&amp%3bqt-content-tab=0&amp%3bcshs_field_dl_category_tid_flyers=&amp%3btitle=&amp%3border=field_dl_effective_date&amp%3bsort=asc&title=&cshs_field_dl_category_tid_flyers=&cshs_field_dl_category_tid_policies=&combine=&qt-content-tab=5&order=field_dl_form_number&sort=asc&page=0%2c2",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__5fbeb076dff9.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00086.warc.gz",
+    "warc_offset": 331293905,
+    "warc_length": 26218
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=144&amp%3bqt-content-tab=0&amp%3bcshs_field_dl_category_tid_reports=&amp%3btitle=&amp%3border=field_dl_effective_date&amp%3bsort=asc&cshs_field_dl_category_tid_policies=&title=&combine=&qt-content-tab=2&page=0%2c6&order=field_dl_form_number&sort=asc",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__c2509a4f1bdb.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00086.warc.gz",
+    "warc_offset": 331321233,
+    "warc_length": 26258
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=144&amp%3bqt-content-tab=2&title=&cshs_field_dl_category_tid_flyers=&cshs_field_dl_category_tid_policies=&qt-content-tab=1&combine=&page=0%2c0&cshs_field_dl_category_tid_reports&order=title&sort=desc",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__e55b3ec86477.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00087.warc.gz",
+    "warc_offset": 332620784,
+    "warc_length": 24642
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=144&amp%3bqt-content-tab=0&amp%3bcshs_field_dl_category_tid_flyers=&amp%3btitle=&amp%3border=field_dl_effective_date&amp%3bsort=asc&title=&cshs_field_dl_category_tid_flyers=&cshs_field_dl_category_tid_policies=&combine=&qt-content-tab=5&order=field_dl_form_number&sort=asc&page=0%2c3",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__bc058cf83482.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00087.warc.gz",
+    "warc_offset": 332567463,
+    "warc_length": 26209
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=144&amp%3bqt-content-tab=0&amp%3bcshs_field_dl_category_tid_reports=&amp%3btitle=&amp%3border=field_dl_effective_date&amp%3bsort=asc&cshs_field_dl_category_tid_policies=&title=&combine=&qt-content-tab=0&page=0%2c3&cshs_field_dl_category_tid_reports&order=title&sort=asc",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__bc48e4d3b1d3.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00087.warc.gz",
+    "warc_offset": 332594781,
+    "warc_length": 24919
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=144&amp%3bcshs_field_dl_category_tid_policies=&amp%3btitle=&amp%3bcshs_field_dl_category_tid_reports=&amp%3border=field_dl_form_number&amp%3bsort=desc&cshs_field_dl_category_tid_flyers=&title=&cshs_field_dl_category_tid_policies=&combine=&order=title&sort=asc&qt-content-tab=5&page=0%2c7",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__a7e287b78dab.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00087.warc.gz",
+    "warc_offset": 332540647,
+    "warc_length": 25707
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=176&amp%3bpage=0%2c28&title=&cshs_field_dl_category_tid_flyers=&cshs_field_dl_category_tid_policies=&combine=&qt-content-tab=0&page=0%2c13&order=title&sort=asc",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__9de734f123cf.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00089.warc.gz",
+    "warc_offset": 331031864,
+    "warc_length": 26040
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=144&amp%3bcshs_field_dl_category_tid_policies=&amp%3btitle=&amp%3border=field_dl_form_number&amp%3bsort=asc&amp%3bpage=0%2c4&cshs_field_dl_category_tid_flyers=&title=&qt-content-tab=2&cshs_field_dl_category_tid_policies=&combine=&page=0%2c1&cshs_field_dl_category_tid_reports&order=field_dl_form_number&sort=asc",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__800b3686d01c.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00089.warc.gz",
+    "warc_offset": 331005818,
+    "warc_length": 24968
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=144&amp%3bqt-content-tab=2&title=&combine=&cshs_field_dl_category_tid_policies=&qt-content-tab=5&cshs_field_dl_category_tid_reports&order=title&sort=desc",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__7d2616b4c6cf.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00090.warc.gz",
+    "warc_offset": 337303872,
+    "warc_length": 24423
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=144&amp%3bcshs_field_dl_category_tid_policies=&amp%3btitle=&amp%3border=field_dl_form_number&amp%3bsort=asc&amp%3bpage=0%2c4&title=&cshs_field_dl_category_tid_flyers=&cshs_field_dl_category_tid_policies=&combine=&qt-content-tab=4&order=field_dl_effective_date&sort=desc",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__c724b84d3c2f.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00092.warc.gz",
+    "warc_offset": 331332712,
+    "warc_length": 26197
+  },
+  {
+    "url": "https://azsdwis.azdeq.gov/dww_ext/jsp/tcrfieldresults.jsp?tinwsys_is_number=3140&tinwsys_st_code=az&tsasampl_is_number=1898228&tsasampl_st_code=az",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/dww_ext_jsp_tcrfieldresults.jsp__15aa45b68112.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00093.warc.gz",
+    "warc_offset": 267767747,
+    "warc_length": 3678
+  },
+  {
+    "url": "https://personnel.az.gov/sitemap",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/sitemap__51967102e58a.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00093.warc.gz",
+    "warc_offset": 559062243,
+    "warc_length": 11672
+  },
+  {
+    "url": "https://azsdwis.azdeq.gov/dww_ext/jsp/watersystemfacility.jsp?tinwsys_is_number=2264&tinwsys_st_code=az&tinwsf_is_number=1444&tinwsf_st_code=az",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/dww_ext_jsp_watersystemfacility.jsp__838cceacafba.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00100.warc.gz",
+    "warc_offset": 255116549,
+    "warc_length": 4744
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=144&amp%3bqt-content-tab=0&amp%3bcshs_field_dl_category_tid_flyers=&amp%3btitle=&amp%3border=field_dl_effective_date&amp%3bsort=asc&qt-content-tab=2&title=&cshs_field_dl_category_tid_flyers=&cshs_field_dl_category_tid_policies=&combine=&page=0%2c1&cshs_field_dl_category_tid_reports&order=field_dl_form_number&sort=asc",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__4e00784dc07b.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00102.warc.gz",
+    "warc_offset": 337149530,
+    "warc_length": 24838
+  },
+  {
+    "url": "https://personnel.az.gov/board-meetings",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/board-meetings__67364183ee62.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00103.warc.gz",
+    "warc_offset": 570515590,
+    "warc_length": 13351
+  },
+  {
+    "url": "https://azgovernor.gov/governor/video/us-senate-field-hearing-homeland-security-government-affairs",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/governor_video_us-senate-field-hearing-homeland-security-government-affairs__10971278fc7b.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00105.warc.gz",
+    "warc_offset": 273632408,
+    "warc_length": 20377
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=176&amp%3bqt-content-tab=0&title=&cshs_field_dl_category_tid_flyers=&qt-content-tab=3&combine=&order=field_dl_form_number&sort=asc&page=0%2c13",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__966546b9ec8f.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00106.warc.gz",
+    "warc_offset": 358484637,
+    "warc_length": 26014
+  },
+  {
+    "url": "https://azsdwis.azdeq.gov/dww_ext/jsp/tcrfieldresults.jsp?tinwsys_is_number=1032&tinwsys_st_code=az&tsasampl_is_number=1968777&tsasampl_st_code=az",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/dww_ext_jsp_tcrfieldresults.jsp__c5d36ba69c32.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00108.warc.gz",
+    "warc_offset": 266591312,
+    "warc_length": 3678
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=144&amp%3bqt-content-tab=0&amp%3bpage=0%2c2&cshs_field_dl_category_tid_flyers=&title=&cshs_field_dl_category_tid_policies=&qt-content-tab=0&combine=&order=field_dl_form_number&sort=desc&page=0%2c5",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__08d598339ab2.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00109.warc.gz",
+    "warc_offset": 323154591,
+    "warc_length": 26333
+  },
+  {
+    "url": "https://azsdwis.azdeq.gov/dww_ext/jsp/tcrfieldresults.jsp?tinwsys_is_number=2611&tinwsys_st_code=az&tsasampl_is_number=1883170&tsasampl_st_code=az",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/dww_ext_jsp_tcrfieldresults.jsp__950c03224709.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00109.warc.gz",
+    "warc_offset": 255697622,
+    "warc_length": 3683
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=176&amp%3bpage=0%2c51&cshs_field_dl_category_tid_policies=&title=&combine=&order=field_dl_effective_date&sort=desc&qt-content-tab=3&page=0%2c10",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__63f080a3ac82.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00110.warc.gz",
+    "warc_offset": 333187302,
+    "warc_length": 26066
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=176&amp%3bqt-content-tab=0&cshs_field_dl_category_tid_flyers=&title=&qt-content-tab=2&page=0%2c1&cshs_field_dl_category_tid_reports&combine=&order=field_dl_effective_date&sort=asc",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__3564deba5127.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00110.warc.gz",
+    "warc_offset": 333214429,
+    "warc_length": 24471
+  },
+  {
+    "url": "https://azsdwis.azdeq.gov/dww_ext/jsp/tcrfieldresults.jsp?tinwsys_is_number=1060&tinwsys_st_code=az&tsasampl_is_number=1865604&tsasampl_st_code=az",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/dww_ext_jsp_tcrfieldresults.jsp__61eff57441da.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00110.warc.gz",
+    "warc_offset": 259568177,
+    "warc_length": 3689
+  },
+  {
+    "url": "https://azsdwis.azdeq.gov/dww_ext/jsp/tcrfieldresults.jsp?tinwsys_is_number=2611&tinwsys_st_code=az&tsasampl_is_number=1898850&tsasampl_st_code=az",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/dww_ext_jsp_tcrfieldresults.jsp__e9d59395f9ea.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00114.warc.gz",
+    "warc_offset": 257323772,
+    "warc_length": 3681
+  },
+  {
+    "url": "https://personnel.az.gov/contact-us",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/contact-us__a3b85cca2ab0.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00115.warc.gz",
+    "warc_offset": 568619530,
+    "warc_length": 11738
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=144&amp%3bqt-content-tab=2&title=&cshs_field_dl_category_tid_flyers=&qt-content-tab=0&combine=&page=0%2c1&cshs_field_dl_category_tid_policies=&cshs_field_dl_category_tid_reports&order=title&sort=desc",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__2da671623e30.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00117.warc.gz",
+    "warc_offset": 323602197,
+    "warc_length": 24490
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=144&amp%3bqt-content-tab=0&amp%3bcshs_field_dl_category_tid_flyers=&amp%3btitle=&amp%3border=title&amp%3bsort=desc&cshs_field_dl_category_tid_flyers=&title=&cshs_field_dl_category_tid_policies=&combine=&qt-content-tab=0&order=field_dl_form_number&sort=asc&page=0%2c2",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__a6da5e973a0b.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00117.warc.gz",
+    "warc_offset": 323574769,
+    "warc_length": 26347
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=144&amp%3bcshs_field_dl_category_tid_policies=&amp%3btitle=&amp%3bcshs_field_dl_category_tid_reports=&amp%3border=title&amp%3bsort=desc&title=&cshs_field_dl_category_tid_policies=&qt-content-tab=4&combine=&order=field_dl_effective_date&sort=desc&page=0%2c4",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__128271fed71b.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00118.warc.gz",
+    "warc_offset": 343454688,
+    "warc_length": 26147
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=176&amp%3btitle=&amp%3border=field_dl_effective_date&amp%3bsort=asc&cshs_field_dl_category_tid_flyers=&title=&qt-content-tab=1&combine=&cshs_field_dl_category_tid_policies=&page=0%2c0&order=field_dl_form_number&sort=asc",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__b77bc91319fc.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00120.warc.gz",
+    "warc_offset": 339254753,
+    "warc_length": 26112
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=144&amp%3bqt-content-tab=0&title=&cshs_field_dl_category_tid_policies=&qt-content-tab=3&page=0%2c2&cshs_field_dl_category_tid_reports&combine=&order=title&sort=desc",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__283bc68a41a0.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00122.warc.gz",
+    "warc_offset": 338013596,
+    "warc_length": 24440
+  },
+  {
+    "url": "https://azgovernor.gov/governor/files/12-news-new-plan-aims-help-az-schools-reopen",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/governor_files_12-news-new-plan-aims-help-az-schools-reopen__99ae26c63bc3.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00122.warc.gz",
+    "warc_offset": 263971236,
+    "warc_length": 17760
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=176&amp%3bqt-content-tab=1&cshs_field_dl_category_tid_flyers=&title=&combine=&qt-content-tab=1&cshs_field_dl_category_tid_policies=&order=field_dl_form_number&sort=asc&page=0%2c9",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__d2a95db8483b.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00124.warc.gz",
+    "warc_offset": 335278424,
+    "warc_length": 25960
+  },
+  {
+    "url": "https://ot.az.gov/",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/index__466424839a1f.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00125.warc.gz",
+    "warc_offset": 546478599,
+    "warc_length": 16862
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=144&amp%3bqt-content-tab=0&amp%3bpage=0%2c3&qt-content-tab=1&cshs_field_dl_category_tid_policies=&title=&combine=&page=0%2c1&cshs_field_dl_category_tid_reports&order=field_dl_effective_date&sort=asc",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__77d82ea04630.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00126.warc.gz",
+    "warc_offset": 330981162,
+    "warc_length": 24481
+  },
+  {
+    "url": "https://azsdwis.azdeq.gov/dww_ext/jsp/tcrfieldresults.jsp?tinwsys_is_number=3140&tinwsys_st_code=az&tsasampl_is_number=1861799&tsasampl_st_code=az",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/dww_ext_jsp_tcrfieldresults.jsp__181ddc8d3e3b.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00128.warc.gz",
+    "warc_offset": 262554792,
+    "warc_length": 3679
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=144&amp%3bqt-content-tab=0&amp%3btitle=&amp%3border=field_dl_effective_date&amp%3bsort=asc&title=&cshs_field_dl_category_tid_flyers=&qt-content-tab=1&combine=&order=field_dl_effective_date&sort=desc&page=0%2c1",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__dee5128df02d.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00130.warc.gz",
+    "warc_offset": 327212139,
+    "warc_length": 26245
+  },
+  {
+    "url": "https://des.az.gov/documents-center?amp%3bcshs_field_dl_category_tid_policies=&amp%3btitle=&amp%3border=field_dl_effective_date&amp%3bsort=asc&cshs_field_dl_category_tid_flyers=&title=&cshs_field_dl_category_tid_policies=&order=field_dl_form_number&sort=asc&qt-content-tab=4&page=0%2c0",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__164939c4d065.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00130.warc.gz",
+    "warc_offset": 327185057,
+    "warc_length": 26004
+  },
+  {
+    "url": "https://ot.az.gov/initial",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/initial__695c0c752af8.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00135.warc.gz",
+    "warc_offset": 564810295,
+    "warc_length": 14934
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=144&amp%3bqt-content-tab=0&amp%3btitle=&amp%3border=field_dl_effective_date&amp%3bsort=asc&title=&qt-content-tab=4&cshs_field_dl_category_tid_flyers=&combine=&cshs_field_dl_category_tid_policies=&page=0%2c4&cshs_field_dl_category_tid_reports&order=field_dl_effective_date&sort=asc",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__d21875e8eda7.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00136.warc.gz",
+    "warc_offset": 341242831,
+    "warc_length": 24798
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=144&amp%3bqt-content-tab=0&amp%3bpage=0%2c1&title=&qt-content-tab=0&combine=&cshs_field_dl_category_tid_flyers=&page=0%2c1&cshs_field_dl_category_tid_reports&order=field_dl_effective_date&sort=desc",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__45d3ccd6b56e.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00136.warc.gz",
+    "warc_offset": 341217307,
+    "warc_length": 24436
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=144&amp%3bcshs_field_dl_category_tid_policies=&amp%3btitle=&amp%3border=field_dl_effective_date&amp%3bsort=desc&title=&cshs_field_dl_category_tid_flyers=&cshs_field_dl_category_tid_policies=&qt-content-tab=2&page=0%2c2&combine=&cshs_field_dl_category_tid_reports&order=title&sort=desc",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__c36f3d4f8708.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00136.warc.gz",
+    "warc_offset": 341191408,
+    "warc_length": 24812
+  },
+  {
+    "url": "https://des.az.gov/documents-center?amp%3bamp%3bcshs_field_dl_category_tid_forms=195&amp%3bamp%3bpage=0%2c49&amp%3bcshs_field_dl_category_tid_flyers=&amp%3btitle=&amp%3border=title&amp%3bsort=desc&cshs_field_dl_category_tid_flyers=&combine=&qt-content-tab=3&page=0%2c56&cshs_field_dl_category_tid_forms&order=field_dl_effective_date&sort=desc",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__c9aa1257668c.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00137.warc.gz",
+    "warc_offset": 333733668,
+    "warc_length": 22514
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=144&amp%3bqt-content-tab=0&amp%3bcshs_field_dl_category_tid_policies=&amp%3btitle=&amp%3border=field_dl_effective_date&amp%3bsort=asc&title=&qt-content-tab=3&cshs_field_dl_category_tid_policies=&order=title&sort=desc&page=0%2c7",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__c410bf80ba7d.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00137.warc.gz",
+    "warc_offset": 333757276,
+    "warc_length": 25426
+  },
+  {
+    "url": "https://ot.az.gov/sitemap/m?order=title&sort=desc",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/sitemap_m__4b440964e37c.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00138.warc.gz",
+    "warc_offset": 547304252,
+    "warc_length": 9755
+  },
+  {
+    "url": "https://azsdwis.azdeq.gov/dww_ext/jsp/tcrfieldresults.jsp?tinwsys_is_number=2297&tinwsys_st_code=az&tsasampl_is_number=1914888&tsasampl_st_code=az",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/dww_ext_jsp_tcrfieldresults.jsp__446d06f44234.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00140.warc.gz",
+    "warc_offset": 256279905,
+    "warc_length": 3682
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=176&amp%3bpage=0%2c28&title=&cshs_field_dl_category_tid_flyers=&cshs_field_dl_category_tid_policies=&combine=&qt-content-tab=5&page=0%2c4&cshs_field_dl_category_tid_reports&order=field_dl_form_number&sort=asc",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__54d0917f6f13.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00142.warc.gz",
+    "warc_offset": 337479202,
+    "warc_length": 24496
+  },
+  {
+    "url": "https://azsdwis.azdeq.gov/dww_ext/jsp/tcrfieldresults.jsp?tinwsys_is_number=531&tinwsys_st_code=az&tsasampl_is_number=1908655&tsasampl_st_code=az",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/dww_ext_jsp_tcrfieldresults.jsp__56a9e7412cb1.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00142.warc.gz",
+    "warc_offset": 257686106,
+    "warc_length": 3670
+  },
+  {
+    "url": "https://azsdwis.azdeq.gov/dww_ext/jsp/tcrfieldresults.jsp?tinwsys_is_number=1060&tinwsys_st_code=az&tsasampl_is_number=1955691&tsasampl_st_code=az",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/dww_ext_jsp_tcrfieldresults.jsp__4d71e546f47b.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00144.warc.gz",
+    "warc_offset": 263369561,
+    "warc_length": 3687
+  },
+  {
+    "url": "https://azgovernor.gov/governor/engage/shareables/celebrate-freedom-celebrate-liberty-celebrate-america-july4th",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/governor_engage_shareables_celebrate-freedom-celebrate-liberty-celebrate-america-july4th__fc1c983343c0.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00146.warc.gz",
+    "warc_offset": 248489351,
+    "warc_length": 20725
+  },
+  {
+    "url": "https://azsdwis.azdeq.gov/dww_ext/jsp/tcrfieldresults.jsp?tinwsys_is_number=8207&tinwsys_st_code=az&tsasampl_is_number=1910856&tsasampl_st_code=az",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/dww_ext_jsp_tcrfieldresults.jsp__f6d9452fba37.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00148.warc.gz",
+    "warc_offset": 257533641,
+    "warc_length": 3679
+  },
+  {
+    "url": "https://azsdwis.azdeq.gov/dww_ext/jsp/tcrfieldresults.jsp?tinwsys_is_number=1032&tinwsys_st_code=az&tsasampl_is_number=1977331&tsasampl_st_code=az",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/dww_ext_jsp_tcrfieldresults.jsp__2b16c0f12437.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00152.warc.gz",
+    "warc_offset": 257912027,
+    "warc_length": 3680
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=176&amp%3bpage=0%2c28&title=&cshs_field_dl_category_tid_flyers=&cshs_field_dl_category_tid_policies=&combine=&qt-content-tab=5&page=0%2c4&cshs_field_dl_category_tid_reports&order=field_dl_effective_date&sort=desc",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__7b314c64a497.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00154.warc.gz",
+    "warc_offset": 343411303,
+    "warc_length": 24811
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=176&amp%3bpage=0%2c51&qt-content-tab=1&cshs_field_dl_category_tid_flyers=&title=&combine=&cshs_field_dl_category_tid_policies=&order=field_dl_form_number&sort=asc&page=0%2c0",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__c6afd08fd3b7.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00154.warc.gz",
+    "warc_offset": 343437189,
+    "warc_length": 25992
+  },
+  {
+    "url": "https://ot.az.gov/sitemap/n?order=changed&sort=asc",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/sitemap_n__e7d1b1c0e2d9.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00155.warc.gz",
+    "warc_offset": 557024102,
+    "warc_length": 13265
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=144&amp%3bqt-content-tab=2&title=&cshs_field_dl_category_tid_flyers=&cshs_field_dl_category_tid_policies=&qt-content-tab=4&combine=&order=field_dl_form_number&sort=asc&page=0%2c3",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__5ce6ad66c214.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00157.warc.gz",
+    "warc_offset": 349376069,
+    "warc_length": 26083
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=176&amp%3btitle=&amp%3border=field_dl_effective_date&amp%3bsort=asc&title=&qt-content-tab=3&cshs_field_dl_category_tid_flyers=&combine=&page=0%2c3&cshs_field_dl_category_tid_reports&order=title&sort=desc",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__ab426420b175.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00157.warc.gz",
+    "warc_offset": 349403224,
+    "warc_length": 24635
+  },
+  {
+    "url": "https://azsdwis.azdeq.gov/dww_ext/jsp/tcrfieldresults.jsp?tinwsys_is_number=3140&tinwsys_st_code=az&tsasampl_is_number=1866736&tsasampl_st_code=az",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/dww_ext_jsp_tcrfieldresults.jsp__507bdf9d9f26.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00158.warc.gz",
+    "warc_offset": 259844678,
+    "warc_length": 3671
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=144&amp%3bqt-content-tab=0&amp%3bcshs_field_dl_category_tid_policies=&amp%3btitle=&amp%3border=field_dl_effective_date&amp%3bsort=asc&title=&cshs_field_dl_category_tid_flyers=&combine=&qt-content-tab=1&cshs_field_dl_category_tid_policies=&order=field_dl_effective_date&sort=desc&page=0%2c5",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__94bec7c1d49c.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00158.warc.gz",
+    "warc_offset": 330519455,
+    "warc_length": 26333
+  },
+  {
+    "url": "https://azsdwis.azdeq.gov/dww_ext/jsp/tcrfieldresults.jsp?tinwsys_is_number=531&tinwsys_st_code=az&tsasampl_is_number=1908007&tsasampl_st_code=az",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/dww_ext_jsp_tcrfieldresults.jsp__834dd5ea8855.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00159.warc.gz",
+    "warc_offset": 262057870,
+    "warc_length": 3668
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=144&amp%3bqt-content-tab=0&amp%3bcshs_field_dl_category_tid_flyers=&amp%3btitle=&amp%3border=title&amp%3bsort=desc&cshs_field_dl_category_tid_flyers=&title=&cshs_field_dl_category_tid_policies=&combine=&order=field_dl_effective_date&sort=asc&qt-content-tab=3&page=0%2c58",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__e2ffff56cebd.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00161.warc.gz",
+    "warc_offset": 347566903,
+    "warc_length": 25555
+  },
+  {
+    "url": "https://azsdwis.azdeq.gov/dww_ext/jsp/tcrfieldresults.jsp?tinwsys_is_number=1060&tinwsys_st_code=az&tsasampl_is_number=1976880&tsasampl_st_code=az",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/dww_ext_jsp_tcrfieldresults.jsp__dfe3273dae5a.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00163.warc.gz",
+    "warc_offset": 264913202,
+    "warc_length": 3686
+  },
+  {
+    "url": "https://azgovernor.gov/governor/video/governor-ducey-superintendent-hoffman-pass-out-meals-provide-covid-19-update",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/governor_video_governor-ducey-superintendent-hoffman-pass-out-meals-provide-covid-19-update__378ebee372ba.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00164.warc.gz",
+    "warc_offset": 267201087,
+    "warc_length": 20456
+  },
+  {
+    "url": "https://azgovernor.gov/governor/news/2019/12/governor-ducey-unveils-new-welcome-arizona-highway-signs",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/governor_news_2019_12_governor-ducey-unveils-new-welcome-arizona-highway-signs__0e05111fa424.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00166.warc.gz",
+    "warc_offset": 265619361,
+    "warc_length": 21807
+  },
+  {
+    "url": "https://azgovernor.gov/governor/news/2020/02/governors-office-announces-departure-keith-schraad-director-department",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/governor_news_2020_02_governors-office-announces-departure-keith-schraad-director-department__a679d4fef8a2.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00166.warc.gz",
+    "warc_offset": 265642135,
+    "warc_length": 21701
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=176&amp%3bcshs_field_dl_category_tid_reports=&amp%3btitle=&amp%3border=field_dl_form_number&amp%3bsort=asc&cshs_field_dl_category_tid_flyers=&title=&cshs_field_dl_category_tid_policies=&order=field_dl_form_number&sort=asc&qt-content-tab=3&page=0%2c58",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__9f35005e6603.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00168.warc.gz",
+    "warc_offset": 330051607,
+    "warc_length": 25686
+  },
+  {
+    "url": "https://azsdwis.azdeq.gov/dww_ext/jsp/tcrfieldresults.jsp?tinwsys_is_number=3140&tinwsys_st_code=az&tsasampl_is_number=1931124&tsasampl_st_code=az",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/dww_ext_jsp_tcrfieldresults.jsp__24b6ef76eb15.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00168.warc.gz",
+    "warc_offset": 254119459,
+    "warc_length": 3675
+  },
+  {
+    "url": "https://azsdwis.azdeq.gov/dww_ext/jsp/watersystemfacility.jsp?tinwsys_is_number=2264&tinwsys_st_code=az&tinwsf_is_number=19858&tinwsf_st_code=az",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/dww_ext_jsp_watersystemfacility.jsp__bafa92522bd1.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00168.warc.gz",
+    "warc_offset": 254124127,
+    "warc_length": 3941
+  },
+  {
+    "url": "https://ot.az.gov/faq1",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/faq1__e4681652d0dd.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00168.warc.gz",
+    "warc_offset": 547914867,
+    "warc_length": 12433
+  },
+  {
+    "url": "https://azgovernor.gov/governor/news/2018/02/governor-ducey-increases-wildfire-prevention-funding",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/governor_news_2018_02_governor-ducey-increases-wildfire-prevention-funding__c828268f1c6e.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00169.warc.gz",
+    "warc_offset": 256482132,
+    "warc_length": 25791
+  },
+  {
+    "url": "https://azgovernor.gov/governor/video/us-senate-field-hearing-homeland-security-government-affairs?page=1",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/governor_video_us-senate-field-hearing-homeland-security-government-affairs__033f658716ad.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00169.warc.gz",
+    "warc_offset": 256508884,
+    "warc_length": 20526
+  },
+  {
+    "url": "https://ot.az.gov/faq2",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/faq2__071dc8976759.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00169.warc.gz",
+    "warc_offset": 559113484,
+    "warc_length": 12471
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=144&amp%3bqt-content-tab=0&amp%3bcshs_field_dl_category_tid_policies=&amp%3btitle=&amp%3border=field_dl_effective_date&amp%3bsort=asc&title=&cshs_field_dl_category_tid_flyers=&combine=&qt-content-tab=5&page=0%2c2&order=title&sort=desc",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__333d33ffd83c.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00169.warc.gz",
+    "warc_offset": 337116143,
+    "warc_length": 26269
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=144&amp%3bqt-content-tab=0&amp%3bpage=0%2c3&cshs_field_dl_category_tid_flyers=&title=&order=title&sort=desc&qt-content-tab=3&page=0%2c58",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__b0dc5b4ef738.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00169.warc.gz",
+    "warc_offset": 337143476,
+    "warc_length": 25495
+  },
+  {
+    "url": "https://azsdwis.azdeq.gov/dww_ext/jsp/tcrfieldresults.jsp?tinwsys_is_number=3140&tinwsys_st_code=az&tsasampl_is_number=1920478&tsasampl_st_code=az",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/dww_ext_jsp_tcrfieldresults.jsp__c520711e8085.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00170.warc.gz",
+    "warc_offset": 265870487,
+    "warc_length": 3675
+  },
+  {
+    "url": "https://ot.az.gov/faq6",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/faq6__d25e3c9d3ff4.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00173.warc.gz",
+    "warc_offset": 546296935,
+    "warc_length": 12385
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=195&amp%3bqt-content-tab=0&title=&cshs_field_dl_category_tid_policies=&qt-content-tab=5&page=0%2c3&cshs_field_dl_category_tid_reports&combine=&order=field_dl_form_number&sort=desc",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__dbfafbe1d783.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00177.warc.gz",
+    "warc_offset": 334985318,
+    "warc_length": 24436
+  },
+  {
+    "url": "https://des.az.gov/documents-center?amp%3bpage=0%2c30&amp%3bcshs_field_dl_category_tid_forms=&amp%3btitle=&amp%3border=field_dl_form_number&amp%3bsort=asc&cshs_field_dl_category_tid_flyers=&title=&cshs_field_dl_category_tid_policies=&order=title&sort=desc&qt-content-tab=4&page=0%2c58",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__0d33803d2b3a.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00177.warc.gz",
+    "warc_offset": 334958054,
+    "warc_length": 26196
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=176&amp%3bpage=0%2c28&title=&cshs_field_dl_category_tid_flyers=&cshs_field_dl_category_tid_policies=&combine=&qt-content-tab=2&page=0%2c13&cshs_field_dl_category_tid_reports&order=field_dl_form_number&sort=asc",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__afcac1ec6311.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00181.warc.gz",
+    "warc_offset": 336931923,
+    "warc_length": 24420
+  },
+  {
+    "url": "https://azsdwis.azdeq.gov/dww_ext/jsp/tcrfieldresults.jsp?tinwsys_is_number=3930&tinwsys_st_code=az&tsasampl_is_number=1980908&tsasampl_st_code=az",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/dww_ext_jsp_tcrfieldresults.jsp__a1a16d306937.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00181.warc.gz",
+    "warc_offset": 267097907,
+    "warc_length": 3673
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=144&amp%3bcshs_field_dl_category_tid_policies=&amp%3btitle=&amp%3bcshs_field_dl_category_tid_reports=&amp%3border=field_dl_form_number&amp%3bsort=desc&cshs_field_dl_category_tid_flyers=&title=&cshs_field_dl_category_tid_policies=&combine=&qt-content-tab=5&page=0%2c5&order=field_dl_form_number&sort=asc",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__c86651dbb6a5.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00181.warc.gz",
+    "warc_offset": 336904535,
+    "warc_length": 26299
+  },
+  {
+    "url": "https://azsdwis.azdeq.gov/dww_ext/jsp/tcrfieldresults.jsp?tinwsys_is_number=2297&tinwsys_st_code=az&tsasampl_is_number=1893319&tsasampl_st_code=az",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/dww_ext_jsp_tcrfieldresults.jsp__83a2e17b5464.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00185.warc.gz",
+    "warc_offset": 261820649,
+    "warc_length": 3685
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=175&amp%3bpage=0%2c2&cshs_field_dl_category_tid_flyers=&title=&combine=&cshs_field_dl_category_tid_policies=&order=field_dl_form_number&sort=asc&qt-content-tab=1&page=0%2c58",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__8217d0c914c7.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00188.warc.gz",
+    "warc_offset": 326190049,
+    "warc_length": 25444
+  },
+  {
+    "url": "https://azsdwis.azdeq.gov/dww_ext/jsp/tcrfieldresults.jsp?tinwsys_is_number=3140&tinwsys_st_code=az&tsasampl_is_number=1893420&tsasampl_st_code=az",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/dww_ext_jsp_tcrfieldresults.jsp__58bb88dfb685.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00188.warc.gz",
+    "warc_offset": 252548155,
+    "warc_length": 3674
+  },
+  {
+    "url": "https://des.az.gov/documents-center?amp%3bpage=0%2c1&cshs_field_dl_category_tid_flyers=&title=&cshs_field_dl_category_tid_policies=&combine=&qt-content-tab=4&page=0%2c5&cshs_field_dl_category_tid_reports&order=title&sort=asc",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__2716752a9250.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00192.warc.gz",
+    "warc_offset": 334371044,
+    "warc_length": 24503
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=144&amp%3bcshs_field_dl_category_tid_policies=&amp%3btitle=&amp%3bcshs_field_dl_category_tid_reports=&amp%3border=title&amp%3bsort=desc&qt-content-tab=0&cshs_field_dl_category_tid_flyers=&combine=&page=0%2c6&cshs_field_dl_category_tid_reports&order=field_dl_effective_date&sort=desc",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__ed758fd1fc21.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00192.warc.gz",
+    "warc_offset": 334396626,
+    "warc_length": 24314
+  },
+  {
+    "url": "https://azgovernor.gov/governor/engage/shareables/lets-all-take-moment-recognize-men-women-who-wont-be-celebrating-july4th",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/governor_engage_shareables_lets-all-take-moment-recognize-men-women-who-wont-be-celebrating-july4th__6a9818d008fd.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00192.warc.gz",
+    "warc_offset": 260171178,
+    "warc_length": 20757
+  },
+  {
+    "url": "https://azgovernor.gov/governor/news/2020/09/governor-ducey-statement-withdrawal-medicaid-fiscal-accountability-regulation",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/governor_news_2020_09_governor-ducey-statement-withdrawal-medicaid-fiscal-accountability-regulation__11e4dcf72e99.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00192.warc.gz",
+    "warc_offset": 260192921,
+    "warc_length": 20529
+  },
+  {
+    "url": "https://azsdwis.azdeq.gov/dww_ext/jsp/tcrfieldresults.jsp?tinwsys_is_number=2611&tinwsys_st_code=az&tsasampl_is_number=1916057&tsasampl_st_code=az",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/dww_ext_jsp_tcrfieldresults.jsp__9478f1223f6f.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00202.warc.gz",
+    "warc_offset": 266618100,
+    "warc_length": 3682
+  },
+  {
+    "url": "https://azsdwis.azdeq.gov/dww_ext/jsp/tcrfieldresults.jsp?tinwsys_is_number=3347&tinwsys_st_code=az&tsasampl_is_number=1972517&tsasampl_st_code=az",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/dww_ext_jsp_tcrfieldresults.jsp__8e372c283caf.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00204.warc.gz",
+    "warc_offset": 263832860,
+    "warc_length": 3676
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=144&amp%3bqt-content-tab=0&amp%3bpage=0%2c1&title=&qt-content-tab=0&combine=&cshs_field_dl_category_tid_flyers=&order=field_dl_form_number&sort=asc&page=0%2c58",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__bb97dc6c7eb4.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00206.warc.gz",
+    "warc_offset": 335506270,
+    "warc_length": 25566
+  },
+  {
+    "url": "https://azsdwis.azdeq.gov/dww_ext/jsp/tcrfieldresults.jsp?tinwsys_is_number=3347&tinwsys_st_code=az&tsasampl_is_number=1931990&tsasampl_st_code=az",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/dww_ext_jsp_tcrfieldresults.jsp__9e32043f7687.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00206.warc.gz",
+    "warc_offset": 261524925,
+    "warc_length": 3668
+  },
+  {
+    "url": "https://azsdwis.azdeq.gov/dww_ext/jsp/tcrfieldresults.jsp?tinwsys_is_number=1060&tinwsys_st_code=az&tsasampl_is_number=1939761&tsasampl_st_code=az",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/dww_ext_jsp_tcrfieldresults.jsp__df17dd92c035.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00206.warc.gz",
+    "warc_offset": 261520238,
+    "warc_length": 3689
+  },
+  {
+    "url": "https://azsdwis.azdeq.gov/dww_ext/jsp/analytelisttwo.jsp?tinwsys_is_number=3140&tinwsys_st_code=az",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/dww_ext_jsp_analytelisttwo.jsp__b2d2de21b785.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00206.warc.gz",
+    "warc_offset": 261513883,
+    "warc_length": 5375
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=144&amp%3bqt-content-tab=0&amp%3bcshs_field_dl_category_tid_reports=&amp%3btitle=&amp%3border=field_dl_effective_date&amp%3bsort=asc&cshs_field_dl_category_tid_flyers=&title=&combine=&qt-content-tab=5&page=0%2c3&cshs_field_dl_category_tid_reports&order=title&sort=asc",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__1fb355645f95.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00207.warc.gz",
+    "warc_offset": 333327269,
+    "warc_length": 24765
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=175&amp%3bpage=0%2c2&cshs_field_dl_category_tid_flyers=&title=&combine=&qt-content-tab=0&page=0%2c10&order=title&sort=desc",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__3660d53143b0.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00207.warc.gz",
+    "warc_offset": 333353102,
+    "warc_length": 25945
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=176&amp%3bcshs_field_dl_category_tid_flyers=&amp%3btitle=&amp%3border=title&amp%3bsort=desc&cshs_field_dl_category_tid_flyers=&title=&cshs_field_dl_category_tid_policies=&combine=&order=field_dl_effective_date&sort=desc&qt-content-tab=4",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__191b8ec52591.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00208.warc.gz",
+    "warc_offset": 332894772,
+    "warc_length": 26059
+  },
+  {
+    "url": "https://azsdwis.azdeq.gov/dww_ext/jsp/tcrfieldresults.jsp?tinwsys_is_number=2611&tinwsys_st_code=az&tsasampl_is_number=1872055&tsasampl_st_code=az",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/dww_ext_jsp_tcrfieldresults.jsp__d93c178ca23f.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00211.warc.gz",
+    "warc_offset": 262049827,
+    "warc_length": 3673
+  },
+  {
+    "url": "https://azsdwis.azdeq.gov/dww_ext/jsp/tcrfieldresults.jsp?tinwsys_is_number=1060&tinwsys_st_code=az&tsasampl_is_number=1873926&tsasampl_st_code=az",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/dww_ext_jsp_tcrfieldresults.jsp__efe3dc89522c.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00212.warc.gz",
+    "warc_offset": 261227826,
+    "warc_length": 3687
+  },
+  {
+    "url": "https://azsdwis.azdeq.gov/dww_ext/jsp/tcrfieldresults.jsp?tinwsys_is_number=531&tinwsys_st_code=az&tsasampl_is_number=1952447&tsasampl_st_code=az",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/dww_ext_jsp_tcrfieldresults.jsp__b1ca8411ae22.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00218.warc.gz",
+    "warc_offset": 266535395,
+    "warc_length": 3667
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=176&amp%3bpage=0%2c51&cshs_field_dl_category_tid_flyers=&title=&combine=&cshs_field_dl_category_tid_policies=&qt-content-tab=3&cshs_field_dl_category_tid_reports&order=field_dl_effective_date&sort=desc",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__e7d453c07588.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00218.warc.gz",
+    "warc_offset": 339397462,
+    "warc_length": 24334
+  },
+  {
+    "url": "https://azsdwis.azdeq.gov/dww_ext/jsp/tcrfieldresults.jsp?tinwsys_is_number=2297&tinwsys_st_code=az&tsasampl_is_number=1921257&tsasampl_st_code=az",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/dww_ext_jsp_tcrfieldresults.jsp__7b39cdee951e.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00220.warc.gz",
+    "warc_offset": 259716071,
+    "warc_length": 3679
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=144&amp%3bqt-content-tab=0&amp%3bpage=0%2c2&title=&cshs_field_dl_category_tid_policies=&combine=&qt-content-tab=5&page=0%2c4&cshs_field_dl_category_tid_reports&order=title&sort=desc",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__771a1728ebd0.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00222.warc.gz",
+    "warc_offset": 342748552,
+    "warc_length": 24423
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=144&amp%3bcshs_field_dl_category_tid_policies=&amp%3btitle=&amp%3border=field_dl_form_number&amp%3bsort=asc&amp%3bpage=0%2c4&title=&cshs_field_dl_category_tid_flyers=&cshs_field_dl_category_tid_policies=&combine=&order=title&sort=asc&qt-content-tab=4&page=0%2c1",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__f1543dd528b2.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00223.warc.gz",
+    "warc_offset": 334052399,
+    "warc_length": 26241
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=144&amp%3bqt-content-tab=0&amp%3bcshs_field_dl_category_tid_flyers=&amp%3btitle=&amp%3border=field_dl_effective_date&amp%3bsort=asc&qt-content-tab=2&title=&cshs_field_dl_category_tid_policies=&combine=&page=0%2c3&order=title&sort=asc",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__5c001de0c108.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00223.warc.gz",
+    "warc_offset": 334079738,
+    "warc_length": 26332
+  },
+  {
+    "url": "https://ot.az.gov/sitemap/h?order=name&sort=asc",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/sitemap_h__11daa5dd1d2f.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00224.warc.gz",
+    "warc_offset": 574821743,
+    "warc_length": 13103
+  },
+  {
+    "url": "https://azsdwis.azdeq.gov/dww_ext/jsp/tcrfieldresults.jsp?tinwsys_is_number=531&tinwsys_st_code=az&tsasampl_is_number=1897054&tsasampl_st_code=az",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/dww_ext_jsp_tcrfieldresults.jsp__525a545f766b.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00226.warc.gz",
+    "warc_offset": 252950732,
+    "warc_length": 3668
+  },
+  {
+    "url": "https://ot.az.gov/consumer-information",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/consumer-information__f030aa735395.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00226.warc.gz",
+    "warc_offset": 536446281,
+    "warc_length": 12654
+  },
+  {
+    "url": "https://ptl.az.gov/app/gohs_taskforce/index.xhtml",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/app_gohs_taskforce_index.xhtml__6f1e2bfb5027.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00240.warc.gz",
+    "warc_offset": 587906593,
+    "warc_length": 4402
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=144&amp%3bqt-content-tab=0&amp%3bcshs_field_dl_category_tid_reports=&amp%3btitle=&amp%3border=field_dl_effective_date&amp%3bsort=asc&qt-content-tab=0&cshs_field_dl_category_tid_policies=&title=&page=0%2c1&combine=&cshs_field_dl_category_tid_reports&order=field_dl_form_number&sort=desc",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__71e03eb2ea52.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00241.warc.gz",
+    "warc_offset": 345982922,
+    "warc_length": 24814
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=144&amp%3bcshs_field_dl_category_tid_policies=&amp%3btitle=&amp%3border=field_dl_form_number&amp%3bsort=asc&amp%3bpage=0%2c4&title=&qt-content-tab=1&cshs_field_dl_category_tid_flyers=&combine=&page=0%2c1&cshs_field_dl_category_tid_policies&order=field_dl_effective_date&sort=desc",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__110a9b3a07b1.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00241.warc.gz",
+    "warc_offset": 345955646,
+    "warc_length": 26154
+  },
+  {
+    "url": "https://des.az.gov/documents-center?amp%3bamp%3bcshs_field_dl_category_tid_forms=195&amp%3bamp%3bpage=0%2c49&amp%3bcshs_field_dl_category_tid_forms=&amp%3btitle=&amp%3border=field_dl_effective_date&amp%3bsort=asc&cshs_field_dl_category_tid_flyers=&title=&qt-content-tab=5&cshs_field_dl_category_tid_policies=&combine=&cshs_field_dl_category_tid_reports&order=field_dl_form_number&sort=asc",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__76398763a005.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00247.warc.gz",
+    "warc_offset": 350279735,
+    "warc_length": 24694
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=176&amp%3bpage=0%2c3&cshs_field_dl_category_tid_flyers=&title=&cshs_field_dl_category_tid_policies=&combine=&qt-content-tab=4&page=0%2c2&order=title&sort=desc",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__fc9106907418.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00250.warc.gz",
+    "warc_offset": 340464611,
+    "warc_length": 26030
+  },
+  {
+    "url": "https://azsdwis.azdeq.gov/dww_ext/jsp/tcrfieldresults.jsp?tinwsys_is_number=531&tinwsys_st_code=az&tsasampl_is_number=1870685&tsasampl_st_code=az",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/dww_ext_jsp_tcrfieldresults.jsp__c3c2225a5bc8.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00251.warc.gz",
+    "warc_offset": 259464037,
+    "warc_length": 3667
+  },
+  {
+    "url": "https://azsdwis.azdeq.gov/dww_ext/jsp/tcrfieldresults.jsp?tinwsys_is_number=1060&tinwsys_st_code=az&tsasampl_is_number=1949365&tsasampl_st_code=az",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/dww_ext_jsp_tcrfieldresults.jsp__ca3a22e86907.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00255.warc.gz",
+    "warc_offset": 263258959,
+    "warc_length": 3690
+  },
+  {
+    "url": "https://azgovernor.gov/governor/video/kgun-governor-ducey-visits-bighorn-fire",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/governor_video_kgun-governor-ducey-visits-bighorn-fire__580e0413cd37.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00258.warc.gz",
+    "warc_offset": 257376691,
+    "warc_length": 20330
+  },
+  {
+    "url": "https://personnel.az.gov/about-us",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/about-us__4d99034e7883.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00262.warc.gz",
+    "warc_offset": 557673641,
+    "warc_length": 11993
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=144&amp%3bqt-content-tab=0&amp%3bcshs_field_dl_category_tid_reports=&amp%3btitle=&amp%3border=field_dl_effective_date&amp%3bsort=asc&cshs_field_dl_category_tid_policies=&title=&combine=&qt-content-tab=2&order=title&sort=desc&page=0%2c5",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__6e1f346c8a7c.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00263.warc.gz",
+    "warc_offset": 355043594,
+    "warc_length": 26206
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=144&amp%3bqt-content-tab=0&amp%3bcshs_field_dl_category_tid_policies=&amp%3btitle=&amp%3border=field_dl_form_number&amp%3bsort=asc&title=&cshs_field_dl_category_tid_flyers=&cshs_field_dl_category_tid_policies=&combine=&qt-content-tab=3&page=0%2c4&order=title&sort=desc",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__ab766585e1a7.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00263.warc.gz",
+    "warc_offset": 355016125,
+    "warc_length": 26366
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=144&amp%3bcshs_field_dl_category_tid_policies=&amp%3btitle=&amp%3border=field_dl_effective_date&amp%3bsort=desc&title=&cshs_field_dl_category_tid_flyers=&qt-content-tab=0&page=0%2c3&combine=&order=field_dl_form_number&sort=desc",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__ca8e26de05bc.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00263.warc.gz",
+    "warc_offset": 354988709,
+    "warc_length": 26309
+  },
+  {
+    "url": "https://personnel.az.gov/node?qt-54-bp-54=0",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/node__a4691fc2122b.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00264.warc.gz",
+    "warc_offset": 555828217,
+    "warc_length": 18616
+  },
+  {
+    "url": "https://ot.az.gov/home-page-background-image",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/home-page-background-image__a7bbc52a4f91.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00265.warc.gz",
+    "warc_offset": 547653906,
+    "warc_length": 12244
+  },
+  {
+    "url": "https://des.az.gov/documents-center?amp%3bamp%3bcshs_field_dl_category_tid_forms=195&amp%3bamp%3bpage=0%2c49&amp%3bcshs_field_dl_category_tid_forms=&amp%3btitle=&amp%3border=field_dl_effective_date&amp%3bsort=asc&cshs_field_dl_category_tid_flyers=&title=&qt-content-tab=5&cshs_field_dl_category_tid_policies=&combine=&order=title&sort=asc&page=0%2c1",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__8903ee9ec4cb.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00266.warc.gz",
+    "warc_offset": 346035954,
+    "warc_length": 26278
+  },
+  {
+    "url": "https://azsdwis.azdeq.gov/dww_ext/jsp/tcrfieldresults.jsp?tinwsys_is_number=8207&tinwsys_st_code=az&tsasampl_is_number=1891249&tsasampl_st_code=az",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/dww_ext_jsp_tcrfieldresults.jsp__3484d03d0673.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00266.warc.gz",
+    "warc_offset": 264938196,
+    "warc_length": 3677
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=176&amp%3btitle=&amp%3border=field_dl_effective_date&amp%3bsort=asc&title=&cshs_field_dl_category_tid_flyers=&qt-content-tab=0&combine=&cshs_field_dl_category_tid_policies=&order=field_dl_form_number&sort=asc&page=0%2c2",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__bec9b9c6438d.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00269.warc.gz",
+    "warc_offset": 336668937,
+    "warc_length": 26064
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=144&amp%3bqt-content-tab=1&cshs_field_dl_category_tid_flyers=&title=&combine=&qt-content-tab=4&page=0%2c1&cshs_field_dl_category_tid_reports&order=title&sort=desc",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__e1cf18418a88.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00272.warc.gz",
+    "warc_offset": 331401323,
+    "warc_length": 24426
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=176&cshs_field_dl_category_tid_flyers=&title=&combine=&order=field_dl_effective_date&sort=asc&page=0%2c7",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__a78da5fcab01.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00272.warc.gz",
+    "warc_offset": 331426778,
+    "warc_length": 25971
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=144&amp%3bcshs_field_dl_category_tid_policies=&amp%3btitle=&amp%3border=field_dl_form_number&amp%3bsort=asc&amp%3bpage=0%2c4&qt-content-tab=4&cshs_field_dl_category_tid_policies=&title=&combine=&order=title&sort=desc&page=0%2c0",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__c185850acd7a.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00273.warc.gz",
+    "warc_offset": 344460683,
+    "warc_length": 22454
+  },
+  {
+    "url": "https://azsdwis.azdeq.gov/dww_ext/jsp/enfactbysys.jsp?tinwsys_is_number=3140&tinwsys_st_code=az",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/dww_ext_jsp_enfactbysys.jsp__43a8707ce743.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00275.warc.gz",
+    "warc_offset": 256555412,
+    "warc_length": 18478
+  },
+  {
+    "url": "https://personnel.az.gov/sitemap/w?order=name&sort=asc",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/sitemap_w__7965cfb4a14c.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00276.warc.gz",
+    "warc_offset": 572304254,
+    "warc_length": 11668
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=144&amp%3bcshs_field_dl_category_tid_policies=&amp%3btitle=&amp%3border=field_dl_form_number&amp%3bsort=asc&amp%3bpage=0%2c4&qt-content-tab=4&cshs_field_dl_category_tid_policies=&title=&combine=&order=title&sort=desc&page=0%2c5",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__4688ca486a39.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00278.warc.gz",
+    "warc_offset": 334327489,
+    "warc_length": 26333
+  },
+  {
+    "url": "https://des.az.gov/documents-center?amp%3bcshs_field_dl_category_tid_forms=195&amp%3bamp%3bcshs_field_dl_category_tid_flyers=&amp%3bamp%3btitle=&amp%3bamp%3bcshs_field_dl_category_tid_policies=&amp%3bamp%3border=title&amp%3bamp%3bsort=desc&amp%3bamp%3bpage=0%2c2&amp%3bqt-content-tab=4&cshs_field_dl_category_tid_flyers=&title=&cshs_field_dl_category_tid_policies=&qt-content-tab=1&page=0%2c1&cshs_field_dl_category_tid_forms&combine=&order=title&sort=asc",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__c59fe8574d1a.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00279.warc.gz",
+    "warc_offset": 326920245,
+    "warc_length": 22618
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=144&amp%3bcshs_field_dl_category_tid_policies=&amp%3btitle=&amp%3border=field_dl_form_number&amp%3bsort=asc&amp%3bqt-content-tab=2&title=&qt-content-tab=4&combine=&cshs_field_dl_category_tid_flyers=&page=0%2c2&order=field_dl_form_number&sort=asc",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__8d6fe7bf69e5.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00280.warc.gz",
+    "warc_offset": 339050627,
+    "warc_length": 26179
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=176&amp%3btitle=&amp%3border=field_dl_effective_date&amp%3bsort=asc&title=&cshs_field_dl_category_tid_policies=&qt-content-tab=0&combine=&order=field_dl_form_number&sort=asc&page=0%2c10",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__dcbd4ab20457.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00283.warc.gz",
+    "warc_offset": 320495077,
+    "warc_length": 26118
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=144&amp%3bqt-content-tab=2&title=&cshs_field_dl_category_tid_flyers=&combine=&cshs_field_dl_category_tid_policies=&qt-content-tab=4&order=field_dl_effective_date&sort=desc",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__dd2c4b17f283.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00284.warc.gz",
+    "warc_offset": 330163570,
+    "warc_length": 26115
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=176&amp%3bqt-content-tab=1&cshs_field_dl_category_tid_flyers=&title=&combine=&qt-content-tab=1&cshs_field_dl_category_tid_policies=&order=field_dl_form_number&sort=asc&page=0%2c11",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__0c522010f703.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00285.warc.gz",
+    "warc_offset": 346836287,
+    "warc_length": 26118
+  },
+  {
+    "url": "https://personnel.az.gov/change-address",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/change-address__181f2b10f8ff.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00287.warc.gz",
+    "warc_offset": 565801324,
+    "warc_length": 13044
+  },
+  {
+    "url": "https://azgovernor.gov/governor/engage/shareables/azmeansbiz-report-sees-arizona-growing-faster-us-year-and-next-read",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/governor_engage_shareables_azmeansbiz-report-sees-arizona-growing-faster-us-year-and-next-read__7d36971d1f81.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00291.warc.gz",
+    "warc_offset": 250006089,
+    "warc_length": 20750
+  },
+  {
+    "url": "https://azgovernor.gov/governor/news/2019/10/governor-ducey-orders-flags-half-staff-honor-border-patrol-agent-robert-hotten",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/governor_news_2019_10_governor-ducey-orders-flags-half-staff-honor-border-patrol-agent-robert-hotten__d07d1cfcf604.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00291.warc.gz",
+    "warc_offset": 250027817,
+    "warc_length": 20896
+  },
+  {
+    "url": "https://personnel.az.gov/customer-satisfaction-survey",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/customer-satisfaction-survey__ce54d508d6a0.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00292.warc.gz",
+    "warc_offset": 578644219,
+    "warc_length": 16035
+  },
+  {
+    "url": "https://azsdwis.azdeq.gov/dww_ext/jsp/tcrfieldresults.jsp?tinwsys_is_number=1060&tinwsys_st_code=az&tsasampl_is_number=1884585&tsasampl_st_code=az",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/dww_ext_jsp_tcrfieldresults.jsp__741855e508b5.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00297.warc.gz",
+    "warc_offset": 273712919,
+    "warc_length": 3686
+  },
+  {
+    "url": "https://des.az.gov/documents-center?amp%3bamp%3bcshs_field_dl_category_tid_forms=195&amp%3bamp%3bpage=0%2c49&amp%3bcshs_field_dl_category_tid_flyers=&amp%3btitle=&amp%3border=title&amp%3bsort=desc&cshs_field_dl_category_tid_flyers=&title=&qt-content-tab=2&page=0%2c53&cshs_field_dl_category_tid_reports&combine=&order=title&sort=desc",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__bdc4b17d21c7.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00298.warc.gz",
+    "warc_offset": 342254556,
+    "warc_length": 24789
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=195&amp%3bqt-content-tab=0&title=&cshs_field_dl_category_tid_policies=&qt-content-tab=5&page=0%2c3&cshs_field_dl_category_tid_reports&combine=&order=title&sort=desc",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__f308859428ab.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00301.warc.gz",
+    "warc_offset": 344319093,
+    "warc_length": 24455
+  },
+  {
+    "url": "https://azsdwis.azdeq.gov/dww_ext/jsp/tcrfieldresults.jsp?tinwsys_is_number=8207&tinwsys_st_code=az&tsasampl_is_number=1966554&tsasampl_st_code=az",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/dww_ext_jsp_tcrfieldresults.jsp__c26d9055a5dc.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00302.warc.gz",
+    "warc_offset": 259700866,
+    "warc_length": 3673
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=176&amp%3bcshs_field_dl_category_tid_policies=&amp%3btitle=&amp%3border=field_dl_form_number&amp%3bsort=asc&cshs_field_dl_category_tid_flyers=&title=&cshs_field_dl_category_tid_policies=&combine=&order=title&sort=desc&page=0%2c2",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__1d8b66455448.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00303.warc.gz",
+    "warc_offset": 343829478,
+    "warc_length": 26233
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=176&amp%3btitle=&amp%3border=field_dl_effective_date&amp%3bsort=asc&title=&cshs_field_dl_category_tid_flyers=&qt-content-tab=0&combine=&cshs_field_dl_category_tid_policies=&order=field_dl_effective_date&sort=desc&page=0%2c0",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__73b134020714.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00303.warc.gz",
+    "warc_offset": 343883713,
+    "warc_length": 26220
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=176&amp%3bpage=0%2c51&cshs_field_dl_category_tid_policies=&title=&combine=&qt-content-tab=3&page=0%2c2&order=title&sort=asc",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__8beae1604e00.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00303.warc.gz",
+    "warc_offset": 343856763,
+    "warc_length": 25892
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=144&amp%3bqt-content-tab=0&cshs_field_dl_category_tid_flyers=&title=&cshs_field_dl_category_tid_policies=&order=field_dl_effective_date&sort=desc&qt-content-tab=4&page=0%2c7",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__febd3e4e0c2d.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00303.warc.gz",
+    "warc_offset": 343802993,
+    "warc_length": 25417
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=144&amp%3bcshs_field_dl_category_tid_policies=&amp%3btitle=&amp%3bcshs_field_dl_category_tid_reports=&amp%3border=field_dl_form_number&amp%3bsort=desc&cshs_field_dl_category_tid_flyers=&title=&cshs_field_dl_category_tid_policies=&combine=&qt-content-tab=5&page=0%2c5&cshs_field_dl_category_tid_reports&order=field_dl_form_number&sort=asc",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__ff4091dc0f95.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00303.warc.gz",
+    "warc_offset": 343776941,
+    "warc_length": 24973
+  },
+  {
+    "url": "https://ot.az.gov/forms",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/forms__59f286c528d3.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00306.warc.gz",
+    "warc_offset": 562780540,
+    "warc_length": 13305
+  },
+  {
+    "url": "https://azsdwis.azdeq.gov/dww_ext/jsp/tcrfieldresults.jsp?tinwsys_is_number=1060&tinwsys_st_code=az&tsasampl_is_number=1982011&tsasampl_st_code=az",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/dww_ext_jsp_tcrfieldresults.jsp__8de5df552d3b.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00312.warc.gz",
+    "warc_offset": 260272842,
+    "warc_length": 3687
+  },
+  {
+    "url": "https://azsdwis.azdeq.gov/dww_ext/jsp/tcrfieldresults.jsp?tinwsys_is_number=8207&tinwsys_st_code=az&tsasampl_is_number=1861816&tsasampl_st_code=az",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/dww_ext_jsp_tcrfieldresults.jsp__0ed9240df5a2.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00317.warc.gz",
+    "warc_offset": 265848802,
+    "warc_length": 3673
+  },
+  {
+    "url": "https://personnel.az.gov/node/81",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/node_81__480946d2b0e0.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00318.warc.gz",
+    "warc_offset": 576021069,
+    "warc_length": 11877
+  },
+  {
+    "url": "https://ot.az.gov/sitemap/r?order=title&sort=desc",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/sitemap_r__0a8c60089485.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00319.warc.gz",
+    "warc_offset": 543508854,
+    "warc_length": 13189
+  },
+  {
+    "url": "https://personnel.az.gov/node/82",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/node_82__c6a4f24e05ae.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00319.warc.gz",
+    "warc_offset": 554163656,
+    "warc_length": 13679
+  },
+  {
+    "url": "https://personnel.az.gov/public-information-and-records-request-form",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/public-information-and-records-request-form__a5f0d791a4e2.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00320.warc.gz",
+    "warc_offset": 573448620,
+    "warc_length": 14093
+  },
+  {
+    "url": "https://personnel.az.gov/node/84",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/node_84__2e7c34076627.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00321.warc.gz",
+    "warc_offset": 555086495,
+    "warc_length": 12073
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=176&amp%3bqt-content-tab=0&title=&cshs_field_dl_category_tid_flyers=&qt-content-tab=0&combine=&page=0%2c6&cshs_field_dl_category_tid_reports&order=field_dl_form_number&sort=asc",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__e54234ba38e5.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00327.warc.gz",
+    "warc_offset": 332316289,
+    "warc_length": 24430
+  },
+  {
+    "url": "https://des.az.gov/documents-center?cshs_field_dl_category_tid_forms=144&amp%3bcshs_field_dl_category_tid_policies=&amp%3btitle=&amp%3bcshs_field_dl_category_tid_reports=&amp%3border=title&amp%3bsort=desc&title=&cshs_field_dl_category_tid_flyers=&cshs_field_dl_category_tid_policies=&combine=&qt-content-tab=5&page=0%2c3&cshs_field_dl_category_tid_reports&order=field_dl_effective_date&sort=asc",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AZ/raw_html/documents-center__182e83a5d38e.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00327.warc.gz",
+    "warc_offset": 332290398,
+    "warc_length": 24802
+  }
+]

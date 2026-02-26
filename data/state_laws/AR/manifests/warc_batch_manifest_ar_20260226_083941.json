@@ -1,0 +1,1298 @@
+[
+  {
+    "url": "http://www.arkansas.gov/dhhs/newdhs/countyoffice/dhscountyoffices.htm",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/dhhs_newdhs_countyoffice_dhscountyoffices.htm__a6969a9414c5.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00001.warc.gz",
+    "warc_offset": 4473914,
+    "warc_length": 668
+  },
+  {
+    "url": "https://humanservices.arkansas.gov/newdhs/countyoffice/dhscountyoffices.htm",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/newdhs_countyoffice_dhscountyoffices.htm__ce90a616682f.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00008.warc.gz",
+    "warc_offset": 11965165,
+    "warc_length": 749
+  },
+  {
+    "url": "http://humanservices.arkansas.gov/about-dhs/dccece",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/about-dhs_dccece__374688d405be.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00016.warc.gz",
+    "warc_offset": 1486505,
+    "warc_length": 480
+  },
+  {
+    "url": "https://arkansasag.gov/site/assets/files/2552/2020_npm_quarterly_certification_form.pdf",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/site_assets_files_2552_2020_npm_quarterly_certification_form.pdf__dd2929a6234e.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00018.warc.gz",
+    "warc_offset": 7867223,
+    "warc_length": 9770
+  },
+  {
+    "url": "http://humanservices.arkansas.gov/chilnfam",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/chilnfam__a6765e4d9288.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00025.warc.gz",
+    "warc_offset": 2199982,
+    "warc_length": 475
+  },
+  {
+    "url": "http://www.dfa.arkansas.gov/",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/index__652ed8315d9e.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00026.warc.gz",
+    "warc_offset": 4809539,
+    "warc_length": 468
+  },
+  {
+    "url": "http://www.arkansas.gov/asc/forms.html",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/asc_forms.html__ba187dbe97a2.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00033.warc.gz",
+    "warc_offset": 4615578,
+    "warc_length": 2177
+  },
+  {
+    "url": "http://www.arkansas.gov/dhs/dmhs/alco_drug_abuse_prevention.htm",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/dhs_dmhs_alco_drug_abuse_prevention.htm__e5f3e72f099a.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00053.warc.gz",
+    "warc_offset": 4718726,
+    "warc_length": 679
+  },
+  {
+    "url": "http://www.arkansas.gov/government/agency-detail/governor-office-of",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/government_agency-detail_governor-office-of__2a9ce25e418b.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00060.warc.gz",
+    "warc_offset": 3979567,
+    "warc_length": 678
+  },
+  {
+    "url": "http://www.arkansas.gov/childcare/services/printedmats/pdf/sal/mayjune08.pdf",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/childcare_services_printedmats_pdf_sal_mayjune08.pdf__b62565518f2f.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00063.warc.gz",
+    "warc_offset": 4398422,
+    "warc_length": 698
+  },
+  {
+    "url": "http://www.arkansas.gov/dfa/abc_administration/abcadm_index.html",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/dfa_abc_administration_abcadm_index.html__878c5a2e79eb.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00067.warc.gz",
+    "warc_offset": 3906320,
+    "warc_length": 670
+  },
+  {
+    "url": "https://www.arkansas.gov/sbec/contact-us/backpage.html",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/sbec_contact-us_backpage.html__bb761ec57f69.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00071.warc.gz",
+    "warc_offset": 22084003,
+    "warc_length": 3812
+  },
+  {
+    "url": "http://www.arkansas.gov/clb",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/clb__7fc2fc1a45a5.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00080.warc.gz",
+    "warc_offset": 4035183,
+    "warc_length": 640
+  },
+  {
+    "url": "http://arkansasag.gov/programs/seniors/",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/programs_seniors__d4a3bade535b.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00082.warc.gz",
+    "warc_offset": 261307,
+    "warc_length": 715
+  },
+  {
+    "url": "http://jddc.arkansas.gov/",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/index__22502cddba03.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00093.warc.gz",
+    "warc_offset": 1956354,
+    "warc_length": 767
+  },
+  {
+    "url": "https://arkansasag.gov/news-and-consumer-alerts/details/judge-sides-with-the-state-orders-credit-repair-agency-to-cease-operation",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/news-and-consumer-alerts_details_judge-sides-with-the-state-orders-credit-repair-agency-to-cease-operation__3c4db9e6f412.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00098.warc.gz",
+    "warc_offset": 7787992,
+    "warc_length": 9805
+  },
+  {
+    "url": "https://arkansasag.gov/consumer-protection/money/one/credit-repair-scams/",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/consumer-protection_money_one_credit-repair-scams__9167b75d6bbb.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00102.warc.gz",
+    "warc_offset": 9027797,
+    "warc_length": 9768
+  },
+  {
+    "url": "http://www.arkansas.gov/dhs/chilnfam/",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/dhs_chilnfam__851ed31a5b9a.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00106.warc.gz",
+    "warc_offset": 4847481,
+    "warc_length": 658
+  },
+  {
+    "url": "https://portal.arkansas.gov/help-center/how-may-we-assist-you",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/help-center_how-may-we-assist-you__1b40c13859f0.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00120.warc.gz",
+    "warc_offset": 16018052,
+    "warc_length": 602
+  },
+  {
+    "url": "https://portal.arkansas.gov/agency/department-of-health/employees/anthony-jones-4/",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/agency_department-of-health_employees_anthony-jones-4__686de62ea247.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00124.warc.gz",
+    "warc_offset": 15871278,
+    "warc_length": 618
+  },
+  {
+    "url": "http://www.arkansas.gov/clb/search.php",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/clb_search.php__30b5a5a04055.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00129.warc.gz",
+    "warc_offset": 4506143,
+    "warc_length": 659
+  },
+  {
+    "url": "https://portal.arkansas.gov/government/agency-detail/governor-office-of",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/government_agency-detail_governor-office-of__dc97fa786b58.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00134.warc.gz",
+    "warc_offset": 14769844,
+    "warc_length": 611
+  },
+  {
+    "url": "http://arkansasag.gov/news-and-consumer-alerts/details/attorney-generals-office-to-host-winter-webcast-series",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/news-and-consumer-alerts_details_attorney-generals-office-to-host-winter-webcast-series__161096495a53.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00140.warc.gz",
+    "warc_offset": 349577,
+    "warc_length": 768
+  },
+  {
+    "url": "https://portal.arkansas.gov/agency/arkansas-state-game-and-fish-commission/news/cwd-positive-deer-confirmed-in-logan-county/",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/agency_arkansas-state-game-and-fish-commission_news_cwd-positive-deer-confirmed-in-logan-county__308c499269ce.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00147.warc.gz",
+    "warc_offset": 15246159,
+    "warc_length": 644
+  },
+  {
+    "url": "http://www.arkansas.gov/sitemap.php",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/sitemap.php__44c0f49e89ff.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00150.warc.gz",
+    "warc_offset": 4150025,
+    "warc_length": 650
+  },
+  {
+    "url": "https://portal.arkansas.gov/agency/department-of-health/employees/bobby-smith-34/",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/agency_department-of-health_employees_bobby-smith-34__1920cd4b32e6.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00156.warc.gz",
+    "warc_offset": 14729800,
+    "warc_length": 617
+  },
+  {
+    "url": "https://arkansasag.gov/news-and-consumer-alerts/details/attorney-generals-office-to-host-winter-webcast-series",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/news-and-consumer-alerts_details_attorney-generals-office-to-host-winter-webcast-series__cdbd15c60517.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00171.warc.gz",
+    "warc_offset": 7671978,
+    "warc_length": 9785
+  },
+  {
+    "url": "http://www.arkansas.gov/swlb/",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/swlb__4e73a095b9ec.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00172.warc.gz",
+    "warc_offset": 4439696,
+    "warc_length": 469
+  },
+  {
+    "url": "https://humanservices.arkansas.gov/dccece/pages/default.aspx",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/dccece_pages_default.aspx__1c31f2bf592d.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00192.warc.gz",
+    "warc_offset": 12747087,
+    "warc_length": 689
+  },
+  {
+    "url": "http://www.arkansas.gov/childcare/newsandevents/task%20force%20report.pdf",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/childcare_newsandevents_task_20force_20report.pdf__9116f18fa3f9.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00193.warc.gz",
+    "warc_offset": 4025765,
+    "warc_length": 704
+  },
+  {
+    "url": "http://www.arkansas.gov/help-center",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/help-center__1f2a32b10746.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00200.warc.gz",
+    "warc_offset": 4001785,
+    "warc_length": 658
+  },
+  {
+    "url": "http://www.ag.state.ar.us/consumers_consumer_complaints.html",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/consumers_consumer_complaints.html__edf2b7178d6b.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00203.warc.gz",
+    "warc_offset": 4463493,
+    "warc_length": 5262
+  },
+  {
+    "url": "https://arkansasag.gov/consumer-protection/lemonlaw/arkansas-lemon-law",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/consumer-protection_lemonlaw_arkansas-lemon-law__426d1cfb4b7a.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00207.warc.gz",
+    "warc_offset": 8443965,
+    "warc_length": 9746
+  },
+  {
+    "url": "https://portal.arkansas.gov/business",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/business__acff743e726b.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00207.warc.gz",
+    "warc_offset": 16268893,
+    "warc_length": 588
+  },
+  {
+    "url": "https://arkansasag.gov/news-and-consumer-alerts/details/arkansas-and-texas-lead-coalition-against-delaware-to-reclaim-money",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/news-and-consumer-alerts_details_arkansas-and-texas-lead-coalition-against-delaware-to-reclaim-money__daaebe590ec7.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00214.warc.gz",
+    "warc_offset": 7509332,
+    "warc_length": 9794
+  },
+  {
+    "url": "https://arkansasag.gov/programs/criminal-justice/crime-victim-reparations",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/programs_criminal-justice_crime-victim-reparations__b672dffc71ba.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00215.warc.gz",
+    "warc_offset": 7674506,
+    "warc_length": 9771
+  },
+  {
+    "url": "https://portal.arkansas.gov/education",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/education__6c0437351781.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00217.warc.gz",
+    "warc_offset": 16218042,
+    "warc_length": 591
+  },
+  {
+    "url": "https://portal.arkansas.gov/agency/department-of-health/employees/charles-carter-6/",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/agency_department-of-health_employees_charles-carter-6__87fc2704a011.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00233.warc.gz",
+    "warc_offset": 15709577,
+    "warc_length": 621
+  },
+  {
+    "url": "https://humanservices.arkansas.gov/chilnfam",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/chilnfam__bfb1e2964854.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00234.warc.gz",
+    "warc_offset": 11796779,
+    "warc_length": 727
+  },
+  {
+    "url": "http://arkansasag.gov/our-office/sponsored-events/missing-persons-initiative",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/our-office_sponsored-events_missing-persons-initiative__42c3b6f30066.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00236.warc.gz",
+    "warc_offset": 287475,
+    "warc_length": 742
+  },
+  {
+    "url": "http://arkansasag.gov/consumer-protection/resources/column-one/legal-resources/guide-to-small-claims-court/",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/consumer-protection_resources_column-one_legal-resources_guide-to-small-claims-court__c9824314e6fc.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00238.warc.gz",
+    "warc_offset": 341072,
+    "warc_length": 760
+  },
+  {
+    "url": "https://arkansasag.gov/programs/arkansas-lawyer/charities-registration",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/programs_arkansas-lawyer_charities-registration__72b27abe8ed8.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00241.warc.gz",
+    "warc_offset": 8087044,
+    "warc_length": 9763
+  },
+  {
+    "url": "https://portal.arkansas.gov/government/agency-detail/carroll-county",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/government_agency-detail_carroll-county__37f7ba109db9.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00267.warc.gz",
+    "warc_offset": 15465234,
+    "warc_length": 609
+  },
+  {
+    "url": "http://www.arkansas.gov/senate/senatorsearch.html",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/senate_senatorsearch.html__a65c2b8746ae.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00271.warc.gz",
+    "warc_offset": 4248585,
+    "warc_length": 478
+  },
+  {
+    "url": "http://arkansasag.gov/programs/arkansas-lawyer/charities-registration",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/programs_arkansas-lawyer_charities-registration__ed7b649de7b9.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00274.warc.gz",
+    "warc_offset": 266508,
+    "warc_length": 731
+  },
+  {
+    "url": "https://arkansasag.gov/news-and-consumer-alerts/details/rutledge-reaches-settlement-with-children-of-veterans-foundation",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/news-and-consumer-alerts_details_rutledge-reaches-settlement-with-children-of-veterans-foundation__152862e47423.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00275.warc.gz",
+    "warc_offset": 7441013,
+    "warc_length": 9784
+  },
+  {
+    "url": "http://www.arkansas.gov/business",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/business__a7b09aa23cad.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00281.warc.gz",
+    "warc_offset": 4105744,
+    "warc_length": 658
+  },
+  {
+    "url": "https://www.arkansas.gov/senate/senatorsearch.html",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/senate_senatorsearch.html__fb00cf436a04.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00286.warc.gz",
+    "warc_offset": 18439063,
+    "warc_length": 634
+  },
+  {
+    "url": "https://arkansasag.gov/programs/seniors/",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/programs_seniors__66fae1810612.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00289.warc.gz",
+    "warc_offset": 7047447,
+    "warc_length": 9745
+  },
+  {
+    "url": "https://psychologyboard.arkansas.gov/pages/default.aspx",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/pages_default.aspx__95471fcfbe8d.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00290.warc.gz",
+    "warc_offset": 15785303,
+    "warc_length": 8397
+  },
+  {
+    "url": "http://www.arkansas.gov/clb/search_code.php?company_info=2275431&contractor_name=&city=&county=&license_no=0253990315&div_name=&state=&commercial=&residential=&specialty=&search=submit",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/clb_search_code.php__cd167c1d10ed.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00303.warc.gz",
+    "warc_offset": 3987269,
+    "warc_length": 807
+  },
+  {
+    "url": "http://humanservices.arkansas.gov/chilnfam/",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/chilnfam__35abf5741db1.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00310.warc.gz",
+    "warc_offset": 1664595,
+    "warc_length": 476
+  },
+  {
+    "url": "http://humanservices.arkansas.gov/newdhs/countyoffice/dhscountyoffices.htm",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/newdhs_countyoffice_dhscountyoffices.htm__63f17874dae9.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00327.warc.gz",
+    "warc_offset": 1610030,
+    "warc_length": 495
+  },
+  {
+    "url": "https://portal.arkansas.gov/agency/governors-office/news/governor-hutchinsons-weekly-address-setting-the-pace-in-computer-science-education/",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/agency_governors-office_news_governor-hutchinsons-weekly-address-setting-the-pace-in-computer-science-education__143ca5c5c3c3.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00340.warc.gz",
+    "warc_offset": 16147493,
+    "warc_length": 651
+  },
+  {
+    "url": "https://arkansasag.gov/programs/arkansas-lawyer/charities-registration/",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/programs_arkansas-lawyer_charities-registration__3a69f5f5dc43.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00350.warc.gz",
+    "warc_offset": 7248177,
+    "warc_length": 9758
+  },
+  {
+    "url": "http://arkansasag.gov/consumer-protection/vehicle/column-two/salvage-title-vehicles/",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/consumer-protection_vehicle_column-two_salvage-title-vehicles__7134d13fbc1a.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00351.warc.gz",
+    "warc_offset": 281142,
+    "warc_length": 747
+  },
+  {
+    "url": "https://www.arkansas.gov/government/agency-detail/carroll-county",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/government_agency-detail_carroll-county__5e6b0c996477.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00368.warc.gz",
+    "warc_offset": 20326271,
+    "warc_length": 653
+  },
+  {
+    "url": "http://arkansasag.gov/news-and-consumer-alerts/details/rutledge-reaches-settlement-with-children-of-veterans-foundation",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/news-and-consumer-alerts_details_rutledge-reaches-settlement-with-children-of-veterans-foundation__fa0f110e40ea.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00372.warc.gz",
+    "warc_offset": 265883,
+    "warc_length": 768
+  },
+  {
+    "url": "https://portal.arkansas.gov/agency/department-of-finance-and-administration/arkansas-tobacco-control-board/events/arkansas-tobacco-control-board-meeting-32/",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/agency_department-of-finance-and-administration_arkansas-tobacco-control-board_events_arkansas-tobacco-control-board-meeting-32__d5516aee60c0.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00376.warc.gz",
+    "warc_offset": 14475894,
+    "warc_length": 649
+  },
+  {
+    "url": "http://www.arkansas.gov/asbpa/rules_2009/rule-3.pdf",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/asbpa_rules_2009_rule-3.pdf__cd94c7dbfa19.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00383.warc.gz",
+    "warc_offset": 4092048,
+    "warc_length": 664
+  },
+  {
+    "url": "http://www.arkansas.gov/education",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/education__28cdc2436fe3.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00383.warc.gz",
+    "warc_offset": 4093480,
+    "warc_length": 656
+  },
+  {
+    "url": "http://www.arkansas.gov/clb/search_code.php?company_info=737094&contractor_name=monroe+roofing+inc&city=&county=&license_no=&state=&commercial=&residential=&specialty=&search=submit",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/clb_search_code.php__360937948487.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00392.warc.gz",
+    "warc_offset": 4640180,
+    "warc_length": 809
+  },
+  {
+    "url": "https://portal.arkansas.gov/agency/department-of-education/employees/lisa-johnson-6/",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/agency_department-of-education_employees_lisa-johnson-6__8342932369b7.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00394.warc.gz",
+    "warc_offset": 14650427,
+    "warc_length": 621
+  },
+  {
+    "url": "http://www.arkansas.gov/dhs/chilnfam",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/dhs_chilnfam__6d0ec27c2841.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00405.warc.gz",
+    "warc_offset": 4640316,
+    "warc_length": 658
+  },
+  {
+    "url": "http://arkansasag.gov/programs/criminal-justice/crime-victim-reparations",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/programs_criminal-justice_crime-victim-reparations__1e070965878e.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00406.warc.gz",
+    "warc_offset": 282014,
+    "warc_length": 735
+  },
+  {
+    "url": "http://arkansasag.gov/media-center/consumer-alerts/first-time-renter/",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/media-center_consumer-alerts_first-time-renter__e22ce3729013.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00430.warc.gz",
+    "warc_offset": 314494,
+    "warc_length": 733
+  },
+  {
+    "url": "http://www.arkansas.gov/abep",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/abep__1ab8065a2eff.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00453.warc.gz",
+    "warc_offset": 4341578,
+    "warc_length": 666
+  },
+  {
+    "url": "http://aclb.arkansas.gov/",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/index__9a51a1b08a36.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00460.warc.gz",
+    "warc_offset": 99169,
+    "warc_length": 770
+  },
+  {
+    "url": "https://portal.arkansas.gov/agency/department-of-health/employees/jeannie-newman-90/",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/agency_department-of-health_employees_jeannie-newman-90__e73b2fa5c8ff.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00487.warc.gz",
+    "warc_offset": 15223287,
+    "warc_length": 622
+  },
+  {
+    "url": "http://www.arkansas.gov/adfa/nsp/neighborhood_stabilization_p.htm",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/adfa_nsp_neighborhood_stabilization_p.htm__4d934243d586.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00494.warc.gz",
+    "warc_offset": 3679987,
+    "warc_length": 678
+  },
+  {
+    "url": "https://arkansasag.gov/programs/consumer-protection/my-vehicle/gap-insurance",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/programs_consumer-protection_my-vehicle_gap-insurance__f25c26b0fc9e.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00499.warc.gz",
+    "warc_offset": 7085124,
+    "warc_length": 776
+  },
+  {
+    "url": "http://arkansasag.gov/news-and-consumer-alerts/details/arkansas-and-texas-lead-coalition-against-delaware-to-reclaim-money",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/news-and-consumer-alerts_details_arkansas-and-texas-lead-coalition-against-delaware-to-reclaim-money__9caaaf98f89a.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00501.warc.gz",
+    "warc_offset": 305149,
+    "warc_length": 765
+  },
+  {
+    "url": "https://humanservices.arkansas.gov/chilnfam/",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/chilnfam__cc4cf2d6a365.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00501.warc.gz",
+    "warc_offset": 11908125,
+    "warc_length": 732
+  },
+  {
+    "url": "http://psychologyboard.arkansas.gov/pages/default.aspx",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/pages_default.aspx__b9132cb60d88.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00513.warc.gz",
+    "warc_offset": 3121328,
+    "warc_length": 663
+  },
+  {
+    "url": "http://arkansasag.gov/news-and-consumer-alerts/details/statement-from-the-attorney-general6",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/news-and-consumer-alerts_details_statement-from-the-attorney-general6__26ada0a44281.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00528.warc.gz",
+    "warc_offset": 321739,
+    "warc_length": 748
+  },
+  {
+    "url": "http://arkansasag.gov/arkansas-lawyer/opinions-department/opinions-search/",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/arkansas-lawyer_opinions-department_opinions-search__988bbd959701.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00530.warc.gz",
+    "warc_offset": 294158,
+    "warc_length": 727
+  },
+  {
+    "url": "https://portal.arkansas.gov/help-center",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/help-center__96845753a495.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00546.warc.gz",
+    "warc_offset": 15975885,
+    "warc_length": 586
+  },
+  {
+    "url": "http://www.arkansas.gov/education/scholarship-and-financial-aid-information",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/education_scholarship-and-financial-aid-information__0b378ca03c01.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00550.warc.gz",
+    "warc_offset": 4190877,
+    "warc_length": 681
+  },
+  {
+    "url": "https://portal.arkansas.gov/education/scholarship-and-financial-aid-information",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/education_scholarship-and-financial-aid-information__1564854b4ded.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00560.warc.gz",
+    "warc_offset": 16388936,
+    "warc_length": 614
+  },
+  {
+    "url": "http://adfa.arkansas.gov/",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/index__654be9116e47.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00562.warc.gz",
+    "warc_offset": 182385,
+    "warc_length": 576
+  },
+  {
+    "url": "https://humanservices.arkansas.gov/dmhs/alco_drug_abuse_prevention.htm",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/dmhs_alco_drug_abuse_prevention.htm__2aaa56c64163.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00576.warc.gz",
+    "warc_offset": 11923525,
+    "warc_length": 754
+  },
+  {
+    "url": "http://www.arkansas.gov/jddc/pdf/boeckmann-amended-jan-19-2015.pdf",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/jddc_pdf_boeckmann-amended-jan-19-2015.pdf__0a685fd7590f.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00579.warc.gz",
+    "warc_offset": 4702908,
+    "warc_length": 673
+  },
+  {
+    "url": "http://www.arkansas.gov/asbpa/rules_2013/rule-13.pdf",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/asbpa_rules_2013_rule-13.pdf__320093d9a544.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00583.warc.gz",
+    "warc_offset": 3920865,
+    "warc_length": 668
+  },
+  {
+    "url": "https://arkansasag.gov/our-office/sponsored-events/missing-persons-initiative",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/our-office_sponsored-events_missing-persons-initiative__ca4145ece231.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00589.warc.gz",
+    "warc_offset": 8166886,
+    "warc_length": 9758
+  },
+  {
+    "url": "http://www.arkansas.gov/help-center/how-may-we-assist-you",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/help-center_how-may-we-assist-you__43bef7f374e1.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00590.warc.gz",
+    "warc_offset": 4159099,
+    "warc_length": 674
+  },
+  {
+    "url": "http://arkansasag.gov/programs/arkansas-lawyer/charities-registration/",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/programs_arkansas-lawyer_charities-registration__91d3f4199562.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00605.warc.gz",
+    "warc_offset": 313235,
+    "warc_length": 728
+  },
+  {
+    "url": "http://humanservices.arkansas.gov/dmhs/alco_drug_abuse_prevention.htm",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/dmhs_alco_drug_abuse_prevention.htm__c8cc4440607c.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00609.warc.gz",
+    "warc_offset": 1774492,
+    "warc_length": 498
+  },
+  {
+    "url": "http://www.arkansas.gov/clb/search.html",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/clb_search.html__7d3e8675526c.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00610.warc.gz",
+    "warc_offset": 4083206,
+    "warc_length": 655
+  },
+  {
+    "url": "http://www.arkansas.gov/abec/abec_license_info.html",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/abec_abec_license_info.html__fdf18964111a.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00612.warc.gz",
+    "warc_offset": 4226514,
+    "warc_length": 671
+  },
+  {
+    "url": "http://arkansasag.gov/news-and-consumer-alerts/details/judge-sides-with-the-state-orders-credit-repair-agency-to-cease-operation",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/news-and-consumer-alerts_details_judge-sides-with-the-state-orders-credit-repair-agency-to-cease-operation__f2eeedd4480a.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00641.warc.gz",
+    "warc_offset": 343772,
+    "warc_length": 778
+  },
+  {
+    "url": "https://portal.arkansas.gov/agency/department-of-health/employees/lisa-johnson-7/",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/agency_department-of-health_employees_lisa-johnson-7__e5f574529010.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00649.warc.gz",
+    "warc_offset": 15767539,
+    "warc_length": 618
+  },
+  {
+    "url": "https://www.arkansas.gov/swlb/",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/swlb__5f06fd034e3f.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00651.warc.gz",
+    "warc_offset": 20941998,
+    "warc_length": 675
+  },
+  {
+    "url": "https://arkansasag.gov/consumer-protection/resources/column-one/legal-resources/guide-to-small-claims-court/",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/consumer-protection_resources_column-one_legal-resources_guide-to-small-claims-court__b73fc2eb0dbb.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00653.warc.gz",
+    "warc_offset": 8425057,
+    "warc_length": 786
+  },
+  {
+    "url": "https://arkansasag.gov/news-and-consumer-alerts/details/statement-from-the-attorney-general6",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/news-and-consumer-alerts_details_statement-from-the-attorney-general6__5e335fcbdb4c.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00655.warc.gz",
+    "warc_offset": 7168950,
+    "warc_length": 9775
+  },
+  {
+    "url": "http://humanservices.arkansas.gov/dccece/pages/default.aspx",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/dccece_pages_default.aspx__5173b37d8422.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00657.warc.gz",
+    "warc_offset": 1652664,
+    "warc_length": 488
+  },
+  {
+    "url": "http://asbpa.arkansas.gov/",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/index__d344da711123.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00659.warc.gz",
+    "warc_offset": 454777,
+    "warc_length": 764
+  },
+  {
+    "url": "http://www.arkansas.gov/childcare/general/infantframework.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/childcare_general_infantframework.pdf__223008a76c24.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00666.warc.gz",
+    "warc_offset": 4480363,
+    "warc_length": 693
+  },
+  {
+    "url": "http://www.arkansas.gov/dhs/newdhs/countyoffice/dhscountyoffices.htm",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/dhs_newdhs_countyoffice_dhscountyoffices.htm__ef9761de762a.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00675.warc.gz",
+    "warc_offset": 3927272,
+    "warc_length": 677
+  },
+  {
+    "url": "https://portal.arkansas.gov/agency/department-of-education/employees/saraj-goldberg-6/",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/agency_department-of-education_employees_saraj-goldberg-6__28e96a2bb392.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00711.warc.gz",
+    "warc_offset": 15210122,
+    "warc_length": 621
+  },
+  {
+    "url": "http://www.arkansas.gov/esd/ui/pdf/500%20booklet%208x11%20art%20v01-25-16.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/esd_ui_pdf_500_20booklet_208x11_20art_20v01-25-16.pdf__2aa5fe83fd0c.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00719.warc.gz",
+    "warc_offset": 4068442,
+    "warc_length": 2211
+  },
+  {
+    "url": "http://aclb.arkansas.gov/robots.txt",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/robots.txt__471381cc6127.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/robotstxt/CC-MAIN-20210115134101-20210115164101-00055.warc.gz",
+    "warc_offset": 59360,
+    "warc_length": 777
+  },
+  {
+    "url": "https://www.asbpa.arkansas.gov/robots.txt",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/robots.txt__898240d158b1.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/robotstxt/CC-MAIN-20210115134101-20210115164101-00056.warc.gz",
+    "warc_offset": 2441805,
+    "warc_length": 893
+  },
+  {
+    "url": "https://adfa.arkansas.gov/robots.txt",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/robots.txt__cf6f9b684c87.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/robotstxt/CC-MAIN-20210115134101-20210115164101-00060.warc.gz",
+    "warc_offset": 1191159,
+    "warc_length": 562
+  },
+  {
+    "url": "https://www.dfa.arkansas.gov/robots.txt",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/robots.txt__0fd6fedd4a6d.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/robotstxt/CC-MAIN-20210115134101-20210115164101-00070.warc.gz",
+    "warc_offset": 2907962,
+    "warc_length": 616
+  },
+  {
+    "url": "https://www.arkansasag.gov/robots.txt",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/robots.txt__59390909c93e.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/robotstxt/CC-MAIN-20210115134101-20210115164101-00079.warc.gz",
+    "warc_offset": 2666644,
+    "warc_length": 769
+  },
+  {
+    "url": "http://jddc.arkansas.gov/robots.txt",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/robots.txt__ae977857dc6f.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/robotstxt/CC-MAIN-20210115134101-20210115164101-00104.warc.gz",
+    "warc_offset": 337171,
+    "warc_length": 779
+  },
+  {
+    "url": "http://arkansasag.gov/robots.txt",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/robots.txt__0b821295d3e4.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/robotstxt/CC-MAIN-20210115134101-20210115164101-00149.warc.gz",
+    "warc_offset": 118041,
+    "warc_length": 711
+  },
+  {
+    "url": "http://asbpa.arkansas.gov/robots.txt",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/robots.txt__7ea3de8de8bc.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/robotstxt/CC-MAIN-20210115134101-20210115164101-00174.warc.gz",
+    "warc_offset": 65879,
+    "warc_length": 777
+  },
+  {
+    "url": "http://psychologyboard.arkansas.gov/robots.txt",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/robots.txt__f95612f674a0.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/robotstxt/CC-MAIN-20210115134101-20210115164101-00218.warc.gz",
+    "warc_offset": 775173,
+    "warc_length": 657
+  },
+  {
+    "url": "http://aclb2.arkansas.gov/robots.txt",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/robots.txt__b4ddcc164fcc.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/robotstxt/CC-MAIN-20210115134101-20210115164101-00231.warc.gz",
+    "warc_offset": 37015,
+    "warc_length": 654
+  },
+  {
+    "url": "https://psychologyboard.arkansas.gov/robots.txt",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/robots.txt__0a57d62cfac8.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/robotstxt/CC-MAIN-20210115134101-20210115164101-00235.warc.gz",
+    "warc_offset": 2119849,
+    "warc_length": 810
+  },
+  {
+    "url": "https://portal.arkansas.gov/robots.txt",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/robots.txt__038258fb629b.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/robotstxt/CC-MAIN-20210115134101-20210115164101-00282.warc.gz",
+    "warc_offset": 1845506,
+    "warc_length": 571
+  },
+  {
+    "url": "http://adfa.arkansas.gov/robots.txt",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/robots.txt__c226ee86360c.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/robotstxt/CC-MAIN-20210115134101-20210115164101-00365.warc.gz",
+    "warc_offset": 39668,
+    "warc_length": 584
+  },
+  {
+    "url": "http://www.arkansas.gov/robots.txt",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/robots.txt__718174b78793.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/robotstxt/CC-MAIN-20210115134101-20210115164101-00436.warc.gz",
+    "warc_offset": 931870,
+    "warc_length": 1217
+  },
+  {
+    "url": "https://arkansasag.gov/robots.txt",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/robots.txt__3b80811b9ed7.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/robotstxt/CC-MAIN-20210115134101-20210115164101-00470.warc.gz",
+    "warc_offset": 1276403,
+    "warc_length": 767
+  },
+  {
+    "url": "http://www.ag.state.ar.us/robots.txt",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/robots.txt__5312b6b346ec.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/robotstxt/CC-MAIN-20210115134101-20210115164101-00492.warc.gz",
+    "warc_offset": 830307,
+    "warc_length": 5268
+  },
+  {
+    "url": "http://humanservices.arkansas.gov/robots.txt",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/robots.txt__bf412f50fc41.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/robotstxt/CC-MAIN-20210115134101-20210115164101-00520.warc.gz",
+    "warc_offset": 340945,
+    "warc_length": 479
+  },
+  {
+    "url": "https://www.jddc.arkansas.gov/robots.txt",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/robots.txt__05cb1a11fbea.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/robotstxt/CC-MAIN-20210115134101-20210115164101-00574.warc.gz",
+    "warc_offset": 2674960,
+    "warc_length": 891
+  },
+  {
+    "url": "https://senate.arkansas.gov/robots.txt",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/robots.txt__5948348c1a10.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/robotstxt/CC-MAIN-20210115134101-20210115164101-00596.warc.gz",
+    "warc_offset": 2318559,
+    "warc_length": 632
+  },
+  {
+    "url": "https://www.arkansas.gov/robots.txt",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/robots.txt__a2441c0c0b82.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/robotstxt/CC-MAIN-20210115134101-20210115164101-00613.warc.gz",
+    "warc_offset": 2378157,
+    "warc_length": 1194
+  },
+  {
+    "url": "https://humanservices.arkansas.gov/robots.txt",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/robots.txt__e3bcdc22c93a.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/robotstxt/CC-MAIN-20210115134101-20210115164101-00633.warc.gz",
+    "warc_offset": 1757030,
+    "warc_length": 734
+  },
+  {
+    "url": "https://www.aclb.arkansas.gov/robots.txt",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/robots.txt__66d6420cfd49.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/robotstxt/CC-MAIN-20210115134101-20210115164101-00653.warc.gz",
+    "warc_offset": 2138682,
+    "warc_length": 892
+  },
+  {
+    "url": "http://www.dfa.arkansas.gov/robots.txt",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/robots.txt__1ee78f6a00f0.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/robotstxt/CC-MAIN-20210115134101-20210115164101-00661.warc.gz",
+    "warc_offset": 943225,
+    "warc_length": 476
+  },
+  {
+    "url": "https://www.arkansas.gov/notifications/index.php",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/notifications_index.php__b12c63e6fc98.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00011.warc.gz",
+    "warc_offset": 757301429,
+    "warc_length": 2394
+  },
+  {
+    "url": "https://portal.arkansas.gov/agency/department-of-parks-heritage-and-tourism/department-of-arkansas-heritage-dah/",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/agency_department-of-parks-heritage-and-tourism_department-of-arkansas-heritage-dah__3e7a415bcdc2.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00012.warc.gz",
+    "warc_offset": 582880152,
+    "warc_length": 6412
+  },
+  {
+    "url": "https://arkansasag.gov/consumer-protection/money/one/credit-cards/",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/consumer-protection_money_one_credit-cards__2a0d50b527c0.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00014.warc.gz",
+    "warc_offset": 251707013,
+    "warc_length": 11919
+  },
+  {
+    "url": "https://arkansasag.gov/site/assets/files/2552/directory_update_2020-8-12.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/site_assets_files_2552_directory_update_2020-8-12.pdf__15a3000f24ba.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00015.warc.gz",
+    "warc_offset": 239083646,
+    "warc_length": 101445
+  },
+  {
+    "url": "https://arkansasag.gov/office/scheduling/",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/office_scheduling__81a9655e6079.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00019.warc.gz",
+    "warc_offset": 246901284,
+    "warc_length": 9414
+  },
+  {
+    "url": "https://portal.arkansas.gov/agency/department-of-health/employees/donna-tate/",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/agency_department-of-health_employees_donna-tate__56de0fa8b593.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00019.warc.gz",
+    "warc_offset": 553047617,
+    "warc_length": 3219
+  },
+  {
+    "url": "http://www.arkansas.gov/alcb/appraiser/",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/alcb_appraiser__08f01419cbe6.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00020.warc.gz",
+    "warc_offset": 127359269,
+    "warc_length": 6768
+  },
+  {
+    "url": "https://arkansasag.gov/arkansas-lawyer/legal-resources/",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/arkansas-lawyer_legal-resources__bfedab9d48d0.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00021.warc.gz",
+    "warc_offset": 246476494,
+    "warc_length": 9967
+  },
+  {
+    "url": "https://arkansasag.gov/site/assets/files/2552/2020_acceptance_of_joint_and_several_liability.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/site_assets_files_2552_2020_acceptance_of_joint_and_several_liability.pdf__7c8c1746fc3c.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00022.warc.gz",
+    "warc_offset": 255935906,
+    "warc_length": 244201
+  },
+  {
+    "url": "https://arkansasag.gov/media-center/press-packet/",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/media-center_press-packet__942ce027002f.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00023.warc.gz",
+    "warc_offset": 241088805,
+    "warc_length": 10456
+  },
+  {
+    "url": "http://www.arkansas.gov/alcb/calendar/day/2019/07/11/",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/alcb_calendar_day_2019_07_11__5c8f9748ca92.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00024.warc.gz",
+    "warc_offset": 133253803,
+    "warc_length": 4404
+  },
+  {
+    "url": "https://www.arkansas.gov/tss/procurement/bids/get_document.php/popup?doc_id=16235&doc_type=pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/tss_procurement_bids_get_document.php_popup__320f8d4101bc.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00025.warc.gz",
+    "warc_offset": 779810344,
+    "warc_length": 187650
+  },
+  {
+    "url": "https://portal.arkansas.gov/agency/department-of-commerce/minority-business-advisory-council/",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/agency_department-of-commerce_minority-business-advisory-council__004df1fd3f61.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00027.warc.gz",
+    "warc_offset": 568640772,
+    "warc_length": 3707
+  },
+  {
+    "url": "https://arkansasag.gov/media-center/sign-up-for-alerts/",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/media-center_sign-up-for-alerts__2367ad50f633.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00028.warc.gz",
+    "warc_offset": 247234680,
+    "warc_length": 10058
+  },
+  {
+    "url": "https://portal.arkansas.gov/agency/department-of-finance-and-administration/directors-office/management-services-division/office-of-information-services/employees/kyle-hagerman/",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/agency_department-of-finance-and-administration_directors-office_management-services-division_office-of-information-services_employees_kyle-hagerman__5e259bdbd44a.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00029.warc.gz",
+    "warc_offset": 591603088,
+    "warc_length": 3309
+  },
+  {
+    "url": "https://portal.arkansas.gov/agency/department-of-education/arkansas-school-for-the-blind/employees/leslie-blaylock/",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/agency_department-of-education_arkansas-school-for-the-blind_employees_leslie-blaylock__70901031f5a5.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00030.warc.gz",
+    "warc_offset": 576535909,
+    "warc_length": 3295
+  },
+  {
+    "url": "https://portal.arkansas.gov/agency/department-of-finance-and-administration/directors-office/revenue-division/office-of-field-audit-administration/employees/martina-franklin/",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/agency_department-of-finance-and-administration_directors-office_revenue-division_office-of-field-audit-administration_employees_martina-franklin__3dd177b8cecc.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00030.warc.gz",
+    "warc_offset": 576540220,
+    "warc_length": 3307
+  },
+  {
+    "url": "https://arkansasag.gov/media-center/news-releases/rutledge-delivers-statewide-advisory-to-alarm-companies/",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/media-center_news-releases_rutledge-delivers-statewide-advisory-to-alarm-companies__311aae9a08e9.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00032.warc.gz",
+    "warc_offset": 250911516,
+    "warc_length": 10335
+  },
+  {
+    "url": "https://adfa.arkansas.gov/",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/index__74615e5efd2c.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00033.warc.gz",
+    "warc_offset": 220886924,
+    "warc_length": 4937
+  },
+  {
+    "url": "https://arkansasag.gov/arkansas-lawyer/public-protection/column-two/environmental/",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/arkansas-lawyer_public-protection_column-two_environmental__07c86720a182.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00034.warc.gz",
+    "warc_offset": 248326148,
+    "warc_length": 10124
+  },
+  {
+    "url": "https://portal.arkansas.gov/agency/department-of-veterans-affairs/arkansas-state-veterans-home-at-north-little-rock/employees/christina-robinson/",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/agency_department-of-veterans-affairs_arkansas-state-veterans-home-at-north-little-rock_employees_christina-robinson__b59dc1f4be2f.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00034.warc.gz",
+    "warc_offset": 559587367,
+    "warc_length": 3325
+  },
+  {
+    "url": "https://portal.arkansas.gov/agency/department-of-labor-and-licensing/arkansas-towing-and-recovery-board/",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/agency_department-of-labor-and-licensing_arkansas-towing-and-recovery-board__3fb3d447194d.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00041.warc.gz",
+    "warc_offset": 585105309,
+    "warc_length": 4091
+  },
+  {
+    "url": "https://portal.arkansas.gov/agency/department-of-human-services/events/",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/agency_department-of-human-services_events__f0ead92b9c7e.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00043.warc.gz",
+    "warc_offset": 578626908,
+    "warc_length": 3486
+  },
+  {
+    "url": "https://portal.arkansas.gov/agency/department-of-labor-and-licensing/arkansas-manufactured-home-commission/",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/agency_department-of-labor-and-licensing_arkansas-manufactured-home-commission__2d2960159c0d.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00043.warc.gz",
+    "warc_offset": 578631348,
+    "warc_length": 4825
+  },
+  {
+    "url": "https://portal.arkansas.gov/agency/department-of-finance-and-administration/directors-office/revenue-division/office-of-state-revenue-office-administration/employees/holli-ellis/",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/agency_department-of-finance-and-administration_directors-office_revenue-division_office-of-state-revenue-office-administration_employees_holli-ellis__ff495130862e.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00045.warc.gz",
+    "warc_offset": 562209705,
+    "warc_length": 3289
+  },
+  {
+    "url": "https://portal.arkansas.gov/agency/information-network-of-arkansas/service/title-registration-and-lien-record-search/",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/agency_information-network-of-arkansas_service_title-registration-and-lien-record-search__e25709998e1c.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00045.warc.gz",
+    "warc_offset": 562214003,
+    "warc_length": 3174
+  },
+  {
+    "url": "https://portal.arkansas.gov/agency/department-of-veterans-affairs/veteran-services/district-veteran-service-office-5/employees/nicholas-bertucci-2/",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/agency_department-of-veterans-affairs_veteran-services_district-veteran-service-office-5_employees_nicholas-bertucci-2__7f2084730fb2.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00046.warc.gz",
+    "warc_offset": 576980054,
+    "warc_length": 3291
+  },
+  {
+    "url": "https://arkansasag.gov/public-safety/seniors/",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/public-safety_seniors__dd07b2e41172.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00048.warc.gz",
+    "warc_offset": 254929040,
+    "warc_length": 9983
+  },
+  {
+    "url": "https://portal.arkansas.gov/agency/department-of-health/employees/corrin-kastner/",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/agency_department-of-health_employees_corrin-kastner__2c6663ccdfeb.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00048.warc.gz",
+    "warc_offset": 585087760,
+    "warc_length": 3235
+  },
+  {
+    "url": "https://arkansasag.gov/consumer-protection/vehicle/column-one/car-buying-tips/",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/consumer-protection_vehicle_column-one_car-buying-tips__31f10e306d39.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00050.warc.gz",
+    "warc_offset": 248127040,
+    "warc_length": 12683
+  },
+  {
+    "url": "https://portal.arkansas.gov/agency/department-of-health/employees/cathleen-johnston/",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/agency_department-of-health_employees_cathleen-johnston__b5f648cbe3fb.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00050.warc.gz",
+    "warc_offset": 581030032,
+    "warc_length": 3242
+  },
+  {
+    "url": "https://portal.arkansas.gov/agency/department-of-health/employees/meghan-harrell/",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/agency_department-of-health_employees_meghan-harrell__42bc8dee2927.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00051.warc.gz",
+    "warc_offset": 586933676,
+    "warc_length": 3203
+  },
+  {
+    "url": "https://arkansasag.gov/arkansas-lawyer/",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/arkansas-lawyer__4f408cfbb32e.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00055.warc.gz",
+    "warc_offset": 243051755,
+    "warc_length": 11557
+  },
+  {
+    "url": "https://portal.arkansas.gov/agency/department-of-health/employees/scottie-chandler/",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/agency_department-of-health_employees_scottie-chandler__a4d71021e96c.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00063.warc.gz",
+    "warc_offset": 577233210,
+    "warc_length": 3228
+  },
+  {
+    "url": "https://portal.arkansas.gov/agency/department-of-finance-and-administration/",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/agency_department-of-finance-and-administration__6b8928c48ba2.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00066.warc.gz",
+    "warc_offset": 567530551,
+    "warc_length": 7377
+  },
+  {
+    "url": "https://portal.arkansas.gov/agency/department-of-labor-and-licensing/home-inspector-advisory-board/",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/agency_department-of-labor-and-licensing_home-inspector-advisory-board__c128c4ad0f2c.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00067.warc.gz",
+    "warc_offset": 584549036,
+    "warc_length": 3602
+  },
+  {
+    "url": "https://arkansasag.gov/forms/request-a-speaker/",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/forms_request-a-speaker__d4c1c5bb0b48.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00069.warc.gz",
+    "warc_offset": 254417205,
+    "warc_length": 9349
+  },
+  {
+    "url": "https://arkansasag.gov/media-center/consumer-alerts/attorney-general-alert-better-watch-out-for-scam-artists-coming-to-town/",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/media-center_consumer-alerts_attorney-general-alert-better-watch-out-for-scam-artists-coming-to-town__d577d579a0ca.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00069.warc.gz",
+    "warc_offset": 254427467,
+    "warc_length": 10713
+  },
+  {
+    "url": "https://portal.arkansas.gov/agency/department-of-health/employees/monica-kendrick/",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AR/raw_html/agency_department-of-health_employees_monica-kendrick__f321904c87f6.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00069.warc.gz",
+    "warc_offset": 588425715,
+    "warc_length": 3240
+  }
+]

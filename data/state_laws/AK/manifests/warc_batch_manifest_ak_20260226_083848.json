@@ -1,0 +1,1730 @@
+[
+  {
+    "url": "https://www.adfg.alaska.gov/index.cfm?adfg=wildlifenews.view_article&articles_id=957&issue_id=207",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/index.cfm__1b51fa0e79a6.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00012.warc.gz",
+    "warc_offset": 19284135,
+    "warc_length": 977
+  },
+  {
+    "url": "http://www.adfg.alaska.gov/static/regulations/fishregulations/pdfs/commercial/2014_2017_cook_inlet_finfish.pdf",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/static_regulations_fishregulations_pdfs_commercial_2014_2017_cook_inlet_finfish.pdf__6fe54621f73e.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00022.warc.gz",
+    "warc_offset": 4093428,
+    "warc_length": 11130
+  },
+  {
+    "url": "http://www.adfg.alaska.gov/static/regulations/fishregulations/pdfs/southcentral/2014scprincewilliamsoundregulations.pdf",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/static_regulations_fishregulations_pdfs_southcentral_2014scprincewilliamsoundregulations.pdf__aa64973962bb.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00035.warc.gz",
+    "warc_offset": 3775163,
+    "warc_length": 11130
+  },
+  {
+    "url": "http://www.adfg.alaska.gov/index.cfm?adfg=wildlifeplanning.main",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/index.cfm__895db08a1c92.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00134.warc.gz",
+    "warc_offset": 3844932,
+    "warc_length": 822
+  },
+  {
+    "url": "http://www.dhss.alaska.gov/dph/epi/id/pages/covid-19/search.aspx",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/dph_epi_id_pages_covid-19_search.aspx__5fda030b4893.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00242.warc.gz",
+    "warc_offset": 4895211,
+    "warc_length": 734
+  },
+  {
+    "url": "https://www.adfg.alaska.gov/login/identity/connect/authorize?client_id=myadfg&redirect_uri=https%3a%2f%2fwww.adfg.alaska.gov%2fmyadfg%2fdashboard%2findex&response_mode=form_post&response_type=id_token&scope=openid+profile+evendor&state=openidconnect.authenticationproperties%3ddc6xvgvbuuwyp3cquuwmcqz-p1q7omjou9hz1gk7pjrbva9glmealqc5h3gzphdinwd8z4zzvpkomdge3rvsnpq5ctb3rolm4tvtc3oi88t0f3jkzyflyisq1dhkwtbfqdmacq_u368txgxm-48eohnmyw5byvvshcqwz5cm9ozmcgxlfcdlszqjudgnri2_kalvkaysls5tc6ajjgoebluympcvgb99r3sqamwm5zkggcb0&nonce=637462272967135288.mtk2mzjkzdetywq5yi00ythkltk0otatytgynzdlzjlly2rizgm5zdg5mtatotvhzs00yzdjlwi1yzutmtjjotuzyjg3mgyx",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/login_identity_connect_authorize__2de10f304522.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00249.warc.gz",
+    "warc_offset": 18452099,
+    "warc_length": 2052
+  },
+  {
+    "url": "http://www.dhss.alaska.gov/dbh/pages/inpatient-psych/api-adolescent.aspx",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/dbh_pages_inpatient-psych_api-adolescent.aspx__a04c84f6c722.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00260.warc.gz",
+    "warc_offset": 4539058,
+    "warc_length": 735
+  },
+  {
+    "url": "https://www.commerce.alaska.gov/dcra/dcraexternal/community/communityentitypage/2069e1af-9863-4e30-9ad0-126f0b2fa83c",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/dcra_dcraexternal_community_communityentitypage_2069e1af-9863-4e30-9ad0-126f0b2fa83c__e80bfb713f5e.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00301.warc.gz",
+    "warc_offset": 21506028,
+    "warc_length": 1141
+  },
+  {
+    "url": "http://www.adfg.alaska.gov/index.cfm?adfg=errors.main&page_not_found",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/index.cfm__b4561fc0fd89.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00302.warc.gz",
+    "warc_offset": 3536137,
+    "warc_length": 11082
+  },
+  {
+    "url": "http://www.dhss.alaska.gov/api/pages/mission.aspx",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/api_pages_mission.aspx__a808d5f0bc55.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00326.warc.gz",
+    "warc_offset": 4614625,
+    "warc_length": 716
+  },
+  {
+    "url": "http://www.adfg.alaska.gov/index.cfm?adfg=redirect.email_campaign_redirect&tkusrguid=73ec71de-e9ac-4ec0-bd71-a29c3368a5c8&tkmecid=17&link_location_alias=store_home",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/index.cfm__91ed9aec0f8b.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00347.warc.gz",
+    "warc_offset": 4021399,
+    "warc_length": 1062
+  },
+  {
+    "url": "http://www.adfg.alaska.gov/index.cfm?adfg=redirect.email_campaign_redirect&tkusrguid=73ec71de-e9ac-4ec0-bd71-a29c3368a5c8&tkmecid=17&link_location_alias=draw_home",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/index.cfm__0aed17c1d0b0.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00348.warc.gz",
+    "warc_offset": 4349446,
+    "warc_length": 1063
+  },
+  {
+    "url": "https://www.adfg.alaska.gov/myadfg",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/myadfg__ee528b29efdd.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00361.warc.gz",
+    "warc_offset": 18810223,
+    "warc_length": 692
+  },
+  {
+    "url": "http://www.adfg.alaska.gov/static/fishing/pdfs/commercial/12uciregs.pdf",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/static_fishing_pdfs_commercial_12uciregs.pdf__dd597a8c94da.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00394.warc.gz",
+    "warc_offset": 3875313,
+    "warc_length": 11123
+  },
+  {
+    "url": "http://www.dhss.alaska.gov/akopioidtaskforce/",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/akopioidtaskforce__dedde515a6d7.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00415.warc.gz",
+    "warc_offset": 4252660,
+    "warc_length": 736
+  },
+  {
+    "url": "http://www.adfg.alaska.gov/index.cfm?adfg=redirect.email_campaign_redirect&tkusrguid=73ec71de-e9ac-4ec0-bd71-a29c3368a5c8&tkmecid=17&link_location_alias=draw_supplements",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/index.cfm__e9de70cc5542.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00429.warc.gz",
+    "warc_offset": 4338349,
+    "warc_length": 1074
+  },
+  {
+    "url": "https://www.adfg.alaska.gov/login/identity/login?signin=cf1e29797149e79b1e0be477fc5c3618",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/login_identity_login__8119f18f6c11.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00455.warc.gz",
+    "warc_offset": 19296725,
+    "warc_length": 757
+  },
+  {
+    "url": "http://www.dhss.alaska.gov/sites/takeheart/life/pages/alaskanspromotingphysicalactivity.aspx",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/sites_takeheart_life_pages_alaskanspromotingphysicalactivity.aspx__f38b0ff260af.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00494.warc.gz",
+    "warc_offset": 4210079,
+    "warc_length": 715
+  },
+  {
+    "url": "http://alaskadvantage.state.ak.us/",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/index__e975914202bb.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00506.warc.gz",
+    "warc_offset": 143646,
+    "warc_length": 481
+  },
+  {
+    "url": "http://www.dhss.alaska.gov/suicideprevention/pages/logomeaning.aspx",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/suicideprevention_pages_logomeaning.aspx__a6bc150bf89b.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00556.warc.gz",
+    "warc_offset": 4832506,
+    "warc_length": 730
+  },
+  {
+    "url": "https://www.adfg.alaska.gov/index.cfm?adfg=wildlifenews.view_article&articles_id=956&issue_id=207",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/index.cfm__97bd02d1e0f4.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00557.warc.gz",
+    "warc_offset": 19080455,
+    "warc_length": 979
+  },
+  {
+    "url": "http://www.dhss.alaska.gov/dbh/pages/inpatient-psych/bartlett.aspx",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/dbh_pages_inpatient-psych_bartlett.aspx__f116df8628f3.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00563.warc.gz",
+    "warc_offset": 4197314,
+    "warc_length": 729
+  },
+  {
+    "url": "https://www.adfg.alaska.gov/login/identity/connect/authorize?client_id=myadfg&redirect_uri=https%3a%2f%2fwww.adfg.alaska.gov%2fmyadfg%2fdashboard%2findex&response_mode=form_post&response_type=id_token&scope=openid+profile+evendor&state=openidconnect.authenticationproperties%3dmpgxveayz4jbppxxda1glxewehurqzn18zhkmzhidqwzoknk9bhhham51cjeogtfsfvrl9rvtea2yeodnhcnvvniqgvllmf5qkptgi3vvrbbarpdutrwucg8jg5bdmj84fsou2xov5gmtqj5uo2zsfsopesvpa8yerznsmx5d5gxb4qrw8ieabjelkq16wjvgwflxuci4ha_t3o-3q299v2qc-kusm0auj6pvpdevd2asuic&nonce=637463203767949803.njc5m2ewm2mtzdbiny00yjjklweyzwqtodnmnmvlytm4njbjmjzjzja3odetoti5zs00nzc5lwixm2mtyjdiy2m1zje4mznh",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/login_identity_connect_authorize__963c1e090b98.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00596.warc.gz",
+    "warc_offset": 19228242,
+    "warc_length": 2056
+  },
+  {
+    "url": "https://www.adfg.alaska.gov/myadfg/",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/myadfg__53cd66f15b86.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00646.warc.gz",
+    "warc_offset": 18522490,
+    "warc_length": 1453
+  },
+  {
+    "url": "https://www.commerce.alaska.gov/web/portals/4/pub/dowl_status%20report_9.pdf",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/web_portals_4_pub_dowl_status_20report_9.pdf__da607b7d3234.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00660.warc.gz",
+    "warc_offset": 21446961,
+    "warc_length": 1121
+  },
+  {
+    "url": "https://alaskadvantage.state.ak.us/",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/index__8a13d48aa26e.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00683.warc.gz",
+    "warc_offset": 8241142,
+    "warc_length": 1303
+  },
+  {
+    "url": "https://www.adfg.alaska.gov/index.cfm?adfg=citizenscience.batobservationform",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/index.cfm__2ed20bcf1949.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00686.warc.gz",
+    "warc_offset": 17739310,
+    "warc_length": 993
+  },
+  {
+    "url": "https://www.adfg.alaska.gov/login/identity/login?signin=c2d30cc926608cc2a67b746567ab99a2",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/login_identity_login__c4bdd8476ebc.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00705.warc.gz",
+    "warc_offset": 18740127,
+    "warc_length": 754
+  },
+  {
+    "url": "https://acpesecure.alaska.gov/robots.txt",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/robots.txt__bc3af51a59f5.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/robotstxt/CC-MAIN-20210115134101-20210115164101-00007.warc.gz",
+    "warc_offset": 1447020,
+    "warc_length": 1365
+  },
+  {
+    "url": "https://www.commerce.alaska.gov/robots.txt",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/robots.txt__aa4a157b9bfd.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/robotstxt/CC-MAIN-20210115134101-20210115164101-00075.warc.gz",
+    "warc_offset": 2586717,
+    "warc_length": 724
+  },
+  {
+    "url": "http://www.dhss.alaska.gov/robots.txt",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/robots.txt__254b2d882aaa.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/robotstxt/CC-MAIN-20210115134101-20210115164101-00181.warc.gz",
+    "warc_offset": 859091,
+    "warc_length": 842
+  },
+  {
+    "url": "http://alaskadvantage.state.ak.us/robots.txt",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/robots.txt__e2b5edf80853.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/robotstxt/CC-MAIN-20210115134101-20210115164101-00197.warc.gz",
+    "warc_offset": 50848,
+    "warc_length": 488
+  },
+  {
+    "url": "https://alaskadvantage.state.ak.us/robots.txt",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/robots.txt__525c69d1e001.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/robotstxt/CC-MAIN-20210115134101-20210115164101-00310.warc.gz",
+    "warc_offset": 1350859,
+    "warc_length": 1369
+  },
+  {
+    "url": "https://www.adfg.alaska.gov/robots.txt",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/robots.txt__ae113dbe7217.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/robotstxt/CC-MAIN-20210115134101-20210115164101-00356.warc.gz",
+    "warc_offset": 2256904,
+    "warc_length": 11147
+  },
+  {
+    "url": "http://www.adfg.alaska.gov/robots.txt",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/robots.txt__c8d41ffcedaa.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/robotstxt/CC-MAIN-20210115134101-20210115164101-00565.warc.gz",
+    "warc_offset": 751845,
+    "warc_length": 11098
+  },
+  {
+    "url": "http://www.legis.state.ak.us/robots.txt",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/robots.txt__27571bff21e7.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/robotstxt/CC-MAIN-20210115134101-20210115164101-00675.warc.gz",
+    "warc_offset": 1139365,
+    "warc_length": 910
+  },
+  {
+    "url": "https://www.commerce.alaska.gov/web/portals/5/pub/08-0589.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/web_portals_5_pub_08-0589.pdf__6e8a2e286d2a.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00000.warc.gz",
+    "warc_offset": 809986683,
+    "warc_length": 980069
+  },
+  {
+    "url": "https://www.commerce.alaska.gov/web/portals/5/pub/08-421.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/web_portals_5_pub_08-421.pdf__a5f3761ba0c9.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00001.warc.gz",
+    "warc_offset": 809800405,
+    "warc_length": 975994
+  },
+  {
+    "url": "https://www.commerce.alaska.gov/web/cbpl/login.aspx?returnurl=%2fweb%2fcbpl%2fprofessionallicensing%2fboardofpharmacy%2fboardactions.aspx",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/web_cbpl_login.aspx__0be98d0d806a.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00001.warc.gz",
+    "warc_offset": 810777210,
+    "warc_length": 7627
+  },
+  {
+    "url": "http://www.adfg.alaska.gov/index.cfm?adfg=gameboard.meetinginfo&date=03-12-2021&meeting=fairbanks",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/index.cfm__5e1d8c3ea80b.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00004.warc.gz",
+    "warc_offset": 132491085,
+    "warc_length": 17879
+  },
+  {
+    "url": "https://www.commerce.alaska.gov/web/portals/5/pub/08-424.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/web_portals_5_pub_08-424.pdf__ec105c90f530.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00004.warc.gz",
+    "warc_offset": 808365263,
+    "warc_length": 964976
+  },
+  {
+    "url": "http://www.adfg.alaska.gov/sf/eonr/index.cfm?adfg=region.nr&nrid=3061",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/sf_eonr_index.cfm__2ce3aca7f774.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00005.warc.gz",
+    "warc_offset": 131614424,
+    "warc_length": 11847
+  },
+  {
+    "url": "http://www.dhss.alaska.gov/dph/chronic/pages/cancer/topics.aspx",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/dph_chronic_pages_cancer_topics.aspx__3e9164731a53.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00006.warc.gz",
+    "warc_offset": 147416821,
+    "warc_length": 10657
+  },
+  {
+    "url": "https://www.commerce.alaska.gov/web/portals/5/pub/08-427.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/web_portals_5_pub_08-427.pdf__e2bb11bb64bf.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00007.warc.gz",
+    "warc_offset": 820907708,
+    "warc_length": 1001524
+  },
+  {
+    "url": "https://www.adfg.alaska.gov/index.cfm?adfg=viewinglocations.unalaska",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/index.cfm__d54a710973d9.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00010.warc.gz",
+    "warc_offset": 739185256,
+    "warc_length": 14664
+  },
+  {
+    "url": "http://www.dhss.alaska.gov/dbh/pages/residentialcare/facilities/mitchellhouse.aspx",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/dbh_pages_residentialcare_facilities_mitchellhouse.aspx__48760bf7847f.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00010.warc.gz",
+    "warc_offset": 157104869,
+    "warc_length": 12090
+  },
+  {
+    "url": "http://www.dhss.alaska.gov/dph/chronic/pages/obesity/default.aspx",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/dph_chronic_pages_obesity_default.aspx__6d8224906bbf.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00010.warc.gz",
+    "warc_offset": 157117908,
+    "warc_length": 12716
+  },
+  {
+    "url": "http://www.dhss.alaska.gov/dph/emergency/pages/prepared/hurricanes.aspx",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/dph_emergency_pages_prepared_hurricanes.aspx__f6557f4050c2.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00010.warc.gz",
+    "warc_offset": 157131567,
+    "warc_length": 10531
+  },
+  {
+    "url": "https://www.adfg.alaska.gov/index.cfm?adfg=librarypublications.wildlifepublicationsdetails&pubidentifier=7110",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/index.cfm__7ccaae8fade8.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00012.warc.gz",
+    "warc_offset": 743296757,
+    "warc_length": 12992
+  },
+  {
+    "url": "http://www.adfg.alaska.gov/static/hunting/maps/huntmaps/pdf/tx096.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/static_hunting_maps_huntmaps_pdf_tx096.pdf__592c5bd8cc7c.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00012.warc.gz",
+    "warc_offset": 140576411,
+    "warc_length": 388190
+  },
+  {
+    "url": "https://www.adfg.alaska.gov/index.cfm?adfg=librarypublications.wildlifepublicationsdetails&pubidentifier=3250",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/index.cfm__2bef36799916.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00013.warc.gz",
+    "warc_offset": 726651027,
+    "warc_length": 13240
+  },
+  {
+    "url": "https://www.adfg.alaska.gov/index.cfm?adfg=plans.strategic",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/index.cfm__419c5b30e124.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00013.warc.gz",
+    "warc_offset": 726665181,
+    "warc_length": 12999
+  },
+  {
+    "url": "https://www.adfg.alaska.gov/index.cfm?adfg=librarypublications.wildlifepublicationsdetails&pubidentifier=2360",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/index.cfm__21abae52ddfc.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00014.warc.gz",
+    "warc_offset": 728407575,
+    "warc_length": 13074
+  },
+  {
+    "url": "https://www.adfg.alaska.gov/index.cfm?adfg=osprey.main",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/index.cfm__e694c841b6a8.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00014.warc.gz",
+    "warc_offset": 728421561,
+    "warc_length": 18948
+  },
+  {
+    "url": "http://www.dhss.alaska.gov/dph/epi/id/siteassets/pages/humancov/business/flyer-pleasewearamask-keepusopen.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/dph_epi_id_siteassets_pages_humancov_business_flyer-pleasewearamask-keepusopen.pdf__394cf8754387.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00014.warc.gz",
+    "warc_offset": 147909385,
+    "warc_length": 351191
+  },
+  {
+    "url": "http://www.adfg.alaska.gov/index.cfm?adfg=home.main&cfid=1151530&cftoken=63432605",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/index.cfm__af28a7e39eeb.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00015.warc.gz",
+    "warc_offset": 128054311,
+    "warc_length": 23275
+  },
+  {
+    "url": "http://www.adfg.alaska.gov/static/home/library/pdfs/wildlife/comeback_trail/comeback_trail_2016.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/static_home_library_pdfs_wildlife_comeback_trail_comeback_trail_2016.pdf__1d8d953a37e9.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00015.warc.gz",
+    "warc_offset": 128078518,
+    "warc_length": 1037485
+  },
+  {
+    "url": "https://www.commerce.alaska.gov/web/portals/4/pub/mertarvik_steering_committee_meeting_3_agenda_20161027.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/web_portals_4_pub_mertarvik_steering_committee_meeting_3_agenda_20161027.pdf__edf1a4fcf148.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00016.warc.gz",
+    "warc_offset": 818202369,
+    "warc_length": 151425
+  },
+  {
+    "url": "https://www.commerce.alaska.gov/web/portals/4/pub/mertarvik_steering_committee_meeting_4_agenda_20161202.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/web_portals_4_pub_mertarvik_steering_committee_meeting_4_agenda_20161202.pdf__7f4d6e4771a9.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00016.warc.gz",
+    "warc_offset": 818354620,
+    "warc_length": 157784
+  },
+  {
+    "url": "https://www.adfg.alaska.gov/index.cfm?adfg=librarypublications.wildlifepublicationsdetails&pubidentifier=3255",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/index.cfm__ca63ee80e144.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00018.warc.gz",
+    "warc_offset": 738705158,
+    "warc_length": 13020
+  },
+  {
+    "url": "https://www.commerce.alaska.gov/web/portals/5/pub/pha_case2013-000898_jamiewakefield_technician.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/web_portals_5_pub_pha_case2013-000898_jamiewakefield_technician.pdf__bcc23ca12068.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00019.warc.gz",
+    "warc_offset": 788371413,
+    "warc_length": 708519
+  },
+  {
+    "url": "https://www.commerce.alaska.gov/web/portals/5/pub/08-0592.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/web_portals_5_pub_08-0592.pdf__34eb1f208840.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00024.warc.gz",
+    "warc_offset": 790546414,
+    "warc_length": 958043
+  },
+  {
+    "url": "http://www.adfg.alaska.gov/static/applications/dcfnewsrelease/458966421.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/static_applications_dcfnewsrelease_458966421.pdf__2f3bef6f8322.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00024.warc.gz",
+    "warc_offset": 129979011,
+    "warc_length": 111231
+  },
+  {
+    "url": "http://www.dhss.alaska.gov/dph/infocenter/pages/ia/contacts.aspx",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/dph_infocenter_pages_ia_contacts.aspx__f2daeface266.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00024.warc.gz",
+    "warc_offset": 148531157,
+    "warc_length": 11515
+  },
+  {
+    "url": "https://www.commerce.alaska.gov/web/portals/5/pub/psy_boardpacket_2019.06.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/web_portals_5_pub_psy_boardpacket_2019.06.pdf__dec42d9592c9.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00025.warc.gz",
+    "warc_offset": 850344212,
+    "warc_length": 1004671
+  },
+  {
+    "url": "http://www.dhss.alaska.gov/dph/infocenter/pages/ia/brfss/brfss_health_profiles.aspx",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/dph_infocenter_pages_ia_brfss_brfss_health_profiles.aspx__f0ca8028a4b6.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00026.warc.gz",
+    "warc_offset": 146124422,
+    "warc_length": 13664
+  },
+  {
+    "url": "http://www.dhss.alaska.gov/dph/playeveryday/pages/cutting-back-on-sugar-by-serving-white-milk-for-school-lunches.aspx",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/dph_playeveryday_pages_cutting-back-on-sugar-by-serving-white-milk-for-school-lunches.aspx__3b3842d25524.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00026.warc.gz",
+    "warc_offset": 146112774,
+    "warc_length": 10656
+  },
+  {
+    "url": "https://www.commerce.alaska.gov/web/portals/5/pub/08-0595.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/web_portals_5_pub_08-0595.pdf__71d23b6dffb2.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00027.warc.gz",
+    "warc_offset": 808740298,
+    "warc_length": 930576
+  },
+  {
+    "url": "http://www.dhss.alaska.gov/dsds/pages/medicare/calendar.aspx",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/dsds_pages_medicare_calendar.aspx__dc6643a6bd88.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00027.warc.gz",
+    "warc_offset": 147648823,
+    "warc_length": 11835
+  },
+  {
+    "url": "http://www.dhss.alaska.gov/dph/playeveryday/pages/what-is-a-sugary-drink.aspx",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/dph_playeveryday_pages_what-is-a-sugary-drink.aspx__f48ee949db63.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00028.warc.gz",
+    "warc_offset": 148189476,
+    "warc_length": 10391
+  },
+  {
+    "url": "http://www.adfg.alaska.gov/static/applications/dcfnewsrelease/1238813066.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/static_applications_dcfnewsrelease_1238813066.pdf__21fc0f71ae6a.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00029.warc.gz",
+    "warc_offset": 142295377,
+    "warc_length": 221705
+  },
+  {
+    "url": "https://www.commerce.alaska.gov/web/portals/5/pub/08-0598.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/web_portals_5_pub_08-0598.pdf__80977f0b91b2.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00030.warc.gz",
+    "warc_offset": 822485400,
+    "warc_length": 926949
+  },
+  {
+    "url": "https://www.commerce.alaska.gov/web/portals/5/pub/08-430.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/web_portals_5_pub_08-430.pdf__45b3c2da7579.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00031.warc.gz",
+    "warc_offset": 822946897,
+    "warc_length": 973868
+  },
+  {
+    "url": "http://www.dhss.alaska.gov/dph/wcfh/pages/newborn/faq/parent.aspx",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/dph_wcfh_pages_newborn_faq_parent.aspx__62daa98fb65a.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00032.warc.gz",
+    "warc_offset": 153947744,
+    "warc_length": 14090
+  },
+  {
+    "url": "http://www.dhss.alaska.gov/dsds/pages/aps/apslaws.aspx",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/dsds_pages_aps_apslaws.aspx__4a683a6f35fc.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00032.warc.gz",
+    "warc_offset": 153962761,
+    "warc_length": 12571
+  },
+  {
+    "url": "https://www.commerce.alaska.gov/web/portals/5/pub/08-4737.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/web_portals_5_pub_08-4737.pdf__8f92371b6c26.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00033.warc.gz",
+    "warc_offset": 809300116,
+    "warc_length": 991301
+  },
+  {
+    "url": "https://www.commerce.alaska.gov/web/portals/5/pub/08-433.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/web_portals_5_pub_08-433.pdf__9d9232f686b5.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00034.warc.gz",
+    "warc_offset": 800184951,
+    "warc_length": 1005121
+  },
+  {
+    "url": "http://www.dhss.alaska.gov/dph/epi/id/pages/group-a-streptococcus.aspx",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/dph_epi_id_pages_group-a-streptococcus.aspx__7fe9cbdfdeb9.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00034.warc.gz",
+    "warc_offset": 146910067,
+    "warc_length": 12962
+  },
+  {
+    "url": "https://www.commerce.alaska.gov/web/portals/5/pub/08-533.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/web_portals_5_pub_08-533.pdf__3ba24f4e04f4.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00035.warc.gz",
+    "warc_offset": 813389505,
+    "warc_length": 922711
+  },
+  {
+    "url": "http://www.adfg.alaska.gov/index.cfm%3fadfg%3dmarinemammalprogram.stellervital",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/index.cfm_3fadfg_3dmarinemammalprogram.stellervital__68b87a52e00c.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00036.warc.gz",
+    "warc_offset": 126823094,
+    "warc_length": 15506
+  },
+  {
+    "url": "http://www.dhss.alaska.gov/dbh/pages/treatmentrecovery/substanceabuse/default.aspx",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/dbh_pages_treatmentrecovery_substanceabuse_default.aspx__02d68fe4f5e9.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00036.warc.gz",
+    "warc_offset": 144447867,
+    "warc_length": 12040
+  },
+  {
+    "url": "http://www.dhss.alaska.gov/dph/chronic/pages/injuryprevention/akfvpp/default.aspx",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/dph_chronic_pages_injuryprevention_akfvpp_default.aspx__b3b8923e575e.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00037.warc.gz",
+    "warc_offset": 154683873,
+    "warc_length": 10829
+  },
+  {
+    "url": "https://www.commerce.alaska.gov/web/portals/4/pub/1a-mertarvik_steering_agenda_20160825.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/web_portals_4_pub_1a-mertarvik_steering_agenda_20160825.pdf__504b18953343.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00038.warc.gz",
+    "warc_offset": 815329831,
+    "warc_length": 174928
+  },
+  {
+    "url": "https://www.commerce.alaska.gov/web/portals/5/pub/08-536.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/web_portals_5_pub_08-536.pdf__2a5211e495c6.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00038.warc.gz",
+    "warc_offset": 815505544,
+    "warc_length": 952916
+  },
+  {
+    "url": "http://www.adfg.alaska.gov/static/home/library/pdfs/afrb/toddv1n2.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/static_home_library_pdfs_afrb_toddv1n2.pdf__6199356c8c73.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00039.warc.gz",
+    "warc_offset": 134568021,
+    "warc_length": 197237
+  },
+  {
+    "url": "https://www.commerce.alaska.gov/web/portals/5/pub/08-439.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/web_portals_5_pub_08-439.pdf__00737162e7ea.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00040.warc.gz",
+    "warc_offset": 813045863,
+    "warc_length": 959201
+  },
+  {
+    "url": "https://www.commerce.alaska.gov/web/portals/5/pub/08-539.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/web_portals_5_pub_08-539.pdf__e0277b962cf1.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00041.warc.gz",
+    "warc_offset": 816868282,
+    "warc_length": 966350
+  },
+  {
+    "url": "https://www.commerce.alaska.gov/web/portals/5/pub/pha_pdmp.prescriberreportuserguide.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/web_portals_5_pub_pha_pdmp.prescriberreportuserguide.pdf__034c28f2d31c.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00042.warc.gz",
+    "warc_offset": 812339558,
+    "warc_length": 444488
+  },
+  {
+    "url": "https://www.adfg.alaska.gov/index.cfm?adfg=librarypublications.wildlifepublicationsdetails&pubidentifier=10629",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/index.cfm__1929e4ed606b.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00043.warc.gz",
+    "warc_offset": 728415649,
+    "warc_length": 13341
+  },
+  {
+    "url": "https://www.adfg.alaska.gov/index.cfm?adfg=librarypublications.wildlifepublicationsdetails&pubidentifier=7120",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/index.cfm__caeeae8e9b02.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00043.warc.gz",
+    "warc_offset": 728429937,
+    "warc_length": 13023
+  },
+  {
+    "url": "http://www.dhss.alaska.gov/dph/chronic/pages/cardiovascular/default.aspx",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/dph_chronic_pages_cardiovascular_default.aspx__fec210fe217d.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00044.warc.gz",
+    "warc_offset": 151688106,
+    "warc_length": 13122
+  },
+  {
+    "url": "https://www.adfg.alaska.gov/index.cfm?adfg=librarypublications.wildlifepublicationsdetails&pubidentifier=231",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/index.cfm__a56112bd33e0.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00045.warc.gz",
+    "warc_offset": 716772863,
+    "warc_length": 13288
+  },
+  {
+    "url": "http://www.adfg.alaska.gov/static/applications/dcfnewsrelease/862476876.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/static_applications_dcfnewsrelease_862476876.pdf__9e8f5a484401.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00047.warc.gz",
+    "warc_offset": 132359878,
+    "warc_length": 152328
+  },
+  {
+    "url": "http://www.dhss.alaska.gov/dph/epi/id/pages/handfootmouth.aspx",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/dph_epi_id_pages_handfootmouth.aspx__a689643ea435.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00047.warc.gz",
+    "warc_offset": 148455773,
+    "warc_length": 11024
+  },
+  {
+    "url": "https://www.adfg.alaska.gov/index.cfm?adfg=pressreleases.pr&release=2021_01_08",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/index.cfm__01d99d702259.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00048.warc.gz",
+    "warc_offset": 737915085,
+    "warc_length": 13804
+  },
+  {
+    "url": "https://www.commerce.alaska.gov/web/portals/4/pub/dowl_status_report_20170209.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/web_portals_4_pub_dowl_status_report_20170209.pdf__ad4b2181a7f9.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00048.warc.gz",
+    "warc_offset": 826096389,
+    "warc_length": 199690
+  },
+  {
+    "url": "http://www.adfg.alaska.gov/static/home/library/pdfs/wildlife/research_pdfs/wrr_2016_1_wolf_population_estimation_prince_wales_island_methods.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/static_home_library_pdfs_wildlife_research_pdfs_wrr_2016_1_wolf_population_estimation_prince_wales_island_methods.pdf__3c87a83ef3cf.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00050.warc.gz",
+    "warc_offset": 130939311,
+    "warc_length": 1042829
+  },
+  {
+    "url": "http://www.dhss.alaska.gov/dph/playeveryday/blog/lists/posts/post.aspx?id=348",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/dph_playeveryday_blog_lists_posts_post.aspx__73ce9cd17816.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00050.warc.gz",
+    "warc_offset": 147089200,
+    "warc_length": 19869
+  },
+  {
+    "url": "http://www.dhss.alaska.gov/dbh/pages/treatmentrecovery/mentalhealth/grants.aspx",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/dbh_pages_treatmentrecovery_mentalhealth_grants.aspx__9ebddd0a0523.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00051.warc.gz",
+    "warc_offset": 154779446,
+    "warc_length": 11617
+  },
+  {
+    "url": "https://www.adfg.alaska.gov/index.cfm?adfg=elkhunting.harvest",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/index.cfm__5ce943ea2b2f.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00053.warc.gz",
+    "warc_offset": 746028611,
+    "warc_length": 14097
+  },
+  {
+    "url": "https://www.commerce.alaska.gov/web/portals/5/pub/08-4740.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/web_portals_5_pub_08-4740.pdf__9f49006758d5.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00057.warc.gz",
+    "warc_offset": 834414142,
+    "warc_length": 991386
+  },
+  {
+    "url": "http://www.dhss.alaska.gov/dsds/pages/research/default.aspx",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/dsds_pages_research_default.aspx__ff2563760d2c.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00057.warc.gz",
+    "warc_offset": 160283452,
+    "warc_length": 12033
+  },
+  {
+    "url": "http://www.dhss.alaska.gov/dph/epi/id/pages/parasitic-worms.aspx",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/dph_epi_id_pages_parasitic-worms.aspx__c8567f51c260.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00062.warc.gz",
+    "warc_offset": 150198215,
+    "warc_length": 12396
+  },
+  {
+    "url": "http://www.dhss.alaska.gov/dph/playeveryday/blog/lists/posts/post.aspx?list=8bb3b836-f360-46fa-a9f5-407dc7217d58&id=392&web=0bd2e12b-2bb7-4edd-90db-a145b3957ea1",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/dph_playeveryday_blog_lists_posts_post.aspx__f7bd5ac9baa3.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00063.warc.gz",
+    "warc_offset": 157442885,
+    "warc_length": 20926
+  },
+  {
+    "url": "https://www.commerce.alaska.gov/web/portals/5/pub/08-442.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/web_portals_5_pub_08-442.pdf__db006fbc48b8.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00064.warc.gz",
+    "warc_offset": 792368839,
+    "warc_length": 1035084
+  },
+  {
+    "url": "http://www.adfg.alaska.gov/index.cfm?adfg=fisheriesboard.meetinginfo&date=01-25-2021&meeting=tele",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/index.cfm__521b83b86050.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00065.warc.gz",
+    "warc_offset": 133596515,
+    "warc_length": 13826
+  },
+  {
+    "url": "http://www.adfg.alaska.gov/specialpubs/sp2_sp1988-001.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/specialpubs_sp2_sp1988-001.pdf__9789c804c4e2.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00065.warc.gz",
+    "warc_offset": 133611255,
+    "warc_length": 565854
+  },
+  {
+    "url": "https://www.commerce.alaska.gov/web/portals/4/pub/grantconstructionmanual95.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/web_portals_4_pub_grantconstructionmanual95.pdf__62496329ccc0.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00067.warc.gz",
+    "warc_offset": 818483806,
+    "warc_length": 957998
+  },
+  {
+    "url": "https://www.commerce.alaska.gov/web/portals/5/pub/08-445.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/web_portals_5_pub_08-445.pdf__d339917d0969.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00067.warc.gz",
+    "warc_offset": 817462122,
+    "warc_length": 1020907
+  },
+  {
+    "url": "https://www.commerce.alaska.gov/web/portals/5/pub/08-545.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/web_portals_5_pub_08-545.pdf__340abd683a63.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00068.warc.gz",
+    "warc_offset": 825481196,
+    "warc_length": 956458
+  },
+  {
+    "url": "https://www.commerce.alaska.gov/web/portals/4/pub/dowl_status_report_20170112.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/web_portals_4_pub_dowl_status_report_20170112.pdf__e3686d44c580.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00071.warc.gz",
+    "warc_offset": 826345998,
+    "warc_length": 192710
+  },
+  {
+    "url": "https://www.commerce.alaska.gov/web/portals/5/pub/08-548.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/web_portals_5_pub_08-548.pdf__dfc0bdc74df3.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00071.warc.gz",
+    "warc_offset": 826539487,
+    "warc_length": 967091
+  },
+  {
+    "url": "https://www.commerce.alaska.gov/web/portals/4/pub/creating%20and%20understanding%20monthly%20utility%20finance%20reports.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/web_portals_4_pub_creating_20and_20understanding_20monthly_20utility_20finance_20reports.pdf__86fe49b35570.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00072.warc.gz",
+    "warc_offset": 802316904,
+    "warc_length": 996586
+  },
+  {
+    "url": "http://www.adfg.alaska.gov/index.cfm?adfg=personalusebyareasoutheastkingcrab.regs",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/index.cfm__e038e3bbf7df.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00073.warc.gz",
+    "warc_offset": 132366352,
+    "warc_length": 14853
+  },
+  {
+    "url": "https://www.adfg.alaska.gov/index.cfm?adfg=librarypublications.wildlifepublicationsdetails&pubidentifier=3272",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/index.cfm__ca4ca92d95eb.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00077.warc.gz",
+    "warc_offset": 737242931,
+    "warc_length": 13054
+  },
+  {
+    "url": "https://www.commerce.alaska.gov/web/portals/4/pub/mertarvik_steering_committee_meeting_11_agenda.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/web_portals_4_pub_mertarvik_steering_committee_meeting_11_agenda.pdf__93dd439a4671.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00077.warc.gz",
+    "warc_offset": 820345961,
+    "warc_length": 161135
+  },
+  {
+    "url": "http://www.dhss.alaska.gov/dbh/documents/initiatives/ak-responders-flyer.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/dbh_documents_initiatives_ak-responders-flyer.pdf__ad6f68f6bf28.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00077.warc.gz",
+    "warc_offset": 150449704,
+    "warc_length": 413087
+  },
+  {
+    "url": "http://www.dhss.alaska.gov/dph/epi/id/pages/covid-19/circleofsupport.aspx",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/dph_epi_id_pages_covid-19_circleofsupport.aspx__143f94ba0176.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00078.warc.gz",
+    "warc_offset": 150600963,
+    "warc_length": 10753
+  },
+  {
+    "url": "https://www.adfg.alaska.gov/index.cfm?adfg=librarypublications.wildlifepublicationsdetails&pubidentifier=8620",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/index.cfm__a8cbda4ff0b1.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00079.warc.gz",
+    "warc_offset": 731841855,
+    "warc_length": 13091
+  },
+  {
+    "url": "http://www.dhss.alaska.gov/dph/epi/id/pages/covid-19/terms.aspx",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/dph_epi_id_pages_covid-19_terms.aspx__d334be637518.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00079.warc.gz",
+    "warc_offset": 154789468,
+    "warc_length": 12198
+  },
+  {
+    "url": "https://www.adfg.alaska.gov/index.cfm?adfg=librarypublications.wildlifepublicationsdetails&pubidentifier=3275",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/index.cfm__a0098c525af4.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00080.warc.gz",
+    "warc_offset": 729437570,
+    "warc_length": 12849
+  },
+  {
+    "url": "https://www.adfg.alaska.gov/index.cfm?adfg=librarypublications.wildlifepublicationsdetails&pubidentifier=4760",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/index.cfm__6058df81aa70.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00080.warc.gz",
+    "warc_offset": 729451362,
+    "warc_length": 12994
+  },
+  {
+    "url": "https://www.adfg.alaska.gov/index.cfm?adfg=librarypublications.wildlifepublicationsdetails&pubidentifier=5651",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/index.cfm__7a81cd82997b.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00080.warc.gz",
+    "warc_offset": 729465298,
+    "warc_length": 13058
+  },
+  {
+    "url": "https://www.adfg.alaska.gov/index.cfm?adfg=librarypublications.wildlifepublicationsdetails&pubidentifier=3573",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/index.cfm__7b1862ea2478.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00081.warc.gz",
+    "warc_offset": 725768992,
+    "warc_length": 13076
+  },
+  {
+    "url": "http://www.dhss.alaska.gov/directoryhealthcare/pages/default.aspx",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/directoryhealthcare_pages_default.aspx__2509d85dbd1e.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00081.warc.gz",
+    "warc_offset": 156569032,
+    "warc_length": 9895
+  },
+  {
+    "url": "https://www.adfg.alaska.gov/index.cfm?adfg=librarypublications.wildlifepublicationsdetails&pubidentifier=3278",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/index.cfm__89706403ebb9.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00083.warc.gz",
+    "warc_offset": 727661094,
+    "warc_length": 13125
+  },
+  {
+    "url": "http://www.dhss.alaska.gov/dsds/pages/medicare/staff.aspx",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/dsds_pages_medicare_staff.aspx__e5812802590d.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00087.warc.gz",
+    "warc_offset": 150451932,
+    "warc_length": 12043
+  },
+  {
+    "url": "https://www.commerce.alaska.gov/web/portals/5/pub/pha_case2017-000719.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/web_portals_5_pub_pha_case2017-000719.pdf__ed20285cb9eb.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00087.warc.gz",
+    "warc_offset": 808763463,
+    "warc_length": 123150
+  },
+  {
+    "url": "https://www.adfg.alaska.gov/index.cfm?adfg=librarypublications.wildlifepublicationsdetails&pubidentifier=2988",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/index.cfm__1abbb3212b15.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00090.warc.gz",
+    "warc_offset": 731776888,
+    "warc_length": 13165
+  },
+  {
+    "url": "http://www.dhss.alaska.gov/daph/pages/anchorage/anchorage_pics.aspx",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/daph_pages_anchorage_anchorage_pics.aspx__e42c990e7249.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00090.warc.gz",
+    "warc_offset": 158331422,
+    "warc_length": 14063
+  },
+  {
+    "url": "http://www.dhss.alaska.gov/dph/playeveryday/pages/frequently-asked-questions.aspx",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/dph_playeveryday_pages_frequently-asked-questions.aspx__3f254f7ef916.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00090.warc.gz",
+    "warc_offset": 158317813,
+    "warc_length": 12659
+  },
+  {
+    "url": "https://www.adfg.alaska.gov/index.cfm?adfg=librarypublications.wildlifepublicationsdetails&pubidentifier=2989",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/index.cfm__c6ab7be721bf.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00091.warc.gz",
+    "warc_offset": 740269568,
+    "warc_length": 13140
+  },
+  {
+    "url": "http://www.dhss.alaska.gov/daph/pages/juneau/newsletters.aspx",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/daph_pages_juneau_newsletters.aspx__57c6697cd287.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00092.warc.gz",
+    "warc_offset": 149330099,
+    "warc_length": 10084
+  },
+  {
+    "url": "https://www.commerce.alaska.gov/web/portals/5/pub/08-551.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/web_portals_5_pub_08-551.pdf__22dfa870e76e.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00095.warc.gz",
+    "warc_offset": 815046891,
+    "warc_length": 946602
+  },
+  {
+    "url": "http://www.dhss.alaska.gov/dph/epi/id/pages/covid-19/symptoms.aspx",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/dph_epi_id_pages_covid-19_symptoms.aspx__6afb8a06d402.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00096.warc.gz",
+    "warc_offset": 158277575,
+    "warc_length": 10760
+  },
+  {
+    "url": "https://www.commerce.alaska.gov/web/portals/5/pub/pha_case2017-000459.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/web_portals_5_pub_pha_case2017-000459.pdf__e5e3401782a0.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00096.warc.gz",
+    "warc_offset": 831684868,
+    "warc_length": 357982
+  },
+  {
+    "url": "http://www.dhss.alaska.gov/akopioidtaskforce/pages/default.aspx",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/akopioidtaskforce_pages_default.aspx__48aff2531803.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00097.warc.gz",
+    "warc_offset": 149482910,
+    "warc_length": 10880
+  },
+  {
+    "url": "https://www.commerce.alaska.gov/web/portals/5/pub/08-554.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/web_portals_5_pub_08-554.pdf__780718bab8e0.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00098.warc.gz",
+    "warc_offset": 809641019,
+    "warc_length": 967664
+  },
+  {
+    "url": "https://www.commerce.alaska.gov/web/portals/5/pub/08-457.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/web_portals_5_pub_08-457.pdf__5cd0de2b0d85.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00100.warc.gz",
+    "warc_offset": 804815276,
+    "warc_length": 930603
+  },
+  {
+    "url": "https://www.adfg.alaska.gov/index.cfm?adfg=multimedia.embeddedvideo&videoid=464420039",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/index.cfm__beecae82f05d.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00102.warc.gz",
+    "warc_offset": 719968238,
+    "warc_length": 12856
+  },
+  {
+    "url": "http://www.dhss.alaska.gov/dph/nursing/pages/services-resource-pages/tuberculosis.aspx",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/dph_nursing_pages_services-resource-pages_tuberculosis.aspx__9ab30e58879d.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00102.warc.gz",
+    "warc_offset": 151022470,
+    "warc_length": 10406
+  },
+  {
+    "url": "http://www.dhss.alaska.gov/dbh/pages/resources/medicaidrelated.aspx",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/dbh_pages_resources_medicaidrelated.aspx__fe3541444320.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00103.warc.gz",
+    "warc_offset": 150720453,
+    "warc_length": 12562
+  },
+  {
+    "url": "http://www.dhss.alaska.gov/commissioner/documents/medicaidstateplan/pdf_sp/msp/sec_7-3.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/commissioner_documents_medicaidstateplan_pdf_sp_msp_sec_7-3.pdf__55db3d953d61.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00104.warc.gz",
+    "warc_offset": 148575906,
+    "warc_length": 181980
+  },
+  {
+    "url": "https://www.adfg.alaska.gov/index.cfm?adfg=librarypublications.wildlifepublicationsdetails&pubidentifier=3281",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/index.cfm__1a0b40f1a120.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00107.warc.gz",
+    "warc_offset": 720234397,
+    "warc_length": 13264
+  },
+  {
+    "url": "http://www.dhss.alaska.gov/dph/epi/eph/pages/vitamind.aspx",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/dph_epi_eph_pages_vitamind.aspx__895de9a2c713.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00107.warc.gz",
+    "warc_offset": 146096877,
+    "warc_length": 13388
+  },
+  {
+    "url": "https://acpesecure.alaska.gov/",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/index__84a093936361.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00108.warc.gz",
+    "warc_offset": 233461365,
+    "warc_length": 15688
+  },
+  {
+    "url": "https://www.adfg.alaska.gov/index.cfm?adfg=librarypublications.wildlifepublicationsdetails&pubidentifier=1826",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/index.cfm__1f97955a510d.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00110.warc.gz",
+    "warc_offset": 733233498,
+    "warc_length": 12971
+  },
+  {
+    "url": "http://www.dhss.alaska.gov/dph/epi/id/pages/covid-19/gatherings.aspx",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/dph_epi_id_pages_covid-19_gatherings.aspx__7ddd8b95ad67.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00110.warc.gz",
+    "warc_offset": 143591258,
+    "warc_length": 13910
+  },
+  {
+    "url": "https://www.adfg.alaska.gov/index.cfm?adfg=librarypublications.wildlifepublicationsdetails&pubidentifier=3285",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/index.cfm__678f1b27371b.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00111.warc.gz",
+    "warc_offset": 742466051,
+    "warc_length": 13187
+  },
+  {
+    "url": "http://www.adfg.alaska.gov/index.cfm?adfg=pressreleases.pr&release=2021_01_07",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/index.cfm__06f3147d6f6e.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00112.warc.gz",
+    "warc_offset": 133843387,
+    "warc_length": 13791
+  },
+  {
+    "url": "https://www.adfg.alaska.gov/index.cfm?adfg=librarypublications.wildlifepublicationsdetails&pubidentifier=2990",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/index.cfm__f2c4e5f6f8b4.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00113.warc.gz",
+    "warc_offset": 741857299,
+    "warc_length": 13129
+  },
+  {
+    "url": "https://www.adfg.alaska.gov/index.cfm?adfg=librarypublications.wildlifepublicationsdetails&pubidentifier=7148",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/index.cfm__ec36eaa72860.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00113.warc.gz",
+    "warc_offset": 741871368,
+    "warc_length": 12948
+  },
+  {
+    "url": "https://www.adfg.alaska.gov/index.cfm?adfg=wildlifediversity.citizenscience&project=bats&section=report-form",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/index.cfm__e0b4549d5bd9.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00113.warc.gz",
+    "warc_offset": 741885264,
+    "warc_length": 16095
+  },
+  {
+    "url": "https://www.adfg.alaska.gov/index.cfm?adfg=librarypublications.wildlifepublicationsdetails&pubidentifier=2991",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/index.cfm__38ad076d48f0.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00114.warc.gz",
+    "warc_offset": 727490532,
+    "warc_length": 13051
+  },
+  {
+    "url": "https://www.adfg.alaska.gov/index.cfm?adfg=marinemammalprogram.entanglements",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/index.cfm__754800ff19b4.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00115.warc.gz",
+    "warc_offset": 735641717,
+    "warc_length": 14231
+  },
+  {
+    "url": "https://www.adfg.alaska.gov/index.cfm?adfg=librarypublications.wildlifepublicationsdetails&pubidentifier=2993",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/index.cfm__613d5ce0452f.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00116.warc.gz",
+    "warc_offset": 717367497,
+    "warc_length": 13126
+  },
+  {
+    "url": "https://www.adfg.alaska.gov/index.cfm?adfg=librarypublications.wildlifepublicationsdetails&pubidentifier=3587",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/index.cfm__da1bb654b65e.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00116.warc.gz",
+    "warc_offset": 717381564,
+    "warc_length": 13285
+  },
+  {
+    "url": "http://www.dhss.alaska.gov/dph/epi/id/pages/cryptosporidium.aspx",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/dph_epi_id_pages_cryptosporidium.aspx__51f1222575c8.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00116.warc.gz",
+    "warc_offset": 148468136,
+    "warc_length": 10851
+  },
+  {
+    "url": "http://www.dhss.alaska.gov/dph/infocenter/pages/ia/yrbss/yrbss_health_profiles.aspx",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/dph_infocenter_pages_ia_yrbss_yrbss_health_profiles.aspx__c0df50157f7b.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00116.warc.gz",
+    "warc_offset": 148479934,
+    "warc_length": 12909
+  },
+  {
+    "url": "https://www.adfg.alaska.gov/index.cfm?adfg=librarypublications.wildlifepublicationsdetails&pubidentifier=2995",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/index.cfm__3e64f8603d38.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00118.warc.gz",
+    "warc_offset": 736100657,
+    "warc_length": 13210
+  },
+  {
+    "url": "http://www.dhss.alaska.gov/ocs/pages/childrensjustice/default.aspx",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/ocs_pages_childrensjustice_default.aspx__a87c93a2cc4a.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00118.warc.gz",
+    "warc_offset": 145180412,
+    "warc_length": 12292
+  },
+  {
+    "url": "https://www.adfg.alaska.gov/index.cfm?adfg=pondsmelt.main",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/index.cfm__b1ea37ba5807.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00120.warc.gz",
+    "warc_offset": 727467464,
+    "warc_length": 18305
+  },
+  {
+    "url": "https://www.commerce.alaska.gov/web/portals/5/pub/08-4764.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/web_portals_5_pub_08-4764.pdf__0e10f0f5b70d.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00123.warc.gz",
+    "warc_offset": 805857043,
+    "warc_length": 1020490
+  },
+  {
+    "url": "https://www.commerce.alaska.gov/web/portals/5/pub/08-460.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/web_portals_5_pub_08-460.pdf__89651df0184d.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00124.warc.gz",
+    "warc_offset": 814204687,
+    "warc_length": 989738
+  },
+  {
+    "url": "http://www.dhss.alaska.gov/dph/chronic/pages/library/default.aspx",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/dph_chronic_pages_library_default.aspx__4a84b33f2ea3.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00124.warc.gz",
+    "warc_offset": 147695832,
+    "warc_length": 15717
+  },
+  {
+    "url": "https://www.commerce.alaska.gov/web/portals/5/pub/pha_pdmp.prescriberreports.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/web_portals_5_pub_pha_pdmp.prescriberreports.pdf__f7054a0428e2.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00124.warc.gz",
+    "warc_offset": 815195207,
+    "warc_length": 140039
+  },
+  {
+    "url": "http://www.dhss.alaska.gov/dph/epi/id/siteassets/pages/humancov/business/flyer-howtosupportthisbusiness-fillable-crab.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/dph_epi_id_siteassets_pages_humancov_business_flyer-howtosupportthisbusiness-fillable-crab.pdf__b4400846e397.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00125.warc.gz",
+    "warc_offset": 153445987,
+    "warc_length": 1014466
+  },
+  {
+    "url": "https://www.commerce.alaska.gov/web/portals/5/pub/08-463.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/web_portals_5_pub_08-463.pdf__4a82302b62bc.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00127.warc.gz",
+    "warc_offset": 810272674,
+    "warc_length": 956758
+  },
+  {
+    "url": "http://www.dhss.alaska.gov/abada/pages/staff.aspx",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/abada_pages_staff.aspx__083356ebb100.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00127.warc.gz",
+    "warc_offset": 143696654,
+    "warc_length": 10662
+  },
+  {
+    "url": "http://www.dhss.alaska.gov/dph/epi/id/pages/covid-19/travel.aspx",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/dph_epi_id_pages_covid-19_travel.aspx__d9bd403a3ca1.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00128.warc.gz",
+    "warc_offset": 151536508,
+    "warc_length": 14846
+  },
+  {
+    "url": "http://www.dhss.alaska.gov/dph/playeveryday/pages/understanding-the-types-of-diabetes.aspx",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/dph_playeveryday_pages_understanding-the-types-of-diabetes.aspx__47eec88ba106.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00128.warc.gz",
+    "warc_offset": 151525030,
+    "warc_length": 10520
+  },
+  {
+    "url": "http://www.dhss.alaska.gov/commissioner/pages/boards/default.aspx",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/commissioner_pages_boards_default.aspx__f104ec0f4eb2.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00129.warc.gz",
+    "warc_offset": 145272385,
+    "warc_length": 11268
+  },
+  {
+    "url": "http://www.adfg.alaska.gov/index.cfm?adfg=viewing.webcams&fbclid=iwar2p8velhjnl0wzsogidbqb5mibuxuyrz0rf5fdatytydcm8bjh1xt99zfs",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/index.cfm__d14e829d10e1.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00130.warc.gz",
+    "warc_offset": 129134244,
+    "warc_length": 13290
+  },
+  {
+    "url": "https://www.commerce.alaska.gov/web/portals/5/pub/08-466.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/web_portals_5_pub_08-466.pdf__a23bbe14d407.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00130.warc.gz",
+    "warc_offset": 786970107,
+    "warc_length": 976056
+  },
+  {
+    "url": "https://www.commerce.alaska.gov/web/portals/5/pub/08-469.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/web_portals_5_pub_08-469.pdf__ed36c1374873.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00133.warc.gz",
+    "warc_offset": 835351402,
+    "warc_length": 1005315
+  },
+  {
+    "url": "https://www.commerce.alaska.gov/web/portals/4/pub/mertarvik_steering_committee_meeting_12_notes.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/web_portals_4_pub_mertarvik_steering_committee_meeting_12_notes.pdf__68a4587a3dcf.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00137.warc.gz",
+    "warc_offset": 820629038,
+    "warc_length": 666523
+  },
+  {
+    "url": "http://www.dhss.alaska.gov/dph/epi/id/pages/covid-19/business.aspx",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/dph_epi_id_pages_covid-19_business.aspx__4bf29a6bdc59.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00138.warc.gz",
+    "warc_offset": 146498468,
+    "warc_length": 16650
+  },
+  {
+    "url": "http://www.dhss.alaska.gov/dph/playeveryday/blog/lists/posts/post.aspx?list=8bb3b836-f360-46fa-a9f5-407dc7217d58&id=363&web=0bd2e12b-2bb7-4edd-90db-a145b3957ea1",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/dph_playeveryday_blog_lists_posts_post.aspx__7db034a5a0d2.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00139.warc.gz",
+    "warc_offset": 150859738,
+    "warc_length": 20064
+  },
+  {
+    "url": "https://www.adfg.alaska.gov/index.cfm?adfg=librarypublications.wildlifepublicationsdetails&pubidentifier=7154",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/index.cfm__4bbb6c4df701.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00140.warc.gz",
+    "warc_offset": 716136075,
+    "warc_length": 13265
+  },
+  {
+    "url": "http://www.adfg.alaska.gov/index.cfm?adfg=specialstatus.fedhabitat&species=greenseaturtle",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/index.cfm__e908f317aa06.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00140.warc.gz",
+    "warc_offset": 128171049,
+    "warc_length": 12904
+  },
+  {
+    "url": "http://www.dhss.alaska.gov/dph/nursing/pages/services-resource-pages/community-health-assessments.aspx",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/dph_nursing_pages_services-resource-pages_community-health-assessments.aspx__f104a5ff4585.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00140.warc.gz",
+    "warc_offset": 145391727,
+    "warc_length": 11158
+  },
+  {
+    "url": "https://www.commerce.alaska.gov/web/portals/5/pub/pha_case2013-001222.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/web_portals_5_pub_pha_case2013-001222.pdf__fc0b1f6800db.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00141.warc.gz",
+    "warc_offset": 826248590,
+    "warc_length": 351334
+  },
+  {
+    "url": "https://www.commerce.alaska.gov/web/portals/5/pub/pha_case2014-001553.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/web_portals_5_pub_pha_case2014-001553.pdf__ce86f7a1c5ea.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00141.warc.gz",
+    "warc_offset": 826600707,
+    "warc_length": 149500
+  },
+  {
+    "url": "http://www.dhss.alaska.gov/dph/chronic/pages/tobacco/tobaccofreealaska/community/dec2017.aspx",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/dph_chronic_pages_tobacco_tobaccofreealaska_community_dec2017.aspx__8f2b37f9e217.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00142.warc.gz",
+    "warc_offset": 147932464,
+    "warc_length": 11957
+  },
+  {
+    "url": "https://www.commerce.alaska.gov/web/portals/5/pub/pha_case2013-000089_ronaldjmiller_pharmacist.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/web_portals_5_pub_pha_case2013-000089_ronaldjmiller_pharmacist.pdf__bce2e838e0fa.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00146.warc.gz",
+    "warc_offset": 802733376,
+    "warc_length": 898968
+  },
+  {
+    "url": "https://www.adfg.alaska.gov/index.cfm?adfg=librarypublications.wildlifepublicationsdetails&pubidentifier=4785",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/index.cfm__21635f862fb6.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00147.warc.gz",
+    "warc_offset": 724818024,
+    "warc_length": 12931
+  },
+  {
+    "url": "http://www.dhss.alaska.gov/dph/playeveryday/pages/aboutcampaign.aspx",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/dph_playeveryday_pages_aboutcampaign.aspx__f2b925d76729.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00147.warc.gz",
+    "warc_offset": 146547695,
+    "warc_length": 10571
+  },
+  {
+    "url": "http://www.adfg.alaska.gov/static/applications/dcfnewsrelease/900598547.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/static_applications_dcfnewsrelease_900598547.pdf__a043d9546bd3.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00148.warc.gz",
+    "warc_offset": 128999745,
+    "warc_length": 160871
+  },
+  {
+    "url": "https://www.adfg.alaska.gov/static/education/wns/marten.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/static_education_wns_marten.pdf__bfcbb48252eb.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00149.warc.gz",
+    "warc_offset": 730229644,
+    "warc_length": 42372
+  },
+  {
+    "url": "https://www.adfg.alaska.gov/static/regulations/fishregulations/pdfs/southeast/2018se_sfregs_ketchikan.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/static_regulations_fishregulations_pdfs_southeast_2018se_sfregs_ketchikan.pdf__d8305274b631.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00150.warc.gz",
+    "warc_offset": 731754401,
+    "warc_length": 1041030
+  },
+  {
+    "url": "http://www.dhss.alaska.gov/abada/pages/members.aspx",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/abada_pages_members.aspx__25613d4826bc.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00150.warc.gz",
+    "warc_offset": 143221955,
+    "warc_length": 10895
+  },
+  {
+    "url": "https://www.commerce.alaska.gov/web/portals/4/pub/anlpac/anlpacreport.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/web_portals_4_pub_anlpac_anlpacreport.pdf__89adfb49becd.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00151.warc.gz",
+    "warc_offset": 806621814,
+    "warc_length": 930781
+  },
+  {
+    "url": "http://www.dhss.alaska.gov/dsds/documents/transitionplanhcbs/cms_feedbackonstp_3-16-17.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/dsds_documents_transitionplanhcbs_cms_feedbackonstp_3-16-17.pdf__d4b78227d5f2.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00151.warc.gz",
+    "warc_offset": 152465051,
+    "warc_length": 174884
+  },
+  {
+    "url": "http://www.adfg.alaska.gov/index.cfm?adfg=huntlicense.drawsupplements&utm_campaign=winter_2020_application_period&utm_source=1st_draw_reminder_email&utm_medium=email&utm_content=draw_supplements",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/index.cfm__558f944e18bd.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00154.warc.gz",
+    "warc_offset": 137735583,
+    "warc_length": 13091
+  },
+  {
+    "url": "http://www.adfg.alaska.gov/static/applications/dcfnewsrelease/1238935397.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/static_applications_dcfnewsrelease_1238935397.pdf__b9bc087d12f2.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00157.warc.gz",
+    "warc_offset": 136849021,
+    "warc_length": 158413
+  },
+  {
+    "url": "http://www.dhss.alaska.gov/dsds/pages/medicare/volunteer.aspx",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/dsds_pages_medicare_volunteer.aspx__a5d90ec39145.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00157.warc.gz",
+    "warc_offset": 154770471,
+    "warc_length": 12616
+  },
+  {
+    "url": "https://www.commerce.alaska.gov/web/portals/5/pub/bah4401.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/web_portals_5_pub_bah4401.pdf__30a50fc1aabe.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00159.warc.gz",
+    "warc_offset": 815865466,
+    "warc_length": 1005687
+  },
+  {
+    "url": "http://www.dhss.alaska.gov/dsds/pages/medicare/medicarehealth.aspx",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/dsds_pages_medicare_medicarehealth.aspx__6b4456809220.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00159.warc.gz",
+    "warc_offset": 154127433,
+    "warc_length": 11478
+  },
+  {
+    "url": "https://www.commerce.alaska.gov/web/portals/5/pub/08-475.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/web_portals_5_pub_08-475.pdf__88b72b31c011.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00160.warc.gz",
+    "warc_offset": 792316154,
+    "warc_length": 958242
+  },
+  {
+    "url": "http://www.dhss.alaska.gov/dph/epi/id/siteassets/pages/humancov/business/flyer-commitmenttoourcustomers.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/dph_epi_id_siteassets_pages_humancov_business_flyer-commitmenttoourcustomers.pdf__beb6cb223f2f.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00161.warc.gz",
+    "warc_offset": 157651106,
+    "warc_length": 705398
+  },
+  {
+    "url": "http://www.dhss.alaska.gov/dbh/pages/well-being-alaska.aspx",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/dbh_pages_well-being-alaska.aspx__03bc313e6683.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00162.warc.gz",
+    "warc_offset": 139286958,
+    "warc_length": 14235
+  },
+  {
+    "url": "https://www.adfg.alaska.gov/index.cfm?adfg=librarypublications.wildlifepublicationsdetails&pubidentifier=5104",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/index.cfm__b3c471c0f849.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00163.warc.gz",
+    "warc_offset": 732058741,
+    "warc_length": 12986
+  },
+  {
+    "url": "http://www.dhss.alaska.gov/dph/playeveryday/blog/lists/posts/post.aspx?id=406",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/dph_playeveryday_blog_lists_posts_post.aspx__aaf62583db32.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00165.warc.gz",
+    "warc_offset": 146793626,
+    "warc_length": 21714
+  },
+  {
+    "url": "https://www.commerce.alaska.gov/web/portals/5/pub/pco_agenda_2018.09.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/web_portals_5_pub_pco_agenda_2018.09.pdf__3e08d003ee59.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00165.warc.gz",
+    "warc_offset": 792045399,
+    "warc_length": 76704
+  },
+  {
+    "url": "https://www.adfg.alaska.gov/index.cfm?adfg=librarypublications.wildlifepublicationsdetails&pubidentifier=3028",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/index.cfm__fe3eb33aef9b.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00166.warc.gz",
+    "warc_offset": 736858905,
+    "warc_length": 13378
+  },
+  {
+    "url": "http://www.dhss.alaska.gov/dph/playeveryday/blog/lists/posts/post.aspx?id=380",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/dph_playeveryday_blog_lists_posts_post.aspx__958152fe7c1d.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00166.warc.gz",
+    "warc_offset": 155072574,
+    "warc_length": 20391
+  },
+  {
+    "url": "https://www.adfg.alaska.gov/index.cfm?adfg=librarypublications.wildlifepublicationsdetails&pubidentifier=5702",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/index.cfm__12f65cb2824b.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00167.warc.gz",
+    "warc_offset": 723505172,
+    "warc_length": 12980
+  },
+  {
+    "url": "http://www.adfg.alaska.gov/index.cfm?adfg=pressreleases.pr&release=2020_12_10",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/index.cfm__dcedd84d9f52.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00167.warc.gz",
+    "warc_offset": 127830568,
+    "warc_length": 14156
+  },
+  {
+    "url": "http://www.dhss.alaska.gov/gcdse/pages/partners/livingwell.aspx",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/gcdse_pages_partners_livingwell.aspx__40bb88a3258f.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00167.warc.gz",
+    "warc_offset": 147543515,
+    "warc_length": 11098
+  },
+  {
+    "url": "http://www.dhss.alaska.gov/dph/playeveryday/blog/lists/posts/post.aspx?id=381",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/dph_playeveryday_blog_lists_posts_post.aspx__3020465198aa.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00167.warc.gz",
+    "warc_offset": 147521545,
+    "warc_length": 21024
+  },
+  {
+    "url": "http://www.dhss.alaska.gov/dph/nursing/pages/services-resource-pages/infectious-disease-control.aspx",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/dph_nursing_pages_services-resource-pages_infectious-disease-control.aspx__bc381d08cf5d.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00168.warc.gz",
+    "warc_offset": 146080286,
+    "warc_length": 10281
+  },
+  {
+    "url": "http://www.adfg.alaska.gov/static/fishing/pdfs/hatcheries/research/pwssc_hw_2015_report.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/static_fishing_pdfs_hatcheries_research_pwssc_hw_2015_report.pdf__10cd4a81bc41.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00169.warc.gz",
+    "warc_offset": 129988067,
+    "warc_length": 1045819
+  },
+  {
+    "url": "https://www.adfg.alaska.gov/index.cfm?adfg=librarypublications.wildlifepublicationsdetails&pubidentifier=5708",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/index.cfm__d99777326491.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00173.warc.gz",
+    "warc_offset": 721705840,
+    "warc_length": 12945
+  },
+  {
+    "url": "https://www.commerce.alaska.gov/web/portals/5/pub/08-0564.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/web_portals_5_pub_08-0564.pdf__c4f88796431f.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00173.warc.gz",
+    "warc_offset": 806297591,
+    "warc_length": 927827
+  },
+  {
+    "url": "http://www.adfg.alaska.gov/static/applications/webintra/wcnews/2021/releases/01-04-2021.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/static_applications_webintra_wcnews_2021_releases_01-04-2021.pdf__dcdc88d3a2e4.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00175.warc.gz",
+    "warc_offset": 133421850,
+    "warc_length": 222948
+  },
+  {
+    "url": "http://www.dhss.alaska.gov/dph/nursing/pages/services-resource-pages/immunizations.aspx",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AK/raw_html/dph_nursing_pages_services-resource-pages_immunizations.aspx__03df810c97ea.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00175.warc.gz",
+    "warc_offset": 149254141,
+    "warc_length": 10903
+  }
+]

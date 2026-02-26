@@ -1,0 +1,1434 @@
+[
+  {
+    "url": "http://ahc.alabama.gov/grantspdfs/alabama%20resources.pdf",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/grantspdfs_alabama_20resources.pdf__a54ebb336999.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00001.warc.gz",
+    "warc_offset": 147437,
+    "warc_length": 1075
+  },
+  {
+    "url": "https://myalabamataxes.alabama.gov/_",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/index__53f7478388d5.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00007.warc.gz",
+    "warc_offset": 15475875,
+    "warc_length": 4903
+  },
+  {
+    "url": "http://ahc.alabama.gov/news.aspx",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/news.aspx__d5afd7d4e3cc.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00028.warc.gz",
+    "warc_offset": 120348,
+    "warc_length": 1044
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/place_hold?hold_source_page=%2feg%2fopac%2fresults%3fquery%3dcivil%2520rights%2520movements%2520fiction.%3bqtype%3dsubject;query=subject%3acivil%20rights%20movements%20fiction.;hold_type=t;hold_target=224118",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_place_hold__95c6fbfdd74b.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00031.warc.gz",
+    "warc_offset": 10027874,
+    "warc_length": 938
+  },
+  {
+    "url": "http://ahc.alabama.gov/placesinperilpdfs/2013%20places%20in%20peril%20list%202.pdf",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/placesinperilpdfs_2013_20places_20in_20peril_20list_202.pdf__64584a2e5672.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00054.warc.gz",
+    "warc_offset": 148568,
+    "warc_length": 1094
+  },
+  {
+    "url": "http://ahc.alabama.gov/architecturalprogramspdfs/ahc_architectural_survey_guidelines.pdf",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/architecturalprogramspdfs_ahc_architectural_survey_guidelines.pdf__ff172821fccd.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00060.warc.gz",
+    "warc_offset": 94284,
+    "warc_length": 1083
+  },
+  {
+    "url": "http://ahc.alabama.gov/grantspdfs/national%20funding%20sources.pdf",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/grantspdfs_national_20funding_20sources.pdf__a3754ee2991c.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00067.warc.gz",
+    "warc_offset": 124849,
+    "warc_length": 1084
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/mylist/delete?record=214940;anchor=record_214940",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_mylist_delete__3e41e62b986a.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00077.warc.gz",
+    "warc_offset": 10317211,
+    "warc_length": 808
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/mylist/delete?record=146893;anchor=record_146893",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_mylist_delete__423ff15bc07f.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00093.warc.gz",
+    "warc_offset": 10627311,
+    "warc_length": 808
+  },
+  {
+    "url": "http://ahc.alabama.gov/placesinperilpdfs/pip2011.pdf",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/placesinperilpdfs_pip2011.pdf__4e8a224fb852.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00097.warc.gz",
+    "warc_offset": 74234,
+    "warc_length": 1062
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/mylist/add?anchor=record_239200;record=239200",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_mylist_add__4971c4b8d6b3.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00117.warc.gz",
+    "warc_offset": 10741733,
+    "warc_length": 805
+  },
+  {
+    "url": "http://ahc.alabama.gov/commissionpdfs/the%20code%20of%20alabama%201975.pdf",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/commissionpdfs_the_20code_20of_20alabama_201975.pdf__9e76ff1ad937.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00134.warc.gz",
+    "warc_offset": 86083,
+    "warc_length": 1082
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/place_hold?query=subject%3asegregation%20in%20transportation%20alabama%20montgomery%20history%2020th%20century%20juvenile%20literature;hold_target=237380;hold_type=t;hold_source_page=%2feg%2fopac%2fresults%3fquery%3dsegregation%2520in%2520transportation%2520alabama%2520montgomery%2520history%252020th%2520century%2520juvenile%2520literature%3bqtype%3dsubject",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_place_hold__a86d6a76ebec.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00142.warc.gz",
+    "warc_offset": 10640001,
+    "warc_length": 1013
+  },
+  {
+    "url": "http://ahc.alabama.gov/placesinperilpdfs/al-in-peril-2016.pdf",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/placesinperilpdfs_al-in-peril-2016.pdf__828dd15b58fc.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00146.warc.gz",
+    "warc_offset": 108060,
+    "warc_length": 1063
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/myopac/main?query=identifier%7cgenre%5bnovels.%5d;qtype=subject",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_myopac_main__174f198b8d44.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00159.warc.gz",
+    "warc_offset": 10162208,
+    "warc_length": 831
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/place_hold?query=subject%3acivil%20rights%20movements%20fiction.;hold_source_page=%2feg%2fopac%2fresults%3fquery%3dcivil%2520rights%2520movements%2520fiction.%3bqtype%3dsubject;hold_type=t;hold_target=228381",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_place_hold__e06e479ea8b0.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00159.warc.gz",
+    "warc_offset": 10163933,
+    "warc_length": 937
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/place_hold?hold_target=239452;query=subject%3aidentifier%7cgenre%5bnovels.%5d;hold_source_page=%2feg%2fopac%2fresults%3fqtype%3dsubject%3bquery%3didentifier%257cgenre%255bnovels.%255d;hold_type=t",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_place_hold__8bf6d9b957cc.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00168.warc.gz",
+    "warc_offset": 9384856,
+    "warc_length": 927
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/mylist/add?anchor=record_179007;record=179007",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_mylist_add__61fa6d060a65.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00169.warc.gz",
+    "warc_offset": 10859982,
+    "warc_length": 809
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/mylist/add?record=17830;anchor=record_17830",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_mylist_add__b28e5ee3f2b1.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00171.warc.gz",
+    "warc_offset": 10747477,
+    "warc_length": 800
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/mylist/add?anchor=record_239857;record=239857",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_mylist_add__c1c47d3c3990.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00181.warc.gz",
+    "warc_offset": 10800964,
+    "warc_length": 805
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/place_hold?hold_type=t;query=subject%3areligions;hold_source_page=%2feg%2fopac%2fresults%3fqtype%3dsubject%3bquery%3dreligions%3bpage%3d7;hold_target=74582",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_place_hold__531a436d82c3.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00188.warc.gz",
+    "warc_offset": 10763062,
+    "warc_length": 907
+  },
+  {
+    "url": "http://ahc.alabama.gov/inthenews.aspx",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/inthenews.aspx__14e522c97912.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00194.warc.gz",
+    "warc_offset": 217912,
+    "warc_length": 1050
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/mylist/delete?record=183963;anchor=record_183963",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_mylist_delete__bfe4754c1b48.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00205.warc.gz",
+    "warc_offset": 10792309,
+    "warc_length": 807
+  },
+  {
+    "url": "http://ahc.alabama.gov/placesinperil.aspx",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/placesinperil.aspx__6d124f83dbf0.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00210.warc.gz",
+    "warc_offset": 94716,
+    "warc_length": 1051
+  },
+  {
+    "url": "https://ahc.alabama.gov/resources/grants%20pdf-%20new/2021_etf_grant_application%20fillable%20pdf.pdf",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/resources_grants_20pdf-_20new_2021_etf_grant_application_20fillable_20pdf.pdf__02081293492c.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00211.warc.gz",
+    "warc_offset": 7214538,
+    "warc_length": 1597
+  },
+  {
+    "url": "http://ahc.alabama.gov/placesinperilpdfs/pip%204-page%202010.pdf",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/placesinperilpdfs_pip_204-page_202010.pdf__35e401dfb45f.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00216.warc.gz",
+    "warc_offset": 111270,
+    "warc_length": 1074
+  },
+  {
+    "url": "http://ahc.alabama.gov/placesinperilpdfs/2012placesinperil_info.pdf",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/placesinperilpdfs_2012placesinperil_info.pdf__5ceff7fc3861.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00217.warc.gz",
+    "warc_offset": 132018,
+    "warc_length": 1070
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/myopac/main?qtype=subject;query=california%20history",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_myopac_main__ac2fadb3005f.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00222.warc.gz",
+    "warc_offset": 10430911,
+    "warc_length": 823
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/mylist/add?record=183963;anchor=record_183963",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_mylist_add__a10c9a0ba09f.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00239.warc.gz",
+    "warc_offset": 10491001,
+    "warc_length": 806
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/mylist/add?record=170775;anchor=record_170775",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_mylist_add__783f2f44f0e5.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00271.warc.gz",
+    "warc_offset": 10776692,
+    "warc_length": 804
+  },
+  {
+    "url": "https://ahc.alabama.gov/updates.aspx",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/updates.aspx__1f684412b3a0.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00278.warc.gz",
+    "warc_offset": 7354997,
+    "warc_length": 1051
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/mylist/delete?anchor=record_199959;record=199959",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_mylist_delete__6d3aeb3d5290.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00279.warc.gz",
+    "warc_offset": 9994827,
+    "warc_length": 807
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/place_hold?hold_type=t;hold_source_page=%2feg%2fopac%2fresults%3fqtype%3dsubject%3bquery%3dsegregation%2520in%2520transportation%2520alabama%2520montgomery%2520history%252020th%2520century%2520juvenile%2520literature;query=subject%3asegregation%20in%20transportation%20alabama%20montgomery%20history%2020th%20century%20juvenile%20literature;hold_target=231633",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_place_hold__10231b32bfb4.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00287.warc.gz",
+    "warc_offset": 11217104,
+    "warc_length": 1008
+  },
+  {
+    "url": "http://ahc.alabama.gov/section106pdfs/alabama_architectural_guidelines_for_106_projects.pdf",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/section106pdfs_alabama_architectural_guidelines_for_106_projects.pdf__557458f5050e.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00301.warc.gz",
+    "warc_offset": 107378,
+    "warc_length": 1084
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/mylist/delete?record=80886;anchor=record_80886",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_mylist_delete__ba44b0c53cf3.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00311.warc.gz",
+    "warc_offset": 11807915,
+    "warc_length": 805
+  },
+  {
+    "url": "http://ahc.alabama.gov/section106pdfs/policy_for_archaeological_survey_and_testing_in_alabama.pdf",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/section106pdfs_policy_for_archaeological_survey_and_testing_in_alabama.pdf__c33d3a49669b.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00324.warc.gz",
+    "warc_offset": 87597,
+    "warc_length": 1093
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/mylist/add?anchor=record_171949;record=171949",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_mylist_add__e7093ef076cc.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00343.warc.gz",
+    "warc_offset": 10964773,
+    "warc_length": 805
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/place_hold?hold_target=225035;query=subject%3asegregation%20in%20transportation%20alabama%20montgomery%20history%2020th%20century%20juvenile%20literature;hold_source_page=%2feg%2fopac%2fresults%3fqtype%3dsubject%3bquery%3dsegregation%2520in%2520transportation%2520alabama%2520montgomery%2520history%252020th%2520century%2520juvenile%2520literature;hold_type=t",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_place_hold__ccddeab1e65f.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00346.warc.gz",
+    "warc_offset": 11021072,
+    "warc_length": 1005
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/mylist/delete?anchor=record_17830;record=17830",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_mylist_delete__75928f40153c.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00349.warc.gz",
+    "warc_offset": 11283960,
+    "warc_length": 806
+  },
+  {
+    "url": "http://ahc.alabama.gov/commissionpdfs/by-laws.pdf",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/commissionpdfs_by-laws.pdf__b688d249b5eb.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00353.warc.gz",
+    "warc_offset": 131609,
+    "warc_length": 1056
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/mylist/delete?record=209774;anchor=record_209774",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_mylist_delete__da80a92edf4a.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00365.warc.gz",
+    "warc_offset": 10473450,
+    "warc_length": 805
+  },
+  {
+    "url": "http://ahc.alabama.gov/architecturalprogramspdfs/ahc%20research%20policy%20(revised%20november%202016).pdf",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/architecturalprogramspdfs_ahc_20research_20policy_20_revised_20november_202016_.pdf__043471a947a6.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00381.warc.gz",
+    "warc_offset": 123655,
+    "warc_length": 1114
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/place_hold?facet=subject%7ctopic%5bfiction%5d;facet=identifier%7cgenre%5bdetective%20and%20mystery%20fiction.%5d;detail_record_view=1;long_facet=subjectgeographic;query=subject%3aidentifier%7cgenre%5bthrillers%20%28fiction%29%5d;hold_type=t;hold_source_page=%2feg%2fopac%2fresults%3fqtype%3dsubject%3bquery%3didentifier%257cgenre%255bthrillers%2520%2528fiction%2529%255d%3bfacet%3dsubject%257ctopic%255bfiction%255d%3bfacet%3didentifier%257cgenre%255bdetective%2520and%2520mystery%2520fiction.%255d%3bdetail_record_view%3d1%3blong_facet%3dsubjectgeographic;hold_target=239316",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_place_hold__bbf1d61732ef.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00395.warc.gz",
+    "warc_offset": 9946434,
+    "warc_length": 1130
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/mylist/add?anchor=record_230857;record=230857",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_mylist_add__624f2b3a6654.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00407.warc.gz",
+    "warc_offset": 11649341,
+    "warc_length": 805
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/mylist/delete?record=224118;anchor=record_224118",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_mylist_delete__9ea8597207fd.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00413.warc.gz",
+    "warc_offset": 11767615,
+    "warc_length": 802
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/mylist/delete?record=231904;anchor=record_231904",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_mylist_delete__7a5ab3ab9fe0.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00413.warc.gz",
+    "warc_offset": 11769214,
+    "warc_length": 806
+  },
+  {
+    "url": "http://ahc.alabama.gov/statetaxcreditpdfs/fact_sheet_2017_alabama_historic_rehabilitation_tax_credit.pdf",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/statetaxcreditpdfs_fact_sheet_2017_alabama_historic_rehabilitation_tax_credit.pdf__0557d532ae63.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00415.warc.gz",
+    "warc_offset": 129142,
+    "warc_length": 1094
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/place_hold?hold_type=t;hold_source_page=%2feg%2fopac%2fresults%3fqtype%3dsubject%3bquery%3dsegregation%2520in%2520transportation%2520alabama%2520montgomery%2520history%252020th%2520century%2520juvenile%2520literature;query=subject%3asegregation%20in%20transportation%20alabama%20montgomery%20history%2020th%20century%20juvenile%20literature;hold_target=228384",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_place_hold__2374aeb53f28.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00416.warc.gz",
+    "warc_offset": 10608809,
+    "warc_length": 1008
+  },
+  {
+    "url": "http://ahc.alabama.gov/grantspdfs/national%20resources.pdf",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/grantspdfs_national_20resources.pdf__552309640163.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00422.warc.gz",
+    "warc_offset": 174079,
+    "warc_length": 1068
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/mylist/add?record=199959;anchor=record_199959",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_mylist_add__f0892f1556ae.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00431.warc.gz",
+    "warc_offset": 10742674,
+    "warc_length": 805
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/mylist/add?record=189683;anchor=record_189683",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_mylist_add__f8fec7f04b62.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00447.warc.gz",
+    "warc_offset": 10910324,
+    "warc_length": 802
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/mylist/add?record=224118;anchor=record_224118",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_mylist_add__5474e7a93b5e.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00447.warc.gz",
+    "warc_offset": 10911918,
+    "warc_length": 800
+  },
+  {
+    "url": "http://ahc.alabama.gov/grantspdfs/2018_capital_enhancements_grant_program.pdf",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/grantspdfs_2018_capital_enhancements_grant_program.pdf__c285c9035aae.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00464.warc.gz",
+    "warc_offset": 141521,
+    "warc_length": 1079
+  },
+  {
+    "url": "http://ahc.alabama.gov/statetaxcreditpdfs/2018tax_credit_allocation_and_waiting_list.pdf",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/statetaxcreditpdfs_2018tax_credit_allocation_and_waiting_list.pdf__4399610e0a0d.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00464.warc.gz",
+    "warc_offset": 143396,
+    "warc_length": 1083
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/mylist/add?record=239200;anchor=record_239200",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_mylist_add__fa8334f6fdf9.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00479.warc.gz",
+    "warc_offset": 10717801,
+    "warc_length": 805
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/place_hold?facet=subject%7ctopic%5bhistory%5d;hold_target=239799;query=subject%3areligions;hold_source_page=%2feg%2fopac%2fresults%3fqtype%3dsubject%3bquery%3dreligions%3bfacet%3dsubject%257ctopic%255bhistory%255d;hold_type=t",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_place_hold__a2abd076ec25.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00480.warc.gz",
+    "warc_offset": 10396292,
+    "warc_length": 952
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/mylist/add?anchor=record_231904;record=231904",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_mylist_add__811b6b5893d2.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00491.warc.gz",
+    "warc_offset": 10999511,
+    "warc_length": 805
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/mylist/delete?record=117248;anchor=record_117248",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_mylist_delete__525f8fdc8818.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00493.warc.gz",
+    "warc_offset": 10978087,
+    "warc_length": 805
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/mylist/delete?anchor=record_80100;record=80100",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_mylist_delete__8c38ce7cc75c.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00525.warc.gz",
+    "warc_offset": 11324347,
+    "warc_length": 805
+  },
+  {
+    "url": "http://ahc.alabama.gov/architecturalprogramspdfs/ahc%20copy%20policy%20(revised%20november%202016).pdf",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/architecturalprogramspdfs_ahc_20copy_20policy_20_revised_20november_202016_.pdf__a31c2a8fa97e.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00531.warc.gz",
+    "warc_offset": 167393,
+    "warc_length": 1109
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/mylist/add?record=101435;anchor=record_101435",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_mylist_add__4e94cc92732c.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00543.warc.gz",
+    "warc_offset": 10390442,
+    "warc_length": 803
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/mylist/delete?anchor=record_238682;record=238682",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_mylist_delete__013e2d1156a6.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00545.warc.gz",
+    "warc_offset": 9765056,
+    "warc_length": 807
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/place_hold?facet=subject%7ctopic%5bfiction%5d;facet=identifier%7cgenre%5bdetective%20and%20mystery%20fiction.%5d;detail_record_view=1;long_facet=subjectgeographic;query=subject%3aidentifier%7cgenre%5bthrillers%20%28fiction%29%5d;hold_type=t;hold_source_page=%2feg%2fopac%2fresults%3fqtype%3dsubject%3bquery%3didentifier%257cgenre%255bthrillers%2520%2528fiction%2529%255d%3bfacet%3dsubject%257ctopic%255bfiction%255d%3bfacet%3didentifier%257cgenre%255bdetective%2520and%2520mystery%2520fiction.%255d%3bdetail_record_view%3d1%3blong_facet%3dsubjectgeographic;hold_target=239364",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_place_hold__6b841d46e1bb.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00548.warc.gz",
+    "warc_offset": 10240846,
+    "warc_length": 1134
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/mylist/delete?anchor=record_9362;record=9362",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_mylist_delete__927135658bc0.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00555.warc.gz",
+    "warc_offset": 10590875,
+    "warc_length": 807
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/mylist/add?record=174605;anchor=record_174605",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_mylist_add__ae235892c45a.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00575.warc.gz",
+    "warc_offset": 11124060,
+    "warc_length": 805
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/place_hold?hold_source_page=%2feg%2fopac%2fresults%3fquery%3dsegregation%2520in%2520transportation%2520alabama%2520montgomery%2520history%252020th%2520century%2520juvenile%2520literature%3bqtype%3dsubject;hold_type=t;hold_target=231633;query=subject%3asegregation%20in%20transportation%20alabama%20montgomery%20history%2020th%20century%20juvenile%20literature",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_place_hold__68f6141a8074.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00579.warc.gz",
+    "warc_offset": 11155120,
+    "warc_length": 1014
+  },
+  {
+    "url": "https://ahc.alabama.gov/properties/statehistoricpreservationplan.aspx",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/properties_statehistoricpreservationplan.aspx__d8694e672251.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00583.warc.gz",
+    "warc_offset": 6872081,
+    "warc_length": 1073
+  },
+  {
+    "url": "http://ahc.alabama.gov/updates.aspx",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/updates.aspx__d7f491d7b457.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00583.warc.gz",
+    "warc_offset": 119745,
+    "warc_length": 1046
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/mylist/add?anchor=record_9362;record=9362",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_mylist_add__af4651917aba.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00621.warc.gz",
+    "warc_offset": 9986429,
+    "warc_length": 804
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/place_hold?query=subject%3asegregation%20in%20transportation%20alabama%20montgomery%20history%2020th%20century%20juvenile%20literature;hold_target=224561;hold_source_page=%2feg%2fopac%2fresults%3fquery%3dsegregation%2520in%2520transportation%2520alabama%2520montgomery%2520history%252020th%2520century%2520juvenile%2520literature%3bqtype%3dsubject;hold_type=t",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_place_hold__ca054c1963a7.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00645.warc.gz",
+    "warc_offset": 10806165,
+    "warc_length": 1013
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/mylist/delete?anchor=record_201899;record=201899",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_mylist_delete__e1eb40f5c4b9.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00649.warc.gz",
+    "warc_offset": 10331215,
+    "warc_length": 805
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/mylist/delete?record=200969;anchor=record_200969",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_mylist_delete__0fa11af4a5af.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00653.warc.gz",
+    "warc_offset": 11565167,
+    "warc_length": 805
+  },
+  {
+    "url": "http://ahc.alabama.gov/grantspdfs/alabama%20funding%20sources.pdf",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/grantspdfs_alabama_20funding_20sources.pdf__6dbfc518fb11.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00654.warc.gz",
+    "warc_offset": 124003,
+    "warc_length": 1079
+  },
+  {
+    "url": "http://ahc.alabama.gov/placesinperilpdfs/2014placesinperilweb.pdf",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/placesinperilpdfs_2014placesinperilweb.pdf__fd6fc4ec31aa.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00658.warc.gz",
+    "warc_offset": 141058,
+    "warc_length": 1069
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/place_hold?hold_target=239850;hold_source_page=%2feg%2fopac%2fresults%3fquery%3didentifier%257cgenre%255bnovels.%255d%3bqtype%3dsubject;query=subject%3aidentifier%7cgenre%5bnovels.%5d;hold_type=t",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_place_hold__0068ce15a712.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00666.warc.gz",
+    "warc_offset": 11204097,
+    "warc_length": 934
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/place_hold?hold_target=239850;hold_type=t;query=subject%3aidentifier%7cgenre%5bnovels.%5d;hold_source_page=%2feg%2fopac%2fresults%3fqtype%3dsubject%3bquery%3didentifier%257cgenre%255bnovels.%255d",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_place_hold__a7c9b59a8361.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00666.warc.gz",
+    "warc_offset": 11206000,
+    "warc_length": 932
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/mylist/delete?anchor=record_239324;record=239324",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_mylist_delete__edf3ffa1dab2.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00697.warc.gz",
+    "warc_offset": 10554241,
+    "warc_length": 806
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/place_hold?hold_target=239324;query=subject%3aidentifier%7cgenre%5bnovels.%5d;hold_type=t;hold_source_page=%2feg%2fopac%2fresults%3fqtype%3dsubject%3bquery%3didentifier%257cgenre%255bnovels.%255d",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_place_hold__a32288e26845.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00700.warc.gz",
+    "warc_offset": 10368154,
+    "warc_length": 932
+  },
+  {
+    "url": "http://ahc.alabama.gov/architecturalprogramspdfs/buildingsurveyform.pdf",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/architecturalprogramspdfs_buildingsurveyform.pdf__2c4e3bf1d50a.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/crawldiagnostics/CC-MAIN-20210115134101-20210115164101-00705.warc.gz",
+    "warc_offset": 149210,
+    "warc_length": 1078
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/robots.txt",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/robots.txt__15c4ec208236.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/robotstxt/CC-MAIN-20210115134101-20210115164101-00005.warc.gz",
+    "warc_offset": 1593514,
+    "warc_length": 696
+  },
+  {
+    "url": "https://ahc.alabama.gov/robots.txt",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/robots.txt__7cfdaa160cc8.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/robotstxt/CC-MAIN-20210115134101-20210115164101-00083.warc.gz",
+    "warc_offset": 1220545,
+    "warc_length": 3900
+  },
+  {
+    "url": "http://ahc.alabama.gov/robots.txt",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/robots.txt__1f2957922de8.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/robotstxt/CC-MAIN-20210115134101-20210115164101-00196.warc.gz",
+    "warc_offset": 46836,
+    "warc_length": 1048
+  },
+  {
+    "url": "https://publichunts.dcnr.alabama.gov/robots.txt",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/robots.txt__9ea43a1f0f98.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/robotstxt/CC-MAIN-20210115134101-20210115164101-00357.warc.gz",
+    "warc_offset": 2160649,
+    "warc_length": 1132
+  },
+  {
+    "url": "http://auditor.alabama.gov/robots.txt",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/robots.txt__a6986b71347c.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/robotstxt/CC-MAIN-20210115134101-20210115164101-00434.warc.gz",
+    "warc_offset": 69422,
+    "warc_length": 1536
+  },
+  {
+    "url": "https://myalabamataxes.alabama.gov/robots.txt",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/robots.txt__7f084ff9a90e.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/robotstxt/CC-MAIN-20210115134101-20210115164101-00707.warc.gz",
+    "warc_offset": 1987349,
+    "warc_length": 608
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/results?query=segregation%20in%20transportation%20alabama%20montgomery%20history%2020th%20century%20juvenile%20literature;qtype=subject;detail_record_view=1",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_results__af8423902c07.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00003.warc.gz",
+    "warc_offset": 372994576,
+    "warc_length": 14294
+  },
+  {
+    "url": "https://ahc.alabama.gov/map.aspx",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/map.aspx__427699405360.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00004.warc.gz",
+    "warc_offset": 234795804,
+    "warc_length": 6787
+  },
+  {
+    "url": "https://ahc.alabama.gov/pdf/frontier%20days%20teacher%20packet%2011.17.20.pdf",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/pdf_frontier_20days_20teacher_20packet_2011.17.20.pdf__e760e2c4948c.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00011.warc.gz",
+    "warc_offset": 245480975,
+    "warc_length": 1027514
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/results?qtype=subject;query=identifier%7cgenre%5bthrillers%20%28fiction%29%5d;facet=subject%7ctopic%5bfiction%5d;facet=identifier%7cgenre%5bdetective%20and%20mystery%20fiction.%5d;facet=subject%7cname%5bcarpenter%2c%20andy%20%28fictitious%20character%29%5d;detail_record_view=1;long_facet=subjectgeographic",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_results__dca63f299cc9.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00015.warc.gz",
+    "warc_offset": 362943637,
+    "warc_length": 9674
+  },
+  {
+    "url": "https://ahc.alabama.gov/partnerships.aspx",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/partnerships.aspx__e64c701bbb6c.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00017.warc.gz",
+    "warc_offset": 232820594,
+    "warc_length": 8012
+  },
+  {
+    "url": "https://ahc.alabama.gov/alabamastatecapitolplanyourvisit.aspx",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/alabamastatecapitolplanyourvisit.aspx__41374867d530.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00019.warc.gz",
+    "warc_offset": 229726984,
+    "warc_length": 8029
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/results?qtype=subject;query=segregation%20in%20transportation%20alabama%20montgomery%20history%2020th%20century%20juvenile%20literature;facet=identifier%7cgenre%5bhistory.%5d",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_results__b0b8df0d4a3a.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00019.warc.gz",
+    "warc_offset": 361125776,
+    "warc_length": 11595
+  },
+  {
+    "url": "https://ahc.alabama.gov/news_detail.aspx?id=13749",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/news_detail.aspx__760a8c3b72cf.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00020.warc.gz",
+    "warc_offset": 224900875,
+    "warc_length": 23399
+  },
+  {
+    "url": "https://ahc.alabama.gov/archaeology.aspx",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/archaeology.aspx__59a35d27c50b.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00022.warc.gz",
+    "warc_offset": 239879506,
+    "warc_length": 7711
+  },
+  {
+    "url": "https://ahc.alabama.gov/pdf/crossword-answer%20key.pdf",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/pdf_crossword-answer_20key.pdf__f93816b4666d.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00022.warc.gz",
+    "warc_offset": 239261159,
+    "warc_length": 617566
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/results?qtype=subject;query=religions;facet=subject%7ctopic%5bhistory%5d;facet=subject%7cgeographic%5bsouthern%20states%5d",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_results__bbf6ede84adb.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00023.warc.gz",
+    "warc_offset": 365597253,
+    "warc_length": 9951
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/record/197797?detail_record_view=1;query=subject%3areligions",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_record_197797__f07b3f1d01e7.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00024.warc.gz",
+    "warc_offset": 361000301,
+    "warc_length": 8125
+  },
+  {
+    "url": "https://ahc.alabama.gov/clg-faq.aspx",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/clg-faq.aspx__e805e820ca02.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00025.warc.gz",
+    "warc_offset": 234019502,
+    "warc_length": 9304
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/results?query=civil%20rights%20movements%20fiction.;qtype=subject;facet=subject%7ctopic%5bhistory%5d",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_results__28b5cf779b5e.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00028.warc.gz",
+    "warc_offset": 377447172,
+    "warc_length": 11250
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/record/179007?query=subject%3ainterpersonal%20relations",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_record_179007__fd833fa9c879.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00030.warc.gz",
+    "warc_offset": 372232684,
+    "warc_length": 7496
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/results?qtype=author;query=covington%20%20vicki%20",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_results__a942c88b7e4e.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00031.warc.gz",
+    "warc_offset": 376527188,
+    "warc_length": 10297
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/mylist?query=civil%20rights%20movements%20fiction.;qtype=subject",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_mylist__81305109e59b.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00035.warc.gz",
+    "warc_offset": 376491698,
+    "warc_length": 5258
+  },
+  {
+    "url": "https://ahc.alabama.gov/magnoliagroveplanyourvisit.aspx",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/magnoliagroveplanyourvisit.aspx__86140d789f64.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00036.warc.gz",
+    "warc_offset": 234666698,
+    "warc_length": 7590
+  },
+  {
+    "url": "https://ahc.alabama.gov/reports/final_mobile_river_survey_search_redacted.pdf",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/reports_final_mobile_river_survey_search_redacted.pdf__93812b9055bd.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00037.warc.gz",
+    "warc_offset": 239980414,
+    "warc_length": 1010592
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/record/8918?detail_record_view=1;query=subject%3areligions",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_record_8918__7b737eb5feac.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00038.warc.gz",
+    "warc_offset": 373489597,
+    "warc_length": 7540
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/results?query=interpersonal%20relations;qtype=subject;facet=subject%7cname%5bandrae%2c%20a%5d",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_results__6fa4f08d6f09.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00040.warc.gz",
+    "warc_offset": 371249073,
+    "warc_length": 8881
+  },
+  {
+    "url": "https://ahc.alabama.gov/properties/ftmorgan/ftmorgan.aspx",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/properties_ftmorgan_ftmorgan.aspx__aefa3bef5015.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00045.warc.gz",
+    "warc_offset": 227742540,
+    "warc_length": 9276
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/results?qtype=author;query=hudson%20%20suzanne%20%201953%20",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_results__b51577b6afa1.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00045.warc.gz",
+    "warc_offset": 366789337,
+    "warc_length": 9190
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/results?qtype=subject;query=segregation%20in%20transportation%20alabama%20montgomery%20history%2020th%20century%20juvenile%20literature;facet=author%7cpersonal%5bcrewe%2c%20sabrina.%5d",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_results__62784670a7d0.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00047.warc.gz",
+    "warc_offset": 363093117,
+    "warc_length": 8746
+  },
+  {
+    "url": "https://ahc.alabama.gov/pdf/fy21_clg_grant_application%2012.21.pdf",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/pdf_fy21_clg_grant_application_2012.21.pdf__5c14f312fefa.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00049.warc.gz",
+    "warc_offset": 236468721,
+    "warc_length": 1014135
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/results?qtype=subject;query=segregation%20in%20transportation%20alabama%20montgomery%20history%2020th%20century%20juvenile%20literature;facet=subject%7cgeographic%5balabama%5d",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_results__114a5112d1d2.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00049.warc.gz",
+    "warc_offset": 382518665,
+    "warc_length": 12489
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/results?query=segregation%20in%20transportation%20alabama%20montgomery%20history%2020th%20century%20juvenile%20literature;qtype=subject;facet=subject%7cname%5bparks%2c%20rosa%201913-2005%5d",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_results__7065596904a6.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00050.warc.gz",
+    "warc_offset": 379318345,
+    "warc_length": 11740
+  },
+  {
+    "url": "https://ahc.alabama.gov/fttoulouseplanyourvisit.aspx",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/fttoulouseplanyourvisit.aspx__d6ee218f0dd0.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00057.warc.gz",
+    "warc_offset": 246103968,
+    "warc_length": 7638
+  },
+  {
+    "url": "https://ahc.alabama.gov/pdf/fy21_clg_development_grant_application%2012.21.pdf",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/pdf_fy21_clg_development_grant_application_2012.21.pdf__d0aaaed59f75.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00061.warc.gz",
+    "warc_offset": 217172286,
+    "warc_length": 1014953
+  },
+  {
+    "url": "https://ahc.alabama.gov/properties/fttoulouse/fttoulouse.aspx",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/properties_fttoulouse_fttoulouse.aspx__dc122dcf9828.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00061.warc.gz",
+    "warc_offset": 218188043,
+    "warc_length": 9713
+  },
+  {
+    "url": "https://ahc.alabama.gov/properties/pondspring/pondspring.aspx",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/properties_pondspring_pondspring.aspx__a23b02a30691.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00061.warc.gz",
+    "warc_offset": 218198671,
+    "warc_length": 9027
+  },
+  {
+    "url": "https://ahc.alabama.gov/placesinperil.aspx",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/placesinperil.aspx__aa19908d2ad1.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00065.warc.gz",
+    "warc_offset": 231571648,
+    "warc_length": 8963
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/results?qtype=subject;query=california%20history;facet=author%7cpersonal%5bburns%2c%20walter%20noble.%5d",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_results__c798afbf7332.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00065.warc.gz",
+    "warc_offset": 378935120,
+    "warc_length": 8355
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/results?query=civil%20rights%20movements%20fiction.;qtype=subject;page=1",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_results__5bfb56fa9335.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00065.warc.gz",
+    "warc_offset": 378944463,
+    "warc_length": 11525
+  },
+  {
+    "url": "https://ahc.alabama.gov/pondspringplanyourvisit.aspx",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/pondspringplanyourvisit.aspx__a4ee4a966f6a.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00067.warc.gz",
+    "warc_offset": 237772843,
+    "warc_length": 7930
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/login?redirect_to=%2feg%2fopac%2fplace_hold%3fhold_target%3d239452%3bquery%3dsubject%253aidentifier%257cgenre%255bnovels.%255d%3bhold_source_page%3d%252feg%252fopac%252fresults%253fqtype%253dsubject%253bquery%253didentifier%25257cgenre%25255bnovels.%25255d%3bhold_type%3dt",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_login__cbd80459e745.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00069.warc.gz",
+    "warc_offset": 375845889,
+    "warc_length": 5701
+  },
+  {
+    "url": "https://ahc.alabama.gov/disasterresources%20pdf/ncptt-when%20disaster%20strikes.pdf",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/disasterresources_20pdf_ncptt-when_20disaster_20strikes.pdf__c38ede55d5fb.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00070.warc.gz",
+    "warc_offset": 233213317,
+    "warc_length": 123992
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/results?query=interpersonal%20relations;qtype=subject;page=1",
+    "status": "skipped_existing",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_results__c70ab79122c0.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00070.warc.gz",
+    "warc_offset": 363969782,
+    "warc_length": 12301
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/results?query=interpersonal%20relations;qtype=subject;page=2",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_results__9a29f33daf04.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00071.warc.gz",
+    "warc_offset": 376453420,
+    "warc_length": 12417
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/results?qtype=subject;query=segregation%20in%20transportation%20alabama%20montgomery%20history%2020th%20century%20juvenile%20literature;facet=subject%7cgeographic%5bunited%20states%5d",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_results__fa91cf6442cb.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00072.warc.gz",
+    "warc_offset": 367373464,
+    "warc_length": 9689
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/results?query=interpersonal%20relations;qtype=subject;page=3",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_results__831e9f4b3fb2.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00072.warc.gz",
+    "warc_offset": 367384173,
+    "warc_length": 12484
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/login?redirect_to=%2feg%2fopac%2fplace_hold%3fhold_target%3d239324%3bquery%3dsubject%253aidentifier%257cgenre%255bnovels.%255d%3bhold_type%3dt%3bhold_source_page%3d%252feg%252fopac%252fresults%253fqtype%253dsubject%253bquery%253didentifier%25257cgenre%25255bnovels.%25255d",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_login__13fddd2a1ddb.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00073.warc.gz",
+    "warc_offset": 381326411,
+    "warc_length": 5702
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/results?qtype=subject;query=religions;detail_record_view=1;facet=series%7cseriestitle%5bafrican%20american%20religious%20thought%20and%20life%5d",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_results__76c6bb5c0d3e.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00074.warc.gz",
+    "warc_offset": 367625899,
+    "warc_length": 8561
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/results?query=interpersonal%20relations;qtype=subject;page=6",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_results__d6f98adf193a.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00075.warc.gz",
+    "warc_offset": 364111711,
+    "warc_length": 12339
+  },
+  {
+    "url": "https://ahc.alabama.gov/section106.aspx",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/section106.aspx__4723fe5a7a02.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00078.warc.gz",
+    "warc_offset": 231502908,
+    "warc_length": 11133
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/results?query=segregation%20in%20transportation%20alabama%20montgomery%20history%2020th%20century%20juvenile%20literature;qtype=subject;facet=author%7cpersonal%5bcrewe%2c%20sabrina.%5d",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_results__65304001402a.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00079.warc.gz",
+    "warc_offset": 372065823,
+    "warc_length": 8742
+  },
+  {
+    "url": "https://ahc.alabama.gov/cemeteryprogrampdfs/alabama_historic_cemetery_register%205.20.20.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/cemeteryprogrampdfs_alabama_historic_cemetery_register_205.20.20.pdf__332cba2de5e4.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00080.warc.gz",
+    "warc_offset": 228540815,
+    "warc_length": 281635
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/advanced?qtype=subject;query=religions;facet=subject%7ctopic%5bhistory%5d",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_advanced__b78f88763b33.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00081.warc.gz",
+    "warc_offset": 379415617,
+    "warc_length": 11850
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/results?qtype=author;query=stinnett%20%20nick%20",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_results__fc7940f0bfc1.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00082.warc.gz",
+    "warc_offset": 384114480,
+    "warc_length": 10106
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/results?qtype=subject;query=religions;page=7;long_facet=identifiergenre",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_results__d1807859c103.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00082.warc.gz",
+    "warc_offset": 384125534,
+    "warc_length": 12890
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/results?qtype=author;query=lecouteux%20%20claude%20",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_results__ee85b5344f93.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00082.warc.gz",
+    "warc_offset": 384105258,
+    "warc_length": 8290
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/results?query=interpersonal%20relations;qtype=subject;facet=author%7cpersonal%5bmorris%2c%20gilbert.%5d",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_results__72216a8627ee.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00087.warc.gz",
+    "warc_offset": 374409612,
+    "warc_length": 8987
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/results?qtype=subject;query=segregation%20in%20transportation%20alabama%20montgomery%20history%2020th%20century%20juvenile%20literature;facet=series%7cseriestitle%5bamerican%20girl%20%28new%20york%2c%20n.y.%29%5d",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_results__e0a33a38c1bf.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00088.warc.gz",
+    "warc_offset": 383794389,
+    "warc_length": 9094
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/results?qtype=subject;query=identifier%7cgenre%5bnovels.%5d;facet=subject%7ctopic%5bfiction%5d",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_results__35bb40725d82.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00093.warc.gz",
+    "warc_offset": 369470674,
+    "warc_length": 11508
+  },
+  {
+    "url": "https://ahc.alabama.gov/cahawbahistoryfacts.aspx",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/cahawbahistoryfacts.aspx__7a57da579af1.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00094.warc.gz",
+    "warc_offset": 232512152,
+    "warc_length": 8360
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/record/113213?query=subject%3acalifornia%20history",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_record_113213__24cf7c4a9059.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00094.warc.gz",
+    "warc_offset": 371114311,
+    "warc_length": 7607
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/results?qtype=subject;query=identifier%7cgenre%5bnovels.%5d;facet=identifier%7cgenre%5bnovels.%5d",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_results__c673152083b6.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00095.warc.gz",
+    "warc_offset": 383880440,
+    "warc_length": 12240
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/results?query=interpersonal%20relations;qtype=subject;facet=subject%7cgeographic%5bunited%20states%5d",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_results__a3de4dc09a8d.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00095.warc.gz",
+    "warc_offset": 383893663,
+    "warc_length": 11820
+  },
+  {
+    "url": "https://ahc.alabama.gov/bellemontvolunteer.aspx",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/bellemontvolunteer.aspx__5f7ae93f1dce.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00096.warc.gz",
+    "warc_offset": 239696153,
+    "warc_length": 6873
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/results?qtype=subject;query=identifier%7cgenre%5bnovels.%5d;long_facet=identifiergenre",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_results__b0826bf2c34e.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00096.warc.gz",
+    "warc_offset": 379753386,
+    "warc_length": 13048
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/results?qtype=author;detail_record_view=1;long_facet=subjectgeographic;query=grant%20%20andrew%20%201968%20",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_results__336f1dbe334e.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00096.warc.gz",
+    "warc_offset": 379742080,
+    "warc_length": 10314
+  },
+  {
+    "url": "https://ahc.alabama.gov/placesinperilpdfs/2014placesinperilweb.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/placesinperilpdfs_2014placesinperilweb.pdf__be2d29c5eb8d.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00097.warc.gz",
+    "warc_offset": 231083703,
+    "warc_length": 843042
+  },
+  {
+    "url": "https://ahc.alabama.gov/archaeology%20pdfs/kristin%20koors%20%20web.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/archaeology_20pdfs_kristin_20koors_20_20web.pdf__b5878b8789e1.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00100.warc.gz",
+    "warc_offset": 231388462,
+    "warc_length": 262615
+  },
+  {
+    "url": "https://ahc.alabama.gov/commission.aspx",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/commission.aspx__ed362215eff7.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00101.warc.gz",
+    "warc_offset": 229539333,
+    "warc_length": 7634
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/advanced?query=identifier%7cgenre%5bnovels.%5d;qtype=subject",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_advanced__1a941eb85cc8.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00106.warc.gz",
+    "warc_offset": 395634984,
+    "warc_length": 11839
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/results?qtype=subject;query=religions;detail_record_view=1;facet=author%7cpersonal%5bleeming%2c%20david%20adams%201937-%5d",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_results__deee519b32a3.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00108.warc.gz",
+    "warc_offset": 373019465,
+    "warc_length": 9634
+  },
+  {
+    "url": "https://ahc.alabama.gov/ftmimshistoryfacts.aspx",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/ftmimshistoryfacts.aspx__5eb0eef84dc2.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00109.warc.gz",
+    "warc_offset": 228555534,
+    "warc_length": 8295
+  },
+  {
+    "url": "https://ahc.alabama.gov/properties/gaineswood/gaineswood.aspx",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/properties_gaineswood_gaineswood.aspx__e6929d8f6fbb.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00109.warc.gz",
+    "warc_offset": 228564737,
+    "warc_length": 8875
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/login?redirect_to=%2feg%2fopac%2fplace_hold%3ffacet%3dsubject%257ctopic%255bfiction%255d%3bfacet%3didentifier%257cgenre%255bdetective%2520and%2520mystery%2520fiction.%255d%3bdetail_record_view%3d1%3blong_facet%3dsubjectgeographic%3bquery%3dsubject%253aidentifier%257cgenre%255bthrillers%2520%2528fiction%2529%255d%3bhold_type%3dt%3bhold_source_page%3d%252feg%252fopac%252fresults%253fqtype%253dsubject%253bquery%253didentifier%25257cgenre%25255bthrillers%252520%252528fiction%252529%25255d%253bfacet%253dsubject%25257ctopic%25255bfiction%25255d%253bfacet%253didentifier%25257cgenre%25255bdetective%252520and%252520mystery%252520fiction.%25255d%253bdetail_record_view%253d1%253blong_facet%253dsubjectgeographic%3bhold_target%3d239316",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_login__a580297504a7.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00112.warc.gz",
+    "warc_offset": 376731524,
+    "warc_length": 5959
+  },
+  {
+    "url": "https://ahc.alabama.gov/grantspdfs/national%20funding%20sources.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/grantspdfs_national_20funding_20sources.pdf__f7caee742fa2.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00116.warc.gz",
+    "warc_offset": 231929595,
+    "warc_length": 132463
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/results?query=religions;qtype=subject;page=1;long_facet=subjectname",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_results__89a2a5876836.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00117.warc.gz",
+    "warc_offset": 366213122,
+    "warc_length": 16525
+  },
+  {
+    "url": "https://ahc.alabama.gov/fedtaxcreditfaq.aspx",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/fedtaxcreditfaq.aspx__69ff430ccef1.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00121.warc.gz",
+    "warc_offset": 240451566,
+    "warc_length": 8559
+  },
+  {
+    "url": "https://ahc.alabama.gov/pdf/legislative%20update%20february%204-7,%2020.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/pdf_legislative_20update_20february_204-7_2020.pdf__95d18207ba3c.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00121.warc.gz",
+    "warc_offset": 240355064,
+    "warc_length": 95703
+  },
+  {
+    "url": "https://ahc.alabama.gov/volunteer_intern.aspx",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/volunteer_intern.aspx__a76990eb2930.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00121.warc.gz",
+    "warc_offset": 240461027,
+    "warc_length": 7331
+  },
+  {
+    "url": "https://ahc.alabama.gov/bhc_faq.aspx",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/bhc_faq.aspx__4bc254c2183f.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00124.warc.gz",
+    "warc_offset": 232995206,
+    "warc_length": 7144
+  },
+  {
+    "url": "https://ahc.alabama.gov/frontierdays.aspx",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/frontierdays.aspx__f373d3edecd6.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00124.warc.gz",
+    "warc_offset": 233003247,
+    "warc_length": 10617
+  },
+  {
+    "url": "https://ahc.alabama.gov/properties/bottlecreek/bottlecreek.aspx",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/properties_bottlecreek_bottlecreek.aspx__c57ee31152d0.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00127.warc.gz",
+    "warc_offset": 231601653,
+    "warc_length": 8731
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/advanced?qtype=subject;query=segregation%20in%20transportation%20alabama%20montgomery%20history%2020th%20century%20juvenile%20literature",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_advanced__0734a574a1d8.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00127.warc.gz",
+    "warc_offset": 369586118,
+    "warc_length": 11912
+  },
+  {
+    "url": "https://ahc.alabama.gov/pdf/twelvemile%20island%20wreck_final_redacted%20version%205_28_19.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/pdf_twelvemile_20island_20wreck_final_redacted_20version_205_28_19.pdf__e637d37070a3.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00129.warc.gz",
+    "warc_offset": 230549038,
+    "warc_length": 980803
+  },
+  {
+    "url": "https://ahc.alabama.gov/pdf/legislative%20update%20march%203-6,%2020.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/pdf_legislative_20update_20march_203-6_2020.pdf__e3bc665ecdca.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00130.warc.gz",
+    "warc_offset": 228862814,
+    "warc_length": 101724
+  },
+  {
+    "url": "https://ahc.alabama.gov/news_detail.aspx?id=14074",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/news_detail.aspx__6957da0be0d8.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00132.warc.gz",
+    "warc_offset": 229205923,
+    "warc_length": 20438
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/results?query=civil%20rights%20movements%20fiction.;qtype=subject;facet=identifier%7cgenre%5bhistory.%5d",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_results__90520edb24f0.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00135.warc.gz",
+    "warc_offset": 382812631,
+    "warc_length": 9929
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/results?query=interpersonal%20relations;qtype=subject;facet=subject%7ctopic%5bwomen%5d",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_results__37b3ecaffe6f.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00135.warc.gz",
+    "warc_offset": 382823560,
+    "warc_length": 11368
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/results?query=segregation%20in%20transportation%20alabama%20montgomery%20history%2020th%20century%20juvenile%20literature;qtype=subject;facet=subject%7cgeographic%5bunited%20states%5d",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_results__30043b36fdd2.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00136.warc.gz",
+    "warc_offset": 375214468,
+    "warc_length": 9693
+  },
+  {
+    "url": "https://ahc.alabama.gov/press/clotilda%20appropriation%207.16.2020.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/press_clotilda_20appropriation_207.16.2020.pdf__baeacbd59512.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00138.warc.gz",
+    "warc_offset": 230105911,
+    "warc_length": 368622
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/record/208424?page=1;query=subject%3areligions",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_record_208424__4257fad1b978.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00140.warc.gz",
+    "warc_offset": 364479821,
+    "warc_length": 8087
+  },
+  {
+    "url": "https://ahc.alabama.gov/news_detail.aspx?id=13788",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/news_detail.aspx__57d801daf23e.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00143.warc.gz",
+    "warc_offset": 227156805,
+    "warc_length": 19468
+  },
+  {
+    "url": "https://ahc.alabama.gov/architecturalprogramspdfs/buildingsurveyform.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/architecturalprogramspdfs_buildingsurveyform.pdf__aeaf5a1569ed.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00144.warc.gz",
+    "warc_offset": 230181497,
+    "warc_length": 188877
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/results?qtype=subject;query=religions;detail_record_view=1;long_facet=authorpersonal",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_results__08fb62098206.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00147.warc.gz",
+    "warc_offset": 371427225,
+    "warc_length": 22343
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/results?qtype=subject;query=identifier%7cgenre%5bnovels.%5d;facet=subject%7cgeographic%5bohio%5d",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_results__def1a5ee5bd7.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00148.warc.gz",
+    "warc_offset": 365726117,
+    "warc_length": 9144
+  },
+  {
+    "url": "https://ahc.alabama.gov/grantspdfs/2021_etf_grant_guidelines.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/grantspdfs_2021_etf_grant_guidelines.pdf__0bea3183ddf4.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00149.warc.gz",
+    "warc_offset": 236451709,
+    "warc_length": 214993
+  },
+  {
+    "url": "https://ahc.alabama.gov/pdf/monument%20preservation%20request%20form-final.pdf",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/pdf_monument_20preservation_20request_20form-final.pdf__a5c48616773a.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00149.warc.gz",
+    "warc_offset": 236241541,
+    "warc_length": 209390
+  },
+  {
+    "url": "https://ahc.alabama.gov/historicpreservationprograms.aspx",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/historicpreservationprograms.aspx__5551bd21adb6.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00150.warc.gz",
+    "warc_offset": 228391591,
+    "warc_length": 7666
+  },
+  {
+    "url": "https://evergreen.apls.state.al.us/eg/opac/results?qtype=subject;query=identifier%7cgenre%5bthrillers%20%28fiction%29%5d;facet=subject%7ctopic%5bfiction%5d;facet=identifier%7cgenre%5bdetective%20and%20mystery%20fiction.%5d;facet=subject%7cgeographic%5bbirmingham%5d;detail_record_view=1;long_facet=subjectgeographic",
+    "status": "written",
+    "file": "/home/barberb/municipal_scrape_workspace/data/state_laws/AL/raw_html/eg_opac_results__5f848b4f619b.html",
+    "warc_filename": "crawl-data/CC-MAIN-2021-04/segments/1610703495901.0/warc/CC-MAIN-20210115134101-20210115164101-00151.warc.gz",
+    "warc_offset": 366871614,
+    "warc_length": 9619
+  }
+]
