@@ -43,9 +43,14 @@ def find_duckdb_files(base_dir: Path, years: Optional[List[str]] = None) -> List
     return sorted(duckdb_files)
 
 
-def export_duckdb_to_parquet(duckdb_file: Path, dry_run: bool = False) -> Dict[str, bool]:
+def export_duckdb_to_parquet(duckdb_file: Path, dry_run: bool = False, compression: str = "zstd") -> Dict[str, bool]:
     """
     Export all tables from a duckdb file to parquet files.
+    
+    Args:
+        duckdb_file: Path to the duckdb file to export
+        dry_run: If True, don't actually write files
+        compression: Compression codec (default: zstd). Use None for no compression.
     
     Returns a dict with success status for each export.
     """
@@ -72,8 +77,10 @@ def export_duckdb_to_parquet(duckdb_file: Path, dry_run: bool = False) -> Dict[s
             output_file = duckdb_file.parent / f"{base_name}__{table_name}.parquet"
             
             if not dry_run:
-                # Export table to parquet
-                con.execute(f"COPY {table_name} TO '{output_file}' (FORMAT 'parquet')")
+                # Export table to parquet with zstd compression
+                compress_opt = f"COMPRESSION '{compression}'" if compression else ""
+                copy_cmd = f"COPY {table_name} TO '{output_file}' (FORMAT 'parquet'{(',' + compress_opt) if compress_opt else ''})"
+                con.execute(copy_cmd)
             
             results[str(output_file)] = True
         
@@ -91,8 +98,9 @@ def convert_all(
     base_dir: Path,
     years: Optional[List[str]] = None,
     dry_run: bool = False,
-    remove_duckdb: bool = False,
+    remove_parquet: bool = False,
     workers: int = 4,
+    compression: str = "zstd",
 ) -> None:
     """Convert all duckdb files to parquet."""
     
@@ -102,7 +110,8 @@ def convert_all(
     print(f"Base directory: {base_dir}")
     print(f"Years: {years or 'all'}")
     print(f"Dry run: {dry_run}")
-    print(f"Remove duckdb files: {remove_duckdb}")
+    print(f"Remove existing parquet files: {remove_parquet}")
+    print(f"Compression: {compression}")
     print(f"Workers: {workers}")
     print()
     
@@ -130,7 +139,7 @@ def convert_all(
     
     with ProcessPoolExecutor(max_workers=workers) as executor:
         futures = {
-            executor.submit(export_duckdb_to_parquet, f, dry_run): f
+            executor.submit(export_duckdb_to_parquet, f, dry_run, compression): f
             for f in duckdb_files
         }
         
@@ -141,12 +150,6 @@ def convert_all(
                     results = future.result()
                     if "error" not in results:
                         successful += 1
-                        if not dry_run and remove_duckdb:
-                            try:
-                                duckdb_file.unlink()
-                                pbar.write(f"✓ Removed {duckdb_file.name}")
-                            except Exception as e:
-                                pbar.write(f"⚠ Failed to remove {duckdb_file.name}: {e}")
                     else:
                         failed += 1
                         pbar.write(f"✗ Failed: {duckdb_file.name}")
@@ -183,9 +186,16 @@ def main():
         help="Show what would be done without modifying files",
     )
     parser.add_argument(
-        "--remove-duckdb",
+        "--remove-parquet",
         action="store_true",
-        help="Remove duckdb files after successful conversion",
+        help="Remove existing parquet files before conversion",
+    )
+    parser.add_argument(
+        "--compression",
+        type=str,
+        default="zstd",
+        choices=["zstd", "snappy", "gzip", "brotli", None],
+        help="Compression codec (default: zstd)",
     )
     parser.add_argument(
         "--workers",
@@ -204,8 +214,9 @@ def main():
         base_dir=args.base,
         years=args.years,
         dry_run=args.dry_run,
-        remove_duckdb=args.remove_duckdb,
+        remove_parquet=args.remove_parquet,
         workers=args.workers,
+        compression=args.compression,
     )
 
 
