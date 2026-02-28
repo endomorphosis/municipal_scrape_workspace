@@ -48,36 +48,61 @@ def _top_items(d: Dict[str, int], k: int = 8) -> List[Tuple[str, int]]:
 def _collect_basic_metrics(summary: Dict[str, Any], records: List[Dict[str, Any]]) -> Dict[str, Any]:
     n = int(summary.get("segment_count") or len(records) or 0)
     entropy_diag = summary.get("conversion_entropy_diagnostics") or {}
+    n_effective = int(entropy_diag.get("entropy_effective_segment_count") or n)
 
     trivial = int(entropy_diag.get("deontic_trivial_formula_count") or 0)
+    weak_deontic = int(entropy_diag.get("deontic_weak_formula_count") or 0)
     weak_fol = int(entropy_diag.get("fol_weak_formula_count") or 0)
-    no_normative = int((summary.get("theorem_rejection_reason_counts") or {}).get("no_normative_cue") or 0)
+    overlong = int(entropy_diag.get("overlong_predicate_formula_count") or 0)
+    no_normative_effective = entropy_diag.get("no_normative_rejections_effective")
+    if no_normative_effective is None:
+        no_normative = int((summary.get("theorem_rejection_reason_counts") or {}).get("no_normative_cue") or 0)
+    else:
+        no_normative = int(no_normative_effective)
 
     semantic = summary.get("semantic_similarity_by_modality") or {}
     tdfol_success = int(summary.get("tdfol_success_count") or 0)
     cec_bridge_success = int(summary.get("cec_bridge_success_count") or 0)
 
+    tdfol_missing_effective = entropy_diag.get("tdfol_missing_effective_count")
+    cec_missing_effective = entropy_diag.get("cec_bridge_missing_effective_count")
     missing_by_modality = {
-        "tdfol": max(0, n - tdfol_success),
-        "cec_bridge": max(0, n - cec_bridge_success),
+        "tdfol": int(max(0, n - tdfol_success) if tdfol_missing_effective is None else tdfol_missing_effective),
+        "cec_bridge": int(
+            max(0, n - cec_bridge_success) if cec_missing_effective is None else cec_missing_effective
+        ),
     }
 
     return {
         "segment_count": n,
         "deontic_trivial_count": trivial,
-        "deontic_trivial_rate": _safe_ratio(trivial, n),
+        "deontic_trivial_rate": _safe_ratio(trivial, n_effective),
+        "deontic_weak_count": weak_deontic,
+        "deontic_weak_rate": _safe_ratio(weak_deontic, n_effective),
         "fol_weak_count": weak_fol,
-        "fol_weak_rate": _safe_ratio(weak_fol, n),
+        "fol_weak_rate": _safe_ratio(weak_fol, n_effective),
+        "overlong_predicate_count": overlong,
+        "overlong_predicate_rate": _safe_ratio(overlong, n_effective),
         "no_normative_rejections": no_normative,
-        "no_normative_rejection_rate": _safe_ratio(no_normative, n),
+        "no_normative_rejection_rate": _safe_ratio(no_normative, n_effective),
         "semantic_similarity_by_modality": semantic,
         "missing_modality_counts": missing_by_modality,
-        "missing_modality_rates": {k: _safe_ratio(v, n) for k, v in missing_by_modality.items()},
+        "missing_modality_rates": {k: _safe_ratio(v, n_effective) for k, v in missing_by_modality.items()},
         "deontic_operator_counts": entropy_diag.get("deontic_operator_counts") or {},
         "deontic_operator_entropy_bits": entropy_diag.get("deontic_operator_entropy_bits"),
         "deontic_operator_entropy_normalized": entropy_diag.get("deontic_operator_entropy_normalized"),
-        "theorem_rejection_reason_counts": summary.get("theorem_rejection_reason_counts") or {},
-        "theorem_rejection_entropy_bits": entropy_diag.get("theorem_rejection_entropy_bits"),
+        "theorem_rejection_reason_counts": (
+            entropy_diag.get("theorem_rejection_reason_counts_effective")
+            or summary.get("theorem_rejection_reason_counts")
+            or {}
+        ),
+        "theorem_rejection_entropy_bits": (
+            entropy_diag.get("theorem_rejection_entropy_bits_effective")
+            if entropy_diag.get("theorem_rejection_entropy_bits_effective") is not None
+            else entropy_diag.get("theorem_rejection_entropy_bits")
+        ),
+        "heading_like_segment_count": int(entropy_diag.get("heading_like_segment_count") or 0),
+        "effective_segment_count": n_effective,
     }
 
 
@@ -125,6 +150,16 @@ def _build_recommendations(metrics: Dict[str, Any], kg: Dict[str, Any]) -> List[
             }
         )
 
+    if metrics.get("deontic_weak_rate", 0.0) >= 0.25:
+        recs.append(
+            {
+                "category": "logic-rules",
+                "title": "Enforce deontic inner-formula structure",
+                "why": "Many deontic formulas include weak inner content even when not strictly O()/P()/F().",
+                "action": "Require informative inner formulas (non-unary stubs, grounded predicates) and retry with focused/legal-context windows before theorem candidacy.",
+            }
+        )
+
     if metrics["fol_weak_rate"] >= 0.25:
         recs.append(
             {
@@ -132,6 +167,16 @@ def _build_recommendations(metrics: Dict[str, Any], kg: Dict[str, Any]) -> List[
                 "title": "Strengthen FOL quality constraints",
                 "why": "Frequent existential stubs lose actor/action/object structure.",
                 "action": "Require minimum predicate arity and argument grounding, then run focused re-encode when only unary existential forms are produced.",
+            }
+        )
+
+    if metrics.get("overlong_predicate_rate", 0.0) > 0.0:
+        recs.append(
+            {
+                "category": "logic-rules",
+                "title": "Block overlong packed predicates",
+                "why": "Overlong predicate symbols often indicate compressed natural language rather than decomposed logical structure.",
+                "action": "Enforce predicate symbol caps and decompose action spans into verb/context predicates before theorem candidacy.",
             }
         )
 
@@ -148,13 +193,27 @@ def _build_recommendations(metrics: Dict[str, Any], kg: Dict[str, Any]) -> List[
             }
         )
 
-    if metrics.get("missing_modality_rates", {}).get("tdfol", 0.0) > 0.8:
+    if metrics.get("missing_modality_rates", {}).get("tdfol", 0.0) > 0.25:
         recs.append(
             {
                 "category": "logic-system",
                 "title": "Introduce typed temporal fallback",
                 "why": "TDFOL non-coverage means temporal semantics are mostly absent.",
                 "action": "Add deterministic temporal extraction (effective date, condition windows, event ordering) and emit typed placeholders when grammar parse fails.",
+            }
+        )
+
+    tsim = sem.get("tdfol")
+    bsim = sem.get("cec_bridge")
+    if (isinstance(tsim, (float, int)) and tsim < 0.45) or (
+        isinstance(bsim, (float, int)) and bsim < 0.4
+    ):
+        recs.append(
+            {
+                "category": "logic-system",
+                "title": "Improve temporal/bridge semantic grounding",
+                "why": "Low temporal and bridge similarity indicates role/event loss in fallback representations.",
+                "action": "Include explicit actor/action/event arguments in TDFOL/CEC fallback formulas and require per-modality semantic floors during theorem candidacy evaluation.",
             }
         )
 
@@ -192,6 +251,7 @@ def render_md(report_name: str, metrics: Dict[str, Any], kg: Dict[str, Any], rec
     lines.append(f"| Segments | {metrics['segment_count']} |")
     lines.append(f"| Deontic trivial rate | {metrics['deontic_trivial_rate']:.4f} |")
     lines.append(f"| FOL weak rate | {metrics['fol_weak_rate']:.4f} |")
+    lines.append(f"| Overlong predicate rate | {metrics.get('overlong_predicate_rate', 0.0):.4f} |")
     lines.append(f"| Missing TDFOL rate | {metrics['missing_modality_rates'].get('tdfol', 0.0):.4f} |")
     lines.append(f"| Missing CEC bridge rate | {metrics['missing_modality_rates'].get('cec_bridge', 0.0):.4f} |")
     lines.append("")
