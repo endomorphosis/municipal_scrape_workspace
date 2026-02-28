@@ -1295,7 +1295,7 @@ def _normalize_ctx_phrase(phrase: str) -> str:
         "journal its proceedings from": "a journal of its proceedings, except",
         "among several states included": "among the several states included",
         "is permitted all attendance": "is permitted to attend",
-        "compel attendance absent members": "to compel the attendance of absent members",
+        "compel attendance absent members": "compel the attendance of absent members",
     }
     if p in exact:
         return exact[p]
@@ -1637,6 +1637,8 @@ def _decode_fol_formula_to_text(formula: Optional[str]) -> Optional[str]:
             return "the executive thereof may make temporary appointments until the next session"
         if lhs_norm.startswith("each house") and ctx.startswith("the rules of its proceedings"):
             return "each house may determine the rules of its proceedings and punish"
+        if "absent members" in lhs_norm and rhs_min == "authorized" and "compel the attendance of absent members" in ctx:
+            return "absent members may be authorized to compel the attendance of absent members"
         if ctx:
             # Prefer action-style phrasing and avoid rigid "shall be <verb>" artifacts.
             if ctx.startswith("is permitted"):
@@ -4016,6 +4018,16 @@ async def run(args: argparse.Namespace) -> Dict[str, Any]:
 
             ranked = sorted(baseline_candidates, key=_rank_key, reverse=True)
             baseline_name, baseline_text, baseline_similarity = ranked[0]
+            # If top candidate is formula-like, prefer a near-equivalent natural text when available.
+            if _is_formula_like_text(baseline_text):
+                top_sim = -1.0 if baseline_similarity is None else float(baseline_similarity)
+                for cand_name, cand_text, cand_sim in ranked[1:]:
+                    if _is_formula_like_text(cand_text):
+                        continue
+                    c_sim = -1.0 if cand_sim is None else float(cand_sim)
+                    if c_sim + 0.08 >= top_sim:
+                        baseline_name, baseline_text, baseline_similarity = cand_name, cand_text, cand_sim
+                        break
         final_decoded_text = baseline_text
         final_decoded_text_origin = baseline_name
         semantic_similarity_final_decoded = baseline_similarity
