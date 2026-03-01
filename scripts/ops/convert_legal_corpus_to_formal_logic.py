@@ -1343,6 +1343,9 @@ def _is_formula_like_text(text: Optional[str]) -> bool:
     if not text:
         return False
     t = str(text)
+    low = t.lower()
+    if "tdfol obligatory temporal event" in low or "tdfol permitted temporal event" in low:
+        return True
     # Detect symbolic bridge-style renderings that should not win final NL decoding.
     formula_markers = [
         "Temporal Context",
