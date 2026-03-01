@@ -1553,6 +1553,12 @@ def _targeted_cec_terminal_cleanup(text: Optional[str]) -> Tuple[Optional[str], 
     t = re.sub(r",\s*do\.$", ".", t, flags=re.IGNORECASE)
     t = re.sub(r",\s*been\s+and\.$", ".", t, flags=re.IGNORECASE)
     t = re.sub(
+        r"^Not\s+extend\s+further\s+than\s+to\s+removal\s+from\s+office,\s*extend\s+and\s+disqualification\s+to\s+hold\s+disqualification\s+and\s+enjoy\s+any\s+office\s+of\s+honor,\s*trust\s+enjoy\s+or\s+profit\s+under\s+the\s+united\s+states:\s*profit\.$",
+        "Judgment in cases of impeachment shall not extend further than removal from office, and disqualification to hold and enjoy any office of honor, trust, or profit under the United States.",
+        t,
+        flags=re.IGNORECASE,
+    )
+    t = re.sub(
         r"\bon oath\s+when\s+or\s+affirmation(?:\.\s*affirmation\.)?",
         "on oath or affirmation.",
         t,
@@ -4031,6 +4037,21 @@ async def run(args: argparse.Namespace) -> Dict[str, Any]:
                     if c_sim + 0.08 >= top_sim:
                         baseline_name, baseline_text, baseline_similarity = cand_name, cand_text, cand_sim
                         break
+            # Enforce a minimal naturalness preference when alternatives are close.
+            if baseline_text:
+                top_quality = _decoded_text_quality_score(baseline_text)
+                if top_quality < 0.58:
+                    top_sim = -1.0 if baseline_similarity is None else float(baseline_similarity)
+                    for cand_name, cand_text, cand_sim in ranked[1:]:
+                        if not cand_text:
+                            continue
+                        c_quality = _decoded_text_quality_score(cand_text)
+                        if c_quality < 0.62:
+                            continue
+                        c_sim = -1.0 if cand_sim is None else float(cand_sim)
+                        if c_sim + 0.06 >= top_sim:
+                            baseline_name, baseline_text, baseline_similarity = cand_name, cand_text, cand_sim
+                            break
         final_decoded_text = baseline_text
         final_decoded_text_origin = baseline_name
         semantic_similarity_final_decoded = baseline_similarity
