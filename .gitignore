@@ -6,6 +6,8 @@ __pycache__/
 *.pyd
 *.egg-info/
 dist/
+data/
+data/*
 build/
 .ipynb_checkpoints/
 .DS_Store
@@ -14,6 +16,8 @@ state/
 datasets/
 content_blobs/
 logs/
+data/
+data/state_laws/
 artifacts/
 ccindex_subset*
 # Ignore test data files but not test source code
