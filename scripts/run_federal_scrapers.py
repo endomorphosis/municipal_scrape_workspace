@@ -548,7 +548,7 @@ async def main():
     logger.info("SCRAPING COMPLETE")
     logger.info("=" * 80)
 
-    fr_count = fr_result.get("metadata", {}).get("documents_scraped", 0) if fr_result.get("status") in ["success", "partial_success"] else 0
+    fr_count = fr_result.get("metadata", {}).get("documents_count", 0) if fr_result.get("status") in ["success", "partial_success"] else 0
     usc_count = usc_result.get("metadata", {}).get("sections_count", 0) if usc_result.get("status") in ["success", "partial_success"] else 0
 
     logger.info(f"Federal Register documents: {fr_count}")
