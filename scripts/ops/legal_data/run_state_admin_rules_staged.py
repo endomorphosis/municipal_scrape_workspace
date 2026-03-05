@@ -74,6 +74,13 @@ async def run_staged(args: argparse.Namespace) -> dict[str, Any]:
             ),
             per_state_timeout_seconds=float(args.per_state_timeout_seconds),
             include_dc=False,
+            agentic_fallback_enabled=bool(args.agentic_fallback_enabled),
+            agentic_max_candidates_per_state=int(args.agentic_max_candidates_per_state),
+            agentic_max_fetch_per_state=int(args.agentic_max_fetch_per_state),
+            agentic_max_results_per_domain=int(args.agentic_max_results_per_domain),
+            agentic_max_hops=int(args.agentic_max_hops),
+            agentic_max_pages=int(args.agentic_max_pages),
+            write_agentic_kg_corpus=bool(args.write_agentic_kg_corpus),
         )
 
         metadata = result.get("metadata") or {}
@@ -92,6 +99,8 @@ async def run_staged(args: argparse.Namespace) -> dict[str, Any]:
             "states_with_rules": states_with_rules,
             "missing_rule_states": missing_states,
             "coverage_ratio": float(metadata.get("coverage_ratio") or 0.0),
+            "agentic_recovered_states": list(metadata.get("agentic_recovered_states") or []),
+            "agentic_attempted_states": list(metadata.get("agentic_attempted_states") or []),
             "scraped_at": metadata.get("scraped_at"),
             "elapsed_time_seconds": metadata.get("elapsed_time_seconds"),
         }
@@ -151,6 +160,23 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--min-full-text-chars", type=int, default=300)
     parser.add_argument("--max-rules", type=int, default=0)
     parser.add_argument("--max-base-statutes", type=int, default=0)
+    parser.add_argument(
+        "--agentic-fallback-enabled",
+        action=argparse.BooleanOptionalAction,
+        default=True,
+        help="Enable agentic web-archiving fallback for zero-rule states",
+    )
+    parser.add_argument("--agentic-max-candidates-per-state", type=int, default=12)
+    parser.add_argument("--agentic-max-fetch-per-state", type=int, default=5)
+    parser.add_argument("--agentic-max-results-per-domain", type=int, default=20)
+    parser.add_argument("--agentic-max-hops", type=int, default=1)
+    parser.add_argument("--agentic-max-pages", type=int, default=8)
+    parser.add_argument(
+        "--write-agentic-kg-corpus",
+        action=argparse.BooleanOptionalAction,
+        default=True,
+        help="Write agentic discovery ETL corpus JSONL for KG downstream",
+    )
     args = parser.parse_args()
     if args.end_batch == 0:
         args.end_batch = None
