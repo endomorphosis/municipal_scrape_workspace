@@ -134,6 +134,7 @@ async def run_staged(args: argparse.Namespace) -> dict[str, Any]:
             agentic_max_hops=int(args.agentic_max_hops),
             agentic_max_pages=int(args.agentic_max_pages),
             write_agentic_kg_corpus=bool(args.write_agentic_kg_corpus),
+            require_substantive_rule_text=bool(args.require_substantive_rule_text),
         )
 
         metadata = result.get("metadata") or {}
@@ -236,6 +237,12 @@ def parse_args() -> argparse.Namespace:
         action=argparse.BooleanOptionalAction,
         default=True,
         help="Write agentic discovery ETL corpus JSONL for KG downstream",
+    )
+    parser.add_argument(
+        "--require-substantive-rule-text",
+        action=argparse.BooleanOptionalAction,
+        default=True,
+        help="Require substantive administrative rule text (filters portal/reference placeholders)",
     )
     args = parser.parse_args()
     if args.end_batch == 0:
