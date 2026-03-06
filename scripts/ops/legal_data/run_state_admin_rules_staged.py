@@ -6,6 +6,7 @@ import json
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
+from urllib.parse import urlparse
 
 import anyio
 
@@ -23,6 +24,53 @@ def _now() -> str:
     return datetime.now(timezone.utc).isoformat()
 
 
+def _extract_kg_rows(batch_data: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    rows: list[dict[str, Any]] = []
+    for state_block in batch_data:
+        if not isinstance(state_block, dict):
+            continue
+        state_code = str(state_block.get("state_code") or "").strip().upper()
+        state_name = str(state_block.get("state_name") or "").strip()
+        statutes = list(state_block.get("statutes") or [])
+        for statute in statutes:
+            if not isinstance(statute, dict):
+                continue
+            url = str(statute.get("source_url") or "").strip()
+            text = str(statute.get("full_text") or "").strip()
+            if not state_code or not url:
+                continue
+            rows.append(
+                {
+                    "state_code": state_code,
+                    "state_name": state_name,
+                    "url": url,
+                    "domain": urlparse(url).netloc,
+                    "title": str(statute.get("section_name") or statute.get("short_title") or "").strip(),
+                    "text": text,
+                    "query": f"{state_name or state_code} administrative code regulations agency rules",
+                    "source": "state_admin_rules_pipeline",
+                    "official_cite": str(statute.get("official_cite") or "").strip(),
+                    "section_number": str(statute.get("section_number") or "").strip(),
+                    "fetched_at": _now(),
+                }
+            )
+    return rows
+
+
+def _append_jsonl(path: Path, rows: list[dict[str, Any]]) -> int:
+    if not rows:
+        return 0
+    path.parent.mkdir(parents=True, exist_ok=True)
+    written = 0
+    with path.open("a", encoding="utf-8") as handle:
+        for row in rows:
+            if not isinstance(row, dict):
+                continue
+            handle.write(json.dumps(row, ensure_ascii=False) + "\n")
+            written += 1
+    return written
+
+
 async def run_staged(args: argparse.Namespace) -> dict[str, Any]:
     states = list(US_50_STATE_CODES)
     batches = _chunks(states, max(1, int(args.batch_size)))
@@ -33,6 +81,11 @@ async def run_staged(args: argparse.Namespace) -> dict[str, Any]:
 
     report_path = Path(args.report_path).expanduser().resolve()
     report_path.parent.mkdir(parents=True, exist_ok=True)
+    output_root = Path(args.output_dir).expanduser().resolve() if args.output_dir else report_path.parent / "output"
+    output_root.mkdir(parents=True, exist_ok=True)
+    kg_corpus_path = output_root / "aggregates" / "state_admin_rule_kg_corpus_all_states.jsonl"
+    if kg_corpus_path.exists() and args.start_batch <= 1:
+        kg_corpus_path.unlink(missing_ok=True)
 
     run_summary: dict[str, Any] = {
         "started_at": _now(),
@@ -59,7 +112,7 @@ async def run_staged(args: argparse.Namespace) -> dict[str, Any]:
             include_metadata=True,
             rate_limit_delay=float(args.rate_limit_delay),
             max_rules=(int(args.max_rules) if args.max_rules and int(args.max_rules) > 0 else None),
-            output_dir=args.output_dir,
+            output_dir=str(output_root),
             write_jsonld=bool(args.write_jsonld),
             strict_full_text=bool(args.strict_full_text),
             min_full_text_chars=int(args.min_full_text_chars),
@@ -84,8 +137,12 @@ async def run_staged(args: argparse.Namespace) -> dict[str, Any]:
         )
 
         metadata = result.get("metadata") or {}
+        batch_data = list(result.get("data") or [])
         states_with_rules = list(metadata.get("states_with_rules") or [])
         missing_states = list(metadata.get("missing_rule_states") or [])
+
+        batch_kg_rows = _extract_kg_rows(batch_data)
+        batch_kg_rows_written = _append_jsonl(kg_corpus_path, batch_kg_rows)
 
         states_with_rules_union.update(states_with_rules)
         missing_states_union.update(missing_states)
@@ -101,6 +158,7 @@ async def run_staged(args: argparse.Namespace) -> dict[str, Any]:
             "coverage_ratio": float(metadata.get("coverage_ratio") or 0.0),
             "agentic_recovered_states": list(metadata.get("agentic_recovered_states") or []),
             "agentic_attempted_states": list(metadata.get("agentic_attempted_states") or []),
+            "kg_rows_written": int(batch_kg_rows_written),
             "scraped_at": metadata.get("scraped_at"),
             "elapsed_time_seconds": metadata.get("elapsed_time_seconds"),
         }
@@ -108,6 +166,7 @@ async def run_staged(args: argparse.Namespace) -> dict[str, Any]:
 
         run_summary["states_with_rules_union"] = sorted(states_with_rules_union)
         run_summary["missing_states_union"] = sorted(missing_states_union)
+        run_summary["kg_corpus_jsonl"] = str(kg_corpus_path)
         run_summary["updated_at"] = _now()
 
         report_path.write_text(json.dumps(run_summary, ensure_ascii=False, indent=2), encoding="utf-8")
@@ -130,6 +189,7 @@ async def run_staged(args: argparse.Namespace) -> dict[str, Any]:
     run_summary["missing_states_union"] = sorted(missing_states_union)
     run_summary["states_with_rules_union_count"] = len(states_with_rules_union)
     run_summary["missing_states_union_count"] = len(missing_states_union)
+    run_summary["kg_corpus_jsonl"] = str(kg_corpus_path)
     run_summary["overall_coverage_ratio"] = (
         len(states_with_rules_union) / float(len(states)) if states else 0.0
     )
