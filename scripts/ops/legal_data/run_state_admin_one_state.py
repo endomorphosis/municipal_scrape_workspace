@@ -23,6 +23,7 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--agentic-max-results-per-domain", type=int, default=35)
     p.add_argument("--agentic-max-hops", type=int, default=2)
     p.add_argument("--agentic-max-pages", type=int, default=18)
+    p.add_argument("--agentic-fetch-concurrency", type=int, default=6)
     p.add_argument("--parallel-workers", type=int, default=6)
     return p.parse_args()
 
@@ -52,6 +53,7 @@ async def _run(args: argparse.Namespace) -> dict:
         agentic_max_results_per_domain=int(args.agentic_max_results_per_domain),
         agentic_max_hops=int(args.agentic_max_hops),
         agentic_max_pages=int(args.agentic_max_pages),
+        agentic_fetch_concurrency=int(args.agentic_fetch_concurrency),
         write_agentic_kg_corpus=True,
         require_substantive_rule_text=bool(args.require_substantive_rule_text),
     )
