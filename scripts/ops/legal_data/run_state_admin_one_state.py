@@ -3,12 +3,39 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
+from pathlib import Path
+import sys
 
 import anyio
 
 from ipfs_datasets_py.processors.legal_scrapers.state_admin_rules_scraper import (
     scrape_state_admin_rules,
 )
+
+
+def _repo_root() -> Path:
+    return Path(__file__).resolve().parents[3]
+
+
+def _reexec_in_repo_venv() -> None:
+    if os.environ.get("MUNICIPAL_SCRAPE_IN_VENV", "").lower() == "true":
+        return
+
+    venv_python = _repo_root() / ".venv" / "bin" / "python"
+    if not venv_python.exists():
+        return
+
+    try:
+        in_venv = Path(sys.prefix).resolve() == venv_python.parent.parent.resolve()
+    except Exception:
+        in_venv = False
+
+    if in_venv:
+        return
+
+    os.environ["MUNICIPAL_SCRAPE_IN_VENV"] = "true"
+    os.execv(str(venv_python), [str(venv_python), str(Path(__file__).resolve()), *sys.argv[1:]])
 
 
 def parse_args() -> argparse.Namespace:
@@ -68,6 +95,7 @@ async def _run(args: argparse.Namespace) -> dict:
 
 
 def main() -> int:
+    _reexec_in_repo_venv()
     args = parse_args()
     payload = anyio.run(_run, args)
     with open(args.output_json, "w", encoding="utf-8") as f:
