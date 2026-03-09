@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+import asyncio
 import json
 import os
 from pathlib import Path
@@ -9,13 +10,25 @@ import sys
 
 import anyio
 
-from ipfs_datasets_py.processors.legal_scrapers.state_admin_rules_scraper import (
-    scrape_state_admin_rules,
-)
-
 
 def _repo_root() -> Path:
     return Path(__file__).resolve().parents[3]
+
+
+def _ensure_local_import_paths() -> None:
+    root = _repo_root()
+    candidates = [root, root / "ipfs_datasets_py"]
+    for candidate in candidates:
+        candidate_str = str(candidate)
+        if candidate.exists() and candidate_str not in sys.path:
+            sys.path.insert(0, candidate_str)
+
+
+_ensure_local_import_paths()
+
+from ipfs_datasets_py.processors.legal_scrapers.state_admin_rules_scraper import (
+    scrape_state_admin_rules,
+)
 
 
 def _reexec_in_repo_venv() -> None:
@@ -58,33 +71,46 @@ def parse_args() -> argparse.Namespace:
 
 async def _run(args: argparse.Namespace) -> dict:
     state = str(args.state or "").strip().upper()
-    result = await scrape_state_admin_rules(
-        states=[state],
-        output_format="json",
-        include_metadata=True,
-        rate_limit_delay=0.2,
-        max_rules=None,
-        output_dir=args.output_dir,
-        write_jsonld=True,
-        strict_full_text=False,
-        min_full_text_chars=200,
-        hydrate_rule_text=True,
-        parallel_workers=int(args.parallel_workers),
-        per_state_retry_attempts=1,
-        retry_zero_rule_states=bool(args.retry_zero_rule_states),
-        max_base_statutes=None,
-        per_state_timeout_seconds=float(args.per_state_timeout_seconds),
-        include_dc=False,
-        agentic_fallback_enabled=True,
-        agentic_max_candidates_per_state=int(args.agentic_max_candidates_per_state),
-        agentic_max_fetch_per_state=int(args.agentic_max_fetch_per_state),
-        agentic_max_results_per_domain=int(args.agentic_max_results_per_domain),
-        agentic_max_hops=int(args.agentic_max_hops),
-        agentic_max_pages=int(args.agentic_max_pages),
-        agentic_fetch_concurrency=int(args.agentic_fetch_concurrency),
-        write_agentic_kg_corpus=True,
-        require_substantive_rule_text=bool(args.require_substantive_rule_text),
-    )
+    try:
+        result = await asyncio.wait_for(
+            scrape_state_admin_rules(
+                states=[state],
+                output_format="json",
+                include_metadata=True,
+                rate_limit_delay=0.2,
+                max_rules=None,
+                output_dir=args.output_dir,
+                write_jsonld=True,
+                strict_full_text=False,
+                min_full_text_chars=200,
+                hydrate_rule_text=True,
+                parallel_workers=int(args.parallel_workers),
+                per_state_retry_attempts=1,
+                retry_zero_rule_states=bool(args.retry_zero_rule_states),
+                max_base_statutes=None,
+                per_state_timeout_seconds=float(args.per_state_timeout_seconds),
+                include_dc=False,
+                agentic_fallback_enabled=True,
+                agentic_max_candidates_per_state=int(args.agentic_max_candidates_per_state),
+                agentic_max_fetch_per_state=int(args.agentic_max_fetch_per_state),
+                agentic_max_results_per_domain=int(args.agentic_max_results_per_domain),
+                agentic_max_hops=int(args.agentic_max_hops),
+                agentic_max_pages=int(args.agentic_max_pages),
+                agentic_fetch_concurrency=int(args.agentic_fetch_concurrency),
+                write_agentic_kg_corpus=True,
+                require_substantive_rule_text=bool(args.require_substantive_rule_text),
+            ),
+            timeout=float(args.per_state_timeout_seconds),
+        )
+    except asyncio.TimeoutError:
+        return {
+            "state": state,
+            "status": "timeout",
+            "rules_count": 0,
+            "states_with_rules": [],
+            "missing_rule_states": [state],
+        }
+
     meta = result.get("metadata") or {}
     return {
         "state": state,
