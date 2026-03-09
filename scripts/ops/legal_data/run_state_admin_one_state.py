@@ -45,6 +45,7 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--output-dir", required=True)
     p.add_argument("--per-state-timeout-seconds", type=float, default=90.0)
     p.add_argument("--require-substantive-rule-text", action=argparse.BooleanOptionalAction, default=False)
+    p.add_argument("--retry-zero-rule-states", action=argparse.BooleanOptionalAction, default=True)
     p.add_argument("--agentic-max-candidates-per-state", type=int, default=40)
     p.add_argument("--agentic-max-fetch-per-state", type=int, default=16)
     p.add_argument("--agentic-max-results-per-domain", type=int, default=35)
@@ -70,7 +71,7 @@ async def _run(args: argparse.Namespace) -> dict:
         hydrate_rule_text=True,
         parallel_workers=int(args.parallel_workers),
         per_state_retry_attempts=1,
-        retry_zero_rule_states=True,
+        retry_zero_rule_states=bool(args.retry_zero_rule_states),
         max_base_statutes=None,
         per_state_timeout_seconds=float(args.per_state_timeout_seconds),
         include_dc=False,
