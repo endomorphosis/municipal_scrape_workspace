@@ -6,6 +6,7 @@ import asyncio
 import json
 import os
 from pathlib import Path
+import subprocess
 import sys
 
 import anyio
@@ -66,7 +67,134 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--agentic-max-pages", type=int, default=18)
     p.add_argument("--agentic-fetch-concurrency", type=int, default=6)
     p.add_argument("--parallel-workers", type=int, default=6)
+    p.add_argument("--worker-direct", action="store_true", help=argparse.SUPPRESS)
     return p.parse_args()
+
+
+def _payload_path(output_json: str) -> Path:
+    return Path(output_json).expanduser().resolve()
+
+
+def _write_payload(output_json: str, payload: dict) -> None:
+    payload_path = _payload_path(output_json)
+    payload_path.parent.mkdir(parents=True, exist_ok=True)
+    payload_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+def _timeout_payload(state: str, *, detail: str | None = None) -> dict:
+    payload = {
+        "state": state,
+        "status": "timeout",
+        "rules_count": 0,
+        "states_with_rules": [],
+        "missing_rule_states": [state],
+    }
+    if detail:
+        payload["detail"] = detail
+    return payload
+
+
+def _error_payload(state: str, *, detail: str) -> dict:
+    return {
+        "state": state,
+        "status": "error",
+        "rules_count": 0,
+        "states_with_rules": [],
+        "missing_rule_states": [state],
+        "detail": detail,
+    }
+
+
+def _forward_child_output(stdout: str | None, stderr: str | None) -> None:
+    if stdout:
+        sys.stdout.write(stdout)
+        if not stdout.endswith("\n"):
+            sys.stdout.write("\n")
+        sys.stdout.flush()
+    if stderr:
+        sys.stderr.write(stderr)
+        if not stderr.endswith("\n"):
+            sys.stderr.write("\n")
+        sys.stderr.flush()
+
+
+def _coerce_stream_text(value: str | bytes | None) -> str:
+    if value is None:
+        return ""
+    if isinstance(value, bytes):
+        return value.decode("utf-8", errors="replace")
+    return value
+
+
+def _run_supervised(args: argparse.Namespace) -> int:
+    state = str(args.state or "").strip().upper()
+    output_dir = Path(args.output_dir).expanduser().resolve()
+    output_dir.mkdir(parents=True, exist_ok=True)
+    _payload_path(args.output_json).parent.mkdir(parents=True, exist_ok=True)
+
+    child_args = [arg for arg in sys.argv[1:] if arg != "--worker-direct"]
+    cmd = [sys.executable, str(Path(__file__).resolve()), *child_args, "--worker-direct"]
+    env = os.environ.copy()
+    env["MUNICIPAL_SCRAPE_IN_VENV"] = "true"
+
+    timeout_seconds = max(
+        float(args.per_state_timeout_seconds) + 20.0,
+        float(args.per_state_timeout_seconds) * 1.25,
+    )
+    proc = subprocess.Popen(
+        cmd,
+        cwd=str(_repo_root()),
+        env=env,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        text=True,
+    )
+
+    try:
+        stdout, stderr = proc.communicate(timeout=timeout_seconds)
+    except subprocess.TimeoutExpired as exc:
+        stdout = _coerce_stream_text(exc.stdout)
+        stderr = _coerce_stream_text(exc.stderr)
+        proc.terminate()
+        try:
+            tail_stdout, tail_stderr = proc.communicate(timeout=10)
+            stdout += _coerce_stream_text(tail_stdout)
+            stderr += _coerce_stream_text(tail_stderr)
+        except subprocess.TimeoutExpired:
+            proc.kill()
+            tail_stdout, tail_stderr = proc.communicate()
+            stdout += _coerce_stream_text(tail_stdout)
+            stderr += _coerce_stream_text(tail_stderr)
+
+        _forward_child_output(stdout, stderr)
+        payload = _timeout_payload(
+            state,
+            detail=(
+                "Supervisor terminated the worker after the scrape timed out or hung during shutdown."
+            ),
+        )
+        _write_payload(args.output_json, payload)
+        print(json.dumps(payload, ensure_ascii=False))
+        return 0
+
+    _forward_child_output(stdout, stderr)
+
+    if proc.returncode != 0:
+        payload_path = _payload_path(args.output_json)
+        if not payload_path.exists():
+            payload = _error_payload(state, detail=f"Worker exited with status {proc.returncode}")
+            _write_payload(args.output_json, payload)
+            print(json.dumps(payload, ensure_ascii=False))
+        return int(proc.returncode or 1)
+
+    payload_path = _payload_path(args.output_json)
+    if not payload_path.exists():
+        payload = _error_payload(state, detail="Worker exited successfully but did not write output JSON")
+        _write_payload(args.output_json, payload)
+        print(json.dumps(payload, ensure_ascii=False))
+        return 1
+
+    return 0
 
 
 async def _run(args: argparse.Namespace) -> dict:
@@ -124,9 +252,11 @@ async def _run(args: argparse.Namespace) -> dict:
 def main() -> int:
     _reexec_in_repo_venv()
     args = parse_args()
+    if not args.worker_direct:
+        return _run_supervised(args)
+
     payload = anyio.run(_run, args)
-    with open(args.output_json, "w", encoding="utf-8") as f:
-        f.write(json.dumps(payload, ensure_ascii=False, indent=2))
+    _write_payload(args.output_json, payload)
     print(json.dumps(payload, ensure_ascii=False))
     return 0
 
