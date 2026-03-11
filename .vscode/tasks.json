@@ -91,7 +91,7 @@
       "command": "bash",
       "args": [
         "-lc",
-        "LEGAL_DAEMON_PRINT_RELEASE_PLAN=1 LEGAL_DAEMON_POST_CYCLE_RELEASE_PUBLISH_COMMAND='bash -lc \"echo publish {corpus_key} from {parquet_dir}\"' bash ./scripts/ops/legal_data/run_agentic_legal_daemon.sh"
+        "LEGAL_DAEMON_PRINT_RELEASE_PLAN=1 bash ./scripts/ops/legal_data/run_agentic_legal_daemon.sh"
       ],
       "isBackground": false,
       "problemMatcher": [],
@@ -118,6 +118,30 @@
         "LEGAL_DAEMON_MAX_CYCLES=0 LEGAL_DAEMON_STOP_ON_TARGET_SCORE=1 bash ./scripts/ops/legal_data/run_agentic_legal_daemon.sh"
       ],
       "isBackground": true,
+      "problemMatcher": [],
+      "group": "build"
+    },
+    {
+      "label": "Legal publish: dry run",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-lc",
+        "LEGAL_PUBLISH_DRY_RUN=1 bash ./scripts/ops/legal_data/run_publish_canonical_legal_corpus.sh"
+      ],
+      "isBackground": false,
+      "problemMatcher": [],
+      "group": "build"
+    },
+    {
+      "label": "Legal publish: live",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-lc",
+        "LEGAL_PUBLISH_DRY_RUN=0 bash ./scripts/ops/legal_data/run_publish_canonical_legal_corpus.sh"
+      ],
+      "isBackground": false,
       "problemMatcher": [],
       "group": "build"
     }
