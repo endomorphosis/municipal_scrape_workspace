@@ -84,6 +84,42 @@
       "isBackground": true,
       "problemMatcher": [],
       "group": "build"
+    },
+    {
+      "label": "Legal daemon: release plan preview",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-lc",
+        "LEGAL_DAEMON_PRINT_RELEASE_PLAN=1 LEGAL_DAEMON_POST_CYCLE_RELEASE_PUBLISH_COMMAND='bash -lc \"echo publish {corpus_key} from {parquet_dir}\"' bash ./scripts/ops/legal_data/run_agentic_legal_daemon.sh"
+      ],
+      "isBackground": false,
+      "problemMatcher": [],
+      "group": "build"
+    },
+    {
+      "label": "Legal daemon: one cycle dry run",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-lc",
+        "LEGAL_DAEMON_MAX_CYCLES=1 LEGAL_DAEMON_MAX_STATUTES=25 LEGAL_DAEMON_PER_STATE_TIMEOUT_SECONDS=45 LEGAL_DAEMON_POST_CYCLE_RELEASE=1 LEGAL_DAEMON_POST_CYCLE_RELEASE_DRY_RUN=1 bash ./scripts/ops/legal_data/run_agentic_legal_daemon.sh"
+      ],
+      "isBackground": false,
+      "problemMatcher": [],
+      "group": "build"
+    },
+    {
+      "label": "Legal daemon: continuous",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-lc",
+        "LEGAL_DAEMON_MAX_CYCLES=0 LEGAL_DAEMON_STOP_ON_TARGET_SCORE=1 bash ./scripts/ops/legal_data/run_agentic_legal_daemon.sh"
+      ],
+      "isBackground": true,
+      "problemMatcher": [],
+      "group": "build"
     }
 
   ]

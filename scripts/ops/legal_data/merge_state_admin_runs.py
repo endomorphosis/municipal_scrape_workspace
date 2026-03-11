@@ -21,6 +21,18 @@ STATE_RE = re.compile(r"STATE-([A-Z]{2})\.jsonld$")
 SUMMARY_RE = re.compile(r"([A-Z]{2})\.json$")
 
 
+def _parse_selected_states(values: Optional[Sequence[str]]) -> Optional[List[str]]:
+    if not values:
+        return None
+    selected: List[str] = []
+    for value in values:
+        for item in str(value or "").split(","):
+            code = item.strip().upper()
+            if re.fullmatch(r"[A-Z]{2}", code) and code not in selected:
+                selected.append(code)
+    return selected or None
+
+
 @dataclass
 class CandidateRow:
     state: str
@@ -253,6 +265,12 @@ def main() -> int:
         action="store_true",
         help="Also ingest state-admin corpus JSONL rows found in input roots",
     )
+    parser.add_argument(
+        "--state",
+        action="append",
+        default=None,
+        help="Restrict the merge to one or more state codes. Repeatable or comma-separated.",
+    )
     args = parser.parse_args()
 
     input_roots = [Path(p).resolve() for p in (args.input_root or ["artifacts/state_admin_rules"])]
@@ -281,6 +299,13 @@ def main() -> int:
     if args.include_corpus_jsonl:
         corpus_rows_by_state = _load_corpus_rows_by_state(corpus_jsonl_files)
 
+    selected_states = _parse_selected_states(args.state)
+    if selected_states is not None:
+        allowed = set(selected_states)
+        jsonld_files = {state: paths for state, paths in jsonld_files.items() if state in allowed}
+        summary_files = {state: paths for state, paths in summary_files.items() if state in allowed}
+        corpus_rows_by_state = {state: rows for state, rows in corpus_rows_by_state.items() if state in allowed}
+
     all_states = sorted(set(jsonld_files.keys()) | set(summary_files.keys()) | set(corpus_rows_by_state.keys()))
 
     merged_manifest: Dict[str, Any] = {
@@ -288,6 +313,7 @@ def main() -> int:
         "input_roots": [str(p) for p in input_roots],
         "output_dir": str(output_dir),
         "include_corpus_jsonl": bool(args.include_corpus_jsonl),
+        "selected_states": list(selected_states or []),
         "states": {},
         "totals": {
             "states_seen": len(all_states),

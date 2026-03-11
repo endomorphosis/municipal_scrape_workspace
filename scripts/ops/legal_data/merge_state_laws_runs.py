@@ -22,6 +22,18 @@ STATE_FILE_RE = re.compile(r"(?:^|[_-])([A-Z]{2})(?:\.[^.]+)?$")
 JURIS_RE = re.compile(r"^US-([A-Z]{2})$")
 
 
+def _parse_selected_states(values: Optional[Sequence[str]]) -> Optional[List[str]]:
+    if not values:
+        return None
+    selected: List[str] = []
+    for value in values:
+        for item in str(value or "").split(","):
+            code = item.strip().upper()
+            if re.fullmatch(r"[A-Z]{2}", code) and code not in selected:
+                selected.append(code)
+    return selected or None
+
+
 def _normalize(value: Any) -> str:
     return str(value or "").strip()
 
@@ -284,6 +296,12 @@ def main() -> int:
         default=None,
         help="Output directory (default: artifacts/state_laws/canonical_merged_<UTC timestamp>)",
     )
+    parser.add_argument(
+        "--state",
+        action="append",
+        default=None,
+        help="Restrict the merge to one or more state codes. Repeatable or comma-separated.",
+    )
     args = parser.parse_args()
 
     input_roots = [Path(p).resolve() for p in (args.input_root or ["data/state_laws", "/tmp"])]
@@ -305,12 +323,19 @@ def main() -> int:
         jsonld_files = _merge_map_list(jsonld_files, _discover_jsonld_files(root))
         summary_files = _merge_map_list(summary_files, _discover_summary_files(root))
 
+    selected_states = _parse_selected_states(args.state)
+    if selected_states is not None:
+        allowed = set(selected_states)
+        jsonld_files = {state: paths for state, paths in jsonld_files.items() if state in allowed}
+        summary_files = {state: paths for state, paths in summary_files.items() if state in allowed}
+
     all_states = sorted(set(jsonld_files.keys()) | set(summary_files.keys()))
 
     manifest: Dict[str, Any] = {
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
         "input_roots": [str(p) for p in input_roots],
         "output_dir": str(output_dir),
+        "selected_states": list(selected_states or []),
         "states": {},
         "totals": {
             "states_seen": len(all_states),

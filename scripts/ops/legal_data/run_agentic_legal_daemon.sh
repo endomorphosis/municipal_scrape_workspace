@@ -1,0 +1,108 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+ROOT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")/../../.." && pwd)
+PKG_DIR="$ROOT_DIR/ipfs_datasets_py"
+ROOT_VENV_PYTHON="$ROOT_DIR/.venv/bin/python"
+PKG_VENV_PYTHON="$PKG_DIR/.venv/bin/python"
+
+if [[ -f "$ROOT_DIR/.env" ]]; then
+  set -a
+  # shellcheck disable=SC1091
+  source "$ROOT_DIR/.env"
+  set +a
+fi
+
+PYTHON_BIN=${LEGAL_DAEMON_PYTHON_BIN:-}
+if [[ -z "$PYTHON_BIN" ]]; then
+  if [[ -x "$ROOT_VENV_PYTHON" ]]; then
+    PYTHON_BIN="$ROOT_VENV_PYTHON"
+  elif [[ -x "$PKG_VENV_PYTHON" ]]; then
+    PYTHON_BIN="$PKG_VENV_PYTHON"
+  else
+    PYTHON_BIN=$(command -v python3)
+  fi
+fi
+
+CORPUS=${LEGAL_DAEMON_CORPUS:-state_laws}
+STATES=${LEGAL_DAEMON_STATES:-all}
+MAX_CYCLES=${LEGAL_DAEMON_MAX_CYCLES:-1}
+MAX_STATUTES=${LEGAL_DAEMON_MAX_STATUTES:-0}
+CYCLE_INTERVAL_SECONDS=${LEGAL_DAEMON_CYCLE_INTERVAL_SECONDS:-900}
+ARCHIVE_WARMUP_URLS=${LEGAL_DAEMON_ARCHIVE_WARMUP_URLS:-25}
+PER_STATE_TIMEOUT_SECONDS=${LEGAL_DAEMON_PER_STATE_TIMEOUT_SECONDS:-480}
+TARGET_SCORE=${LEGAL_DAEMON_TARGET_SCORE:-0.92}
+RANDOM_SEED=${LEGAL_DAEMON_RANDOM_SEED:-}
+OUTPUT_DIR=${LEGAL_DAEMON_OUTPUT_DIR:-}
+STOP_ON_TARGET_SCORE=${LEGAL_DAEMON_STOP_ON_TARGET_SCORE:-0}
+PRINT_RELEASE_PLAN=${LEGAL_DAEMON_PRINT_RELEASE_PLAN:-0}
+POST_CYCLE_RELEASE=${LEGAL_DAEMON_POST_CYCLE_RELEASE:-0}
+POST_CYCLE_RELEASE_DRY_RUN=${LEGAL_DAEMON_POST_CYCLE_RELEASE_DRY_RUN:-0}
+POST_CYCLE_RELEASE_MIN_SCORE=${LEGAL_DAEMON_POST_CYCLE_RELEASE_MIN_SCORE:-}
+POST_CYCLE_RELEASE_IGNORE_PASS=${LEGAL_DAEMON_POST_CYCLE_RELEASE_IGNORE_PASS:-0}
+POST_CYCLE_RELEASE_TIMEOUT_SECONDS=${LEGAL_DAEMON_POST_CYCLE_RELEASE_TIMEOUT_SECONDS:-7200}
+POST_CYCLE_RELEASE_WORKSPACE_ROOT=${LEGAL_DAEMON_POST_CYCLE_RELEASE_WORKSPACE_ROOT:-$ROOT_DIR}
+POST_CYCLE_RELEASE_PYTHON_BIN=${LEGAL_DAEMON_POST_CYCLE_RELEASE_PYTHON_BIN:-$PYTHON_BIN}
+POST_CYCLE_RELEASE_PUBLISH_COMMAND=${LEGAL_DAEMON_POST_CYCLE_RELEASE_PUBLISH_COMMAND:-}
+POST_CYCLE_RELEASE_PREVIEW_SCORE=${LEGAL_DAEMON_POST_CYCLE_RELEASE_PREVIEW_SCORE:-}
+POST_CYCLE_RELEASE_PREVIEW_CYCLE=${LEGAL_DAEMON_POST_CYCLE_RELEASE_PREVIEW_CYCLE:-1}
+
+ARGS=(
+  -m ipfs_datasets_py.processors.legal_scrapers.state_laws_agentic_daemon
+  --corpus "$CORPUS"
+  --states "$STATES"
+  --max-cycles "$MAX_CYCLES"
+  --max-statutes "$MAX_STATUTES"
+  --cycle-interval-seconds "$CYCLE_INTERVAL_SECONDS"
+  --archive-warmup-urls "$ARCHIVE_WARMUP_URLS"
+  --per-state-timeout-seconds "$PER_STATE_TIMEOUT_SECONDS"
+  --target-score "$TARGET_SCORE"
+  --post-cycle-release-timeout-seconds "$POST_CYCLE_RELEASE_TIMEOUT_SECONDS"
+  --post-cycle-release-workspace-root "$POST_CYCLE_RELEASE_WORKSPACE_ROOT"
+  --post-cycle-release-python-bin "$POST_CYCLE_RELEASE_PYTHON_BIN"
+  --post-cycle-release-preview-cycle "$POST_CYCLE_RELEASE_PREVIEW_CYCLE"
+)
+
+if [[ -n "$RANDOM_SEED" ]]; then
+  ARGS+=(--random-seed "$RANDOM_SEED")
+fi
+
+if [[ -n "$OUTPUT_DIR" ]]; then
+  ARGS+=(--output-dir "$OUTPUT_DIR")
+fi
+
+if [[ "$STOP_ON_TARGET_SCORE" == "1" ]]; then
+  ARGS+=(--stop-on-target-score)
+fi
+
+if [[ "$PRINT_RELEASE_PLAN" == "1" ]]; then
+  ARGS+=(--print-post-cycle-release-plan)
+fi
+
+if [[ "$POST_CYCLE_RELEASE" == "1" ]]; then
+  ARGS+=(--post-cycle-release)
+fi
+
+if [[ "$POST_CYCLE_RELEASE_DRY_RUN" == "1" ]]; then
+  ARGS+=(--post-cycle-release-dry-run)
+fi
+
+if [[ -n "$POST_CYCLE_RELEASE_MIN_SCORE" ]]; then
+  ARGS+=(--post-cycle-release-min-score "$POST_CYCLE_RELEASE_MIN_SCORE")
+fi
+
+if [[ "$POST_CYCLE_RELEASE_IGNORE_PASS" == "1" ]]; then
+  ARGS+=(--post-cycle-release-ignore-pass)
+fi
+
+if [[ -n "$POST_CYCLE_RELEASE_PUBLISH_COMMAND" ]]; then
+  ARGS+=(--post-cycle-release-publish-command "$POST_CYCLE_RELEASE_PUBLISH_COMMAND")
+fi
+
+if [[ -n "$POST_CYCLE_RELEASE_PREVIEW_SCORE" ]]; then
+  ARGS+=(--post-cycle-release-preview-score "$POST_CYCLE_RELEASE_PREVIEW_SCORE")
+fi
+
+cd "$PKG_DIR"
+PYTHONPATH=src exec "$PYTHON_BIN" "${ARGS[@]}" "$@"
