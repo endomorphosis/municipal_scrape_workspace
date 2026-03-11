@@ -78,3 +78,101 @@ def test_daemon_wrapper_preserves_inline_env_overrides():
     assert "--state CA" in merge_command
     assert "run_publish_canonical_legal_corpus.sh" in publish_command
     assert "LEGAL_PUBLISH_CORPUS=state_admin_rules" in publish_command
+
+
+def test_daemon_wrapper_forwards_router_timeout_env_vars(tmp_path):
+    repo_root = _repo_root()
+    probe = tmp_path / "argv_probe.py"
+    probe.write_text(
+        """
+#!/usr/bin/env python3
+import json
+import sys
+
+print(json.dumps({"argv": sys.argv[1:]}))
+""".strip()
+        + "\n",
+        encoding="utf-8",
+    )
+    probe.chmod(0o755)
+
+    env = _base_env()
+    env.update(
+        {
+            "LEGAL_DAEMON_PYTHON_BIN": str(probe),
+            "LEGAL_DAEMON_ROUTER_LLM_TIMEOUT_SECONDS": "31",
+            "LEGAL_DAEMON_ROUTER_EMBEDDINGS_TIMEOUT_SECONDS": "17",
+            "LEGAL_DAEMON_ROUTER_IPFS_TIMEOUT_SECONDS": "19",
+        }
+    )
+
+    result = subprocess.run(
+        ["bash", str(repo_root / "scripts/ops/legal_data/run_agentic_legal_daemon.sh")],
+        cwd=repo_root,
+        env=env,
+        capture_output=True,
+        text=True,
+        timeout=120,
+        check=True,
+    )
+
+    argv = json.loads(result.stdout)["argv"]
+    assert "--router-llm-timeout-seconds" in argv
+    assert argv[argv.index("--router-llm-timeout-seconds") + 1] == "31"
+    assert "--router-embeddings-timeout-seconds" in argv
+    assert argv[argv.index("--router-embeddings-timeout-seconds") + 1] == "17"
+    assert "--router-ipfs-timeout-seconds" in argv
+    assert argv[argv.index("--router-ipfs-timeout-seconds") + 1] == "19"
+
+
+def test_daemon_wrapper_preserves_cloudflare_env_overrides(tmp_path):
+    repo_root = _repo_root()
+    probe = tmp_path / "env_probe.py"
+    probe.write_text(
+        """
+#!/usr/bin/env python3
+import json
+import os
+
+keys = [
+    "CLOUDFLARE_ACCOUNT_ID",
+    "CLOUDFLARE_API_TOKEN",
+    "IPFS_DATASETS_CLOUDFLARE_CRAWL_TIMEOUT_SECONDS",
+    "LEGAL_SCRAPER_CLOUDFLARE_CRAWL_MAX_RATE_LIMIT_WAIT_SECONDS",
+    "LEGAL_SCRAPER_CLOUDFLARE_CRAWL_FORMATS",
+]
+print(json.dumps({key: os.environ.get(key) for key in keys}))
+""".strip()
+        + "\n",
+        encoding="utf-8",
+    )
+    probe.chmod(0o755)
+
+    env = _base_env()
+    env.update(
+        {
+            "LEGAL_DAEMON_PYTHON_BIN": str(probe),
+            "CLOUDFLARE_ACCOUNT_ID": "acct-inline",
+            "CLOUDFLARE_API_TOKEN": "token-inline",
+            "IPFS_DATASETS_CLOUDFLARE_CRAWL_TIMEOUT_SECONDS": "77",
+            "LEGAL_SCRAPER_CLOUDFLARE_CRAWL_MAX_RATE_LIMIT_WAIT_SECONDS": "900",
+            "LEGAL_SCRAPER_CLOUDFLARE_CRAWL_FORMATS": "markdown,html",
+        }
+    )
+
+    result = subprocess.run(
+        ["bash", str(repo_root / "scripts/ops/legal_data/run_agentic_legal_daemon.sh")],
+        cwd=repo_root,
+        env=env,
+        capture_output=True,
+        text=True,
+        timeout=120,
+        check=True,
+    )
+
+    payload = json.loads(result.stdout)
+    assert payload["CLOUDFLARE_ACCOUNT_ID"] == "acct-inline"
+    assert payload["CLOUDFLARE_API_TOKEN"] == "token-inline"
+    assert payload["IPFS_DATASETS_CLOUDFLARE_CRAWL_TIMEOUT_SECONDS"] == "77"
+    assert payload["LEGAL_SCRAPER_CLOUDFLARE_CRAWL_MAX_RATE_LIMIT_WAIT_SECONDS"] == "900"
+    assert payload["LEGAL_SCRAPER_CLOUDFLARE_CRAWL_FORMATS"] == "markdown,html"
