@@ -19,6 +19,15 @@ from typing import Any, Dict, Iterable, List, Optional, Sequence, Tuple
 
 STATE_RE = re.compile(r"STATE-([A-Z]{2})\.jsonld$")
 SUMMARY_RE = re.compile(r"([A-Z]{2})\.json$")
+_RAW_RTF_PREFIX_RE = re.compile(r"^\s*\{\\rtf", re.IGNORECASE)
+_RTF_NOISE_RE = re.compile(
+    r"Times New Roman;|Arial;|Calibri;|Aptos;|Cambria Math;|Default Paragraph Font|Normal Table|\\fonttbl|\\stylesheet|\\panose",
+    re.IGNORECASE,
+)
+_LEGAL_TEXT_RE = re.compile(
+    r"\b(?:chapter|article|title|section|rule|authority|historical\s+note)\b|R\d{1,2}-\d{1,2}-\d{2,4}",
+    re.IGNORECASE,
+)
 
 
 def _parse_selected_states(values: Optional[Sequence[str]]) -> Optional[List[str]]:
@@ -81,6 +90,19 @@ def _row_text(row: Dict[str, Any]) -> str:
     return _normalize_text(row.get("text") or row.get("full_text"))
 
 
+def _text_quality_tuple(text: str) -> Tuple[int, int, int]:
+    normalized = str(text or "").strip()
+    if not normalized:
+        return (0, -999, 0)
+
+    prefix = normalized[:4000]
+    non_raw_rtf = 0 if _RAW_RTF_PREFIX_RE.match(prefix) else 1
+    legal_hits = len(_LEGAL_TEXT_RE.findall(prefix))
+    noise_hits = len(_RTF_NOISE_RE.findall(prefix))
+    semantic_score = legal_hits * 5 - noise_hits * 4
+    return (non_raw_rtf, semantic_score, len(normalized))
+
+
 def _dedupe_key(row: Dict[str, Any]) -> Tuple[str, str, str]:
     url = _row_url(row).lower()
     ident = _row_identifier(row).lower()
@@ -93,11 +115,11 @@ def _dedupe_key(row: Dict[str, Any]) -> Tuple[str, str, str]:
 
 
 def _quality_tuple(row: Dict[str, Any]) -> Tuple[int, int, int]:
-    # Prefer richer rows: longer text, then presence of URL, then name length.
-    text_len = len(_row_text(row))
+    # Prefer substantive extracted text over raw RTF noise, then richer rows.
+    text_quality = _text_quality_tuple(_row_text(row))
     has_url = 1 if _row_url(row) else 0
     name_len = len(_row_name(row))
-    return (text_len, has_url, name_len)
+    return (*text_quality, has_url, name_len)
 
 
 def _prefer_row(existing: Dict[str, Any], new_row: Dict[str, Any]) -> Dict[str, Any]:
