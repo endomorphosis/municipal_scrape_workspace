@@ -78,6 +78,147 @@ def test_merge_state_admin_runs_filters_selected_state(tmp_path, monkeypatch):
     assert not (output_dir / "state_admin_rules_jsonld" / "STATE-CA.jsonld").exists()
 
 
+def test_merge_state_admin_runs_ingests_corpus_jsonl_and_prefers_richer_row(tmp_path, monkeypatch):
+    module = _load_module(
+        "merge_state_admin_runs_corpus_test",
+        Path("/home/barberb/municipal_scrape_workspace/scripts/ops/legal_data/merge_state_admin_runs.py"),
+    )
+
+    input_root = tmp_path / "artifacts" / "state_admin_rules" / "run_a"
+    _write_jsonl(
+        input_root / "STATE-AZ.jsonld",
+        [
+            {
+                "identifier": "AZ-rule-1",
+                "name": "AZ Rule 1",
+                "text": "short",
+                "legislationJurisdiction": "US-AZ",
+                "sourceUrl": "https://example.org/az/rule-1",
+            }
+        ],
+    )
+    _write_jsonl(
+        input_root / "state_admin_rule_kg_corpus_run.jsonl",
+        [
+            {
+                "identifier": "AZ-rule-1",
+                "name": "AZ Rule 1",
+                "text": "This is the longer Arizona administrative rule text that should win during dedupe.",
+                "legislationJurisdiction": "US-AZ",
+                "state_code": "AZ",
+                "sourceUrl": "https://example.org/az/rule-1",
+            },
+            {
+                "identifier": "AZ-rule-2",
+                "name": "AZ Rule 2",
+                "text": "Second Arizona rule from the corpus JSONL.",
+                "legislationJurisdiction": "US-AZ",
+                "state_code": "AZ",
+                "sourceUrl": "https://example.org/az/rule-2",
+            },
+        ],
+    )
+
+    output_dir = tmp_path / "out_admin_corpus"
+    monkeypatch.setattr(
+        sys,
+        "argv",
+        [
+            "merge_state_admin_runs.py",
+            "--input-root",
+            str(input_root),
+            "--output-dir",
+            str(output_dir),
+            "--include-corpus-jsonl",
+            "--state",
+            "AZ",
+        ],
+    )
+
+    assert module.main() == 0
+
+    manifest = json.loads((output_dir / "manifest.json").read_text(encoding="utf-8"))
+    state_entry = manifest["states"]["AZ"]
+    assert manifest["totals"]["source_corpus_jsonl_files"] == 1
+    assert state_entry["source_corpus_rows"] == 2
+    assert state_entry["merged_rows_total"] == 2
+
+    merged_rows = [
+        json.loads(line)
+        for line in (output_dir / "state_admin_rules_jsonld" / "STATE-AZ.jsonld").read_text(encoding="utf-8").splitlines()
+        if line.strip()
+    ]
+    assert len(merged_rows) == 2
+    by_identifier = {row["identifier"]: row for row in merged_rows}
+    assert by_identifier["AZ-rule-1"]["text"].startswith("This is the longer Arizona administrative rule text")
+    assert by_identifier["AZ-rule-2"]["name"] == "AZ Rule 2"
+
+
+def test_merge_state_admin_runs_selects_best_summary_by_status_then_count(tmp_path, monkeypatch):
+    module = _load_module(
+        "merge_state_admin_runs_summary_test",
+        Path("/home/barberb/municipal_scrape_workspace/scripts/ops/legal_data/merge_state_admin_runs.py"),
+    )
+
+    input_root = tmp_path / "artifacts" / "state_admin_rules" / "run_a"
+    _write_jsonl(
+        input_root / "STATE-UT.jsonld",
+        [
+            {
+                "identifier": "UT-rule-1",
+                "name": "UT Rule 1",
+                "text": "Utah administrative rule text",
+                "legislationJurisdiction": "US-UT",
+                "sourceUrl": "https://example.org/ut/rule-1",
+            }
+        ],
+    )
+
+    lower_quality_summary = {
+        "status": "partial_success",
+        "rules_count": 99,
+        "notes": ["more rows but weaker status"],
+    }
+    better_summary = {
+        "status": "success",
+        "rules_count": 7,
+        "notes": ["fewer rows but successful run"],
+    }
+    (input_root / "UT.json").write_text(json.dumps(lower_quality_summary), encoding="utf-8")
+    sibling_dir = tmp_path / "artifacts" / "state_admin_rules" / "run_b"
+    sibling_dir.mkdir(parents=True, exist_ok=True)
+    (sibling_dir / "UT.json").write_text(json.dumps(better_summary), encoding="utf-8")
+
+    output_dir = tmp_path / "out_admin_summary"
+    monkeypatch.setattr(
+        sys,
+        "argv",
+        [
+            "merge_state_admin_runs.py",
+            "--input-root",
+            str(input_root),
+            "--input-root",
+            str(sibling_dir),
+            "--output-dir",
+            str(output_dir),
+            "--state",
+            "UT",
+        ],
+    )
+
+    assert module.main() == 0
+
+    manifest = json.loads((output_dir / "manifest.json").read_text(encoding="utf-8"))
+    state_entry = manifest["states"]["UT"]
+    summary = json.loads((output_dir / "state_summaries" / "UT.json").read_text(encoding="utf-8"))
+
+    assert state_entry["canonical_summary_status"] == "success"
+    assert state_entry["canonical_summary_rules_count"] == 7
+    assert summary["status"] == "success"
+    assert summary["rules_count"] == 7
+    assert summary["_source_file"].endswith("UT.json")
+
+
 def test_merge_state_laws_runs_filters_selected_state(tmp_path, monkeypatch):
     module = _load_module(
         "merge_state_laws_runs_test",
