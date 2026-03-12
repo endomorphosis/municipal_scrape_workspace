@@ -43,6 +43,21 @@ def test_build_pending_retry_report_includes_seconds_remaining(tmp_path) -> None
         },
     }
     (tmp_path / "latest_pending_retry.json").write_text(json.dumps(payload), encoding="utf-8")
+    (tmp_path / "latest_summary.json").write_text(
+        json.dumps(
+            {
+                "latest_cycle": {
+                    "cycle_state_order": ["AZ", "UT", "IN"],
+                    "tactic_selection": {
+                        "selected_tactic": "document_first",
+                        "mode": "exploit",
+                        "priority_states": ["AZ"],
+                    },
+                }
+            }
+        ),
+        encoding="utf-8",
+    )
 
     report = module.build_pending_retry_report(daemon_output_dir=tmp_path)
 
@@ -50,6 +65,8 @@ def test_build_pending_retry_report_includes_seconds_remaining(tmp_path) -> None
     assert report["cycle"] == 4
     assert report["corpus"] == "state_admin_rules"
     assert report["pending_retry"]["provider"] == "cloudflare_browser_rendering"
+    assert report["tactic_selection"]["selected_tactic"] == "document_first"
+    assert report["cycle_state_order"] == ["AZ", "UT", "IN"]
     assert isinstance(report["seconds_remaining"], float)
     assert report["seconds_remaining"] >= 0.0
 

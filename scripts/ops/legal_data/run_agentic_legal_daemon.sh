@@ -62,6 +62,7 @@ _PRESERVE_ENV_VARS=(
   LEGAL_DAEMON_POST_CYCLE_RELEASE_PUBLISH_COMMAND
   LEGAL_DAEMON_POST_CYCLE_RELEASE_PREVIEW_SCORE
   LEGAL_DAEMON_POST_CYCLE_RELEASE_PREVIEW_CYCLE
+  LEGAL_DAEMON_SUMMARIZE_TACTIC_SELECTION
 )
 
 for _var in "${_PRESERVE_ENV_VARS[@]}"; do
@@ -132,6 +133,7 @@ POST_CYCLE_RELEASE_PUBLISH_COMMAND=${LEGAL_DAEMON_POST_CYCLE_RELEASE_PUBLISH_COM
 POST_CYCLE_RELEASE_PREVIEW_SCORE=${LEGAL_DAEMON_POST_CYCLE_RELEASE_PREVIEW_SCORE:-}
 POST_CYCLE_RELEASE_PREVIEW_CYCLE=${LEGAL_DAEMON_POST_CYCLE_RELEASE_PREVIEW_CYCLE:-1}
 SUMMARIZE_PENDING_RETRY=${LEGAL_DAEMON_SUMMARIZE_PENDING_RETRY:-1}
+SUMMARIZE_TACTIC_SELECTION=${LEGAL_DAEMON_SUMMARIZE_TACTIC_SELECTION:-1}
 
 ARGS=(
   -m ipfs_datasets_py.processors.legal_scrapers.state_laws_agentic_daemon
@@ -245,6 +247,24 @@ if [[ "$_daemon_status" -eq 0 && "$SUMMARIZE_PENDING_RETRY" == "1" ]]; then
         "${_pending_retry_after:-unknown}" \
         "${_pending_retry_at:-unknown}" \
         "${_pending_reason:-unknown}" \
+        >&2
+    fi
+  fi
+fi
+
+if [[ "$_daemon_status" -eq 0 && "$SUMMARIZE_TACTIC_SELECTION" == "1" ]]; then
+  if command -v jq >/dev/null 2>&1; then
+    _selected_tactic=$(jq -r '.latest_cycle.tactic_selection.selected_tactic // .tactic_selection.selected_tactic // empty' "$_stdout_capture" 2>/dev/null || true)
+    if [[ -n "$_selected_tactic" ]]; then
+      _selection_mode=$(jq -r '.latest_cycle.tactic_selection.mode // .tactic_selection.mode // empty' "$_stdout_capture" 2>/dev/null || true)
+      _selection_priority_states=$(jq -r '(.latest_cycle.tactic_selection.priority_states // .tactic_selection.priority_states // []) | join(",")' "$_stdout_capture" 2>/dev/null || true)
+      _selection_state_order=$(jq -r '(.latest_cycle.cycle_state_order // .cycle_state_order // []) | join(",")' "$_stdout_capture" 2>/dev/null || true)
+      printf 'tactic_selection: selected=%s mode=%s priority_states=%s cycle_state_order=%s
+' \
+        "$_selected_tactic" \
+        "${_selection_mode:-unknown}" \
+        "${_selection_priority_states:-none}" \
+        "${_selection_state_order:-unknown}" \
         >&2
     fi
   fi

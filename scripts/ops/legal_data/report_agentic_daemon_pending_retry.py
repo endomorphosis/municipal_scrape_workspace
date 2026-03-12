@@ -60,13 +60,21 @@ def _load_json(path: Path) -> Optional[Dict[str, Any]]:
 
 def build_pending_retry_report(*, daemon_output_dir: Path) -> Dict[str, Any]:
     pending_retry_path = daemon_output_dir / "latest_pending_retry.json"
+    latest_summary_path = daemon_output_dir / "latest_summary.json"
     payload = _load_json(pending_retry_path)
+    latest_summary = _load_json(latest_summary_path) or {}
+    latest_cycle = latest_summary.get("latest_cycle") if isinstance(latest_summary.get("latest_cycle"), dict) else {}
+    tactic_selection = latest_cycle.get("tactic_selection") if isinstance(latest_cycle.get("tactic_selection"), dict) else None
+    cycle_state_order = list(latest_cycle.get("cycle_state_order") or []) if isinstance(latest_cycle, dict) else []
     if not payload:
         return {
             "status": "idle",
             "daemon_output_dir": str(daemon_output_dir),
             "pending_retry_path": str(pending_retry_path),
+            "latest_summary_path": str(latest_summary_path),
             "pending_retry": None,
+            "tactic_selection": tactic_selection,
+            "cycle_state_order": cycle_state_order,
         }
 
     pending_retry = payload.get("pending_retry") if isinstance(payload.get("pending_retry"), dict) else {}
@@ -80,11 +88,14 @@ def build_pending_retry_report(*, daemon_output_dir: Path) -> Dict[str, Any]:
         "status": "pending_retry",
         "daemon_output_dir": str(daemon_output_dir),
         "pending_retry_path": str(pending_retry_path),
+        "latest_summary_path": str(latest_summary_path),
         "cycle": int(payload.get("cycle", 0) or 0),
         "timestamp": payload.get("timestamp"),
         "corpus": payload.get("corpus"),
         "states": list(payload.get("states") or []),
         "pending_retry": pending_retry,
+        "tactic_selection": tactic_selection,
+        "cycle_state_order": cycle_state_order,
         "seconds_remaining": round(seconds_remaining, 3) if seconds_remaining is not None else None,
     }
 

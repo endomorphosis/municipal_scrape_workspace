@@ -69,7 +69,13 @@ municipal-scrape --help
 scripts/ops/download_cc_indexes.sh
 scripts/ops/overnight_build_duckdb_index.sh
 scripts/ops/monitor_progress.sh
+
+# Legal daemon operators can use the workspace wrappers and pending-retry watcher
+bash scripts/ops/legal_data/run_agentic_legal_daemon.sh
+LEGAL_DAEMON_PENDING_RETRY_CORPUS=state_laws bash scripts/ops/legal_data/run_agentic_daemon_pending_retry_watch.sh
 ```
+
+Agentic legal daemon usage, deferred retry behavior, and the `Legal daemon: pending retry watch` task are documented in [ipfs_datasets_py/docs/AGENTIC_LEGAL_SCRAPER_DAEMON.md](ipfs_datasets_py/docs/AGENTIC_LEGAL_SCRAPER_DAEMON.md).
 
 **📚 For current structure, see [docs/REPO_STRUCTURE.md](docs/REPO_STRUCTURE.md)**
 

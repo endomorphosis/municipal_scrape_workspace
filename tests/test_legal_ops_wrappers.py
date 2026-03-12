@@ -264,6 +264,56 @@ print(json.dumps({
     assert "retry_at_utc=2026-03-12T12:34:56+00:00" in result.stderr
 
 
+def test_daemon_wrapper_summarizes_tactic_selection_to_stderr(tmp_path):
+    repo_root = _repo_root()
+    probe = tmp_path / "tactic_selection_probe.py"
+    probe.write_text(
+        """
+#!/usr/bin/env python3
+import json
+
+print(json.dumps({
+    "status": "success",
+    "latest_cycle": {
+        "cycle_state_order": ["AZ", "WA", "CA"],
+        "tactic_selection": {
+            "selected_tactic": "document_first",
+            "mode": "exploit",
+            "priority_states": ["AZ", "WA"]
+        }
+    }
+}))
+""".strip()
+        + "\n",
+        encoding="utf-8",
+    )
+    probe.chmod(0o755)
+
+    env = _base_env()
+    env.update(
+        {
+            "LEGAL_DAEMON_PYTHON_BIN": str(probe),
+        }
+    )
+
+    result = subprocess.run(
+        ["bash", str(repo_root / "scripts/ops/legal_data/run_agentic_legal_daemon.sh")],
+        cwd=repo_root,
+        env=env,
+        capture_output=True,
+        text=True,
+        timeout=120,
+        check=True,
+    )
+
+    payload = json.loads(result.stdout)
+    assert payload["latest_cycle"]["tactic_selection"]["selected_tactic"] == "document_first"
+    assert "tactic_selection: selected=document_first" in result.stderr
+    assert "mode=exploit" in result.stderr
+    assert "priority_states=AZ,WA" in result.stderr
+    assert "cycle_state_order=AZ,WA,CA" in result.stderr
+
+
 def test_pending_retry_watch_wrapper_forwards_env_to_reporter(tmp_path):
     repo_root = _repo_root()
     stub = tmp_path / "python3"
