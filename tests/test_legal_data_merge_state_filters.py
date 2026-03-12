@@ -21,6 +21,14 @@ def _write_jsonl(path: Path, rows: list[dict]) -> None:
             handle.write(json.dumps(row, ensure_ascii=False) + "\n")
 
 
+def _read_jsonl(path: Path) -> list[dict]:
+    return [
+        json.loads(line)
+        for line in path.read_text(encoding="utf-8").splitlines()
+        if line.strip()
+    ]
+
+
 def test_merge_state_admin_runs_filters_selected_state(tmp_path, monkeypatch):
     module = _load_module(
         "merge_state_admin_runs_test",
@@ -217,6 +225,134 @@ def test_merge_state_admin_runs_selects_best_summary_by_status_then_count(tmp_pa
     assert summary["status"] == "success"
     assert summary["rules_count"] == 7
     assert summary["_source_file"].endswith("UT.json")
+
+
+def test_clean_state_admin_canonical_drops_legislature_code_pages(tmp_path, monkeypatch):
+    module = _load_module(
+        "clean_state_admin_canonical_test",
+        Path("/home/barberb/municipal_scrape_workspace/scripts/ops/legal_data/clean_state_admin_canonical.py"),
+    )
+
+    input_dir = tmp_path / "canonical_merged_fixture"
+    state_dir = input_dir / "state_admin_rules_jsonld"
+
+    _write_jsonl(
+        state_dir / "STATE-CA.jsonld",
+        [
+            {
+                "state_code": "CA",
+                "identifier": "CA-bad-1",
+                "name": "Codes Display Text",
+                "text": "Codes Display Text Civil Code - CIV Bill Information California Law",
+                "url": "https://leginfo.legislature.ca.gov/faces/codes_displayText.xhtml?lawCode=CIV&sectionNum=43",
+            },
+            {
+                "state_code": "CA",
+                "identifier": "CA-good-1",
+                "name": "California Code of Regulations Title 8 Section 1234",
+                "text": "California Code of Regulations administrative code section 1234 authority reference adopted register 2026, No. 1.",
+                "url": "https://govt.westlaw.com/calregs/Document/example-title-8-section-1234",
+            },
+        ],
+    )
+    _write_jsonl(
+        state_dir / "STATE-AZ.jsonld",
+        [
+            {
+                "state_code": "AZ",
+                "identifier": "AZ-bad-1",
+                "name": "Arizona - Arizona Administrative Rules (Agentic Discovery) - A6",
+                "text": "Arizona Revised Statutes Arizona Legislature Bill Information Session Summary",
+                "url": "https://www.azleg.gov/arsDetail?title=8",
+            },
+            {
+                "state_code": "AZ",
+                "identifier": "AZ-good-1",
+                "name": "Arizona Administrative Code R2-5A-101",
+                "text": "Arizona Administrative Code R2-5A-101 administrative rules authority and register notice.",
+                "url": "https://apps.azsos.gov/public_services/Title_02/2-05A.pdf",
+            },
+        ],
+    )
+
+    output_dir = tmp_path / "cleaned_out"
+    monkeypatch.setattr(
+        sys,
+        "argv",
+        [
+            "clean_state_admin_canonical.py",
+            "--input-dir",
+            str(input_dir),
+            "--output-dir",
+            str(output_dir),
+        ],
+    )
+
+    assert module.main() == 0
+
+    ca_rows = _read_jsonl(output_dir / "state_admin_rules_jsonld" / "STATE-CA.jsonld")
+    az_rows = _read_jsonl(output_dir / "state_admin_rules_jsonld" / "STATE-AZ.jsonld")
+
+    assert [row["identifier"] for row in ca_rows] == ["CA-good-1"]
+    assert [row["identifier"] for row in az_rows] == ["AZ-good-1"]
+
+    manifest = json.loads((output_dir / "manifest.cleaned.json").read_text(encoding="utf-8"))
+    assert manifest["states"]["CA"]["kept_rows"] == 1
+    assert manifest["states"]["CA"]["dropped_rows"] == 1
+    assert manifest["states"]["AZ"]["kept_rows"] == 1
+    assert manifest["states"]["AZ"]["dropped_rows"] == 1
+
+
+def test_clean_state_admin_canonical_does_not_fallback_to_negative_placeholders(tmp_path, monkeypatch):
+    module = _load_module(
+        "clean_state_admin_canonical_negative_fallback_test",
+        Path("/home/barberb/municipal_scrape_workspace/scripts/ops/legal_data/clean_state_admin_canonical.py"),
+    )
+
+    input_dir = tmp_path / "canonical_merged_negative_fixture"
+    state_dir = input_dir / "state_admin_rules_jsonld"
+    _write_jsonl(
+        state_dir / "STATE-CA.jsonld",
+        [
+            {
+                "state_code": "CA",
+                "identifier": "CA-placeholder-1",
+                "name": "California Administrative Rules (agentic source 1)",
+                "text": "California administrative rules portal reference. Source URL: https://leginfo.legislature.ca.gov/regulations.",
+                "url": "https://leginfo.legislature.ca.gov/regulations",
+            },
+            {
+                "state_code": "CA",
+                "identifier": "CA-placeholder-2",
+                "name": "California Legislative Information",
+                "text": "California Legislative Information Quick Bill Search Quick Code Search",
+                "url": "https://leginfo.legislature.ca.gov",
+            },
+        ],
+    )
+
+    output_dir = tmp_path / "cleaned_negative_out"
+    monkeypatch.setattr(
+        sys,
+        "argv",
+        [
+            "clean_state_admin_canonical.py",
+            "--input-dir",
+            str(input_dir),
+            "--output-dir",
+            str(output_dir),
+        ],
+    )
+
+    assert module.main() == 0
+
+    ca_rows = _read_jsonl(output_dir / "state_admin_rules_jsonld" / "STATE-CA.jsonld")
+    manifest = json.loads((output_dir / "manifest.cleaned.json").read_text(encoding="utf-8"))
+
+    assert ca_rows == []
+    assert manifest["states"]["CA"]["kept_rows"] == 0
+    assert manifest["states"]["CA"]["dropped_rows"] == 2
+    assert manifest["states"]["CA"]["fallback_used"] == 0
 
 
 def test_merge_state_laws_runs_filters_selected_state(tmp_path, monkeypatch):

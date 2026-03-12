@@ -41,6 +41,11 @@ BLOCKED_URL_HINTS = (
     "/contact-us",
     "login",
     "forgot-password",
+    "codes_displaytext.xhtml",
+    "codedisplayexpand.xhtml",
+    "codes_displayexpandedbranch.xhtml",
+    "/faces/codes.xhtml",
+    "arsdetail",
 )
 
 # Positive URL cues for likely administrative rules/regulatory content.
@@ -70,6 +75,28 @@ POSITIVE_TEXT_HINTS = (
     "rule",
     "regulation",
     "authority",
+)
+
+# Negative content cues for legislature statute/code pages that should not survive
+# admin-rule cleaning even when they contain incidental words like "chapter".
+NEGATIVE_TEXT_HINTS = (
+    "revised statutes",
+    "codes display text",
+    "codes: code search",
+    "civil code",
+    "corporations code",
+    "education code",
+    "penal code",
+    "bill information",
+    "legislative council",
+    "session laws",
+    "arizona legislature",
+    "agentic source",
+    "source url:",
+    "portal reference",
+    "california legislative information",
+    "quick code search",
+    "quick bill search",
 )
 
 
@@ -121,7 +148,7 @@ def _row_score(row: Dict[str, Any]) -> int:
 
     for hint in BLOCKED_URL_HINTS:
         if hint in url:
-            score -= 2
+            score -= 4
 
     for hint in POSITIVE_URL_HINTS:
         if hint in url:
@@ -131,6 +158,18 @@ def _row_score(row: Dict[str, Any]) -> int:
     for hint in POSITIVE_TEXT_HINTS:
         if hint in hay:
             score += 1
+
+    for hint in NEGATIVE_TEXT_HINTS:
+        if hint in hay:
+            score -= 3
+
+    if "agentic source" in hay:
+        score -= 4
+    if "source url:" in hay or "portal reference" in hay:
+        score -= 4
+
+    if "legislature" in domain and ("code" in url or "statute" in hay or "revised statutes" in hay):
+        score -= 4
 
     if "you need to enable javascript to run this app" in text:
         score -= 2
@@ -174,7 +213,7 @@ def _clean_state_rows(rows: List[Dict[str, Any]], threshold: int) -> Tuple[List[
     fallback_used = 0
 
     # Preserve coverage: if all rows are filtered, keep best one.
-    if not kept and scored:
+    if not kept and scored and scored[0][0] >= threshold:
         kept = [scored[0][1]]
         fallback_used = 1
 
