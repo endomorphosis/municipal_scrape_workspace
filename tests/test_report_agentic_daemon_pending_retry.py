@@ -48,6 +48,9 @@ def test_build_pending_retry_report_includes_seconds_remaining(tmp_path) -> None
             {
                 "latest_cycle": {
                     "cycle_state_order": ["AZ", "UT", "IN"],
+                    "critic": {
+                        "issues": ["document-recovery-stalled:AZ,IN"]
+                    },
                     "tactic_selection": {
                         "selected_tactic": "document_first",
                         "mode": "exploit",
@@ -67,6 +70,7 @@ def test_build_pending_retry_report_includes_seconds_remaining(tmp_path) -> None
     assert report["pending_retry"]["provider"] == "cloudflare_browser_rendering"
     assert report["tactic_selection"]["selected_tactic"] == "document_first"
     assert report["cycle_state_order"] == ["AZ", "UT", "IN"]
+    assert report["stalled_document_recovery_states"] == ["AZ", "IN"]
     assert isinstance(report["seconds_remaining"], float)
     assert report["seconds_remaining"] >= 0.0
 

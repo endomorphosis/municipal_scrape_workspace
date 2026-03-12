@@ -58,6 +58,22 @@ def _load_json(path: Path) -> Optional[Dict[str, Any]]:
     return payload if isinstance(payload, dict) else None
 
 
+def _extract_stalled_document_recovery_states(critic: Any) -> List[str]:
+    if not isinstance(critic, dict):
+        return []
+    stalled: List[str] = []
+    for issue in list(critic.get("issues") or []):
+        normalized = str(issue or "").strip()
+        if not normalized.startswith("document-recovery-stalled:"):
+            continue
+        _, _, suffix = normalized.partition(":")
+        for item in suffix.split(","):
+            state_code = str(item or "").strip().upper()
+            if state_code and state_code not in stalled:
+                stalled.append(state_code)
+    return stalled
+
+
 def build_pending_retry_report(*, daemon_output_dir: Path) -> Dict[str, Any]:
     pending_retry_path = daemon_output_dir / "latest_pending_retry.json"
     latest_summary_path = daemon_output_dir / "latest_summary.json"
@@ -66,6 +82,8 @@ def build_pending_retry_report(*, daemon_output_dir: Path) -> Dict[str, Any]:
     latest_cycle = latest_summary.get("latest_cycle") if isinstance(latest_summary.get("latest_cycle"), dict) else {}
     tactic_selection = latest_cycle.get("tactic_selection") if isinstance(latest_cycle.get("tactic_selection"), dict) else None
     cycle_state_order = list(latest_cycle.get("cycle_state_order") or []) if isinstance(latest_cycle, dict) else []
+    critic = latest_cycle.get("critic") if isinstance(latest_cycle.get("critic"), dict) else None
+    stalled_document_recovery_states = _extract_stalled_document_recovery_states(critic)
     if not payload:
         return {
             "status": "idle",
@@ -75,6 +93,7 @@ def build_pending_retry_report(*, daemon_output_dir: Path) -> Dict[str, Any]:
             "pending_retry": None,
             "tactic_selection": tactic_selection,
             "cycle_state_order": cycle_state_order,
+            "stalled_document_recovery_states": stalled_document_recovery_states,
         }
 
     pending_retry = payload.get("pending_retry") if isinstance(payload.get("pending_retry"), dict) else {}
@@ -96,6 +115,7 @@ def build_pending_retry_report(*, daemon_output_dir: Path) -> Dict[str, Any]:
         "pending_retry": pending_retry,
         "tactic_selection": tactic_selection,
         "cycle_state_order": cycle_state_order,
+        "stalled_document_recovery_states": stalled_document_recovery_states,
         "seconds_remaining": round(seconds_remaining, 3) if seconds_remaining is not None else None,
     }
 

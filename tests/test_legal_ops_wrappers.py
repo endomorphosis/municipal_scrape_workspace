@@ -276,6 +276,9 @@ print(json.dumps({
     "status": "success",
     "latest_cycle": {
         "cycle_state_order": ["AZ", "WA", "CA"],
+        "critic": {
+            "issues": ["document-recovery-stalled:AZ,WA"]
+        },
         "tactic_selection": {
             "selected_tactic": "document_first",
             "mode": "exploit",
@@ -312,6 +315,7 @@ print(json.dumps({
     assert "mode=exploit" in result.stderr
     assert "priority_states=AZ,WA" in result.stderr
     assert "cycle_state_order=AZ,WA,CA" in result.stderr
+    assert "stalled_document_recovery_states=AZ,WA" in result.stderr
 
 
 def test_pending_retry_watch_wrapper_forwards_env_to_reporter(tmp_path):

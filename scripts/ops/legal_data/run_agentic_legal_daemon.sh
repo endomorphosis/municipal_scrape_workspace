@@ -259,12 +259,14 @@ if [[ "$_daemon_status" -eq 0 && "$SUMMARIZE_TACTIC_SELECTION" == "1" ]]; then
       _selection_mode=$(jq -r '.latest_cycle.tactic_selection.mode // .tactic_selection.mode // empty' "$_stdout_capture" 2>/dev/null || true)
       _selection_priority_states=$(jq -r '(.latest_cycle.tactic_selection.priority_states // .tactic_selection.priority_states // []) | join(",")' "$_stdout_capture" 2>/dev/null || true)
       _selection_state_order=$(jq -r '(.latest_cycle.cycle_state_order // .cycle_state_order // []) | join(",")' "$_stdout_capture" 2>/dev/null || true)
-      printf 'tactic_selection: selected=%s mode=%s priority_states=%s cycle_state_order=%s
+      _stalled_document_recovery_states=$(jq -r '((.latest_cycle.critic.issues // .critic.issues // []) | map(select(type == "string" and startswith("document-recovery-stalled:"))) | map(split(":")[1] // "") | map(split(",")[]) | map(select(length > 0)) | unique | join(","))' "$_stdout_capture" 2>/dev/null || true)
+      printf 'tactic_selection: selected=%s mode=%s priority_states=%s cycle_state_order=%s stalled_document_recovery_states=%s
 ' \
         "$_selected_tactic" \
         "${_selection_mode:-unknown}" \
         "${_selection_priority_states:-none}" \
         "${_selection_state_order:-unknown}" \
+        "${_stalled_document_recovery_states:-none}" \
         >&2
     fi
   fi
