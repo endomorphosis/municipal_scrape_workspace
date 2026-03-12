@@ -123,6 +123,44 @@ print(json.dumps({"argv": sys.argv[1:]}))
     assert argv[argv.index("--router-embeddings-timeout-seconds") + 1] == "17"
     assert "--router-ipfs-timeout-seconds" in argv
     assert argv[argv.index("--router-ipfs-timeout-seconds") + 1] == "19"
+    
+def test_daemon_wrapper_forwards_scrape_timeout_override(tmp_path):
+    repo_root = _repo_root()
+    probe = tmp_path / "argv_probe.py"
+    probe.write_text(
+        """
+#!/usr/bin/env python3
+import json
+import sys
+
+print(json.dumps({"argv": sys.argv[1:]}))
+""".strip()
+        + "\n",
+        encoding="utf-8",
+    )
+    probe.chmod(0o755)
+
+    env = _base_env()
+    env.update(
+        {
+            "LEGAL_DAEMON_PYTHON_BIN": str(probe),
+            "LEGAL_DAEMON_SCRAPE_TIMEOUT_SECONDS": "181",
+        }
+    )
+
+    result = subprocess.run(
+        ["bash", str(repo_root / "scripts/ops/legal_data/run_agentic_legal_daemon.sh")],
+        cwd=repo_root,
+        env=env,
+        capture_output=True,
+        text=True,
+        timeout=120,
+        check=True,
+    )
+
+    argv = json.loads(result.stdout)["argv"]
+    assert "--scrape-timeout-seconds" in argv
+    assert argv[argv.index("--scrape-timeout-seconds") + 1] == "181"
 
 
 def test_daemon_wrapper_preserves_cloudflare_env_overrides(tmp_path):
@@ -176,3 +214,50 @@ print(json.dumps({key: os.environ.get(key) for key in keys}))
     assert payload["IPFS_DATASETS_CLOUDFLARE_CRAWL_TIMEOUT_SECONDS"] == "77"
     assert payload["LEGAL_SCRAPER_CLOUDFLARE_CRAWL_MAX_RATE_LIMIT_WAIT_SECONDS"] == "900"
     assert payload["LEGAL_SCRAPER_CLOUDFLARE_CRAWL_FORMATS"] == "markdown,html"
+
+
+def test_daemon_wrapper_summarizes_pending_retry_to_stderr(tmp_path):
+    repo_root = _repo_root()
+    probe = tmp_path / "pending_retry_probe.py"
+    probe.write_text(
+        """
+#!/usr/bin/env python3
+import json
+
+print(json.dumps({
+    "status": "success",
+    "pending_retry": {
+        "provider": "cloudflare_browser_rendering",
+        "retry_after_seconds": 321,
+        "retry_at_utc": "2026-03-12T12:34:56+00:00",
+        "reason": "cloudflare_browser_rendering_rate_limited"
+    }
+}))
+""".strip()
+        + "\n",
+        encoding="utf-8",
+    )
+    probe.chmod(0o755)
+
+    env = _base_env()
+    env.update(
+        {
+            "LEGAL_DAEMON_PYTHON_BIN": str(probe),
+        }
+    )
+
+    result = subprocess.run(
+        ["bash", str(repo_root / "scripts/ops/legal_data/run_agentic_legal_daemon.sh")],
+        cwd=repo_root,
+        env=env,
+        capture_output=True,
+        text=True,
+        timeout=120,
+        check=True,
+    )
+
+    payload = json.loads(result.stdout)
+    assert payload["pending_retry"]["provider"] == "cloudflare_browser_rendering"
+    assert "pending_retry scheduled: provider=cloudflare_browser_rendering" in result.stderr
+    assert "retry_after_seconds=321" in result.stderr
+    assert "retry_at_utc=2026-03-12T12:34:56+00:00" in result.stderr

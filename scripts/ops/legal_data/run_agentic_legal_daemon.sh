@@ -115,6 +115,7 @@ ADMIN_AGENTIC_FETCH_CONCURRENCY=${LEGAL_DAEMON_ADMIN_AGENTIC_FETCH_CONCURRENCY:-
 ROUTER_LLM_TIMEOUT_SECONDS=${LEGAL_DAEMON_ROUTER_LLM_TIMEOUT_SECONDS:-20}
 ROUTER_EMBEDDINGS_TIMEOUT_SECONDS=${LEGAL_DAEMON_ROUTER_EMBEDDINGS_TIMEOUT_SECONDS:-10}
 ROUTER_IPFS_TIMEOUT_SECONDS=${LEGAL_DAEMON_ROUTER_IPFS_TIMEOUT_SECONDS:-10}
+SCRAPE_TIMEOUT_SECONDS=${LEGAL_DAEMON_SCRAPE_TIMEOUT_SECONDS:-}
 TARGET_SCORE=${LEGAL_DAEMON_TARGET_SCORE:-0.92}
 RANDOM_SEED=${LEGAL_DAEMON_RANDOM_SEED:-}
 OUTPUT_DIR=${LEGAL_DAEMON_OUTPUT_DIR:-}
@@ -130,6 +131,7 @@ POST_CYCLE_RELEASE_PYTHON_BIN=${LEGAL_DAEMON_POST_CYCLE_RELEASE_PYTHON_BIN:-$PYT
 POST_CYCLE_RELEASE_PUBLISH_COMMAND=${LEGAL_DAEMON_POST_CYCLE_RELEASE_PUBLISH_COMMAND:-}
 POST_CYCLE_RELEASE_PREVIEW_SCORE=${LEGAL_DAEMON_POST_CYCLE_RELEASE_PREVIEW_SCORE:-}
 POST_CYCLE_RELEASE_PREVIEW_CYCLE=${LEGAL_DAEMON_POST_CYCLE_RELEASE_PREVIEW_CYCLE:-1}
+SUMMARIZE_PENDING_RETRY=${LEGAL_DAEMON_SUMMARIZE_PENDING_RETRY:-1}
 
 ARGS=(
   -m ipfs_datasets_py.processors.legal_scrapers.state_laws_agentic_daemon
@@ -149,6 +151,10 @@ ARGS=(
   --post-cycle-release-python-bin "$POST_CYCLE_RELEASE_PYTHON_BIN"
   --post-cycle-release-preview-cycle "$POST_CYCLE_RELEASE_PREVIEW_CYCLE"
 )
+
+if [[ -n "$SCRAPE_TIMEOUT_SECONDS" ]]; then
+  ARGS+=(--scrape-timeout-seconds "$SCRAPE_TIMEOUT_SECONDS")
+fi
 
 if [[ -n "$ADMIN_AGENTIC_MAX_CANDIDATES_PER_STATE" ]]; then
   ARGS+=(--admin-agentic-max-candidates-per-state "$ADMIN_AGENTIC_MAX_CANDIDATES_PER_STATE")
@@ -215,4 +221,33 @@ if [[ -n "$POST_CYCLE_RELEASE_PREVIEW_SCORE" ]]; then
 fi
 
 cd "$PKG_DIR"
-PYTHONPATH=src exec "$PYTHON_BIN" "${ARGS[@]}" "$@"
+
+_stdout_capture=$(mktemp)
+cleanup() {
+  rm -f "$_stdout_capture"
+}
+trap cleanup EXIT
+
+set +e
+PYTHONPATH=src "$PYTHON_BIN" "${ARGS[@]}" "$@" | tee "$_stdout_capture"
+_daemon_status=${PIPESTATUS[0]}
+set -e
+
+if [[ "$_daemon_status" -eq 0 && "$SUMMARIZE_PENDING_RETRY" == "1" ]]; then
+  if command -v jq >/dev/null 2>&1; then
+    _pending_provider=$(jq -r '.pending_retry.provider // empty' "$_stdout_capture" 2>/dev/null || true)
+    if [[ -n "$_pending_provider" ]]; then
+      _pending_retry_after=$(jq -r '.pending_retry.retry_after_seconds // empty' "$_stdout_capture" 2>/dev/null || true)
+      _pending_retry_at=$(jq -r '.pending_retry.retry_at_utc // empty' "$_stdout_capture" 2>/dev/null || true)
+      _pending_reason=$(jq -r '.pending_retry.reason // empty' "$_stdout_capture" 2>/dev/null || true)
+      printf 'pending_retry scheduled: provider=%s retry_after_seconds=%s retry_at_utc=%s reason=%s\n' \
+        "$_pending_provider" \
+        "${_pending_retry_after:-unknown}" \
+        "${_pending_retry_at:-unknown}" \
+        "${_pending_reason:-unknown}" \
+        >&2
+    fi
+  fi
+fi
+
+exit "$_daemon_status"
