@@ -29,6 +29,20 @@ def _read_jsonl(path: Path) -> list[dict]:
     ]
 
 
+def test_discover_state_admin_rule_sources_rejects_california_leginfo_candidates(tmp_path):
+    module = _load_module(
+        "discover_state_admin_rule_sources_test",
+        Path("/home/barberb/municipal_scrape_workspace/ipfs_datasets_py/scripts/ops/legal_data/discover_state_admin_rule_sources.py"),
+    )
+
+    candidates = module._template_candidates_for_state("CA", "California administrative code regulations rules")
+
+    assert candidates
+    assert any("oal.ca.gov/publications/ccr/" in candidate.url for candidate in candidates)
+    assert all("leginfo.legislature.ca.gov" not in candidate.url.lower() for candidate in candidates)
+    assert module._score_url("https://leginfo.legislature.ca.gov/regulations") < 0
+
+
 def test_merge_state_admin_runs_filters_selected_state(tmp_path, monkeypatch):
     module = _load_module(
         "merge_state_admin_runs_test",
