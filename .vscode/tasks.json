@@ -122,6 +122,18 @@
       "group": "build"
     },
     {
+      "label": "Legal daemon: pending retry watch",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-lc",
+        "LEGAL_DAEMON_PENDING_RETRY_CORPUS=${input:legalDaemonCorpus} LEGAL_DAEMON_PENDING_RETRY_WATCH=1 LEGAL_DAEMON_PENDING_RETRY_INTERVAL_SECONDS=10 bash ./scripts/ops/legal_data/run_agentic_daemon_pending_retry_watch.sh"
+      ],
+      "isBackground": true,
+      "problemMatcher": [],
+      "group": "build"
+    },
+    {
       "label": "Legal publish: dry run",
       "type": "shell",
       "command": "bash",
@@ -146,5 +158,18 @@
       "group": "build"
     }
 
+  ],
+  "inputs": [
+    {
+      "id": "legalDaemonCorpus",
+      "type": "pickString",
+      "description": "Corpus to inspect for pending daemon retries",
+      "default": "state_laws",
+      "options": [
+        "state_laws",
+        "state_admin_rules",
+        "state_court_rules"
+      ]
+    }
   ]
 }

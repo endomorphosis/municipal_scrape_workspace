@@ -1,6 +1,7 @@
 import json
 import os
 import subprocess
+import sys
 from pathlib import Path
 
 
@@ -261,3 +262,54 @@ print(json.dumps({
     assert "pending_retry scheduled: provider=cloudflare_browser_rendering" in result.stderr
     assert "retry_after_seconds=321" in result.stderr
     assert "retry_at_utc=2026-03-12T12:34:56+00:00" in result.stderr
+
+
+def test_pending_retry_watch_wrapper_forwards_env_to_reporter(tmp_path):
+    repo_root = _repo_root()
+    stub = tmp_path / "python3"
+    stub.write_text(
+    f"""
+#!{sys.executable}
+import json
+import sys
+
+print(json.dumps({{"argv": sys.argv[1:]}}))
+""".strip()
+        + "\n",
+        encoding="utf-8",
+    )
+    stub.chmod(0o755)
+
+    env = _base_env()
+    env.update(
+        {
+            "PATH": f"{tmp_path}:{env.get('PATH', '')}",
+            "LEGAL_DAEMON_PENDING_RETRY_CORPUS": "state_admin_rules",
+            "LEGAL_DAEMON_PENDING_RETRY_OUTPUT_DIR": str(tmp_path / "daemon_out"),
+            "LEGAL_DAEMON_PENDING_RETRY_WATCH": "1",
+            "LEGAL_DAEMON_PENDING_RETRY_INTERVAL_SECONDS": "17",
+            "LEGAL_DAEMON_PENDING_RETRY_MAX_REPORTS": "4",
+        }
+    )
+
+    result = subprocess.run(
+        ["bash", str(repo_root / "scripts/ops/legal_data/run_agentic_daemon_pending_retry_watch.sh")],
+        cwd=repo_root,
+        env=env,
+        capture_output=True,
+        text=True,
+        timeout=120,
+        check=True,
+    )
+
+    argv = json.loads(result.stdout)["argv"]
+    assert argv[0].endswith("scripts/ops/legal_data/report_agentic_daemon_pending_retry.py")
+    assert "--corpus" in argv
+    assert argv[argv.index("--corpus") + 1] == "state_admin_rules"
+    assert "--daemon-output-dir" in argv
+    assert argv[argv.index("--daemon-output-dir") + 1] == str(tmp_path / "daemon_out")
+    assert "--watch" in argv
+    assert "--interval-seconds" in argv
+    assert argv[argv.index("--interval-seconds") + 1] == "17"
+    assert "--max-reports" in argv
+    assert argv[argv.index("--max-reports") + 1] == "4"
