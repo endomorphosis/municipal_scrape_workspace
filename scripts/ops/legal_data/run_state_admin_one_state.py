@@ -81,6 +81,16 @@ def _write_payload(output_json: str, payload: dict) -> None:
     payload_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
+def _read_payload_if_present(output_json: str) -> dict | None:
+    payload_path = _payload_path(output_json)
+    if not payload_path.exists():
+        return None
+    try:
+        return json.loads(payload_path.read_text(encoding="utf-8"))
+    except Exception:
+        return None
+
+
 def _timeout_payload(state: str, *, detail: str | None = None) -> dict:
     payload = {
         "state": state,
@@ -103,6 +113,20 @@ def _error_payload(state: str, *, detail: str) -> dict:
         "missing_rule_states": [state],
         "detail": detail,
     }
+
+
+def _timeout_payload_preserving_existing(output_json: str, state: str, *, detail: str) -> dict:
+    existing_payload = _read_payload_if_present(output_json)
+    if not isinstance(existing_payload, dict):
+        return _timeout_payload(state, detail=detail)
+
+    payload = dict(existing_payload)
+    payload.setdefault("state", state)
+    payload.setdefault("status", "timeout")
+    payload["supervisor_timeout"] = True
+    prior_detail = str(payload.get("detail") or "").strip()
+    payload["detail"] = detail if not prior_detail else f"{prior_detail} {detail}".strip()
+    return payload
 
 
 def _build_payload_from_result(state: str, result: dict) -> dict:
@@ -185,7 +209,8 @@ def _run_supervised(args: argparse.Namespace) -> int:
             stderr += _coerce_stream_text(tail_stderr)
 
         _forward_child_output(stdout, stderr)
-        payload = _timeout_payload(
+        payload = _timeout_payload_preserving_existing(
+            args.output_json,
             state,
             detail=(
                 "Supervisor terminated the worker after the scrape timed out or hung during shutdown."
