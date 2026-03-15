@@ -105,6 +105,24 @@ def _error_payload(state: str, *, detail: str) -> dict:
     }
 
 
+def _build_payload_from_result(state: str, result: dict) -> dict:
+    meta = result.get("metadata") or {}
+    agentic_report = meta.get("agentic_report") or {}
+    per_state_report = ((agentic_report.get("per_state") or {}).get(state) or {})
+    return {
+        "state": state,
+        "status": result.get("status"),
+        "rules_count": int(meta.get("rules_count") or 0),
+        "states_with_rules": list(meta.get("states_with_rules") or []),
+        "missing_rule_states": list(meta.get("missing_rule_states") or []),
+        "agentic_report_status": agentic_report.get("status"),
+        "agentic_report_error": agentic_report.get("error"),
+        "per_state": per_state_report,
+        "kg_etl_corpus_jsonl": meta.get("kg_etl_corpus_jsonl"),
+        "elapsed_time_seconds": meta.get("elapsed_time_seconds"),
+    }
+
+
 def _forward_child_output(stdout: str | None, stderr: str | None) -> None:
     if stdout:
         sys.stdout.write(stdout)
@@ -239,14 +257,7 @@ async def _run(args: argparse.Namespace) -> dict:
             "missing_rule_states": [state],
         }
 
-    meta = result.get("metadata") or {}
-    return {
-        "state": state,
-        "status": result.get("status"),
-        "rules_count": int(meta.get("rules_count") or 0),
-        "states_with_rules": list(meta.get("states_with_rules") or []),
-        "missing_rule_states": list(meta.get("missing_rule_states") or []),
-    }
+    return _build_payload_from_result(state, result)
 
 
 def main() -> int:
