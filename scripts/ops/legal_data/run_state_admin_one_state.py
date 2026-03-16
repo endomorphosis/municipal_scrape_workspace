@@ -115,6 +115,38 @@ def _error_payload(state: str, *, detail: str) -> dict:
     }
 
 
+def _count_nonempty_lines(path: Path) -> int:
+    try:
+        return sum(1 for line in path.read_text(encoding="utf-8").splitlines() if line.strip())
+    except Exception:
+        return 0
+
+
+def _artifact_recovery_payload(state: str, output_dir: str) -> dict | None:
+    output_root = Path(output_dir).expanduser().resolve()
+    jsonld_path = output_root / "state_admin_rules_jsonld" / f"STATE-{state}.jsonld"
+    kg_path = output_root / "agentic_discovery" / "state_admin_rule_kg_corpus.jsonl"
+
+    rules_count = 0
+    if jsonld_path.exists():
+        rules_count = max(rules_count, _count_nonempty_lines(jsonld_path))
+    if kg_path.exists():
+        rules_count = max(rules_count, _count_nonempty_lines(kg_path))
+
+    if rules_count <= 0:
+        return None
+
+    return {
+        "state": state,
+        "status": "partial_success",
+        "rules_count": rules_count,
+        "states_with_rules": [state],
+        "missing_rule_states": [],
+        "artifact_recovered": True,
+        "artifact_output_dir": str(output_root),
+    }
+
+
 def _timeout_payload_preserving_existing(output_json: str, state: str, *, detail: str) -> dict:
     existing_payload = _read_payload_if_present(output_json)
     if not isinstance(existing_payload, dict):
@@ -209,13 +241,22 @@ def _run_supervised(args: argparse.Namespace) -> int:
             stderr += _coerce_stream_text(tail_stderr)
 
         _forward_child_output(stdout, stderr)
-        payload = _timeout_payload_preserving_existing(
-            args.output_json,
-            state,
-            detail=(
-                "Supervisor terminated the worker after the scrape timed out or hung during shutdown."
-            ),
-        )
+        recovered_payload = _artifact_recovery_payload(state, args.output_dir)
+        if recovered_payload is not None:
+            payload = dict(recovered_payload)
+            payload["supervisor_timeout"] = True
+            payload["detail"] = (
+                "Supervisor terminated the worker after the scrape timed out or hung during shutdown. "
+                "Recovered counts from worker output artifacts."
+            )
+        else:
+            payload = _timeout_payload_preserving_existing(
+                args.output_json,
+                state,
+                detail=(
+                    "Supervisor terminated the worker after the scrape timed out or hung during shutdown."
+                ),
+            )
         _write_payload(args.output_json, payload)
         print(json.dumps(payload, ensure_ascii=False))
         return 0
@@ -274,6 +315,11 @@ async def _run(args: argparse.Namespace) -> dict:
             timeout=float(args.per_state_timeout_seconds),
         )
     except asyncio.TimeoutError:
+        recovered_payload = _artifact_recovery_payload(state, args.output_dir)
+        if recovered_payload is not None:
+            payload = dict(recovered_payload)
+            payload["detail"] = "Worker timed out after scrape artifacts were written; recovered counts from output artifacts."
+            return payload
         return {
             "state": state,
             "status": "timeout",
@@ -291,10 +337,14 @@ def main() -> int:
     if not args.worker_direct:
         return _run_supervised(args)
 
-    payload = anyio.run(_run, args)
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
+    payload = loop.run_until_complete(_run(args))
     _write_payload(args.output_json, payload)
     print(json.dumps(payload, ensure_ascii=False))
-    return 0
+    sys.stdout.flush()
+    sys.stderr.flush()
+    os._exit(0)
 
 
 if __name__ == "__main__":
