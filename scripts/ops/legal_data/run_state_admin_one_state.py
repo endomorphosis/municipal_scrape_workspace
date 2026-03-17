@@ -202,12 +202,12 @@ def _coerce_stream_text(value: str | bytes | None) -> str:
 
 def _worker_timeout_seconds(per_state_timeout_seconds: float) -> float:
     timeout_value = float(per_state_timeout_seconds)
-    return max(timeout_value + 15.0, timeout_value * 1.2)
+    return max(timeout_value + 30.0, timeout_value * 1.5)
 
 
 def _supervisor_timeout_seconds(per_state_timeout_seconds: float) -> float:
     timeout_value = float(per_state_timeout_seconds)
-    return max(timeout_value + 20.0, timeout_value * 1.25)
+    return max(_worker_timeout_seconds(timeout_value) + 20.0, timeout_value * 1.75)
 
 
 def _run_supervised(args: argparse.Namespace) -> int:
