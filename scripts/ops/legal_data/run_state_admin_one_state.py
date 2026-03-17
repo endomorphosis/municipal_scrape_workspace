@@ -200,6 +200,16 @@ def _coerce_stream_text(value: str | bytes | None) -> str:
     return value
 
 
+def _worker_timeout_seconds(per_state_timeout_seconds: float) -> float:
+    timeout_value = float(per_state_timeout_seconds)
+    return max(timeout_value + 15.0, timeout_value * 1.2)
+
+
+def _supervisor_timeout_seconds(per_state_timeout_seconds: float) -> float:
+    timeout_value = float(per_state_timeout_seconds)
+    return max(timeout_value + 20.0, timeout_value * 1.25)
+
+
 def _run_supervised(args: argparse.Namespace) -> int:
     state = str(args.state or "").strip().upper()
     output_dir = Path(args.output_dir).expanduser().resolve()
@@ -211,10 +221,7 @@ def _run_supervised(args: argparse.Namespace) -> int:
     env = os.environ.copy()
     env["MUNICIPAL_SCRAPE_IN_VENV"] = "true"
 
-    timeout_seconds = max(
-        float(args.per_state_timeout_seconds) + 20.0,
-        float(args.per_state_timeout_seconds) * 1.25,
-    )
+    timeout_seconds = _supervisor_timeout_seconds(float(args.per_state_timeout_seconds))
     proc = subprocess.Popen(
         cmd,
         cwd=str(_repo_root()),
@@ -312,7 +319,7 @@ async def _run(args: argparse.Namespace) -> dict:
                 write_agentic_kg_corpus=True,
                 require_substantive_rule_text=bool(args.require_substantive_rule_text),
             ),
-            timeout=float(args.per_state_timeout_seconds),
+            timeout=_worker_timeout_seconds(float(args.per_state_timeout_seconds)),
         )
     except asyncio.TimeoutError:
         recovered_payload = _artifact_recovery_payload(state, args.output_dir)
