@@ -1,0 +1,103 @@
+{
+  "state": "AZ",
+  "status": "success",
+  "rules_count": 6,
+  "states_with_rules": [
+    "AZ"
+  ],
+  "missing_rule_states": [],
+  "agentic_report_status": "success",
+  "agentic_report_error": null,
+  "per_state": {
+    "candidate_urls": 10,
+    "inspected_urls": 24,
+    "inspected_url_samples": [
+      "https://apps.azsos.gov/public_services/Title_04/4-08.pdf",
+      "https://apps.azsos.gov/public_services/Title_06/6-11.pdf",
+      "https://apps.azsos.gov/public_services/Title_07/7-03.pdf",
+      "https://apps.azsos.gov/public_services/Title_09/9-30.pdf",
+      "https://apps.azsos.gov/public_services/Title_13/13-01.pdf",
+      "https://apps.azsos.gov/public_services/Title_15/15-02.pdf",
+      "https://apps.azsos.gov/public_services/Title_15/15-03.pdf",
+      "https://apps.azsos.gov/public_services/Title_15/15-05.pdf",
+      "https://apps.azsos.gov/public_services/Title_15/15-07.pdf",
+      "https://apps.azsos.gov/public_services/Title_17/17-04.pdf",
+      "https://apps.azsos.gov/public_services/Title_02/2-12.pdf",
+      "https://apps.azsos.gov/public_services/Title_01/1-01.pdf",
+      "https://apps.azsos.gov/public_services/Title_01/1-01.rtf",
+      "https://apps.azsos.gov/public_services/Title_01/1-02.pdf",
+      "https://apps.azsos.gov/public_services/Title_01/1-02.rtf",
+      "https://apps.azsos.gov/public_services/Title_01/1-03.pdf"
+    ],
+    "expanded_urls": 0,
+    "fetched_rules": 6,
+    "vermont_lexis_signin_block_count": 0,
+    "vermont_lexis_access_blocked": false,
+    "seed_urls": [
+      "https://azsos.gov/rules/arizona-administrative-code",
+      "https://azsos.gov/rules/",
+      "https://azsos.gov/rules/arizona-administrative-register",
+      "https://apps.azsos.gov/public_services/CodeTOC.htm",
+      "https://apps.azsos.gov/public_services/Index/",
+      "https://apps.azsos.gov/public_services/Title_06/6-11.rtf",
+      "https://apps.azsos.gov/public_services/Title_18/18-01.rtf",
+      "https://apps.azsos.gov/public_services/Title_18/18-04.rtf"
+    ],
+    "top_candidate_urls": [
+      "https://apps.azsos.gov/public_services/Title_06/6-11.rtf",
+      "https://apps.azsos.gov/public_services/Title_18/18-01.rtf",
+      "https://apps.azsos.gov/public_services/Title_18/18-04.rtf",
+      "https://apps.azsos.gov/public_services/Title_04/4-08.pdf",
+      "https://apps.azsos.gov/public_services/Title_07/7-02.rtf",
+      "https://azsos.gov/rules/arizona-administrative-code",
+      "https://azsos.gov/rules/arizona-administrative-register",
+      "https://azsos.gov/rules/",
+      "https://apps.azsos.gov/public_services/CodeTOC.htm",
+      "https://apps.azsos.gov/public_services/Index/"
+    ],
+    "direct_detail_candidate_samples": [
+      "https://apps.azsos.gov/public_services/Title_01/1-04.rtf",
+      "https://apps.azsos.gov/public_services/Title_01/1-05.pdf",
+      "https://apps.azsos.gov/public_services/Title_01/1-05.rtf",
+      "https://apps.azsos.gov/public_services/Title_01/1-06.pdf",
+      "https://apps.azsos.gov/public_services/Title_01/1-06.rtf",
+      "https://apps.azsos.gov/public_services/Title_02/2-01.pdf",
+      "https://apps.azsos.gov/public_services/Title_06/6-11.rtf",
+      "https://apps.azsos.gov/public_services/Title_18/18-01.rtf",
+      "https://apps.azsos.gov/public_services/Title_18/18-04.rtf",
+      "https://apps.azsos.gov/public_services/Title_07/7-02.rtf",
+      "https://apps.azsos.gov/public_services/Title_04/4-08.pdf"
+    ],
+    "format_counts": {
+      "html": 0,
+      "pdf": 4,
+      "rtf": 2
+    },
+    "domains_seen": [
+      "apps.azsos.gov"
+    ],
+    "parallel_prefetch": {
+      "attempted": 0,
+      "successful": 0,
+      "rule_hits": 0
+    },
+    "gap_summary": {
+      "seed_hosts": [
+        "azsos.gov"
+      ],
+      "candidate_hosts": [
+        "azsos.gov"
+      ],
+      "rule_hosts": [
+        "azsos.gov"
+      ],
+      "missing_seed_hosts": [],
+      "candidate_hosts_without_rules": []
+    },
+    "source_breakdown": {},
+    "new_hampshire_bootstrap_diagnostics": {},
+    "timed_out": false
+  },
+  "kg_etl_corpus_jsonl": "/home/barberb/municipal_scrape_workspace/tmp/az_probe_90/agentic_discovery/state_admin_rule_kg_corpus.jsonl",
+  "elapsed_time_seconds": 106.01547265052795
+}
