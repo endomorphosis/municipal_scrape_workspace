@@ -57,14 +57,14 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--state", required=True)
     p.add_argument("--output-json", required=True)
     p.add_argument("--output-dir", required=True)
-    p.add_argument("--per-state-timeout-seconds", type=float, default=90.0)
+    p.add_argument("--per-state-timeout-seconds", type=float, default=86400.0)
     p.add_argument("--require-substantive-rule-text", action=argparse.BooleanOptionalAction, default=False)
     p.add_argument("--retry-zero-rule-states", action=argparse.BooleanOptionalAction, default=True)
-    p.add_argument("--agentic-max-candidates-per-state", type=int, default=40)
-    p.add_argument("--agentic-max-fetch-per-state", type=int, default=16)
-    p.add_argument("--agentic-max-results-per-domain", type=int, default=35)
-    p.add_argument("--agentic-max-hops", type=int, default=2)
-    p.add_argument("--agentic-max-pages", type=int, default=18)
+    p.add_argument("--agentic-max-candidates-per-state", type=int, default=1000)
+    p.add_argument("--agentic-max-fetch-per-state", type=int, default=1000)
+    p.add_argument("--agentic-max-results-per-domain", type=int, default=1000)
+    p.add_argument("--agentic-max-hops", type=int, default=4)
+    p.add_argument("--agentic-max-pages", type=int, default=1000)
     p.add_argument("--agentic-fetch-concurrency", type=int, default=6)
     p.add_argument("--parallel-workers", type=int, default=6)
     p.add_argument("--worker-direct", action="store_true", help=argparse.SUPPRESS)
@@ -202,11 +202,15 @@ def _coerce_stream_text(value: str | bytes | None) -> str:
 
 def _worker_timeout_seconds(per_state_timeout_seconds: float) -> float:
     timeout_value = float(per_state_timeout_seconds)
+    if timeout_value <= 0.0:
+        return 0.0
     return max(timeout_value + 30.0, timeout_value * 1.5)
 
 
 def _supervisor_timeout_seconds(per_state_timeout_seconds: float) -> float:
     timeout_value = float(per_state_timeout_seconds)
+    if timeout_value <= 0.0:
+        return 0.0
     return max(_worker_timeout_seconds(timeout_value) + 20.0, timeout_value * 1.75)
 
 
@@ -232,7 +236,10 @@ def _run_supervised(args: argparse.Namespace) -> int:
     )
 
     try:
-        stdout, stderr = proc.communicate(timeout=timeout_seconds)
+        if timeout_seconds <= 0.0:
+            stdout, stderr = proc.communicate()
+        else:
+            stdout, stderr = proc.communicate(timeout=timeout_seconds)
     except subprocess.TimeoutExpired as exc:
         stdout = _coerce_stream_text(exc.stdout)
         stderr = _coerce_stream_text(exc.stderr)
@@ -291,35 +298,38 @@ def _run_supervised(args: argparse.Namespace) -> int:
 async def _run(args: argparse.Namespace) -> dict:
     state = str(args.state or "").strip().upper()
     try:
-        result = await asyncio.wait_for(
-            scrape_state_admin_rules(
-                states=[state],
-                output_format="json",
-                include_metadata=True,
-                rate_limit_delay=0.2,
-                max_rules=None,
-                output_dir=args.output_dir,
-                write_jsonld=True,
-                strict_full_text=False,
-                min_full_text_chars=200,
-                hydrate_rule_text=True,
-                parallel_workers=int(args.parallel_workers),
-                per_state_retry_attempts=1,
-                retry_zero_rule_states=bool(args.retry_zero_rule_states),
-                max_base_statutes=None,
-                per_state_timeout_seconds=float(args.per_state_timeout_seconds),
-                include_dc=False,
-                agentic_fallback_enabled=True,
-                agentic_max_candidates_per_state=int(args.agentic_max_candidates_per_state),
-                agentic_max_fetch_per_state=int(args.agentic_max_fetch_per_state),
-                agentic_max_results_per_domain=int(args.agentic_max_results_per_domain),
-                agentic_max_hops=int(args.agentic_max_hops),
-                agentic_max_pages=int(args.agentic_max_pages),
-                agentic_fetch_concurrency=int(args.agentic_fetch_concurrency),
-                write_agentic_kg_corpus=True,
-                require_substantive_rule_text=bool(args.require_substantive_rule_text),
-            ),
-            timeout=_worker_timeout_seconds(float(args.per_state_timeout_seconds)),
+        scrape_coro = scrape_state_admin_rules(
+            states=[state],
+            output_format="json",
+            include_metadata=True,
+            rate_limit_delay=0.2,
+            max_rules=None,
+            output_dir=args.output_dir,
+            write_jsonld=True,
+            strict_full_text=False,
+            min_full_text_chars=200,
+            hydrate_rule_text=True,
+            parallel_workers=int(args.parallel_workers),
+            per_state_retry_attempts=1,
+            retry_zero_rule_states=bool(args.retry_zero_rule_states),
+            max_base_statutes=None,
+            per_state_timeout_seconds=float(args.per_state_timeout_seconds),
+            include_dc=False,
+            agentic_fallback_enabled=True,
+            agentic_max_candidates_per_state=int(args.agentic_max_candidates_per_state),
+            agentic_max_fetch_per_state=int(args.agentic_max_fetch_per_state),
+            agentic_max_results_per_domain=int(args.agentic_max_results_per_domain),
+            agentic_max_hops=int(args.agentic_max_hops),
+            agentic_max_pages=int(args.agentic_max_pages),
+            agentic_fetch_concurrency=int(args.agentic_fetch_concurrency),
+            write_agentic_kg_corpus=True,
+            require_substantive_rule_text=bool(args.require_substantive_rule_text),
+        )
+        worker_timeout_seconds = _worker_timeout_seconds(float(args.per_state_timeout_seconds))
+        result = await (
+            scrape_coro
+            if worker_timeout_seconds <= 0.0
+            else asyncio.wait_for(scrape_coro, timeout=worker_timeout_seconds)
         )
     except asyncio.TimeoutError:
         recovered_payload = _artifact_recovery_payload(state, args.output_dir)

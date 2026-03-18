@@ -218,7 +218,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--rate-limit-delay", type=float, default=1.5)
     parser.add_argument("--parallel-workers", type=int, default=6)
     parser.add_argument("--per-state-retry-attempts", type=int, default=1)
-    parser.add_argument("--per-state-timeout-seconds", type=float, default=480.0)
+    parser.add_argument("--per-state-timeout-seconds", type=float, default=86400.0)
     parser.add_argument("--min-full-text-chars", type=int, default=300)
     parser.add_argument("--max-rules", type=int, default=0)
     parser.add_argument("--max-base-statutes", type=int, default=0)
@@ -228,11 +228,11 @@ def parse_args() -> argparse.Namespace:
         default=True,
         help="Enable agentic web-archiving fallback for zero-rule states",
     )
-    parser.add_argument("--agentic-max-candidates-per-state", type=int, default=12)
-    parser.add_argument("--agentic-max-fetch-per-state", type=int, default=5)
-    parser.add_argument("--agentic-max-results-per-domain", type=int, default=20)
-    parser.add_argument("--agentic-max-hops", type=int, default=1)
-    parser.add_argument("--agentic-max-pages", type=int, default=8)
+    parser.add_argument("--agentic-max-candidates-per-state", type=int, default=1000)
+    parser.add_argument("--agentic-max-fetch-per-state", type=int, default=1000)
+    parser.add_argument("--agentic-max-results-per-domain", type=int, default=1000)
+    parser.add_argument("--agentic-max-hops", type=int, default=4)
+    parser.add_argument("--agentic-max-pages", type=int, default=1000)
     parser.add_argument("--agentic-fetch-concurrency", type=int, default=6)
     parser.add_argument(
         "--write-agentic-kg-corpus",
