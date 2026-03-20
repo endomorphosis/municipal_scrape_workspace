@@ -218,7 +218,12 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--rate-limit-delay", type=float, default=1.5)
     parser.add_argument("--parallel-workers", type=int, default=6)
     parser.add_argument("--per-state-retry-attempts", type=int, default=1)
-    parser.add_argument("--per-state-timeout-seconds", type=float, default=86400.0)
+    parser.add_argument(
+        "--per-state-timeout-seconds",
+        type=float,
+        default=86400.0,
+        help="Per-state timeout in seconds. Use 0 or a negative value to disable the state time limit.",
+    )
     parser.add_argument("--min-full-text-chars", type=int, default=300)
     parser.add_argument("--max-rules", type=int, default=0)
     parser.add_argument("--max-base-statutes", type=int, default=0)

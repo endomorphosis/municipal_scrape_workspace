@@ -57,7 +57,12 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--state", required=True)
     p.add_argument("--output-json", required=True)
     p.add_argument("--output-dir", required=True)
-    p.add_argument("--per-state-timeout-seconds", type=float, default=86400.0)
+    p.add_argument(
+        "--per-state-timeout-seconds",
+        type=float,
+        default=86400.0,
+        help="Per-state timeout in seconds. Use 0 or a negative value to disable the state time limit.",
+    )
     p.add_argument("--require-substantive-rule-text", action=argparse.BooleanOptionalAction, default=False)
     p.add_argument("--retry-zero-rule-states", action=argparse.BooleanOptionalAction, default=True)
     p.add_argument("--agentic-max-candidates-per-state", type=int, default=1000)
