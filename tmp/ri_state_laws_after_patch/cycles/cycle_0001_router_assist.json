@@ -1,0 +1,74 @@
+{
+  "status": "completed",
+  "availability": {
+    "llm_router": true,
+    "embeddings_router": true,
+    "ipfs_backend_router": true,
+    "llm_accelerate": {
+      "available": true,
+      "enabled": true,
+      "env_disabled": false,
+      "env_var": "1"
+    },
+    "embeddings_accelerate": {
+      "available": true,
+      "enabled": true,
+      "env_disabled": false,
+      "env_var": "1"
+    },
+    "ipfs_backend": "KuboCLIBackend"
+  },
+  "preferred": {
+    "llm_provider": null,
+    "embeddings_provider": null,
+    "ipfs_backend": null,
+    "enable_ipfs_accelerate": null
+  },
+  "issue_count": 3,
+  "llm_review": {
+    "recommended_next_tactics": [
+      "discovery_first",
+      "archival_first"
+    ],
+    "priority_states": [
+      "RI"
+    ],
+    "query_hints": [
+      "RI: start with Wayback/Archive.is snapshots of Rhode Island statutes portals"
+    ],
+    "rationale": "No fetch attempts yet for Rhode Island, so bias toward discovery and archival-first tactics to relocate reliable URLs before live scraping; fetch success and KG payload metrics remain zero, so we need alternative archival sources to bootstrap data.",
+    "status": "success",
+    "provider": null
+  },
+  "embeddings_ranking": [
+    {
+      "tactic": "archival_first",
+      "score": 0.6694
+    },
+    {
+      "tactic": "discovery_first",
+      "score": 0.5633
+    },
+    {
+      "tactic": "precision_first",
+      "score": 0.5292
+    },
+    {
+      "tactic": "router_assisted",
+      "score": 0.3941
+    },
+    {
+      "tactic": "document_first",
+      "score": 0.3609
+    },
+    {
+      "tactic": "cloudflare_explore",
+      "score": 0.2606
+    },
+    {
+      "tactic": "render_first",
+      "score": 0.1961
+    }
+  ],
+  "cycle": 1
+}

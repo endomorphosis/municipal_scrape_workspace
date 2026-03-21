@@ -1,0 +1,75 @@
+{
+  "status": "completed",
+  "availability": {
+    "llm_router": true,
+    "embeddings_router": true,
+    "ipfs_backend_router": true,
+    "llm_accelerate": {
+      "available": true,
+      "enabled": true,
+      "env_disabled": false,
+      "env_var": "1"
+    },
+    "embeddings_accelerate": {
+      "available": true,
+      "enabled": true,
+      "env_disabled": false,
+      "env_var": "1"
+    },
+    "ipfs_backend": "KuboCLIBackend"
+  },
+  "preferred": {
+    "llm_provider": null,
+    "embeddings_provider": null,
+    "ipfs_backend": null,
+    "enable_ipfs_accelerate": null
+  },
+  "issue_count": 4,
+  "llm_review": {
+    "recommended_next_tactics": [
+      "archival_first",
+      "discovery_first"
+    ],
+    "priority_states": [
+      "RI"
+    ],
+    "query_hints": [
+      "RI: expand Common Crawl/Wayback hits for older code hosts",
+      "RI: search broader discovery terms for relocated legislative domains"
+    ],
+    "rationale": "RI still reports zero statutes and missing coverage despite two successful fetches, so biasing toward archival and broader discovery tactics aligns with the critic\u2019s request to uncover overlooked records before another cycle.",
+    "status": "success",
+    "provider": null
+  },
+  "embeddings_ranking": [
+    {
+      "tactic": "discovery_first",
+      "score": 0.5531
+    },
+    {
+      "tactic": "archival_first",
+      "score": 0.5091
+    },
+    {
+      "tactic": "precision_first",
+      "score": 0.3548
+    },
+    {
+      "tactic": "router_assisted",
+      "score": 0.3212
+    },
+    {
+      "tactic": "document_first",
+      "score": 0.2448
+    },
+    {
+      "tactic": "cloudflare_explore",
+      "score": 0.2433
+    },
+    {
+      "tactic": "render_first",
+      "score": 0.047
+    }
+  ],
+  "cycle": 1
+}

@@ -74,7 +74,11 @@ def test_daemon_wrapper_preserves_inline_env_overrides():
     assert report["preview"] is True
     assert report["corpus"] == "state_admin_rules"
     merge_command = report["commands"][0]["command"]
-    publish_command = report["commands"][3]["command"]
+    publish_command = next(
+        command["command"]
+        for command in report["commands"]
+        if "run_publish_canonical_legal_corpus.sh" in command["command"]
+    )
     assert "merge_state_admin_runs.py" in merge_command
     assert "--state CA" in merge_command
     assert "run_publish_canonical_legal_corpus.sh" in publish_command

@@ -1,0 +1,366 @@
+{
+  "cycle": 1,
+  "timestamp": "2026-03-21T05:36:38.787227",
+  "corpus": "state_laws",
+  "states": [
+    "RI"
+  ],
+  "cycle_state_order": [
+    "RI"
+  ],
+  "status": "partial_success",
+  "tactic": {
+    "name": "archival_first",
+    "description": "Bias toward Common Crawl, Wayback, Archive.is, and IPWB before live fetches.",
+    "scraper_method_order": [
+      "common_crawl",
+      "wayback_machine",
+      "archive_is",
+      "ipwb",
+      "playwright",
+      "beautifulsoup",
+      "readability",
+      "requests_only"
+    ],
+    "search_engines": [
+      "brave",
+      "duckduckgo",
+      "google_cse"
+    ],
+    "rate_limit_delay": 1.0,
+    "parallel_workers": 6,
+    "per_state_retry_attempts": 1,
+    "min_full_text_chars": 300,
+    "hydrate_statute_text": true,
+    "strict_full_text": true,
+    "archive_is_submit_on_miss": true,
+    "search_parallel_enabled": true,
+    "search_fallback_enabled": true,
+    "llm_provider": null,
+    "embeddings_provider": null,
+    "ipfs_backend": null,
+    "enable_ipfs_accelerate": null,
+    "cloudflare_timeout_seconds": null,
+    "cloudflare_poll_interval_seconds": null,
+    "cloudflare_max_rate_limit_wait_seconds": null,
+    "cloudflare_limit": null,
+    "cloudflare_depth": null,
+    "cloudflare_render": null,
+    "cloudflare_source": null,
+    "cloudflare_formats": null,
+    "cloudflare_include_external_links": null,
+    "cloudflare_include_subdomains": null
+  },
+  "tactic_selection": {
+    "mode": "untried",
+    "selected_tactic": "archival_first",
+    "priority_recommended_tactics": [],
+    "recommended_tactics": [],
+    "priority_states": [],
+    "recent_issue_counts": {},
+    "score_breakdown": {
+      "archival_first": {
+        "untried_bonus": 1.0
+      }
+    }
+  },
+  "critic_score": 0.25,
+  "passed": false,
+  "diagnostics": {
+    "coverage": {
+      "states_targeted": 1,
+      "states_returned": 1,
+      "states_with_nonzero_statutes": 0,
+      "coverage_gap_states": [
+        "RI"
+      ]
+    },
+    "fetch": {
+      "attempted": 2,
+      "success": 2,
+      "success_ratio": 1.0,
+      "fallback_count": 0,
+      "providers": {
+        "unified_scraper": 2
+      },
+      "no_attempt_states": [],
+      "weak_states": [
+        {
+          "state": "RI",
+          "attempted": 2,
+          "success": 2,
+          "success_ratio": 1.0,
+          "fallback_count": 0,
+          "fallback_ratio": 0.0,
+          "last_error": null
+        }
+      ]
+    },
+    "etl_readiness": {
+      "ready_for_kg_etl": false,
+      "total_statutes": 0,
+      "full_text_ratio": 0.0,
+      "jsonld_ratio": 0.0,
+      "jsonld_legislation_ratio": 0.0,
+      "kg_payload_ratio": 0.0,
+      "citation_ratio": 0.0,
+      "statute_signal_ratio": 0.0,
+      "non_scaffold_ratio": 0.0,
+      "states_with_zero_statutes": 1
+    },
+    "quality": {
+      "weak_states": []
+    },
+    "documents": {
+      "document_recovery_ratio": 1.0,
+      "required_document_recovery_ratio": 0.0,
+      "document_recovery_ratio_ok": true
+    }
+  },
+  "critic": {
+    "issues": [
+      "coverage-gaps:RI",
+      "kg-payload-low",
+      "jsonld-legislation-low",
+      "common-crawl-unused-on-gap-cycle",
+      "router-assisted-review"
+    ],
+    "provider_summary": {
+      "unified_scraper": 2
+    },
+    "recommended_next_tactics": [
+      "archival_first",
+      "discovery_first",
+      "precision_first",
+      "render_first",
+      "router_assisted"
+    ],
+    "priority_states": [
+      "RI"
+    ],
+    "state_action_plan": {
+      "RI": {
+        "priority_score": 2,
+        "reasons": [
+          "missing_or_zero_coverage"
+        ],
+        "recommended_tactics": [
+          "archival_first",
+          "discovery_first"
+        ],
+        "query_hints": [],
+        "candidate_document_format_counts": {
+          "pdf": 0,
+          "rtf": 0
+        },
+        "document_recovery_profile": {},
+        "hosts": []
+      }
+    },
+    "query_hints": [
+      "RI: expand Common Crawl/Wayback hits for older code hosts",
+      "RI: search broader discovery terms for relocated legislative domains"
+    ],
+    "summary": "Coverage gaps remain, so the next cycle should bias toward broader archival and search discovery.",
+    "router_rationale": "RI still reports zero statutes and missing coverage despite two successful fetches, so biasing toward archival and broader discovery tactics aligns with the critic\u2019s request to uncover overlooked records before another cycle."
+  },
+  "router_assist": {
+    "status": "completed",
+    "availability": {
+      "llm_router": true,
+      "embeddings_router": true,
+      "ipfs_backend_router": true,
+      "llm_accelerate": {
+        "available": true,
+        "enabled": true,
+        "env_disabled": false,
+        "env_var": "1"
+      },
+      "embeddings_accelerate": {
+        "available": true,
+        "enabled": true,
+        "env_disabled": false,
+        "env_var": "1"
+      },
+      "ipfs_backend": "KuboCLIBackend"
+    },
+    "preferred": {
+      "llm_provider": null,
+      "embeddings_provider": null,
+      "ipfs_backend": null,
+      "enable_ipfs_accelerate": null
+    },
+    "issue_count": 4,
+    "llm_review": {
+      "recommended_next_tactics": [
+        "archival_first",
+        "discovery_first"
+      ],
+      "priority_states": [
+        "RI"
+      ],
+      "query_hints": [
+        "RI: expand Common Crawl/Wayback hits for older code hosts",
+        "RI: search broader discovery terms for relocated legislative domains"
+      ],
+      "rationale": "RI still reports zero statutes and missing coverage despite two successful fetches, so biasing toward archival and broader discovery tactics aligns with the critic\u2019s request to uncover overlooked records before another cycle.",
+      "status": "success",
+      "provider": null
+    },
+    "embeddings_ranking": [
+      {
+        "tactic": "discovery_first",
+        "score": 0.5531
+      },
+      {
+        "tactic": "archival_first",
+        "score": 0.5091
+      },
+      {
+        "tactic": "precision_first",
+        "score": 0.3548
+      },
+      {
+        "tactic": "router_assisted",
+        "score": 0.3212
+      },
+      {
+        "tactic": "document_first",
+        "score": 0.2448
+      },
+      {
+        "tactic": "cloudflare_explore",
+        "score": 0.2433
+      },
+      {
+        "tactic": "render_first",
+        "score": 0.047
+      }
+    ],
+    "artifact_path": "/home/barberb/municipal_scrape_workspace/tmp/all_state_legal_corpora_agentic/state_laws/cycles/cycle_0001_router_assist.json",
+    "ipfs_persist": {
+      "status": "skipped",
+      "reason": "ipfs-kit-install-did-not-change-backend",
+      "backend": "KuboCLIBackend",
+      "command": "ipfs"
+    }
+  },
+  "parallel_admin_assist": {
+    "status": "skipped",
+    "reason": "corpus-not-state-admin-rules"
+  },
+  "archive_warmup": {
+    "status": "skipped",
+    "reason": "archive-warmup-disabled",
+    "attempted": 0
+  },
+  "document_gap_report": null,
+  "document_gap_report_path": null,
+  "document_artifacts": {
+    "status": "skipped",
+    "reason": "corpus-not-state-admin-rules"
+  },
+  "post_cycle_release": {
+    "status": "skipped",
+    "reason": "post-cycle-release-disabled"
+  },
+  "metadata": {
+    "states_scraped": [
+      "RI"
+    ],
+    "states_count": 1,
+    "statutes_count": 0,
+    "legal_areas": [
+      "all"
+    ],
+    "elapsed_time_seconds": 4.17592716217041,
+    "scraped_at": "2026-03-21T05:35:40.089129",
+    "scraper_type": "State-specific scrapers",
+    "sources": "Official State Legislative Websites",
+    "rate_limit_delay": 1.0,
+    "parallel_workers": 6,
+    "per_state_retry_attempts": 1,
+    "retry_zero_statute_states": true,
+    "include_metadata": true,
+    "errors": null,
+    "warnings": [
+      "RI returned zero statutes"
+    ],
+    "zero_statute_states": [
+      "RI"
+    ],
+    "low_quality_states": null,
+    "quality_by_state": {
+      "RI": {
+        "total": 0,
+        "nav_like_ratio": 0.0,
+        "fallback_section_ratio": 0.0,
+        "numeric_section_name_ratio": 0.0,
+        "scaffold_ratio": 0.0
+      }
+    },
+    "coverage_summary": {
+      "states_targeted": 1,
+      "states_returned": 1,
+      "states_with_nonzero_statutes": 0,
+      "zero_statute_states": [
+        "RI"
+      ],
+      "error_states": [],
+      "missing_states": [],
+      "coverage_gap_states": [
+        "RI"
+      ],
+      "full_coverage": false
+    },
+    "fetch_analytics": {
+      "states_with_fetch_analytics": 1,
+      "attempted": 2,
+      "success": 2,
+      "success_ratio": 1.0,
+      "fallback_count": 0,
+      "providers": {
+        "unified_scraper": 2
+      }
+    },
+    "fetch_analytics_by_state": {
+      "RI": {
+        "attempted": 2,
+        "success": 2,
+        "success_ratio": 1.0,
+        "providers": {
+          "unified_scraper": 2
+        },
+        "fallback_count": 0,
+        "cache_hits": 0,
+        "cache_writes": 0,
+        "last_error": null
+      }
+    },
+    "etl_readiness": {
+      "states_processed": 1,
+      "states_with_zero_statutes": 1,
+      "states_with_jsonld": 0,
+      "total_statutes": 0,
+      "full_text_ratio": 0.0,
+      "jsonld_ratio": 0.0,
+      "jsonld_legislation_ratio": 0.0,
+      "kg_payload_ratio": 0.0,
+      "citation_ratio": 0.0,
+      "statute_signal_ratio": 0.0,
+      "non_scaffold_ratio": 0.0,
+      "ready_for_kg_etl": false
+    },
+    "schema_normalized": true,
+    "canonical_dataset": "state_laws",
+    "canonical_hf_dataset_id": "justicedao/ipfs_state_laws",
+    "jsonld_dir": "/home/barberb/.ipfs_datasets/state_laws/state_laws_jsonld",
+    "jsonld_files": [
+      "/home/barberb/.ipfs_datasets/state_laws/state_laws_jsonld/STATE-RI.jsonld"
+    ],
+    "strict_full_text": true,
+    "min_full_text_chars": 300,
+    "strict_removed_total": 0,
+    "hydrate_statute_text": true
+  }
+}

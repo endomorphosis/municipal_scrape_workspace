@@ -1,0 +1,130 @@
+{
+  "cycle": 1,
+  "timestamp": "2026-03-21T05:44:10.273634",
+  "corpus": "state_laws",
+  "states": [
+    "RI"
+  ],
+  "cycle_state_order": [
+    "RI"
+  ],
+  "status": "error",
+  "stage": "router_review",
+  "tactic": {
+    "name": "archival_first",
+    "description": "Bias toward Common Crawl, Wayback, Archive.is, and IPWB before live fetches.",
+    "scraper_method_order": [
+      "common_crawl",
+      "wayback_machine",
+      "archive_is",
+      "ipwb",
+      "playwright",
+      "beautifulsoup",
+      "readability",
+      "requests_only"
+    ],
+    "search_engines": [
+      "brave",
+      "duckduckgo",
+      "google_cse"
+    ],
+    "rate_limit_delay": 1.0,
+    "parallel_workers": 6,
+    "per_state_retry_attempts": 1,
+    "min_full_text_chars": 300,
+    "hydrate_statute_text": true,
+    "strict_full_text": true,
+    "archive_is_submit_on_miss": true,
+    "search_parallel_enabled": true,
+    "search_fallback_enabled": true,
+    "llm_provider": null,
+    "embeddings_provider": null,
+    "ipfs_backend": null,
+    "enable_ipfs_accelerate": null,
+    "cloudflare_timeout_seconds": null,
+    "cloudflare_poll_interval_seconds": null,
+    "cloudflare_max_rate_limit_wait_seconds": null,
+    "cloudflare_limit": null,
+    "cloudflare_depth": null,
+    "cloudflare_render": null,
+    "cloudflare_source": null,
+    "cloudflare_formats": null,
+    "cloudflare_include_external_links": null,
+    "cloudflare_include_subdomains": null
+  },
+  "tactic_selection": {
+    "mode": "untried",
+    "selected_tactic": "archival_first",
+    "priority_recommended_tactics": [],
+    "recommended_tactics": [],
+    "priority_states": [],
+    "recent_issue_counts": {},
+    "score_breakdown": {
+      "archival_first": {
+        "untried_bonus": 1.0
+      }
+    }
+  },
+  "diagnostics": {
+    "coverage": {
+      "states_targeted": 0,
+      "states_returned": 0,
+      "states_with_nonzero_statutes": 0,
+      "coverage_gap_states": []
+    },
+    "fetch": {
+      "attempted": 0,
+      "success": 0,
+      "success_ratio": 0.0,
+      "fallback_count": 0,
+      "providers": {},
+      "no_attempt_states": [],
+      "weak_states": []
+    },
+    "etl_readiness": {
+      "ready_for_kg_etl": false,
+      "total_statutes": 0,
+      "full_text_ratio": 0.0,
+      "jsonld_ratio": 0.0,
+      "jsonld_legislation_ratio": 0.0,
+      "kg_payload_ratio": 0.0,
+      "citation_ratio": 0.0,
+      "statute_signal_ratio": 0.0,
+      "non_scaffold_ratio": 0.0,
+      "states_with_zero_statutes": 0
+    },
+    "quality": {
+      "weak_states": []
+    },
+    "documents": {
+      "document_recovery_ratio": 1.0,
+      "required_document_recovery_ratio": 0.0,
+      "document_recovery_ratio_ok": true
+    }
+  },
+  "critic_score": 0.1,
+  "passed": false,
+  "critic": {
+    "issues": [
+      "fetch-success-low",
+      "kg-payload-low",
+      "jsonld-legislation-low"
+    ],
+    "provider_summary": {},
+    "recommended_next_tactics": [
+      "render_first",
+      "archival_first",
+      "precision_first",
+      "discovery_first",
+      "router_assisted"
+    ],
+    "priority_states": [],
+    "state_action_plan": {},
+    "query_hints": [],
+    "summary": "Fetch reliability is weak; bias toward alternative archival providers and relocation search."
+  },
+  "metadata": {
+    "scrape_timeout_seconds": 90.0,
+    "scrape_timed_out": true
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "status": "completed",
+  "availability": {
+    "llm_router": true,
+    "embeddings_router": true,
+    "ipfs_backend_router": true,
+    "llm_accelerate": {
+      "available": true,
+      "enabled": true,
+      "env_disabled": false,
+      "env_var": "1"
+    },
+    "embeddings_accelerate": {
+      "available": true,
+      "enabled": true,
+      "env_disabled": false,
+      "env_var": "1"
+    },
+    "ipfs_backend": "KuboCLIBackend"
+  },
+  "preferred": {
+    "llm_provider": null,
+    "embeddings_provider": null,
+    "ipfs_backend": null,
+    "enable_ipfs_accelerate": null
+  },
+  "issue_count": 4,
+  "llm_review": {
+    "recommended_next_tactics": [
+      "archival_first",
+      "discovery_first"
+    ],
+    "priority_states": [
+      "RI"
+    ],
+    "query_hints": [
+      "RI archival: Rhode Island court rules site:archive.org",
+      "RI discovery: RI rule update search engine query"
+    ],
+    "rationale": "No statutes or documents were extracted for RI despite two successful fetch attempts, so follow the critic\u2019s plan with archive-heavy exploration plus wide discovery of relocated sources to close coverage gaps before re-running the cycle.",
+    "status": "success",
+    "provider": null
+  },
+  "embeddings_ranking": [
+    {
+      "tactic": "discovery_first",
+      "score": 0.5531
+    },
+    {
+      "tactic": "archival_first",
+      "score": 0.5091
+    },
+    {
+      "tactic": "precision_first",
+      "score": 0.3548
+    },
+    {
+      "tactic": "router_assisted",
+      "score": 0.3212
+    },
+    {
+      "tactic": "document_first",
+      "score": 0.2448
+    },
+    {
+      "tactic": "cloudflare_explore",
+      "score": 0.2433
+    },
+    {
+      "tactic": "render_first",
+      "score": 0.047
+    }
+  ],
+  "cycle": 1
+}

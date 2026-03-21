@@ -1,0 +1,90 @@
+{
+  "created_at": "2026-03-21T05:36:41.472346",
+  "cycle_count": 1,
+  "recommended_tactics": [
+    "archival_first",
+    "discovery_first",
+    "precision_first",
+    "render_first",
+    "router_assisted"
+  ],
+  "priority_states": [
+    "RI"
+  ],
+  "state_action_plan": {
+    "RI": {
+      "priority_score": 2,
+      "reasons": [
+        "missing_or_zero_coverage"
+      ],
+      "recommended_tactics": [
+        "archival_first",
+        "discovery_first"
+      ],
+      "query_hints": [],
+      "candidate_document_format_counts": {
+        "pdf": 0,
+        "rtf": 0
+      },
+      "document_recovery_profile": {},
+      "hosts": []
+    }
+  },
+  "state_query_hints": {
+    "RI": [
+      "RI archival: Rhode Island court rules site:archive.org",
+      "RI discovery: RI rule update search engine query"
+    ]
+  },
+  "recent_cycles": [
+    {
+      "cycle": 1,
+      "tactic": "archival_first",
+      "score": 0.25,
+      "passed": false,
+      "issues": [
+        "coverage-gaps:RI",
+        "kg-payload-low",
+        "jsonld-legislation-low",
+        "common-crawl-unused-on-gap-cycle",
+        "router-assisted-review"
+      ],
+      "priority_states": [
+        "RI"
+      ],
+      "document_gap_states": [],
+      "coverage_gap_states": [
+        "RI"
+      ]
+    }
+  ],
+  "tactics": {
+    "archival_first": {
+      "trials": 1,
+      "total_score": 0.25,
+      "best_score": 0.25,
+      "last_score": 0.25,
+      "passed_cycles": 0
+    }
+  },
+  "best_tactic": {
+    "name": "archival_first",
+    "score": 0.25,
+    "cycle": 1
+  },
+  "last_cycle_at": "2026-03-21T05:37:37.149991",
+  "corpus": "state_court_rules",
+  "last_tactic_selection": {
+    "mode": "untried",
+    "selected_tactic": "archival_first",
+    "priority_recommended_tactics": [],
+    "recommended_tactics": [],
+    "priority_states": [],
+    "recent_issue_counts": {},
+    "score_breakdown": {
+      "archival_first": {
+        "untried_bonus": 1.0
+      }
+    }
+  }
+}

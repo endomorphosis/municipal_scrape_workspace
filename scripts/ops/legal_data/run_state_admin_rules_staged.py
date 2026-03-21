@@ -97,14 +97,21 @@ async def run_staged(args: argparse.Namespace) -> dict[str, Any]:
         "batches": [],
         "states_with_rules_union": [],
         "missing_states_union": [],
+        "status": "running",
     }
+
+    report_path.write_text(json.dumps(run_summary, ensure_ascii=False, indent=2), encoding="utf-8")
 
     states_with_rules_union: set[str] = set()
     missing_states_union: set[str] = set()
 
     for batch_idx in range(start_batch, end_batch + 1):
         batch_states = batches[batch_idx - 1]
-        print(f"batch_start index={batch_idx} states={batch_states}")
+        run_summary["current_batch_index"] = batch_idx
+        run_summary["current_batch_states"] = batch_states
+        run_summary["updated_at"] = _now()
+        report_path.write_text(json.dumps(run_summary, ensure_ascii=False, indent=2), encoding="utf-8")
+        print(f"batch_start index={batch_idx} states={batch_states}", flush=True)
 
         result = await scrape_state_admin_rules(
             states=batch_states,
@@ -183,10 +190,12 @@ async def run_staged(args: argparse.Namespace) -> dict[str, Any]:
                     "coverage_ratio": batch_summary["coverage_ratio"],
                 },
                 ensure_ascii=False,
-            )
+            ),
+            flush=True,
         )
 
     run_summary["completed_at"] = _now()
+    run_summary["status"] = "completed"
     run_summary["states_with_rules_union"] = sorted(states_with_rules_union)
     run_summary["missing_states_union"] = sorted(missing_states_union)
     run_summary["states_with_rules_union_count"] = len(states_with_rules_union)
@@ -195,6 +204,8 @@ async def run_staged(args: argparse.Namespace) -> dict[str, Any]:
     run_summary["overall_coverage_ratio"] = (
         len(states_with_rules_union) / float(len(states)) if states else 0.0
     )
+    run_summary.pop("current_batch_index", None)
+    run_summary.pop("current_batch_states", None)
 
     report_path.write_text(json.dumps(run_summary, ensure_ascii=False, indent=2), encoding="utf-8")
     return run_summary
