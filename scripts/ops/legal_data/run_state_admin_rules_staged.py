@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -71,6 +72,26 @@ def _append_jsonl(path: Path, rows: list[dict[str, Any]]) -> int:
     return written
 
 
+def _write_json_atomic(path: Path, payload: dict[str, Any]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    tmp_path = path.with_name(f".{path.name}.tmp")
+    with tmp_path.open("w", encoding="utf-8") as handle:
+        json.dump(payload, handle, ensure_ascii=False, indent=2)
+        handle.flush()
+        os.fsync(handle.fileno())
+    tmp_path.replace(path)
+
+
+def _load_existing_summary(path: Path) -> dict[str, Any] | None:
+    if not path.exists():
+        return None
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+    except Exception:
+        return None
+    return payload if isinstance(payload, dict) else None
+
+
 async def run_staged(args: argparse.Namespace) -> dict[str, Any]:
     states = list(US_50_STATE_CODES)
     batches = _chunks(states, max(1, int(args.batch_size)))
@@ -84,8 +105,22 @@ async def run_staged(args: argparse.Namespace) -> dict[str, Any]:
     output_root = Path(args.output_dir).expanduser().resolve() if args.output_dir else report_path.parent / "output"
     output_root.mkdir(parents=True, exist_ok=True)
     kg_corpus_path = output_root / "aggregates" / "state_admin_rule_kg_corpus_all_states.jsonl"
+    existing_summary = _load_existing_summary(report_path)
     if kg_corpus_path.exists() and args.start_batch <= 1:
         kg_corpus_path.unlink(missing_ok=True)
+
+    prior_batches: list[dict[str, Any]] = []
+    prior_states_with_rules_union: set[str] = set()
+    prior_missing_states_union: set[str] = set()
+    if args.start_batch > 1 and isinstance(existing_summary, dict):
+        for batch in list(existing_summary.get("batches") or []):
+            if not isinstance(batch, dict):
+                continue
+            batch_index = int(batch.get("batch_index") or 0)
+            if 0 < batch_index < start_batch:
+                prior_batches.append(batch)
+                prior_states_with_rules_union.update(str(state or "").upper() for state in list(batch.get("states_with_rules") or []))
+                prior_missing_states_union.update(str(state or "").upper() for state in list(batch.get("missing_rule_states") or []))
 
     run_summary: dict[str, Any] = {
         "started_at": _now(),
@@ -94,23 +129,28 @@ async def run_staged(args: argparse.Namespace) -> dict[str, Any]:
         "end_batch": end_batch,
         "total_batches": len(batches),
         "states_targeted": states,
-        "batches": [],
-        "states_with_rules_union": [],
-        "missing_states_union": [],
+        "batches": prior_batches,
+        "states_with_rules_union": sorted(prior_states_with_rules_union),
+        "missing_states_union": sorted(prior_missing_states_union),
         "status": "running",
     }
+    if args.start_batch > 1 and prior_batches:
+        run_summary["resumed_from_batch"] = start_batch
+        run_summary["resumed_at"] = _now()
+    if isinstance(existing_summary, dict) and existing_summary.get("kg_corpus_jsonl"):
+        run_summary["kg_corpus_jsonl"] = str(existing_summary.get("kg_corpus_jsonl"))
 
-    report_path.write_text(json.dumps(run_summary, ensure_ascii=False, indent=2), encoding="utf-8")
+    _write_json_atomic(report_path, run_summary)
 
-    states_with_rules_union: set[str] = set()
-    missing_states_union: set[str] = set()
+    states_with_rules_union: set[str] = set(prior_states_with_rules_union)
+    missing_states_union: set[str] = set(prior_missing_states_union)
 
     for batch_idx in range(start_batch, end_batch + 1):
         batch_states = batches[batch_idx - 1]
         run_summary["current_batch_index"] = batch_idx
         run_summary["current_batch_states"] = batch_states
         run_summary["updated_at"] = _now()
-        report_path.write_text(json.dumps(run_summary, ensure_ascii=False, indent=2), encoding="utf-8")
+        _write_json_atomic(report_path, run_summary)
         print(f"batch_start index={batch_idx} states={batch_states}", flush=True)
 
         result = await scrape_state_admin_rules(
@@ -178,7 +218,7 @@ async def run_staged(args: argparse.Namespace) -> dict[str, Any]:
         run_summary["kg_corpus_jsonl"] = str(kg_corpus_path)
         run_summary["updated_at"] = _now()
 
-        report_path.write_text(json.dumps(run_summary, ensure_ascii=False, indent=2), encoding="utf-8")
+        _write_json_atomic(report_path, run_summary)
         print(
             "batch_done "
             + json.dumps(
@@ -207,7 +247,7 @@ async def run_staged(args: argparse.Namespace) -> dict[str, Any]:
     run_summary.pop("current_batch_index", None)
     run_summary.pop("current_batch_states", None)
 
-    report_path.write_text(json.dumps(run_summary, ensure_ascii=False, indent=2), encoding="utf-8")
+    _write_json_atomic(report_path, run_summary)
     return run_summary
 
 

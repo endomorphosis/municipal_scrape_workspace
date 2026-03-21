@@ -1,0 +1,88 @@
+{
+  "status": "completed",
+  "availability": {
+    "llm_router": true,
+    "embeddings_router": true,
+    "ipfs_backend_router": true,
+    "llm_accelerate": {
+      "available": true,
+      "enabled": true,
+      "env_disabled": false,
+      "env_var": "1"
+    },
+    "embeddings_accelerate": {
+      "available": true,
+      "enabled": true,
+      "env_disabled": false,
+      "env_var": "1"
+    },
+    "ipfs_backend": "KuboCLIBackend"
+  },
+  "preferred": {
+    "llm_provider": null,
+    "embeddings_provider": null,
+    "ipfs_backend": null,
+    "enable_ipfs_accelerate": null
+  },
+  "issue_count": 2,
+  "llm_review": {
+    "recommended_next_tactics": [
+      "archival_first",
+      "discovery_first"
+    ],
+    "priority_states": [
+      "AK",
+      "AL",
+      "AR",
+      "AZ",
+      "CA",
+      "CO",
+      "CT",
+      "DC"
+    ],
+    "query_hints": [
+      "AK",
+      "AL",
+      "AR",
+      "AZ",
+      "CA",
+      "CO",
+      "CT",
+      "DC"
+    ],
+    "rationale": "Coverage gaps persist across the highlighted states (zero statutes recovered except RI), so biasing toward archival discovery before live fetches should surface archived PDFs or redirects for the missing jurisdictions and satisfy the critic\u2019s request for broader discovery.",
+    "status": "success",
+    "provider": null
+  },
+  "embeddings_ranking": [
+    {
+      "tactic": "discovery_first",
+      "score": 0.5531
+    },
+    {
+      "tactic": "archival_first",
+      "score": 0.5091
+    },
+    {
+      "tactic": "precision_first",
+      "score": 0.3548
+    },
+    {
+      "tactic": "router_assisted",
+      "score": 0.3212
+    },
+    {
+      "tactic": "document_first",
+      "score": 0.2448
+    },
+    {
+      "tactic": "cloudflare_explore",
+      "score": 0.2433
+    },
+    {
+      "tactic": "render_first",
+      "score": 0.047
+    }
+  ],
+  "cycle": 1
+}

@@ -1,0 +1,377 @@
+{
+  "cycle": 1,
+  "timestamp": "2026-03-21T06:01:56.806920",
+  "corpus": "state_court_rules",
+  "states": [
+    "RI"
+  ],
+  "cycle_state_order": [
+    "RI"
+  ],
+  "status": "success",
+  "tactic": {
+    "name": "archival_first",
+    "description": "Bias toward Common Crawl, Wayback, Archive.is, and IPWB before live fetches.",
+    "scraper_method_order": [
+      "common_crawl",
+      "wayback_machine",
+      "archive_is",
+      "ipwb",
+      "playwright",
+      "beautifulsoup",
+      "readability",
+      "requests_only"
+    ],
+    "search_engines": [
+      "brave",
+      "duckduckgo",
+      "google_cse"
+    ],
+    "rate_limit_delay": 1.0,
+    "parallel_workers": 6,
+    "per_state_retry_attempts": 1,
+    "min_full_text_chars": 300,
+    "hydrate_statute_text": true,
+    "strict_full_text": true,
+    "archive_is_submit_on_miss": true,
+    "search_parallel_enabled": true,
+    "search_fallback_enabled": true,
+    "llm_provider": null,
+    "embeddings_provider": null,
+    "ipfs_backend": null,
+    "enable_ipfs_accelerate": null,
+    "cloudflare_timeout_seconds": null,
+    "cloudflare_poll_interval_seconds": null,
+    "cloudflare_max_rate_limit_wait_seconds": null,
+    "cloudflare_limit": null,
+    "cloudflare_depth": null,
+    "cloudflare_render": null,
+    "cloudflare_source": null,
+    "cloudflare_formats": null,
+    "cloudflare_include_external_links": null,
+    "cloudflare_include_subdomains": null
+  },
+  "tactic_selection": {
+    "mode": "untried",
+    "selected_tactic": "archival_first",
+    "priority_recommended_tactics": [],
+    "recommended_tactics": [],
+    "priority_states": [],
+    "recent_issue_counts": {},
+    "score_breakdown": {
+      "archival_first": {
+        "untried_bonus": 1.0
+      }
+    }
+  },
+  "critic_score": 1.0,
+  "passed": true,
+  "diagnostics": {
+    "coverage": {
+      "states_targeted": 1,
+      "states_returned": 1,
+      "states_with_nonzero_statutes": 1,
+      "coverage_gap_states": []
+    },
+    "fetch": {
+      "attempted": 321,
+      "success": 321,
+      "success_ratio": 1.0,
+      "fallback_count": 0,
+      "providers": {
+        "unified_scraper": 214,
+        "direct": 107
+      },
+      "no_attempt_states": [],
+      "weak_states": [
+        {
+          "state": "RI",
+          "attempted": 321,
+          "success": 321,
+          "success_ratio": 1.0,
+          "fallback_count": 0,
+          "fallback_ratio": 0.0,
+          "last_error": null
+        }
+      ]
+    },
+    "etl_readiness": {
+      "ready_for_kg_etl": true,
+      "total_statutes": 2,
+      "full_text_ratio": 1.0,
+      "jsonld_ratio": 1.0,
+      "jsonld_legislation_ratio": 1.0,
+      "kg_payload_ratio": 1.0,
+      "citation_ratio": 1.0,
+      "statute_signal_ratio": 1.0,
+      "non_scaffold_ratio": 1.0,
+      "states_with_zero_statutes": 0
+    },
+    "quality": {
+      "weak_states": []
+    },
+    "documents": {
+      "total_by_format": {
+        "html": 0,
+        "pdf": 2,
+        "rtf": 0
+      },
+      "processed_document_urls": 2,
+      "candidate_document_urls": 0,
+      "candidate_format_counts_by_state": {},
+      "candidate_urls_by_state": {
+        "RI": []
+      },
+      "states_with_document_rules": [
+        "RI"
+      ],
+      "states_with_candidate_document_gaps": [],
+      "per_state": {
+        "RI": {
+          "html": 0,
+          "pdf": 2,
+          "rtf": 0
+        }
+      },
+      "per_state_recovery": {
+        "RI": {
+          "processed_method_counts": {
+            "pdf_processor": 2
+          },
+          "source_breakdown": {},
+          "domains_seen": [],
+          "parallel_prefetch": {},
+          "timed_out": false,
+          "candidate_urls": 0,
+          "inspected_urls": 0,
+          "expanded_urls": 0,
+          "cloudflare_status": null,
+          "cloudflare_http_status": null,
+          "cloudflare_browser_challenge_detected": false,
+          "cloudflare_error_excerpt": null,
+          "cloudflare_record_status": null,
+          "cloudflare_job_status": null
+        }
+      },
+      "cloudflare_browser_rendering": {},
+      "document_recovery_ratio": 1.0,
+      "required_document_recovery_ratio": 0.0,
+      "document_recovery_ratio_ok": true
+    },
+    "gap_analysis": {
+      "weak_states": [],
+      "states": {}
+    }
+  },
+  "critic": {
+    "issues": [],
+    "provider_summary": {
+      "unified_scraper": 214,
+      "direct": 107
+    },
+    "recommended_next_tactics": [
+      "archival_first"
+    ],
+    "priority_states": [],
+    "state_action_plan": {},
+    "query_hints": [],
+    "summary": "Coverage and ETL signals are stable; continue exploiting the best-known tactic."
+  },
+  "router_assist": {
+    "status": "skipped",
+    "availability": {
+      "llm_router": true,
+      "embeddings_router": true,
+      "ipfs_backend_router": true,
+      "llm_accelerate": {
+        "available": true,
+        "enabled": true,
+        "env_disabled": false,
+        "env_var": "1"
+      },
+      "embeddings_accelerate": {
+        "available": true,
+        "enabled": true,
+        "env_disabled": false,
+        "env_var": "1"
+      },
+      "ipfs_backend": "KuboCLIBackend"
+    },
+    "preferred": {
+      "llm_provider": null,
+      "embeddings_provider": null,
+      "ipfs_backend": null,
+      "enable_ipfs_accelerate": null
+    },
+    "reason": "no-critic-issues"
+  },
+  "parallel_admin_assist": {
+    "status": "skipped",
+    "reason": "corpus-not-state-admin-rules"
+  },
+  "archive_warmup": {
+    "status": "skipped",
+    "reason": "archive-warmup-disabled",
+    "attempted": 0
+  },
+  "document_gap_report": null,
+  "document_gap_report_path": null,
+  "document_artifacts": {
+    "status": "skipped",
+    "reason": "corpus-not-state-admin-rules"
+  },
+  "post_cycle_release": {
+    "status": "skipped",
+    "reason": "post-cycle-release-disabled"
+  },
+  "metadata": {
+    "states_scraped": [
+      "RI"
+    ],
+    "states_count": 1,
+    "rules_count": 2,
+    "canonical_dataset": "state_court_rules",
+    "canonical_hf_dataset_id": "justicedao/ipfs_court_rules",
+    "family_counts": {
+      "civil_procedure": 1,
+      "criminal_procedure": 0,
+      "civil_and_criminal_procedure": 1
+    },
+    "elapsed_time_seconds": 55.78982925415039,
+    "scraped_at": "2026-03-21T06:01:56.787924",
+    "rate_limit_delay": 1.0,
+    "parallel_workers": 6,
+    "per_state_retry_attempts": 1,
+    "retry_zero_rule_states": true,
+    "strict_full_text": true,
+    "min_full_text_chars": 300,
+    "hydrate_rule_text": true,
+    "zero_rule_states": null,
+    "jsonld_dir": "/home/barberb/.ipfs_datasets/state_court_rules/state_court_rules_jsonld",
+    "jsonld_files": [
+      "/home/barberb/.ipfs_datasets/state_court_rules/state_court_rules_jsonld/STATE-RI.jsonld"
+    ],
+    "fetch_analytics_by_state": {
+      "RI": {
+        "attempted": 331,
+        "success": 331,
+        "success_ratio": 1.0,
+        "fallback_count": 0,
+        "cache_hits": 0,
+        "cache_writes": 0,
+        "providers": {
+          "unified_scraper": 223,
+          "direct": 108
+        },
+        "last_error": null
+      }
+    },
+    "supplemental_fetch_analytics_by_state": {
+      "RI": {
+        "attempted": 10,
+        "success": 10,
+        "success_ratio": 1.0,
+        "providers": {
+          "unified_scraper": 9,
+          "direct": 1
+        },
+        "fallback_count": 0,
+        "cache_hits": 0,
+        "cache_writes": 0,
+        "last_error": null
+      }
+    },
+    "base_status": "success",
+    "base_metadata": {
+      "states_scraped": [
+        "RI"
+      ],
+      "states_count": 1,
+      "statutes_count": 89,
+      "legal_areas": [
+        "all"
+      ],
+      "elapsed_time_seconds": 40.92119002342224,
+      "scraped_at": "2026-03-21T06:01:41.919325",
+      "scraper_type": "State-specific scrapers",
+      "sources": "Official State Legislative Websites",
+      "rate_limit_delay": 1.0,
+      "parallel_workers": 6,
+      "per_state_retry_attempts": 1,
+      "retry_zero_statute_states": true,
+      "include_metadata": true,
+      "errors": null,
+      "warnings": null,
+      "zero_statute_states": null,
+      "low_quality_states": null,
+      "quality_by_state": {
+        "RI": {
+          "total": 89,
+          "nav_like_ratio": 0.0,
+          "fallback_section_ratio": 0.0,
+          "numeric_section_name_ratio": 1.0,
+          "scaffold_ratio": 0.0
+        }
+      },
+      "coverage_summary": {
+        "states_targeted": 1,
+        "states_returned": 1,
+        "states_with_nonzero_statutes": 1,
+        "zero_statute_states": [],
+        "error_states": [],
+        "missing_states": [],
+        "coverage_gap_states": [],
+        "full_coverage": true
+      },
+      "fetch_analytics": {
+        "states_with_fetch_analytics": 1,
+        "attempted": 321,
+        "success": 321,
+        "success_ratio": 1.0,
+        "fallback_count": 0,
+        "providers": {
+          "unified_scraper": 214,
+          "direct": 107
+        }
+      },
+      "fetch_analytics_by_state": {
+        "RI": {
+          "attempted": 321,
+          "success": 321,
+          "success_ratio": 1.0,
+          "providers": {
+            "unified_scraper": 214,
+            "direct": 107
+          },
+          "fallback_count": 0,
+          "cache_hits": 0,
+          "cache_writes": 0,
+          "last_error": null
+        }
+      },
+      "etl_readiness": {
+        "states_processed": 1,
+        "states_with_zero_statutes": 0,
+        "states_with_jsonld": 1,
+        "total_statutes": 89,
+        "full_text_ratio": 1.0,
+        "jsonld_ratio": 1.0,
+        "jsonld_legislation_ratio": 1.0,
+        "kg_payload_ratio": 1.0,
+        "citation_ratio": 0.135,
+        "statute_signal_ratio": 1.0,
+        "non_scaffold_ratio": 1.0,
+        "ready_for_kg_etl": true
+      },
+      "schema_normalized": true,
+      "canonical_dataset": "state_laws",
+      "canonical_hf_dataset_id": "justicedao/ipfs_state_laws",
+      "jsonld_dir": null,
+      "jsonld_files": null,
+      "strict_full_text": true,
+      "min_full_text_chars": 300,
+      "strict_removed_total": 11,
+      "hydrate_statute_text": true
+    }
+  }
+}

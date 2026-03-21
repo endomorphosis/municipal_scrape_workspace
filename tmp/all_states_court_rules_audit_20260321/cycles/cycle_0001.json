@@ -1,0 +1,3842 @@
+{
+  "cycle": 1,
+  "timestamp": "2026-03-21T06:12:06.445694",
+  "corpus": "state_court_rules",
+  "states": [
+    "AL",
+    "AK",
+    "AZ",
+    "AR",
+    "CA",
+    "CO",
+    "CT",
+    "DE",
+    "FL",
+    "GA",
+    "HI",
+    "ID",
+    "IL",
+    "IN",
+    "IA",
+    "KS",
+    "KY",
+    "LA",
+    "ME",
+    "MD",
+    "MA",
+    "MI",
+    "MN",
+    "MS",
+    "MO",
+    "MT",
+    "NE",
+    "NV",
+    "NH",
+    "NJ",
+    "NM",
+    "NY",
+    "NC",
+    "ND",
+    "OH",
+    "OK",
+    "OR",
+    "PA",
+    "RI",
+    "SC",
+    "SD",
+    "TN",
+    "TX",
+    "UT",
+    "VT",
+    "VA",
+    "WA",
+    "WV",
+    "WI",
+    "WY",
+    "DC"
+  ],
+  "cycle_state_order": [
+    "AL",
+    "AK",
+    "AZ",
+    "AR",
+    "CA",
+    "CO",
+    "CT",
+    "DE",
+    "FL",
+    "GA",
+    "HI",
+    "ID",
+    "IL",
+    "IN",
+    "IA",
+    "KS",
+    "KY",
+    "LA",
+    "ME",
+    "MD",
+    "MA",
+    "MI",
+    "MN",
+    "MS",
+    "MO",
+    "MT",
+    "NE",
+    "NV",
+    "NH",
+    "NJ",
+    "NM",
+    "NY",
+    "NC",
+    "ND",
+    "OH",
+    "OK",
+    "OR",
+    "PA",
+    "RI",
+    "SC",
+    "SD",
+    "TN",
+    "TX",
+    "UT",
+    "VT",
+    "VA",
+    "WA",
+    "WV",
+    "WI",
+    "WY",
+    "DC"
+  ],
+  "status": "partial_success",
+  "tactic": {
+    "name": "archival_first",
+    "description": "Bias toward Common Crawl, Wayback, Archive.is, and IPWB before live fetches.",
+    "scraper_method_order": [
+      "common_crawl",
+      "wayback_machine",
+      "archive_is",
+      "ipwb",
+      "playwright",
+      "beautifulsoup",
+      "readability",
+      "requests_only"
+    ],
+    "search_engines": [
+      "brave",
+      "duckduckgo",
+      "google_cse"
+    ],
+    "rate_limit_delay": 1.0,
+    "parallel_workers": 6,
+    "per_state_retry_attempts": 1,
+    "min_full_text_chars": 300,
+    "hydrate_statute_text": true,
+    "strict_full_text": true,
+    "archive_is_submit_on_miss": true,
+    "search_parallel_enabled": true,
+    "search_fallback_enabled": true,
+    "llm_provider": null,
+    "embeddings_provider": null,
+    "ipfs_backend": null,
+    "enable_ipfs_accelerate": null,
+    "cloudflare_timeout_seconds": null,
+    "cloudflare_poll_interval_seconds": null,
+    "cloudflare_max_rate_limit_wait_seconds": null,
+    "cloudflare_limit": null,
+    "cloudflare_depth": null,
+    "cloudflare_render": null,
+    "cloudflare_source": null,
+    "cloudflare_formats": null,
+    "cloudflare_include_external_links": null,
+    "cloudflare_include_subdomains": null
+  },
+  "tactic_selection": {
+    "mode": "untried",
+    "selected_tactic": "archival_first",
+    "priority_recommended_tactics": [],
+    "recommended_tactics": [],
+    "priority_states": [],
+    "recent_issue_counts": {},
+    "score_breakdown": {
+      "archival_first": {
+        "untried_bonus": 1.0
+      }
+    }
+  },
+  "critic_score": 0.7069,
+  "passed": false,
+  "diagnostics": {
+    "coverage": {
+      "states_targeted": 51,
+      "states_returned": 51,
+      "states_with_nonzero_statutes": 1,
+      "coverage_gap_states": [
+        "AK",
+        "AL",
+        "AR",
+        "AZ",
+        "CA",
+        "CO",
+        "CT",
+        "DC",
+        "DE",
+        "FL",
+        "GA",
+        "HI",
+        "IA",
+        "ID",
+        "IL",
+        "IN",
+        "KS",
+        "KY",
+        "LA",
+        "MA",
+        "MD",
+        "ME",
+        "MI",
+        "MN",
+        "MO",
+        "MS",
+        "MT",
+        "NC",
+        "ND",
+        "NE",
+        "NH",
+        "NJ",
+        "NM",
+        "NV",
+        "NY",
+        "OH",
+        "OK",
+        "OR",
+        "PA",
+        "RI",
+        "SC",
+        "SD",
+        "TN",
+        "TX",
+        "UT",
+        "VA",
+        "VT",
+        "WA",
+        "WI",
+        "WV",
+        "WY"
+      ]
+    },
+    "fetch": {
+      "attempted": 188,
+      "success": 188,
+      "success_ratio": 1.0,
+      "fallback_count": 5,
+      "providers": {
+        "unified_scraper": 188
+      },
+      "no_attempt_states": [],
+      "weak_states": [
+        {
+          "state": "FL",
+          "attempted": 32,
+          "success": 32,
+          "success_ratio": 1.0,
+          "fallback_count": 0,
+          "fallback_ratio": 0.0,
+          "last_error": null
+        },
+        {
+          "state": "CA",
+          "attempted": 29,
+          "success": 29,
+          "success_ratio": 1.0,
+          "fallback_count": 0,
+          "fallback_ratio": 0.0,
+          "last_error": null
+        },
+        {
+          "state": "AR",
+          "attempted": 19,
+          "success": 19,
+          "success_ratio": 1.0,
+          "fallback_count": 2,
+          "fallback_ratio": 0.105,
+          "last_error": null
+        },
+        {
+          "state": "AK",
+          "attempted": 17,
+          "success": 17,
+          "success_ratio": 1.0,
+          "fallback_count": 1,
+          "fallback_ratio": 0.059,
+          "last_error": null
+        },
+        {
+          "state": "OH",
+          "attempted": 12,
+          "success": 12,
+          "success_ratio": 1.0,
+          "fallback_count": 0,
+          "fallback_ratio": 0.0,
+          "last_error": null
+        },
+        {
+          "state": "NE",
+          "attempted": 10,
+          "success": 10,
+          "success_ratio": 1.0,
+          "fallback_count": 0,
+          "fallback_ratio": 0.0,
+          "last_error": null
+        },
+        {
+          "state": "NH",
+          "attempted": 10,
+          "success": 10,
+          "success_ratio": 1.0,
+          "fallback_count": 0,
+          "fallback_ratio": 0.0,
+          "last_error": null
+        },
+        {
+          "state": "VT",
+          "attempted": 10,
+          "success": 10,
+          "success_ratio": 1.0,
+          "fallback_count": 0,
+          "fallback_ratio": 0.0,
+          "last_error": null
+        }
+      ]
+    },
+    "etl_readiness": {
+      "ready_for_kg_etl": true,
+      "total_statutes": 1,
+      "full_text_ratio": 1.0,
+      "jsonld_ratio": 1.0,
+      "jsonld_legislation_ratio": 1.0,
+      "kg_payload_ratio": 1.0,
+      "citation_ratio": 1.0,
+      "statute_signal_ratio": 1.0,
+      "non_scaffold_ratio": 1.0,
+      "states_with_zero_statutes": 50
+    },
+    "quality": {
+      "weak_states": []
+    },
+    "documents": {
+      "total_by_format": {
+        "html": 0,
+        "pdf": 1,
+        "rtf": 0
+      },
+      "processed_document_urls": 1,
+      "candidate_document_urls": 0,
+      "candidate_format_counts_by_state": {},
+      "candidate_urls_by_state": {
+        "AL": [],
+        "AK": [],
+        "AZ": [],
+        "AR": [],
+        "CA": [],
+        "CO": [],
+        "CT": [],
+        "DE": [],
+        "FL": [],
+        "GA": [],
+        "HI": [],
+        "ID": [],
+        "IL": [],
+        "IN": [],
+        "IA": [],
+        "KS": [],
+        "KY": [],
+        "LA": [],
+        "ME": [],
+        "MD": [],
+        "MA": [],
+        "MI": [],
+        "MN": [],
+        "MS": [],
+        "MO": [],
+        "MT": [],
+        "NE": [],
+        "NV": [],
+        "NH": [],
+        "NJ": [],
+        "NM": [],
+        "NY": [],
+        "NC": [],
+        "ND": [],
+        "OH": [],
+        "OK": [],
+        "OR": [],
+        "PA": [],
+        "RI": [],
+        "SC": [],
+        "SD": [],
+        "TN": [],
+        "TX": [],
+        "UT": [],
+        "VT": [],
+        "VA": [],
+        "WA": [],
+        "WV": [],
+        "WI": [],
+        "WY": [],
+        "DC": []
+      },
+      "states_with_document_rules": [
+        "RI"
+      ],
+      "states_with_candidate_document_gaps": [],
+      "per_state": {
+        "AL": {
+          "html": 0,
+          "pdf": 0,
+          "rtf": 0
+        },
+        "AK": {
+          "html": 0,
+          "pdf": 0,
+          "rtf": 0
+        },
+        "AZ": {
+          "html": 0,
+          "pdf": 0,
+          "rtf": 0
+        },
+        "AR": {
+          "html": 0,
+          "pdf": 0,
+          "rtf": 0
+        },
+        "CA": {
+          "html": 0,
+          "pdf": 0,
+          "rtf": 0
+        },
+        "CO": {
+          "html": 0,
+          "pdf": 0,
+          "rtf": 0
+        },
+        "CT": {
+          "html": 0,
+          "pdf": 0,
+          "rtf": 0
+        },
+        "DE": {
+          "html": 0,
+          "pdf": 0,
+          "rtf": 0
+        },
+        "FL": {
+          "html": 0,
+          "pdf": 0,
+          "rtf": 0
+        },
+        "GA": {
+          "html": 0,
+          "pdf": 0,
+          "rtf": 0
+        },
+        "HI": {
+          "html": 0,
+          "pdf": 0,
+          "rtf": 0
+        },
+        "ID": {
+          "html": 0,
+          "pdf": 0,
+          "rtf": 0
+        },
+        "IL": {
+          "html": 0,
+          "pdf": 0,
+          "rtf": 0
+        },
+        "IN": {
+          "html": 0,
+          "pdf": 0,
+          "rtf": 0
+        },
+        "IA": {
+          "html": 0,
+          "pdf": 0,
+          "rtf": 0
+        },
+        "KS": {
+          "html": 0,
+          "pdf": 0,
+          "rtf": 0
+        },
+        "KY": {
+          "html": 0,
+          "pdf": 0,
+          "rtf": 0
+        },
+        "LA": {
+          "html": 0,
+          "pdf": 0,
+          "rtf": 0
+        },
+        "ME": {
+          "html": 0,
+          "pdf": 0,
+          "rtf": 0
+        },
+        "MD": {
+          "html": 0,
+          "pdf": 0,
+          "rtf": 0
+        },
+        "MA": {
+          "html": 0,
+          "pdf": 0,
+          "rtf": 0
+        },
+        "MI": {
+          "html": 0,
+          "pdf": 0,
+          "rtf": 0
+        },
+        "MN": {
+          "html": 0,
+          "pdf": 0,
+          "rtf": 0
+        },
+        "MS": {
+          "html": 0,
+          "pdf": 0,
+          "rtf": 0
+        },
+        "MO": {
+          "html": 0,
+          "pdf": 0,
+          "rtf": 0
+        },
+        "MT": {
+          "html": 0,
+          "pdf": 0,
+          "rtf": 0
+        },
+        "NE": {
+          "html": 0,
+          "pdf": 0,
+          "rtf": 0
+        },
+        "NV": {
+          "html": 0,
+          "pdf": 0,
+          "rtf": 0
+        },
+        "NH": {
+          "html": 0,
+          "pdf": 0,
+          "rtf": 0
+        },
+        "NJ": {
+          "html": 0,
+          "pdf": 0,
+          "rtf": 0
+        },
+        "NM": {
+          "html": 0,
+          "pdf": 0,
+          "rtf": 0
+        },
+        "NY": {
+          "html": 0,
+          "pdf": 0,
+          "rtf": 0
+        },
+        "NC": {
+          "html": 0,
+          "pdf": 0,
+          "rtf": 0
+        },
+        "ND": {
+          "html": 0,
+          "pdf": 0,
+          "rtf": 0
+        },
+        "OH": {
+          "html": 0,
+          "pdf": 0,
+          "rtf": 0
+        },
+        "OK": {
+          "html": 0,
+          "pdf": 0,
+          "rtf": 0
+        },
+        "OR": {
+          "html": 0,
+          "pdf": 0,
+          "rtf": 0
+        },
+        "PA": {
+          "html": 0,
+          "pdf": 0,
+          "rtf": 0
+        },
+        "RI": {
+          "html": 0,
+          "pdf": 1,
+          "rtf": 0
+        },
+        "SC": {
+          "html": 0,
+          "pdf": 0,
+          "rtf": 0
+        },
+        "SD": {
+          "html": 0,
+          "pdf": 0,
+          "rtf": 0
+        },
+        "TN": {
+          "html": 0,
+          "pdf": 0,
+          "rtf": 0
+        },
+        "TX": {
+          "html": 0,
+          "pdf": 0,
+          "rtf": 0
+        },
+        "UT": {
+          "html": 0,
+          "pdf": 0,
+          "rtf": 0
+        },
+        "VT": {
+          "html": 0,
+          "pdf": 0,
+          "rtf": 0
+        },
+        "VA": {
+          "html": 0,
+          "pdf": 0,
+          "rtf": 0
+        },
+        "WA": {
+          "html": 0,
+          "pdf": 0,
+          "rtf": 0
+        },
+        "WV": {
+          "html": 0,
+          "pdf": 0,
+          "rtf": 0
+        },
+        "WI": {
+          "html": 0,
+          "pdf": 0,
+          "rtf": 0
+        },
+        "WY": {
+          "html": 0,
+          "pdf": 0,
+          "rtf": 0
+        },
+        "DC": {
+          "html": 0,
+          "pdf": 0,
+          "rtf": 0
+        }
+      },
+      "per_state_recovery": {
+        "AL": {
+          "processed_method_counts": {},
+          "source_breakdown": {},
+          "domains_seen": [],
+          "parallel_prefetch": {},
+          "timed_out": false,
+          "candidate_urls": 0,
+          "inspected_urls": 0,
+          "expanded_urls": 0,
+          "cloudflare_status": null,
+          "cloudflare_http_status": null,
+          "cloudflare_browser_challenge_detected": false,
+          "cloudflare_error_excerpt": null,
+          "cloudflare_record_status": null,
+          "cloudflare_job_status": null
+        },
+        "AK": {
+          "processed_method_counts": {},
+          "source_breakdown": {},
+          "domains_seen": [],
+          "parallel_prefetch": {},
+          "timed_out": false,
+          "candidate_urls": 0,
+          "inspected_urls": 0,
+          "expanded_urls": 0,
+          "cloudflare_status": null,
+          "cloudflare_http_status": null,
+          "cloudflare_browser_challenge_detected": false,
+          "cloudflare_error_excerpt": null,
+          "cloudflare_record_status": null,
+          "cloudflare_job_status": null
+        },
+        "AZ": {
+          "processed_method_counts": {},
+          "source_breakdown": {},
+          "domains_seen": [],
+          "parallel_prefetch": {},
+          "timed_out": false,
+          "candidate_urls": 0,
+          "inspected_urls": 0,
+          "expanded_urls": 0,
+          "cloudflare_status": null,
+          "cloudflare_http_status": null,
+          "cloudflare_browser_challenge_detected": false,
+          "cloudflare_error_excerpt": null,
+          "cloudflare_record_status": null,
+          "cloudflare_job_status": null
+        },
+        "AR": {
+          "processed_method_counts": {},
+          "source_breakdown": {},
+          "domains_seen": [],
+          "parallel_prefetch": {},
+          "timed_out": false,
+          "candidate_urls": 0,
+          "inspected_urls": 0,
+          "expanded_urls": 0,
+          "cloudflare_status": null,
+          "cloudflare_http_status": null,
+          "cloudflare_browser_challenge_detected": false,
+          "cloudflare_error_excerpt": null,
+          "cloudflare_record_status": null,
+          "cloudflare_job_status": null
+        },
+        "CA": {
+          "processed_method_counts": {},
+          "source_breakdown": {},
+          "domains_seen": [],
+          "parallel_prefetch": {},
+          "timed_out": false,
+          "candidate_urls": 0,
+          "inspected_urls": 0,
+          "expanded_urls": 0,
+          "cloudflare_status": null,
+          "cloudflare_http_status": null,
+          "cloudflare_browser_challenge_detected": false,
+          "cloudflare_error_excerpt": null,
+          "cloudflare_record_status": null,
+          "cloudflare_job_status": null
+        },
+        "CO": {
+          "processed_method_counts": {},
+          "source_breakdown": {},
+          "domains_seen": [],
+          "parallel_prefetch": {},
+          "timed_out": false,
+          "candidate_urls": 0,
+          "inspected_urls": 0,
+          "expanded_urls": 0,
+          "cloudflare_status": null,
+          "cloudflare_http_status": null,
+          "cloudflare_browser_challenge_detected": false,
+          "cloudflare_error_excerpt": null,
+          "cloudflare_record_status": null,
+          "cloudflare_job_status": null
+        },
+        "CT": {
+          "processed_method_counts": {},
+          "source_breakdown": {},
+          "domains_seen": [],
+          "parallel_prefetch": {},
+          "timed_out": false,
+          "candidate_urls": 0,
+          "inspected_urls": 0,
+          "expanded_urls": 0,
+          "cloudflare_status": null,
+          "cloudflare_http_status": null,
+          "cloudflare_browser_challenge_detected": false,
+          "cloudflare_error_excerpt": null,
+          "cloudflare_record_status": null,
+          "cloudflare_job_status": null
+        },
+        "DE": {
+          "processed_method_counts": {},
+          "source_breakdown": {},
+          "domains_seen": [],
+          "parallel_prefetch": {},
+          "timed_out": false,
+          "candidate_urls": 0,
+          "inspected_urls": 0,
+          "expanded_urls": 0,
+          "cloudflare_status": null,
+          "cloudflare_http_status": null,
+          "cloudflare_browser_challenge_detected": false,
+          "cloudflare_error_excerpt": null,
+          "cloudflare_record_status": null,
+          "cloudflare_job_status": null
+        },
+        "FL": {
+          "processed_method_counts": {},
+          "source_breakdown": {},
+          "domains_seen": [],
+          "parallel_prefetch": {},
+          "timed_out": false,
+          "candidate_urls": 0,
+          "inspected_urls": 0,
+          "expanded_urls": 0,
+          "cloudflare_status": null,
+          "cloudflare_http_status": null,
+          "cloudflare_browser_challenge_detected": false,
+          "cloudflare_error_excerpt": null,
+          "cloudflare_record_status": null,
+          "cloudflare_job_status": null
+        },
+        "GA": {
+          "processed_method_counts": {},
+          "source_breakdown": {},
+          "domains_seen": [],
+          "parallel_prefetch": {},
+          "timed_out": false,
+          "candidate_urls": 0,
+          "inspected_urls": 0,
+          "expanded_urls": 0,
+          "cloudflare_status": null,
+          "cloudflare_http_status": null,
+          "cloudflare_browser_challenge_detected": false,
+          "cloudflare_error_excerpt": null,
+          "cloudflare_record_status": null,
+          "cloudflare_job_status": null
+        },
+        "HI": {
+          "processed_method_counts": {},
+          "source_breakdown": {},
+          "domains_seen": [],
+          "parallel_prefetch": {},
+          "timed_out": false,
+          "candidate_urls": 0,
+          "inspected_urls": 0,
+          "expanded_urls": 0,
+          "cloudflare_status": null,
+          "cloudflare_http_status": null,
+          "cloudflare_browser_challenge_detected": false,
+          "cloudflare_error_excerpt": null,
+          "cloudflare_record_status": null,
+          "cloudflare_job_status": null
+        },
+        "ID": {
+          "processed_method_counts": {},
+          "source_breakdown": {},
+          "domains_seen": [],
+          "parallel_prefetch": {},
+          "timed_out": false,
+          "candidate_urls": 0,
+          "inspected_urls": 0,
+          "expanded_urls": 0,
+          "cloudflare_status": null,
+          "cloudflare_http_status": null,
+          "cloudflare_browser_challenge_detected": false,
+          "cloudflare_error_excerpt": null,
+          "cloudflare_record_status": null,
+          "cloudflare_job_status": null
+        },
+        "IL": {
+          "processed_method_counts": {},
+          "source_breakdown": {},
+          "domains_seen": [],
+          "parallel_prefetch": {},
+          "timed_out": false,
+          "candidate_urls": 0,
+          "inspected_urls": 0,
+          "expanded_urls": 0,
+          "cloudflare_status": null,
+          "cloudflare_http_status": null,
+          "cloudflare_browser_challenge_detected": false,
+          "cloudflare_error_excerpt": null,
+          "cloudflare_record_status": null,
+          "cloudflare_job_status": null
+        },
+        "IN": {
+          "processed_method_counts": {},
+          "source_breakdown": {},
+          "domains_seen": [],
+          "parallel_prefetch": {},
+          "timed_out": false,
+          "candidate_urls": 0,
+          "inspected_urls": 0,
+          "expanded_urls": 0,
+          "cloudflare_status": null,
+          "cloudflare_http_status": null,
+          "cloudflare_browser_challenge_detected": false,
+          "cloudflare_error_excerpt": null,
+          "cloudflare_record_status": null,
+          "cloudflare_job_status": null
+        },
+        "IA": {
+          "processed_method_counts": {},
+          "source_breakdown": {},
+          "domains_seen": [],
+          "parallel_prefetch": {},
+          "timed_out": false,
+          "candidate_urls": 0,
+          "inspected_urls": 0,
+          "expanded_urls": 0,
+          "cloudflare_status": null,
+          "cloudflare_http_status": null,
+          "cloudflare_browser_challenge_detected": false,
+          "cloudflare_error_excerpt": null,
+          "cloudflare_record_status": null,
+          "cloudflare_job_status": null
+        },
+        "KS": {
+          "processed_method_counts": {},
+          "source_breakdown": {},
+          "domains_seen": [],
+          "parallel_prefetch": {},
+          "timed_out": false,
+          "candidate_urls": 0,
+          "inspected_urls": 0,
+          "expanded_urls": 0,
+          "cloudflare_status": null,
+          "cloudflare_http_status": null,
+          "cloudflare_browser_challenge_detected": false,
+          "cloudflare_error_excerpt": null,
+          "cloudflare_record_status": null,
+          "cloudflare_job_status": null
+        },
+        "KY": {
+          "processed_method_counts": {},
+          "source_breakdown": {},
+          "domains_seen": [],
+          "parallel_prefetch": {},
+          "timed_out": false,
+          "candidate_urls": 0,
+          "inspected_urls": 0,
+          "expanded_urls": 0,
+          "cloudflare_status": null,
+          "cloudflare_http_status": null,
+          "cloudflare_browser_challenge_detected": false,
+          "cloudflare_error_excerpt": null,
+          "cloudflare_record_status": null,
+          "cloudflare_job_status": null
+        },
+        "LA": {
+          "processed_method_counts": {},
+          "source_breakdown": {},
+          "domains_seen": [],
+          "parallel_prefetch": {},
+          "timed_out": false,
+          "candidate_urls": 0,
+          "inspected_urls": 0,
+          "expanded_urls": 0,
+          "cloudflare_status": null,
+          "cloudflare_http_status": null,
+          "cloudflare_browser_challenge_detected": false,
+          "cloudflare_error_excerpt": null,
+          "cloudflare_record_status": null,
+          "cloudflare_job_status": null
+        },
+        "ME": {
+          "processed_method_counts": {},
+          "source_breakdown": {},
+          "domains_seen": [],
+          "parallel_prefetch": {},
+          "timed_out": false,
+          "candidate_urls": 0,
+          "inspected_urls": 0,
+          "expanded_urls": 0,
+          "cloudflare_status": null,
+          "cloudflare_http_status": null,
+          "cloudflare_browser_challenge_detected": false,
+          "cloudflare_error_excerpt": null,
+          "cloudflare_record_status": null,
+          "cloudflare_job_status": null
+        },
+        "MD": {
+          "processed_method_counts": {},
+          "source_breakdown": {},
+          "domains_seen": [],
+          "parallel_prefetch": {},
+          "timed_out": false,
+          "candidate_urls": 0,
+          "inspected_urls": 0,
+          "expanded_urls": 0,
+          "cloudflare_status": null,
+          "cloudflare_http_status": null,
+          "cloudflare_browser_challenge_detected": false,
+          "cloudflare_error_excerpt": null,
+          "cloudflare_record_status": null,
+          "cloudflare_job_status": null
+        },
+        "MA": {
+          "processed_method_counts": {},
+          "source_breakdown": {},
+          "domains_seen": [],
+          "parallel_prefetch": {},
+          "timed_out": false,
+          "candidate_urls": 0,
+          "inspected_urls": 0,
+          "expanded_urls": 0,
+          "cloudflare_status": null,
+          "cloudflare_http_status": null,
+          "cloudflare_browser_challenge_detected": false,
+          "cloudflare_error_excerpt": null,
+          "cloudflare_record_status": null,
+          "cloudflare_job_status": null
+        },
+        "MI": {
+          "processed_method_counts": {},
+          "source_breakdown": {},
+          "domains_seen": [],
+          "parallel_prefetch": {},
+          "timed_out": false,
+          "candidate_urls": 0,
+          "inspected_urls": 0,
+          "expanded_urls": 0,
+          "cloudflare_status": null,
+          "cloudflare_http_status": null,
+          "cloudflare_browser_challenge_detected": false,
+          "cloudflare_error_excerpt": null,
+          "cloudflare_record_status": null,
+          "cloudflare_job_status": null
+        },
+        "MN": {
+          "processed_method_counts": {},
+          "source_breakdown": {},
+          "domains_seen": [],
+          "parallel_prefetch": {},
+          "timed_out": false,
+          "candidate_urls": 0,
+          "inspected_urls": 0,
+          "expanded_urls": 0,
+          "cloudflare_status": null,
+          "cloudflare_http_status": null,
+          "cloudflare_browser_challenge_detected": false,
+          "cloudflare_error_excerpt": null,
+          "cloudflare_record_status": null,
+          "cloudflare_job_status": null
+        },
+        "MS": {
+          "processed_method_counts": {},
+          "source_breakdown": {},
+          "domains_seen": [],
+          "parallel_prefetch": {},
+          "timed_out": false,
+          "candidate_urls": 0,
+          "inspected_urls": 0,
+          "expanded_urls": 0,
+          "cloudflare_status": null,
+          "cloudflare_http_status": null,
+          "cloudflare_browser_challenge_detected": false,
+          "cloudflare_error_excerpt": null,
+          "cloudflare_record_status": null,
+          "cloudflare_job_status": null
+        },
+        "MO": {
+          "processed_method_counts": {},
+          "source_breakdown": {},
+          "domains_seen": [],
+          "parallel_prefetch": {},
+          "timed_out": false,
+          "candidate_urls": 0,
+          "inspected_urls": 0,
+          "expanded_urls": 0,
+          "cloudflare_status": null,
+          "cloudflare_http_status": null,
+          "cloudflare_browser_challenge_detected": false,
+          "cloudflare_error_excerpt": null,
+          "cloudflare_record_status": null,
+          "cloudflare_job_status": null
+        },
+        "MT": {
+          "processed_method_counts": {},
+          "source_breakdown": {},
+          "domains_seen": [],
+          "parallel_prefetch": {},
+          "timed_out": false,
+          "candidate_urls": 0,
+          "inspected_urls": 0,
+          "expanded_urls": 0,
+          "cloudflare_status": null,
+          "cloudflare_http_status": null,
+          "cloudflare_browser_challenge_detected": false,
+          "cloudflare_error_excerpt": null,
+          "cloudflare_record_status": null,
+          "cloudflare_job_status": null
+        },
+        "NE": {
+          "processed_method_counts": {},
+          "source_breakdown": {},
+          "domains_seen": [],
+          "parallel_prefetch": {},
+          "timed_out": false,
+          "candidate_urls": 0,
+          "inspected_urls": 0,
+          "expanded_urls": 0,
+          "cloudflare_status": null,
+          "cloudflare_http_status": null,
+          "cloudflare_browser_challenge_detected": false,
+          "cloudflare_error_excerpt": null,
+          "cloudflare_record_status": null,
+          "cloudflare_job_status": null
+        },
+        "NV": {
+          "processed_method_counts": {},
+          "source_breakdown": {},
+          "domains_seen": [],
+          "parallel_prefetch": {},
+          "timed_out": false,
+          "candidate_urls": 0,
+          "inspected_urls": 0,
+          "expanded_urls": 0,
+          "cloudflare_status": null,
+          "cloudflare_http_status": null,
+          "cloudflare_browser_challenge_detected": false,
+          "cloudflare_error_excerpt": null,
+          "cloudflare_record_status": null,
+          "cloudflare_job_status": null
+        },
+        "NH": {
+          "processed_method_counts": {},
+          "source_breakdown": {},
+          "domains_seen": [],
+          "parallel_prefetch": {},
+          "timed_out": false,
+          "candidate_urls": 0,
+          "inspected_urls": 0,
+          "expanded_urls": 0,
+          "cloudflare_status": null,
+          "cloudflare_http_status": null,
+          "cloudflare_browser_challenge_detected": false,
+          "cloudflare_error_excerpt": null,
+          "cloudflare_record_status": null,
+          "cloudflare_job_status": null
+        },
+        "NJ": {
+          "processed_method_counts": {},
+          "source_breakdown": {},
+          "domains_seen": [],
+          "parallel_prefetch": {},
+          "timed_out": false,
+          "candidate_urls": 0,
+          "inspected_urls": 0,
+          "expanded_urls": 0,
+          "cloudflare_status": null,
+          "cloudflare_http_status": null,
+          "cloudflare_browser_challenge_detected": false,
+          "cloudflare_error_excerpt": null,
+          "cloudflare_record_status": null,
+          "cloudflare_job_status": null
+        },
+        "NM": {
+          "processed_method_counts": {},
+          "source_breakdown": {},
+          "domains_seen": [],
+          "parallel_prefetch": {},
+          "timed_out": false,
+          "candidate_urls": 0,
+          "inspected_urls": 0,
+          "expanded_urls": 0,
+          "cloudflare_status": null,
+          "cloudflare_http_status": null,
+          "cloudflare_browser_challenge_detected": false,
+          "cloudflare_error_excerpt": null,
+          "cloudflare_record_status": null,
+          "cloudflare_job_status": null
+        },
+        "NY": {
+          "processed_method_counts": {},
+          "source_breakdown": {},
+          "domains_seen": [],
+          "parallel_prefetch": {},
+          "timed_out": false,
+          "candidate_urls": 0,
+          "inspected_urls": 0,
+          "expanded_urls": 0,
+          "cloudflare_status": null,
+          "cloudflare_http_status": null,
+          "cloudflare_browser_challenge_detected": false,
+          "cloudflare_error_excerpt": null,
+          "cloudflare_record_status": null,
+          "cloudflare_job_status": null
+        },
+        "NC": {
+          "processed_method_counts": {},
+          "source_breakdown": {},
+          "domains_seen": [],
+          "parallel_prefetch": {},
+          "timed_out": false,
+          "candidate_urls": 0,
+          "inspected_urls": 0,
+          "expanded_urls": 0,
+          "cloudflare_status": null,
+          "cloudflare_http_status": null,
+          "cloudflare_browser_challenge_detected": false,
+          "cloudflare_error_excerpt": null,
+          "cloudflare_record_status": null,
+          "cloudflare_job_status": null
+        },
+        "ND": {
+          "processed_method_counts": {},
+          "source_breakdown": {},
+          "domains_seen": [],
+          "parallel_prefetch": {},
+          "timed_out": false,
+          "candidate_urls": 0,
+          "inspected_urls": 0,
+          "expanded_urls": 0,
+          "cloudflare_status": null,
+          "cloudflare_http_status": null,
+          "cloudflare_browser_challenge_detected": false,
+          "cloudflare_error_excerpt": null,
+          "cloudflare_record_status": null,
+          "cloudflare_job_status": null
+        },
+        "OH": {
+          "processed_method_counts": {},
+          "source_breakdown": {},
+          "domains_seen": [],
+          "parallel_prefetch": {},
+          "timed_out": false,
+          "candidate_urls": 0,
+          "inspected_urls": 0,
+          "expanded_urls": 0,
+          "cloudflare_status": null,
+          "cloudflare_http_status": null,
+          "cloudflare_browser_challenge_detected": false,
+          "cloudflare_error_excerpt": null,
+          "cloudflare_record_status": null,
+          "cloudflare_job_status": null
+        },
+        "OK": {
+          "processed_method_counts": {},
+          "source_breakdown": {},
+          "domains_seen": [],
+          "parallel_prefetch": {},
+          "timed_out": false,
+          "candidate_urls": 0,
+          "inspected_urls": 0,
+          "expanded_urls": 0,
+          "cloudflare_status": null,
+          "cloudflare_http_status": null,
+          "cloudflare_browser_challenge_detected": false,
+          "cloudflare_error_excerpt": null,
+          "cloudflare_record_status": null,
+          "cloudflare_job_status": null
+        },
+        "OR": {
+          "processed_method_counts": {},
+          "source_breakdown": {},
+          "domains_seen": [],
+          "parallel_prefetch": {},
+          "timed_out": false,
+          "candidate_urls": 0,
+          "inspected_urls": 0,
+          "expanded_urls": 0,
+          "cloudflare_status": null,
+          "cloudflare_http_status": null,
+          "cloudflare_browser_challenge_detected": false,
+          "cloudflare_error_excerpt": null,
+          "cloudflare_record_status": null,
+          "cloudflare_job_status": null
+        },
+        "PA": {
+          "processed_method_counts": {},
+          "source_breakdown": {},
+          "domains_seen": [],
+          "parallel_prefetch": {},
+          "timed_out": false,
+          "candidate_urls": 0,
+          "inspected_urls": 0,
+          "expanded_urls": 0,
+          "cloudflare_status": null,
+          "cloudflare_http_status": null,
+          "cloudflare_browser_challenge_detected": false,
+          "cloudflare_error_excerpt": null,
+          "cloudflare_record_status": null,
+          "cloudflare_job_status": null
+        },
+        "RI": {
+          "processed_method_counts": {
+            "pdf_processor": 1
+          },
+          "source_breakdown": {},
+          "domains_seen": [],
+          "parallel_prefetch": {},
+          "timed_out": false,
+          "candidate_urls": 0,
+          "inspected_urls": 0,
+          "expanded_urls": 0,
+          "cloudflare_status": null,
+          "cloudflare_http_status": null,
+          "cloudflare_browser_challenge_detected": false,
+          "cloudflare_error_excerpt": null,
+          "cloudflare_record_status": null,
+          "cloudflare_job_status": null
+        },
+        "SC": {
+          "processed_method_counts": {},
+          "source_breakdown": {},
+          "domains_seen": [],
+          "parallel_prefetch": {},
+          "timed_out": false,
+          "candidate_urls": 0,
+          "inspected_urls": 0,
+          "expanded_urls": 0,
+          "cloudflare_status": null,
+          "cloudflare_http_status": null,
+          "cloudflare_browser_challenge_detected": false,
+          "cloudflare_error_excerpt": null,
+          "cloudflare_record_status": null,
+          "cloudflare_job_status": null
+        },
+        "SD": {
+          "processed_method_counts": {},
+          "source_breakdown": {},
+          "domains_seen": [],
+          "parallel_prefetch": {},
+          "timed_out": false,
+          "candidate_urls": 0,
+          "inspected_urls": 0,
+          "expanded_urls": 0,
+          "cloudflare_status": null,
+          "cloudflare_http_status": null,
+          "cloudflare_browser_challenge_detected": false,
+          "cloudflare_error_excerpt": null,
+          "cloudflare_record_status": null,
+          "cloudflare_job_status": null
+        },
+        "TN": {
+          "processed_method_counts": {},
+          "source_breakdown": {},
+          "domains_seen": [],
+          "parallel_prefetch": {},
+          "timed_out": false,
+          "candidate_urls": 0,
+          "inspected_urls": 0,
+          "expanded_urls": 0,
+          "cloudflare_status": null,
+          "cloudflare_http_status": null,
+          "cloudflare_browser_challenge_detected": false,
+          "cloudflare_error_excerpt": null,
+          "cloudflare_record_status": null,
+          "cloudflare_job_status": null
+        },
+        "TX": {
+          "processed_method_counts": {},
+          "source_breakdown": {},
+          "domains_seen": [],
+          "parallel_prefetch": {},
+          "timed_out": false,
+          "candidate_urls": 0,
+          "inspected_urls": 0,
+          "expanded_urls": 0,
+          "cloudflare_status": null,
+          "cloudflare_http_status": null,
+          "cloudflare_browser_challenge_detected": false,
+          "cloudflare_error_excerpt": null,
+          "cloudflare_record_status": null,
+          "cloudflare_job_status": null
+        },
+        "UT": {
+          "processed_method_counts": {},
+          "source_breakdown": {},
+          "domains_seen": [],
+          "parallel_prefetch": {},
+          "timed_out": false,
+          "candidate_urls": 0,
+          "inspected_urls": 0,
+          "expanded_urls": 0,
+          "cloudflare_status": null,
+          "cloudflare_http_status": null,
+          "cloudflare_browser_challenge_detected": false,
+          "cloudflare_error_excerpt": null,
+          "cloudflare_record_status": null,
+          "cloudflare_job_status": null
+        },
+        "VT": {
+          "processed_method_counts": {},
+          "source_breakdown": {},
+          "domains_seen": [],
+          "parallel_prefetch": {},
+          "timed_out": false,
+          "candidate_urls": 0,
+          "inspected_urls": 0,
+          "expanded_urls": 0,
+          "cloudflare_status": null,
+          "cloudflare_http_status": null,
+          "cloudflare_browser_challenge_detected": false,
+          "cloudflare_error_excerpt": null,
+          "cloudflare_record_status": null,
+          "cloudflare_job_status": null
+        },
+        "VA": {
+          "processed_method_counts": {},
+          "source_breakdown": {},
+          "domains_seen": [],
+          "parallel_prefetch": {},
+          "timed_out": false,
+          "candidate_urls": 0,
+          "inspected_urls": 0,
+          "expanded_urls": 0,
+          "cloudflare_status": null,
+          "cloudflare_http_status": null,
+          "cloudflare_browser_challenge_detected": false,
+          "cloudflare_error_excerpt": null,
+          "cloudflare_record_status": null,
+          "cloudflare_job_status": null
+        },
+        "WA": {
+          "processed_method_counts": {},
+          "source_breakdown": {},
+          "domains_seen": [],
+          "parallel_prefetch": {},
+          "timed_out": false,
+          "candidate_urls": 0,
+          "inspected_urls": 0,
+          "expanded_urls": 0,
+          "cloudflare_status": null,
+          "cloudflare_http_status": null,
+          "cloudflare_browser_challenge_detected": false,
+          "cloudflare_error_excerpt": null,
+          "cloudflare_record_status": null,
+          "cloudflare_job_status": null
+        },
+        "WV": {
+          "processed_method_counts": {},
+          "source_breakdown": {},
+          "domains_seen": [],
+          "parallel_prefetch": {},
+          "timed_out": false,
+          "candidate_urls": 0,
+          "inspected_urls": 0,
+          "expanded_urls": 0,
+          "cloudflare_status": null,
+          "cloudflare_http_status": null,
+          "cloudflare_browser_challenge_detected": false,
+          "cloudflare_error_excerpt": null,
+          "cloudflare_record_status": null,
+          "cloudflare_job_status": null
+        },
+        "WI": {
+          "processed_method_counts": {},
+          "source_breakdown": {},
+          "domains_seen": [],
+          "parallel_prefetch": {},
+          "timed_out": false,
+          "candidate_urls": 0,
+          "inspected_urls": 0,
+          "expanded_urls": 0,
+          "cloudflare_status": null,
+          "cloudflare_http_status": null,
+          "cloudflare_browser_challenge_detected": false,
+          "cloudflare_error_excerpt": null,
+          "cloudflare_record_status": null,
+          "cloudflare_job_status": null
+        },
+        "WY": {
+          "processed_method_counts": {},
+          "source_breakdown": {},
+          "domains_seen": [],
+          "parallel_prefetch": {},
+          "timed_out": false,
+          "candidate_urls": 0,
+          "inspected_urls": 0,
+          "expanded_urls": 0,
+          "cloudflare_status": null,
+          "cloudflare_http_status": null,
+          "cloudflare_browser_challenge_detected": false,
+          "cloudflare_error_excerpt": null,
+          "cloudflare_record_status": null,
+          "cloudflare_job_status": null
+        },
+        "DC": {
+          "processed_method_counts": {},
+          "source_breakdown": {},
+          "domains_seen": [],
+          "parallel_prefetch": {},
+          "timed_out": false,
+          "candidate_urls": 0,
+          "inspected_urls": 0,
+          "expanded_urls": 0,
+          "cloudflare_status": null,
+          "cloudflare_http_status": null,
+          "cloudflare_browser_challenge_detected": false,
+          "cloudflare_error_excerpt": null,
+          "cloudflare_record_status": null,
+          "cloudflare_job_status": null
+        }
+      },
+      "cloudflare_browser_rendering": {},
+      "document_recovery_ratio": 1.0,
+      "required_document_recovery_ratio": 0.0,
+      "document_recovery_ratio_ok": true
+    },
+    "gap_analysis": {
+      "weak_states": [],
+      "states": {}
+    }
+  },
+  "critic": {
+    "issues": [
+      "coverage-gaps:AK,AL,AR,AZ,CA,CO,CT,DC",
+      "common-crawl-unused-on-gap-cycle",
+      "router-assisted-review"
+    ],
+    "provider_summary": {
+      "unified_scraper": 188
+    },
+    "recommended_next_tactics": [
+      "archival_first",
+      "discovery_first",
+      "router_assisted"
+    ],
+    "priority_states": [
+      "AK",
+      "AL",
+      "AR",
+      "AZ",
+      "CA",
+      "CO",
+      "CT",
+      "DC"
+    ],
+    "state_action_plan": {
+      "AK": {
+        "priority_score": 2,
+        "reasons": [
+          "missing_or_zero_coverage"
+        ],
+        "recommended_tactics": [
+          "archival_first",
+          "discovery_first"
+        ],
+        "query_hints": [],
+        "candidate_document_format_counts": {
+          "pdf": 0,
+          "rtf": 0
+        },
+        "document_recovery_profile": {},
+        "hosts": []
+      },
+      "AL": {
+        "priority_score": 2,
+        "reasons": [
+          "missing_or_zero_coverage"
+        ],
+        "recommended_tactics": [
+          "archival_first",
+          "discovery_first"
+        ],
+        "query_hints": [],
+        "candidate_document_format_counts": {
+          "pdf": 0,
+          "rtf": 0
+        },
+        "document_recovery_profile": {},
+        "hosts": []
+      },
+      "AR": {
+        "priority_score": 2,
+        "reasons": [
+          "missing_or_zero_coverage"
+        ],
+        "recommended_tactics": [
+          "archival_first",
+          "discovery_first"
+        ],
+        "query_hints": [],
+        "candidate_document_format_counts": {
+          "pdf": 0,
+          "rtf": 0
+        },
+        "document_recovery_profile": {},
+        "hosts": []
+      },
+      "AZ": {
+        "priority_score": 2,
+        "reasons": [
+          "missing_or_zero_coverage"
+        ],
+        "recommended_tactics": [
+          "archival_first",
+          "discovery_first"
+        ],
+        "query_hints": [],
+        "candidate_document_format_counts": {
+          "pdf": 0,
+          "rtf": 0
+        },
+        "document_recovery_profile": {},
+        "hosts": []
+      },
+      "CA": {
+        "priority_score": 2,
+        "reasons": [
+          "missing_or_zero_coverage"
+        ],
+        "recommended_tactics": [
+          "archival_first",
+          "discovery_first"
+        ],
+        "query_hints": [],
+        "candidate_document_format_counts": {
+          "pdf": 0,
+          "rtf": 0
+        },
+        "document_recovery_profile": {},
+        "hosts": []
+      },
+      "CO": {
+        "priority_score": 2,
+        "reasons": [
+          "missing_or_zero_coverage"
+        ],
+        "recommended_tactics": [
+          "archival_first",
+          "discovery_first"
+        ],
+        "query_hints": [],
+        "candidate_document_format_counts": {
+          "pdf": 0,
+          "rtf": 0
+        },
+        "document_recovery_profile": {},
+        "hosts": []
+      },
+      "CT": {
+        "priority_score": 2,
+        "reasons": [
+          "missing_or_zero_coverage"
+        ],
+        "recommended_tactics": [
+          "archival_first",
+          "discovery_first"
+        ],
+        "query_hints": [],
+        "candidate_document_format_counts": {
+          "pdf": 0,
+          "rtf": 0
+        },
+        "document_recovery_profile": {},
+        "hosts": []
+      },
+      "DC": {
+        "priority_score": 2,
+        "reasons": [
+          "missing_or_zero_coverage"
+        ],
+        "recommended_tactics": [
+          "archival_first",
+          "discovery_first"
+        ],
+        "query_hints": [],
+        "candidate_document_format_counts": {
+          "pdf": 0,
+          "rtf": 0
+        },
+        "document_recovery_profile": {},
+        "hosts": []
+      },
+      "DE": {
+        "priority_score": 2,
+        "reasons": [
+          "missing_or_zero_coverage"
+        ],
+        "recommended_tactics": [
+          "archival_first",
+          "discovery_first"
+        ],
+        "query_hints": [],
+        "candidate_document_format_counts": {
+          "pdf": 0,
+          "rtf": 0
+        },
+        "document_recovery_profile": {},
+        "hosts": []
+      },
+      "FL": {
+        "priority_score": 2,
+        "reasons": [
+          "missing_or_zero_coverage"
+        ],
+        "recommended_tactics": [
+          "archival_first",
+          "discovery_first"
+        ],
+        "query_hints": [],
+        "candidate_document_format_counts": {
+          "pdf": 0,
+          "rtf": 0
+        },
+        "document_recovery_profile": {},
+        "hosts": []
+      },
+      "GA": {
+        "priority_score": 2,
+        "reasons": [
+          "missing_or_zero_coverage"
+        ],
+        "recommended_tactics": [
+          "archival_first",
+          "discovery_first"
+        ],
+        "query_hints": [],
+        "candidate_document_format_counts": {
+          "pdf": 0,
+          "rtf": 0
+        },
+        "document_recovery_profile": {},
+        "hosts": []
+      },
+      "HI": {
+        "priority_score": 2,
+        "reasons": [
+          "missing_or_zero_coverage"
+        ],
+        "recommended_tactics": [
+          "archival_first",
+          "discovery_first"
+        ],
+        "query_hints": [],
+        "candidate_document_format_counts": {
+          "pdf": 0,
+          "rtf": 0
+        },
+        "document_recovery_profile": {},
+        "hosts": []
+      },
+      "IA": {
+        "priority_score": 2,
+        "reasons": [
+          "missing_or_zero_coverage"
+        ],
+        "recommended_tactics": [
+          "archival_first",
+          "discovery_first"
+        ],
+        "query_hints": [],
+        "candidate_document_format_counts": {
+          "pdf": 0,
+          "rtf": 0
+        },
+        "document_recovery_profile": {},
+        "hosts": []
+      },
+      "ID": {
+        "priority_score": 2,
+        "reasons": [
+          "missing_or_zero_coverage"
+        ],
+        "recommended_tactics": [
+          "archival_first",
+          "discovery_first"
+        ],
+        "query_hints": [],
+        "candidate_document_format_counts": {
+          "pdf": 0,
+          "rtf": 0
+        },
+        "document_recovery_profile": {},
+        "hosts": []
+      },
+      "IL": {
+        "priority_score": 2,
+        "reasons": [
+          "missing_or_zero_coverage"
+        ],
+        "recommended_tactics": [
+          "archival_first",
+          "discovery_first"
+        ],
+        "query_hints": [],
+        "candidate_document_format_counts": {
+          "pdf": 0,
+          "rtf": 0
+        },
+        "document_recovery_profile": {},
+        "hosts": []
+      },
+      "IN": {
+        "priority_score": 2,
+        "reasons": [
+          "missing_or_zero_coverage"
+        ],
+        "recommended_tactics": [
+          "archival_first",
+          "discovery_first"
+        ],
+        "query_hints": [],
+        "candidate_document_format_counts": {
+          "pdf": 0,
+          "rtf": 0
+        },
+        "document_recovery_profile": {},
+        "hosts": []
+      },
+      "KS": {
+        "priority_score": 2,
+        "reasons": [
+          "missing_or_zero_coverage"
+        ],
+        "recommended_tactics": [
+          "archival_first",
+          "discovery_first"
+        ],
+        "query_hints": [],
+        "candidate_document_format_counts": {
+          "pdf": 0,
+          "rtf": 0
+        },
+        "document_recovery_profile": {},
+        "hosts": []
+      },
+      "KY": {
+        "priority_score": 2,
+        "reasons": [
+          "missing_or_zero_coverage"
+        ],
+        "recommended_tactics": [
+          "archival_first",
+          "discovery_first"
+        ],
+        "query_hints": [],
+        "candidate_document_format_counts": {
+          "pdf": 0,
+          "rtf": 0
+        },
+        "document_recovery_profile": {},
+        "hosts": []
+      },
+      "LA": {
+        "priority_score": 2,
+        "reasons": [
+          "missing_or_zero_coverage"
+        ],
+        "recommended_tactics": [
+          "archival_first",
+          "discovery_first"
+        ],
+        "query_hints": [],
+        "candidate_document_format_counts": {
+          "pdf": 0,
+          "rtf": 0
+        },
+        "document_recovery_profile": {},
+        "hosts": []
+      },
+      "MA": {
+        "priority_score": 2,
+        "reasons": [
+          "missing_or_zero_coverage"
+        ],
+        "recommended_tactics": [
+          "archival_first",
+          "discovery_first"
+        ],
+        "query_hints": [],
+        "candidate_document_format_counts": {
+          "pdf": 0,
+          "rtf": 0
+        },
+        "document_recovery_profile": {},
+        "hosts": []
+      },
+      "MD": {
+        "priority_score": 2,
+        "reasons": [
+          "missing_or_zero_coverage"
+        ],
+        "recommended_tactics": [
+          "archival_first",
+          "discovery_first"
+        ],
+        "query_hints": [],
+        "candidate_document_format_counts": {
+          "pdf": 0,
+          "rtf": 0
+        },
+        "document_recovery_profile": {},
+        "hosts": []
+      },
+      "ME": {
+        "priority_score": 2,
+        "reasons": [
+          "missing_or_zero_coverage"
+        ],
+        "recommended_tactics": [
+          "archival_first",
+          "discovery_first"
+        ],
+        "query_hints": [],
+        "candidate_document_format_counts": {
+          "pdf": 0,
+          "rtf": 0
+        },
+        "document_recovery_profile": {},
+        "hosts": []
+      },
+      "MI": {
+        "priority_score": 2,
+        "reasons": [
+          "missing_or_zero_coverage"
+        ],
+        "recommended_tactics": [
+          "archival_first",
+          "discovery_first"
+        ],
+        "query_hints": [],
+        "candidate_document_format_counts": {
+          "pdf": 0,
+          "rtf": 0
+        },
+        "document_recovery_profile": {},
+        "hosts": []
+      },
+      "MN": {
+        "priority_score": 2,
+        "reasons": [
+          "missing_or_zero_coverage"
+        ],
+        "recommended_tactics": [
+          "archival_first",
+          "discovery_first"
+        ],
+        "query_hints": [],
+        "candidate_document_format_counts": {
+          "pdf": 0,
+          "rtf": 0
+        },
+        "document_recovery_profile": {},
+        "hosts": []
+      },
+      "MO": {
+        "priority_score": 2,
+        "reasons": [
+          "missing_or_zero_coverage"
+        ],
+        "recommended_tactics": [
+          "archival_first",
+          "discovery_first"
+        ],
+        "query_hints": [],
+        "candidate_document_format_counts": {
+          "pdf": 0,
+          "rtf": 0
+        },
+        "document_recovery_profile": {},
+        "hosts": []
+      },
+      "MS": {
+        "priority_score": 2,
+        "reasons": [
+          "missing_or_zero_coverage"
+        ],
+        "recommended_tactics": [
+          "archival_first",
+          "discovery_first"
+        ],
+        "query_hints": [],
+        "candidate_document_format_counts": {
+          "pdf": 0,
+          "rtf": 0
+        },
+        "document_recovery_profile": {},
+        "hosts": []
+      },
+      "MT": {
+        "priority_score": 2,
+        "reasons": [
+          "missing_or_zero_coverage"
+        ],
+        "recommended_tactics": [
+          "archival_first",
+          "discovery_first"
+        ],
+        "query_hints": [],
+        "candidate_document_format_counts": {
+          "pdf": 0,
+          "rtf": 0
+        },
+        "document_recovery_profile": {},
+        "hosts": []
+      },
+      "NC": {
+        "priority_score": 2,
+        "reasons": [
+          "missing_or_zero_coverage"
+        ],
+        "recommended_tactics": [
+          "archival_first",
+          "discovery_first"
+        ],
+        "query_hints": [],
+        "candidate_document_format_counts": {
+          "pdf": 0,
+          "rtf": 0
+        },
+        "document_recovery_profile": {},
+        "hosts": []
+      },
+      "ND": {
+        "priority_score": 2,
+        "reasons": [
+          "missing_or_zero_coverage"
+        ],
+        "recommended_tactics": [
+          "archival_first",
+          "discovery_first"
+        ],
+        "query_hints": [],
+        "candidate_document_format_counts": {
+          "pdf": 0,
+          "rtf": 0
+        },
+        "document_recovery_profile": {},
+        "hosts": []
+      },
+      "NE": {
+        "priority_score": 2,
+        "reasons": [
+          "missing_or_zero_coverage"
+        ],
+        "recommended_tactics": [
+          "archival_first",
+          "discovery_first"
+        ],
+        "query_hints": [],
+        "candidate_document_format_counts": {
+          "pdf": 0,
+          "rtf": 0
+        },
+        "document_recovery_profile": {},
+        "hosts": []
+      },
+      "NH": {
+        "priority_score": 2,
+        "reasons": [
+          "missing_or_zero_coverage"
+        ],
+        "recommended_tactics": [
+          "archival_first",
+          "discovery_first"
+        ],
+        "query_hints": [],
+        "candidate_document_format_counts": {
+          "pdf": 0,
+          "rtf": 0
+        },
+        "document_recovery_profile": {},
+        "hosts": []
+      },
+      "NJ": {
+        "priority_score": 2,
+        "reasons": [
+          "missing_or_zero_coverage"
+        ],
+        "recommended_tactics": [
+          "archival_first",
+          "discovery_first"
+        ],
+        "query_hints": [],
+        "candidate_document_format_counts": {
+          "pdf": 0,
+          "rtf": 0
+        },
+        "document_recovery_profile": {},
+        "hosts": []
+      },
+      "NM": {
+        "priority_score": 2,
+        "reasons": [
+          "missing_or_zero_coverage"
+        ],
+        "recommended_tactics": [
+          "archival_first",
+          "discovery_first"
+        ],
+        "query_hints": [],
+        "candidate_document_format_counts": {
+          "pdf": 0,
+          "rtf": 0
+        },
+        "document_recovery_profile": {},
+        "hosts": []
+      },
+      "NV": {
+        "priority_score": 2,
+        "reasons": [
+          "missing_or_zero_coverage"
+        ],
+        "recommended_tactics": [
+          "archival_first",
+          "discovery_first"
+        ],
+        "query_hints": [],
+        "candidate_document_format_counts": {
+          "pdf": 0,
+          "rtf": 0
+        },
+        "document_recovery_profile": {},
+        "hosts": []
+      },
+      "NY": {
+        "priority_score": 2,
+        "reasons": [
+          "missing_or_zero_coverage"
+        ],
+        "recommended_tactics": [
+          "archival_first",
+          "discovery_first"
+        ],
+        "query_hints": [],
+        "candidate_document_format_counts": {
+          "pdf": 0,
+          "rtf": 0
+        },
+        "document_recovery_profile": {},
+        "hosts": []
+      },
+      "OH": {
+        "priority_score": 2,
+        "reasons": [
+          "missing_or_zero_coverage"
+        ],
+        "recommended_tactics": [
+          "archival_first",
+          "discovery_first"
+        ],
+        "query_hints": [],
+        "candidate_document_format_counts": {
+          "pdf": 0,
+          "rtf": 0
+        },
+        "document_recovery_profile": {},
+        "hosts": []
+      },
+      "OK": {
+        "priority_score": 2,
+        "reasons": [
+          "missing_or_zero_coverage"
+        ],
+        "recommended_tactics": [
+          "archival_first",
+          "discovery_first"
+        ],
+        "query_hints": [],
+        "candidate_document_format_counts": {
+          "pdf": 0,
+          "rtf": 0
+        },
+        "document_recovery_profile": {},
+        "hosts": []
+      },
+      "OR": {
+        "priority_score": 2,
+        "reasons": [
+          "missing_or_zero_coverage"
+        ],
+        "recommended_tactics": [
+          "archival_first",
+          "discovery_first"
+        ],
+        "query_hints": [],
+        "candidate_document_format_counts": {
+          "pdf": 0,
+          "rtf": 0
+        },
+        "document_recovery_profile": {},
+        "hosts": []
+      },
+      "PA": {
+        "priority_score": 2,
+        "reasons": [
+          "missing_or_zero_coverage"
+        ],
+        "recommended_tactics": [
+          "archival_first",
+          "discovery_first"
+        ],
+        "query_hints": [],
+        "candidate_document_format_counts": {
+          "pdf": 0,
+          "rtf": 0
+        },
+        "document_recovery_profile": {},
+        "hosts": []
+      },
+      "RI": {
+        "priority_score": 2,
+        "reasons": [
+          "missing_or_zero_coverage"
+        ],
+        "recommended_tactics": [
+          "archival_first",
+          "discovery_first"
+        ],
+        "query_hints": [],
+        "candidate_document_format_counts": {
+          "pdf": 0,
+          "rtf": 0
+        },
+        "document_recovery_profile": {},
+        "hosts": []
+      },
+      "SC": {
+        "priority_score": 2,
+        "reasons": [
+          "missing_or_zero_coverage"
+        ],
+        "recommended_tactics": [
+          "archival_first",
+          "discovery_first"
+        ],
+        "query_hints": [],
+        "candidate_document_format_counts": {
+          "pdf": 0,
+          "rtf": 0
+        },
+        "document_recovery_profile": {},
+        "hosts": []
+      },
+      "SD": {
+        "priority_score": 2,
+        "reasons": [
+          "missing_or_zero_coverage"
+        ],
+        "recommended_tactics": [
+          "archival_first",
+          "discovery_first"
+        ],
+        "query_hints": [],
+        "candidate_document_format_counts": {
+          "pdf": 0,
+          "rtf": 0
+        },
+        "document_recovery_profile": {},
+        "hosts": []
+      },
+      "TN": {
+        "priority_score": 2,
+        "reasons": [
+          "missing_or_zero_coverage"
+        ],
+        "recommended_tactics": [
+          "archival_first",
+          "discovery_first"
+        ],
+        "query_hints": [],
+        "candidate_document_format_counts": {
+          "pdf": 0,
+          "rtf": 0
+        },
+        "document_recovery_profile": {},
+        "hosts": []
+      },
+      "TX": {
+        "priority_score": 2,
+        "reasons": [
+          "missing_or_zero_coverage"
+        ],
+        "recommended_tactics": [
+          "archival_first",
+          "discovery_first"
+        ],
+        "query_hints": [],
+        "candidate_document_format_counts": {
+          "pdf": 0,
+          "rtf": 0
+        },
+        "document_recovery_profile": {},
+        "hosts": []
+      },
+      "UT": {
+        "priority_score": 2,
+        "reasons": [
+          "missing_or_zero_coverage"
+        ],
+        "recommended_tactics": [
+          "archival_first",
+          "discovery_first"
+        ],
+        "query_hints": [],
+        "candidate_document_format_counts": {
+          "pdf": 0,
+          "rtf": 0
+        },
+        "document_recovery_profile": {},
+        "hosts": []
+      },
+      "VA": {
+        "priority_score": 2,
+        "reasons": [
+          "missing_or_zero_coverage"
+        ],
+        "recommended_tactics": [
+          "archival_first",
+          "discovery_first"
+        ],
+        "query_hints": [],
+        "candidate_document_format_counts": {
+          "pdf": 0,
+          "rtf": 0
+        },
+        "document_recovery_profile": {},
+        "hosts": []
+      },
+      "VT": {
+        "priority_score": 2,
+        "reasons": [
+          "missing_or_zero_coverage"
+        ],
+        "recommended_tactics": [
+          "archival_first",
+          "discovery_first"
+        ],
+        "query_hints": [],
+        "candidate_document_format_counts": {
+          "pdf": 0,
+          "rtf": 0
+        },
+        "document_recovery_profile": {},
+        "hosts": []
+      },
+      "WA": {
+        "priority_score": 2,
+        "reasons": [
+          "missing_or_zero_coverage"
+        ],
+        "recommended_tactics": [
+          "archival_first",
+          "discovery_first"
+        ],
+        "query_hints": [],
+        "candidate_document_format_counts": {
+          "pdf": 0,
+          "rtf": 0
+        },
+        "document_recovery_profile": {},
+        "hosts": []
+      },
+      "WI": {
+        "priority_score": 2,
+        "reasons": [
+          "missing_or_zero_coverage"
+        ],
+        "recommended_tactics": [
+          "archival_first",
+          "discovery_first"
+        ],
+        "query_hints": [],
+        "candidate_document_format_counts": {
+          "pdf": 0,
+          "rtf": 0
+        },
+        "document_recovery_profile": {},
+        "hosts": []
+      },
+      "WV": {
+        "priority_score": 2,
+        "reasons": [
+          "missing_or_zero_coverage"
+        ],
+        "recommended_tactics": [
+          "archival_first",
+          "discovery_first"
+        ],
+        "query_hints": [],
+        "candidate_document_format_counts": {
+          "pdf": 0,
+          "rtf": 0
+        },
+        "document_recovery_profile": {},
+        "hosts": []
+      },
+      "WY": {
+        "priority_score": 2,
+        "reasons": [
+          "missing_or_zero_coverage"
+        ],
+        "recommended_tactics": [
+          "archival_first",
+          "discovery_first"
+        ],
+        "query_hints": [],
+        "candidate_document_format_counts": {
+          "pdf": 0,
+          "rtf": 0
+        },
+        "document_recovery_profile": {},
+        "hosts": []
+      }
+    },
+    "query_hints": [
+      "AK",
+      "AL",
+      "AR",
+      "AZ",
+      "CA",
+      "CO",
+      "CT",
+      "DC"
+    ],
+    "summary": "Coverage gaps remain, so the next cycle should bias toward broader archival and search discovery.",
+    "router_rationale": "Coverage gaps persist across the highlighted states (zero statutes recovered except RI), so biasing toward archival discovery before live fetches should surface archived PDFs or redirects for the missing jurisdictions and satisfy the critic\u2019s request for broader discovery."
+  },
+  "router_assist": {
+    "status": "completed",
+    "availability": {
+      "llm_router": true,
+      "embeddings_router": true,
+      "ipfs_backend_router": true,
+      "llm_accelerate": {
+        "available": true,
+        "enabled": true,
+        "env_disabled": false,
+        "env_var": "1"
+      },
+      "embeddings_accelerate": {
+        "available": true,
+        "enabled": true,
+        "env_disabled": false,
+        "env_var": "1"
+      },
+      "ipfs_backend": "KuboCLIBackend"
+    },
+    "preferred": {
+      "llm_provider": null,
+      "embeddings_provider": null,
+      "ipfs_backend": null,
+      "enable_ipfs_accelerate": null
+    },
+    "issue_count": 2,
+    "llm_review": {
+      "recommended_next_tactics": [
+        "archival_first",
+        "discovery_first"
+      ],
+      "priority_states": [
+        "AK",
+        "AL",
+        "AR",
+        "AZ",
+        "CA",
+        "CO",
+        "CT",
+        "DC"
+      ],
+      "query_hints": [
+        "AK",
+        "AL",
+        "AR",
+        "AZ",
+        "CA",
+        "CO",
+        "CT",
+        "DC"
+      ],
+      "rationale": "Coverage gaps persist across the highlighted states (zero statutes recovered except RI), so biasing toward archival discovery before live fetches should surface archived PDFs or redirects for the missing jurisdictions and satisfy the critic\u2019s request for broader discovery.",
+      "status": "success",
+      "provider": null
+    },
+    "embeddings_ranking": [
+      {
+        "tactic": "discovery_first",
+        "score": 0.5531
+      },
+      {
+        "tactic": "archival_first",
+        "score": 0.5091
+      },
+      {
+        "tactic": "precision_first",
+        "score": 0.3548
+      },
+      {
+        "tactic": "router_assisted",
+        "score": 0.3212
+      },
+      {
+        "tactic": "document_first",
+        "score": 0.2448
+      },
+      {
+        "tactic": "cloudflare_explore",
+        "score": 0.2433
+      },
+      {
+        "tactic": "render_first",
+        "score": 0.047
+      }
+    ],
+    "artifact_path": "/home/barberb/municipal_scrape_workspace/tmp/all_states_court_rules_audit_20260321/cycles/cycle_0001_router_assist.json",
+    "ipfs_persist": {
+      "status": "skipped",
+      "reason": "ipfs-kit-install-did-not-change-backend",
+      "backend": "KuboCLIBackend",
+      "command": "ipfs"
+    }
+  },
+  "parallel_admin_assist": {
+    "status": "skipped",
+    "reason": "corpus-not-state-admin-rules"
+  },
+  "archive_warmup": {
+    "status": "skipped",
+    "reason": "archive-warmup-disabled",
+    "attempted": 0
+  },
+  "document_gap_report": null,
+  "document_gap_report_path": null,
+  "document_artifacts": {
+    "status": "skipped",
+    "reason": "corpus-not-state-admin-rules"
+  },
+  "post_cycle_release": {
+    "status": "skipped",
+    "reason": "post-cycle-release-disabled"
+  },
+  "metadata": {
+    "states_scraped": [
+      "AL",
+      "AK",
+      "AZ",
+      "AR",
+      "CA",
+      "CO",
+      "CT",
+      "DE",
+      "FL",
+      "GA",
+      "HI",
+      "ID",
+      "IL",
+      "IN",
+      "IA",
+      "KS",
+      "KY",
+      "LA",
+      "ME",
+      "MD",
+      "MA",
+      "MI",
+      "MN",
+      "MS",
+      "MO",
+      "MT",
+      "NE",
+      "NV",
+      "NH",
+      "NJ",
+      "NM",
+      "NY",
+      "NC",
+      "ND",
+      "OH",
+      "OK",
+      "OR",
+      "PA",
+      "RI",
+      "SC",
+      "SD",
+      "TN",
+      "TX",
+      "UT",
+      "VT",
+      "VA",
+      "WA",
+      "WV",
+      "WI",
+      "WY",
+      "DC"
+    ],
+    "states_count": 51,
+    "rules_count": 1,
+    "canonical_dataset": "state_court_rules",
+    "canonical_hf_dataset_id": "justicedao/ipfs_court_rules",
+    "family_counts": {
+      "civil_procedure": 0,
+      "criminal_procedure": 0,
+      "civil_and_criminal_procedure": 1
+    },
+    "elapsed_time_seconds": 418.5515923500061,
+    "scraped_at": "2026-03-21T06:10:52.049899",
+    "rate_limit_delay": 1.0,
+    "parallel_workers": 6,
+    "per_state_retry_attempts": 1,
+    "retry_zero_rule_states": true,
+    "strict_full_text": true,
+    "min_full_text_chars": 300,
+    "hydrate_rule_text": true,
+    "zero_rule_states": [
+      "AK",
+      "AL",
+      "AR",
+      "AZ",
+      "CA",
+      "CO",
+      "CT",
+      "DC",
+      "DE",
+      "FL",
+      "GA",
+      "HI",
+      "IA",
+      "ID",
+      "IL",
+      "IN",
+      "KS",
+      "KY",
+      "LA",
+      "MA",
+      "MD",
+      "ME",
+      "MI",
+      "MN",
+      "MO",
+      "MS",
+      "MT",
+      "NC",
+      "ND",
+      "NE",
+      "NH",
+      "NJ",
+      "NM",
+      "NV",
+      "NY",
+      "OH",
+      "OK",
+      "OR",
+      "PA",
+      "SC",
+      "SD",
+      "TN",
+      "TX",
+      "UT",
+      "VA",
+      "VT",
+      "WA",
+      "WI",
+      "WV",
+      "WY"
+    ],
+    "jsonld_dir": "/home/barberb/.ipfs_datasets/state_court_rules/state_court_rules_jsonld",
+    "jsonld_files": [
+      "/home/barberb/.ipfs_datasets/state_court_rules/state_court_rules_jsonld/STATE-RI.jsonld"
+    ],
+    "fetch_analytics_by_state": {
+      "AK": {
+        "attempted": 17,
+        "success": 17,
+        "success_ratio": 1.0,
+        "fallback_count": 1,
+        "cache_hits": 0,
+        "cache_writes": 0,
+        "providers": {
+          "unified_scraper": 17
+        },
+        "last_error": null
+      },
+      "AR": {
+        "attempted": 19,
+        "success": 19,
+        "success_ratio": 1.0,
+        "fallback_count": 2,
+        "cache_hits": 0,
+        "cache_writes": 0,
+        "providers": {
+          "unified_scraper": 19
+        },
+        "last_error": null
+      },
+      "CA": {
+        "attempted": 29,
+        "success": 29,
+        "success_ratio": 1.0,
+        "fallback_count": 0,
+        "cache_hits": 0,
+        "cache_writes": 0,
+        "providers": {
+          "unified_scraper": 29
+        },
+        "last_error": null
+      },
+      "CO": {
+        "attempted": 5,
+        "success": 5,
+        "success_ratio": 1.0,
+        "fallback_count": 0,
+        "cache_hits": 0,
+        "cache_writes": 0,
+        "providers": {
+          "unified_scraper": 5
+        },
+        "last_error": null
+      },
+      "FL": {
+        "attempted": 32,
+        "success": 32,
+        "success_ratio": 1.0,
+        "fallback_count": 0,
+        "cache_hits": 0,
+        "cache_writes": 0,
+        "providers": {
+          "unified_scraper": 32
+        },
+        "last_error": null
+      },
+      "HI": {
+        "attempted": 6,
+        "success": 6,
+        "success_ratio": 1.0,
+        "fallback_count": 0,
+        "cache_hits": 0,
+        "cache_writes": 0,
+        "providers": {
+          "unified_scraper": 6
+        },
+        "last_error": null
+      },
+      "IL": {
+        "attempted": 6,
+        "success": 6,
+        "success_ratio": 1.0,
+        "fallback_count": 0,
+        "cache_hits": 0,
+        "cache_writes": 0,
+        "providers": {
+          "unified_scraper": 6
+        },
+        "last_error": null
+      },
+      "IN": {
+        "attempted": 9,
+        "success": 9,
+        "success_ratio": 1.0,
+        "fallback_count": 0,
+        "cache_hits": 0,
+        "cache_writes": 0,
+        "providers": {
+          "unified_scraper": 9
+        },
+        "last_error": null
+      },
+      "KS": {
+        "attempted": 1,
+        "success": 1,
+        "success_ratio": 1.0,
+        "fallback_count": 1,
+        "cache_hits": 0,
+        "cache_writes": 0,
+        "providers": {
+          "unified_scraper": 1
+        },
+        "last_error": null
+      },
+      "MI": {
+        "attempted": 1,
+        "success": 1,
+        "success_ratio": 1.0,
+        "fallback_count": 0,
+        "cache_hits": 0,
+        "cache_writes": 0,
+        "providers": {
+          "unified_scraper": 1
+        },
+        "last_error": null
+      },
+      "MO": {
+        "attempted": 1,
+        "success": 1,
+        "success_ratio": 1.0,
+        "fallback_count": 0,
+        "cache_hits": 0,
+        "cache_writes": 0,
+        "providers": {
+          "unified_scraper": 1
+        },
+        "last_error": null
+      },
+      "NE": {
+        "attempted": 10,
+        "success": 10,
+        "success_ratio": 1.0,
+        "fallback_count": 0,
+        "cache_hits": 0,
+        "cache_writes": 0,
+        "providers": {
+          "unified_scraper": 10
+        },
+        "last_error": null
+      },
+      "NH": {
+        "attempted": 10,
+        "success": 10,
+        "success_ratio": 1.0,
+        "fallback_count": 0,
+        "cache_hits": 0,
+        "cache_writes": 0,
+        "providers": {
+          "unified_scraper": 10
+        },
+        "last_error": null
+      },
+      "NJ": {
+        "attempted": 6,
+        "success": 6,
+        "success_ratio": 1.0,
+        "fallback_count": 0,
+        "cache_hits": 0,
+        "cache_writes": 0,
+        "providers": {
+          "unified_scraper": 6
+        },
+        "last_error": null
+      },
+      "NM": {
+        "attempted": 8,
+        "success": 8,
+        "success_ratio": 1.0,
+        "fallback_count": 0,
+        "cache_hits": 0,
+        "cache_writes": 0,
+        "providers": {
+          "unified_scraper": 8
+        },
+        "last_error": null
+      },
+      "NV": {
+        "attempted": 1,
+        "success": 1,
+        "success_ratio": 1.0,
+        "fallback_count": 0,
+        "cache_hits": 0,
+        "cache_writes": 0,
+        "providers": {
+          "unified_scraper": 1
+        },
+        "last_error": null
+      },
+      "NY": {
+        "attempted": 5,
+        "success": 5,
+        "success_ratio": 1.0,
+        "fallback_count": 1,
+        "cache_hits": 0,
+        "cache_writes": 0,
+        "providers": {
+          "unified_scraper": 5
+        },
+        "last_error": null
+      },
+      "OH": {
+        "attempted": 12,
+        "success": 12,
+        "success_ratio": 1.0,
+        "fallback_count": 0,
+        "cache_hits": 0,
+        "cache_writes": 0,
+        "providers": {
+          "unified_scraper": 12
+        },
+        "last_error": null
+      },
+      "RI": {
+        "attempted": 9,
+        "success": 9,
+        "success_ratio": 1.0,
+        "fallback_count": 0,
+        "cache_hits": 0,
+        "cache_writes": 0,
+        "providers": {
+          "unified_scraper": 8,
+          "direct": 1
+        },
+        "last_error": null
+      },
+      "VT": {
+        "attempted": 10,
+        "success": 10,
+        "success_ratio": 1.0,
+        "fallback_count": 0,
+        "cache_hits": 0,
+        "cache_writes": 0,
+        "providers": {
+          "unified_scraper": 10
+        },
+        "last_error": null
+      }
+    },
+    "supplemental_fetch_analytics_by_state": {
+      "RI": {
+        "attempted": 9,
+        "success": 9,
+        "success_ratio": 1.0,
+        "providers": {
+          "unified_scraper": 8,
+          "direct": 1
+        },
+        "fallback_count": 0,
+        "cache_hits": 0,
+        "cache_writes": 0,
+        "last_error": null
+      }
+    },
+    "base_status": "partial_success",
+    "base_metadata": {
+      "states_scraped": [
+        "AL",
+        "AK",
+        "AZ",
+        "AR",
+        "CA",
+        "CO",
+        "CT",
+        "DE",
+        "FL",
+        "GA",
+        "HI",
+        "ID",
+        "IL",
+        "IN",
+        "IA",
+        "KS",
+        "KY",
+        "LA",
+        "ME",
+        "MD",
+        "MA",
+        "MI",
+        "MN",
+        "MS",
+        "MO",
+        "MT",
+        "NE",
+        "NV",
+        "NH",
+        "NJ",
+        "NM",
+        "NY",
+        "NC",
+        "ND",
+        "OH",
+        "OK",
+        "OR",
+        "PA",
+        "RI",
+        "SC",
+        "SD",
+        "TN",
+        "TX",
+        "UT",
+        "VT",
+        "VA",
+        "WA",
+        "WV",
+        "WI",
+        "WY",
+        "DC"
+      ],
+      "states_count": 51,
+      "statutes_count": 30,
+      "legal_areas": [
+        "all"
+      ],
+      "elapsed_time_seconds": 405.7976462841034,
+      "scraped_at": "2026-03-21T06:10:39.296039",
+      "scraper_type": "State-specific scrapers",
+      "sources": "Official State Legislative Websites",
+      "rate_limit_delay": 1.0,
+      "parallel_workers": 6,
+      "per_state_retry_attempts": 1,
+      "retry_zero_statute_states": true,
+      "include_metadata": true,
+      "errors": [
+        "Failed to scrape Alabama using state-specific scraper: timed out after 30.0 seconds",
+        "Failed to scrape Arizona using state-specific scraper: timed out after 30.0 seconds",
+        "Failed to scrape Connecticut using state-specific scraper: timed out after 30.0 seconds",
+        "Failed to scrape Delaware using state-specific scraper: timed out after 30.0 seconds",
+        "Failed to scrape Georgia using state-specific scraper: timed out after 30.0 seconds",
+        "Failed to scrape Idaho using state-specific scraper: timed out after 30.0 seconds",
+        "Failed to scrape Iowa using state-specific scraper: timed out after 30.0 seconds",
+        "Failed to scrape Kentucky using state-specific scraper: timed out after 30.0 seconds",
+        "Failed to scrape Louisiana using state-specific scraper: timed out after 30.0 seconds",
+        "Failed to scrape Maine using state-specific scraper: timed out after 30.0 seconds",
+        "Failed to scrape Maryland using state-specific scraper: timed out after 30.0 seconds",
+        "Failed to scrape Massachusetts using state-specific scraper: timed out after 30.0 seconds",
+        "Failed to scrape Minnesota using state-specific scraper: timed out after 30.0 seconds",
+        "Failed to scrape Mississippi using state-specific scraper: timed out after 30.0 seconds",
+        "Failed to scrape Montana using state-specific scraper: timed out after 30.0 seconds",
+        "Failed to scrape North Carolina using state-specific scraper: timed out after 30.0 seconds",
+        "Failed to scrape North Dakota using state-specific scraper: timed out after 30.0 seconds",
+        "Failed to scrape Oklahoma using state-specific scraper: timed out after 30.0 seconds",
+        "Failed to scrape Oregon using state-specific scraper: timed out after 30.0 seconds",
+        "Failed to scrape Pennsylvania using state-specific scraper: timed out after 30.0 seconds",
+        "Failed to scrape Rhode Island using state-specific scraper: timed out after 30.0 seconds",
+        "Failed to scrape South Carolina using state-specific scraper: timed out after 30.0 seconds",
+        "Failed to scrape South Dakota using state-specific scraper: timed out after 30.0 seconds",
+        "Failed to scrape Tennessee using state-specific scraper: timed out after 30.0 seconds",
+        "Failed to scrape Texas using state-specific scraper: timed out after 30.0 seconds",
+        "Failed to scrape Utah using state-specific scraper: timed out after 30.0 seconds",
+        "Failed to scrape Virginia using state-specific scraper: timed out after 30.0 seconds",
+        "Failed to scrape Washington using state-specific scraper: timed out after 30.0 seconds",
+        "Failed to scrape West Virginia using state-specific scraper: timed out after 30.0 seconds",
+        "Failed to scrape Wisconsin using state-specific scraper: timed out after 30.0 seconds",
+        "Failed to scrape Wyoming using state-specific scraper: timed out after 30.0 seconds",
+        "Failed to scrape District of Columbia using state-specific scraper: timed out after 30.0 seconds"
+      ],
+      "warnings": [
+        "AL timed out while scraping",
+        "AZ timed out while scraping",
+        "AR returned zero statutes",
+        "CA returned zero statutes",
+        "CT timed out while scraping",
+        "DE timed out while scraping",
+        "FL returned zero statutes",
+        "GA timed out while scraping",
+        "ID timed out while scraping",
+        "IL returned zero statutes",
+        "IA timed out while scraping",
+        "KS returned zero statutes",
+        "KY timed out while scraping",
+        "LA timed out while scraping",
+        "ME timed out while scraping",
+        "MD timed out while scraping",
+        "MA timed out while scraping",
+        "MI returned zero statutes",
+        "MN timed out while scraping",
+        "MS timed out while scraping",
+        "MO returned zero statutes",
+        "MT timed out while scraping",
+        "NE returned zero statutes",
+        "NV returned zero statutes",
+        "NH returned zero statutes",
+        "NJ returned zero statutes",
+        "NY returned zero statutes",
+        "NC timed out while scraping",
+        "ND timed out while scraping",
+        "OK timed out while scraping",
+        "OR timed out while scraping",
+        "PA timed out while scraping",
+        "RI timed out while scraping",
+        "SC timed out while scraping",
+        "SD timed out while scraping",
+        "TN timed out while scraping",
+        "TX timed out while scraping",
+        "UT timed out while scraping",
+        "VT returned zero statutes",
+        "VA timed out while scraping",
+        "WA timed out while scraping",
+        "WV timed out while scraping",
+        "WI timed out while scraping",
+        "WY timed out while scraping",
+        "DC timed out while scraping"
+      ],
+      "zero_statute_states": [
+        "AL",
+        "AZ",
+        "AR",
+        "CA",
+        "CT",
+        "DE",
+        "FL",
+        "GA",
+        "ID",
+        "IL",
+        "IA",
+        "KS",
+        "KY",
+        "LA",
+        "ME",
+        "MD",
+        "MA",
+        "MI",
+        "MN",
+        "MS",
+        "MO",
+        "MT",
+        "NE",
+        "NV",
+        "NH",
+        "NJ",
+        "NY",
+        "NC",
+        "ND",
+        "OK",
+        "OR",
+        "PA",
+        "RI",
+        "SC",
+        "SD",
+        "TN",
+        "TX",
+        "UT",
+        "VT",
+        "VA",
+        "WA",
+        "WV",
+        "WI",
+        "WY",
+        "DC"
+      ],
+      "low_quality_states": null,
+      "quality_by_state": {
+        "AL": {
+          "total": 0,
+          "nav_like_ratio": 0.0,
+          "fallback_section_ratio": 0.0,
+          "numeric_section_name_ratio": 0.0,
+          "scaffold_ratio": 0.0
+        },
+        "AK": {
+          "total": 7,
+          "nav_like_ratio": 0.0,
+          "fallback_section_ratio": 1.0,
+          "numeric_section_name_ratio": 1.0,
+          "scaffold_ratio": 0.0
+        },
+        "AZ": {
+          "total": 0,
+          "nav_like_ratio": 0.0,
+          "fallback_section_ratio": 0.0,
+          "numeric_section_name_ratio": 0.0,
+          "scaffold_ratio": 0.0
+        },
+        "AR": {
+          "total": 0,
+          "nav_like_ratio": 0.0,
+          "fallback_section_ratio": 0.0,
+          "numeric_section_name_ratio": 0.0,
+          "scaffold_ratio": 0.0
+        },
+        "CA": {
+          "total": 0,
+          "nav_like_ratio": 0.0,
+          "fallback_section_ratio": 0.0,
+          "numeric_section_name_ratio": 0.0,
+          "scaffold_ratio": 0.0
+        },
+        "CO": {
+          "total": 3,
+          "nav_like_ratio": 0.0,
+          "fallback_section_ratio": 0.0,
+          "numeric_section_name_ratio": 0.0,
+          "scaffold_ratio": 0.0
+        },
+        "CT": {
+          "total": 0,
+          "nav_like_ratio": 0.0,
+          "fallback_section_ratio": 0.0,
+          "numeric_section_name_ratio": 0.0,
+          "scaffold_ratio": 0.0
+        },
+        "DE": {
+          "total": 0,
+          "nav_like_ratio": 0.0,
+          "fallback_section_ratio": 0.0,
+          "numeric_section_name_ratio": 0.0,
+          "scaffold_ratio": 0.0
+        },
+        "FL": {
+          "total": 0,
+          "nav_like_ratio": 0.0,
+          "fallback_section_ratio": 0.0,
+          "numeric_section_name_ratio": 0.0,
+          "scaffold_ratio": 0.0
+        },
+        "GA": {
+          "total": 0,
+          "nav_like_ratio": 0.0,
+          "fallback_section_ratio": 0.0,
+          "numeric_section_name_ratio": 0.0,
+          "scaffold_ratio": 0.0
+        },
+        "HI": {
+          "total": 4,
+          "nav_like_ratio": 0.0,
+          "fallback_section_ratio": 0.0,
+          "numeric_section_name_ratio": 1.0,
+          "scaffold_ratio": 0.0
+        },
+        "ID": {
+          "total": 0,
+          "nav_like_ratio": 0.0,
+          "fallback_section_ratio": 0.0,
+          "numeric_section_name_ratio": 0.0,
+          "scaffold_ratio": 0.0
+        },
+        "IL": {
+          "total": 0,
+          "nav_like_ratio": 0.0,
+          "fallback_section_ratio": 0.0,
+          "numeric_section_name_ratio": 0.0,
+          "scaffold_ratio": 0.0
+        },
+        "IN": {
+          "total": 4,
+          "nav_like_ratio": 0.0,
+          "fallback_section_ratio": 0.0,
+          "numeric_section_name_ratio": 0.25,
+          "scaffold_ratio": 0.0
+        },
+        "IA": {
+          "total": 0,
+          "nav_like_ratio": 0.0,
+          "fallback_section_ratio": 0.0,
+          "numeric_section_name_ratio": 0.0,
+          "scaffold_ratio": 0.0
+        },
+        "KS": {
+          "total": 0,
+          "nav_like_ratio": 0.0,
+          "fallback_section_ratio": 0.0,
+          "numeric_section_name_ratio": 0.0,
+          "scaffold_ratio": 0.0
+        },
+        "KY": {
+          "total": 0,
+          "nav_like_ratio": 0.0,
+          "fallback_section_ratio": 0.0,
+          "numeric_section_name_ratio": 0.0,
+          "scaffold_ratio": 0.0
+        },
+        "LA": {
+          "total": 0,
+          "nav_like_ratio": 0.0,
+          "fallback_section_ratio": 0.0,
+          "numeric_section_name_ratio": 0.0,
+          "scaffold_ratio": 0.0
+        },
+        "ME": {
+          "total": 0,
+          "nav_like_ratio": 0.0,
+          "fallback_section_ratio": 0.0,
+          "numeric_section_name_ratio": 0.0,
+          "scaffold_ratio": 0.0
+        },
+        "MD": {
+          "total": 0,
+          "nav_like_ratio": 0.0,
+          "fallback_section_ratio": 0.0,
+          "numeric_section_name_ratio": 0.0,
+          "scaffold_ratio": 0.0
+        },
+        "MA": {
+          "total": 0,
+          "nav_like_ratio": 0.0,
+          "fallback_section_ratio": 0.0,
+          "numeric_section_name_ratio": 0.0,
+          "scaffold_ratio": 0.0
+        },
+        "MI": {
+          "total": 0,
+          "nav_like_ratio": 0.0,
+          "fallback_section_ratio": 0.0,
+          "numeric_section_name_ratio": 0.0,
+          "scaffold_ratio": 0.0
+        },
+        "MN": {
+          "total": 0,
+          "nav_like_ratio": 0.0,
+          "fallback_section_ratio": 0.0,
+          "numeric_section_name_ratio": 0.0,
+          "scaffold_ratio": 0.0
+        },
+        "MS": {
+          "total": 0,
+          "nav_like_ratio": 0.0,
+          "fallback_section_ratio": 0.0,
+          "numeric_section_name_ratio": 0.0,
+          "scaffold_ratio": 0.0
+        },
+        "MO": {
+          "total": 0,
+          "nav_like_ratio": 0.0,
+          "fallback_section_ratio": 0.0,
+          "numeric_section_name_ratio": 0.0,
+          "scaffold_ratio": 0.0
+        },
+        "MT": {
+          "total": 0,
+          "nav_like_ratio": 0.0,
+          "fallback_section_ratio": 0.0,
+          "numeric_section_name_ratio": 0.0,
+          "scaffold_ratio": 0.0
+        },
+        "NE": {
+          "total": 0,
+          "nav_like_ratio": 0.0,
+          "fallback_section_ratio": 0.0,
+          "numeric_section_name_ratio": 0.0,
+          "scaffold_ratio": 0.0
+        },
+        "NV": {
+          "total": 0,
+          "nav_like_ratio": 0.0,
+          "fallback_section_ratio": 0.0,
+          "numeric_section_name_ratio": 0.0,
+          "scaffold_ratio": 0.0
+        },
+        "NH": {
+          "total": 0,
+          "nav_like_ratio": 0.0,
+          "fallback_section_ratio": 0.0,
+          "numeric_section_name_ratio": 0.0,
+          "scaffold_ratio": 0.0
+        },
+        "NJ": {
+          "total": 0,
+          "nav_like_ratio": 0.0,
+          "fallback_section_ratio": 0.0,
+          "numeric_section_name_ratio": 0.0,
+          "scaffold_ratio": 0.0
+        },
+        "NM": {
+          "total": 1,
+          "nav_like_ratio": 0.0,
+          "fallback_section_ratio": 0.0,
+          "numeric_section_name_ratio": 0.0,
+          "scaffold_ratio": 0.0
+        },
+        "NY": {
+          "total": 0,
+          "nav_like_ratio": 0.0,
+          "fallback_section_ratio": 0.0,
+          "numeric_section_name_ratio": 0.0,
+          "scaffold_ratio": 0.0
+        },
+        "NC": {
+          "total": 0,
+          "nav_like_ratio": 0.0,
+          "fallback_section_ratio": 0.0,
+          "numeric_section_name_ratio": 0.0,
+          "scaffold_ratio": 0.0
+        },
+        "ND": {
+          "total": 0,
+          "nav_like_ratio": 0.0,
+          "fallback_section_ratio": 0.0,
+          "numeric_section_name_ratio": 0.0,
+          "scaffold_ratio": 0.0
+        },
+        "OH": {
+          "total": 11,
+          "nav_like_ratio": 0.0,
+          "fallback_section_ratio": 1.0,
+          "numeric_section_name_ratio": 0.636,
+          "scaffold_ratio": 0.0
+        },
+        "OK": {
+          "total": 0,
+          "nav_like_ratio": 0.0,
+          "fallback_section_ratio": 0.0,
+          "numeric_section_name_ratio": 0.0,
+          "scaffold_ratio": 0.0
+        },
+        "OR": {
+          "total": 0,
+          "nav_like_ratio": 0.0,
+          "fallback_section_ratio": 0.0,
+          "numeric_section_name_ratio": 0.0,
+          "scaffold_ratio": 0.0
+        },
+        "PA": {
+          "total": 0,
+          "nav_like_ratio": 0.0,
+          "fallback_section_ratio": 0.0,
+          "numeric_section_name_ratio": 0.0,
+          "scaffold_ratio": 0.0
+        },
+        "RI": {
+          "total": 0,
+          "nav_like_ratio": 0.0,
+          "fallback_section_ratio": 0.0,
+          "numeric_section_name_ratio": 0.0,
+          "scaffold_ratio": 0.0
+        },
+        "SC": {
+          "total": 0,
+          "nav_like_ratio": 0.0,
+          "fallback_section_ratio": 0.0,
+          "numeric_section_name_ratio": 0.0,
+          "scaffold_ratio": 0.0
+        },
+        "SD": {
+          "total": 0,
+          "nav_like_ratio": 0.0,
+          "fallback_section_ratio": 0.0,
+          "numeric_section_name_ratio": 0.0,
+          "scaffold_ratio": 0.0
+        },
+        "TN": {
+          "total": 0,
+          "nav_like_ratio": 0.0,
+          "fallback_section_ratio": 0.0,
+          "numeric_section_name_ratio": 0.0,
+          "scaffold_ratio": 0.0
+        },
+        "TX": {
+          "total": 0,
+          "nav_like_ratio": 0.0,
+          "fallback_section_ratio": 0.0,
+          "numeric_section_name_ratio": 0.0,
+          "scaffold_ratio": 0.0
+        },
+        "UT": {
+          "total": 0,
+          "nav_like_ratio": 0.0,
+          "fallback_section_ratio": 0.0,
+          "numeric_section_name_ratio": 0.0,
+          "scaffold_ratio": 0.0
+        },
+        "VT": {
+          "total": 0,
+          "nav_like_ratio": 0.0,
+          "fallback_section_ratio": 0.0,
+          "numeric_section_name_ratio": 0.0,
+          "scaffold_ratio": 0.0
+        },
+        "VA": {
+          "total": 0,
+          "nav_like_ratio": 0.0,
+          "fallback_section_ratio": 0.0,
+          "numeric_section_name_ratio": 0.0,
+          "scaffold_ratio": 0.0
+        },
+        "WA": {
+          "total": 0,
+          "nav_like_ratio": 0.0,
+          "fallback_section_ratio": 0.0,
+          "numeric_section_name_ratio": 0.0,
+          "scaffold_ratio": 0.0
+        },
+        "WV": {
+          "total": 0,
+          "nav_like_ratio": 0.0,
+          "fallback_section_ratio": 0.0,
+          "numeric_section_name_ratio": 0.0,
+          "scaffold_ratio": 0.0
+        },
+        "WI": {
+          "total": 0,
+          "nav_like_ratio": 0.0,
+          "fallback_section_ratio": 0.0,
+          "numeric_section_name_ratio": 0.0,
+          "scaffold_ratio": 0.0
+        },
+        "WY": {
+          "total": 0,
+          "nav_like_ratio": 0.0,
+          "fallback_section_ratio": 0.0,
+          "numeric_section_name_ratio": 0.0,
+          "scaffold_ratio": 0.0
+        },
+        "DC": {
+          "total": 0,
+          "nav_like_ratio": 0.0,
+          "fallback_section_ratio": 0.0,
+          "numeric_section_name_ratio": 0.0,
+          "scaffold_ratio": 0.0
+        }
+      },
+      "coverage_summary": {
+        "states_targeted": 51,
+        "states_returned": 51,
+        "states_with_nonzero_statutes": 6,
+        "zero_statute_states": [
+          "AL",
+          "AR",
+          "AZ",
+          "CA",
+          "CT",
+          "DC",
+          "DE",
+          "FL",
+          "GA",
+          "IA",
+          "ID",
+          "IL",
+          "KS",
+          "KY",
+          "LA",
+          "MA",
+          "MD",
+          "ME",
+          "MI",
+          "MN",
+          "MO",
+          "MS",
+          "MT",
+          "NC",
+          "ND",
+          "NE",
+          "NH",
+          "NJ",
+          "NV",
+          "NY",
+          "OK",
+          "OR",
+          "PA",
+          "RI",
+          "SC",
+          "SD",
+          "TN",
+          "TX",
+          "UT",
+          "VA",
+          "VT",
+          "WA",
+          "WI",
+          "WV",
+          "WY"
+        ],
+        "error_states": [
+          "AL",
+          "AZ",
+          "CT",
+          "DC",
+          "DE",
+          "GA",
+          "IA",
+          "ID",
+          "KY",
+          "LA",
+          "MA",
+          "MD",
+          "ME",
+          "MN",
+          "MS",
+          "MT",
+          "NC",
+          "ND",
+          "OK",
+          "OR",
+          "PA",
+          "RI",
+          "SC",
+          "SD",
+          "TN",
+          "TX",
+          "UT",
+          "VA",
+          "WA",
+          "WI",
+          "WV",
+          "WY"
+        ],
+        "missing_states": [],
+        "coverage_gap_states": [
+          "AL",
+          "AR",
+          "AZ",
+          "CA",
+          "CT",
+          "DC",
+          "DE",
+          "FL",
+          "GA",
+          "IA",
+          "ID",
+          "IL",
+          "KS",
+          "KY",
+          "LA",
+          "MA",
+          "MD",
+          "ME",
+          "MI",
+          "MN",
+          "MO",
+          "MS",
+          "MT",
+          "NC",
+          "ND",
+          "NE",
+          "NH",
+          "NJ",
+          "NV",
+          "NY",
+          "OK",
+          "OR",
+          "PA",
+          "RI",
+          "SC",
+          "SD",
+          "TN",
+          "TX",
+          "UT",
+          "VA",
+          "VT",
+          "WA",
+          "WI",
+          "WV",
+          "WY"
+        ],
+        "full_coverage": false
+      },
+      "fetch_analytics": {
+        "states_with_fetch_analytics": 19,
+        "attempted": 188,
+        "success": 188,
+        "success_ratio": 1.0,
+        "fallback_count": 5,
+        "providers": {
+          "unified_scraper": 188
+        }
+      },
+      "fetch_analytics_by_state": {
+        "AK": {
+          "attempted": 17,
+          "success": 17,
+          "success_ratio": 1.0,
+          "providers": {
+            "unified_scraper": 17
+          },
+          "fallback_count": 1,
+          "cache_hits": 0,
+          "cache_writes": 0,
+          "last_error": null
+        },
+        "AR": {
+          "attempted": 19,
+          "success": 19,
+          "success_ratio": 1.0,
+          "providers": {
+            "unified_scraper": 19
+          },
+          "fallback_count": 2,
+          "cache_hits": 0,
+          "cache_writes": 0,
+          "last_error": null
+        },
+        "CA": {
+          "attempted": 29,
+          "success": 29,
+          "success_ratio": 1.0,
+          "providers": {
+            "unified_scraper": 29
+          },
+          "fallback_count": 0,
+          "cache_hits": 0,
+          "cache_writes": 0,
+          "last_error": null
+        },
+        "CO": {
+          "attempted": 5,
+          "success": 5,
+          "success_ratio": 1.0,
+          "providers": {
+            "unified_scraper": 5
+          },
+          "fallback_count": 0,
+          "cache_hits": 0,
+          "cache_writes": 0,
+          "last_error": null
+        },
+        "FL": {
+          "attempted": 32,
+          "success": 32,
+          "success_ratio": 1.0,
+          "providers": {
+            "unified_scraper": 32
+          },
+          "fallback_count": 0,
+          "cache_hits": 0,
+          "cache_writes": 0,
+          "last_error": null
+        },
+        "HI": {
+          "attempted": 6,
+          "success": 6,
+          "success_ratio": 1.0,
+          "providers": {
+            "unified_scraper": 6
+          },
+          "fallback_count": 0,
+          "cache_hits": 0,
+          "cache_writes": 0,
+          "last_error": null
+        },
+        "IL": {
+          "attempted": 6,
+          "success": 6,
+          "success_ratio": 1.0,
+          "providers": {
+            "unified_scraper": 6
+          },
+          "fallback_count": 0,
+          "cache_hits": 0,
+          "cache_writes": 0,
+          "last_error": null
+        },
+        "IN": {
+          "attempted": 9,
+          "success": 9,
+          "success_ratio": 1.0,
+          "providers": {
+            "unified_scraper": 9
+          },
+          "fallback_count": 0,
+          "cache_hits": 0,
+          "cache_writes": 0,
+          "last_error": null
+        },
+        "KS": {
+          "attempted": 1,
+          "success": 1,
+          "success_ratio": 1.0,
+          "providers": {
+            "unified_scraper": 1
+          },
+          "fallback_count": 1,
+          "cache_hits": 0,
+          "cache_writes": 0,
+          "last_error": null
+        },
+        "MI": {
+          "attempted": 1,
+          "success": 1,
+          "success_ratio": 1.0,
+          "providers": {
+            "unified_scraper": 1
+          },
+          "fallback_count": 0,
+          "cache_hits": 0,
+          "cache_writes": 0,
+          "last_error": null
+        },
+        "MO": {
+          "attempted": 1,
+          "success": 1,
+          "success_ratio": 1.0,
+          "providers": {
+            "unified_scraper": 1
+          },
+          "fallback_count": 0,
+          "cache_hits": 0,
+          "cache_writes": 0,
+          "last_error": null
+        },
+        "NE": {
+          "attempted": 10,
+          "success": 10,
+          "success_ratio": 1.0,
+          "providers": {
+            "unified_scraper": 10
+          },
+          "fallback_count": 0,
+          "cache_hits": 0,
+          "cache_writes": 0,
+          "last_error": null
+        },
+        "NV": {
+          "attempted": 1,
+          "success": 1,
+          "success_ratio": 1.0,
+          "providers": {
+            "unified_scraper": 1
+          },
+          "fallback_count": 0,
+          "cache_hits": 0,
+          "cache_writes": 0,
+          "last_error": null
+        },
+        "NH": {
+          "attempted": 10,
+          "success": 10,
+          "success_ratio": 1.0,
+          "providers": {
+            "unified_scraper": 10
+          },
+          "fallback_count": 0,
+          "cache_hits": 0,
+          "cache_writes": 0,
+          "last_error": null
+        },
+        "NJ": {
+          "attempted": 6,
+          "success": 6,
+          "success_ratio": 1.0,
+          "providers": {
+            "unified_scraper": 6
+          },
+          "fallback_count": 0,
+          "cache_hits": 0,
+          "cache_writes": 0,
+          "last_error": null
+        },
+        "NM": {
+          "attempted": 8,
+          "success": 8,
+          "success_ratio": 1.0,
+          "providers": {
+            "unified_scraper": 8
+          },
+          "fallback_count": 0,
+          "cache_hits": 0,
+          "cache_writes": 0,
+          "last_error": null
+        },
+        "NY": {
+          "attempted": 5,
+          "success": 5,
+          "success_ratio": 1.0,
+          "providers": {
+            "unified_scraper": 5
+          },
+          "fallback_count": 1,
+          "cache_hits": 0,
+          "cache_writes": 0,
+          "last_error": null
+        },
+        "OH": {
+          "attempted": 12,
+          "success": 12,
+          "success_ratio": 1.0,
+          "providers": {
+            "unified_scraper": 12
+          },
+          "fallback_count": 0,
+          "cache_hits": 0,
+          "cache_writes": 0,
+          "last_error": null
+        },
+        "VT": {
+          "attempted": 10,
+          "success": 10,
+          "success_ratio": 1.0,
+          "providers": {
+            "unified_scraper": 10
+          },
+          "fallback_count": 0,
+          "cache_hits": 0,
+          "cache_writes": 0,
+          "last_error": null
+        }
+      },
+      "etl_readiness": {
+        "states_processed": 51,
+        "states_with_zero_statutes": 45,
+        "states_with_jsonld": 6,
+        "total_statutes": 30,
+        "full_text_ratio": 1.0,
+        "jsonld_ratio": 1.0,
+        "jsonld_legislation_ratio": 1.0,
+        "kg_payload_ratio": 1.0,
+        "citation_ratio": 0.733,
+        "statute_signal_ratio": 0.967,
+        "non_scaffold_ratio": 1.0,
+        "ready_for_kg_etl": true
+      },
+      "schema_normalized": true,
+      "canonical_dataset": "state_laws",
+      "canonical_hf_dataset_id": "justicedao/ipfs_state_laws",
+      "jsonld_dir": null,
+      "jsonld_files": null,
+      "strict_full_text": true,
+      "min_full_text_chars": 300,
+      "strict_removed_total": 1,
+      "hydrate_statute_text": true
+    }
+  }
+}

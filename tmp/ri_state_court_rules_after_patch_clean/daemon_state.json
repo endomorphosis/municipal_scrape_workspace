@@ -1,0 +1,51 @@
+{
+  "created_at": "2026-03-21T06:01:00.997695",
+  "cycle_count": 1,
+  "recommended_tactics": [
+    "archival_first"
+  ],
+  "priority_states": [],
+  "state_action_plan": {},
+  "state_query_hints": {},
+  "recent_cycles": [
+    {
+      "cycle": 1,
+      "tactic": "archival_first",
+      "score": 1.0,
+      "passed": true,
+      "issues": [],
+      "priority_states": [],
+      "document_gap_states": [],
+      "coverage_gap_states": []
+    }
+  ],
+  "tactics": {
+    "archival_first": {
+      "trials": 1,
+      "total_score": 1.0,
+      "best_score": 1.0,
+      "last_score": 1.0,
+      "passed_cycles": 1
+    }
+  },
+  "best_tactic": {
+    "name": "archival_first",
+    "score": 1.0,
+    "cycle": 1
+  },
+  "last_cycle_at": "2026-03-21T06:01:56.806920",
+  "corpus": "state_court_rules",
+  "last_tactic_selection": {
+    "mode": "untried",
+    "selected_tactic": "archival_first",
+    "priority_recommended_tactics": [],
+    "recommended_tactics": [],
+    "priority_states": [],
+    "recent_issue_counts": {},
+    "score_breakdown": {
+      "archival_first": {
+        "untried_bonus": 1.0
+      }
+    }
+  }
+}
