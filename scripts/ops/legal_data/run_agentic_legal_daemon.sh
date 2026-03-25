@@ -256,6 +256,12 @@ if [[ -n "$OUTPUT_DIR" ]]; then
   ARGS+=(--output-dir "$OUTPUT_DIR")
 fi
 
+if [[ -n "$OUTPUT_DIR" ]]; then
+  _resolved_output_dir="$OUTPUT_DIR"
+else
+  _resolved_output_dir="$HOME/.ipfs_datasets/$CORPUS/agentic_daemon"
+fi
+
 if [[ "$STOP_ON_TARGET_SCORE" == "1" ]]; then
   ARGS+=(--stop-on-target-score)
 fi
@@ -334,6 +340,42 @@ if [[ "$_daemon_status" -eq 0 && "$SUMMARIZE_TACTIC_SELECTION" == "1" ]]; then
         "${_selection_state_order:-unknown}" \
         "${_stalled_document_recovery_states:-none}" \
         >&2
+    fi
+  fi
+fi
+
+if [[ "$_daemon_status" -ne 0 ]]; then
+  _latest_summary="$_resolved_output_dir/latest_summary.json"
+  if [[ -f "$_latest_summary" ]]; then
+    if command -v python3 >/dev/null 2>&1; then
+      python3 - <<'PY' "$_latest_summary" >&2
+import json
+import sys
+from pathlib import Path
+
+path = Path(sys.argv[1])
+try:
+    payload = json.loads(path.read_text(encoding="utf-8"))
+except Exception as exc:
+    print(f"recovered_summary available: path={path} parse_error={exc}")
+    raise SystemExit(0)
+
+parts = [f"path={path}"]
+for key in (
+    "checkpoint_promoted",
+    "checkpoint_promotion_reason",
+    "cycle",
+    "stage",
+    "status",
+    "checkpoint_promoted_at",
+):
+    value = payload.get(key)
+    if value is not None:
+        parts.append(f"{key}={value}")
+print("recovered_summary: " + " ".join(parts))
+PY
+    else
+      printf 'recovered_summary: path=%s\n' "$_latest_summary" >&2
     fi
   fi
 fi
