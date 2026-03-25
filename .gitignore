@@ -34,6 +34,7 @@ ccindex_subset*
 # Run/output directories
 out_*/
 
+tmp/
 # Local caches
 .mypy_cache/
 .pytest_cache/
