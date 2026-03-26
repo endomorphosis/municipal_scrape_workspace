@@ -12,7 +12,7 @@ from pathlib import Path
 WORKSPACE = Path(__file__).resolve().parents[3]
 PYTHON = str(WORKSPACE / ".venv" / "bin" / "python")
 
-WAVE1_PIDS = [1278398, 1279607, 1654284, 1654543, 1654813]
+WAVE1_PIDS = [3029816, 3030346, 1654284, 1654543, 1654813]
 
 WAVE2_BATCHES = [
     ("batch_az_nv_nm_ut_ks_20260326_wave2",   "AZ,NV,NM,UT,KS"),
@@ -32,8 +32,7 @@ COMMON_FLAGS = [
     "--admin-agentic-max-results-per-domain", "1500",
     "--admin-agentic-max-hops", "5",
     "--admin-agentic-max-pages", "800",
-    "--admin-parallel-assist-enabled",
-    "--admin-parallel-assist-state-limit", "2",
+    "--no-admin-parallel-assist-enabled",
     "--target-score", "0.80",
     "--post-cycle-release",
     "--post-cycle-release-timeout-seconds", "7200",
